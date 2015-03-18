@@ -4,7 +4,7 @@
 
 	<groupId>com.tectonica</groupId>
 	<artifactId>jonix</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>2.0</version>
 
 	<name>Jonix</name>
 	<description>Commercial-grade library for extracting data from ONIX sources</description>
@@ -37,7 +37,7 @@
 	</scm>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>Cp1255</project.build.sourceEncoding>
 	</properties>
 
 	<build>
