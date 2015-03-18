@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Header
 {
 	public static final String refname = "Header";
@@ -81,47 +85,47 @@ public class Header
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(FromEANNumber.refname) || name.equalsIgnoreCase(FromEANNumber.shortname))
+				if (name.equals(FromEANNumber.refname) || name.equals(FromEANNumber.shortname))
 					x.fromEANNumber = FromEANNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(FromSAN.refname) || name.equalsIgnoreCase(FromSAN.shortname))
+				else if (name.equals(FromSAN.refname) || name.equals(FromSAN.shortname))
 					x.fromSAN = FromSAN.fromDoc(element);
-				else if (name.equalsIgnoreCase(SenderIdentifier.refname) || name.equalsIgnoreCase(SenderIdentifier.shortname))
+				else if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
 					x.senderIdentifiers = DU.addToList(x.senderIdentifiers, SenderIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(FromCompany.refname) || name.equalsIgnoreCase(FromCompany.shortname))
+				else if (name.equals(FromCompany.refname) || name.equals(FromCompany.shortname))
 					x.fromCompany = FromCompany.fromDoc(element);
-				else if (name.equalsIgnoreCase(FromPerson.refname) || name.equalsIgnoreCase(FromPerson.shortname))
+				else if (name.equals(FromPerson.refname) || name.equals(FromPerson.shortname))
 					x.fromPerson = FromPerson.fromDoc(element);
-				else if (name.equalsIgnoreCase(FromEmail.refname) || name.equalsIgnoreCase(FromEmail.shortname))
+				else if (name.equals(FromEmail.refname) || name.equals(FromEmail.shortname))
 					x.fromEmail = FromEmail.fromDoc(element);
-				else if (name.equalsIgnoreCase(ToEANNumber.refname) || name.equalsIgnoreCase(ToEANNumber.shortname))
+				else if (name.equals(ToEANNumber.refname) || name.equals(ToEANNumber.shortname))
 					x.toEANNumber = ToEANNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(ToSAN.refname) || name.equalsIgnoreCase(ToSAN.shortname))
+				else if (name.equals(ToSAN.refname) || name.equals(ToSAN.shortname))
 					x.toSAN = ToSAN.fromDoc(element);
-				else if (name.equalsIgnoreCase(AddresseeIdentifier.refname) || name.equalsIgnoreCase(AddresseeIdentifier.shortname))
+				else if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
 					x.addresseeIdentifiers = DU.addToList(x.addresseeIdentifiers, AddresseeIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(ToCompany.refname) || name.equalsIgnoreCase(ToCompany.shortname))
+				else if (name.equals(ToCompany.refname) || name.equals(ToCompany.shortname))
 					x.toCompany = ToCompany.fromDoc(element);
-				else if (name.equalsIgnoreCase(ToPerson.refname) || name.equalsIgnoreCase(ToPerson.shortname))
+				else if (name.equals(ToPerson.refname) || name.equals(ToPerson.shortname))
 					x.toPerson = ToPerson.fromDoc(element);
-				else if (name.equalsIgnoreCase(MessageNumber.refname) || name.equalsIgnoreCase(MessageNumber.shortname))
+				else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
 					x.messageNumber = MessageNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(MessageRepeat.refname) || name.equalsIgnoreCase(MessageRepeat.shortname))
+				else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
 					x.messageRepeat = MessageRepeat.fromDoc(element);
-				else if (name.equalsIgnoreCase(SentDate.refname) || name.equalsIgnoreCase(SentDate.shortname))
+				else if (name.equals(SentDate.refname) || name.equals(SentDate.shortname))
 					x.sentDate = SentDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(MessageNote.refname) || name.equalsIgnoreCase(MessageNote.shortname))
+				else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
 					x.messageNote = MessageNote.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultLanguageOfText.refname) || name.equalsIgnoreCase(DefaultLanguageOfText.shortname))
+				else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
 					x.defaultLanguageOfText = DefaultLanguageOfText.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultPriceTypeCode.refname) || name.equalsIgnoreCase(DefaultPriceTypeCode.shortname))
+				else if (name.equals(DefaultPriceTypeCode.refname) || name.equals(DefaultPriceTypeCode.shortname))
 					x.defaultPriceTypeCode = DefaultPriceTypeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultCurrencyCode.refname) || name.equalsIgnoreCase(DefaultCurrencyCode.shortname))
+				else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
 					x.defaultCurrencyCode = DefaultCurrencyCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultLinearUnit.refname) || name.equalsIgnoreCase(DefaultLinearUnit.shortname))
+				else if (name.equals(DefaultLinearUnit.refname) || name.equals(DefaultLinearUnit.shortname))
 					x.defaultLinearUnit = DefaultLinearUnit.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultWeightUnit.refname) || name.equalsIgnoreCase(DefaultWeightUnit.shortname))
+				else if (name.equals(DefaultWeightUnit.refname) || name.equals(DefaultWeightUnit.shortname))
 					x.defaultWeightUnit = DefaultWeightUnit.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultClassOfTrade.refname) || name.equalsIgnoreCase(DefaultClassOfTrade.shortname))
+				else if (name.equals(DefaultClassOfTrade.refname) || name.equals(DefaultClassOfTrade.shortname))
 					x.defaultClassOfTrade = DefaultClassOfTrade.fromDoc(element);
 			}
 		});

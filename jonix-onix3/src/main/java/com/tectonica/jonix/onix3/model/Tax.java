@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Tax
 {
 	public static final String refname = "Tax";
@@ -51,15 +55,15 @@ public class Tax
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(TaxType.refname) || name.equalsIgnoreCase(TaxType.shortname))
+				if (name.equals(TaxType.refname) || name.equals(TaxType.shortname))
 					x.taxType = TaxType.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxRateCode.refname) || name.equalsIgnoreCase(TaxRateCode.shortname))
+				else if (name.equals(TaxRateCode.refname) || name.equals(TaxRateCode.shortname))
 					x.taxRateCode = TaxRateCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxRatePercent.refname) || name.equalsIgnoreCase(TaxRatePercent.shortname))
+				else if (name.equals(TaxRatePercent.refname) || name.equals(TaxRatePercent.shortname))
 					x.taxRatePercent = TaxRatePercent.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxableAmount.refname) || name.equalsIgnoreCase(TaxableAmount.shortname))
+				else if (name.equals(TaxableAmount.refname) || name.equals(TaxableAmount.shortname))
 					x.taxableAmount = TaxableAmount.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxAmount.refname) || name.equalsIgnoreCase(TaxAmount.shortname))
+				else if (name.equals(TaxAmount.refname) || name.equals(TaxAmount.shortname))
 					x.taxAmount = TaxAmount.fromDoc(element);
 			}
 		});

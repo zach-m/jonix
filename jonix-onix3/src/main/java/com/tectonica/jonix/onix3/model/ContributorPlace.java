@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ContributorPlace
 {
 	public static final String refname = "ContributorPlace";
@@ -52,13 +56,13 @@ public class ContributorPlace
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ContributorPlaceRelator.refname) || name.equalsIgnoreCase(ContributorPlaceRelator.shortname))
+				if (name.equals(ContributorPlaceRelator.refname) || name.equals(ContributorPlaceRelator.shortname))
 					x.contributorPlaceRelator = ContributorPlaceRelator.fromDoc(element);
-				else if (name.equalsIgnoreCase(CountryCode.refname) || name.equalsIgnoreCase(CountryCode.shortname))
+				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
 					x.countryCode = CountryCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(RegionCode.refname) || name.equalsIgnoreCase(RegionCode.shortname))
+				else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname))
 					x.regionCode = RegionCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(LocationName.refname) || name.equalsIgnoreCase(LocationName.shortname))
+				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
 					x.locationNames = DU.addToList(x.locationNames, LocationName.fromDoc(element));
 			}
 		});

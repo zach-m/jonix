@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ContentItem
 {
 	public static final String refname = "ContentItem";
@@ -76,37 +80,37 @@ public class ContentItem
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(LevelSequenceNumber.refname) || name.equalsIgnoreCase(LevelSequenceNumber.shortname))
+				if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
 					x.levelSequenceNumber = LevelSequenceNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextItem.refname) || name.equalsIgnoreCase(TextItem.shortname))
+				else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname))
 					x.textItem = TextItem.fromDoc(element);
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
-				else if (name.equalsIgnoreCase(ComponentTypeName.refname) || name.equalsIgnoreCase(ComponentTypeName.shortname))
+				else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname))
 					x.componentTypeName = ComponentTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(ComponentNumber.refname) || name.equalsIgnoreCase(ComponentNumber.shortname))
+				else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname))
 					x.componentNumber = ComponentNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(DistinctiveTitle.refname) || name.equalsIgnoreCase(DistinctiveTitle.shortname))
+				else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
 					x.distinctiveTitle = DistinctiveTitle.fromDoc(element);
-				else if (name.equalsIgnoreCase(Title.refname) || name.equalsIgnoreCase(Title.shortname))
+				else if (name.equals(Title.refname) || name.equals(Title.shortname))
 					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
-				else if (name.equalsIgnoreCase(WorkIdentifier.refname) || name.equalsIgnoreCase(WorkIdentifier.shortname))
+				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
 					x.workIdentifiers = DU.addToList(x.workIdentifiers, WorkIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(Contributor.refname) || name.equalsIgnoreCase(Contributor.shortname))
+				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
 					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
-				else if (name.equalsIgnoreCase(ContributorStatement.refname) || name.equalsIgnoreCase(ContributorStatement.shortname))
+				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
 					x.contributorStatement = ContributorStatement.fromDoc(element);
-				else if (name.equalsIgnoreCase(Subject.refname) || name.equalsIgnoreCase(Subject.shortname))
+				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
 					x.subjects = DU.addToList(x.subjects, Subject.fromDoc(element));
-				else if (name.equalsIgnoreCase(PersonAsSubject.refname) || name.equalsIgnoreCase(PersonAsSubject.shortname))
+				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
 					x.personAsSubjects = DU.addToList(x.personAsSubjects, PersonAsSubject.fromDoc(element));
-				else if (name.equalsIgnoreCase(CorporateBodyAsSubject.refname) || name.equalsIgnoreCase(CorporateBodyAsSubject.shortname))
+				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
 					x.corporateBodyAsSubjects = DU.addToList(x.corporateBodyAsSubjects, CorporateBodyAsSubject.fromDoc(element));
-				else if (name.equalsIgnoreCase(PlaceAsSubject.refname) || name.equalsIgnoreCase(PlaceAsSubject.shortname))
+				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
 					x.placeAsSubjects = DU.addToList(x.placeAsSubjects, PlaceAsSubject.fromDoc(element));
-				else if (name.equalsIgnoreCase(OtherText.refname) || name.equalsIgnoreCase(OtherText.shortname))
+				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
 					x.otherTexts = DU.addToList(x.otherTexts, OtherText.fromDoc(element));
-				else if (name.equalsIgnoreCase(MediaFile.refname) || name.equalsIgnoreCase(MediaFile.shortname))
+				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
 					x.mediaFiles = DU.addToList(x.mediaFiles, MediaFile.fromDoc(element));
 			}
 		});

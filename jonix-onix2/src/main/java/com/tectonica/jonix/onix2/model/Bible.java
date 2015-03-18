@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Bible
 {
 	public static final String refname = "Bible";
@@ -67,19 +71,19 @@ public class Bible
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(BibleContents.refname) || name.equalsIgnoreCase(BibleContents.shortname))
+				if (name.equals(BibleContents.refname) || name.equals(BibleContents.shortname))
 					x.bibleContentss = DU.addToList(x.bibleContentss, BibleContents.fromDoc(element));
-				else if (name.equalsIgnoreCase(BibleVersion.refname) || name.equalsIgnoreCase(BibleVersion.shortname))
+				else if (name.equals(BibleVersion.refname) || name.equals(BibleVersion.shortname))
 					x.bibleVersions = DU.addToList(x.bibleVersions, BibleVersion.fromDoc(element));
-				else if (name.equalsIgnoreCase(StudyBibleType.refname) || name.equalsIgnoreCase(StudyBibleType.shortname))
+				else if (name.equals(StudyBibleType.refname) || name.equals(StudyBibleType.shortname))
 					x.studyBibleType = StudyBibleType.fromDoc(element);
-				else if (name.equalsIgnoreCase(BiblePurpose.refname) || name.equalsIgnoreCase(BiblePurpose.shortname))
+				else if (name.equals(BiblePurpose.refname) || name.equals(BiblePurpose.shortname))
 					x.biblePurposes = DU.addToList(x.biblePurposes, BiblePurpose.fromDoc(element));
-				else if (name.equalsIgnoreCase(BibleTextOrganization.refname) || name.equalsIgnoreCase(BibleTextOrganization.shortname))
+				else if (name.equals(BibleTextOrganization.refname) || name.equals(BibleTextOrganization.shortname))
 					x.bibleTextOrganization = BibleTextOrganization.fromDoc(element);
-				else if (name.equalsIgnoreCase(BibleReferenceLocation.refname) || name.equalsIgnoreCase(BibleReferenceLocation.shortname))
+				else if (name.equals(BibleReferenceLocation.refname) || name.equals(BibleReferenceLocation.shortname))
 					x.bibleReferenceLocation = BibleReferenceLocation.fromDoc(element);
-				else if (name.equalsIgnoreCase(BibleTextFeature.refname) || name.equalsIgnoreCase(BibleTextFeature.shortname))
+				else if (name.equals(BibleTextFeature.refname) || name.equals(BibleTextFeature.shortname))
 					x.bibleTextFeatures = DU.addToList(x.bibleTextFeatures, BibleTextFeature.fromDoc(element));
 			}
 		});

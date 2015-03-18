@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PublisherRepresentative
 {
 	public static final String refname = "PublisherRepresentative";
@@ -55,19 +59,19 @@ public class PublisherRepresentative
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(AgentRole.refname) || name.equalsIgnoreCase(AgentRole.shortname))
+				if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
 					x.agentRole = AgentRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(AgentIdentifier.refname) || name.equalsIgnoreCase(AgentIdentifier.shortname))
+				else if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
 					x.agentIdentifiers = DU.addToList(x.agentIdentifiers, AgentIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(AgentName.refname) || name.equalsIgnoreCase(AgentName.shortname))
+				else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
 					x.agentName = AgentName.fromDoc(element);
-				else if (name.equalsIgnoreCase(TelephoneNumber.refname) || name.equalsIgnoreCase(TelephoneNumber.shortname))
+				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
 					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(FaxNumber.refname) || name.equalsIgnoreCase(FaxNumber.shortname))
+				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
 					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(EmailAddress.refname) || name.equalsIgnoreCase(EmailAddress.shortname))
+				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
 					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
 			}
 		});

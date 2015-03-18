@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Imprint
 {
 	public static final String refname = "Imprint";
@@ -62,13 +66,13 @@ public class Imprint
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ImprintName.refname) || name.equalsIgnoreCase(ImprintName.shortname))
+				if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
 					x.imprintName = ImprintName.fromDoc(element);
-				else if (name.equalsIgnoreCase(NameCodeType.refname) || name.equalsIgnoreCase(NameCodeType.shortname))
+				else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname))
 					x.nameCodeType = NameCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(NameCodeTypeName.refname) || name.equalsIgnoreCase(NameCodeTypeName.shortname))
+				else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname))
 					x.nameCodeTypeName = NameCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(NameCodeValue.refname) || name.equalsIgnoreCase(NameCodeValue.shortname))
+				else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname))
 					x.nameCodeValue = NameCodeValue.fromDoc(element);
 			}
 		});

@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SupplyDetail
 {
 	public static final String refname = "SupplyDetail";
@@ -60,29 +64,29 @@ public class SupplyDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Supplier.refname) || name.equalsIgnoreCase(Supplier.shortname))
+				if (name.equals(Supplier.refname) || name.equals(Supplier.shortname))
 					x.supplier = Supplier.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplierOwnCoding.refname) || name.equalsIgnoreCase(SupplierOwnCoding.shortname))
+				else if (name.equals(SupplierOwnCoding.refname) || name.equals(SupplierOwnCoding.shortname))
 					x.supplierOwnCodings = DU.addToList(x.supplierOwnCodings, SupplierOwnCoding.fromDoc(element));
-				else if (name.equalsIgnoreCase(ReturnsConditions.refname) || name.equalsIgnoreCase(ReturnsConditions.shortname))
+				else if (name.equals(ReturnsConditions.refname) || name.equals(ReturnsConditions.shortname))
 					x.returnsConditionss = DU.addToList(x.returnsConditionss, ReturnsConditions.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductAvailability.refname) || name.equalsIgnoreCase(ProductAvailability.shortname))
+				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
 					x.productAvailability = ProductAvailability.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplyDate.refname) || name.equalsIgnoreCase(SupplyDate.shortname))
+				else if (name.equals(SupplyDate.refname) || name.equals(SupplyDate.shortname))
 					x.supplyDates = DU.addToList(x.supplyDates, SupplyDate.fromDoc(element));
-				else if (name.equalsIgnoreCase(OrderTime.refname) || name.equalsIgnoreCase(OrderTime.shortname))
+				else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
 					x.orderTime = OrderTime.fromDoc(element);
-				else if (name.equalsIgnoreCase(NewSupplier.refname) || name.equalsIgnoreCase(NewSupplier.shortname))
+				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
 					x.newSupplier = NewSupplier.fromDoc(element);
-				else if (name.equalsIgnoreCase(Stock.refname) || name.equalsIgnoreCase(Stock.shortname))
+				else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
 					x.stocks = DU.addToList(x.stocks, Stock.fromDoc(element));
-				else if (name.equalsIgnoreCase(PackQuantity.refname) || name.equalsIgnoreCase(PackQuantity.shortname))
+				else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
 					x.packQuantity = PackQuantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(UnpricedItemType.refname) || name.equalsIgnoreCase(UnpricedItemType.shortname))
+				else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
 					x.unpricedItemType = UnpricedItemType.fromDoc(element);
-				else if (name.equalsIgnoreCase(Price.refname) || name.equalsIgnoreCase(Price.shortname))
+				else if (name.equals(Price.refname) || name.equals(Price.shortname))
 					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
-				else if (name.equalsIgnoreCase(Reissue.refname) || name.equalsIgnoreCase(Reissue.shortname))
+				else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
 					x.reissue = Reissue.fromDoc(element);
 			}
 		});

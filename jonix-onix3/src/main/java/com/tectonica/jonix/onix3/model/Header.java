@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Header
 {
 	public static final String refname = "Header";
@@ -57,23 +61,23 @@ public class Header
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Sender.refname) || name.equalsIgnoreCase(Sender.shortname))
+				if (name.equals(Sender.refname) || name.equals(Sender.shortname))
 					x.sender = Sender.fromDoc(element);
-				else if (name.equalsIgnoreCase(Addressee.refname) || name.equalsIgnoreCase(Addressee.shortname))
+				else if (name.equals(Addressee.refname) || name.equals(Addressee.shortname))
 					x.addressees = DU.addToList(x.addressees, Addressee.fromDoc(element));
-				else if (name.equalsIgnoreCase(MessageNumber.refname) || name.equalsIgnoreCase(MessageNumber.shortname))
+				else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
 					x.messageNumber = MessageNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(MessageRepeat.refname) || name.equalsIgnoreCase(MessageRepeat.shortname))
+				else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
 					x.messageRepeat = MessageRepeat.fromDoc(element);
-				else if (name.equalsIgnoreCase(SentDateTime.refname) || name.equalsIgnoreCase(SentDateTime.shortname))
+				else if (name.equals(SentDateTime.refname) || name.equals(SentDateTime.shortname))
 					x.sentDateTime = SentDateTime.fromDoc(element);
-				else if (name.equalsIgnoreCase(MessageNote.refname) || name.equalsIgnoreCase(MessageNote.shortname))
+				else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
 					x.messageNotes = DU.addToList(x.messageNotes, MessageNote.fromDoc(element));
-				else if (name.equalsIgnoreCase(DefaultLanguageOfText.refname) || name.equalsIgnoreCase(DefaultLanguageOfText.shortname))
+				else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
 					x.defaultLanguageOfText = DefaultLanguageOfText.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultPriceType.refname) || name.equalsIgnoreCase(DefaultPriceType.shortname))
+				else if (name.equals(DefaultPriceType.refname) || name.equals(DefaultPriceType.shortname))
 					x.defaultPriceType = DefaultPriceType.fromDoc(element);
-				else if (name.equalsIgnoreCase(DefaultCurrencyCode.refname) || name.equalsIgnoreCase(DefaultCurrencyCode.shortname))
+				else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
 					x.defaultCurrencyCode = DefaultCurrencyCode.fromDoc(element);
 			}
 		});

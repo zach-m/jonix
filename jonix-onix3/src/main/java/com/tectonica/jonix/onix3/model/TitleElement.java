@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class TitleElement
 {
 	public static final String refname = "TitleElement";
@@ -55,23 +59,23 @@ public class TitleElement
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SequenceNumber.refname) || name.equalsIgnoreCase(SequenceNumber.shortname))
+				if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
 					x.sequenceNumber = SequenceNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitleElementLevel.refname) || name.equalsIgnoreCase(TitleElementLevel.shortname))
+				else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname))
 					x.titleElementLevel = TitleElementLevel.fromDoc(element);
-				else if (name.equalsIgnoreCase(PartNumber.refname) || name.equalsIgnoreCase(PartNumber.shortname))
+				else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname))
 					x.partNumber = PartNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(YearOfAnnual.refname) || name.equalsIgnoreCase(YearOfAnnual.shortname))
+				else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
 					x.yearOfAnnual = YearOfAnnual.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitlePrefix.refname) || name.equalsIgnoreCase(TitlePrefix.shortname))
+				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
 					x.titlePrefix = TitlePrefix.fromDoc(element);
-				else if (name.equalsIgnoreCase(NoPrefix.refname) || name.equalsIgnoreCase(NoPrefix.shortname))
+				else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname))
 					x.noPrefix = NoPrefix.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitleWithoutPrefix.refname) || name.equalsIgnoreCase(TitleWithoutPrefix.shortname))
+				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
 					x.titleWithoutPrefix = TitleWithoutPrefix.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitleText.refname) || name.equalsIgnoreCase(TitleText.shortname))
+				else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
 					x.titleText = TitleText.fromDoc(element);
-				else if (name.equalsIgnoreCase(Subtitle.refname) || name.equalsIgnoreCase(Subtitle.shortname))
+				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
 					x.subtitle = Subtitle.fromDoc(element);
 			}
 		});

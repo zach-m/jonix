@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PriceCoded
 {
 	public static final String refname = "PriceCoded";
@@ -49,11 +53,11 @@ public class PriceCoded
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PriceCodeType.refname) || name.equalsIgnoreCase(PriceCodeType.shortname))
+				if (name.equals(PriceCodeType.refname) || name.equals(PriceCodeType.shortname))
 					x.priceCodeType = PriceCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceCodeTypeName.refname) || name.equalsIgnoreCase(PriceCodeTypeName.shortname))
+				else if (name.equals(PriceCodeTypeName.refname) || name.equals(PriceCodeTypeName.shortname))
 					x.priceCodeTypeName = PriceCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceCode.refname) || name.equalsIgnoreCase(PriceCode.shortname))
+				else if (name.equals(PriceCode.refname) || name.equals(PriceCode.shortname))
 					x.priceCode = PriceCode.fromDoc(element);
 			}
 		});

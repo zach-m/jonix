@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ResourceVersion
 {
 	public static final String refname = "ResourceVersion";
@@ -52,13 +56,13 @@ public class ResourceVersion
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ResourceForm.refname) || name.equalsIgnoreCase(ResourceForm.shortname))
+				if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname))
 					x.resourceForm = ResourceForm.fromDoc(element);
-				else if (name.equalsIgnoreCase(ResourceVersionFeature.refname) || name.equalsIgnoreCase(ResourceVersionFeature.shortname))
+				else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname))
 					x.resourceVersionFeatures = DU.addToList(x.resourceVersionFeatures, ResourceVersionFeature.fromDoc(element));
-				else if (name.equalsIgnoreCase(ResourceLink.refname) || name.equalsIgnoreCase(ResourceLink.shortname))
+				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
 					x.resourceLinks = DU.addToList(x.resourceLinks, ResourceLink.fromDoc(element));
-				else if (name.equalsIgnoreCase(ContentDate.refname) || name.equalsIgnoreCase(ContentDate.shortname))
+				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
 					x.contentDates = DU.addToList(x.contentDates, ContentDate.fromDoc(element));
 			}
 		});

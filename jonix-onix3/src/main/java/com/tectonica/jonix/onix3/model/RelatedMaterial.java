@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class RelatedMaterial
 {
 	public static final String refname = "RelatedMaterial";
@@ -50,9 +54,9 @@ public class RelatedMaterial
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(RelatedWork.refname) || name.equalsIgnoreCase(RelatedWork.shortname))
+				if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
 					x.relatedWorks = DU.addToList(x.relatedWorks, RelatedWork.fromDoc(element));
-				else if (name.equalsIgnoreCase(RelatedProduct.refname) || name.equalsIgnoreCase(RelatedProduct.shortname))
+				else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
 					x.relatedProducts = DU.addToList(x.relatedProducts, RelatedProduct.fromDoc(element));
 			}
 		});

@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class MainSeriesRecord
 {
 	public static final String refname = "MainSeriesRecord";
@@ -74,34 +78,33 @@ public class MainSeriesRecord
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(RecordReference.refname) || name.equalsIgnoreCase(RecordReference.shortname))
+				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
 					x.recordReference = RecordReference.fromDoc(element);
-				else if (name.equalsIgnoreCase(NotificationType.refname) || name.equalsIgnoreCase(NotificationType.shortname))
+				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
 					x.notificationType = NotificationType.fromDoc(element);
-				else if (name.equalsIgnoreCase(DeletionCode.refname) || name.equalsIgnoreCase(DeletionCode.shortname))
+				else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
 					x.deletionCode = DeletionCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(DeletionText.refname) || name.equalsIgnoreCase(DeletionText.shortname))
+				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
 					x.deletionText = DeletionText.fromDoc(element);
-				else if (name.equalsIgnoreCase(RecordSourceType.refname) || name.equalsIgnoreCase(RecordSourceType.shortname))
+				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
 					x.recordSourceType = RecordSourceType.fromDoc(element);
-				else if (name.equalsIgnoreCase(RecordSourceIdentifierType.refname)
-						|| name.equalsIgnoreCase(RecordSourceIdentifierType.shortname))
+				else if (name.equals(RecordSourceIdentifierType.refname) || name.equals(RecordSourceIdentifierType.shortname))
 					x.recordSourceIdentifierType = RecordSourceIdentifierType.fromDoc(element);
-				else if (name.equalsIgnoreCase(RecordSourceIdentifier.refname) || name.equalsIgnoreCase(RecordSourceIdentifier.shortname))
+				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
 					x.recordSourceIdentifier = RecordSourceIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(RecordSourceName.refname) || name.equalsIgnoreCase(RecordSourceName.shortname))
+				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
 					x.recordSourceName = RecordSourceName.fromDoc(element);
-				else if (name.equalsIgnoreCase(SeriesIdentifier.refname) || name.equalsIgnoreCase(SeriesIdentifier.shortname))
+				else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
 					x.seriesIdentifiers = DU.addToList(x.seriesIdentifiers, SeriesIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(Title.refname) || name.equalsIgnoreCase(Title.shortname))
+				else if (name.equals(Title.refname) || name.equals(Title.shortname))
 					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
-				else if (name.equalsIgnoreCase(Contributor.refname) || name.equalsIgnoreCase(Contributor.shortname))
+				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
 					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
-				else if (name.equalsIgnoreCase(OtherText.refname) || name.equalsIgnoreCase(OtherText.shortname))
+				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
 					x.otherTexts = DU.addToList(x.otherTexts, OtherText.fromDoc(element));
-				else if (name.equalsIgnoreCase(Publisher.refname) || name.equalsIgnoreCase(Publisher.shortname))
+				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
 					x.publishers = DU.addToList(x.publishers, Publisher.fromDoc(element));
-				else if (name.equalsIgnoreCase(SubordinateEntries.refname) || name.equalsIgnoreCase(SubordinateEntries.shortname))
+				else if (name.equals(SubordinateEntries.refname) || name.equals(SubordinateEntries.shortname))
 					x.subordinateEntries = SubordinateEntries.fromDoc(element);
 			}
 		});

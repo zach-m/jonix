@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PublishingDetail
 {
 	public static final String refname = "PublishingDetail";
@@ -61,31 +65,31 @@ public class PublishingDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Imprint.refname) || name.equalsIgnoreCase(Imprint.shortname))
+				if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
 					x.imprints = DU.addToList(x.imprints, Imprint.fromDoc(element));
-				else if (name.equalsIgnoreCase(Publisher.refname) || name.equalsIgnoreCase(Publisher.shortname))
+				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
 					x.publishers = DU.addToList(x.publishers, Publisher.fromDoc(element));
-				else if (name.equalsIgnoreCase(CityOfPublication.refname) || name.equalsIgnoreCase(CityOfPublication.shortname))
+				else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
 					x.cityOfPublications = DU.addToList(x.cityOfPublications, CityOfPublication.fromDoc(element));
-				else if (name.equalsIgnoreCase(CountryOfPublication.refname) || name.equalsIgnoreCase(CountryOfPublication.shortname))
+				else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
 					x.countryOfPublication = CountryOfPublication.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductContact.refname) || name.equalsIgnoreCase(ProductContact.shortname))
+				else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
 					x.productContacts = DU.addToList(x.productContacts, ProductContact.fromDoc(element));
-				else if (name.equalsIgnoreCase(PublishingStatus.refname) || name.equalsIgnoreCase(PublishingStatus.shortname))
+				else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
 					x.publishingStatus = PublishingStatus.fromDoc(element);
-				else if (name.equalsIgnoreCase(PublishingStatusNote.refname) || name.equalsIgnoreCase(PublishingStatusNote.shortname))
+				else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
 					x.publishingStatusNotes = DU.addToList(x.publishingStatusNotes, PublishingStatusNote.fromDoc(element));
-				else if (name.equalsIgnoreCase(PublishingDate.refname) || name.equalsIgnoreCase(PublishingDate.shortname))
+				else if (name.equals(PublishingDate.refname) || name.equals(PublishingDate.shortname))
 					x.publishingDates = DU.addToList(x.publishingDates, PublishingDate.fromDoc(element));
-				else if (name.equalsIgnoreCase(LatestReprintNumber.refname) || name.equalsIgnoreCase(LatestReprintNumber.shortname))
+				else if (name.equals(LatestReprintNumber.refname) || name.equals(LatestReprintNumber.shortname))
 					x.latestReprintNumber = LatestReprintNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(CopyrightStatement.refname) || name.equalsIgnoreCase(CopyrightStatement.shortname))
+				else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
 					x.copyrightStatements = DU.addToList(x.copyrightStatements, CopyrightStatement.fromDoc(element));
-				else if (name.equalsIgnoreCase(SalesRights.refname) || name.equalsIgnoreCase(SalesRights.shortname))
+				else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
 					x.salesRightss = DU.addToList(x.salesRightss, SalesRights.fromDoc(element));
-				else if (name.equalsIgnoreCase(ROWSalesRightsType.refname) || name.equalsIgnoreCase(ROWSalesRightsType.shortname))
+				else if (name.equals(ROWSalesRightsType.refname) || name.equals(ROWSalesRightsType.shortname))
 					x.rowSalesRightsType = ROWSalesRightsType.fromDoc(element);
-				else if (name.equalsIgnoreCase(SalesRestriction.refname) || name.equalsIgnoreCase(SalesRestriction.shortname))
+				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
 					x.salesRestrictions = DU.addToList(x.salesRestrictions, SalesRestriction.fromDoc(element));
 			}
 		});

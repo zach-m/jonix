@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class MarketDate
 {
 	public static final String refname = "MarketDate";
@@ -61,11 +65,11 @@ public class MarketDate
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(MarketDateRole.refname) || name.equalsIgnoreCase(MarketDateRole.shortname))
+				if (name.equals(MarketDateRole.refname) || name.equals(MarketDateRole.shortname))
 					x.marketDateRole = MarketDateRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(DateFormat.refname) || name.equalsIgnoreCase(DateFormat.shortname))
+				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
 					x.dateFormat = DateFormat.fromDoc(element);
-				else if (name.equalsIgnoreCase(Date.refname) || name.equalsIgnoreCase(Date.shortname))
+				else if (name.equals(Date.refname) || name.equals(Date.shortname))
 					x.date = Date.fromDoc(element);
 			}
 		});

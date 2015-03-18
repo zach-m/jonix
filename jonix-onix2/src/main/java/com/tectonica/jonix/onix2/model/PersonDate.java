@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PersonDate
 {
 	public static final String refname = "PersonDate";
@@ -61,11 +65,11 @@ public class PersonDate
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PersonDateRole.refname) || name.equalsIgnoreCase(PersonDateRole.shortname))
+				if (name.equals(PersonDateRole.refname) || name.equals(PersonDateRole.shortname))
 					x.personDateRole = PersonDateRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(DateFormat.refname) || name.equalsIgnoreCase(DateFormat.shortname))
+				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
 					x.dateFormat = DateFormat.fromDoc(element);
-				else if (name.equalsIgnoreCase(Date.refname) || name.equalsIgnoreCase(Date.shortname))
+				else if (name.equals(Date.refname) || name.equals(Date.shortname))
 					x.date = Date.fromDoc(element);
 			}
 		});

@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class NewSupplier
 {
 	public static final String refname = "NewSupplier";
@@ -53,15 +57,15 @@ public class NewSupplier
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SupplierIdentifier.refname) || name.equalsIgnoreCase(SupplierIdentifier.shortname))
+				if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
 					x.supplierIdentifiers = DU.addToList(x.supplierIdentifiers, SupplierIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupplierName.refname) || name.equalsIgnoreCase(SupplierName.shortname))
+				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
 					x.supplierName = SupplierName.fromDoc(element);
-				else if (name.equalsIgnoreCase(TelephoneNumber.refname) || name.equalsIgnoreCase(TelephoneNumber.shortname))
+				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
 					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(FaxNumber.refname) || name.equalsIgnoreCase(FaxNumber.shortname))
+				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
 					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(EmailAddress.refname) || name.equalsIgnoreCase(EmailAddress.shortname))
+				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
 					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
 			}
 		});

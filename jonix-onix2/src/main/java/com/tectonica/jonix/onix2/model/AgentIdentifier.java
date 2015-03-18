@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class AgentIdentifier
 {
 	public static final String refname = "AgentIdentifier";
@@ -61,11 +65,11 @@ public class AgentIdentifier
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(AgentIDType.refname) || name.equalsIgnoreCase(AgentIDType.shortname))
+				if (name.equals(AgentIDType.refname) || name.equals(AgentIDType.shortname))
 					x.agentIDType = AgentIDType.fromDoc(element);
-				else if (name.equalsIgnoreCase(IDTypeName.refname) || name.equalsIgnoreCase(IDTypeName.shortname))
+				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
 					x.idTypeName = IDTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(IDValue.refname) || name.equalsIgnoreCase(IDValue.shortname))
+				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
 					x.idValue = IDValue.fromDoc(element);
 			}
 		});

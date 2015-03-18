@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SalesRestriction
 {
 	public static final String refname = "SalesRestriction";
@@ -63,11 +67,11 @@ public class SalesRestriction
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SalesRestrictionType.refname) || name.equalsIgnoreCase(SalesRestrictionType.shortname))
+				if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
 					x.salesRestrictionType = SalesRestrictionType.fromDoc(element);
-				else if (name.equalsIgnoreCase(SalesOutlet.refname) || name.equalsIgnoreCase(SalesOutlet.shortname))
+				else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
 					x.salesOutlets = DU.addToList(x.salesOutlets, SalesOutlet.fromDoc(element));
-				else if (name.equalsIgnoreCase(SalesRestrictionDetail.refname) || name.equalsIgnoreCase(SalesRestrictionDetail.shortname))
+				else if (name.equals(SalesRestrictionDetail.refname) || name.equals(SalesRestrictionDetail.shortname))
 					x.salesRestrictionDetail = SalesRestrictionDetail.fromDoc(element);
 			}
 		});

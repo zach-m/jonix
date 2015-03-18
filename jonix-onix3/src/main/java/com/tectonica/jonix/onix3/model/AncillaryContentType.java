@@ -23,6 +23,10 @@ import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List25;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class AncillaryContentType
 {
 	public static final String refname = "AncillaryContentType";

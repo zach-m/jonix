@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class CopyrightStatement
 {
 	public static final String refname = "CopyrightStatement";
@@ -62,9 +66,9 @@ public class CopyrightStatement
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(CopyrightYear.refname) || name.equalsIgnoreCase(CopyrightYear.shortname))
+				if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
 					x.copyrightYears = DU.addToList(x.copyrightYears, CopyrightYear.fromDoc(element));
-				else if (name.equalsIgnoreCase(CopyrightOwner.refname) || name.equalsIgnoreCase(CopyrightOwner.shortname))
+				else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname))
 					x.copyrightOwners = DU.addToList(x.copyrightOwners, CopyrightOwner.fromDoc(element));
 			}
 		});

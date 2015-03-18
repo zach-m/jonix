@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Price
 {
 	public static final String refname = "Price";
@@ -69,47 +73,47 @@ public class Price
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PriceIdentifier.refname) || name.equalsIgnoreCase(PriceIdentifier.shortname))
+				if (name.equals(PriceIdentifier.refname) || name.equals(PriceIdentifier.shortname))
 					x.priceIdentifiers = DU.addToList(x.priceIdentifiers, PriceIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(PriceType.refname) || name.equalsIgnoreCase(PriceType.shortname))
+				else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
 					x.priceType = PriceType.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceQualifier.refname) || name.equalsIgnoreCase(PriceQualifier.shortname))
+				else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
 					x.priceQualifier = PriceQualifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceTypeDescription.refname) || name.equalsIgnoreCase(PriceTypeDescription.shortname))
+				else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
 					x.priceTypeDescriptions = DU.addToList(x.priceTypeDescriptions, PriceTypeDescription.fromDoc(element));
-				else if (name.equalsIgnoreCase(PricePer.refname) || name.equalsIgnoreCase(PricePer.shortname))
+				else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
 					x.pricePer = PricePer.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceCondition.refname) || name.equalsIgnoreCase(PriceCondition.shortname))
+				else if (name.equals(PriceCondition.refname) || name.equals(PriceCondition.shortname))
 					x.priceConditions = DU.addToList(x.priceConditions, PriceCondition.fromDoc(element));
-				else if (name.equalsIgnoreCase(MinimumOrderQuantity.refname) || name.equalsIgnoreCase(MinimumOrderQuantity.shortname))
+				else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
 					x.minimumOrderQuantity = MinimumOrderQuantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(BatchBonus.refname) || name.equalsIgnoreCase(BatchBonus.shortname))
+				else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
 					x.batchBonuss = DU.addToList(x.batchBonuss, BatchBonus.fromDoc(element));
-				else if (name.equalsIgnoreCase(DiscountCoded.refname) || name.equalsIgnoreCase(DiscountCoded.shortname))
+				else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
 					x.discountCodeds = DU.addToList(x.discountCodeds, DiscountCoded.fromDoc(element));
-				else if (name.equalsIgnoreCase(Discount.refname) || name.equalsIgnoreCase(Discount.shortname))
+				else if (name.equals(Discount.refname) || name.equals(Discount.shortname))
 					x.discounts = DU.addToList(x.discounts, Discount.fromDoc(element));
-				else if (name.equalsIgnoreCase(PriceStatus.refname) || name.equalsIgnoreCase(PriceStatus.shortname))
+				else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
 					x.priceStatus = PriceStatus.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceAmount.refname) || name.equalsIgnoreCase(PriceAmount.shortname))
+				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
 					x.priceAmount = PriceAmount.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceCoded.refname) || name.equalsIgnoreCase(PriceCoded.shortname))
+				else if (name.equals(PriceCoded.refname) || name.equals(PriceCoded.shortname))
 					x.priceCoded = PriceCoded.fromDoc(element);
-				else if (name.equalsIgnoreCase(Tax.refname) || name.equalsIgnoreCase(Tax.shortname))
+				else if (name.equals(Tax.refname) || name.equals(Tax.shortname))
 					x.taxs = DU.addToList(x.taxs, Tax.fromDoc(element));
-				else if (name.equalsIgnoreCase(CurrencyCode.refname) || name.equalsIgnoreCase(CurrencyCode.shortname))
+				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
 					x.currencyCode = CurrencyCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(Territory.refname) || name.equalsIgnoreCase(Territory.shortname))
+				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
 					x.territory = Territory.fromDoc(element);
-				else if (name.equalsIgnoreCase(CurrencyZone.refname) || name.equalsIgnoreCase(CurrencyZone.shortname))
+				else if (name.equals(CurrencyZone.refname) || name.equals(CurrencyZone.shortname))
 					x.currencyZone = CurrencyZone.fromDoc(element);
-				else if (name.equalsIgnoreCase(ComparisonProductPrice.refname) || name.equalsIgnoreCase(ComparisonProductPrice.shortname))
+				else if (name.equals(ComparisonProductPrice.refname) || name.equals(ComparisonProductPrice.shortname))
 					x.comparisonProductPrices = DU.addToList(x.comparisonProductPrices, ComparisonProductPrice.fromDoc(element));
-				else if (name.equalsIgnoreCase(PriceDate.refname) || name.equalsIgnoreCase(PriceDate.shortname))
+				else if (name.equals(PriceDate.refname) || name.equals(PriceDate.shortname))
 					x.priceDates = DU.addToList(x.priceDates, PriceDate.fromDoc(element));
-				else if (name.equalsIgnoreCase(PrintedOnProduct.refname) || name.equalsIgnoreCase(PrintedOnProduct.shortname))
+				else if (name.equals(PrintedOnProduct.refname) || name.equals(PrintedOnProduct.shortname))
 					x.printedOnProduct = PrintedOnProduct.fromDoc(element);
-				else if (name.equalsIgnoreCase(PositionOnProduct.refname) || name.equalsIgnoreCase(PositionOnProduct.shortname))
+				else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
 					x.positionOnProduct = PositionOnProduct.fromDoc(element);
 			}
 		});

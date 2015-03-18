@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PageRun
 {
 	public static final String refname = "PageRun";
@@ -48,9 +52,9 @@ public class PageRun
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(FirstPageNumber.refname) || name.equalsIgnoreCase(FirstPageNumber.shortname))
+				if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
 					x.firstPageNumber = FirstPageNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(LastPageNumber.refname) || name.equalsIgnoreCase(LastPageNumber.shortname))
+				else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
 					x.lastPageNumber = LastPageNumber.fromDoc(element);
 			}
 		});

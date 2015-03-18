@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Publisher
 {
 	public static final String refname = "Publisher";
@@ -66,17 +70,17 @@ public class Publisher
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PublishingRole.refname) || name.equalsIgnoreCase(PublishingRole.shortname))
+				if (name.equals(PublishingRole.refname) || name.equals(PublishingRole.shortname))
 					x.publishingRole = PublishingRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(PublisherName.refname) || name.equalsIgnoreCase(PublisherName.shortname))
+				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
 					x.publisherName = PublisherName.fromDoc(element);
-				else if (name.equalsIgnoreCase(NameCodeType.refname) || name.equalsIgnoreCase(NameCodeType.shortname))
+				else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname))
 					x.nameCodeType = NameCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(NameCodeTypeName.refname) || name.equalsIgnoreCase(NameCodeTypeName.shortname))
+				else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname))
 					x.nameCodeTypeName = NameCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(NameCodeValue.refname) || name.equalsIgnoreCase(NameCodeValue.shortname))
+				else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname))
 					x.nameCodeValue = NameCodeValue.fromDoc(element);
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
 			}
 		});

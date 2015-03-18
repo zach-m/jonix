@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SupplierOwnCoding
 {
 	public static final String refname = "SupplierOwnCoding";
@@ -49,11 +53,11 @@ public class SupplierOwnCoding
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SupplierCodeType.refname) || name.equalsIgnoreCase(SupplierCodeType.shortname))
+				if (name.equals(SupplierCodeType.refname) || name.equals(SupplierCodeType.shortname))
 					x.supplierCodeType = SupplierCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplierCodeTypeName.refname) || name.equalsIgnoreCase(SupplierCodeTypeName.shortname))
+				else if (name.equals(SupplierCodeTypeName.refname) || name.equals(SupplierCodeTypeName.shortname))
 					x.supplierCodeTypeName = SupplierCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplierCodeValue.refname) || name.equalsIgnoreCase(SupplierCodeValue.shortname))
+				else if (name.equals(SupplierCodeValue.refname) || name.equals(SupplierCodeValue.shortname))
 					x.supplierCodeValue = SupplierCodeValue.fromDoc(element);
 			}
 		});

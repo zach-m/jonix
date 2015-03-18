@@ -23,6 +23,10 @@ import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 import com.tectonica.jonix.onix3.codelist.List69;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class AgentRole
 {
 	public static final String refname = "AgentRole";

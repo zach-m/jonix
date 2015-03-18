@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class BatchBonus
 {
 	public static final String refname = "BatchBonus";
@@ -48,9 +52,9 @@ public class BatchBonus
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(BatchQuantity.refname) || name.equalsIgnoreCase(BatchQuantity.shortname))
+				if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname))
 					x.batchQuantity = BatchQuantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(FreeQuantity.refname) || name.equalsIgnoreCase(FreeQuantity.shortname))
+				else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname))
 					x.freeQuantity = FreeQuantity.fromDoc(element);
 			}
 		});

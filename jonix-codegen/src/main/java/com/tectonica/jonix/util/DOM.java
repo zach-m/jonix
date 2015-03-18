@@ -48,7 +48,7 @@ public class DOM
 		for (int i = 0; i < childNodes.getLength(); i++)
 		{
 			final Node item = childNodes.item(i);
-			if ((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equalsIgnoreCase(item.getNodeName())))
+			if ((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item.getNodeName())))
 				return (Element) item;
 		}
 		return null;
@@ -60,7 +60,7 @@ public class DOM
 		for (int i = 0; i < childNodes.getLength(); i++)
 		{
 			final Node item = childNodes.item(i);
-			if ((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equalsIgnoreCase(item.getNodeName())))
+			if ((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item.getNodeName())))
 			{
 				final Element elem = (Element) item;
 				if (elem.getAttribute(attrName).equals(attrValue))
@@ -79,7 +79,7 @@ public class DOM
 	{
 		Node item = node.getNextSibling();
 		while (item != null
-				&& !((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equalsIgnoreCase(item.getNodeName()))))
+				&& !((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item.getNodeName()))))
 			item = item.getNextSibling();
 		return (Element) item;
 	}

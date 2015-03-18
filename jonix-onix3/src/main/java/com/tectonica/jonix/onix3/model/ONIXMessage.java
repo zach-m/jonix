@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ONIXMessage
 {
 	public static final String refname = "ONIXMessage";
@@ -52,11 +56,11 @@ public class ONIXMessage
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Header.refname) || name.equalsIgnoreCase(Header.shortname))
+				if (name.equals(Header.refname) || name.equals(Header.shortname))
 					x.header = Header.fromDoc(element);
-				else if (name.equalsIgnoreCase(NoProduct.refname) || name.equalsIgnoreCase(NoProduct.shortname))
+				else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname))
 					x.noProduct = NoProduct.fromDoc(element);
-				else if (name.equalsIgnoreCase(Product.refname) || name.equalsIgnoreCase(Product.shortname))
+				else if (name.equals(Product.refname) || name.equals(Product.shortname))
 					x.products = DU.addToList(x.products, Product.fromDoc(element));
 			}
 		});

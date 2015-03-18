@@ -19,9 +19,9 @@
 
 package com.tectonica.jonix.codegen;
 
-public class Copyright
+public class Comments
 {
-	public static final String MSG = "/*\n" + //
+	public static final String Copyright = "/*\n" + //
 			" * Copyright (C) 2012 Zach Melamed\n" + //
 			" * \n" + //
 			" * Latest version available online at https://github.com/zach-m/jonix\n" + //
@@ -38,5 +38,9 @@ public class Copyright
 			" * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n" + //
 			" * See the License for the specific language governing permissions and\n" + //
 			" * limitations under the License.\n" + //
+			" */\n";
+
+	public static final String AutoGen = "/*\n" + //
+			" * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT\n" + //
 			" */\n";
 }

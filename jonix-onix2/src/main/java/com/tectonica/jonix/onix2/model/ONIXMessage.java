@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ONIXMessage
 {
 	public static final String refname = "ONIXMessage";
@@ -65,13 +69,13 @@ public class ONIXMessage
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Header.refname) || name.equalsIgnoreCase(Header.shortname))
+				if (name.equals(Header.refname) || name.equals(Header.shortname))
 					x.header = Header.fromDoc(element);
-				else if (name.equalsIgnoreCase(Product.refname) || name.equalsIgnoreCase(Product.shortname))
+				else if (name.equals(Product.refname) || name.equals(Product.shortname))
 					x.products = DU.addToList(x.products, Product.fromDoc(element));
-				else if (name.equalsIgnoreCase(MainSeriesRecord.refname) || name.equalsIgnoreCase(MainSeriesRecord.shortname))
+				else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname))
 					x.mainSeriesRecords = DU.addToList(x.mainSeriesRecords, MainSeriesRecord.fromDoc(element));
-				else if (name.equalsIgnoreCase(SubSeriesRecord.refname) || name.equalsIgnoreCase(SubSeriesRecord.shortname))
+				else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname))
 					x.subSeriesRecords = DU.addToList(x.subSeriesRecords, SubSeriesRecord.fromDoc(element));
 			}
 		});

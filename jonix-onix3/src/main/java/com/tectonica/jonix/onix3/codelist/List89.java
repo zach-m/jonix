@@ -19,6 +19,10 @@
 
 package com.tectonica.jonix.onix3.codelist;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 /**
  * Religious text feature type
  */

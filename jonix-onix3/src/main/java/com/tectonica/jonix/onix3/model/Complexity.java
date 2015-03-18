@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Complexity
 {
 	public static final String refname = "Complexity";
@@ -48,10 +52,9 @@ public class Complexity
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ComplexitySchemeIdentifier.refname)
-						|| name.equalsIgnoreCase(ComplexitySchemeIdentifier.shortname))
+				if (name.equals(ComplexitySchemeIdentifier.refname) || name.equals(ComplexitySchemeIdentifier.shortname))
 					x.complexitySchemeIdentifier = ComplexitySchemeIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(ComplexityCode.refname) || name.equalsIgnoreCase(ComplexityCode.shortname))
+				else if (name.equals(ComplexityCode.refname) || name.equals(ComplexityCode.shortname))
 					x.complexityCode = ComplexityCode.fromDoc(element);
 			}
 		});

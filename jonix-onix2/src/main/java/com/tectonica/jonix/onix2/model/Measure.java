@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Measure
 {
 	public static final String refname = "Measure";
@@ -61,11 +65,11 @@ public class Measure
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(MeasureTypeCode.refname) || name.equalsIgnoreCase(MeasureTypeCode.shortname))
+				if (name.equals(MeasureTypeCode.refname) || name.equals(MeasureTypeCode.shortname))
 					x.measureTypeCode = MeasureTypeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(Measurement.refname) || name.equalsIgnoreCase(Measurement.shortname))
+				else if (name.equals(Measurement.refname) || name.equals(Measurement.shortname))
 					x.measurement = Measurement.fromDoc(element);
-				else if (name.equalsIgnoreCase(MeasureUnitCode.refname) || name.equalsIgnoreCase(MeasureUnitCode.shortname))
+				else if (name.equals(MeasureUnitCode.refname) || name.equals(MeasureUnitCode.shortname))
 					x.measureUnitCode = MeasureUnitCode.fromDoc(element);
 			}
 		});

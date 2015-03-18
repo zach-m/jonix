@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Stock
 {
 	public static final String refname = "Stock";
@@ -57,23 +61,23 @@ public class Stock
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(LocationIdentifier.refname) || name.equalsIgnoreCase(LocationIdentifier.shortname))
+				if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname))
 					x.locationIdentifier = LocationIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(LocationName.refname) || name.equalsIgnoreCase(LocationName.shortname))
+				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
 					x.locationName = LocationName.fromDoc(element);
-				else if (name.equalsIgnoreCase(StockQuantityCoded.refname) || name.equalsIgnoreCase(StockQuantityCoded.shortname))
+				else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname))
 					x.stockQuantityCodeds = DU.addToList(x.stockQuantityCodeds, StockQuantityCoded.fromDoc(element));
-				else if (name.equalsIgnoreCase(OnHand.refname) || name.equalsIgnoreCase(OnHand.shortname))
+				else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname))
 					x.onHand = OnHand.fromDoc(element);
-				else if (name.equalsIgnoreCase(Proximity.refname) || name.equalsIgnoreCase(Proximity.shortname))
+				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
 					x.proximity = Proximity.fromDoc(element);
-				else if (name.equalsIgnoreCase(OnOrder.refname) || name.equalsIgnoreCase(OnOrder.shortname))
+				else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
 					x.onOrder = OnOrder.fromDoc(element);
-				else if (name.equalsIgnoreCase(CBO.refname) || name.equalsIgnoreCase(CBO.shortname))
+				else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
 					x.cbO = CBO.fromDoc(element);
-				else if (name.equalsIgnoreCase(OnOrderDetail.refname) || name.equalsIgnoreCase(OnOrderDetail.shortname))
+				else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
 					x.onOrderDetails = DU.addToList(x.onOrderDetails, OnOrderDetail.fromDoc(element));
-				else if (name.equalsIgnoreCase(Velocity.refname) || name.equalsIgnoreCase(Velocity.shortname))
+				else if (name.equals(Velocity.refname) || name.equals(Velocity.shortname))
 					x.velocitys = DU.addToList(x.velocitys, Velocity.fromDoc(element));
 			}
 		});

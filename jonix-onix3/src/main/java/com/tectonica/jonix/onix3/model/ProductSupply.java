@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProductSupply
 {
 	public static final String refname = "ProductSupply";
@@ -51,11 +55,11 @@ public class ProductSupply
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Market.refname) || name.equalsIgnoreCase(Market.shortname))
+				if (name.equals(Market.refname) || name.equals(Market.shortname))
 					x.markets = DU.addToList(x.markets, Market.fromDoc(element));
-				else if (name.equalsIgnoreCase(MarketPublishingDetail.refname) || name.equalsIgnoreCase(MarketPublishingDetail.shortname))
+				else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname))
 					x.marketPublishingDetail = MarketPublishingDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplyDetail.refname) || name.equalsIgnoreCase(SupplyDetail.shortname))
+				else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
 					x.supplyDetails = DU.addToList(x.supplyDetails, SupplyDetail.fromDoc(element));
 			}
 		});

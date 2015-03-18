@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class DescriptiveDetail
 {
 	public static final String refname = "DescriptiveDetail";
@@ -94,97 +98,97 @@ public class DescriptiveDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProductComposition.refname) || name.equalsIgnoreCase(ProductComposition.shortname))
+				if (name.equals(ProductComposition.refname) || name.equals(ProductComposition.shortname))
 					x.productComposition = ProductComposition.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductForm.refname) || name.equalsIgnoreCase(ProductForm.shortname))
+				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
 					x.productForm = ProductForm.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductFormDetail.refname) || name.equalsIgnoreCase(ProductFormDetail.shortname))
+				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
 					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductFormFeature.refname) || name.equalsIgnoreCase(ProductFormFeature.shortname))
+				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
 					x.productFormFeatures = DU.addToList(x.productFormFeatures, ProductFormFeature.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductPackaging.refname) || name.equalsIgnoreCase(ProductPackaging.shortname))
+				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
 					x.productPackaging = ProductPackaging.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductFormDescription.refname) || name.equalsIgnoreCase(ProductFormDescription.shortname))
+				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
 					x.productFormDescriptions = DU.addToList(x.productFormDescriptions, ProductFormDescription.fromDoc(element));
-				else if (name.equalsIgnoreCase(TradeCategory.refname) || name.equalsIgnoreCase(TradeCategory.shortname))
+				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
 					x.tradeCategory = TradeCategory.fromDoc(element);
-				else if (name.equalsIgnoreCase(PrimaryContentType.refname) || name.equalsIgnoreCase(PrimaryContentType.shortname))
+				else if (name.equals(PrimaryContentType.refname) || name.equals(PrimaryContentType.shortname))
 					x.primaryContentType = PrimaryContentType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductContentType.refname) || name.equalsIgnoreCase(ProductContentType.shortname))
+				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
 					x.productContentTypes = DU.addToList(x.productContentTypes, ProductContentType.fromDoc(element));
-				else if (name.equalsIgnoreCase(Measure.refname) || name.equalsIgnoreCase(Measure.shortname))
+				else if (name.equals(Measure.refname) || name.equals(Measure.shortname))
 					x.measures = DU.addToList(x.measures, Measure.fromDoc(element));
-				else if (name.equalsIgnoreCase(CountryOfManufacture.refname) || name.equalsIgnoreCase(CountryOfManufacture.shortname))
+				else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname))
 					x.countryOfManufacture = CountryOfManufacture.fromDoc(element);
-				else if (name.equalsIgnoreCase(EpubTechnicalProtection.refname) || name.equalsIgnoreCase(EpubTechnicalProtection.shortname))
+				else if (name.equals(EpubTechnicalProtection.refname) || name.equals(EpubTechnicalProtection.shortname))
 					x.epubTechnicalProtections = DU.addToList(x.epubTechnicalProtections, EpubTechnicalProtection.fromDoc(element));
-				else if (name.equalsIgnoreCase(EpubUsageConstraint.refname) || name.equalsIgnoreCase(EpubUsageConstraint.shortname))
+				else if (name.equals(EpubUsageConstraint.refname) || name.equals(EpubUsageConstraint.shortname))
 					x.epubUsageConstraints = DU.addToList(x.epubUsageConstraints, EpubUsageConstraint.fromDoc(element));
-				else if (name.equalsIgnoreCase(EpubLicense.refname) || name.equalsIgnoreCase(EpubLicense.shortname))
+				else if (name.equals(EpubLicense.refname) || name.equals(EpubLicense.shortname))
 					x.epubLicense = EpubLicense.fromDoc(element);
-				else if (name.equalsIgnoreCase(MapScale.refname) || name.equalsIgnoreCase(MapScale.shortname))
+				else if (name.equals(MapScale.refname) || name.equals(MapScale.shortname))
 					x.mapScales = DU.addToList(x.mapScales, MapScale.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductClassification.refname) || name.equalsIgnoreCase(ProductClassification.shortname))
+				else if (name.equals(ProductClassification.refname) || name.equals(ProductClassification.shortname))
 					x.productClassifications = DU.addToList(x.productClassifications, ProductClassification.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductPart.refname) || name.equalsIgnoreCase(ProductPart.shortname))
+				else if (name.equals(ProductPart.refname) || name.equals(ProductPart.shortname))
 					x.productParts = DU.addToList(x.productParts, ProductPart.fromDoc(element));
-				else if (name.equalsIgnoreCase(Collection.refname) || name.equalsIgnoreCase(Collection.shortname))
+				else if (name.equals(Collection.refname) || name.equals(Collection.shortname))
 					x.collections = DU.addToList(x.collections, Collection.fromDoc(element));
-				else if (name.equalsIgnoreCase(NoCollection.refname) || name.equalsIgnoreCase(NoCollection.shortname))
+				else if (name.equals(NoCollection.refname) || name.equals(NoCollection.shortname))
 					x.noCollection = NoCollection.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitleDetail.refname) || name.equalsIgnoreCase(TitleDetail.shortname))
+				else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
 					x.titleDetails = DU.addToList(x.titleDetails, TitleDetail.fromDoc(element));
-				else if (name.equalsIgnoreCase(ThesisType.refname) || name.equalsIgnoreCase(ThesisType.shortname))
+				else if (name.equals(ThesisType.refname) || name.equals(ThesisType.shortname))
 					x.thesisType = ThesisType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ThesisPresentedTo.refname) || name.equalsIgnoreCase(ThesisPresentedTo.shortname))
+				else if (name.equals(ThesisPresentedTo.refname) || name.equals(ThesisPresentedTo.shortname))
 					x.thesisPresentedTo = ThesisPresentedTo.fromDoc(element);
-				else if (name.equalsIgnoreCase(ThesisYear.refname) || name.equalsIgnoreCase(ThesisYear.shortname))
+				else if (name.equals(ThesisYear.refname) || name.equals(ThesisYear.shortname))
 					x.thesisYear = ThesisYear.fromDoc(element);
-				else if (name.equalsIgnoreCase(Contributor.refname) || name.equalsIgnoreCase(Contributor.shortname))
+				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
 					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
-				else if (name.equalsIgnoreCase(ContributorStatement.refname) || name.equalsIgnoreCase(ContributorStatement.shortname))
+				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
 					x.contributorStatements = DU.addToList(x.contributorStatements, ContributorStatement.fromDoc(element));
-				else if (name.equalsIgnoreCase(NoContributor.refname) || name.equalsIgnoreCase(NoContributor.shortname))
+				else if (name.equals(NoContributor.refname) || name.equals(NoContributor.shortname))
 					x.noContributor = NoContributor.fromDoc(element);
-				else if (name.equalsIgnoreCase(Conference.refname) || name.equalsIgnoreCase(Conference.shortname))
+				else if (name.equals(Conference.refname) || name.equals(Conference.shortname))
 					x.conferences = DU.addToList(x.conferences, Conference.fromDoc(element));
-				else if (name.equalsIgnoreCase(EditionType.refname) || name.equalsIgnoreCase(EditionType.shortname))
+				else if (name.equals(EditionType.refname) || name.equals(EditionType.shortname))
 					x.editionTypes = DU.addToList(x.editionTypes, EditionType.fromDoc(element));
-				else if (name.equalsIgnoreCase(EditionNumber.refname) || name.equalsIgnoreCase(EditionNumber.shortname))
+				else if (name.equals(EditionNumber.refname) || name.equals(EditionNumber.shortname))
 					x.editionNumber = EditionNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(EditionVersionNumber.refname) || name.equalsIgnoreCase(EditionVersionNumber.shortname))
+				else if (name.equals(EditionVersionNumber.refname) || name.equals(EditionVersionNumber.shortname))
 					x.editionVersionNumber = EditionVersionNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(EditionStatement.refname) || name.equalsIgnoreCase(EditionStatement.shortname))
+				else if (name.equals(EditionStatement.refname) || name.equals(EditionStatement.shortname))
 					x.editionStatements = DU.addToList(x.editionStatements, EditionStatement.fromDoc(element));
-				else if (name.equalsIgnoreCase(NoEdition.refname) || name.equalsIgnoreCase(NoEdition.shortname))
+				else if (name.equals(NoEdition.refname) || name.equals(NoEdition.shortname))
 					x.noEdition = NoEdition.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReligiousText.refname) || name.equalsIgnoreCase(ReligiousText.shortname))
+				else if (name.equals(ReligiousText.refname) || name.equals(ReligiousText.shortname))
 					x.religiousText = ReligiousText.fromDoc(element);
-				else if (name.equalsIgnoreCase(Language.refname) || name.equalsIgnoreCase(Language.shortname))
+				else if (name.equals(Language.refname) || name.equals(Language.shortname))
 					x.languages = DU.addToList(x.languages, Language.fromDoc(element));
-				else if (name.equalsIgnoreCase(Extent.refname) || name.equalsIgnoreCase(Extent.shortname))
+				else if (name.equals(Extent.refname) || name.equals(Extent.shortname))
 					x.extents = DU.addToList(x.extents, Extent.fromDoc(element));
-				else if (name.equalsIgnoreCase(Illustrated.refname) || name.equalsIgnoreCase(Illustrated.shortname))
+				else if (name.equals(Illustrated.refname) || name.equals(Illustrated.shortname))
 					x.illustrated = Illustrated.fromDoc(element);
-				else if (name.equalsIgnoreCase(NumberOfIllustrations.refname) || name.equalsIgnoreCase(NumberOfIllustrations.shortname))
+				else if (name.equals(NumberOfIllustrations.refname) || name.equals(NumberOfIllustrations.shortname))
 					x.numberOfIllustrations = NumberOfIllustrations.fromDoc(element);
-				else if (name.equalsIgnoreCase(IllustrationsNote.refname) || name.equalsIgnoreCase(IllustrationsNote.shortname))
+				else if (name.equals(IllustrationsNote.refname) || name.equals(IllustrationsNote.shortname))
 					x.illustrationsNotes = DU.addToList(x.illustrationsNotes, IllustrationsNote.fromDoc(element));
-				else if (name.equalsIgnoreCase(AncillaryContent.refname) || name.equalsIgnoreCase(AncillaryContent.shortname))
+				else if (name.equals(AncillaryContent.refname) || name.equals(AncillaryContent.shortname))
 					x.ancillaryContents = DU.addToList(x.ancillaryContents, AncillaryContent.fromDoc(element));
-				else if (name.equalsIgnoreCase(Subject.refname) || name.equalsIgnoreCase(Subject.shortname))
+				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
 					x.subjects = DU.addToList(x.subjects, Subject.fromDoc(element));
-				else if (name.equalsIgnoreCase(NameAsSubject.refname) || name.equalsIgnoreCase(NameAsSubject.shortname))
+				else if (name.equals(NameAsSubject.refname) || name.equals(NameAsSubject.shortname))
 					x.nameAsSubjects = DU.addToList(x.nameAsSubjects, NameAsSubject.fromDoc(element));
-				else if (name.equalsIgnoreCase(AudienceCode.refname) || name.equalsIgnoreCase(AudienceCode.shortname))
+				else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname))
 					x.audienceCodes = DU.addToList(x.audienceCodes, AudienceCode.fromDoc(element));
-				else if (name.equalsIgnoreCase(Audience.refname) || name.equalsIgnoreCase(Audience.shortname))
+				else if (name.equals(Audience.refname) || name.equals(Audience.shortname))
 					x.audiences = DU.addToList(x.audiences, Audience.fromDoc(element));
-				else if (name.equalsIgnoreCase(AudienceRange.refname) || name.equalsIgnoreCase(AudienceRange.shortname))
+				else if (name.equals(AudienceRange.refname) || name.equals(AudienceRange.shortname))
 					x.audienceRanges = DU.addToList(x.audienceRanges, AudienceRange.fromDoc(element));
-				else if (name.equalsIgnoreCase(AudienceDescription.refname) || name.equalsIgnoreCase(AudienceDescription.shortname))
+				else if (name.equals(AudienceDescription.refname) || name.equals(AudienceDescription.shortname))
 					x.audienceDescriptions = DU.addToList(x.audienceDescriptions, AudienceDescription.fromDoc(element));
-				else if (name.equalsIgnoreCase(Complexity.refname) || name.equalsIgnoreCase(Complexity.shortname))
+				else if (name.equals(Complexity.refname) || name.equals(Complexity.shortname))
 					x.complexitys = DU.addToList(x.complexitys, Complexity.fromDoc(element));
 			}
 		});

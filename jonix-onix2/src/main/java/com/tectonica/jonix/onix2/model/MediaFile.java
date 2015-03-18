@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class MediaFile
 {
 	public static final String refname = "MediaFile";
@@ -69,27 +73,27 @@ public class MediaFile
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(MediaFileTypeCode.refname) || name.equalsIgnoreCase(MediaFileTypeCode.shortname))
+				if (name.equals(MediaFileTypeCode.refname) || name.equals(MediaFileTypeCode.shortname))
 					x.mediaFileTypeCode = MediaFileTypeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(MediaFileFormatCode.refname) || name.equalsIgnoreCase(MediaFileFormatCode.shortname))
+				else if (name.equals(MediaFileFormatCode.refname) || name.equals(MediaFileFormatCode.shortname))
 					x.mediaFileFormatCode = MediaFileFormatCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(ImageResolution.refname) || name.equalsIgnoreCase(ImageResolution.shortname))
+				else if (name.equals(ImageResolution.refname) || name.equals(ImageResolution.shortname))
 					x.imageResolution = ImageResolution.fromDoc(element);
-				else if (name.equalsIgnoreCase(MediaFileLinkTypeCode.refname) || name.equalsIgnoreCase(MediaFileLinkTypeCode.shortname))
+				else if (name.equals(MediaFileLinkTypeCode.refname) || name.equals(MediaFileLinkTypeCode.shortname))
 					x.mediaFileLinkTypeCode = MediaFileLinkTypeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(MediaFileLink.refname) || name.equalsIgnoreCase(MediaFileLink.shortname))
+				else if (name.equals(MediaFileLink.refname) || name.equals(MediaFileLink.shortname))
 					x.mediaFileLink = MediaFileLink.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextWithDownload.refname) || name.equalsIgnoreCase(TextWithDownload.shortname))
+				else if (name.equals(TextWithDownload.refname) || name.equals(TextWithDownload.shortname))
 					x.textWithDownload = TextWithDownload.fromDoc(element);
-				else if (name.equalsIgnoreCase(DownloadCaption.refname) || name.equalsIgnoreCase(DownloadCaption.shortname))
+				else if (name.equals(DownloadCaption.refname) || name.equals(DownloadCaption.shortname))
 					x.downloadCaption = DownloadCaption.fromDoc(element);
-				else if (name.equalsIgnoreCase(DownloadCredit.refname) || name.equalsIgnoreCase(DownloadCredit.shortname))
+				else if (name.equals(DownloadCredit.refname) || name.equals(DownloadCredit.shortname))
 					x.downloadCredit = DownloadCredit.fromDoc(element);
-				else if (name.equalsIgnoreCase(DownloadCopyrightNotice.refname) || name.equalsIgnoreCase(DownloadCopyrightNotice.shortname))
+				else if (name.equals(DownloadCopyrightNotice.refname) || name.equals(DownloadCopyrightNotice.shortname))
 					x.downloadCopyrightNotice = DownloadCopyrightNotice.fromDoc(element);
-				else if (name.equalsIgnoreCase(DownloadTerms.refname) || name.equalsIgnoreCase(DownloadTerms.shortname))
+				else if (name.equals(DownloadTerms.refname) || name.equals(DownloadTerms.shortname))
 					x.downloadTerms = DownloadTerms.fromDoc(element);
-				else if (name.equalsIgnoreCase(MediaFileDate.refname) || name.equalsIgnoreCase(MediaFileDate.shortname))
+				else if (name.equals(MediaFileDate.refname) || name.equals(MediaFileDate.shortname))
 					x.mediaFileDate = MediaFileDate.fromDoc(element);
 			}
 		});

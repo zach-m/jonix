@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Set
 {
 	public static final String refname = "Set";
@@ -70,25 +74,25 @@ public class Set
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ISBNOfSet.refname) || name.equalsIgnoreCase(ISBNOfSet.shortname))
+				if (name.equals(ISBNOfSet.refname) || name.equals(ISBNOfSet.shortname))
 					x.isbnOfSet = ISBNOfSet.fromDoc(element);
-				else if (name.equalsIgnoreCase(EAN13OfSet.refname) || name.equalsIgnoreCase(EAN13OfSet.shortname))
+				else if (name.equals(EAN13OfSet.refname) || name.equals(EAN13OfSet.shortname))
 					x.ean13OfSet = EAN13OfSet.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(TitleOfSet.refname) || name.equalsIgnoreCase(TitleOfSet.shortname))
+				else if (name.equals(TitleOfSet.refname) || name.equals(TitleOfSet.shortname))
 					x.titleOfSet = TitleOfSet.fromDoc(element);
-				else if (name.equalsIgnoreCase(Title.refname) || name.equalsIgnoreCase(Title.shortname))
+				else if (name.equals(Title.refname) || name.equals(Title.shortname))
 					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
-				else if (name.equalsIgnoreCase(SetPartNumber.refname) || name.equalsIgnoreCase(SetPartNumber.shortname))
+				else if (name.equals(SetPartNumber.refname) || name.equals(SetPartNumber.shortname))
 					x.setPartNumber = SetPartNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(SetPartTitle.refname) || name.equalsIgnoreCase(SetPartTitle.shortname))
+				else if (name.equals(SetPartTitle.refname) || name.equals(SetPartTitle.shortname))
 					x.setPartTitle = SetPartTitle.fromDoc(element);
-				else if (name.equalsIgnoreCase(ItemNumberWithinSet.refname) || name.equalsIgnoreCase(ItemNumberWithinSet.shortname))
+				else if (name.equals(ItemNumberWithinSet.refname) || name.equals(ItemNumberWithinSet.shortname))
 					x.itemNumberWithinSet = ItemNumberWithinSet.fromDoc(element);
-				else if (name.equalsIgnoreCase(LevelSequenceNumber.refname) || name.equalsIgnoreCase(LevelSequenceNumber.shortname))
+				else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
 					x.levelSequenceNumber = LevelSequenceNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(SetItemTitle.refname) || name.equalsIgnoreCase(SetItemTitle.shortname))
+				else if (name.equals(SetItemTitle.refname) || name.equals(SetItemTitle.shortname))
 					x.setItemTitle = SetItemTitle.fromDoc(element);
 			}
 		});

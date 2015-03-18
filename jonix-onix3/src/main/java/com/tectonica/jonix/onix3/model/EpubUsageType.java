@@ -23,6 +23,10 @@ import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List145;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class EpubUsageType
 {
 	public static final String refname = "EpubUsageType";

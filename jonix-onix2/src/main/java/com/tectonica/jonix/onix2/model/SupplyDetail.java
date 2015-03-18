@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SupplyDetail
 {
 	public static final String refname = "SupplyDetail";
@@ -93,73 +97,71 @@ public class SupplyDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SupplierIdentifier.refname) || name.equalsIgnoreCase(SupplierIdentifier.shortname))
+				if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
 					x.supplierIdentifiers = DU.addToList(x.supplierIdentifiers, SupplierIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupplierSAN.refname) || name.equalsIgnoreCase(SupplierSAN.shortname))
+				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
 					x.supplierSAN = SupplierSAN.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplierEANLocationNumber.refname)
-						|| name.equalsIgnoreCase(SupplierEANLocationNumber.shortname))
+				else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
 					x.supplierEANLocationNumber = SupplierEANLocationNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplierName.refname) || name.equalsIgnoreCase(SupplierName.shortname))
+				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
 					x.supplierName = SupplierName.fromDoc(element);
-				else if (name.equalsIgnoreCase(TelephoneNumber.refname) || name.equalsIgnoreCase(TelephoneNumber.shortname))
+				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
 					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(FaxNumber.refname) || name.equalsIgnoreCase(FaxNumber.shortname))
+				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
 					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(EmailAddress.refname) || name.equalsIgnoreCase(EmailAddress.shortname))
+				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
 					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupplierRole.refname) || name.equalsIgnoreCase(SupplierRole.shortname))
+				else if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
 					x.supplierRole = SupplierRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplyToCountry.refname) || name.equalsIgnoreCase(SupplyToCountry.shortname))
+				else if (name.equals(SupplyToCountry.refname) || name.equals(SupplyToCountry.shortname))
 					x.supplyToCountrys = DU.addToList(x.supplyToCountrys, SupplyToCountry.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupplyToTerritory.refname) || name.equalsIgnoreCase(SupplyToTerritory.shortname))
+				else if (name.equals(SupplyToTerritory.refname) || name.equals(SupplyToTerritory.shortname))
 					x.supplyToTerritory = SupplyToTerritory.fromDoc(element);
-				else if (name.equalsIgnoreCase(SupplyToRegion.refname) || name.equalsIgnoreCase(SupplyToRegion.shortname))
+				else if (name.equals(SupplyToRegion.refname) || name.equals(SupplyToRegion.shortname))
 					x.supplyToRegions = DU.addToList(x.supplyToRegions, SupplyToRegion.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupplyToCountryExcluded.refname) || name.equalsIgnoreCase(SupplyToCountryExcluded.shortname))
+				else if (name.equals(SupplyToCountryExcluded.refname) || name.equals(SupplyToCountryExcluded.shortname))
 					x.supplyToCountryExcludeds = DU.addToList(x.supplyToCountryExcludeds, SupplyToCountryExcluded.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupplyRestrictionDetail.refname) || name.equalsIgnoreCase(SupplyRestrictionDetail.shortname))
+				else if (name.equals(SupplyRestrictionDetail.refname) || name.equals(SupplyRestrictionDetail.shortname))
 					x.supplyRestrictionDetail = SupplyRestrictionDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReturnsCodeType.refname) || name.equalsIgnoreCase(ReturnsCodeType.shortname))
+				else if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
 					x.returnsCodeType = ReturnsCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReturnsCode.refname) || name.equalsIgnoreCase(ReturnsCode.shortname))
+				else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
 					x.returnsCode = ReturnsCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(LastDateForReturns.refname) || name.equalsIgnoreCase(LastDateForReturns.shortname))
+				else if (name.equals(LastDateForReturns.refname) || name.equals(LastDateForReturns.shortname))
 					x.lastDateForReturns = LastDateForReturns.fromDoc(element);
-				else if (name.equalsIgnoreCase(AvailabilityCode.refname) || name.equalsIgnoreCase(AvailabilityCode.shortname))
+				else if (name.equals(AvailabilityCode.refname) || name.equals(AvailabilityCode.shortname))
 					x.availabilityCode = AvailabilityCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductAvailability.refname) || name.equalsIgnoreCase(ProductAvailability.shortname))
+				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
 					x.productAvailability = ProductAvailability.fromDoc(element);
-				else if (name.equalsIgnoreCase(IntermediaryAvailabilityCode.refname)
-						|| name.equalsIgnoreCase(IntermediaryAvailabilityCode.shortname))
+				else if (name.equals(IntermediaryAvailabilityCode.refname) || name.equals(IntermediaryAvailabilityCode.shortname))
 					x.intermediaryAvailabilityCode = IntermediaryAvailabilityCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(NewSupplier.refname) || name.equalsIgnoreCase(NewSupplier.shortname))
+				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
 					x.newSupplier = NewSupplier.fromDoc(element);
-				else if (name.equalsIgnoreCase(DateFormat.refname) || name.equalsIgnoreCase(DateFormat.shortname))
+				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
 					x.dateFormat = DateFormat.fromDoc(element);
-				else if (name.equalsIgnoreCase(ExpectedShipDate.refname) || name.equalsIgnoreCase(ExpectedShipDate.shortname))
+				else if (name.equals(ExpectedShipDate.refname) || name.equals(ExpectedShipDate.shortname))
 					x.expectedShipDate = ExpectedShipDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(OnSaleDate.refname) || name.equalsIgnoreCase(OnSaleDate.shortname))
+				else if (name.equals(OnSaleDate.refname) || name.equals(OnSaleDate.shortname))
 					x.onSaleDate = OnSaleDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(OrderTime.refname) || name.equalsIgnoreCase(OrderTime.shortname))
+				else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
 					x.orderTime = OrderTime.fromDoc(element);
-				else if (name.equalsIgnoreCase(Stock.refname) || name.equalsIgnoreCase(Stock.shortname))
+				else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
 					x.stocks = DU.addToList(x.stocks, Stock.fromDoc(element));
-				else if (name.equalsIgnoreCase(PackQuantity.refname) || name.equalsIgnoreCase(PackQuantity.shortname))
+				else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
 					x.packQuantity = PackQuantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(AudienceRestrictionFlag.refname) || name.equalsIgnoreCase(AudienceRestrictionFlag.shortname))
+				else if (name.equals(AudienceRestrictionFlag.refname) || name.equals(AudienceRestrictionFlag.shortname))
 					x.audienceRestrictionFlag = AudienceRestrictionFlag.fromDoc(element);
-				else if (name.equalsIgnoreCase(AudienceRestrictionNote.refname) || name.equalsIgnoreCase(AudienceRestrictionNote.shortname))
+				else if (name.equals(AudienceRestrictionNote.refname) || name.equals(AudienceRestrictionNote.shortname))
 					x.audienceRestrictionNote = AudienceRestrictionNote.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceAmount.refname) || name.equalsIgnoreCase(PriceAmount.shortname))
+				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
 					x.priceAmount = PriceAmount.fromDoc(element);
-				else if (name.equalsIgnoreCase(UnpricedItemType.refname) || name.equalsIgnoreCase(UnpricedItemType.shortname))
+				else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
 					x.unpricedItemType = UnpricedItemType.fromDoc(element);
-				else if (name.equalsIgnoreCase(Price.refname) || name.equalsIgnoreCase(Price.shortname))
+				else if (name.equals(Price.refname) || name.equals(Price.shortname))
 					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
-				else if (name.equalsIgnoreCase(Reissue.refname) || name.equalsIgnoreCase(Reissue.shortname))
+				else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
 					x.reissue = Reissue.fromDoc(element);
 			}
 		});

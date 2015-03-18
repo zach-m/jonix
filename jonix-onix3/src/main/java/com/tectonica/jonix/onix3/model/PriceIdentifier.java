@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PriceIdentifier
 {
 	public static final String refname = "PriceIdentifier";
@@ -49,11 +53,11 @@ public class PriceIdentifier
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PriceIDType.refname) || name.equalsIgnoreCase(PriceIDType.shortname))
+				if (name.equals(PriceIDType.refname) || name.equals(PriceIDType.shortname))
 					x.priceIDType = PriceIDType.fromDoc(element);
-				else if (name.equalsIgnoreCase(IDTypeName.refname) || name.equalsIgnoreCase(IDTypeName.shortname))
+				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
 					x.idTypeName = IDTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(IDValue.refname) || name.equalsIgnoreCase(IDValue.shortname))
+				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
 					x.idValue = IDValue.fromDoc(element);
 			}
 		});

@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Product
 {
 	public static final String refname = "Product";
@@ -62,33 +66,33 @@ public class Product
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(RecordReference.refname) || name.equalsIgnoreCase(RecordReference.shortname))
+				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
 					x.recordReference = RecordReference.fromDoc(element);
-				else if (name.equalsIgnoreCase(NotificationType.refname) || name.equalsIgnoreCase(NotificationType.shortname))
+				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
 					x.notificationType = NotificationType.fromDoc(element);
-				else if (name.equalsIgnoreCase(DeletionText.refname) || name.equalsIgnoreCase(DeletionText.shortname))
+				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
 					x.deletionTexts = DU.addToList(x.deletionTexts, DeletionText.fromDoc(element));
-				else if (name.equalsIgnoreCase(RecordSourceType.refname) || name.equalsIgnoreCase(RecordSourceType.shortname))
+				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
 					x.recordSourceType = RecordSourceType.fromDoc(element);
-				else if (name.equalsIgnoreCase(RecordSourceIdentifier.refname) || name.equalsIgnoreCase(RecordSourceIdentifier.shortname))
+				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
 					x.recordSourceIdentifiers = DU.addToList(x.recordSourceIdentifiers, RecordSourceIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(RecordSourceName.refname) || name.equalsIgnoreCase(RecordSourceName.shortname))
+				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
 					x.recordSourceName = RecordSourceName.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(Barcode.refname) || name.equalsIgnoreCase(Barcode.shortname))
+				else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
 					x.barcodes = DU.addToList(x.barcodes, Barcode.fromDoc(element));
-				else if (name.equalsIgnoreCase(DescriptiveDetail.refname) || name.equalsIgnoreCase(DescriptiveDetail.shortname))
+				else if (name.equals(DescriptiveDetail.refname) || name.equals(DescriptiveDetail.shortname))
 					x.descriptiveDetail = DescriptiveDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(CollateralDetail.refname) || name.equalsIgnoreCase(CollateralDetail.shortname))
+				else if (name.equals(CollateralDetail.refname) || name.equals(CollateralDetail.shortname))
 					x.collateralDetail = CollateralDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(ContentDetail.refname) || name.equalsIgnoreCase(ContentDetail.shortname))
+				else if (name.equals(ContentDetail.refname) || name.equals(ContentDetail.shortname))
 					x.contentDetail = ContentDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(PublishingDetail.refname) || name.equalsIgnoreCase(PublishingDetail.shortname))
+				else if (name.equals(PublishingDetail.refname) || name.equals(PublishingDetail.shortname))
 					x.publishingDetail = PublishingDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(RelatedMaterial.refname) || name.equalsIgnoreCase(RelatedMaterial.shortname))
+				else if (name.equals(RelatedMaterial.refname) || name.equals(RelatedMaterial.shortname))
 					x.relatedMaterial = RelatedMaterial.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductSupply.refname) || name.equalsIgnoreCase(ProductSupply.shortname))
+				else if (name.equals(ProductSupply.refname) || name.equals(ProductSupply.shortname))
 					x.productSupplys = DU.addToList(x.productSupplys, ProductSupply.fromDoc(element));
 			}
 		});

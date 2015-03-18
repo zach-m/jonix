@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Price
 {
 	public static final String refname = "Price";
@@ -87,59 +91,59 @@ public class Price
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PriceTypeCode.refname) || name.equalsIgnoreCase(PriceTypeCode.shortname))
+				if (name.equals(PriceTypeCode.refname) || name.equals(PriceTypeCode.shortname))
 					x.priceTypeCode = PriceTypeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceQualifier.refname) || name.equalsIgnoreCase(PriceQualifier.shortname))
+				else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
 					x.priceQualifier = PriceQualifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceTypeDescription.refname) || name.equalsIgnoreCase(PriceTypeDescription.shortname))
+				else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
 					x.priceTypeDescription = PriceTypeDescription.fromDoc(element);
-				else if (name.equalsIgnoreCase(PricePer.refname) || name.equalsIgnoreCase(PricePer.shortname))
+				else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
 					x.pricePer = PricePer.fromDoc(element);
-				else if (name.equalsIgnoreCase(MinimumOrderQuantity.refname) || name.equalsIgnoreCase(MinimumOrderQuantity.shortname))
+				else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
 					x.minimumOrderQuantity = MinimumOrderQuantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(BatchBonus.refname) || name.equalsIgnoreCase(BatchBonus.shortname))
+				else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
 					x.batchBonuss = DU.addToList(x.batchBonuss, BatchBonus.fromDoc(element));
-				else if (name.equalsIgnoreCase(ClassOfTrade.refname) || name.equalsIgnoreCase(ClassOfTrade.shortname))
+				else if (name.equals(ClassOfTrade.refname) || name.equals(ClassOfTrade.shortname))
 					x.classOfTrade = ClassOfTrade.fromDoc(element);
-				else if (name.equalsIgnoreCase(BICDiscountGroupCode.refname) || name.equalsIgnoreCase(BICDiscountGroupCode.shortname))
+				else if (name.equals(BICDiscountGroupCode.refname) || name.equals(BICDiscountGroupCode.shortname))
 					x.bicDiscountGroupCode = BICDiscountGroupCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(DiscountCoded.refname) || name.equalsIgnoreCase(DiscountCoded.shortname))
+				else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
 					x.discountCodeds = DU.addToList(x.discountCodeds, DiscountCoded.fromDoc(element));
-				else if (name.equalsIgnoreCase(DiscountPercent.refname) || name.equalsIgnoreCase(DiscountPercent.shortname))
+				else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
 					x.discountPercent = DiscountPercent.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceStatus.refname) || name.equalsIgnoreCase(PriceStatus.shortname))
+				else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
 					x.priceStatus = PriceStatus.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceAmount.refname) || name.equalsIgnoreCase(PriceAmount.shortname))
+				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
 					x.priceAmount = PriceAmount.fromDoc(element);
-				else if (name.equalsIgnoreCase(CurrencyCode.refname) || name.equalsIgnoreCase(CurrencyCode.shortname))
+				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
 					x.currencyCode = CurrencyCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(CountryCode.refname) || name.equalsIgnoreCase(CountryCode.shortname))
+				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
 					x.countryCodes = DU.addToList(x.countryCodes, CountryCode.fromDoc(element));
-				else if (name.equalsIgnoreCase(Territory.refname) || name.equalsIgnoreCase(Territory.shortname))
+				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
 					x.territory = Territory.fromDoc(element);
-				else if (name.equalsIgnoreCase(CountryExcluded.refname) || name.equalsIgnoreCase(CountryExcluded.shortname))
+				else if (name.equals(CountryExcluded.refname) || name.equals(CountryExcluded.shortname))
 					x.countryExcluded = CountryExcluded.fromDoc(element);
-				else if (name.equalsIgnoreCase(TerritoryExcluded.refname) || name.equalsIgnoreCase(TerritoryExcluded.shortname))
+				else if (name.equals(TerritoryExcluded.refname) || name.equals(TerritoryExcluded.shortname))
 					x.territoryExcluded = TerritoryExcluded.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxRateCode1.refname) || name.equalsIgnoreCase(TaxRateCode1.shortname))
+				else if (name.equals(TaxRateCode1.refname) || name.equals(TaxRateCode1.shortname))
 					x.taxRateCode1 = TaxRateCode1.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxRatePercent1.refname) || name.equalsIgnoreCase(TaxRatePercent1.shortname))
+				else if (name.equals(TaxRatePercent1.refname) || name.equals(TaxRatePercent1.shortname))
 					x.taxRatePercent1 = TaxRatePercent1.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxableAmount1.refname) || name.equalsIgnoreCase(TaxableAmount1.shortname))
+				else if (name.equals(TaxableAmount1.refname) || name.equals(TaxableAmount1.shortname))
 					x.taxableAmount1 = TaxableAmount1.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxAmount1.refname) || name.equalsIgnoreCase(TaxAmount1.shortname))
+				else if (name.equals(TaxAmount1.refname) || name.equals(TaxAmount1.shortname))
 					x.taxAmount1 = TaxAmount1.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxRateCode2.refname) || name.equalsIgnoreCase(TaxRateCode2.shortname))
+				else if (name.equals(TaxRateCode2.refname) || name.equals(TaxRateCode2.shortname))
 					x.taxRateCode2 = TaxRateCode2.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxRatePercent2.refname) || name.equalsIgnoreCase(TaxRatePercent2.shortname))
+				else if (name.equals(TaxRatePercent2.refname) || name.equals(TaxRatePercent2.shortname))
 					x.taxRatePercent2 = TaxRatePercent2.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxableAmount2.refname) || name.equalsIgnoreCase(TaxableAmount2.shortname))
+				else if (name.equals(TaxableAmount2.refname) || name.equals(TaxableAmount2.shortname))
 					x.taxableAmount2 = TaxableAmount2.fromDoc(element);
-				else if (name.equalsIgnoreCase(TaxAmount2.refname) || name.equalsIgnoreCase(TaxAmount2.shortname))
+				else if (name.equals(TaxAmount2.refname) || name.equals(TaxAmount2.shortname))
 					x.taxAmount2 = TaxAmount2.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceEffectiveFrom.refname) || name.equalsIgnoreCase(PriceEffectiveFrom.shortname))
+				else if (name.equals(PriceEffectiveFrom.refname) || name.equals(PriceEffectiveFrom.shortname))
 					x.priceEffectiveFrom = PriceEffectiveFrom.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceEffectiveUntil.refname) || name.equalsIgnoreCase(PriceEffectiveUntil.shortname))
+				else if (name.equals(PriceEffectiveUntil.refname) || name.equals(PriceEffectiveUntil.shortname))
 					x.priceEffectiveUntil = PriceEffectiveUntil.fromDoc(element);
 			}
 		});

@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProfessionalAffiliation
 {
 	public static final String refname = "ProfessionalAffiliation";
@@ -50,9 +54,9 @@ public class ProfessionalAffiliation
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProfessionalPosition.refname) || name.equalsIgnoreCase(ProfessionalPosition.shortname))
+				if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
 					x.professionalPositions = DU.addToList(x.professionalPositions, ProfessionalPosition.fromDoc(element));
-				else if (name.equalsIgnoreCase(Affiliation.refname) || name.equalsIgnoreCase(Affiliation.shortname))
+				else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
 					x.affiliation = Affiliation.fromDoc(element);
 			}
 		});

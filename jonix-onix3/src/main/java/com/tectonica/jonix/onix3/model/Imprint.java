@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Imprint
 {
 	public static final String refname = "Imprint";
@@ -50,9 +54,9 @@ public class Imprint
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ImprintIdentifier.refname) || name.equalsIgnoreCase(ImprintIdentifier.shortname))
+				if (name.equals(ImprintIdentifier.refname) || name.equals(ImprintIdentifier.shortname))
 					x.imprintIdentifiers = DU.addToList(x.imprintIdentifiers, ImprintIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(ImprintName.refname) || name.equalsIgnoreCase(ImprintName.shortname))
+				else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
 					x.imprintName = ImprintName.fromDoc(element);
 			}
 		});

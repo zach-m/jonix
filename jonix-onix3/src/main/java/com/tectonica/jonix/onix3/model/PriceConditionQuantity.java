@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PriceConditionQuantity
 {
 	public static final String refname = "PriceConditionQuantity";
@@ -49,12 +53,11 @@ public class PriceConditionQuantity
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PriceConditionQuantityType.refname)
-						|| name.equalsIgnoreCase(PriceConditionQuantityType.shortname))
+				if (name.equals(PriceConditionQuantityType.refname) || name.equals(PriceConditionQuantityType.shortname))
 					x.priceConditionQuantityType = PriceConditionQuantityType.fromDoc(element);
-				else if (name.equalsIgnoreCase(Quantity.refname) || name.equalsIgnoreCase(Quantity.shortname))
+				else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
 					x.quantity = Quantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(QuantityUnit.refname) || name.equalsIgnoreCase(QuantityUnit.shortname))
+				else if (name.equals(QuantityUnit.refname) || name.equals(QuantityUnit.shortname))
 					x.quantityUnit = QuantityUnit.fromDoc(element);
 			}
 		});

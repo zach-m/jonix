@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PersonAsSubject
 {
 	public static final String refname = "PersonAsSubject";
@@ -72,29 +76,29 @@ public class PersonAsSubject
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PersonName.refname) || name.equalsIgnoreCase(PersonName.shortname))
+				if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
 					x.personName = PersonName.fromDoc(element);
-				else if (name.equalsIgnoreCase(PersonNameInverted.refname) || name.equalsIgnoreCase(PersonNameInverted.shortname))
+				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
 					x.personNameInverted = PersonNameInverted.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitlesBeforeNames.refname) || name.equalsIgnoreCase(TitlesBeforeNames.shortname))
+				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
 					x.titlesBeforeNames = TitlesBeforeNames.fromDoc(element);
-				else if (name.equalsIgnoreCase(NamesBeforeKey.refname) || name.equalsIgnoreCase(NamesBeforeKey.shortname))
+				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
 					x.namesBeforeKey = NamesBeforeKey.fromDoc(element);
-				else if (name.equalsIgnoreCase(PrefixToKey.refname) || name.equalsIgnoreCase(PrefixToKey.shortname))
+				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
 					x.prefixToKey = PrefixToKey.fromDoc(element);
-				else if (name.equalsIgnoreCase(KeyNames.refname) || name.equalsIgnoreCase(KeyNames.shortname))
+				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
 					x.keyNames = KeyNames.fromDoc(element);
-				else if (name.equalsIgnoreCase(NamesAfterKey.refname) || name.equalsIgnoreCase(NamesAfterKey.shortname))
+				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
 					x.namesAfterKey = NamesAfterKey.fromDoc(element);
-				else if (name.equalsIgnoreCase(SuffixToKey.refname) || name.equalsIgnoreCase(SuffixToKey.shortname))
+				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
 					x.suffixToKey = SuffixToKey.fromDoc(element);
-				else if (name.equalsIgnoreCase(LettersAfterNames.refname) || name.equalsIgnoreCase(LettersAfterNames.shortname))
+				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
 					x.lettersAfterNames = LettersAfterNames.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitlesAfterNames.refname) || name.equalsIgnoreCase(TitlesAfterNames.shortname))
+				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
 					x.titlesAfterNames = TitlesAfterNames.fromDoc(element);
-				else if (name.equalsIgnoreCase(Name.refname) || name.equalsIgnoreCase(Name.shortname))
+				else if (name.equals(Name.refname) || name.equals(Name.shortname))
 					x.names = DU.addToList(x.names, Name.fromDoc(element));
-				else if (name.equalsIgnoreCase(PersonNameIdentifier.refname) || name.equalsIgnoreCase(PersonNameIdentifier.shortname))
+				else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
 					x.personNameIdentifiers = DU.addToList(x.personNameIdentifiers, PersonNameIdentifier.fromDoc(element));
 			}
 		});

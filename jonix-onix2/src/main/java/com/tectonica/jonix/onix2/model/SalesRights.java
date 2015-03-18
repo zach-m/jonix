@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SalesRights
 {
 	public static final String refname = "SalesRights";
@@ -64,13 +68,13 @@ public class SalesRights
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SalesRightsType.refname) || name.equalsIgnoreCase(SalesRightsType.shortname))
+				if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
 					x.salesRightsType = SalesRightsType.fromDoc(element);
-				else if (name.equalsIgnoreCase(RightsCountry.refname) || name.equalsIgnoreCase(RightsCountry.shortname))
+				else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
 					x.rightsCountrys = DU.addToList(x.rightsCountrys, RightsCountry.fromDoc(element));
-				else if (name.equalsIgnoreCase(RightsTerritory.refname) || name.equalsIgnoreCase(RightsTerritory.shortname))
+				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
 					x.rightsTerritory = RightsTerritory.fromDoc(element);
-				else if (name.equalsIgnoreCase(RightsRegion.refname) || name.equalsIgnoreCase(RightsRegion.shortname))
+				else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname))
 					x.rightsRegions = DU.addToList(x.rightsRegions, RightsRegion.fromDoc(element));
 			}
 		});

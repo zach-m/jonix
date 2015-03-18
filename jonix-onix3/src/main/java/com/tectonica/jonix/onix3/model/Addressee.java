@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Addressee
 {
 	public static final String refname = "Addressee";
@@ -52,13 +56,13 @@ public class Addressee
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(AddresseeIdentifier.refname) || name.equalsIgnoreCase(AddresseeIdentifier.shortname))
+				if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
 					x.addresseeIdentifiers = DU.addToList(x.addresseeIdentifiers, AddresseeIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(AddresseeName.refname) || name.equalsIgnoreCase(AddresseeName.shortname))
+				else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname))
 					x.addresseeName = AddresseeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(ContactName.refname) || name.equalsIgnoreCase(ContactName.shortname))
+				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
 					x.contactName = ContactName.fromDoc(element);
-				else if (name.equalsIgnoreCase(EmailAddress.refname) || name.equalsIgnoreCase(EmailAddress.shortname))
+				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
 					x.emailAddress = EmailAddress.fromDoc(element);
 			}
 		});

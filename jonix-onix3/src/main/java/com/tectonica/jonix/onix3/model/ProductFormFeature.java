@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProductFormFeature
 {
 	public static final String refname = "ProductFormFeature";
@@ -51,12 +55,11 @@ public class ProductFormFeature
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProductFormFeatureType.refname) || name.equalsIgnoreCase(ProductFormFeatureType.shortname))
+				if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname))
 					x.productFormFeatureType = ProductFormFeatureType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductFormFeatureValue.refname) || name.equalsIgnoreCase(ProductFormFeatureValue.shortname))
+				else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname))
 					x.productFormFeatureValue = ProductFormFeatureValue.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductFormFeatureDescription.refname)
-						|| name.equalsIgnoreCase(ProductFormFeatureDescription.shortname))
+				else if (name.equals(ProductFormFeatureDescription.refname) || name.equals(ProductFormFeatureDescription.shortname))
 					x.productFormFeatureDescriptions = DU.addToList(x.productFormFeatureDescriptions,
 							ProductFormFeatureDescription.fromDoc(element));
 			}

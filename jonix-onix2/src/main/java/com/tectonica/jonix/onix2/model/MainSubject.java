@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class MainSubject
 {
 	public static final String refname = "MainSubject";
@@ -62,14 +66,13 @@ public class MainSubject
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(MainSubjectSchemeIdentifier.refname)
-						|| name.equalsIgnoreCase(MainSubjectSchemeIdentifier.shortname))
+				if (name.equals(MainSubjectSchemeIdentifier.refname) || name.equals(MainSubjectSchemeIdentifier.shortname))
 					x.mainSubjectSchemeIdentifier = MainSubjectSchemeIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectSchemeVersion.refname) || name.equalsIgnoreCase(SubjectSchemeVersion.shortname))
+				else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
 					x.subjectSchemeVersion = SubjectSchemeVersion.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectCode.refname) || name.equalsIgnoreCase(SubjectCode.shortname))
+				else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname))
 					x.subjectCode = SubjectCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectHeadingText.refname) || name.equalsIgnoreCase(SubjectHeadingText.shortname))
+				else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname))
 					x.subjectHeadingText = SubjectHeadingText.fromDoc(element);
 			}
 		});

@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class EpubUsageConstraint
 {
 	public static final String refname = "EpubUsageConstraint";
@@ -51,11 +55,11 @@ public class EpubUsageConstraint
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(EpubUsageType.refname) || name.equalsIgnoreCase(EpubUsageType.shortname))
+				if (name.equals(EpubUsageType.refname) || name.equals(EpubUsageType.shortname))
 					x.epubUsageType = EpubUsageType.fromDoc(element);
-				else if (name.equalsIgnoreCase(EpubUsageStatus.refname) || name.equalsIgnoreCase(EpubUsageStatus.shortname))
+				else if (name.equals(EpubUsageStatus.refname) || name.equals(EpubUsageStatus.shortname))
 					x.epubUsageStatus = EpubUsageStatus.fromDoc(element);
-				else if (name.equalsIgnoreCase(EpubUsageLimit.refname) || name.equalsIgnoreCase(EpubUsageLimit.shortname))
+				else if (name.equals(EpubUsageLimit.refname) || name.equals(EpubUsageLimit.shortname))
 					x.epubUsageLimits = DU.addToList(x.epubUsageLimits, EpubUsageLimit.fromDoc(element));
 			}
 		});

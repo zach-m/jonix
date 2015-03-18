@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Reissue
 {
 	public static final String refname = "Reissue";
@@ -52,13 +56,13 @@ public class Reissue
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ReissueDate.refname) || name.equalsIgnoreCase(ReissueDate.shortname))
+				if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
 					x.reissueDate = ReissueDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReissueDescription.refname) || name.equalsIgnoreCase(ReissueDescription.shortname))
+				else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
 					x.reissueDescription = ReissueDescription.fromDoc(element);
-				else if (name.equalsIgnoreCase(Price.refname) || name.equalsIgnoreCase(Price.shortname))
+				else if (name.equals(Price.refname) || name.equals(Price.shortname))
 					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupportingResource.refname) || name.equalsIgnoreCase(SupportingResource.shortname))
+				else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
 					x.supportingResources = DU.addToList(x.supportingResources, SupportingResource.fromDoc(element));
 			}
 		});

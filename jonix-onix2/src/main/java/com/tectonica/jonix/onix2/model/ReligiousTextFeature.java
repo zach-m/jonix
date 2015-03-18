@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ReligiousTextFeature
 {
 	public static final String refname = "ReligiousTextFeature";
@@ -61,13 +65,11 @@ public class ReligiousTextFeature
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ReligiousTextFeatureType.refname) || name.equalsIgnoreCase(ReligiousTextFeatureType.shortname))
+				if (name.equals(ReligiousTextFeatureType.refname) || name.equals(ReligiousTextFeatureType.shortname))
 					x.religiousTextFeatureType = ReligiousTextFeatureType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReligiousTextFeatureCode.refname)
-						|| name.equalsIgnoreCase(ReligiousTextFeatureCode.shortname))
+				else if (name.equals(ReligiousTextFeatureCode.refname) || name.equals(ReligiousTextFeatureCode.shortname))
 					x.religiousTextFeatureCode = ReligiousTextFeatureCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReligiousTextFeatureDescription.refname)
-						|| name.equalsIgnoreCase(ReligiousTextFeatureDescription.shortname))
+				else if (name.equals(ReligiousTextFeatureDescription.refname) || name.equals(ReligiousTextFeatureDescription.shortname))
 					x.religiousTextFeatureDescription = ReligiousTextFeatureDescription.fromDoc(element);
 			}
 		});

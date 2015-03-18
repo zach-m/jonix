@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProfessionalAffiliation
 {
 	public static final String refname = "ProfessionalAffiliation";
@@ -60,9 +64,9 @@ public class ProfessionalAffiliation
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProfessionalPosition.refname) || name.equalsIgnoreCase(ProfessionalPosition.shortname))
+				if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
 					x.professionalPosition = ProfessionalPosition.fromDoc(element);
-				else if (name.equalsIgnoreCase(Affiliation.refname) || name.equalsIgnoreCase(Affiliation.shortname))
+				else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
 					x.affiliation = Affiliation.fromDoc(element);
 			}
 		});

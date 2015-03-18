@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Collection
 {
 	public static final String refname = "Collection";
@@ -55,19 +59,19 @@ public class Collection
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(CollectionType.refname) || name.equalsIgnoreCase(CollectionType.shortname))
+				if (name.equals(CollectionType.refname) || name.equals(CollectionType.shortname))
 					x.collectionType = CollectionType.fromDoc(element);
-				else if (name.equalsIgnoreCase(SourceName.refname) || name.equalsIgnoreCase(SourceName.shortname))
+				else if (name.equals(SourceName.refname) || name.equals(SourceName.shortname))
 					x.sourceName = SourceName.fromDoc(element);
-				else if (name.equalsIgnoreCase(CollectionIdentifier.refname) || name.equalsIgnoreCase(CollectionIdentifier.shortname))
+				else if (name.equals(CollectionIdentifier.refname) || name.equals(CollectionIdentifier.shortname))
 					x.collectionIdentifiers = DU.addToList(x.collectionIdentifiers, CollectionIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(CollectionSequence.refname) || name.equalsIgnoreCase(CollectionSequence.shortname))
+				else if (name.equals(CollectionSequence.refname) || name.equals(CollectionSequence.shortname))
 					x.collectionSequences = DU.addToList(x.collectionSequences, CollectionSequence.fromDoc(element));
-				else if (name.equalsIgnoreCase(TitleDetail.refname) || name.equalsIgnoreCase(TitleDetail.shortname))
+				else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
 					x.titleDetails = DU.addToList(x.titleDetails, TitleDetail.fromDoc(element));
-				else if (name.equalsIgnoreCase(Contributor.refname) || name.equalsIgnoreCase(Contributor.shortname))
+				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
 					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
-				else if (name.equalsIgnoreCase(ContributorStatement.refname) || name.equalsIgnoreCase(ContributorStatement.shortname))
+				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
 					x.contributorStatements = DU.addToList(x.contributorStatements, ContributorStatement.fromDoc(element));
 			}
 		});

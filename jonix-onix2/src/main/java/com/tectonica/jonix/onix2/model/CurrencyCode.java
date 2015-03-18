@@ -27,6 +27,10 @@ import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 import com.tectonica.jonix.onix2.codelist.List96;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class CurrencyCode
 {
 	public static final String refname = "CurrencyCode";

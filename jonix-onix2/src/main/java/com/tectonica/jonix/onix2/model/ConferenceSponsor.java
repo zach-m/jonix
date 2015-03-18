@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ConferenceSponsor
 {
 	public static final String refname = "ConferenceSponsor";
@@ -61,12 +65,11 @@ public class ConferenceSponsor
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ConferenceSponsorIdentifier.refname)
-						|| name.equalsIgnoreCase(ConferenceSponsorIdentifier.shortname))
+				if (name.equals(ConferenceSponsorIdentifier.refname) || name.equals(ConferenceSponsorIdentifier.shortname))
 					x.conferenceSponsorIdentifier = ConferenceSponsorIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(PersonName.refname) || name.equalsIgnoreCase(PersonName.shortname))
+				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
 					x.personName = PersonName.fromDoc(element);
-				else if (name.equalsIgnoreCase(CorporateName.refname) || name.equalsIgnoreCase(CorporateName.shortname))
+				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
 					x.corporateName = CorporateName.fromDoc(element);
 			}
 		});

@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Extent
 {
 	public static final String refname = "Extent";
@@ -61,11 +65,11 @@ public class Extent
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ExtentType.refname) || name.equalsIgnoreCase(ExtentType.shortname))
+				if (name.equals(ExtentType.refname) || name.equals(ExtentType.shortname))
 					x.extentType = ExtentType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ExtentValue.refname) || name.equalsIgnoreCase(ExtentValue.shortname))
+				else if (name.equals(ExtentValue.refname) || name.equals(ExtentValue.shortname))
 					x.extentValue = ExtentValue.fromDoc(element);
-				else if (name.equalsIgnoreCase(ExtentUnit.refname) || name.equalsIgnoreCase(ExtentUnit.shortname))
+				else if (name.equals(ExtentUnit.refname) || name.equals(ExtentUnit.shortname))
 					x.extentUnit = ExtentUnit.fromDoc(element);
 			}
 		});

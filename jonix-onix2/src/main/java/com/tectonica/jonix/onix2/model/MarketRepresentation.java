@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class MarketRepresentation
 {
 	public static final String refname = "MarketRepresentation";
@@ -73,31 +77,31 @@ public class MarketRepresentation
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(AgentIdentifier.refname) || name.equalsIgnoreCase(AgentIdentifier.shortname))
+				if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
 					x.agentIdentifiers = DU.addToList(x.agentIdentifiers, AgentIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(AgentName.refname) || name.equalsIgnoreCase(AgentName.shortname))
+				else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
 					x.agentName = AgentName.fromDoc(element);
-				else if (name.equalsIgnoreCase(TelephoneNumber.refname) || name.equalsIgnoreCase(TelephoneNumber.shortname))
+				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
 					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(FaxNumber.refname) || name.equalsIgnoreCase(FaxNumber.shortname))
+				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
 					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
-				else if (name.equalsIgnoreCase(EmailAddress.refname) || name.equalsIgnoreCase(EmailAddress.shortname))
+				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
 					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
-				else if (name.equalsIgnoreCase(AgentRole.refname) || name.equalsIgnoreCase(AgentRole.shortname))
+				else if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
 					x.agentRole = AgentRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(MarketCountry.refname) || name.equalsIgnoreCase(MarketCountry.shortname))
+				else if (name.equals(MarketCountry.refname) || name.equals(MarketCountry.shortname))
 					x.marketCountry = MarketCountry.fromDoc(element);
-				else if (name.equalsIgnoreCase(MarketTerritory.refname) || name.equalsIgnoreCase(MarketTerritory.shortname))
+				else if (name.equals(MarketTerritory.refname) || name.equals(MarketTerritory.shortname))
 					x.marketTerritory = MarketTerritory.fromDoc(element);
-				else if (name.equalsIgnoreCase(MarketCountryExcluded.refname) || name.equalsIgnoreCase(MarketCountryExcluded.shortname))
+				else if (name.equals(MarketCountryExcluded.refname) || name.equals(MarketCountryExcluded.shortname))
 					x.marketCountryExcluded = MarketCountryExcluded.fromDoc(element);
-				else if (name.equalsIgnoreCase(MarketRestrictionDetail.refname) || name.equalsIgnoreCase(MarketRestrictionDetail.shortname))
+				else if (name.equals(MarketRestrictionDetail.refname) || name.equals(MarketRestrictionDetail.shortname))
 					x.marketRestrictionDetail = MarketRestrictionDetail.fromDoc(element);
-				else if (name.equalsIgnoreCase(MarketPublishingStatus.refname) || name.equalsIgnoreCase(MarketPublishingStatus.shortname))
+				else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
 					x.marketPublishingStatus = MarketPublishingStatus.fromDoc(element);
-				else if (name.equalsIgnoreCase(MarketDate.refname) || name.equalsIgnoreCase(MarketDate.shortname))
+				else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
 					x.marketDates = DU.addToList(x.marketDates, MarketDate.fromDoc(element));
 			}
 		});

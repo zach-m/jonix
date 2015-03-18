@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class CollateralDetail
 {
 	public static final String refname = "CollateralDetail";
@@ -52,13 +56,13 @@ public class CollateralDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(TextContent.refname) || name.equalsIgnoreCase(TextContent.shortname))
+				if (name.equals(TextContent.refname) || name.equals(TextContent.shortname))
 					x.textContents = DU.addToList(x.textContents, TextContent.fromDoc(element));
-				else if (name.equalsIgnoreCase(CitedContent.refname) || name.equalsIgnoreCase(CitedContent.shortname))
+				else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname))
 					x.citedContents = DU.addToList(x.citedContents, CitedContent.fromDoc(element));
-				else if (name.equalsIgnoreCase(SupportingResource.refname) || name.equalsIgnoreCase(SupportingResource.shortname))
+				else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
 					x.supportingResources = DU.addToList(x.supportingResources, SupportingResource.fromDoc(element));
-				else if (name.equalsIgnoreCase(Prize.refname) || name.equalsIgnoreCase(Prize.shortname))
+				else if (name.equals(Prize.refname) || name.equals(Prize.shortname))
 					x.prizes = DU.addToList(x.prizes, Prize.fromDoc(element));
 			}
 		});

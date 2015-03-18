@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class TextItem
 {
 	public static final String refname = "TextItem";
@@ -52,13 +56,13 @@ public class TextItem
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(TextItemType.refname) || name.equalsIgnoreCase(TextItemType.shortname))
+				if (name.equals(TextItemType.refname) || name.equals(TextItemType.shortname))
 					x.textItemType = TextItemType.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextItemIdentifier.refname) || name.equalsIgnoreCase(TextItemIdentifier.shortname))
+				else if (name.equals(TextItemIdentifier.refname) || name.equals(TextItemIdentifier.shortname))
 					x.textItemIdentifiers = DU.addToList(x.textItemIdentifiers, TextItemIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(PageRun.refname) || name.equalsIgnoreCase(PageRun.shortname))
+				else if (name.equals(PageRun.refname) || name.equals(PageRun.shortname))
 					x.pageRuns = DU.addToList(x.pageRuns, PageRun.fromDoc(element));
-				else if (name.equalsIgnoreCase(NumberOfPages.refname) || name.equalsIgnoreCase(NumberOfPages.shortname))
+				else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
 					x.numberOfPages = NumberOfPages.fromDoc(element);
 			}
 		});

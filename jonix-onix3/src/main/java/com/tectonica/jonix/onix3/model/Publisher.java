@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Publisher
 {
 	public static final String refname = "Publisher";
@@ -52,13 +56,13 @@ public class Publisher
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PublishingRole.refname) || name.equalsIgnoreCase(PublishingRole.shortname))
+				if (name.equals(PublishingRole.refname) || name.equals(PublishingRole.shortname))
 					x.publishingRole = PublishingRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(PublisherIdentifier.refname) || name.equalsIgnoreCase(PublisherIdentifier.shortname))
+				else if (name.equals(PublisherIdentifier.refname) || name.equals(PublisherIdentifier.shortname))
 					x.publisherIdentifiers = DU.addToList(x.publisherIdentifiers, PublisherIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(PublisherName.refname) || name.equalsIgnoreCase(PublisherName.shortname))
+				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
 					x.publisherName = PublisherName.fromDoc(element);
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
 			}
 		});

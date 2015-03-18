@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SupplyDate
 {
 	public static final String refname = "SupplyDate";
@@ -49,11 +53,11 @@ public class SupplyDate
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SupplyDateRole.refname) || name.equalsIgnoreCase(SupplyDateRole.shortname))
+				if (name.equals(SupplyDateRole.refname) || name.equals(SupplyDateRole.shortname))
 					x.supplyDateRole = SupplyDateRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(DateFormat.refname) || name.equalsIgnoreCase(DateFormat.shortname))
+				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
 					x.dateFormat = DateFormat.fromDoc(element);
-				else if (name.equalsIgnoreCase(Date.refname) || name.equalsIgnoreCase(Date.shortname))
+				else if (name.equals(Date.refname) || name.equals(Date.shortname))
 					x.date = Date.fromDoc(element);
 			}
 		});

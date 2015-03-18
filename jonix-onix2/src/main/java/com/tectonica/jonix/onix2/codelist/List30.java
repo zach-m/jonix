@@ -19,8 +19,12 @@
 
 package com.tectonica.jonix.onix2.codelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
 
 /**
  * Audience range qualifier

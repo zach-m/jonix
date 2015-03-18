@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PriceCondition
 {
 	public static final String refname = "PriceCondition";
@@ -51,11 +55,11 @@ public class PriceCondition
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PriceConditionType.refname) || name.equalsIgnoreCase(PriceConditionType.shortname))
+				if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname))
 					x.priceConditionType = PriceConditionType.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceConditionQuantity.refname) || name.equalsIgnoreCase(PriceConditionQuantity.shortname))
+				else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname))
 					x.priceConditionQuantitys = DU.addToList(x.priceConditionQuantitys, PriceConditionQuantity.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
 			}
 		});

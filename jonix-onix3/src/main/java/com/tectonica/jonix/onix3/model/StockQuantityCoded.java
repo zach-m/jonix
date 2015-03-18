@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class StockQuantityCoded
 {
 	public static final String refname = "StockQuantityCoded";
@@ -49,12 +53,11 @@ public class StockQuantityCoded
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(StockQuantityCodeType.refname) || name.equalsIgnoreCase(StockQuantityCodeType.shortname))
+				if (name.equals(StockQuantityCodeType.refname) || name.equals(StockQuantityCodeType.shortname))
 					x.stockQuantityCodeType = StockQuantityCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(StockQuantityCodeTypeName.refname)
-						|| name.equalsIgnoreCase(StockQuantityCodeTypeName.shortname))
+				else if (name.equals(StockQuantityCodeTypeName.refname) || name.equals(StockQuantityCodeTypeName.shortname))
 					x.stockQuantityCodeTypeName = StockQuantityCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(StockQuantityCode.refname) || name.equalsIgnoreCase(StockQuantityCode.shortname))
+				else if (name.equals(StockQuantityCode.refname) || name.equals(StockQuantityCode.shortname))
 					x.stockQuantityCode = StockQuantityCode.fromDoc(element);
 			}
 		});

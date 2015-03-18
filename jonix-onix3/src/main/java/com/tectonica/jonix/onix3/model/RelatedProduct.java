@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class RelatedProduct
 {
 	public static final String refname = "RelatedProduct";
@@ -52,13 +56,13 @@ public class RelatedProduct
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProductRelationCode.refname) || name.equalsIgnoreCase(ProductRelationCode.shortname))
+				if (name.equals(ProductRelationCode.refname) || name.equals(ProductRelationCode.shortname))
 					x.productRelationCodes = DU.addToList(x.productRelationCodes, ProductRelationCode.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductForm.refname) || name.equalsIgnoreCase(ProductForm.shortname))
+				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
 					x.productForm = ProductForm.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductFormDetail.refname) || name.equalsIgnoreCase(ProductFormDetail.shortname))
+				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
 					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
 			}
 		});

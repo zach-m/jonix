@@ -34,6 +34,8 @@ import com.tectonica.jonix.metadata.OnixValueClass;
 
 public class OnixClassGen
 {
+	private static final String EQUALS = "equals"; // turn to "equalsIgnoreCase" to assume case-insensitive XML
+	
 	private final String basePackage;
 	private final String baseFolder;
 	private final OnixMetadata ref;
@@ -71,7 +73,7 @@ public class OnixClassGen
 
 	private void writeContentClass(OnixContentClass clz, String basePackage, String subfolder, PrintStream p)
 	{
-		p.println(Copyright.MSG);
+		p.println(Comments.Copyright);
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
 		p.println("import java.util.List;");
@@ -79,6 +81,7 @@ public class OnixClassGen
 		p.printf("import %s.DU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
 		p.println();
+		p.println(Comments.AutoGen);
 		p.println("public class " + clz.name);
 		p.println("{");
 
@@ -120,7 +123,7 @@ public class OnixClassGen
 				first = false;
 			else
 				p.print("else ");
-			p.printf("if (name.equalsIgnoreCase(%s.refname) || name.equalsIgnoreCase(%s.shortname))\n", cls, cls);
+			p.printf("if (name.%s(%s.refname) || name.%s(%s.shortname))\n", EQUALS, cls, EQUALS, cls);
 			if (m.multiplicity.singular)
 				p.printf("\t\t\t\t\t" + "x.%s = %s.fromDoc(element);\n", field, cls);
 			else
@@ -138,12 +141,13 @@ public class OnixClassGen
 
 	private void writeValueClass(OnixValueClass clz, String basePackage, String subfolder, PrintStream p)
 	{
-		p.println(Copyright.MSG);
+		p.println(Comments.Copyright);
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
 		p.printf("import %s.DU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
 		p.println();
+		p.println(Comments.AutoGen);
 		p.println("public class " + clz.name);
 		p.println("{");
 
@@ -181,12 +185,13 @@ public class OnixClassGen
 
 	private void writeFlagClass(OnixFlagClass clz, String basePackage, String subfolder, PrintStream p)
 	{
-		p.println(Copyright.MSG);
+		p.println(Comments.Copyright);
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
 		p.printf("import %s.DU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
 		p.println();
+		p.println(Comments.AutoGen);
 		p.println("public class " + clz.name);
 		p.println("{");
 

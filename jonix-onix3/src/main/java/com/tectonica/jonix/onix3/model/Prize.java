@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Prize
 {
 	public static final String refname = "Prize";
@@ -54,17 +58,17 @@ public class Prize
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PrizeName.refname) || name.equalsIgnoreCase(PrizeName.shortname))
+				if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
 					x.prizeNames = DU.addToList(x.prizeNames, PrizeName.fromDoc(element));
-				else if (name.equalsIgnoreCase(PrizeYear.refname) || name.equalsIgnoreCase(PrizeYear.shortname))
+				else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
 					x.prizeYear = PrizeYear.fromDoc(element);
-				else if (name.equalsIgnoreCase(PrizeCountry.refname) || name.equalsIgnoreCase(PrizeCountry.shortname))
+				else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
 					x.prizeCountry = PrizeCountry.fromDoc(element);
-				else if (name.equalsIgnoreCase(PrizeCode.refname) || name.equalsIgnoreCase(PrizeCode.shortname))
+				else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
 					x.prizeCode = PrizeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(PrizeStatement.refname) || name.equalsIgnoreCase(PrizeStatement.shortname))
+				else if (name.equals(PrizeStatement.refname) || name.equals(PrizeStatement.shortname))
 					x.prizeStatements = DU.addToList(x.prizeStatements, PrizeStatement.fromDoc(element));
-				else if (name.equalsIgnoreCase(PrizeJury.refname) || name.equalsIgnoreCase(PrizeJury.shortname))
+				else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
 					x.prizeJurys = DU.addToList(x.prizeJurys, PrizeJury.fromDoc(element));
 			}
 		});

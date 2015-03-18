@@ -27,6 +27,10 @@ import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 import com.tectonica.jonix.onix2.codelist.List79;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProductFormFeatureType
 {
 	public static final String refname = "ProductFormFeatureType";

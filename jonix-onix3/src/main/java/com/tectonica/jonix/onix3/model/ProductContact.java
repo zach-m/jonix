@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProductContact
 {
 	public static final String refname = "ProductContact";
@@ -53,16 +57,15 @@ public class ProductContact
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProductContactRole.refname) || name.equalsIgnoreCase(ProductContactRole.shortname))
+				if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname))
 					x.productContactRole = ProductContactRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductContactIdentifier.refname)
-						|| name.equalsIgnoreCase(ProductContactIdentifier.shortname))
+				else if (name.equals(ProductContactIdentifier.refname) || name.equals(ProductContactIdentifier.shortname))
 					x.productContactIdentifiers = DU.addToList(x.productContactIdentifiers, ProductContactIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductContactName.refname) || name.equalsIgnoreCase(ProductContactName.shortname))
+				else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname))
 					x.productContactName = ProductContactName.fromDoc(element);
-				else if (name.equalsIgnoreCase(ContactName.refname) || name.equalsIgnoreCase(ContactName.shortname))
+				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
 					x.contactName = ContactName.fromDoc(element);
-				else if (name.equalsIgnoreCase(EmailAddress.refname) || name.equalsIgnoreCase(EmailAddress.shortname))
+				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
 					x.emailAddress = EmailAddress.fromDoc(element);
 			}
 		});

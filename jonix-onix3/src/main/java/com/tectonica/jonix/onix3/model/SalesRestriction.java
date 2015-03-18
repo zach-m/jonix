@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SalesRestriction
 {
 	public static final String refname = "SalesRestriction";
@@ -53,15 +57,15 @@ public class SalesRestriction
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SalesRestrictionType.refname) || name.equalsIgnoreCase(SalesRestrictionType.shortname))
+				if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
 					x.salesRestrictionType = SalesRestrictionType.fromDoc(element);
-				else if (name.equalsIgnoreCase(SalesOutlet.refname) || name.equalsIgnoreCase(SalesOutlet.shortname))
+				else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
 					x.salesOutlets = DU.addToList(x.salesOutlets, SalesOutlet.fromDoc(element));
-				else if (name.equalsIgnoreCase(SalesRestrictionNote.refname) || name.equalsIgnoreCase(SalesRestrictionNote.shortname))
+				else if (name.equals(SalesRestrictionNote.refname) || name.equals(SalesRestrictionNote.shortname))
 					x.salesRestrictionNotes = DU.addToList(x.salesRestrictionNotes, SalesRestrictionNote.fromDoc(element));
-				else if (name.equalsIgnoreCase(StartDate.refname) || name.equalsIgnoreCase(StartDate.shortname))
+				else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
 					x.startDate = StartDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(EndDate.refname) || name.equalsIgnoreCase(EndDate.shortname))
+				else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
 					x.endDate = EndDate.fromDoc(element);
 			}
 		});

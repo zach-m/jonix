@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Language
 {
 	public static final String refname = "Language";
@@ -50,13 +54,13 @@ public class Language
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(LanguageRole.refname) || name.equalsIgnoreCase(LanguageRole.shortname))
+				if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
 					x.languageRole = LanguageRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(LanguageCode.refname) || name.equalsIgnoreCase(LanguageCode.shortname))
+				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
 					x.languageCode = LanguageCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(CountryCode.refname) || name.equalsIgnoreCase(CountryCode.shortname))
+				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
 					x.countryCode = CountryCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(ScriptCode.refname) || name.equalsIgnoreCase(ScriptCode.shortname))
+				else if (name.equals(ScriptCode.refname) || name.equals(ScriptCode.shortname))
 					x.scriptCode = ScriptCode.fromDoc(element);
 			}
 		});

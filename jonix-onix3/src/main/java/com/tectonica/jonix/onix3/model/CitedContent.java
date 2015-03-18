@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class CitedContent
 {
 	public static final String refname = "CitedContent";
@@ -57,23 +61,23 @@ public class CitedContent
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(CitedContentType.refname) || name.equalsIgnoreCase(CitedContentType.shortname))
+				if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname))
 					x.citedContentType = CitedContentType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ContentAudience.refname) || name.equalsIgnoreCase(ContentAudience.shortname))
+				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
 					x.contentAudiences = DU.addToList(x.contentAudiences, ContentAudience.fromDoc(element));
-				else if (name.equalsIgnoreCase(SourceType.refname) || name.equalsIgnoreCase(SourceType.shortname))
+				else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname))
 					x.sourceType = SourceType.fromDoc(element);
-				else if (name.equalsIgnoreCase(SourceTitle.refname) || name.equalsIgnoreCase(SourceTitle.shortname))
+				else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
 					x.sourceTitles = DU.addToList(x.sourceTitles, SourceTitle.fromDoc(element));
-				else if (name.equalsIgnoreCase(ListName.refname) || name.equalsIgnoreCase(ListName.shortname))
+				else if (name.equals(ListName.refname) || name.equals(ListName.shortname))
 					x.listNames = DU.addToList(x.listNames, ListName.fromDoc(element));
-				else if (name.equalsIgnoreCase(PositionOnList.refname) || name.equalsIgnoreCase(PositionOnList.shortname))
+				else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname))
 					x.positionOnList = PositionOnList.fromDoc(element);
-				else if (name.equalsIgnoreCase(CitationNote.refname) || name.equalsIgnoreCase(CitationNote.shortname))
+				else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname))
 					x.citationNotes = DU.addToList(x.citationNotes, CitationNote.fromDoc(element));
-				else if (name.equalsIgnoreCase(ResourceLink.refname) || name.equalsIgnoreCase(ResourceLink.shortname))
+				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
 					x.resourceLinks = DU.addToList(x.resourceLinks, ResourceLink.fromDoc(element));
-				else if (name.equalsIgnoreCase(ContentDate.refname) || name.equalsIgnoreCase(ContentDate.shortname))
+				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
 					x.contentDates = DU.addToList(x.contentDates, ContentDate.fromDoc(element));
 			}
 		});

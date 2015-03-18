@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class RelatedWork
 {
 	public static final String refname = "RelatedWork";
@@ -50,9 +54,9 @@ public class RelatedWork
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(WorkRelationCode.refname) || name.equalsIgnoreCase(WorkRelationCode.shortname))
+				if (name.equals(WorkRelationCode.refname) || name.equals(WorkRelationCode.shortname))
 					x.workRelationCode = WorkRelationCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(WorkIdentifier.refname) || name.equalsIgnoreCase(WorkIdentifier.shortname))
+				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
 					x.workIdentifiers = DU.addToList(x.workIdentifiers, WorkIdentifier.fromDoc(element));
 			}
 		});

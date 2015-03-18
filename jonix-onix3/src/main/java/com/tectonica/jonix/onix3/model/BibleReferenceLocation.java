@@ -23,6 +23,10 @@ import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 import com.tectonica.jonix.onix3.codelist.List87;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class BibleReferenceLocation
 {
 	public static final String refname = "BibleReferenceLocation";

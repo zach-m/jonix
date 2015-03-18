@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class CopyrightStatement
 {
 	public static final String refname = "CopyrightStatement";
@@ -51,11 +55,11 @@ public class CopyrightStatement
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(CopyrightType.refname) || name.equalsIgnoreCase(CopyrightType.shortname))
+				if (name.equals(CopyrightType.refname) || name.equals(CopyrightType.shortname))
 					x.copyrightType = CopyrightType.fromDoc(element);
-				else if (name.equalsIgnoreCase(CopyrightYear.refname) || name.equalsIgnoreCase(CopyrightYear.shortname))
+				else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
 					x.copyrightYears = DU.addToList(x.copyrightYears, CopyrightYear.fromDoc(element));
-				else if (name.equalsIgnoreCase(CopyrightOwner.refname) || name.equalsIgnoreCase(CopyrightOwner.shortname))
+				else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname))
 					x.copyrightOwners = DU.addToList(x.copyrightOwners, CopyrightOwner.fromDoc(element));
 			}
 		});

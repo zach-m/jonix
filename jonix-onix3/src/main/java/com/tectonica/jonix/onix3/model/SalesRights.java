@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SalesRights
 {
 	public static final String refname = "SalesRights";
@@ -53,15 +57,15 @@ public class SalesRights
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SalesRightsType.refname) || name.equalsIgnoreCase(SalesRightsType.shortname))
+				if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
 					x.salesRightsType = SalesRightsType.fromDoc(element);
-				else if (name.equalsIgnoreCase(Territory.refname) || name.equalsIgnoreCase(Territory.shortname))
+				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
 					x.territory = Territory.fromDoc(element);
-				else if (name.equalsIgnoreCase(SalesRestriction.refname) || name.equalsIgnoreCase(SalesRestriction.shortname))
+				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
 					x.salesRestrictions = DU.addToList(x.salesRestrictions, SalesRestriction.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(PublisherName.refname) || name.equalsIgnoreCase(PublisherName.shortname))
+				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
 					x.publisherName = PublisherName.fromDoc(element);
 			}
 		});

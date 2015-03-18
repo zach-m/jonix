@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Series
 {
 	public static final String refname = "Series";
@@ -68,21 +72,21 @@ public class Series
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SeriesISSN.refname) || name.equalsIgnoreCase(SeriesISSN.shortname))
+				if (name.equals(SeriesISSN.refname) || name.equals(SeriesISSN.shortname))
 					x.seriesISSN = SeriesISSN.fromDoc(element);
-				else if (name.equalsIgnoreCase(PublisherSeriesCode.refname) || name.equalsIgnoreCase(PublisherSeriesCode.shortname))
+				else if (name.equals(PublisherSeriesCode.refname) || name.equals(PublisherSeriesCode.shortname))
 					x.publisherSeriesCode = PublisherSeriesCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(SeriesIdentifier.refname) || name.equalsIgnoreCase(SeriesIdentifier.shortname))
+				else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
 					x.seriesIdentifiers = DU.addToList(x.seriesIdentifiers, SeriesIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(TitleOfSeries.refname) || name.equalsIgnoreCase(TitleOfSeries.shortname))
+				else if (name.equals(TitleOfSeries.refname) || name.equals(TitleOfSeries.shortname))
 					x.titleOfSeries = TitleOfSeries.fromDoc(element);
-				else if (name.equalsIgnoreCase(Title.refname) || name.equalsIgnoreCase(Title.shortname))
+				else if (name.equals(Title.refname) || name.equals(Title.shortname))
 					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
-				else if (name.equalsIgnoreCase(Contributor.refname) || name.equalsIgnoreCase(Contributor.shortname))
+				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
 					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
-				else if (name.equalsIgnoreCase(NumberWithinSeries.refname) || name.equalsIgnoreCase(NumberWithinSeries.shortname))
+				else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
 					x.numberWithinSeries = NumberWithinSeries.fromDoc(element);
-				else if (name.equalsIgnoreCase(YearOfAnnual.refname) || name.equalsIgnoreCase(YearOfAnnual.shortname))
+				else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
 					x.yearOfAnnual = YearOfAnnual.fromDoc(element);
 			}
 		});

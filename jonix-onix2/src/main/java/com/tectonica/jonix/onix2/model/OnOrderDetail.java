@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class OnOrderDetail
 {
 	public static final String refname = "OnOrderDetail";
@@ -60,9 +64,9 @@ public class OnOrderDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(OnOrder.refname) || name.equalsIgnoreCase(OnOrder.shortname))
+				if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
 					x.onOrder = OnOrder.fromDoc(element);
-				else if (name.equalsIgnoreCase(ExpectedDate.refname) || name.equalsIgnoreCase(ExpectedDate.shortname))
+				else if (name.equals(ExpectedDate.refname) || name.equals(ExpectedDate.shortname))
 					x.expectedDate = ExpectedDate.fromDoc(element);
 			}
 		});

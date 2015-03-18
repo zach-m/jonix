@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class DiscountCoded
 {
 	public static final String refname = "DiscountCoded";
@@ -61,11 +65,11 @@ public class DiscountCoded
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(DiscountCodeType.refname) || name.equalsIgnoreCase(DiscountCodeType.shortname))
+				if (name.equals(DiscountCodeType.refname) || name.equals(DiscountCodeType.shortname))
 					x.discountCodeType = DiscountCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(DiscountCodeTypeName.refname) || name.equalsIgnoreCase(DiscountCodeTypeName.shortname))
+				else if (name.equals(DiscountCodeTypeName.refname) || name.equals(DiscountCodeTypeName.shortname))
 					x.discountCodeTypeName = DiscountCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(DiscountCode.refname) || name.equalsIgnoreCase(DiscountCode.shortname))
+				else if (name.equals(DiscountCode.refname) || name.equals(DiscountCode.shortname))
 					x.discountCode = DiscountCode.fromDoc(element);
 			}
 		});

@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Subject
 {
 	public static final String refname = "Subject";
@@ -54,17 +58,17 @@ public class Subject
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(MainSubject.refname) || name.equalsIgnoreCase(MainSubject.shortname))
+				if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname))
 					x.mainSubject = MainSubject.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectSchemeIdentifier.refname) || name.equalsIgnoreCase(SubjectSchemeIdentifier.shortname))
+				else if (name.equals(SubjectSchemeIdentifier.refname) || name.equals(SubjectSchemeIdentifier.shortname))
 					x.subjectSchemeIdentifier = SubjectSchemeIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectSchemeName.refname) || name.equalsIgnoreCase(SubjectSchemeName.shortname))
+				else if (name.equals(SubjectSchemeName.refname) || name.equals(SubjectSchemeName.shortname))
 					x.subjectSchemeName = SubjectSchemeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectSchemeVersion.refname) || name.equalsIgnoreCase(SubjectSchemeVersion.shortname))
+				else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
 					x.subjectSchemeVersion = SubjectSchemeVersion.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectCode.refname) || name.equalsIgnoreCase(SubjectCode.shortname))
+				else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname))
 					x.subjectCode = SubjectCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(SubjectHeadingText.refname) || name.equalsIgnoreCase(SubjectHeadingText.shortname))
+				else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname))
 					x.subjectHeadingTexts = DU.addToList(x.subjectHeadingTexts, SubjectHeadingText.fromDoc(element));
 			}
 		});

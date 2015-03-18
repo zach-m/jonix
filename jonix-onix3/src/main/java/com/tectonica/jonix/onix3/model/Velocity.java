@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Velocity
 {
 	public static final String refname = "Velocity";
@@ -49,11 +53,11 @@ public class Velocity
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(VelocityMetric.refname) || name.equalsIgnoreCase(VelocityMetric.shortname))
+				if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname))
 					x.velocityMetric = VelocityMetric.fromDoc(element);
-				else if (name.equalsIgnoreCase(Rate.refname) || name.equalsIgnoreCase(Rate.shortname))
+				else if (name.equals(Rate.refname) || name.equals(Rate.shortname))
 					x.rate = Rate.fromDoc(element);
-				else if (name.equalsIgnoreCase(Proximity.refname) || name.equalsIgnoreCase(Proximity.shortname))
+				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
 					x.proximity = Proximity.fromDoc(element);
 			}
 		});

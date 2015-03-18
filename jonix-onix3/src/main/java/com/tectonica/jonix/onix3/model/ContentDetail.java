@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ContentDetail
 {
 	public static final String refname = "ContentDetail";
@@ -49,7 +53,7 @@ public class ContentDetail
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ContentItem.refname) || name.equalsIgnoreCase(ContentItem.shortname))
+				if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname))
 					x.contentItems = DU.addToList(x.contentItems, ContentItem.fromDoc(element));
 			}
 		});

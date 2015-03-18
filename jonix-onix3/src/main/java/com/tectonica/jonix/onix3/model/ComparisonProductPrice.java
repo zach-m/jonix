@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ComparisonProductPrice
 {
 	public static final String refname = "ComparisonProductPrice";
@@ -52,13 +56,13 @@ public class ComparisonProductPrice
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(PriceType.refname) || name.equalsIgnoreCase(PriceType.shortname))
+				else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
 					x.priceType = PriceType.fromDoc(element);
-				else if (name.equalsIgnoreCase(PriceAmount.refname) || name.equalsIgnoreCase(PriceAmount.shortname))
+				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
 					x.priceAmount = PriceAmount.fromDoc(element);
-				else if (name.equalsIgnoreCase(CurrencyCode.refname) || name.equalsIgnoreCase(CurrencyCode.shortname))
+				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
 					x.currencyCode = CurrencyCode.fromDoc(element);
 			}
 		});

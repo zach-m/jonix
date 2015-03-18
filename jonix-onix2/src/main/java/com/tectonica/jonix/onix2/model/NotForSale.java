@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class NotForSale
 {
 	public static final String refname = "NotForSale";
@@ -66,17 +70,17 @@ public class NotForSale
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(RightsCountry.refname) || name.equalsIgnoreCase(RightsCountry.shortname))
+				if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
 					x.rightsCountrys = DU.addToList(x.rightsCountrys, RightsCountry.fromDoc(element));
-				else if (name.equalsIgnoreCase(RightsTerritory.refname) || name.equalsIgnoreCase(RightsTerritory.shortname))
+				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
 					x.rightsTerritory = RightsTerritory.fromDoc(element);
-				else if (name.equalsIgnoreCase(ISBN.refname) || name.equalsIgnoreCase(ISBN.shortname))
+				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
 					x.isbN = ISBN.fromDoc(element);
-				else if (name.equalsIgnoreCase(EAN13.refname) || name.equalsIgnoreCase(EAN13.shortname))
+				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
 					x.ean13 = EAN13.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(PublisherName.refname) || name.equalsIgnoreCase(PublisherName.shortname))
+				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
 					x.publisherName = PublisherName.fromDoc(element);
 			}
 		});

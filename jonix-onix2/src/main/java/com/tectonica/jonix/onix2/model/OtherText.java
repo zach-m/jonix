@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class OtherText
 {
 	public static final String refname = "OtherText";
@@ -69,27 +73,27 @@ public class OtherText
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(TextTypeCode.refname) || name.equalsIgnoreCase(TextTypeCode.shortname))
+				if (name.equals(TextTypeCode.refname) || name.equals(TextTypeCode.shortname))
 					x.textTypeCode = TextTypeCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextFormat.refname) || name.equalsIgnoreCase(TextFormat.shortname))
+				else if (name.equals(TextFormat.refname) || name.equals(TextFormat.shortname))
 					x.textFormat = TextFormat.fromDoc(element);
-				else if (name.equalsIgnoreCase(Text.refname) || name.equalsIgnoreCase(Text.shortname))
+				else if (name.equals(Text.refname) || name.equals(Text.shortname))
 					x.text = Text.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextLinkType.refname) || name.equalsIgnoreCase(TextLinkType.shortname))
+				else if (name.equals(TextLinkType.refname) || name.equals(TextLinkType.shortname))
 					x.textLinkType = TextLinkType.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextLink.refname) || name.equalsIgnoreCase(TextLink.shortname))
+				else if (name.equals(TextLink.refname) || name.equals(TextLink.shortname))
 					x.textLink = TextLink.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextAuthor.refname) || name.equalsIgnoreCase(TextAuthor.shortname))
+				else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname))
 					x.textAuthor = TextAuthor.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextSourceCorporate.refname) || name.equalsIgnoreCase(TextSourceCorporate.shortname))
+				else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname))
 					x.textSourceCorporate = TextSourceCorporate.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextSourceTitle.refname) || name.equalsIgnoreCase(TextSourceTitle.shortname))
+				else if (name.equals(TextSourceTitle.refname) || name.equals(TextSourceTitle.shortname))
 					x.textSourceTitle = TextSourceTitle.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextPublicationDate.refname) || name.equalsIgnoreCase(TextPublicationDate.shortname))
+				else if (name.equals(TextPublicationDate.refname) || name.equals(TextPublicationDate.shortname))
 					x.textPublicationDate = TextPublicationDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(StartDate.refname) || name.equalsIgnoreCase(StartDate.shortname))
+				else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
 					x.startDate = StartDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(EndDate.refname) || name.equalsIgnoreCase(EndDate.shortname))
+				else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
 					x.endDate = EndDate.fromDoc(element);
 			}
 		});

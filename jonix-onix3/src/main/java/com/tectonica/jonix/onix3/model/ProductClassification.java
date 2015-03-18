@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProductClassification
 {
 	public static final String refname = "ProductClassification";
@@ -49,12 +53,11 @@ public class ProductClassification
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ProductClassificationType.refname) || name.equalsIgnoreCase(ProductClassificationType.shortname))
+				if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname))
 					x.productClassificationType = ProductClassificationType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductClassificationCode.refname)
-						|| name.equalsIgnoreCase(ProductClassificationCode.shortname))
+				else if (name.equals(ProductClassificationCode.refname) || name.equals(ProductClassificationCode.shortname))
 					x.productClassificationCode = ProductClassificationCode.fromDoc(element);
-				else if (name.equalsIgnoreCase(Percent.refname) || name.equalsIgnoreCase(Percent.shortname))
+				else if (name.equals(Percent.refname) || name.equals(Percent.shortname))
 					x.percent = Percent.fromDoc(element);
 			}
 		});

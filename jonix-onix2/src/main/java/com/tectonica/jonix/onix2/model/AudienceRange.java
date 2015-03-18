@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class AudienceRange
 {
 	public static final String refname = "AudienceRange";
@@ -61,11 +65,11 @@ public class AudienceRange
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(AudienceRangeQualifier.refname) || name.equalsIgnoreCase(AudienceRangeQualifier.shortname))
+				if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname))
 					x.audienceRangeQualifier = AudienceRangeQualifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(AudienceRangePrecision.refname) || name.equalsIgnoreCase(AudienceRangePrecision.shortname))
+				else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname))
 					x.audienceRangePrecision = AudienceRangePrecision.fromDoc(element);
-				else if (name.equalsIgnoreCase(AudienceRangeValue.refname) || name.equalsIgnoreCase(AudienceRangeValue.shortname))
+				else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname))
 					x.audienceRangeValue = AudienceRangeValue.fromDoc(element);
 			}
 		});

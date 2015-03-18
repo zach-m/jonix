@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SupportingResource
 {
 	public static final String refname = "SupportingResource";
@@ -53,15 +57,15 @@ public class SupportingResource
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ResourceContentType.refname) || name.equalsIgnoreCase(ResourceContentType.shortname))
+				if (name.equals(ResourceContentType.refname) || name.equals(ResourceContentType.shortname))
 					x.resourceContentType = ResourceContentType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ContentAudience.refname) || name.equalsIgnoreCase(ContentAudience.shortname))
+				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
 					x.contentAudiences = DU.addToList(x.contentAudiences, ContentAudience.fromDoc(element));
-				else if (name.equalsIgnoreCase(ResourceMode.refname) || name.equalsIgnoreCase(ResourceMode.shortname))
+				else if (name.equals(ResourceMode.refname) || name.equals(ResourceMode.shortname))
 					x.resourceMode = ResourceMode.fromDoc(element);
-				else if (name.equalsIgnoreCase(ResourceFeature.refname) || name.equalsIgnoreCase(ResourceFeature.shortname))
+				else if (name.equals(ResourceFeature.refname) || name.equals(ResourceFeature.shortname))
 					x.resourceFeatures = DU.addToList(x.resourceFeatures, ResourceFeature.fromDoc(element));
-				else if (name.equalsIgnoreCase(ResourceVersion.refname) || name.equalsIgnoreCase(ResourceVersion.shortname))
+				else if (name.equals(ResourceVersion.refname) || name.equals(ResourceVersion.shortname))
 					x.resourceVersions = DU.addToList(x.resourceVersions, ResourceVersion.fromDoc(element));
 			}
 		});

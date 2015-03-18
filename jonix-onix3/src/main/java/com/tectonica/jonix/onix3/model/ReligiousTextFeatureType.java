@@ -23,6 +23,10 @@ import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 import com.tectonica.jonix.onix3.codelist.List89;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ReligiousTextFeatureType
 {
 	public static final String refname = "ReligiousTextFeatureType";

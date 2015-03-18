@@ -70,7 +70,7 @@ public class OnixEnumGen
 
 	private void writeEnumClass(OnixSimpleType enumType, String packageName, PrintStream p)
 	{
-		p.println(Copyright.MSG);
+		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
 
 		p.println();
@@ -81,6 +81,7 @@ public class OnixEnumGen
 		}
 
 		p.println();
+		p.println(Comments.AutoGen);
 		if (enumType.comment != null)
 		{
 			p.printf("/**\n");

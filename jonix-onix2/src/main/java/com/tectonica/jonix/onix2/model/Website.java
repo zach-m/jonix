@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Website
 {
 	public static final String refname = "Website";
@@ -61,11 +65,11 @@ public class Website
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(WebsiteRole.refname) || name.equalsIgnoreCase(WebsiteRole.shortname))
+				if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
 					x.websiteRole = WebsiteRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(WebsiteDescription.refname) || name.equalsIgnoreCase(WebsiteDescription.shortname))
+				else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname))
 					x.websiteDescription = WebsiteDescription.fromDoc(element);
-				else if (name.equalsIgnoreCase(WebsiteLink.refname) || name.equalsIgnoreCase(WebsiteLink.shortname))
+				else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname))
 					x.websiteLink = WebsiteLink.fromDoc(element);
 			}
 		});

@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Territory
 {
 	public static final String refname = "Territory";
@@ -50,13 +54,13 @@ public class Territory
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(CountriesIncluded.refname) || name.equalsIgnoreCase(CountriesIncluded.shortname))
+				if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname))
 					x.countriesIncluded = CountriesIncluded.fromDoc(element);
-				else if (name.equalsIgnoreCase(RegionsIncluded.refname) || name.equalsIgnoreCase(RegionsIncluded.shortname))
+				else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname))
 					x.regionsIncluded = RegionsIncluded.fromDoc(element);
-				else if (name.equalsIgnoreCase(CountriesExcluded.refname) || name.equalsIgnoreCase(CountriesExcluded.shortname))
+				else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname))
 					x.countriesExcluded = CountriesExcluded.fromDoc(element);
-				else if (name.equalsIgnoreCase(RegionsExcluded.refname) || name.equalsIgnoreCase(RegionsExcluded.shortname))
+				else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname))
 					x.regionsExcluded = RegionsExcluded.fromDoc(element);
 			}
 		});

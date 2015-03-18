@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class EpubLicenseExpression
 {
 	public static final String refname = "EpubLicenseExpression";
@@ -49,13 +53,11 @@ public class EpubLicenseExpression
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(EpubLicenseExpressionType.refname) || name.equalsIgnoreCase(EpubLicenseExpressionType.shortname))
+				if (name.equals(EpubLicenseExpressionType.refname) || name.equals(EpubLicenseExpressionType.shortname))
 					x.epubLicenseExpressionType = EpubLicenseExpressionType.fromDoc(element);
-				else if (name.equalsIgnoreCase(EpubLicenseExpressionTypeName.refname)
-						|| name.equalsIgnoreCase(EpubLicenseExpressionTypeName.shortname))
+				else if (name.equals(EpubLicenseExpressionTypeName.refname) || name.equals(EpubLicenseExpressionTypeName.shortname))
 					x.epubLicenseExpressionTypeName = EpubLicenseExpressionTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(EpubLicenseExpressionLink.refname)
-						|| name.equalsIgnoreCase(EpubLicenseExpressionLink.shortname))
+				else if (name.equals(EpubLicenseExpressionLink.refname) || name.equals(EpubLicenseExpressionLink.shortname))
 					x.epubLicenseExpressionLink = EpubLicenseExpressionLink.fromDoc(element);
 			}
 		});

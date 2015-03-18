@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class EpubUsageLimit
 {
 	public static final String refname = "EpubUsageLimit";
@@ -48,9 +52,9 @@ public class EpubUsageLimit
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Quantity.refname) || name.equalsIgnoreCase(Quantity.shortname))
+				if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
 					x.quantity = Quantity.fromDoc(element);
-				else if (name.equalsIgnoreCase(EpubUsageUnit.refname) || name.equalsIgnoreCase(EpubUsageUnit.shortname))
+				else if (name.equals(EpubUsageUnit.refname) || name.equals(EpubUsageUnit.shortname))
 					x.epubUsageUnit = EpubUsageUnit.fromDoc(element);
 			}
 		});

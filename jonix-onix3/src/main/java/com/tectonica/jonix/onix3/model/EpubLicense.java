@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class EpubLicense
 {
 	public static final String refname = "EpubLicense";
@@ -50,9 +54,9 @@ public class EpubLicense
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(EpubLicenseName.refname) || name.equalsIgnoreCase(EpubLicenseName.shortname))
+				if (name.equals(EpubLicenseName.refname) || name.equals(EpubLicenseName.shortname))
 					x.epubLicenseNames = DU.addToList(x.epubLicenseNames, EpubLicenseName.fromDoc(element));
-				else if (name.equalsIgnoreCase(EpubLicenseExpression.refname) || name.equalsIgnoreCase(EpubLicenseExpression.shortname))
+				else if (name.equals(EpubLicenseExpression.refname) || name.equals(EpubLicenseExpression.shortname))
 					x.epubLicenseExpressions = DU.addToList(x.epubLicenseExpressions, EpubLicenseExpression.fromDoc(element));
 			}
 		});

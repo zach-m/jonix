@@ -27,6 +27,10 @@ import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 import com.tectonica.jonix.onix2.codelist.List90;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ReligiousTextFeatureCode
 {
 	public static final String refname = "ReligiousTextFeatureCode";

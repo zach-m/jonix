@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ReturnsConditions
 {
 	public static final String refname = "ReturnsConditions";
@@ -49,11 +53,11 @@ public class ReturnsConditions
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ReturnsCodeType.refname) || name.equalsIgnoreCase(ReturnsCodeType.shortname))
+				if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
 					x.returnsCodeType = ReturnsCodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReturnsCodeTypeName.refname) || name.equalsIgnoreCase(ReturnsCodeTypeName.shortname))
+				else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname))
 					x.returnsCodeTypeName = ReturnsCodeTypeName.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReturnsCode.refname) || name.equalsIgnoreCase(ReturnsCode.shortname))
+				else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
 					x.returnsCode = ReturnsCode.fromDoc(element);
 			}
 		});

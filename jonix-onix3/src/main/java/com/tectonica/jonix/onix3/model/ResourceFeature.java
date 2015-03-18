@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ResourceFeature
 {
 	public static final String refname = "ResourceFeature";
@@ -51,11 +55,11 @@ public class ResourceFeature
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ResourceFeatureType.refname) || name.equalsIgnoreCase(ResourceFeatureType.shortname))
+				if (name.equals(ResourceFeatureType.refname) || name.equals(ResourceFeatureType.shortname))
 					x.resourceFeatureType = ResourceFeatureType.fromDoc(element);
-				else if (name.equalsIgnoreCase(FeatureValue.refname) || name.equalsIgnoreCase(FeatureValue.shortname))
+				else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname))
 					x.featureValue = FeatureValue.fromDoc(element);
-				else if (name.equalsIgnoreCase(FeatureNote.refname) || name.equalsIgnoreCase(FeatureNote.shortname))
+				else if (name.equals(FeatureNote.refname) || name.equals(FeatureNote.shortname))
 					x.featureNotes = DU.addToList(x.featureNotes, FeatureNote.fromDoc(element));
 			}
 		});

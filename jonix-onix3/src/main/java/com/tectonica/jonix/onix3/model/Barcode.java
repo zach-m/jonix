@@ -22,6 +22,10 @@ package com.tectonica.jonix.onix3.model;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Barcode
 {
 	public static final String refname = "Barcode";
@@ -48,9 +52,9 @@ public class Barcode
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(BarcodeType.refname) || name.equalsIgnoreCase(BarcodeType.shortname))
+				if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname))
 					x.barcodeType = BarcodeType.fromDoc(element);
-				else if (name.equalsIgnoreCase(PositionOnProduct.refname) || name.equalsIgnoreCase(PositionOnProduct.shortname))
+				else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
 					x.positionOnProduct = PositionOnProduct.fromDoc(element);
 			}
 		});

@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Illustrations
 {
 	public static final String refname = "Illustrations";
@@ -61,12 +65,11 @@ public class Illustrations
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(IllustrationType.refname) || name.equalsIgnoreCase(IllustrationType.shortname))
+				if (name.equals(IllustrationType.refname) || name.equals(IllustrationType.shortname))
 					x.illustrationType = IllustrationType.fromDoc(element);
-				else if (name.equalsIgnoreCase(IllustrationTypeDescription.refname)
-						|| name.equalsIgnoreCase(IllustrationTypeDescription.shortname))
+				else if (name.equals(IllustrationTypeDescription.refname) || name.equals(IllustrationTypeDescription.shortname))
 					x.illustrationTypeDescription = IllustrationTypeDescription.fromDoc(element);
-				else if (name.equalsIgnoreCase(Number.refname) || name.equalsIgnoreCase(Number.shortname))
+				else if (name.equals(Number.refname) || name.equals(Number.shortname))
 					x.number = Number.fromDoc(element);
 			}
 		});

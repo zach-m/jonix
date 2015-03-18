@@ -27,6 +27,10 @@ import com.tectonica.jonix.onix2.codelist.List32;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ComplexitySchemeIdentifier
 {
 	public static final String refname = "ComplexitySchemeIdentifier";

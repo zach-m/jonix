@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ReligiousText
 {
 	public static final String refname = "ReligiousText";
@@ -63,11 +67,11 @@ public class ReligiousText
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(Bible.refname) || name.equalsIgnoreCase(Bible.shortname))
+				if (name.equals(Bible.refname) || name.equals(Bible.shortname))
 					x.bible = Bible.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReligiousTextID.refname) || name.equalsIgnoreCase(ReligiousTextID.shortname))
+				else if (name.equals(ReligiousTextID.refname) || name.equals(ReligiousTextID.shortname))
 					x.religiousTextID = ReligiousTextID.fromDoc(element);
-				else if (name.equalsIgnoreCase(ReligiousTextFeature.refname) || name.equalsIgnoreCase(ReligiousTextFeature.shortname))
+				else if (name.equals(ReligiousTextFeature.refname) || name.equals(ReligiousTextFeature.shortname))
 					x.religiousTextFeatures = DU.addToList(x.religiousTextFeatures, ReligiousTextFeature.fromDoc(element));
 			}
 		});

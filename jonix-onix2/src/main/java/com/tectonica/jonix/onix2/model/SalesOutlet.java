@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class SalesOutlet
 {
 	public static final String refname = "SalesOutlet";
@@ -60,9 +64,9 @@ public class SalesOutlet
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(SalesOutletIdentifier.refname) || name.equalsIgnoreCase(SalesOutletIdentifier.shortname))
+				if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname))
 					x.salesOutletIdentifier = SalesOutletIdentifier.fromDoc(element);
-				else if (name.equalsIgnoreCase(SalesOutletName.refname) || name.equalsIgnoreCase(SalesOutletName.shortname))
+				else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname))
 					x.salesOutletName = SalesOutletName.fromDoc(element);
 			}
 		});

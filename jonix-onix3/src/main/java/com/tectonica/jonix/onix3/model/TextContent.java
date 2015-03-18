@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class TextContent
 {
 	public static final String refname = "TextContent";
@@ -55,19 +59,19 @@ public class TextContent
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(TextType.refname) || name.equalsIgnoreCase(TextType.shortname))
+				if (name.equals(TextType.refname) || name.equals(TextType.shortname))
 					x.textType = TextType.fromDoc(element);
-				else if (name.equalsIgnoreCase(ContentAudience.refname) || name.equalsIgnoreCase(ContentAudience.shortname))
+				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
 					x.contentAudiences = DU.addToList(x.contentAudiences, ContentAudience.fromDoc(element));
-				else if (name.equalsIgnoreCase(Text.refname) || name.equalsIgnoreCase(Text.shortname))
+				else if (name.equals(Text.refname) || name.equals(Text.shortname))
 					x.texts = DU.addToList(x.texts, Text.fromDoc(element));
-				else if (name.equalsIgnoreCase(TextAuthor.refname) || name.equalsIgnoreCase(TextAuthor.shortname))
+				else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname))
 					x.textAuthors = DU.addToList(x.textAuthors, TextAuthor.fromDoc(element));
-				else if (name.equalsIgnoreCase(TextSourceCorporate.refname) || name.equalsIgnoreCase(TextSourceCorporate.shortname))
+				else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname))
 					x.textSourceCorporate = TextSourceCorporate.fromDoc(element);
-				else if (name.equalsIgnoreCase(SourceTitle.refname) || name.equalsIgnoreCase(SourceTitle.shortname))
+				else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
 					x.sourceTitles = DU.addToList(x.sourceTitles, SourceTitle.fromDoc(element));
-				else if (name.equalsIgnoreCase(ContentDate.refname) || name.equalsIgnoreCase(ContentDate.shortname))
+				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
 					x.contentDates = DU.addToList(x.contentDates, ContentDate.fromDoc(element));
 			}
 		});

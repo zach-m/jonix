@@ -24,6 +24,10 @@ import java.util.List;
 import com.tectonica.jonix.onix3.DU;
 import com.tectonica.jonix.onix3.codelist.List3;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class ProductPart
 {
 	public static final String refname = "ProductPart";
@@ -58,25 +62,25 @@ public class ProductPart
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(PrimaryPart.refname) || name.equalsIgnoreCase(PrimaryPart.shortname))
+				if (name.equals(PrimaryPart.refname) || name.equals(PrimaryPart.shortname))
 					x.primaryPart = PrimaryPart.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductIdentifier.refname) || name.equalsIgnoreCase(ProductIdentifier.shortname))
+				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductForm.refname) || name.equalsIgnoreCase(ProductForm.shortname))
+				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
 					x.productForm = ProductForm.fromDoc(element);
-				else if (name.equalsIgnoreCase(ProductFormDetail.refname) || name.equalsIgnoreCase(ProductFormDetail.shortname))
+				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
 					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductFormFeature.refname) || name.equalsIgnoreCase(ProductFormFeature.shortname))
+				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
 					x.productFormFeatures = DU.addToList(x.productFormFeatures, ProductFormFeature.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductFormDescription.refname) || name.equalsIgnoreCase(ProductFormDescription.shortname))
+				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
 					x.productFormDescriptions = DU.addToList(x.productFormDescriptions, ProductFormDescription.fromDoc(element));
-				else if (name.equalsIgnoreCase(ProductContentType.refname) || name.equalsIgnoreCase(ProductContentType.shortname))
+				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
 					x.productContentTypes = DU.addToList(x.productContentTypes, ProductContentType.fromDoc(element));
-				else if (name.equalsIgnoreCase(NumberOfItemsOfThisForm.refname) || name.equalsIgnoreCase(NumberOfItemsOfThisForm.shortname))
+				else if (name.equals(NumberOfItemsOfThisForm.refname) || name.equals(NumberOfItemsOfThisForm.shortname))
 					x.numberOfItemsOfThisForm = NumberOfItemsOfThisForm.fromDoc(element);
-				else if (name.equalsIgnoreCase(NumberOfCopies.refname) || name.equalsIgnoreCase(NumberOfCopies.shortname))
+				else if (name.equals(NumberOfCopies.refname) || name.equals(NumberOfCopies.shortname))
 					x.numberOfCopies = NumberOfCopies.fromDoc(element);
-				else if (name.equalsIgnoreCase(CountryOfManufacture.refname) || name.equalsIgnoreCase(CountryOfManufacture.shortname))
+				else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname))
 					x.countryOfManufacture = CountryOfManufacture.fromDoc(element);
 			}
 		});

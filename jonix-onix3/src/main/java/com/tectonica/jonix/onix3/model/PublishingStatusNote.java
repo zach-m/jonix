@@ -24,6 +24,10 @@ import com.tectonica.jonix.onix3.codelist.List3;
 import com.tectonica.jonix.onix3.codelist.List34;
 import com.tectonica.jonix.onix3.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class PublishingStatusNote
 {
 	public static final String refname = "PublishingStatusNote";

@@ -28,6 +28,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Conference
 {
 	public static final String refname = "Conference";
@@ -69,23 +73,23 @@ public class Conference
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(ConferenceRole.refname) || name.equalsIgnoreCase(ConferenceRole.shortname))
+				if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
 					x.conferenceRole = ConferenceRole.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferenceName.refname) || name.equalsIgnoreCase(ConferenceName.shortname))
+				else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
 					x.conferenceName = ConferenceName.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferenceAcronym.refname) || name.equalsIgnoreCase(ConferenceAcronym.shortname))
+				else if (name.equals(ConferenceAcronym.refname) || name.equals(ConferenceAcronym.shortname))
 					x.conferenceAcronym = ConferenceAcronym.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferenceNumber.refname) || name.equalsIgnoreCase(ConferenceNumber.shortname))
+				else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
 					x.conferenceNumber = ConferenceNumber.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferenceTheme.refname) || name.equalsIgnoreCase(ConferenceTheme.shortname))
+				else if (name.equals(ConferenceTheme.refname) || name.equals(ConferenceTheme.shortname))
 					x.conferenceTheme = ConferenceTheme.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferenceDate.refname) || name.equalsIgnoreCase(ConferenceDate.shortname))
+				else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
 					x.conferenceDate = ConferenceDate.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferencePlace.refname) || name.equalsIgnoreCase(ConferencePlace.shortname))
+				else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
 					x.conferencePlace = ConferencePlace.fromDoc(element);
-				else if (name.equalsIgnoreCase(ConferenceSponsor.refname) || name.equalsIgnoreCase(ConferenceSponsor.shortname))
+				else if (name.equals(ConferenceSponsor.refname) || name.equals(ConferenceSponsor.shortname))
 					x.conferenceSponsors = DU.addToList(x.conferenceSponsors, ConferenceSponsor.fromDoc(element));
-				else if (name.equalsIgnoreCase(Website.refname) || name.equalsIgnoreCase(Website.shortname))
+				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
 			}
 		});

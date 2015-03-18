@@ -26,6 +26,10 @@ import com.tectonica.jonix.onix2.codelist.List3;
 import com.tectonica.jonix.onix2.codelist.List34;
 import com.tectonica.jonix.onix2.codelist.List74;
 
+/*
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ */
+
 public class Title
 {
 	public static final String refname = "Title";
@@ -65,19 +69,19 @@ public class Title
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equalsIgnoreCase(TitleType.refname) || name.equalsIgnoreCase(TitleType.shortname))
+				if (name.equals(TitleType.refname) || name.equals(TitleType.shortname))
 					x.titleType = TitleType.fromDoc(element);
-				else if (name.equalsIgnoreCase(AbbreviatedLength.refname) || name.equalsIgnoreCase(AbbreviatedLength.shortname))
+				else if (name.equals(AbbreviatedLength.refname) || name.equals(AbbreviatedLength.shortname))
 					x.abbreviatedLength = AbbreviatedLength.fromDoc(element);
-				else if (name.equalsIgnoreCase(TextCaseFlag.refname) || name.equalsIgnoreCase(TextCaseFlag.shortname))
+				else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
 					x.textCaseFlag = TextCaseFlag.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitleText.refname) || name.equalsIgnoreCase(TitleText.shortname))
+				else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
 					x.titleText = TitleText.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitlePrefix.refname) || name.equalsIgnoreCase(TitlePrefix.shortname))
+				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
 					x.titlePrefix = TitlePrefix.fromDoc(element);
-				else if (name.equalsIgnoreCase(TitleWithoutPrefix.refname) || name.equalsIgnoreCase(TitleWithoutPrefix.shortname))
+				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
 					x.titleWithoutPrefix = TitleWithoutPrefix.fromDoc(element);
-				else if (name.equalsIgnoreCase(Subtitle.refname) || name.equalsIgnoreCase(Subtitle.shortname))
+				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
 					x.subtitle = Subtitle.fromDoc(element);
 			}
 		});
