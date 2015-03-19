@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -78,6 +79,18 @@ public class Prize
 		return x;
 	}
 
+	public List<String> getPrizeNameValues()
+	{
+		if (prizeNames != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PrizeName i : prizeNames)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getPrizeYearValue()
 	{
 		return (prizeYear == null) ? null : prizeYear.value;
@@ -91,5 +104,29 @@ public class Prize
 	public PrizeOrAwardAchievements getPrizeCodeValue()
 	{
 		return (prizeCode == null) ? null : prizeCode.value;
+	}
+
+	public List<String> getPrizeStatementValues()
+	{
+		if (prizeStatements != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PrizeStatement i : prizeStatements)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getPrizeJuryValues()
+	{
+		if (prizeJurys != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PrizeJury i : prizeJurys)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

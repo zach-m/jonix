@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -141,5 +142,29 @@ public class ContentItem
 	public String getContributorStatementValue()
 	{
 		return (contributorStatement == null) ? null : contributorStatement.value;
+	}
+
+	public List<String> getCorporateBodyAsSubjectValues()
+	{
+		if (corporateBodyAsSubjects != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CorporateBodyAsSubject i : corporateBodyAsSubjects)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getPlaceAsSubjectValues()
+	{
+		if (placeAsSubjects != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PlaceAsSubject i : placeAsSubjects)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

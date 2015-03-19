@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -72,6 +73,18 @@ public class AncillaryContent
 	public IllustrationAndOtherContentTypes getAncillaryContentTypeValue()
 	{
 		return (ancillaryContentType == null) ? null : ancillaryContentType.value;
+	}
+
+	public List<String> getAncillaryContentDescriptionValues()
+	{
+		if (ancillaryContentDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (AncillaryContentDescription i : ancillaryContentDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public Integer getNumberValue()

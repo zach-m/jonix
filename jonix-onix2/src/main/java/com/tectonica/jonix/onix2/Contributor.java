@@ -19,9 +19,12 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -157,6 +160,30 @@ public class Contributor
 		return (sequenceNumber == null) ? null : sequenceNumber.value;
 	}
 
+	public List<ContributorRoles> getContributorRoleValues()
+	{
+		if (contributorRoles != null)
+		{
+			List<ContributorRoles> list = new ArrayList<>();
+			for (ContributorRole i : contributorRoles)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<LanguageCodeIso6392Bs> getLanguageCodeValues()
+	{
+		if (languageCodes != null)
+		{
+			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			for (LanguageCode i : languageCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getSequenceNumberWithinRoleValue()
 	{
 		return (sequenceNumberWithinRole == null) ? null : sequenceNumberWithinRole.value;
@@ -240,5 +267,29 @@ public class Contributor
 	public UnnamedPersonss getUnnamedPersonsValue()
 	{
 		return (unnamedPersons == null) ? null : unnamedPersons.value;
+	}
+
+	public List<CountryCodeIso31661s> getCountryCodeValues()
+	{
+		if (countryCodes != null)
+		{
+			List<CountryCodeIso31661s> list = new ArrayList<>();
+			for (CountryCode i : countryCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getRegionCodeValues()
+	{
+		if (regionCodes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (RegionCode i : regionCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

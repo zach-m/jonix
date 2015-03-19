@@ -19,11 +19,13 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.AudienceRestrictionFlags;
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
@@ -31,6 +33,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.codelist.SupplierRoles;
+import com.tectonica.jonix.codelist.SupplytoRegions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
@@ -192,14 +195,86 @@ public class SupplyDetail
 		return (supplierName == null) ? null : supplierName.value;
 	}
 
+	public List<String> getTelephoneNumberValues()
+	{
+		if (telephoneNumbers != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (TelephoneNumber i : telephoneNumbers)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getFaxNumberValues()
+	{
+		if (faxNumbers != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (FaxNumber i : faxNumbers)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getEmailAddressValues()
+	{
+		if (emailAddresss != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (EmailAddress i : emailAddresss)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public SupplierRoles getSupplierRoleValue()
 	{
 		return (supplierRole == null) ? null : supplierRole.value;
 	}
 
+	public List<CountryCodeIso31661s> getSupplyToCountryValues()
+	{
+		if (supplyToCountrys != null)
+		{
+			List<CountryCodeIso31661s> list = new ArrayList<>();
+			for (SupplyToCountry i : supplyToCountrys)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public Regions getSupplyToTerritoryValue()
 	{
 		return (supplyToTerritory == null) ? null : supplyToTerritory.value;
+	}
+
+	public List<SupplytoRegions> getSupplyToRegionValues()
+	{
+		if (supplyToRegions != null)
+		{
+			List<SupplytoRegions> list = new ArrayList<>();
+			for (SupplyToRegion i : supplyToRegions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<CountryCodeIso31661s> getSupplyToCountryExcludedValues()
+	{
+		if (supplyToCountryExcludeds != null)
+		{
+			List<CountryCodeIso31661s> list = new ArrayList<>();
+			for (SupplyToCountryExcluded i : supplyToCountryExcludeds)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public String getSupplyRestrictionDetailValue()

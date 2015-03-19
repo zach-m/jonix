@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -212,6 +213,18 @@ public class Price
 	public CurrencyCodeIso4217s getCurrencyCodeValue()
 	{
 		return (currencyCode == null) ? null : currencyCode.value;
+	}
+
+	public List<CountryCodeIso31661s> getCountryCodeValues()
+	{
+		if (countryCodes != null)
+		{
+			List<CountryCodeIso31661s> list = new ArrayList<>();
+			for (CountryCode i : countryCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public Regions getTerritoryValue()

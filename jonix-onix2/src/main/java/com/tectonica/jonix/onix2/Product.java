@@ -19,10 +19,15 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.Audiences;
+import com.tectonica.jonix.codelist.BarcodeIndicators;
+import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationFormats;
 import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.FrontCoverImageFileFormats;
@@ -31,6 +36,8 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.ProductCompositions;
+import com.tectonica.jonix.codelist.ProductContentTypes;
+import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.PublishingStatuss;
@@ -609,6 +616,18 @@ public class Product
 		return (doi == null) ? null : doi.value;
 	}
 
+	public List<BarcodeIndicators> getBarcodeValues()
+	{
+		if (barcodes != null)
+		{
+			List<BarcodeIndicators> list = new ArrayList<>();
+			for (Barcode i : barcodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getReplacesISBNValue()
 	{
 		return (replacesISBN == null) ? null : replacesISBN.value;
@@ -622,6 +641,30 @@ public class Product
 	public ProductForms getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
+	}
+
+	public List<ProductFormDetails> getProductFormDetailValues()
+	{
+		if (productFormDetails != null)
+		{
+			List<ProductFormDetails> list = new ArrayList<>();
+			for (ProductFormDetail i : productFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<BookFormDetails> getBookFormDetailValues()
+	{
+		if (bookFormDetails != null)
+		{
+			List<BookFormDetails> list = new ArrayList<>();
+			for (BookFormDetail i : bookFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public ProductPackagingTypes getProductPackagingValue()
@@ -642,6 +685,18 @@ public class Product
 	public TradeCategorys getTradeCategoryValue()
 	{
 		return (tradeCategory == null) ? null : tradeCategory.value;
+	}
+
+	public List<ProductContentTypes> getProductContentTypeValues()
+	{
+		if (productContentTypes != null)
+		{
+			List<ProductContentTypes> list = new ArrayList<>();
+			for (ProductContentType i : productContentTypes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public EpublicationTypes getEpubTypeValue()
@@ -724,6 +779,18 @@ public class Product
 		return (translationOfTitle == null) ? null : translationOfTitle.value;
 	}
 
+	public List<String> getFormerTitleValues()
+	{
+		if (formerTitles != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (FormerTitle i : formerTitles)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public ThesisTypes getThesisTypeValue()
 	{
 		return (thesisType == null) ? null : thesisType.value;
@@ -774,6 +841,18 @@ public class Product
 		return (conferencePlace == null) ? null : conferencePlace.value;
 	}
 
+	public List<EditionTypes> getEditionTypeCodeValues()
+	{
+		if (editionTypeCodes != null)
+		{
+			List<EditionTypes> list = new ArrayList<>();
+			for (EditionTypeCode i : editionTypeCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getEditionNumberValue()
 	{
 		return (editionNumber == null) ? null : editionNumber.value;
@@ -787,6 +866,18 @@ public class Product
 	public String getEditionStatementValue()
 	{
 		return (editionStatement == null) ? null : editionStatement.value;
+	}
+
+	public List<LanguageCodeIso6392Bs> getLanguageOfTextValues()
+	{
+		if (languageOfTexts != null)
+		{
+			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			for (LanguageOfText i : languageOfTexts)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public LanguageCodeIso6392Bs getOriginalLanguageValue()
@@ -819,6 +910,18 @@ public class Product
 		return (illustrationsNote == null) ? null : illustrationsNote.value;
 	}
 
+	public List<String> getMapScaleValues()
+	{
+		if (mapScales != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (MapScale i : mapScales)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getBASICMainSubjectValue()
 	{
 		return (basicMainSubject == null) ? null : basicMainSubject.value;
@@ -837,6 +940,42 @@ public class Product
 	public String getBICVersionValue()
 	{
 		return (bicVersion == null) ? null : bicVersion.value;
+	}
+
+	public List<String> getCorporateBodyAsSubjectValues()
+	{
+		if (corporateBodyAsSubjects != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CorporateBodyAsSubject i : corporateBodyAsSubjects)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getPlaceAsSubjectValues()
+	{
+		if (placeAsSubjects != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PlaceAsSubject i : placeAsSubjects)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<Audiences> getAudienceCodeValues()
+	{
+		if (audienceCodes != null)
+		{
+			List<Audiences> list = new ArrayList<>();
+			for (AudienceCode i : audienceCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public String getUSSchoolGradeValue()
@@ -862,6 +1001,18 @@ public class Product
 	public String getMainDescriptionValue()
 	{
 		return (mainDescription == null) ? null : mainDescription.value;
+	}
+
+	public List<String> getReviewQuoteValues()
+	{
+		if (reviewQuotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ReviewQuote i : reviewQuotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public FrontCoverImageFileFormats getCoverImageFormatCodeValue()
@@ -894,9 +1045,45 @@ public class Product
 		return (publisherName == null) ? null : publisherName.value;
 	}
 
+	public List<String> getCityOfPublicationValues()
+	{
+		if (cityOfPublications != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CityOfPublication i : cityOfPublications)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public CountryCodeIso31661s getCountryOfPublicationValue()
 	{
 		return (countryOfPublication == null) ? null : countryOfPublication.value;
+	}
+
+	public List<String> getCopublisherNameValues()
+	{
+		if (copublisherNames != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CopublisherName i : copublisherNames)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getSponsorNameValues()
+	{
+		if (sponsorNames != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (SponsorName i : sponsorNames)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public String getOriginalPublisherValue()
@@ -1012,6 +1199,18 @@ public class Product
 	public String getInitialPrintRunValue()
 	{
 		return (initialPrintRun == null) ? null : initialPrintRun.value;
+	}
+
+	public List<String> getReprintDetailValues()
+	{
+		if (reprintDetails != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ReprintDetail i : reprintDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public String getCopiesSoldValue()

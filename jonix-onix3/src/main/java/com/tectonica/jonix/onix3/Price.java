@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -137,6 +138,18 @@ public class Price
 	public PriceTypeQualifiers getPriceQualifierValue()
 	{
 		return (priceQualifier == null) ? null : priceQualifier.value;
+	}
+
+	public List<String> getPriceTypeDescriptionValues()
+	{
+		if (priceTypeDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PriceTypeDescription i : priceTypeDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public UnitOfPricings getPricePerValue()

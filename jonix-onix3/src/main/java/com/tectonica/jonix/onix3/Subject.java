@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -95,5 +96,17 @@ public class Subject
 	public String getSubjectCodeValue()
 	{
 		return (subjectCode == null) ? null : subjectCode.value;
+	}
+
+	public List<String> getSubjectHeadingTextValues()
+	{
+		if (subjectHeadingTexts != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (SubjectHeadingText i : subjectHeadingTexts)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

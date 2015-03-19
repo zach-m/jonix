@@ -19,13 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.EditionTypes;
+import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.codelist.IllustratedNotIllustrateds;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
+import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -214,9 +219,33 @@ public class DescriptiveDetail
 		return (productForm == null) ? null : productForm.value;
 	}
 
+	public List<ProductFormDetailsList175> getProductFormDetailValues()
+	{
+		if (productFormDetails != null)
+		{
+			List<ProductFormDetailsList175> list = new ArrayList<>();
+			for (ProductFormDetail i : productFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public ProductPackagingTypes getProductPackagingValue()
 	{
 		return (productPackaging == null) ? null : productPackaging.value;
+	}
+
+	public List<String> getProductFormDescriptionValues()
+	{
+		if (productFormDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ProductFormDescription i : productFormDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public TradeCategorys getTradeCategoryValue()
@@ -229,9 +258,45 @@ public class DescriptiveDetail
 		return (primaryContentType == null) ? null : primaryContentType.value;
 	}
 
+	public List<ProductContentTypes> getProductContentTypeValues()
+	{
+		if (productContentTypes != null)
+		{
+			List<ProductContentTypes> list = new ArrayList<>();
+			for (ProductContentType i : productContentTypes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public CountryCodeIso31661s getCountryOfManufactureValue()
 	{
 		return (countryOfManufacture == null) ? null : countryOfManufacture.value;
+	}
+
+	public List<EpublicationTechnicalProtections> getEpubTechnicalProtectionValues()
+	{
+		if (epubTechnicalProtections != null)
+		{
+			List<EpublicationTechnicalProtections> list = new ArrayList<>();
+			for (EpubTechnicalProtection i : epubTechnicalProtections)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<Integer> getMapScaleValues()
+	{
+		if (mapScales != null)
+		{
+			List<Integer> list = new ArrayList<>();
+			for (MapScale i : mapScales)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public ThesisTypes getThesisTypeValue()
@@ -249,6 +314,30 @@ public class DescriptiveDetail
 		return (thesisYear == null) ? null : thesisYear.value;
 	}
 
+	public List<String> getContributorStatementValues()
+	{
+		if (contributorStatements != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ContributorStatement i : contributorStatements)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<EditionTypes> getEditionTypeValues()
+	{
+		if (editionTypes != null)
+		{
+			List<EditionTypes> list = new ArrayList<>();
+			for (EditionType i : editionTypes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public Integer getEditionNumberValue()
 	{
 		return (editionNumber == null) ? null : editionNumber.value;
@@ -259,6 +348,18 @@ public class DescriptiveDetail
 		return (editionVersionNumber == null) ? null : editionVersionNumber.value;
 	}
 
+	public List<String> getEditionStatementValues()
+	{
+		if (editionStatements != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (EditionStatement i : editionStatements)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public IllustratedNotIllustrateds getIllustratedValue()
 	{
 		return (illustrated == null) ? null : illustrated.value;
@@ -267,5 +368,41 @@ public class DescriptiveDetail
 	public Integer getNumberOfIllustrationsValue()
 	{
 		return (numberOfIllustrations == null) ? null : numberOfIllustrations.value;
+	}
+
+	public List<String> getIllustrationsNoteValues()
+	{
+		if (illustrationsNotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (IllustrationsNote i : illustrationsNotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<Audiences> getAudienceCodeValues()
+	{
+		if (audienceCodes != null)
+		{
+			List<Audiences> list = new ArrayList<>();
+			for (AudienceCode i : audienceCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getAudienceDescriptionValues()
+	{
+		if (audienceDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (AudienceDescription i : audienceDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

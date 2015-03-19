@@ -19,9 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceContentTypes;
 import com.tectonica.jonix.codelist.ResourceModes;
@@ -78,6 +80,18 @@ public class SupportingResource
 	public ResourceContentTypes getResourceContentTypeValue()
 	{
 		return (resourceContentType == null) ? null : resourceContentType.value;
+	}
+
+	public List<ContentAudiences> getContentAudienceValues()
+	{
+		if (contentAudiences != null)
+		{
+			List<ContentAudiences> list = new ArrayList<>();
+			for (ContentAudience i : contentAudiences)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public ResourceModes getResourceModeValue()

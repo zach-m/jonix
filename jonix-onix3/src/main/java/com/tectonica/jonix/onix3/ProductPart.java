@@ -19,10 +19,13 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.ProductContentTypes;
+import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -93,6 +96,42 @@ public class ProductPart
 	public ProductFormsList150 getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
+	}
+
+	public List<ProductFormDetailsList175> getProductFormDetailValues()
+	{
+		if (productFormDetails != null)
+		{
+			List<ProductFormDetailsList175> list = new ArrayList<>();
+			for (ProductFormDetail i : productFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getProductFormDescriptionValues()
+	{
+		if (productFormDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ProductFormDescription i : productFormDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<ProductContentTypes> getProductContentTypeValues()
+	{
+		if (productContentTypes != null)
+		{
+			List<ProductContentTypes> list = new ArrayList<>();
+			for (ProductContentType i : productContentTypes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public Integer getNumberOfItemsOfThisFormValue()

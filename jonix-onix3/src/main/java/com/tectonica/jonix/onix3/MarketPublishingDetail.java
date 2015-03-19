@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -97,8 +98,80 @@ public class MarketPublishingDetail
 		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
 	}
 
+	public List<String> getMarketPublishingStatusNoteValues()
+	{
+		if (marketPublishingStatusNotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (MarketPublishingStatusNote i : marketPublishingStatusNotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getPromotionCampaignValues()
+	{
+		if (promotionCampaigns != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PromotionCampaign i : promotionCampaigns)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getPromotionContactValue()
 	{
 		return (promotionContact == null) ? null : promotionContact.value;
+	}
+
+	public List<String> getInitialPrintRunValues()
+	{
+		if (initialPrintRuns != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (InitialPrintRun i : initialPrintRuns)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getReprintDetailValues()
+	{
+		if (reprintDetails != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ReprintDetail i : reprintDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getCopiesSoldValues()
+	{
+		if (copiesSolds != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CopiesSold i : copiesSolds)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getBookClubAdoptionValues()
+	{
+		if (bookClubAdoptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (BookClubAdoption i : bookClubAdoptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

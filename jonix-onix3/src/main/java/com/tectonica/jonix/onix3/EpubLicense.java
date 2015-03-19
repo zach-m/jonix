@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -62,5 +63,17 @@ public class EpubLicense
 		});
 
 		return x;
+	}
+
+	public List<String> getEpubLicenseNameValues()
+	{
+		if (epubLicenseNames != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (EpubLicenseName i : epubLicenseNames)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

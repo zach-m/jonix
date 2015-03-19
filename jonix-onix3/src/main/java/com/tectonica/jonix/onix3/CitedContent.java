@@ -19,10 +19,12 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CitedContentTypes;
+import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.ContentSourceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -92,13 +94,73 @@ public class CitedContent
 		return (citedContentType == null) ? null : citedContentType.value;
 	}
 
+	public List<ContentAudiences> getContentAudienceValues()
+	{
+		if (contentAudiences != null)
+		{
+			List<ContentAudiences> list = new ArrayList<>();
+			for (ContentAudience i : contentAudiences)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public ContentSourceTypes getSourceTypeValue()
 	{
 		return (sourceType == null) ? null : sourceType.value;
 	}
 
+	public List<String> getSourceTitleValues()
+	{
+		if (sourceTitles != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (SourceTitle i : sourceTitles)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getListNameValues()
+	{
+		if (listNames != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ListName i : listNames)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public Integer getPositionOnListValue()
 	{
 		return (positionOnList == null) ? null : positionOnList.value;
+	}
+
+	public List<String> getCitationNoteValues()
+	{
+		if (citationNotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CitationNote i : citationNotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getResourceLinkValues()
+	{
+		if (resourceLinks != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ResourceLink i : resourceLinks)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

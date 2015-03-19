@@ -19,10 +19,13 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormsList150;
+import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -71,8 +74,32 @@ public class RelatedProduct
 		return x;
 	}
 
+	public List<ProductRelations> getProductRelationCodeValues()
+	{
+		if (productRelationCodes != null)
+		{
+			List<ProductRelations> list = new ArrayList<>();
+			for (ProductRelationCode i : productRelationCodes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public ProductFormsList150 getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
+	}
+
+	public List<ProductFormDetailsList175> getProductFormDetailValues()
+	{
+		if (productFormDetails != null)
+		{
+			List<ProductFormDetailsList175> list = new ArrayList<>();
+			for (ProductFormDetail i : productFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

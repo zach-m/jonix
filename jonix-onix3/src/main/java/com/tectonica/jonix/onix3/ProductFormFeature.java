@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -77,5 +78,17 @@ public class ProductFormFeature
 	public String getProductFormFeatureValueValue()
 	{
 		return (productFormFeatureValue == null) ? null : productFormFeatureValue.value;
+	}
+
+	public List<String> getProductFormFeatureDescriptionValues()
+	{
+		if (productFormFeatureDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ProductFormFeatureDescription i : productFormFeatureDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

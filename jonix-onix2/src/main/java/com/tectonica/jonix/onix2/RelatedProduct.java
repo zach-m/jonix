@@ -19,12 +19,16 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.EpublicationFormats;
 import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.ProductContentTypes;
+import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.ProductRelations;
@@ -162,6 +166,30 @@ public class RelatedProduct
 		return (productForm == null) ? null : productForm.value;
 	}
 
+	public List<ProductFormDetails> getProductFormDetailValues()
+	{
+		if (productFormDetails != null)
+		{
+			List<ProductFormDetails> list = new ArrayList<>();
+			for (ProductFormDetail i : productFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<BookFormDetails> getBookFormDetailValues()
+	{
+		if (bookFormDetails != null)
+		{
+			List<BookFormDetails> list = new ArrayList<>();
+			for (BookFormDetail i : bookFormDetails)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public ProductPackagingTypes getProductPackagingValue()
 	{
 		return (productPackaging == null) ? null : productPackaging.value;
@@ -180,6 +208,18 @@ public class RelatedProduct
 	public TradeCategorys getTradeCategoryValue()
 	{
 		return (tradeCategory == null) ? null : tradeCategory.value;
+	}
+
+	public List<ProductContentTypes> getProductContentTypeValues()
+	{
+		if (productContentTypes != null)
+		{
+			List<ProductContentTypes> list = new ArrayList<>();
+			for (ProductContentType i : productContentTypes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public EpublicationTypes getEpubTypeValue()

@@ -19,9 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
@@ -87,6 +89,18 @@ public class NotForSale
 		});
 
 		return x;
+	}
+
+	public List<CountryCodeIso31661s> getRightsCountryValues()
+	{
+		if (rightsCountrys != null)
+		{
+			List<CountryCodeIso31661s> list = new ArrayList<>();
+			for (RightsCountry i : rightsCountrys)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public Regions getRightsTerritoryValue()

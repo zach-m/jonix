@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -62,6 +63,18 @@ public class ProfessionalAffiliation
 		});
 
 		return x;
+	}
+
+	public List<String> getProfessionalPositionValues()
+	{
+		if (professionalPositions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ProfessionalPosition i : professionalPositions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public String getAffiliationValue()

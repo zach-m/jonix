@@ -19,11 +19,16 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.BibleContentss;
+import com.tectonica.jonix.codelist.BiblePurposes;
 import com.tectonica.jonix.codelist.BibleReferenceLocations;
+import com.tectonica.jonix.codelist.BibleTextFeatures;
 import com.tectonica.jonix.codelist.BibleTextOrganizations;
+import com.tectonica.jonix.codelist.BibleVersions;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StudyBibleTypes;
@@ -94,9 +99,45 @@ public class Bible
 		return x;
 	}
 
+	public List<BibleContentss> getBibleContentsValues()
+	{
+		if (bibleContentss != null)
+		{
+			List<BibleContentss> list = new ArrayList<>();
+			for (BibleContents i : bibleContentss)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<BibleVersions> getBibleVersionValues()
+	{
+		if (bibleVersions != null)
+		{
+			List<BibleVersions> list = new ArrayList<>();
+			for (BibleVersion i : bibleVersions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public StudyBibleTypes getStudyBibleTypeValue()
 	{
 		return (studyBibleType == null) ? null : studyBibleType.value;
+	}
+
+	public List<BiblePurposes> getBiblePurposeValues()
+	{
+		if (biblePurposes != null)
+		{
+			List<BiblePurposes> list = new ArrayList<>();
+			for (BiblePurpose i : biblePurposes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public BibleTextOrganizations getBibleTextOrganizationValue()
@@ -107,5 +148,17 @@ public class Bible
 	public BibleReferenceLocations getBibleReferenceLocationValue()
 	{
 		return (bibleReferenceLocation == null) ? null : bibleReferenceLocation.value;
+	}
+
+	public List<BibleTextFeatures> getBibleTextFeatureValues()
+	{
+		if (bibleTextFeatures != null)
+		{
+			List<BibleTextFeatures> list = new ArrayList<>();
+			for (BibleTextFeature i : bibleTextFeatures)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

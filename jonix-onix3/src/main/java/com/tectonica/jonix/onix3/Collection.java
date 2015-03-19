@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -88,5 +89,17 @@ public class Collection
 	public String getSourceNameValue()
 	{
 		return (sourceName == null) ? null : sourceName.value;
+	}
+
+	public List<String> getContributorStatementValues()
+	{
+		if (contributorStatements != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ContributorStatement i : contributorStatements)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

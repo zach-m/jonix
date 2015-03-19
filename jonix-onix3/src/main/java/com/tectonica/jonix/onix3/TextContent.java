@@ -19,9 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextTypes;
 
@@ -85,8 +87,56 @@ public class TextContent
 		return (textType == null) ? null : textType.value;
 	}
 
+	public List<ContentAudiences> getContentAudienceValues()
+	{
+		if (contentAudiences != null)
+		{
+			List<ContentAudiences> list = new ArrayList<>();
+			for (ContentAudience i : contentAudiences)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getTextValues()
+	{
+		if (texts != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (Text i : texts)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getTextAuthorValues()
+	{
+		if (textAuthors != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (TextAuthor i : textAuthors)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public String getTextSourceCorporateValue()
 	{
 		return (textSourceCorporate == null) ? null : textSourceCorporate.value;
+	}
+
+	public List<String> getSourceTitleValues()
+	{
+		if (sourceTitles != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (SourceTitle i : sourceTitles)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

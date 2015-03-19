@@ -78,6 +78,7 @@ public class OnixClassGen
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
 		p.println("import java.util.List;");
+		p.println("import java.util.ArrayList;");
 		p.println();
 		p.printf("import %s.DU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
@@ -141,18 +142,33 @@ public class OnixClassGen
 		// declare value getters
 		for (OnixContentClassMember m : clz.members)
 		{
-			if (m.multiplicity.singular)
+			final OnixValueClass ovc = ref.valueClassByName(m.onixTypeName);
+			if (ovc != null)
 			{
-				final OnixValueClass ovc = ref.valueClassByName(m.onixTypeName);
-				if (ovc != null)
+				final OnixValueClassMember vm = ovc.valueMember;
+				final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
+				final String field = fieldOf(m.onixTypeName);
+				if (m.multiplicity.singular)
 				{
-					final OnixValueClassMember vm = ovc.valueMember;
-					final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
-					final String field = fieldOf(m.onixTypeName);
 					p.println();
 					p.printf("\t" + "public %s get%sValue()\n", ti.javaType, m.onixTypeName);
 					p.printf("\t" + "{\n");
 					p.printf("\t\t" + "return (%s == null) ? null : %s.value;\n", field, field);
+					p.printf("\t" + "}\n");
+				}
+				else
+				{
+					p.println();
+					p.printf("\t" + "public List<%s> get%sValues()\n", ti.javaType, m.onixTypeName);
+					p.printf("\t" + "{\n");
+					p.printf("\t\t" + "if (%ss != null) \n", field);
+					p.printf("\t\t" + "{ \n", field, field);
+					p.printf("\t\t\t" + "List<%s> list = new ArrayList<>(); \n", ti.javaType);
+					p.printf("\t\t\t" + "for (%s i : %ss) \n", m.onixTypeName, field);
+					p.printf("\t\t\t\t" + "list.add(i.value); \n");
+					p.printf("\t\t\t" + "return list; \n");
+					p.printf("\t\t" + "} \n");
+					p.printf("\t\t" + "return null;\n");
 					p.printf("\t" + "}\n");
 				}
 			}

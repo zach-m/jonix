@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -104,5 +105,41 @@ public class NewSupplier
 	public String getSupplierNameValue()
 	{
 		return (supplierName == null) ? null : supplierName.value;
+	}
+
+	public List<String> getTelephoneNumberValues()
+	{
+		if (telephoneNumbers != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (TelephoneNumber i : telephoneNumbers)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getFaxNumberValues()
+	{
+		if (faxNumbers != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (FaxNumber i : faxNumbers)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getEmailAddressValues()
+	{
+		if (emailAddresss != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (EmailAddress i : emailAddresss)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -100,6 +101,18 @@ public class PublishingDetail
 		return x;
 	}
 
+	public List<String> getCityOfPublicationValues()
+	{
+		if (cityOfPublications != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CityOfPublication i : cityOfPublications)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public CountryCodeIso31661s getCountryOfPublicationValue()
 	{
 		return (countryOfPublication == null) ? null : countryOfPublication.value;
@@ -108,6 +121,18 @@ public class PublishingDetail
 	public PublishingStatuss getPublishingStatusValue()
 	{
 		return (publishingStatus == null) ? null : publishingStatus.value;
+	}
+
+	public List<String> getPublishingStatusNoteValues()
+	{
+		if (publishingStatusNotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (PublishingStatusNote i : publishingStatusNotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public Integer getLatestReprintNumberValue()

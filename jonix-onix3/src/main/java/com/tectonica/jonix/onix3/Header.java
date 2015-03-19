@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -101,6 +102,18 @@ public class Header
 	public String getSentDateTimeValue()
 	{
 		return (sentDateTime == null) ? null : sentDateTime.value;
+	}
+
+	public List<String> getMessageNoteValues()
+	{
+		if (messageNotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (MessageNote i : messageNotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public LanguageCodeIso6392Bs getDefaultLanguageOfTextValue()

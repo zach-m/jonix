@@ -19,9 +19,12 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
@@ -143,6 +146,42 @@ public class Contributor
 		return (sequenceNumber == null) ? null : sequenceNumber.value;
 	}
 
+	public List<ContributorRoles> getContributorRoleValues()
+	{
+		if (contributorRoles != null)
+		{
+			List<ContributorRoles> list = new ArrayList<>();
+			for (ContributorRole i : contributorRoles)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<LanguageCodeIso6392Bs> getFromLanguageValues()
+	{
+		if (fromLanguages != null)
+		{
+			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			for (FromLanguage i : fromLanguages)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<LanguageCodeIso6392Bs> getToLanguageValues()
+	{
+		if (toLanguages != null)
+		{
+			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			for (ToLanguage i : toLanguages)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
 	public PersonOrganizationNameTypes getNameTypeValue()
 	{
 		return (nameType == null) ? null : nameType.value;
@@ -206,6 +245,30 @@ public class Contributor
 	public String getCorporateNameInvertedValue()
 	{
 		return (corporateNameInverted == null) ? null : corporateNameInverted.value;
+	}
+
+	public List<String> getBiographicalNoteValues()
+	{
+		if (biographicalNotes != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (BiographicalNote i : biographicalNotes)
+				list.add(i.value);
+			return list;
+		}
+		return null;
+	}
+
+	public List<String> getContributorDescriptionValues()
+	{
+		if (contributorDescriptions != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (ContributorDescription i : contributorDescriptions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public UnnamedPersonss getUnnamedPersonsValue()

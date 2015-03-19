@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -74,5 +75,17 @@ public class CopyrightStatement
 		});
 
 		return x;
+	}
+
+	public List<String> getCopyrightYearValues()
+	{
+		if (copyrightYears != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (CopyrightYear i : copyrightYears)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }

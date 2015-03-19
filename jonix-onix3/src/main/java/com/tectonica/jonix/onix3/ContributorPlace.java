@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
@@ -86,5 +87,17 @@ public class ContributorPlace
 	public Regions getRegionCodeValue()
 	{
 		return (regionCode == null) ? null : regionCode.value;
+	}
+
+	public List<String> getLocationNameValues()
+	{
+		if (locationNames != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (LocationName i : locationNames)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 }
