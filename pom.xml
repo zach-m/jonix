@@ -38,6 +38,7 @@
 	</scm>
 
 	<modules>
+		<module>jonix</module>
 		<module>jonix-codegen</module>
 		<module>jonix-onix2</module>
 		<module>jonix-onix3</module>
@@ -67,6 +68,11 @@
 	<dependencyManagement>
 		<dependencies>
 			<!-- Internal Projects -->
+			<dependency>
+				<groupId>com.tectonica</groupId>
+				<artifactId>jonix</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.tectonica</groupId>
 				<artifactId>jonix-codegen</artifactId>

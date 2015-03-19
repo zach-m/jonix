@@ -1,4 +1,4 @@
-jonix
+![jonix](JONIX.png)
 =
 
 Commercial-grade library for extracting data from ONIX sources.  
