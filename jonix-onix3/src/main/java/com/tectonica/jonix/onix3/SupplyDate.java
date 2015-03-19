@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.DateFormats;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplyDateRoles;
 
 /*
@@ -34,7 +34,7 @@ public class SupplyDate
 	public static final String shortname = "supplydate";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public SupplyDateRole supplyDateRole; // Required
@@ -46,7 +46,7 @@ public class SupplyDate
 		final SupplyDate x = new SupplyDate();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()

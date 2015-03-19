@@ -139,19 +139,21 @@ public class Parser
 		String enumName = enumJavaName(onixSimpleType.comment);
 		if (!context.enumNames.add(enumName))
 			enumName += onixSimpleType.name;
-		return enumName + "s";
+		return enumName;
 	}
 
 	private String enumJavaName(String enumComment)
 	{
 		final String[] splits = enumComment.replaceAll("[^a-zA-Z0-9 /]+", "").replaceAll("[ /]{2,}", " ").split(" |/");
 		StringBuilder sb = new StringBuilder();
-		for (String split : splits)
+		for (int i = 0; i < splits.length; i++)
 		{
-			split = split.toLowerCase();
+			String split = splits[i].toLowerCase();
+			if (i == splits.length - 1 && (split.equalsIgnoreCase("code") || split.equalsIgnoreCase("codes")))
+				break;
 			sb.append(Character.toUpperCase(split.charAt(0))).append(split.substring(1));
 		}
-		return sb.toString();
+		return sb.toString() + "s";
 	}
 
 	private void processSimpleType(Element simpleType, final OnixSimpleType onixSimpleType)

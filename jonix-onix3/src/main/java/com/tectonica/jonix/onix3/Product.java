@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypeCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -35,7 +35,7 @@ public class Product
 	public static final String shortname = "product";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public RecordReference recordReference; // Required
@@ -58,7 +58,7 @@ public class Product
 		final Product x = new Product();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -106,12 +106,12 @@ public class Product
 		return (recordReference == null) ? null : recordReference.value;
 	}
 
-	public NotificationOrUpdateTypeCodes getNotificationTypeValue()
+	public NotificationOrUpdateTypes getNotificationTypeValue()
 	{
 		return (notificationType == null) ? null : notificationType.value;
 	}
 
-	public RecordSourceTypeCodes getRecordSourceTypeValue()
+	public RecordSourceTypes getRecordSourceTypeValue()
 	{
 		return (recordSourceType == null) ? null : recordSourceType.value;
 	}

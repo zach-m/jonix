@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.PriceIdentifierTypeCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.PriceIdentifierTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class PriceIDType
 	public static final String shortname = "x506";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PriceIdentifierTypeCodes value;
+	public PriceIdentifierTypes value;
 
 	public static PriceIDType fromDoc(org.w3c.dom.Element element)
 	{
 		final PriceIDType x = new PriceIDType();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = PriceIdentifierTypeCodes.byValue(DU.getContentAsString(element));
+		x.value = PriceIdentifierTypes.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

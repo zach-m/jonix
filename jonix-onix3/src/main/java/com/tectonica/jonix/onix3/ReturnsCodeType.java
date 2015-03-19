@@ -20,7 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 
 /*
@@ -33,7 +33,7 @@ public class ReturnsCodeType
 	public static final String shortname = "j268";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public ReturnsConditionsCodeTypes value;
@@ -43,7 +43,7 @@ public class ReturnsCodeType
 		final ReturnsCodeType x = new ReturnsCodeType();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		x.value = ReturnsConditionsCodeTypes.byValue(DU.getContentAsString(element));

@@ -20,7 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Velocitys;
 
 /*
@@ -33,7 +33,7 @@ public class VelocityMetric
 	public static final String shortname = "x504";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public Velocitys value;
@@ -43,7 +43,7 @@ public class VelocityMetric
 		final VelocityMetric x = new VelocityMetric();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		x.value = Velocitys.byValue(DU.getContentAsString(element));

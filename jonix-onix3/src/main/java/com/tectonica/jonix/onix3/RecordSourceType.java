@@ -20,7 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -32,20 +32,20 @@ public class RecordSourceType
 	public static final String shortname = "a194";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public RecordSourceTypeCodes value;
+	public RecordSourceTypes value;
 
 	public static RecordSourceType fromDoc(org.w3c.dom.Element element)
 	{
 		final RecordSourceType x = new RecordSourceType();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = RecordSourceTypeCodes.byValue(DU.getContentAsString(element));
+		x.value = RecordSourceTypes.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

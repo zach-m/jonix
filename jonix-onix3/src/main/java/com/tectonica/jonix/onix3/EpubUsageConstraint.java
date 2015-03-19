@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageStatuss;
 import com.tectonica.jonix.codelist.UsageTypes;
 
@@ -36,7 +36,7 @@ public class EpubUsageConstraint
 	public static final String shortname = "epubusageconstraint";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public EpubUsageType epubUsageType; // Required
@@ -48,7 +48,7 @@ public class EpubUsageConstraint
 		final EpubUsageConstraint x = new EpubUsageConstraint();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()

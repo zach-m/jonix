@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.SeriesIdentifierTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,7 +33,7 @@ public class CollectionIdentifier
 	public static final String shortname = "collectionidentifier";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public CollectionIDType collectionIDType; // Required
@@ -45,7 +45,7 @@ public class CollectionIdentifier
 		final CollectionIdentifier x = new CollectionIdentifier();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -66,7 +66,7 @@ public class CollectionIdentifier
 		return x;
 	}
 
-	public SeriesIdentifierTypeCodes getCollectionIDTypeValue()
+	public SeriesIdentifierTypes getCollectionIDTypeValue()
 	{
 		return (collectionIDType == null) ? null : collectionIDType.value;
 	}

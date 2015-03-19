@@ -24,8 +24,8 @@ import java.util.List;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.PublishingStatuss;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.SalesRightsTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SalesRightsTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -37,7 +37,7 @@ public class PublishingDetail
 	public static final String shortname = "publishingdetail";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public List<Imprint> imprints; // OneOrMore
@@ -59,7 +59,7 @@ public class PublishingDetail
 		final PublishingDetail x = new PublishingDetail();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -115,7 +115,7 @@ public class PublishingDetail
 		return (latestReprintNumber == null) ? null : latestReprintNumber.value;
 	}
 
-	public SalesRightsTypeCodes getROWSalesRightsTypeValue()
+	public SalesRightsTypes getROWSalesRightsTypeValue()
 	{
 		return (rowSalesRightsType == null) ? null : rowSalesRightsType.value;
 	}

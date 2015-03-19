@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.ThesisTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ThesisTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class ThesisType
 	public static final String shortname = "b368";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ThesisTypeCodes value;
+	public ThesisTypes value;
 
 	public static ThesisType fromDoc(org.w3c.dom.Element element)
 	{
 		final ThesisType x = new ThesisType();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = ThesisTypeCodes.byValue(DU.getContentAsString(element));
+		x.value = ThesisTypes.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

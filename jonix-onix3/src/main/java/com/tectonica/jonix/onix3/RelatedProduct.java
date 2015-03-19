@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.ProductForms;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ProductFormsList150;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -35,7 +35,7 @@ public class RelatedProduct
 	public static final String shortname = "relatedproduct";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public List<ProductRelationCode> productRelationCodes; // OneOrMore
@@ -48,7 +48,7 @@ public class RelatedProduct
 		final RelatedProduct x = new RelatedProduct();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -71,7 +71,7 @@ public class RelatedProduct
 		return x;
 	}
 
-	public ProductForms getProductFormValue()
+	public ProductFormsList150 getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
 	}

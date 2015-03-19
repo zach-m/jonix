@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.PublishingRoleCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.PublishingRoles;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -35,7 +35,7 @@ public class Publisher
 	public static final String shortname = "publisher";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public PublishingRole publishingRole; // Required
@@ -48,7 +48,7 @@ public class Publisher
 		final Publisher x = new Publisher();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -71,7 +71,7 @@ public class Publisher
 		return x;
 	}
 
-	public PublishingRoleCodes getPublishingRoleValue()
+	public PublishingRoles getPublishingRoleValue()
 	{
 		return (publishingRole == null) ? null : publishingRole.value;
 	}

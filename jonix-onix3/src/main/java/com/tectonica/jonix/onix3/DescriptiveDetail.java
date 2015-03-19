@@ -26,11 +26,11 @@ import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.IllustratedNotIllustrateds;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
-import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.ThesisTypeCodes;
-import com.tectonica.jonix.codelist.TradeCategoryCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ThesisTypes;
+import com.tectonica.jonix.codelist.TradeCategorys;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -42,7 +42,7 @@ public class DescriptiveDetail
 	public static final String shortname = "descriptivedetail";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public ProductComposition productComposition; // Required
@@ -97,7 +97,7 @@ public class DescriptiveDetail
 		final DescriptiveDetail x = new DescriptiveDetail();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -209,7 +209,7 @@ public class DescriptiveDetail
 		return (productComposition == null) ? null : productComposition.value;
 	}
 
-	public ProductForms getProductFormValue()
+	public ProductFormsList150 getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
 	}
@@ -219,7 +219,7 @@ public class DescriptiveDetail
 		return (productPackaging == null) ? null : productPackaging.value;
 	}
 
-	public TradeCategoryCodes getTradeCategoryValue()
+	public TradeCategorys getTradeCategoryValue()
 	{
 		return (tradeCategory == null) ? null : tradeCategory.value;
 	}
@@ -234,7 +234,7 @@ public class DescriptiveDetail
 		return (countryOfManufacture == null) ? null : countryOfManufacture.value;
 	}
 
-	public ThesisTypeCodes getThesisTypeValue()
+	public ThesisTypes getThesisTypeValue()
 	{
 		return (thesisType == null) ? null : thesisType.value;
 	}

@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.ExtentUnitCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ExtentUnits;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class ExtentUnit
 	public static final String shortname = "b220";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ExtentUnitCodes value;
+	public ExtentUnits value;
 
 	public static ExtentUnit fromDoc(org.w3c.dom.Element element)
 	{
 		final ExtentUnit x = new ExtentUnit();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = ExtentUnitCodes.byValue(DU.getContentAsString(element));
+		x.value = ExtentUnits.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.MeasureUnitCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.MeasureUnits;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class MeasureUnitCode
 	public static final String shortname = "c095";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public MeasureUnitCodes value;
+	public MeasureUnits value;
 
 	public static MeasureUnitCode fromDoc(org.w3c.dom.Element element)
 	{
 		final MeasureUnitCode x = new MeasureUnitCode();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = MeasureUnitCodes.byValue(DU.getContentAsString(element));
+		x.value = MeasureUnits.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

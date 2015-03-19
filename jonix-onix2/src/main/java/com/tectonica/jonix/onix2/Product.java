@@ -23,23 +23,23 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.EpublicationFormatCodes;
-import com.tectonica.jonix.codelist.EpublicationTypeCodes;
-import com.tectonica.jonix.codelist.FrontCoverImageFileFormatCodes;
-import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypeCodes;
+import com.tectonica.jonix.codelist.EpublicationFormats;
+import com.tectonica.jonix.codelist.EpublicationTypes;
+import com.tectonica.jonix.codelist.FrontCoverImageFileFormats;
+import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypeCodes;
+import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.ProductCompositions;
-import com.tectonica.jonix.codelist.ProductFormCodes;
+import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.PublishingStatuss;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormatCodes;
-import com.tectonica.jonix.codelist.ThesisTypeCodes;
-import com.tectonica.jonix.codelist.TradeCategoryCodes;
-import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.ThesisTypes;
+import com.tectonica.jonix.codelist.TradeCategorys;
+import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -50,12 +50,12 @@ public class Product
 	public static final String refname = "Product";
 	public static final String shortname = "product";
 
-	public TextFormatCodes textformat;
+	public TextFormats textformat;
 	public TextCaseFlags textcase;
 	public LanguageCodeIso6392Bs language;
-	public TransliterationSchemeCodes transliteration;
+	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public RecordReference recordReference; // Required
@@ -215,12 +215,12 @@ public class Product
 	{
 		final Product x = new Product();
 
-		x.textformat = TextFormatCodes.byValue(DU.getAttribute(element, "textformat"));
+		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
 		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
 		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemeCodes.byValue(DU.getAttribute(element, "transliteration"));
+		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -544,7 +544,7 @@ public class Product
 		return (recordReference == null) ? null : recordReference.value;
 	}
 
-	public NotificationOrUpdateTypeCodes getNotificationTypeValue()
+	public NotificationOrUpdateTypes getNotificationTypeValue()
 	{
 		return (notificationType == null) ? null : notificationType.value;
 	}
@@ -559,7 +559,7 @@ public class Product
 		return (deletionText == null) ? null : deletionText.value;
 	}
 
-	public RecordSourceTypeCodes getRecordSourceTypeValue()
+	public RecordSourceTypes getRecordSourceTypeValue()
 	{
 		return (recordSourceType == null) ? null : recordSourceType.value;
 	}
@@ -619,7 +619,7 @@ public class Product
 		return (replacesEAN13 == null) ? null : replacesEAN13.value;
 	}
 
-	public ProductFormCodes getProductFormValue()
+	public ProductForms getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
 	}
@@ -639,12 +639,12 @@ public class Product
 		return (numberOfPieces == null) ? null : numberOfPieces.value;
 	}
 
-	public TradeCategoryCodes getTradeCategoryValue()
+	public TradeCategorys getTradeCategoryValue()
 	{
 		return (tradeCategory == null) ? null : tradeCategory.value;
 	}
 
-	public EpublicationTypeCodes getEpubTypeValue()
+	public EpublicationTypes getEpubTypeValue()
 	{
 		return (epubType == null) ? null : epubType.value;
 	}
@@ -659,7 +659,7 @@ public class Product
 		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
 	}
 
-	public EpublicationFormatCodes getEpubFormatValue()
+	public EpublicationFormats getEpubFormatValue()
 	{
 		return (epubFormat == null) ? null : epubFormat.value;
 	}
@@ -674,7 +674,7 @@ public class Product
 		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
 	}
 
-	public EpublicationFormatCodes getEpubSourceValue()
+	public EpublicationFormats getEpubSourceValue()
 	{
 		return (epubSource == null) ? null : epubSource.value;
 	}
@@ -724,7 +724,7 @@ public class Product
 		return (translationOfTitle == null) ? null : translationOfTitle.value;
 	}
 
-	public ThesisTypeCodes getThesisTypeValue()
+	public ThesisTypes getThesisTypeValue()
 	{
 		return (thesisType == null) ? null : thesisType.value;
 	}
@@ -864,12 +864,12 @@ public class Product
 		return (mainDescription == null) ? null : mainDescription.value;
 	}
 
-	public FrontCoverImageFileFormatCodes getCoverImageFormatCodeValue()
+	public FrontCoverImageFileFormats getCoverImageFormatCodeValue()
 	{
 		return (coverImageFormatCode == null) ? null : coverImageFormatCode.value;
 	}
 
-	public FrontCoverImageFileLinkTypeCodes getCoverImageLinkTypeCodeValue()
+	public FrontCoverImageFileLinkTypes getCoverImageLinkTypeCodeValue()
 	{
 		return (coverImageLinkTypeCode == null) ? null : coverImageLinkTypeCode.value;
 	}

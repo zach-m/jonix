@@ -22,17 +22,17 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.EpublicationFormatCodes;
-import com.tectonica.jonix.codelist.EpublicationTypeCodes;
+import com.tectonica.jonix.codelist.EpublicationFormats;
+import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
-import com.tectonica.jonix.codelist.ProductFormCodes;
+import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
-import com.tectonica.jonix.codelist.ProductRelationCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ProductRelations;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormatCodes;
-import com.tectonica.jonix.codelist.TradeCategoryCodes;
-import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TradeCategorys;
+import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -43,12 +43,12 @@ public class RelatedProduct
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 
-	public TextFormatCodes textformat;
+	public TextFormats textformat;
 	public TextCaseFlags textcase;
 	public LanguageCodeIso6392Bs language;
-	public TransliterationSchemeCodes transliteration;
+	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public RelationCode relationCode; // Required
@@ -78,12 +78,12 @@ public class RelatedProduct
 	{
 		final RelatedProduct x = new RelatedProduct();
 
-		x.textformat = TextFormatCodes.byValue(DU.getAttribute(element, "textformat"));
+		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
 		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
 		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemeCodes.byValue(DU.getAttribute(element, "transliteration"));
+		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -142,7 +142,7 @@ public class RelatedProduct
 		return x;
 	}
 
-	public ProductRelationCodes getRelationCodeValue()
+	public ProductRelations getRelationCodeValue()
 	{
 		return (relationCode == null) ? null : relationCode.value;
 	}
@@ -157,7 +157,7 @@ public class RelatedProduct
 		return (ean13 == null) ? null : ean13.value;
 	}
 
-	public ProductFormCodes getProductFormValue()
+	public ProductForms getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
 	}
@@ -177,12 +177,12 @@ public class RelatedProduct
 		return (numberOfPieces == null) ? null : numberOfPieces.value;
 	}
 
-	public TradeCategoryCodes getTradeCategoryValue()
+	public TradeCategorys getTradeCategoryValue()
 	{
 		return (tradeCategory == null) ? null : tradeCategory.value;
 	}
 
-	public EpublicationTypeCodes getEpubTypeValue()
+	public EpublicationTypes getEpubTypeValue()
 	{
 		return (epubType == null) ? null : epubType.value;
 	}
@@ -197,7 +197,7 @@ public class RelatedProduct
 		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
 	}
 
-	public EpublicationFormatCodes getEpubFormatValue()
+	public EpublicationFormats getEpubFormatValue()
 	{
 		return (epubFormat == null) ? null : epubFormat.value;
 	}

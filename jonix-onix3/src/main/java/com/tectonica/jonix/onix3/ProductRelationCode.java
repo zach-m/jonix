@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.ProductRelationCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ProductRelations;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class ProductRelationCode
 	public static final String shortname = "x455";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProductRelationCodes value;
+	public ProductRelations value;
 
 	public static ProductRelationCode fromDoc(org.w3c.dom.Element element)
 	{
 		final ProductRelationCode x = new ProductRelationCode();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = ProductRelationCodes.byValue(DU.getContentAsString(element));
+		x.value = ProductRelations.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

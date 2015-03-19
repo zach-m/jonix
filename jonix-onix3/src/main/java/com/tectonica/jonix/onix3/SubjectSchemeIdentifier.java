@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifierCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class SubjectSchemeIdentifier
 	public static final String shortname = "b067";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SubjectSchemeIdentifierCodes value;
+	public SubjectSchemeIdentifiers value;
 
 	public static SubjectSchemeIdentifier fromDoc(org.w3c.dom.Element element)
 	{
 		final SubjectSchemeIdentifier x = new SubjectSchemeIdentifier();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = SubjectSchemeIdentifierCodes.byValue(DU.getContentAsString(element));
+		x.value = SubjectSchemeIdentifiers.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

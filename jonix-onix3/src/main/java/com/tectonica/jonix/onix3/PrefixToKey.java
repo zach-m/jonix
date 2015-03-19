@@ -21,7 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
 
 /*
@@ -34,7 +34,7 @@ public class PrefixToKey
 	public static final String shortname = "b247";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 	public String collationkey;
 	public TextScriptCodeIso15924s textscript;
@@ -47,7 +47,7 @@ public class PrefixToKey
 		final PrefixToKey x = new PrefixToKey();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 		x.collationkey = DU.getAttribute(element, "collationkey");
 		x.textscript = TextScriptCodeIso15924s.byValue(DU.getAttribute(element, "textscript"));

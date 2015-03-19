@@ -25,16 +25,16 @@ import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
-import com.tectonica.jonix.codelist.PriceStatusCodes;
-import com.tectonica.jonix.codelist.PriceTypeCodes;
+import com.tectonica.jonix.codelist.PriceStatuss;
 import com.tectonica.jonix.codelist.PriceTypeQualifiers;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.RegionCodes;
+import com.tectonica.jonix.codelist.PriceTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.TaxRateCodeds;
 import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormatCodes;
-import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
-import com.tectonica.jonix.codelist.UnitOfPricingCodes;
+import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.codelist.UnitOfPricings;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -45,12 +45,12 @@ public class Price
 	public static final String refname = "Price";
 	public static final String shortname = "price";
 
-	public TextFormatCodes textformat;
+	public TextFormats textformat;
 	public TextCaseFlags textcase;
 	public LanguageCodeIso6392Bs language;
-	public TransliterationSchemeCodes transliteration;
+	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public PriceTypeCode priceTypeCode; // Optional
@@ -85,12 +85,12 @@ public class Price
 	{
 		final Price x = new Price();
 
-		x.textformat = TextFormatCodes.byValue(DU.getAttribute(element, "textformat"));
+		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
 		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
 		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemeCodes.byValue(DU.getAttribute(element, "transliteration"));
+		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -159,7 +159,7 @@ public class Price
 		return x;
 	}
 
-	public PriceTypeCodes getPriceTypeCodeValue()
+	public PriceTypes getPriceTypeCodeValue()
 	{
 		return (priceTypeCode == null) ? null : priceTypeCode.value;
 	}
@@ -174,7 +174,7 @@ public class Price
 		return (priceTypeDescription == null) ? null : priceTypeDescription.value;
 	}
 
-	public UnitOfPricingCodes getPricePerValue()
+	public UnitOfPricings getPricePerValue()
 	{
 		return (pricePer == null) ? null : pricePer.value;
 	}
@@ -199,7 +199,7 @@ public class Price
 		return (discountPercent == null) ? null : discountPercent.value;
 	}
 
-	public PriceStatusCodes getPriceStatusValue()
+	public PriceStatuss getPriceStatusValue()
 	{
 		return (priceStatus == null) ? null : priceStatus.value;
 	}
@@ -214,7 +214,7 @@ public class Price
 		return (currencyCode == null) ? null : currencyCode.value;
 	}
 
-	public RegionCodes getTerritoryValue()
+	public Regions getTerritoryValue()
 	{
 		return (territory == null) ? null : territory.value;
 	}
@@ -224,7 +224,7 @@ public class Price
 		return (countryExcluded == null) ? null : countryExcluded.value;
 	}
 
-	public RegionCodes getTerritoryExcludedValue()
+	public Regions getTerritoryExcludedValue()
 	{
 		return (territoryExcluded == null) ? null : territoryExcluded.value;
 	}

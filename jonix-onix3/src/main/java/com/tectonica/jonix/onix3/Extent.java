@@ -20,9 +20,9 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.ExtentTypeCodes;
-import com.tectonica.jonix.codelist.ExtentUnitCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ExtentTypes;
+import com.tectonica.jonix.codelist.ExtentUnits;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -34,7 +34,7 @@ public class Extent
 	public static final String shortname = "extent";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public ExtentType extentType; // Required
@@ -47,7 +47,7 @@ public class Extent
 		final Extent x = new Extent();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -70,7 +70,7 @@ public class Extent
 		return x;
 	}
 
-	public ExtentTypeCodes getExtentTypeValue()
+	public ExtentTypes getExtentTypeValue()
 	{
 		return (extentType == null) ? null : extentType.value;
 	}
@@ -85,7 +85,7 @@ public class Extent
 		return (extentValueRoman == null) ? null : extentValueRoman.value;
 	}
 
-	public ExtentUnitCodes getExtentUnitValue()
+	public ExtentUnits getExtentUnitValue()
 	{
 		return (extentUnit == null) ? null : extentUnit.value;
 	}

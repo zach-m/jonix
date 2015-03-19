@@ -23,8 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.UnpricedItemTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.UnpricedItemTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -36,7 +36,7 @@ public class SupplyDetail
 	public static final String shortname = "supplydetail";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public Supplier supplier; // Required
@@ -57,7 +57,7 @@ public class SupplyDetail
 		final SupplyDetail x = new SupplyDetail();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -111,7 +111,7 @@ public class SupplyDetail
 		return (packQuantity == null) ? null : packQuantity.value;
 	}
 
-	public UnpricedItemTypeCodes getUnpricedItemTypeValue()
+	public UnpricedItemTypes getUnpricedItemTypeValue()
 	{
 		return (unpricedItemType == null) ? null : unpricedItemType.value;
 	}

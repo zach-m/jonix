@@ -23,8 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
-import com.tectonica.jonix.codelist.PriceTypeCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.PriceTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -36,7 +36,7 @@ public class ComparisonProductPrice
 	public static final String shortname = "comparisonproductprice";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public List<ProductIdentifier> productIdentifiers; // OneOrMore
@@ -49,7 +49,7 @@ public class ComparisonProductPrice
 		final ComparisonProductPrice x = new ComparisonProductPrice();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -72,7 +72,7 @@ public class ComparisonProductPrice
 		return x;
 	}
 
-	public PriceTypeCodes getPriceTypeValue()
+	public PriceTypes getPriceTypeValue()
 	{
 		return (priceType == null) ? null : priceType.value;
 	}

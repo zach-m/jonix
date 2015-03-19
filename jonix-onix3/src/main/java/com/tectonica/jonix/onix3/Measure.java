@@ -20,9 +20,9 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.MeasureTypeCodes;
-import com.tectonica.jonix.codelist.MeasureUnitCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.MeasureTypes;
+import com.tectonica.jonix.codelist.MeasureUnits;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -34,7 +34,7 @@ public class Measure
 	public static final String shortname = "measure";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public MeasureType measureType; // Required
@@ -46,7 +46,7 @@ public class Measure
 		final Measure x = new Measure();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -67,7 +67,7 @@ public class Measure
 		return x;
 	}
 
-	public MeasureTypeCodes getMeasureTypeValue()
+	public MeasureTypes getMeasureTypeValue()
 	{
 		return (measureType == null) ? null : measureType.value;
 	}
@@ -77,7 +77,7 @@ public class Measure
 		return (measurement == null) ? null : measurement.value;
 	}
 
-	public MeasureUnitCodes getMeasureUnitCodeValue()
+	public MeasureUnits getMeasureUnitCodeValue()
 	{
 		return (measureUnitCode == null) ? null : measureUnitCode.value;
 	}

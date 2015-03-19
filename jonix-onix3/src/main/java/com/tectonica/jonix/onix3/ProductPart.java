@@ -23,8 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.ProductForms;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ProductFormsList150;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -36,7 +36,7 @@ public class ProductPart
 	public static final String shortname = "productpart";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public PrimaryPart primaryPart; // Optional
@@ -55,7 +55,7 @@ public class ProductPart
 		final ProductPart x = new ProductPart();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -90,7 +90,7 @@ public class ProductPart
 		return x;
 	}
 
-	public ProductForms getProductFormValue()
+	public ProductFormsList150 getProductFormValue()
 	{
 		return (productForm == null) ? null : productForm.value;
 	}

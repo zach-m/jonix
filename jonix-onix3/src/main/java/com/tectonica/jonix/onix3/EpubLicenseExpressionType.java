@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.LicenseExpressionTypeCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.LicenseExpressionTypes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class EpubLicenseExpressionType
 	public static final String shortname = "x508";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public LicenseExpressionTypeCodes value;
+	public LicenseExpressionTypes value;
 
 	public static EpubLicenseExpressionType fromDoc(org.w3c.dom.Element element)
 	{
 		final EpubLicenseExpressionType x = new EpubLicenseExpressionType();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = LicenseExpressionTypeCodes.byValue(DU.getContentAsString(element));
+		x.value = LicenseExpressionTypes.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

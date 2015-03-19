@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.RightsTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.RightsTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -35,7 +35,7 @@ public class CopyrightStatement
 	public static final String shortname = "copyrightstatement";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public CopyrightType copyrightType; // Optional
@@ -47,7 +47,7 @@ public class CopyrightStatement
 		final CopyrightStatement x = new CopyrightStatement();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -68,7 +68,7 @@ public class CopyrightStatement
 		return x;
 	}
 
-	public RightsTypeCodes getCopyrightTypeValue()
+	public RightsTypes getCopyrightTypeValue()
 	{
 		return (copyrightType == null) ? null : copyrightType.value;
 	}

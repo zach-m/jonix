@@ -22,8 +22,8 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
-import com.tectonica.jonix.codelist.LanguageRoleCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
 
 /*
@@ -36,7 +36,7 @@ public class Language
 	public static final String shortname = "language";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public LanguageRole languageRole; // Required
@@ -49,7 +49,7 @@ public class Language
 		final Language x = new Language();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -72,7 +72,7 @@ public class Language
 		return x;
 	}
 
-	public LanguageRoleCodes getLanguageRoleValue()
+	public LanguageRoles getLanguageRoleValue()
 	{
 		return (languageRole == null) ? null : languageRole.value;
 	}

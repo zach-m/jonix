@@ -24,8 +24,8 @@ import java.util.List;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.ContributorPlaceRelators;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.RegionCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.Regions;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -37,7 +37,7 @@ public class ContributorPlace
 	public static final String shortname = "contributorplace";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public ContributorPlaceRelator contributorPlaceRelator; // Required
@@ -50,7 +50,7 @@ public class ContributorPlace
 		final ContributorPlace x = new ContributorPlace();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -83,7 +83,7 @@ public class ContributorPlace
 		return (countryCode == null) ? null : countryCode.value;
 	}
 
-	public RegionCodes getRegionCodeValue()
+	public Regions getRegionCodeValue()
 	{
 		return (regionCode == null) ? null : regionCode.value;
 	}

@@ -27,7 +27,7 @@ import java.util.Map;
  */
 
 /**
- * Product form
+ * Product form code
  */
 public enum ProductForms
 {
@@ -93,7 +93,7 @@ public enum ProductForms
 	Pre_recorded_SD_card("AL"), //
 
 	/**
-	 * Other audio format not specified by AB to AK.
+	 * Other audio format not specified by AB to AL.
 	 */
 	Other_audio_format("AZ"), //
 
@@ -177,7 +177,7 @@ public enum ProductForms
 	Foam_book("BP"), //
 
 	/**
-	 * Other book format or binding not specified by BB to BO.
+	 * Other book format or binding not specified by BB to BP.
 	 */
 	Other_book_format("BZ"), //
 
@@ -206,16 +206,21 @@ public enum ProductForms
 	Other_cartographic("CZ"), //
 
 	/**
-	 * Digital content delivered on a physical carrier (detail unspecified).
+	 * Digital or multimedia (detail unspecified).
 	 */
-	Digital_on_physical_carrier("DA"), //
+	Digital("DA"), //
 
 	CD_ROM("DB"), //
 
 	/**
-	 * CD interactive: use for ‘green book’ discs.
+	 * CD interactive, use for ‘green book’ discs.
 	 */
 	CD_I("DC"), //
+
+	/**
+	 * DEPRECATED – use VI for DVD video, AI for DVD audio, DI for DVD-ROM.
+	 */
+	DVD("DD"), //
 
 	Game_cartridge("DE"), //
 
@@ -223,6 +228,16 @@ public enum ProductForms
 	 * AKA ‘floppy disc’.
 	 */
 	Diskette("DF"), //
+
+	/**
+	 * Electronic book text in proprietary or open standard format.
+	 */
+	Electronic_book_text("DG"), //
+
+	/**
+	 * An electronic database or other resource or service accessible through online networks.
+	 */
+	Online_resource("DH"), //
 
 	DVD_ROM("DI"), //
 
@@ -235,39 +250,30 @@ public enum ProductForms
 	USB_Flash_Drive("DM"), //
 
 	/**
-	 * Double-sided disc, one side Audio CD/CD-ROM, other side DVD.
+	 * Double-sided disc, one side CD-Audio/CD-ROM, other side DVD-Audio/DVD-Video/DVD-ROM (at least one side must be -ROM).
 	 */
 	Double_sided_CD_DVD("DN"), //
 
 	/**
-	 * Other carrier of digital content not specified by DB to DN.
+	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or booklet containing a code
+	 * enabling the purchaser to download or activate the associated product.
 	 */
-	Other_digital_carrier("DZ"), //
+	Digital_product_license_key("DO"), //
 
 	/**
-	 * Digital content delivered electronically (delivery method unspecified).
+	 * Other digital or multimedia not specified by DB to DN.
 	 */
-	Digital_delivered_electronically("EA"), //
-
-	/**
-	 * Digital content available both by download and by online access.
-	 */
-	Digital_download_and_online("EB"), //
-
-	/**
-	 * Digital content accessed online only.
-	 */
-	Digital_online("EC"), //
-
-	/**
-	 * Digital content delivered by download only.
-	 */
-	Digital_download("ED"), //
+	Other_digital("DZ"), //
 
 	/**
 	 * Film or transparency – detail unspecified.
 	 */
 	Film_or_transparency("FA"), //
+
+	/**
+	 * Continuous film or filmstrip: DEPRECATED – use FE or FF.
+	 */
+	Film("FB"), //
 
 	/**
 	 * Photographic transparencies mounted for projection.
@@ -284,29 +290,12 @@ public enum ProductForms
 	/**
 	 * Continuous movie film as opposed to filmstrip.
 	 */
-	Film("FF"), //
+	Film_("FF"), //
 
 	/**
 	 * Other film or transparency format not specified by FB to FF.
 	 */
 	Other_film_or_transparency_format("FZ"), //
-
-	/**
-	 * Digital product license (delivery method not encoded).
-	 */
-	Digital_product_license("LA"), //
-
-	/**
-	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or booklet containing a code
-	 * enabling the purchaser to download the associated product.
-	 */
-	Digital_product_license_key("LB"), //
-
-	/**
-	 * Digital product license delivered by email or other electronic distribution, typically providing a code enabling the purchaser to
-	 * upgrade or extend the license supplied with the associated product.
-	 */
-	Digital_product_license_code("LC"), //
 
 	/**
 	 * Microform – detail unspecified.
@@ -373,8 +362,7 @@ public enum ProductForms
 	Poster("PK"), //
 
 	/**
-	 * Record book (eg ‘birthday book’, ‘baby book’): binding unspecified; may use product form detail codes P201 to P204 to specify
-	 * binding.
+	 * Record book (eg ‘birthday book’, ‘baby book’): may use product form detail codes P201 to P204 to specify binding.
 	 */
 	Record_book("PL"), //
 
@@ -396,7 +384,7 @@ public enum ProductForms
 	Plate_l_mina("PQ"), //
 
 	/**
-	 * A book with all pages blank for the buyer’s own use; may use product form detail codes P201 to P204 to specify binding.
+	 * A book with all pages blank for the buyer’s own use: may use product form detail codes P201 to P204 to specify binding.
 	 */
 	Notebook_blank_book("PR"), //
 
@@ -408,41 +396,9 @@ public enum ProductForms
 	Bookmark("PT"), //
 
 	/**
-	 * Other printed item not specified by PB to PQ.
+	 * Other printed item not specified by PB to PT.
 	 */
 	Other_printed_item("PZ"), //
-
-	/**
-	 * Presentation unspecified: format of product items must be given in <ProductPart>.
-	 */
-	Multiple_item_retail_product("SA"), //
-
-	/**
-	 * Format of product items must be given in <ProductPart>.
-	 */
-	Multiple_item_retail_product_boxed("SB"), //
-
-	/**
-	 * Format of product items must be given in <ProductPart>.
-	 */
-	Multiple_item_retail_product_slip_cased("SC"), //
-
-	/**
-	 * Format of product items must be given in <ProductPart>. Use code XL for a shrink-wrapped pack for trade supply, where the retail
-	 * items it contains are intended for sale individually.
-	 */
-	Multiple_item_retail_product_shrinkwrapped("SD"), //
-
-	/**
-	 * Format of product items must be given in <ProductPart>.
-	 */
-	Multiple_item_retail_product_loose("SE"), //
-
-	/**
-	 * Multiple item product where subsidiary product part(s) is/are supplied as enclosures to the primary part, eg a book with a CD
-	 * packaged in a sleeve glued within the back cover. Format of product items must be given in <ProductPart>.
-	 */
-	Multiple_item_retail_product_part_s("SF"), //
 
 	/**
 	 * Video – detail unspecified.
@@ -450,22 +406,52 @@ public enum ProductForms
 	Video("VA"), //
 
 	/**
+	 * DEPRECATED – use new VJ.
+	 */
+	Video_VHS_PAL("VB"), //
+
+	/**
+	 * DEPRECATED – use new VJ.
+	 */
+	Video_VHS_NTSC("VC"), //
+
+	/**
+	 * DEPRECATED – use new VK.
+	 */
+	Video_Betamax_PAL("VD"), //
+
+	/**
+	 * DEPRECATED – use new VK.
+	 */
+	Video_Betamax_NTSC("VE"), //
+
+	/**
 	 * eg Laserdisc.
 	 */
 	Videodisc("VF"), //
 
 	/**
-	 * DVD video: specify TV standard in List 175.
+	 * DEPRECATED – use new VJ.
+	 */
+	Video_VHS_SECAM("VG"), //
+
+	/**
+	 * DEPRECATED – use new VK.
+	 */
+	Video_Betamax_SECAM("VH"), //
+
+	/**
+	 * DVD video: specify TV standard in List 78.
 	 */
 	DVD_video("VI"), //
 
 	/**
-	 * VHS videotape: specify TV standard in List 175.
+	 * VHS videotape: specify TV standard in List 78.
 	 */
 	VHS_video("VJ"), //
 
 	/**
-	 * Betamax videotape: specify TV standard in List 175.
+	 * Betamax videotape: specify TV standard in List 78.
 	 */
 	Betamax_video("VK"), //
 
@@ -495,14 +481,25 @@ public enum ProductForms
 	UMD_Video("VP"), //
 
 	/**
-	 * China Blue High-Definition, derivative of HD-DVD.
-	 */
-	CBHD("VQ"), //
-
-	/**
 	 * Other video format not specified by VB to VP.
 	 */
 	Other_video_format("VZ"), //
+
+	/**
+	 * A product consisting of two or more items in different media or different product forms, eg book and CD-ROM, book and toy, hardback
+	 * book and e-book, etc.
+	 */
+	Mixed_media_product("WW"), //
+
+	/**
+	 * A product containing multiple copies of one or more items packaged together for retail sale, consisting of either (a) several copies
+	 * of a single item (eg 6 copies of a graded reader), or (b) several copies of each of several items (eg 3 copies each of 3 different
+	 * graded readers), or (c) several copies of one or more single items plus a single copy of one or more related items (eg 30 copies of a
+	 * pupil’s textbook plus 1 of teacher’s text). NOT TO BE CONFUSED WITH: multi-volume sets, or sets containing a single copy of a number
+	 * of different items (boxed, slip-cased or otherwise); items with several components of different physical forms (see WW); or packs
+	 * intended for trade distribution only, where the contents are retailed separately (see XC, XE, XL).
+	 */
+	Multiple_copy_pack("WX"), //
 
 	/**
 	 * Trade-only material (unspecified).
@@ -512,14 +509,14 @@ public enum ProductForms
 	Dumpbin_empty("XB"), //
 
 	/**
-	 * Dumpbin with contents. ISBN (where applicable) and format of contained items must be given in Product Part.
+	 * Dumpbin with contents.
 	 */
 	Dumpbin_filled("XC"), //
 
 	Counterpack_empty("XD"), //
 
 	/**
-	 * Counterpack with contents. ISBN (where applicable) and format of contained items must be given in Product Part.
+	 * Counterpack with contents.
 	 */
 	Counterpack_filled("XE"), //
 
@@ -545,16 +542,16 @@ public enum ProductForms
 	Large_book_display("XK"), //
 
 	/**
-	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually.
-	 * ISBN (where applicable) and format of contained items must be given in Product Part. For products or product bundles supplied
-	 * individually shrink-wrapped for retail sale, use code SD.
+	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually –
+	 * see also WX. For products or product bundles supplied shrink-wrapped for retail sale, use the Product Form code of the contents plus
+	 * code 21 from List 80.
 	 */
 	Shrink_wrapped_pack("XL"), //
 
 	/**
-	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually.
-	 * ISBN (where applicable) and format of contained items must be given in Product Part. For products or product bundles boxed
-	 * individually for retail sale, use code SB.
+	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually –
+	 * see also WX. For products or product bundles supplied boxed for retail sale, use the Product Form code of the contents plus code 09
+	 * from List 80.
 	 */
 	Boxed_pack("XM"), //
 

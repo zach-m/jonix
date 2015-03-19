@@ -21,8 +21,8 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.TextFormats;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -34,10 +34,10 @@ public class PromotionCampaign
 	public static final String shortname = "k165";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 	public LanguageCodeIso6392Bs language;
-	public TextFormatCodes textformat;
+	public TextFormats textformat;
 
 	public String value; // XHTML
 
@@ -46,10 +46,10 @@ public class PromotionCampaign
 		final PromotionCampaign x = new PromotionCampaign();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.textformat = TextFormatCodes.byValue(DU.getAttribute(element, "textformat"));
+		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
 
 		x.value = DU.getChildXHTML(element, true);
 

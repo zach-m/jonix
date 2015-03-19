@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.SalesRestrictionTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,20 +33,20 @@ public class SalesRestrictionType
 	public static final String shortname = "b381";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SalesRestrictionTypeCodes value;
+	public SalesRestrictionTypes value;
 
 	public static SalesRestrictionType fromDoc(org.w3c.dom.Element element)
 	{
 		final SalesRestrictionType x = new SalesRestrictionType();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = SalesRestrictionTypeCodes.byValue(DU.getContentAsString(element));
+		x.value = SalesRestrictionTypes.byValue(DU.getContentAsString(element));
 
 		return x;
 	}

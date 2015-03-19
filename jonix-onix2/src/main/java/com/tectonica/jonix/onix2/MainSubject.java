@@ -21,11 +21,11 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
-import com.tectonica.jonix.codelist.MainSubjectSchemeIdentifierCodes;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.MainSubjectSchemeIdentifiers;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextFormatCodes;
-import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -36,12 +36,12 @@ public class MainSubject
 	public static final String refname = "MainSubject";
 	public static final String shortname = "mainsubject";
 
-	public TextFormatCodes textformat;
+	public TextFormats textformat;
 	public TextCaseFlags textcase;
 	public LanguageCodeIso6392Bs language;
-	public TransliterationSchemeCodes transliteration;
+	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier; // Required
@@ -53,12 +53,12 @@ public class MainSubject
 	{
 		final MainSubject x = new MainSubject();
 
-		x.textformat = TextFormatCodes.byValue(DU.getAttribute(element, "textformat"));
+		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
 		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
 		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemeCodes.byValue(DU.getAttribute(element, "transliteration"));
+		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -81,7 +81,7 @@ public class MainSubject
 		return x;
 	}
 
-	public MainSubjectSchemeIdentifierCodes getMainSubjectSchemeIdentifierValue()
+	public MainSubjectSchemeIdentifiers getMainSubjectSchemeIdentifierValue()
 	{
 		return (mainSubjectSchemeIdentifier == null) ? null : mainSubjectSchemeIdentifier.value;
 	}

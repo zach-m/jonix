@@ -20,8 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.WorkIdentifierTypeCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -33,7 +33,7 @@ public class WorkIdentifier
 	public static final String shortname = "workidentifier";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public WorkIDType workIDType; // Required
@@ -45,7 +45,7 @@ public class WorkIdentifier
 		final WorkIdentifier x = new WorkIdentifier();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -66,7 +66,7 @@ public class WorkIdentifier
 		return x;
 	}
 
-	public WorkIdentifierTypeCodes getWorkIDTypeValue()
+	public WorkIdentifierTypes getWorkIDTypeValue()
 	{
 		return (workIDType == null) ? null : workIDType.value;
 	}

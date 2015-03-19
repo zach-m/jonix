@@ -25,12 +25,12 @@ import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.CurrencyZones;
 import com.tectonica.jonix.codelist.PositionOnProducts;
-import com.tectonica.jonix.codelist.PriceStatusCodes;
-import com.tectonica.jonix.codelist.PriceTypeCodes;
+import com.tectonica.jonix.codelist.PriceStatuss;
 import com.tectonica.jonix.codelist.PriceTypeQualifiers;
+import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.PrintedOnProducts;
-import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
-import com.tectonica.jonix.codelist.UnitOfPricingCodes;
+import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.UnitOfPricings;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -42,7 +42,7 @@ public class Price
 	public static final String shortname = "price";
 
 	public String datestamp; // dt.DateOrDateTime
-	public RecordSourceTypeCodes sourcetype;
+	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
 	public List<PriceIdentifier> priceIdentifiers; // ZeroOrMore
@@ -72,7 +72,7 @@ public class Price
 		final Price x = new Price();
 
 		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypeCodes.byValue(DU.getAttribute(element, "sourcetype"));
+		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
 		DU.forElementsOf(element, new DU.ElementListener()
@@ -129,7 +129,7 @@ public class Price
 		return x;
 	}
 
-	public PriceTypeCodes getPriceTypeValue()
+	public PriceTypes getPriceTypeValue()
 	{
 		return (priceType == null) ? null : priceType.value;
 	}
@@ -139,7 +139,7 @@ public class Price
 		return (priceQualifier == null) ? null : priceQualifier.value;
 	}
 
-	public UnitOfPricingCodes getPricePerValue()
+	public UnitOfPricings getPricePerValue()
 	{
 		return (pricePer == null) ? null : pricePer.value;
 	}
@@ -149,7 +149,7 @@ public class Price
 		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
 	}
 
-	public PriceStatusCodes getPriceStatusValue()
+	public PriceStatuss getPriceStatusValue()
 	{
 		return (priceStatus == null) ? null : priceStatus.value;
 	}
