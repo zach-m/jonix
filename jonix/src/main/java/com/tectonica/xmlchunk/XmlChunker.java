@@ -25,6 +25,7 @@ public class XmlChunker
 {
 	private static final XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 	private static final TransformerFactory transformerFactory;
+	private static final XmlChunkerEndDocument endDocumentEvent = new XmlChunkerEndDocument();
 
 	static
 	{
@@ -82,7 +83,7 @@ public class XmlChunker
 						List<XMLEvent> domEvents = new ArrayList<XMLEvent>();
 						domEvents.add(startDocumentEvent);
 						domEvents.addAll(events);
-						domEvents.add(new XmlChunkerEndDocument());
+						domEvents.add(endDocumentEvent);
 						Element element = elementFromEvents(domEvents, reader);
 						listener.onTarget(element);
 						events = null;
