@@ -22,7 +22,6 @@ package com.tectonica.jonix;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
@@ -34,12 +33,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
-import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.Product;
-import com.tectonica.jonix.onix2.Title;
 import com.tectonica.xmlchunk.XmlChunker;
 
-public class TestXmlChunkerWithProcessing
+public class TestBasicProduct
 {
 	@Before
 	public void setUp() throws Exception
@@ -53,7 +50,11 @@ public class TestXmlChunkerWithProcessing
 	@Ignore
 	public void test() throws FileNotFoundException
 	{
-		final File file = new File("../onix_samples/SB_Ref.xml"); // SB_short.xml
+		final String path = "../onix_samples/SB_Ref.xml"; // SB_short.xml
+//		final String path = "../onix_samples/CR.xml";
+//		final String path = "../onix_samples/MY.xml";
+		
+		final File file = new File(path); 
 		if (!file.exists())
 			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
 
@@ -66,14 +67,8 @@ public class TestXmlChunkerWithProcessing
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
 					final Product product = Product.fromDoc(element);
-					if (product.titles != null)
-					{
-						final Title title = findTitle(product.titles, TitleTypes.Distinctive_title_book);
-						if (title != null && title.titleText != null)
-							System.out.println(title.titleText.value);
-						else
-							System.err.println("NO-TITLE");
-					}
+					BasicProduct bp = new BasicProduct(product);
+					System.out.println(bp.getLabel());
 				}
 			}
 
@@ -88,15 +83,5 @@ public class TestXmlChunkerWithProcessing
 		});
 
 		System.err.println("** DONE");
-	}
-
-	private static Title findTitle(List<Title> titles, TitleTypes requestedType)
-	{
-		for (Title title : titles)
-		{
-			if (title.titleType != null && title.titleType.value == requestedType)
-				return title;
-		}
-		return null;
 	}
 }
