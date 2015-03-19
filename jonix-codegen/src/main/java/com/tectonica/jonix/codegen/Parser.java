@@ -22,8 +22,10 @@ package com.tectonica.jonix.codegen;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -50,6 +52,7 @@ public class Parser
 	public static class SchemaContext
 	{
 		private Map<String, OnixSimpleType> simpleTypes = new HashMap<>();
+		private Set<String> enumNames = new HashSet<>();
 		private Map<String, Element> groupNodes = new HashMap<>();
 		private Map<String, Element> attributeGroupNodes = new HashMap<>();
 	}
@@ -116,15 +119,39 @@ public class Parser
 			if (onixSimpleType.dataType == null)
 				throw new RuntimeException("erroneous processing of onixType " + onixSimpleType);
 
-			context.simpleTypes.put(onixSimpleType.name, onixSimpleType);
-
 			if (onixSimpleType.enumValues != null)
+			{
+				onixSimpleType.enumName = enumNameOf(onixSimpleType);
 				meta.enums.add(onixSimpleType);
+			}
 			else
 				meta.types.add(onixSimpleType);
 
-//			System.out.println(onixSimple);
+			context.simpleTypes.put(onixSimpleType.name, onixSimpleType);
 		}
+	}
+
+	private String enumNameOf(OnixSimpleType onixSimpleType)
+	{
+		if (onixSimpleType.aliasFor != null)
+			return context.simpleTypes.get(onixSimpleType.aliasFor).enumName;
+
+		String enumName = enumJavaName(onixSimpleType.comment);
+		if (!context.enumNames.add(enumName))
+			enumName += onixSimpleType.name;
+		return enumName + "s";
+	}
+
+	private String enumJavaName(String enumComment)
+	{
+		final String[] splits = enumComment.replaceAll("[^a-zA-Z0-9 /]+", "").replaceAll("[ /]{2,}", " ").split(" |/");
+		StringBuilder sb = new StringBuilder();
+		for (String split : splits)
+		{
+			split = split.toLowerCase();
+			sb.append(Character.toUpperCase(split.charAt(0))).append(split.substring(1));
+		}
+		return sb.toString();
 	}
 
 	private void processSimpleType(Element simpleType, final OnixSimpleType onixSimpleType)
@@ -522,6 +549,7 @@ public class Parser
 		// case 3 - a true attribute
 		final Primitive dataType;
 		final String onixSimpleTypeName;
+		final String enumName;
 		final String baseType = attribute.hasAttribute("type") ? attribute.getAttribute("type") : "xs:string";
 		final Primitive primitiveType = Primitive.fromXsdToken(baseType);
 		if (primitiveType == null)
@@ -530,13 +558,15 @@ public class Parser
 			if (onixSimple == null)
 				throw new RuntimeException("Couldn't find type " + baseType);
 			onixSimpleTypeName = onixSimple.name;
+			enumName = onixSimple.enumName;
 			dataType = onixSimple.dataType;
 		}
 		else
 		{
 			dataType = primitiveType;
 			onixSimpleTypeName = null;
+			enumName = null;
 		}
-		onixClass.add(OnixAttribute.create(name, dataType, onixSimpleTypeName));
+		onixClass.add(OnixAttribute.create(name, dataType, onixSimpleTypeName, enumName));
 	}
 }

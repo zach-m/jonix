@@ -22,7 +22,7 @@ package com.tectonica.jonix.metadata;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({ "name", "value", "description" })
-public class OnixEnumValue
+public class OnixEnumValue implements Comparable<OnixEnumValue>
 {
 	public String name;
 	public String value;
@@ -41,5 +41,11 @@ public class OnixEnumValue
 	public String toString()
 	{
 		return "{" + value + "=" + name + "}";
+	}
+
+	@Override
+	public int compareTo(OnixEnumValue o)
+	{
+		return value.compareTo(o.value); // NOTE: this is a value comparison, not name
 	}
 }

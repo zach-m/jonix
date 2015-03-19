@@ -34,7 +34,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
-import com.tectonica.jonix.onix2.model.Product;
+import com.tectonica.jonix.onix2.Product;
 
 public class TestSingle
 {

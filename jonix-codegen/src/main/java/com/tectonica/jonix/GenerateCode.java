@@ -21,14 +21,19 @@ package com.tectonica.jonix;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.ListIterator;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import com.tectonica.jonix.codegen.ListDiff;
+import com.tectonica.jonix.codegen.ListDiff.CompareListener;
 import com.tectonica.jonix.codegen.OnixClassGen;
 import com.tectonica.jonix.codegen.OnixEnumGen;
 import com.tectonica.jonix.metadata.OnixContentClass;
+import com.tectonica.jonix.metadata.OnixEnumValue;
 import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
@@ -39,6 +44,9 @@ public class GenerateCode
 {
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException
 	{
+		final String basePackage = "com.tectonica.jonix";
+		final String relativePath = "/src/main/java/com/tectonica/jonix";
+
 		// //////////////////////////////////////////////////////////////////////////////////////
 		// ONIX 2
 		// //////////////////////////////////////////////////////////////////////////////////////
@@ -48,12 +56,8 @@ public class GenerateCode
 			throw new RuntimeException("couldn't find jonix-onix2 project at " + onix2home);
 
 		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2);
-		final String baseFolderOnix2 = onix2home + "/src/main/java/com/tectonica/jonix/onix2";
-		final String basePackageOnix2 = "com.tectonica.jonix.onix2";
-
-		System.out.println("Generating " + basePackageOnix2 + "..");
-		generateModel(basePackageOnix2, baseFolderOnix2, ref2);
-		generateCodelists(basePackageOnix2, baseFolderOnix2, ref2);
+		System.out.println("Generating code for Onix2..");
+		generateModel(basePackage, onix2home + relativePath, "onix2", ref2);
 
 		// //////////////////////////////////////////////////////////////////////////////////////
 		// ONIX 3
@@ -64,97 +68,113 @@ public class GenerateCode
 			throw new RuntimeException("couldn't find jonix-onix3 project at " + onix3home);
 
 		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3);
-		final String baseFolderOnix3 = onix3home + "/src/main/java/com/tectonica/jonix/onix3";
-		final String basePackageOnix3 = "com.tectonica.jonix.onix3";
-		System.out.println("Generating " + basePackageOnix3 + "..");
+		System.out.println("Generating code for Onix3..");
 
-		generateModel(basePackageOnix3, baseFolderOnix3, ref3);
-		generateCodelists(basePackageOnix3, baseFolderOnix3, ref3);
+		generateModel(basePackage, onix3home + relativePath, "onix3", ref3);
+
+		// //////////////////////////////////////////////////////////////////////////////////////
+		// UNIFIED CODELISTS
+		// //////////////////////////////////////////////////////////////////////////////////////
+
+		final String codelistHome = new File("..").getAbsolutePath() + "/jonix-codelist";
+		if (!new File(codelistHome).exists())
+			throw new RuntimeException("couldn't find jonix-codelist project at " + codelistHome);
+
+		System.out.println("Generating unified codelists (for both Onix2 and Onix3)..");
+		generateCodelists(basePackage, codelistHome + relativePath, "codelist", ref2, ref3);
 
 		System.out.println("DONE");
 	}
 
-	private static void generateModel(String basePackage, String baseFolder, OnixMetadata ref)
+	private static void generateModel(String basePackage, String baseFolder, String subfolder, OnixMetadata ref)
 	{
 		final OnixClassGen ccg = new OnixClassGen(basePackage, baseFolder, ref);
 
 		for (OnixContentClass occ : ref.contentClasses)
-			ccg.generate("model", occ);
+			ccg.generate(subfolder, occ);
 
 		for (OnixValueClass ovc : ref.valueClasses)
-			ccg.generate("model", ovc);
+			ccg.generate(subfolder, ovc);
 
 		for (OnixFlagClass ofc : ref.flagClasses)
-			ccg.generate("model", ofc);
+			ccg.generate(subfolder, ofc);
 	}
 
-	private static void generateCodelists(String basePackage, String baseFolder, OnixMetadata ref)
+	private static void generateCodelists(String basePackage, String baseFolder, String subfolder, OnixMetadata ref2, OnixMetadata ref3)
 	{
-		OnixEnumGen oeg = new OnixEnumGen(basePackage, baseFolder, ref);
+		final OnixEnumGen oeg = new OnixEnumGen(basePackage, baseFolder, subfolder);
 
-		for (OnixSimpleType enumType : ref.enums)
-			if (enumType.aliasFor == null)
-				oeg.generate("codelist", enumType);
+		removeAliases(ref2);
+		removeAliases(ref3);
+
+		Collections.sort(ref2.enums);
+		Collections.sort(ref3.enums);
+
+		ListDiff.compare(ref2.enums, ref3.enums, new CompareListener<OnixSimpleType>()
+		{
+			@Override
+			public void onDiff(OnixSimpleType enum2, OnixSimpleType enum3)
+			{
+				if (enum2 != null && enum3 != null)
+				{
+//					System.out.println("                                         Common: " + enum2.enumName);
+					oeg.generate(unifiedEnum(enum2, enum3));
+				}
+				else if (enum2 != null)
+				{
+//					System.out.println("Unique to Onix2: " + enum2.enumName);
+					enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3";
+					oeg.generate(enum2);
+				}
+				else
+				{
+//					System.out.println("Unique to Onix3: " + enum3.enumName);
+					enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3";
+					oeg.generate(enum3);
+				}
+			}
+		});
 	}
 
-//	private static void generateUnified(final OnixClassGen ccg, OnixMetadata ref2, OnixMetadata ref3)
-//	{
-//		ListDiff.compare(ref2.contentClasses, ref3.contentClasses, new CompareListener<OnixContentClass>()
-//		{
-//			final String FMT = "%25s <==> %s \n";
-//
-//			@Override
-//			public void onDiff(OnixContentClass itemL, OnixContentClass itemR)
-//			{
-//				if (itemL != null && itemR != null)
-//					System.out.printf(FMT, itemL.name, itemR.name);
-//				else if (itemL != null)
-//					System.out.printf(FMT, itemL.name, "");
-//				else
-//					System.out.printf(FMT, "", itemR.name);
-//			}
-//		});
-//
-//		System.out.println("---------------------------------------------------------------------------------------");
-//
-//		ListDiff.compare(ref2.valueClasses, ref3.valueClasses, new CompareListener<OnixValueClass>()
-//		{
-//			final String FMT = "%25s <==> %s \n";
-//
-//			@Override
-//			public void onDiff(OnixValueClass itemL, OnixValueClass itemR)
-//			{
-//				if (itemL != null && itemR != null)
-//					System.out.printf(FMT, itemL.name, itemR.name);
-//				else if (itemL != null)
-//					System.out.printf(FMT, itemL.name, "");
-//				else
-//					System.out.printf(FMT, "", itemR.name);
-//			}
-//		});
-//
-//		System.out.println("---------------------------------------------------------------------------------------");
-//
-//		ListDiff.compare(ref2.flagClasses, ref3.flagClasses, new CompareListener<OnixFlagClass>()
-//		{
-//			final String FMT = "%25s <==> %s \n";
-//
-//			@Override
-//			public void onDiff(OnixFlagClass itemL, OnixFlagClass itemR)
-//			{
-//				if (itemL != null && itemR != null)
-//					System.out.printf(FMT, itemL.name, itemR.name);
-//				else if (itemL != null)
-//				{
-//					System.out.printf(FMT, itemL.name, "");
-//					ccg.generate("onix2", itemL);
-//				}
-//				else
-//				{
-//					System.out.printf(FMT, "", itemR.name);
-//					ccg.generate("onix3", itemR);
-//				}
-//			}
-//		});
-//	}
+	private static void removeAliases(OnixMetadata ref)
+	{
+		for (ListIterator<OnixSimpleType> iter = ref.enums.listIterator(); iter.hasNext();)
+		{
+			final OnixSimpleType next = iter.next();
+			if (next.aliasFor != null)
+				iter.remove();
+		}
+	}
+
+	private static OnixSimpleType unifiedEnum(final OnixSimpleType enum2, final OnixSimpleType enum3)
+	{
+		final OnixSimpleType result = OnixSimpleType.cloneFrom(enum3);
+		ListDiff.compare(enum2.enumValues, enum3.enumValues, new CompareListener<OnixEnumValue>()
+		{
+			@Override
+			public void onDiff(OnixEnumValue enumValue2, OnixEnumValue enumValue3)
+			{
+				if (enumValue2 != null && enumValue3 != null)
+				{
+//					if (!enumValue2.name.equals(enumValue3.name))
+//					{
+//						System.out.println("DIFF - ONIX2 - " + enum2.enumName + ": "+ enumValue2.name);
+//						System.out.println("DIFF - ONIX3 - " + enum3.enumName + ": "+ enumValue3.name);
+//					}
+				}
+				else if (enumValue2 != null)
+				{
+//					System.out.println("Unique to Onix2: " + enum2.enumName + "." + enumValue2);
+					enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3";
+					result.add(enumValue2);
+				}
+				else
+				{
+//					System.out.println("Unique to Onix3: " + enum3.enumName + "." + enumValue3);
+					enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3";
+				}
+			}
+		});
+		return result;
+	}
 }

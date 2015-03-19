@@ -35,9 +35,10 @@ import com.tectonica.jonix.metadata.OnixValueClass;
 public class OnixClassGen
 {
 	private static final String EQUALS = "equals"; // turn to "equalsIgnoreCase" to assume case-insensitive XML
-	
+
 	private final String basePackage;
 	private final String baseFolder;
+	@SuppressWarnings("unused")
 	private final OnixMetadata ref;
 
 	public OnixClassGen(String basePackage, String baseFolder, OnixMetadata ref)
@@ -154,7 +155,7 @@ public class OnixClassGen
 		declareConstsAndAttributes(p, clz);
 
 		// declare value
-		final TypeInfo ti = typeInfoOf(clz.valueMember.onixSimpleTypeName, clz.valueMember.dataType.javaType);
+		final TypeInfo ti = typeInfoOf(clz.valueMember.onixSimpleTypeName, clz.valueMember.dataType.javaType, clz.valueMember.enumName);
 
 		p.println();
 		p.printf("\t" + "public %s value;%s\n", ti.javaType, ti.comment);
@@ -221,7 +222,7 @@ public class OnixClassGen
 		p.println();
 		for (OnixAttribute a : clz.attributes)
 		{
-			final TypeInfo ti = typeInfoOf(a.onixSimpleTypeName, a.dataType.javaType);
+			final TypeInfo ti = typeInfoOf(a.onixSimpleTypeName, a.dataType.javaType, a.enumName);
 			p.printf("\t" + "public %s %s;%s\n", ti.javaType, a.name, ti.comment);
 		}
 	}
@@ -231,7 +232,7 @@ public class OnixClassGen
 		p.println();
 		for (OnixAttribute a : clz.attributes)
 		{
-			String enumType = enumTypeOf(a.onixSimpleTypeName);
+			String enumType = a.enumName;
 
 			if (enumType == null)
 				p.printf("\t\t" + "x.%s = DU.getAttribute(element, \"%s\");\n", a.name, a.name);
@@ -248,11 +249,11 @@ public class OnixClassGen
 		boolean isXHTML;
 	}
 
-	private TypeInfo typeInfoOf(String onixSimpleTypeName, String javaType)
+	private TypeInfo typeInfoOf(String onixSimpleTypeName, String javaType, String enumName)
 	{
 		TypeInfo result = new TypeInfo();
 		result.isXHTML = (onixSimpleTypeName == null) ? false : onixSimpleTypeName.equals(OnixSimpleType.XHTML.name);
-		result.javaType = result.isXHTML ? null : enumTypeOf(onixSimpleTypeName);
+		result.javaType = result.isXHTML ? null : enumName;
 		result.isPrimitive = (result.javaType == null);
 		result.comment = "";
 		if (result.javaType == null)
@@ -262,17 +263,6 @@ public class OnixClassGen
 				result.comment = " // " + onixSimpleTypeName;
 		}
 		return result;
-	}
-
-	private String enumTypeOf(String onixSimpleTypeName)
-	{
-		if (onixSimpleTypeName != null)
-		{
-			final OnixSimpleType simpleType = ref.typeByName(onixSimpleTypeName);
-			if (simpleType.enumValues != null)
-				return (simpleType.aliasFor == null) ? simpleType.name : simpleType.aliasFor;
-		}
-		return null;
 	}
 
 	public String fieldOf(String propertyName)

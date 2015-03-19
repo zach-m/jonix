@@ -22,7 +22,7 @@ package com.tectonica.jonix.metadata;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "type", "onixType" })
+@JsonPropertyOrder({ "name", "type", "onixType", "enumName" })
 public class OnixAttribute implements Comparable<OnixAttribute>
 {
 	public String name;
@@ -30,20 +30,25 @@ public class OnixAttribute implements Comparable<OnixAttribute>
 	public Primitive dataType;
 	@JsonProperty("onixType")
 	public String onixSimpleTypeName;
+	public String enumName;
 
-	public static OnixAttribute create(String name, Primitive dataType, String onixSimpleTypeName)
+	private OnixAttribute()
+	{}
+
+	public static OnixAttribute create(String name, Primitive dataType, String onixSimpleTypeName, String enumName)
 	{
 		OnixAttribute ova = new OnixAttribute();
 		ova.name = name;
 		ova.dataType = dataType;
 		ova.onixSimpleTypeName = onixSimpleTypeName;
+		ova.enumName = enumName;
 		return ova;
 	}
 
 	@Override
 	public String toString()
 	{
-		return name + "(" + dataType.name() + " / " + onixSimpleTypeName + ")";
+		return name + "(" + dataType.name() + " / " + onixSimpleTypeName + " / " + enumName + ")";
 	}
 
 	@Override

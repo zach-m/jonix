@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2012 Zach Melamed
+ * 
+ * Latest version available online at https://github.com/zach-m/jonix
+ * Contact me at zach@tectonica.co.il
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.tectonica.jonix;
 
 import java.io.File;
@@ -15,9 +34,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
-import com.tectonica.jonix.onix2.codelist.List15;
-import com.tectonica.jonix.onix2.model.Product;
-import com.tectonica.jonix.onix2.model.Title;
+import com.tectonica.jonix.codelist.TitleTypeCodes;
+import com.tectonica.jonix.onix2.Product;
+import com.tectonica.jonix.onix2.Title;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class TestXmlChunkerWithProcessing
@@ -49,7 +68,7 @@ public class TestXmlChunkerWithProcessing
 					final Product product = Product.fromDoc(element);
 					if (product.titles != null)
 					{
-						final Title title = findTitle(product.titles, List15.Distinctive_title_book);
+						final Title title = findTitle(product.titles, TitleTypeCodes.Distinctive_title_book);
 						if (title != null && title.titleText != null)
 							System.out.println(title.titleText.value);
 						else
@@ -71,7 +90,7 @@ public class TestXmlChunkerWithProcessing
 		System.err.println("** DONE");
 	}
 
-	private static Title findTitle(List<Title> titles, List15 requestedType)
+	private static Title findTitle(List<Title> titles, TitleTypeCodes requestedType)
 	{
 		for (Title title : titles)
 		{

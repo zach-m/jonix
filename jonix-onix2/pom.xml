@@ -15,6 +15,11 @@
 	<description>Collection of classes for processing Onix-2 sources</description>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.tectonica</groupId>
+			<artifactId>jonix-codelist</artifactId>
+		</dependency>
+			
 		<!-- Testing -->
 		<dependency>
 			<groupId>junit</groupId>

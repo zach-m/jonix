@@ -25,41 +25,38 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.tectonica.jonix.metadata.OnixEnumValue;
-import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 
 public class OnixEnumGen
 {
 	private static final int MIN_FOR_MAP = 8;
 
-	private final String basePackage;
-	private final String baseFolder;
+	private final String packageName;
+	private final String folderName;
 
-	@SuppressWarnings("unused")
-	private final OnixMetadata ref;
-
-	public OnixEnumGen(String basePackage, String baseFolder, OnixMetadata ref)
+	public OnixEnumGen(String basePackage, String baseFolder, String subfolder)
 	{
-		this.basePackage = basePackage;
-		this.baseFolder = baseFolder;
-		this.ref = ref;
+		packageName = basePackage + "." + subfolder;
+		folderName = baseFolder + "\\" + subfolder;
+		new File(folderName).mkdirs();
 	}
 
-	public void generate(String subfolder, OnixSimpleType enumType)
+	public void generate(OnixSimpleType enumType)
 	{
+		if (enumType.aliasFor != null)
+//			return;
+			throw new RuntimeException("Alias enum was passed: " + enumType.name + " ==> " + enumType.aliasFor);
+
 		if (enumType.enumValues == null)
 			throw new RuntimeException("Non-enum: " + enumType);
 
 		try
 		{
-			final String folder = baseFolder + "\\" + subfolder;
-			new File(folder).mkdirs();
-			String fileName = folder + "\\" + enumType.name + ".java";
-			String packageName = basePackage + "." + subfolder;
+			String fileName = folderName + "\\" + enumType.enumName + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
 			{
-				writeEnumClass(enumType, packageName, p);
+				writeEnumClass(enumType, p);
 			}
 		}
 		catch (Exception e)
@@ -68,7 +65,7 @@ public class OnixEnumGen
 		}
 	}
 
-	private void writeEnumClass(OnixSimpleType enumType, String packageName, PrintStream p)
+	private void writeEnumClass(OnixSimpleType enumType, PrintStream p)
 	{
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
@@ -88,7 +85,7 @@ public class OnixEnumGen
 			p.printf(" * %s\n", enumType.comment);
 			p.printf(" */\n");
 		}
-		p.println("public enum " + enumType.name);
+		p.println("public enum " + enumType.enumName);
 		p.println("{");
 
 		Set<String> tokens = new HashSet<>();
@@ -116,7 +113,7 @@ public class OnixEnumGen
 		p.println();
 		p.printf("\t" + "public final String value;\n");
 		p.println();
-		p.printf("\t" + "private %s(String value)\n", enumType.name);
+		p.printf("\t" + "private %s(String value)\n", enumType.enumName);
 		p.printf("\t" + "{\n");
 		p.printf("\t\t" + "this.value = value;\n");
 		p.printf("\t" + "}\n");
@@ -124,11 +121,11 @@ public class OnixEnumGen
 		if (enumType.enumValues.size() < MIN_FOR_MAP)
 		{
 			p.println();
-			p.printf("\t" + "public static %s byValue(String value)\n", enumType.name);
+			p.printf("\t" + "public static %s byValue(String value)\n", enumType.enumName);
 			p.printf("\t" + "{\n");
 			p.printf("\t\t" + "if (value == null || value.isEmpty())\n");
 			p.printf("\t\t\t" + "return null;\n");
-			p.printf("\t\t" + "for (%s e : values())\n", enumType.name);
+			p.printf("\t\t" + "for (%s e : values())\n", enumType.enumName);
 			p.printf("\t\t\t" + "if (e.value.equals(value))\n");
 			p.printf("\t\t\t\t" + "return e;\n");
 			p.printf("\t\t" + "return null;\n");
@@ -137,20 +134,20 @@ public class OnixEnumGen
 		else
 		{
 			p.println();
-			p.printf("\t" + "private static Map<String, %s> map;\n", enumType.name);
+			p.printf("\t" + "private static Map<String, %s> map;\n", enumType.enumName);
 			p.println();
-			p.printf("\t" + "private static Map<String, %s> map()\n", enumType.name);
+			p.printf("\t" + "private static Map<String, %s> map()\n", enumType.enumName);
 			p.printf("\t" + "{\n");
 			p.printf("\t\t" + "if (map == null)\n");
 			p.printf("\t\t" + "{\n");
 			p.printf("\t\t\t" + "map = new HashMap<>();\n");
-			p.printf("\t\t\t" + "for (%s e : values())\n", enumType.name);
+			p.printf("\t\t\t" + "for (%s e : values())\n", enumType.enumName);
 			p.printf("\t\t\t\t" + "map.put(e.value, e);\n");
 			p.printf("\t\t" + "}\n");
 			p.printf("\t\t" + "return map;\n");
 			p.printf("\t" + "}\n");
 			p.println();
-			p.printf("\t" + "public static %s byValue(String value)\n", enumType.name);
+			p.printf("\t" + "public static %s byValue(String value)\n", enumType.enumName);
 			p.printf("\t" + "{\n");
 			p.printf("\t\t" + "if (value == null || value.isEmpty())\n");
 			p.printf("\t\t\t" + "return null;\n");
@@ -179,7 +176,7 @@ public class OnixEnumGen
 
 		s = "16:10";
 		System.out.println(s + " --> " + aux.enumNameOf(s));
-		
+
 		s = "Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)";
 		System.out.println(s + " --> " + aux.enumNameOf(s));
 	}

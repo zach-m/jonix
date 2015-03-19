@@ -22,13 +22,14 @@ package com.tectonica.jonix.metadata;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "type", "onixType" })
+@JsonPropertyOrder({ "type", "onixType", "enumName" })
 public class OnixValueClassMember implements Comparable<OnixValueClassMember>
 {
 	@JsonProperty("type")
 	public Primitive dataType;
 	@JsonProperty("onixType")
 	public String onixSimpleTypeName;
+	public String enumName;
 
 	@Override
 	public int compareTo(OnixValueClassMember o)
@@ -42,11 +43,15 @@ public class OnixValueClassMember implements Comparable<OnixValueClassMember>
 		return dataType + " (" + onixSimpleTypeName + ")";
 	}
 
+	private OnixValueClassMember()
+	{}
+
 	public static OnixValueClassMember create(OnixSimpleType simpleType)
 	{
 		OnixValueClassMember ovcm = new OnixValueClassMember();
 		ovcm.dataType = simpleType.dataType;
 		ovcm.onixSimpleTypeName = simpleType.name;
+		ovcm.enumName = simpleType.enumName;
 		return ovcm;
 	}
 }

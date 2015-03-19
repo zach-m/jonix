@@ -25,7 +25,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "type", "comment", "aliasFor", "enumValues" })
+@JsonPropertyOrder({ "name", "type", "comment", "aliasFor", "enumName", "enumValues" })
 public class OnixSimpleType implements Comparable<OnixSimpleType>
 {
 	public static final OnixSimpleType XHTML = OnixSimpleType.create("XHTML", Primitive.String, "Free XHTML content", null);
@@ -35,6 +35,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType>
 	public Primitive dataType;
 	public String comment;
 	public String aliasFor;
+	public String enumName;
 	public List<OnixEnumValue> enumValues;
 
 	public static OnixSimpleType create(String name, Primitive dataType, String comment, List<OnixEnumValue> enumValues)
@@ -52,7 +53,20 @@ public class OnixSimpleType implements Comparable<OnixSimpleType>
 		dataType = other.dataType;
 		comment = other.comment;
 		aliasFor = other.name;
+		enumName = other.enumName;
 		enumValues = other.enumValues;
+	}
+
+	public static OnixSimpleType cloneFrom(OnixSimpleType other)
+	{
+		OnixSimpleType ost = new OnixSimpleType();
+		ost.name = other.name;
+		ost.dataType = other.dataType;
+		ost.comment = other.comment;
+		ost.aliasFor = other.aliasFor;
+		ost.enumName = other.enumName;
+		ost.enumValues = new ArrayList<OnixEnumValue>(other.enumValues); //  new array, same items
+		return ost;
 	}
 
 	public void add(OnixEnumValue onixEnumValue)
@@ -71,6 +85,8 @@ public class OnixSimpleType implements Comparable<OnixSimpleType>
 	@Override
 	public int compareTo(OnixSimpleType o)
 	{
+		if (this.enumName != null && o.enumName != null)
+			return enumName.compareTo(o.enumName);
 		return name.compareTo(o.name);
 	}
 }
