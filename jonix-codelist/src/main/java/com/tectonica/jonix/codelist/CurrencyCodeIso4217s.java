@@ -19,15 +19,19 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList96
+ * <p>
  * Currency code – ISO 4217
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum CurrencyCodeIso4217s
 {

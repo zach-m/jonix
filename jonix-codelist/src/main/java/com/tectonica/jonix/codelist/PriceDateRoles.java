@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList173
+ * <p>
  * Price date role
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum PriceDateRoles
 {

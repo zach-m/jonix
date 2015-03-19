@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList57
+ * <p>
  * Unpriced item type code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum UnpricedItemTypes
 {

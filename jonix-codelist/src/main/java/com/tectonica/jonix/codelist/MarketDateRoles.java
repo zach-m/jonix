@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList67
+ * <p>
  * Market date role
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum MarketDateRoles
 {

@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList40
+ * <p>
  * Image/audio/video file link type
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum ImageAudioVideoFileLinkTypes
 {

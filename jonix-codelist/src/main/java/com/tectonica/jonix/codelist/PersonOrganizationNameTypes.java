@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList18
+ * <p>
  * Person / organization name type
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum PersonOrganizationNameTypes
 {

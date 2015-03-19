@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList70
+ * <p>
  * Stock quantity code type
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum StockQuantityCodeTypes
 {

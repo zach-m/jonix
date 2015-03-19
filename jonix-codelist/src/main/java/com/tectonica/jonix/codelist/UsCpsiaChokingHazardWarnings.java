@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList140
+ * <p>
  * US CPSIA choking hazard warning code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum UsCpsiaChokingHazardWarnings
 {

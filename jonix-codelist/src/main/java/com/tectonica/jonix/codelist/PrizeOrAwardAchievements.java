@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList41
+ * <p>
  * Prize or award achievement code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum PrizeOrAwardAchievements
 {

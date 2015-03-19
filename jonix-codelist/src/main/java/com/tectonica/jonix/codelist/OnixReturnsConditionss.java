@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList204
+ * <p>
  * ONIX Returns conditions code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum OnixReturnsConditionss
 {

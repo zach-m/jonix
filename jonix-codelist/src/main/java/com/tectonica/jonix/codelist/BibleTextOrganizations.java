@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList86
+ * <p>
  * Bible text organization
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum BibleTextOrganizations
 {

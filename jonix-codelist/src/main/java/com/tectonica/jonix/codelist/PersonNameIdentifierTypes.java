@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList101
+ * <p>
  * Person name identifier type
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum PersonNameIdentifierTypes
 {

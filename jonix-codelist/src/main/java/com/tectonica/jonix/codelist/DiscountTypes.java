@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList170
+ * <p>
  * Discount type
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum DiscountTypes
 {

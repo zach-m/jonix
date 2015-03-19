@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList53
+ * <p>
  * Returns conditions code type
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum ReturnsConditionsCodeTypes
 {

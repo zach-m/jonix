@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList169
+ * <p>
  * Quantity unit
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum QuantityUnits
 {

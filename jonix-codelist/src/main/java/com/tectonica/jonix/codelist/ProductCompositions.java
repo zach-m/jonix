@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList2
+ * <p>
  * Product composition
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum ProductCompositions
 {

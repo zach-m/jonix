@@ -24,9 +24,13 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList224
+ * <p>
  * Status detail type severity
  * <p>
  * NOTE: Introduced in Onix3
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum StatusDetailTypeSeveritys
 {

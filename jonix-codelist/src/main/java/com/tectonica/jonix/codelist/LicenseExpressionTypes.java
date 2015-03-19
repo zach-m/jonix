@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList218
+ * <p>
  * License expression type code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum LicenseExpressionTypes
 {

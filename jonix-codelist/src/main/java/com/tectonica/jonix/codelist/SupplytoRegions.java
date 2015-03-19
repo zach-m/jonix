@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList52
+ * <p>
  * Supply-to region code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum SupplytoRegions
 {

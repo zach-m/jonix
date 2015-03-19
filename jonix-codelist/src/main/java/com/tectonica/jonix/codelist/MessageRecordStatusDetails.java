@@ -24,9 +24,13 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList225
+ * <p>
  * Message / Record status detail code
  * <p>
  * NOTE: Introduced in Onix3
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum MessageRecordStatusDetails
 {

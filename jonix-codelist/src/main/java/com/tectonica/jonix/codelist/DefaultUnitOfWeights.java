@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList95
+ * <p>
  * Default unit of weight
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum DefaultUnitOfWeights
 {

@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList31
+ * <p>
  * Audience range precision
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum AudienceRangePrecisions
 {

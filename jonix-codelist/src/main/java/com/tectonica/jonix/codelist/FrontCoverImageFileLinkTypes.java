@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList37
+ * <p>
  * Front cover image file link type code
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum FrontCoverImageFileLinkTypes
 {

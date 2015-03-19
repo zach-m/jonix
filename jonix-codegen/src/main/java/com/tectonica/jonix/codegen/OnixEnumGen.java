@@ -79,12 +79,17 @@ public class OnixEnumGen
 
 		p.println();
 		p.println(Comments.AutoGen);
+		p.printf("/**\n");
+		p.printf(" * Enum that corresponds to ONIX's Code%s\n", enumType.name);
 		if (enumType.comment != null)
 		{
-			p.printf("/**\n");
+			p.printf(" * <p>\n");
 			p.printf(" * %s\n", enumType.comment);
-			p.printf(" */\n");
 		}
+		p.printf(" * \n");
+		p.printf(" * @see http://www.editeur.org/14/code-lists/\n");
+		p.printf(" */\n");
+
 		p.println("public enum " + enumType.enumName);
 		p.println("{");
 

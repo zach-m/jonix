@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList146
+ * <p>
  * Usage status
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum UsageStatuss
 {

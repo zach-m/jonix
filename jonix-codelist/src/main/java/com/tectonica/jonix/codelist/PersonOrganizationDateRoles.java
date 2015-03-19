@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList177
+ * <p>
  * Person / organization date role
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum PersonOrganizationDateRoles
 {

@@ -19,15 +19,19 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList147
+ * <p>
  * Unit of usage
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum UnitOfUsages
 {

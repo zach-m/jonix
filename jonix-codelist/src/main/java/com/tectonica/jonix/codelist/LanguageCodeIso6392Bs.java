@@ -19,15 +19,19 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList74
+ * <p>
  * Language code – ISO 639-2/B
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum LanguageCodeIso6392Bs
 {

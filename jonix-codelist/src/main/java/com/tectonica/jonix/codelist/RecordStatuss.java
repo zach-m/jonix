@@ -24,9 +24,13 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList226
+ * <p>
  * Record status
  * <p>
  * NOTE: Introduced in Onix3
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum RecordStatuss
 {

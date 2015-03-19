@@ -24,7 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
+ * Enum that corresponds to ONIX's CodeList47
+ * <p>
  * Rights region
+ * 
+ * @see http://www.editeur.org/14/code-lists/
  */
 public enum RightsRegions
 {
