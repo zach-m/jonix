@@ -85,7 +85,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-onix2</artifactId>
+				<artifactId>jonix-onix3</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
