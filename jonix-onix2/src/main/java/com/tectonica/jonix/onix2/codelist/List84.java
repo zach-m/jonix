@@ -56,7 +56,7 @@ public enum List84
 	/**
 	 * Norwegian study Bible, New Testament.
 	 */
-	Studiebibel__Det_Nye_testamentet("NNT"), //
+	Studiebibel_Det_Nye_testamentet("NNT"), //
 
 	/**
 	 * Published in 1991 and based on the New Revised Standard version.

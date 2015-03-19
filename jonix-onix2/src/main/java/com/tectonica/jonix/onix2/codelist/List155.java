@@ -59,7 +59,7 @@ public enum List155
 	/**
 	 * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat 06.
 	 */
-	From__until_date("24"), //
+	From_until_date("24"), //
 
 	/**
 	 * Date from which a supporting resource is available for download. Note that this date also implies that it can be immediately

@@ -44,7 +44,7 @@ public enum List145
 	/**
 	 * Make digital copy of extract.
 	 */
-	Copy___paste("03"), //
+	Copy_paste("03"), //
 
 	/**
 	 * Share product across multiple concurrent devices.

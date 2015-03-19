@@ -28,11 +28,11 @@ package com.tectonica.jonix.onix2.codelist;
  */
 public enum List66
 {
-	No__not_returnable("N"), //
+	No_not_returnable("N"), //
 
-	Yes__returnable__full_copies_only("Y"), //
+	Yes_returnable_full_copies_only("Y"), //
 
-	Yes__returnable__stripped_cover("S"), //
+	Yes_returnable_stripped_cover("S"), //
 
 	/**
 	 * Contact publisher for requirements and/or authorization.

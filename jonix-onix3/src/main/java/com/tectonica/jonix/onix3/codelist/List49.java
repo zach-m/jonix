@@ -95,7 +95,7 @@ public enum List49
 	/**
 	 * UK excluding Northern Ireland.
 	 */
-	England__Wales__Scotland("GB-EWS"), //
+	England_Wales_Scotland("GB-EWS"), //
 
 	/**
 	 * DEPRECATED, replaced by country code IM – Isle of Man.
@@ -185,7 +185,7 @@ public enum List49
 
 	Foggia("IT-FG"), //
 
-	Forl__Cesena("IT-FC"), //
+	Forl_Cesena("IT-FC"), //
 
 	Frosinone("IT-FR"), //
 
@@ -369,13 +369,13 @@ public enum List49
 
 	Republic_of_Mordoviya("RU-MO"), //
 
-	Republic_of_Sakha__Yakutiya_("RU-SA"), //
+	Republic_of_Sakha_Yakutiya("RU-SA"), //
 
 	Republic_of_Severnaya_Osetiya_Alaniya("RU-SE"), //
 
 	Republic_of_Tatarstan("RU-TA"), //
 
-	Republic_of_Tyva__Tuva_("RU-TY"), //
+	Republic_of_Tyva_Tuva("RU-TY"), //
 
 	Udmurtskaya_Republic("RU-UD"), //
 

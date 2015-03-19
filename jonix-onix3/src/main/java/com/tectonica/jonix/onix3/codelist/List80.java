@@ -101,7 +101,7 @@ public enum List80
 	 */
 	Long_square_package("16"), //
 
-	Softbox__for_DVD_("17"), //
+	Softbox_for_DVD("17"), //
 
 	/**
 	 * In pouch, eg teaching materials in a plastic bag or pouch.

@@ -53,7 +53,7 @@ public enum List65
 	 * when the successor will be published under a different ISBN (normally because different trade terms apply); or to a title that is
 	 * being published as a POD original.
 	 */
-	Not_yet_available__will_be_POD("12"), //
+	Not_yet_available_will_be_POD("12"), //
 
 	/**
 	 * Available from us (form of availability unspecified).
@@ -109,19 +109,19 @@ public enum List65
 	/**
 	 * Not available from us (for any reason).
 	 */
-	Not_available__reason_unspecified_("40"), //
+	Not_available_reason_unspecified("40"), //
 
 	/**
 	 * This product is unavailable, but a successor product or edition is or will be available from us (identify successor in
 	 * <RelatedProduct>).
 	 */
-	Not_available__replaced_by_new_product("41"), //
+	Not_available_replaced_by_new_product("41"), //
 
 	/**
 	 * This product is unavailable, but the same content is or will be available from us in an alternative format (identify other format
 	 * product in <RelatedProduct>).
 	 */
-	Not_available__other_format_available("42"), //
+	Not_available_other_format_available("42"), //
 
 	/**
 	 * Identify new supplier in <NewSupplier> if possible.
@@ -152,7 +152,7 @@ public enum List65
 	 * Out of print, but a print-on-demand edition is or will be available under a different ISBN. Use only when the POD successor has a
 	 * different ISBN, normally because different trade terms apply.
 	 */
-	Not_available__replaced_by_POD("48"), //
+	Not_available_replaced_by_POD("48"), //
 
 	/**
 	 * Recalled for reasons of consumer safety.
@@ -168,13 +168,13 @@ public enum List65
 	 * This product is unavailable, no successor product or alternative format is available or planned. Use this code only when the
 	 * publisher has indicated the product is out of print.
 	 */
-	Not_available__publisher_indicates_OP("51"), //
+	Not_available_publisher_indicates_OP("51"), //
 
 	/**
 	 * This product is unavailable in this market, no successor product or alternative format is available or planned. Use this code when a
 	 * publisher has indicated the product is permanently unavailable (in this market) while remaining available elsewhere.
 	 */
-	Not_available__publisher_no_longer_sells_product_in_this_market("52"), //
+	Not_available_publisher_no_longer_sells_product_in_this_market("52"), //
 
 	/**
 	 * Sender has not received any recent update for this product from the publisher/supplier (for use when the sender is a data

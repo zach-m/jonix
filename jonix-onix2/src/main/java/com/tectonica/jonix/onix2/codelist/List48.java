@@ -64,7 +64,7 @@ public enum List48
 	/**
 	 * Of a globe, for example.
 	 */
-	Diameter__sphere_("09"), //
+	Diameter_sphere("09"), //
 
 	/**
 	 * The height of a folded or rolled sheet map, poster etc when unfolded.
@@ -80,7 +80,7 @@ public enum List48
 	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 “height” for the height or
 	 * length of the tube.
 	 */
-	Diameter__tube_or_cylinder_("12"), //
+	Diameter_tube_or_cylinder("12"), //
 
 	/**
 	 * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet product. Use 01

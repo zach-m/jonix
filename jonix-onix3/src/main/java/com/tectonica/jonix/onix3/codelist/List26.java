@@ -92,7 +92,7 @@ public enum List26
 
 	BIC_geographical_qualifier("13"), //
 
-	BIC_language_qualifier__language_as_subject_("14"), //
+	BIC_language_qualifier_language_as_subject("14"), //
 
 	BIC_time_period_qualifier("15"), //
 
@@ -191,7 +191,7 @@ public enum List26
 	/**
 	 * A modified Dewey Decimal Classification used in the Republic of Korea.
 	 */
-	Korean_Decimal_Classification__KDC_("35"), //
+	Korean_Decimal_Classification_KDC("35"), //
 
 	/**
 	 * German Translation of Dewey Decimal Classification 22. Also known as DDC 22 ger. See
@@ -295,7 +295,7 @@ public enum List26
 
 	Qualificatore_di_livello_scolastico_CCE("57"), //
 
-	Qualificatore_di_et__di_lettura_CCE("58"), //
+	Qualificatore_di_et_di_lettura_CCE("58"), //
 
 	/**
 	 * Subject code list of the German association of educational media publishers.
@@ -446,7 +446,7 @@ public enum List26
 
 	Thema_educational_purpose_qualifier("97"), //
 
-	Thema_interest_age___special_interest_qualifier("98"), //
+	Thema_interest_age_special_interest_qualifier("98"), //
 
 	Thema_style_qualifier("99"), //
 
@@ -458,7 +458,7 @@ public enum List26
 	/**
 	 * Polish Statistical Book and E-book Classification.
 	 */
-	Statystyka_Ksi__ek_Papierowych__M_wionych_I_Elektronicznych("A3"), //
+	Statystyka_Ksi_ek_Papierowych_M_wionych_I_Elektronicznych("A3"), //
 
 	/**
 	 * Common Core State Standards curriculum alignment, for links to US educational standards. <SubjectCode> uses the full dot notation.

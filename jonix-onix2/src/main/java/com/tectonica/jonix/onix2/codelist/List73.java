@@ -31,7 +31,7 @@ import java.util.Map;
  */
 public enum List73
 {
-	Unspecified__see_website_description("00"), //
+	Unspecified_see_website_description("00"), //
 
 	/**
 	 * See also codes 17 and 18.
@@ -58,7 +58,7 @@ public enum List73
 	 * A webpage giving direct access to the content that is available online for a specified resource version. Generally used for content
 	 * available online under subscription terms.
 	 */
-	Online_resource__available_content__page("05"), //
+	Online_resource_available_content_page("05"), //
 
 	/**
 	 * A webpage maintained by an author or other contributor about her/his publications and personal background.
@@ -116,7 +116,7 @@ public enum List73
 	/**
 	 * A webpage devoted to a group or series of works, and maintained by a third party (eg a fan site).
 	 */
-	Third_party_website_relating_to_group_or_series_of_works__eg_a_fan_site_("16"), //
+	Third_party_website_relating_to_group_or_series_of_works_eg_a_fan_site("16"), //
 
 	/**
 	 * Use instead of code 01 to specify a publisher’s website for trade users.
@@ -133,7 +133,7 @@ public enum List73
 	 */
 	Author_blog("23"), //
 
-	Web_page_for_author_presentation___commentary("24"), //
+	Web_page_for_author_presentation_commentary("24"), //
 
 	Web_page_for_author_interview("25"), //
 
@@ -149,7 +149,7 @@ public enum List73
 	 */
 	Web_page_for_full_content("29"), //
 
-	Web_page_for_other_commentary___discussion("30"), //
+	Web_page_for_other_commentary_discussion("30"), //
 
 	/**
 	 * URL needed by the German National Library for direct access, harvesting and storage of an electronic resource.
@@ -219,7 +219,7 @@ public enum List73
 	/**
 	 * For example, a Facebook, Google+ or Twitter page. Use only in the context of a specific content item (eg within <ContentItem>).
 	 */
-	Social_networking_URL_for_specific_article__chapter_or_content_item("44");
+	Social_networking_URL_for_specific_article_chapter_or_content_item("44");
 
 	public final String value;
 

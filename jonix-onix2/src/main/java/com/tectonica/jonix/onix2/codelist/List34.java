@@ -73,9 +73,9 @@ public enum List34
 	 */
 	PDF_("08"), //
 
-	Microsoft_rich_text_format__RTF_("09"), //
+	Microsoft_rich_text_format_RTF("09"), //
 
-	Microsoft_Word_binary_format__DOC_("10"), //
+	Microsoft_Word_binary_format_DOC("10"), //
 
 	/**
 	 * Office Open XML file format / OOXML / DOCX.
@@ -87,7 +87,7 @@ public enum List34
 	 */
 	ISO_26300_ODF("12"), //
 
-	Corel_Wordperfect_binary_format__DOC_("13"), //
+	Corel_Wordperfect_binary_format_DOC("13"), //
 
 	/**
 	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum (IDPF) [File extension

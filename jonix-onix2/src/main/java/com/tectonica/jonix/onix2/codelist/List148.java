@@ -31,7 +31,7 @@ public enum List148
 	/**
 	 * Collection type is not determined.
 	 */
-	Unspecified__default_("00"), //
+	Unspecified_default("00"), //
 
 	/**
 	 * The collection is a bibliographic collection (eg a series or set (Fr. série)) defined and identified by a publisher, either on the
@@ -47,7 +47,7 @@ public enum List148
 	 * an imprint or marque. Used only in French book publishing, to distinguish between ‘série’ (using the normal code 10) and ‘collection’
 	 * (code 11), and where the collection éditoriale is not an imprint.
 	 */
-	Collection__ditoriale("11"), //
+	Collection_ditoriale("11"), //
 
 	Ascribed_collection("20");
 

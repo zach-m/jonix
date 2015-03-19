@@ -74,7 +74,7 @@ public enum List74
 
 	Amharic("amh"), //
 
-	English__Old__ca__450_1100_("ang"), //
+	English_Old_ca_450_1100("ang"), //
 
 	Angika("anp"), //
 
@@ -85,13 +85,13 @@ public enum List74
 
 	Arabic("ara"), //
 
-	Official_Aramaic__Imperial_Aramaic__700_300_BCE_("arc"), //
+	Official_Aramaic_Imperial_Aramaic_700_300_BCE("arc"), //
 
 	Aragonese("arg"), //
 
 	Armenian("arm"), //
 
-	Mapudungun__Mapuche("arn"), //
+	Mapudungun_Mapuche("arn"), //
 
 	Arapaho("arp"), //
 
@@ -104,7 +104,7 @@ public enum List74
 
 	Assamese("asm"), //
 
-	Asturian__Bable__Leonese__Asturleonese("ast"), //
+	Asturian_Bable_Leonese_Asturleonese("ast"), //
 
 	/**
 	 * Collective name.
@@ -153,7 +153,7 @@ public enum List74
 	 */
 	Baltic_languages("bat"), //
 
-	Beja__Bedawiyet("bej"), //
+	Beja_Bedawiyet("bej"), //
 
 	Belarusian("bel"), //
 
@@ -175,7 +175,7 @@ public enum List74
 
 	Bikol("bik"), //
 
-	Bini__Edo("bin"), //
+	Bini_Edo("bin"), //
 
 	Bislama("bis"), //
 
@@ -205,7 +205,7 @@ public enum List74
 
 	Burmese("bur"), //
 
-	Blin__Bilin("byn"), //
+	Blin_Bilin("byn"), //
 
 	Caddo("cad"), //
 
@@ -240,7 +240,7 @@ public enum List74
 
 	Chinese("chi"), //
 
-	Chuukese__Truk_("chk"), //
+	Chuukese_Truk("chk"), //
 
 	Mari("chm"), //
 
@@ -248,11 +248,11 @@ public enum List74
 
 	Choctaw("cho"), //
 
-	Chipewyan__Dene_Suline("chp"), //
+	Chipewyan_Dene_Suline("chp"), //
 
 	Cherokee("chr"), //
 
-	Church_Slavic__Old_Slavonic__Church_Slavonic__Old_Bulgarian__Old_Church_Slavonic("chu"), //
+	Church_Slavic_Old_Slavonic_Church_Slavonic_Old_Bulgarian_Old_Church_Slavonic("chu"), //
 
 	Chuvash("chv"), //
 
@@ -272,21 +272,21 @@ public enum List74
 	/**
 	 * Collective name.
 	 */
-	Creoles_and_pidgins__English_based("cpe"), //
+	Creoles_and_pidgins_English_based("cpe"), //
 
 	/**
 	 * Collective name.
 	 */
-	Creoles_and_pidgins__French_based("cpf"), //
+	Creoles_and_pidgins_French_based("cpf"), //
 
 	/**
 	 * Collective name.
 	 */
-	Creoles_and_pidgins__Portuguese_based("cpp"), //
+	Creoles_and_pidgins_Portuguese_based("cpp"), //
 
 	Cree("cre"), //
 
-	Crimean_Turkish__Crimean_Tatar("crh"), //
+	Crimean_Turkish_Crimean_Tatar("crh"), //
 
 	/**
 	 * Collective name.
@@ -315,13 +315,13 @@ public enum List74
 
 	Delaware("del"), //
 
-	Slave__Athapascan_("den"), //
+	Slave_Athapascan("den"), //
 
 	Dogrib("dgr"), //
 
 	Dinka("din"), //
 
-	Divehi__Dhivehi__Maldivian("div"), //
+	Divehi_Dhivehi_Maldivian("div"), //
 
 	Dogri("doi"), //
 
@@ -334,9 +334,9 @@ public enum List74
 
 	Duala("dua"), //
 
-	Dutch__Middle__ca__1050_1350_("dum"), //
+	Dutch_Middle_ca_1050_1350("dum"), //
 
-	Dutch__Flemish("dut"), //
+	Dutch_Flemish("dut"), //
 
 	Dyula("dyu"), //
 
@@ -344,7 +344,7 @@ public enum List74
 
 	Efik("efi"), //
 
-	Egyptian__Ancient_("egy"), //
+	Egyptian_Ancient("egy"), //
 
 	Ekajuk("eka"), //
 
@@ -352,7 +352,7 @@ public enum List74
 
 	English("eng"), //
 
-	English__Middle__1100_1500_("enm"), //
+	English_Middle_1100_1500("enm"), //
 
 	/**
 	 * Artificial language.
@@ -373,7 +373,7 @@ public enum List74
 
 	Fijian("fij"), //
 
-	Filipino__Pilipino("fil"), //
+	Filipino_Pilipino("fil"), //
 
 	Finnish("fin"), //
 
@@ -391,9 +391,9 @@ public enum List74
 
 	French("fre"), //
 
-	French__Middle__ca__1400_1600_("frm"), //
+	French_Middle_ca_1400_1600("frm"), //
 
-	French__Old__ca__842_1400_("fro"), //
+	French_Old_ca_842_1400("fro"), //
 
 	Northern_Frisian("frr"), //
 
@@ -420,7 +420,7 @@ public enum List74
 
 	German("ger"), //
 
-	Ethiopic__Ge_ez_("gez"), //
+	Ethiopic_Ge_ez("gez"), //
 
 	Gilbertese("gil"), //
 
@@ -432,9 +432,9 @@ public enum List74
 
 	Manx("glv"), //
 
-	German__Middle_High__ca__1050_1500_("gmh"), //
+	German_Middle_High_ca_1050_1500("gmh"), //
 
-	German__Old_High__ca__750_1050_("goh"), //
+	German_Old_High_ca_750_1050("goh"), //
 
 	Gondi("gon"), //
 
@@ -444,13 +444,13 @@ public enum List74
 
 	Grebo("grb"), //
 
-	Greek__Ancient__to_1453_("grc"), //
+	Greek_Ancient_to_1453("grc"), //
 
-	Greek__Modern__1453__("gre"), //
+	Greek_Modern_1453_("gre"), //
 
 	Guarani("grn"), //
 
-	Swiss_German__Alemannic("gsw"), //
+	Swiss_German_Alemannic("gsw"), //
 
 	Gujarati("guj"), //
 
@@ -473,13 +473,13 @@ public enum List74
 	/**
 	 * Collective name.
 	 */
-	Himachali_languages__Western_Pahari_languages("him"), //
+	Himachali_languages_Western_Pahari_languages("him"), //
 
 	Hindi("hin"), //
 
 	Hittite("hit"), //
 
-	Hmong__Mong("hmn"), //
+	Hmong_Mong("hmn"), //
 
 	Hiri_Motu("hmo"), //
 
@@ -502,7 +502,7 @@ public enum List74
 	 */
 	Ido("ido"), //
 
-	Sichuan_Yi__Nuosu("iii"), //
+	Sichuan_Yi_Nuosu("iii"), //
 
 	/**
 	 * Collective name.
@@ -514,14 +514,14 @@ public enum List74
 	/**
 	 * Artificial language.
 	 */
-	Interlingue__Occidental("ile"), //
+	Interlingue_Occidental("ile"), //
 
 	Iloko("ilo"), //
 
 	/**
 	 * Artificial language.
 	 */
-	Interlingua__International_Auxiliary_Language_Association_("ina"), //
+	Interlingua_International_Auxiliary_Language_Association("ina"), //
 
 	/**
 	 * Collective name.
@@ -565,9 +565,9 @@ public enum List74
 
 	Kabyle("kab"), //
 
-	Kachin__Jingpho("kac"), //
+	Kachin_Jingpho("kac"), //
 
-	Kal_tdlisut__Greenlandic("kal"), //
+	Kal_tdlisut_Greenlandic("kal"), //
 
 	Kamba("kam"), //
 
@@ -586,7 +586,7 @@ public enum List74
 
 	Kazakh("kaz"), //
 
-	Kabardian__Circassian_("kbd"), //
+	Kabardian_Circassian("kbd"), //
 
 	Khasi("kha"), //
 
@@ -597,13 +597,13 @@ public enum List74
 
 	Central_Khmer("khm"), //
 
-	Khotanese__Sakan("kho"), //
+	Khotanese_Sakan("kho"), //
 
-	Kikuyu__Gikuyu("kik"), //
+	Kikuyu_Gikuyu("kik"), //
 
 	Kinyarwanda("kin"), //
 
-	Kirghiz__Kyrgyz("kir"), //
+	Kirghiz_Kyrgyz("kir"), //
 
 	Kimbundu("kmb"), //
 
@@ -615,7 +615,7 @@ public enum List74
 
 	Korean("kor"), //
 
-	Kusaiean__Caroline_Islands_("kos"), //
+	Kusaiean_Caroline_Islands("kos"), //
 
 	Kpelle("kpe"), //
 
@@ -662,7 +662,7 @@ public enum List74
 
 	Lozi("loz"), //
 
-	Luxembourgish__Letzeburgesch("ltz"), //
+	Luxembourgish_Letzeburgesch("ltz"), //
 
 	Luba_Lulua("lua"), //
 
@@ -674,7 +674,7 @@ public enum List74
 
 	Lunda("lun"), //
 
-	Luo__Kenya_and_Tanzania_("luo"), //
+	Luo_Kenya_and_Tanzania("luo"), //
 
 	Lushai("lus"), //
 
@@ -713,9 +713,9 @@ public enum List74
 
 	Mende("men"), //
 
-	Irish__Middle__ca__1100_1550_("mga"), //
+	Irish_Middle_ca_1100_1550("mga"), //
 
-	Mi_kmaq__Micmac("mic"), //
+	Mi_kmaq_Micmac("mic"), //
 
 	Minangkabau("min"), //
 
@@ -744,11 +744,11 @@ public enum List74
 	/**
 	 * DEPRECATED – use rum.
 	 */
-	Moldavian__Moldovan("mol"), //
+	Moldavian_Moldovan("mol"), //
 
 	Mongolian("mon"), //
 
-	Moor___Mossi("mos"), //
+	Moor_Mossi("mos"), //
 
 	Multiple_languages("mul"), //
 
@@ -786,17 +786,17 @@ public enum List74
 
 	Navajo("nav"), //
 
-	Ndebele__South("nbl"), //
+	Ndebele_South("nbl"), //
 
-	Ndebele__North("nde"), //
+	Ndebele_North("nde"), //
 
 	Ndonga("ndo"), //
 
-	Low_German__Low_Saxon("nds"), //
+	Low_German_Low_Saxon("nds"), //
 
 	Nepali("nep"), //
 
-	Newari__Nepal_Bhasa("new"), //
+	Newari_Nepal_Bhasa("new"), //
 
 	Nias("nia"), //
 
@@ -819,16 +819,16 @@ public enum List74
 
 	N_Ko("nqo"), //
 
-	Pedi__Sepedi__Northern_Sotho("nso"), //
+	Pedi_Sepedi_Northern_Sotho("nso"), //
 
 	/**
 	 * Collective name.
 	 */
 	Nubian_languages("nub"), //
 
-	Classical_Newari__Old_Newari__Classical_Nepal_Bhasa("nwc"), //
+	Classical_Newari_Old_Newari_Classical_Nepal_Bhasa("nwc"), //
 
-	Chichewa__Chewa__Nyanja("nya"), //
+	Chichewa_Chewa_Nyanja("nya"), //
 
 	Nyamwezi("nym"), //
 
@@ -838,7 +838,7 @@ public enum List74
 
 	Nzima("nzi"), //
 
-	Occitan__post_1500_("oci"), //
+	Occitan_post_1500("oci"), //
 
 	Ojibwa("oji"), //
 
@@ -848,9 +848,9 @@ public enum List74
 
 	Osage("osa"), //
 
-	Ossetian__Ossetic("oss"), //
+	Ossetian_Ossetic("oss"), //
 
-	Turkish__Ottoman("ota"), //
+	Turkish_Ottoman("ota"), //
 
 	/**
 	 * Collective name.
@@ -866,7 +866,7 @@ public enum List74
 
 	Pahlavi("pal"), //
 
-	Pampanga__Kapampangan("pam"), //
+	Pampanga_Kapampangan("pam"), //
 
 	Panjabi("pan"), //
 
@@ -874,7 +874,7 @@ public enum List74
 
 	Palauan("pau"), //
 
-	Old_Persian__ca__600_400_B_C__("peo"), //
+	Old_Persian_ca_600_400_B_C_("peo"), //
 
 	Persian("per"), //
 
@@ -898,9 +898,9 @@ public enum List74
 	 */
 	Prakrit_languages("pra"), //
 
-	Proven_al__Old__to_1500___Occitan__Old__to_1500_("pro"), //
+	Proven_al_Old_to_1500("pro"), //
 
-	Pushto__Pashto("pus"), //
+	Pushto_Pashto("pus"), //
 
 	/**
 	 * ONIX local code, distinct dialect of Occitan (not distinguished from oci by ISO 639-3).
@@ -918,7 +918,7 @@ public enum List74
 
 	Rapanui("rap"), //
 
-	Rarotongan__Cook_Islands_Maori("rar"), //
+	Rarotongan_Cook_Islands_Maori("rar"), //
 
 	/**
 	 * Collective name.
@@ -933,7 +933,7 @@ public enum List74
 
 	Rundi("run"), //
 
-	Aromanian__Arumanian__Macedo_Romanian("rup"), //
+	Aromanian_Arumanian_Macedo_Romanian("rup"), //
 
 	Russian("rus"), //
 
@@ -968,7 +968,7 @@ public enum List74
 
 	Sicilian("scn"), //
 
-	Scots__lallans_("sco"), //
+	Scots_lallans("sco"), //
 
 	/**
 	 * DEPRECATED – use hrv.
@@ -982,7 +982,7 @@ public enum List74
 	 */
 	Semitic_languages("sem"), //
 
-	Irish__Old__to_1100_("sga"), //
+	Irish_Old_to_1100("sga"), //
 
 	/**
 	 * Collective name.
@@ -993,7 +993,7 @@ public enum List74
 
 	Sidamo("sid"), //
 
-	Sinhala__Sinhalese("sin"), //
+	Sinhala_Sinhalese("sin"), //
 
 	/**
 	 * Collective name.
@@ -1046,7 +1046,7 @@ public enum List74
 	 */
 	Songhai_languages("son"), //
 
-	Sotho__Sesotho("sot"), //
+	Sotho_Sesotho("sot"), //
 
 	Spanish("spa"), //
 
@@ -1063,7 +1063,7 @@ public enum List74
 	 */
 	Nilo_Saharan_languages("ssa"), //
 
-	Swazi__Swati("ssw"), //
+	Swazi_Swati("ssw"), //
 
 	Sukuma("suk"), //
 
@@ -1094,7 +1094,7 @@ public enum List74
 
 	Telugu("tel"), //
 
-	Temne__Time("tem"), //
+	Temne_Time("tem"), //
 
 	Terena("ter"), //
 
@@ -1119,13 +1119,13 @@ public enum List74
 	/**
 	 * Artificial language.
 	 */
-	Klingon__tlhIngan_Hol("tlh"), //
+	Klingon_tlhIngan_Hol("tlh"), //
 
 	Tlingit("tli"), //
 
 	Tamashek("tmh"), //
 
-	Tonga__Nyasa_("tog"), //
+	Tonga_Nyasa("tog"), //
 
 	Tongan("ton"), //
 
@@ -1163,7 +1163,7 @@ public enum List74
 
 	Ugaritic("uga"), //
 
-	Uighur__Uyghur("uig"), //
+	Uighur_Uyghur("uig"), //
 
 	Ukrainian("ukr"), //
 
@@ -1193,7 +1193,7 @@ public enum List74
 	 */
 	Wakashan_languages("wak"), //
 
-	Wolaitta__Wolaytta("wal"), //
+	Wolaitta_Wolaytta("wal"), //
 
 	Waray("war"), //
 
@@ -1232,11 +1232,11 @@ public enum List74
 	/**
 	 * Artificial language.
 	 */
-	Blissymbols__Blissymbolics__Bliss("zbl"), //
+	Blissymbols_Blissymbolics_Bliss("zbl"), //
 
 	Zenaga("zen"), //
 
-	Zhuang__Chuang("zha"), //
+	Zhuang_Chuang("zha"), //
 
 	/**
 	 * Collective name.
@@ -1249,7 +1249,7 @@ public enum List74
 
 	No_linguistic_content("zxx"), //
 
-	Zaza__Dimili__Dimli__Kirdki__Kirmanjki__Zazaki("zza");
+	Zaza_Dimili_Dimli_Kirdki_Kirmanjki_Zazaki("zza");
 
 	public final String value;
 

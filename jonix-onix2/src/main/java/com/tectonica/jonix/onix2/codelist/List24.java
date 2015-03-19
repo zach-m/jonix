@@ -38,11 +38,11 @@ public enum List24
 
 	Pages("03"), //
 
-	Hours__integer_and_decimals_("04"), //
+	Hours_integer_and_decimals("04"), //
 
-	Minutes__integer_and_decimals_("05"), //
+	Minutes_integer_and_decimals("05"), //
 
-	Seconds__integer_only_("06"), //
+	Seconds_integer_only("06"), //
 
 	/**
 	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3–6 minutes of running time,

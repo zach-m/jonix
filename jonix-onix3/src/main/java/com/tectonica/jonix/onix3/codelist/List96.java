@@ -74,7 +74,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Austria__Schilling("ATS"), //
+	Austria_Schilling("ATS"), //
 
 	/**
 	 * Australia, Christmas Island, Cocos (Keeling) Islands, Heard Island and McDonald Islands, Kiribati, Nauru, Norfolk Island, Tuvalu.
@@ -109,7 +109,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Belgium__Franc("BEF"), //
+	Belgium_Franc("BEF"), //
 
 	/**
 	 * DEPRECATED, replaced by BGN.
@@ -244,7 +244,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Germany__Mark("DEM"), //
+	Germany_Mark("DEM"), //
 
 	/**
 	 * Djibouti (prices normally quoted as integers).
@@ -285,7 +285,7 @@ public enum List96
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices normally quoted as
 	 * integers).
 	 */
-	Spain__Peseta("ESP"), //
+	Spain_Peseta("ESP"), //
 
 	/**
 	 * Ethiopia.
@@ -302,7 +302,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Finland__Markka("FIM"), //
+	Finland_Markka("FIM"), //
 
 	/**
 	 * Fiji.
@@ -317,7 +317,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	France__Franc("FRF"), //
+	France_Franc("FRF"), //
 
 	/**
 	 * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands, British Indian Ocean Territory.
@@ -357,7 +357,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Greece__Drachma("GRD"), //
+	Greece_Drachma("GRD"), //
 
 	/**
 	 * Guatemala.
@@ -407,7 +407,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Ireland__Punt("IEP"), //
+	Ireland_Punt("IEP"), //
 
 	/**
 	 * Israel.
@@ -438,7 +438,7 @@ public enum List96
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices normally quoted as
 	 * integers).
 	 */
-	Italy__Lira("ITL"), //
+	Italy_Lira("ITL"), //
 
 	/**
 	 * Jamaica.
@@ -534,7 +534,7 @@ public enum List96
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices normally quoted as
 	 * integers).
 	 */
-	Luxembourg__Franc("LUF"), //
+	Luxembourg_Franc("LUF"), //
 
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
@@ -644,7 +644,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Netherlands__Guilder("NLG"), //
+	Netherlands_Guilder("NLG"), //
 
 	/**
 	 * Norway, Bouvet Island, Svalbard and Jan Mayen.
@@ -699,7 +699,7 @@ public enum List96
 	/**
 	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
 	 */
-	Portugal__Escudo("PTE"), //
+	Portugal_Escudo("PTE"), //
 
 	/**
 	 * Paraguay (prices normally quoted as integers).
@@ -869,12 +869,12 @@ public enum List96
 	/**
 	 * Deprecated, replaced by TRY (prices normally quoted as integers).
 	 */
-	Turkish_Lira__old_("TRL"), //
+	Turkish_Lira_old("TRL"), //
 
 	/**
 	 * Turkey, from 1 January 2005.
 	 */
-	Turkish_Lira__new_("TRY"), //
+	Turkish_Lira_new("TRY"), //
 
 	/**
 	 * Trinidad and Tobago.

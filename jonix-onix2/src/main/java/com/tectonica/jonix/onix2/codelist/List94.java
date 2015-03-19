@@ -33,7 +33,7 @@ public enum List94
 	 */
 	Centimeters("cm"), //
 
-	Inches__US_("in"), //
+	Inches_US("in"), //
 
 	Millimeters("mm");
 

@@ -60,7 +60,7 @@ public enum List58
 	 * Unit price charged by supplier to reseller / rental outlet, excluding any sales tax or value-added tax: goods for rental (used for
 	 * video and DVD).
 	 */
-	Supplier_s_net_price_excluding_tax__rental_goods("06"), //
+	Supplier_s_net_price_excluding_tax_rental_goods("06"), //
 
 	/**
 	 * Unit price charged by supplier to reseller including any sales tax or value-added tax if applicable: goods for retail sale.

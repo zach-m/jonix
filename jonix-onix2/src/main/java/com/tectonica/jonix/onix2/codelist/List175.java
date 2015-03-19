@@ -85,44 +85,44 @@ public enum List175
 	/**
 	 * Deprecated, as does not meet DAISY 2 standard. Use conventional audiobook codes instead.
 	 */
-	DAISY_2__full_audio_with_title_only__no_navigation_("A201"), //
+	DAISY_2_full_audio_with_title_only_no_navigation("A201"), //
 
-	DAISY_2__full_audio_with_navigation__no_text_("A202"), //
+	DAISY_2_full_audio_with_navigation_no_text("A202"), //
 
-	DAISY_2__full_audio_with_navigation_and_partial_text("A203"), //
+	DAISY_2_full_audio_with_navigation_and_partial_text("A203"), //
 
-	DAISY_2__full_audio_with_navigation_and_full_text("A204"), //
-
-	/**
-	 * Reading systems may provide full audio via text-to-speech.
-	 */
-	DAISY_2__full_text_with_navigation_and_partial_audio("A205"), //
+	DAISY_2_full_audio_with_navigation_and_full_text("A204"), //
 
 	/**
 	 * Reading systems may provide full audio via text-to-speech.
 	 */
-	DAISY_2__full_text_with_navigation_and_no_audio("A206"), //
+	DAISY_2_full_text_with_navigation_and_partial_audio("A205"), //
+
+	/**
+	 * Reading systems may provide full audio via text-to-speech.
+	 */
+	DAISY_2_full_text_with_navigation_and_no_audio("A206"), //
 
 	/**
 	 * Deprecated, as does not meet DAISY 3 standard. Use conventional audiobook codes instead.
 	 */
-	DAISY_3__full_audio_with_title_only__no_navigation_("A207"), //
+	DAISY_3_full_audio_with_title_only_no_navigation("A207"), //
 
-	DAISY_3__full_audio_with_navigation__no_text_("A208"), //
+	DAISY_3_full_audio_with_navigation_no_text("A208"), //
 
-	DAISY_3__full_audio_with_navigation_and_partial_text("A209"), //
+	DAISY_3_full_audio_with_navigation_and_partial_text("A209"), //
 
-	DAISY_3__full_audio_with_navigation_and_full_text("A210"), //
-
-	/**
-	 * Reading systems may provide full audio via text-to-speech.
-	 */
-	DAISY_3__full_text_with_navigation_and_partial_audio("A211"), //
+	DAISY_3_full_audio_with_navigation_and_full_text("A210"), //
 
 	/**
 	 * Reading systems may provide full audio via text-to-speech.
 	 */
-	DAISY_3__full_text_with_navigation_and_no_audio("A212"), //
+	DAISY_3_full_text_with_navigation_and_partial_audio("A211"), //
+
+	/**
+	 * Reading systems may provide full audio via text-to-speech.
+	 */
+	DAISY_3_full_text_with_navigation_and_no_audio("A212"), //
 
 	Standalone_audio("A301"), //
 
@@ -154,14 +154,14 @@ public enum List175
 	 * In North America, a category of paperback characterized partly by page size (typically 4¼ x 7 1/8 inches) and partly by target market
 	 * and terms of trade. Use with Product Form code BC.
 	 */
-	Mass_market__rack__paperback("B101"), //
+	Mass_market_rack("B101"), //
 
 	/**
 	 * In North America, a category of paperback characterized partly by page size and partly by target market and terms of trade. AKA
 	 * ‘quality paperback’, and including textbooks. Most paperback books sold in North America except ‘mass-market’ (B101) and ‘tall rack’
 	 * (B107) are correctly described with this code. Use with Product Form code BC.
 	 */
-	Trade_paperback__US_("B102"), //
+	Trade_paperback_US("B102"), //
 
 	/**
 	 * In North America, a category of paperback characterized by page size and generally used for children’s books; use with Product Form
@@ -183,13 +183,13 @@ public enum List175
 	 * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and often used for
 	 * paperback originals; use with Product Form code BC (replaces ‘C-format’ from former List 8).
 	 */
-	Trade_paperback__UK_("B106"), //
+	Trade_paperback_UK("B106"), //
 
 	/**
 	 * In North America, a category of paperback characterised partly by page size and partly by target market and terms of trade; use with
 	 * Product Form code BC.
 	 */
-	Tall_rack_paperback__US_("B107"), //
+	Tall_rack_paperback_US("B107"), //
 
 	/**
 	 * 210x148mm.
@@ -219,22 +219,22 @@ public enum List175
 	/**
 	 * A Swedish and Norwegian paperback format, use with Product Form Code BC.
 	 */
-	Pocket__Sweden__Norway_("B113"), //
+	Pocket_Sweden_Norway("B113"), //
 
 	/**
 	 * A Swedish paperback format, use with Product Form Code BC.
 	 */
-	Storpocket__Sweden_("B114"), //
+	Storpocket_Sweden("B114"), //
 
 	/**
 	 * A Swedish hardback format, use with Product Form Code BB.
 	 */
-	Kartonnage__Sweden_("B115"), //
+	Kartonnage_Sweden("B115"), //
 
 	/**
 	 * A Swedish softback format, use with Product Form Code BC.
 	 */
-	Flexband__Sweden_("B116"), //
+	Flexband_Sweden("B116"), //
 
 	/**
 	 * In Japan, a softback book in the format of a magazine but sold like a book. Use with Product Form code BC.
@@ -310,9 +310,9 @@ public enum List175
 	/**
 	 * German paperback format, greater than 205mm high, with flaps. Use with Product form code BC.
 	 */
-	Paperback__DE_("B131"), //
+	Paperback_DE("B131"), //
 
-	Coloring___join_the_dot_book("B201"), //
+	Coloring_join_the_dot_book("B201"), //
 
 	Lift_the_flap_book("B202"), //
 
@@ -321,13 +321,13 @@ public enum List175
 	 */
 	Miniature_book("B204"), //
 
-	Moving_picture___flicker_book("B205"), //
+	Moving_picture_flicker_book("B205"), //
 
 	Pop_up_book("B206"), //
 
-	Scented____smelly__book("B207"), //
+	Scented_smelly_book("B207"), //
 
-	Sound_story____noisy__book("B208"), //
+	Sound_story_noisy_book("B208"), //
 
 	Sticker_book("B209"), //
 
@@ -366,22 +366,22 @@ public enum List175
 	/**
 	 * (aka ‘Star’ book). Tax treatment of products may differ from that of products with similar codes such as Book as toy or Pop-up book).
 	 */
-	_Carousel__Book("B222"), //
+	_Carousel_Book("B222"), //
 
 	/**
 	 * Use with Product Form code BD.
 	 */
-	Loose_leaf___sheets_and_binder("B301"), //
+	Loose_leaf_sheets_and_binder("B301"), //
 
 	/**
 	 * Use with Product Form code BD.
 	 */
-	Loose_leaf___binder_only("B302"), //
+	Loose_leaf_binder_only("B302"), //
 
 	/**
 	 * Use with Product Form code BD.
 	 */
-	Loose_leaf___sheets_only("B303"), //
+	Loose_leaf_sheets_only("B303"), //
 
 	/**
 	 * AKA stitched; for ‘saddle-sewn’, see code B310.
@@ -391,7 +391,7 @@ public enum List175
 	/**
 	 * Including ‘perfect bound’, ‘glued’.
 	 */
-	Unsewn___adhesive_bound("B305"), //
+	Unsewn_adhesive_bound("B305"), //
 
 	/**
 	 * Strengthened cloth-over-boards binding intended for libraries: use with Product form code BB.
@@ -440,11 +440,11 @@ public enum List175
 
 	Paper_over_boards("B402"), //
 
-	Leather__real("B403"), //
+	Leather_real("B403"), //
 
-	Leather__imitation("B404"), //
+	Leather_imitation("B404"), //
 
-	Leather__bonded("B405"), //
+	Leather_bonded("B405"), //
 
 	Vellum("B406"), //
 
@@ -499,7 +499,7 @@ public enum List175
 	/**
 	 * If the number of markers is significant, it can be stated as free text in <ProductFormDescription>.
 	 */
-	With_ribbon_marker_s_("B506"), //
+	With_ribbon_marker_s("B506"), //
 
 	With_zip_fastener("B507"), //
 
@@ -600,12 +600,12 @@ public enum List175
 	/**
 	 * Use with an applicable Product Form code D*; see note on D201.
 	 */
-	UNIX___LINUX("D204"), //
+	UNIX_LINUX("D204"), //
 
 	/**
 	 * Use with an applicable Product Form code D*; see note on D201.
 	 */
-	Other_operating_system_s_("D205"), //
+	Other_operating_system_s("D205"), //
 
 	/**
 	 * Use with an applicable Product Form code D*; see note on D201.
@@ -680,7 +680,7 @@ public enum List175
 
 	Nintendo_Wii("D315"), //
 
-	Sony_PlayStation_Portable__PSP_("D316"), //
+	Sony_PlayStation_Portable_PSP("D316"), //
 
 	/**
 	 * No code allocated for this e-publication format yet.
@@ -864,20 +864,20 @@ public enum List175
 	 * Epublication packaged as application for iOS (eg Apple iPhone, iPad etc), containing both executable code and content. Use
 	 * <ProductContentType> to describe content, and <ProductFormFeatureType> to list detailed technical requirements.
 	 */
-	Book__app__for_iOS("E134"), //
+	Book_app_for_iOS("E134"), //
 
 	/**
 	 * Epublication packaged as application for Android (eg Android phone or tablet), containing both executable code and content. Use
 	 * <ProductContentType> to describe content, and <ProductFormFeatureType> to list detailed technical requirements.
 	 */
-	Book__app__for_Android("E135"), //
+	Book_app_for_Android("E135"), //
 
 	/**
 	 * Epublication packaged as application, containing both executable code and content. Use where other ‘app’ codes are not applicable.
 	 * Technical requirements such as target operating system and/or device should be provided eg in <ProductFormFeatureType>. Content type
 	 * (text or text plus various ‘enhancements’) may be described with <ProductContentType>.
 	 */
-	Book__app__for_other_operating_system("E136"), //
+	Book_app_for_other_operating_system("E136"), //
 
 	/**
 	 * Founder Apabi’s proprietary basic e-book format.
@@ -1051,22 +1051,22 @@ public enum List175
 	/**
 	 * Stationery item in hardback book format.
 	 */
-	Hardback__stationery_("P201"), //
+	Hardback_stationery("P201"), //
 
 	/**
 	 * Stationery item in paperback/softback book format.
 	 */
-	Paperback___softback__stationery_("P202"), //
+	Paperback_softback_stationery("P202"), //
 
 	/**
 	 * Stationery item in spiral-bound book format.
 	 */
-	Spiral_bound__stationery_("P203"), //
+	Spiral_bound_stationery("P203"), //
 
 	/**
 	 * Stationery item in leather-bound book format, or other fine binding.
 	 */
-	Leather___fine_binding__stationery_("P204"), //
+	Leather_fine_binding_stationery("P204"), //
 
 	/**
 	 * TV standard for video or DVD.

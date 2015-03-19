@@ -122,7 +122,7 @@ public enum List21
 	/**
 	 * Large print edition, print sizes 14 to 19 pt – see also ULP.
 	 */
-	Large_type___large_print_edition("LTE"), //
+	Large_type_large_print_edition("LTE"), //
 
 	/**
 	 * A printed edition in a type size too small to be read without a magnifying glass.

@@ -42,7 +42,7 @@ public enum List18
 	/**
 	 * May be used to identify a well-known real name, where the primary name is a pseudonym.
 	 */
-	_Real__name("04"), //
+	_Real_name("04"), //
 
 	/**
 	 * Use only within <AlternativeName>, when the primary name type is unspecified.

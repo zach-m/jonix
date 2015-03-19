@@ -110,7 +110,7 @@ public enum List150
 	/**
 	 * Paperback or other softback book.
 	 */
-	Paperback___softback("BC"), //
+	Paperback_softback("BC"), //
 
 	/**
 	 * Loose-leaf book.
@@ -127,7 +127,7 @@ public enum List150
 	 */
 	Pamphlet("BF"), //
 
-	Leather___fine_binding("BG"), //
+	Leather_fine_binding("BG"), //
 
 	/**
 	 * Child’s book with all pages printed on board.
@@ -164,7 +164,7 @@ public enum List150
 	/**
 	 * A part-work issued with its own ISBN and intended to be collected and bound into a complete book.
 	 */
-	Part_work__fasc_culo_("BN"), //
+	Part_work_fasc_culo("BN"), //
 
 	/**
 	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German ‘Leporello’.
@@ -186,14 +186,14 @@ public enum List150
 	 */
 	Sheet_map("CA"), //
 
-	Sheet_map__folded("CB"), //
+	Sheet_map_folded("CB"), //
 
-	Sheet_map__flat("CC"), //
+	Sheet_map_flat("CC"), //
 
 	/**
 	 * See Code List 80 for ‘rolled in tube’.
 	 */
-	Sheet_map__rolled("CD"), //
+	Sheet_map_rolled("CD"), //
 
 	/**
 	 * Globe or planisphere.
@@ -208,7 +208,7 @@ public enum List150
 	/**
 	 * Digital content delivered on a physical carrier (detail unspecified).
 	 */
-	Digital__on_physical_carrier_("DA"), //
+	Digital_on_physical_carrier("DA"), //
 
 	CD_ROM("DB"), //
 
@@ -226,7 +226,7 @@ public enum List150
 
 	DVD_ROM("DI"), //
 
-	Secure_Digital__SD__Memory_Card("DJ"), //
+	Secure_Digital_SD("DJ"), //
 
 	Compact_Flash_Memory_Card("DK"), //
 
@@ -247,7 +247,7 @@ public enum List150
 	/**
 	 * Digital content delivered electronically (delivery method unspecified).
 	 */
-	Digital__delivered_electronically_("EA"), //
+	Digital_delivered_electronically("EA"), //
 
 	/**
 	 * Digital content available both by download and by online access.
@@ -393,12 +393,12 @@ public enum List150
 	/**
 	 * A book-sized (as opposed to poster-sized) sheet, usually in colour or high quality print.
 	 */
-	Plate__l_mina_("PQ"), //
+	Plate_l_mina("PQ"), //
 
 	/**
 	 * A book with all pages blank for the buyer’s own use; may use product form detail codes P201 to P204 to specify binding.
 	 */
-	Notebook___blank_book("PR"), //
+	Notebook_blank_book("PR"), //
 
 	/**
 	 * May use product form detail codes P201 to P204 to specify binding.
@@ -420,29 +420,29 @@ public enum List150
 	/**
 	 * Format of product items must be given in <ProductPart>.
 	 */
-	Multiple_item_retail_product__boxed("SB"), //
+	Multiple_item_retail_product_boxed("SB"), //
 
 	/**
 	 * Format of product items must be given in <ProductPart>.
 	 */
-	Multiple_item_retail_product__slip_cased("SC"), //
+	Multiple_item_retail_product_slip_cased("SC"), //
 
 	/**
 	 * Format of product items must be given in <ProductPart>. Use code XL for a shrink-wrapped pack for trade supply, where the retail
 	 * items it contains are intended for sale individually.
 	 */
-	Multiple_item_retail_product__shrinkwrapped("SD"), //
+	Multiple_item_retail_product_shrinkwrapped("SD"), //
 
 	/**
 	 * Format of product items must be given in <ProductPart>.
 	 */
-	Multiple_item_retail_product__loose("SE"), //
+	Multiple_item_retail_product_loose("SE"), //
 
 	/**
 	 * Multiple item product where subsidiary product part(s) is/are supplied as enclosures to the primary part, eg a book with a CD
 	 * packaged in a sleeve glued within the back cover. Format of product items must be given in <ProductPart>.
 	 */
-	Multiple_item_retail_product__part_s__enclosed("SF"), //
+	Multiple_item_retail_product_part_s("SF"), //
 
 	/**
 	 * Video – detail unspecified.
@@ -509,24 +509,24 @@ public enum List150
 	 */
 	Trade_only_material("XA"), //
 
-	Dumpbin___empty("XB"), //
+	Dumpbin_empty("XB"), //
 
 	/**
 	 * Dumpbin with contents. ISBN (where applicable) and format of contained items must be given in Product Part.
 	 */
-	Dumpbin___filled("XC"), //
+	Dumpbin_filled("XC"), //
 
-	Counterpack___empty("XD"), //
+	Counterpack_empty("XD"), //
 
 	/**
 	 * Counterpack with contents. ISBN (where applicable) and format of contained items must be given in Product Part.
 	 */
-	Counterpack___filled("XE"), //
+	Counterpack_filled("XE"), //
 
 	/**
 	 * Promotional poster for display, not for sale – see also PK.
 	 */
-	Poster__promotional("XF"), //
+	Poster_promotional("XF"), //
 
 	Shelf_strip("XG"), //
 

@@ -36,7 +36,7 @@ public enum List184
 	 */
 	No_warning("00"), //
 
-	Carries__CE__logo("01"), //
+	Carries_CE_logo("01"), //
 
 	/**
 	 * Use to specify age (in years, or years and months). Provide specific wording in <ProductFormFeatureDescription>.
@@ -48,7 +48,7 @@ public enum List184
 	 * in a language other than English, as appropriate), unless specific wording is provided in <ProductFormFeatureDescription>. If
 	 * specific alternative wording is carried in <ProductFormFeatureDescription>, this must be used in place of the default text.
 	 */
-	Carries_EU_Toy_Safety_Directive__Unsuitable_for_children_ages_0_3__warning_logo("03"), //
+	Carries_EU_Toy_Safety_Directive_Unsuitable_for_children_ages_0_3_warning_logo("03"), //
 
 	/**
 	 * Exact text of warning must be included in <ProductFormFeatureDescription>.

@@ -113,22 +113,22 @@ public enum List55
 	/**
 	 * Year month day (Hijri calendar).
 	 */
-	YYYYMMDD__H_("20"), //
+	YYYYMMDD_H("20"), //
 
 	/**
 	 * Year and month (Hijri calendar).
 	 */
-	YYYYMM__H_("21"), //
+	YYYYMM_H("21"), //
 
 	/**
 	 * Year (Hijri calendar).
 	 */
-	YYYY__H_("25"), //
+	YYYY_H("25"), //
 
 	/**
 	 * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script.
 	 */
-	Text_string__H_("32");
+	Text_string_H("32");
 
 	public final String value;
 

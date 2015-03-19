@@ -55,7 +55,7 @@ public enum List42
 	/**
 	 * For journals.
 	 */
-	Serial_item__miscellaneous_or_unspecified("10"), //
+	Serial_item_miscellaneous_or_unspecified("10"), //
 
 	/**
 	 * For journals.
@@ -90,7 +90,7 @@ public enum List42
 	/**
 	 * For journals.
 	 */
-	Book_review__or_review_of_other_publication_("17"), //
+	Book_review_or_review_of_other_publication("17"), //
 
 	/**
 	 * For journals.

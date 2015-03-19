@@ -40,7 +40,7 @@ public enum List196
 	 * that provision of any significant part of the textual content as images (ie as pictures of text, rather than as text) inevitably
 	 * prevents use of these accessibility options.
 	 */
-	No_reading_system_accessibility_options_disabled__except_("10"), //
+	No_reading_system_accessibility_options_disabled_except("10"), //
 
 	/**
 	 * Table of contents allows direct (eg hyperlinked) access to all levels of text organization above individual paragraphs (eg to all

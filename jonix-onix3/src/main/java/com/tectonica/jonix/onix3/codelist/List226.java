@@ -38,7 +38,7 @@ public enum List226
 	 * Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a <RecordStatusNote>
 	 * or at least one <RecordStatusDetail> to convey errors in associated media files (and possibly supplementary editorial queries).
 	 */
-	No_record_errors___errors_in_collateral("01"), //
+	No_record_errors_errors_in_collateral("01"), //
 
 	/**
 	 * Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a <RecordStatusNote> or at

@@ -40,7 +40,7 @@ public enum List15
 	 * constructed by concatenating the individual titles, with suitable punctuation, as in “Pride and prejudice / Sense and sensibility /
 	 * Northanger Abbey”.
 	 */
-	Distinctive_title__book___Cover_title__serial___Title_on_item__serial_content_item_or_reviewed_resource_("01"), //
+	Distinctive_title_book("01"), //
 
 	/**
 	 * Serials only.

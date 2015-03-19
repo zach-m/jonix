@@ -31,7 +31,7 @@ public enum List52
 	/**
 	 * When the same ISBN is used for open market and UK editions.
 	 */
-	UK__open_market_("004");
+	UK_open_market_("004");
 
 	public final String value;
 

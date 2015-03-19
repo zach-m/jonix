@@ -34,13 +34,13 @@ public enum List71
 	/**
 	 * Restriction must be described in <SalesRestrictionDetail> (ONIX 2.1) or <SalesRestrictionNote> (ONIX 3.0).
 	 */
-	Unspecified___see_text("00"), //
+	Unspecified_see_text("00"), //
 
 	/**
 	 * For sale only through designated retailer. Retailer must be identified or named in an instance of the <SalesOutlet> composite. Use
 	 * only when it is not possible to assign the more explicit code 04 or 05.
 	 */
-	Retailer_exclusive___own_brand("01"), //
+	Retailer_exclusive_own_brand("01"), //
 
 	/**
 	 * For editions sold only though office supplies wholesalers. Retailer(s) and/or distributor(s) may be identified or named in an
@@ -51,7 +51,7 @@ public enum List71
 	/**
 	 * For an ISBN that is assigned for a publisher’s internal purposes.
 	 */
-	Internal_publisher_use_only__do_not_list("03"), //
+	Internal_publisher_use_only_do_not_list("03"), //
 
 	/**
 	 * For sale only through designated retailer, though not under retailer’s own brand/imprint. Retailer must be identified or named in an

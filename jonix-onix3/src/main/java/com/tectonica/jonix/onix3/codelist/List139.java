@@ -235,9 +235,9 @@ public enum List139
 
 	Tesco("TES"), //
 
-	Toys__R__Us("TSR"), //
+	Toys_R_Us("TSR"), //
 
-	TSO__The_Stationery_Office_("TSO"), //
+	TSO_The_Stationery_Office("TSO"), //
 
 	Txtr("TXR"), //
 

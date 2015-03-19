@@ -163,6 +163,24 @@ public class OnixEnumGen
 
 	public String enumNameOf(String rawName)
 	{
-		return rawName.replaceAll("[^a-zA-Z0-9_]+?", "_").replaceAll("^([0-9].*)", "_$1");
+		return rawName.replaceAll("(.+?)\\)(.*)", "$1").trim().replaceAll("[^a-zA-Z0-9_]+", "_").replaceAll("^([0-9].*)", "_$1");
+	}
+
+	public static void main(String[] args)
+	{
+		final OnixEnumGen aux = new OnixEnumGen(null, null, null);
+		String s;
+
+		s = "By (photographer)";
+		System.out.println(s + " --> " + aux.enumNameOf(s));
+
+		s = "Tagalog (Baybayin, Alibata)";
+		System.out.println(s + " --> " + aux.enumNameOf(s));
+
+		s = "16:10";
+		System.out.println(s + " --> " + aux.enumNameOf(s));
+		
+		s = "Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)";
+		System.out.println(s + " --> " + aux.enumNameOf(s));
 	}
 }

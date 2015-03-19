@@ -99,16 +99,16 @@ public enum List121
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Cyrillic__Old_Church_Slavonic_variant_("Cyrs"), //
+	Cyrillic_Old_Church_Slavonic_variant("Cyrs"), //
 
-	Devanagari__Nagari_("Deva"), //
+	Devanagari_Nagari("Deva"), //
 
-	Deseret__Mormon_("Dsrt"), //
+	Deseret_Mormon("Dsrt"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Duployan_shorthand__Duployan_stenography("Dupl"), //
+	Duployan_shorthand_Duployan_stenography("Dupl"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -127,14 +127,14 @@ public enum List121
 	 */
 	Elbasan("Elba"), //
 
-	Ethiopic__Ge_ez_("Ethi"), //
+	Ethiopic_Ge_ez("Ethi"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Khutsuri__Asomtavruli_and_Khutsuri_("Geok"), //
+	Khutsuri_Asomtavruli_and_Khutsuri("Geok"), //
 
-	Georgian__Mkhedruli_("Geor"), //
+	Georgian_Mkhedruli("Geor"), //
 
 	Glagolitic("Glag"), //
 
@@ -151,15 +151,15 @@ public enum List121
 
 	Gurmukhi("Guru"), //
 
-	Hangul__Hang_l__Hangeul_("Hang"), //
+	Hangul_Hang_l_Hangeul("Hang"), //
 
-	Han__Hanzi__Kanji__Hanja_("Hani"), //
+	Han_Hanzi_Kanji_Hanja("Hani"), //
 
-	Hanunoo__Hanun_o_("Hano"), //
+	Hanunoo_Hanun_o("Hano"), //
 
-	Han__Simplified_variant_("Hans"), //
+	Han_Simplified_variant("Hans"), //
 
-	Han__Traditional_variant_("Hant"), //
+	Han_Traditional_variant("Hant"), //
 
 	Hebrew("Hebr"), //
 
@@ -170,7 +170,7 @@ public enum List121
 	 */
 	Pahawh_Hmong("Hmng"), //
 
-	Japanese_syllabaries__alias_for_Hiragana___Katakana_("Hrkt"), //
+	Japanese_syllabaries_alias_for_Hiragana_Katakana("Hrkt"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -180,13 +180,13 @@ public enum List121
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Indus__Harappan_("Inds"), //
+	Indus_Harappan("Inds"), //
 
-	Old_Italic__Etruscan__Oscan__etc__("Ital"), //
+	Old_Italic_Etruscan_Oscan_etc_("Ital"), //
 
 	Javanese("Java"), //
 
-	Japanese_syllabaries__alias_for_Han___Hiragana___Katakana_("Jpan"), //
+	Japanese_syllabaries_alias_for_Han_Hiragana_Katakana("Jpan"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -205,7 +205,7 @@ public enum List121
 
 	Kannada("Knda"), //
 
-	Korean__alias_for_Hangul___Han_("Kore"), //
+	Korean_alias_for_Hangul_Han("Kore"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -214,23 +214,23 @@ public enum List121
 
 	Kaithi("Kthi"), //
 
-	Lanna__Tai_Tham("Lana"), //
+	Lanna_Tai_Tham("Lana"), //
 
 	Lao("Laoo"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Latin__Fraktur_variant_("Latf"), //
+	Latin_Fraktur_variant("Latf"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Latin__Gaelic_variant_("Latg"), //
+	Latin_Gaelic_variant("Latg"), //
 
 	Latin("Latn"), //
 
-	Lepcha__R_ng_("Lepc"), //
+	Lepcha_R_ng("Lepc"), //
 
 	Limbu("Limb"), //
 
@@ -241,7 +241,7 @@ public enum List121
 
 	Linear_B("Linb"), //
 
-	Lisu__Fraser_("Lisu"), //
+	Lisu_Fraser("Lisu"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -252,7 +252,7 @@ public enum List121
 
 	Lydian("Lydi"), //
 
-	Mandaic__Mandaean("Mand"), //
+	Mandaic_Mandaean("Mand"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -286,21 +286,21 @@ public enum List121
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Moon__Moon_code__Moon_script__Moon_type_("Moon"), //
+	Moon_Moon_code_Moon_script_Moon_type("Moon"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Mro__Mru("Mroo"), //
+	Mro_Mru("Mroo"), //
 
-	Meitei_Mayek__Meithei__Meetei_("Mtei"), //
+	Meitei_Mayek_Meithei_Meetei("Mtei"), //
 
-	Myanmar__Burmese_("Mymr"), //
+	Myanmar_Burmese("Mymr"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Old_North_Arabian__Ancient_North_Arabian_("Narb"), //
+	Old_North_Arabian_Ancient_North_Arabian("Narb"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -310,7 +310,7 @@ public enum List121
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Nakhi_Geba___Na__Khi__Gg___baw__Naxi_Geba_("Nkgb"), //
+	Nakhi_Geba_Na_Khi_Gg_baw_Naxi_Geba("Nkgb"), //
 
 	N_Ko("Nkoo"), //
 
@@ -321,9 +321,9 @@ public enum List121
 
 	Ogham("Ogam"), //
 
-	Ol_Chiki__Ol_Cemet___Ol__Santali_("Olck"), //
+	Ol_Chiki_Ol_Cemet_Ol_Santali("Olck"), //
 
-	Old_Turkic__Orkhon_Runic("Orkh"), //
+	Old_Turkic_Orkhon_Runic("Orkh"), //
 
 	Oriya("Orya"), //
 
@@ -358,15 +358,15 @@ public enum List121
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Miao__Pollard_("Plrd"), //
+	Miao_Pollard("Plrd"), //
 
 	Inscriptional_Parthian("Prti"), //
 
-	Reserved_for_private_use__start_("Qaaa"), //
+	Reserved_for_private_use_start("Qaaa"), //
 
-	Reserved_for_private_use__end_("Qabx"), //
+	Reserved_for_private_use_end("Qabx"), //
 
-	Rejang__Redjang__Kaganga_("Rjng"), //
+	Rejang_Redjang_Kaganga("Rjng"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -391,17 +391,17 @@ public enum List121
 	 */
 	SignWriting("Sgnw"), //
 
-	Shavian__Shaw_("Shaw"), //
+	Shavian_Shaw("Shaw"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Sharada____rad_("Shrd"), //
+	Sharada_rad_("Shrd"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Khudawadi__Sindhi("Sind"), //
+	Khudawadi_Sindhi("Sind"), //
 
 	Sinhala("Sinh"), //
 
@@ -416,18 +416,18 @@ public enum List121
 
 	Syriac("Syrc"), //
 
-	Syriac__Estrangelo_variant_("Syre"), //
+	Syriac_Estrangelo_variant("Syre"), //
 
-	Syriac__Western_variant_("Syrj"), //
+	Syriac_Western_variant("Syrj"), //
 
-	Syriac__Eastern_variant_("Syrn"), //
+	Syriac_Eastern_variant("Syrn"), //
 
 	Tagbanwa("Tagb"), //
 
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Takri____kr______kr_("Takr"), //
+	Takri_kr_kr_("Takr"), //
 
 	Tai_Le("Tale"), //
 
@@ -449,9 +449,9 @@ public enum List121
 	 */
 	Tengwar("Teng"), //
 
-	Tifinagh__Berber_("Tfng"), //
+	Tifinagh_Berber("Tfng"), //
 
-	Tagalog__Baybayin__Alibata_("Tglg"), //
+	Tagalog_Baybayin_Alibata("Tglg"), //
 
 	Thaana("Thaa"), //
 
@@ -473,7 +473,7 @@ public enum List121
 	/**
 	 * Script is not supported by Unicode.
 	 */
-	Warang_Citi__Varang_Kshiti_("Wara"), //
+	Warang_Citi_Varang_Kshiti("Wara"), //
 
 	/**
 	 * Script is not supported by Unicode.
@@ -482,7 +482,7 @@ public enum List121
 
 	Old_Persian("Xpeo"), //
 
-	Cuneiform__Sumero_Akkadian("Xsux"), //
+	Cuneiform_Sumero_Akkadian("Xsux"), //
 
 	Yi("Yiii"), //
 

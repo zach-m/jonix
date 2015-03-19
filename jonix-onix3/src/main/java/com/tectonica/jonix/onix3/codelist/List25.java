@@ -34,42 +34,42 @@ public enum List25
 	/**
 	 * See description in the <IllustrationTypeDescription> element.
 	 */
-	Unspecified__see_description("00"), //
+	Unspecified_see_description("00"), //
 
-	Illustrations__black_and_white("01"), //
+	Illustrations_black_and_white("01"), //
 
-	Illustrations__color("02"), //
+	Illustrations_color("02"), //
 
 	/**
 	 * Including black and white photographs.
 	 */
-	Halftones__black_and_white("03"), //
+	Halftones_black_and_white("03"), //
 
 	/**
 	 * Including color photographs.
 	 */
-	Halftones__color("04"), //
+	Halftones_color("04"), //
 
-	Line_drawings__black_and_white("05"), //
+	Line_drawings_black_and_white("05"), //
 
-	Line_drawings__color("06"), //
+	Line_drawings_color("06"), //
 
-	Tables__black_and_white("07"), //
+	Tables_black_and_white("07"), //
 
-	Tables__color("08"), //
+	Tables_color("08"), //
 
-	Illustrations__unspecified("09"), //
+	Illustrations_unspecified("09"), //
 
 	/**
 	 * Including photographs.
 	 */
-	Halftones__unspecified("10"), //
+	Halftones_unspecified("10"), //
 
-	Tables__unspecified("11"), //
+	Tables_unspecified("11"), //
 
-	Line_drawings__unspecified("12"), //
+	Line_drawings_unspecified("12"), //
 
-	Halftones__duotone("13"), //
+	Halftones_duotone("13"), //
 
 	Maps("14"), //
 
@@ -100,17 +100,17 @@ public enum List25
 	/**
 	 * ‘Plates’ means illustrations that are on separate pages bound into the body of a book.
 	 */
-	Plates__unspecified("22"), //
+	Plates_unspecified("22"), //
 
 	/**
 	 * ‘Plates’ means illustrations that are on separate pages bound into the body of a book.
 	 */
-	Plates__black_and_white("23"), //
+	Plates_black_and_white("23"), //
 
 	/**
 	 * ‘Plates’ means illustrations that are on separate pages bound into the body of a book.
 	 */
-	Plates__color("24"), //
+	Plates_color("24"), //
 
 	Index("25"), //
 

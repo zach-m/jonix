@@ -31,33 +31,33 @@ public enum List140
 	/**
 	 * List withdrawn – use List 143.
 	 */
-	WARNING__CHOKING_HAZARD___Small_parts___Not_for_children_under_3_yrs_("01"), //
+	WARNING_CHOKING_HAZARD_Small_parts_Not_for_children_under_3_yrs_("01"), //
 
 	/**
 	 * List withdrawn – use List 143.
 	 */
-	WARNING__CHOKING_HAZARD___This_toy_is_a_small_ball___Not_for_children_under_3_yrs_("02"), //
+	WARNING_CHOKING_HAZARD_This_toy_is_a_small_ball_Not_for_children_under_3_yrs_("02"), //
 
 	/**
 	 * List withdrawn – use List 143.
 	 */
-	WARNING__CHOKING_HAZARD___Toy_contains_a_small_ball___Not_for_children_under_3_yrs_("03"), //
+	WARNING_CHOKING_HAZARD_Toy_contains_a_small_ball_Not_for_children_under_3_yrs_("03"), //
 
 	/**
 	 * List withdrawn – use List 143.
 	 */
-	WARNING__CHOKING_HAZARD___Children_under_8_yrs__can_choke_or_suffocate_on_uninflated_or_broken_balloons__Adult_supervision_required___Keep_uninflated_balloons_from_children__Discard_broken_balloons_at_once_(
+	WARNING_CHOKING_HAZARD_Children_under_8_yrs_can_choke_or_suffocate_on_uninflated_or_broken_balloons_Adult_supervision_required_Keep_uninflated_balloons_from_children_Discard_broken_balloons_at_once_(
 			"04"), //
 
 	/**
 	 * List withdrawn – use List 143.
 	 */
-	WARNING__CHOKING_HAZARD___This_toy_is_a_marble___Not_for_children_under_3_yrs_("05"), //
+	WARNING_CHOKING_HAZARD_This_toy_is_a_marble_Not_for_children_under_3_yrs_("05"), //
 
 	/**
 	 * List withdrawn – use List 143.
 	 */
-	WARNING__CHOKING_HAZARD___Toy_contains_a_marble___Not_for_children_under_3_yrs_("06"), //
+	WARNING_CHOKING_HAZARD_Toy_contains_a_marble_Not_for_children_under_3_yrs_("06"), //
 
 	/**
 	 * List withdrawn – use List 143.

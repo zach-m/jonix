@@ -74,7 +74,7 @@ public enum List79
 	 * word is then read aloud by the device. The name of the compatible device (or range of devices) should be given in
 	 * <ProductFormFeatureDescription>.
 	 */
-	_Point_and_listen__device_compatibility("08"), //
+	_Point_and_listen_device_compatibility("08"), //
 
 	/**
 	 * For <ProductFormFeatureValue> codes, see Codelist 196.
@@ -132,7 +132,7 @@ public enum List79
 	 * not contain Pre- and Post-Consumer-Waste (PCW), so type code 31 can only occur on its own. Certification numbers may be checked at
 	 * ‘http://info.fsc.org/’.
 	 */
-	FSC_certified___pure("31"), //
+	FSC_certified_pure("31"), //
 
 	/**
 	 * Product carries FSC logo (Mixed sources, Mix). <ProductFormFeatureValue> is the Certification number (ie either a Chain Of Custody
@@ -142,7 +142,7 @@ public enum List79
 	 * Post-Consumer-Waste (PCW) percentage value, to be reported in another instance of <ProductFormFeature> with type code 36.
 	 * Certification numbers may be checked at http://info.fsc.org/
 	 */
-	FSC_certified___mixed_sources("32"), //
+	FSC_certified_mixed_sources("32"), //
 
 	/**
 	 * Product carries FSC logo (Recycled). <ProductFormFeatureValue> is the Certification number (ie either a Chain Of Custody (COC) number
@@ -152,7 +152,7 @@ public enum List79
 	 * Post-Consumer-Waste (PCW) percentage value, to be reported in another instance of <ProductFormFeature> with type code 36.
 	 * Certification numbers may be checked at‘ http://info.fsc.org/’.
 	 */
-	FSC_certified___recycled("33"), //
+	FSC_certified_recycled("33"), //
 
 	/**
 	 * Product carries PEFC logo (certified). <ProductFormFeatureValue> is the Chain Of Custody (COC) number printed on the book. May be
@@ -172,20 +172,20 @@ public enum List79
 	 * The percentage of recycled Pre- and Post-Consumer-Waste (PCW) used in a product where the composition is certified by FSC or PEFC.
 	 * <ProductFormFeatureValue> is an integer. May occur together with type code 32, 33, 34 or 35.
 	 */
-	FSC_or_PEFC_certified_Pre__and_Post_Consumer_Waste__PCW__percentage("36"), //
+	FSC_or_PEFC_certified_Pre_and_Post_Consumer_Waste_PCW("36"), //
 
 	/**
 	 * The percentage of recycled Pre- and Post-Consumer Waste (PCW) claimed to be used in a product where the composition is not certified
 	 * by FSC or PEFC. <Product FormFeatureValue> is an integer. <ProductFormFeatureDescription> may carry free text supporting the claim.
 	 * Must be accompanied by type code 30.
 	 */
-	Claimed_Pre__and_Post_Consumer_Waste__PCW__percentage("37"), //
+	Claimed_Pre_and_Post_Consumer_Waste_PCW("37"), //
 
 	/**
 	 * Product made from paper produced using environmentally-conscious technology. <ProductFormFeatureDescription> may carry free text with
 	 * a more detailed statement.
 	 */
-	Paper_produced_by__green__technology("40");
+	Paper_produced_by_green_technology("40");
 
 	public final String value;
 

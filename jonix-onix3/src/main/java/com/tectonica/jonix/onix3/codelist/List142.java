@@ -34,7 +34,7 @@ public enum List142
 	/**
 	 * Position unknown or unspecified.
 	 */
-	Unknown___unspecified("00"), //
+	Unknown_unspecified("00"), //
 
 	/**
 	 * The back cover of a book.
@@ -84,7 +84,7 @@ public enum List142
 	/**
 	 * Used only for products packaged in outer sleeves.
 	 */
-	On_outer_sleeve___back("10"), //
+	On_outer_sleeve_back("10"), //
 
 	/**
 	 * Used only for products packaged in shrink-wrap or other removable wrapping.

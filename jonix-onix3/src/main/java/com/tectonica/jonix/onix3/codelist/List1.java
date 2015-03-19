@@ -40,7 +40,7 @@ public enum List1
 	 * Use for a complete record issued to confirm advance information approximately six months before publication; or for a complete record
 	 * issued after that date and before information has been confirmed from the book-in-hand.
 	 */
-	Advance_notification__confirmed_("02"), //
+	Advance_notification_confirmed("02"), //
 
 	/**
 	 * Use for a complete record issued to confirm advance information at or just before actual publication date; or for a complete record
@@ -52,7 +52,7 @@ public enum List1
 	 * In ONIX 3.0 only, use when sending a ‘block update’ record. In previous ONIX releases, ONIX updating has generally been by complete
 	 * record replacement using code 03, and code 04 is not used.
 	 */
-	Update__partial_("04"), //
+	Update_partial("04"), //
 
 	/**
 	 * Use when sending an instruction to delete a record which was previously issued. Note that a Delete instruction should NOT be used
@@ -75,23 +75,23 @@ public enum List1
 	/**
 	 * ONIX Books 2.1 supply update – <SupplyDetail> only (not used in ONIX 3.0).
 	 */
-	Update___SupplyDetail_only("12"), //
+	Update_SupplyDetail_only("12"), //
 
 	/**
 	 * ONIX Books 2.1 supply update – <MarketRepresentation> only (not used in ONIX 3.0).
 	 */
-	Update___MarketRepresentation_only("13"), //
+	Update_MarketRepresentation_only("13"), //
 
 	/**
 	 * ONIX Books 2.1 supply update – both <SupplyDetail> and <MarketRepresentation> (not used in ONIX 3.0).
 	 */
-	Update___SupplyDetail_and_MarketRepresentation("14"), //
+	Update_SupplyDetail_and_MarketRepresentation("14"), //
 
 	/**
 	 * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded. Sender must ensure the <RecordReference>
 	 * matches a previously-sent Test record.
 	 */
-	Test_update__Partial_("88"), //
+	Test_update_Partial("88"), //
 
 	/**
 	 * Record may be processed for test purposes, but data should be discarded. Sender must ensure the <RecordReference> does not match any

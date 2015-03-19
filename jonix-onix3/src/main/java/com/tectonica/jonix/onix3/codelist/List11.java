@@ -42,9 +42,9 @@ public enum List11
 
 	RocketBook("04"), //
 
-	Rich_text_format__RTF_("05"), //
+	Rich_text_format_RTF("05"), //
 
-	Open_Ebook_Publication_Structure__OEBPS__format_standard("06"), //
+	Open_Ebook_Publication_Structure_OEBPS("06"), //
 
 	XML("07"), //
 

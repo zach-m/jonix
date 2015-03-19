@@ -36,7 +36,7 @@ public enum List10
 	 * the consumer. This code is used when an ONIX <Product> record describes the content package and lists within the record the different
 	 * forms in which it is available.
 	 */
-	Epublication__content_package_("000"), //
+	Epublication_content_package_("000"), //
 
 	/**
 	 * An epublication delivered in a basic, unprotected, HTML format. Do NOT use for HTML-based formats which include DRM protection.
@@ -95,7 +95,7 @@ public enum List10
 	 * An epublication delivered in a proprietary HTML-based format, capable of being read in reading software which may be used on handheld
 	 * devices using the Palm OS or Pocket PC/Windows CE operating systems.
 	 */
-	eReader__AKA_Palm_Reader_("010"), //
+	eReader_AKA_Palm_Reader("010"), //
 
 	/**
 	 * An epublication delivered in a proprietary format capable of being read in reading software which is specific to the Softbook
@@ -261,19 +261,19 @@ public enum List10
 	 * Epublication packaged as an application for iOS (eg Apple iPhone, iPad etc) containing both executable code and content. Content can
 	 * be described with <ProductContentType>.
 	 */
-	Book__app__for_iOS("040"), //
+	Book_app_for_iOS("040"), //
 
 	/**
 	 * Epublication packaged as an application for Android (eg Android phone or tablet) containing both executable code and content. Content
 	 * can be described with <ProductContentType>.
 	 */
-	Android__app_("041"), //
+	Android_app_("041"), //
 
 	/**
 	 * Epublication packaged as an application. Technical requirements such as target operating system and/or device should be provided in
 	 * <EpubTypeNote>. Content can be described with <ProductContentType>.
 	 */
-	Other__app_("042"), //
+	Other_app_("042"), //
 
 	/**
 	 * XML Paper Specification format [File extension .xps] for (eg) Blio.

@@ -110,7 +110,7 @@ public enum List7
 	/**
 	 * Paperback or other softback book.
 	 */
-	Paperback___softback("BC"), //
+	Paperback_softback("BC"), //
 
 	/**
 	 * Loose-leaf book.
@@ -127,7 +127,7 @@ public enum List7
 	 */
 	Pamphlet("BF"), //
 
-	Leather___fine_binding("BG"), //
+	Leather_fine_binding("BG"), //
 
 	/**
 	 * Child’s book with all pages printed on board.
@@ -164,7 +164,7 @@ public enum List7
 	/**
 	 * A part-work issued with its own ISBN and intended to be collected and bound into a complete book.
 	 */
-	Part_work__fasc_culo_("BN"), //
+	Part_work_fasc_culo("BN"), //
 
 	/**
 	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German ‘Leporello’.
@@ -186,14 +186,14 @@ public enum List7
 	 */
 	Sheet_map("CA"), //
 
-	Sheet_map__folded("CB"), //
+	Sheet_map_folded("CB"), //
 
-	Sheet_map__flat("CC"), //
+	Sheet_map_flat("CC"), //
 
 	/**
 	 * See Code List 80 for ‘rolled in tube’.
 	 */
-	Sheet_map__rolled("CD"), //
+	Sheet_map_rolled("CD"), //
 
 	/**
 	 * Globe or planisphere.
@@ -241,7 +241,7 @@ public enum List7
 
 	DVD_ROM("DI"), //
 
-	Secure_Digital__SD__Memory_Card("DJ"), //
+	Secure_Digital_SD("DJ"), //
 
 	Compact_Flash_Memory_Card("DK"), //
 
@@ -381,12 +381,12 @@ public enum List7
 	/**
 	 * A book-sized (as opposed to poster-sized) sheet, usually in colour or high quality print.
 	 */
-	Plate__l_mina_("PQ"), //
+	Plate_l_mina("PQ"), //
 
 	/**
 	 * A book with all pages blank for the buyer’s own use: may use product form detail codes P201 to P204 to specify binding.
 	 */
-	Notebook___blank_book("PR"), //
+	Notebook_blank_book("PR"), //
 
 	/**
 	 * May use product form detail codes P201 to P204 to specify binding.
@@ -408,22 +408,22 @@ public enum List7
 	/**
 	 * DEPRECATED – use new VJ.
 	 */
-	Video__VHS__PAL("VB"), //
+	Video_VHS_PAL("VB"), //
 
 	/**
 	 * DEPRECATED – use new VJ.
 	 */
-	Video__VHS__NTSC("VC"), //
+	Video_VHS_NTSC("VC"), //
 
 	/**
 	 * DEPRECATED – use new VK.
 	 */
-	Video__Betamax__PAL("VD"), //
+	Video_Betamax_PAL("VD"), //
 
 	/**
 	 * DEPRECATED – use new VK.
 	 */
-	Video__Betamax__NTSC("VE"), //
+	Video_Betamax_NTSC("VE"), //
 
 	/**
 	 * eg Laserdisc.
@@ -433,12 +433,12 @@ public enum List7
 	/**
 	 * DEPRECATED – use new VJ.
 	 */
-	Video__VHS__SECAM("VG"), //
+	Video_VHS_SECAM("VG"), //
 
 	/**
 	 * DEPRECATED – use new VK.
 	 */
-	Video__Betamax__SECAM("VH"), //
+	Video_Betamax_SECAM("VH"), //
 
 	/**
 	 * DVD video: specify TV standard in List 78.
@@ -506,24 +506,24 @@ public enum List7
 	 */
 	Trade_only_material("XA"), //
 
-	Dumpbin___empty("XB"), //
+	Dumpbin_empty("XB"), //
 
 	/**
 	 * Dumpbin with contents.
 	 */
-	Dumpbin___filled("XC"), //
+	Dumpbin_filled("XC"), //
 
-	Counterpack___empty("XD"), //
+	Counterpack_empty("XD"), //
 
 	/**
 	 * Counterpack with contents.
 	 */
-	Counterpack___filled("XE"), //
+	Counterpack_filled("XE"), //
 
 	/**
 	 * Promotional poster for display, not for sale – see also PK.
 	 */
-	Poster__promotional("XF"), //
+	Poster_promotional("XF"), //
 
 	Shelf_strip("XG"), //
 

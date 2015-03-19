@@ -57,7 +57,7 @@ public enum List12
 	/**
 	 * Edition produced solely for sale in designated export markets.
 	 */
-	International_edition__US_("05"), //
+	International_edition_US("05"), //
 
 	/**
 	 * Audio product sold in special durable packaging and with a replacement guarantee for the contained cassettes or CDs for a specified
@@ -74,12 +74,12 @@ public enum List12
 	/**
 	 * In France, a category of book that has a particular legal status, claimed by the publisher.
 	 */
-	Livre_scolaire__d_clar__par_l__diteur("08"), //
+	Livre_scolaire_d_clar_par_l_diteur("08"), //
 
 	/**
 	 * In France, a category of book that has a particular legal status, designated independently of the publisher.
 	 */
-	Livre_scolaire__non_sp_cifi__("09"), //
+	Livre_scolaire_non_sp_cifi_("09"), //
 
 	/**
 	 * Edition published for sale only with a newspaper or periodical.

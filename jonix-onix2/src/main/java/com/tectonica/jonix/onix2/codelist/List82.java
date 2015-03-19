@@ -37,22 +37,22 @@ public enum List82
 	 * to Esther; the Prayer of Azariah; Song of the Three Jews; Susannah; Bel and the Dragon). These are not generally included in the
 	 * Protestant canon.
 	 */
-	Apocrypha__Catholic_canon_("AP"), //
+	Apocrypha_Catholic_canon("AP"), //
 
 	/**
 	 * A collection of Apocryphal texts, canon not specified.
 	 */
-	Apocrypha__canon_unspecified_("AQ"), //
+	Apocrypha_canon_unspecified("AQ"), //
 
 	/**
 	 * I Esdras; Prayer of Manasseh; Psalm 151; III Maccabees.
 	 */
-	Additional_Apocryphal_texts__Greek_Orthodox_canon("AX"), //
+	Additional_Apocryphal_texts_Greek_Orthodox_canon("AX"), //
 
 	/**
 	 * I and II Esdras; Prayer of Manasseh; Psalm 151; III and IV Maccabees.
 	 */
-	Additional_Apocryphal_texts__Slavonic_Orthodox_canon("AY"), //
+	Additional_Apocryphal_texts_Slavonic_Orthodox_canon("AY"), //
 
 	/**
 	 * Additional Apocryphal texts included in some Bible versions: I and II Esdras; Prayer of Manasseh.
@@ -63,12 +63,12 @@ public enum List82
 	 * The 66 books included in the Protestant, Catholic and Orthodox canons, together with the seven portions of the Apocrypha included in
 	 * the Catholic canon.
 	 */
-	General_canon_with_Apocrypha__Catholic_canon_("GA"), //
+	General_canon_with_Apocrypha_Catholic_canon("GA"), //
 
 	/**
 	 * The 66 books included in the Protestant, Catholic and Orthodox canons, together with Apocryphal texts, canon not specified.
 	 */
-	General_canon_with_Apocryphal_texts__canon_unspecified_("GC"), //
+	General_canon_with_Apocryphal_texts_canon_unspecified("GC"), //
 
 	/**
 	 * The 66 books included in the Protestant, Catholic and Orthodox canons, 39 from the Old Testament and 27 from the New Testament. The

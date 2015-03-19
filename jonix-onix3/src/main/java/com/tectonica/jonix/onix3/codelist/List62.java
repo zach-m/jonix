@@ -37,7 +37,7 @@ public enum List62
 	 * Under Italian tax rules, VAT on books may be paid at source by the publisher, and subsequent transactions through the supply chain
 	 * are tax-exempt.
 	 */
-	Tax_paid_at_source__Italy_("P"), //
+	Tax_paid_at_source_Italy("P"), //
 
 	/**
 	 * Specifies that tax is applied at a lower rate than standard.

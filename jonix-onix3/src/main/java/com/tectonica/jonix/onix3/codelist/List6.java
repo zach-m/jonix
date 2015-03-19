@@ -33,7 +33,7 @@ public enum List6
 {
 	Not_barcoded("00"), //
 
-	Barcoded__scheme_unspecified("01"), //
+	Barcoded_scheme_unspecified("01"), //
 
 	/**
 	 * Position unspecified.
@@ -43,7 +43,7 @@ public enum List6
 	/**
 	 * Position unspecified.
 	 */
-	EAN13_5__US_dollar_price_encoded_("03"), //
+	EAN13_5_US_dollar_price_encoded("03"), //
 
 	/**
 	 * Type and position unspecified. DEPRECATED: if possible, use more specific values below.
@@ -58,22 +58,22 @@ public enum List6
 	/**
 	 * AKA item/price: position unspecified.
 	 */
-	UPC12__item_specific_("06"), //
+	UPC12_item_specific("06"), //
 
 	/**
 	 * AKA item/price: position unspecified.
 	 */
-	UPC12_5__item_specific_("07"), //
+	UPC12_5_item_specific("07"), //
 
 	/**
 	 * AKA price/item: position unspecified.
 	 */
-	UPC12__price_point_("08"), //
+	UPC12_price_point("08"), //
 
 	/**
 	 * AKA price/item: position unspecified.
 	 */
-	UPC12_5__price_point_("09"), //
+	UPC12_5_price_point("09"), //
 
 	/**
 	 * ‘Cover 4’ is defined as the back cover of a book.
@@ -83,27 +83,27 @@ public enum List6
 	/**
 	 * ‘Cover 4’ is defined as the back cover of a book.
 	 */
-	EAN13_5_on_cover_4__US_dollar_price_encoded_("11"), //
+	EAN13_5_on_cover_4_US_dollar_price_encoded("11"), //
 
 	/**
 	 * AKA item/price; ‘cover 4’ is defined as the back cover of a book.
 	 */
-	UPC12__item_specific__on_cover_4("12"), //
+	UPC12_item_specific_("12"), //
 
 	/**
 	 * AKA item/price; ‘cover 4’ is defined as the back cover of a book.
 	 */
-	UPC12_5__item_specific__on_cover_4("13"), //
+	UPC12_5_item_specific_("13"), //
 
 	/**
 	 * AKA price/item; ‘cover 4’ is defined as the back cover of a book.
 	 */
-	UPC12__price_point__on_cover_4("14"), //
+	UPC12_price_point_("14"), //
 
 	/**
 	 * AKA price/item; ‘cover 4’ is defined as the back cover of a book.
 	 */
-	UPC12_5__price_point__on_cover_4("15"), //
+	UPC12_5_price_point_("15"), //
 
 	/**
 	 * ‘Cover 3’ is defined as the inside back cover of a book.
@@ -113,27 +113,27 @@ public enum List6
 	/**
 	 * ‘Cover 3’ is defined as the inside back cover of a book.
 	 */
-	EAN13_5_on_cover_3__US_dollar_price_encoded_("17"), //
+	EAN13_5_on_cover_3_US_dollar_price_encoded("17"), //
 
 	/**
 	 * AKA item/price; ‘cover 3’ is defined as the inside back cover of a book.
 	 */
-	UPC12__item_specific__on_cover_3("18"), //
+	UPC12_item_specific__("18"), //
 
 	/**
 	 * AKA item/price; ‘cover 3’ is defined as the inside back cover of a book.
 	 */
-	UPC12_5__item_specific__on_cover_3("19"), //
+	UPC12_5_item_specific__("19"), //
 
 	/**
 	 * AKA price/item; ‘cover 3’ is defined as the inside back cover of a book.
 	 */
-	UPC12__price_point__on_cover_3("20"), //
+	UPC12_price_point__("20"), //
 
 	/**
 	 * AKA price/item; ‘cover 3’ is defined as the inside back cover of a book.
 	 */
-	UPC12_5__price_point__on_cover_3("21"), //
+	UPC12_5_price_point__("21"), //
 
 	/**
 	 * ‘Cover 2’ is defined as the inside front cover of a book.
@@ -143,27 +143,27 @@ public enum List6
 	/**
 	 * ‘Cover 2’ is defined as the inside front cover of a book.
 	 */
-	EAN13_5_on_cover_2__US_dollar_price_encoded_("23"), //
+	EAN13_5_on_cover_2_US_dollar_price_encoded("23"), //
 
 	/**
 	 * AKA item/price; ‘cover 2’ is defined as the inside front cover of a book.
 	 */
-	UPC12__item_specific__on_cover_2("24"), //
+	UPC12_item_specific___("24"), //
 
 	/**
 	 * AKA item/price; ‘cover 2’ is defined as the inside front cover of a book.
 	 */
-	UPC12_5__item_specific__on_cover_2("25"), //
+	UPC12_5_item_specific___("25"), //
 
 	/**
 	 * AKA price/item; ‘cover 2’ is defined as the inside front cover of a book.
 	 */
-	UPC12__price_point__on_cover_2("26"), //
+	UPC12_price_point___("26"), //
 
 	/**
 	 * AKA price/item; ‘cover 2’ is defined as the inside front cover of a book.
 	 */
-	UPC12_5__price_point__on_cover_2("27"), //
+	UPC12_5_price_point___("27"), //
 
 	/**
 	 * To be used only on boxed products.
@@ -173,27 +173,27 @@ public enum List6
 	/**
 	 * To be used only on boxed products.
 	 */
-	EAN13_5_on_box__US_dollar_price_encoded_("29"), //
+	EAN13_5_on_box_US_dollar_price_encoded("29"), //
 
 	/**
 	 * AKA item/price; to be used only on boxed products.
 	 */
-	UPC12__item_specific__on_box("30"), //
+	UPC12_item_specific____("30"), //
 
 	/**
 	 * AKA item/price; to be used only on boxed products.
 	 */
-	UPC12_5__item_specific__on_box("31"), //
+	UPC12_5_item_specific____("31"), //
 
 	/**
 	 * AKA price/item; to be used only on boxed products.
 	 */
-	UPC12__price_point__on_box("32"), //
+	UPC12_price_point____("32"), //
 
 	/**
 	 * AKA price/item; to be used only on boxed products.
 	 */
-	UPC12_5__price_point__on_box("33"), //
+	UPC12_5_price_point____("33"), //
 
 	/**
 	 * To be used only on products fitted with hanging tags.
@@ -203,27 +203,27 @@ public enum List6
 	/**
 	 * To be used only on products fitted with hanging tags.
 	 */
-	EAN13_5_on_tag__US_dollar_price_encoded_("35"), //
+	EAN13_5_on_tag_US_dollar_price_encoded("35"), //
 
 	/**
 	 * AKA item/price; to be used only on products fitted with hanging tags.
 	 */
-	UPC12__item_specific__on_tag("36"), //
+	UPC12_item_specific_____("36"), //
 
 	/**
 	 * AKA item/price; to be used only on products fitted with hanging tags.
 	 */
-	UPC12_5__item_specific__on_tag("37"), //
+	UPC12_5_item_specific_____("37"), //
 
 	/**
 	 * AKA price/item; to be used only on products fitted with hanging tags.
 	 */
-	UPC12__price_point__on_tag("38"), //
+	UPC12_price_point_____("38"), //
 
 	/**
 	 * AKA price/item; to be used only on products fitted with hanging tags.
 	 */
-	UPC12_5__price_point__on_tag("39"), //
+	UPC12_5_price_point_____("39"), //
 
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
@@ -233,27 +233,27 @@ public enum List6
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
 	 */
-	EAN13_5_on_bottom__US_dollar_price_encoded_("41"), //
+	EAN13_5_on_bottom_US_dollar_price_encoded("41"), //
 
 	/**
 	 * AKA item/price; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12__item_specific__on_bottom("42"), //
+	UPC12_item_specific______("42"), //
 
 	/**
 	 * AKA item/price; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12_5__item_specific__on_bottom("43"), //
+	UPC12_5_item_specific______("43"), //
 
 	/**
 	 * AKA price/item; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12__price_point__on_bottom("44"), //
+	UPC12_price_point______("44"), //
 
 	/**
 	 * AKA price/item; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12_5__price_point__on_bottom("45"), //
+	UPC12_5_price_point______("45"), //
 
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
@@ -263,27 +263,27 @@ public enum List6
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
 	 */
-	EAN13_5_on_back__US_dollar_price_encoded_("47"), //
+	EAN13_5_on_back_US_dollar_price_encoded("47"), //
 
 	/**
 	 * AKA item/price; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12__item_specific__on_back("48"), //
+	UPC12_item_specific_______("48"), //
 
 	/**
 	 * AKA item/price; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12_5__item_specific__on_back("49"), //
+	UPC12_5_item_specific_______("49"), //
 
 	/**
 	 * AKA price/item; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12__price_point__on_back("50"), //
+	UPC12_price_point_______("50"), //
 
 	/**
 	 * AKA price/item; not be used on books unless they are contained within outer packaging.
 	 */
-	UPC12_5__price_point__on_back("51"), //
+	UPC12_5_price_point_______("51"), //
 
 	/**
 	 * To be used only on products packaged in outer sleeves.
@@ -293,117 +293,117 @@ public enum List6
 	/**
 	 * To be used only on products packaged in outer sleeves.
 	 */
-	EAN13_5_on_outer_sleeve_back__US_dollar_price_encoded_("53"), //
+	EAN13_5_on_outer_sleeve_back_US_dollar_price_encoded("53"), //
 
 	/**
 	 * AKA item/price; to be used only on products packaged in outer sleeves.
 	 */
-	UPC12__item_specific__on_outer_sleeve_back("54"), //
+	UPC12_item_specific________("54"), //
 
 	/**
 	 * AKA item/price; to be used only on products packaged in outer sleeves.
 	 */
-	UPC12_5__item_specific__on_outer_sleeve_back("55"), //
+	UPC12_5_item_specific________("55"), //
 
 	/**
 	 * AKA price/item; to be used only on products packaged in outer sleeves.
 	 */
-	UPC12__price_point__on_outer_sleeve_back("56"), //
+	UPC12_price_point________("56"), //
 
 	/**
 	 * AKA price/item; to be used only on products packaged in outer sleeves.
 	 */
-	UPC12_5__price_point__on_outer_sleeve_back("57"), //
+	UPC12_5_price_point________("57"), //
 
 	/**
 	 * Position unspecified.
 	 */
-	EAN13_5__no_price_encoded_("58"), //
+	EAN13_5_no_price_encoded("58"), //
 
 	/**
 	 * ‘Cover 4’ is defined as the back cover of a book.
 	 */
-	EAN13_5_on_cover_4__no_price_encoded_("59"), //
+	EAN13_5_on_cover_4_no_price_encoded("59"), //
 
 	/**
 	 * ‘Cover 3’ is defined as the inside back cover of a book.
 	 */
-	EAN13_5_on_cover_3__no_price_encoded_("60"), //
+	EAN13_5_on_cover_3_no_price_encoded("60"), //
 
 	/**
 	 * ‘Cover 2’ is defined as the inside front cover of a book.
 	 */
-	EAN13_5_on_cover_2__no_price_encoded_("61"), //
+	EAN13_5_on_cover_2_no_price_encoded("61"), //
 
 	/**
 	 * To be used only on boxed products.
 	 */
-	EAN13_5_on_box__no_price_encoded_("62"), //
+	EAN13_5_on_box_no_price_encoded("62"), //
 
 	/**
 	 * To be used only on products fitted with hanging tags.
 	 */
-	EAN13_5_on_tag__no_price_encoded_("63"), //
+	EAN13_5_on_tag_no_price_encoded("63"), //
 
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
 	 */
-	EAN13_5_on_bottom__no_price_encoded_("64"), //
+	EAN13_5_on_bottom_no_price_encoded("64"), //
 
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
 	 */
-	EAN13_5_on_back__no_price_encoded_("65"), //
+	EAN13_5_on_back_no_price_encoded("65"), //
 
 	/**
 	 * To be used only on products packaged in outer sleeves.
 	 */
-	EAN13_5_on_outer_sleeve_back__no_price_encoded_("66"), //
+	EAN13_5_on_outer_sleeve_back_no_price_encoded("66"), //
 
 	/**
 	 * Position unspecified.
 	 */
-	EAN13_5__CAN_dollar_price_encoded_("67"), //
+	EAN13_5_CAN_dollar_price_encoded("67"), //
 
 	/**
 	 * ‘Cover 4’ is defined as the back cover of a book.
 	 */
-	EAN13_5_on_cover_4__CAN_dollar_price_encoded_("68"), //
+	EAN13_5_on_cover_4_CAN_dollar_price_encoded("68"), //
 
 	/**
 	 * ‘Cover 3’ is defined as the inside back cover of a book.
 	 */
-	EAN13_5_on_cover_3__CAN_dollar_price_encoded_("69"), //
+	EAN13_5_on_cover_3_CAN_dollar_price_encoded("69"), //
 
 	/**
 	 * ‘Cover 2’ is defined as the inside front cover of a book.
 	 */
-	EAN13_5_on_cover_2__CAN_dollar_price_encoded_("70"), //
+	EAN13_5_on_cover_2_CAN_dollar_price_encoded("70"), //
 
 	/**
 	 * To be used only on boxed products.
 	 */
-	EAN13_5_on_box__CAN_dollar_price_encoded_("71"), //
+	EAN13_5_on_box_CAN_dollar_price_encoded("71"), //
 
 	/**
 	 * To be used only on products fitted with hanging tags.
 	 */
-	EAN13_5_on_tag__CAN_dollar_price_encoded_("72"), //
+	EAN13_5_on_tag_CAN_dollar_price_encoded("72"), //
 
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
 	 */
-	EAN13_5_on_bottom__CAN_dollar_price_encoded_("73"), //
+	EAN13_5_on_bottom_CAN_dollar_price_encoded("73"), //
 
 	/**
 	 * Not be used on books unless they are contained within outer packaging.
 	 */
-	EAN13_5_on_back__CAN_dollar_price_encoded_("74"), //
+	EAN13_5_on_back_CAN_dollar_price_encoded("74"), //
 
 	/**
 	 * To be used only on products packaged in outer sleeves.
 	 */
-	EAN13_5_on_outer_sleeve_back__CAN_dollar_price_encoded_("75");
+	EAN13_5_on_outer_sleeve_back_CAN_dollar_price_encoded("75");
 
 	public final String value;
 

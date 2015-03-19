@@ -118,7 +118,7 @@ public enum List29
 	/**
 	 * Code list used to specify reading levels for children’s books, used in the Netherlands – see also code 09.
 	 */
-	AVI__revised_("18"), //
+	AVI_revised("18"), //
 
 	/**
 	 * Lexile measure (the Lexile measure in <AudienceCodeValue> may optionally be prefixed by the Lexile code). Examples might be ‘880L’,
@@ -163,7 +163,7 @@ public enum List29
 	 * Used for German videos/DVDs with educational or informative content; value for <AudienceCodeValue> must be either ‘Infoprogramm gemäß
 	 * § 14 JuSchG’ or ‘Lehrprogramm gemäß § 14 JuSchG’.
 	 */
-	FSK_Lehr__Infoprogramm("26"), //
+	FSK_Lehr_Infoprogramm("26"), //
 
 	/**
 	 * Where this is different from the language of the text of the book recorded in <Language>. <AudienceCodeValue> should be a value from

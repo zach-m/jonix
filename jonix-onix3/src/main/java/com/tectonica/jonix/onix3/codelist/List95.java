@@ -28,11 +28,11 @@ package com.tectonica.jonix.onix3.codelist;
  */
 public enum List95
 {
-	Pounds__US_("lb"), //
+	Pounds_US("lb"), //
 
 	Grams("gr"), //
 
-	Ounces__US_("oz");
+	Ounces_US("oz");
 
 	public final String value;
 

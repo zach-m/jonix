@@ -44,22 +44,22 @@ public enum List30
 	/**
 	 * Values in <AudienceRangeValue> must be integers.
 	 */
-	Reading_speed__words_per_minute("15"), //
+	Reading_speed_words_per_minute("15"), //
 
 	/**
 	 * For use up to 36 months only: values in <AudienceRangeValue> must be integers.
 	 */
-	Interest_age__months("16"), //
+	Interest_age_months("16"), //
 
 	/**
 	 * Values in <AudienceRangeValue> must be integers.
 	 */
-	Interest_age__years("17"), //
+	Interest_age_years("17"), //
 
 	/**
 	 * Values in <AudienceRangeValue> must be integers.
 	 */
-	Reading_age__years("18"), //
+	Reading_age_years("18"), //
 
 	/**
 	 * Spain: combined grade and region code, maintained by the Ministerio de Educación.

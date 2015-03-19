@@ -28,7 +28,7 @@ package com.tectonica.jonix.onix3.codelist;
  */
 public enum List56
 {
-	Restrictions_apply__see_note("R"), //
+	Restrictions_apply_see_note("R"), //
 
 	/**
 	 * Indexed for the German market – in Deutschland indiziert.

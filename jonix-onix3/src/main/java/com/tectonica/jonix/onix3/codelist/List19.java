@@ -45,17 +45,17 @@ public enum List19
 	/**
 	 * Use with Contributor role code E07 “read by”, for audio books for the blind.
 	 */
-	Synthesized_voice___male("05"), //
+	Synthesized_voice_male("05"), //
 
 	/**
 	 * Use with Contributor role code E07 “read by”, for audio books for the blind.
 	 */
-	Synthesized_voice___female("06"), //
+	Synthesized_voice_female("06"), //
 
 	/**
 	 * Use with Contributor role code E07 “read by”, for audio books for the blind.
 	 */
-	Synthesized_voice___unspecified("07");
+	Synthesized_voice_unspecified("07");
 
 	public final String value;
 

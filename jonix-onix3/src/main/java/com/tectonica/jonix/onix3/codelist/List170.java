@@ -36,7 +36,7 @@ public enum List170
 	/**
 	 * Additional discount may be applied retrospectively, based on number of units ordered over a specific period.
 	 */
-	Rising_discount__cumulative_("02"), //
+	Rising_discount_cumulative("02"), //
 
 	/**
 	 * Discount applied to marginal units in a qualifying order.
@@ -46,7 +46,7 @@ public enum List170
 	/**
 	 * Previous orders within a specific time period are counted when calculating a progressive discount.
 	 */
-	Progressive_discount__cumulative_("04");
+	Progressive_discount_cumulative("04");
 
 	public final String value;
 

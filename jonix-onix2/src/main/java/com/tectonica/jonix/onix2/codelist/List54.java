@@ -69,7 +69,7 @@ public enum List54
 	/**
 	 * Wholesaler or vendor only: MUST be accompanied by expected availability date.
 	 */
-	Newly_catalogued__not_yet_in_stock("NY"), //
+	Newly_catalogued_not_yet_in_stock("NY"), //
 
 	/**
 	 * This format is out of print, but another format is available: should be accompanied by an identifier for the alternative product.
@@ -113,7 +113,7 @@ public enum List54
 	/**
 	 * Use instead of RP as a last resort, only if it is really impossible to give an expected availability date.
 	 */
-	Reprinting__undated("RU"), //
+	Reprinting_undated("RU"), //
 
 	/**
 	 * This item is not stocked but has to be specially ordered from a supplier (eg import item not stocked locally): may be accompanied by
@@ -136,12 +136,12 @@ public enum List54
 	 * reissue date in the <Reissue> composite. See notes on the <Reissue> composite for details on treatment of availability status during
 	 * reissue.
 	 */
-	Unavailable__awaiting_reissue("UR"), //
+	Unavailable_awaiting_reissue("UR"), //
 
 	/**
 	 * MUST be accompanied by the remainder date.
 	 */
-	Will_be_remaindered_as_of__date_("WR"), //
+	Will_be_remaindered_as_of_date("WR"), //
 
 	/**
 	 * Typically, withdrawn indefinitely for legal reasons.

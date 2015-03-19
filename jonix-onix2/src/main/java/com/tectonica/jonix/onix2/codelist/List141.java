@@ -33,35 +33,35 @@ public enum List141
 {
 	Not_barcoded("00"), //
 
-	Barcoded__scheme_unspecified("01"), //
+	Barcoded_scheme_unspecified("01"), //
 
 	GTIN_13("02"), //
 
-	GTIN_13_5__US_dollar_price_encoded_("03"), //
+	GTIN_13_5_US_dollar_price_encoded("03"), //
 
-	GTIN_13_5__CAN_dollar_price_encoded_("04"), //
+	GTIN_13_5_CAN_dollar_price_encoded("04"), //
 
-	GTIN_13_5__no_price_encoded_("05"), //
-
-	/**
-	 * AKA item/price.
-	 */
-	UPC_12__item_specific_("06"), //
+	GTIN_13_5_no_price_encoded("05"), //
 
 	/**
 	 * AKA item/price.
 	 */
-	UPC_12_5__item_specific_("07"), //
+	UPC_12_item_specific("06"), //
+
+	/**
+	 * AKA item/price.
+	 */
+	UPC_12_5_item_specific("07"), //
 
 	/**
 	 * AKA price/item.
 	 */
-	UPC_12__price_point_("08"), //
+	UPC_12_price_point("08"), //
 
 	/**
 	 * AKA price/item.
 	 */
-	UPC_12_5__price_point_("09");
+	UPC_12_5_price_point("09");
 
 	public final String value;
 

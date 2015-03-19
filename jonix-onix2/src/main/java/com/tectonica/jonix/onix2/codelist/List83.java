@@ -110,12 +110,12 @@ public enum List83
 	/**
 	 * Finnish Bible translation.
 	 */
-	Biblia__1776_("FBB"), //
+	Biblia_1776("FBB"), //
 
 	/**
 	 * Finnish Bible translation.
 	 */
-	Raamattu__1933_1938_("FRA"), //
+	Raamattu_1933_1938("FRA"), //
 
 	/**
 	 * Finnish Bible translation.
@@ -125,7 +125,7 @@ public enum List83
 	/**
 	 * Finnish Bible translation.
 	 */
-	Raamattu__1992_("FRM"), //
+	Raamattu_1992("FRM"), //
 
 	/**
 	 * A 1995 translation by the World Bible Publishing Company using the English language in a manner to communicate to the late 20th
@@ -148,7 +148,7 @@ public enum List83
 	 * Version edited by E. Galbiati, A. Penna and P. Rossano, and published by UTET. This version, based on original texts, is rich in
 	 * notes and has been used as the basis for CEI translation.
 	 */
-	Galbiati__Penna__Rossano___UTET("GPR"), //
+	Galbiati_Penna_Rossano_UTET("GPR"), //
 
 	/**
 	 * New Testament text in an original Greek version.
@@ -158,7 +158,7 @@ public enum List83
 	/**
 	 * Richly annotated 1963 Version edited by S. Garofano and S. Rinaldi, and published by Marietti.
 	 */
-	Garofano__Rinaldi___Marietti("GRM"), //
+	Garofano_Rinaldi_Marietti("GRM"), //
 
 	/**
 	 * Old Testament text in an original Hebrew version.
@@ -230,7 +230,7 @@ public enum List83
 	/**
 	 * A 1995 translation using more modern language than the NASB.
 	 */
-	New_American_Standard__Updated("NAU"), //
+	New_American_Standard_Updated("NAU"), //
 
 	/**
 	 * Norwegian Bible translation.
@@ -270,7 +270,7 @@ public enum List83
 	/**
 	 * Norwegian Bible translation.
 	 */
-	Bibelen_1978_85_rev__2005("NBH"), //
+	Bibelen_1978_85_rev_2005("NBH"), //
 
 	/**
 	 * Norwegian Bible translation.
@@ -318,7 +318,7 @@ public enum List83
 	/**
 	 * Norwegian ‘nynorsk’ Bible translation.
 	 */
-	Bibelen__nynorsk("NNK"), //
+	Bibelen_nynorsk("NNK"), //
 
 	/**
 	 * A translation sponsored by Tyndale House and first released in 1996. It is considered a revision and updating of the Living Bible.
@@ -355,7 +355,7 @@ public enum List83
 	/**
 	 * An idiomatic translation by J B Phillips, first completed in 1966.
 	 */
-	New_Testament_in_Modern_English__Phillips_("PHP"), //
+	New_Testament_in_Modern_English_Phillips("PHP"), //
 
 	/**
 	 * A 1989 revision of the NEB. A significant effort was made to reduce the British flavor present in the NEB.
@@ -388,7 +388,7 @@ public enum List83
 	/**
 	 * Norwegian ‘samisk’ Bible translation.
 	 */
-	Bibelen__samisk("SMK"), //
+	Bibelen_samisk("SMK"), //
 
 	/**
 	 * A translation of the New Testament sponsored by the American Bible Society and first published in 1966. It was incorporated into the

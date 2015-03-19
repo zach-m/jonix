@@ -65,7 +65,7 @@ public enum List163
 	/**
 	 * Date when a product was (or will be) declared out-of-print or deleted.
 	 */
-	Out_of_print___deletion_date("13"), //
+	Out_of_print_deletion_date("13"), //
 
 	/**
 	 * Date when a product was last reissued.

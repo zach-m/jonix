@@ -37,7 +37,7 @@ public enum List47
 	/**
 	 * Use when an open market edition is published under its own ISBN.
 	 */
-	UK__open_market_("003");
+	UK_open_market_("003");
 
 	public final String value;
 

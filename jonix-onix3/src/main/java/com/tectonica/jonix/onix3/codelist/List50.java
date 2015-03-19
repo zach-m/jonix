@@ -38,18 +38,18 @@ public enum List50
 
 	Grams("gr"), //
 
-	Inches__US_("in"), //
+	Inches_US("in"), //
 
 	/**
 	 * Grams are the preferred metric unit of weight.
 	 */
 	Kilograms("kg"), //
 
-	Pounds__US_("lb"), //
+	Pounds_US("lb"), //
 
 	Millimeters("mm"), //
 
-	Ounces__US_("oz"), //
+	Ounces_US("oz"), //
 
 	Pixels("px");
 

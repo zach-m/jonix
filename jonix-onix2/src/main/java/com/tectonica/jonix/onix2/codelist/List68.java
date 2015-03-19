@@ -108,7 +108,7 @@ public enum List68
 	 * The product is published in this market and active but, as a publishing decision, it is not sold separately – only in an assembly or
 	 * as part of a package.
 	 */
-	Active__but_not_sold_separately("13"), //
+	Active_but_not_sold_separately("13"), //
 
 	/**
 	 * The product is published in this market and active, but is not available to all customer types, typically because the market is split
@@ -116,7 +116,7 @@ public enum List68
 	 * <MarketRestrictionDetail> describing the nature of the restriction. In ONIX 3.0, the <SalesRestriction> composite in Group P.24
 	 * should be used.
 	 */
-	Active__with_market_restrictions("14"), //
+	Active_with_market_restrictions("14"), //
 
 	/**
 	 * Recalled in this market for reasons of consumer safety.

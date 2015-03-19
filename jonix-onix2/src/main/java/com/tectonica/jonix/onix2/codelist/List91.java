@@ -92,9 +92,9 @@ public enum List91
 
 	Brunei_Darussalam("BN"), //
 
-	Bolivia__Plurinational_State_of("BO"), //
+	Bolivia_Plurinational_State_of("BO"), //
 
-	Bonaire__Sint_Eustatius_and_Saba("BQ"), //
+	Bonaire_Sint_Eustatius_and_Saba("BQ"), //
 
 	Brazil("BR"), //
 
@@ -112,9 +112,9 @@ public enum List91
 
 	Canada("CA"), //
 
-	Cocos__Keeling__Islands("CC"), //
+	Cocos_Keeling("CC"), //
 
-	Congo__Democratic_Republic_of_the("CD"), //
+	Congo_Democratic_Republic_of_the("CD"), //
 
 	Central_African_Republic("CF"), //
 
@@ -183,9 +183,9 @@ public enum List91
 
 	Fiji("FJ"), //
 
-	Falkland_Islands__Malvinas_("FK"), //
+	Falkland_Islands_Malvinas("FK"), //
 
-	Micronesia__Federated_States_of("FM"), //
+	Micronesia_Federated_States_of("FM"), //
 
 	Faroe_Islands("FO"), //
 
@@ -255,7 +255,7 @@ public enum List91
 
 	Iraq("IQ"), //
 
-	Iran__Islamic_Republic_of("IR"), //
+	Iran_Islamic_Republic_of("IR"), //
 
 	Iceland("IS"), //
 
@@ -281,9 +281,9 @@ public enum List91
 
 	Saint_Kitts_and_Nevis("KN"), //
 
-	Korea__Democratic_People_s_Republic_of("KP"), //
+	Korea_Democratic_People_s_Republic_of("KP"), //
 
-	Korea__Republic_of("KR"), //
+	Korea_Republic_of("KR"), //
 
 	Kuwait("KW"), //
 
@@ -317,17 +317,17 @@ public enum List91
 
 	Monaco("MC"), //
 
-	Moldova__Repubic_of("MD"), //
+	Moldova_Repubic_of("MD"), //
 
 	Montenegro("ME"), //
 
-	Saint_Martin__French_part_("MF"), //
+	Saint_Martin_French_part("MF"), //
 
 	Madagascar("MG"), //
 
 	Marshall_Islands("MH"), //
 
-	Macedonia__the_former_Yugoslav_Republic_of("MK"), //
+	Macedonia_the_former_Yugoslav_Republic_of("MK"), //
 
 	Mali("ML"), //
 
@@ -405,7 +405,7 @@ public enum List91
 
 	Puerto_Rico("PR"), //
 
-	Palestine__State_of("PS"), //
+	Palestine_State_of("PS"), //
 
 	Portugal("PT"), //
 
@@ -437,7 +437,7 @@ public enum List91
 
 	Singapore("SG"), //
 
-	Saint_Helena__Ascension_and_Tristan_da_Cunha("SH"), //
+	Saint_Helena_Ascension_and_Tristan_da_Cunha("SH"), //
 
 	Slovenia("SI"), //
 
@@ -461,7 +461,7 @@ public enum List91
 
 	El_Salvador("SV"), //
 
-	Sint_Maarten__Dutch_part_("SX"), //
+	Sint_Maarten_Dutch_part("SX"), //
 
 	Syrian_Arab_Republic("SY"), //
 
@@ -495,9 +495,9 @@ public enum List91
 
 	Tuvalu("TV"), //
 
-	Taiwan__Province_of_China("TW"), //
+	Taiwan_Province_of_China("TW"), //
 
-	Tanzania__United_Republic_of("TZ"), //
+	Tanzania_United_Republic_of("TZ"), //
 
 	Ukraine("UA"), //
 
@@ -511,15 +511,15 @@ public enum List91
 
 	Uzbekistan("UZ"), //
 
-	Holy_See__Vatican_City_State_("VA"), //
+	Holy_See_Vatican_City_State("VA"), //
 
 	Saint_Vincent_and_the_Grenadines("VC"), //
 
-	Venezuela__Bolivarian_Republic_of("VE"), //
+	Venezuela_Bolivarian_Republic_of("VE"), //
 
-	Virgin_Islands__British("VG"), //
+	Virgin_Islands_British("VG"), //
 
-	Virgin_Islands__US("VI"), //
+	Virgin_Islands_US("VI"), //
 
 	Viet_Nam("VN"), //
 

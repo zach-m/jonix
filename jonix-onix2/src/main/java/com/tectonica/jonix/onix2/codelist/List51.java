@@ -96,7 +96,7 @@ public enum List51
 	/**
 	 * <Product> is an epublication based on printed product <RelatedProduct>.
 	 */
-	Epublication_based_on__print_product_("13"), //
+	Epublication_based_on_print_product("13"), //
 
 	/**
 	 * <Product> is an epublication ‘rendered’ as <RelatedProduct>: use in ONIX 2.1 only when the <Product> record describes a package of

@@ -46,27 +46,27 @@ public enum List203
 	/**
 	 * The publisher warns the product includes content of an explicit sexual nature.
 	 */
-	Content_warning__sex_("03"), //
+	Content_warning_sex("03"), //
 
 	/**
 	 * The publisher warns the product includes content of a violent nature.
 	 */
-	Content_warning__violence_("04"), //
+	Content_warning_violence("04"), //
 
 	/**
 	 * The publisher warns the product includes content involving misuse of drugs.
 	 */
-	Content_warning__drug_taking_("05"), //
+	Content_warning_drug_taking("05"), //
 
 	/**
 	 * The publisher warns the product includes extreme / offensive / explicit language.
 	 */
-	Content_warning__language_("06"), //
+	Content_warning_language("06"), //
 
 	/**
 	 * The publisher warns the product includes content involving intolerance of particular groups (eg religious, ethnic, racial, social).
 	 */
-	Content_warning__intolerance_("07");
+	Content_warning_intolerance("07");
 
 	public final String value;
 

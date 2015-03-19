@@ -35,7 +35,7 @@ public enum List81
 	 * Readable text of the main work: this value is required, together with applicable <ProductForm> and <ProductFormDetail> values, to
 	 * designate an e-book or other digital product whose primary content is eye-readable text.
 	 */
-	Text__eye_readable_("10"), //
+	Text_eye_readable("10"), //
 
 	/**
 	 * E-publication is enhanced with a significant number of actionable cross-references, hyperlinked notes and annotations, or with other
@@ -64,7 +64,7 @@ public enum List81
 	/**
 	 * Use only when no more detailed specification is provided.
 	 */
-	Still_images___graphics("07"), //
+	Still_images_graphics("07"), //
 
 	/**
 	 * Whether in a plate section / insert, or not.
@@ -74,13 +74,13 @@ public enum List81
 	/**
 	 * Including other ‘mechanical’ (ie non-photographic) illustrations.
 	 */
-	Figures__diagrams__charts__graphs("19"), //
+	Figures_diagrams_charts_graphs("19"), //
 
 	/**
 	 * E-publication is enhanced with additional images or graphical content such as supplementary photographs that are not included in a
 	 * primary or ‘unenhanced’ version.
 	 */
-	Additional_images___graphics_not_part_of_main_work("20"), //
+	Additional_images_graphics_not_part_of_main_work("20"), //
 
 	Maps_and_or_other_cartographic_content("12"), //
 
@@ -92,7 +92,7 @@ public enum List81
 	/**
 	 * Audio recording of a drama or other spoken word performance.
 	 */
-	Performance___spoken_word("02"), //
+	Performance_spoken_word("02"), //
 
 	/**
 	 * eg an interview, not a ‘reading’ or ‘performance’).
@@ -112,7 +112,7 @@ public enum List81
 	/**
 	 * Audio recording of a reading, performance or dramatization of part of the work.
 	 */
-	Partial_performance___spoken_word("21"), //
+	Partial_performance_spoken_word("21"), //
 
 	/**
 	 * Product is enhanced with audio recording of full or partial reading, performance, dramatization, interview, background documentary or
@@ -135,12 +135,12 @@ public enum List81
 	/**
 	 * Video recording of a drama or other performance, including musical performance.
 	 */
-	Performance___visual("27"), //
+	Performance_visual("27"), //
 
 	/**
 	 * eg animated diagrams, charts, graphs or other illustrations.
 	 */
-	Animated___interactive_illustrations("24"), //
+	Animated_interactive_illustrations("24"), //
 
 	/**
 	 * eg cartoon, animatic or CGI animation.
@@ -155,7 +155,7 @@ public enum List81
 	/**
 	 * Video recording of a reading, performance or dramatization of part of the work.
 	 */
-	Partial_performance___video("29"), //
+	Partial_performance_video("29"), //
 
 	/**
 	 * E-publication is enhanced with video recording of full or partial reading, performance, dramatization, interview, background
@@ -171,7 +171,7 @@ public enum List81
 	/**
 	 * No multi-user functionality. Formerly just ‘Game’.
 	 */
-	Game___Puzzle("05"), //
+	Game_Puzzle("05"), //
 
 	/**
 	 * Includes some degree of multi-user functionality.
@@ -203,16 +203,16 @@ public enum List81
 	/**
 	 * ‘Back ads’ – promotional pages for other books (that do not include sample content, cf codes 17, 23).
 	 */
-	Advertising___first_party("37"), //
+	Advertising_first_party("37"), //
 
 	/**
 	 * Eg to obtain discounts on other products.
 	 */
-	Advertising___coupons("36"), //
+	Advertising_coupons("36"), //
 
-	Advertising___third_party_display("38"), //
+	Advertising_third_party_display("38"), //
 
-	Advertising___third_party_textual("39");
+	Advertising_third_party_textual("39");
 
 	public final String value;
 

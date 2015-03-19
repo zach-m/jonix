@@ -43,7 +43,7 @@ public enum List156
 	/**
 	 * (North America) Inclusion in a program such as ‘Chicago Reads’, ‘Seattle Reads’.
 	 */
-	_One_locality__one_book__program("04");
+	_One_locality_one_book_program("04");
 
 	public final String value;
 

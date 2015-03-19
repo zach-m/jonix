@@ -50,7 +50,7 @@ public enum List59
 	 * Use in cases where there is no combined price, but a lower price is offered for each part if the whole set / series / collection is
 	 * purchased (either at one time, as part of a continuing commitment, or in a single purchase).
 	 */
-	Reduced_price_applicable_when_the_item_is_purchased_as_part_of_a_set__or_series__or_collection_("03"), //
+	Reduced_price_applicable_when_the_item_is_purchased_as_part_of_a_set_or_series_or_collection("03"), //
 
 	/**
 	 * In the Netherlands (or any other market where similar arrangements exist): a reduced fixed price available for a limited time on

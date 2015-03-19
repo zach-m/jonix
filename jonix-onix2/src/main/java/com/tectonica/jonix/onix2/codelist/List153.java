@@ -56,7 +56,7 @@ public enum List153
 	/**
 	 * Descriptive blurb taken from the back cover and/or flaps.
 	 */
-	Flap___cover_copy("05"), //
+	Flap_cover_copy("05"), //
 
 	/**
 	 * A quote taken from a review of the product or of the work in question where there is no need to take account of different editions.
@@ -66,12 +66,12 @@ public enum List153
 	/**
 	 * A quote taken from a review of a previous edition of the work.
 	 */
-	Review_quote__previous_edition("07"), //
+	Review_quote_previous_edition("07"), //
 
 	/**
 	 * A quote taken from a review of a previous work by the same author(s) or in the same series.
 	 */
-	Review_quote__previous_work("08"), //
+	Review_quote_previous_work("08"), //
 
 	/**
 	 * A quote usually provided by a celebrity or another author to promote a new book, not from a review.

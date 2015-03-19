@@ -38,7 +38,7 @@ public enum List2
 	/**
 	 * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as such.
 	 */
-	Multiple_item_collection__retailed_as_separate_parts("11"), //
+	Multiple_item_collection_retailed_as_separate_parts("11"), //
 
 	/**
 	 * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material.

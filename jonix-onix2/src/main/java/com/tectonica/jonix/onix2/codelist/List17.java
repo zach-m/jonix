@@ -34,7 +34,7 @@ public enum List17
 	/**
 	 * Author of a textual work.
 	 */
-	By__author_("A01"), //
+	By_author("A01"), //
 
 	/**
 	 * With or as told to: ‘ghost’ author of a literary work.
@@ -59,17 +59,17 @@ public enum List17
 	/**
 	 * Composer of music.
 	 */
-	By__composer_("A06"), //
+	By_composer("A06"), //
 
 	/**
 	 * Visual artist when named as the primary creator of, eg, a book of reproductions of artworks.
 	 */
-	By__artist_("A07"), //
+	By_artist("A07"), //
 
 	/**
 	 * Photographer when named as the primary creator of, eg, a book of photographs.
 	 */
-	By__photographer_("A08"), //
+	By_photographer("A08"), //
 
 	Created_by("A09"), //
 
@@ -302,7 +302,7 @@ public enum List17
 	 */
 	Literary_editor("B24"), //
 
-	Arranged_by__music_("B25"), //
+	Arranged_by_music("B25"), //
 
 	Technical_editor("B26"), //
 
@@ -361,7 +361,7 @@ public enum List17
 	/**
 	 * Name of a musical group in a performing role.
 	 */
-	Performed_by__orchestra__band__ensemble_("E08"), //
+	Performed_by_orchestra_band_ensemble("E08"), //
 
 	/**
 	 * Of a speech, lecture etc.
@@ -379,7 +379,7 @@ public enum List17
 	 */
 	Filmed_photographed_by("F01"), //
 
-	Editor__film_or_video_("F02"), //
+	Editor_film_or_video("F02"), //
 
 	/**
 	 * Other type of recording not specified above.
@@ -394,7 +394,7 @@ public enum List17
 	/**
 	 * For use ONLY with ‘et al’ or ‘Various’ within <UnnamedPersons>, where the roles of the multiple contributors vary.
 	 */
-	_Various_roles_("Z98"), //
+	_Various_roles("Z98"), //
 
 	/**
 	 * Other creative responsibility not falling within A to F above.

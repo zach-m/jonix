@@ -44,18 +44,18 @@ public enum List158
 	/**
 	 * Not limited to front or back, including 3D perspective.
 	 */
-	Cover___pack("03"), //
+	Cover_pack("03"), //
 
 	/**
 	 * Photograph or portrait of contributor(s).
 	 */
 	Contributor_picture("04"), //
 
-	Series_image___artwork("05"), //
+	Series_image_artwork("05"), //
 
 	Series_logo("06"), //
 
-	Product_image___artwork("07"), //
+	Product_image_artwork("07"), //
 
 	Product_logo("08"), //
 
@@ -95,7 +95,7 @@ public enum List158
 	 */
 	Review("17"), //
 
-	Other_commentary___discussion("18"), //
+	Other_commentary_discussion("18"), //
 
 	Reading_group_guide("19"), //
 
@@ -109,9 +109,9 @@ public enum List158
 	/**
 	 * Fictional character ‘interview’.
 	 */
-	Character__interview_("22"), //
+	Character_interview_("22"), //
 
-	Wallpaper___screensaver("23"), //
+	Wallpaper_screensaver("23"), //
 
 	Press_release("24"), //
 

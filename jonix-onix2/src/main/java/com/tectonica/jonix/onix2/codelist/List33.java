@@ -49,7 +49,7 @@ public enum List33
 	/**
 	 * A review quote that is restricted to a maximum length agreed between the sender and receiver of an ONIX file.
 	 */
-	Review_quote__restricted_length("05"), //
+	Review_quote_restricted_length("05"), //
 
 	/**
 	 * A review quote taken from a review of a previous edition of the work.
@@ -69,7 +69,7 @@ public enum List33
 	/**
 	 * A promotional phrase which is intended to headline a description of the product.
 	 */
-	Promotional__headline_("09"), //
+	Promotional_headline_("09"), //
 
 	/**
 	 * A quote from a review of a previous work by the same author(s) or in the same series.
@@ -159,7 +159,7 @@ public enum List33
 	 */
 	Promotional_text("35"), //
 
-	Author_interview___QandA("40"), //
+	Author_interview_QandA("40"), //
 
 	/**
 	 * Complete guide: see also codes 14 and 15.
@@ -169,7 +169,7 @@ public enum List33
 	/**
 	 * Other than author comments: see code 11.
 	 */
-	Commentary___discussion("42"), //
+	Commentary_discussion("42"), //
 
 	/**
 	 * (of which the product is a part.) Limited to a maximum of 350 characters.
