@@ -23,6 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ResourceContentTypes;
+import com.tectonica.jonix.codelist.ResourceModes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -71,5 +73,15 @@ public class SupportingResource
 		});
 
 		return x;
+	}
+
+	public ResourceContentTypes getResourceContentTypeValue()
+	{
+		return (resourceContentType == null) ? null : resourceContentType.value;
+	}
+
+	public ResourceModes getResourceModeValue()
+	{
+		return (resourceMode == null) ? null : resourceMode.value;
 	}
 }

@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.BarcodeIndicatorList141s;
+import com.tectonica.jonix.codelist.PositionOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -60,5 +62,15 @@ public class Barcode
 		});
 
 		return x;
+	}
+
+	public BarcodeIndicatorList141s getBarcodeTypeValue()
+	{
+		return (barcodeType == null) ? null : barcodeType.value;
+	}
+
+	public PositionOnProducts getPositionOnProductValue()
+	{
+		return (positionOnProduct == null) ? null : positionOnProduct.value;
 	}
 }

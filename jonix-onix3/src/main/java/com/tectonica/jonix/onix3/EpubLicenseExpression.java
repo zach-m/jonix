@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.LicenseExpressionTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +64,20 @@ public class EpubLicenseExpression
 		});
 
 		return x;
+	}
+
+	public LicenseExpressionTypeCodes getEpubLicenseExpressionTypeValue()
+	{
+		return (epubLicenseExpressionType == null) ? null : epubLicenseExpressionType.value;
+	}
+
+	public String getEpubLicenseExpressionTypeNameValue()
+	{
+		return (epubLicenseExpressionTypeName == null) ? null : epubLicenseExpressionTypeName.value;
+	}
+
+	public String getEpubLicenseExpressionLinkValue()
+	{
+		return (epubLicenseExpressionLink == null) ? null : epubLicenseExpressionLink.value;
 	}
 }

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +64,20 @@ public class Audience
 		});
 
 		return x;
+	}
+
+	public AudienceCodeTypes getAudienceCodeTypeValue()
+	{
+		return (audienceCodeType == null) ? null : audienceCodeType.value;
+	}
+
+	public String getAudienceCodeTypeNameValue()
+	{
+		return (audienceCodeTypeName == null) ? null : audienceCodeTypeName.value;
+	}
+
+	public String getAudienceCodeValueValue()
+	{
+		return (audienceCodeValue == null) ? null : audienceCodeValue.value;
 	}
 }

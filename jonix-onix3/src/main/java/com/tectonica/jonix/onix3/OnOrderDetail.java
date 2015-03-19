@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +64,20 @@ public class OnOrderDetail
 		});
 
 		return x;
+	}
+
+	public Integer getOnOrderValue()
+	{
+		return (onOrder == null) ? null : onOrder.value;
+	}
+
+	public Proximitys getProximityValue()
+	{
+		return (proximity == null) ? null : proximity.value;
+	}
+
+	public String getExpectedDateValue()
+	{
+		return (expectedDate == null) ? null : expectedDate.value;
 	}
 }

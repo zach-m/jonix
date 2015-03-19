@@ -63,4 +63,9 @@ public class ProfessionalAffiliation
 
 		return x;
 	}
+
+	public String getAffiliationValue()
+	{
+		return (affiliation == null) ? null : affiliation.value;
+	}
 }

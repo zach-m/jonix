@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.DiscountTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -69,5 +70,30 @@ public class Discount
 		});
 
 		return x;
+	}
+
+	public DiscountTypes getDiscountTypeValue()
+	{
+		return (discountType == null) ? null : discountType.value;
+	}
+
+	public Double getQuantityValue()
+	{
+		return (quantity == null) ? null : quantity.value;
+	}
+
+	public Double getToQuantityValue()
+	{
+		return (toQuantity == null) ? null : toQuantity.value;
+	}
+
+	public Double getDiscountPercentValue()
+	{
+		return (discountPercent == null) ? null : discountPercent.value;
+	}
+
+	public Double getDiscountAmountValue()
+	{
+		return (discountAmount == null) ? null : discountAmount.value;
 	}
 }

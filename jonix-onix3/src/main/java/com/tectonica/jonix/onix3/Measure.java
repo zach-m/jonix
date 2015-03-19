@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.MeasureTypeCodes;
+import com.tectonica.jonix.codelist.MeasureUnitCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +65,20 @@ public class Measure
 		});
 
 		return x;
+	}
+
+	public MeasureTypeCodes getMeasureTypeValue()
+	{
+		return (measureType == null) ? null : measureType.value;
+	}
+
+	public Double getMeasurementValue()
+	{
+		return (measurement == null) ? null : measurement.value;
+	}
+
+	public MeasureUnitCodes getMeasureUnitCodeValue()
+	{
+		return (measureUnitCode == null) ? null : measureUnitCode.value;
 	}
 }

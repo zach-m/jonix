@@ -93,4 +93,19 @@ public class ContentItem
 
 		return x;
 	}
+
+	public String getLevelSequenceNumberValue()
+	{
+		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
+	}
+
+	public String getComponentTypeNameValue()
+	{
+		return (componentTypeName == null) ? null : componentTypeName.value;
+	}
+
+	public String getComponentNumberValue()
+	{
+		return (componentNumber == null) ? null : componentNumber.value;
+	}
 }

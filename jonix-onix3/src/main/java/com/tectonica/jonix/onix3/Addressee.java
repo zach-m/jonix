@@ -69,4 +69,19 @@ public class Addressee
 
 		return x;
 	}
+
+	public String getAddresseeNameValue()
+	{
+		return (addresseeName == null) ? null : addresseeName.value;
+	}
+
+	public String getContactNameValue()
+	{
+		return (contactName == null) ? null : contactName.value;
+	}
+
+	public String getEmailAddressValue()
+	{
+		return (emailAddress == null) ? null : emailAddress.value;
+	}
 }

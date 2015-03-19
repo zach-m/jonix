@@ -22,7 +22,15 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.IllustratedNotIllustrateds;
+import com.tectonica.jonix.codelist.ProductCompositions;
+import com.tectonica.jonix.codelist.ProductContentTypes;
+import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ThesisTypeCodes;
+import com.tectonica.jonix.codelist.TradeCategoryCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -194,5 +202,70 @@ public class DescriptiveDetail
 		});
 
 		return x;
+	}
+
+	public ProductCompositions getProductCompositionValue()
+	{
+		return (productComposition == null) ? null : productComposition.value;
+	}
+
+	public ProductForms getProductFormValue()
+	{
+		return (productForm == null) ? null : productForm.value;
+	}
+
+	public ProductPackagingTypes getProductPackagingValue()
+	{
+		return (productPackaging == null) ? null : productPackaging.value;
+	}
+
+	public TradeCategoryCodes getTradeCategoryValue()
+	{
+		return (tradeCategory == null) ? null : tradeCategory.value;
+	}
+
+	public ProductContentTypes getPrimaryContentTypeValue()
+	{
+		return (primaryContentType == null) ? null : primaryContentType.value;
+	}
+
+	public CountryCodeIso31661s getCountryOfManufactureValue()
+	{
+		return (countryOfManufacture == null) ? null : countryOfManufacture.value;
+	}
+
+	public ThesisTypeCodes getThesisTypeValue()
+	{
+		return (thesisType == null) ? null : thesisType.value;
+	}
+
+	public String getThesisPresentedToValue()
+	{
+		return (thesisPresentedTo == null) ? null : thesisPresentedTo.value;
+	}
+
+	public String getThesisYearValue()
+	{
+		return (thesisYear == null) ? null : thesisYear.value;
+	}
+
+	public Integer getEditionNumberValue()
+	{
+		return (editionNumber == null) ? null : editionNumber.value;
+	}
+
+	public String getEditionVersionNumberValue()
+	{
+		return (editionVersionNumber == null) ? null : editionVersionNumber.value;
+	}
+
+	public IllustratedNotIllustrateds getIllustratedValue()
+	{
+		return (illustrated == null) ? null : illustrated.value;
+	}
+
+	public Integer getNumberOfIllustrationsValue()
+	{
+		return (numberOfIllustrations == null) ? null : numberOfIllustrations.value;
 	}
 }

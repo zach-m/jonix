@@ -76,4 +76,19 @@ public class AgentIdentifier
 
 		return x;
 	}
+
+	public String getAgentIDTypeValue()
+	{
+		return (agentIDType == null) ? null : agentIDType.value;
+	}
+
+	public String getIDTypeNameValue()
+	{
+		return (idTypeName == null) ? null : idTypeName.value;
+	}
+
+	public String getIDValueValue()
+	{
+		return (idValue == null) ? null : idValue.value;
+	}
 }

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ProductClassificationTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +64,20 @@ public class ProductClassification
 		});
 
 		return x;
+	}
+
+	public ProductClassificationTypeCodes getProductClassificationTypeValue()
+	{
+		return (productClassificationType == null) ? null : productClassificationType.value;
+	}
+
+	public String getProductClassificationCodeValue()
+	{
+		return (productClassificationCode == null) ? null : productClassificationCode.value;
+	}
+
+	public Double getPercentValue()
+	{
+		return (percent == null) ? null : percent.value;
 	}
 }

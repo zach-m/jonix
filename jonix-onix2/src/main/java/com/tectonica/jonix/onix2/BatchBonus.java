@@ -73,4 +73,14 @@ public class BatchBonus
 
 		return x;
 	}
+
+	public String getBatchQuantityValue()
+	{
+		return (batchQuantity == null) ? null : batchQuantity.value;
+	}
+
+	public String getFreeQuantityValue()
+	{
+		return (freeQuantity == null) ? null : freeQuantity.value;
+	}
 }

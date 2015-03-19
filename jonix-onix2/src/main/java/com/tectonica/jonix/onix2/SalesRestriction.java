@@ -24,6 +24,7 @@ import java.util.List;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SalesRestrictionTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -77,5 +78,15 @@ public class SalesRestriction
 		});
 
 		return x;
+	}
+
+	public SalesRestrictionTypeCodes getSalesRestrictionTypeValue()
+	{
+		return (salesRestrictionType == null) ? null : salesRestrictionType.value;
+	}
+
+	public String getSalesRestrictionDetailValue()
+	{
+		return (salesRestrictionDetail == null) ? null : salesRestrictionDetail.value;
 	}
 }

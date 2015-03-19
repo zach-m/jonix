@@ -27,6 +27,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.UnnamedPersonss;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -149,5 +150,95 @@ public class Contributor
 		});
 
 		return x;
+	}
+
+	public String getSequenceNumberValue()
+	{
+		return (sequenceNumber == null) ? null : sequenceNumber.value;
+	}
+
+	public String getSequenceNumberWithinRoleValue()
+	{
+		return (sequenceNumberWithinRole == null) ? null : sequenceNumberWithinRole.value;
+	}
+
+	public String getPersonNameValue()
+	{
+		return (personName == null) ? null : personName.value;
+	}
+
+	public String getPersonNameInvertedValue()
+	{
+		return (personNameInverted == null) ? null : personNameInverted.value;
+	}
+
+	public String getTitlesBeforeNamesValue()
+	{
+		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
+	}
+
+	public String getNamesBeforeKeyValue()
+	{
+		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
+	}
+
+	public String getPrefixToKeyValue()
+	{
+		return (prefixToKey == null) ? null : prefixToKey.value;
+	}
+
+	public String getKeyNamesValue()
+	{
+		return (keyNames == null) ? null : keyNames.value;
+	}
+
+	public String getNamesAfterKeyValue()
+	{
+		return (namesAfterKey == null) ? null : namesAfterKey.value;
+	}
+
+	public String getSuffixToKeyValue()
+	{
+		return (suffixToKey == null) ? null : suffixToKey.value;
+	}
+
+	public String getLettersAfterNamesValue()
+	{
+		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
+	}
+
+	public String getTitlesAfterNamesValue()
+	{
+		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
+	}
+
+	public String getCorporateNameValue()
+	{
+		return (corporateName == null) ? null : corporateName.value;
+	}
+
+	public String getBiographicalNoteValue()
+	{
+		return (biographicalNote == null) ? null : biographicalNote.value;
+	}
+
+	public String getProfessionalPositionValue()
+	{
+		return (professionalPosition == null) ? null : professionalPosition.value;
+	}
+
+	public String getAffiliationValue()
+	{
+		return (affiliation == null) ? null : affiliation.value;
+	}
+
+	public String getContributorDescriptionValue()
+	{
+		return (contributorDescription == null) ? null : contributorDescription.value;
+	}
+
+	public UnnamedPersonss getUnnamedPersonsValue()
+	{
+		return (unnamedPersons == null) ? null : unnamedPersons.value;
 	}
 }

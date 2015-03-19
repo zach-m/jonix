@@ -20,7 +20,9 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SupplyDateRoles;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -63,5 +65,20 @@ public class SupplyDate
 		});
 
 		return x;
+	}
+
+	public SupplyDateRoles getSupplyDateRoleValue()
+	{
+		return (supplyDateRole == null) ? null : supplyDateRole.value;
+	}
+
+	public DateFormats getDateFormatValue()
+	{
+		return (dateFormat == null) ? null : dateFormat.value;
+	}
+
+	public String getDateValue()
+	{
+		return (date == null) ? null : date.value;
 	}
 }

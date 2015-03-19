@@ -23,6 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.PublishingRoleCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -86,5 +88,30 @@ public class Publisher
 		});
 
 		return x;
+	}
+
+	public PublishingRoleCodes getPublishingRoleValue()
+	{
+		return (publishingRole == null) ? null : publishingRole.value;
+	}
+
+	public String getPublisherNameValue()
+	{
+		return (publisherName == null) ? null : publisherName.value;
+	}
+
+	public NameCodeTypes getNameCodeTypeValue()
+	{
+		return (nameCodeType == null) ? null : nameCodeType.value;
+	}
+
+	public String getNameCodeTypeNameValue()
+	{
+		return (nameCodeTypeName == null) ? null : nameCodeTypeName.value;
+	}
+
+	public String getNameCodeValueValue()
+	{
+		return (nameCodeValue == null) ? null : nameCodeValue.value;
 	}
 }

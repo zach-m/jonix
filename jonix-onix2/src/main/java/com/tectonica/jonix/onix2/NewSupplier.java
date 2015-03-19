@@ -90,4 +90,19 @@ public class NewSupplier
 
 		return x;
 	}
+
+	public String getSupplierSANValue()
+	{
+		return (supplierSAN == null) ? null : supplierSAN.value;
+	}
+
+	public String getSupplierEANLocationNumberValue()
+	{
+		return (supplierEANLocationNumber == null) ? null : supplierEANLocationNumber.value;
+	}
+
+	public String getSupplierNameValue()
+	{
+		return (supplierName == null) ? null : supplierName.value;
+	}
 }

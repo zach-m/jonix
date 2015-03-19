@@ -81,4 +81,14 @@ public class Reissue
 
 		return x;
 	}
+
+	public String getReissueDateValue()
+	{
+		return (reissueDate == null) ? null : reissueDate.value;
+	}
+
+	public String getReissueDescriptionValue()
+	{
+		return (reissueDescription == null) ? null : reissueDescription.value;
+	}
 }

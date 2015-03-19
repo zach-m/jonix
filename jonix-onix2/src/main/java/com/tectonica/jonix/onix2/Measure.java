@@ -21,6 +21,8 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.MeasureTypeCodes;
+import com.tectonica.jonix.codelist.MeasureUnitCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -75,5 +77,20 @@ public class Measure
 		});
 
 		return x;
+	}
+
+	public MeasureTypeCodes getMeasureTypeCodeValue()
+	{
+		return (measureTypeCode == null) ? null : measureTypeCode.value;
+	}
+
+	public String getMeasurementValue()
+	{
+		return (measurement == null) ? null : measurement.value;
+	}
+
+	public MeasureUnitCodes getMeasureUnitCodeValue()
+	{
+		return (measureUnitCode == null) ? null : measureUnitCode.value;
 	}
 }

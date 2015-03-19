@@ -50,7 +50,7 @@ public class Stock
 	public StockQuantityCoded stockQuantityCoded; // Required
 	public OnHand onHand; // Optional
 	public OnOrder onOrder; // Optional
-	public CBO cbO; // Optional
+	public CBO cbo; // Optional
 	public List<OnOrderDetail> onOrderDetails; // ZeroOrMore
 
 	public static Stock fromDoc(org.w3c.dom.Element element)
@@ -82,12 +82,32 @@ public class Stock
 				else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
 					x.onOrder = OnOrder.fromDoc(element);
 				else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
-					x.cbO = CBO.fromDoc(element);
+					x.cbo = CBO.fromDoc(element);
 				else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
 					x.onOrderDetails = DU.addToList(x.onOrderDetails, OnOrderDetail.fromDoc(element));
 			}
 		});
 
 		return x;
+	}
+
+	public String getLocationNameValue()
+	{
+		return (locationName == null) ? null : locationName.value;
+	}
+
+	public String getOnHandValue()
+	{
+		return (onHand == null) ? null : onHand.value;
+	}
+
+	public String getOnOrderValue()
+	{
+		return (onOrder == null) ? null : onOrder.value;
+	}
+
+	public String getCBOValue()
+	{
+		return (cbo == null) ? null : cbo.value;
 	}
 }

@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -65,5 +66,15 @@ public class ResourceFeature
 		});
 
 		return x;
+	}
+
+	public ResourceFeatureTypes getResourceFeatureTypeValue()
+	{
+		return (resourceFeatureType == null) ? null : resourceFeatureType.value;
+	}
+
+	public String getFeatureValueValue()
+	{
+		return (featureValue == null) ? null : featureValue.value;
 	}
 }

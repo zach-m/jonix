@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.codelist.PriceDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +65,20 @@ public class PriceDate
 		});
 
 		return x;
+	}
+
+	public PriceDateRoles getPriceDateRoleValue()
+	{
+		return (priceDateRole == null) ? null : priceDateRole.value;
+	}
+
+	public DateFormats getDateFormatValue()
+	{
+		return (dateFormat == null) ? null : dateFormat.value;
+	}
+
+	public String getDateValue()
+	{
+		return (date == null) ? null : date.value;
 	}
 }

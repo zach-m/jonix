@@ -31,6 +31,7 @@ import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
+import com.tectonica.jonix.metadata.OnixValueClassMember;
 
 public class OnixClassGen
 {
@@ -38,7 +39,6 @@ public class OnixClassGen
 
 	private final String basePackage;
 	private final String baseFolder;
-	@SuppressWarnings("unused")
 	private final OnixMetadata ref;
 
 	public OnixClassGen(String basePackage, String baseFolder, OnixMetadata ref)
@@ -92,10 +92,11 @@ public class OnixClassGen
 		p.println();
 		for (OnixContentClassMember m : clz.members)
 		{
+			final String field = fieldOf(m.onixTypeName);
 			if (m.multiplicity.singular)
-				p.printf("\t" + "public %s %s; // %s\n", m.onixTypeName, fieldOf(m.onixTypeName), m.multiplicity.name());
+				p.printf("\t" + "public %s %s; // %s\n", m.onixTypeName, field, m.multiplicity.name());
 			else
-				p.printf("\t" + "public List<%s> %ss; // %s\n", m.onixTypeName, fieldOf(m.onixTypeName), m.multiplicity.name());
+				p.printf("\t" + "public List<%s> %ss; // %s\n", m.onixTypeName, field, m.multiplicity.name());
 		}
 
 		// creator
@@ -137,6 +138,26 @@ public class OnixClassGen
 		p.printf("\t\t" + "return x;\n");
 		p.printf("\t" + "}\n");
 
+		// declare value getters
+		for (OnixContentClassMember m : clz.members)
+		{
+			if (m.multiplicity.singular)
+			{
+				final OnixValueClass ovc = ref.valueClassByName(m.onixTypeName);
+				if (ovc != null)
+				{
+					final OnixValueClassMember vm = ovc.valueMember;
+					final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
+					final String field = fieldOf(m.onixTypeName);
+					p.println();
+					p.printf("\t" + "public %s get%sValue()\n", ti.javaType, m.onixTypeName);
+					p.printf("\t" + "{\n");
+					p.printf("\t\t" + "return (%s == null) ? null : %s.value;\n", field, field);
+					p.printf("\t" + "}\n");
+				}
+			}
+		}
+
 		p.println("}");
 	}
 
@@ -155,7 +176,8 @@ public class OnixClassGen
 		declareConstsAndAttributes(p, clz);
 
 		// declare value
-		final TypeInfo ti = typeInfoOf(clz.valueMember.onixSimpleTypeName, clz.valueMember.dataType.javaType, clz.valueMember.enumName);
+		final OnixValueClassMember vm = clz.valueMember;
+		final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
 
 		p.println();
 		p.printf("\t" + "public %s value;%s\n", ti.javaType, ti.comment);
@@ -273,7 +295,7 @@ public class OnixClassGen
 			if (Character.isLowerCase(propertyName.charAt(i)))
 				break;
 
-		// "Text" --> "text"
+		// "text" --> "text" (nothing to do)
 		if (i == 0)
 			return propertyName;
 
@@ -281,7 +303,21 @@ public class OnixClassGen
 		if (i == 1)
 			return propertyName.substring(0, 1).toLowerCase() + propertyName.substring(1);
 
+		// "ISBN" --> "isbn"
+		if (i == propertyName.length())
+			return propertyName.toLowerCase();
+
 		// "IDTypeName" --> "idTypeName"
 		return propertyName.substring(0, i - 1).toLowerCase() + propertyName.substring(i - 1);
+	}
+
+	public static void main(String[] args)
+	{
+		final OnixClassGen ocg = new OnixClassGen(null, null, null);
+
+		System.out.println(ocg.fieldOf("text"));
+		System.out.println(ocg.fieldOf("TextFormat"));
+		System.out.println(ocg.fieldOf("ISBN"));
+		System.out.println(ocg.fieldOf("IDTypeName"));
 	}
 }

@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.UnitOfUsages;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -60,5 +61,15 @@ public class EpubUsageLimit
 		});
 
 		return x;
+	}
+
+	public Double getQuantityValue()
+	{
+		return (quantity == null) ? null : quantity.value;
+	}
+
+	public UnitOfUsages getEpubUsageUnitValue()
+	{
+		return (epubUsageUnit == null) ? null : epubUsageUnit.value;
 	}
 }

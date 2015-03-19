@@ -22,6 +22,9 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PriceTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -83,5 +86,35 @@ public class Header
 		});
 
 		return x;
+	}
+
+	public Integer getMessageNumberValue()
+	{
+		return (messageNumber == null) ? null : messageNumber.value;
+	}
+
+	public Integer getMessageRepeatValue()
+	{
+		return (messageRepeat == null) ? null : messageRepeat.value;
+	}
+
+	public String getSentDateTimeValue()
+	{
+		return (sentDateTime == null) ? null : sentDateTime.value;
+	}
+
+	public LanguageCodeIso6392Bs getDefaultLanguageOfTextValue()
+	{
+		return (defaultLanguageOfText == null) ? null : defaultLanguageOfText.value;
+	}
+
+	public PriceTypeCodes getDefaultPriceTypeValue()
+	{
+		return (defaultPriceType == null) ? null : defaultPriceType.value;
+	}
+
+	public CurrencyCodeIso4217s getDefaultCurrencyCodeValue()
+	{
+		return (defaultCurrencyCode == null) ? null : defaultCurrencyCode.value;
 	}
 }

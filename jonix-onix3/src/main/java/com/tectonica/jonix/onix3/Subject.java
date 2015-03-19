@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SubjectSchemeIdentifierCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -74,5 +75,25 @@ public class Subject
 		});
 
 		return x;
+	}
+
+	public SubjectSchemeIdentifierCodes getSubjectSchemeIdentifierValue()
+	{
+		return (subjectSchemeIdentifier == null) ? null : subjectSchemeIdentifier.value;
+	}
+
+	public String getSubjectSchemeNameValue()
+	{
+		return (subjectSchemeName == null) ? null : subjectSchemeName.value;
+	}
+
+	public String getSubjectSchemeVersionValue()
+	{
+		return (subjectSchemeVersion == null) ? null : subjectSchemeVersion.value;
+	}
+
+	public String getSubjectCodeValue()
+	{
+		return (subjectCode == null) ? null : subjectCode.value;
 	}
 }

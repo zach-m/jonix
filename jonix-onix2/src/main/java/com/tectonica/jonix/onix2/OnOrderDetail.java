@@ -73,4 +73,14 @@ public class OnOrderDetail
 
 		return x;
 	}
+
+	public String getOnOrderValue()
+	{
+		return (onOrder == null) ? null : onOrder.value;
+	}
+
+	public String getExpectedDateValue()
+	{
+		return (expectedDate == null) ? null : expectedDate.value;
+	}
 }

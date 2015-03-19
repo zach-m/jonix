@@ -22,7 +22,10 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SalesRightsTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -95,5 +98,25 @@ public class PublishingDetail
 		});
 
 		return x;
+	}
+
+	public CountryCodeIso31661s getCountryOfPublicationValue()
+	{
+		return (countryOfPublication == null) ? null : countryOfPublication.value;
+	}
+
+	public PublishingStatuss getPublishingStatusValue()
+	{
+		return (publishingStatus == null) ? null : publishingStatus.value;
+	}
+
+	public Integer getLatestReprintNumberValue()
+	{
+		return (latestReprintNumber == null) ? null : latestReprintNumber.value;
+	}
+
+	public SalesRightsTypeCodes getROWSalesRightsTypeValue()
+	{
+		return (rowSalesRightsType == null) ? null : rowSalesRightsType.value;
 	}
 }

@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.AudienceRangePrecisions;
+import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +65,20 @@ public class AudienceRange
 		});
 
 		return x;
+	}
+
+	public AudienceRangeQualifiers getAudienceRangeQualifierValue()
+	{
+		return (audienceRangeQualifier == null) ? null : audienceRangeQualifier.value;
+	}
+
+	public AudienceRangePrecisions getAudienceRangePrecisionValue()
+	{
+		return (audienceRangePrecision == null) ? null : audienceRangePrecision.value;
+	}
+
+	public String getAudienceRangeValueValue()
+	{
+		return (audienceRangeValue == null) ? null : audienceRangeValue.value;
 	}
 }

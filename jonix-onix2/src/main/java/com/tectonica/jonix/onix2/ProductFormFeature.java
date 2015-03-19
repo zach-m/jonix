@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -75,5 +76,20 @@ public class ProductFormFeature
 		});
 
 		return x;
+	}
+
+	public ProductFormFeatureTypes getProductFormFeatureTypeValue()
+	{
+		return (productFormFeatureType == null) ? null : productFormFeatureType.value;
+	}
+
+	public String getProductFormFeatureValueValue()
+	{
+		return (productFormFeatureValue == null) ? null : productFormFeatureValue.value;
+	}
+
+	public String getProductFormFeatureDescriptionValue()
+	{
+		return (productFormFeatureDescription == null) ? null : productFormFeatureDescription.value;
 	}
 }

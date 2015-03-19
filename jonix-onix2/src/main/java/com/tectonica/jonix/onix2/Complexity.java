@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ComplexitySchemeIdentifierCodes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -72,5 +73,15 @@ public class Complexity
 		});
 
 		return x;
+	}
+
+	public ComplexitySchemeIdentifierCodes getComplexitySchemeIdentifierValue()
+	{
+		return (complexitySchemeIdentifier == null) ? null : complexitySchemeIdentifier.value;
+	}
+
+	public String getComplexityCodeValue()
+	{
+		return (complexityCode == null) ? null : complexityCode.value;
 	}
 }

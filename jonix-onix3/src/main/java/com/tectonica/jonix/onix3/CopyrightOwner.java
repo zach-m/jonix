@@ -66,4 +66,14 @@ public class CopyrightOwner
 
 		return x;
 	}
+
+	public String getPersonNameValue()
+	{
+		return (personName == null) ? null : personName.value;
+	}
+
+	public String getCorporateNameValue()
+	{
+		return (corporateName == null) ? null : corporateName.value;
+	}
 }

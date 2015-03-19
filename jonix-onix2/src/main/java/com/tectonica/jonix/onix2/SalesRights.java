@@ -24,6 +24,8 @@ import java.util.List;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RegionCodes;
+import com.tectonica.jonix.codelist.SalesRightsTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -80,5 +82,15 @@ public class SalesRights
 		});
 
 		return x;
+	}
+
+	public SalesRightsTypeCodes getSalesRightsTypeValue()
+	{
+		return (salesRightsType == null) ? null : salesRightsType.value;
+	}
+
+	public RegionCodes getRightsTerritoryValue()
+	{
+		return (rightsTerritory == null) ? null : rightsTerritory.value;
 	}
 }

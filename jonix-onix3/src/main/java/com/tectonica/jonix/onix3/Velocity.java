@@ -20,7 +20,9 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.Velocitys;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -63,5 +65,20 @@ public class Velocity
 		});
 
 		return x;
+	}
+
+	public Velocitys getVelocityMetricValue()
+	{
+		return (velocityMetric == null) ? null : velocityMetric.value;
+	}
+
+	public Integer getRateValue()
+	{
+		return (rate == null) ? null : rate.value;
+	}
+
+	public Proximitys getProximityValue()
+	{
+		return (proximity == null) ? null : proximity.value;
 	}
 }

@@ -20,7 +20,9 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PersonDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -75,5 +77,20 @@ public class PersonDate
 		});
 
 		return x;
+	}
+
+	public PersonDateRoles getPersonDateRoleValue()
+	{
+		return (personDateRole == null) ? null : personDateRole.value;
+	}
+
+	public DateFormats getDateFormatValue()
+	{
+		return (dateFormat == null) ? null : dateFormat.value;
+	}
+
+	public String getDateValue()
+	{
+		return (date == null) ? null : date.value;
 	}
 }

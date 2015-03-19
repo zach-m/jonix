@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.MarketPublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -89,5 +90,15 @@ public class MarketPublishingDetail
 		});
 
 		return x;
+	}
+
+	public MarketPublishingStatuss getMarketPublishingStatusValue()
+	{
+		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
+	}
+
+	public String getPromotionContactValue()
+	{
+		return (promotionContact == null) ? null : promotionContact.value;
 	}
 }

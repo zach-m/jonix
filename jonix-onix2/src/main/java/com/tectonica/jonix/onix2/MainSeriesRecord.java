@@ -23,6 +23,9 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NotificationOrUpdateTypeCodes;
+import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -110,5 +113,50 @@ public class MainSeriesRecord
 		});
 
 		return x;
+	}
+
+	public String getRecordReferenceValue()
+	{
+		return (recordReference == null) ? null : recordReference.value;
+	}
+
+	public NotificationOrUpdateTypeCodes getNotificationTypeValue()
+	{
+		return (notificationType == null) ? null : notificationType.value;
+	}
+
+	public ProductCompositions getDeletionCodeValue()
+	{
+		return (deletionCode == null) ? null : deletionCode.value;
+	}
+
+	public String getDeletionTextValue()
+	{
+		return (deletionText == null) ? null : deletionText.value;
+	}
+
+	public RecordSourceTypeCodes getRecordSourceTypeValue()
+	{
+		return (recordSourceType == null) ? null : recordSourceType.value;
+	}
+
+	public NameCodeTypes getRecordSourceIdentifierTypeValue()
+	{
+		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
+	}
+
+	public String getRecordSourceIdentifierValue()
+	{
+		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
+	}
+
+	public String getRecordSourceNameValue()
+	{
+		return (recordSourceName == null) ? null : recordSourceName.value;
+	}
+
+	public String getSubordinateEntriesValue()
+	{
+		return (subordinateEntries == null) ? null : subordinateEntries.value;
 	}
 }

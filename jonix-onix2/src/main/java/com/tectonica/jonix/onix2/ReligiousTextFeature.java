@@ -22,6 +22,8 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureCodes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -75,5 +77,20 @@ public class ReligiousTextFeature
 		});
 
 		return x;
+	}
+
+	public ReligiousTextFeatureTypes getReligiousTextFeatureTypeValue()
+	{
+		return (religiousTextFeatureType == null) ? null : religiousTextFeatureType.value;
+	}
+
+	public ReligiousTextFeatureCodes getReligiousTextFeatureCodeValue()
+	{
+		return (religiousTextFeatureCode == null) ? null : religiousTextFeatureCode.value;
+	}
+
+	public String getReligiousTextFeatureDescriptionValue()
+	{
+		return (religiousTextFeatureDescription == null) ? null : religiousTextFeatureDescription.value;
 	}
 }

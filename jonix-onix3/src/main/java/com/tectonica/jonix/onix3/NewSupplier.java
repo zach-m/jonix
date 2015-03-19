@@ -72,4 +72,9 @@ public class NewSupplier
 
 		return x;
 	}
+
+	public String getSupplierNameValue()
+	{
+		return (supplierName == null) ? null : supplierName.value;
+	}
 }

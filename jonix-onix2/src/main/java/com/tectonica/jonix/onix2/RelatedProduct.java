@@ -22,10 +22,16 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.EpublicationFormatCodes;
+import com.tectonica.jonix.codelist.EpublicationTypeCodes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.ProductFormCodes;
+import com.tectonica.jonix.codelist.ProductPackagingTypes;
+import com.tectonica.jonix.codelist.ProductRelationCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.TradeCategoryCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
 
 /*
@@ -46,7 +52,7 @@ public class RelatedProduct
 	public String sourcename;
 
 	public RelationCode relationCode; // Required
-	public ISBN isbN; // Required
+	public ISBN isbn; // Required
 	public EAN13 ean13; // Optional
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 	public List<Website> websites; // ZeroOrMore
@@ -89,7 +95,7 @@ public class RelatedProduct
 				if (name.equals(RelationCode.refname) || name.equals(RelationCode.shortname))
 					x.relationCode = RelationCode.fromDoc(element);
 				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbN = ISBN.fromDoc(element);
+					x.isbn = ISBN.fromDoc(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
 					x.ean13 = EAN13.fromDoc(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
@@ -134,5 +140,80 @@ public class RelatedProduct
 		});
 
 		return x;
+	}
+
+	public ProductRelationCodes getRelationCodeValue()
+	{
+		return (relationCode == null) ? null : relationCode.value;
+	}
+
+	public String getISBNValue()
+	{
+		return (isbn == null) ? null : isbn.value;
+	}
+
+	public String getEAN13Value()
+	{
+		return (ean13 == null) ? null : ean13.value;
+	}
+
+	public ProductFormCodes getProductFormValue()
+	{
+		return (productForm == null) ? null : productForm.value;
+	}
+
+	public ProductPackagingTypes getProductPackagingValue()
+	{
+		return (productPackaging == null) ? null : productPackaging.value;
+	}
+
+	public String getProductFormDescriptionValue()
+	{
+		return (productFormDescription == null) ? null : productFormDescription.value;
+	}
+
+	public String getNumberOfPiecesValue()
+	{
+		return (numberOfPieces == null) ? null : numberOfPieces.value;
+	}
+
+	public TradeCategoryCodes getTradeCategoryValue()
+	{
+		return (tradeCategory == null) ? null : tradeCategory.value;
+	}
+
+	public EpublicationTypeCodes getEpubTypeValue()
+	{
+		return (epubType == null) ? null : epubType.value;
+	}
+
+	public String getEpubTypeVersionValue()
+	{
+		return (epubTypeVersion == null) ? null : epubTypeVersion.value;
+	}
+
+	public String getEpubTypeDescriptionValue()
+	{
+		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
+	}
+
+	public EpublicationFormatCodes getEpubFormatValue()
+	{
+		return (epubFormat == null) ? null : epubFormat.value;
+	}
+
+	public String getEpubFormatVersionValue()
+	{
+		return (epubFormatVersion == null) ? null : epubFormatVersion.value;
+	}
+
+	public String getEpubFormatDescriptionValue()
+	{
+		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
+	}
+
+	public String getEpubTypeNoteValue()
+	{
+		return (epubTypeNote == null) ? null : epubTypeNote.value;
 	}
 }

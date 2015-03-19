@@ -26,6 +26,7 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.TextItemTypeCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
 
 /*
@@ -86,5 +87,25 @@ public class TextItem
 		});
 
 		return x;
+	}
+
+	public TextItemTypeCodes getTextItemTypeValue()
+	{
+		return (textItemType == null) ? null : textItemType.value;
+	}
+
+	public String getFirstPageNumberValue()
+	{
+		return (firstPageNumber == null) ? null : firstPageNumber.value;
+	}
+
+	public String getLastPageNumberValue()
+	{
+		return (lastPageNumber == null) ? null : lastPageNumber.value;
+	}
+
+	public String getNumberOfPagesValue()
+	{
+		return (numberOfPages == null) ? null : numberOfPages.value;
 	}
 }

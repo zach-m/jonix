@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -78,5 +79,25 @@ public class Imprint
 		});
 
 		return x;
+	}
+
+	public String getImprintNameValue()
+	{
+		return (imprintName == null) ? null : imprintName.value;
+	}
+
+	public NameCodeTypes getNameCodeTypeValue()
+	{
+		return (nameCodeType == null) ? null : nameCodeType.value;
+	}
+
+	public String getNameCodeTypeNameValue()
+	{
+		return (nameCodeTypeName == null) ? null : nameCodeTypeName.value;
+	}
+
+	public String getNameCodeValueValue()
+	{
+		return (nameCodeValue == null) ? null : nameCodeValue.value;
 	}
 }

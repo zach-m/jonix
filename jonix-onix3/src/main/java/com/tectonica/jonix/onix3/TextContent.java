@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TextTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -77,5 +78,15 @@ public class TextContent
 		});
 
 		return x;
+	}
+
+	public TextTypes getTextTypeValue()
+	{
+		return (textType == null) ? null : textType.value;
+	}
+
+	public String getTextSourceCorporateValue()
+	{
+		return (textSourceCorporate == null) ? null : textSourceCorporate.value;
 	}
 }

@@ -99,4 +99,44 @@ public class Set
 
 		return x;
 	}
+
+	public String getISBNOfSetValue()
+	{
+		return (isbnOfSet == null) ? null : isbnOfSet.value;
+	}
+
+	public String getEAN13OfSetValue()
+	{
+		return (ean13OfSet == null) ? null : ean13OfSet.value;
+	}
+
+	public String getTitleOfSetValue()
+	{
+		return (titleOfSet == null) ? null : titleOfSet.value;
+	}
+
+	public String getSetPartNumberValue()
+	{
+		return (setPartNumber == null) ? null : setPartNumber.value;
+	}
+
+	public String getSetPartTitleValue()
+	{
+		return (setPartTitle == null) ? null : setPartTitle.value;
+	}
+
+	public String getItemNumberWithinSetValue()
+	{
+		return (itemNumberWithinSet == null) ? null : itemNumberWithinSet.value;
+	}
+
+	public String getLevelSequenceNumberValue()
+	{
+		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
+	}
+
+	public String getSetItemTitleValue()
+	{
+		return (setItemTitle == null) ? null : setItemTitle.value;
+	}
 }

@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SalesRightsTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -71,5 +72,15 @@ public class SalesRights
 		});
 
 		return x;
+	}
+
+	public SalesRightsTypeCodes getSalesRightsTypeValue()
+	{
+		return (salesRightsType == null) ? null : salesRightsType.value;
+	}
+
+	public String getPublisherNameValue()
+	{
+		return (publisherName == null) ? null : publisherName.value;
 	}
 }

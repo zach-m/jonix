@@ -23,6 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.UsageStatuss;
+import com.tectonica.jonix.codelist.UsageTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -65,5 +67,15 @@ public class EpubUsageConstraint
 		});
 
 		return x;
+	}
+
+	public UsageTypes getEpubUsageTypeValue()
+	{
+		return (epubUsageType == null) ? null : epubUsageType.value;
+	}
+
+	public UsageStatuss getEpubUsageStatusValue()
+	{
+		return (epubUsageStatus == null) ? null : epubUsageStatus.value;
 	}
 }

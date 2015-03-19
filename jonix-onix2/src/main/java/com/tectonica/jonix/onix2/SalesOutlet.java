@@ -73,4 +73,9 @@ public class SalesOutlet
 
 		return x;
 	}
+
+	public String getSalesOutletNameValue()
+	{
+		return (salesOutletName == null) ? null : salesOutletName.value;
+	}
 }

@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SupplierRoles;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -77,5 +78,15 @@ public class Supplier
 		});
 
 		return x;
+	}
+
+	public SupplierRoles getSupplierRoleValue()
+	{
+		return (supplierRole == null) ? null : supplierRole.value;
+	}
+
+	public String getSupplierNameValue()
+	{
+		return (supplierName == null) ? null : supplierName.value;
 	}
 }

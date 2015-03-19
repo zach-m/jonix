@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -63,5 +64,20 @@ public class StockQuantityCoded
 		});
 
 		return x;
+	}
+
+	public StockQuantityCodeTypes getStockQuantityCodeTypeValue()
+	{
+		return (stockQuantityCodeType == null) ? null : stockQuantityCodeType.value;
+	}
+
+	public String getStockQuantityCodeTypeNameValue()
+	{
+		return (stockQuantityCodeTypeName == null) ? null : stockQuantityCodeTypeName.value;
+	}
+
+	public String getStockQuantityCodeValue()
+	{
+		return (stockQuantityCode == null) ? null : stockQuantityCode.value;
 	}
 }

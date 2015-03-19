@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -104,5 +105,60 @@ public class Name
 		});
 
 		return x;
+	}
+
+	public PersonOrganizationNameTypes getPersonNameTypeValue()
+	{
+		return (personNameType == null) ? null : personNameType.value;
+	}
+
+	public String getPersonNameValue()
+	{
+		return (personName == null) ? null : personName.value;
+	}
+
+	public String getPersonNameInvertedValue()
+	{
+		return (personNameInverted == null) ? null : personNameInverted.value;
+	}
+
+	public String getTitlesBeforeNamesValue()
+	{
+		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
+	}
+
+	public String getNamesBeforeKeyValue()
+	{
+		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
+	}
+
+	public String getPrefixToKeyValue()
+	{
+		return (prefixToKey == null) ? null : prefixToKey.value;
+	}
+
+	public String getKeyNamesValue()
+	{
+		return (keyNames == null) ? null : keyNames.value;
+	}
+
+	public String getNamesAfterKeyValue()
+	{
+		return (namesAfterKey == null) ? null : namesAfterKey.value;
+	}
+
+	public String getSuffixToKeyValue()
+	{
+		return (suffixToKey == null) ? null : suffixToKey.value;
+	}
+
+	public String getLettersAfterNamesValue()
+	{
+		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
+	}
+
+	public String getTitlesAfterNamesValue()
+	{
+		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
 	}
 }

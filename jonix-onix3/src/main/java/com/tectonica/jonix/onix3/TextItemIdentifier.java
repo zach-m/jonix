@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TextItemIdentifierTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -63,5 +64,20 @@ public class TextItemIdentifier
 		});
 
 		return x;
+	}
+
+	public TextItemIdentifierTypeCodes getTextItemIDTypeValue()
+	{
+		return (textItemIDType == null) ? null : textItemIDType.value;
+	}
+
+	public String getIDTypeNameValue()
+	{
+		return (idTypeName == null) ? null : idTypeName.value;
+	}
+
+	public String getIDValueValue()
+	{
+		return (idValue == null) ? null : idValue.value;
 	}
 }

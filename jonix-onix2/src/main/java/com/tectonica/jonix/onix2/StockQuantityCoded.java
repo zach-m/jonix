@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -75,5 +76,20 @@ public class StockQuantityCoded
 		});
 
 		return x;
+	}
+
+	public StockQuantityCodeTypes getStockQuantityCodeTypeValue()
+	{
+		return (stockQuantityCodeType == null) ? null : stockQuantityCodeType.value;
+	}
+
+	public String getStockQuantityCodeTypeNameValue()
+	{
+		return (stockQuantityCodeTypeName == null) ? null : stockQuantityCodeTypeName.value;
+	}
+
+	public String getStockQuantityCodeValue()
+	{
+		return (stockQuantityCode == null) ? null : stockQuantityCode.value;
 	}
 }

@@ -22,6 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.PriceTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -68,5 +70,20 @@ public class ComparisonProductPrice
 		});
 
 		return x;
+	}
+
+	public PriceTypeCodes getPriceTypeValue()
+	{
+		return (priceType == null) ? null : priceType.value;
+	}
+
+	public Double getPriceAmountValue()
+	{
+		return (priceAmount == null) ? null : priceAmount.value;
+	}
+
+	public CurrencyCodeIso4217s getCurrencyCodeValue()
+	{
+		return (currencyCode == null) ? null : currencyCode.value;
 	}
 }

@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -75,5 +76,20 @@ public class ConferenceSponsorIdentifier
 		});
 
 		return x;
+	}
+
+	public NameCodeTypes getConferenceSponsorIDTypeValue()
+	{
+		return (conferenceSponsorIDType == null) ? null : conferenceSponsorIDType.value;
+	}
+
+	public String getIDTypeNameValue()
+	{
+		return (idTypeName == null) ? null : idTypeName.value;
+	}
+
+	public String getIDValueValue()
+	{
+		return (idValue == null) ? null : idValue.value;
 	}
 }

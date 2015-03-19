@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.PriceConditionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -65,5 +66,10 @@ public class PriceCondition
 		});
 
 		return x;
+	}
+
+	public PriceConditionTypes getPriceConditionTypeValue()
+	{
+		return (priceConditionType == null) ? null : priceConditionType.value;
 	}
 }

@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TitleTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -65,5 +66,15 @@ public class TitleDetail
 		});
 
 		return x;
+	}
+
+	public TitleTypeCodes getTitleTypeValue()
+	{
+		return (titleType == null) ? null : titleType.value;
+	}
+
+	public String getTitleStatementValue()
+	{
+		return (titleStatement == null) ? null : titleStatement.value;
 	}
 }

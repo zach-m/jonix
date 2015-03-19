@@ -21,7 +21,9 @@ package com.tectonica.jonix.metadata;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -34,25 +36,42 @@ public class OnixMetadata
 	public List<OnixSimpleType> types = new ArrayList<>();
 	public List<OnixSimpleType> enums = new ArrayList<>();
 
-//	private Map<String, OnixSimpleType> typesMap;
-//
-//	private Map<String, OnixSimpleType> typesMap()
-//	{
-//		if (typesMap == null)
-//		{
-//			typesMap = new HashMap<>();
-//			for (OnixSimpleType ost : types)
-//				typesMap.put(ost.name, ost);
-//			for (OnixSimpleType ost : enums)
-//				typesMap.put(ost.name, ost);
-//		}
-//		return typesMap;
-//	}
-//
-//	public OnixSimpleType typeByName(String value)
-//	{
-//		return typesMap().get(value);
-//	}
+	private Map<String, OnixSimpleType> typesMap;
+	private Map<String, OnixValueClass> valueClassesMap;
+
+	private Map<String, OnixSimpleType> typesMap()
+	{
+		if (typesMap == null)
+		{
+			typesMap = new HashMap<>();
+			for (OnixSimpleType ost : types)
+				typesMap.put(ost.name, ost);
+			for (OnixSimpleType ost : enums)
+				typesMap.put(ost.enumName, ost);
+		}
+		return typesMap;
+	}
+
+	private Map<String, OnixValueClass> valueClassesMap()
+	{
+		if (valueClassesMap == null)
+		{
+			valueClassesMap = new HashMap<>();
+			for (OnixValueClass ovc : valueClasses)
+				valueClassesMap.put(ovc.name, ovc);
+		}
+		return valueClassesMap;
+	}
+
+	public OnixSimpleType typeByName(String name)
+	{
+		return typesMap().get(name);
+	}
+
+	public OnixValueClass valueClassByName(String name)
+	{
+		return valueClassesMap().get(name);
+	}
 
 	public void sort()
 	{

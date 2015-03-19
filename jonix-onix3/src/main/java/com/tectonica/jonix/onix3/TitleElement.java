@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TitleElementLevels;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,5 +82,45 @@ public class TitleElement
 		});
 
 		return x;
+	}
+
+	public Integer getSequenceNumberValue()
+	{
+		return (sequenceNumber == null) ? null : sequenceNumber.value;
+	}
+
+	public TitleElementLevels getTitleElementLevelValue()
+	{
+		return (titleElementLevel == null) ? null : titleElementLevel.value;
+	}
+
+	public String getPartNumberValue()
+	{
+		return (partNumber == null) ? null : partNumber.value;
+	}
+
+	public String getYearOfAnnualValue()
+	{
+		return (yearOfAnnual == null) ? null : yearOfAnnual.value;
+	}
+
+	public String getTitlePrefixValue()
+	{
+		return (titlePrefix == null) ? null : titlePrefix.value;
+	}
+
+	public String getTitleWithoutPrefixValue()
+	{
+		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
+	}
+
+	public String getTitleTextValue()
+	{
+		return (titleText == null) ? null : titleText.value;
+	}
+
+	public String getSubtitleValue()
+	{
+		return (subtitle == null) ? null : subtitle.value;
 	}
 }

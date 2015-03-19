@@ -25,6 +25,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.WebsiteRoles;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -75,5 +76,20 @@ public class ProductWebsite
 		});
 
 		return x;
+	}
+
+	public WebsiteRoles getWebsiteRoleValue()
+	{
+		return (websiteRole == null) ? null : websiteRole.value;
+	}
+
+	public String getProductWebsiteDescriptionValue()
+	{
+		return (productWebsiteDescription == null) ? null : productWebsiteDescription.value;
+	}
+
+	public String getProductWebsiteLinkValue()
+	{
+		return (productWebsiteLink == null) ? null : productWebsiteLink.value;
 	}
 }

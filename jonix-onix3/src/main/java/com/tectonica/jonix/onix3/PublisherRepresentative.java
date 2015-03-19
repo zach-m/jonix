@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -77,5 +78,15 @@ public class PublisherRepresentative
 		});
 
 		return x;
+	}
+
+	public AgentRoles getAgentRoleValue()
+	{
+		return (agentRole == null) ? null : agentRole.value;
+	}
+
+	public String getAgentNameValue()
+	{
+		return (agentName == null) ? null : agentName.value;
 	}
 }

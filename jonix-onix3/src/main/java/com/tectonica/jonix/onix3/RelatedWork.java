@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.WorkRelationCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -62,5 +63,10 @@ public class RelatedWork
 		});
 
 		return x;
+	}
+
+	public WorkRelationCodes getWorkRelationCodeValue()
+	{
+		return (workRelationCode == null) ? null : workRelationCode.value;
 	}
 }

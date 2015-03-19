@@ -22,7 +22,9 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.UnpricedItemTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -92,5 +94,25 @@ public class SupplyDetail
 		});
 
 		return x;
+	}
+
+	public ProductAvailabilitys getProductAvailabilityValue()
+	{
+		return (productAvailability == null) ? null : productAvailability.value;
+	}
+
+	public Integer getOrderTimeValue()
+	{
+		return (orderTime == null) ? null : orderTime.value;
+	}
+
+	public Integer getPackQuantityValue()
+	{
+		return (packQuantity == null) ? null : packQuantity.value;
+	}
+
+	public UnpricedItemTypeCodes getUnpricedItemTypeValue()
+	{
+		return (unpricedItemType == null) ? null : unpricedItemType.value;
 	}
 }

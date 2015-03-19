@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ExtentTypeCodes;
+import com.tectonica.jonix.codelist.ExtentUnitCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -66,5 +68,25 @@ public class Extent
 		});
 
 		return x;
+	}
+
+	public ExtentTypeCodes getExtentTypeValue()
+	{
+		return (extentType == null) ? null : extentType.value;
+	}
+
+	public Double getExtentValueValue()
+	{
+		return (extentValue == null) ? null : extentValue.value;
+	}
+
+	public String getExtentValueRomanValue()
+	{
+		return (extentValueRoman == null) ? null : extentValueRoman.value;
+	}
+
+	public ExtentUnitCodes getExtentUnitValue()
+	{
+		return (extentUnit == null) ? null : extentUnit.value;
 	}
 }

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SubjectSchemeIdentifierCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -81,5 +82,30 @@ public class Subject
 		});
 
 		return x;
+	}
+
+	public SubjectSchemeIdentifierCodes getSubjectSchemeIdentifierValue()
+	{
+		return (subjectSchemeIdentifier == null) ? null : subjectSchemeIdentifier.value;
+	}
+
+	public String getSubjectSchemeNameValue()
+	{
+		return (subjectSchemeName == null) ? null : subjectSchemeName.value;
+	}
+
+	public String getSubjectSchemeVersionValue()
+	{
+		return (subjectSchemeVersion == null) ? null : subjectSchemeVersion.value;
+	}
+
+	public String getSubjectCodeValue()
+	{
+		return (subjectCode == null) ? null : subjectCode.value;
+	}
+
+	public String getSubjectHeadingTextValue()
+	{
+		return (subjectHeadingText == null) ? null : subjectHeadingText.value;
 	}
 }

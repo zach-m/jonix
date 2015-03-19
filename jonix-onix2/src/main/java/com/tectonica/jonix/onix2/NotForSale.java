@@ -24,6 +24,7 @@ import java.util.List;
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RegionCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -47,7 +48,7 @@ public class NotForSale
 
 	public List<RightsCountry> rightsCountrys; // OneOrMore
 	public RightsTerritory rightsTerritory; // Optional
-	public ISBN isbN; // Optional
+	public ISBN isbn; // Optional
 	public EAN13 ean13; // Optional
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 	public PublisherName publisherName; // Optional
@@ -75,7 +76,7 @@ public class NotForSale
 				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
 					x.rightsTerritory = RightsTerritory.fromDoc(element);
 				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbN = ISBN.fromDoc(element);
+					x.isbn = ISBN.fromDoc(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
 					x.ean13 = EAN13.fromDoc(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
@@ -86,5 +87,25 @@ public class NotForSale
 		});
 
 		return x;
+	}
+
+	public RegionCodes getRightsTerritoryValue()
+	{
+		return (rightsTerritory == null) ? null : rightsTerritory.value;
+	}
+
+	public String getISBNValue()
+	{
+		return (isbn == null) ? null : isbn.value;
+	}
+
+	public String getEAN13Value()
+	{
+		return (ean13 == null) ? null : ean13.value;
+	}
+
+	public String getPublisherNameValue()
+	{
+		return (publisherName == null) ? null : publisherName.value;
 	}
 }

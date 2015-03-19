@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.WebsiteRoles;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -65,5 +66,15 @@ public class Website
 		});
 
 		return x;
+	}
+
+	public WebsiteRoles getWebsiteRoleValue()
+	{
+		return (websiteRole == null) ? null : websiteRole.value;
+	}
+
+	public String getWebsiteLinkValue()
+	{
+		return (websiteLink == null) ? null : websiteLink.value;
 	}
 }

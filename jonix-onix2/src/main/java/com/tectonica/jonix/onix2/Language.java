@@ -20,7 +20,9 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageRoleCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -75,5 +77,20 @@ public class Language
 		});
 
 		return x;
+	}
+
+	public LanguageRoleCodes getLanguageRoleValue()
+	{
+		return (languageRole == null) ? null : languageRole.value;
+	}
+
+	public LanguageCodeIso6392Bs getLanguageCodeValue()
+	{
+		return (languageCode == null) ? null : languageCode.value;
+	}
+
+	public CountryCodeIso31661s getCountryCodeValue()
+	{
+		return (countryCode == null) ? null : countryCode.value;
 	}
 }

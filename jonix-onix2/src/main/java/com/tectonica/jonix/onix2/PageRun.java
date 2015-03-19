@@ -73,4 +73,14 @@ public class PageRun
 
 		return x;
 	}
+
+	public String getFirstPageNumberValue()
+	{
+		return (firstPageNumber == null) ? null : firstPageNumber.value;
+	}
+
+	public String getLastPageNumberValue()
+	{
+		return (lastPageNumber == null) ? null : lastPageNumber.value;
+	}
 }

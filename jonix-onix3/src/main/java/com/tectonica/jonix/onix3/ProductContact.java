@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -71,5 +72,25 @@ public class ProductContact
 		});
 
 		return x;
+	}
+
+	public ProductContactRoles getProductContactRoleValue()
+	{
+		return (productContactRole == null) ? null : productContactRole.value;
+	}
+
+	public String getProductContactNameValue()
+	{
+		return (productContactName == null) ? null : productContactName.value;
+	}
+
+	public String getContactNameValue()
+	{
+		return (contactName == null) ? null : contactName.value;
+	}
+
+	public String getEmailAddressValue()
+	{
+		return (emailAddress == null) ? null : emailAddress.value;
 	}
 }

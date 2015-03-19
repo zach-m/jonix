@@ -22,11 +22,19 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PriceStatusCodes;
+import com.tectonica.jonix.codelist.PriceTypeCodes;
+import com.tectonica.jonix.codelist.PriceTypeQualifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RegionCodes;
+import com.tectonica.jonix.codelist.TaxRateCodeds;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.UnitOfPricingCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -149,5 +157,125 @@ public class Price
 		});
 
 		return x;
+	}
+
+	public PriceTypeCodes getPriceTypeCodeValue()
+	{
+		return (priceTypeCode == null) ? null : priceTypeCode.value;
+	}
+
+	public PriceTypeQualifiers getPriceQualifierValue()
+	{
+		return (priceQualifier == null) ? null : priceQualifier.value;
+	}
+
+	public String getPriceTypeDescriptionValue()
+	{
+		return (priceTypeDescription == null) ? null : priceTypeDescription.value;
+	}
+
+	public UnitOfPricingCodes getPricePerValue()
+	{
+		return (pricePer == null) ? null : pricePer.value;
+	}
+
+	public String getMinimumOrderQuantityValue()
+	{
+		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
+	}
+
+	public String getClassOfTradeValue()
+	{
+		return (classOfTrade == null) ? null : classOfTrade.value;
+	}
+
+	public String getBICDiscountGroupCodeValue()
+	{
+		return (bicDiscountGroupCode == null) ? null : bicDiscountGroupCode.value;
+	}
+
+	public String getDiscountPercentValue()
+	{
+		return (discountPercent == null) ? null : discountPercent.value;
+	}
+
+	public PriceStatusCodes getPriceStatusValue()
+	{
+		return (priceStatus == null) ? null : priceStatus.value;
+	}
+
+	public String getPriceAmountValue()
+	{
+		return (priceAmount == null) ? null : priceAmount.value;
+	}
+
+	public CurrencyCodeIso4217s getCurrencyCodeValue()
+	{
+		return (currencyCode == null) ? null : currencyCode.value;
+	}
+
+	public RegionCodes getTerritoryValue()
+	{
+		return (territory == null) ? null : territory.value;
+	}
+
+	public CountryCodeIso31661s getCountryExcludedValue()
+	{
+		return (countryExcluded == null) ? null : countryExcluded.value;
+	}
+
+	public RegionCodes getTerritoryExcludedValue()
+	{
+		return (territoryExcluded == null) ? null : territoryExcluded.value;
+	}
+
+	public TaxRateCodeds getTaxRateCode1Value()
+	{
+		return (taxRateCode1 == null) ? null : taxRateCode1.value;
+	}
+
+	public String getTaxRatePercent1Value()
+	{
+		return (taxRatePercent1 == null) ? null : taxRatePercent1.value;
+	}
+
+	public String getTaxableAmount1Value()
+	{
+		return (taxableAmount1 == null) ? null : taxableAmount1.value;
+	}
+
+	public String getTaxAmount1Value()
+	{
+		return (taxAmount1 == null) ? null : taxAmount1.value;
+	}
+
+	public TaxRateCodeds getTaxRateCode2Value()
+	{
+		return (taxRateCode2 == null) ? null : taxRateCode2.value;
+	}
+
+	public String getTaxRatePercent2Value()
+	{
+		return (taxRatePercent2 == null) ? null : taxRatePercent2.value;
+	}
+
+	public String getTaxableAmount2Value()
+	{
+		return (taxableAmount2 == null) ? null : taxableAmount2.value;
+	}
+
+	public String getTaxAmount2Value()
+	{
+		return (taxAmount2 == null) ? null : taxAmount2.value;
+	}
+
+	public String getPriceEffectiveFromValue()
+	{
+		return (priceEffectiveFrom == null) ? null : priceEffectiveFrom.value;
+	}
+
+	public String getPriceEffectiveUntilValue()
+	{
+		return (priceEffectiveUntil == null) ? null : priceEffectiveUntil.value;
 	}
 }

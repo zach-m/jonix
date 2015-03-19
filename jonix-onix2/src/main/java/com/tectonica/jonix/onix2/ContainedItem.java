@@ -23,9 +23,12 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.ProductFormCodes;
+import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.TradeCategoryCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
 
 /*
@@ -45,7 +48,7 @@ public class ContainedItem
 	public RecordSourceTypeCodes sourcetype;
 	public String sourcename;
 
-	public ISBN isbN; // Required
+	public ISBN isbn; // Required
 	public EAN13 ean13; // Optional
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 	public ProductForm productForm; // Optional
@@ -78,7 +81,7 @@ public class ContainedItem
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbN = ISBN.fromDoc(element);
+					x.isbn = ISBN.fromDoc(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
 					x.ean13 = EAN13.fromDoc(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
@@ -107,5 +110,45 @@ public class ContainedItem
 		});
 
 		return x;
+	}
+
+	public String getISBNValue()
+	{
+		return (isbn == null) ? null : isbn.value;
+	}
+
+	public String getEAN13Value()
+	{
+		return (ean13 == null) ? null : ean13.value;
+	}
+
+	public ProductFormCodes getProductFormValue()
+	{
+		return (productForm == null) ? null : productForm.value;
+	}
+
+	public ProductPackagingTypes getProductPackagingValue()
+	{
+		return (productPackaging == null) ? null : productPackaging.value;
+	}
+
+	public String getProductFormDescriptionValue()
+	{
+		return (productFormDescription == null) ? null : productFormDescription.value;
+	}
+
+	public String getNumberOfPiecesValue()
+	{
+		return (numberOfPieces == null) ? null : numberOfPieces.value;
+	}
+
+	public TradeCategoryCodes getTradeCategoryValue()
+	{
+		return (tradeCategory == null) ? null : tradeCategory.value;
+	}
+
+	public String getItemQuantityValue()
+	{
+		return (itemQuantity == null) ? null : itemQuantity.value;
 	}
 }

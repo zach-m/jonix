@@ -20,6 +20,9 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ImageAudioVideoFileFormatCodes;
+import com.tectonica.jonix.codelist.ImageAudioVideoFileLinkTypes;
+import com.tectonica.jonix.codelist.ImageAudioVideoFileTypeCodes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -99,5 +102,60 @@ public class MediaFile
 		});
 
 		return x;
+	}
+
+	public ImageAudioVideoFileTypeCodes getMediaFileTypeCodeValue()
+	{
+		return (mediaFileTypeCode == null) ? null : mediaFileTypeCode.value;
+	}
+
+	public ImageAudioVideoFileFormatCodes getMediaFileFormatCodeValue()
+	{
+		return (mediaFileFormatCode == null) ? null : mediaFileFormatCode.value;
+	}
+
+	public String getImageResolutionValue()
+	{
+		return (imageResolution == null) ? null : imageResolution.value;
+	}
+
+	public ImageAudioVideoFileLinkTypes getMediaFileLinkTypeCodeValue()
+	{
+		return (mediaFileLinkTypeCode == null) ? null : mediaFileLinkTypeCode.value;
+	}
+
+	public String getMediaFileLinkValue()
+	{
+		return (mediaFileLink == null) ? null : mediaFileLink.value;
+	}
+
+	public String getTextWithDownloadValue()
+	{
+		return (textWithDownload == null) ? null : textWithDownload.value;
+	}
+
+	public String getDownloadCaptionValue()
+	{
+		return (downloadCaption == null) ? null : downloadCaption.value;
+	}
+
+	public String getDownloadCreditValue()
+	{
+		return (downloadCredit == null) ? null : downloadCredit.value;
+	}
+
+	public String getDownloadCopyrightNoticeValue()
+	{
+		return (downloadCopyrightNotice == null) ? null : downloadCopyrightNotice.value;
+	}
+
+	public String getDownloadTermsValue()
+	{
+		return (downloadTerms == null) ? null : downloadTerms.value;
+	}
+
+	public String getMediaFileDateValue()
+	{
+		return (mediaFileDate == null) ? null : mediaFileDate.value;
 	}
 }

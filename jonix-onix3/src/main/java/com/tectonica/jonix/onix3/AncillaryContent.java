@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -66,5 +67,15 @@ public class AncillaryContent
 		});
 
 		return x;
+	}
+
+	public IllustrationAndOtherContentTypeCodes getAncillaryContentTypeValue()
+	{
+		return (ancillaryContentType == null) ? null : ancillaryContentType.value;
+	}
+
+	public Integer getNumberValue()
+	{
+		return (number == null) ? null : number.value;
 	}
 }

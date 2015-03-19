@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypeCodes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -75,5 +76,20 @@ public class Illustrations
 		});
 
 		return x;
+	}
+
+	public IllustrationAndOtherContentTypeCodes getIllustrationTypeValue()
+	{
+		return (illustrationType == null) ? null : illustrationType.value;
+	}
+
+	public String getIllustrationTypeDescriptionValue()
+	{
+		return (illustrationTypeDescription == null) ? null : illustrationTypeDescription.value;
+	}
+
+	public String getNumberValue()
+	{
+		return (number == null) ? null : number.value;
 	}
 }

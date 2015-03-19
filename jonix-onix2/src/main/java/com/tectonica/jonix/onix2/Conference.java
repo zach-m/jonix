@@ -96,4 +96,39 @@ public class Conference
 
 		return x;
 	}
+
+	public String getConferenceRoleValue()
+	{
+		return (conferenceRole == null) ? null : conferenceRole.value;
+	}
+
+	public String getConferenceNameValue()
+	{
+		return (conferenceName == null) ? null : conferenceName.value;
+	}
+
+	public String getConferenceAcronymValue()
+	{
+		return (conferenceAcronym == null) ? null : conferenceAcronym.value;
+	}
+
+	public String getConferenceNumberValue()
+	{
+		return (conferenceNumber == null) ? null : conferenceNumber.value;
+	}
+
+	public String getConferenceThemeValue()
+	{
+		return (conferenceTheme == null) ? null : conferenceTheme.value;
+	}
+
+	public String getConferenceDateValue()
+	{
+		return (conferenceDate == null) ? null : conferenceDate.value;
+	}
+
+	public String getConferencePlaceValue()
+	{
+		return (conferencePlace == null) ? null : conferencePlace.value;
+	}
 }

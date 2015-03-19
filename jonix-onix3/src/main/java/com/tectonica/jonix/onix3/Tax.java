@@ -21,6 +21,8 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TaxRateCodeds;
+import com.tectonica.jonix.codelist.TaxTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -69,5 +71,30 @@ public class Tax
 		});
 
 		return x;
+	}
+
+	public TaxTypes getTaxTypeValue()
+	{
+		return (taxType == null) ? null : taxType.value;
+	}
+
+	public TaxRateCodeds getTaxRateCodeValue()
+	{
+		return (taxRateCode == null) ? null : taxRateCode.value;
+	}
+
+	public Double getTaxRatePercentValue()
+	{
+		return (taxRatePercent == null) ? null : taxRatePercent.value;
+	}
+
+	public Double getTaxableAmountValue()
+	{
+		return (taxableAmount == null) ? null : taxableAmount.value;
+	}
+
+	public Double getTaxAmountValue()
+	{
+		return (taxAmount == null) ? null : taxAmount.value;
 	}
 }

@@ -24,6 +24,7 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.TitleTypeCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
 
 /*
@@ -87,5 +88,40 @@ public class Title
 		});
 
 		return x;
+	}
+
+	public TitleTypeCodes getTitleTypeValue()
+	{
+		return (titleType == null) ? null : titleType.value;
+	}
+
+	public String getAbbreviatedLengthValue()
+	{
+		return (abbreviatedLength == null) ? null : abbreviatedLength.value;
+	}
+
+	public TextCaseFlags getTextCaseFlagValue()
+	{
+		return (textCaseFlag == null) ? null : textCaseFlag.value;
+	}
+
+	public String getTitleTextValue()
+	{
+		return (titleText == null) ? null : titleText.value;
+	}
+
+	public String getTitlePrefixValue()
+	{
+		return (titlePrefix == null) ? null : titlePrefix.value;
+	}
+
+	public String getTitleWithoutPrefixValue()
+	{
+		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
+	}
+
+	public String getSubtitleValue()
+	{
+		return (subtitle == null) ? null : subtitle.value;
 	}
 }

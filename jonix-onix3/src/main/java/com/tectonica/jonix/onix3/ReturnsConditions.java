@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -63,5 +64,20 @@ public class ReturnsConditions
 		});
 
 		return x;
+	}
+
+	public ReturnsConditionsCodeTypes getReturnsCodeTypeValue()
+	{
+		return (returnsCodeType == null) ? null : returnsCodeType.value;
+	}
+
+	public String getReturnsCodeTypeNameValue()
+	{
+		return (returnsCodeTypeName == null) ? null : returnsCodeTypeName.value;
+	}
+
+	public String getReturnsCodeValue()
+	{
+		return (returnsCode == null) ? null : returnsCode.value;
 	}
 }

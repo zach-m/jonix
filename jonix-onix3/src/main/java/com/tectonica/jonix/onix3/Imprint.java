@@ -63,4 +63,9 @@ public class Imprint
 
 		return x;
 	}
+
+	public String getImprintNameValue()
+	{
+		return (imprintName == null) ? null : imprintName.value;
+	}
 }

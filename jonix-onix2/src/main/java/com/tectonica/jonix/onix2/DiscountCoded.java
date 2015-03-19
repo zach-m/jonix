@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.DiscountCodeTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -75,5 +76,20 @@ public class DiscountCoded
 		});
 
 		return x;
+	}
+
+	public DiscountCodeTypes getDiscountCodeTypeValue()
+	{
+		return (discountCodeType == null) ? null : discountCodeType.value;
+	}
+
+	public String getDiscountCodeTypeNameValue()
+	{
+		return (discountCodeTypeName == null) ? null : discountCodeTypeName.value;
+	}
+
+	public String getDiscountCodeValue()
+	{
+		return (discountCode == null) ? null : discountCode.value;
 	}
 }

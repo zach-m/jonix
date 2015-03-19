@@ -21,9 +21,11 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.OtherTextTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.TextLinkTypeCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
 
 /*
@@ -99,5 +101,60 @@ public class OtherText
 		});
 
 		return x;
+	}
+
+	public OtherTextTypeCodes getTextTypeCodeValue()
+	{
+		return (textTypeCode == null) ? null : textTypeCode.value;
+	}
+
+	public TextFormatCodes getTextFormatValue()
+	{
+		return (textFormat == null) ? null : textFormat.value;
+	}
+
+	public String getTextValue()
+	{
+		return (text == null) ? null : text.value;
+	}
+
+	public TextLinkTypeCodes getTextLinkTypeValue()
+	{
+		return (textLinkType == null) ? null : textLinkType.value;
+	}
+
+	public String getTextLinkValue()
+	{
+		return (textLink == null) ? null : textLink.value;
+	}
+
+	public String getTextAuthorValue()
+	{
+		return (textAuthor == null) ? null : textAuthor.value;
+	}
+
+	public String getTextSourceCorporateValue()
+	{
+		return (textSourceCorporate == null) ? null : textSourceCorporate.value;
+	}
+
+	public String getTextSourceTitleValue()
+	{
+		return (textSourceTitle == null) ? null : textSourceTitle.value;
+	}
+
+	public String getTextPublicationDateValue()
+	{
+		return (textPublicationDate == null) ? null : textPublicationDate.value;
+	}
+
+	public String getStartDateValue()
+	{
+		return (startDate == null) ? null : startDate.value;
+	}
+
+	public String getEndDateValue()
+	{
+		return (endDate == null) ? null : endDate.value;
 	}
 }

@@ -108,4 +108,39 @@ public class MarketRepresentation
 
 		return x;
 	}
+
+	public String getAgentNameValue()
+	{
+		return (agentName == null) ? null : agentName.value;
+	}
+
+	public String getAgentRoleValue()
+	{
+		return (agentRole == null) ? null : agentRole.value;
+	}
+
+	public String getMarketCountryValue()
+	{
+		return (marketCountry == null) ? null : marketCountry.value;
+	}
+
+	public String getMarketTerritoryValue()
+	{
+		return (marketTerritory == null) ? null : marketTerritory.value;
+	}
+
+	public String getMarketCountryExcludedValue()
+	{
+		return (marketCountryExcluded == null) ? null : marketCountryExcluded.value;
+	}
+
+	public String getMarketRestrictionDetailValue()
+	{
+		return (marketRestrictionDetail == null) ? null : marketRestrictionDetail.value;
+	}
+
+	public String getMarketPublishingStatusValue()
+	{
+		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
+	}
 }

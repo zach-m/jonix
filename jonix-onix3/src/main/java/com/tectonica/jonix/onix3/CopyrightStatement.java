@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RightsTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -65,5 +66,10 @@ public class CopyrightStatement
 		});
 
 		return x;
+	}
+
+	public RightsTypeCodes getCopyrightTypeValue()
+	{
+		return (copyrightType == null) ? null : copyrightType.value;
 	}
 }

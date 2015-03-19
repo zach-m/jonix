@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ResourceForms;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -68,5 +69,10 @@ public class ResourceVersion
 		});
 
 		return x;
+	}
+
+	public ResourceForms getResourceFormValue()
+	{
+		return (resourceForm == null) ? null : resourceForm.value;
 	}
 }

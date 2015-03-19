@@ -22,7 +22,11 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.DefaultLinearUnits;
+import com.tectonica.jonix.codelist.DefaultUnitOfWeights;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PriceTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
@@ -131,5 +135,100 @@ public class Header
 		});
 
 		return x;
+	}
+
+	public String getFromEANNumberValue()
+	{
+		return (fromEANNumber == null) ? null : fromEANNumber.value;
+	}
+
+	public String getFromSANValue()
+	{
+		return (fromSAN == null) ? null : fromSAN.value;
+	}
+
+	public String getFromCompanyValue()
+	{
+		return (fromCompany == null) ? null : fromCompany.value;
+	}
+
+	public String getFromPersonValue()
+	{
+		return (fromPerson == null) ? null : fromPerson.value;
+	}
+
+	public String getFromEmailValue()
+	{
+		return (fromEmail == null) ? null : fromEmail.value;
+	}
+
+	public String getToEANNumberValue()
+	{
+		return (toEANNumber == null) ? null : toEANNumber.value;
+	}
+
+	public String getToSANValue()
+	{
+		return (toSAN == null) ? null : toSAN.value;
+	}
+
+	public String getToCompanyValue()
+	{
+		return (toCompany == null) ? null : toCompany.value;
+	}
+
+	public String getToPersonValue()
+	{
+		return (toPerson == null) ? null : toPerson.value;
+	}
+
+	public String getMessageNumberValue()
+	{
+		return (messageNumber == null) ? null : messageNumber.value;
+	}
+
+	public String getMessageRepeatValue()
+	{
+		return (messageRepeat == null) ? null : messageRepeat.value;
+	}
+
+	public String getSentDateValue()
+	{
+		return (sentDate == null) ? null : sentDate.value;
+	}
+
+	public String getMessageNoteValue()
+	{
+		return (messageNote == null) ? null : messageNote.value;
+	}
+
+	public LanguageCodeIso6392Bs getDefaultLanguageOfTextValue()
+	{
+		return (defaultLanguageOfText == null) ? null : defaultLanguageOfText.value;
+	}
+
+	public PriceTypeCodes getDefaultPriceTypeCodeValue()
+	{
+		return (defaultPriceTypeCode == null) ? null : defaultPriceTypeCode.value;
+	}
+
+	public CurrencyCodeIso4217s getDefaultCurrencyCodeValue()
+	{
+		return (defaultCurrencyCode == null) ? null : defaultCurrencyCode.value;
+	}
+
+	public DefaultLinearUnits getDefaultLinearUnitValue()
+	{
+		return (defaultLinearUnit == null) ? null : defaultLinearUnit.value;
+	}
+
+	public DefaultUnitOfWeights getDefaultWeightUnitValue()
+	{
+		return (defaultWeightUnit == null) ? null : defaultWeightUnit.value;
+	}
+
+	public String getDefaultClassOfTradeValue()
+	{
+		return (defaultClassOfTrade == null) ? null : defaultClassOfTrade.value;
 	}
 }

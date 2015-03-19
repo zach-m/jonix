@@ -20,7 +20,9 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RegionCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -66,5 +68,25 @@ public class Territory
 		});
 
 		return x;
+	}
+
+	public CountryCodeIso31661s getCountriesIncludedValue()
+	{
+		return (countriesIncluded == null) ? null : countriesIncluded.value;
+	}
+
+	public RegionCodes getRegionsIncludedValue()
+	{
+		return (regionsIncluded == null) ? null : regionsIncluded.value;
+	}
+
+	public CountryCodeIso31661s getCountriesExcludedValue()
+	{
+		return (countriesExcluded == null) ? null : countriesExcluded.value;
+	}
+
+	public RegionCodes getRegionsExcludedValue()
+	{
+		return (regionsExcluded == null) ? null : regionsExcluded.value;
 	}
 }

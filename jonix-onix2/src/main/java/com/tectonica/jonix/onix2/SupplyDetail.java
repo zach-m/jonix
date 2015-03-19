@@ -22,11 +22,19 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.AudienceRestrictionFlags;
+import com.tectonica.jonix.codelist.AvailabilityStatusCodes;
+import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RegionCodes;
+import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
+import com.tectonica.jonix.codelist.SupplierRoles;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
+import com.tectonica.jonix.codelist.UnpricedItemTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -167,5 +175,110 @@ public class SupplyDetail
 		});
 
 		return x;
+	}
+
+	public String getSupplierSANValue()
+	{
+		return (supplierSAN == null) ? null : supplierSAN.value;
+	}
+
+	public String getSupplierEANLocationNumberValue()
+	{
+		return (supplierEANLocationNumber == null) ? null : supplierEANLocationNumber.value;
+	}
+
+	public String getSupplierNameValue()
+	{
+		return (supplierName == null) ? null : supplierName.value;
+	}
+
+	public SupplierRoles getSupplierRoleValue()
+	{
+		return (supplierRole == null) ? null : supplierRole.value;
+	}
+
+	public RegionCodes getSupplyToTerritoryValue()
+	{
+		return (supplyToTerritory == null) ? null : supplyToTerritory.value;
+	}
+
+	public String getSupplyRestrictionDetailValue()
+	{
+		return (supplyRestrictionDetail == null) ? null : supplyRestrictionDetail.value;
+	}
+
+	public ReturnsConditionsCodeTypes getReturnsCodeTypeValue()
+	{
+		return (returnsCodeType == null) ? null : returnsCodeType.value;
+	}
+
+	public String getReturnsCodeValue()
+	{
+		return (returnsCode == null) ? null : returnsCode.value;
+	}
+
+	public String getLastDateForReturnsValue()
+	{
+		return (lastDateForReturns == null) ? null : lastDateForReturns.value;
+	}
+
+	public AvailabilityStatusCodes getAvailabilityCodeValue()
+	{
+		return (availabilityCode == null) ? null : availabilityCode.value;
+	}
+
+	public ProductAvailabilitys getProductAvailabilityValue()
+	{
+		return (productAvailability == null) ? null : productAvailability.value;
+	}
+
+	public String getIntermediaryAvailabilityCodeValue()
+	{
+		return (intermediaryAvailabilityCode == null) ? null : intermediaryAvailabilityCode.value;
+	}
+
+	public DateFormats getDateFormatValue()
+	{
+		return (dateFormat == null) ? null : dateFormat.value;
+	}
+
+	public String getExpectedShipDateValue()
+	{
+		return (expectedShipDate == null) ? null : expectedShipDate.value;
+	}
+
+	public String getOnSaleDateValue()
+	{
+		return (onSaleDate == null) ? null : onSaleDate.value;
+	}
+
+	public String getOrderTimeValue()
+	{
+		return (orderTime == null) ? null : orderTime.value;
+	}
+
+	public String getPackQuantityValue()
+	{
+		return (packQuantity == null) ? null : packQuantity.value;
+	}
+
+	public AudienceRestrictionFlags getAudienceRestrictionFlagValue()
+	{
+		return (audienceRestrictionFlag == null) ? null : audienceRestrictionFlag.value;
+	}
+
+	public String getAudienceRestrictionNoteValue()
+	{
+		return (audienceRestrictionNote == null) ? null : audienceRestrictionNote.value;
+	}
+
+	public String getPriceAmountValue()
+	{
+		return (priceAmount == null) ? null : priceAmount.value;
+	}
+
+	public UnpricedItemTypeCodes getUnpricedItemTypeValue()
+	{
+		return (unpricedItemType == null) ? null : unpricedItemType.value;
 	}
 }

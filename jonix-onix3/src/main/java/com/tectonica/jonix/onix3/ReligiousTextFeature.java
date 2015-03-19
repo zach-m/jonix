@@ -23,6 +23,8 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureCodes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -66,5 +68,15 @@ public class ReligiousTextFeature
 		});
 
 		return x;
+	}
+
+	public ReligiousTextFeatureTypes getReligiousTextFeatureTypeValue()
+	{
+		return (religiousTextFeatureType == null) ? null : religiousTextFeatureType.value;
+	}
+
+	public ReligiousTextFeatureCodes getReligiousTextFeatureCodeValue()
+	{
+		return (religiousTextFeatureCode == null) ? null : religiousTextFeatureCode.value;
 	}
 }

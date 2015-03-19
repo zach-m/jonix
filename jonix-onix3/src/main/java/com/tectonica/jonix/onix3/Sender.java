@@ -69,4 +69,19 @@ public class Sender
 
 		return x;
 	}
+
+	public String getSenderNameValue()
+	{
+		return (senderName == null) ? null : senderName.value;
+	}
+
+	public String getContactNameValue()
+	{
+		return (contactName == null) ? null : contactName.value;
+	}
+
+	public String getEmailAddressValue()
+	{
+		return (emailAddress == null) ? null : emailAddress.value;
+	}
 }

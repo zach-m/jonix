@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +65,20 @@ public class PublishingDate
 		});
 
 		return x;
+	}
+
+	public PublishingDateRoles getPublishingDateRoleValue()
+	{
+		return (publishingDateRole == null) ? null : publishingDateRole.value;
+	}
+
+	public DateFormats getDateFormatValue()
+	{
+		return (dateFormat == null) ? null : dateFormat.value;
+	}
+
+	public String getDateValue()
+	{
+		return (date == null) ? null : date.value;
 	}
 }

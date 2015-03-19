@@ -22,7 +22,10 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ContributorPlaceRelators;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.RegionCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -68,5 +71,20 @@ public class ContributorPlace
 		});
 
 		return x;
+	}
+
+	public ContributorPlaceRelators getContributorPlaceRelatorValue()
+	{
+		return (contributorPlaceRelator == null) ? null : contributorPlaceRelator.value;
+	}
+
+	public CountryCodeIso31661s getCountryCodeValue()
+	{
+		return (countryCode == null) ? null : countryCode.value;
+	}
+
+	public RegionCodes getRegionCodeValue()
+	{
+		return (regionCode == null) ? null : regionCode.value;
 	}
 }

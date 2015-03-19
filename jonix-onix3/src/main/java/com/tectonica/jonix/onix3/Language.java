@@ -20,7 +20,11 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageRoleCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -66,5 +70,25 @@ public class Language
 		});
 
 		return x;
+	}
+
+	public LanguageRoleCodes getLanguageRoleValue()
+	{
+		return (languageRole == null) ? null : languageRole.value;
+	}
+
+	public LanguageCodeIso6392Bs getLanguageCodeValue()
+	{
+		return (languageCode == null) ? null : languageCode.value;
+	}
+
+	public CountryCodeIso31661s getCountryCodeValue()
+	{
+		return (countryCode == null) ? null : countryCode.value;
+	}
+
+	public TextScriptCodeIso15924s getScriptCodeValue()
+	{
+		return (scriptCode == null) ? null : scriptCode.value;
 	}
 }

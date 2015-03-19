@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.PriceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +64,20 @@ public class PriceCoded
 		});
 
 		return x;
+	}
+
+	public PriceCodeTypes getPriceCodeTypeValue()
+	{
+		return (priceCodeType == null) ? null : priceCodeType.value;
+	}
+
+	public String getPriceCodeTypeNameValue()
+	{
+		return (priceCodeTypeName == null) ? null : priceCodeTypeName.value;
+	}
+
+	public String getPriceCodeValue()
+	{
+		return (priceCode == null) ? null : priceCode.value;
 	}
 }

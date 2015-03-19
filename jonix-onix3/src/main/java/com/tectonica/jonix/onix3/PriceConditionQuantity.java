@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
+import com.tectonica.jonix.codelist.QuantityUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +65,20 @@ public class PriceConditionQuantity
 		});
 
 		return x;
+	}
+
+	public PriceConditionQuantityTypes getPriceConditionQuantityTypeValue()
+	{
+		return (priceConditionQuantityType == null) ? null : priceConditionQuantityType.value;
+	}
+
+	public Double getQuantityValue()
+	{
+		return (quantity == null) ? null : quantity.value;
+	}
+
+	public QuantityUnits getQuantityUnitValue()
+	{
+		return (quantityUnit == null) ? null : quantityUnit.value;
 	}
 }

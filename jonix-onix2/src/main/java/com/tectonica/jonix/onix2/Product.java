@@ -22,10 +22,23 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.EpublicationFormatCodes;
+import com.tectonica.jonix.codelist.EpublicationTypeCodes;
+import com.tectonica.jonix.codelist.FrontCoverImageFileFormatCodes;
+import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypeCodes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.NotificationOrUpdateTypeCodes;
+import com.tectonica.jonix.codelist.ProductCompositions;
+import com.tectonica.jonix.codelist.ProductFormCodes;
+import com.tectonica.jonix.codelist.ProductPackagingTypes;
+import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
+import com.tectonica.jonix.codelist.ThesisTypeCodes;
+import com.tectonica.jonix.codelist.TradeCategoryCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
 
 /*
@@ -53,12 +66,12 @@ public class Product
 	public RecordSourceIdentifierType recordSourceIdentifierType; // Optional
 	public RecordSourceIdentifier recordSourceIdentifier; // Optional
 	public RecordSourceName recordSourceName; // Optional
-	public ISBN isbN; // Required
+	public ISBN isbn; // Required
 	public EAN13 ean13; // Optional
-	public UPC upC; // Optional
+	public UPC upc; // Optional
 	public PublisherProductNo publisherProductNo; // Optional
-	public ISMN ismN; // Optional
-	public DOI doI; // Optional
+	public ISMN ismn; // Optional
+	public DOI doi; // Optional
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 	public List<Barcode> barcodes; // ZeroOrMore
 	public ReplacesISBN replacesISBN; // Optional
@@ -233,17 +246,17 @@ public class Product
 				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
 					x.recordSourceName = RecordSourceName.fromDoc(element);
 				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbN = ISBN.fromDoc(element);
+					x.isbn = ISBN.fromDoc(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
 					x.ean13 = EAN13.fromDoc(element);
 				else if (name.equals(UPC.refname) || name.equals(UPC.shortname))
-					x.upC = UPC.fromDoc(element);
+					x.upc = UPC.fromDoc(element);
 				else if (name.equals(PublisherProductNo.refname) || name.equals(PublisherProductNo.shortname))
 					x.publisherProductNo = PublisherProductNo.fromDoc(element);
 				else if (name.equals(ISMN.refname) || name.equals(ISMN.shortname))
-					x.ismN = ISMN.fromDoc(element);
+					x.ismn = ISMN.fromDoc(element);
 				else if (name.equals(DOI.refname) || name.equals(DOI.shortname))
-					x.doI = DOI.fromDoc(element);
+					x.doi = DOI.fromDoc(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
 				else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
@@ -524,5 +537,490 @@ public class Product
 		});
 
 		return x;
+	}
+
+	public String getRecordReferenceValue()
+	{
+		return (recordReference == null) ? null : recordReference.value;
+	}
+
+	public NotificationOrUpdateTypeCodes getNotificationTypeValue()
+	{
+		return (notificationType == null) ? null : notificationType.value;
+	}
+
+	public ProductCompositions getDeletionCodeValue()
+	{
+		return (deletionCode == null) ? null : deletionCode.value;
+	}
+
+	public String getDeletionTextValue()
+	{
+		return (deletionText == null) ? null : deletionText.value;
+	}
+
+	public RecordSourceTypeCodes getRecordSourceTypeValue()
+	{
+		return (recordSourceType == null) ? null : recordSourceType.value;
+	}
+
+	public NameCodeTypes getRecordSourceIdentifierTypeValue()
+	{
+		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
+	}
+
+	public String getRecordSourceIdentifierValue()
+	{
+		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
+	}
+
+	public String getRecordSourceNameValue()
+	{
+		return (recordSourceName == null) ? null : recordSourceName.value;
+	}
+
+	public String getISBNValue()
+	{
+		return (isbn == null) ? null : isbn.value;
+	}
+
+	public String getEAN13Value()
+	{
+		return (ean13 == null) ? null : ean13.value;
+	}
+
+	public String getUPCValue()
+	{
+		return (upc == null) ? null : upc.value;
+	}
+
+	public String getPublisherProductNoValue()
+	{
+		return (publisherProductNo == null) ? null : publisherProductNo.value;
+	}
+
+	public String getISMNValue()
+	{
+		return (ismn == null) ? null : ismn.value;
+	}
+
+	public String getDOIValue()
+	{
+		return (doi == null) ? null : doi.value;
+	}
+
+	public String getReplacesISBNValue()
+	{
+		return (replacesISBN == null) ? null : replacesISBN.value;
+	}
+
+	public String getReplacesEAN13Value()
+	{
+		return (replacesEAN13 == null) ? null : replacesEAN13.value;
+	}
+
+	public ProductFormCodes getProductFormValue()
+	{
+		return (productForm == null) ? null : productForm.value;
+	}
+
+	public ProductPackagingTypes getProductPackagingValue()
+	{
+		return (productPackaging == null) ? null : productPackaging.value;
+	}
+
+	public String getProductFormDescriptionValue()
+	{
+		return (productFormDescription == null) ? null : productFormDescription.value;
+	}
+
+	public String getNumberOfPiecesValue()
+	{
+		return (numberOfPieces == null) ? null : numberOfPieces.value;
+	}
+
+	public TradeCategoryCodes getTradeCategoryValue()
+	{
+		return (tradeCategory == null) ? null : tradeCategory.value;
+	}
+
+	public EpublicationTypeCodes getEpubTypeValue()
+	{
+		return (epubType == null) ? null : epubType.value;
+	}
+
+	public String getEpubTypeVersionValue()
+	{
+		return (epubTypeVersion == null) ? null : epubTypeVersion.value;
+	}
+
+	public String getEpubTypeDescriptionValue()
+	{
+		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
+	}
+
+	public EpublicationFormatCodes getEpubFormatValue()
+	{
+		return (epubFormat == null) ? null : epubFormat.value;
+	}
+
+	public String getEpubFormatVersionValue()
+	{
+		return (epubFormatVersion == null) ? null : epubFormatVersion.value;
+	}
+
+	public String getEpubFormatDescriptionValue()
+	{
+		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
+	}
+
+	public EpublicationFormatCodes getEpubSourceValue()
+	{
+		return (epubSource == null) ? null : epubSource.value;
+	}
+
+	public String getEpubSourceVersionValue()
+	{
+		return (epubSourceVersion == null) ? null : epubSourceVersion.value;
+	}
+
+	public String getEpubSourceDescriptionValue()
+	{
+		return (epubSourceDescription == null) ? null : epubSourceDescription.value;
+	}
+
+	public String getEpubTypeNoteValue()
+	{
+		return (epubTypeNote == null) ? null : epubTypeNote.value;
+	}
+
+	public TextCaseFlags getTextCaseFlagValue()
+	{
+		return (textCaseFlag == null) ? null : textCaseFlag.value;
+	}
+
+	public String getDistinctiveTitleValue()
+	{
+		return (distinctiveTitle == null) ? null : distinctiveTitle.value;
+	}
+
+	public String getTitlePrefixValue()
+	{
+		return (titlePrefix == null) ? null : titlePrefix.value;
+	}
+
+	public String getTitleWithoutPrefixValue()
+	{
+		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
+	}
+
+	public String getSubtitleValue()
+	{
+		return (subtitle == null) ? null : subtitle.value;
+	}
+
+	public String getTranslationOfTitleValue()
+	{
+		return (translationOfTitle == null) ? null : translationOfTitle.value;
+	}
+
+	public ThesisTypeCodes getThesisTypeValue()
+	{
+		return (thesisType == null) ? null : thesisType.value;
+	}
+
+	public String getThesisPresentedToValue()
+	{
+		return (thesisPresentedTo == null) ? null : thesisPresentedTo.value;
+	}
+
+	public String getThesisYearValue()
+	{
+		return (thesisYear == null) ? null : thesisYear.value;
+	}
+
+	public String getContributorStatementValue()
+	{
+		return (contributorStatement == null) ? null : contributorStatement.value;
+	}
+
+	public String getConferenceDescriptionValue()
+	{
+		return (conferenceDescription == null) ? null : conferenceDescription.value;
+	}
+
+	public String getConferenceRoleValue()
+	{
+		return (conferenceRole == null) ? null : conferenceRole.value;
+	}
+
+	public String getConferenceNameValue()
+	{
+		return (conferenceName == null) ? null : conferenceName.value;
+	}
+
+	public String getConferenceNumberValue()
+	{
+		return (conferenceNumber == null) ? null : conferenceNumber.value;
+	}
+
+	public String getConferenceDateValue()
+	{
+		return (conferenceDate == null) ? null : conferenceDate.value;
+	}
+
+	public String getConferencePlaceValue()
+	{
+		return (conferencePlace == null) ? null : conferencePlace.value;
+	}
+
+	public String getEditionNumberValue()
+	{
+		return (editionNumber == null) ? null : editionNumber.value;
+	}
+
+	public String getEditionVersionNumberValue()
+	{
+		return (editionVersionNumber == null) ? null : editionVersionNumber.value;
+	}
+
+	public String getEditionStatementValue()
+	{
+		return (editionStatement == null) ? null : editionStatement.value;
+	}
+
+	public LanguageCodeIso6392Bs getOriginalLanguageValue()
+	{
+		return (originalLanguage == null) ? null : originalLanguage.value;
+	}
+
+	public String getNumberOfPagesValue()
+	{
+		return (numberOfPages == null) ? null : numberOfPages.value;
+	}
+
+	public String getPagesRomanValue()
+	{
+		return (pagesRoman == null) ? null : pagesRoman.value;
+	}
+
+	public String getPagesArabicValue()
+	{
+		return (pagesArabic == null) ? null : pagesArabic.value;
+	}
+
+	public String getNumberOfIllustrationsValue()
+	{
+		return (numberOfIllustrations == null) ? null : numberOfIllustrations.value;
+	}
+
+	public String getIllustrationsNoteValue()
+	{
+		return (illustrationsNote == null) ? null : illustrationsNote.value;
+	}
+
+	public String getBASICMainSubjectValue()
+	{
+		return (basicMainSubject == null) ? null : basicMainSubject.value;
+	}
+
+	public String getBASICVersionValue()
+	{
+		return (basicVersion == null) ? null : basicVersion.value;
+	}
+
+	public String getBICMainSubjectValue()
+	{
+		return (bicMainSubject == null) ? null : bicMainSubject.value;
+	}
+
+	public String getBICVersionValue()
+	{
+		return (bicVersion == null) ? null : bicVersion.value;
+	}
+
+	public String getUSSchoolGradeValue()
+	{
+		return (usSchoolGrade == null) ? null : usSchoolGrade.value;
+	}
+
+	public String getInterestAgeValue()
+	{
+		return (interestAge == null) ? null : interestAge.value;
+	}
+
+	public String getAudienceDescriptionValue()
+	{
+		return (audienceDescription == null) ? null : audienceDescription.value;
+	}
+
+	public String getAnnotationValue()
+	{
+		return (annotation == null) ? null : annotation.value;
+	}
+
+	public String getMainDescriptionValue()
+	{
+		return (mainDescription == null) ? null : mainDescription.value;
+	}
+
+	public FrontCoverImageFileFormatCodes getCoverImageFormatCodeValue()
+	{
+		return (coverImageFormatCode == null) ? null : coverImageFormatCode.value;
+	}
+
+	public FrontCoverImageFileLinkTypeCodes getCoverImageLinkTypeCodeValue()
+	{
+		return (coverImageLinkTypeCode == null) ? null : coverImageLinkTypeCode.value;
+	}
+
+	public String getCoverImageLinkValue()
+	{
+		return (coverImageLink == null) ? null : coverImageLink.value;
+	}
+
+	public String getPrizesDescriptionValue()
+	{
+		return (prizesDescription == null) ? null : prizesDescription.value;
+	}
+
+	public String getImprintNameValue()
+	{
+		return (imprintName == null) ? null : imprintName.value;
+	}
+
+	public String getPublisherNameValue()
+	{
+		return (publisherName == null) ? null : publisherName.value;
+	}
+
+	public CountryCodeIso31661s getCountryOfPublicationValue()
+	{
+		return (countryOfPublication == null) ? null : countryOfPublication.value;
+	}
+
+	public String getOriginalPublisherValue()
+	{
+		return (originalPublisher == null) ? null : originalPublisher.value;
+	}
+
+	public PublishingStatuss getPublishingStatusValue()
+	{
+		return (publishingStatus == null) ? null : publishingStatus.value;
+	}
+
+	public String getPublishingStatusNoteValue()
+	{
+		return (publishingStatusNote == null) ? null : publishingStatusNote.value;
+	}
+
+	public String getAnnouncementDateValue()
+	{
+		return (announcementDate == null) ? null : announcementDate.value;
+	}
+
+	public String getTradeAnnouncementDateValue()
+	{
+		return (tradeAnnouncementDate == null) ? null : tradeAnnouncementDate.value;
+	}
+
+	public String getPublicationDateValue()
+	{
+		return (publicationDate == null) ? null : publicationDate.value;
+	}
+
+	public String getCopyrightYearValue()
+	{
+		return (copyrightYear == null) ? null : copyrightYear.value;
+	}
+
+	public String getYearFirstPublishedValue()
+	{
+		return (yearFirstPublished == null) ? null : yearFirstPublished.value;
+	}
+
+	public String getHeightValue()
+	{
+		return (height == null) ? null : height.value;
+	}
+
+	public String getWidthValue()
+	{
+		return (width == null) ? null : width.value;
+	}
+
+	public String getThicknessValue()
+	{
+		return (thickness == null) ? null : thickness.value;
+	}
+
+	public String getWeightValue()
+	{
+		return (weight == null) ? null : weight.value;
+	}
+
+	public String getDimensionsValue()
+	{
+		return (dimensions == null) ? null : dimensions.value;
+	}
+
+	public String getReplacedByISBNValue()
+	{
+		return (replacedByISBN == null) ? null : replacedByISBN.value;
+	}
+
+	public String getReplacedByEAN13Value()
+	{
+		return (replacedByEAN13 == null) ? null : replacedByEAN13.value;
+	}
+
+	public String getAlternativeFormatISBNValue()
+	{
+		return (alternativeFormatISBN == null) ? null : alternativeFormatISBN.value;
+	}
+
+	public String getAlternativeFormatEAN13Value()
+	{
+		return (alternativeFormatEAN13 == null) ? null : alternativeFormatEAN13.value;
+	}
+
+	public String getAlternativeProductISBNValue()
+	{
+		return (alternativeProductISBN == null) ? null : alternativeProductISBN.value;
+	}
+
+	public String getAlternativeProductEAN13Value()
+	{
+		return (alternativeProductEAN13 == null) ? null : alternativeProductEAN13.value;
+	}
+
+	public String getOutOfPrintDateValue()
+	{
+		return (outOfPrintDate == null) ? null : outOfPrintDate.value;
+	}
+
+	public String getPromotionCampaignValue()
+	{
+		return (promotionCampaign == null) ? null : promotionCampaign.value;
+	}
+
+	public String getPromotionContactValue()
+	{
+		return (promotionContact == null) ? null : promotionContact.value;
+	}
+
+	public String getInitialPrintRunValue()
+	{
+		return (initialPrintRun == null) ? null : initialPrintRun.value;
+	}
+
+	public String getCopiesSoldValue()
+	{
+		return (copiesSold == null) ? null : copiesSold.value;
+	}
+
+	public String getBookClubAdoptionValue()
+	{
+		return (bookClubAdoption == null) ? null : bookClubAdoption.value;
 	}
 }

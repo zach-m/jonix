@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -77,5 +78,15 @@ public class Collection
 		});
 
 		return x;
+	}
+
+	public CollectionTypes getCollectionTypeValue()
+	{
+		return (collectionType == null) ? null : collectionType.value;
+	}
+
+	public String getSourceNameValue()
+	{
+		return (sourceName == null) ? null : sourceName.value;
 	}
 }

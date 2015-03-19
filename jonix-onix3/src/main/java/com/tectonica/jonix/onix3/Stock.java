@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -43,7 +44,7 @@ public class Stock
 	public OnHand onHand; // Required
 	public Proximity proximity; // Optional
 	public OnOrder onOrder; // Optional
-	public CBO cbO; // Optional
+	public CBO cbo; // Optional
 	public List<OnOrderDetail> onOrderDetails; // ZeroOrMore
 	public List<Velocity> velocitys; // ZeroOrMore
 
@@ -74,7 +75,7 @@ public class Stock
 				else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
 					x.onOrder = OnOrder.fromDoc(element);
 				else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
-					x.cbO = CBO.fromDoc(element);
+					x.cbo = CBO.fromDoc(element);
 				else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
 					x.onOrderDetails = DU.addToList(x.onOrderDetails, OnOrderDetail.fromDoc(element));
 				else if (name.equals(Velocity.refname) || name.equals(Velocity.shortname))
@@ -83,5 +84,30 @@ public class Stock
 		});
 
 		return x;
+	}
+
+	public String getLocationNameValue()
+	{
+		return (locationName == null) ? null : locationName.value;
+	}
+
+	public Integer getOnHandValue()
+	{
+		return (onHand == null) ? null : onHand.value;
+	}
+
+	public Proximitys getProximityValue()
+	{
+		return (proximity == null) ? null : proximity.value;
+	}
+
+	public Integer getOnOrderValue()
+	{
+		return (onOrder == null) ? null : onOrder.value;
+	}
+
+	public Integer getCBOValue()
+	{
+		return (cbo == null) ? null : cbo.value;
 	}
 }

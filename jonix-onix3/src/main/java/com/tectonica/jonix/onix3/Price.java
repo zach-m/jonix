@@ -22,7 +22,15 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.CurrencyZones;
+import com.tectonica.jonix.codelist.PositionOnProducts;
+import com.tectonica.jonix.codelist.PriceStatusCodes;
+import com.tectonica.jonix.codelist.PriceTypeCodes;
+import com.tectonica.jonix.codelist.PriceTypeQualifiers;
+import com.tectonica.jonix.codelist.PrintedOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.UnitOfPricingCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -119,5 +127,55 @@ public class Price
 		});
 
 		return x;
+	}
+
+	public PriceTypeCodes getPriceTypeValue()
+	{
+		return (priceType == null) ? null : priceType.value;
+	}
+
+	public PriceTypeQualifiers getPriceQualifierValue()
+	{
+		return (priceQualifier == null) ? null : priceQualifier.value;
+	}
+
+	public UnitOfPricingCodes getPricePerValue()
+	{
+		return (pricePer == null) ? null : pricePer.value;
+	}
+
+	public Integer getMinimumOrderQuantityValue()
+	{
+		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
+	}
+
+	public PriceStatusCodes getPriceStatusValue()
+	{
+		return (priceStatus == null) ? null : priceStatus.value;
+	}
+
+	public Double getPriceAmountValue()
+	{
+		return (priceAmount == null) ? null : priceAmount.value;
+	}
+
+	public CurrencyCodeIso4217s getCurrencyCodeValue()
+	{
+		return (currencyCode == null) ? null : currencyCode.value;
+	}
+
+	public CurrencyZones getCurrencyZoneValue()
+	{
+		return (currencyZone == null) ? null : currencyZone.value;
+	}
+
+	public PrintedOnProducts getPrintedOnProductValue()
+	{
+		return (printedOnProduct == null) ? null : printedOnProduct.value;
+	}
+
+	public PositionOnProducts getPositionOnProductValue()
+	{
+		return (positionOnProduct == null) ? null : positionOnProduct.value;
 	}
 }

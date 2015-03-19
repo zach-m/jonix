@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -66,5 +67,15 @@ public class ProductFormFeature
 		});
 
 		return x;
+	}
+
+	public ProductFormFeatureTypes getProductFormFeatureTypeValue()
+	{
+		return (productFormFeatureType == null) ? null : productFormFeatureType.value;
+	}
+
+	public String getProductFormFeatureValueValue()
+	{
+		return (productFormFeatureValue == null) ? null : productFormFeatureValue.value;
 	}
 }

@@ -22,6 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.PrizeOrAwardAchievementCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -74,5 +76,20 @@ public class Prize
 		});
 
 		return x;
+	}
+
+	public String getPrizeYearValue()
+	{
+		return (prizeYear == null) ? null : prizeYear.value;
+	}
+
+	public CountryCodeIso31661s getPrizeCountryValue()
+	{
+		return (prizeCountry == null) ? null : prizeCountry.value;
+	}
+
+	public PrizeOrAwardAchievementCodes getPrizeCodeValue()
+	{
+		return (prizeCode == null) ? null : prizeCode.value;
 	}
 }

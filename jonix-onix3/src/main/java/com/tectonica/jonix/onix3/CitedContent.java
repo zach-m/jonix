@@ -22,6 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CitedContentTypes;
+import com.tectonica.jonix.codelist.ContentSourceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -83,5 +85,20 @@ public class CitedContent
 		});
 
 		return x;
+	}
+
+	public CitedContentTypes getCitedContentTypeValue()
+	{
+		return (citedContentType == null) ? null : citedContentType.value;
+	}
+
+	public ContentSourceTypes getSourceTypeValue()
+	{
+		return (sourceType == null) ? null : sourceType.value;
+	}
+
+	public Integer getPositionOnListValue()
+	{
+		return (positionOnList == null) ? null : positionOnList.value;
 	}
 }

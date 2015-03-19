@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -63,5 +64,20 @@ public class CollectionSequence
 		});
 
 		return x;
+	}
+
+	public CollectionSequenceTypes getCollectionSequenceTypeValue()
+	{
+		return (collectionSequenceType == null) ? null : collectionSequenceType.value;
+	}
+
+	public String getCollectionSequenceTypeNameValue()
+	{
+		return (collectionSequenceTypeName == null) ? null : collectionSequenceTypeName.value;
+	}
+
+	public String getCollectionSequenceNumberValue()
+	{
+		return (collectionSequenceNumber == null) ? null : collectionSequenceNumber.value;
 	}
 }

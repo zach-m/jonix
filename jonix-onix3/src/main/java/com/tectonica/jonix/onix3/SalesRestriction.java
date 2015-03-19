@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SalesRestrictionTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -71,5 +72,20 @@ public class SalesRestriction
 		});
 
 		return x;
+	}
+
+	public SalesRestrictionTypeCodes getSalesRestrictionTypeValue()
+	{
+		return (salesRestrictionType == null) ? null : salesRestrictionType.value;
+	}
+
+	public String getStartDateValue()
+	{
+		return (startDate == null) ? null : startDate.value;
+	}
+
+	public String getEndDateValue()
+	{
+		return (endDate == null) ? null : endDate.value;
 	}
 }

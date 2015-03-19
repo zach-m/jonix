@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.PublishingRoleCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -68,5 +69,15 @@ public class Publisher
 		});
 
 		return x;
+	}
+
+	public PublishingRoleCodes getPublishingRoleValue()
+	{
+		return (publishingRole == null) ? null : publishingRole.value;
+	}
+
+	public String getPublisherNameValue()
+	{
+		return (publisherName == null) ? null : publisherName.value;
 	}
 }

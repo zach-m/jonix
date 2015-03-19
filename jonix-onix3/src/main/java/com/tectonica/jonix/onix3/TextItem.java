@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.TextItemTypeCodes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -68,5 +69,15 @@ public class TextItem
 		});
 
 		return x;
+	}
+
+	public TextItemTypeCodes getTextItemTypeValue()
+	{
+		return (textItemType == null) ? null : textItemType.value;
+	}
+
+	public Integer getNumberOfPagesValue()
+	{
+		return (numberOfPages == null) ? null : numberOfPages.value;
 	}
 }

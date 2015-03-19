@@ -22,8 +22,11 @@ package com.tectonica.jonix.onix2;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.BibleReferenceLocations;
+import com.tectonica.jonix.codelist.BibleTextOrganizations;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.StudyBibleTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormatCodes;
 import com.tectonica.jonix.codelist.TransliterationSchemeCodes;
@@ -89,5 +92,20 @@ public class Bible
 		});
 
 		return x;
+	}
+
+	public StudyBibleTypes getStudyBibleTypeValue()
+	{
+		return (studyBibleType == null) ? null : studyBibleType.value;
+	}
+
+	public BibleTextOrganizations getBibleTextOrganizationValue()
+	{
+		return (bibleTextOrganization == null) ? null : bibleTextOrganization.value;
+	}
+
+	public BibleReferenceLocations getBibleReferenceLocationValue()
+	{
+		return (bibleReferenceLocation == null) ? null : bibleReferenceLocation.value;
 	}
 }

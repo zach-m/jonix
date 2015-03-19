@@ -78,4 +78,9 @@ public class ReligiousText
 
 		return x;
 	}
+
+	public String getReligiousTextIDValue()
+	{
+		return (religiousTextID == null) ? null : religiousTextID.value;
+	}
 }

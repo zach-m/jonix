@@ -66,4 +66,9 @@ public class ReligiousText
 
 		return x;
 	}
+
+	public String getReligiousTextIdentifierValue()
+	{
+		return (religiousTextIdentifier == null) ? null : religiousTextIdentifier.value;
+	}
 }

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.NotificationOrUpdateTypeCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -98,5 +99,25 @@ public class Product
 		});
 
 		return x;
+	}
+
+	public String getRecordReferenceValue()
+	{
+		return (recordReference == null) ? null : recordReference.value;
+	}
+
+	public NotificationOrUpdateTypeCodes getNotificationTypeValue()
+	{
+		return (notificationType == null) ? null : notificationType.value;
+	}
+
+	public RecordSourceTypeCodes getRecordSourceTypeValue()
+	{
+		return (recordSourceType == null) ? null : recordSourceType.value;
+	}
+
+	public String getRecordSourceNameValue()
+	{
+		return (recordSourceName == null) ? null : recordSourceName.value;
 	}
 }

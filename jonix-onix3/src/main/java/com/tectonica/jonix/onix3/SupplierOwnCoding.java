@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix3;
 
 import com.tectonica.jonix.DU;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
+import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -63,5 +64,20 @@ public class SupplierOwnCoding
 		});
 
 		return x;
+	}
+
+	public SupplierOwnCodeTypes getSupplierCodeTypeValue()
+	{
+		return (supplierCodeType == null) ? null : supplierCodeType.value;
+	}
+
+	public String getSupplierCodeTypeNameValue()
+	{
+		return (supplierCodeTypeName == null) ? null : supplierCodeTypeName.value;
+	}
+
+	public String getSupplierCodeValueValue()
+	{
+		return (supplierCodeValue == null) ? null : supplierCodeValue.value;
 	}
 }

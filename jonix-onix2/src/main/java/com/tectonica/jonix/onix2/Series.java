@@ -93,4 +93,29 @@ public class Series
 
 		return x;
 	}
+
+	public String getSeriesISSNValue()
+	{
+		return (seriesISSN == null) ? null : seriesISSN.value;
+	}
+
+	public String getPublisherSeriesCodeValue()
+	{
+		return (publisherSeriesCode == null) ? null : publisherSeriesCode.value;
+	}
+
+	public String getTitleOfSeriesValue()
+	{
+		return (titleOfSeries == null) ? null : titleOfSeries.value;
+	}
+
+	public String getNumberWithinSeriesValue()
+	{
+		return (numberWithinSeries == null) ? null : numberWithinSeries.value;
+	}
+
+	public String getYearOfAnnualValue()
+	{
+		return (yearOfAnnual == null) ? null : yearOfAnnual.value;
+	}
 }

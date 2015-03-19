@@ -22,6 +22,8 @@ package com.tectonica.jonix.onix3;
 import java.util.List;
 
 import com.tectonica.jonix.DU;
+import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.RecordSourceTypeCodes;
 
 /*
@@ -86,5 +88,25 @@ public class ProductPart
 		});
 
 		return x;
+	}
+
+	public ProductForms getProductFormValue()
+	{
+		return (productForm == null) ? null : productForm.value;
+	}
+
+	public Integer getNumberOfItemsOfThisFormValue()
+	{
+		return (numberOfItemsOfThisForm == null) ? null : numberOfItemsOfThisForm.value;
+	}
+
+	public Integer getNumberOfCopiesValue()
+	{
+		return (numberOfCopies == null) ? null : numberOfCopies.value;
+	}
+
+	public CountryCodeIso31661s getCountryOfManufactureValue()
+	{
+		return (countryOfManufacture == null) ? null : countryOfManufacture.value;
 	}
 }
