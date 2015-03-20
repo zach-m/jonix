@@ -364,7 +364,7 @@ public enum BasicColumn implements JonixColumn
 			if (salesRights.rightsRegions != null)
 				for (RightsRegions rr : salesRights.rightsRegions)
 					sb.append(rr.name()).append(",");
-			fieldData[0] = sb.toString().toUpperCase();
+			fieldData[0] = sb.toString(); //.toUpperCase();
 			if (++pos == fieldData.length)
 				break;
 		}

@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -35,6 +35,11 @@ import java.util.HashMap;
  */
 public enum CountryCodeIso31661s
 {
+	/**
+	 * All unspecified countries
+	 */
+	Rest_Of_World("ROW"), //
+
 	Andorra("AD"), //
 
 	United_Arab_Emirates("AE"), //

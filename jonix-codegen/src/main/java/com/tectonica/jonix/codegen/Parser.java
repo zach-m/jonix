@@ -304,6 +304,10 @@ public class Parser
 				onixSimpleType.aliasFrom(existingType);
 			}
 		});
+
+		// hack for "ROW" constant in country-codes (ISO 3166-1)
+		if (onixSimpleType.name.equals("List91"))
+			onixSimpleType.enumValues.add(0, OnixEnumValue.create("Rest Of World", "ROW", "All unspecified countries"));
 	}
 
 	private void processGroups(final Element schema)
