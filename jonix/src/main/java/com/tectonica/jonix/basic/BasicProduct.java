@@ -127,12 +127,12 @@ public class BasicProduct implements Serializable
 		return (titles.size() > 0) ? titles.get(0).titleText : recordReference;
 	}
 
-	public JonixColumn[] getDefaultColumns()
+	public static JonixColumn[] getDefaultColumns()
 	{
 		return BasicColumn.all;
 	}
 
-	public JonixColumn getDefaultIdColumn()
+	public static JonixColumn getDefaultIdColumn()
 	{
 		return BasicColumn.ISBN13;
 	}

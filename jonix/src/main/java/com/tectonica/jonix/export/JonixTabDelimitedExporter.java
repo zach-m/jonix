@@ -20,6 +20,7 @@
 package com.tectonica.jonix.export;
 
 import java.io.PrintStream;
+import java.util.List;
 
 import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixFormatter;
@@ -50,24 +51,19 @@ public class JonixTabDelimitedExporter extends JonixFilesExport
 	}
 
 	@Override
-	protected void onProduct(BasicProduct product, int index)
+	protected boolean onBeforeFiles(List<String> onixFileNames)
 	{
-		super.onProduct(product, index);
-
-		// on first product, if no columns-set was explicitly set, ask for the default one
-		if (this.columns == null)
-			columns = product.getDefaultColumns();
+		super.onBeforeFiles(onixFileNames);
 		if (columns == null)
-			throw new NullPointerException("No columns are set for output");
-
-		onExportProduct(product);
+			columns = BasicProduct.getDefaultColumns();
+		out.println(JonixFormatter.headerAsTabDelimitedString(columns));
+		return true;
 	}
 
-	/**
-	 * Override this method to generate your own needed output. By default generates tab-delimited output.
-	 */
-	protected void onExportProduct(BasicProduct product)
+	@Override
+	protected void onProduct(BasicProduct product, int index)
 	{
 		out.println(JonixFormatter.productAsTabDelimitedString(product, columns));
+		logProductParseSummary(product, index);
 	}
 }

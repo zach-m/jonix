@@ -38,4 +38,21 @@ public class BasicHeader implements Serializable
 		toCompany = header.getToCompanyValue();
 		sentDate = header.getSentDateValue();
 	}
+
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		if (fromCompany != null)
+			sb.append("FromCompany: ").append(fromCompany).append("\n");
+		if (fromPerson != null)
+			sb.append("FromPerson:  ").append(fromPerson).append("\n");
+		if (fromEmail != null)
+			sb.append("FromEmail:   ").append(fromEmail).append("\n");
+		if (toCompany != null)
+			sb.append("ToCompany:   ").append(toCompany).append("\n");
+		if (sentDate != null)
+			sb.append("SentDate:    ").append(sentDate);
+		return sb.toString();
+	}
 }

@@ -51,7 +51,5 @@ public class TestTabDelimited
 		PrintStream outFile = new PrintStream("BK.tsv");
 
 		Jonix.createBasicTabDelimitedExporter(outFile, null).scanFolder(path, ".xml");
-
-		System.err.println("** DONE");
 	}
 }
