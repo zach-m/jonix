@@ -33,6 +33,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
+import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.xmlchunk.XmlChunker;
 

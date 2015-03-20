@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 

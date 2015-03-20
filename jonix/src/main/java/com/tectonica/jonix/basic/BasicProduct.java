@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
@@ -69,7 +70,6 @@ public class BasicProduct implements Serializable
 	public final EditionTypes editionType;
 	public final CountryCodeIso31661s countryOfPublication;
 
-	// composites
 	public final List<ProductIdentifier> productIdentifiers;
 	public final List<Title> titles;
 	public final List<Contributor> contributors;
@@ -84,8 +84,12 @@ public class BasicProduct implements Serializable
 	public final List<SupplyDetail> supplyDetails;
 	public final List<SalesRights> salesRightss;
 
+	public final com.tectonica.jonix.onix2.Product product;
+
 	public BasicProduct(com.tectonica.jonix.onix2.Product product)
 	{
+		this.product = product;
+
 		// singles
 		recordReference = product.getRecordReferenceValue();
 		editionNumber = product.getEditionNumberValue();
@@ -121,6 +125,16 @@ public class BasicProduct implements Serializable
 	public String getLabel()
 	{
 		return (titles.size() > 0) ? titles.get(0).titleText : recordReference;
+	}
+
+	public JonixColumn[] getDefaultColumns()
+	{
+		return BasicColumn.all;
+	}
+
+	public JonixColumn getDefaultIdColumn()
+	{
+		return BasicColumn.ISBN13;
 	}
 
 	// LOOKUP CONVENIENCE SERVICES
