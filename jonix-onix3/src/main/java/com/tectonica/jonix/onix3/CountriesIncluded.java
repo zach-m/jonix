@@ -36,7 +36,7 @@ public class CountriesIncluded
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CountryCodeIso31661s value;
+	public java.util.Set<CountryCodeIso31661s> value;
 
 	public static CountriesIncluded fromDoc(org.w3c.dom.Element element)
 	{
@@ -46,7 +46,9 @@ public class CountriesIncluded
 		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = CountryCodeIso31661s.byValue(DU.getContentAsString(element));
+		x.value = new java.util.HashSet<>();
+		for (String split : DU.getContentAsString(element).trim().split(" +"))
+			x.value.add(CountryCodeIso31661s.byValue(split));
 
 		return x;
 	}

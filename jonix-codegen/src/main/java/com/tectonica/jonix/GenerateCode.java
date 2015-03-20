@@ -55,7 +55,7 @@ public class GenerateCode
 		if (!new File(onix2home).exists())
 			throw new RuntimeException("couldn't find jonix-onix2 project at " + onix2home);
 
-		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2);
+		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2);
 		System.out.println("Generating code for Onix2..");
 		generateModel(basePackage, onix2home + relativePath, "onix2", ref2);
 
@@ -67,7 +67,7 @@ public class GenerateCode
 		if (!new File(onix3home).exists())
 			throw new RuntimeException("couldn't find jonix-onix3 project at " + onix3home);
 
-		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3);
+		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3);
 		System.out.println("Generating code for Onix3..");
 
 		generateModel(basePackage, onix3home + relativePath, "onix3", ref3);

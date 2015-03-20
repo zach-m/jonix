@@ -227,17 +227,17 @@ public class Price
 		return null;
 	}
 
-	public Regions getTerritoryValue()
+	public java.util.Set<Regions> getTerritorySet()
 	{
 		return (territory == null) ? null : territory.value;
 	}
 
-	public CountryCodeIso31661s getCountryExcludedValue()
+	public java.util.Set<CountryCodeIso31661s> getCountryExcludedSet()
 	{
 		return (countryExcluded == null) ? null : countryExcluded.value;
 	}
 
-	public Regions getTerritoryExcludedValue()
+	public java.util.Set<Regions> getTerritoryExcludedSet()
 	{
 		return (territoryExcluded == null) ? null : territoryExcluded.value;
 	}

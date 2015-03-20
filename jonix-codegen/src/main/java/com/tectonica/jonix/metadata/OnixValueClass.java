@@ -21,14 +21,15 @@ package com.tectonica.jonix.metadata;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "valueMember", "consts", "attributes" })
+@JsonPropertyOrder({ "name", "valueMember", "consts", "attributes", "isSpaceable" })
 public class OnixValueClass extends OnixClass
 {
 	public OnixValueClassMember valueMember;
+	public boolean isSpaceable;
 
 	@Override
 	public String toString()
 	{
-		return name + ": valueMember=" + valueMember + ", attributes=" + attributes;
+		return name + ": valueMember=" + valueMember + ", attributes=" + attributes + ", isSpaceable=" + isSpaceable;
 	}
 }

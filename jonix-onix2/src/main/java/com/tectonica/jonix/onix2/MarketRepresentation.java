@@ -156,17 +156,17 @@ public class MarketRepresentation
 		return (agentRole == null) ? null : agentRole.value;
 	}
 
-	public String getMarketCountryValue()
+	public java.util.Set<String> getMarketCountrySet()
 	{
 		return (marketCountry == null) ? null : marketCountry.value;
 	}
 
-	public String getMarketTerritoryValue()
+	public java.util.Set<String> getMarketTerritorySet()
 	{
 		return (marketTerritory == null) ? null : marketTerritory.value;
 	}
 
-	public String getMarketCountryExcludedValue()
+	public java.util.Set<String> getMarketCountryExcludedSet()
 	{
 		return (marketCountryExcluded == null) ? null : marketCountryExcluded.value;
 	}

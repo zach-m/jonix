@@ -148,22 +148,27 @@ public class OnixClassGen
 				final OnixValueClassMember vm = ovc.valueMember;
 				final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
 				final String field = fieldOf(m.onixTypeName);
+				String javaType = ti.javaType;
+				if (ovc.isSpaceable)
+					javaType = "java.util.Set<" + javaType + ">";
 				if (m.multiplicity.singular)
 				{
+					final String caption = ovc.isSpaceable ? "Set" : "Value";
 					p.println();
-					p.printf("\t" + "public %s get%sValue()\n", ti.javaType, m.onixTypeName);
+					p.printf("\t" + "public %s get%s%s()\n", javaType, m.onixTypeName, caption);
 					p.printf("\t" + "{\n");
 					p.printf("\t\t" + "return (%s == null) ? null : %s.value;\n", field, field);
 					p.printf("\t" + "}\n");
 				}
 				else
 				{
+					final String caption = ovc.isSpaceable ? "Sets" : "Values";
 					p.println();
-					p.printf("\t" + "public List<%s> get%sValues()\n", ti.javaType, m.onixTypeName);
+					p.printf("\t" + "public List<%s> get%s%s()\n", javaType, m.onixTypeName, caption);
 					p.printf("\t" + "{\n");
 					p.printf("\t\t" + "if (%ss != null) \n", field);
 					p.printf("\t\t" + "{ \n", field, field);
-					p.printf("\t\t\t" + "List<%s> list = new ArrayList<>(); \n", ti.javaType);
+					p.printf("\t\t\t" + "List<%s> list = new ArrayList<>(); \n", javaType);
 					p.printf("\t\t\t" + "for (%s i : %ss) \n", m.onixTypeName, field);
 					p.printf("\t\t\t\t" + "list.add(i.value); \n");
 					p.printf("\t\t\t" + "return list; \n");
@@ -196,7 +201,10 @@ public class OnixClassGen
 		final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
 
 		p.println();
-		p.printf("\t" + "public %s value;%s\n", ti.javaType, ti.comment);
+		if (!clz.isSpaceable)
+			p.printf("\t" + "public %s value;%s\n", ti.javaType, ti.comment);
+		else
+			p.printf("\t" + "public java.util.Set<%s> value;%s\n", ti.javaType, ti.comment);
 
 		// creator
 		p.println();
@@ -210,10 +218,22 @@ public class OnixClassGen
 		p.println();
 		if (ti.isXHTML)
 			p.printf("\t\t" + "x.value = DU.getChildXHTML(element, true);\n");
-		else if (ti.isPrimitive)
-			p.printf("\t\t" + "x.value = DU.getContentAs%s(element);\n", ti.javaType);
+		else if (!clz.isSpaceable)
+		{
+			if (ti.isPrimitive)
+				p.printf("\t\t" + "x.value = DU.getContentAs%s(element);\n", ti.javaType);
+			else
+				p.printf("\t\t" + "x.value = %s.byValue(DU.getContentAsString(element));\n", ti.javaType);
+		}
 		else
-			p.printf("\t\t" + "x.value = %s.byValue(DU.getContentAsString(element));\n", ti.javaType);
+		{
+			p.printf("\t\t" + "x.value = new java.util.HashSet<>();\n");
+			p.printf("\t\t" + "for (String split : DU.getContentAsString(element).trim().split(\" +\"))\n");
+			if (ti.isPrimitive)
+				p.printf("\t\t\t" + "x.value.add(%s.valueOf(split));\n", ti.javaType);
+			else
+				p.printf("\t\t\t" + "x.value.add(%s.byValue(split));\n", ti.javaType);
+		}
 
 		p.println();
 		p.printf("\t\t" + "return x;\n");

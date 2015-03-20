@@ -43,7 +43,7 @@ public class MarketCountryExcluded
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public String value; // NonEmptyString
+	public java.util.Set<String> value; // NonEmptyString
 
 	public static MarketCountryExcluded fromDoc(org.w3c.dom.Element element)
 	{
@@ -57,7 +57,9 @@ public class MarketCountryExcluded
 		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = DU.getContentAsString(element);
+		x.value = new java.util.HashSet<>();
+		for (String split : DU.getContentAsString(element).trim().split(" +"))
+			x.value.add(String.valueOf(split));
 
 		return x;
 	}

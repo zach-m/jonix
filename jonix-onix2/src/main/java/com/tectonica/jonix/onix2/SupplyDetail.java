@@ -236,11 +236,11 @@ public class SupplyDetail
 		return (supplierRole == null) ? null : supplierRole.value;
 	}
 
-	public List<CountryCodeIso31661s> getSupplyToCountryValues()
+	public List<java.util.Set<CountryCodeIso31661s>> getSupplyToCountrySets()
 	{
 		if (supplyToCountrys != null)
 		{
-			List<CountryCodeIso31661s> list = new ArrayList<>();
+			List<java.util.Set<CountryCodeIso31661s>> list = new ArrayList<>();
 			for (SupplyToCountry i : supplyToCountrys)
 				list.add(i.value);
 			return list;
@@ -248,7 +248,7 @@ public class SupplyDetail
 		return null;
 	}
 
-	public Regions getSupplyToTerritoryValue()
+	public java.util.Set<Regions> getSupplyToTerritorySet()
 	{
 		return (supplyToTerritory == null) ? null : supplyToTerritory.value;
 	}
@@ -265,11 +265,11 @@ public class SupplyDetail
 		return null;
 	}
 
-	public List<CountryCodeIso31661s> getSupplyToCountryExcludedValues()
+	public List<java.util.Set<CountryCodeIso31661s>> getSupplyToCountryExcludedSets()
 	{
 		if (supplyToCountryExcludeds != null)
 		{
-			List<CountryCodeIso31661s> list = new ArrayList<>();
+			List<java.util.Set<CountryCodeIso31661s>> list = new ArrayList<>();
 			for (SupplyToCountryExcluded i : supplyToCountryExcludeds)
 				list.add(i.value);
 			return list;

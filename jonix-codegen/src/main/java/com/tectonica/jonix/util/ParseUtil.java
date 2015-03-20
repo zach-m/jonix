@@ -22,6 +22,9 @@ package com.tectonica.jonix.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -44,12 +47,24 @@ public class ParseUtil
 	public static final String RES_REF_3 = "/xsd/onix3/ONIX_BookProduct_3.0_reference.xsd";
 	public static final String RES_SHORT_3 = "/xsd/onix3/ONIX_BookProduct_3.0_short.xsd";
 
-	public static OnixMetadata parse(String mainXsd, String codelistXsd) throws IOException, ParserConfigurationException, SAXException
+	public static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList("RegionCode", "RightsCountry", "RightsTerritory",
+			"SupplyToCountry", "SupplyToTerritory", "SupplyToCountryExcluded", "Territory", "CountryExcluded", "TerritoryExcluded",
+			"MarketCountry", "MarketTerritory", "MarketCountryExcluded"));
+
+	public static final Set<String> SPACEABLE_SHORT_2 = new HashSet<>(Arrays.asList("b398", "b090", "b388", "j138", "j397", "j140", "j303",
+			"j304", "j308", "j403", "j404", "j405"));
+
+	public static final Set<String> SPACEABLE_REF_3 = new HashSet<>(Arrays.asList("CountriesIncluded", "RegionsIncluded",
+			"CountriesExcluded", "RegionsExcluded"));
+
+	public static final Set<String> SPACEABLE_SHORT_3 = new HashSet<>(Arrays.asList("x449", "x450", "x451", "x452"));
+
+	public static OnixMetadata parse(String mainXsd, String codelistXsd, Set<String> spaceables) throws IOException, ParserConfigurationException, SAXException
 	{
 		Document codelistDoc = docOf(codelistXsd);
 		Document mainDoc = docOf(mainXsd);
 
-		final Parser parser = new Parser();
+		final Parser parser = new Parser(spaceables);
 		parser.analyzeSchema(codelistDoc);
 		parser.analyzeSchema(mainDoc);
 

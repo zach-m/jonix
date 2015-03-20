@@ -50,8 +50,8 @@ public class MetadataDump
 
 	private static void parse2() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2);
-		final OnixMetadata short2 = ParseUtil.parse(ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2);
+		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2);
+		final OnixMetadata short2 = ParseUtil.parse(ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_SHORT_2);
 
 		saveMetadata(ref2, "/onix2/reference");
 		saveMetadata(short2, "/onix2/short");
@@ -59,8 +59,8 @@ public class MetadataDump
 
 	private static void parse3() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3);
-		final OnixMetadata short3 = ParseUtil.parse(ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3);
+		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3);
+		final OnixMetadata short3 = ParseUtil.parse(ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_SHORT_3);
 
 		saveMetadata(ref3, "/onix3/reference");
 		saveMetadata(short3, "/onix3/short");

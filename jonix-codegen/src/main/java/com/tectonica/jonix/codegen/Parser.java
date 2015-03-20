@@ -51,6 +51,7 @@ public class Parser
 {
 	public static class SchemaContext
 	{
+		private Set<String> spaceables;
 		private Map<String, OnixSimpleType> simpleTypes = new HashMap<>();
 		private Set<String> enumNames = new HashSet<>();
 		private Map<String, Element> groupNodes = new HashMap<>();
@@ -59,6 +60,11 @@ public class Parser
 
 	private final SchemaContext context = new SchemaContext();
 	private final OnixMetadata meta = new OnixMetadata();
+
+	public Parser(Set<String> spaceables)
+	{
+		context.spaceables = spaceables;
+	}
 
 	public OnixMetadata getMetadata()
 	{
@@ -366,6 +372,7 @@ public class Parser
 				final OnixValueClass onixValueClass = new OnixValueClass();
 				onixValueClass.name = onixTagName;
 				onixValueClass.valueMember = member;
+				onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
 				meta.valueClasses.add(onixValueClass);
 				onixClass = onixValueClass;
 				attributesParent = complexType;
@@ -415,6 +422,7 @@ public class Parser
 			final OnixValueClass onixValueClass = new OnixValueClass();
 			onixValueClass.name = onixTagName;
 			onixValueClass.valueMember = member;
+			onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
 			meta.valueClasses.add(onixValueClass);
 			onixClass = onixValueClass;
 			attributesParent = extension;

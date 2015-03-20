@@ -358,8 +358,8 @@ public enum BasicColumn implements JonixColumn
 				sb.append(salesRights.rightsTerritory).append("#");
 			sb.append("|");
 			if (salesRights.rightsCountries != null)
-				for (CountryCodeIso31661s cc : salesRights.rightsCountries)
-					sb.append(cc.name()).append(";");
+				for (Set<CountryCodeIso31661s> cc : salesRights.rightsCountries)
+					sb.append(cc).append(";");
 			sb.append("|");
 			if (salesRights.rightsRegions != null)
 				for (RightsRegions rr : salesRights.rightsRegions)

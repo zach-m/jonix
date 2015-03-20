@@ -91,11 +91,11 @@ public class NotForSale
 		return x;
 	}
 
-	public List<CountryCodeIso31661s> getRightsCountryValues()
+	public List<java.util.Set<CountryCodeIso31661s>> getRightsCountrySets()
 	{
 		if (rightsCountrys != null)
 		{
-			List<CountryCodeIso31661s> list = new ArrayList<>();
+			List<java.util.Set<CountryCodeIso31661s>> list = new ArrayList<>();
 			for (RightsCountry i : rightsCountrys)
 				list.add(i.value);
 			return list;
@@ -103,7 +103,7 @@ public class NotForSale
 		return null;
 	}
 
-	public Regions getRightsTerritoryValue()
+	public java.util.Set<Regions> getRightsTerritorySet()
 	{
 		return (rightsTerritory == null) ? null : rightsTerritory.value;
 	}

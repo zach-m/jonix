@@ -70,22 +70,22 @@ public class Territory
 		return x;
 	}
 
-	public CountryCodeIso31661s getCountriesIncludedValue()
+	public java.util.Set<CountryCodeIso31661s> getCountriesIncludedSet()
 	{
 		return (countriesIncluded == null) ? null : countriesIncluded.value;
 	}
 
-	public Regions getRegionsIncludedValue()
+	public java.util.Set<Regions> getRegionsIncludedSet()
 	{
 		return (regionsIncluded == null) ? null : regionsIncluded.value;
 	}
 
-	public CountryCodeIso31661s getCountriesExcludedValue()
+	public java.util.Set<CountryCodeIso31661s> getCountriesExcludedSet()
 	{
 		return (countriesExcluded == null) ? null : countriesExcluded.value;
 	}
 
-	public Regions getRegionsExcludedValue()
+	public java.util.Set<Regions> getRegionsExcludedSet()
 	{
 		return (regionsExcluded == null) ? null : regionsExcluded.value;
 	}

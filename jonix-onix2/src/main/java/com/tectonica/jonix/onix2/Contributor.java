@@ -281,11 +281,11 @@ public class Contributor
 		return null;
 	}
 
-	public List<String> getRegionCodeValues()
+	public List<java.util.Set<String>> getRegionCodeSets()
 	{
 		if (regionCodes != null)
 		{
-			List<String> list = new ArrayList<>();
+			List<java.util.Set<String>> list = new ArrayList<>();
 			for (RegionCode i : regionCodes)
 				list.add(i.value);
 			return list;

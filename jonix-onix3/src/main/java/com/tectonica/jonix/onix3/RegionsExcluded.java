@@ -36,7 +36,7 @@ public class RegionsExcluded
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Regions value;
+	public java.util.Set<Regions> value;
 
 	public static RegionsExcluded fromDoc(org.w3c.dom.Element element)
 	{
@@ -46,7 +46,9 @@ public class RegionsExcluded
 		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
 		x.sourcename = DU.getAttribute(element, "sourcename");
 
-		x.value = Regions.byValue(DU.getContentAsString(element));
+		x.value = new java.util.HashSet<>();
+		for (String split : DU.getContentAsString(element).trim().split(" +"))
+			x.value.add(Regions.byValue(split));
 
 		return x;
 	}
