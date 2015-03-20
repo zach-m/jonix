@@ -60,8 +60,8 @@ public class JSON
 		}
 		else
 		{
-			// limit to props only
-			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
+			// limit to fields only
+			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NON_PRIVATE);
 			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
 			mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
 		}
@@ -71,7 +71,7 @@ public class JSON
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
 		mapper.setDateFormat(sdf);
 
