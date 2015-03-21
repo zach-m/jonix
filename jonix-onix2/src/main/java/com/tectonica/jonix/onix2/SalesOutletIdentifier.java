@@ -28,6 +28,7 @@ import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.SalesOutletIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,5 +94,13 @@ public class SalesOutletIdentifier implements Serializable
 	public String getIDValueValue()
 	{
 		return (idValue == null) ? null : idValue.value;
+	}
+
+	public SalesOutletIdentifierStruct asStruct()
+	{
+		SalesOutletIdentifierStruct x = new SalesOutletIdentifierStruct();
+		x.idTypeName = getIDTypeNameValue();
+		x.idValue = getIDValueValue();
+		return x;
 	}
 }

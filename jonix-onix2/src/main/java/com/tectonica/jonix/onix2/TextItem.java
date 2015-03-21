@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,8 +28,10 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.codelist.TextItemTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.TextItemIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -108,5 +111,33 @@ public class TextItem implements Serializable
 	public String getNumberOfPagesValue()
 	{
 		return (numberOfPages == null) ? null : numberOfPages.value;
+	}
+
+	public TextItemIdentifierStruct findTextItemIdentifier(TextItemIdentifierTypes textItemIDType)
+	{
+		if (textItemIdentifiers != null)
+		{
+			for (TextItemIdentifier x : textItemIdentifiers)
+			{
+				if (x.getTextItemIDTypeValue() == textItemIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<TextItemIdentifierStruct> findTextItemIdentifiers(java.util.Set<TextItemIdentifierTypes> textItemIDTypes)
+	{
+		if (textItemIdentifiers != null)
+		{
+			List<TextItemIdentifierStruct> matches = new ArrayList<>();
+			for (TextItemIdentifier x : textItemIdentifiers)
+			{
+				if (textItemIDTypes.contains(x.getTextItemIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

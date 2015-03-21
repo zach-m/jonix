@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
 import com.tectonica.jonix.codelist.BookFormDetails;
@@ -33,21 +34,39 @@ import com.tectonica.jonix.codelist.EpublicationFormats;
 import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.FrontCoverImageFileFormats;
 import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypes;
+import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
+import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
+import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.ThesisTypes;
+import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.codelist.WorkIdentifierTypes;
+import com.tectonica.jonix.struct.AudienceStruct;
+import com.tectonica.jonix.struct.IllustrationsStruct;
+import com.tectonica.jonix.struct.ImprintStruct;
+import com.tectonica.jonix.struct.LanguageStruct;
+import com.tectonica.jonix.struct.MediaFileStruct;
+import com.tectonica.jonix.struct.OtherTextStruct;
+import com.tectonica.jonix.struct.ProductIdentifierStruct;
+import com.tectonica.jonix.struct.SalesRightsStruct;
+import com.tectonica.jonix.struct.TitleStruct;
+import com.tectonica.jonix.struct.WorkIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -1222,5 +1241,285 @@ public class Product implements Serializable
 	public String getBookClubAdoptionValue()
 	{
 		return (bookClubAdoption == null) ? null : bookClubAdoption.value;
+	}
+
+	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	{
+		if (productIdentifiers != null)
+		{
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (x.getProductIDTypeValue() == productIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	{
+		if (productIdentifiers != null)
+		{
+			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (productIDTypes.contains(x.getProductIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public TitleStruct findTitle(TitleTypes titleType)
+	{
+		if (titles != null)
+		{
+			for (Title x : titles)
+			{
+				if (x.getTitleTypeValue() == titleType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	{
+		if (titles != null)
+		{
+			List<TitleStruct> matches = new ArrayList<>();
+			for (Title x : titles)
+			{
+				if (titleTypes.contains(x.getTitleTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public WorkIdentifierStruct findWorkIdentifier(WorkIdentifierTypes workIDType)
+	{
+		if (workIdentifiers != null)
+		{
+			for (WorkIdentifier x : workIdentifiers)
+			{
+				if (x.getWorkIDTypeValue() == workIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<WorkIdentifierStruct> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	{
+		if (workIdentifiers != null)
+		{
+			List<WorkIdentifierStruct> matches = new ArrayList<>();
+			for (WorkIdentifier x : workIdentifiers)
+			{
+				if (workIDTypes.contains(x.getWorkIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public LanguageStruct findLanguage(LanguageRoles languageRole)
+	{
+		if (languages != null)
+		{
+			for (Language x : languages)
+			{
+				if (x.getLanguageRoleValue() == languageRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<LanguageStruct> findLanguages(java.util.Set<LanguageRoles> languageRoles)
+	{
+		if (languages != null)
+		{
+			List<LanguageStruct> matches = new ArrayList<>();
+			for (Language x : languages)
+			{
+				if (languageRoles.contains(x.getLanguageRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public IllustrationsStruct findIllustrations(IllustrationAndOtherContentTypes illustrationType)
+	{
+		if (illustrationss != null)
+		{
+			for (Illustrations x : illustrationss)
+			{
+				if (x.getIllustrationTypeValue() == illustrationType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<IllustrationsStruct> findIllustrationss(java.util.Set<IllustrationAndOtherContentTypes> illustrationTypes)
+	{
+		if (illustrationss != null)
+		{
+			List<IllustrationsStruct> matches = new ArrayList<>();
+			for (Illustrations x : illustrationss)
+			{
+				if (illustrationTypes.contains(x.getIllustrationTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public AudienceStruct findAudience(AudienceCodeTypes audienceCodeType)
+	{
+		if (audiences != null)
+		{
+			for (Audience x : audiences)
+			{
+				if (x.getAudienceCodeTypeValue() == audienceCodeType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<AudienceStruct> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
+	{
+		if (audiences != null)
+		{
+			List<AudienceStruct> matches = new ArrayList<>();
+			for (Audience x : audiences)
+			{
+				if (audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public OtherTextStruct findOtherText(OtherTextTypes textTypeCode)
+	{
+		if (otherTexts != null)
+		{
+			for (OtherText x : otherTexts)
+			{
+				if (x.getTextTypeCodeValue() == textTypeCode)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<OtherTextStruct> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	{
+		if (otherTexts != null)
+		{
+			List<OtherTextStruct> matches = new ArrayList<>();
+			for (OtherText x : otherTexts)
+			{
+				if (textTypeCodes.contains(x.getTextTypeCodeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public MediaFileStruct findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	{
+		if (mediaFiles != null)
+		{
+			for (MediaFile x : mediaFiles)
+			{
+				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<MediaFileStruct> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	{
+		if (mediaFiles != null)
+		{
+			List<MediaFileStruct> matches = new ArrayList<>();
+			for (MediaFile x : mediaFiles)
+			{
+				if (mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public ImprintStruct findImprint(NameCodeTypes nameCodeType)
+	{
+		if (imprints != null)
+		{
+			for (Imprint x : imprints)
+			{
+				if (x.getNameCodeTypeValue() == nameCodeType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ImprintStruct> findImprints(java.util.Set<NameCodeTypes> nameCodeTypes)
+	{
+		if (imprints != null)
+		{
+			List<ImprintStruct> matches = new ArrayList<>();
+			for (Imprint x : imprints)
+			{
+				if (nameCodeTypes.contains(x.getNameCodeTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public SalesRightsStruct findSalesRights(SalesRightsTypes salesRightsType)
+	{
+		if (salesRightss != null)
+		{
+			for (SalesRights x : salesRightss)
+			{
+				if (x.getSalesRightsTypeValue() == salesRightsType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SalesRightsStruct> findSalesRightss(java.util.Set<SalesRightsTypes> salesRightsTypes)
+	{
+		if (salesRightss != null)
+		{
+			List<SalesRightsStruct> matches = new ArrayList<>();
+			for (SalesRights x : salesRightss)
+			{
+				if (salesRightsTypes.contains(x.getSalesRightsTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

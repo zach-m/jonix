@@ -28,6 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.IllustrationsStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,5 +94,13 @@ public class Illustrations implements Serializable
 	public String getNumberValue()
 	{
 		return (number == null) ? null : number.value;
+	}
+
+	public IllustrationsStruct asStruct()
+	{
+		IllustrationsStruct x = new IllustrationsStruct();
+		x.illustrationTypeDescription = getIllustrationTypeDescriptionValue();
+		x.number = getNumberValue();
+		return x;
 	}
 }

@@ -26,8 +26,10 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormsList150;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.ProductIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -100,6 +102,34 @@ public class RelatedProduct implements Serializable
 			for (ProductFormDetail i : productFormDetails)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	{
+		if (productIdentifiers != null)
+		{
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (x.getProductIDTypeValue() == productIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	{
+		if (productIdentifiers != null)
+		{
+			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (productIDTypes.contains(x.getProductIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

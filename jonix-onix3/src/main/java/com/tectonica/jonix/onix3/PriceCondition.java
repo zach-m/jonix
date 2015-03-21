@@ -20,11 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
 import com.tectonica.jonix.codelist.PriceConditionTypes;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.PriceConditionQuantityStruct;
+import com.tectonica.jonix.struct.ProductIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -72,5 +77,62 @@ public class PriceCondition implements Serializable
 	public PriceConditionTypes getPriceConditionTypeValue()
 	{
 		return (priceConditionType == null) ? null : priceConditionType.value;
+	}
+
+	public PriceConditionQuantityStruct findPriceConditionQuantity(PriceConditionQuantityTypes priceConditionQuantityType)
+	{
+		if (priceConditionQuantitys != null)
+		{
+			for (PriceConditionQuantity x : priceConditionQuantitys)
+			{
+				if (x.getPriceConditionQuantityTypeValue() == priceConditionQuantityType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PriceConditionQuantityStruct> findPriceConditionQuantitys(
+			java.util.Set<PriceConditionQuantityTypes> priceConditionQuantityTypes)
+	{
+		if (priceConditionQuantitys != null)
+		{
+			List<PriceConditionQuantityStruct> matches = new ArrayList<>();
+			for (PriceConditionQuantity x : priceConditionQuantitys)
+			{
+				if (priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	{
+		if (productIdentifiers != null)
+		{
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (x.getProductIDTypeValue() == productIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	{
+		if (productIdentifiers != null)
+		{
+			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (productIDTypes.contains(x.getProductIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

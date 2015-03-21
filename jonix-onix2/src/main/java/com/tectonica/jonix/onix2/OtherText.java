@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextLinkTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.OtherTextStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -158,5 +159,21 @@ public class OtherText implements Serializable
 	public String getEndDateValue()
 	{
 		return (endDate == null) ? null : endDate.value;
+	}
+
+	public OtherTextStruct asStruct()
+	{
+		OtherTextStruct x = new OtherTextStruct();
+		x.textFormat = getTextFormatValue();
+		x.text = getTextValue();
+		x.textLinkType = getTextLinkTypeValue();
+		x.textLink = getTextLinkValue();
+		x.textAuthor = getTextAuthorValue();
+		x.textSourceCorporate = getTextSourceCorporateValue();
+		x.textSourceTitle = getTextSourceTitleValue();
+		x.textPublicationDate = getTextPublicationDateValue();
+		x.startDate = getStartDateValue();
+		x.endDate = getEndDateValue();
+		return x;
 	}
 }

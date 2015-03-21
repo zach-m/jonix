@@ -26,9 +26,13 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
+import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
+import com.tectonica.jonix.struct.ContributorDateStruct;
+import com.tectonica.jonix.struct.NameIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -275,5 +279,61 @@ public class Contributor implements Serializable
 	public UnnamedPersonss getUnnamedPersonsValue()
 	{
 		return (unnamedPersons == null) ? null : unnamedPersons.value;
+	}
+
+	public NameIdentifierStruct findNameIdentifier(NameCodeTypes nameIDType)
+	{
+		if (nameIdentifiers != null)
+		{
+			for (NameIdentifier x : nameIdentifiers)
+			{
+				if (x.getNameIDTypeValue() == nameIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<NameIdentifierStruct> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
+	{
+		if (nameIdentifiers != null)
+		{
+			List<NameIdentifierStruct> matches = new ArrayList<>();
+			for (NameIdentifier x : nameIdentifiers)
+			{
+				if (nameIDTypes.contains(x.getNameIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public ContributorDateStruct findContributorDate(PersonOrganizationDateRoles contributorDateRole)
+	{
+		if (contributorDates != null)
+		{
+			for (ContributorDate x : contributorDates)
+			{
+				if (x.getContributorDateRoleValue() == contributorDateRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ContributorDateStruct> findContributorDates(java.util.Set<PersonOrganizationDateRoles> contributorDateRoles)
+	{
+		if (contributorDates != null)
+		{
+			List<ContributorDateStruct> matches = new ArrayList<>();
+			for (ContributorDate x : contributorDates)
+			{
+				if (contributorDateRoles.contains(x.getContributorDateRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

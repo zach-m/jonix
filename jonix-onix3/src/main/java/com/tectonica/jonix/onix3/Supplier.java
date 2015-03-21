@@ -25,7 +25,9 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.SupplierRoles;
+import com.tectonica.jonix.struct.SupplierIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -124,6 +126,34 @@ public class Supplier implements Serializable
 			for (EmailAddress i : emailAddresss)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public SupplierIdentifierStruct findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
+	{
+		if (supplierIdentifiers != null)
+		{
+			for (SupplierIdentifier x : supplierIdentifiers)
+			{
+				if (x.getSupplierIDTypeValue() == supplierIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SupplierIdentifierStruct> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
+	{
+		if (supplierIdentifiers != null)
+		{
+			List<SupplierIdentifierStruct> matches = new ArrayList<>();
+			for (SupplierIdentifier x : supplierIdentifiers)
+			{
+				if (supplierIDTypes.contains(x.getSupplierIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

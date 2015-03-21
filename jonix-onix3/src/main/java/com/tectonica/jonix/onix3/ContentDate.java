@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.ContentDateStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -82,5 +83,13 @@ public class ContentDate implements Serializable
 	public String getDateValue()
 	{
 		return (date == null) ? null : date.value;
+	}
+
+	public ContentDateStruct asStruct()
+	{
+		ContentDateStruct x = new ContentDateStruct();
+		x.dateFormat = getDateFormatValue();
+		x.date = getDateValue();
+		return x;
 	}
 }

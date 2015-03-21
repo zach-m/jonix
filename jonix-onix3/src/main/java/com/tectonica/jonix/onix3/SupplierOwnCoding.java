@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
+import com.tectonica.jonix.struct.SupplierOwnCodingStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,5 +82,13 @@ public class SupplierOwnCoding implements Serializable
 	public String getSupplierCodeValueValue()
 	{
 		return (supplierCodeValue == null) ? null : supplierCodeValue.value;
+	}
+
+	public SupplierOwnCodingStruct asStruct()
+	{
+		SupplierOwnCodingStruct x = new SupplierOwnCodingStruct();
+		x.supplierCodeTypeName = getSupplierCodeTypeNameValue();
+		x.supplierCodeValue = getSupplierCodeValueValue();
+		return x;
 	}
 }

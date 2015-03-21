@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.EpubLicenseExpressionStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,5 +82,13 @@ public class EpubLicenseExpression implements Serializable
 	public String getEpubLicenseExpressionLinkValue()
 	{
 		return (epubLicenseExpressionLink == null) ? null : epubLicenseExpressionLink.value;
+	}
+
+	public EpubLicenseExpressionStruct asStruct()
+	{
+		EpubLicenseExpressionStruct x = new EpubLicenseExpressionStruct();
+		x.epubLicenseExpressionTypeName = getEpubLicenseExpressionTypeNameValue();
+		x.epubLicenseExpressionLink = getEpubLicenseExpressionLinkValue();
+		return x;
 	}
 }

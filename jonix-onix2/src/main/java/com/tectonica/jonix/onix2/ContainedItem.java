@@ -29,12 +29,14 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.ProductIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -191,5 +193,33 @@ public class ContainedItem implements Serializable
 	public String getItemQuantityValue()
 	{
 		return (itemQuantity == null) ? null : itemQuantity.value;
+	}
+
+	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	{
+		if (productIdentifiers != null)
+		{
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (x.getProductIDTypeValue() == productIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	{
+		if (productIdentifiers != null)
+		{
+			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (productIDTypes.contains(x.getProductIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

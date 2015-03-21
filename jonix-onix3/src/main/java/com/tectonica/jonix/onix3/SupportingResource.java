@@ -27,7 +27,9 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceContentTypes;
+import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 import com.tectonica.jonix.codelist.ResourceModes;
+import com.tectonica.jonix.struct.ResourceFeatureStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -98,5 +100,33 @@ public class SupportingResource implements Serializable
 	public ResourceModes getResourceModeValue()
 	{
 		return (resourceMode == null) ? null : resourceMode.value;
+	}
+
+	public ResourceFeatureStruct findResourceFeature(ResourceFeatureTypes resourceFeatureType)
+	{
+		if (resourceFeatures != null)
+		{
+			for (ResourceFeature x : resourceFeatures)
+			{
+				if (x.getResourceFeatureTypeValue() == resourceFeatureType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ResourceFeatureStruct> findResourceFeatures(java.util.Set<ResourceFeatureTypes> resourceFeatureTypes)
+	{
+		if (resourceFeatures != null)
+		{
+			List<ResourceFeatureStruct> matches = new ArrayList<>();
+			for (ResourceFeature x : resourceFeatures)
+			{
+				if (resourceFeatureTypes.contains(x.getResourceFeatureTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

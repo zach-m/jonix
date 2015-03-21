@@ -24,7 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.EpubLicenseExpressionStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -74,6 +76,34 @@ public class EpubLicense implements Serializable
 			for (EpubLicenseName i : epubLicenseNames)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public EpubLicenseExpressionStruct findEpubLicenseExpression(LicenseExpressionTypes epubLicenseExpressionType)
+	{
+		if (epubLicenseExpressions != null)
+		{
+			for (EpubLicenseExpression x : epubLicenseExpressions)
+			{
+				if (x.getEpubLicenseExpressionTypeValue() == epubLicenseExpressionType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<EpubLicenseExpressionStruct> findEpubLicenseExpressions(java.util.Set<LicenseExpressionTypes> epubLicenseExpressionTypes)
+	{
+		if (epubLicenseExpressions != null)
+		{
+			List<EpubLicenseExpressionStruct> matches = new ArrayList<>();
+			for (EpubLicenseExpression x : epubLicenseExpressions)
+			{
+				if (epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

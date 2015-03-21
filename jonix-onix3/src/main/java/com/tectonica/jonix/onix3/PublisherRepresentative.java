@@ -26,6 +26,8 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
+import com.tectonica.jonix.struct.AgentIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -124,6 +126,34 @@ public class PublisherRepresentative implements Serializable
 			for (EmailAddress i : emailAddresss)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public AgentIdentifierStruct findAgentIdentifier(SupplierIdentifierTypes agentIDType)
+	{
+		if (agentIdentifiers != null)
+		{
+			for (AgentIdentifier x : agentIdentifiers)
+			{
+				if (x.getAgentIDTypeValue() == agentIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<AgentIdentifierStruct> findAgentIdentifiers(java.util.Set<SupplierIdentifierTypes> agentIDTypes)
+	{
+		if (agentIdentifiers != null)
+		{
+			List<AgentIdentifierStruct> matches = new ArrayList<>();
+			for (AgentIdentifier x : agentIdentifiers)
+			{
+				if (agentIDTypes.contains(x.getAgentIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

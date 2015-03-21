@@ -42,6 +42,7 @@ import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
 import com.tectonica.jonix.metadata.OnixValueClassMember;
+import com.tectonica.jonix.metadata.OnixValueStruct;
 import com.tectonica.jonix.metadata.Primitive;
 import com.tectonica.jonix.util.DOM;
 import com.tectonica.jonix.util.DOM.ElementListener;
@@ -140,7 +141,7 @@ public class Parser
 
 		String enumName = enumJavaName(enumType.comment);
 		if (!context.enumNames.add(enumName))
-			enumName += enumType.name;
+			enumName += enumType.name; // new code-list with the same name, we have to differentiate
 		return enumName;
 	}
 
@@ -575,14 +576,38 @@ public class Parser
 
 	public void postAnalysis()
 	{
-		for (OnixContentClass occ : meta.contentClassesMap.values())
+		classesLoop: for (OnixContentClass occ : meta.contentClassesMap.values())
 		{
+			OnixValueStruct struct = new OnixValueStruct(occ);
 			for (OnixContentClassMember m : occ.members)
 			{
 				m.onixClass = meta.classByName(m.className);
 				if (m.onixClass == null)
 					throw new NullPointerException("class " + m.className + " referenced by " + occ.name + " wasn't found");
+
+				if (m.onixClass instanceof OnixValueClass)
+				{
+					OnixSimpleType simpleType = ((OnixValueClass) m.onixClass).valueMember.simpleType;
+
+					boolean isKey = false;
+					if (simpleType.isEnum() && (m.cardinality == Cardinality.Required))
+					{
+						if (simpleType.enumName.endsWith("Types") || simpleType.enumName.endsWith("Roles"))
+						{
+							if (struct.key == null) // in rare-cases (e.g. OtherText) where there are several candidates we take the first
+								isKey = true;
+						}
+					}
+					if (isKey)
+						struct.key = m;
+					else
+						struct.members.add(m);
+				}
+				else
+					continue classesLoop; // no need to check the rest of the members once we find a non-value member
 			}
+			if (struct.key != null && struct.members.size() > 0)
+				meta.structsMap.put(occ.name, struct);
 		}
 	}
 }

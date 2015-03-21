@@ -20,11 +20,14 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.ProductContactIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,5 +96,33 @@ public class ProductContact implements Serializable
 	public String getEmailAddressValue()
 	{
 		return (emailAddress == null) ? null : emailAddress.value;
+	}
+
+	public ProductContactIdentifierStruct findProductContactIdentifier(NameCodeTypes productContactIDType)
+	{
+		if (productContactIdentifiers != null)
+		{
+			for (ProductContactIdentifier x : productContactIdentifiers)
+			{
+				if (x.getProductContactIDTypeValue() == productContactIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductContactIdentifierStruct> findProductContactIdentifiers(java.util.Set<NameCodeTypes> productContactIDTypes)
+	{
+		if (productContactIdentifiers != null)
+		{
+			List<ProductContactIdentifierStruct> matches = new ArrayList<>();
+			for (ProductContactIdentifier x : productContactIdentifiers)
+			{
+				if (productContactIDTypes.contains(x.getProductContactIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

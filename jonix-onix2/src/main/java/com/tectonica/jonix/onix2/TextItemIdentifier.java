@@ -28,6 +28,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.TextItemIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,5 +94,13 @@ public class TextItemIdentifier implements Serializable
 	public String getIDValueValue()
 	{
 		return (idValue == null) ? null : idValue.value;
+	}
+
+	public TextItemIdentifierStruct asStruct()
+	{
+		TextItemIdentifierStruct x = new TextItemIdentifierStruct();
+		x.idTypeName = getIDTypeNameValue();
+		x.idValue = getIDValueValue();
+		return x;
 	}
 }

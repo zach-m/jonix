@@ -26,6 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.AncillaryContentStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -90,5 +91,13 @@ public class AncillaryContent implements Serializable
 	public Integer getNumberValue()
 	{
 		return (number == null) ? null : number.value;
+	}
+
+	public AncillaryContentStruct asStruct()
+	{
+		AncillaryContentStruct x = new AncillaryContentStruct();
+		x.ancillaryContentDescriptions = getAncillaryContentDescriptionValues();
+		x.number = getNumberValue();
+		return x;
 	}
 }

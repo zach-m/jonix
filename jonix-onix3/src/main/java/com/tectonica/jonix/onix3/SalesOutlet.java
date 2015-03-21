@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
+import com.tectonica.jonix.struct.SalesOutletIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -68,5 +71,33 @@ public class SalesOutlet implements Serializable
 	public String getSalesOutletNameValue()
 	{
 		return (salesOutletName == null) ? null : salesOutletName.value;
+	}
+
+	public SalesOutletIdentifierStruct findSalesOutletIdentifier(SalesOutletIdentifierTypes salesOutletIDType)
+	{
+		if (salesOutletIdentifiers != null)
+		{
+			for (SalesOutletIdentifier x : salesOutletIdentifiers)
+			{
+				if (x.getSalesOutletIDTypeValue() == salesOutletIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SalesOutletIdentifierStruct> findSalesOutletIdentifiers(java.util.Set<SalesOutletIdentifierTypes> salesOutletIDTypes)
+	{
+		if (salesOutletIdentifiers != null)
+		{
+			List<SalesOutletIdentifierStruct> matches = new ArrayList<>();
+			for (SalesOutletIdentifier x : salesOutletIdentifiers)
+			{
+				if (salesOutletIDTypes.contains(x.getSalesOutletIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

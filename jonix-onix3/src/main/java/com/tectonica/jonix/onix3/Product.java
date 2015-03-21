@@ -24,8 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.ProductIdentifierStruct;
+import com.tectonica.jonix.struct.RecordSourceIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -133,5 +137,61 @@ public class Product implements Serializable
 	public String getRecordSourceNameValue()
 	{
 		return (recordSourceName == null) ? null : recordSourceName.value;
+	}
+
+	public RecordSourceIdentifierStruct findRecordSourceIdentifier(NameCodeTypes recordSourceIDType)
+	{
+		if (recordSourceIdentifiers != null)
+		{
+			for (RecordSourceIdentifier x : recordSourceIdentifiers)
+			{
+				if (x.getRecordSourceIDTypeValue() == recordSourceIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<RecordSourceIdentifierStruct> findRecordSourceIdentifiers(java.util.Set<NameCodeTypes> recordSourceIDTypes)
+	{
+		if (recordSourceIdentifiers != null)
+		{
+			List<RecordSourceIdentifierStruct> matches = new ArrayList<>();
+			for (RecordSourceIdentifier x : recordSourceIdentifiers)
+			{
+				if (recordSourceIDTypes.contains(x.getRecordSourceIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	{
+		if (productIdentifiers != null)
+		{
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (x.getProductIDTypeValue() == productIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	{
+		if (productIdentifiers != null)
+		{
+			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (productIDTypes.contains(x.getProductIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

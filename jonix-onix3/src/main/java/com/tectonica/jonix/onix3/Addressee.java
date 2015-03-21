@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.AddresseeIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,5 +87,33 @@ public class Addressee implements Serializable
 	public String getEmailAddressValue()
 	{
 		return (emailAddress == null) ? null : emailAddress.value;
+	}
+
+	public AddresseeIdentifierStruct findAddresseeIdentifier(NameCodeTypes addresseeIDType)
+	{
+		if (addresseeIdentifiers != null)
+		{
+			for (AddresseeIdentifier x : addresseeIdentifiers)
+			{
+				if (x.getAddresseeIDTypeValue() == addresseeIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<AddresseeIdentifierStruct> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
+	{
+		if (addresseeIdentifiers != null)
+		{
+			List<AddresseeIdentifierStruct> matches = new ArrayList<>();
+			for (AddresseeIdentifier x : addresseeIdentifiers)
+			{
+				if (addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

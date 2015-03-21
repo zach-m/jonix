@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.ImprintIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -68,5 +71,33 @@ public class Imprint implements Serializable
 	public String getImprintNameValue()
 	{
 		return (imprintName == null) ? null : imprintName.value;
+	}
+
+	public ImprintIdentifierStruct findImprintIdentifier(NameCodeTypes imprintIDType)
+	{
+		if (imprintIdentifiers != null)
+		{
+			for (ImprintIdentifier x : imprintIdentifiers)
+			{
+				if (x.getImprintIDTypeValue() == imprintIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ImprintIdentifierStruct> findImprintIdentifiers(java.util.Set<NameCodeTypes> imprintIDTypes)
+	{
+		if (imprintIdentifiers != null)
+		{
+			List<ImprintIdentifierStruct> matches = new ArrayList<>();
+			for (ImprintIdentifier x : imprintIdentifiers)
+			{
+				if (imprintIDTypes.contains(x.getImprintIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

@@ -24,11 +24,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.codelist.WorkIdentifierTypes;
+import com.tectonica.jonix.struct.MediaFileStruct;
+import com.tectonica.jonix.struct.OtherTextStruct;
+import com.tectonica.jonix.struct.TitleStruct;
+import com.tectonica.jonix.struct.WorkIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -165,6 +173,118 @@ public class ContentItem implements Serializable
 			for (PlaceAsSubject i : placeAsSubjects)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public TitleStruct findTitle(TitleTypes titleType)
+	{
+		if (titles != null)
+		{
+			for (Title x : titles)
+			{
+				if (x.getTitleTypeValue() == titleType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	{
+		if (titles != null)
+		{
+			List<TitleStruct> matches = new ArrayList<>();
+			for (Title x : titles)
+			{
+				if (titleTypes.contains(x.getTitleTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public WorkIdentifierStruct findWorkIdentifier(WorkIdentifierTypes workIDType)
+	{
+		if (workIdentifiers != null)
+		{
+			for (WorkIdentifier x : workIdentifiers)
+			{
+				if (x.getWorkIDTypeValue() == workIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<WorkIdentifierStruct> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	{
+		if (workIdentifiers != null)
+		{
+			List<WorkIdentifierStruct> matches = new ArrayList<>();
+			for (WorkIdentifier x : workIdentifiers)
+			{
+				if (workIDTypes.contains(x.getWorkIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public OtherTextStruct findOtherText(OtherTextTypes textTypeCode)
+	{
+		if (otherTexts != null)
+		{
+			for (OtherText x : otherTexts)
+			{
+				if (x.getTextTypeCodeValue() == textTypeCode)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<OtherTextStruct> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	{
+		if (otherTexts != null)
+		{
+			List<OtherTextStruct> matches = new ArrayList<>();
+			for (OtherText x : otherTexts)
+			{
+				if (textTypeCodes.contains(x.getTextTypeCodeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public MediaFileStruct findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	{
+		if (mediaFiles != null)
+		{
+			for (MediaFile x : mediaFiles)
+			{
+				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<MediaFileStruct> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	{
+		if (mediaFiles != null)
+		{
+			List<MediaFileStruct> matches = new ArrayList<>();
+			for (MediaFile x : mediaFiles)
+			{
+				if (mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

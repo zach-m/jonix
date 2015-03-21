@@ -20,11 +20,14 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.codelist.WorkRelations;
+import com.tectonica.jonix.struct.WorkIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -69,5 +72,33 @@ public class RelatedWork implements Serializable
 	public WorkRelations getWorkRelationCodeValue()
 	{
 		return (workRelationCode == null) ? null : workRelationCode.value;
+	}
+
+	public WorkIdentifierStruct findWorkIdentifier(WorkIdentifierTypes workIDType)
+	{
+		if (workIdentifiers != null)
+		{
+			for (WorkIdentifier x : workIdentifiers)
+			{
+				if (x.getWorkIDTypeValue() == workIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<WorkIdentifierStruct> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	{
+		if (workIdentifiers != null)
+		{
+			List<WorkIdentifierStruct> matches = new ArrayList<>();
+			for (WorkIdentifier x : workIdentifiers)
+			{
+				if (workIDTypes.contains(x.getWorkIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

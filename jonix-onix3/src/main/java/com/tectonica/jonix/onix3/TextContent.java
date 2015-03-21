@@ -25,8 +25,10 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContentAudiences;
+import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextTypes;
+import com.tectonica.jonix.struct.ContentDateStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -137,6 +139,34 @@ public class TextContent implements Serializable
 			for (SourceTitle i : sourceTitles)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public ContentDateStruct findContentDate(ContentDateRoles contentDateRole)
+	{
+		if (contentDates != null)
+		{
+			for (ContentDate x : contentDates)
+			{
+				if (x.getContentDateRoleValue() == contentDateRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ContentDateStruct> findContentDates(java.util.Set<ContentDateRoles> contentDateRoles)
+	{
+		if (contentDates != null)
+		{
+			List<ContentDateStruct> matches = new ArrayList<>();
+			for (ContentDate x : contentDates)
+			{
+				if (contentDateRoles.contains(x.getContentDateRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

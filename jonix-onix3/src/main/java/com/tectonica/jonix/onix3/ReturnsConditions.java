@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
+import com.tectonica.jonix.struct.ReturnsConditionsStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,5 +82,13 @@ public class ReturnsConditions implements Serializable
 	public String getReturnsCodeValue()
 	{
 		return (returnsCode == null) ? null : returnsCode.value;
+	}
+
+	public ReturnsConditionsStruct asStruct()
+	{
+		ReturnsConditionsStruct x = new ReturnsConditionsStruct();
+		x.returnsCodeTypeName = getReturnsCodeTypeNameValue();
+		x.returnsCode = getReturnsCodeValue();
+		return x;
 	}
 }

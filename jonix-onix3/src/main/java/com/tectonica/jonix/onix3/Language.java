@@ -27,6 +27,7 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
+import com.tectonica.jonix.struct.LanguageStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -92,5 +93,14 @@ public class Language implements Serializable
 	public TextScriptCodeIso15924s getScriptCodeValue()
 	{
 		return (scriptCode == null) ? null : scriptCode.value;
+	}
+
+	public LanguageStruct asStruct()
+	{
+		LanguageStruct x = new LanguageStruct();
+		x.languageCode = getLanguageCodeValue();
+		x.countryCode = getCountryCodeValue();
+		x.scriptCode = getScriptCodeValue();
+		return x;
 	}
 }

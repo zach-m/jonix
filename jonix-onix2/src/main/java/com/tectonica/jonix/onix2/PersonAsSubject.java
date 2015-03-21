@@ -20,14 +20,17 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.PersonNameIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -155,5 +158,33 @@ public class PersonAsSubject implements Serializable
 	public String getTitlesAfterNamesValue()
 	{
 		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
+	}
+
+	public PersonNameIdentifierStruct findPersonNameIdentifier(PersonNameIdentifierTypes personNameIDType)
+	{
+		if (personNameIdentifiers != null)
+		{
+			for (PersonNameIdentifier x : personNameIdentifiers)
+			{
+				if (x.getPersonNameIDTypeValue() == personNameIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PersonNameIdentifierStruct> findPersonNameIdentifiers(java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	{
+		if (personNameIdentifiers != null)
+		{
+			List<PersonNameIdentifierStruct> matches = new ArrayList<>();
+			for (PersonNameIdentifier x : personNameIdentifiers)
+			{
+				if (personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

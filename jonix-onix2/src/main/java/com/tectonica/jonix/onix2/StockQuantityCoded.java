@@ -28,6 +28,7 @@ import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.StockQuantityCodedStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,5 +94,13 @@ public class StockQuantityCoded implements Serializable
 	public String getStockQuantityCodeValue()
 	{
 		return (stockQuantityCode == null) ? null : stockQuantityCode.value;
+	}
+
+	public StockQuantityCodedStruct asStruct()
+	{
+		StockQuantityCodedStruct x = new StockQuantityCodedStruct();
+		x.stockQuantityCodeTypeName = getStockQuantityCodeTypeNameValue();
+		x.stockQuantityCode = getStockQuantityCodeValue();
+		return x;
 	}
 }

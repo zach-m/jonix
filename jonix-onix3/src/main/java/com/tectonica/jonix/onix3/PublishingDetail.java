@@ -25,9 +25,11 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
+import com.tectonica.jonix.struct.PublishingDateStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -144,5 +146,33 @@ public class PublishingDetail implements Serializable
 	public SalesRightsTypes getROWSalesRightsTypeValue()
 	{
 		return (rowSalesRightsType == null) ? null : rowSalesRightsType.value;
+	}
+
+	public PublishingDateStruct findPublishingDate(PublishingDateRoles publishingDateRole)
+	{
+		if (publishingDates != null)
+		{
+			for (PublishingDate x : publishingDates)
+			{
+				if (x.getPublishingDateRoleValue() == publishingDateRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PublishingDateStruct> findPublishingDates(java.util.Set<PublishingDateRoles> publishingDateRoles)
+	{
+		if (publishingDates != null)
+		{
+			List<PublishingDateStruct> matches = new ArrayList<>();
+			for (PublishingDate x : publishingDates)
+			{
+				if (publishingDateRoles.contains(x.getPublishingDateRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

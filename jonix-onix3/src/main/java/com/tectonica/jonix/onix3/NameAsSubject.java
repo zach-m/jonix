@@ -20,11 +20,14 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.NameIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -165,5 +168,33 @@ public class NameAsSubject implements Serializable
 	public String getCorporateNameInvertedValue()
 	{
 		return (corporateNameInverted == null) ? null : corporateNameInverted.value;
+	}
+
+	public NameIdentifierStruct findNameIdentifier(NameCodeTypes nameIDType)
+	{
+		if (nameIdentifiers != null)
+		{
+			for (NameIdentifier x : nameIdentifiers)
+			{
+				if (x.getNameIDTypeValue() == nameIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<NameIdentifierStruct> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
+	{
+		if (nameIdentifiers != null)
+		{
+			List<NameIdentifierStruct> matches = new ArrayList<>();
+			for (NameIdentifier x : nameIdentifiers)
+			{
+				if (nameIDTypes.contains(x.getNameIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

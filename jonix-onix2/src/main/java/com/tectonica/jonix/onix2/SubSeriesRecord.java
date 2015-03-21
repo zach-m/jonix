@@ -20,17 +20,24 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
+import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.OtherTextStruct;
+import com.tectonica.jonix.struct.SeriesIdentifierStruct;
+import com.tectonica.jonix.struct.TitleStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -186,5 +193,89 @@ public class SubSeriesRecord implements Serializable
 	public String getSubordinateEntriesValue()
 	{
 		return (subordinateEntries == null) ? null : subordinateEntries.value;
+	}
+
+	public SeriesIdentifierStruct findSeriesIdentifier(SeriesIdentifierTypes seriesIDType)
+	{
+		if (seriesIdentifiers != null)
+		{
+			for (SeriesIdentifier x : seriesIdentifiers)
+			{
+				if (x.getSeriesIDTypeValue() == seriesIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SeriesIdentifierStruct> findSeriesIdentifiers(java.util.Set<SeriesIdentifierTypes> seriesIDTypes)
+	{
+		if (seriesIdentifiers != null)
+		{
+			List<SeriesIdentifierStruct> matches = new ArrayList<>();
+			for (SeriesIdentifier x : seriesIdentifiers)
+			{
+				if (seriesIDTypes.contains(x.getSeriesIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public TitleStruct findTitle(TitleTypes titleType)
+	{
+		if (titles != null)
+		{
+			for (Title x : titles)
+			{
+				if (x.getTitleTypeValue() == titleType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	{
+		if (titles != null)
+		{
+			List<TitleStruct> matches = new ArrayList<>();
+			for (Title x : titles)
+			{
+				if (titleTypes.contains(x.getTitleTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public OtherTextStruct findOtherText(OtherTextTypes textTypeCode)
+	{
+		if (otherTexts != null)
+		{
+			for (OtherText x : otherTexts)
+			{
+				if (x.getTextTypeCodeValue() == textTypeCode)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<OtherTextStruct> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	{
+		if (otherTexts != null)
+		{
+			List<OtherTextStruct> matches = new ArrayList<>();
+			for (OtherText x : otherTexts)
+			{
+				if (textTypeCodes.contains(x.getTextTypeCodeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

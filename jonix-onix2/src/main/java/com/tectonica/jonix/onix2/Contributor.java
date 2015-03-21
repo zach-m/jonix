@@ -27,11 +27,15 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PersonDateRoles;
+import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
+import com.tectonica.jonix.struct.PersonDateStruct;
+import com.tectonica.jonix.struct.PersonNameIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -290,6 +294,62 @@ public class Contributor implements Serializable
 			for (RegionCode i : regionCodes)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public PersonNameIdentifierStruct findPersonNameIdentifier(PersonNameIdentifierTypes personNameIDType)
+	{
+		if (personNameIdentifiers != null)
+		{
+			for (PersonNameIdentifier x : personNameIdentifiers)
+			{
+				if (x.getPersonNameIDTypeValue() == personNameIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PersonNameIdentifierStruct> findPersonNameIdentifiers(java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	{
+		if (personNameIdentifiers != null)
+		{
+			List<PersonNameIdentifierStruct> matches = new ArrayList<>();
+			for (PersonNameIdentifier x : personNameIdentifiers)
+			{
+				if (personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public PersonDateStruct findPersonDate(PersonDateRoles personDateRole)
+	{
+		if (personDates != null)
+		{
+			for (PersonDate x : personDates)
+			{
+				if (x.getPersonDateRoleValue() == personDateRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PersonDateStruct> findPersonDates(java.util.Set<PersonDateRoles> personDateRoles)
+	{
+		if (personDates != null)
+		{
+			List<PersonDateStruct> matches = new ArrayList<>();
+			for (PersonDate x : personDates)
+			{
+				if (personDateRoles.contains(x.getPersonDateRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

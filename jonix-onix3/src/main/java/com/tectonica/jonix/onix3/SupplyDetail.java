@@ -20,12 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
+import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
+import com.tectonica.jonix.codelist.SupplyDateRoles;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
+import com.tectonica.jonix.struct.ReturnsConditionsStruct;
+import com.tectonica.jonix.struct.SupplierOwnCodingStruct;
+import com.tectonica.jonix.struct.SupplyDateStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -115,5 +122,89 @@ public class SupplyDetail implements Serializable
 	public UnpricedItemTypes getUnpricedItemTypeValue()
 	{
 		return (unpricedItemType == null) ? null : unpricedItemType.value;
+	}
+
+	public SupplierOwnCodingStruct findSupplierOwnCoding(SupplierOwnCodeTypes supplierCodeType)
+	{
+		if (supplierOwnCodings != null)
+		{
+			for (SupplierOwnCoding x : supplierOwnCodings)
+			{
+				if (x.getSupplierCodeTypeValue() == supplierCodeType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SupplierOwnCodingStruct> findSupplierOwnCodings(java.util.Set<SupplierOwnCodeTypes> supplierCodeTypes)
+	{
+		if (supplierOwnCodings != null)
+		{
+			List<SupplierOwnCodingStruct> matches = new ArrayList<>();
+			for (SupplierOwnCoding x : supplierOwnCodings)
+			{
+				if (supplierCodeTypes.contains(x.getSupplierCodeTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public ReturnsConditionsStruct findReturnsConditions(ReturnsConditionsCodeTypes returnsCodeType)
+	{
+		if (returnsConditionss != null)
+		{
+			for (ReturnsConditions x : returnsConditionss)
+			{
+				if (x.getReturnsCodeTypeValue() == returnsCodeType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ReturnsConditionsStruct> findReturnsConditionss(java.util.Set<ReturnsConditionsCodeTypes> returnsCodeTypes)
+	{
+		if (returnsConditionss != null)
+		{
+			List<ReturnsConditionsStruct> matches = new ArrayList<>();
+			for (ReturnsConditions x : returnsConditionss)
+			{
+				if (returnsCodeTypes.contains(x.getReturnsCodeTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public SupplyDateStruct findSupplyDate(SupplyDateRoles supplyDateRole)
+	{
+		if (supplyDates != null)
+		{
+			for (SupplyDate x : supplyDates)
+			{
+				if (x.getSupplyDateRoleValue() == supplyDateRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SupplyDateStruct> findSupplyDates(java.util.Set<SupplyDateRoles> supplyDateRoles)
+	{
+		if (supplyDates != null)
+		{
+			List<SupplyDateStruct> matches = new ArrayList<>();
+			for (SupplyDate x : supplyDates)
+			{
+				if (supplyDateRoles.contains(x.getSupplyDateRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

@@ -24,11 +24,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.codelist.IllustratedNotIllustrateds;
+import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
+import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
@@ -37,6 +40,9 @@ import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ThesisTypes;
 import com.tectonica.jonix.codelist.TradeCategorys;
+import com.tectonica.jonix.struct.AncillaryContentStruct;
+import com.tectonica.jonix.struct.AudienceStruct;
+import com.tectonica.jonix.struct.LanguageStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -403,6 +409,90 @@ public class DescriptiveDetail implements Serializable
 			for (AudienceDescription i : audienceDescriptions)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public LanguageStruct findLanguage(LanguageRoles languageRole)
+	{
+		if (languages != null)
+		{
+			for (Language x : languages)
+			{
+				if (x.getLanguageRoleValue() == languageRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<LanguageStruct> findLanguages(java.util.Set<LanguageRoles> languageRoles)
+	{
+		if (languages != null)
+		{
+			List<LanguageStruct> matches = new ArrayList<>();
+			for (Language x : languages)
+			{
+				if (languageRoles.contains(x.getLanguageRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public AncillaryContentStruct findAncillaryContent(IllustrationAndOtherContentTypes ancillaryContentType)
+	{
+		if (ancillaryContents != null)
+		{
+			for (AncillaryContent x : ancillaryContents)
+			{
+				if (x.getAncillaryContentTypeValue() == ancillaryContentType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<AncillaryContentStruct> findAncillaryContents(java.util.Set<IllustrationAndOtherContentTypes> ancillaryContentTypes)
+	{
+		if (ancillaryContents != null)
+		{
+			List<AncillaryContentStruct> matches = new ArrayList<>();
+			for (AncillaryContent x : ancillaryContents)
+			{
+				if (ancillaryContentTypes.contains(x.getAncillaryContentTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public AudienceStruct findAudience(AudienceCodeTypes audienceCodeType)
+	{
+		if (audiences != null)
+		{
+			for (Audience x : audiences)
+			{
+				if (x.getAudienceCodeTypeValue() == audienceCodeType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<AudienceStruct> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
+	{
+		if (audiences != null)
+		{
+			List<AudienceStruct> matches = new ArrayList<>();
+			for (Audience x : audiences)
+			{
+				if (audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

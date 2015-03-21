@@ -20,14 +20,17 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.MediaFileStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -91,5 +94,33 @@ public class Reissue implements Serializable
 	public String getReissueDescriptionValue()
 	{
 		return (reissueDescription == null) ? null : reissueDescription.value;
+	}
+
+	public MediaFileStruct findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	{
+		if (mediaFiles != null)
+		{
+			for (MediaFile x : mediaFiles)
+			{
+				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<MediaFileStruct> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	{
+		if (mediaFiles != null)
+		{
+			List<MediaFileStruct> matches = new ArrayList<>();
+			for (MediaFile x : mediaFiles)
+			{
+				if (mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

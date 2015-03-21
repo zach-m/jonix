@@ -26,7 +26,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "contentClasses", "valueClasses", "flagClasses", "types", "enums" })
+@JsonPropertyOrder({ "contentClasses", "valueClasses", "flagClasses", "types", "enums", "structs" })
 public class OnixMetadata
 {
 	@JsonIgnore
@@ -39,30 +39,37 @@ public class OnixMetadata
 	public Map<String, OnixSimpleType> typesMap = new HashMap<>();
 	@JsonIgnore
 	public Map<String, OnixSimpleType> enumsMap = new HashMap<>();
+	@JsonIgnore
+	public Map<String, OnixValueStruct> structsMap = new HashMap<>();
 
 	public Collection<OnixContentClass> getContentClasses()
 	{
 		return contentClassesMap.values();
 	}
 
-	public Collection<OnixValueClass> getValueClassesMap()
+	public Collection<OnixValueClass> getValueClasses()
 	{
 		return valueClassesMap.values();
 	}
 
-	public Collection<OnixFlagClass> getFlagClassesMap()
+	public Collection<OnixFlagClass> getFlagClasses()
 	{
 		return flagClassesMap.values();
 	}
 
-	public Collection<OnixSimpleType> getTypesMap()
+	public Collection<OnixSimpleType> getTypes()
 	{
 		return typesMap.values();
 	}
 
-	public Collection<OnixSimpleType> getEnumsMap()
+	public Collection<OnixSimpleType> getEnums()
 	{
 		return enumsMap.values();
+	}
+
+	public Collection<OnixValueStruct> getStructs()
+	{
+		return structsMap.values();
 	}
 
 	public OnixSimpleType typeByName(String name)

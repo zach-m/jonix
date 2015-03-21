@@ -33,6 +33,7 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.SalesRightsStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -120,5 +121,14 @@ public class SalesRights implements Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public SalesRightsStruct asStruct()
+	{
+		SalesRightsStruct x = new SalesRightsStruct();
+		x.rightsCountrys = getRightsCountrySets();
+		x.rightsTerritory = getRightsTerritorySet();
+		x.rightsRegions = getRightsRegionValues();
+		return x;
 	}
 }

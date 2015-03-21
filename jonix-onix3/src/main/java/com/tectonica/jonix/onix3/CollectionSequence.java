@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.CollectionSequenceStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,5 +82,13 @@ public class CollectionSequence implements Serializable
 	public String getCollectionSequenceNumberValue()
 	{
 		return (collectionSequenceNumber == null) ? null : collectionSequenceNumber.value;
+	}
+
+	public CollectionSequenceStruct asStruct()
+	{
+		CollectionSequenceStruct x = new CollectionSequenceStruct();
+		x.collectionSequenceTypeName = getCollectionSequenceTypeNameValue();
+		x.collectionSequenceNumber = getCollectionSequenceNumberValue();
+		return x;
 	}
 }

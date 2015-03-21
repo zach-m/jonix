@@ -28,6 +28,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.TitleStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -125,5 +126,17 @@ public class Title implements Serializable
 	public String getSubtitleValue()
 	{
 		return (subtitle == null) ? null : subtitle.value;
+	}
+
+	public TitleStruct asStruct()
+	{
+		TitleStruct x = new TitleStruct();
+		x.abbreviatedLength = getAbbreviatedLengthValue();
+		x.textCaseFlag = getTextCaseFlagValue();
+		x.titleText = getTitleTextValue();
+		x.titlePrefix = getTitlePrefixValue();
+		x.titleWithoutPrefix = getTitleWithoutPrefixValue();
+		x.subtitle = getSubtitleValue();
+		return x;
 	}
 }

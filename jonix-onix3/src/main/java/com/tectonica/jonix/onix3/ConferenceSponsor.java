@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.ConferenceSponsorIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -76,5 +79,33 @@ public class ConferenceSponsor implements Serializable
 	public String getCorporateNameValue()
 	{
 		return (corporateName == null) ? null : corporateName.value;
+	}
+
+	public ConferenceSponsorIdentifierStruct findConferenceSponsorIdentifier(NameCodeTypes conferenceSponsorIDType)
+	{
+		if (conferenceSponsorIdentifiers != null)
+		{
+			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
+			{
+				if (x.getConferenceSponsorIDTypeValue() == conferenceSponsorIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ConferenceSponsorIdentifierStruct> findConferenceSponsorIdentifiers(java.util.Set<NameCodeTypes> conferenceSponsorIDTypes)
+	{
+		if (conferenceSponsorIdentifiers != null)
+		{
+			List<ConferenceSponsorIdentifierStruct> matches = new ArrayList<>();
+			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
+			{
+				if (conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

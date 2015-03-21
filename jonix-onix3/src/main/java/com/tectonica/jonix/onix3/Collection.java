@@ -24,8 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
+import com.tectonica.jonix.struct.CollectionIdentifierStruct;
+import com.tectonica.jonix.struct.CollectionSequenceStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -100,6 +104,62 @@ public class Collection implements Serializable
 			for (ContributorStatement i : contributorStatements)
 				list.add(i.value);
 			return list;
+		}
+		return null;
+	}
+
+	public CollectionIdentifierStruct findCollectionIdentifier(SeriesIdentifierTypes collectionIDType)
+	{
+		if (collectionIdentifiers != null)
+		{
+			for (CollectionIdentifier x : collectionIdentifiers)
+			{
+				if (x.getCollectionIDTypeValue() == collectionIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<CollectionIdentifierStruct> findCollectionIdentifiers(java.util.Set<SeriesIdentifierTypes> collectionIDTypes)
+	{
+		if (collectionIdentifiers != null)
+		{
+			List<CollectionIdentifierStruct> matches = new ArrayList<>();
+			for (CollectionIdentifier x : collectionIdentifiers)
+			{
+				if (collectionIDTypes.contains(x.getCollectionIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public CollectionSequenceStruct findCollectionSequence(CollectionSequenceTypes collectionSequenceType)
+	{
+		if (collectionSequences != null)
+		{
+			for (CollectionSequence x : collectionSequences)
+			{
+				if (x.getCollectionSequenceTypeValue() == collectionSequenceType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<CollectionSequenceStruct> findCollectionSequences(java.util.Set<CollectionSequenceTypes> collectionSequenceTypes)
+	{
+		if (collectionSequences != null)
+		{
+			List<CollectionSequenceStruct> matches = new ArrayList<>();
+			for (CollectionSequence x : collectionSequences)
+			{
+				if (collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
 		}
 		return null;
 	}

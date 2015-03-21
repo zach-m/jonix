@@ -26,13 +26,19 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.CurrencyZones;
+import com.tectonica.jonix.codelist.DiscountCodeTypes;
 import com.tectonica.jonix.codelist.PositionOnProducts;
+import com.tectonica.jonix.codelist.PriceDateRoles;
+import com.tectonica.jonix.codelist.PriceIdentifierTypes;
 import com.tectonica.jonix.codelist.PriceStatuss;
 import com.tectonica.jonix.codelist.PriceTypeQualifiers;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.PrintedOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnitOfPricings;
+import com.tectonica.jonix.struct.DiscountCodedStruct;
+import com.tectonica.jonix.struct.PriceDateStruct;
+import com.tectonica.jonix.struct.PriceIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -191,5 +197,89 @@ public class Price implements Serializable
 	public PositionOnProducts getPositionOnProductValue()
 	{
 		return (positionOnProduct == null) ? null : positionOnProduct.value;
+	}
+
+	public PriceIdentifierStruct findPriceIdentifier(PriceIdentifierTypes priceIDType)
+	{
+		if (priceIdentifiers != null)
+		{
+			for (PriceIdentifier x : priceIdentifiers)
+			{
+				if (x.getPriceIDTypeValue() == priceIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PriceIdentifierStruct> findPriceIdentifiers(java.util.Set<PriceIdentifierTypes> priceIDTypes)
+	{
+		if (priceIdentifiers != null)
+		{
+			List<PriceIdentifierStruct> matches = new ArrayList<>();
+			for (PriceIdentifier x : priceIdentifiers)
+			{
+				if (priceIDTypes.contains(x.getPriceIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public DiscountCodedStruct findDiscountCoded(DiscountCodeTypes discountCodeType)
+	{
+		if (discountCodeds != null)
+		{
+			for (DiscountCoded x : discountCodeds)
+			{
+				if (x.getDiscountCodeTypeValue() == discountCodeType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<DiscountCodedStruct> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
+	{
+		if (discountCodeds != null)
+		{
+			List<DiscountCodedStruct> matches = new ArrayList<>();
+			for (DiscountCoded x : discountCodeds)
+			{
+				if (discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public PriceDateStruct findPriceDate(PriceDateRoles priceDateRole)
+	{
+		if (priceDates != null)
+		{
+			for (PriceDate x : priceDates)
+			{
+				if (x.getPriceDateRoleValue() == priceDateRole)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PriceDateStruct> findPriceDates(java.util.Set<PriceDateRoles> priceDateRoles)
+	{
+		if (priceDates != null)
+		{
+			List<PriceDateStruct> matches = new ArrayList<>();
+			for (PriceDate x : priceDates)
+			{
+				if (priceDateRoles.contains(x.getPriceDateRoleValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

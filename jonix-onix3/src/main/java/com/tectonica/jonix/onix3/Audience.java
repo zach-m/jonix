@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.AudienceStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,5 +82,13 @@ public class Audience implements Serializable
 	public String getAudienceCodeValueValue()
 	{
 		return (audienceCodeValue == null) ? null : audienceCodeValue.value;
+	}
+
+	public AudienceStruct asStruct()
+	{
+		AudienceStruct x = new AudienceStruct();
+		x.audienceCodeTypeName = getAudienceCodeTypeNameValue();
+		x.audienceCodeValue = getAudienceCodeValueValue();
+		return x;
 	}
 }

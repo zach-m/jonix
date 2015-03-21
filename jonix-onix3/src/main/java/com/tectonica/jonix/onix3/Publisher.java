@@ -20,11 +20,14 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PublishingRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.PublisherIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -80,5 +83,33 @@ public class Publisher implements Serializable
 	public String getPublisherNameValue()
 	{
 		return (publisherName == null) ? null : publisherName.value;
+	}
+
+	public PublisherIdentifierStruct findPublisherIdentifier(NameCodeTypes publisherIDType)
+	{
+		if (publisherIdentifiers != null)
+		{
+			for (PublisherIdentifier x : publisherIdentifiers)
+			{
+				if (x.getPublisherIDTypeValue() == publisherIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<PublisherIdentifierStruct> findPublisherIdentifiers(java.util.Set<NameCodeTypes> publisherIDTypes)
+	{
+		if (publisherIdentifiers != null)
+		{
+			List<PublisherIdentifierStruct> matches = new ArrayList<>();
+			for (PublisherIdentifier x : publisherIdentifiers)
+			{
+				if (publisherIDTypes.contains(x.getPublisherIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

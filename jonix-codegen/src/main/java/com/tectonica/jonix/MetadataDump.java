@@ -32,6 +32,7 @@ import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
+import com.tectonica.jonix.metadata.OnixValueStruct;
 import com.tectonica.jonix.util.JSON;
 import com.tectonica.jonix.util.ParseUtil;
 
@@ -94,6 +95,10 @@ public class MetadataDump
 		new File(folder + "/enums").mkdirs();
 		for (OnixSimpleType ost : metadata.enumsMap.values())
 			saveAsJson(ost, folder + "/enums/" + ost.name + ".txt");
+
+		new File(folder + "/structs").mkdirs();
+		for (OnixValueStruct ost : metadata.structsMap.values())
+			saveAsJson(ost, folder + "/structs/" + ost.containingClass.name + ".txt");
 
 		System.out.println("saved results to " + folder);
 	}

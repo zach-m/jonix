@@ -33,12 +33,14 @@ import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.SupplierRoles;
 import com.tectonica.jonix.codelist.SupplytoRegions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
+import com.tectonica.jonix.struct.SupplierIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -356,5 +358,33 @@ public class SupplyDetail implements Serializable
 	public UnpricedItemTypes getUnpricedItemTypeValue()
 	{
 		return (unpricedItemType == null) ? null : unpricedItemType.value;
+	}
+
+	public SupplierIdentifierStruct findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
+	{
+		if (supplierIdentifiers != null)
+		{
+			for (SupplierIdentifier x : supplierIdentifiers)
+			{
+				if (x.getSupplierIDTypeValue() == supplierIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SupplierIdentifierStruct> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
+	{
+		if (supplierIdentifiers != null)
+		{
+			List<SupplierIdentifierStruct> matches = new ArrayList<>();
+			for (SupplierIdentifier x : supplierIdentifiers)
+			{
+				if (supplierIDTypes.contains(x.getSupplierIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

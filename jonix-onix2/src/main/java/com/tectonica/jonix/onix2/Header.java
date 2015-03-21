@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,11 +28,14 @@ import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.DefaultLinearUnits;
 import com.tectonica.jonix.codelist.DefaultUnitOfWeights;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.AddresseeIdentifierStruct;
+import com.tectonica.jonix.struct.SenderIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -231,5 +235,61 @@ public class Header implements Serializable
 	public String getDefaultClassOfTradeValue()
 	{
 		return (defaultClassOfTrade == null) ? null : defaultClassOfTrade.value;
+	}
+
+	public SenderIdentifierStruct findSenderIdentifier(NameCodeTypes senderIDType)
+	{
+		if (senderIdentifiers != null)
+		{
+			for (SenderIdentifier x : senderIdentifiers)
+			{
+				if (x.getSenderIDTypeValue() == senderIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SenderIdentifierStruct> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
+	{
+		if (senderIdentifiers != null)
+		{
+			List<SenderIdentifierStruct> matches = new ArrayList<>();
+			for (SenderIdentifier x : senderIdentifiers)
+			{
+				if (senderIDTypes.contains(x.getSenderIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public AddresseeIdentifierStruct findAddresseeIdentifier(NameCodeTypes addresseeIDType)
+	{
+		if (addresseeIdentifiers != null)
+		{
+			for (AddresseeIdentifier x : addresseeIdentifiers)
+			{
+				if (x.getAddresseeIDTypeValue() == addresseeIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<AddresseeIdentifierStruct> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
+	{
+		if (addresseeIdentifiers != null)
+		{
+			List<AddresseeIdentifierStruct> matches = new ArrayList<>();
+			for (AddresseeIdentifier x : addresseeIdentifiers)
+			{
+				if (addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

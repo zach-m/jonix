@@ -30,24 +30,46 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import com.tectonica.jonix.codegen.GenUtil;
 import com.tectonica.jonix.codegen.ListDiff;
 import com.tectonica.jonix.codegen.ListDiff.CompareListener;
 import com.tectonica.jonix.codegen.OnixClassGen;
 import com.tectonica.jonix.codegen.OnixEnumGen;
+import com.tectonica.jonix.codegen.OnixStructGen;
 import com.tectonica.jonix.metadata.OnixContentClass;
+import com.tectonica.jonix.metadata.OnixContentClassMember;
 import com.tectonica.jonix.metadata.OnixEnumValue;
 import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
+import com.tectonica.jonix.metadata.OnixValueClassMember;
+import com.tectonica.jonix.metadata.OnixValueStruct;
 import com.tectonica.jonix.util.ParseUtil;
 
 public class GenerateCode
 {
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException
 	{
-		final String basePackage = "com.tectonica.jonix";
+		final String basePackage = GenUtil.COMMON_PACKAGE;
 		final String relativePath = "/src/main/java/com/tectonica/jonix";
+
+		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2);
+		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3);
+
+		// //////////////////////////////////////////////////////////////////////////////////////
+		// UNIFIED CODELISTS + STRUCTS
+		// //////////////////////////////////////////////////////////////////////////////////////
+
+		final String codelistHome = new File("..").getAbsolutePath() + "/jonix-codelist";
+		if (!new File(codelistHome).exists())
+			throw new RuntimeException("couldn't find jonix-codelist project at " + codelistHome);
+
+		System.out.println("Generating unified codelists..");
+		generateCodelists(basePackage, codelistHome + relativePath, "codelist", ref2, ref3);
+
+		System.out.println("Generating unified structs..");
+		generateStructs(basePackage, codelistHome + relativePath, "struct", ref2, ref3);
 
 		// //////////////////////////////////////////////////////////////////////////////////////
 		// ONIX 2
@@ -57,7 +79,6 @@ public class GenerateCode
 		if (!new File(onix2home).exists())
 			throw new RuntimeException("couldn't find jonix-onix2 project at " + onix2home);
 
-		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2);
 		System.out.println("Generating code for Onix2..");
 		generateModel(basePackage, onix2home + relativePath, "onix2", ref2);
 
@@ -69,37 +90,29 @@ public class GenerateCode
 		if (!new File(onix3home).exists())
 			throw new RuntimeException("couldn't find jonix-onix3 project at " + onix3home);
 
-		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3);
 		System.out.println("Generating code for Onix3..");
 
 		generateModel(basePackage, onix3home + relativePath, "onix3", ref3);
 
 		// //////////////////////////////////////////////////////////////////////////////////////
-		// UNIFIED CODELISTS
+		// FINISHED
 		// //////////////////////////////////////////////////////////////////////////////////////
-
-		final String codelistHome = new File("..").getAbsolutePath() + "/jonix-codelist";
-		if (!new File(codelistHome).exists())
-			throw new RuntimeException("couldn't find jonix-codelist project at " + codelistHome);
-
-		System.out.println("Generating unified codelists (for both Onix2 and Onix3)..");
-		generateCodelists(basePackage, codelistHome + relativePath, "codelist", ref2, ref3);
 
 		System.out.println("DONE");
 	}
 
 	private static void generateModel(String basePackage, String baseFolder, String subfolder, OnixMetadata ref)
 	{
-		final OnixClassGen ccg = new OnixClassGen(basePackage, baseFolder, ref);
+		final OnixClassGen ccg = new OnixClassGen(basePackage, baseFolder, subfolder, ref);
 
 		for (OnixContentClass occ : ref.contentClassesMap.values())
-			ccg.generate(subfolder, occ);
+			ccg.generate(occ);
 
 		for (OnixValueClass ovc : ref.valueClassesMap.values())
-			ccg.generate(subfolder, ovc);
+			ccg.generate(ovc);
 
 		for (OnixFlagClass ofc : ref.flagClassesMap.values())
-			ccg.generate(subfolder, ofc);
+			ccg.generate(ofc);
 	}
 
 	private static void generateCodelists(String basePackage, String baseFolder, String subfolder, OnixMetadata ref2, OnixMetadata ref3)
@@ -181,5 +194,108 @@ public class GenerateCode
 			}
 		});
 		return result;
+	}
+
+	private static void generateStructs(String basePackage, String baseFolder, String subfolder, final OnixMetadata ref2,
+			final OnixMetadata ref3)
+	{
+		final OnixStructGen osg = new OnixStructGen(basePackage, baseFolder, subfolder);
+
+		final List<OnixValueStruct> structs2 = new ArrayList<>(ref2.getStructs());
+		final List<OnixValueStruct> structs3 = new ArrayList<>(ref3.getStructs());
+
+		Collections.sort(structs2);
+		Collections.sort(structs3);
+
+		ListDiff.compare(structs2, structs3, new CompareListener<OnixValueStruct>()
+		{
+			@Override
+			public void onDiff(final OnixValueStruct struct2, final OnixValueStruct struct3)
+			{
+				if (struct2 != null && struct3 != null)
+				{
+					final OnixValueStruct u = unifiedStruct(struct2, struct3);
+					if (u == null)
+					{
+						ref2.structsMap.remove(struct2.containingClass.name);
+						ref3.structsMap.remove(struct3.containingClass.name);
+					}
+					else
+						osg.generate(u);
+				}
+				else if (struct2 != null)
+				{
+					osg.generate(struct2);
+				}
+				else
+				{
+					osg.generate(struct3);
+				}
+			}
+		});
+	}
+
+	private static OnixValueStruct unifiedStruct(final OnixValueStruct struct2, final OnixValueStruct struct3)
+	{
+		final String className = struct3.containingClass.name;
+		final OnixValueStruct unified = new OnixValueStruct(struct3.containingClass);
+
+		final String enumName2 = struct2.keyEnumType().enumName;
+		final String enumName3 = struct3.keyEnumType().enumName;
+		if (!enumName2.equals(enumName3))
+			throw new RuntimeException("In " + className + ", Can't reconcile when keys are of different types: Onix2=" + enumName2
+					+ " Onix3=" + enumName3);
+
+		unified.key = struct3.key;
+		unified.members = new ArrayList<>();
+
+		final List<OnixContentClassMember> members2 = new ArrayList<>(struct2.members);
+		final List<OnixContentClassMember> members3 = new ArrayList<>(struct3.members);
+
+		Collections.sort(members2);
+		Collections.sort(members3);
+
+		ListDiff.compare(members2, members3, new CompareListener<OnixContentClassMember>()
+		{
+			@Override
+			public void onDiff(OnixContentClassMember m2, OnixContentClassMember m3)
+			{
+				if (m2 != null && m3 != null)
+				{
+					final String memberClassName = m2.className; // = m3.className
+					OnixValueClassMember vm2 = ((OnixValueClass) m2.onixClass).valueMember;
+					OnixValueClassMember vm3 = ((OnixValueClass) m3.onixClass).valueMember;
+					final String javaType2 = vm2.simpleType.primitiveType.javaType;
+					final String javaType3 = vm3.simpleType.primitiveType.javaType;
+					if (!javaType2.equals(javaType3))
+					{
+						System.err.println("In " + className + ", type mismatch in " + memberClassName + ": Onix2=" + javaType2
+								+ " vs Onix3=" + javaType3);
+						unified.key = null; // cancels the unification
+					}
+					if (m2.cardinality != m3.cardinality)
+					{
+						System.err.println("In " + className + ", cardinality mismatch in " + memberClassName + ": Onix2=" + m2.cardinality
+								+ " vs Onix3=" + m3.cardinality);
+						unified.key = null; // cancels the unification
+					}
+					unified.members.add(m3);
+				}
+				else if (m2 != null)
+				{
+					unified.members.add(m2);
+//					OnixValueClassMember vm2 = ((OnixValueClass) m2.onixClass).valueMember;
+//					System.out.println(m2.className + ": " + vm2.simpleType.name + "(" + vm2.simpleType.primitiveType + ")");
+				}
+				else
+				{
+					unified.members.add(m3);
+//					OnixValueClassMember vm3 = ((OnixValueClass) m3.onixClass).valueMember;
+//					System.out.println(m3.className + ":                            " + vm3.simpleType.name + "("
+//							+ vm3.simpleType.primitiveType + ")");
+				}
+			}
+		});
+		return (unified.key == null) ? null : unified;
 	}
 }

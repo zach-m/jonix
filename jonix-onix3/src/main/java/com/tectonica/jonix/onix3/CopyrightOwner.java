@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.CopyrightOwnerIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -76,5 +79,33 @@ public class CopyrightOwner implements Serializable
 	public String getCorporateNameValue()
 	{
 		return (corporateName == null) ? null : corporateName.value;
+	}
+
+	public CopyrightOwnerIdentifierStruct findCopyrightOwnerIdentifier(NameCodeTypes copyrightOwnerIDType)
+	{
+		if (copyrightOwnerIdentifiers != null)
+		{
+			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
+			{
+				if (x.getCopyrightOwnerIDTypeValue() == copyrightOwnerIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<CopyrightOwnerIdentifierStruct> findCopyrightOwnerIdentifiers(java.util.Set<NameCodeTypes> copyrightOwnerIDTypes)
+	{
+		if (copyrightOwnerIdentifiers != null)
+		{
+			List<CopyrightOwnerIdentifierStruct> matches = new ArrayList<>();
+			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
+			{
+				if (copyrightOwnerIDTypes.contains(x.getCopyrightOwnerIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

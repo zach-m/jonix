@@ -20,14 +20,19 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.ProductIdentifierStruct;
+import com.tectonica.jonix.struct.TitleStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -139,5 +144,61 @@ public class Set implements Serializable
 	public String getSetItemTitleValue()
 	{
 		return (setItemTitle == null) ? null : setItemTitle.value;
+	}
+
+	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	{
+		if (productIdentifiers != null)
+		{
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (x.getProductIDTypeValue() == productIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	{
+		if (productIdentifiers != null)
+		{
+			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			for (ProductIdentifier x : productIdentifiers)
+			{
+				if (productIDTypes.contains(x.getProductIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public TitleStruct findTitle(TitleTypes titleType)
+	{
+		if (titles != null)
+		{
+			for (Title x : titles)
+			{
+				if (x.getTitleTypeValue() == titleType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	{
+		if (titles != null)
+		{
+			List<TitleStruct> matches = new ArrayList<>();
+			for (Title x : titles)
+			{
+				if (titleTypes.contains(x.getTitleTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

@@ -26,6 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
+import com.tectonica.jonix.struct.ResourceVersionFeatureStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -90,5 +91,13 @@ public class ResourceVersionFeature implements Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public ResourceVersionFeatureStruct asStruct()
+	{
+		ResourceVersionFeatureStruct x = new ResourceVersionFeatureStruct();
+		x.featureValue = getFeatureValueValue();
+		x.featureNotes = getFeatureNoteValues();
+		return x;
 	}
 }

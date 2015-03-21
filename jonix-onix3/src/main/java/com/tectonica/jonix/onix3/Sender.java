@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.SenderIdentifierStruct;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,5 +87,33 @@ public class Sender implements Serializable
 	public String getEmailAddressValue()
 	{
 		return (emailAddress == null) ? null : emailAddress.value;
+	}
+
+	public SenderIdentifierStruct findSenderIdentifier(NameCodeTypes senderIDType)
+	{
+		if (senderIdentifiers != null)
+		{
+			for (SenderIdentifier x : senderIdentifiers)
+			{
+				if (x.getSenderIDTypeValue() == senderIDType)
+					return x.asStruct();
+			}
+		}
+		return null;
+	}
+
+	public List<SenderIdentifierStruct> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
+	{
+		if (senderIdentifiers != null)
+		{
+			List<SenderIdentifierStruct> matches = new ArrayList<>();
+			for (SenderIdentifier x : senderIdentifiers)
+			{
+				if (senderIDTypes.contains(x.getSenderIDTypeValue()))
+					matches.add(x.asStruct());
+			}
+			return matches;
+		}
+		return null;
 	}
 }
