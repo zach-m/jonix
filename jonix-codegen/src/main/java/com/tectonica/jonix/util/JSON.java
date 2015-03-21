@@ -62,7 +62,7 @@ public class JSON
 		{
 			// limit to fields only
 			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NON_PRIVATE);
-			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
+			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.PUBLIC_ONLY);
 			mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
 		}
 

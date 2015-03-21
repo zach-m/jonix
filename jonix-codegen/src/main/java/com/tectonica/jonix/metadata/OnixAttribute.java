@@ -19,36 +19,52 @@
 
 package com.tectonica.jonix.metadata;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "type", "onixType", "enumName" })
+@JsonPropertyOrder({ "name", "primitiveType", "simpleTypeName", "enumName" })
 public class OnixAttribute implements Comparable<OnixAttribute>
 {
 	public String name;
-	@JsonProperty("type")
-	public Primitive dataType;
-	@JsonProperty("onixType")
-	public String onixSimpleTypeName;
-	public String enumName;
+	public Primitive primitiveType;
+	@JsonIgnore
+	public OnixSimpleType simpleType; // may be null
 
 	private OnixAttribute()
 	{}
 
-	public static OnixAttribute create(String name, Primitive dataType, String onixSimpleTypeName, String enumName)
+	public String getSimpleTypeName()
+	{
+		return (simpleType == null) ? null : simpleType.name;
+	}
+
+	public String getEnumName()
+	{
+		return (simpleType == null) ? null : simpleType.enumName;
+	}
+
+	public static OnixAttribute create(String name, Primitive primitiveType)
 	{
 		OnixAttribute ova = new OnixAttribute();
 		ova.name = name;
-		ova.dataType = dataType;
-		ova.onixSimpleTypeName = onixSimpleTypeName;
-		ova.enumName = enumName;
+		ova.primitiveType = primitiveType;
+		ova.simpleType = null;
+		return ova;
+	}
+
+	public static OnixAttribute create(String name, OnixSimpleType simpleType)
+	{
+		OnixAttribute ova = new OnixAttribute();
+		ova.name = name;
+		ova.primitiveType = simpleType.primitiveType;
+		ova.simpleType = simpleType;
 		return ova;
 	}
 
 	@Override
 	public String toString()
 	{
-		return name + "(" + dataType.name() + " / " + onixSimpleTypeName + " / " + enumName + ")";
+		return name + "(" + primitiveType.name() + " / " + getSimpleTypeName() + ")";
 	}
 
 	@Override

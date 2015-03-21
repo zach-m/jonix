@@ -21,7 +21,9 @@ package com.tectonica.jonix;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.ListIterator;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -90,13 +92,13 @@ public class GenerateCode
 	{
 		final OnixClassGen ccg = new OnixClassGen(basePackage, baseFolder, ref);
 
-		for (OnixContentClass occ : ref.contentClasses)
+		for (OnixContentClass occ : ref.contentClassesMap.values())
 			ccg.generate(subfolder, occ);
 
-		for (OnixValueClass ovc : ref.valueClasses)
+		for (OnixValueClass ovc : ref.valueClassesMap.values())
 			ccg.generate(subfolder, ovc);
 
-		for (OnixFlagClass ofc : ref.flagClasses)
+		for (OnixFlagClass ofc : ref.flagClassesMap.values())
 			ccg.generate(subfolder, ofc);
 	}
 
@@ -104,13 +106,16 @@ public class GenerateCode
 	{
 		final OnixEnumGen oeg = new OnixEnumGen(basePackage, baseFolder, subfolder);
 
-		removeAliases(ref2);
-		removeAliases(ref3);
+		final List<OnixSimpleType> enums2 = new ArrayList<>(ref2.enumsMap.values());
+		final List<OnixSimpleType> enums3 = new ArrayList<>(ref3.enumsMap.values());
 
-		Collections.sort(ref2.enums);
-		Collections.sort(ref3.enums);
+		removeAliases(enums2);
+		removeAliases(enums3);
 
-		ListDiff.compare(ref2.enums, ref3.enums, new CompareListener<OnixSimpleType>()
+		Collections.sort(enums2);
+		Collections.sort(enums3);
+
+		ListDiff.compare(enums2, enums3, new CompareListener<OnixSimpleType>()
 		{
 			@Override
 			public void onDiff(OnixSimpleType enum2, OnixSimpleType enum3)
@@ -136,12 +141,12 @@ public class GenerateCode
 		});
 	}
 
-	private static void removeAliases(OnixMetadata ref)
+	private static void removeAliases(List<OnixSimpleType> enums)
 	{
-		for (ListIterator<OnixSimpleType> iter = ref.enums.listIterator(); iter.hasNext();)
+		for (ListIterator<OnixSimpleType> iter = enums.listIterator(); iter.hasNext();)
 		{
 			final OnixSimpleType next = iter.next();
-			if (next.aliasFor != null)
+			if (next.enumAliasFor != null)
 				iter.remove();
 		}
 	}

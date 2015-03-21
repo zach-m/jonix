@@ -19,28 +19,35 @@
 
 package com.tectonica.jonix.metadata;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "type", "onixType", "enumName" })
+@JsonPropertyOrder({ "simpleTypeName", "dataType" })
 public class OnixValueClassMember implements Comparable<OnixValueClassMember>
 {
-	@JsonProperty("type")
-	public Primitive dataType;
-	@JsonProperty("onixType")
-	public String onixSimpleTypeName;
-	public String enumName;
+	@JsonIgnore
+	public OnixSimpleType simpleType;
+
+	public String getSimpleTypeName()
+	{
+		return simpleType.name;
+	}
+
+	public Primitive getDataType()
+	{
+		return simpleType.primitiveType;
+	}
 
 	@Override
 	public int compareTo(OnixValueClassMember o)
 	{
-		return onixSimpleTypeName.compareTo(o.onixSimpleTypeName);
+		return simpleType.name.compareTo(o.simpleType.name);
 	}
 
 	@Override
 	public String toString()
 	{
-		return dataType + " (" + onixSimpleTypeName + ")";
+		return simpleType.primitiveType + " (" + simpleType.name + ")";
 	}
 
 	private OnixValueClassMember()
@@ -48,10 +55,11 @@ public class OnixValueClassMember implements Comparable<OnixValueClassMember>
 
 	public static OnixValueClassMember create(OnixSimpleType simpleType)
 	{
+		if (simpleType == null)
+			throw new NullPointerException("simpleType");
+		
 		OnixValueClassMember ovcm = new OnixValueClassMember();
-		ovcm.dataType = simpleType.dataType;
-		ovcm.onixSimpleTypeName = simpleType.name;
-		ovcm.enumName = simpleType.enumName;
+		ovcm.simpleType = simpleType;
 		return ovcm;
 	}
 }

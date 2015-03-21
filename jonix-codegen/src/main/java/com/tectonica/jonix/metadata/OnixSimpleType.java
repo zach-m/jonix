@@ -22,50 +22,56 @@ package com.tectonica.jonix.metadata;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "type", "comment", "aliasFor", "enumName", "enumValues" })
+@JsonPropertyOrder({ "name", "primitiveType", "comment", "enum", "enumAliasFor", "enumName", "enumValues" })
 public class OnixSimpleType implements Comparable<OnixSimpleType>
 {
 	public static final OnixSimpleType XHTML = OnixSimpleType.create("XHTML", Primitive.String, "Free XHTML content", null);
 
 	public String name;
-	@JsonProperty("type")
-	public Primitive dataType;
+	public Primitive primitiveType;
 	public String comment;
-	public String aliasFor;
+	public String enumAliasFor;
 	public String enumName;
 	public List<OnixEnumValue> enumValues;
+
+	public boolean isEnum()
+	{
+		return (enumValues != null);
+	}
 
 	public static OnixSimpleType create(String name, Primitive dataType, String comment, List<OnixEnumValue> enumValues)
 	{
 		OnixSimpleType ost = new OnixSimpleType();
 		ost.name = name;
-		ost.dataType = dataType;
+		ost.primitiveType = dataType;
 		ost.comment = comment;
 		ost.enumValues = enumValues;
 		return ost;
 	}
 
-	public void aliasFrom(OnixSimpleType other)
+	public void aliasFrom(OnixSimpleType enumType)
 	{
-		dataType = other.dataType;
-		comment = other.comment;
-		aliasFor = other.name;
-		enumName = other.enumName;
-		enumValues = other.enumValues;
+		if (!enumType.isEnum())
+			throw new RuntimeException("alias is not allowed for " + enumType);
+
+		primitiveType = enumType.primitiveType;
+		comment = enumType.comment;
+		enumAliasFor = enumType.name;
+		enumName = enumType.enumName;
+		enumValues = enumType.enumValues;
 	}
 
 	public static OnixSimpleType cloneFrom(OnixSimpleType other)
 	{
 		OnixSimpleType ost = new OnixSimpleType();
 		ost.name = other.name;
-		ost.dataType = other.dataType;
+		ost.primitiveType = other.primitiveType;
 		ost.comment = other.comment;
-		ost.aliasFor = other.aliasFor;
+		ost.enumAliasFor = other.enumAliasFor;
 		ost.enumName = other.enumName;
-		ost.enumValues = new ArrayList<OnixEnumValue>(other.enumValues); //  new array, same items
+		ost.enumValues = new ArrayList<OnixEnumValue>(other.enumValues); // new array, same items
 		return ost;
 	}
 
@@ -79,7 +85,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType>
 	@Override
 	public String toString()
 	{
-		return name + " (" + dataType + ") = '" + comment + "', values=" + enumValues + "'";
+		return name + " (" + primitiveType + ") = '" + comment + "', values=" + enumValues + "'";
 	}
 
 	@Override

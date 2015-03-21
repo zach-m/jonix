@@ -67,11 +67,9 @@ public class ParseUtil
 		final Parser parser = new Parser(spaceables);
 		parser.analyzeSchema(codelistDoc);
 		parser.analyzeSchema(mainDoc);
+		parser.postAnalysis();
 
-		final OnixMetadata metadata = parser.getMetadata();
-//		metadata.sort();
-
-		return metadata;
+		return parser.getMetadata();
 	}
 
 	private static Document docOf(String xmlResourceName) throws ParserConfigurationException, SAXException, IOException

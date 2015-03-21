@@ -43,11 +43,11 @@ public class OnixEnumGen
 
 	public void generate(OnixSimpleType enumType)
 	{
-		if (enumType.aliasFor != null)
+		if (enumType.enumAliasFor != null)
 //			return;
-			throw new RuntimeException("Alias enum was passed: " + enumType.name + " ==> " + enumType.aliasFor);
+			throw new RuntimeException("Alias enum was passed: " + enumType.name + " ==> " + enumType.enumAliasFor);
 
-		if (enumType.enumValues == null)
+		if (!enumType.isEnum())
 			throw new RuntimeException("Non-enum: " + enumType);
 
 		try

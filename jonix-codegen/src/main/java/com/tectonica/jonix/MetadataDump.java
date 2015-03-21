@@ -73,26 +73,26 @@ public class MetadataDump
 		final String folder = "C:/Users/zach/Desktop" + prefix;
 		new File(folder).mkdirs();
 
-//		saveAsJson(metadata.contentClasses, folder + "/contentClasses.txt");
-//		saveAsJson(metadata.valueClasses, folder + "/valueClasses.txt");
-//		saveAsJson(metadata.flagClasses, folder + "/flagClasses.txt");
-//		saveAsJson(metadata.enums, folder + "/enums.txt");
-		saveAsJson(metadata.types, folder + "/types.txt");
+//		saveAsJson(metadata.contentClassesMap.values(), folder + "/contentClasses.txt");
+//		saveAsJson(metadata.valueClassesMap.values(), folder + "/valueClasses.txt");
+//		saveAsJson(metadata.flagClassesMap.values(), folder + "/flagClasses.txt");
+//		saveAsJson(metadata.enumsMap.values(), folder + "/enums.txt");
+		saveAsJson(metadata.typesMap.values(), folder + "/types.txt");
 
 		new File(folder + "/contentClasses").mkdirs();
-		for (OnixContentClass occ : metadata.contentClasses)
+		for (OnixContentClass occ : metadata.contentClassesMap.values())
 			saveAsJson(occ, folder + "/contentClasses/" + occ.name + ".txt");
 
 		new File(folder + "/valueClasses").mkdirs();
-		for (OnixValueClass ovc : metadata.valueClasses)
+		for (OnixValueClass ovc : metadata.valueClassesMap.values())
 			saveAsJson(ovc, folder + "/valueClasses/" + ovc.name + ".txt");
 
 		new File(folder + "/flagClasses").mkdirs();
-		for (OnixFlagClass ofc : metadata.flagClasses)
+		for (OnixFlagClass ofc : metadata.flagClassesMap.values())
 			saveAsJson(ofc, folder + "/flagClasses/" + ofc.name + ".txt");
 
 		new File(folder + "/enums").mkdirs();
-		for (OnixSimpleType ost : metadata.enums)
+		for (OnixSimpleType ost : metadata.enumsMap.values())
 			saveAsJson(ost, folder + "/enums/" + ost.name + ".txt");
 
 		System.out.println("saved results to " + folder);

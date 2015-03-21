@@ -19,72 +19,74 @@
 
 package com.tectonica.jonix.metadata;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({ "contentClasses", "valueClasses", "flagClasses", "types", "enums" })
 public class OnixMetadata
 {
-	public List<OnixContentClass> contentClasses = new ArrayList<>();
-	public List<OnixValueClass> valueClasses = new ArrayList<>();
-	public List<OnixFlagClass> flagClasses = new ArrayList<>();
-	public List<OnixSimpleType> types = new ArrayList<>();
-	public List<OnixSimpleType> enums = new ArrayList<>();
+	@JsonIgnore
+	public Map<String, OnixContentClass> contentClassesMap = new HashMap<>();
+	@JsonIgnore
+	public Map<String, OnixValueClass> valueClassesMap = new HashMap<>();
+	@JsonIgnore
+	public Map<String, OnixFlagClass> flagClassesMap = new HashMap<>();
+	@JsonIgnore
+	public Map<String, OnixSimpleType> typesMap = new HashMap<>();
+	@JsonIgnore
+	public Map<String, OnixSimpleType> enumsMap = new HashMap<>();
 
-	private Map<String, OnixSimpleType> typesMap;
-	private Map<String, OnixValueClass> valueClassesMap;
-
-	private Map<String, OnixSimpleType> typesMap()
+	public Collection<OnixContentClass> getContentClasses()
 	{
-		if (typesMap == null)
-		{
-			typesMap = new HashMap<>();
-			for (OnixSimpleType ost : types)
-				typesMap.put(ost.name, ost);
-			for (OnixSimpleType ost : enums)
-				typesMap.put(ost.enumName, ost);
-		}
-		return typesMap;
+		return contentClassesMap.values();
 	}
 
-	private Map<String, OnixValueClass> valueClassesMap()
+	public Collection<OnixValueClass> getValueClassesMap()
 	{
-		if (valueClassesMap == null)
-		{
-			valueClassesMap = new HashMap<>();
-			for (OnixValueClass ovc : valueClasses)
-				valueClassesMap.put(ovc.name, ovc);
-		}
-		return valueClassesMap;
+		return valueClassesMap.values();
+	}
+
+	public Collection<OnixFlagClass> getFlagClassesMap()
+	{
+		return flagClassesMap.values();
+	}
+
+	public Collection<OnixSimpleType> getTypesMap()
+	{
+		return typesMap.values();
+	}
+
+	public Collection<OnixSimpleType> getEnumsMap()
+	{
+		return enumsMap.values();
 	}
 
 	public OnixSimpleType typeByName(String name)
 	{
-		return typesMap().get(name);
+		OnixSimpleType type = typesMap.get(name);
+		if (type == null)
+			type = enumsMap.get(name);
+		return type;
+	}
+
+	public OnixClass classByName(String name)
+	{
+		OnixClass onixClass = contentClassesMap.get(name);
+		if (onixClass == null)
+		{
+			onixClass = valueClassesMap.get(name);
+			if (onixClass == null)
+				onixClass = flagClassesMap.get(name);
+		}
+		return onixClass;
 	}
 
 	public OnixValueClass valueClassByName(String name)
 	{
-		return valueClassesMap().get(name);
-	}
-
-	public void sort()
-	{
-		Collections.sort(contentClasses);
-		Collections.sort(valueClasses);
-		Collections.sort(flagClasses);
-		Collections.sort(types);
-		Collections.sort(enums);
-		for (OnixContentClass occ : contentClasses)
-			occ.sortInternally();
-		for (OnixValueClass ovc : valueClasses)
-			ovc.sortInternally();
-		for (OnixFlagClass ovc : flagClasses)
-			ovc.sortInternally();
+		return valueClassesMap.get(name);
 	}
 }

@@ -29,9 +29,8 @@ import java.util.Set;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
-import com.tectonica.jonix.metadata.Multiplicity;
+import com.tectonica.jonix.metadata.Cardinality;
 import com.tectonica.jonix.metadata.OnixAttribute;
 import com.tectonica.jonix.metadata.OnixClass;
 import com.tectonica.jonix.metadata.OnixConst;
@@ -52,7 +51,6 @@ public class Parser
 	public static class SchemaContext
 	{
 		private Set<String> spaceables;
-		private Map<String, OnixSimpleType> simpleTypes = new HashMap<>();
 		private Set<String> enumNames = new HashSet<>();
 		private Map<String, Element> groupNodes = new HashMap<>();
 		private Map<String, Element> attributeGroupNodes = new HashMap<>();
@@ -73,10 +71,10 @@ public class Parser
 
 	public void analyzeSchema(Document doc)
 	{
-		final Element schema = (Element) doc.getElementsByTagName("xs:schema").item(0);
-		amendContext(schema);
+		final Element schemaElem = (Element) doc.getElementsByTagName("xs:schema").item(0);
+		amendContext(schemaElem);
 
-		DOM.forElementsOf(schema, new ElementListener()
+		DOM.forElementsOf(schemaElem, new ElementListener()
 		{
 			@Override
 			public void onElement(Element element)
@@ -100,51 +98,49 @@ public class Parser
 		});
 	}
 
-	private void amendContext(final Element schema)
+	private void amendContext(final Element schemaElem)
 	{
-		processSimpleTypes(schema);
-		processGroups(schema);
-		processAttributeGroups(schema);
+		processSimpleTypes(schemaElem);
+		processGroups(schemaElem);
+		processAttributeGroups(schemaElem);
 	}
 
-	private void processSimpleTypes(final Element schema)
+	private void processSimpleTypes(final Element schemaElem)
 	{
-		final NodeList simpleTypes = schema.getElementsByTagName("xs:simpleType");
-		for (int i = 0; i < simpleTypes.getLength(); i++)
+		DOM.forElementsOf(schemaElem, "xs:simpleType", new ElementListener()
 		{
-			Element simpleType = (Element) simpleTypes.item(i);
-			if (simpleType.getParentNode() != schema)
-				continue; // TODO: change getElementsByTagName to getChildElementsByTagName
-			final String simpleTypeName = simpleType.getAttribute("name");
-			if (simpleTypeName.isEmpty())
-				throw new RuntimeException("unnamed top-level xs:simpleType is unsupported");
-
-			OnixSimpleType onixSimpleType = new OnixSimpleType();
-			onixSimpleType.name = simpleType.getAttribute("name");
-			processSimpleType(simpleType, onixSimpleType);
-			if (onixSimpleType.dataType == null)
-				throw new RuntimeException("erroneous processing of onixType " + onixSimpleType);
-
-			if (onixSimpleType.enumValues != null)
+			@Override
+			public void onElement(Element simpleTypeElem)
 			{
-				onixSimpleType.enumName = enumNameOf(onixSimpleType);
-				meta.enums.add(onixSimpleType);
-			}
-			else
-				meta.types.add(onixSimpleType);
+				final String simpleTypeName = simpleTypeElem.getAttribute("name");
+				if (simpleTypeName.isEmpty())
+					throw new RuntimeException("unnamed top-level xs:simpleType is unsupported");
 
-			context.simpleTypes.put(onixSimpleType.name, onixSimpleType);
-		}
+				OnixSimpleType simpleType = new OnixSimpleType();
+				simpleType.name = simpleTypeElem.getAttribute("name");
+				processSimpleType(simpleTypeElem, simpleType);
+				if (simpleType.primitiveType == null)
+					throw new RuntimeException("erroneous processing of onixType " + simpleType);
+
+				if (simpleType.isEnum())
+				{
+					simpleType.enumName = enumNameOf(simpleType);
+					meta.enumsMap.put(simpleType.name, simpleType);
+				}
+				else
+					meta.typesMap.put(simpleType.name, simpleType);
+			}
+		});
 	}
 
-	private String enumNameOf(OnixSimpleType onixSimpleType)
+	private String enumNameOf(OnixSimpleType enumType)
 	{
-		if (onixSimpleType.aliasFor != null)
-			return context.simpleTypes.get(onixSimpleType.aliasFor).enumName;
+		if (enumType.enumAliasFor != null)
+			return meta.typeByName(enumType.enumAliasFor).enumName;
 
-		String enumName = enumJavaName(onixSimpleType.comment);
+		String enumName = enumJavaName(enumType.comment);
 		if (!context.enumNames.add(enumName))
-			enumName += onixSimpleType.name;
+			enumName += enumType.name;
 		return enumName;
 	}
 
@@ -162,33 +158,33 @@ public class Parser
 		return sb.toString() + "s";
 	}
 
-	private void processSimpleType(Element simpleType, final OnixSimpleType onixSimpleType)
+	private void processSimpleType(Element simpleTypeElem, final OnixSimpleType simpleType)
 	{
-		DOM.forElementsOf(simpleType, new ElementListener()
+		DOM.forElementsOf(simpleTypeElem, new ElementListener()
 		{
 			@Override
-			public void onElement(Element simpleTypeDef)
+			public void onElement(Element simpleTypeDefElem)
 			{
-				final String simpleTypeDefName = simpleTypeDef.getNodeName();
+				final String simpleTypeDefName = simpleTypeDefElem.getNodeName();
 
 				if (simpleTypeDefName.equals("xs:restriction"))
 				{
-					handleRestriction(simpleTypeDef);
+					handleRestriction(simpleTypeDefElem);
 				}
 
 				else if (simpleTypeDefName.equals("xs:annotation"))
 				{
-					onixSimpleType.comment = extractAnnotationText(simpleTypeDef);
+					simpleType.comment = extractAnnotationText(simpleTypeDefElem);
 				}
 
 				else if (simpleTypeDefName.equals("xs:union"))
 				{
-					onixSimpleType.dataType = Primitive.String; // we don't even bother..
+					simpleType.primitiveType = Primitive.String; // we don't even bother..
 				}
 
 				else if (simpleTypeDefName.equals("xs:list"))
 				{
-					handleList(simpleTypeDef);
+					handleList(simpleTypeDefElem);
 				}
 				else
 					throw new RuntimeException("Unhandled case of " + simpleTypeDefName);
@@ -197,35 +193,35 @@ public class Parser
 			/**
 			 * restriction can define a type by inheriting an existing one (primitive / non-primitive), or be defining a new type
 			 */
-			private void handleRestriction(Element restriction)
+			private void handleRestriction(Element restrictionElem)
 			{
 				// first we check the case of inheritance
-				if (restriction.hasAttribute("base"))
+				if (restrictionElem.hasAttribute("base"))
 				{
-					final String baseType = restriction.getAttribute("base");
+					final String baseType = restrictionElem.getAttribute("base");
 
 					// we handle the case of primitive-type
 					final Primitive primitiveType = Primitive.fromXsdToken(baseType);
 					if (primitiveType != null)
 					{
-						onixSimpleType.dataType = primitiveType;
+						simpleType.primitiveType = primitiveType;
 
 						// primitives (strings, actually) may have a pattern or a list of enumerated values
-						final Element pattern = DOM.firstElemChild(restriction, "xs:pattern");
-						if (pattern != null)
+						final Element patternElem = DOM.firstElemChild(restrictionElem, "xs:pattern");
+						if (patternElem != null)
 						{
-							onixSimpleType.comment = pattern.getAttribute("value");
+							simpleType.comment = patternElem.getAttribute("value");
 						}
 						else
 						{
-							DOM.forElementsOf(restriction, "xs:enumeration", new ElementListener()
+							DOM.forElementsOf(restrictionElem, "xs:enumeration", new ElementListener()
 							{
 								@Override
-								public void onElement(Element enumeration)
+								public void onElement(Element enumerationElem)
 								{
-									final String value = enumeration.getAttribute("value");
-									final Element annotation = DOM.firstElemChild(enumeration, "xs:annotation");
-									String comment = (annotation != null) ? extractAnnotationText(annotation) : null;
+									final String value = enumerationElem.getAttribute("value");
+									final Element annotationElem = DOM.firstElemChild(enumerationElem, "xs:annotation");
+									String comment = (annotationElem != null) ? extractAnnotationText(annotationElem) : null;
 									final int lineBreak = comment.indexOf("\n");
 									final String name;
 									final String description;
@@ -239,7 +235,7 @@ public class Parser
 										name = comment.substring(0, lineBreak);
 										description = comment.substring(lineBreak + "\n".length());
 									}
-									onixSimpleType.add(OnixEnumValue.create(name, value, description));
+									simpleType.add(OnixEnumValue.create(name, value, description));
 								}
 							});
 						}
@@ -247,13 +243,13 @@ public class Parser
 					}
 
 					// if non-primitive, we lookup the inherited type and simply create an alias to it
-					final OnixSimpleType existing = context.simpleTypes.get(baseType);
+					final OnixSimpleType existing = meta.typeByName(baseType);
 					if (existing != null)
 					{
-						if (restriction.getChildNodes().getLength() > 0)
+						if (restrictionElem.getChildNodes().getLength() > 0)
 							throw new RuntimeException("Inheritance of non-privimive is limited to mere aliasing");
 						// we have a situation where one type simply "inherits" another type that's NOT xsd-primitive
-						onixSimpleType.aliasFrom(existing);
+						simpleType.aliasFrom(existing);
 						return;
 					}
 
@@ -261,25 +257,25 @@ public class Parser
 				}
 
 				// handle restriction that defines a new simpleType (rather than inheriting an existing xsd-type)
-				final Element simpleTypeBelowRestriction = DOM.firstElemChild(restriction, "xs:simpleType");
-				if (simpleTypeBelowRestriction != null)
+				final Element simpleTypeElemBelowRestriction = DOM.firstElemChild(restrictionElem, "xs:simpleType");
+				if (simpleTypeElemBelowRestriction != null)
 				{
-					processSimpleType(simpleTypeBelowRestriction, onixSimpleType);
+					processSimpleType(simpleTypeElemBelowRestriction, simpleType);
 					return;
 				}
 
 				throw new RuntimeException("Unhandled case of xs:restriction");
 			}
 
-			private String extractAnnotationText(Element annotation)
+			private String extractAnnotationText(Element annotationElem)
 			{
 				final StringBuffer sb = new StringBuffer();
-				DOM.forElementsOf(annotation, "xs:documentation", new ElementListener()
+				DOM.forElementsOf(annotationElem, "xs:documentation", new ElementListener()
 				{
 					@Override
-					public void onElement(Element documentation)
+					public void onElement(Element documentationElem)
 					{
-						final String line = DOM.getChildText(documentation);
+						final String line = DOM.getChildText(documentationElem);
 						if (line != null && !line.isEmpty())
 						{
 							if (sb.length() != 0)
@@ -291,51 +287,51 @@ public class Parser
 				return sb.length() > 0 ? sb.toString() : null;
 			}
 
-			private void handleList(Element list)
+			private void handleList(Element listElem)
 			{
-				final String itemType = list.getAttribute("itemType");
+				final String itemType = listElem.getAttribute("itemType");
 				if (itemType.isEmpty())
 					throw new RuntimeException("xs:list doesn't specify an itemType attribute");
 
-				OnixSimpleType existingType = context.simpleTypes.get(itemType);
+				OnixSimpleType existingType = meta.typeByName(itemType);
 				if (existingType == null)
 					throw new RuntimeException("Unknown type " + itemType);
 
-				onixSimpleType.aliasFrom(existingType);
+				simpleType.aliasFrom(existingType);
 			}
 		});
 
 		// hack for "ROW" constant in country-codes (ISO 3166-1)
-		if (onixSimpleType.name.equals("List91"))
-			onixSimpleType.enumValues.add(0, OnixEnumValue.create("Rest Of World", "ROW", "All unspecified countries"));
+		if (simpleType.name.equals("List91"))
+			simpleType.enumValues.add(0, OnixEnumValue.create("Rest Of World", "ROW", "All unspecified countries"));
 	}
 
-	private void processGroups(final Element schema)
+	private void processGroups(final Element schemaElem)
 	{
-		DOM.forElementsOf(schema, "xs:group", new ElementListener()
+		DOM.forElementsOf(schemaElem, "xs:group", new ElementListener()
 		{
 			@Override
-			public void onElement(Element group)
+			public void onElement(Element groupElem)
 			{
-				final String groupName = group.getAttribute("name");
+				final String groupName = groupElem.getAttribute("name");
 				if (groupName.isEmpty())
 					throw new RuntimeException("unnamed top-level xs:group is unsupported");
-				context.groupNodes.put(groupName, group);
+				context.groupNodes.put(groupName, groupElem);
 			}
 		});
 	}
 
-	private void processAttributeGroups(final Element schema)
+	private void processAttributeGroups(final Element schemaElem)
 	{
-		DOM.forElementsOf(schema, "xs:attributeGroup", new ElementListener()
+		DOM.forElementsOf(schemaElem, "xs:attributeGroup", new ElementListener()
 		{
 			@Override
-			public void onElement(Element attributeGroup)
+			public void onElement(Element attributeGroupElem)
 			{
-				final String attributeGroupName = attributeGroup.getAttribute("name");
+				final String attributeGroupName = attributeGroupElem.getAttribute("name");
 				if (attributeGroupName.isEmpty())
 					throw new RuntimeException("unnamed top-level xs:attributeGroup is unsupported");
-				context.attributeGroupNodes.put(attributeGroupName, attributeGroup);
+				context.attributeGroupNodes.put(attributeGroupName, attributeGroupElem);
 			}
 		});
 	}
@@ -351,66 +347,67 @@ public class Parser
 //		if (!onixTagName.equals("Annotation"))
 //			return;
 
-		final Element complexType = DOM.firstElemChild(element);
-		if (!complexType.getNodeName().equals("xs:complexType"))
+		final Element complexTypeElem = DOM.firstElemChild(element);
+		if (!complexTypeElem.getNodeName().equals("xs:complexType"))
 			throw new RuntimeException("top-level xs:element is expected to be defined as a xs:complexType");
 
-		if (DOM.nextElemChild(complexType) != null)
+		if (DOM.nextElemChild(complexTypeElem) != null)
 			throw new RuntimeException("top-level xs:element is expected contain exactly one xs:complexType");
 
-		final Element content = DOM.firstElemChild(complexType);
-		final String contentType = content.getNodeName();
+		final Element contentElem = DOM.firstElemChild(complexTypeElem);
+		final String contentType = contentElem.getNodeName();
 		final boolean defineFromScratch = contentType.equals("xs:sequence") || contentType.equals("xs:choice");
 		final boolean defineByInheritance = contentType.equals("xs:simpleContent") || contentType.equals("xs:complexContent");
 		final boolean defineFlag = contentType.equals("xs:attribute") || contentType.equals("xs:attributeGroup");
 
 		OnixClass onixClass = null;
-		Element attributesParent = null;
+		Element attributesParentElem = null;
 
 		if (defineFromScratch)
 		{
 			// special case for Onix2 Flow
-			if (DOM.firstElemChild(content, "xs:element", "ref", "p") != null)
+			if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null)
 			{
 				final OnixValueClassMember member = OnixValueClassMember.create(OnixSimpleType.XHTML);
 				final OnixValueClass onixValueClass = new OnixValueClass();
 				onixValueClass.name = onixTagName;
 				onixValueClass.valueMember = member;
 				onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
-				meta.valueClasses.add(onixValueClass);
+				meta.valueClassesMap.put(onixValueClass.name, onixValueClass);
 				onixClass = onixValueClass;
-				attributesParent = complexType;
+				attributesParentElem = complexTypeElem;
 			}
 			else
 			{
 				final Map<String, OnixContentClassMember> members = new LinkedHashMap<>();
-				extractClassFromSequencesAndChoices(content, members);
+				extractClassFromSequencesAndChoices(contentElem, members);
 				final OnixContentClass onixContentClass = new OnixContentClass();
 				onixContentClass.name = onixTagName;
 				onixContentClass.members = new ArrayList<>(members.values());
-				meta.contentClasses.add(onixContentClass);
+				meta.contentClassesMap.put(onixContentClass.name, onixContentClass);
 				onixClass = onixContentClass;
-				attributesParent = complexType;
+				attributesParentElem = complexTypeElem;
 			}
 		}
 		else if (defineByInheritance)
 		{
-			final Element extension = DOM.firstElemChild(content);
+			final Element extensionElem = DOM.firstElemChild(contentElem);
 
 			// validate that we can deal with the provided inheritance
-			if (!extension.getNodeName().equals("xs:extension"))
-				throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: " + extension.getNodeName());
-			final String baseType = extension.getAttribute("base");
+			if (!extensionElem.getNodeName().equals("xs:extension"))
+				throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: "
+						+ extensionElem.getNodeName());
+			final String baseType = extensionElem.getAttribute("base");
 			if (baseType.isEmpty())
 				throw new RuntimeException("found xs:extension without base");
-			DOM.ensureTagNames(DOM.firstElemChild(extension), Arrays.asList("xs:attribute", "xs:attributeGroup"));
+			DOM.ensureTagNames(DOM.firstElemChild(extensionElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
 
 			final boolean complex = contentType.equals("xs:complexContent");
 
 			final OnixSimpleType simpleType;
 			if (!complex)
 			{
-				simpleType = context.simpleTypes.get(baseType);
+				simpleType = meta.typeByName(baseType);
 				if (simpleType == null)
 					throw new RuntimeException("Unknown type " + baseType);
 			}
@@ -427,65 +424,65 @@ public class Parser
 			onixValueClass.name = onixTagName;
 			onixValueClass.valueMember = member;
 			onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
-			meta.valueClasses.add(onixValueClass);
+			meta.valueClassesMap.put(onixValueClass.name, onixValueClass);
 			onixClass = onixValueClass;
-			attributesParent = extension;
+			attributesParentElem = extensionElem;
 		}
 		else if (defineFlag)
 		{
 			final OnixFlagClass onixFlagClass = new OnixFlagClass();
 			onixFlagClass.name = onixTagName;
-			meta.flagClasses.add(onixFlagClass);
+			meta.flagClassesMap.put(onixFlagClass.name, onixFlagClass);
 			onixClass = onixFlagClass;
-			attributesParent = complexType;
+			attributesParentElem = complexTypeElem;
 		}
 		else
 			throw new RuntimeException("first child of top-level xs:element's xs:complexType is expected to define a content. found: "
 					+ contentType);
 
 		// other than attributes, we don't expect other information about the class we just created
-		DOM.ensureTagNames(DOM.nextElemChild(content), Arrays.asList("xs:attribute", "xs:attributeGroup"));
+		DOM.ensureTagNames(DOM.nextElemChild(contentElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
 
-		if (attributesParent != null)
-			extractAttributes(attributesParent, onixClass);
+		if (attributesParentElem != null)
+			extractAttributes(attributesParentElem, onixClass);
 	}
 
-	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoice, final Map<String, OnixContentClassMember> members)
+	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoiceElem, final Map<String, OnixContentClassMember> members)
 	{
-		final Multiplicity parentMultiplicity = Multiplicity.of(sequenceOrChoice.getAttribute("minOccurs"),
-				sequenceOrChoice.getAttribute("maxOccurs"));
+		final Cardinality parentCardinality = Cardinality.of(sequenceOrChoiceElem.getAttribute("minOccurs"),
+				sequenceOrChoiceElem.getAttribute("maxOccurs"));
 
-		DOM.forElementsOf(sequenceOrChoice, new ElementListener()
+		DOM.forElementsOf(sequenceOrChoiceElem, new ElementListener()
 		{
 			@Override
-			public void onElement(Element child)
+			public void onElement(Element childElem)
 			{
-				final String childType = child.getNodeName();
+				final String childType = childElem.getNodeName();
 				if (childType.equals("xs:element"))
 				{
-					final String className = child.getAttribute("ref");
+					final String className = childElem.getAttribute("ref");
 					if (className.isEmpty())
 						throw new RuntimeException("under content - xs:elemenet without ref found");
-					final boolean isUnderChoice = sequenceOrChoice.getNodeName().equals("xs:choice");
-					final String minOccurs = isUnderChoice ? "0" : child.getAttribute("minOccurs");
-					final String maxOccurs = child.getAttribute("maxOccurs");
-					Multiplicity multiplicity = Multiplicity.of(minOccurs, maxOccurs).commonGroundsWith(parentMultiplicity);
+					final boolean isUnderChoice = sequenceOrChoiceElem.getNodeName().equals("xs:choice");
+					final String minOccurs = isUnderChoice ? "0" : childElem.getAttribute("minOccurs");
+					final String maxOccurs = childElem.getAttribute("maxOccurs");
+					Cardinality cardinality = Cardinality.of(minOccurs, maxOccurs).mergeWith(parentCardinality);
 					final OnixContentClassMember existing = members.get(className);
 					if (existing == null)
-						members.put(className, OnixContentClassMember.create(className, multiplicity));
+						members.put(className, OnixContentClassMember.create(className, cardinality));
 					else
-						existing.multiplicity = existing.multiplicity.commonGroundsWith(multiplicity);
+						existing.cardinality = existing.cardinality.mergeWith(cardinality);
 				}
 				else if (childType.equals("xs:sequence") || childType.equals("xs:choice"))
 				{
-					extractClassFromSequencesAndChoices(child, members);
+					extractClassFromSequencesAndChoices(childElem, members);
 				}
 				else if (childType.equals("xs:group"))
 				{
-					final Element group = context.groupNodes.get(child.getAttribute("ref"));
-					if (group == null)
+					final Element groupElem = context.groupNodes.get(childElem.getAttribute("ref"));
+					if (groupElem == null)
 						throw new RuntimeException("under content - couldn't find group");
-					extractClassFromSequencesAndChoices(group, members);
+					extractClassFromSequencesAndChoices(groupElem, members);
 				}
 				else
 					throw new RuntimeException("under content - node of invalid type found: " + childType);
@@ -493,40 +490,40 @@ public class Parser
 		});
 	}
 
-	private void extractAttributes(Element attributesParent, final OnixClass onixClass)
+	private void extractAttributes(Element attributesParentElem, final OnixClass onixClass)
 	{
 		final ElementListener attributeWorker = new ElementListener()
 		{
 			@Override
-			public void onElement(Element attribute)
+			public void onElement(Element attributeElem)
 			{
-				extractAttribute(attribute, onixClass);
+				extractAttribute(attributeElem, onixClass);
 			}
 		};
 
-		DOM.forElementsOf(attributesParent, "xs:attribute", attributeWorker);
+		DOM.forElementsOf(attributesParentElem, "xs:attribute", attributeWorker);
 
-		DOM.forElementsOf(attributesParent, "xs:attributeGroup", new ElementListener()
+		DOM.forElementsOf(attributesParentElem, "xs:attributeGroup", new ElementListener()
 		{
 			@Override
-			public void onElement(Element attributeGroupRef)
+			public void onElement(Element attributeGroupRefElem)
 			{
-				final String ref = attributeGroupRef.getAttribute("ref");
+				final String ref = attributeGroupRefElem.getAttribute("ref");
 				if (ref.isEmpty())
 					throw new RuntimeException("xs:attributeGroup is specified without ref");
-				final Element attributeGroup = context.attributeGroupNodes.get(ref);
-				if (attributeGroup == null)
+				final Element attributeGroupElem = context.attributeGroupNodes.get(ref);
+				if (attributeGroupElem == null)
 					throw new RuntimeException("no definition found for xs:attributeGroup ref=" + ref);
 
-				DOM.forElementsOf(attributeGroup, "xs:attribute", attributeWorker);
+				DOM.forElementsOf(attributeGroupElem, "xs:attribute", attributeWorker);
 			}
 		});
 	}
 
-	private void extractAttribute(Element attribute, final OnixClass onixClass)
+	private void extractAttribute(Element attributeElem, final OnixClass onixClass)
 	{
-		final String name = attribute.getAttribute("name");
-		final String fixed = attribute.getAttribute("fixed");
+		final String name = attributeElem.getAttribute("name");
+		final String fixed = attributeElem.getAttribute("fixed");
 
 		// case 1 - simplest possible const (using 'fixed')
 		if (!fixed.isEmpty())
@@ -536,22 +533,22 @@ public class Parser
 		}
 
 		// case 2 - nested const (using internal 'xs:enumeration')
-		final Element simpleType = DOM.firstElemChild(attribute, "xs:simpleType");
-		if (simpleType != null)
+		final Element simpleTypeElement = DOM.firstElemChild(attributeElem, "xs:simpleType");
+		if (simpleTypeElement != null)
 		{
-			final Element restriction = DOM.firstElemChild(simpleType, "xs:restriction");
-			if (restriction == null)
+			final Element restrictionElem = DOM.firstElemChild(simpleTypeElement, "xs:restriction");
+			if (restrictionElem == null)
 				throw new RuntimeException();
 
-			final String base = restriction.getAttribute("base");
+			final String base = restrictionElem.getAttribute("base");
 			if (Primitive.fromXsdToken(base) != Primitive.String)
 				throw new RuntimeException();
 
-			final Element enumeration = DOM.firstElemChild(restriction, "xs:enumeration");
-			if (enumeration == null)
+			final Element enumerationElem = DOM.firstElemChild(restrictionElem, "xs:enumeration");
+			if (enumerationElem == null)
 				throw new RuntimeException();
 
-			final String value = enumeration.getAttribute("value");
+			final String value = enumerationElem.getAttribute("value");
 
 			if (name.isEmpty() || value.isEmpty())
 				throw new RuntimeException("Empty const attribute");
@@ -561,26 +558,31 @@ public class Parser
 		}
 
 		// case 3 - a true attribute
-		final Primitive dataType;
-		final String onixSimpleTypeName;
-		final String enumName;
-		final String baseType = attribute.hasAttribute("type") ? attribute.getAttribute("type") : "xs:string";
+		final String baseType = attributeElem.hasAttribute("type") ? attributeElem.getAttribute("type") : "xs:string";
 		final Primitive primitiveType = Primitive.fromXsdToken(baseType);
 		if (primitiveType == null)
 		{
-			final OnixSimpleType onixSimple = context.simpleTypes.get(baseType);
-			if (onixSimple == null)
+			final OnixSimpleType simpleType = meta.typeByName(baseType);
+			if (simpleType == null)
 				throw new RuntimeException("Couldn't find type " + baseType);
-			onixSimpleTypeName = onixSimple.name;
-			enumName = onixSimple.enumName;
-			dataType = onixSimple.dataType;
+			onixClass.add(OnixAttribute.create(name, simpleType));
 		}
 		else
 		{
-			dataType = primitiveType;
-			onixSimpleTypeName = null;
-			enumName = null;
+			onixClass.add(OnixAttribute.create(name, primitiveType));
 		}
-		onixClass.add(OnixAttribute.create(name, dataType, onixSimpleTypeName, enumName));
+	}
+
+	public void postAnalysis()
+	{
+		for (OnixContentClass occ : meta.contentClassesMap.values())
+		{
+			for (OnixContentClassMember m : occ.members)
+			{
+				m.onixClass = meta.classByName(m.className);
+				if (m.onixClass == null)
+					throw new NullPointerException("class " + m.className + " referenced by " + occ.name + " wasn't found");
+			}
+		}
 	}
 }

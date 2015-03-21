@@ -19,34 +19,35 @@
 
 package com.tectonica.jonix.metadata;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "onixType", "cardinality" })
+@JsonPropertyOrder({ "className", "cardinality" })
 public class OnixContentClassMember implements Comparable<OnixContentClassMember>
 {
-	@JsonProperty("onixType")
-	public String onixTypeName;
-	@JsonProperty("cardinality")
-	public Multiplicity multiplicity;
+	public String className;
+	public Cardinality cardinality;
+
+	@JsonIgnore
+	public OnixClass onixClass; // added after parsing is over
 
 	@Override
 	public int compareTo(OnixContentClassMember o)
 	{
-		return onixTypeName.compareTo(o.onixTypeName);
+		return className.compareTo(o.className);
 	}
 
 	@Override
 	public String toString()
 	{
-		return onixTypeName + " [" + multiplicity + "]";
+		return className + " [" + cardinality + "]";
 	}
 
-	public static OnixContentClassMember create(String onixTypeName, Multiplicity multiplicity)
+	public static OnixContentClassMember create(String className, Cardinality cardinality)
 	{
 		OnixContentClassMember ocm = new OnixContentClassMember();
-		ocm.onixTypeName = onixTypeName;
-		ocm.multiplicity = multiplicity;
+		ocm.className = className;
+		ocm.cardinality = cardinality;
 		return ocm;
 	}
 }

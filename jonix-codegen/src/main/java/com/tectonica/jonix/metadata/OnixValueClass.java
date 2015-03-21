@@ -21,7 +21,7 @@ package com.tectonica.jonix.metadata;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "valueMember", "consts", "attributes", "isSpaceable" })
+@JsonPropertyOrder({ "name", "isSpaceable", "valueMember", "consts", "attributes" })
 public class OnixValueClass extends OnixClass
 {
 	public OnixValueClassMember valueMember;

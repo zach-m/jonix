@@ -93,11 +93,11 @@ public class OnixClassGen
 		p.println();
 		for (OnixContentClassMember m : clz.members)
 		{
-			final String field = fieldOf(m.onixTypeName);
-			if (m.multiplicity.singular)
-				p.printf("\t" + "public %s %s; // %s\n", m.onixTypeName, field, m.multiplicity.name());
+			final String field = fieldOf(m.className);
+			if (m.cardinality.singular)
+				p.printf("\t" + "public %s %s; // %s\n", m.className, field, m.cardinality.name());
 			else
-				p.printf("\t" + "public List<%s> %ss; // %s\n", m.onixTypeName, field, m.multiplicity.name());
+				p.printf("\t" + "public List<%s> %ss; // %s\n", m.className, field, m.cardinality.name());
 		}
 
 		// creator
@@ -119,7 +119,7 @@ public class OnixClassGen
 		boolean first = true;
 		for (OnixContentClassMember m : clz.members)
 		{
-			final String cls = m.onixTypeName;
+			final String cls = m.className;
 			final String field = fieldOf(cls);
 			p.print("\t\t\t\t");
 			if (first)
@@ -127,7 +127,7 @@ public class OnixClassGen
 			else
 				p.print("else ");
 			p.printf("if (name.%s(%s.refname) || name.%s(%s.shortname))\n", EQUALS, cls, EQUALS, cls);
-			if (m.multiplicity.singular)
+			if (m.cardinality.singular)
 				p.printf("\t\t\t\t\t" + "x.%s = %s.fromDoc(element);\n", field, cls);
 			else
 				p.printf("\t\t\t\t\t" + "x.%ss = DU.addToList(x.%ss, %s.fromDoc(element));\n", field, field, cls);
@@ -142,20 +142,19 @@ public class OnixClassGen
 		// declare value getters
 		for (OnixContentClassMember m : clz.members)
 		{
-			final OnixValueClass ovc = ref.valueClassByName(m.onixTypeName);
+			final OnixValueClass ovc = ref.valueClassByName(m.className);
 			if (ovc != null)
 			{
-				final OnixValueClassMember vm = ovc.valueMember;
-				final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
-				final String field = fieldOf(m.onixTypeName);
+				final TypeInfo ti = typeInfoOf(ovc.valueMember.simpleType);
+				final String field = fieldOf(m.className);
 				String javaType = ti.javaType;
 				if (ovc.isSpaceable)
 					javaType = "java.util.Set<" + javaType + ">";
-				if (m.multiplicity.singular)
+				if (m.cardinality.singular)
 				{
 					final String caption = ovc.isSpaceable ? "Set" : "Value";
 					p.println();
-					p.printf("\t" + "public %s get%s%s()\n", javaType, m.onixTypeName, caption);
+					p.printf("\t" + "public %s get%s%s()\n", javaType, m.className, caption);
 					p.printf("\t" + "{\n");
 					p.printf("\t\t" + "return (%s == null) ? null : %s.value;\n", field, field);
 					p.printf("\t" + "}\n");
@@ -164,12 +163,12 @@ public class OnixClassGen
 				{
 					final String caption = ovc.isSpaceable ? "Sets" : "Values";
 					p.println();
-					p.printf("\t" + "public List<%s> get%s%s()\n", javaType, m.onixTypeName, caption);
+					p.printf("\t" + "public List<%s> get%s%s()\n", javaType, m.className, caption);
 					p.printf("\t" + "{\n");
 					p.printf("\t\t" + "if (%ss != null) \n", field);
 					p.printf("\t\t" + "{ \n", field, field);
 					p.printf("\t\t\t" + "List<%s> list = new ArrayList<>(); \n", javaType);
-					p.printf("\t\t\t" + "for (%s i : %ss) \n", m.onixTypeName, field);
+					p.printf("\t\t\t" + "for (%s i : %ss) \n", m.className, field);
 					p.printf("\t\t\t\t" + "list.add(i.value); \n");
 					p.printf("\t\t\t" + "return list; \n");
 					p.printf("\t\t" + "} \n");
@@ -197,8 +196,7 @@ public class OnixClassGen
 		declareConstsAndAttributes(p, clz);
 
 		// declare value
-		final OnixValueClassMember vm = clz.valueMember;
-		final TypeInfo ti = typeInfoOf(vm.onixSimpleTypeName, vm.dataType.javaType, vm.enumName);
+		final TypeInfo ti = typeInfoOf(clz.valueMember.simpleType);
 
 		p.println();
 		if (!clz.isSpaceable)
@@ -280,7 +278,7 @@ public class OnixClassGen
 		p.println();
 		for (OnixAttribute a : clz.attributes)
 		{
-			final TypeInfo ti = typeInfoOf(a.onixSimpleTypeName, a.dataType.javaType, a.enumName);
+			final TypeInfo ti = typeInfoOf(a);
 			p.printf("\t" + "public %s %s;%s\n", ti.javaType, a.name, ti.comment);
 		}
 	}
@@ -290,7 +288,7 @@ public class OnixClassGen
 		p.println();
 		for (OnixAttribute a : clz.attributes)
 		{
-			String enumType = a.enumName;
+			String enumType = a.getEnumName();
 
 			if (enumType == null)
 				p.printf("\t\t" + "x.%s = DU.getAttribute(element, \"%s\");\n", a.name, a.name);
@@ -305,6 +303,16 @@ public class OnixClassGen
 		String comment;
 		boolean isPrimitive;
 		boolean isXHTML;
+	}
+
+	private TypeInfo typeInfoOf(OnixSimpleType simpleType)
+	{
+		return typeInfoOf(simpleType.name, simpleType.primitiveType.javaType, simpleType.enumName);
+	}
+
+	private TypeInfo typeInfoOf(OnixAttribute attt)
+	{
+		return typeInfoOf(attt.getSimpleTypeName(), attt.primitiveType.javaType, attt.getEnumName());
 	}
 
 	private TypeInfo typeInfoOf(String onixSimpleTypeName, String javaType, String enumName)

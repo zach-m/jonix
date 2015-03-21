@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.metadata;
 
-public enum Multiplicity
+public enum Cardinality
 {
 	Optional(true, true), //
 	Required(false, true), //
@@ -29,22 +29,22 @@ public enum Multiplicity
 	final public boolean omittable;
 	final public boolean singular;
 
-	private Multiplicity(boolean omittable, boolean singular)
+	private Cardinality(boolean omittable, boolean singular)
 	{
 		this.omittable = omittable;
 		this.singular = singular;
 	}
 
-	private static Multiplicity of(boolean omittable, boolean singular)
+	private static Cardinality of(boolean omittable, boolean singular)
 	{
-		for (Multiplicity multiplicity : values())
-			if (multiplicity.omittable == omittable && multiplicity.singular == singular)
-				return multiplicity;
+		for (Cardinality cardinality : values())
+			if (cardinality.omittable == omittable && cardinality.singular == singular)
+				return cardinality;
 
 		return null;
 	}
 
-	public static Multiplicity of(String minOccurs, String maxOccurs)
+	public static Cardinality of(String minOccurs, String maxOccurs)
 	{
 		if (minOccurs == null || minOccurs.isEmpty())
 			minOccurs = "1";
@@ -53,26 +53,26 @@ public enum Multiplicity
 
 		final boolean omittable = "0".equals(minOccurs);
 		final boolean singular = "1".equals(maxOccurs);
-		final Multiplicity multiplicity = Multiplicity.of(omittable, singular);
+		final Cardinality cardinality = Cardinality.of(omittable, singular);
 
-		if (multiplicity == null)
+		if (cardinality == null)
 			throw new RuntimeException("Internal error where minOccurs=" + minOccurs + ", and maxOccurs=" + maxOccurs);
 
-		return multiplicity;
+		return cardinality;
 	}
 
-	public Multiplicity commonGroundsWith(Multiplicity other)
+	public Cardinality mergeWith(Cardinality other)
 	{
 		if (other == null)
 			return this;
 
 		final boolean omittable = this.omittable || other.omittable;
 		final boolean singular = this.singular && other.singular;
-		final Multiplicity multiplicity = Multiplicity.of(omittable, singular);
+		final Cardinality cardinality = Cardinality.of(omittable, singular);
 
-		if (multiplicity == null)
+		if (cardinality == null)
 			throw new RuntimeException("Internal error where omittable=" + omittable + ", and singular=" + singular);
 
-		return multiplicity;
+		return cardinality;
 	}
 }
