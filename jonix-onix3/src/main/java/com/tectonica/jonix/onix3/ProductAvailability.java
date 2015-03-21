@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductAvailability
+@SuppressWarnings("serial")
+public class ProductAvailability implements Serializable
 {
 	public static final String refname = "ProductAvailability";
 	public static final String shortname = "j396";
@@ -38,16 +41,15 @@ public class ProductAvailability
 
 	public ProductAvailabilitys value;
 
-	public static ProductAvailability fromDoc(org.w3c.dom.Element element)
+	public ProductAvailability()
+	{}
+
+	public ProductAvailability(org.w3c.dom.Element element)
 	{
-		final ProductAvailability x = new ProductAvailability();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductAvailabilitys.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductAvailabilitys.byValue(JPU.getContentAsString(element));
 	}
 }

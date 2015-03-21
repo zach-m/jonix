@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class NewSupplier
+@SuppressWarnings("serial")
+public class NewSupplier implements Serializable
 {
 	public static final String refname = "NewSupplier";
 	public static final String shortname = "newsupplier";
@@ -54,42 +56,41 @@ public class NewSupplier
 	public List<FaxNumber> faxNumbers; // ZeroOrMore
 	public List<EmailAddress> emailAddresss; // ZeroOrMore
 
-	public static NewSupplier fromDoc(org.w3c.dom.Element element)
+	public NewSupplier()
+	{}
+
+	public NewSupplier(org.w3c.dom.Element element)
 	{
-		final NewSupplier x = new NewSupplier();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
-					x.supplierIdentifiers = DU.addToList(x.supplierIdentifiers, SupplierIdentifier.fromDoc(element));
+					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
 				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
-					x.supplierSAN = SupplierSAN.fromDoc(element);
+					supplierSAN = new SupplierSAN(element);
 				else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
-					x.supplierEANLocationNumber = SupplierEANLocationNumber.fromDoc(element);
+					supplierEANLocationNumber = new SupplierEANLocationNumber(element);
 				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
-					x.supplierName = SupplierName.fromDoc(element);
+					supplierName = new SupplierName(element);
 				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
+					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
 				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
+					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
+					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getSupplierSANValue()

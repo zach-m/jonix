@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextTypes;
@@ -31,7 +32,8 @@ import com.tectonica.jonix.codelist.TextTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TextContent
+@SuppressWarnings("serial")
+public class TextContent implements Serializable
 {
 	public static final String refname = "TextContent";
 	public static final String shortname = "textcontent";
@@ -48,38 +50,37 @@ public class TextContent
 	public List<SourceTitle> sourceTitles; // ZeroOrMore
 	public List<ContentDate> contentDates; // ZeroOrMore
 
-	public static TextContent fromDoc(org.w3c.dom.Element element)
+	public TextContent()
+	{}
+
+	public TextContent(org.w3c.dom.Element element)
 	{
-		final TextContent x = new TextContent();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TextType.refname) || name.equals(TextType.shortname))
-					x.textType = TextType.fromDoc(element);
+					textType = new TextType(element);
 				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
-					x.contentAudiences = DU.addToList(x.contentAudiences, ContentAudience.fromDoc(element));
+					contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(element));
 				else if (name.equals(Text.refname) || name.equals(Text.shortname))
-					x.texts = DU.addToList(x.texts, Text.fromDoc(element));
+					texts = JPU.addToList(texts, new Text(element));
 				else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname))
-					x.textAuthors = DU.addToList(x.textAuthors, TextAuthor.fromDoc(element));
+					textAuthors = JPU.addToList(textAuthors, new TextAuthor(element));
 				else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname))
-					x.textSourceCorporate = TextSourceCorporate.fromDoc(element);
+					textSourceCorporate = new TextSourceCorporate(element);
 				else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
-					x.sourceTitles = DU.addToList(x.sourceTitles, SourceTitle.fromDoc(element));
+					sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(element));
 				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-					x.contentDates = DU.addToList(x.contentDates, ContentDate.fromDoc(element));
+					contentDates = JPU.addToList(contentDates, new ContentDate(element));
 			}
 		});
-
-		return x;
 	}
 
 	public TextTypes getTextTypeValue()

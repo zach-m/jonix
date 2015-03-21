@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatures;
@@ -31,7 +32,8 @@ import com.tectonica.jonix.codelist.ReligiousTextFeatures;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ReligiousTextFeature
+@SuppressWarnings("serial")
+public class ReligiousTextFeature implements Serializable
 {
 	public static final String refname = "ReligiousTextFeature";
 	public static final String shortname = "religioustextfeature";
@@ -44,31 +46,30 @@ public class ReligiousTextFeature
 	public ReligiousTextFeatureCode religiousTextFeatureCode; // Required
 	public List<ReligiousTextFeatureDescription> religiousTextFeatureDescriptions; // ZeroOrMore
 
-	public static ReligiousTextFeature fromDoc(org.w3c.dom.Element element)
+	public ReligiousTextFeature()
+	{}
+
+	public ReligiousTextFeature(org.w3c.dom.Element element)
 	{
-		final ReligiousTextFeature x = new ReligiousTextFeature();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ReligiousTextFeatureType.refname) || name.equals(ReligiousTextFeatureType.shortname))
-					x.religiousTextFeatureType = ReligiousTextFeatureType.fromDoc(element);
+					religiousTextFeatureType = new ReligiousTextFeatureType(element);
 				else if (name.equals(ReligiousTextFeatureCode.refname) || name.equals(ReligiousTextFeatureCode.shortname))
-					x.religiousTextFeatureCode = ReligiousTextFeatureCode.fromDoc(element);
+					religiousTextFeatureCode = new ReligiousTextFeatureCode(element);
 				else if (name.equals(ReligiousTextFeatureDescription.refname) || name.equals(ReligiousTextFeatureDescription.shortname))
-					x.religiousTextFeatureDescriptions = DU.addToList(x.religiousTextFeatureDescriptions,
-							ReligiousTextFeatureDescription.fromDoc(element));
+					religiousTextFeatureDescriptions = JPU.addToList(religiousTextFeatureDescriptions, new ReligiousTextFeatureDescription(
+							element));
 			}
 		});
-
-		return x;
 	}
 
 	public ReligiousTextFeatureTypes getReligiousTextFeatureTypeValue()

@@ -51,11 +51,12 @@ public class TestBasicProduct
 	@Ignore
 	public void test() throws FileNotFoundException
 	{
-		final String path = "../onix_samples/SB_Ref.xml"; // SB_short.xml
+//		final String path = "../onix_samples/SB_Ref.xml";
+		final String path = "../onix_samples/SB_short.xml"; 
 //		final String path = "../onix_samples/CR.xml";
 //		final String path = "../onix_samples/MY.xml";
-		
-		final File file = new File(path); 
+
+		final File file = new File(path);
 		if (!file.exists())
 			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
 
@@ -67,7 +68,7 @@ public class TestBasicProduct
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
-					final Product product = Product.fromDoc(element);
+					final Product product = new Product(element);
 					BasicProduct bp = new BasicProduct(product);
 					System.out.println(bp.getLabel());
 				}

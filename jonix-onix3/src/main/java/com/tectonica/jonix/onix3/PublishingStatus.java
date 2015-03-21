@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PublishingStatus
+@SuppressWarnings("serial")
+public class PublishingStatus implements Serializable
 {
 	public static final String refname = "PublishingStatus";
 	public static final String shortname = "b394";
@@ -38,16 +41,15 @@ public class PublishingStatus
 
 	public PublishingStatuss value;
 
-	public static PublishingStatus fromDoc(org.w3c.dom.Element element)
+	public PublishingStatus()
+	{}
+
+	public PublishingStatus(org.w3c.dom.Element element)
 	{
-		final PublishingStatus x = new PublishingStatus();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = PublishingStatuss.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = PublishingStatuss.byValue(JPU.getContentAsString(element));
 	}
 }

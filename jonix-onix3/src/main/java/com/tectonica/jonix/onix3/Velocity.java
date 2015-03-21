@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Velocitys;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.Velocitys;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Velocity
+@SuppressWarnings("serial")
+public class Velocity implements Serializable
 {
 	public static final String refname = "Velocity";
 	public static final String shortname = "velocity";
@@ -41,30 +44,29 @@ public class Velocity
 	public Rate rate; // Required
 	public Proximity proximity; // Optional
 
-	public static Velocity fromDoc(org.w3c.dom.Element element)
+	public Velocity()
+	{}
+
+	public Velocity(org.w3c.dom.Element element)
 	{
-		final Velocity x = new Velocity();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname))
-					x.velocityMetric = VelocityMetric.fromDoc(element);
+					velocityMetric = new VelocityMetric(element);
 				else if (name.equals(Rate.refname) || name.equals(Rate.shortname))
-					x.rate = Rate.fromDoc(element);
+					rate = new Rate(element);
 				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
-					x.proximity = Proximity.fromDoc(element);
+					proximity = new Proximity(element);
 			}
 		});
-
-		return x;
 	}
 
 	public Velocitys getVelocityMetricValue()

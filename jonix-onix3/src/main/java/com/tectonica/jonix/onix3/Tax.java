@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TaxRateCodeds;
 import com.tectonica.jonix.codelist.TaxTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.TaxTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Tax
+@SuppressWarnings("serial")
+public class Tax implements Serializable
 {
 	public static final String refname = "Tax";
 	public static final String shortname = "tax";
@@ -43,34 +46,33 @@ public class Tax
 	public TaxableAmount taxableAmount; // Optional
 	public TaxAmount taxAmount; // Optional
 
-	public static Tax fromDoc(org.w3c.dom.Element element)
+	public Tax()
+	{}
+
+	public Tax(org.w3c.dom.Element element)
 	{
-		final Tax x = new Tax();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TaxType.refname) || name.equals(TaxType.shortname))
-					x.taxType = TaxType.fromDoc(element);
+					taxType = new TaxType(element);
 				else if (name.equals(TaxRateCode.refname) || name.equals(TaxRateCode.shortname))
-					x.taxRateCode = TaxRateCode.fromDoc(element);
+					taxRateCode = new TaxRateCode(element);
 				else if (name.equals(TaxRatePercent.refname) || name.equals(TaxRatePercent.shortname))
-					x.taxRatePercent = TaxRatePercent.fromDoc(element);
+					taxRatePercent = new TaxRatePercent(element);
 				else if (name.equals(TaxableAmount.refname) || name.equals(TaxableAmount.shortname))
-					x.taxableAmount = TaxableAmount.fromDoc(element);
+					taxableAmount = new TaxableAmount(element);
 				else if (name.equals(TaxAmount.refname) || name.equals(TaxAmount.shortname))
-					x.taxAmount = TaxAmount.fromDoc(element);
+					taxAmount = new TaxAmount(element);
 			}
 		});
-
-		return x;
 	}
 
 	public TaxTypes getTaxTypeValue()

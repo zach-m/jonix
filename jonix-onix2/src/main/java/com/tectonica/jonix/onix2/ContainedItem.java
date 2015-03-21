@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductContentTypes;
@@ -39,7 +40,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ContainedItem
+@SuppressWarnings("serial")
+public class ContainedItem implements Serializable
 {
 	public static final String refname = "ContainedItem";
 	public static final String shortname = "containeditem";
@@ -66,54 +68,53 @@ public class ContainedItem
 	public List<ProductContentType> productContentTypes; // ZeroOrMore
 	public ItemQuantity itemQuantity; // Optional
 
-	public static ContainedItem fromDoc(org.w3c.dom.Element element)
+	public ContainedItem()
+	{}
+
+	public ContainedItem(org.w3c.dom.Element element)
 	{
-		final ContainedItem x = new ContainedItem();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbn = ISBN.fromDoc(element);
+					isbn = new ISBN(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					x.ean13 = EAN13.fromDoc(element);
+					ean13 = new EAN13(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					x.productForm = ProductForm.fromDoc(element);
+					productForm = new ProductForm(element);
 				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
+					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
 				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					x.productFormFeatures = DU.addToList(x.productFormFeatures, ProductFormFeature.fromDoc(element));
+					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
 				else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
-					x.bookFormDetails = DU.addToList(x.bookFormDetails, BookFormDetail.fromDoc(element));
+					bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(element));
 				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
-					x.productPackaging = ProductPackaging.fromDoc(element);
+					productPackaging = new ProductPackaging(element);
 				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					x.productFormDescription = ProductFormDescription.fromDoc(element);
+					productFormDescription = new ProductFormDescription(element);
 				else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
-					x.numberOfPieces = NumberOfPieces.fromDoc(element);
+					numberOfPieces = new NumberOfPieces(element);
 				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
-					x.tradeCategory = TradeCategory.fromDoc(element);
+					tradeCategory = new TradeCategory(element);
 				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					x.productContentTypes = DU.addToList(x.productContentTypes, ProductContentType.fromDoc(element));
+					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
 				else if (name.equals(ItemQuantity.refname) || name.equals(ItemQuantity.shortname))
-					x.itemQuantity = ItemQuantity.fromDoc(element);
+					itemQuantity = new ItemQuantity(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getISBNValue()

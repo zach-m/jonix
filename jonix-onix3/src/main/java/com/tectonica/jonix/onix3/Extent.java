@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.ExtentUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Extent
+@SuppressWarnings("serial")
+public class Extent implements Serializable
 {
 	public static final String refname = "Extent";
 	public static final String shortname = "extent";
@@ -42,32 +45,31 @@ public class Extent
 	public ExtentValueRoman extentValueRoman; // Optional
 	public ExtentUnit extentUnit; // Required
 
-	public static Extent fromDoc(org.w3c.dom.Element element)
+	public Extent()
+	{}
+
+	public Extent(org.w3c.dom.Element element)
 	{
-		final Extent x = new Extent();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ExtentType.refname) || name.equals(ExtentType.shortname))
-					x.extentType = ExtentType.fromDoc(element);
+					extentType = new ExtentType(element);
 				else if (name.equals(ExtentValue.refname) || name.equals(ExtentValue.shortname))
-					x.extentValue = ExtentValue.fromDoc(element);
+					extentValue = new ExtentValue(element);
 				else if (name.equals(ExtentValueRoman.refname) || name.equals(ExtentValueRoman.shortname))
-					x.extentValueRoman = ExtentValueRoman.fromDoc(element);
+					extentValueRoman = new ExtentValueRoman(element);
 				else if (name.equals(ExtentUnit.refname) || name.equals(ExtentUnit.shortname))
-					x.extentUnit = ExtentUnit.fromDoc(element);
+					extentUnit = new ExtentUnit(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ExtentTypes getExtentTypeValue()

@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.EpublicationFormats;
 import com.tectonica.jonix.codelist.EpublicationTypes;
@@ -42,7 +43,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class RelatedProduct
+@SuppressWarnings("serial")
+public class RelatedProduct implements Serializable
 {
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
@@ -78,72 +80,71 @@ public class RelatedProduct
 	public EpubTypeNote epubTypeNote; // Optional
 	public List<Publisher> publishers; // ZeroOrMore
 
-	public static RelatedProduct fromDoc(org.w3c.dom.Element element)
+	public RelatedProduct()
+	{}
+
+	public RelatedProduct(org.w3c.dom.Element element)
 	{
-		final RelatedProduct x = new RelatedProduct();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RelationCode.refname) || name.equals(RelationCode.shortname))
-					x.relationCode = RelationCode.fromDoc(element);
+					relationCode = new RelationCode(element);
 				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbn = ISBN.fromDoc(element);
+					isbn = new ISBN(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					x.ean13 = EAN13.fromDoc(element);
+					ean13 = new EAN13(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					x.productForm = ProductForm.fromDoc(element);
+					productForm = new ProductForm(element);
 				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
+					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
 				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					x.productFormFeatures = DU.addToList(x.productFormFeatures, ProductFormFeature.fromDoc(element));
+					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
 				else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
-					x.bookFormDetails = DU.addToList(x.bookFormDetails, BookFormDetail.fromDoc(element));
+					bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(element));
 				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
-					x.productPackaging = ProductPackaging.fromDoc(element);
+					productPackaging = new ProductPackaging(element);
 				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					x.productFormDescription = ProductFormDescription.fromDoc(element);
+					productFormDescription = new ProductFormDescription(element);
 				else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
-					x.numberOfPieces = NumberOfPieces.fromDoc(element);
+					numberOfPieces = new NumberOfPieces(element);
 				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
-					x.tradeCategory = TradeCategory.fromDoc(element);
+					tradeCategory = new TradeCategory(element);
 				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					x.productContentTypes = DU.addToList(x.productContentTypes, ProductContentType.fromDoc(element));
+					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
 				else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname))
-					x.epubType = EpubType.fromDoc(element);
+					epubType = new EpubType(element);
 				else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname))
-					x.epubTypeVersion = EpubTypeVersion.fromDoc(element);
+					epubTypeVersion = new EpubTypeVersion(element);
 				else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname))
-					x.epubTypeDescription = EpubTypeDescription.fromDoc(element);
+					epubTypeDescription = new EpubTypeDescription(element);
 				else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname))
-					x.epubFormat = EpubFormat.fromDoc(element);
+					epubFormat = new EpubFormat(element);
 				else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname))
-					x.epubFormatVersion = EpubFormatVersion.fromDoc(element);
+					epubFormatVersion = new EpubFormatVersion(element);
 				else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname))
-					x.epubFormatDescription = EpubFormatDescription.fromDoc(element);
+					epubFormatDescription = new EpubFormatDescription(element);
 				else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname))
-					x.epubTypeNote = EpubTypeNote.fromDoc(element);
+					epubTypeNote = new EpubTypeNote(element);
 				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					x.publishers = DU.addToList(x.publishers, Publisher.fromDoc(element));
+					publishers = JPU.addToList(publishers, new Publisher(element));
 			}
 		});
-
-		return x;
 	}
 
 	public ProductRelations getRelationCodeValue()

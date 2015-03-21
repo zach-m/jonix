@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CollectionSequence
+@SuppressWarnings("serial")
+public class CollectionSequence implements Serializable
 {
 	public static final String refname = "CollectionSequence";
 	public static final String shortname = "collectionsequence";
@@ -40,30 +43,29 @@ public class CollectionSequence
 	public CollectionSequenceTypeName collectionSequenceTypeName; // Optional
 	public CollectionSequenceNumber collectionSequenceNumber; // Required
 
-	public static CollectionSequence fromDoc(org.w3c.dom.Element element)
+	public CollectionSequence()
+	{}
+
+	public CollectionSequence(org.w3c.dom.Element element)
 	{
-		final CollectionSequence x = new CollectionSequence();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CollectionSequenceType.refname) || name.equals(CollectionSequenceType.shortname))
-					x.collectionSequenceType = CollectionSequenceType.fromDoc(element);
+					collectionSequenceType = new CollectionSequenceType(element);
 				else if (name.equals(CollectionSequenceTypeName.refname) || name.equals(CollectionSequenceTypeName.shortname))
-					x.collectionSequenceTypeName = CollectionSequenceTypeName.fromDoc(element);
+					collectionSequenceTypeName = new CollectionSequenceTypeName(element);
 				else if (name.equals(CollectionSequenceNumber.refname) || name.equals(CollectionSequenceNumber.shortname))
-					x.collectionSequenceNumber = CollectionSequenceNumber.fromDoc(element);
+					collectionSequenceNumber = new CollectionSequenceNumber(element);
 			}
 		});
-
-		return x;
 	}
 
 	public CollectionSequenceTypes getCollectionSequenceTypeValue()

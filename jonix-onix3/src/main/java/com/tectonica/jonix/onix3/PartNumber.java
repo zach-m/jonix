@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PartNumber
+@SuppressWarnings("serial")
+public class PartNumber implements Serializable
 {
 	public static final String refname = "PartNumber";
 	public static final String shortname = "x410";
@@ -41,18 +44,17 @@ public class PartNumber
 
 	public String value; // dt.NonEmptyString
 
-	public static PartNumber fromDoc(org.w3c.dom.Element element)
+	public PartNumber()
+	{}
+
+	public PartNumber(org.w3c.dom.Element element)
 	{
-		final PartNumber x = new PartNumber();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.textscript = TextScriptCodeIso15924s.byValue(JPU.getAttribute(element, "textscript"));
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.textscript = TextScriptCodeIso15924s.byValue(DU.getAttribute(element, "textscript"));
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ContentDate
+@SuppressWarnings("serial")
+public class ContentDate implements Serializable
 {
 	public static final String refname = "ContentDate";
 	public static final String shortname = "contentdate";
@@ -41,30 +44,29 @@ public class ContentDate
 	public DateFormat dateFormat; // Optional
 	public Date date; // Required
 
-	public static ContentDate fromDoc(org.w3c.dom.Element element)
+	public ContentDate()
+	{}
+
+	public ContentDate(org.w3c.dom.Element element)
 	{
-		final ContentDate x = new ContentDate();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ContentDateRole.refname) || name.equals(ContentDateRole.shortname))
-					x.contentDateRole = ContentDateRole.fromDoc(element);
+					contentDateRole = new ContentDateRole(element);
 				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					x.dateFormat = DateFormat.fromDoc(element);
+					dateFormat = new DateFormat(element);
 				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					x.date = Date.fromDoc(element);
+					date = new Date(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ContentDateRoles getContentDateRoleValue()

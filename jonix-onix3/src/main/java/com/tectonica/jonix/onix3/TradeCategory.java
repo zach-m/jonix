@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TradeCategorys;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.TradeCategorys;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TradeCategory
+@SuppressWarnings("serial")
+public class TradeCategory implements Serializable
 {
 	public static final String refname = "TradeCategory";
 	public static final String shortname = "b384";
@@ -38,16 +41,15 @@ public class TradeCategory
 
 	public TradeCategorys value;
 
-	public static TradeCategory fromDoc(org.w3c.dom.Element element)
+	public TradeCategory()
+	{}
+
+	public TradeCategory(org.w3c.dom.Element element)
 	{
-		final TradeCategory x = new TradeCategory();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = TradeCategorys.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = TradeCategorys.byValue(JPU.getContentAsString(element));
 	}
 }

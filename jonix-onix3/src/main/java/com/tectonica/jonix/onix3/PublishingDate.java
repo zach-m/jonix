@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PublishingDate
+@SuppressWarnings("serial")
+public class PublishingDate implements Serializable
 {
 	public static final String refname = "PublishingDate";
 	public static final String shortname = "publishingdate";
@@ -41,30 +44,29 @@ public class PublishingDate
 	public DateFormat dateFormat; // Optional
 	public Date date; // Required
 
-	public static PublishingDate fromDoc(org.w3c.dom.Element element)
+	public PublishingDate()
+	{}
+
+	public PublishingDate(org.w3c.dom.Element element)
 	{
-		final PublishingDate x = new PublishingDate();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PublishingDateRole.refname) || name.equals(PublishingDateRole.shortname))
-					x.publishingDateRole = PublishingDateRole.fromDoc(element);
+					publishingDateRole = new PublishingDateRole(element);
 				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					x.dateFormat = DateFormat.fromDoc(element);
+					dateFormat = new DateFormat(element);
 				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					x.date = Date.fromDoc(element);
+					date = new Date(element);
 			}
 		});
-
-		return x;
 	}
 
 	public PublishingDateRoles getPublishingDateRoleValue()

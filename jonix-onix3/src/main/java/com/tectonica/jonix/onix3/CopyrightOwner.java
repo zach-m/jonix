@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CopyrightOwner
+@SuppressWarnings("serial")
+public class CopyrightOwner implements Serializable
 {
 	public static final String refname = "CopyrightOwner";
 	public static final String shortname = "copyrightowner";
@@ -41,30 +43,29 @@ public class CopyrightOwner
 	public PersonName personName; // Optional
 	public CorporateName corporateName; // Optional
 
-	public static CopyrightOwner fromDoc(org.w3c.dom.Element element)
+	public CopyrightOwner()
+	{}
+
+	public CopyrightOwner(org.w3c.dom.Element element)
 	{
-		final CopyrightOwner x = new CopyrightOwner();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
-					x.copyrightOwnerIdentifiers = DU.addToList(x.copyrightOwnerIdentifiers, CopyrightOwnerIdentifier.fromDoc(element));
+					copyrightOwnerIdentifiers = JPU.addToList(copyrightOwnerIdentifiers, new CopyrightOwnerIdentifier(element));
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					x.personName = PersonName.fromDoc(element);
+					personName = new PersonName(element);
 				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					x.corporateName = CorporateName.fromDoc(element);
+					corporateName = new CorporateName(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getPersonNameValue()

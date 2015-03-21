@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageStatuss;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.UsageStatuss;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class EpubUsageStatus
+@SuppressWarnings("serial")
+public class EpubUsageStatus implements Serializable
 {
 	public static final String refname = "EpubUsageStatus";
 	public static final String shortname = "x319";
@@ -38,16 +41,15 @@ public class EpubUsageStatus
 
 	public UsageStatuss value;
 
-	public static EpubUsageStatus fromDoc(org.w3c.dom.Element element)
+	public EpubUsageStatus()
+	{}
+
+	public EpubUsageStatus(org.w3c.dom.Element element)
 	{
-		final EpubUsageStatus x = new EpubUsageStatus();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = UsageStatuss.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = UsageStatuss.byValue(JPU.getContentAsString(element));
 	}
 }

@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ContentItem
+@SuppressWarnings("serial")
+public class ContentItem implements Serializable
 {
 	public static final String refname = "ContentItem";
 	public static final String shortname = "contentitem";
@@ -50,48 +52,47 @@ public class ContentItem
 	public List<SupportingResource> supportingResources; // ZeroOrMore
 	public List<RelatedWork> relatedWorks; // ZeroOrMore
 
-	public static ContentItem fromDoc(org.w3c.dom.Element element)
+	public ContentItem()
+	{}
+
+	public ContentItem(org.w3c.dom.Element element)
 	{
-		final ContentItem x = new ContentItem();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					x.levelSequenceNumber = LevelSequenceNumber.fromDoc(element);
+					levelSequenceNumber = new LevelSequenceNumber(element);
 				else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname))
-					x.textItem = TextItem.fromDoc(element);
+					textItem = new TextItem(element);
 				else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname))
-					x.componentTypeName = ComponentTypeName.fromDoc(element);
+					componentTypeName = new ComponentTypeName(element);
 				else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname))
-					x.componentNumber = ComponentNumber.fromDoc(element);
+					componentNumber = new ComponentNumber(element);
 				else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
-					x.titleDetails = DU.addToList(x.titleDetails, TitleDetail.fromDoc(element));
+					titleDetails = JPU.addToList(titleDetails, new TitleDetail(element));
 				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
+					contributors = JPU.addToList(contributors, new Contributor(element));
 				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
-					x.subjects = DU.addToList(x.subjects, Subject.fromDoc(element));
+					subjects = JPU.addToList(subjects, new Subject(element));
 				else if (name.equals(NameAsSubject.refname) || name.equals(NameAsSubject.shortname))
-					x.nameAsSubjects = DU.addToList(x.nameAsSubjects, NameAsSubject.fromDoc(element));
+					nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(element));
 				else if (name.equals(TextContent.refname) || name.equals(TextContent.shortname))
-					x.textContents = DU.addToList(x.textContents, TextContent.fromDoc(element));
+					textContents = JPU.addToList(textContents, new TextContent(element));
 				else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname))
-					x.citedContents = DU.addToList(x.citedContents, CitedContent.fromDoc(element));
+					citedContents = JPU.addToList(citedContents, new CitedContent(element));
 				else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
-					x.supportingResources = DU.addToList(x.supportingResources, SupportingResource.fromDoc(element));
+					supportingResources = JPU.addToList(supportingResources, new SupportingResource(element));
 				else if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
-					x.relatedWorks = DU.addToList(x.relatedWorks, RelatedWork.fromDoc(element));
+					relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getLevelSequenceNumberValue()

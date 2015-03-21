@@ -31,7 +31,6 @@ import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
-import com.tectonica.jonix.metadata.OnixValueClassMember;
 
 public class OnixClassGen
 {
@@ -77,15 +76,17 @@ public class OnixClassGen
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
+		p.println("import java.io.Serializable;");
 		p.println("import java.util.List;");
 		p.println("import java.util.ArrayList;");
 		p.println();
-		p.printf("import %s.DU;\n", basePackage);
+		p.printf("import %s.JPU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
 		p.println();
 		p.println(Comments.AutoGen);
-		p.println("public class " + clz.name);
-		p.println("{");
+		p.printf("@SuppressWarnings(\"serial\")\n");
+		p.printf("public class %s implements Serializable\n", clz.name);
+		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);
 
@@ -95,49 +96,50 @@ public class OnixClassGen
 		{
 			final String field = fieldOf(m.className);
 			if (m.cardinality.singular)
-				p.printf("\t" + "public %s %s; // %s\n", m.className, field, m.cardinality.name());
+				p.printf("   public %s %s; // %s\n", m.className, field, m.cardinality.name());
 			else
-				p.printf("\t" + "public List<%s> %ss; // %s\n", m.className, field, m.cardinality.name());
+				p.printf("   public List<%s> %ss; // %s\n", m.className, field, m.cardinality.name());
 		}
 
-		// creator
+		// default-constructor
 		p.println();
-		p.printf("\t" + "public static %s fromDoc(org.w3c.dom.Element element)\n", clz.name);
-		p.printf("\t" + "{\n");
+		p.printf("   public %s()\n", clz.name);
+		p.printf("   {}\n");
 
-		p.printf("\t\t" + "final %s x = new %s();\n", clz.name, clz.name);
+		// constructor
+		p.println();
+		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
+		p.printf("   {\n");
 
 		extractAttributes(clz, p);
 
 		p.println();
-		p.printf("\t\t" + "DU.forElementsOf(element, new DU.ElementListener()\n");
-		p.printf("\t\t" + "{\n");
-		p.printf("\t\t\t" + "@Override\n");
-		p.printf("\t\t\t" + "public void onElement(org.w3c.dom.Element element)\n");
-		p.printf("\t\t\t" + "{\n");
-		p.printf("\t\t\t\t" + "final String name = element.getNodeName();\n");
+		p.printf("      JPU.forElementsOf(element, new JPU.ElementListener()\n");
+		p.printf("      {\n");
+		p.printf("         @Override\n");
+		p.printf("         public void onElement(org.w3c.dom.Element element)\n");
+		p.printf("         {\n");
+		p.printf("            final String name = element.getNodeName();\n");
 		boolean first = true;
 		for (OnixContentClassMember m : clz.members)
 		{
-			final String cls = m.className;
-			final String field = fieldOf(cls);
-			p.print("\t\t\t\t");
+			final String className = m.className;
+			final String field = fieldOf(className);
+			p.print("            ");
 			if (first)
 				first = false;
 			else
 				p.print("else ");
-			p.printf("if (name.%s(%s.refname) || name.%s(%s.shortname))\n", EQUALS, cls, EQUALS, cls);
+			p.printf("if (name.%s(%s.refname) || name.%s(%s.shortname))\n", EQUALS, className, EQUALS, className);
 			if (m.cardinality.singular)
-				p.printf("\t\t\t\t\t" + "x.%s = %s.fromDoc(element);\n", field, cls);
+				p.printf("               %s = new %s(element);\n", field, className);
 			else
-				p.printf("\t\t\t\t\t" + "x.%ss = DU.addToList(x.%ss, %s.fromDoc(element));\n", field, field, cls);
+				p.printf("               %ss = JPU.addToList(%ss, new %s(element));\n", field, field, className);
 		}
-		p.printf("\t\t\t" + "}\n");
-		p.printf("\t\t" + "});\n");
+		p.printf("         }\n");
+		p.printf("      });\n");
 
-		p.println();
-		p.printf("\t\t" + "return x;\n");
-		p.printf("\t" + "}\n");
+		p.printf("   }\n");
 
 		// declare value getters
 		for (OnixContentClassMember m : clz.members)
@@ -154,26 +156,26 @@ public class OnixClassGen
 				{
 					final String caption = ovc.isSpaceable ? "Set" : "Value";
 					p.println();
-					p.printf("\t" + "public %s get%s%s()\n", javaType, m.className, caption);
-					p.printf("\t" + "{\n");
-					p.printf("\t\t" + "return (%s == null) ? null : %s.value;\n", field, field);
-					p.printf("\t" + "}\n");
+					p.printf("   public %s get%s%s()\n", javaType, m.className, caption);
+					p.printf("   {\n");
+					p.printf("      return (%s == null) ? null : %s.value;\n", field, field);
+					p.printf("   }\n");
 				}
 				else
 				{
 					final String caption = ovc.isSpaceable ? "Sets" : "Values";
 					p.println();
-					p.printf("\t" + "public List<%s> get%s%s()\n", javaType, m.className, caption);
-					p.printf("\t" + "{\n");
-					p.printf("\t\t" + "if (%ss != null) \n", field);
-					p.printf("\t\t" + "{ \n", field, field);
-					p.printf("\t\t\t" + "List<%s> list = new ArrayList<>(); \n", javaType);
-					p.printf("\t\t\t" + "for (%s i : %ss) \n", m.className, field);
-					p.printf("\t\t\t\t" + "list.add(i.value); \n");
-					p.printf("\t\t\t" + "return list; \n");
-					p.printf("\t\t" + "} \n");
-					p.printf("\t\t" + "return null;\n");
-					p.printf("\t" + "}\n");
+					p.printf("   public List<%s> get%s%s()\n", javaType, m.className, caption);
+					p.printf("   {\n");
+					p.printf("      if (%ss != null) \n", field);
+					p.printf("      { \n", field, field);
+					p.printf("         List<%s> list = new ArrayList<>(); \n", javaType);
+					p.printf("         for (%s i : %ss) \n", m.className, field);
+					p.printf("            list.add(i.value); \n");
+					p.printf("         return list; \n");
+					p.printf("      } \n");
+					p.printf("      return null;\n");
+					p.printf("   }\n");
 				}
 			}
 		}
@@ -186,56 +188,58 @@ public class OnixClassGen
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
-		p.printf("import %s.DU;\n", basePackage);
+		p.println("import java.io.Serializable;");
+		p.printf("import %s.JPU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
 		p.println();
 		p.println(Comments.AutoGen);
-		p.println("public class " + clz.name);
-		p.println("{");
+		p.printf("@SuppressWarnings(\"serial\")\n");
+		p.printf("public class %s implements Serializable\n", clz.name);
+		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);
 
 		// declare value
 		final TypeInfo ti = typeInfoOf(clz.valueMember.simpleType);
-
 		p.println();
 		if (!clz.isSpaceable)
-			p.printf("\t" + "public %s value;%s\n", ti.javaType, ti.comment);
+			p.printf("   public %s value;%s\n", ti.javaType, ti.comment);
 		else
-			p.printf("\t" + "public java.util.Set<%s> value;%s\n", ti.javaType, ti.comment);
+			p.printf("   public java.util.Set<%s> value;%s\n", ti.javaType, ti.comment);
 
-		// creator
+		// default-constructor
 		p.println();
-		p.printf("\t" + "public static %s fromDoc(org.w3c.dom.Element element)\n", clz.name);
-		p.printf("\t" + "{\n");
+		p.printf("   public %s()\n", clz.name);
+		p.printf("   {}\n");
 
-		p.printf("\t\t" + "final %s x = new %s();\n", clz.name, clz.name);
+		// constructor
+		p.println();
+		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
+		p.printf("   {\n");
 
 		extractAttributes(clz, p);
 
 		p.println();
 		if (ti.isXHTML)
-			p.printf("\t\t" + "x.value = DU.getChildXHTML(element, true);\n");
+			p.printf("      value = JPU.getChildXHTML(element, true);\n");
 		else if (!clz.isSpaceable)
 		{
 			if (ti.isPrimitive)
-				p.printf("\t\t" + "x.value = DU.getContentAs%s(element);\n", ti.javaType);
+				p.printf("      value = JPU.getContentAs%s(element);\n", ti.javaType);
 			else
-				p.printf("\t\t" + "x.value = %s.byValue(DU.getContentAsString(element));\n", ti.javaType);
+				p.printf("      value = %s.byValue(JPU.getContentAsString(element));\n", ti.javaType);
 		}
 		else
 		{
-			p.printf("\t\t" + "x.value = new java.util.HashSet<>();\n");
-			p.printf("\t\t" + "for (String split : DU.getContentAsString(element).trim().split(\" +\"))\n");
+			p.printf("      value = new java.util.HashSet<>();\n");
+			p.printf("      for (String split : JPU.getContentAsString(element).trim().split(\" +\"))\n");
 			if (ti.isPrimitive)
-				p.printf("\t\t\t" + "x.value.add(%s.valueOf(split));\n", ti.javaType);
+				p.printf("         value.add(%s.valueOf(split));\n", ti.javaType);
 			else
-				p.printf("\t\t\t" + "x.value.add(%s.byValue(split));\n", ti.javaType);
+				p.printf("         value.add(%s.byValue(split));\n", ti.javaType);
 		}
 
-		p.println();
-		p.printf("\t\t" + "return x;\n");
-		p.printf("\t" + "}\n");
+		p.printf("   }\n");
 
 		p.println("}");
 	}
@@ -245,27 +249,30 @@ public class OnixClassGen
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", basePackage + "." + subfolder);
 		p.println();
-		p.printf("import %s.DU;\n", basePackage);
+		p.println("import java.io.Serializable;");
+		p.printf("import %s.JPU;\n", basePackage);
 		p.printf("import %s.codelist.*;\n", basePackage);
 		p.println();
 		p.println(Comments.AutoGen);
-		p.println("public class " + clz.name);
-		p.println("{");
+		p.printf("@SuppressWarnings(\"serial\")\n");
+		p.printf("public class %s implements Serializable\n", clz.name);
+		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);
 
-		// creator
+		// default-constructor
 		p.println();
-		p.printf("\t" + "public static %s fromDoc(org.w3c.dom.Element element)\n", clz.name);
-		p.printf("\t" + "{\n");
+		p.printf("   public %s()\n", clz.name);
+		p.printf("   {}\n");
 
-		p.printf("\t\t" + "final %s x = new %s();\n", clz.name, clz.name);
+		// constructor
+		p.println();
+		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
+		p.printf("   {\n");
 
 		extractAttributes(clz, p);
 
-		p.println();
-		p.printf("\t\t" + "return x;\n");
-		p.printf("\t" + "}\n");
+		p.printf("   }\n");
 
 		p.println("}");
 	}
@@ -273,27 +280,26 @@ public class OnixClassGen
 	private void declareConstsAndAttributes(PrintStream p, OnixClass clz)
 	{
 		for (OnixConst c : clz.consts)
-			p.printf("\t" + "public static final String %s = \"%s\";\n", c.name, c.value);
+			p.printf("   public static final String %s = \"%s\";\n", c.name, c.value);
 
 		p.println();
 		for (OnixAttribute a : clz.attributes)
 		{
 			final TypeInfo ti = typeInfoOf(a);
-			p.printf("\t" + "public %s %s;%s\n", ti.javaType, a.name, ti.comment);
+			p.printf("   public %s %s;%s\n", ti.javaType, a.name, ti.comment);
 		}
 	}
 
 	private void extractAttributes(OnixClass clz, PrintStream p)
 	{
-		p.println();
 		for (OnixAttribute a : clz.attributes)
 		{
 			String enumType = a.getEnumName();
 
 			if (enumType == null)
-				p.printf("\t\t" + "x.%s = DU.getAttribute(element, \"%s\");\n", a.name, a.name);
+				p.printf("      this.%s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
 			else
-				p.printf("\t\t" + "x.%s = %s.byValue(DU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
+				p.printf("      this.%s = %s.byValue(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
 		}
 	}
 

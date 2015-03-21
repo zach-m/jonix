@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class EditionVersionNumber
+@SuppressWarnings("serial")
+public class EditionVersionNumber implements Serializable
 {
 	public static final String refname = "EditionVersionNumber";
 	public static final String shortname = "b217";
@@ -37,16 +40,15 @@ public class EditionVersionNumber
 
 	public String value; // dt.NonEmptyString
 
-	public static EditionVersionNumber fromDoc(org.w3c.dom.Element element)
+	public EditionVersionNumber()
+	{}
+
+	public EditionVersionNumber(org.w3c.dom.Element element)
 	{
-		final EditionVersionNumber x = new EditionVersionNumber();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

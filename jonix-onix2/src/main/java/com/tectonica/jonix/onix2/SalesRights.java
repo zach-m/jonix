@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -37,7 +38,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SalesRights
+@SuppressWarnings("serial")
+public class SalesRights implements Serializable
 {
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";
@@ -55,36 +57,35 @@ public class SalesRights
 	public RightsTerritory rightsTerritory; // Optional
 	public List<RightsRegion> rightsRegions; // ZeroOrMore
 
-	public static SalesRights fromDoc(org.w3c.dom.Element element)
+	public SalesRights()
+	{}
+
+	public SalesRights(org.w3c.dom.Element element)
 	{
-		final SalesRights x = new SalesRights();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
-					x.salesRightsType = SalesRightsType.fromDoc(element);
+					salesRightsType = new SalesRightsType(element);
 				else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
-					x.rightsCountrys = DU.addToList(x.rightsCountrys, RightsCountry.fromDoc(element));
+					rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(element));
 				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
-					x.rightsTerritory = RightsTerritory.fromDoc(element);
+					rightsTerritory = new RightsTerritory(element);
 				else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname))
-					x.rightsRegions = DU.addToList(x.rightsRegions, RightsRegion.fromDoc(element));
+					rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(element));
 			}
 		});
-
-		return x;
 	}
 
 	public SalesRightsTypes getSalesRightsTypeValue()

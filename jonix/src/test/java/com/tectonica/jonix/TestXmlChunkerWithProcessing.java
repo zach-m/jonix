@@ -65,7 +65,7 @@ public class TestXmlChunkerWithProcessing
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
-					final Product product = Product.fromDoc(element);
+					final Product product = new Product(element);
 					if (product.titles != null)
 					{
 						final Title title = findTitle(product.titles, TitleTypes.Distinctive_title_book);

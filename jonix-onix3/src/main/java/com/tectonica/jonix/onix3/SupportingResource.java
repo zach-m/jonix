@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceContentTypes;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.ResourceModes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupportingResource
+@SuppressWarnings("serial")
+public class SupportingResource implements Serializable
 {
 	public static final String refname = "SupportingResource";
 	public static final String shortname = "supportingresource";
@@ -47,34 +49,33 @@ public class SupportingResource
 	public List<ResourceFeature> resourceFeatures; // ZeroOrMore
 	public List<ResourceVersion> resourceVersions; // OneOrMore
 
-	public static SupportingResource fromDoc(org.w3c.dom.Element element)
+	public SupportingResource()
+	{}
+
+	public SupportingResource(org.w3c.dom.Element element)
 	{
-		final SupportingResource x = new SupportingResource();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ResourceContentType.refname) || name.equals(ResourceContentType.shortname))
-					x.resourceContentType = ResourceContentType.fromDoc(element);
+					resourceContentType = new ResourceContentType(element);
 				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
-					x.contentAudiences = DU.addToList(x.contentAudiences, ContentAudience.fromDoc(element));
+					contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(element));
 				else if (name.equals(ResourceMode.refname) || name.equals(ResourceMode.shortname))
-					x.resourceMode = ResourceMode.fromDoc(element);
+					resourceMode = new ResourceMode(element);
 				else if (name.equals(ResourceFeature.refname) || name.equals(ResourceFeature.shortname))
-					x.resourceFeatures = DU.addToList(x.resourceFeatures, ResourceFeature.fromDoc(element));
+					resourceFeatures = JPU.addToList(resourceFeatures, new ResourceFeature(element));
 				else if (name.equals(ResourceVersion.refname) || name.equals(ResourceVersion.shortname))
-					x.resourceVersions = DU.addToList(x.resourceVersions, ResourceVersion.fromDoc(element));
+					resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(element));
 			}
 		});
-
-		return x;
 	}
 
 	public ResourceContentTypes getResourceContentTypeValue()

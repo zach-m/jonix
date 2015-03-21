@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class AudienceRange
+@SuppressWarnings("serial")
+public class AudienceRange implements Serializable
 {
 	public static final String refname = "AudienceRange";
 	public static final String shortname = "audiencerange";
@@ -41,30 +44,29 @@ public class AudienceRange
 	public AudienceRangePrecision audienceRangePrecision; // Optional
 	public AudienceRangeValue audienceRangeValue; // Optional
 
-	public static AudienceRange fromDoc(org.w3c.dom.Element element)
+	public AudienceRange()
+	{}
+
+	public AudienceRange(org.w3c.dom.Element element)
 	{
-		final AudienceRange x = new AudienceRange();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname))
-					x.audienceRangeQualifier = AudienceRangeQualifier.fromDoc(element);
+					audienceRangeQualifier = new AudienceRangeQualifier(element);
 				else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname))
-					x.audienceRangePrecision = AudienceRangePrecision.fromDoc(element);
+					audienceRangePrecision = new AudienceRangePrecision(element);
 				else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname))
-					x.audienceRangeValue = AudienceRangeValue.fromDoc(element);
+					audienceRangeValue = new AudienceRangeValue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public AudienceRangeQualifiers getAudienceRangeQualifierValue()

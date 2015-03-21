@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SalesOutlet
+@SuppressWarnings("serial")
+public class SalesOutlet implements Serializable
 {
 	public static final String refname = "SalesOutlet";
 	public static final String shortname = "salesoutlet";
@@ -40,28 +42,27 @@ public class SalesOutlet
 	public List<SalesOutletIdentifier> salesOutletIdentifiers; // OneOrMore
 	public SalesOutletName salesOutletName; // Optional
 
-	public static SalesOutlet fromDoc(org.w3c.dom.Element element)
+	public SalesOutlet()
+	{}
+
+	public SalesOutlet(org.w3c.dom.Element element)
 	{
-		final SalesOutlet x = new SalesOutlet();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname))
-					x.salesOutletIdentifiers = DU.addToList(x.salesOutletIdentifiers, SalesOutletIdentifier.fromDoc(element));
+					salesOutletIdentifiers = JPU.addToList(salesOutletIdentifiers, new SalesOutletIdentifier(element));
 				else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname))
-					x.salesOutletName = SalesOutletName.fromDoc(element);
+					salesOutletName = new SalesOutletName(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getSalesOutletNameValue()

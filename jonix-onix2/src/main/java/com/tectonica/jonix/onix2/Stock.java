@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Stock
+@SuppressWarnings("serial")
+public class Stock implements Serializable
 {
 	public static final String refname = "Stock";
 	public static final String shortname = "stock";
@@ -53,42 +55,41 @@ public class Stock
 	public CBO cbo; // Optional
 	public List<OnOrderDetail> onOrderDetails; // ZeroOrMore
 
-	public static Stock fromDoc(org.w3c.dom.Element element)
+	public Stock()
+	{}
+
+	public Stock(org.w3c.dom.Element element)
 	{
-		final Stock x = new Stock();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname))
-					x.locationIdentifier = LocationIdentifier.fromDoc(element);
+					locationIdentifier = new LocationIdentifier(element);
 				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
-					x.locationName = LocationName.fromDoc(element);
+					locationName = new LocationName(element);
 				else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname))
-					x.stockQuantityCoded = StockQuantityCoded.fromDoc(element);
+					stockQuantityCoded = new StockQuantityCoded(element);
 				else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname))
-					x.onHand = OnHand.fromDoc(element);
+					onHand = new OnHand(element);
 				else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
-					x.onOrder = OnOrder.fromDoc(element);
+					onOrder = new OnOrder(element);
 				else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
-					x.cbo = CBO.fromDoc(element);
+					cbo = new CBO(element);
 				else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
-					x.onOrderDetails = DU.addToList(x.onOrderDetails, OnOrderDetail.fromDoc(element));
+					onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getLocationNameValue()

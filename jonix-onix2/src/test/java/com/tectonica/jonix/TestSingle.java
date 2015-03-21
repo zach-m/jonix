@@ -77,8 +77,8 @@ public class TestSingle
 		final NodeList products = doc.getElementsByTagName("Product");
 		for (int i = 0; i < products.getLength(); i++)
 		{
-			final Element item = (Element) products.item(i);
-			final Product product = Product.fromDoc(item);
+			final Element productElem = (Element) products.item(i);
+			final Product product = new Product(productElem);
 			System.out.println(JSON.toJson(product));
 			System.out.println("\n-------------------------------------------------------------------------------\n");
 		}

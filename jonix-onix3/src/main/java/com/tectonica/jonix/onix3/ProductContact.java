@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductContact
+@SuppressWarnings("serial")
+public class ProductContact implements Serializable
 {
 	public static final String refname = "ProductContact";
 	public static final String shortname = "productcontact";
@@ -44,34 +46,33 @@ public class ProductContact
 	public ContactName contactName; // Optional
 	public EmailAddress emailAddress; // Optional
 
-	public static ProductContact fromDoc(org.w3c.dom.Element element)
+	public ProductContact()
+	{}
+
+	public ProductContact(org.w3c.dom.Element element)
 	{
-		final ProductContact x = new ProductContact();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname))
-					x.productContactRole = ProductContactRole.fromDoc(element);
+					productContactRole = new ProductContactRole(element);
 				else if (name.equals(ProductContactIdentifier.refname) || name.equals(ProductContactIdentifier.shortname))
-					x.productContactIdentifiers = DU.addToList(x.productContactIdentifiers, ProductContactIdentifier.fromDoc(element));
+					productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(element));
 				else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname))
-					x.productContactName = ProductContactName.fromDoc(element);
+					productContactName = new ProductContactName(element);
 				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-					x.contactName = ContactName.fromDoc(element);
+					contactName = new ContactName(element);
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddress = EmailAddress.fromDoc(element);
+					emailAddress = new EmailAddress(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ProductContactRoles getProductContactRoleValue()

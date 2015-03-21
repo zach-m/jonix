@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.TextTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TextType
+@SuppressWarnings("serial")
+public class TextType implements Serializable
 {
 	public static final String refname = "TextType";
 	public static final String shortname = "x426";
@@ -38,16 +41,15 @@ public class TextType
 
 	public TextTypes value;
 
-	public static TextType fromDoc(org.w3c.dom.Element element)
+	public TextType()
+	{}
+
+	public TextType(org.w3c.dom.Element element)
 	{
-		final TextType x = new TextType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = TextTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = TextTypes.byValue(JPU.getContentAsString(element));
 	}
 }

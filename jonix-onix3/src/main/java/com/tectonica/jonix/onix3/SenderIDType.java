@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SenderIDType
+@SuppressWarnings("serial")
+public class SenderIDType implements Serializable
 {
 	public static final String refname = "SenderIDType";
 	public static final String shortname = "m379";
@@ -38,16 +41,15 @@ public class SenderIDType
 
 	public NameCodeTypes value;
 
-	public static SenderIDType fromDoc(org.w3c.dom.Element element)
+	public SenderIDType()
+	{}
+
+	public SenderIDType(org.w3c.dom.Element element)
 	{
-		final SenderIDType x = new SenderIDType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = NameCodeTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = NameCodeTypes.byValue(JPU.getContentAsString(element));
 	}
 }

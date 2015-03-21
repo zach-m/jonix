@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Imprint
+@SuppressWarnings("serial")
+public class Imprint implements Serializable
 {
 	public static final String refname = "Imprint";
 	public static final String shortname = "imprint";
@@ -40,28 +42,27 @@ public class Imprint
 	public List<ImprintIdentifier> imprintIdentifiers; // OneOrMore
 	public ImprintName imprintName; // Optional
 
-	public static Imprint fromDoc(org.w3c.dom.Element element)
+	public Imprint()
+	{}
+
+	public Imprint(org.w3c.dom.Element element)
 	{
-		final Imprint x = new Imprint();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ImprintIdentifier.refname) || name.equals(ImprintIdentifier.shortname))
-					x.imprintIdentifiers = DU.addToList(x.imprintIdentifiers, ImprintIdentifier.fromDoc(element));
+					imprintIdentifiers = JPU.addToList(imprintIdentifiers, new ImprintIdentifier(element));
 				else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
-					x.imprintName = ImprintName.fromDoc(element);
+					imprintName = new ImprintName(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getImprintNameValue()

@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Name
+@SuppressWarnings("serial")
+public class Name implements Serializable
 {
 	public static final String refname = "Name";
 	public static final String shortname = "name";
@@ -59,52 +61,51 @@ public class Name
 	public TitlesAfterNames titlesAfterNames; // Optional
 	public List<PersonNameIdentifier> personNameIdentifiers; // ZeroOrMore
 
-	public static Name fromDoc(org.w3c.dom.Element element)
+	public Name()
+	{}
+
+	public Name(org.w3c.dom.Element element)
 	{
-		final Name x = new Name();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PersonNameType.refname) || name.equals(PersonNameType.shortname))
-					x.personNameType = PersonNameType.fromDoc(element);
+					personNameType = new PersonNameType(element);
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					x.personName = PersonName.fromDoc(element);
+					personName = new PersonName(element);
 				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-					x.personNameInverted = PersonNameInverted.fromDoc(element);
+					personNameInverted = new PersonNameInverted(element);
 				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-					x.titlesBeforeNames = TitlesBeforeNames.fromDoc(element);
+					titlesBeforeNames = new TitlesBeforeNames(element);
 				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-					x.namesBeforeKey = NamesBeforeKey.fromDoc(element);
+					namesBeforeKey = new NamesBeforeKey(element);
 				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-					x.prefixToKey = PrefixToKey.fromDoc(element);
+					prefixToKey = new PrefixToKey(element);
 				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-					x.keyNames = KeyNames.fromDoc(element);
+					keyNames = new KeyNames(element);
 				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-					x.namesAfterKey = NamesAfterKey.fromDoc(element);
+					namesAfterKey = new NamesAfterKey(element);
 				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-					x.suffixToKey = SuffixToKey.fromDoc(element);
+					suffixToKey = new SuffixToKey(element);
 				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-					x.lettersAfterNames = LettersAfterNames.fromDoc(element);
+					lettersAfterNames = new LettersAfterNames(element);
 				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-					x.titlesAfterNames = TitlesAfterNames.fromDoc(element);
+					titlesAfterNames = new TitlesAfterNames(element);
 				else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
-					x.personNameIdentifiers = DU.addToList(x.personNameIdentifiers, PersonNameIdentifier.fromDoc(element));
+					personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(element));
 			}
 		});
-
-		return x;
 	}
 
 	public PersonOrganizationNameTypes getPersonNameTypeValue()

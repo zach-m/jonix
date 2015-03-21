@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductFormFeature
+@SuppressWarnings("serial")
+public class ProductFormFeature implements Serializable
 {
 	public static final String refname = "ProductFormFeature";
 	public static final String shortname = "productformfeature";
@@ -48,34 +51,33 @@ public class ProductFormFeature
 	public ProductFormFeatureValue productFormFeatureValue; // Optional
 	public ProductFormFeatureDescription productFormFeatureDescription; // Optional
 
-	public static ProductFormFeature fromDoc(org.w3c.dom.Element element)
+	public ProductFormFeature()
+	{}
+
+	public ProductFormFeature(org.w3c.dom.Element element)
 	{
-		final ProductFormFeature x = new ProductFormFeature();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname))
-					x.productFormFeatureType = ProductFormFeatureType.fromDoc(element);
+					productFormFeatureType = new ProductFormFeatureType(element);
 				else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname))
-					x.productFormFeatureValue = ProductFormFeatureValue.fromDoc(element);
+					productFormFeatureValue = new ProductFormFeatureValue(element);
 				else if (name.equals(ProductFormFeatureDescription.refname) || name.equals(ProductFormFeatureDescription.shortname))
-					x.productFormFeatureDescription = ProductFormFeatureDescription.fromDoc(element);
+					productFormFeatureDescription = new ProductFormFeatureDescription(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ProductFormFeatureTypes getProductFormFeatureTypeValue()

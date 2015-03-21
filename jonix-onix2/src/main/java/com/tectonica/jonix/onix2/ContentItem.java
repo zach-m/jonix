@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ContentItem
+@SuppressWarnings("serial")
+public class ContentItem implements Serializable
 {
 	public static final String refname = "ContentItem";
 	public static final String shortname = "contentitem";
@@ -63,60 +65,59 @@ public class ContentItem
 	public List<OtherText> otherTexts; // ZeroOrMore
 	public List<MediaFile> mediaFiles; // ZeroOrMore
 
-	public static ContentItem fromDoc(org.w3c.dom.Element element)
+	public ContentItem()
+	{}
+
+	public ContentItem(org.w3c.dom.Element element)
 	{
-		final ContentItem x = new ContentItem();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					x.levelSequenceNumber = LevelSequenceNumber.fromDoc(element);
+					levelSequenceNumber = new LevelSequenceNumber(element);
 				else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname))
-					x.textItem = TextItem.fromDoc(element);
+					textItem = new TextItem(element);
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname))
-					x.componentTypeName = ComponentTypeName.fromDoc(element);
+					componentTypeName = new ComponentTypeName(element);
 				else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname))
-					x.componentNumber = ComponentNumber.fromDoc(element);
+					componentNumber = new ComponentNumber(element);
 				else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
-					x.distinctiveTitle = DistinctiveTitle.fromDoc(element);
+					distinctiveTitle = new DistinctiveTitle(element);
 				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
+					titles = JPU.addToList(titles, new Title(element));
 				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
-					x.workIdentifiers = DU.addToList(x.workIdentifiers, WorkIdentifier.fromDoc(element));
+					workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(element));
 				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
+					contributors = JPU.addToList(contributors, new Contributor(element));
 				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
-					x.contributorStatement = ContributorStatement.fromDoc(element);
+					contributorStatement = new ContributorStatement(element);
 				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
-					x.subjects = DU.addToList(x.subjects, Subject.fromDoc(element));
+					subjects = JPU.addToList(subjects, new Subject(element));
 				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
-					x.personAsSubjects = DU.addToList(x.personAsSubjects, PersonAsSubject.fromDoc(element));
+					personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(element));
 				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
-					x.corporateBodyAsSubjects = DU.addToList(x.corporateBodyAsSubjects, CorporateBodyAsSubject.fromDoc(element));
+					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(element));
 				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
-					x.placeAsSubjects = DU.addToList(x.placeAsSubjects, PlaceAsSubject.fromDoc(element));
+					placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(element));
 				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
-					x.otherTexts = DU.addToList(x.otherTexts, OtherText.fromDoc(element));
+					otherTexts = JPU.addToList(otherTexts, new OtherText(element));
 				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
-					x.mediaFiles = DU.addToList(x.mediaFiles, MediaFile.fromDoc(element));
+					mediaFiles = JPU.addToList(mediaFiles, new MediaFile(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getLevelSequenceNumberValue()

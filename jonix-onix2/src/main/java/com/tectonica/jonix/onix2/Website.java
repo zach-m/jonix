@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Website
+@SuppressWarnings("serial")
+public class Website implements Serializable
 {
 	public static final String refname = "Website";
 	public static final String shortname = "website";
@@ -48,34 +51,33 @@ public class Website
 	public WebsiteDescription websiteDescription; // Optional
 	public WebsiteLink websiteLink; // Required
 
-	public static Website fromDoc(org.w3c.dom.Element element)
+	public Website()
+	{}
+
+	public Website(org.w3c.dom.Element element)
 	{
-		final Website x = new Website();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
-					x.websiteRole = WebsiteRole.fromDoc(element);
+					websiteRole = new WebsiteRole(element);
 				else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname))
-					x.websiteDescription = WebsiteDescription.fromDoc(element);
+					websiteDescription = new WebsiteDescription(element);
 				else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname))
-					x.websiteLink = WebsiteLink.fromDoc(element);
+					websiteLink = new WebsiteLink(element);
 			}
 		});
-
-		return x;
 	}
 
 	public WebsiteRoles getWebsiteRoleValue()

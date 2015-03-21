@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierRoles;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.SupplierRoles;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Supplier
+@SuppressWarnings("serial")
+public class Supplier implements Serializable
 {
 	public static final String refname = "Supplier";
 	public static final String shortname = "supplier";
@@ -47,38 +49,37 @@ public class Supplier
 	public List<EmailAddress> emailAddresss; // ZeroOrMore
 	public List<Website> websites; // ZeroOrMore
 
-	public static Supplier fromDoc(org.w3c.dom.Element element)
+	public Supplier()
+	{}
+
+	public Supplier(org.w3c.dom.Element element)
 	{
-		final Supplier x = new Supplier();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
-					x.supplierRole = SupplierRole.fromDoc(element);
+					supplierRole = new SupplierRole(element);
 				else if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
-					x.supplierIdentifiers = DU.addToList(x.supplierIdentifiers, SupplierIdentifier.fromDoc(element));
+					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
 				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
-					x.supplierName = SupplierName.fromDoc(element);
+					supplierName = new SupplierName(element);
 				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
+					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
 				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
+					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
+					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 			}
 		});
-
-		return x;
 	}
 
 	public SupplierRoles getSupplierRoleValue()

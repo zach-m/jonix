@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class LocationName
+@SuppressWarnings("serial")
+public class LocationName implements Serializable
 {
 	public static final String refname = "LocationName";
 	public static final String shortname = "j349";
@@ -39,17 +42,16 @@ public class LocationName
 
 	public String value; // dt.NonEmptyString
 
-	public static LocationName fromDoc(org.w3c.dom.Element element)
+	public LocationName()
+	{}
+
+	public LocationName(org.w3c.dom.Element element)
 	{
-		final LocationName x = new LocationName();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

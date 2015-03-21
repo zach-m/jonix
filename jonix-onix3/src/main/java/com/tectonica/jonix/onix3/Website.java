@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WebsiteRoles;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Website
+@SuppressWarnings("serial")
+public class Website implements Serializable
 {
 	public static final String refname = "Website";
 	public static final String shortname = "website";
@@ -43,30 +45,29 @@ public class Website
 	public List<WebsiteDescription> websiteDescriptions; // ZeroOrMore
 	public WebsiteLink websiteLink; // Required
 
-	public static Website fromDoc(org.w3c.dom.Element element)
+	public Website()
+	{}
+
+	public Website(org.w3c.dom.Element element)
 	{
-		final Website x = new Website();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
-					x.websiteRole = WebsiteRole.fromDoc(element);
+					websiteRole = new WebsiteRole(element);
 				else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname))
-					x.websiteDescriptions = DU.addToList(x.websiteDescriptions, WebsiteDescription.fromDoc(element));
+					websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(element));
 				else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname))
-					x.websiteLink = WebsiteLink.fromDoc(element);
+					websiteLink = new WebsiteLink(element);
 			}
 		});
-
-		return x;
 	}
 
 	public WebsiteRoles getWebsiteRoleValue()

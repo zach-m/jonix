@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
@@ -41,7 +42,8 @@ import com.tectonica.jonix.codelist.UnitOfPricings;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Price
+@SuppressWarnings("serial")
+public class Price implements Serializable
 {
 	public static final String refname = "Price";
 	public static final String shortname = "price";
@@ -82,82 +84,81 @@ public class Price
 	public PriceEffectiveFrom priceEffectiveFrom; // Optional
 	public PriceEffectiveUntil priceEffectiveUntil; // Optional
 
-	public static Price fromDoc(org.w3c.dom.Element element)
+	public Price()
+	{}
+
+	public Price(org.w3c.dom.Element element)
 	{
-		final Price x = new Price();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PriceTypeCode.refname) || name.equals(PriceTypeCode.shortname))
-					x.priceTypeCode = PriceTypeCode.fromDoc(element);
+					priceTypeCode = new PriceTypeCode(element);
 				else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
-					x.priceQualifier = PriceQualifier.fromDoc(element);
+					priceQualifier = new PriceQualifier(element);
 				else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
-					x.priceTypeDescription = PriceTypeDescription.fromDoc(element);
+					priceTypeDescription = new PriceTypeDescription(element);
 				else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
-					x.pricePer = PricePer.fromDoc(element);
+					pricePer = new PricePer(element);
 				else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
-					x.minimumOrderQuantity = MinimumOrderQuantity.fromDoc(element);
+					minimumOrderQuantity = new MinimumOrderQuantity(element);
 				else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
-					x.batchBonuss = DU.addToList(x.batchBonuss, BatchBonus.fromDoc(element));
+					batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(element));
 				else if (name.equals(ClassOfTrade.refname) || name.equals(ClassOfTrade.shortname))
-					x.classOfTrade = ClassOfTrade.fromDoc(element);
+					classOfTrade = new ClassOfTrade(element);
 				else if (name.equals(BICDiscountGroupCode.refname) || name.equals(BICDiscountGroupCode.shortname))
-					x.bicDiscountGroupCode = BICDiscountGroupCode.fromDoc(element);
+					bicDiscountGroupCode = new BICDiscountGroupCode(element);
 				else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
-					x.discountCodeds = DU.addToList(x.discountCodeds, DiscountCoded.fromDoc(element));
+					discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(element));
 				else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
-					x.discountPercent = DiscountPercent.fromDoc(element);
+					discountPercent = new DiscountPercent(element);
 				else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
-					x.priceStatus = PriceStatus.fromDoc(element);
+					priceStatus = new PriceStatus(element);
 				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					x.priceAmount = PriceAmount.fromDoc(element);
+					priceAmount = new PriceAmount(element);
 				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-					x.currencyCode = CurrencyCode.fromDoc(element);
+					currencyCode = new CurrencyCode(element);
 				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					x.countryCodes = DU.addToList(x.countryCodes, CountryCode.fromDoc(element));
+					countryCodes = JPU.addToList(countryCodes, new CountryCode(element));
 				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					x.territory = Territory.fromDoc(element);
+					territory = new Territory(element);
 				else if (name.equals(CountryExcluded.refname) || name.equals(CountryExcluded.shortname))
-					x.countryExcluded = CountryExcluded.fromDoc(element);
+					countryExcluded = new CountryExcluded(element);
 				else if (name.equals(TerritoryExcluded.refname) || name.equals(TerritoryExcluded.shortname))
-					x.territoryExcluded = TerritoryExcluded.fromDoc(element);
+					territoryExcluded = new TerritoryExcluded(element);
 				else if (name.equals(TaxRateCode1.refname) || name.equals(TaxRateCode1.shortname))
-					x.taxRateCode1 = TaxRateCode1.fromDoc(element);
+					taxRateCode1 = new TaxRateCode1(element);
 				else if (name.equals(TaxRatePercent1.refname) || name.equals(TaxRatePercent1.shortname))
-					x.taxRatePercent1 = TaxRatePercent1.fromDoc(element);
+					taxRatePercent1 = new TaxRatePercent1(element);
 				else if (name.equals(TaxableAmount1.refname) || name.equals(TaxableAmount1.shortname))
-					x.taxableAmount1 = TaxableAmount1.fromDoc(element);
+					taxableAmount1 = new TaxableAmount1(element);
 				else if (name.equals(TaxAmount1.refname) || name.equals(TaxAmount1.shortname))
-					x.taxAmount1 = TaxAmount1.fromDoc(element);
+					taxAmount1 = new TaxAmount1(element);
 				else if (name.equals(TaxRateCode2.refname) || name.equals(TaxRateCode2.shortname))
-					x.taxRateCode2 = TaxRateCode2.fromDoc(element);
+					taxRateCode2 = new TaxRateCode2(element);
 				else if (name.equals(TaxRatePercent2.refname) || name.equals(TaxRatePercent2.shortname))
-					x.taxRatePercent2 = TaxRatePercent2.fromDoc(element);
+					taxRatePercent2 = new TaxRatePercent2(element);
 				else if (name.equals(TaxableAmount2.refname) || name.equals(TaxableAmount2.shortname))
-					x.taxableAmount2 = TaxableAmount2.fromDoc(element);
+					taxableAmount2 = new TaxableAmount2(element);
 				else if (name.equals(TaxAmount2.refname) || name.equals(TaxAmount2.shortname))
-					x.taxAmount2 = TaxAmount2.fromDoc(element);
+					taxAmount2 = new TaxAmount2(element);
 				else if (name.equals(PriceEffectiveFrom.refname) || name.equals(PriceEffectiveFrom.shortname))
-					x.priceEffectiveFrom = PriceEffectiveFrom.fromDoc(element);
+					priceEffectiveFrom = new PriceEffectiveFrom(element);
 				else if (name.equals(PriceEffectiveUntil.refname) || name.equals(PriceEffectiveUntil.shortname))
-					x.priceEffectiveUntil = PriceEffectiveUntil.fromDoc(element);
+					priceEffectiveUntil = new PriceEffectiveUntil(element);
 			}
 		});
-
-		return x;
 	}
 
 	public PriceTypes getPriceTypeCodeValue()

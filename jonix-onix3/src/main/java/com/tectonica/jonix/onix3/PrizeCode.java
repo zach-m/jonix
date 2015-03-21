@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PrizeCode
+@SuppressWarnings("serial")
+public class PrizeCode implements Serializable
 {
 	public static final String refname = "PrizeCode";
 	public static final String shortname = "g129";
@@ -38,16 +41,15 @@ public class PrizeCode
 
 	public PrizeOrAwardAchievements value;
 
-	public static PrizeCode fromDoc(org.w3c.dom.Element element)
+	public PrizeCode()
+	{}
+
+	public PrizeCode(org.w3c.dom.Element element)
 	{
-		final PrizeCode x = new PrizeCode();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = PrizeOrAwardAchievements.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = PrizeOrAwardAchievements.byValue(JPU.getContentAsString(element));
 	}
 }

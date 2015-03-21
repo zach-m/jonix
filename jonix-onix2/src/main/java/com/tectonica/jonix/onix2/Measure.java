@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.MeasureUnits;
@@ -32,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Measure
+@SuppressWarnings("serial")
+public class Measure implements Serializable
 {
 	public static final String refname = "Measure";
 	public static final String shortname = "measure";
@@ -49,34 +52,33 @@ public class Measure
 	public Measurement measurement; // Required
 	public MeasureUnitCode measureUnitCode; // Required
 
-	public static Measure fromDoc(org.w3c.dom.Element element)
+	public Measure()
+	{}
+
+	public Measure(org.w3c.dom.Element element)
 	{
-		final Measure x = new Measure();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(MeasureTypeCode.refname) || name.equals(MeasureTypeCode.shortname))
-					x.measureTypeCode = MeasureTypeCode.fromDoc(element);
+					measureTypeCode = new MeasureTypeCode(element);
 				else if (name.equals(Measurement.refname) || name.equals(Measurement.shortname))
-					x.measurement = Measurement.fromDoc(element);
+					measurement = new Measurement(element);
 				else if (name.equals(MeasureUnitCode.refname) || name.equals(MeasureUnitCode.shortname))
-					x.measureUnitCode = MeasureUnitCode.fromDoc(element);
+					measureUnitCode = new MeasureUnitCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public MeasureTypes getMeasureTypeCodeValue()

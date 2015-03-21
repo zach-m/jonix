@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductPackaging
+@SuppressWarnings("serial")
+public class ProductPackaging implements Serializable
 {
 	public static final String refname = "ProductPackaging";
 	public static final String shortname = "b225";
@@ -38,16 +41,15 @@ public class ProductPackaging
 
 	public ProductPackagingTypes value;
 
-	public static ProductPackaging fromDoc(org.w3c.dom.Element element)
+	public ProductPackaging()
+	{}
+
+	public ProductPackaging(org.w3c.dom.Element element)
 	{
-		final ProductPackaging x = new ProductPackaging();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductPackagingTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductPackagingTypes.byValue(JPU.getContentAsString(element));
 	}
 }

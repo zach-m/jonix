@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Illustrations
+@SuppressWarnings("serial")
+public class Illustrations implements Serializable
 {
 	public static final String refname = "Illustrations";
 	public static final String shortname = "illustrations";
@@ -48,34 +51,33 @@ public class Illustrations
 	public IllustrationTypeDescription illustrationTypeDescription; // Optional
 	public Number number; // Optional
 
-	public static Illustrations fromDoc(org.w3c.dom.Element element)
+	public Illustrations()
+	{}
+
+	public Illustrations(org.w3c.dom.Element element)
 	{
-		final Illustrations x = new Illustrations();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(IllustrationType.refname) || name.equals(IllustrationType.shortname))
-					x.illustrationType = IllustrationType.fromDoc(element);
+					illustrationType = new IllustrationType(element);
 				else if (name.equals(IllustrationTypeDescription.refname) || name.equals(IllustrationTypeDescription.shortname))
-					x.illustrationTypeDescription = IllustrationTypeDescription.fromDoc(element);
+					illustrationTypeDescription = new IllustrationTypeDescription(element);
 				else if (name.equals(Number.refname) || name.equals(Number.shortname))
-					x.number = Number.fromDoc(element);
+					number = new Number(element);
 			}
 		});
-
-		return x;
 	}
 
 	public IllustrationAndOtherContentTypes getIllustrationTypeValue()

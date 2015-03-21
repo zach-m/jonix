@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Proximity
+@SuppressWarnings("serial")
+public class Proximity implements Serializable
 {
 	public static final String refname = "Proximity";
 	public static final String shortname = "x502";
@@ -38,16 +41,15 @@ public class Proximity
 
 	public Proximitys value;
 
-	public static Proximity fromDoc(org.w3c.dom.Element element)
+	public Proximity()
+	{}
+
+	public Proximity(org.w3c.dom.Element element)
 	{
-		final Proximity x = new Proximity();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = Proximitys.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = Proximitys.byValue(JPU.getContentAsString(element));
 	}
 }

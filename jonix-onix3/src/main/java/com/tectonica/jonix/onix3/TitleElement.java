@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleElementLevels;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.TitleElementLevels;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TitleElement
+@SuppressWarnings("serial")
+public class TitleElement implements Serializable
 {
 	public static final String refname = "TitleElement";
 	public static final String shortname = "titleelement";
@@ -46,42 +49,41 @@ public class TitleElement
 	public TitleText titleText; // Optional
 	public Subtitle subtitle; // Optional
 
-	public static TitleElement fromDoc(org.w3c.dom.Element element)
+	public TitleElement()
+	{}
+
+	public TitleElement(org.w3c.dom.Element element)
 	{
-		final TitleElement x = new TitleElement();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
-					x.sequenceNumber = SequenceNumber.fromDoc(element);
+					sequenceNumber = new SequenceNumber(element);
 				else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname))
-					x.titleElementLevel = TitleElementLevel.fromDoc(element);
+					titleElementLevel = new TitleElementLevel(element);
 				else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname))
-					x.partNumber = PartNumber.fromDoc(element);
+					partNumber = new PartNumber(element);
 				else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
-					x.yearOfAnnual = YearOfAnnual.fromDoc(element);
+					yearOfAnnual = new YearOfAnnual(element);
 				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-					x.titlePrefix = TitlePrefix.fromDoc(element);
+					titlePrefix = new TitlePrefix(element);
 				else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname))
-					x.noPrefix = NoPrefix.fromDoc(element);
+					noPrefix = new NoPrefix(element);
 				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-					x.titleWithoutPrefix = TitleWithoutPrefix.fromDoc(element);
+					titleWithoutPrefix = new TitleWithoutPrefix(element);
 				else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
-					x.titleText = TitleText.fromDoc(element);
+					titleText = new TitleText(element);
 				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-					x.subtitle = Subtitle.fromDoc(element);
+					subtitle = new Subtitle(element);
 			}
 		});
-
-		return x;
 	}
 
 	public Integer getSequenceNumberValue()

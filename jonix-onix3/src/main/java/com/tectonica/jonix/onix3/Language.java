@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
@@ -30,7 +32,8 @@ import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Language
+@SuppressWarnings("serial")
+public class Language implements Serializable
 {
 	public static final String refname = "Language";
 	public static final String shortname = "language";
@@ -44,32 +47,31 @@ public class Language
 	public CountryCode countryCode; // Optional
 	public ScriptCode scriptCode; // Optional
 
-	public static Language fromDoc(org.w3c.dom.Element element)
+	public Language()
+	{}
+
+	public Language(org.w3c.dom.Element element)
 	{
-		final Language x = new Language();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
-					x.languageRole = LanguageRole.fromDoc(element);
+					languageRole = new LanguageRole(element);
 				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
-					x.languageCode = LanguageCode.fromDoc(element);
+					languageCode = new LanguageCode(element);
 				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					x.countryCode = CountryCode.fromDoc(element);
+					countryCode = new CountryCode(element);
 				else if (name.equals(ScriptCode.refname) || name.equals(ScriptCode.shortname))
-					x.scriptCode = ScriptCode.fromDoc(element);
+					scriptCode = new ScriptCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public LanguageRoles getLanguageRoleValue()

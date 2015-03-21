@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SalesRights
+@SuppressWarnings("serial")
+public class SalesRights implements Serializable
 {
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";
@@ -44,34 +46,33 @@ public class SalesRights
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 	public PublisherName publisherName; // Optional
 
-	public static SalesRights fromDoc(org.w3c.dom.Element element)
+	public SalesRights()
+	{}
+
+	public SalesRights(org.w3c.dom.Element element)
 	{
-		final SalesRights x = new SalesRights();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
-					x.salesRightsType = SalesRightsType.fromDoc(element);
+					salesRightsType = new SalesRightsType(element);
 				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					x.territory = Territory.fromDoc(element);
+					territory = new Territory(element);
 				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					x.salesRestrictions = DU.addToList(x.salesRestrictions, SalesRestriction.fromDoc(element));
+					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					x.publisherName = PublisherName.fromDoc(element);
+					publisherName = new PublisherName(element);
 			}
 		});
-
-		return x;
 	}
 
 	public SalesRightsTypes getSalesRightsTypeValue()

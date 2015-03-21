@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Reissue
+@SuppressWarnings("serial")
+public class Reissue implements Serializable
 {
 	public static final String refname = "Reissue";
 	public static final String shortname = "reissue";
@@ -42,32 +44,31 @@ public class Reissue
 	public List<Price> prices; // ZeroOrMore
 	public List<SupportingResource> supportingResources; // ZeroOrMore
 
-	public static Reissue fromDoc(org.w3c.dom.Element element)
+	public Reissue()
+	{}
+
+	public Reissue(org.w3c.dom.Element element)
 	{
-		final Reissue x = new Reissue();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
-					x.reissueDate = ReissueDate.fromDoc(element);
+					reissueDate = new ReissueDate(element);
 				else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
-					x.reissueDescription = ReissueDescription.fromDoc(element);
+					reissueDescription = new ReissueDescription(element);
 				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
+					prices = JPU.addToList(prices, new Price(element));
 				else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
-					x.supportingResources = DU.addToList(x.supportingResources, SupportingResource.fromDoc(element));
+					supportingResources = JPU.addToList(supportingResources, new SupportingResource(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getReissueDateValue()

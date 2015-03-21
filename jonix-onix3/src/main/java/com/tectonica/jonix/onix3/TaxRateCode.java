@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TaxRateCodeds;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.TaxRateCodeds;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TaxRateCode
+@SuppressWarnings("serial")
+public class TaxRateCode implements Serializable
 {
 	public static final String refname = "TaxRateCode";
 	public static final String shortname = "x471";
@@ -38,16 +41,15 @@ public class TaxRateCode
 
 	public TaxRateCodeds value;
 
-	public static TaxRateCode fromDoc(org.w3c.dom.Element element)
+	public TaxRateCode()
+	{}
+
+	public TaxRateCode(org.w3c.dom.Element element)
 	{
-		final TaxRateCode x = new TaxRateCode();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = TaxRateCodeds.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = TaxRateCodeds.byValue(JPU.getContentAsString(element));
 	}
 }

@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.SalesRestrictionTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SalesRestriction
+@SuppressWarnings("serial")
+public class SalesRestriction implements Serializable
 {
 	public static final String refname = "SalesRestriction";
 	public static final String shortname = "salesrestriction";
@@ -45,34 +47,33 @@ public class SalesRestriction
 	public StartDate startDate; // Optional
 	public EndDate endDate; // Optional
 
-	public static SalesRestriction fromDoc(org.w3c.dom.Element element)
+	public SalesRestriction()
+	{}
+
+	public SalesRestriction(org.w3c.dom.Element element)
 	{
-		final SalesRestriction x = new SalesRestriction();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
-					x.salesRestrictionType = SalesRestrictionType.fromDoc(element);
+					salesRestrictionType = new SalesRestrictionType(element);
 				else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
-					x.salesOutlets = DU.addToList(x.salesOutlets, SalesOutlet.fromDoc(element));
+					salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(element));
 				else if (name.equals(SalesRestrictionNote.refname) || name.equals(SalesRestrictionNote.shortname))
-					x.salesRestrictionNotes = DU.addToList(x.salesRestrictionNotes, SalesRestrictionNote.fromDoc(element));
+					salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(element));
 				else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
-					x.startDate = StartDate.fromDoc(element);
+					startDate = new StartDate(element);
 				else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
-					x.endDate = EndDate.fromDoc(element);
+					endDate = new EndDate(element);
 			}
 		});
-
-		return x;
 	}
 
 	public SalesRestrictionTypes getSalesRestrictionTypeValue()

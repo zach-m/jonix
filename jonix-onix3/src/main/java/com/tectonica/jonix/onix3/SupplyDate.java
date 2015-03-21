@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplyDateRoles;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.SupplyDateRoles;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplyDate
+@SuppressWarnings("serial")
+public class SupplyDate implements Serializable
 {
 	public static final String refname = "SupplyDate";
 	public static final String shortname = "supplydate";
@@ -41,30 +44,29 @@ public class SupplyDate
 	public DateFormat dateFormat; // Optional
 	public Date date; // Required
 
-	public static SupplyDate fromDoc(org.w3c.dom.Element element)
+	public SupplyDate()
+	{}
+
+	public SupplyDate(org.w3c.dom.Element element)
 	{
-		final SupplyDate x = new SupplyDate();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SupplyDateRole.refname) || name.equals(SupplyDateRole.shortname))
-					x.supplyDateRole = SupplyDateRole.fromDoc(element);
+					supplyDateRole = new SupplyDateRole(element);
 				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					x.dateFormat = DateFormat.fromDoc(element);
+					dateFormat = new DateFormat(element);
 				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					x.date = Date.fromDoc(element);
+					date = new Date(element);
 			}
 		});
-
-		return x;
 	}
 
 	public SupplyDateRoles getSupplyDateRoleValue()

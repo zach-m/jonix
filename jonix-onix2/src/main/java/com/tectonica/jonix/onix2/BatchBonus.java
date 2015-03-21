@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -30,7 +32,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class BatchBonus
+@SuppressWarnings("serial")
+public class BatchBonus implements Serializable
 {
 	public static final String refname = "BatchBonus";
 	public static final String shortname = "batchbonus";
@@ -46,32 +49,31 @@ public class BatchBonus
 	public BatchQuantity batchQuantity; // Required
 	public FreeQuantity freeQuantity; // Required
 
-	public static BatchBonus fromDoc(org.w3c.dom.Element element)
+	public BatchBonus()
+	{}
+
+	public BatchBonus(org.w3c.dom.Element element)
 	{
-		final BatchBonus x = new BatchBonus();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname))
-					x.batchQuantity = BatchQuantity.fromDoc(element);
+					batchQuantity = new BatchQuantity(element);
 				else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname))
-					x.freeQuantity = FreeQuantity.fromDoc(element);
+					freeQuantity = new FreeQuantity(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getBatchQuantityValue()

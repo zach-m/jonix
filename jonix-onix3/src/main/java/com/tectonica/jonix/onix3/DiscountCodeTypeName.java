@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class DiscountCodeTypeName
+@SuppressWarnings("serial")
+public class DiscountCodeTypeName implements Serializable
 {
 	public static final String refname = "DiscountCodeTypeName";
 	public static final String shortname = "j378";
@@ -39,17 +42,16 @@ public class DiscountCodeTypeName
 
 	public String value; // dt.NonEmptyString
 
-	public static DiscountCodeTypeName fromDoc(org.w3c.dom.Element element)
+	public DiscountCodeTypeName()
+	{}
+
+	public DiscountCodeTypeName(org.w3c.dom.Element element)
 	{
-		final DiscountCodeTypeName x = new DiscountCodeTypeName();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

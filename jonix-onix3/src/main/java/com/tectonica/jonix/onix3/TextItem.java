@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.TextItemTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TextItem
+@SuppressWarnings("serial")
+public class TextItem implements Serializable
 {
 	public static final String refname = "TextItem";
 	public static final String shortname = "textitem";
@@ -43,32 +45,31 @@ public class TextItem
 	public List<PageRun> pageRuns; // ZeroOrMore
 	public NumberOfPages numberOfPages; // Optional
 
-	public static TextItem fromDoc(org.w3c.dom.Element element)
+	public TextItem()
+	{}
+
+	public TextItem(org.w3c.dom.Element element)
 	{
-		final TextItem x = new TextItem();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TextItemType.refname) || name.equals(TextItemType.shortname))
-					x.textItemType = TextItemType.fromDoc(element);
+					textItemType = new TextItemType(element);
 				else if (name.equals(TextItemIdentifier.refname) || name.equals(TextItemIdentifier.shortname))
-					x.textItemIdentifiers = DU.addToList(x.textItemIdentifiers, TextItemIdentifier.fromDoc(element));
+					textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(element));
 				else if (name.equals(PageRun.refname) || name.equals(PageRun.shortname))
-					x.pageRuns = DU.addToList(x.pageRuns, PageRun.fromDoc(element));
+					pageRuns = JPU.addToList(pageRuns, new PageRun(element));
 				else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
-					x.numberOfPages = NumberOfPages.fromDoc(element);
+					numberOfPages = new NumberOfPages(element);
 			}
 		});
-
-		return x;
 	}
 
 	public TextItemTypes getTextItemTypeValue()

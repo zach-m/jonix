@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Stock
+@SuppressWarnings("serial")
+public class Stock implements Serializable
 {
 	public static final String refname = "Stock";
 	public static final String shortname = "stock";
@@ -48,42 +50,41 @@ public class Stock
 	public List<OnOrderDetail> onOrderDetails; // ZeroOrMore
 	public List<Velocity> velocitys; // ZeroOrMore
 
-	public static Stock fromDoc(org.w3c.dom.Element element)
+	public Stock()
+	{}
+
+	public Stock(org.w3c.dom.Element element)
 	{
-		final Stock x = new Stock();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname))
-					x.locationIdentifier = LocationIdentifier.fromDoc(element);
+					locationIdentifier = new LocationIdentifier(element);
 				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
-					x.locationName = LocationName.fromDoc(element);
+					locationName = new LocationName(element);
 				else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname))
-					x.stockQuantityCodeds = DU.addToList(x.stockQuantityCodeds, StockQuantityCoded.fromDoc(element));
+					stockQuantityCodeds = JPU.addToList(stockQuantityCodeds, new StockQuantityCoded(element));
 				else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname))
-					x.onHand = OnHand.fromDoc(element);
+					onHand = new OnHand(element);
 				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
-					x.proximity = Proximity.fromDoc(element);
+					proximity = new Proximity(element);
 				else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
-					x.onOrder = OnOrder.fromDoc(element);
+					onOrder = new OnOrder(element);
 				else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
-					x.cbo = CBO.fromDoc(element);
+					cbo = new CBO(element);
 				else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
-					x.onOrderDetails = DU.addToList(x.onOrderDetails, OnOrderDetail.fromDoc(element));
+					onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(element));
 				else if (name.equals(Velocity.refname) || name.equals(Velocity.shortname))
-					x.velocitys = DU.addToList(x.velocitys, Velocity.fromDoc(element));
+					velocitys = JPU.addToList(velocitys, new Velocity(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getLocationNameValue()

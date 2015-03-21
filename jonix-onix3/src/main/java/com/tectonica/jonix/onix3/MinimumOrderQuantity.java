@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class MinimumOrderQuantity
+@SuppressWarnings("serial")
+public class MinimumOrderQuantity implements Serializable
 {
 	public static final String refname = "MinimumOrderQuantity";
 	public static final String shortname = "j263";
@@ -37,16 +40,15 @@ public class MinimumOrderQuantity
 
 	public Integer value; // dt.StrictPositiveInteger
 
-	public static MinimumOrderQuantity fromDoc(org.w3c.dom.Element element)
+	public MinimumOrderQuantity()
+	{}
+
+	public MinimumOrderQuantity(org.w3c.dom.Element element)
 	{
-		final MinimumOrderQuantity x = new MinimumOrderQuantity();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = DU.getContentAsInteger(element);
-
-		return x;
+		value = JPU.getContentAsInteger(element);
 	}
 }

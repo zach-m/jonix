@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Sender
+@SuppressWarnings("serial")
+public class Sender implements Serializable
 {
 	public static final String refname = "Sender";
 	public static final String shortname = "sender";
@@ -42,32 +44,31 @@ public class Sender
 	public ContactName contactName; // Optional
 	public EmailAddress emailAddress; // Optional
 
-	public static Sender fromDoc(org.w3c.dom.Element element)
+	public Sender()
+	{}
+
+	public Sender(org.w3c.dom.Element element)
 	{
-		final Sender x = new Sender();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
-					x.senderIdentifiers = DU.addToList(x.senderIdentifiers, SenderIdentifier.fromDoc(element));
+					senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(element));
 				else if (name.equals(SenderName.refname) || name.equals(SenderName.shortname))
-					x.senderName = SenderName.fromDoc(element);
+					senderName = new SenderName(element);
 				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-					x.contactName = ContactName.fromDoc(element);
+					contactName = new ContactName(element);
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddress = EmailAddress.fromDoc(element);
+					emailAddress = new EmailAddress(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getSenderNameValue()

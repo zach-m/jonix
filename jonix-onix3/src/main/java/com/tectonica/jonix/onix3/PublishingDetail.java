@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PublishingDetail
+@SuppressWarnings("serial")
+public class PublishingDetail implements Serializable
 {
 	public static final String refname = "PublishingDetail";
 	public static final String shortname = "publishingdetail";
@@ -55,50 +57,49 @@ public class PublishingDetail
 	public ROWSalesRightsType rowSalesRightsType; // Optional
 	public List<SalesRestriction> salesRestrictions; // ZeroOrMore
 
-	public static PublishingDetail fromDoc(org.w3c.dom.Element element)
+	public PublishingDetail()
+	{}
+
+	public PublishingDetail(org.w3c.dom.Element element)
 	{
-		final PublishingDetail x = new PublishingDetail();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
-					x.imprints = DU.addToList(x.imprints, Imprint.fromDoc(element));
+					imprints = JPU.addToList(imprints, new Imprint(element));
 				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					x.publishers = DU.addToList(x.publishers, Publisher.fromDoc(element));
+					publishers = JPU.addToList(publishers, new Publisher(element));
 				else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
-					x.cityOfPublications = DU.addToList(x.cityOfPublications, CityOfPublication.fromDoc(element));
+					cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(element));
 				else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
-					x.countryOfPublication = CountryOfPublication.fromDoc(element);
+					countryOfPublication = new CountryOfPublication(element);
 				else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
-					x.productContacts = DU.addToList(x.productContacts, ProductContact.fromDoc(element));
+					productContacts = JPU.addToList(productContacts, new ProductContact(element));
 				else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
-					x.publishingStatus = PublishingStatus.fromDoc(element);
+					publishingStatus = new PublishingStatus(element);
 				else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
-					x.publishingStatusNotes = DU.addToList(x.publishingStatusNotes, PublishingStatusNote.fromDoc(element));
+					publishingStatusNotes = JPU.addToList(publishingStatusNotes, new PublishingStatusNote(element));
 				else if (name.equals(PublishingDate.refname) || name.equals(PublishingDate.shortname))
-					x.publishingDates = DU.addToList(x.publishingDates, PublishingDate.fromDoc(element));
+					publishingDates = JPU.addToList(publishingDates, new PublishingDate(element));
 				else if (name.equals(LatestReprintNumber.refname) || name.equals(LatestReprintNumber.shortname))
-					x.latestReprintNumber = LatestReprintNumber.fromDoc(element);
+					latestReprintNumber = new LatestReprintNumber(element);
 				else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
-					x.copyrightStatements = DU.addToList(x.copyrightStatements, CopyrightStatement.fromDoc(element));
+					copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(element));
 				else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
-					x.salesRightss = DU.addToList(x.salesRightss, SalesRights.fromDoc(element));
+					salesRightss = JPU.addToList(salesRightss, new SalesRights(element));
 				else if (name.equals(ROWSalesRightsType.refname) || name.equals(ROWSalesRightsType.shortname))
-					x.rowSalesRightsType = ROWSalesRightsType.fromDoc(element);
+					rowSalesRightsType = new ROWSalesRightsType(element);
 				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					x.salesRestrictions = DU.addToList(x.salesRestrictions, SalesRestriction.fromDoc(element));
+					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
 			}
 		});
-
-		return x;
 	}
 
 	public List<String> getCityOfPublicationValues()

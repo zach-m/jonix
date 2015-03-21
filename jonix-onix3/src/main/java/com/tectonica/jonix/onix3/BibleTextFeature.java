@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BibleTextFeatures;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class BibleTextFeature
+@SuppressWarnings("serial")
+public class BibleTextFeature implements Serializable
 {
 	public static final String refname = "BibleTextFeature";
 	public static final String shortname = "b357";
@@ -38,16 +41,15 @@ public class BibleTextFeature
 
 	public BibleTextFeatures value;
 
-	public static BibleTextFeature fromDoc(org.w3c.dom.Element element)
+	public BibleTextFeature()
+	{}
+
+	public BibleTextFeature(org.w3c.dom.Element element)
 	{
-		final BibleTextFeature x = new BibleTextFeature();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = BibleTextFeatures.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = BibleTextFeatures.byValue(JPU.getContentAsString(element));
 	}
 }

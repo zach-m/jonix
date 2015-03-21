@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContributorPlaceRelators;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.Regions;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ContributorPlace
+@SuppressWarnings("serial")
+public class ContributorPlace implements Serializable
 {
 	public static final String refname = "ContributorPlace";
 	public static final String shortname = "contributorplace";
@@ -46,32 +48,31 @@ public class ContributorPlace
 	public RegionCode regionCode; // Optional
 	public List<LocationName> locationNames; // ZeroOrMore
 
-	public static ContributorPlace fromDoc(org.w3c.dom.Element element)
+	public ContributorPlace()
+	{}
+
+	public ContributorPlace(org.w3c.dom.Element element)
 	{
-		final ContributorPlace x = new ContributorPlace();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ContributorPlaceRelator.refname) || name.equals(ContributorPlaceRelator.shortname))
-					x.contributorPlaceRelator = ContributorPlaceRelator.fromDoc(element);
+					contributorPlaceRelator = new ContributorPlaceRelator(element);
 				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					x.countryCode = CountryCode.fromDoc(element);
+					countryCode = new CountryCode(element);
 				else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname))
-					x.regionCode = RegionCode.fromDoc(element);
+					regionCode = new RegionCode(element);
 				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
-					x.locationNames = DU.addToList(x.locationNames, LocationName.fromDoc(element));
+					locationNames = JPU.addToList(locationNames, new LocationName(element));
 			}
 		});
-
-		return x;
 	}
 
 	public ContributorPlaceRelators getContributorPlaceRelatorValue()

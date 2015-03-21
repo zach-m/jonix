@@ -34,7 +34,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DU
+/**
+ * an all-static Jonix Processing Utility class, assisting in run time processing of the DOM elements.
+ * <p>
+ * IMPORTANT: don't edit! the auto-generated classes all rely heavily on the methods in this class
+ * 
+ * @author Zach Melamed
+ */
+public class JPU
 {
 	public static Element firstElemChild(Node node)
 	{

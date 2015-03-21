@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplyToCountryExcluded
+@SuppressWarnings("serial")
+public class SupplyToCountryExcluded implements Serializable
 {
 	public static final String refname = "SupplyToCountryExcluded";
 	public static final String shortname = "j140";
@@ -46,22 +49,21 @@ public class SupplyToCountryExcluded
 
 	public java.util.Set<CountryCodeIso31661s> value;
 
-	public static SupplyToCountryExcluded fromDoc(org.w3c.dom.Element element)
+	public SupplyToCountryExcluded()
+	{}
+
+	public SupplyToCountryExcluded(org.w3c.dom.Element element)
 	{
-		final SupplyToCountryExcluded x = new SupplyToCountryExcluded();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = new java.util.HashSet<>();
-		for (String split : DU.getContentAsString(element).trim().split(" +"))
-			x.value.add(CountryCodeIso31661s.byValue(split));
-
-		return x;
+		value = new java.util.HashSet<>();
+		for (String split : JPU.getContentAsString(element).trim().split(" +"))
+			value.add(CountryCodeIso31661s.byValue(split));
 	}
 }

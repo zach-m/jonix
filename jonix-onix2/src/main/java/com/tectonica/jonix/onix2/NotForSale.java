@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -35,7 +36,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class NotForSale
+@SuppressWarnings("serial")
+public class NotForSale implements Serializable
 {
 	public static final String refname = "NotForSale";
 	public static final String shortname = "notforsale";
@@ -55,40 +57,39 @@ public class NotForSale
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 	public PublisherName publisherName; // Optional
 
-	public static NotForSale fromDoc(org.w3c.dom.Element element)
+	public NotForSale()
+	{}
+
+	public NotForSale(org.w3c.dom.Element element)
 	{
-		final NotForSale x = new NotForSale();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
-					x.rightsCountrys = DU.addToList(x.rightsCountrys, RightsCountry.fromDoc(element));
+					rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(element));
 				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
-					x.rightsTerritory = RightsTerritory.fromDoc(element);
+					rightsTerritory = new RightsTerritory(element);
 				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbn = ISBN.fromDoc(element);
+					isbn = new ISBN(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					x.ean13 = EAN13.fromDoc(element);
+					ean13 = new EAN13(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					x.publisherName = PublisherName.fromDoc(element);
+					publisherName = new PublisherName(element);
 			}
 		});
-
-		return x;
 	}
 
 	public List<java.util.Set<CountryCodeIso31661s>> getRightsCountrySets()

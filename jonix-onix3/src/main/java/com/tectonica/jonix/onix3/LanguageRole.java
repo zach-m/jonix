@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class LanguageRole
+@SuppressWarnings("serial")
+public class LanguageRole implements Serializable
 {
 	public static final String refname = "LanguageRole";
 	public static final String shortname = "b253";
@@ -38,16 +41,15 @@ public class LanguageRole
 
 	public LanguageRoles value;
 
-	public static LanguageRole fromDoc(org.w3c.dom.Element element)
+	public LanguageRole()
+	{}
+
+	public LanguageRole(org.w3c.dom.Element element)
 	{
-		final LanguageRole x = new LanguageRole();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = LanguageRoles.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = LanguageRoles.byValue(JPU.getContentAsString(element));
 	}
 }

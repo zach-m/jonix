@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.TitleTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TitleDetail
+@SuppressWarnings("serial")
+public class TitleDetail implements Serializable
 {
 	public static final String refname = "TitleDetail";
 	public static final String shortname = "titledetail";
@@ -42,30 +44,29 @@ public class TitleDetail
 	public List<TitleElement> titleElements; // OneOrMore
 	public TitleStatement titleStatement; // Optional
 
-	public static TitleDetail fromDoc(org.w3c.dom.Element element)
+	public TitleDetail()
+	{}
+
+	public TitleDetail(org.w3c.dom.Element element)
 	{
-		final TitleDetail x = new TitleDetail();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TitleType.refname) || name.equals(TitleType.shortname))
-					x.titleType = TitleType.fromDoc(element);
+					titleType = new TitleType(element);
 				else if (name.equals(TitleElement.refname) || name.equals(TitleElement.shortname))
-					x.titleElements = DU.addToList(x.titleElements, TitleElement.fromDoc(element));
+					titleElements = JPU.addToList(titleElements, new TitleElement(element));
 				else if (name.equals(TitleStatement.refname) || name.equals(TitleStatement.shortname))
-					x.titleStatement = TitleStatement.fromDoc(element);
+					titleStatement = new TitleStatement(element);
 			}
 		});
-
-		return x;
 	}
 
 	public TitleTypes getTitleTypeValue()

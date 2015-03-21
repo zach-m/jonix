@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductRelations;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class RelatedProduct
+@SuppressWarnings("serial")
+public class RelatedProduct implements Serializable
 {
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
@@ -46,32 +48,31 @@ public class RelatedProduct
 	public ProductForm productForm; // Optional
 	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
 
-	public static RelatedProduct fromDoc(org.w3c.dom.Element element)
+	public RelatedProduct()
+	{}
+
+	public RelatedProduct(org.w3c.dom.Element element)
 	{
-		final RelatedProduct x = new RelatedProduct();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductRelationCode.refname) || name.equals(ProductRelationCode.shortname))
-					x.productRelationCodes = DU.addToList(x.productRelationCodes, ProductRelationCode.fromDoc(element));
+					productRelationCodes = JPU.addToList(productRelationCodes, new ProductRelationCode(element));
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					x.productForm = ProductForm.fromDoc(element);
+					productForm = new ProductForm(element);
 				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
+					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
 			}
 		});
-
-		return x;
 	}
 
 	public List<ProductRelations> getProductRelationCodeValues()

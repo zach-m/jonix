@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ReligiousText
+@SuppressWarnings("serial")
+public class ReligiousText implements Serializable
 {
 	public static final String refname = "ReligiousText";
 	public static final String shortname = "religioustext";
@@ -41,30 +43,29 @@ public class ReligiousText
 	public ReligiousTextIdentifier religiousTextIdentifier; // Required
 	public List<ReligiousTextFeature> religiousTextFeatures; // OneOrMore
 
-	public static ReligiousText fromDoc(org.w3c.dom.Element element)
+	public ReligiousText()
+	{}
+
+	public ReligiousText(org.w3c.dom.Element element)
 	{
-		final ReligiousText x = new ReligiousText();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Bible.refname) || name.equals(Bible.shortname))
-					x.bible = Bible.fromDoc(element);
+					bible = new Bible(element);
 				else if (name.equals(ReligiousTextIdentifier.refname) || name.equals(ReligiousTextIdentifier.shortname))
-					x.religiousTextIdentifier = ReligiousTextIdentifier.fromDoc(element);
+					religiousTextIdentifier = new ReligiousTextIdentifier(element);
 				else if (name.equals(ReligiousTextFeature.refname) || name.equals(ReligiousTextFeature.shortname))
-					x.religiousTextFeatures = DU.addToList(x.religiousTextFeatures, ReligiousTextFeature.fromDoc(element));
+					religiousTextFeatures = JPU.addToList(religiousTextFeatures, new ReligiousTextFeature(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getReligiousTextIdentifierValue()

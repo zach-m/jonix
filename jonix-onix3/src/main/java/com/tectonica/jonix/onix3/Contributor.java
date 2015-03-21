@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.UnnamedPersonss;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Contributor
+@SuppressWarnings("serial")
+public class Contributor implements Serializable
 {
 	public static final String refname = "Contributor";
 	public static final String shortname = "contributor";
@@ -69,76 +71,75 @@ public class Contributor
 	public UnnamedPersons unnamedPersons; // Required
 	public List<ContributorPlace> contributorPlaces; // ZeroOrMore
 
-	public static Contributor fromDoc(org.w3c.dom.Element element)
+	public Contributor()
+	{}
+
+	public Contributor(org.w3c.dom.Element element)
 	{
-		final Contributor x = new Contributor();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
-					x.sequenceNumber = SequenceNumber.fromDoc(element);
+					sequenceNumber = new SequenceNumber(element);
 				else if (name.equals(ContributorRole.refname) || name.equals(ContributorRole.shortname))
-					x.contributorRoles = DU.addToList(x.contributorRoles, ContributorRole.fromDoc(element));
+					contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(element));
 				else if (name.equals(FromLanguage.refname) || name.equals(FromLanguage.shortname))
-					x.fromLanguages = DU.addToList(x.fromLanguages, FromLanguage.fromDoc(element));
+					fromLanguages = JPU.addToList(fromLanguages, new FromLanguage(element));
 				else if (name.equals(ToLanguage.refname) || name.equals(ToLanguage.shortname))
-					x.toLanguages = DU.addToList(x.toLanguages, ToLanguage.fromDoc(element));
+					toLanguages = JPU.addToList(toLanguages, new ToLanguage(element));
 				else if (name.equals(NameType.refname) || name.equals(NameType.shortname))
-					x.nameType = NameType.fromDoc(element);
+					nameType = new NameType(element);
 				else if (name.equals(NameIdentifier.refname) || name.equals(NameIdentifier.shortname))
-					x.nameIdentifiers = DU.addToList(x.nameIdentifiers, NameIdentifier.fromDoc(element));
+					nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(element));
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					x.personName = PersonName.fromDoc(element);
+					personName = new PersonName(element);
 				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-					x.personNameInverted = PersonNameInverted.fromDoc(element);
+					personNameInverted = new PersonNameInverted(element);
 				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-					x.titlesBeforeNames = TitlesBeforeNames.fromDoc(element);
+					titlesBeforeNames = new TitlesBeforeNames(element);
 				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-					x.namesBeforeKey = NamesBeforeKey.fromDoc(element);
+					namesBeforeKey = new NamesBeforeKey(element);
 				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-					x.prefixToKey = PrefixToKey.fromDoc(element);
+					prefixToKey = new PrefixToKey(element);
 				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-					x.keyNames = KeyNames.fromDoc(element);
+					keyNames = new KeyNames(element);
 				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-					x.namesAfterKey = NamesAfterKey.fromDoc(element);
+					namesAfterKey = new NamesAfterKey(element);
 				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-					x.suffixToKey = SuffixToKey.fromDoc(element);
+					suffixToKey = new SuffixToKey(element);
 				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-					x.lettersAfterNames = LettersAfterNames.fromDoc(element);
+					lettersAfterNames = new LettersAfterNames(element);
 				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-					x.titlesAfterNames = TitlesAfterNames.fromDoc(element);
+					titlesAfterNames = new TitlesAfterNames(element);
 				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					x.corporateName = CorporateName.fromDoc(element);
+					corporateName = new CorporateName(element);
 				else if (name.equals(CorporateNameInverted.refname) || name.equals(CorporateNameInverted.shortname))
-					x.corporateNameInverted = CorporateNameInverted.fromDoc(element);
+					corporateNameInverted = new CorporateNameInverted(element);
 				else if (name.equals(AlternativeName.refname) || name.equals(AlternativeName.shortname))
-					x.alternativeNames = DU.addToList(x.alternativeNames, AlternativeName.fromDoc(element));
+					alternativeNames = JPU.addToList(alternativeNames, new AlternativeName(element));
 				else if (name.equals(ContributorDate.refname) || name.equals(ContributorDate.shortname))
-					x.contributorDates = DU.addToList(x.contributorDates, ContributorDate.fromDoc(element));
+					contributorDates = JPU.addToList(contributorDates, new ContributorDate(element));
 				else if (name.equals(ProfessionalAffiliation.refname) || name.equals(ProfessionalAffiliation.shortname))
-					x.professionalAffiliations = DU.addToList(x.professionalAffiliations, ProfessionalAffiliation.fromDoc(element));
+					professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(element));
 				else if (name.equals(BiographicalNote.refname) || name.equals(BiographicalNote.shortname))
-					x.biographicalNotes = DU.addToList(x.biographicalNotes, BiographicalNote.fromDoc(element));
+					biographicalNotes = JPU.addToList(biographicalNotes, new BiographicalNote(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(ContributorDescription.refname) || name.equals(ContributorDescription.shortname))
-					x.contributorDescriptions = DU.addToList(x.contributorDescriptions, ContributorDescription.fromDoc(element));
+					contributorDescriptions = JPU.addToList(contributorDescriptions, new ContributorDescription(element));
 				else if (name.equals(UnnamedPersons.refname) || name.equals(UnnamedPersons.shortname))
-					x.unnamedPersons = UnnamedPersons.fromDoc(element);
+					unnamedPersons = new UnnamedPersons(element);
 				else if (name.equals(ContributorPlace.refname) || name.equals(ContributorPlace.shortname))
-					x.contributorPlaces = DU.addToList(x.contributorPlaces, ContributorPlace.fromDoc(element));
+					contributorPlaces = JPU.addToList(contributorPlaces, new ContributorPlace(element));
 			}
 		});
-
-		return x;
 	}
 
 	public Integer getSequenceNumberValue()

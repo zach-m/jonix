@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplierOwnCoding
+@SuppressWarnings("serial")
+public class SupplierOwnCoding implements Serializable
 {
 	public static final String refname = "SupplierOwnCoding";
 	public static final String shortname = "supplierowncoding";
@@ -40,30 +43,29 @@ public class SupplierOwnCoding
 	public SupplierCodeTypeName supplierCodeTypeName; // Optional
 	public SupplierCodeValue supplierCodeValue; // Required
 
-	public static SupplierOwnCoding fromDoc(org.w3c.dom.Element element)
+	public SupplierOwnCoding()
+	{}
+
+	public SupplierOwnCoding(org.w3c.dom.Element element)
 	{
-		final SupplierOwnCoding x = new SupplierOwnCoding();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SupplierCodeType.refname) || name.equals(SupplierCodeType.shortname))
-					x.supplierCodeType = SupplierCodeType.fromDoc(element);
+					supplierCodeType = new SupplierCodeType(element);
 				else if (name.equals(SupplierCodeTypeName.refname) || name.equals(SupplierCodeTypeName.shortname))
-					x.supplierCodeTypeName = SupplierCodeTypeName.fromDoc(element);
+					supplierCodeTypeName = new SupplierCodeTypeName(element);
 				else if (name.equals(SupplierCodeValue.refname) || name.equals(SupplierCodeValue.shortname))
-					x.supplierCodeValue = SupplierCodeValue.fromDoc(element);
+					supplierCodeValue = new SupplierCodeValue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public SupplierOwnCodeTypes getSupplierCodeTypeValue()

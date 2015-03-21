@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceConditionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PriceCondition
+@SuppressWarnings("serial")
+public class PriceCondition implements Serializable
 {
 	public static final String refname = "PriceCondition";
 	public static final String shortname = "pricecondition";
@@ -42,30 +44,29 @@ public class PriceCondition
 	public List<PriceConditionQuantity> priceConditionQuantitys; // ZeroOrMore
 	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
 
-	public static PriceCondition fromDoc(org.w3c.dom.Element element)
+	public PriceCondition()
+	{}
+
+	public PriceCondition(org.w3c.dom.Element element)
 	{
-		final PriceCondition x = new PriceCondition();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname))
-					x.priceConditionType = PriceConditionType.fromDoc(element);
+					priceConditionType = new PriceConditionType(element);
 				else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname))
-					x.priceConditionQuantitys = DU.addToList(x.priceConditionQuantitys, PriceConditionQuantity.fromDoc(element));
+					priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(element));
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 			}
 		});
-
-		return x;
 	}
 
 	public PriceConditionTypes getPriceConditionTypeValue()

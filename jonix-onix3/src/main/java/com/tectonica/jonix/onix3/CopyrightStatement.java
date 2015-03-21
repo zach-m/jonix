@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.RightsTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RightsTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CopyrightStatement
+@SuppressWarnings("serial")
+public class CopyrightStatement implements Serializable
 {
 	public static final String refname = "CopyrightStatement";
 	public static final String shortname = "copyrightstatement";
@@ -43,30 +45,29 @@ public class CopyrightStatement
 	public List<CopyrightYear> copyrightYears; // OneOrMore
 	public List<CopyrightOwner> copyrightOwners; // ZeroOrMore
 
-	public static CopyrightStatement fromDoc(org.w3c.dom.Element element)
+	public CopyrightStatement()
+	{}
+
+	public CopyrightStatement(org.w3c.dom.Element element)
 	{
-		final CopyrightStatement x = new CopyrightStatement();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CopyrightType.refname) || name.equals(CopyrightType.shortname))
-					x.copyrightType = CopyrightType.fromDoc(element);
+					copyrightType = new CopyrightType(element);
 				else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
-					x.copyrightYears = DU.addToList(x.copyrightYears, CopyrightYear.fromDoc(element));
+					copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(element));
 				else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname))
-					x.copyrightOwners = DU.addToList(x.copyrightOwners, CopyrightOwner.fromDoc(element));
+					copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(element));
 			}
 		});
-
-		return x;
 	}
 
 	public RightsTypes getCopyrightTypeValue()

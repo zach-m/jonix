@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class DiscountCoded
+@SuppressWarnings("serial")
+public class DiscountCoded implements Serializable
 {
 	public static final String refname = "DiscountCoded";
 	public static final String shortname = "discountcoded";
@@ -48,34 +51,33 @@ public class DiscountCoded
 	public DiscountCodeTypeName discountCodeTypeName; // Optional
 	public DiscountCode discountCode; // Required
 
-	public static DiscountCoded fromDoc(org.w3c.dom.Element element)
+	public DiscountCoded()
+	{}
+
+	public DiscountCoded(org.w3c.dom.Element element)
 	{
-		final DiscountCoded x = new DiscountCoded();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(DiscountCodeType.refname) || name.equals(DiscountCodeType.shortname))
-					x.discountCodeType = DiscountCodeType.fromDoc(element);
+					discountCodeType = new DiscountCodeType(element);
 				else if (name.equals(DiscountCodeTypeName.refname) || name.equals(DiscountCodeTypeName.shortname))
-					x.discountCodeTypeName = DiscountCodeTypeName.fromDoc(element);
+					discountCodeTypeName = new DiscountCodeTypeName(element);
 				else if (name.equals(DiscountCode.refname) || name.equals(DiscountCode.shortname))
-					x.discountCode = DiscountCode.fromDoc(element);
+					discountCode = new DiscountCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public DiscountCodeTypes getDiscountCodeTypeValue()

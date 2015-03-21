@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.Regions;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class RegionsExcluded
+@SuppressWarnings("serial")
+public class RegionsExcluded implements Serializable
 {
 	public static final String refname = "RegionsExcluded";
 	public static final String shortname = "x452";
@@ -38,18 +41,17 @@ public class RegionsExcluded
 
 	public java.util.Set<Regions> value;
 
-	public static RegionsExcluded fromDoc(org.w3c.dom.Element element)
+	public RegionsExcluded()
+	{}
+
+	public RegionsExcluded(org.w3c.dom.Element element)
 	{
-		final RegionsExcluded x = new RegionsExcluded();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = new java.util.HashSet<>();
-		for (String split : DU.getContentAsString(element).trim().split(" +"))
-			x.value.add(Regions.byValue(split));
-
-		return x;
+		value = new java.util.HashSet<>();
+		for (String split : JPU.getContentAsString(element).trim().split(" +"))
+			value.add(Regions.byValue(split));
 	}
 }

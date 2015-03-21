@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductContactRole
+@SuppressWarnings("serial")
+public class ProductContactRole implements Serializable
 {
 	public static final String refname = "ProductContactRole";
 	public static final String shortname = "x482";
@@ -38,16 +41,15 @@ public class ProductContactRole
 
 	public ProductContactRoles value;
 
-	public static ProductContactRole fromDoc(org.w3c.dom.Element element)
+	public ProductContactRole()
+	{}
+
+	public ProductContactRole(org.w3c.dom.Element element)
 	{
-		final ProductContactRole x = new ProductContactRole();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductContactRoles.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductContactRoles.byValue(JPU.getContentAsString(element));
 	}
 }

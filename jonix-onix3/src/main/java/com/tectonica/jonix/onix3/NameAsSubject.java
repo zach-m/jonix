@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class NameAsSubject
+@SuppressWarnings("serial")
+public class NameAsSubject implements Serializable
 {
 	public static final String refname = "NameAsSubject";
 	public static final String shortname = "nameassubject";
@@ -53,52 +55,51 @@ public class NameAsSubject
 	public CorporateName corporateName; // Required
 	public CorporateNameInverted corporateNameInverted; // Optional
 
-	public static NameAsSubject fromDoc(org.w3c.dom.Element element)
+	public NameAsSubject()
+	{}
+
+	public NameAsSubject(org.w3c.dom.Element element)
 	{
-		final NameAsSubject x = new NameAsSubject();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(NameType.refname) || name.equals(NameType.shortname))
-					x.nameType = NameType.fromDoc(element);
+					nameType = new NameType(element);
 				else if (name.equals(NameIdentifier.refname) || name.equals(NameIdentifier.shortname))
-					x.nameIdentifiers = DU.addToList(x.nameIdentifiers, NameIdentifier.fromDoc(element));
+					nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(element));
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					x.personName = PersonName.fromDoc(element);
+					personName = new PersonName(element);
 				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-					x.personNameInverted = PersonNameInverted.fromDoc(element);
+					personNameInverted = new PersonNameInverted(element);
 				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-					x.titlesBeforeNames = TitlesBeforeNames.fromDoc(element);
+					titlesBeforeNames = new TitlesBeforeNames(element);
 				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-					x.namesBeforeKey = NamesBeforeKey.fromDoc(element);
+					namesBeforeKey = new NamesBeforeKey(element);
 				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-					x.prefixToKey = PrefixToKey.fromDoc(element);
+					prefixToKey = new PrefixToKey(element);
 				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-					x.keyNames = KeyNames.fromDoc(element);
+					keyNames = new KeyNames(element);
 				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-					x.namesAfterKey = NamesAfterKey.fromDoc(element);
+					namesAfterKey = new NamesAfterKey(element);
 				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-					x.suffixToKey = SuffixToKey.fromDoc(element);
+					suffixToKey = new SuffixToKey(element);
 				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-					x.lettersAfterNames = LettersAfterNames.fromDoc(element);
+					lettersAfterNames = new LettersAfterNames(element);
 				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-					x.titlesAfterNames = TitlesAfterNames.fromDoc(element);
+					titlesAfterNames = new TitlesAfterNames(element);
 				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					x.corporateName = CorporateName.fromDoc(element);
+					corporateName = new CorporateName(element);
 				else if (name.equals(CorporateNameInverted.refname) || name.equals(CorporateNameInverted.shortname))
-					x.corporateNameInverted = CorporateNameInverted.fromDoc(element);
+					corporateNameInverted = new CorporateNameInverted(element);
 			}
 		});
-
-		return x;
 	}
 
 	public PersonOrganizationNameTypes getNameTypeValue()

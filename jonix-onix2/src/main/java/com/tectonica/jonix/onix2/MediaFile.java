@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileFormats;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileLinkTypes;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
@@ -33,7 +35,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class MediaFile
+@SuppressWarnings("serial")
+public class MediaFile implements Serializable
 {
 	public static final String refname = "MediaFile";
 	public static final String shortname = "mediafile";
@@ -58,50 +61,49 @@ public class MediaFile
 	public DownloadTerms downloadTerms; // Optional
 	public MediaFileDate mediaFileDate; // Optional
 
-	public static MediaFile fromDoc(org.w3c.dom.Element element)
+	public MediaFile()
+	{}
+
+	public MediaFile(org.w3c.dom.Element element)
 	{
-		final MediaFile x = new MediaFile();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(MediaFileTypeCode.refname) || name.equals(MediaFileTypeCode.shortname))
-					x.mediaFileTypeCode = MediaFileTypeCode.fromDoc(element);
+					mediaFileTypeCode = new MediaFileTypeCode(element);
 				else if (name.equals(MediaFileFormatCode.refname) || name.equals(MediaFileFormatCode.shortname))
-					x.mediaFileFormatCode = MediaFileFormatCode.fromDoc(element);
+					mediaFileFormatCode = new MediaFileFormatCode(element);
 				else if (name.equals(ImageResolution.refname) || name.equals(ImageResolution.shortname))
-					x.imageResolution = ImageResolution.fromDoc(element);
+					imageResolution = new ImageResolution(element);
 				else if (name.equals(MediaFileLinkTypeCode.refname) || name.equals(MediaFileLinkTypeCode.shortname))
-					x.mediaFileLinkTypeCode = MediaFileLinkTypeCode.fromDoc(element);
+					mediaFileLinkTypeCode = new MediaFileLinkTypeCode(element);
 				else if (name.equals(MediaFileLink.refname) || name.equals(MediaFileLink.shortname))
-					x.mediaFileLink = MediaFileLink.fromDoc(element);
+					mediaFileLink = new MediaFileLink(element);
 				else if (name.equals(TextWithDownload.refname) || name.equals(TextWithDownload.shortname))
-					x.textWithDownload = TextWithDownload.fromDoc(element);
+					textWithDownload = new TextWithDownload(element);
 				else if (name.equals(DownloadCaption.refname) || name.equals(DownloadCaption.shortname))
-					x.downloadCaption = DownloadCaption.fromDoc(element);
+					downloadCaption = new DownloadCaption(element);
 				else if (name.equals(DownloadCredit.refname) || name.equals(DownloadCredit.shortname))
-					x.downloadCredit = DownloadCredit.fromDoc(element);
+					downloadCredit = new DownloadCredit(element);
 				else if (name.equals(DownloadCopyrightNotice.refname) || name.equals(DownloadCopyrightNotice.shortname))
-					x.downloadCopyrightNotice = DownloadCopyrightNotice.fromDoc(element);
+					downloadCopyrightNotice = new DownloadCopyrightNotice(element);
 				else if (name.equals(DownloadTerms.refname) || name.equals(DownloadTerms.shortname))
-					x.downloadTerms = DownloadTerms.fromDoc(element);
+					downloadTerms = new DownloadTerms(element);
 				else if (name.equals(MediaFileDate.refname) || name.equals(MediaFileDate.shortname))
-					x.mediaFileDate = MediaFileDate.fromDoc(element);
+					mediaFileDate = new MediaFileDate(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ImageAudioVideoFileTypes getMediaFileTypeCodeValue()

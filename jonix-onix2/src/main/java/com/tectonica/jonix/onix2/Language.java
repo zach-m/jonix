@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
@@ -32,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Language
+@SuppressWarnings("serial")
+public class Language implements Serializable
 {
 	public static final String refname = "Language";
 	public static final String shortname = "language";
@@ -49,34 +52,33 @@ public class Language
 	public LanguageCode languageCode; // Required
 	public CountryCode countryCode; // Optional
 
-	public static Language fromDoc(org.w3c.dom.Element element)
+	public Language()
+	{}
+
+	public Language(org.w3c.dom.Element element)
 	{
-		final Language x = new Language();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
-					x.languageRole = LanguageRole.fromDoc(element);
+					languageRole = new LanguageRole(element);
 				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
-					x.languageCode = LanguageCode.fromDoc(element);
+					languageCode = new LanguageCode(element);
 				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					x.countryCode = CountryCode.fromDoc(element);
+					countryCode = new CountryCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public LanguageRoles getLanguageRoleValue()

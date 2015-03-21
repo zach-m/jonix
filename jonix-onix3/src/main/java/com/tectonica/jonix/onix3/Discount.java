@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DiscountTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Discount
+@SuppressWarnings("serial")
+public class Discount implements Serializable
 {
 	public static final String refname = "Discount";
 	public static final String shortname = "discount";
@@ -42,34 +45,33 @@ public class Discount
 	public DiscountPercent discountPercent; // Required
 	public DiscountAmount discountAmount; // Optional
 
-	public static Discount fromDoc(org.w3c.dom.Element element)
+	public Discount()
+	{}
+
+	public Discount(org.w3c.dom.Element element)
 	{
-		final Discount x = new Discount();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(DiscountType.refname) || name.equals(DiscountType.shortname))
-					x.discountType = DiscountType.fromDoc(element);
+					discountType = new DiscountType(element);
 				else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-					x.quantity = Quantity.fromDoc(element);
+					quantity = new Quantity(element);
 				else if (name.equals(ToQuantity.refname) || name.equals(ToQuantity.shortname))
-					x.toQuantity = ToQuantity.fromDoc(element);
+					toQuantity = new ToQuantity(element);
 				else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
-					x.discountPercent = DiscountPercent.fromDoc(element);
+					discountPercent = new DiscountPercent(element);
 				else if (name.equals(DiscountAmount.refname) || name.equals(DiscountAmount.shortname))
-					x.discountAmount = DiscountAmount.fromDoc(element);
+					discountAmount = new DiscountAmount(element);
 			}
 		});
-
-		return x;
 	}
 
 	public DiscountTypes getDiscountTypeValue()

@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ComparisonProductPrice
+@SuppressWarnings("serial")
+public class ComparisonProductPrice implements Serializable
 {
 	public static final String refname = "ComparisonProductPrice";
 	public static final String shortname = "comparisonproductprice";
@@ -44,32 +46,31 @@ public class ComparisonProductPrice
 	public PriceAmount priceAmount; // Required
 	public CurrencyCode currencyCode; // Optional
 
-	public static ComparisonProductPrice fromDoc(org.w3c.dom.Element element)
+	public ComparisonProductPrice()
+	{}
+
+	public ComparisonProductPrice(org.w3c.dom.Element element)
 	{
-		final ComparisonProductPrice x = new ComparisonProductPrice();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
-					x.priceType = PriceType.fromDoc(element);
+					priceType = new PriceType(element);
 				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					x.priceAmount = PriceAmount.fromDoc(element);
+					priceAmount = new PriceAmount(element);
 				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-					x.currencyCode = CurrencyCode.fromDoc(element);
+					currencyCode = new CurrencyCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public PriceTypes getPriceTypeValue()

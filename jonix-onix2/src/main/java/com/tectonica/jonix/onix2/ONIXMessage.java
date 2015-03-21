@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ONIXMessage
+@SuppressWarnings("serial")
+public class ONIXMessage implements Serializable
 {
 	public static final String refname = "ONIXMessage";
 	public static final String shortname = "ONIXmessage";
@@ -51,35 +53,34 @@ public class ONIXMessage
 	public List<MainSeriesRecord> mainSeriesRecords; // ZeroOrMore
 	public List<SubSeriesRecord> subSeriesRecords; // ZeroOrMore
 
-	public static ONIXMessage fromDoc(org.w3c.dom.Element element)
+	public ONIXMessage()
+	{}
+
+	public ONIXMessage(org.w3c.dom.Element element)
 	{
-		final ONIXMessage x = new ONIXMessage();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Header.refname) || name.equals(Header.shortname))
-					x.header = Header.fromDoc(element);
+					header = new Header(element);
 				else if (name.equals(Product.refname) || name.equals(Product.shortname))
-					x.products = DU.addToList(x.products, Product.fromDoc(element));
+					products = JPU.addToList(products, new Product(element));
 				else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname))
-					x.mainSeriesRecords = DU.addToList(x.mainSeriesRecords, MainSeriesRecord.fromDoc(element));
+					mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(element));
 				else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname))
-					x.subSeriesRecords = DU.addToList(x.subSeriesRecords, SubSeriesRecord.fromDoc(element));
+					subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(element));
 			}
 		});
-
-		return x;
 	}
 }

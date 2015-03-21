@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CollectionType
+@SuppressWarnings("serial")
+public class CollectionType implements Serializable
 {
 	public static final String refname = "CollectionType";
 	public static final String shortname = "x329";
@@ -38,16 +41,15 @@ public class CollectionType
 
 	public CollectionTypes value;
 
-	public static CollectionType fromDoc(org.w3c.dom.Element element)
+	public CollectionType()
+	{}
+
+	public CollectionType(org.w3c.dom.Element element)
 	{
-		final CollectionType x = new CollectionType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = CollectionTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = CollectionTypes.byValue(JPU.getContentAsString(element));
 	}
 }

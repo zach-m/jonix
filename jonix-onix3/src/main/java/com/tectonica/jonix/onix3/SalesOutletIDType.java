@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SalesOutletIDType
+@SuppressWarnings("serial")
+public class SalesOutletIDType implements Serializable
 {
 	public static final String refname = "SalesOutletIDType";
 	public static final String shortname = "b393";
@@ -38,16 +41,15 @@ public class SalesOutletIDType
 
 	public SalesOutletIdentifierTypes value;
 
-	public static SalesOutletIDType fromDoc(org.w3c.dom.Element element)
+	public SalesOutletIDType()
+	{}
+
+	public SalesOutletIDType(org.w3c.dom.Element element)
 	{
-		final SalesOutletIDType x = new SalesOutletIDType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = SalesOutletIdentifierTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = SalesOutletIdentifierTypes.byValue(JPU.getContentAsString(element));
 	}
 }

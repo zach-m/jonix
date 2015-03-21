@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class BatchBonus
+@SuppressWarnings("serial")
+public class BatchBonus implements Serializable
 {
 	public static final String refname = "BatchBonus";
 	public static final String shortname = "batchbonus";
@@ -38,28 +41,27 @@ public class BatchBonus
 	public BatchQuantity batchQuantity; // Required
 	public FreeQuantity freeQuantity; // Required
 
-	public static BatchBonus fromDoc(org.w3c.dom.Element element)
+	public BatchBonus()
+	{}
+
+	public BatchBonus(org.w3c.dom.Element element)
 	{
-		final BatchBonus x = new BatchBonus();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname))
-					x.batchQuantity = BatchQuantity.fromDoc(element);
+					batchQuantity = new BatchQuantity(element);
 				else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname))
-					x.freeQuantity = FreeQuantity.fromDoc(element);
+					freeQuantity = new FreeQuantity(element);
 			}
 		});
-
-		return x;
 	}
 
 	public Integer getBatchQuantityValue()

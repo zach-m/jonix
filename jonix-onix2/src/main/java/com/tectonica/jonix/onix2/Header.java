@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.DefaultLinearUnits;
 import com.tectonica.jonix.codelist.DefaultUnitOfWeights;
@@ -36,7 +37,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Header
+@SuppressWarnings("serial")
+public class Header implements Serializable
 {
 	public static final String refname = "Header";
 	public static final String shortname = "header";
@@ -71,70 +73,69 @@ public class Header
 	public DefaultWeightUnit defaultWeightUnit; // Optional
 	public DefaultClassOfTrade defaultClassOfTrade; // Optional
 
-	public static Header fromDoc(org.w3c.dom.Element element)
+	public Header()
+	{}
+
+	public Header(org.w3c.dom.Element element)
 	{
-		final Header x = new Header();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(FromEANNumber.refname) || name.equals(FromEANNumber.shortname))
-					x.fromEANNumber = FromEANNumber.fromDoc(element);
+					fromEANNumber = new FromEANNumber(element);
 				else if (name.equals(FromSAN.refname) || name.equals(FromSAN.shortname))
-					x.fromSAN = FromSAN.fromDoc(element);
+					fromSAN = new FromSAN(element);
 				else if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
-					x.senderIdentifiers = DU.addToList(x.senderIdentifiers, SenderIdentifier.fromDoc(element));
+					senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(element));
 				else if (name.equals(FromCompany.refname) || name.equals(FromCompany.shortname))
-					x.fromCompany = FromCompany.fromDoc(element);
+					fromCompany = new FromCompany(element);
 				else if (name.equals(FromPerson.refname) || name.equals(FromPerson.shortname))
-					x.fromPerson = FromPerson.fromDoc(element);
+					fromPerson = new FromPerson(element);
 				else if (name.equals(FromEmail.refname) || name.equals(FromEmail.shortname))
-					x.fromEmail = FromEmail.fromDoc(element);
+					fromEmail = new FromEmail(element);
 				else if (name.equals(ToEANNumber.refname) || name.equals(ToEANNumber.shortname))
-					x.toEANNumber = ToEANNumber.fromDoc(element);
+					toEANNumber = new ToEANNumber(element);
 				else if (name.equals(ToSAN.refname) || name.equals(ToSAN.shortname))
-					x.toSAN = ToSAN.fromDoc(element);
+					toSAN = new ToSAN(element);
 				else if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
-					x.addresseeIdentifiers = DU.addToList(x.addresseeIdentifiers, AddresseeIdentifier.fromDoc(element));
+					addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(element));
 				else if (name.equals(ToCompany.refname) || name.equals(ToCompany.shortname))
-					x.toCompany = ToCompany.fromDoc(element);
+					toCompany = new ToCompany(element);
 				else if (name.equals(ToPerson.refname) || name.equals(ToPerson.shortname))
-					x.toPerson = ToPerson.fromDoc(element);
+					toPerson = new ToPerson(element);
 				else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
-					x.messageNumber = MessageNumber.fromDoc(element);
+					messageNumber = new MessageNumber(element);
 				else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
-					x.messageRepeat = MessageRepeat.fromDoc(element);
+					messageRepeat = new MessageRepeat(element);
 				else if (name.equals(SentDate.refname) || name.equals(SentDate.shortname))
-					x.sentDate = SentDate.fromDoc(element);
+					sentDate = new SentDate(element);
 				else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
-					x.messageNote = MessageNote.fromDoc(element);
+					messageNote = new MessageNote(element);
 				else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
-					x.defaultLanguageOfText = DefaultLanguageOfText.fromDoc(element);
+					defaultLanguageOfText = new DefaultLanguageOfText(element);
 				else if (name.equals(DefaultPriceTypeCode.refname) || name.equals(DefaultPriceTypeCode.shortname))
-					x.defaultPriceTypeCode = DefaultPriceTypeCode.fromDoc(element);
+					defaultPriceTypeCode = new DefaultPriceTypeCode(element);
 				else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
-					x.defaultCurrencyCode = DefaultCurrencyCode.fromDoc(element);
+					defaultCurrencyCode = new DefaultCurrencyCode(element);
 				else if (name.equals(DefaultLinearUnit.refname) || name.equals(DefaultLinearUnit.shortname))
-					x.defaultLinearUnit = DefaultLinearUnit.fromDoc(element);
+					defaultLinearUnit = new DefaultLinearUnit(element);
 				else if (name.equals(DefaultWeightUnit.refname) || name.equals(DefaultWeightUnit.shortname))
-					x.defaultWeightUnit = DefaultWeightUnit.fromDoc(element);
+					defaultWeightUnit = new DefaultWeightUnit(element);
 				else if (name.equals(DefaultClassOfTrade.refname) || name.equals(DefaultClassOfTrade.shortname))
-					x.defaultClassOfTrade = DefaultClassOfTrade.fromDoc(element);
+					defaultClassOfTrade = new DefaultClassOfTrade(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getFromEANNumberValue()

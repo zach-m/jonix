@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Subject
+@SuppressWarnings("serial")
+public class Subject implements Serializable
 {
 	public static final String refname = "Subject";
 	public static final String shortname = "subject";
@@ -50,38 +53,37 @@ public class Subject
 	public SubjectCode subjectCode; // Required
 	public SubjectHeadingText subjectHeadingText; // Optional
 
-	public static Subject fromDoc(org.w3c.dom.Element element)
+	public Subject()
+	{}
+
+	public Subject(org.w3c.dom.Element element)
 	{
-		final Subject x = new Subject();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SubjectSchemeIdentifier.refname) || name.equals(SubjectSchemeIdentifier.shortname))
-					x.subjectSchemeIdentifier = SubjectSchemeIdentifier.fromDoc(element);
+					subjectSchemeIdentifier = new SubjectSchemeIdentifier(element);
 				else if (name.equals(SubjectSchemeName.refname) || name.equals(SubjectSchemeName.shortname))
-					x.subjectSchemeName = SubjectSchemeName.fromDoc(element);
+					subjectSchemeName = new SubjectSchemeName(element);
 				else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
-					x.subjectSchemeVersion = SubjectSchemeVersion.fromDoc(element);
+					subjectSchemeVersion = new SubjectSchemeVersion(element);
 				else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname))
-					x.subjectCode = SubjectCode.fromDoc(element);
+					subjectCode = new SubjectCode(element);
 				else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname))
-					x.subjectHeadingText = SubjectHeadingText.fromDoc(element);
+					subjectHeadingText = new SubjectHeadingText(element);
 			}
 		});
-
-		return x;
 	}
 
 	public SubjectSchemeIdentifiers getSubjectSchemeIdentifierValue()

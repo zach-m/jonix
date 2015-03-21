@@ -77,12 +77,12 @@ public class JonixParser
 					final String nodeName = element.getNodeName();
 					if (nodeName.equalsIgnoreCase("Product"))
 					{
-						BasicProduct product = new BasicProduct(Product.fromDoc(element));
+						BasicProduct product = new BasicProduct(new Product(element));
 						jonixParserListener.onProduct(product, ++productCount);
 					}
 					else if (nodeName.equalsIgnoreCase("Header"))
 					{
-						BasicHeader header = new BasicHeader(Header.fromDoc(element));
+						BasicHeader header = new BasicHeader(new Header(element));
 						jonixParserListener.onHeader(header);
 					}
 				}

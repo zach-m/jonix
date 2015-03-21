@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Conference
+@SuppressWarnings("serial")
+public class Conference implements Serializable
 {
 	public static final String refname = "Conference";
 	public static final String shortname = "conference";
@@ -47,42 +49,41 @@ public class Conference
 	public List<ConferenceSponsor> conferenceSponsors; // ZeroOrMore
 	public List<Website> websites; // ZeroOrMore
 
-	public static Conference fromDoc(org.w3c.dom.Element element)
+	public Conference()
+	{}
+
+	public Conference(org.w3c.dom.Element element)
 	{
-		final Conference x = new Conference();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
-					x.conferenceRole = ConferenceRole.fromDoc(element);
+					conferenceRole = new ConferenceRole(element);
 				else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
-					x.conferenceName = ConferenceName.fromDoc(element);
+					conferenceName = new ConferenceName(element);
 				else if (name.equals(ConferenceAcronym.refname) || name.equals(ConferenceAcronym.shortname))
-					x.conferenceAcronym = ConferenceAcronym.fromDoc(element);
+					conferenceAcronym = new ConferenceAcronym(element);
 				else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
-					x.conferenceNumber = ConferenceNumber.fromDoc(element);
+					conferenceNumber = new ConferenceNumber(element);
 				else if (name.equals(ConferenceTheme.refname) || name.equals(ConferenceTheme.shortname))
-					x.conferenceTheme = ConferenceTheme.fromDoc(element);
+					conferenceTheme = new ConferenceTheme(element);
 				else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
-					x.conferenceDate = ConferenceDate.fromDoc(element);
+					conferenceDate = new ConferenceDate(element);
 				else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
-					x.conferencePlace = ConferencePlace.fromDoc(element);
+					conferencePlace = new ConferencePlace(element);
 				else if (name.equals(ConferenceSponsor.refname) || name.equals(ConferenceSponsor.shortname))
-					x.conferenceSponsors = DU.addToList(x.conferenceSponsors, ConferenceSponsor.fromDoc(element));
+					conferenceSponsors = JPU.addToList(conferenceSponsors, new ConferenceSponsor(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getConferenceRoleValue()

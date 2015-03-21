@@ -19,17 +19,19 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProfessionalAffiliation
+@SuppressWarnings("serial")
+public class ProfessionalAffiliation implements Serializable
 {
 	public static final String refname = "ProfessionalAffiliation";
 	public static final String shortname = "professionalaffiliation";
@@ -41,28 +43,27 @@ public class ProfessionalAffiliation
 	public List<ProfessionalPosition> professionalPositions; // OneOrMore
 	public Affiliation affiliation; // Optional
 
-	public static ProfessionalAffiliation fromDoc(org.w3c.dom.Element element)
+	public ProfessionalAffiliation()
+	{}
+
+	public ProfessionalAffiliation(org.w3c.dom.Element element)
 	{
-		final ProfessionalAffiliation x = new ProfessionalAffiliation();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
-					x.professionalPositions = DU.addToList(x.professionalPositions, ProfessionalPosition.fromDoc(element));
+					professionalPositions = JPU.addToList(professionalPositions, new ProfessionalPosition(element));
 				else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
-					x.affiliation = Affiliation.fromDoc(element);
+					affiliation = new Affiliation(element);
 			}
 		});
-
-		return x;
 	}
 
 	public List<String> getProfessionalPositionValues()

@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class UnpricedItemType
+@SuppressWarnings("serial")
+public class UnpricedItemType implements Serializable
 {
 	public static final String refname = "UnpricedItemType";
 	public static final String shortname = "j192";
@@ -38,16 +41,15 @@ public class UnpricedItemType
 
 	public UnpricedItemTypes value;
 
-	public static UnpricedItemType fromDoc(org.w3c.dom.Element element)
+	public UnpricedItemType()
+	{}
+
+	public UnpricedItemType(org.w3c.dom.Element element)
 	{
-		final UnpricedItemType x = new UnpricedItemType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = UnpricedItemTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = UnpricedItemTypes.byValue(JPU.getContentAsString(element));
 	}
 }

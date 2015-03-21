@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductFormDetail
+@SuppressWarnings("serial")
+public class ProductFormDetail implements Serializable
 {
 	public static final String refname = "ProductFormDetail";
 	public static final String shortname = "b333";
@@ -38,16 +41,15 @@ public class ProductFormDetail
 
 	public ProductFormDetailsList175 value;
 
-	public static ProductFormDetail fromDoc(org.w3c.dom.Element element)
+	public ProductFormDetail()
+	{}
+
+	public ProductFormDetail(org.w3c.dom.Element element)
 	{
-		final ProductFormDetail x = new ProductFormDetail();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductFormDetailsList175.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductFormDetailsList175.byValue(JPU.getContentAsString(element));
 	}
 }

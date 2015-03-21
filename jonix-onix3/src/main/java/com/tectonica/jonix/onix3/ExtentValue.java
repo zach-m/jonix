@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ExtentValue
+@SuppressWarnings("serial")
+public class ExtentValue implements Serializable
 {
 	public static final String refname = "ExtentValue";
 	public static final String shortname = "b219";
@@ -37,16 +40,15 @@ public class ExtentValue
 
 	public Double value; // dt.StrictPositiveDecimal
 
-	public static ExtentValue fromDoc(org.w3c.dom.Element element)
+	public ExtentValue()
+	{}
+
+	public ExtentValue(org.w3c.dom.Element element)
 	{
-		final ExtentValue x = new ExtentValue();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = DU.getContentAsDouble(element);
-
-		return x;
+		value = JPU.getContentAsDouble(element);
 	}
 }

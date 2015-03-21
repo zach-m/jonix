@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Date
+@SuppressWarnings("serial")
+public class Date implements Serializable
 {
 	public static final String refname = "Date";
 	public static final String shortname = "b306";
@@ -39,17 +42,16 @@ public class Date
 
 	public String value; // dt.NonEmptyString
 
-	public static Date fromDoc(org.w3c.dom.Element element)
+	public Date()
+	{}
+
+	public Date(org.w3c.dom.Element element)
 	{
-		final Date x = new Date();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
+		this.dateformat = DateFormats.byValue(JPU.getAttribute(element, "dateformat"));
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-		x.dateformat = DateFormats.byValue(DU.getAttribute(element, "dateformat"));
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

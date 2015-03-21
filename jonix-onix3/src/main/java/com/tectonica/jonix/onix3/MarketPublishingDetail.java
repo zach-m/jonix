@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.MarketPublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class MarketPublishingDetail
+@SuppressWarnings("serial")
+public class MarketPublishingDetail implements Serializable
 {
 	public static final String refname = "MarketPublishingDetail";
 	public static final String shortname = "marketpublishingdetail";
@@ -51,46 +53,45 @@ public class MarketPublishingDetail
 	public List<CopiesSold> copiesSolds; // ZeroOrMore
 	public List<BookClubAdoption> bookClubAdoptions; // ZeroOrMore
 
-	public static MarketPublishingDetail fromDoc(org.w3c.dom.Element element)
+	public MarketPublishingDetail()
+	{}
+
+	public MarketPublishingDetail(org.w3c.dom.Element element)
 	{
-		final MarketPublishingDetail x = new MarketPublishingDetail();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PublisherRepresentative.refname) || name.equals(PublisherRepresentative.shortname))
-					x.publisherRepresentatives = DU.addToList(x.publisherRepresentatives, PublisherRepresentative.fromDoc(element));
+					publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(element));
 				else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
-					x.productContacts = DU.addToList(x.productContacts, ProductContact.fromDoc(element));
+					productContacts = JPU.addToList(productContacts, new ProductContact(element));
 				else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
-					x.marketPublishingStatus = MarketPublishingStatus.fromDoc(element);
+					marketPublishingStatus = new MarketPublishingStatus(element);
 				else if (name.equals(MarketPublishingStatusNote.refname) || name.equals(MarketPublishingStatusNote.shortname))
-					x.marketPublishingStatusNotes = DU.addToList(x.marketPublishingStatusNotes, MarketPublishingStatusNote.fromDoc(element));
+					marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(element));
 				else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
-					x.marketDates = DU.addToList(x.marketDates, MarketDate.fromDoc(element));
+					marketDates = JPU.addToList(marketDates, new MarketDate(element));
 				else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))
-					x.promotionCampaigns = DU.addToList(x.promotionCampaigns, PromotionCampaign.fromDoc(element));
+					promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(element));
 				else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname))
-					x.promotionContact = PromotionContact.fromDoc(element);
+					promotionContact = new PromotionContact(element);
 				else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname))
-					x.initialPrintRuns = DU.addToList(x.initialPrintRuns, InitialPrintRun.fromDoc(element));
+					initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(element));
 				else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname))
-					x.reprintDetails = DU.addToList(x.reprintDetails, ReprintDetail.fromDoc(element));
+					reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(element));
 				else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname))
-					x.copiesSolds = DU.addToList(x.copiesSolds, CopiesSold.fromDoc(element));
+					copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(element));
 				else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname))
-					x.bookClubAdoptions = DU.addToList(x.bookClubAdoptions, BookClubAdoption.fromDoc(element));
+					bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(element));
 			}
 		});
-
-		return x;
 	}
 
 	public MarketPublishingStatuss getMarketPublishingStatusValue()

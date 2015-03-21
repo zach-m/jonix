@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class EpubLicenseExpression
+@SuppressWarnings("serial")
+public class EpubLicenseExpression implements Serializable
 {
 	public static final String refname = "EpubLicenseExpression";
 	public static final String shortname = "epublicenseexpression";
@@ -40,30 +43,29 @@ public class EpubLicenseExpression
 	public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName; // Optional
 	public EpubLicenseExpressionLink epubLicenseExpressionLink; // Required
 
-	public static EpubLicenseExpression fromDoc(org.w3c.dom.Element element)
+	public EpubLicenseExpression()
+	{}
+
+	public EpubLicenseExpression(org.w3c.dom.Element element)
 	{
-		final EpubLicenseExpression x = new EpubLicenseExpression();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(EpubLicenseExpressionType.refname) || name.equals(EpubLicenseExpressionType.shortname))
-					x.epubLicenseExpressionType = EpubLicenseExpressionType.fromDoc(element);
+					epubLicenseExpressionType = new EpubLicenseExpressionType(element);
 				else if (name.equals(EpubLicenseExpressionTypeName.refname) || name.equals(EpubLicenseExpressionTypeName.shortname))
-					x.epubLicenseExpressionTypeName = EpubLicenseExpressionTypeName.fromDoc(element);
+					epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(element);
 				else if (name.equals(EpubLicenseExpressionLink.refname) || name.equals(EpubLicenseExpressionLink.shortname))
-					x.epubLicenseExpressionLink = EpubLicenseExpressionLink.fromDoc(element);
+					epubLicenseExpressionLink = new EpubLicenseExpressionLink(element);
 			}
 		});
-
-		return x;
 	}
 
 	public LicenseExpressionTypes getEpubLicenseExpressionTypeValue()

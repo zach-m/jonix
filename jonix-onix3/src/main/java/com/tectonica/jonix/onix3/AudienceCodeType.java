@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class AudienceCodeType
+@SuppressWarnings("serial")
+public class AudienceCodeType implements Serializable
 {
 	public static final String refname = "AudienceCodeType";
 	public static final String shortname = "b204";
@@ -38,16 +41,15 @@ public class AudienceCodeType
 
 	public AudienceCodeTypes value;
 
-	public static AudienceCodeType fromDoc(org.w3c.dom.Element element)
+	public AudienceCodeType()
+	{}
+
+	public AudienceCodeType(org.w3c.dom.Element element)
 	{
-		final AudienceCodeType x = new AudienceCodeType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = AudienceCodeTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = AudienceCodeTypes.byValue(JPU.getContentAsString(element));
 	}
 }

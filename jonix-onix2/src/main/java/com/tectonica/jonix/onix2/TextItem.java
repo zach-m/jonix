@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TextItem
+@SuppressWarnings("serial")
+public class TextItem implements Serializable
 {
 	public static final String refname = "TextItem";
 	public static final String shortname = "textitem";
@@ -53,40 +55,39 @@ public class TextItem
 	public List<PageRun> pageRuns; // ZeroOrMore
 	public NumberOfPages numberOfPages; // Optional
 
-	public static TextItem fromDoc(org.w3c.dom.Element element)
+	public TextItem()
+	{}
+
+	public TextItem(org.w3c.dom.Element element)
 	{
-		final TextItem x = new TextItem();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TextItemType.refname) || name.equals(TextItemType.shortname))
-					x.textItemType = TextItemType.fromDoc(element);
+					textItemType = new TextItemType(element);
 				else if (name.equals(TextItemIdentifier.refname) || name.equals(TextItemIdentifier.shortname))
-					x.textItemIdentifiers = DU.addToList(x.textItemIdentifiers, TextItemIdentifier.fromDoc(element));
+					textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(element));
 				else if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
-					x.firstPageNumber = FirstPageNumber.fromDoc(element);
+					firstPageNumber = new FirstPageNumber(element);
 				else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
-					x.lastPageNumber = LastPageNumber.fromDoc(element);
+					lastPageNumber = new LastPageNumber(element);
 				else if (name.equals(PageRun.refname) || name.equals(PageRun.shortname))
-					x.pageRuns = DU.addToList(x.pageRuns, PageRun.fromDoc(element));
+					pageRuns = JPU.addToList(pageRuns, new PageRun(element));
 				else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
-					x.numberOfPages = NumberOfPages.fromDoc(element);
+					numberOfPages = new NumberOfPages(element);
 			}
 		});
-
-		return x;
 	}
 
 	public TextItemTypes getTextItemTypeValue()

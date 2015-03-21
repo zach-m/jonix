@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class EpubLicenseExpressionType
+@SuppressWarnings("serial")
+public class EpubLicenseExpressionType implements Serializable
 {
 	public static final String refname = "EpubLicenseExpressionType";
 	public static final String shortname = "x508";
@@ -38,16 +41,15 @@ public class EpubLicenseExpressionType
 
 	public LicenseExpressionTypes value;
 
-	public static EpubLicenseExpressionType fromDoc(org.w3c.dom.Element element)
+	public EpubLicenseExpressionType()
+	{}
+
+	public EpubLicenseExpressionType(org.w3c.dom.Element element)
 	{
-		final EpubLicenseExpressionType x = new EpubLicenseExpressionType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = LicenseExpressionTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = LicenseExpressionTypes.byValue(JPU.getContentAsString(element));
 	}
 }

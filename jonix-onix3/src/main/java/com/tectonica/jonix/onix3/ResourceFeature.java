@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.ResourceFeatureTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ResourceFeature
+@SuppressWarnings("serial")
+public class ResourceFeature implements Serializable
 {
 	public static final String refname = "ResourceFeature";
 	public static final String shortname = "resourcefeature";
@@ -43,30 +45,29 @@ public class ResourceFeature
 	public FeatureValue featureValue; // Optional
 	public List<FeatureNote> featureNotes; // ZeroOrMore
 
-	public static ResourceFeature fromDoc(org.w3c.dom.Element element)
+	public ResourceFeature()
+	{}
+
+	public ResourceFeature(org.w3c.dom.Element element)
 	{
-		final ResourceFeature x = new ResourceFeature();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ResourceFeatureType.refname) || name.equals(ResourceFeatureType.shortname))
-					x.resourceFeatureType = ResourceFeatureType.fromDoc(element);
+					resourceFeatureType = new ResourceFeatureType(element);
 				else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname))
-					x.featureValue = FeatureValue.fromDoc(element);
+					featureValue = new FeatureValue(element);
 				else if (name.equals(FeatureNote.refname) || name.equals(FeatureNote.shortname))
-					x.featureNotes = DU.addToList(x.featureNotes, FeatureNote.fromDoc(element));
+					featureNotes = JPU.addToList(featureNotes, new FeatureNote(element));
 			}
 		});
-
-		return x;
 	}
 
 	public ResourceFeatureTypes getResourceFeatureTypeValue()

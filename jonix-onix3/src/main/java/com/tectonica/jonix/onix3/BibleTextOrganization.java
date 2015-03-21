@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BibleTextOrganizations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class BibleTextOrganization
+@SuppressWarnings("serial")
+public class BibleTextOrganization implements Serializable
 {
 	public static final String refname = "BibleTextOrganization";
 	public static final String shortname = "b355";
@@ -38,16 +41,15 @@ public class BibleTextOrganization
 
 	public BibleTextOrganizations value;
 
-	public static BibleTextOrganization fromDoc(org.w3c.dom.Element element)
+	public BibleTextOrganization()
+	{}
+
+	public BibleTextOrganization(org.w3c.dom.Element element)
 	{
-		final BibleTextOrganization x = new BibleTextOrganization();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = BibleTextOrganizations.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = BibleTextOrganizations.byValue(JPU.getContentAsString(element));
 	}
 }

@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SubjectSchemeIdentifier
+@SuppressWarnings("serial")
+public class SubjectSchemeIdentifier implements Serializable
 {
 	public static final String refname = "SubjectSchemeIdentifier";
 	public static final String shortname = "b067";
@@ -38,16 +41,15 @@ public class SubjectSchemeIdentifier
 
 	public SubjectSchemeIdentifiers value;
 
-	public static SubjectSchemeIdentifier fromDoc(org.w3c.dom.Element element)
+	public SubjectSchemeIdentifier()
+	{}
+
+	public SubjectSchemeIdentifier(org.w3c.dom.Element element)
 	{
-		final SubjectSchemeIdentifier x = new SubjectSchemeIdentifier();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = SubjectSchemeIdentifiers.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = SubjectSchemeIdentifiers.byValue(JPU.getContentAsString(element));
 	}
 }

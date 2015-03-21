@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ToQuantity
+@SuppressWarnings("serial")
+public class ToQuantity implements Serializable
 {
 	public static final String refname = "ToQuantity";
 	public static final String shortname = "x514";
@@ -37,16 +40,15 @@ public class ToQuantity
 
 	public Double value; // dt.StrictPositiveDecimal
 
-	public static ToQuantity fromDoc(org.w3c.dom.Element element)
+	public ToQuantity()
+	{}
+
+	public ToQuantity(org.w3c.dom.Element element)
 	{
-		final ToQuantity x = new ToQuantity();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = DU.getContentAsDouble(element);
-
-		return x;
+		value = JPU.getContentAsDouble(element);
 	}
 }

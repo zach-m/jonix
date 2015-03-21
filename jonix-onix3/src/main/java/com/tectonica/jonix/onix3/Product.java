@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Product
+@SuppressWarnings("serial")
+public class Product implements Serializable
 {
 	public static final String refname = "Product";
 	public static final String shortname = "product";
@@ -54,52 +56,51 @@ public class Product
 	public RelatedMaterial relatedMaterial; // Optional
 	public List<ProductSupply> productSupplys; // ZeroOrMore
 
-	public static Product fromDoc(org.w3c.dom.Element element)
+	public Product()
+	{}
+
+	public Product(org.w3c.dom.Element element)
 	{
-		final Product x = new Product();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
-					x.recordReference = RecordReference.fromDoc(element);
+					recordReference = new RecordReference(element);
 				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
-					x.notificationType = NotificationType.fromDoc(element);
+					notificationType = new NotificationType(element);
 				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
-					x.deletionTexts = DU.addToList(x.deletionTexts, DeletionText.fromDoc(element));
+					deletionTexts = JPU.addToList(deletionTexts, new DeletionText(element));
 				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
-					x.recordSourceType = RecordSourceType.fromDoc(element);
+					recordSourceType = new RecordSourceType(element);
 				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					x.recordSourceIdentifiers = DU.addToList(x.recordSourceIdentifiers, RecordSourceIdentifier.fromDoc(element));
+					recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(element));
 				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
-					x.recordSourceName = RecordSourceName.fromDoc(element);
+					recordSourceName = new RecordSourceName(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
-					x.barcodes = DU.addToList(x.barcodes, Barcode.fromDoc(element));
+					barcodes = JPU.addToList(barcodes, new Barcode(element));
 				else if (name.equals(DescriptiveDetail.refname) || name.equals(DescriptiveDetail.shortname))
-					x.descriptiveDetail = DescriptiveDetail.fromDoc(element);
+					descriptiveDetail = new DescriptiveDetail(element);
 				else if (name.equals(CollateralDetail.refname) || name.equals(CollateralDetail.shortname))
-					x.collateralDetail = CollateralDetail.fromDoc(element);
+					collateralDetail = new CollateralDetail(element);
 				else if (name.equals(ContentDetail.refname) || name.equals(ContentDetail.shortname))
-					x.contentDetail = ContentDetail.fromDoc(element);
+					contentDetail = new ContentDetail(element);
 				else if (name.equals(PublishingDetail.refname) || name.equals(PublishingDetail.shortname))
-					x.publishingDetail = PublishingDetail.fromDoc(element);
+					publishingDetail = new PublishingDetail(element);
 				else if (name.equals(RelatedMaterial.refname) || name.equals(RelatedMaterial.shortname))
-					x.relatedMaterial = RelatedMaterial.fromDoc(element);
+					relatedMaterial = new RelatedMaterial(element);
 				else if (name.equals(ProductSupply.refname) || name.equals(ProductSupply.shortname))
-					x.productSupplys = DU.addToList(x.productSupplys, ProductSupply.fromDoc(element));
+					productSupplys = JPU.addToList(productSupplys, new ProductSupply(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getRecordReferenceValue()

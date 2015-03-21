@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.UsageTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class EpubUsageType
+@SuppressWarnings("serial")
+public class EpubUsageType implements Serializable
 {
 	public static final String refname = "EpubUsageType";
 	public static final String shortname = "x318";
@@ -38,16 +41,15 @@ public class EpubUsageType
 
 	public UsageTypes value;
 
-	public static EpubUsageType fromDoc(org.w3c.dom.Element element)
+	public EpubUsageType()
+	{}
+
+	public EpubUsageType(org.w3c.dom.Element element)
 	{
-		final EpubUsageType x = new EpubUsageType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = UsageTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = UsageTypes.byValue(JPU.getContentAsString(element));
 	}
 }

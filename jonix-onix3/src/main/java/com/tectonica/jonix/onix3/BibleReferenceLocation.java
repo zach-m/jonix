@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BibleReferenceLocations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class BibleReferenceLocation
+@SuppressWarnings("serial")
+public class BibleReferenceLocation implements Serializable
 {
 	public static final String refname = "BibleReferenceLocation";
 	public static final String shortname = "b356";
@@ -38,16 +41,15 @@ public class BibleReferenceLocation
 
 	public BibleReferenceLocations value;
 
-	public static BibleReferenceLocation fromDoc(org.w3c.dom.Element element)
+	public BibleReferenceLocation()
+	{}
+
+	public BibleReferenceLocation(org.w3c.dom.Element element)
 	{
-		final BibleReferenceLocation x = new BibleReferenceLocation();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = BibleReferenceLocations.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = BibleReferenceLocations.byValue(JPU.getContentAsString(element));
 	}
 }

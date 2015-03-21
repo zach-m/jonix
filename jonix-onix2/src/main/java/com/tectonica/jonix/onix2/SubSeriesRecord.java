@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
@@ -35,7 +36,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SubSeriesRecord
+@SuppressWarnings("serial")
+public class SubSeriesRecord implements Serializable
 {
 	public static final String refname = "SubSeriesRecord";
 	public static final String shortname = "subseriesrecord";
@@ -67,64 +69,63 @@ public class SubSeriesRecord
 	public List<Publisher> publishers; // ZeroOrMore
 	public SubordinateEntries subordinateEntries; // Optional
 
-	public static SubSeriesRecord fromDoc(org.w3c.dom.Element element)
+	public SubSeriesRecord()
+	{}
+
+	public SubSeriesRecord(org.w3c.dom.Element element)
 	{
-		final SubSeriesRecord x = new SubSeriesRecord();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
-					x.recordReference = RecordReference.fromDoc(element);
+					recordReference = new RecordReference(element);
 				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
-					x.notificationType = NotificationType.fromDoc(element);
+					notificationType = new NotificationType(element);
 				else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
-					x.deletionCode = DeletionCode.fromDoc(element);
+					deletionCode = new DeletionCode(element);
 				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
-					x.deletionText = DeletionText.fromDoc(element);
+					deletionText = new DeletionText(element);
 				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
-					x.recordSourceType = RecordSourceType.fromDoc(element);
+					recordSourceType = new RecordSourceType(element);
 				else if (name.equals(RecordSourceIdentifierType.refname) || name.equals(RecordSourceIdentifierType.shortname))
-					x.recordSourceIdentifierType = RecordSourceIdentifierType.fromDoc(element);
+					recordSourceIdentifierType = new RecordSourceIdentifierType(element);
 				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					x.recordSourceIdentifier = RecordSourceIdentifier.fromDoc(element);
+					recordSourceIdentifier = new RecordSourceIdentifier(element);
 				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
-					x.recordSourceName = RecordSourceName.fromDoc(element);
+					recordSourceName = new RecordSourceName(element);
 				else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
-					x.seriesIdentifiers = DU.addToList(x.seriesIdentifiers, SeriesIdentifier.fromDoc(element));
+					seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(element));
 				else if (name.equals(ParentIdentifier.refname) || name.equals(ParentIdentifier.shortname))
-					x.parentIdentifier = ParentIdentifier.fromDoc(element);
+					parentIdentifier = new ParentIdentifier(element);
 				else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					x.levelSequenceNumber = LevelSequenceNumber.fromDoc(element);
+					levelSequenceNumber = new LevelSequenceNumber(element);
 				else if (name.equals(SeriesPartName.refname) || name.equals(SeriesPartName.shortname))
-					x.seriesPartName = SeriesPartName.fromDoc(element);
+					seriesPartName = new SeriesPartName(element);
 				else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
-					x.numberWithinSeries = NumberWithinSeries.fromDoc(element);
+					numberWithinSeries = new NumberWithinSeries(element);
 				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
+					titles = JPU.addToList(titles, new Title(element));
 				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
+					contributors = JPU.addToList(contributors, new Contributor(element));
 				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
-					x.otherTexts = DU.addToList(x.otherTexts, OtherText.fromDoc(element));
+					otherTexts = JPU.addToList(otherTexts, new OtherText(element));
 				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					x.publishers = DU.addToList(x.publishers, Publisher.fromDoc(element));
+					publishers = JPU.addToList(publishers, new Publisher(element));
 				else if (name.equals(SubordinateEntries.refname) || name.equals(SubordinateEntries.shortname))
-					x.subordinateEntries = SubordinateEntries.fromDoc(element);
+					subordinateEntries = new SubordinateEntries(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getRecordReferenceValue()

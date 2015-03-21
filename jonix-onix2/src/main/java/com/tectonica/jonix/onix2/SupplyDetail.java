@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AudienceRestrictionFlags;
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
@@ -43,7 +44,8 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplyDetail
+@SuppressWarnings("serial")
+public class SupplyDetail implements Serializable
 {
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";
@@ -90,94 +92,93 @@ public class SupplyDetail
 	public List<Price> prices; // ZeroOrMore
 	public Reissue reissue; // Optional
 
-	public static SupplyDetail fromDoc(org.w3c.dom.Element element)
+	public SupplyDetail()
+	{}
+
+	public SupplyDetail(org.w3c.dom.Element element)
 	{
-		final SupplyDetail x = new SupplyDetail();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
-					x.supplierIdentifiers = DU.addToList(x.supplierIdentifiers, SupplierIdentifier.fromDoc(element));
+					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
 				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
-					x.supplierSAN = SupplierSAN.fromDoc(element);
+					supplierSAN = new SupplierSAN(element);
 				else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
-					x.supplierEANLocationNumber = SupplierEANLocationNumber.fromDoc(element);
+					supplierEANLocationNumber = new SupplierEANLocationNumber(element);
 				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
-					x.supplierName = SupplierName.fromDoc(element);
+					supplierName = new SupplierName(element);
 				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
+					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
 				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
+					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
+					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
-					x.supplierRole = SupplierRole.fromDoc(element);
+					supplierRole = new SupplierRole(element);
 				else if (name.equals(SupplyToCountry.refname) || name.equals(SupplyToCountry.shortname))
-					x.supplyToCountrys = DU.addToList(x.supplyToCountrys, SupplyToCountry.fromDoc(element));
+					supplyToCountrys = JPU.addToList(supplyToCountrys, new SupplyToCountry(element));
 				else if (name.equals(SupplyToTerritory.refname) || name.equals(SupplyToTerritory.shortname))
-					x.supplyToTerritory = SupplyToTerritory.fromDoc(element);
+					supplyToTerritory = new SupplyToTerritory(element);
 				else if (name.equals(SupplyToRegion.refname) || name.equals(SupplyToRegion.shortname))
-					x.supplyToRegions = DU.addToList(x.supplyToRegions, SupplyToRegion.fromDoc(element));
+					supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(element));
 				else if (name.equals(SupplyToCountryExcluded.refname) || name.equals(SupplyToCountryExcluded.shortname))
-					x.supplyToCountryExcludeds = DU.addToList(x.supplyToCountryExcludeds, SupplyToCountryExcluded.fromDoc(element));
+					supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(element));
 				else if (name.equals(SupplyRestrictionDetail.refname) || name.equals(SupplyRestrictionDetail.shortname))
-					x.supplyRestrictionDetail = SupplyRestrictionDetail.fromDoc(element);
+					supplyRestrictionDetail = new SupplyRestrictionDetail(element);
 				else if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
-					x.returnsCodeType = ReturnsCodeType.fromDoc(element);
+					returnsCodeType = new ReturnsCodeType(element);
 				else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
-					x.returnsCode = ReturnsCode.fromDoc(element);
+					returnsCode = new ReturnsCode(element);
 				else if (name.equals(LastDateForReturns.refname) || name.equals(LastDateForReturns.shortname))
-					x.lastDateForReturns = LastDateForReturns.fromDoc(element);
+					lastDateForReturns = new LastDateForReturns(element);
 				else if (name.equals(AvailabilityCode.refname) || name.equals(AvailabilityCode.shortname))
-					x.availabilityCode = AvailabilityCode.fromDoc(element);
+					availabilityCode = new AvailabilityCode(element);
 				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
-					x.productAvailability = ProductAvailability.fromDoc(element);
+					productAvailability = new ProductAvailability(element);
 				else if (name.equals(IntermediaryAvailabilityCode.refname) || name.equals(IntermediaryAvailabilityCode.shortname))
-					x.intermediaryAvailabilityCode = IntermediaryAvailabilityCode.fromDoc(element);
+					intermediaryAvailabilityCode = new IntermediaryAvailabilityCode(element);
 				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
-					x.newSupplier = NewSupplier.fromDoc(element);
+					newSupplier = new NewSupplier(element);
 				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					x.dateFormat = DateFormat.fromDoc(element);
+					dateFormat = new DateFormat(element);
 				else if (name.equals(ExpectedShipDate.refname) || name.equals(ExpectedShipDate.shortname))
-					x.expectedShipDate = ExpectedShipDate.fromDoc(element);
+					expectedShipDate = new ExpectedShipDate(element);
 				else if (name.equals(OnSaleDate.refname) || name.equals(OnSaleDate.shortname))
-					x.onSaleDate = OnSaleDate.fromDoc(element);
+					onSaleDate = new OnSaleDate(element);
 				else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
-					x.orderTime = OrderTime.fromDoc(element);
+					orderTime = new OrderTime(element);
 				else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
-					x.stocks = DU.addToList(x.stocks, Stock.fromDoc(element));
+					stocks = JPU.addToList(stocks, new Stock(element));
 				else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
-					x.packQuantity = PackQuantity.fromDoc(element);
+					packQuantity = new PackQuantity(element);
 				else if (name.equals(AudienceRestrictionFlag.refname) || name.equals(AudienceRestrictionFlag.shortname))
-					x.audienceRestrictionFlag = AudienceRestrictionFlag.fromDoc(element);
+					audienceRestrictionFlag = new AudienceRestrictionFlag(element);
 				else if (name.equals(AudienceRestrictionNote.refname) || name.equals(AudienceRestrictionNote.shortname))
-					x.audienceRestrictionNote = AudienceRestrictionNote.fromDoc(element);
+					audienceRestrictionNote = new AudienceRestrictionNote(element);
 				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					x.priceAmount = PriceAmount.fromDoc(element);
+					priceAmount = new PriceAmount(element);
 				else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
-					x.unpricedItemType = UnpricedItemType.fromDoc(element);
+					unpricedItemType = new UnpricedItemType(element);
 				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
+					prices = JPU.addToList(prices, new Price(element));
 				else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
-					x.reissue = Reissue.fromDoc(element);
+					reissue = new Reissue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getSupplierSANValue()

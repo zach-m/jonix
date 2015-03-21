@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CitedContentTypes;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.ContentSourceTypes;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CitedContent
+@SuppressWarnings("serial")
+public class CitedContent implements Serializable
 {
 	public static final String refname = "CitedContent";
 	public static final String shortname = "citedcontent";
@@ -51,42 +53,41 @@ public class CitedContent
 	public List<ResourceLink> resourceLinks; // ZeroOrMore
 	public List<ContentDate> contentDates; // ZeroOrMore
 
-	public static CitedContent fromDoc(org.w3c.dom.Element element)
+	public CitedContent()
+	{}
+
+	public CitedContent(org.w3c.dom.Element element)
 	{
-		final CitedContent x = new CitedContent();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname))
-					x.citedContentType = CitedContentType.fromDoc(element);
+					citedContentType = new CitedContentType(element);
 				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
-					x.contentAudiences = DU.addToList(x.contentAudiences, ContentAudience.fromDoc(element));
+					contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(element));
 				else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname))
-					x.sourceType = SourceType.fromDoc(element);
+					sourceType = new SourceType(element);
 				else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
-					x.sourceTitles = DU.addToList(x.sourceTitles, SourceTitle.fromDoc(element));
+					sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(element));
 				else if (name.equals(ListName.refname) || name.equals(ListName.shortname))
-					x.listNames = DU.addToList(x.listNames, ListName.fromDoc(element));
+					listNames = JPU.addToList(listNames, new ListName(element));
 				else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname))
-					x.positionOnList = PositionOnList.fromDoc(element);
+					positionOnList = new PositionOnList(element);
 				else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname))
-					x.citationNotes = DU.addToList(x.citationNotes, CitationNote.fromDoc(element));
+					citationNotes = JPU.addToList(citationNotes, new CitationNote(element));
 				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
-					x.resourceLinks = DU.addToList(x.resourceLinks, ResourceLink.fromDoc(element));
+					resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(element));
 				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-					x.contentDates = DU.addToList(x.contentDates, ContentDate.fromDoc(element));
+					contentDates = JPU.addToList(contentDates, new ContentDate(element));
 			}
 		});
-
-		return x;
 	}
 
 	public CitedContentTypes getCitedContentTypeValue()

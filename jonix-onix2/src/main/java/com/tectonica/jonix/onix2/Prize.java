@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
@@ -32,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Prize
+@SuppressWarnings("serial")
+public class Prize implements Serializable
 {
 	public static final String refname = "Prize";
 	public static final String shortname = "prize";
@@ -51,38 +54,37 @@ public class Prize
 	public PrizeCode prizeCode; // Optional
 	public PrizeJury prizeJury; // Optional
 
-	public static Prize fromDoc(org.w3c.dom.Element element)
+	public Prize()
+	{}
+
+	public Prize(org.w3c.dom.Element element)
 	{
-		final Prize x = new Prize();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
-					x.prizeName = PrizeName.fromDoc(element);
+					prizeName = new PrizeName(element);
 				else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
-					x.prizeYear = PrizeYear.fromDoc(element);
+					prizeYear = new PrizeYear(element);
 				else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
-					x.prizeCountry = PrizeCountry.fromDoc(element);
+					prizeCountry = new PrizeCountry(element);
 				else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
-					x.prizeCode = PrizeCode.fromDoc(element);
+					prizeCode = new PrizeCode(element);
 				else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
-					x.prizeJury = PrizeJury.fromDoc(element);
+					prizeJury = new PrizeJury(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getPrizeNameValue()

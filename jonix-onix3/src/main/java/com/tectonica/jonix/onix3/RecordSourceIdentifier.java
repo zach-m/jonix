@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class RecordSourceIdentifier
+@SuppressWarnings("serial")
+public class RecordSourceIdentifier implements Serializable
 {
 	public static final String refname = "RecordSourceIdentifier";
 	public static final String shortname = "recordsourceidentifier";
@@ -40,30 +43,29 @@ public class RecordSourceIdentifier
 	public IDTypeName idTypeName; // Optional
 	public IDValue idValue; // Required
 
-	public static RecordSourceIdentifier fromDoc(org.w3c.dom.Element element)
+	public RecordSourceIdentifier()
+	{}
+
+	public RecordSourceIdentifier(org.w3c.dom.Element element)
 	{
-		final RecordSourceIdentifier x = new RecordSourceIdentifier();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RecordSourceIDType.refname) || name.equals(RecordSourceIDType.shortname))
-					x.recordSourceIDType = RecordSourceIDType.fromDoc(element);
+					recordSourceIDType = new RecordSourceIDType(element);
 				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					x.idTypeName = IDTypeName.fromDoc(element);
+					idTypeName = new IDTypeName(element);
 				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					x.idValue = IDValue.fromDoc(element);
+					idValue = new IDValue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public NameCodeTypes getRecordSourceIDTypeValue()

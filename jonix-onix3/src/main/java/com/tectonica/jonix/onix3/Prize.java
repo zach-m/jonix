@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +32,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Prize
+@SuppressWarnings("serial")
+public class Prize implements Serializable
 {
 	public static final String refname = "Prize";
 	public static final String shortname = "prize";
@@ -47,36 +49,35 @@ public class Prize
 	public List<PrizeStatement> prizeStatements; // ZeroOrMore
 	public List<PrizeJury> prizeJurys; // ZeroOrMore
 
-	public static Prize fromDoc(org.w3c.dom.Element element)
+	public Prize()
+	{}
+
+	public Prize(org.w3c.dom.Element element)
 	{
-		final Prize x = new Prize();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
-					x.prizeNames = DU.addToList(x.prizeNames, PrizeName.fromDoc(element));
+					prizeNames = JPU.addToList(prizeNames, new PrizeName(element));
 				else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
-					x.prizeYear = PrizeYear.fromDoc(element);
+					prizeYear = new PrizeYear(element);
 				else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
-					x.prizeCountry = PrizeCountry.fromDoc(element);
+					prizeCountry = new PrizeCountry(element);
 				else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
-					x.prizeCode = PrizeCode.fromDoc(element);
+					prizeCode = new PrizeCode(element);
 				else if (name.equals(PrizeStatement.refname) || name.equals(PrizeStatement.shortname))
-					x.prizeStatements = DU.addToList(x.prizeStatements, PrizeStatement.fromDoc(element));
+					prizeStatements = JPU.addToList(prizeStatements, new PrizeStatement(element));
 				else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
-					x.prizeJurys = DU.addToList(x.prizeJurys, PrizeJury.fromDoc(element));
+					prizeJurys = JPU.addToList(prizeJurys, new PrizeJury(element));
 			}
 		});
-
-		return x;
 	}
 
 	public List<String> getPrizeNameValues()

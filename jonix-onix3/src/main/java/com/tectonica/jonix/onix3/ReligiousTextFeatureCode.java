@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatures;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.ReligiousTextFeatures;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ReligiousTextFeatureCode
+@SuppressWarnings("serial")
+public class ReligiousTextFeatureCode implements Serializable
 {
 	public static final String refname = "ReligiousTextFeatureCode";
 	public static final String shortname = "b359";
@@ -38,16 +41,15 @@ public class ReligiousTextFeatureCode
 
 	public ReligiousTextFeatures value;
 
-	public static ReligiousTextFeatureCode fromDoc(org.w3c.dom.Element element)
+	public ReligiousTextFeatureCode()
+	{}
+
+	public ReligiousTextFeatureCode(org.w3c.dom.Element element)
 	{
-		final ReligiousTextFeatureCode x = new ReligiousTextFeatureCode();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ReligiousTextFeatures.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ReligiousTextFeatures.byValue(JPU.getContentAsString(element));
 	}
 }

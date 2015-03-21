@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplyDateRoles;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.SupplyDateRoles;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplyDateRole
+@SuppressWarnings("serial")
+public class SupplyDateRole implements Serializable
 {
 	public static final String refname = "SupplyDateRole";
 	public static final String shortname = "x461";
@@ -38,16 +41,15 @@ public class SupplyDateRole
 
 	public SupplyDateRoles value;
 
-	public static SupplyDateRole fromDoc(org.w3c.dom.Element element)
+	public SupplyDateRole()
+	{}
+
+	public SupplyDateRole(org.w3c.dom.Element element)
 	{
-		final SupplyDateRole x = new SupplyDateRole();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = SupplyDateRoles.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = SupplyDateRoles.byValue(JPU.getContentAsString(element));
 	}
 }

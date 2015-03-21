@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class MarketDate
+@SuppressWarnings("serial")
+public class MarketDate implements Serializable
 {
 	public static final String refname = "MarketDate";
 	public static final String shortname = "marketdate";
@@ -48,34 +51,33 @@ public class MarketDate
 	public DateFormat dateFormat; // Optional
 	public Date date; // Required
 
-	public static MarketDate fromDoc(org.w3c.dom.Element element)
+	public MarketDate()
+	{}
+
+	public MarketDate(org.w3c.dom.Element element)
 	{
-		final MarketDate x = new MarketDate();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(MarketDateRole.refname) || name.equals(MarketDateRole.shortname))
-					x.marketDateRole = MarketDateRole.fromDoc(element);
+					marketDateRole = new MarketDateRole(element);
 				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					x.dateFormat = DateFormat.fromDoc(element);
+					dateFormat = new DateFormat(element);
 				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					x.date = Date.fromDoc(element);
+					date = new Date(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getMarketDateRoleValue()

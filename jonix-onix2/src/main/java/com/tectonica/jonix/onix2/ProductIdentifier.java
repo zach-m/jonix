@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductIdentifier
+@SuppressWarnings("serial")
+public class ProductIdentifier implements Serializable
 {
 	public static final String refname = "ProductIdentifier";
 	public static final String shortname = "productidentifier";
@@ -48,34 +51,33 @@ public class ProductIdentifier
 	public IDTypeName idTypeName; // Optional
 	public IDValue idValue; // Required
 
-	public static ProductIdentifier fromDoc(org.w3c.dom.Element element)
+	public ProductIdentifier()
+	{}
+
+	public ProductIdentifier(org.w3c.dom.Element element)
 	{
-		final ProductIdentifier x = new ProductIdentifier();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductIDType.refname) || name.equals(ProductIDType.shortname))
-					x.productIDType = ProductIDType.fromDoc(element);
+					productIDType = new ProductIDType(element);
 				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					x.idTypeName = IDTypeName.fromDoc(element);
+					idTypeName = new IDTypeName(element);
 				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					x.idValue = IDValue.fromDoc(element);
+					idValue = new IDValue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ProductIdentifierTypes getProductIDTypeValue()

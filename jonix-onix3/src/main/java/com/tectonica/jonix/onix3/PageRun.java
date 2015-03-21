@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PageRun
+@SuppressWarnings("serial")
+public class PageRun implements Serializable
 {
 	public static final String refname = "PageRun";
 	public static final String shortname = "pagerun";
@@ -38,28 +41,27 @@ public class PageRun
 	public FirstPageNumber firstPageNumber; // Required
 	public LastPageNumber lastPageNumber; // Optional
 
-	public static PageRun fromDoc(org.w3c.dom.Element element)
+	public PageRun()
+	{}
+
+	public PageRun(org.w3c.dom.Element element)
 	{
-		final PageRun x = new PageRun();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
-					x.firstPageNumber = FirstPageNumber.fromDoc(element);
+					firstPageNumber = new FirstPageNumber(element);
 				else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
-					x.lastPageNumber = LastPageNumber.fromDoc(element);
+					lastPageNumber = new LastPageNumber(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getFirstPageNumberValue()

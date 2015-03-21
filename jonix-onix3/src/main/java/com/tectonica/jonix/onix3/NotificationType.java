@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class NotificationType
+@SuppressWarnings("serial")
+public class NotificationType implements Serializable
 {
 	public static final String refname = "NotificationType";
 	public static final String shortname = "a002";
@@ -38,16 +41,15 @@ public class NotificationType
 
 	public NotificationOrUpdateTypes value;
 
-	public static NotificationType fromDoc(org.w3c.dom.Element element)
+	public NotificationType()
+	{}
+
+	public NotificationType(org.w3c.dom.Element element)
 	{
-		final NotificationType x = new NotificationType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = NotificationOrUpdateTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = NotificationOrUpdateTypes.byValue(JPU.getContentAsString(element));
 	}
 }

@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -31,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Title
+@SuppressWarnings("serial")
+public class Title implements Serializable
 {
 	public static final String refname = "Title";
 	public static final String shortname = "title";
@@ -52,42 +55,41 @@ public class Title
 	public TitleWithoutPrefix titleWithoutPrefix; // Optional
 	public Subtitle subtitle; // Optional
 
-	public static Title fromDoc(org.w3c.dom.Element element)
+	public Title()
+	{}
+
+	public Title(org.w3c.dom.Element element)
 	{
-		final Title x = new Title();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TitleType.refname) || name.equals(TitleType.shortname))
-					x.titleType = TitleType.fromDoc(element);
+					titleType = new TitleType(element);
 				else if (name.equals(AbbreviatedLength.refname) || name.equals(AbbreviatedLength.shortname))
-					x.abbreviatedLength = AbbreviatedLength.fromDoc(element);
+					abbreviatedLength = new AbbreviatedLength(element);
 				else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
-					x.textCaseFlag = TextCaseFlag.fromDoc(element);
+					textCaseFlag = new TextCaseFlag(element);
 				else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
-					x.titleText = TitleText.fromDoc(element);
+					titleText = new TitleText(element);
 				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-					x.titlePrefix = TitlePrefix.fromDoc(element);
+					titlePrefix = new TitlePrefix(element);
 				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-					x.titleWithoutPrefix = TitleWithoutPrefix.fromDoc(element);
+					titleWithoutPrefix = new TitleWithoutPrefix(element);
 				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-					x.subtitle = Subtitle.fromDoc(element);
+					subtitle = new Subtitle(element);
 			}
 		});
-
-		return x;
 	}
 
 	public TitleTypes getTitleTypeValue()

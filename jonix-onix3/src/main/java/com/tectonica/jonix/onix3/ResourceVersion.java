@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceForms;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.ResourceForms;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ResourceVersion
+@SuppressWarnings("serial")
+public class ResourceVersion implements Serializable
 {
 	public static final String refname = "ResourceVersion";
 	public static final String shortname = "resourceversion";
@@ -44,32 +46,31 @@ public class ResourceVersion
 	public List<ResourceLink> resourceLinks; // OneOrMore
 	public List<ContentDate> contentDates; // ZeroOrMore
 
-	public static ResourceVersion fromDoc(org.w3c.dom.Element element)
+	public ResourceVersion()
+	{}
+
+	public ResourceVersion(org.w3c.dom.Element element)
 	{
-		final ResourceVersion x = new ResourceVersion();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname))
-					x.resourceForm = ResourceForm.fromDoc(element);
+					resourceForm = new ResourceForm(element);
 				else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname))
-					x.resourceVersionFeatures = DU.addToList(x.resourceVersionFeatures, ResourceVersionFeature.fromDoc(element));
+					resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(element));
 				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
-					x.resourceLinks = DU.addToList(x.resourceLinks, ResourceLink.fromDoc(element));
+					resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(element));
 				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-					x.contentDates = DU.addToList(x.contentDates, ContentDate.fromDoc(element));
+					contentDates = JPU.addToList(contentDates, new ContentDate(element));
 			}
 		});
-
-		return x;
 	}
 
 	public ResourceForms getResourceFormValue()

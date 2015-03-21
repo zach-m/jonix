@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CitedContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CitedContentType
+@SuppressWarnings("serial")
+public class CitedContentType implements Serializable
 {
 	public static final String refname = "CitedContentType";
 	public static final String shortname = "x430";
@@ -38,16 +41,15 @@ public class CitedContentType
 
 	public CitedContentTypes value;
 
-	public static CitedContentType fromDoc(org.w3c.dom.Element element)
+	public CitedContentType()
+	{}
+
+	public CitedContentType(org.w3c.dom.Element element)
 	{
-		final CitedContentType x = new CitedContentType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = CitedContentTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = CitedContentTypes.byValue(JPU.getContentAsString(element));
 	}
 }

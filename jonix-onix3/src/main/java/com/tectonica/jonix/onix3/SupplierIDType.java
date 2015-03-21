@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplierIDType
+@SuppressWarnings("serial")
+public class SupplierIDType implements Serializable
 {
 	public static final String refname = "SupplierIDType";
 	public static final String shortname = "j345";
@@ -38,16 +41,15 @@ public class SupplierIDType
 
 	public SupplierIdentifierTypes value;
 
-	public static SupplierIDType fromDoc(org.w3c.dom.Element element)
+	public SupplierIDType()
+	{}
+
+	public SupplierIDType(org.w3c.dom.Element element)
 	{
-		final SupplierIDType x = new SupplierIDType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = SupplierIdentifierTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = SupplierIdentifierTypes.byValue(JPU.getContentAsString(element));
 	}
 }

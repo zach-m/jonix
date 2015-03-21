@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class YearOfAnnual
+@SuppressWarnings("serial")
+public class YearOfAnnual implements Serializable
 {
 	public static final String refname = "YearOfAnnual";
 	public static final String shortname = "b020";
@@ -37,16 +40,15 @@ public class YearOfAnnual
 
 	public String value; // dt.YearOrYearRange
 
-	public static YearOfAnnual fromDoc(org.w3c.dom.Element element)
+	public YearOfAnnual()
+	{}
+
+	public YearOfAnnual(org.w3c.dom.Element element)
 	{
-		final YearOfAnnual x = new YearOfAnnual();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

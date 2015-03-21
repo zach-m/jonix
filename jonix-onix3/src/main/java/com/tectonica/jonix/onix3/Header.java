@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PriceTypes;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Header
+@SuppressWarnings("serial")
+public class Header implements Serializable
 {
 	public static final String refname = "Header";
 	public static final String shortname = "header";
@@ -51,42 +53,41 @@ public class Header
 	public DefaultPriceType defaultPriceType; // Optional
 	public DefaultCurrencyCode defaultCurrencyCode; // Optional
 
-	public static Header fromDoc(org.w3c.dom.Element element)
+	public Header()
+	{}
+
+	public Header(org.w3c.dom.Element element)
 	{
-		final Header x = new Header();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Sender.refname) || name.equals(Sender.shortname))
-					x.sender = Sender.fromDoc(element);
+					sender = new Sender(element);
 				else if (name.equals(Addressee.refname) || name.equals(Addressee.shortname))
-					x.addressees = DU.addToList(x.addressees, Addressee.fromDoc(element));
+					addressees = JPU.addToList(addressees, new Addressee(element));
 				else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
-					x.messageNumber = MessageNumber.fromDoc(element);
+					messageNumber = new MessageNumber(element);
 				else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
-					x.messageRepeat = MessageRepeat.fromDoc(element);
+					messageRepeat = new MessageRepeat(element);
 				else if (name.equals(SentDateTime.refname) || name.equals(SentDateTime.shortname))
-					x.sentDateTime = SentDateTime.fromDoc(element);
+					sentDateTime = new SentDateTime(element);
 				else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
-					x.messageNotes = DU.addToList(x.messageNotes, MessageNote.fromDoc(element));
+					messageNotes = JPU.addToList(messageNotes, new MessageNote(element));
 				else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
-					x.defaultLanguageOfText = DefaultLanguageOfText.fromDoc(element);
+					defaultLanguageOfText = new DefaultLanguageOfText(element);
 				else if (name.equals(DefaultPriceType.refname) || name.equals(DefaultPriceType.shortname))
-					x.defaultPriceType = DefaultPriceType.fromDoc(element);
+					defaultPriceType = new DefaultPriceType(element);
 				else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
-					x.defaultCurrencyCode = DefaultCurrencyCode.fromDoc(element);
+					defaultCurrencyCode = new DefaultCurrencyCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public Integer getMessageNumberValue()

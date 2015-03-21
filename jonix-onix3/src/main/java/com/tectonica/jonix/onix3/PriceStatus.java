@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PriceStatus
+@SuppressWarnings("serial")
+public class PriceStatus implements Serializable
 {
 	public static final String refname = "PriceStatus";
 	public static final String shortname = "j266";
@@ -38,16 +41,15 @@ public class PriceStatus
 
 	public PriceStatuss value;
 
-	public static PriceStatus fromDoc(org.w3c.dom.Element element)
+	public PriceStatus()
+	{}
+
+	public PriceStatus(org.w3c.dom.Element element)
 	{
-		final PriceStatus x = new PriceStatus();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = PriceStatuss.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = PriceStatuss.byValue(JPU.getContentAsString(element));
 	}
 }

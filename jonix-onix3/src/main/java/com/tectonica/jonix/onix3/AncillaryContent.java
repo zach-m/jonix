@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class AncillaryContent
+@SuppressWarnings("serial")
+public class AncillaryContent implements Serializable
 {
 	public static final String refname = "AncillaryContent";
 	public static final String shortname = "ancillarycontent";
@@ -43,31 +45,29 @@ public class AncillaryContent
 	public List<AncillaryContentDescription> ancillaryContentDescriptions; // ZeroOrMore
 	public Number number; // Optional
 
-	public static AncillaryContent fromDoc(org.w3c.dom.Element element)
+	public AncillaryContent()
+	{}
+
+	public AncillaryContent(org.w3c.dom.Element element)
 	{
-		final AncillaryContent x = new AncillaryContent();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(AncillaryContentType.refname) || name.equals(AncillaryContentType.shortname))
-					x.ancillaryContentType = AncillaryContentType.fromDoc(element);
+					ancillaryContentType = new AncillaryContentType(element);
 				else if (name.equals(AncillaryContentDescription.refname) || name.equals(AncillaryContentDescription.shortname))
-					x.ancillaryContentDescriptions = DU.addToList(x.ancillaryContentDescriptions,
-							AncillaryContentDescription.fromDoc(element));
+					ancillaryContentDescriptions = JPU.addToList(ancillaryContentDescriptions, new AncillaryContentDescription(element));
 				else if (name.equals(Number.refname) || name.equals(Number.shortname))
-					x.number = Number.fromDoc(element);
+					number = new Number(element);
 			}
 		});
-
-		return x;
 	}
 
 	public IllustrationAndOtherContentTypes getAncillaryContentTypeValue()

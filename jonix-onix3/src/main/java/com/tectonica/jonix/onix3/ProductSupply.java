@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductSupply
+@SuppressWarnings("serial")
+public class ProductSupply implements Serializable
 {
 	public static final String refname = "ProductSupply";
 	public static final String shortname = "productsupply";
@@ -41,29 +43,28 @@ public class ProductSupply
 	public MarketPublishingDetail marketPublishingDetail; // Optional
 	public List<SupplyDetail> supplyDetails; // OneOrMore
 
-	public static ProductSupply fromDoc(org.w3c.dom.Element element)
+	public ProductSupply()
+	{}
+
+	public ProductSupply(org.w3c.dom.Element element)
 	{
-		final ProductSupply x = new ProductSupply();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Market.refname) || name.equals(Market.shortname))
-					x.markets = DU.addToList(x.markets, Market.fromDoc(element));
+					markets = JPU.addToList(markets, new Market(element));
 				else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname))
-					x.marketPublishingDetail = MarketPublishingDetail.fromDoc(element);
+					marketPublishingDetail = new MarketPublishingDetail(element);
 				else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
-					x.supplyDetails = DU.addToList(x.supplyDetails, SupplyDetail.fromDoc(element));
+					supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(element));
 			}
 		});
-
-		return x;
 	}
 }

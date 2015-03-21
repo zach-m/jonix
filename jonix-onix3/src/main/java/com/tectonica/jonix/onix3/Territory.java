@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.Regions;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Territory
+@SuppressWarnings("serial")
+public class Territory implements Serializable
 {
 	public static final String refname = "Territory";
 	public static final String shortname = "territory";
@@ -42,32 +45,31 @@ public class Territory
 	public CountriesExcluded countriesExcluded; // Optional
 	public RegionsExcluded regionsExcluded; // Optional
 
-	public static Territory fromDoc(org.w3c.dom.Element element)
+	public Territory()
+	{}
+
+	public Territory(org.w3c.dom.Element element)
 	{
-		final Territory x = new Territory();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname))
-					x.countriesIncluded = CountriesIncluded.fromDoc(element);
+					countriesIncluded = new CountriesIncluded(element);
 				else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname))
-					x.regionsIncluded = RegionsIncluded.fromDoc(element);
+					regionsIncluded = new RegionsIncluded(element);
 				else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname))
-					x.countriesExcluded = CountriesExcluded.fromDoc(element);
+					countriesExcluded = new CountriesExcluded(element);
 				else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname))
-					x.regionsExcluded = RegionsExcluded.fromDoc(element);
+					regionsExcluded = new RegionsExcluded(element);
 			}
 		});
-
-		return x;
 	}
 
 	public java.util.Set<CountryCodeIso31661s> getCountriesIncludedSet()

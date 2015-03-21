@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplierIdentifier
+@SuppressWarnings("serial")
+public class SupplierIdentifier implements Serializable
 {
 	public static final String refname = "SupplierIdentifier";
 	public static final String shortname = "supplieridentifier";
@@ -40,30 +43,29 @@ public class SupplierIdentifier
 	public IDTypeName idTypeName; // Optional
 	public IDValue idValue; // Required
 
-	public static SupplierIdentifier fromDoc(org.w3c.dom.Element element)
+	public SupplierIdentifier()
+	{}
+
+	public SupplierIdentifier(org.w3c.dom.Element element)
 	{
-		final SupplierIdentifier x = new SupplierIdentifier();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(SupplierIDType.refname) || name.equals(SupplierIDType.shortname))
-					x.supplierIDType = SupplierIDType.fromDoc(element);
+					supplierIDType = new SupplierIDType(element);
 				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					x.idTypeName = IDTypeName.fromDoc(element);
+					idTypeName = new IDTypeName(element);
 				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					x.idValue = IDValue.fromDoc(element);
+					idValue = new IDValue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public SupplierIdentifierTypes getSupplierIDTypeValue()

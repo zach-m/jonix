@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductFormFeature
+@SuppressWarnings("serial")
+public class ProductFormFeature implements Serializable
 {
 	public static final String refname = "ProductFormFeature";
 	public static final String shortname = "productformfeature";
@@ -43,31 +45,30 @@ public class ProductFormFeature
 	public ProductFormFeatureValue productFormFeatureValue; // Optional
 	public List<ProductFormFeatureDescription> productFormFeatureDescriptions; // ZeroOrMore
 
-	public static ProductFormFeature fromDoc(org.w3c.dom.Element element)
+	public ProductFormFeature()
+	{}
+
+	public ProductFormFeature(org.w3c.dom.Element element)
 	{
-		final ProductFormFeature x = new ProductFormFeature();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname))
-					x.productFormFeatureType = ProductFormFeatureType.fromDoc(element);
+					productFormFeatureType = new ProductFormFeatureType(element);
 				else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname))
-					x.productFormFeatureValue = ProductFormFeatureValue.fromDoc(element);
+					productFormFeatureValue = new ProductFormFeatureValue(element);
 				else if (name.equals(ProductFormFeatureDescription.refname) || name.equals(ProductFormFeatureDescription.shortname))
-					x.productFormFeatureDescriptions = DU.addToList(x.productFormFeatureDescriptions,
-							ProductFormFeatureDescription.fromDoc(element));
+					productFormFeatureDescriptions = JPU.addToList(productFormFeatureDescriptions, new ProductFormFeatureDescription(
+							element));
 			}
 		});
-
-		return x;
 	}
 
 	public ProductFormFeatureTypes getProductFormFeatureTypeValue()

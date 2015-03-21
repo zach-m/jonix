@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductComposition
+@SuppressWarnings("serial")
+public class ProductComposition implements Serializable
 {
 	public static final String refname = "ProductComposition";
 	public static final String shortname = "x314";
@@ -38,16 +41,15 @@ public class ProductComposition
 
 	public ProductCompositions value;
 
-	public static ProductComposition fromDoc(org.w3c.dom.Element element)
+	public ProductComposition()
+	{}
+
+	public ProductComposition(org.w3c.dom.Element element)
 	{
-		final ProductComposition x = new ProductComposition();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductCompositions.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductCompositions.byValue(JPU.getContentAsString(element));
 	}
 }

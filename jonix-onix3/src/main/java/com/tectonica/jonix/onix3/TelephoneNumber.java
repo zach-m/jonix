@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TelephoneNumber
+@SuppressWarnings("serial")
+public class TelephoneNumber implements Serializable
 {
 	public static final String refname = "TelephoneNumber";
 	public static final String shortname = "j270";
@@ -37,16 +40,15 @@ public class TelephoneNumber
 
 	public String value; // dt.NonEmptyString
 
-	public static TelephoneNumber fromDoc(org.w3c.dom.Element element)
+	public TelephoneNumber()
+	{}
+
+	public TelephoneNumber(org.w3c.dom.Element element)
 	{
-		final TelephoneNumber x = new TelephoneNumber();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

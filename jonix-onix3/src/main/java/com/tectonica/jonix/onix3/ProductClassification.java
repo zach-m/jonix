@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductClassification
+@SuppressWarnings("serial")
+public class ProductClassification implements Serializable
 {
 	public static final String refname = "ProductClassification";
 	public static final String shortname = "productclassification";
@@ -40,30 +43,29 @@ public class ProductClassification
 	public ProductClassificationCode productClassificationCode; // Required
 	public Percent percent; // Optional
 
-	public static ProductClassification fromDoc(org.w3c.dom.Element element)
+	public ProductClassification()
+	{}
+
+	public ProductClassification(org.w3c.dom.Element element)
 	{
-		final ProductClassification x = new ProductClassification();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname))
-					x.productClassificationType = ProductClassificationType.fromDoc(element);
+					productClassificationType = new ProductClassificationType(element);
 				else if (name.equals(ProductClassificationCode.refname) || name.equals(ProductClassificationCode.shortname))
-					x.productClassificationCode = ProductClassificationCode.fromDoc(element);
+					productClassificationCode = new ProductClassificationCode(element);
 				else if (name.equals(Percent.refname) || name.equals(Percent.shortname))
-					x.percent = Percent.fromDoc(element);
+					percent = new Percent(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ProductClassificationTypes getProductClassificationTypeValue()

@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Collection
+@SuppressWarnings("serial")
+public class Collection implements Serializable
 {
 	public static final String refname = "Collection";
 	public static final String shortname = "collection";
@@ -47,38 +49,37 @@ public class Collection
 	public List<Contributor> contributors; // ZeroOrMore
 	public List<ContributorStatement> contributorStatements; // ZeroOrMore
 
-	public static Collection fromDoc(org.w3c.dom.Element element)
+	public Collection()
+	{}
+
+	public Collection(org.w3c.dom.Element element)
 	{
-		final Collection x = new Collection();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CollectionType.refname) || name.equals(CollectionType.shortname))
-					x.collectionType = CollectionType.fromDoc(element);
+					collectionType = new CollectionType(element);
 				else if (name.equals(SourceName.refname) || name.equals(SourceName.shortname))
-					x.sourceName = SourceName.fromDoc(element);
+					sourceName = new SourceName(element);
 				else if (name.equals(CollectionIdentifier.refname) || name.equals(CollectionIdentifier.shortname))
-					x.collectionIdentifiers = DU.addToList(x.collectionIdentifiers, CollectionIdentifier.fromDoc(element));
+					collectionIdentifiers = JPU.addToList(collectionIdentifiers, new CollectionIdentifier(element));
 				else if (name.equals(CollectionSequence.refname) || name.equals(CollectionSequence.shortname))
-					x.collectionSequences = DU.addToList(x.collectionSequences, CollectionSequence.fromDoc(element));
+					collectionSequences = JPU.addToList(collectionSequences, new CollectionSequence(element));
 				else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
-					x.titleDetails = DU.addToList(x.titleDetails, TitleDetail.fromDoc(element));
+					titleDetails = JPU.addToList(titleDetails, new TitleDetail(element));
 				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
+					contributors = JPU.addToList(contributors, new Contributor(element));
 				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
-					x.contributorStatements = DU.addToList(x.contributorStatements, ContributorStatement.fromDoc(element));
+					contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(element));
 			}
 		});
-
-		return x;
 	}
 
 	public CollectionTypes getCollectionTypeValue()

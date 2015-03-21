@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PriceCodeType
+@SuppressWarnings("serial")
+public class PriceCodeType implements Serializable
 {
 	public static final String refname = "PriceCodeType";
 	public static final String shortname = "x465";
@@ -38,16 +41,15 @@ public class PriceCodeType
 
 	public PriceCodeTypes value;
 
-	public static PriceCodeType fromDoc(org.w3c.dom.Element element)
+	public PriceCodeType()
+	{}
+
+	public PriceCodeType(org.w3c.dom.Element element)
 	{
-		final PriceCodeType x = new PriceCodeType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = PriceCodeTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = PriceCodeTypes.byValue(JPU.getContentAsString(element));
 	}
 }

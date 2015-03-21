@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductPart
+@SuppressWarnings("serial")
+public class ProductPart implements Serializable
 {
 	public static final String refname = "ProductPart";
 	public static final String shortname = "productpart";
@@ -53,44 +55,43 @@ public class ProductPart
 	public NumberOfCopies numberOfCopies; // Optional
 	public CountryOfManufacture countryOfManufacture; // Optional
 
-	public static ProductPart fromDoc(org.w3c.dom.Element element)
+	public ProductPart()
+	{}
+
+	public ProductPart(org.w3c.dom.Element element)
 	{
-		final ProductPart x = new ProductPart();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PrimaryPart.refname) || name.equals(PrimaryPart.shortname))
-					x.primaryPart = PrimaryPart.fromDoc(element);
+					primaryPart = new PrimaryPart(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					x.productForm = ProductForm.fromDoc(element);
+					productForm = new ProductForm(element);
 				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
+					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
 				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					x.productFormFeatures = DU.addToList(x.productFormFeatures, ProductFormFeature.fromDoc(element));
+					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
 				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					x.productFormDescriptions = DU.addToList(x.productFormDescriptions, ProductFormDescription.fromDoc(element));
+					productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(element));
 				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					x.productContentTypes = DU.addToList(x.productContentTypes, ProductContentType.fromDoc(element));
+					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
 				else if (name.equals(NumberOfItemsOfThisForm.refname) || name.equals(NumberOfItemsOfThisForm.shortname))
-					x.numberOfItemsOfThisForm = NumberOfItemsOfThisForm.fromDoc(element);
+					numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(element);
 				else if (name.equals(NumberOfCopies.refname) || name.equals(NumberOfCopies.shortname))
-					x.numberOfCopies = NumberOfCopies.fromDoc(element);
+					numberOfCopies = new NumberOfCopies(element);
 				else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname))
-					x.countryOfManufacture = CountryOfManufacture.fromDoc(element);
+					countryOfManufacture = new CountryOfManufacture(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ProductFormsList150 getProductFormValue()

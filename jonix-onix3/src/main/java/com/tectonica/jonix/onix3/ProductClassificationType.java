@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductClassificationType
+@SuppressWarnings("serial")
+public class ProductClassificationType implements Serializable
 {
 	public static final String refname = "ProductClassificationType";
 	public static final String shortname = "b274";
@@ -38,16 +41,15 @@ public class ProductClassificationType
 
 	public ProductClassificationTypes value;
 
-	public static ProductClassificationType fromDoc(org.w3c.dom.Element element)
+	public ProductClassificationType()
+	{}
+
+	public ProductClassificationType(org.w3c.dom.Element element)
 	{
-		final ProductClassificationType x = new ProductClassificationType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductClassificationTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductClassificationTypes.byValue(JPU.getContentAsString(element));
 	}
 }

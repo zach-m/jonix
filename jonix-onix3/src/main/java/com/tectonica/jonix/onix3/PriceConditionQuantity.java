@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
 import com.tectonica.jonix.codelist.QuantityUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PriceConditionQuantity
+@SuppressWarnings("serial")
+public class PriceConditionQuantity implements Serializable
 {
 	public static final String refname = "PriceConditionQuantity";
 	public static final String shortname = "priceconditionquantity";
@@ -41,30 +44,29 @@ public class PriceConditionQuantity
 	public Quantity quantity; // Required
 	public QuantityUnit quantityUnit; // Required
 
-	public static PriceConditionQuantity fromDoc(org.w3c.dom.Element element)
+	public PriceConditionQuantity()
+	{}
+
+	public PriceConditionQuantity(org.w3c.dom.Element element)
 	{
-		final PriceConditionQuantity x = new PriceConditionQuantity();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PriceConditionQuantityType.refname) || name.equals(PriceConditionQuantityType.shortname))
-					x.priceConditionQuantityType = PriceConditionQuantityType.fromDoc(element);
+					priceConditionQuantityType = new PriceConditionQuantityType(element);
 				else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-					x.quantity = Quantity.fromDoc(element);
+					quantity = new Quantity(element);
 				else if (name.equals(QuantityUnit.refname) || name.equals(QuantityUnit.shortname))
-					x.quantityUnit = QuantityUnit.fromDoc(element);
+					quantityUnit = new QuantityUnit(element);
 			}
 		});
-
-		return x;
 	}
 
 	public PriceConditionQuantityTypes getPriceConditionQuantityTypeValue()

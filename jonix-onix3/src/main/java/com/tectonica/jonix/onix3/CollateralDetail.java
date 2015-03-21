@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CollateralDetail
+@SuppressWarnings("serial")
+public class CollateralDetail implements Serializable
 {
 	public static final String refname = "CollateralDetail";
 	public static final String shortname = "collateraldetail";
@@ -42,31 +44,30 @@ public class CollateralDetail
 	public List<SupportingResource> supportingResources; // ZeroOrMore
 	public List<Prize> prizes; // ZeroOrMore
 
-	public static CollateralDetail fromDoc(org.w3c.dom.Element element)
+	public CollateralDetail()
+	{}
+
+	public CollateralDetail(org.w3c.dom.Element element)
 	{
-		final CollateralDetail x = new CollateralDetail();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TextContent.refname) || name.equals(TextContent.shortname))
-					x.textContents = DU.addToList(x.textContents, TextContent.fromDoc(element));
+					textContents = JPU.addToList(textContents, new TextContent(element));
 				else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname))
-					x.citedContents = DU.addToList(x.citedContents, CitedContent.fromDoc(element));
+					citedContents = JPU.addToList(citedContents, new CitedContent(element));
 				else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
-					x.supportingResources = DU.addToList(x.supportingResources, SupportingResource.fromDoc(element));
+					supportingResources = JPU.addToList(supportingResources, new SupportingResource(element));
 				else if (name.equals(Prize.refname) || name.equals(Prize.shortname))
-					x.prizes = DU.addToList(x.prizes, Prize.fromDoc(element));
+					prizes = JPU.addToList(prizes, new Prize(element));
 			}
 		});
-
-		return x;
 	}
 }

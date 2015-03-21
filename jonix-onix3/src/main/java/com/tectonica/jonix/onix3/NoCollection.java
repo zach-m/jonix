@@ -19,14 +19,17 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class NoCollection
+@SuppressWarnings("serial")
+public class NoCollection implements Serializable
 {
 	public static final String refname = "NoCollection";
 	public static final String shortname = "x411";
@@ -35,14 +38,13 @@ public class NoCollection
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public static NoCollection fromDoc(org.w3c.dom.Element element)
+	public NoCollection()
+	{}
+
+	public NoCollection(org.w3c.dom.Element element)
 	{
-		final NoCollection x = new NoCollection();
-
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		return x;
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 	}
 }

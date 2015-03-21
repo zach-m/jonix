@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class SupplyDetail
+@SuppressWarnings("serial")
+public class SupplyDetail implements Serializable
 {
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";
@@ -52,48 +54,47 @@ public class SupplyDetail
 	public List<Price> prices; // ZeroOrMore
 	public Reissue reissue; // Optional
 
-	public static SupplyDetail fromDoc(org.w3c.dom.Element element)
+	public SupplyDetail()
+	{}
+
+	public SupplyDetail(org.w3c.dom.Element element)
 	{
-		final SupplyDetail x = new SupplyDetail();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Supplier.refname) || name.equals(Supplier.shortname))
-					x.supplier = Supplier.fromDoc(element);
+					supplier = new Supplier(element);
 				else if (name.equals(SupplierOwnCoding.refname) || name.equals(SupplierOwnCoding.shortname))
-					x.supplierOwnCodings = DU.addToList(x.supplierOwnCodings, SupplierOwnCoding.fromDoc(element));
+					supplierOwnCodings = JPU.addToList(supplierOwnCodings, new SupplierOwnCoding(element));
 				else if (name.equals(ReturnsConditions.refname) || name.equals(ReturnsConditions.shortname))
-					x.returnsConditionss = DU.addToList(x.returnsConditionss, ReturnsConditions.fromDoc(element));
+					returnsConditionss = JPU.addToList(returnsConditionss, new ReturnsConditions(element));
 				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
-					x.productAvailability = ProductAvailability.fromDoc(element);
+					productAvailability = new ProductAvailability(element);
 				else if (name.equals(SupplyDate.refname) || name.equals(SupplyDate.shortname))
-					x.supplyDates = DU.addToList(x.supplyDates, SupplyDate.fromDoc(element));
+					supplyDates = JPU.addToList(supplyDates, new SupplyDate(element));
 				else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
-					x.orderTime = OrderTime.fromDoc(element);
+					orderTime = new OrderTime(element);
 				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
-					x.newSupplier = NewSupplier.fromDoc(element);
+					newSupplier = new NewSupplier(element);
 				else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
-					x.stocks = DU.addToList(x.stocks, Stock.fromDoc(element));
+					stocks = JPU.addToList(stocks, new Stock(element));
 				else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
-					x.packQuantity = PackQuantity.fromDoc(element);
+					packQuantity = new PackQuantity(element);
 				else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
-					x.unpricedItemType = UnpricedItemType.fromDoc(element);
+					unpricedItemType = new UnpricedItemType(element);
 				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
+					prices = JPU.addToList(prices, new Price(element));
 				else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
-					x.reissue = Reissue.fromDoc(element);
+					reissue = new Reissue(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ProductAvailabilitys getProductAvailabilityValue()

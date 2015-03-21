@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ReturnsCodeType
+@SuppressWarnings("serial")
+public class ReturnsCodeType implements Serializable
 {
 	public static final String refname = "ReturnsCodeType";
 	public static final String shortname = "j268";
@@ -38,16 +41,15 @@ public class ReturnsCodeType
 
 	public ReturnsConditionsCodeTypes value;
 
-	public static ReturnsCodeType fromDoc(org.w3c.dom.Element element)
+	public ReturnsCodeType()
+	{}
+
+	public ReturnsCodeType(org.w3c.dom.Element element)
 	{
-		final ReturnsCodeType x = new ReturnsCodeType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ReturnsConditionsCodeTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ReturnsConditionsCodeTypes.byValue(JPU.getContentAsString(element));
 	}
 }

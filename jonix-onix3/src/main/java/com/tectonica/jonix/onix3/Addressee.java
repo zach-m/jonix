@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Addressee
+@SuppressWarnings("serial")
+public class Addressee implements Serializable
 {
 	public static final String refname = "Addressee";
 	public static final String shortname = "addressee";
@@ -42,32 +44,31 @@ public class Addressee
 	public ContactName contactName; // Optional
 	public EmailAddress emailAddress; // Optional
 
-	public static Addressee fromDoc(org.w3c.dom.Element element)
+	public Addressee()
+	{}
+
+	public Addressee(org.w3c.dom.Element element)
 	{
-		final Addressee x = new Addressee();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
-					x.addresseeIdentifiers = DU.addToList(x.addresseeIdentifiers, AddresseeIdentifier.fromDoc(element));
+					addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(element));
 				else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname))
-					x.addresseeName = AddresseeName.fromDoc(element);
+					addresseeName = new AddresseeName(element);
 				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-					x.contactName = ContactName.fromDoc(element);
+					contactName = new ContactName(element);
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddress = EmailAddress.fromDoc(element);
+					emailAddress = new EmailAddress(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getAddresseeNameValue()

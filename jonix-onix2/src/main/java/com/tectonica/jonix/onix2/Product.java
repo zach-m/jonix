@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
 import com.tectonica.jonix.codelist.BookFormDetails;
@@ -52,7 +53,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Product
+@SuppressWarnings("serial")
+public class Product implements Serializable
 {
 	public static final String refname = "Product";
 	public static final String shortname = "product";
@@ -218,332 +220,331 @@ public class Product
 	public CopiesSold copiesSold; // Optional
 	public BookClubAdoption bookClubAdoption; // Optional
 
-	public static Product fromDoc(org.w3c.dom.Element element)
+	public Product()
+	{}
+
+	public Product(org.w3c.dom.Element element)
 	{
-		final Product x = new Product();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
-					x.recordReference = RecordReference.fromDoc(element);
+					recordReference = new RecordReference(element);
 				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
-					x.notificationType = NotificationType.fromDoc(element);
+					notificationType = new NotificationType(element);
 				else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
-					x.deletionCode = DeletionCode.fromDoc(element);
+					deletionCode = new DeletionCode(element);
 				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
-					x.deletionText = DeletionText.fromDoc(element);
+					deletionText = new DeletionText(element);
 				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
-					x.recordSourceType = RecordSourceType.fromDoc(element);
+					recordSourceType = new RecordSourceType(element);
 				else if (name.equals(RecordSourceIdentifierType.refname) || name.equals(RecordSourceIdentifierType.shortname))
-					x.recordSourceIdentifierType = RecordSourceIdentifierType.fromDoc(element);
+					recordSourceIdentifierType = new RecordSourceIdentifierType(element);
 				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					x.recordSourceIdentifier = RecordSourceIdentifier.fromDoc(element);
+					recordSourceIdentifier = new RecordSourceIdentifier(element);
 				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
-					x.recordSourceName = RecordSourceName.fromDoc(element);
+					recordSourceName = new RecordSourceName(element);
 				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					x.isbn = ISBN.fromDoc(element);
+					isbn = new ISBN(element);
 				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					x.ean13 = EAN13.fromDoc(element);
+					ean13 = new EAN13(element);
 				else if (name.equals(UPC.refname) || name.equals(UPC.shortname))
-					x.upc = UPC.fromDoc(element);
+					upc = new UPC(element);
 				else if (name.equals(PublisherProductNo.refname) || name.equals(PublisherProductNo.shortname))
-					x.publisherProductNo = PublisherProductNo.fromDoc(element);
+					publisherProductNo = new PublisherProductNo(element);
 				else if (name.equals(ISMN.refname) || name.equals(ISMN.shortname))
-					x.ismn = ISMN.fromDoc(element);
+					ismn = new ISMN(element);
 				else if (name.equals(DOI.refname) || name.equals(DOI.shortname))
-					x.doi = DOI.fromDoc(element);
+					doi = new DOI(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
-					x.barcodes = DU.addToList(x.barcodes, Barcode.fromDoc(element));
+					barcodes = JPU.addToList(barcodes, new Barcode(element));
 				else if (name.equals(ReplacesISBN.refname) || name.equals(ReplacesISBN.shortname))
-					x.replacesISBN = ReplacesISBN.fromDoc(element);
+					replacesISBN = new ReplacesISBN(element);
 				else if (name.equals(ReplacesEAN13.refname) || name.equals(ReplacesEAN13.shortname))
-					x.replacesEAN13 = ReplacesEAN13.fromDoc(element);
+					replacesEAN13 = new ReplacesEAN13(element);
 				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					x.productForm = ProductForm.fromDoc(element);
+					productForm = new ProductForm(element);
 				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					x.productFormDetails = DU.addToList(x.productFormDetails, ProductFormDetail.fromDoc(element));
+					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
 				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					x.productFormFeatures = DU.addToList(x.productFormFeatures, ProductFormFeature.fromDoc(element));
+					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
 				else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
-					x.bookFormDetails = DU.addToList(x.bookFormDetails, BookFormDetail.fromDoc(element));
+					bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(element));
 				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
-					x.productPackaging = ProductPackaging.fromDoc(element);
+					productPackaging = new ProductPackaging(element);
 				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					x.productFormDescription = ProductFormDescription.fromDoc(element);
+					productFormDescription = new ProductFormDescription(element);
 				else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
-					x.numberOfPieces = NumberOfPieces.fromDoc(element);
+					numberOfPieces = new NumberOfPieces(element);
 				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
-					x.tradeCategory = TradeCategory.fromDoc(element);
+					tradeCategory = new TradeCategory(element);
 				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					x.productContentTypes = DU.addToList(x.productContentTypes, ProductContentType.fromDoc(element));
+					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
 				else if (name.equals(ContainedItem.refname) || name.equals(ContainedItem.shortname))
-					x.containedItems = DU.addToList(x.containedItems, ContainedItem.fromDoc(element));
+					containedItems = JPU.addToList(containedItems, new ContainedItem(element));
 				else if (name.equals(ProductClassification.refname) || name.equals(ProductClassification.shortname))
-					x.productClassifications = DU.addToList(x.productClassifications, ProductClassification.fromDoc(element));
+					productClassifications = JPU.addToList(productClassifications, new ProductClassification(element));
 				else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname))
-					x.epubType = EpubType.fromDoc(element);
+					epubType = new EpubType(element);
 				else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname))
-					x.epubTypeVersion = EpubTypeVersion.fromDoc(element);
+					epubTypeVersion = new EpubTypeVersion(element);
 				else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname))
-					x.epubTypeDescription = EpubTypeDescription.fromDoc(element);
+					epubTypeDescription = new EpubTypeDescription(element);
 				else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname))
-					x.epubFormat = EpubFormat.fromDoc(element);
+					epubFormat = new EpubFormat(element);
 				else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname))
-					x.epubFormatVersion = EpubFormatVersion.fromDoc(element);
+					epubFormatVersion = new EpubFormatVersion(element);
 				else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname))
-					x.epubFormatDescription = EpubFormatDescription.fromDoc(element);
+					epubFormatDescription = new EpubFormatDescription(element);
 				else if (name.equals(EpubSource.refname) || name.equals(EpubSource.shortname))
-					x.epubSource = EpubSource.fromDoc(element);
+					epubSource = new EpubSource(element);
 				else if (name.equals(EpubSourceVersion.refname) || name.equals(EpubSourceVersion.shortname))
-					x.epubSourceVersion = EpubSourceVersion.fromDoc(element);
+					epubSourceVersion = new EpubSourceVersion(element);
 				else if (name.equals(EpubSourceDescription.refname) || name.equals(EpubSourceDescription.shortname))
-					x.epubSourceDescription = EpubSourceDescription.fromDoc(element);
+					epubSourceDescription = new EpubSourceDescription(element);
 				else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname))
-					x.epubTypeNote = EpubTypeNote.fromDoc(element);
+					epubTypeNote = new EpubTypeNote(element);
 				else if (name.equals(Series.refname) || name.equals(Series.shortname))
-					x.seriess = DU.addToList(x.seriess, Series.fromDoc(element));
+					seriess = JPU.addToList(seriess, new Series(element));
 				else if (name.equals(NoSeries.refname) || name.equals(NoSeries.shortname))
-					x.noSeries = NoSeries.fromDoc(element);
+					noSeries = new NoSeries(element);
 				else if (name.equals(Set.refname) || name.equals(Set.shortname))
-					x.sets = DU.addToList(x.sets, Set.fromDoc(element));
+					sets = JPU.addToList(sets, new Set(element));
 				else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
-					x.textCaseFlag = TextCaseFlag.fromDoc(element);
+					textCaseFlag = new TextCaseFlag(element);
 				else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
-					x.distinctiveTitle = DistinctiveTitle.fromDoc(element);
+					distinctiveTitle = new DistinctiveTitle(element);
 				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-					x.titlePrefix = TitlePrefix.fromDoc(element);
+					titlePrefix = new TitlePrefix(element);
 				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-					x.titleWithoutPrefix = TitleWithoutPrefix.fromDoc(element);
+					titleWithoutPrefix = new TitleWithoutPrefix(element);
 				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-					x.subtitle = Subtitle.fromDoc(element);
+					subtitle = new Subtitle(element);
 				else if (name.equals(TranslationOfTitle.refname) || name.equals(TranslationOfTitle.shortname))
-					x.translationOfTitle = TranslationOfTitle.fromDoc(element);
+					translationOfTitle = new TranslationOfTitle(element);
 				else if (name.equals(FormerTitle.refname) || name.equals(FormerTitle.shortname))
-					x.formerTitles = DU.addToList(x.formerTitles, FormerTitle.fromDoc(element));
+					formerTitles = JPU.addToList(formerTitles, new FormerTitle(element));
 				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
+					titles = JPU.addToList(titles, new Title(element));
 				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
-					x.workIdentifiers = DU.addToList(x.workIdentifiers, WorkIdentifier.fromDoc(element));
+					workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(ThesisType.refname) || name.equals(ThesisType.shortname))
-					x.thesisType = ThesisType.fromDoc(element);
+					thesisType = new ThesisType(element);
 				else if (name.equals(ThesisPresentedTo.refname) || name.equals(ThesisPresentedTo.shortname))
-					x.thesisPresentedTo = ThesisPresentedTo.fromDoc(element);
+					thesisPresentedTo = new ThesisPresentedTo(element);
 				else if (name.equals(ThesisYear.refname) || name.equals(ThesisYear.shortname))
-					x.thesisYear = ThesisYear.fromDoc(element);
+					thesisYear = new ThesisYear(element);
 				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					x.contributors = DU.addToList(x.contributors, Contributor.fromDoc(element));
+					contributors = JPU.addToList(contributors, new Contributor(element));
 				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
-					x.contributorStatement = ContributorStatement.fromDoc(element);
+					contributorStatement = new ContributorStatement(element);
 				else if (name.equals(NoContributor.refname) || name.equals(NoContributor.shortname))
-					x.noContributor = NoContributor.fromDoc(element);
+					noContributor = new NoContributor(element);
 				else if (name.equals(ConferenceDescription.refname) || name.equals(ConferenceDescription.shortname))
-					x.conferenceDescription = ConferenceDescription.fromDoc(element);
+					conferenceDescription = new ConferenceDescription(element);
 				else if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
-					x.conferenceRole = ConferenceRole.fromDoc(element);
+					conferenceRole = new ConferenceRole(element);
 				else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
-					x.conferenceName = ConferenceName.fromDoc(element);
+					conferenceName = new ConferenceName(element);
 				else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
-					x.conferenceNumber = ConferenceNumber.fromDoc(element);
+					conferenceNumber = new ConferenceNumber(element);
 				else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
-					x.conferenceDate = ConferenceDate.fromDoc(element);
+					conferenceDate = new ConferenceDate(element);
 				else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
-					x.conferencePlace = ConferencePlace.fromDoc(element);
+					conferencePlace = new ConferencePlace(element);
 				else if (name.equals(Conference.refname) || name.equals(Conference.shortname))
-					x.conferences = DU.addToList(x.conferences, Conference.fromDoc(element));
+					conferences = JPU.addToList(conferences, new Conference(element));
 				else if (name.equals(EditionTypeCode.refname) || name.equals(EditionTypeCode.shortname))
-					x.editionTypeCodes = DU.addToList(x.editionTypeCodes, EditionTypeCode.fromDoc(element));
+					editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(element));
 				else if (name.equals(EditionNumber.refname) || name.equals(EditionNumber.shortname))
-					x.editionNumber = EditionNumber.fromDoc(element);
+					editionNumber = new EditionNumber(element);
 				else if (name.equals(EditionVersionNumber.refname) || name.equals(EditionVersionNumber.shortname))
-					x.editionVersionNumber = EditionVersionNumber.fromDoc(element);
+					editionVersionNumber = new EditionVersionNumber(element);
 				else if (name.equals(EditionStatement.refname) || name.equals(EditionStatement.shortname))
-					x.editionStatement = EditionStatement.fromDoc(element);
+					editionStatement = new EditionStatement(element);
 				else if (name.equals(NoEdition.refname) || name.equals(NoEdition.shortname))
-					x.noEdition = NoEdition.fromDoc(element);
+					noEdition = new NoEdition(element);
 				else if (name.equals(ReligiousText.refname) || name.equals(ReligiousText.shortname))
-					x.religiousText = ReligiousText.fromDoc(element);
+					religiousText = new ReligiousText(element);
 				else if (name.equals(LanguageOfText.refname) || name.equals(LanguageOfText.shortname))
-					x.languageOfTexts = DU.addToList(x.languageOfTexts, LanguageOfText.fromDoc(element));
+					languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(element));
 				else if (name.equals(OriginalLanguage.refname) || name.equals(OriginalLanguage.shortname))
-					x.originalLanguage = OriginalLanguage.fromDoc(element);
+					originalLanguage = new OriginalLanguage(element);
 				else if (name.equals(Language.refname) || name.equals(Language.shortname))
-					x.languages = DU.addToList(x.languages, Language.fromDoc(element));
+					languages = JPU.addToList(languages, new Language(element));
 				else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
-					x.numberOfPages = NumberOfPages.fromDoc(element);
+					numberOfPages = new NumberOfPages(element);
 				else if (name.equals(PagesRoman.refname) || name.equals(PagesRoman.shortname))
-					x.pagesRoman = PagesRoman.fromDoc(element);
+					pagesRoman = new PagesRoman(element);
 				else if (name.equals(PagesArabic.refname) || name.equals(PagesArabic.shortname))
-					x.pagesArabic = PagesArabic.fromDoc(element);
+					pagesArabic = new PagesArabic(element);
 				else if (name.equals(Extent.refname) || name.equals(Extent.shortname))
-					x.extents = DU.addToList(x.extents, Extent.fromDoc(element));
+					extents = JPU.addToList(extents, new Extent(element));
 				else if (name.equals(NumberOfIllustrations.refname) || name.equals(NumberOfIllustrations.shortname))
-					x.numberOfIllustrations = NumberOfIllustrations.fromDoc(element);
+					numberOfIllustrations = new NumberOfIllustrations(element);
 				else if (name.equals(IllustrationsNote.refname) || name.equals(IllustrationsNote.shortname))
-					x.illustrationsNote = IllustrationsNote.fromDoc(element);
+					illustrationsNote = new IllustrationsNote(element);
 				else if (name.equals(Illustrations.refname) || name.equals(Illustrations.shortname))
-					x.illustrationss = DU.addToList(x.illustrationss, Illustrations.fromDoc(element));
+					illustrationss = JPU.addToList(illustrationss, new Illustrations(element));
 				else if (name.equals(MapScale.refname) || name.equals(MapScale.shortname))
-					x.mapScales = DU.addToList(x.mapScales, MapScale.fromDoc(element));
+					mapScales = JPU.addToList(mapScales, new MapScale(element));
 				else if (name.equals(BASICMainSubject.refname) || name.equals(BASICMainSubject.shortname))
-					x.basicMainSubject = BASICMainSubject.fromDoc(element);
+					basicMainSubject = new BASICMainSubject(element);
 				else if (name.equals(BASICVersion.refname) || name.equals(BASICVersion.shortname))
-					x.basicVersion = BASICVersion.fromDoc(element);
+					basicVersion = new BASICVersion(element);
 				else if (name.equals(BICMainSubject.refname) || name.equals(BICMainSubject.shortname))
-					x.bicMainSubject = BICMainSubject.fromDoc(element);
+					bicMainSubject = new BICMainSubject(element);
 				else if (name.equals(BICVersion.refname) || name.equals(BICVersion.shortname))
-					x.bicVersion = BICVersion.fromDoc(element);
+					bicVersion = new BICVersion(element);
 				else if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname))
-					x.mainSubjects = DU.addToList(x.mainSubjects, MainSubject.fromDoc(element));
+					mainSubjects = JPU.addToList(mainSubjects, new MainSubject(element));
 				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
-					x.subjects = DU.addToList(x.subjects, Subject.fromDoc(element));
+					subjects = JPU.addToList(subjects, new Subject(element));
 				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
-					x.personAsSubjects = DU.addToList(x.personAsSubjects, PersonAsSubject.fromDoc(element));
+					personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(element));
 				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
-					x.corporateBodyAsSubjects = DU.addToList(x.corporateBodyAsSubjects, CorporateBodyAsSubject.fromDoc(element));
+					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(element));
 				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
-					x.placeAsSubjects = DU.addToList(x.placeAsSubjects, PlaceAsSubject.fromDoc(element));
+					placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(element));
 				else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname))
-					x.audienceCodes = DU.addToList(x.audienceCodes, AudienceCode.fromDoc(element));
+					audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(element));
 				else if (name.equals(Audience.refname) || name.equals(Audience.shortname))
-					x.audiences = DU.addToList(x.audiences, Audience.fromDoc(element));
+					audiences = JPU.addToList(audiences, new Audience(element));
 				else if (name.equals(USSchoolGrade.refname) || name.equals(USSchoolGrade.shortname))
-					x.usSchoolGrade = USSchoolGrade.fromDoc(element);
+					usSchoolGrade = new USSchoolGrade(element);
 				else if (name.equals(InterestAge.refname) || name.equals(InterestAge.shortname))
-					x.interestAge = InterestAge.fromDoc(element);
+					interestAge = new InterestAge(element);
 				else if (name.equals(AudienceRange.refname) || name.equals(AudienceRange.shortname))
-					x.audienceRanges = DU.addToList(x.audienceRanges, AudienceRange.fromDoc(element));
+					audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(element));
 				else if (name.equals(AudienceDescription.refname) || name.equals(AudienceDescription.shortname))
-					x.audienceDescription = AudienceDescription.fromDoc(element);
+					audienceDescription = new AudienceDescription(element);
 				else if (name.equals(Complexity.refname) || name.equals(Complexity.shortname))
-					x.complexitys = DU.addToList(x.complexitys, Complexity.fromDoc(element));
+					complexitys = JPU.addToList(complexitys, new Complexity(element));
 				else if (name.equals(Annotation.refname) || name.equals(Annotation.shortname))
-					x.annotation = Annotation.fromDoc(element);
+					annotation = new Annotation(element);
 				else if (name.equals(MainDescription.refname) || name.equals(MainDescription.shortname))
-					x.mainDescription = MainDescription.fromDoc(element);
+					mainDescription = new MainDescription(element);
 				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
-					x.otherTexts = DU.addToList(x.otherTexts, OtherText.fromDoc(element));
+					otherTexts = JPU.addToList(otherTexts, new OtherText(element));
 				else if (name.equals(ReviewQuote.refname) || name.equals(ReviewQuote.shortname))
-					x.reviewQuotes = DU.addToList(x.reviewQuotes, ReviewQuote.fromDoc(element));
+					reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(element));
 				else if (name.equals(CoverImageFormatCode.refname) || name.equals(CoverImageFormatCode.shortname))
-					x.coverImageFormatCode = CoverImageFormatCode.fromDoc(element);
+					coverImageFormatCode = new CoverImageFormatCode(element);
 				else if (name.equals(CoverImageLinkTypeCode.refname) || name.equals(CoverImageLinkTypeCode.shortname))
-					x.coverImageLinkTypeCode = CoverImageLinkTypeCode.fromDoc(element);
+					coverImageLinkTypeCode = new CoverImageLinkTypeCode(element);
 				else if (name.equals(CoverImageLink.refname) || name.equals(CoverImageLink.shortname))
-					x.coverImageLink = CoverImageLink.fromDoc(element);
+					coverImageLink = new CoverImageLink(element);
 				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
-					x.mediaFiles = DU.addToList(x.mediaFiles, MediaFile.fromDoc(element));
+					mediaFiles = JPU.addToList(mediaFiles, new MediaFile(element));
 				else if (name.equals(ProductWebsite.refname) || name.equals(ProductWebsite.shortname))
-					x.productWebsites = DU.addToList(x.productWebsites, ProductWebsite.fromDoc(element));
+					productWebsites = JPU.addToList(productWebsites, new ProductWebsite(element));
 				else if (name.equals(PrizesDescription.refname) || name.equals(PrizesDescription.shortname))
-					x.prizesDescription = PrizesDescription.fromDoc(element);
+					prizesDescription = new PrizesDescription(element);
 				else if (name.equals(Prize.refname) || name.equals(Prize.shortname))
-					x.prizes = DU.addToList(x.prizes, Prize.fromDoc(element));
+					prizes = JPU.addToList(prizes, new Prize(element));
 				else if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname))
-					x.contentItems = DU.addToList(x.contentItems, ContentItem.fromDoc(element));
+					contentItems = JPU.addToList(contentItems, new ContentItem(element));
 				else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
-					x.imprintName = ImprintName.fromDoc(element);
+					imprintName = new ImprintName(element);
 				else if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
-					x.imprints = DU.addToList(x.imprints, Imprint.fromDoc(element));
+					imprints = JPU.addToList(imprints, new Imprint(element));
 				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					x.publisherName = PublisherName.fromDoc(element);
+					publisherName = new PublisherName(element);
 				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					x.publishers = DU.addToList(x.publishers, Publisher.fromDoc(element));
+					publishers = JPU.addToList(publishers, new Publisher(element));
 				else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
-					x.cityOfPublications = DU.addToList(x.cityOfPublications, CityOfPublication.fromDoc(element));
+					cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(element));
 				else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
-					x.countryOfPublication = CountryOfPublication.fromDoc(element);
+					countryOfPublication = new CountryOfPublication(element);
 				else if (name.equals(CopublisherName.refname) || name.equals(CopublisherName.shortname))
-					x.copublisherNames = DU.addToList(x.copublisherNames, CopublisherName.fromDoc(element));
+					copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(element));
 				else if (name.equals(SponsorName.refname) || name.equals(SponsorName.shortname))
-					x.sponsorNames = DU.addToList(x.sponsorNames, SponsorName.fromDoc(element));
+					sponsorNames = JPU.addToList(sponsorNames, new SponsorName(element));
 				else if (name.equals(OriginalPublisher.refname) || name.equals(OriginalPublisher.shortname))
-					x.originalPublisher = OriginalPublisher.fromDoc(element);
+					originalPublisher = new OriginalPublisher(element);
 				else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
-					x.publishingStatus = PublishingStatus.fromDoc(element);
+					publishingStatus = new PublishingStatus(element);
 				else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
-					x.publishingStatusNote = PublishingStatusNote.fromDoc(element);
+					publishingStatusNote = new PublishingStatusNote(element);
 				else if (name.equals(AnnouncementDate.refname) || name.equals(AnnouncementDate.shortname))
-					x.announcementDate = AnnouncementDate.fromDoc(element);
+					announcementDate = new AnnouncementDate(element);
 				else if (name.equals(TradeAnnouncementDate.refname) || name.equals(TradeAnnouncementDate.shortname))
-					x.tradeAnnouncementDate = TradeAnnouncementDate.fromDoc(element);
+					tradeAnnouncementDate = new TradeAnnouncementDate(element);
 				else if (name.equals(PublicationDate.refname) || name.equals(PublicationDate.shortname))
-					x.publicationDate = PublicationDate.fromDoc(element);
+					publicationDate = new PublicationDate(element);
 				else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
-					x.copyrightStatements = DU.addToList(x.copyrightStatements, CopyrightStatement.fromDoc(element));
+					copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(element));
 				else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
-					x.copyrightYear = CopyrightYear.fromDoc(element);
+					copyrightYear = new CopyrightYear(element);
 				else if (name.equals(YearFirstPublished.refname) || name.equals(YearFirstPublished.shortname))
-					x.yearFirstPublished = YearFirstPublished.fromDoc(element);
+					yearFirstPublished = new YearFirstPublished(element);
 				else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
-					x.salesRightss = DU.addToList(x.salesRightss, SalesRights.fromDoc(element));
+					salesRightss = JPU.addToList(salesRightss, new SalesRights(element));
 				else if (name.equals(NotForSale.refname) || name.equals(NotForSale.shortname))
-					x.notForSales = DU.addToList(x.notForSales, NotForSale.fromDoc(element));
+					notForSales = JPU.addToList(notForSales, new NotForSale(element));
 				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					x.salesRestrictions = DU.addToList(x.salesRestrictions, SalesRestriction.fromDoc(element));
+					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
 				else if (name.equals(Height.refname) || name.equals(Height.shortname))
-					x.height = Height.fromDoc(element);
+					height = new Height(element);
 				else if (name.equals(Width.refname) || name.equals(Width.shortname))
-					x.width = Width.fromDoc(element);
+					width = new Width(element);
 				else if (name.equals(Thickness.refname) || name.equals(Thickness.shortname))
-					x.thickness = Thickness.fromDoc(element);
+					thickness = new Thickness(element);
 				else if (name.equals(Weight.refname) || name.equals(Weight.shortname))
-					x.weight = Weight.fromDoc(element);
+					weight = new Weight(element);
 				else if (name.equals(Measure.refname) || name.equals(Measure.shortname))
-					x.measures = DU.addToList(x.measures, Measure.fromDoc(element));
+					measures = JPU.addToList(measures, new Measure(element));
 				else if (name.equals(Dimensions.refname) || name.equals(Dimensions.shortname))
-					x.dimensions = Dimensions.fromDoc(element);
+					dimensions = new Dimensions(element);
 				else if (name.equals(ReplacedByISBN.refname) || name.equals(ReplacedByISBN.shortname))
-					x.replacedByISBN = ReplacedByISBN.fromDoc(element);
+					replacedByISBN = new ReplacedByISBN(element);
 				else if (name.equals(ReplacedByEAN13.refname) || name.equals(ReplacedByEAN13.shortname))
-					x.replacedByEAN13 = ReplacedByEAN13.fromDoc(element);
+					replacedByEAN13 = new ReplacedByEAN13(element);
 				else if (name.equals(AlternativeFormatISBN.refname) || name.equals(AlternativeFormatISBN.shortname))
-					x.alternativeFormatISBN = AlternativeFormatISBN.fromDoc(element);
+					alternativeFormatISBN = new AlternativeFormatISBN(element);
 				else if (name.equals(AlternativeFormatEAN13.refname) || name.equals(AlternativeFormatEAN13.shortname))
-					x.alternativeFormatEAN13 = AlternativeFormatEAN13.fromDoc(element);
+					alternativeFormatEAN13 = new AlternativeFormatEAN13(element);
 				else if (name.equals(AlternativeProductISBN.refname) || name.equals(AlternativeProductISBN.shortname))
-					x.alternativeProductISBN = AlternativeProductISBN.fromDoc(element);
+					alternativeProductISBN = new AlternativeProductISBN(element);
 				else if (name.equals(AlternativeProductEAN13.refname) || name.equals(AlternativeProductEAN13.shortname))
-					x.alternativeProductEAN13 = AlternativeProductEAN13.fromDoc(element);
+					alternativeProductEAN13 = new AlternativeProductEAN13(element);
 				else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
-					x.relatedProducts = DU.addToList(x.relatedProducts, RelatedProduct.fromDoc(element));
+					relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(element));
 				else if (name.equals(OutOfPrintDate.refname) || name.equals(OutOfPrintDate.shortname))
-					x.outOfPrintDate = OutOfPrintDate.fromDoc(element);
+					outOfPrintDate = new OutOfPrintDate(element);
 				else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
-					x.supplyDetails = DU.addToList(x.supplyDetails, SupplyDetail.fromDoc(element));
+					supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(element));
 				else if (name.equals(MarketRepresentation.refname) || name.equals(MarketRepresentation.shortname))
-					x.marketRepresentations = DU.addToList(x.marketRepresentations, MarketRepresentation.fromDoc(element));
+					marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(element));
 				else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))
-					x.promotionCampaign = PromotionCampaign.fromDoc(element);
+					promotionCampaign = new PromotionCampaign(element);
 				else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname))
-					x.promotionContact = PromotionContact.fromDoc(element);
+					promotionContact = new PromotionContact(element);
 				else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname))
-					x.initialPrintRun = InitialPrintRun.fromDoc(element);
+					initialPrintRun = new InitialPrintRun(element);
 				else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname))
-					x.reprintDetails = DU.addToList(x.reprintDetails, ReprintDetail.fromDoc(element));
+					reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(element));
 				else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname))
-					x.copiesSold = CopiesSold.fromDoc(element);
+					copiesSold = new CopiesSold(element);
 				else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname))
-					x.bookClubAdoption = BookClubAdoption.fromDoc(element);
+					bookClubAdoption = new BookClubAdoption(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getRecordReferenceValue()

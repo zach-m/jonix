@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix2;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -32,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class OtherText
+@SuppressWarnings("serial")
+public class OtherText implements Serializable
 {
 	public static final String refname = "OtherText";
 	public static final String shortname = "othertext";
@@ -57,50 +60,49 @@ public class OtherText
 	public StartDate startDate; // Optional
 	public EndDate endDate; // Optional
 
-	public static OtherText fromDoc(org.w3c.dom.Element element)
+	public OtherText()
+	{}
+
+	public OtherText(org.w3c.dom.Element element)
 	{
-		final OtherText x = new OtherText();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(TextTypeCode.refname) || name.equals(TextTypeCode.shortname))
-					x.textTypeCode = TextTypeCode.fromDoc(element);
+					textTypeCode = new TextTypeCode(element);
 				else if (name.equals(TextFormat.refname) || name.equals(TextFormat.shortname))
-					x.textFormat = TextFormat.fromDoc(element);
+					textFormat = new TextFormat(element);
 				else if (name.equals(Text.refname) || name.equals(Text.shortname))
-					x.text = Text.fromDoc(element);
+					text = new Text(element);
 				else if (name.equals(TextLinkType.refname) || name.equals(TextLinkType.shortname))
-					x.textLinkType = TextLinkType.fromDoc(element);
+					textLinkType = new TextLinkType(element);
 				else if (name.equals(TextLink.refname) || name.equals(TextLink.shortname))
-					x.textLink = TextLink.fromDoc(element);
+					textLink = new TextLink(element);
 				else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname))
-					x.textAuthor = TextAuthor.fromDoc(element);
+					textAuthor = new TextAuthor(element);
 				else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname))
-					x.textSourceCorporate = TextSourceCorporate.fromDoc(element);
+					textSourceCorporate = new TextSourceCorporate(element);
 				else if (name.equals(TextSourceTitle.refname) || name.equals(TextSourceTitle.shortname))
-					x.textSourceTitle = TextSourceTitle.fromDoc(element);
+					textSourceTitle = new TextSourceTitle(element);
 				else if (name.equals(TextPublicationDate.refname) || name.equals(TextPublicationDate.shortname))
-					x.textPublicationDate = TextPublicationDate.fromDoc(element);
+					textPublicationDate = new TextPublicationDate(element);
 				else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
-					x.startDate = StartDate.fromDoc(element);
+					startDate = new StartDate(element);
 				else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
-					x.endDate = EndDate.fromDoc(element);
+					endDate = new EndDate(element);
 			}
 		});
-
-		return x;
 	}
 
 	public OtherTextTypes getTextTypeCodeValue()

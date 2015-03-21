@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CountryCode
+@SuppressWarnings("serial")
+public class CountryCode implements Serializable
 {
 	public static final String refname = "CountryCode";
 	public static final String shortname = "b251";
@@ -38,16 +41,15 @@ public class CountryCode
 
 	public CountryCodeIso31661s value;
 
-	public static CountryCode fromDoc(org.w3c.dom.Element element)
+	public CountryCode()
+	{}
+
+	public CountryCode(org.w3c.dom.Element element)
 	{
-		final CountryCode x = new CountryCode();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = CountryCodeIso31661s.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = CountryCodeIso31661s.byValue(JPU.getContentAsString(element));
 	}
 }

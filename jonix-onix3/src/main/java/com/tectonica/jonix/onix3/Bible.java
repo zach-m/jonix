@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BibleContentss;
 import com.tectonica.jonix.codelist.BiblePurposes;
 import com.tectonica.jonix.codelist.BibleReferenceLocations;
@@ -36,7 +37,8 @@ import com.tectonica.jonix.codelist.StudyBibleTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Bible
+@SuppressWarnings("serial")
+public class Bible implements Serializable
 {
 	public static final String refname = "Bible";
 	public static final String shortname = "bible";
@@ -53,38 +55,37 @@ public class Bible
 	public BibleReferenceLocation bibleReferenceLocation; // Optional
 	public List<BibleTextFeature> bibleTextFeatures; // ZeroOrMore
 
-	public static Bible fromDoc(org.w3c.dom.Element element)
+	public Bible()
+	{}
+
+	public Bible(org.w3c.dom.Element element)
 	{
-		final Bible x = new Bible();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(BibleContents.refname) || name.equals(BibleContents.shortname))
-					x.bibleContentss = DU.addToList(x.bibleContentss, BibleContents.fromDoc(element));
+					bibleContentss = JPU.addToList(bibleContentss, new BibleContents(element));
 				else if (name.equals(BibleVersion.refname) || name.equals(BibleVersion.shortname))
-					x.bibleVersions = DU.addToList(x.bibleVersions, BibleVersion.fromDoc(element));
+					bibleVersions = JPU.addToList(bibleVersions, new BibleVersion(element));
 				else if (name.equals(StudyBibleType.refname) || name.equals(StudyBibleType.shortname))
-					x.studyBibleType = StudyBibleType.fromDoc(element);
+					studyBibleType = new StudyBibleType(element);
 				else if (name.equals(BiblePurpose.refname) || name.equals(BiblePurpose.shortname))
-					x.biblePurposes = DU.addToList(x.biblePurposes, BiblePurpose.fromDoc(element));
+					biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(element));
 				else if (name.equals(BibleTextOrganization.refname) || name.equals(BibleTextOrganization.shortname))
-					x.bibleTextOrganization = BibleTextOrganization.fromDoc(element);
+					bibleTextOrganization = new BibleTextOrganization(element);
 				else if (name.equals(BibleReferenceLocation.refname) || name.equals(BibleReferenceLocation.shortname))
-					x.bibleReferenceLocation = BibleReferenceLocation.fromDoc(element);
+					bibleReferenceLocation = new BibleReferenceLocation(element);
 				else if (name.equals(BibleTextFeature.refname) || name.equals(BibleTextFeature.shortname))
-					x.bibleTextFeatures = DU.addToList(x.bibleTextFeatures, BibleTextFeature.fromDoc(element));
+					bibleTextFeatures = JPU.addToList(bibleTextFeatures, new BibleTextFeature(element));
 			}
 		});
-
-		return x;
 	}
 
 	public List<BibleContentss> getBibleContentsValues()

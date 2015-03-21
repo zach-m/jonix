@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ProductRelationCode
+@SuppressWarnings("serial")
+public class ProductRelationCode implements Serializable
 {
 	public static final String refname = "ProductRelationCode";
 	public static final String shortname = "x455";
@@ -38,16 +41,15 @@ public class ProductRelationCode
 
 	public ProductRelations value;
 
-	public static ProductRelationCode fromDoc(org.w3c.dom.Element element)
+	public ProductRelationCode()
+	{}
+
+	public ProductRelationCode(org.w3c.dom.Element element)
 	{
-		final ProductRelationCode x = new ProductRelationCode();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ProductRelations.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ProductRelations.byValue(JPU.getContentAsString(element));
 	}
 }

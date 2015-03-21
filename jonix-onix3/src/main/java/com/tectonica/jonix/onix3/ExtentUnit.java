@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ExtentUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ExtentUnit
+@SuppressWarnings("serial")
+public class ExtentUnit implements Serializable
 {
 	public static final String refname = "ExtentUnit";
 	public static final String shortname = "b220";
@@ -38,16 +41,15 @@ public class ExtentUnit
 
 	public ExtentUnits value;
 
-	public static ExtentUnit fromDoc(org.w3c.dom.Element element)
+	public ExtentUnit()
+	{}
+
+	public ExtentUnit(org.w3c.dom.Element element)
 	{
-		final ExtentUnit x = new ExtentUnit();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ExtentUnits.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ExtentUnits.byValue(JPU.getContentAsString(element));
 	}
 }

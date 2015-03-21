@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CorporateNameInverted
+@SuppressWarnings("serial")
+public class CorporateNameInverted implements Serializable
 {
 	public static final String refname = "CorporateNameInverted";
 	public static final String shortname = "x443";
@@ -42,19 +45,18 @@ public class CorporateNameInverted
 
 	public String value; // dt.NonEmptyString
 
-	public static CorporateNameInverted fromDoc(org.w3c.dom.Element element)
+	public CorporateNameInverted()
+	{}
+
+	public CorporateNameInverted(org.w3c.dom.Element element)
 	{
-		final CorporateNameInverted x = new CorporateNameInverted();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
+		this.collationkey = JPU.getAttribute(element, "collationkey");
+		this.textscript = TextScriptCodeIso15924s.byValue(JPU.getAttribute(element, "textscript"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-		x.collationkey = DU.getAttribute(element, "collationkey");
-		x.textscript = TextScriptCodeIso15924s.byValue(DU.getAttribute(element, "textscript"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-
-		x.value = DU.getContentAsString(element);
-
-		return x;
+		value = JPU.getContentAsString(element);
 	}
 }

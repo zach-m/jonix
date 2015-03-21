@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class TitleStatement
+@SuppressWarnings("serial")
+public class TitleStatement implements Serializable
 {
 	public static final String refname = "TitleStatement";
 	public static final String shortname = "x478";
@@ -41,18 +44,17 @@ public class TitleStatement
 
 	public String value; // XHTML
 
-	public static TitleStatement fromDoc(org.w3c.dom.Element element)
+	public TitleStatement()
+	{}
+
+	public TitleStatement(org.w3c.dom.Element element)
 	{
-		final TitleStatement x = new TitleStatement();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-
-		x.value = DU.getChildXHTML(element, true);
-
-		return x;
+		value = JPU.getChildXHTML(element, true);
 	}
 }

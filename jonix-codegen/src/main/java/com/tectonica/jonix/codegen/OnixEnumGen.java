@@ -107,57 +107,57 @@ public class OnixEnumGen
 				p.print(", //\n\n");
 			if (ev.description != null)
 			{
-				p.printf("\t" + "/**\n");
-				p.printf("\t" + " * %s\n", ev.description);
-				p.printf("\t" + " */\n");
+				p.printf("   /**\n");
+				p.printf("    * %s\n", ev.description);
+				p.printf("    */\n");
 			}
-			p.printf("\t" + "%s(\"%s\")", token, ev.value);
+			p.printf("   %s(\"%s\")", token, ev.value);
 		}
 		p.print(";\n");
 
 		p.println();
-		p.printf("\t" + "public final String value;\n");
+		p.printf("   public final String value;\n");
 		p.println();
-		p.printf("\t" + "private %s(String value)\n", enumType.enumName);
-		p.printf("\t" + "{\n");
-		p.printf("\t\t" + "this.value = value;\n");
-		p.printf("\t" + "}\n");
+		p.printf("   private %s(String value)\n", enumType.enumName);
+		p.printf("   {\n");
+		p.printf("      this.value = value;\n");
+		p.printf("   }\n");
 
 		if (enumType.enumValues.size() < MIN_FOR_MAP)
 		{
 			p.println();
-			p.printf("\t" + "public static %s byValue(String value)\n", enumType.enumName);
-			p.printf("\t" + "{\n");
-			p.printf("\t\t" + "if (value == null || value.isEmpty())\n");
-			p.printf("\t\t\t" + "return null;\n");
-			p.printf("\t\t" + "for (%s e : values())\n", enumType.enumName);
-			p.printf("\t\t\t" + "if (e.value.equals(value))\n");
-			p.printf("\t\t\t\t" + "return e;\n");
-			p.printf("\t\t" + "return null;\n");
-			p.printf("\t" + "}\n");
+			p.printf("   public static %s byValue(String value)\n", enumType.enumName);
+			p.printf("   {\n");
+			p.printf("      if (value == null || value.isEmpty())\n");
+			p.printf("         return null;\n");
+			p.printf("      for (%s e : values())\n", enumType.enumName);
+			p.printf("         if (e.value.equals(value))\n");
+			p.printf("            return e;\n");
+			p.printf("      return null;\n");
+			p.printf("   }\n");
 		}
 		else
 		{
 			p.println();
-			p.printf("\t" + "private static Map<String, %s> map;\n", enumType.enumName);
+			p.printf("   private static Map<String, %s> map;\n", enumType.enumName);
 			p.println();
-			p.printf("\t" + "private static Map<String, %s> map()\n", enumType.enumName);
-			p.printf("\t" + "{\n");
-			p.printf("\t\t" + "if (map == null)\n");
-			p.printf("\t\t" + "{\n");
-			p.printf("\t\t\t" + "map = new HashMap<>();\n");
-			p.printf("\t\t\t" + "for (%s e : values())\n", enumType.enumName);
-			p.printf("\t\t\t\t" + "map.put(e.value, e);\n");
-			p.printf("\t\t" + "}\n");
-			p.printf("\t\t" + "return map;\n");
-			p.printf("\t" + "}\n");
+			p.printf("   private static Map<String, %s> map()\n", enumType.enumName);
+			p.printf("   {\n");
+			p.printf("      if (map == null)\n");
+			p.printf("      {\n");
+			p.printf("         map = new HashMap<>();\n");
+			p.printf("         for (%s e : values())\n", enumType.enumName);
+			p.printf("            map.put(e.value, e);\n");
+			p.printf("      }\n");
+			p.printf("      return map;\n");
+			p.printf("   }\n");
 			p.println();
-			p.printf("\t" + "public static %s byValue(String value)\n", enumType.enumName);
-			p.printf("\t" + "{\n");
-			p.printf("\t\t" + "if (value == null || value.isEmpty())\n");
-			p.printf("\t\t\t" + "return null;\n");
-			p.printf("\t\t" + "return map().get(value);\n");
-			p.printf("\t" + "}\n");
+			p.printf("   public static %s byValue(String value)\n", enumType.enumName);
+			p.printf("   {\n");
+			p.printf("      if (value == null || value.isEmpty())\n");
+			p.printf("         return null;\n");
+			p.printf("      return map().get(value);\n");
+			p.printf("   }\n");
 		}
 
 		p.println("}");

@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ONIXMessage
+@SuppressWarnings("serial")
+public class ONIXMessage implements Serializable
 {
 	public static final String refname = "ONIXMessage";
 	public static final String shortname = "ONIXmessage";
@@ -42,29 +44,28 @@ public class ONIXMessage
 	public NoProduct noProduct; // Optional
 	public List<Product> products; // ZeroOrMore
 
-	public static ONIXMessage fromDoc(org.w3c.dom.Element element)
+	public ONIXMessage()
+	{}
+
+	public ONIXMessage(org.w3c.dom.Element element)
 	{
-		final ONIXMessage x = new ONIXMessage();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(Header.refname) || name.equals(Header.shortname))
-					x.header = Header.fromDoc(element);
+					header = new Header(element);
 				else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname))
-					x.noProduct = NoProduct.fromDoc(element);
+					noProduct = new NoProduct(element);
 				else if (name.equals(Product.refname) || name.equals(Product.shortname))
-					x.products = DU.addToList(x.products, Product.fromDoc(element));
+					products = JPU.addToList(products, new Product(element));
 			}
 		});
-
-		return x;
 	}
 }

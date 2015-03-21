@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.BarcodeIndicatorsList141;
 import com.tectonica.jonix.codelist.PositionOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -28,7 +30,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Barcode
+@SuppressWarnings("serial")
+public class Barcode implements Serializable
 {
 	public static final String refname = "Barcode";
 	public static final String shortname = "barcode";
@@ -40,28 +43,27 @@ public class Barcode
 	public BarcodeType barcodeType; // Required
 	public PositionOnProduct positionOnProduct; // Optional
 
-	public static Barcode fromDoc(org.w3c.dom.Element element)
+	public Barcode()
+	{}
+
+	public Barcode(org.w3c.dom.Element element)
 	{
-		final Barcode x = new Barcode();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname))
-					x.barcodeType = BarcodeType.fromDoc(element);
+					barcodeType = new BarcodeType(element);
 				else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
-					x.positionOnProduct = PositionOnProduct.fromDoc(element);
+					positionOnProduct = new PositionOnProduct(element);
 			}
 		});
-
-		return x;
 	}
 
 	public BarcodeIndicatorsList141 getBarcodeTypeValue()

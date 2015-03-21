@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class AgentRole
+@SuppressWarnings("serial")
+public class AgentRole implements Serializable
 {
 	public static final String refname = "AgentRole";
 	public static final String shortname = "j402";
@@ -38,16 +41,15 @@ public class AgentRole
 
 	public AgentRoles value;
 
-	public static AgentRole fromDoc(org.w3c.dom.Element element)
+	public AgentRole()
+	{}
+
+	public AgentRole(org.w3c.dom.Element element)
 	{
-		final AgentRole x = new AgentRole();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = AgentRoles.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = AgentRoles.byValue(JPU.getContentAsString(element));
 	}
 }

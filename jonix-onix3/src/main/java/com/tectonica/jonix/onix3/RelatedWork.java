@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkRelations;
 
@@ -29,7 +30,8 @@ import com.tectonica.jonix.codelist.WorkRelations;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class RelatedWork
+@SuppressWarnings("serial")
+public class RelatedWork implements Serializable
 {
 	public static final String refname = "RelatedWork";
 	public static final String shortname = "relatedwork";
@@ -41,28 +43,27 @@ public class RelatedWork
 	public WorkRelationCode workRelationCode; // Required
 	public List<WorkIdentifier> workIdentifiers; // OneOrMore
 
-	public static RelatedWork fromDoc(org.w3c.dom.Element element)
+	public RelatedWork()
+	{}
+
+	public RelatedWork(org.w3c.dom.Element element)
 	{
-		final RelatedWork x = new RelatedWork();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(WorkRelationCode.refname) || name.equals(WorkRelationCode.shortname))
-					x.workRelationCode = WorkRelationCode.fromDoc(element);
+					workRelationCode = new WorkRelationCode(element);
 				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
-					x.workIdentifiers = DU.addToList(x.workIdentifiers, WorkIdentifier.fromDoc(element));
+					workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(element));
 			}
 		});
-
-		return x;
 	}
 
 	public WorkRelations getWorkRelationCodeValue()

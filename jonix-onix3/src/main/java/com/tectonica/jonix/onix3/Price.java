@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.CurrencyZones;
 import com.tectonica.jonix.codelist.PositionOnProducts;
@@ -37,7 +38,8 @@ import com.tectonica.jonix.codelist.UnitOfPricings;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Price
+@SuppressWarnings("serial")
+public class Price implements Serializable
 {
 	public static final String refname = "Price";
 	public static final String shortname = "price";
@@ -68,66 +70,65 @@ public class Price
 	public PrintedOnProduct printedOnProduct; // Optional
 	public PositionOnProduct positionOnProduct; // Optional
 
-	public static Price fromDoc(org.w3c.dom.Element element)
+	public Price()
+	{}
+
+	public Price(org.w3c.dom.Element element)
 	{
-		final Price x = new Price();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PriceIdentifier.refname) || name.equals(PriceIdentifier.shortname))
-					x.priceIdentifiers = DU.addToList(x.priceIdentifiers, PriceIdentifier.fromDoc(element));
+					priceIdentifiers = JPU.addToList(priceIdentifiers, new PriceIdentifier(element));
 				else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
-					x.priceType = PriceType.fromDoc(element);
+					priceType = new PriceType(element);
 				else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
-					x.priceQualifier = PriceQualifier.fromDoc(element);
+					priceQualifier = new PriceQualifier(element);
 				else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
-					x.priceTypeDescriptions = DU.addToList(x.priceTypeDescriptions, PriceTypeDescription.fromDoc(element));
+					priceTypeDescriptions = JPU.addToList(priceTypeDescriptions, new PriceTypeDescription(element));
 				else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
-					x.pricePer = PricePer.fromDoc(element);
+					pricePer = new PricePer(element);
 				else if (name.equals(PriceCondition.refname) || name.equals(PriceCondition.shortname))
-					x.priceConditions = DU.addToList(x.priceConditions, PriceCondition.fromDoc(element));
+					priceConditions = JPU.addToList(priceConditions, new PriceCondition(element));
 				else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
-					x.minimumOrderQuantity = MinimumOrderQuantity.fromDoc(element);
+					minimumOrderQuantity = new MinimumOrderQuantity(element);
 				else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
-					x.batchBonuss = DU.addToList(x.batchBonuss, BatchBonus.fromDoc(element));
+					batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(element));
 				else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
-					x.discountCodeds = DU.addToList(x.discountCodeds, DiscountCoded.fromDoc(element));
+					discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(element));
 				else if (name.equals(Discount.refname) || name.equals(Discount.shortname))
-					x.discounts = DU.addToList(x.discounts, Discount.fromDoc(element));
+					discounts = JPU.addToList(discounts, new Discount(element));
 				else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
-					x.priceStatus = PriceStatus.fromDoc(element);
+					priceStatus = new PriceStatus(element);
 				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					x.priceAmount = PriceAmount.fromDoc(element);
+					priceAmount = new PriceAmount(element);
 				else if (name.equals(PriceCoded.refname) || name.equals(PriceCoded.shortname))
-					x.priceCoded = PriceCoded.fromDoc(element);
+					priceCoded = new PriceCoded(element);
 				else if (name.equals(Tax.refname) || name.equals(Tax.shortname))
-					x.taxs = DU.addToList(x.taxs, Tax.fromDoc(element));
+					taxs = JPU.addToList(taxs, new Tax(element));
 				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-					x.currencyCode = CurrencyCode.fromDoc(element);
+					currencyCode = new CurrencyCode(element);
 				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					x.territory = Territory.fromDoc(element);
+					territory = new Territory(element);
 				else if (name.equals(CurrencyZone.refname) || name.equals(CurrencyZone.shortname))
-					x.currencyZone = CurrencyZone.fromDoc(element);
+					currencyZone = new CurrencyZone(element);
 				else if (name.equals(ComparisonProductPrice.refname) || name.equals(ComparisonProductPrice.shortname))
-					x.comparisonProductPrices = DU.addToList(x.comparisonProductPrices, ComparisonProductPrice.fromDoc(element));
+					comparisonProductPrices = JPU.addToList(comparisonProductPrices, new ComparisonProductPrice(element));
 				else if (name.equals(PriceDate.refname) || name.equals(PriceDate.shortname))
-					x.priceDates = DU.addToList(x.priceDates, PriceDate.fromDoc(element));
+					priceDates = JPU.addToList(priceDates, new PriceDate(element));
 				else if (name.equals(PrintedOnProduct.refname) || name.equals(PrintedOnProduct.shortname))
-					x.printedOnProduct = PrintedOnProduct.fromDoc(element);
+					printedOnProduct = new PrintedOnProduct(element);
 				else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
-					x.positionOnProduct = PositionOnProduct.fromDoc(element);
+					positionOnProduct = new PositionOnProduct(element);
 			}
 		});
-
-		return x;
 	}
 
 	public PriceTypes getPriceTypeValue()

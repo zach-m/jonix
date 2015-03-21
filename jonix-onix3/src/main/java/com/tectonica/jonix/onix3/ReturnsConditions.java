@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ReturnsConditions
+@SuppressWarnings("serial")
+public class ReturnsConditions implements Serializable
 {
 	public static final String refname = "ReturnsConditions";
 	public static final String shortname = "returnsconditions";
@@ -40,30 +43,29 @@ public class ReturnsConditions
 	public ReturnsCodeTypeName returnsCodeTypeName; // Optional
 	public ReturnsCode returnsCode; // Required
 
-	public static ReturnsConditions fromDoc(org.w3c.dom.Element element)
+	public ReturnsConditions()
+	{}
+
+	public ReturnsConditions(org.w3c.dom.Element element)
 	{
-		final ReturnsConditions x = new ReturnsConditions();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
-					x.returnsCodeType = ReturnsCodeType.fromDoc(element);
+					returnsCodeType = new ReturnsCodeType(element);
 				else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname))
-					x.returnsCodeTypeName = ReturnsCodeTypeName.fromDoc(element);
+					returnsCodeTypeName = new ReturnsCodeTypeName(element);
 				else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
-					x.returnsCode = ReturnsCode.fromDoc(element);
+					returnsCode = new ReturnsCode(element);
 			}
 		});
-
-		return x;
 	}
 
 	public ReturnsConditionsCodeTypes getReturnsCodeTypeValue()

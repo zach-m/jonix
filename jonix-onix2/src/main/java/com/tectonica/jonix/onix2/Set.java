@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Set
+@SuppressWarnings("serial")
+public class Set implements Serializable
 {
 	public static final String refname = "Set";
 	public static final String shortname = "set";
@@ -56,48 +58,47 @@ public class Set
 	public LevelSequenceNumber levelSequenceNumber; // Optional
 	public SetItemTitle setItemTitle; // Optional
 
-	public static Set fromDoc(org.w3c.dom.Element element)
+	public Set()
+	{}
+
+	public Set(org.w3c.dom.Element element)
 	{
-		final Set x = new Set();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ISBNOfSet.refname) || name.equals(ISBNOfSet.shortname))
-					x.isbnOfSet = ISBNOfSet.fromDoc(element);
+					isbnOfSet = new ISBNOfSet(element);
 				else if (name.equals(EAN13OfSet.refname) || name.equals(EAN13OfSet.shortname))
-					x.ean13OfSet = EAN13OfSet.fromDoc(element);
+					ean13OfSet = new EAN13OfSet(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					x.productIdentifiers = DU.addToList(x.productIdentifiers, ProductIdentifier.fromDoc(element));
+					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 				else if (name.equals(TitleOfSet.refname) || name.equals(TitleOfSet.shortname))
-					x.titleOfSet = TitleOfSet.fromDoc(element);
+					titleOfSet = new TitleOfSet(element);
 				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					x.titles = DU.addToList(x.titles, Title.fromDoc(element));
+					titles = JPU.addToList(titles, new Title(element));
 				else if (name.equals(SetPartNumber.refname) || name.equals(SetPartNumber.shortname))
-					x.setPartNumber = SetPartNumber.fromDoc(element);
+					setPartNumber = new SetPartNumber(element);
 				else if (name.equals(SetPartTitle.refname) || name.equals(SetPartTitle.shortname))
-					x.setPartTitle = SetPartTitle.fromDoc(element);
+					setPartTitle = new SetPartTitle(element);
 				else if (name.equals(ItemNumberWithinSet.refname) || name.equals(ItemNumberWithinSet.shortname))
-					x.itemNumberWithinSet = ItemNumberWithinSet.fromDoc(element);
+					itemNumberWithinSet = new ItemNumberWithinSet(element);
 				else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					x.levelSequenceNumber = LevelSequenceNumber.fromDoc(element);
+					levelSequenceNumber = new LevelSequenceNumber(element);
 				else if (name.equals(SetItemTitle.refname) || name.equals(SetItemTitle.shortname))
-					x.setItemTitle = SetItemTitle.fromDoc(element);
+					setItemTitle = new SetItemTitle(element);
 			}
 		});
-
-		return x;
 	}
 
 	public String getISBNOfSetValue()

@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageStatuss;
 import com.tectonica.jonix.codelist.UsageTypes;
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.UsageTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class EpubUsageConstraint
+@SuppressWarnings("serial")
+public class EpubUsageConstraint implements Serializable
 {
 	public static final String refname = "EpubUsageConstraint";
 	public static final String shortname = "epubusageconstraint";
@@ -43,30 +45,29 @@ public class EpubUsageConstraint
 	public EpubUsageStatus epubUsageStatus; // Required
 	public List<EpubUsageLimit> epubUsageLimits; // ZeroOrMore
 
-	public static EpubUsageConstraint fromDoc(org.w3c.dom.Element element)
+	public EpubUsageConstraint()
+	{}
+
+	public EpubUsageConstraint(org.w3c.dom.Element element)
 	{
-		final EpubUsageConstraint x = new EpubUsageConstraint();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(EpubUsageType.refname) || name.equals(EpubUsageType.shortname))
-					x.epubUsageType = EpubUsageType.fromDoc(element);
+					epubUsageType = new EpubUsageType(element);
 				else if (name.equals(EpubUsageStatus.refname) || name.equals(EpubUsageStatus.shortname))
-					x.epubUsageStatus = EpubUsageStatus.fromDoc(element);
+					epubUsageStatus = new EpubUsageStatus(element);
 				else if (name.equals(EpubUsageLimit.refname) || name.equals(EpubUsageLimit.shortname))
-					x.epubUsageLimits = DU.addToList(x.epubUsageLimits, EpubUsageLimit.fromDoc(element));
+					epubUsageLimits = JPU.addToList(epubUsageLimits, new EpubUsageLimit(element));
 			}
 		});
-
-		return x;
 	}
 
 	public UsageTypes getEpubUsageTypeValue()

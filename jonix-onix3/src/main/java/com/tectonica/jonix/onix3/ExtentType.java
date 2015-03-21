@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ExtentType
+@SuppressWarnings("serial")
+public class ExtentType implements Serializable
 {
 	public static final String refname = "ExtentType";
 	public static final String shortname = "b218";
@@ -38,16 +41,15 @@ public class ExtentType
 
 	public ExtentTypes value;
 
-	public static ExtentType fromDoc(org.w3c.dom.Element element)
+	public ExtentType()
+	{}
+
+	public ExtentType(org.w3c.dom.Element element)
 	{
-		final ExtentType x = new ExtentType();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = ExtentTypes.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = ExtentTypes.byValue(JPU.getContentAsString(element));
 	}
 }

@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class PublisherRepresentative
+@SuppressWarnings("serial")
+public class PublisherRepresentative implements Serializable
 {
 	public static final String refname = "PublisherRepresentative";
 	public static final String shortname = "publisherrepresentative";
@@ -47,38 +49,37 @@ public class PublisherRepresentative
 	public List<EmailAddress> emailAddresss; // ZeroOrMore
 	public List<Website> websites; // ZeroOrMore
 
-	public static PublisherRepresentative fromDoc(org.w3c.dom.Element element)
+	public PublisherRepresentative()
+	{}
+
+	public PublisherRepresentative(org.w3c.dom.Element element)
 	{
-		final PublisherRepresentative x = new PublisherRepresentative();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
-					x.agentRole = AgentRole.fromDoc(element);
+					agentRole = new AgentRole(element);
 				else if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
-					x.agentIdentifiers = DU.addToList(x.agentIdentifiers, AgentIdentifier.fromDoc(element));
+					agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(element));
 				else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
-					x.agentName = AgentName.fromDoc(element);
+					agentName = new AgentName(element);
 				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
+					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
 				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
+					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
+					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 			}
 		});
-
-		return x;
 	}
 
 	public AgentRoles getAgentRoleValue()

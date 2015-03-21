@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +33,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Reissue
+@SuppressWarnings("serial")
+public class Reissue implements Serializable
 {
 	public static final String refname = "Reissue";
 	public static final String shortname = "reissue";
@@ -50,36 +52,35 @@ public class Reissue
 	public List<Price> prices; // ZeroOrMore
 	public List<MediaFile> mediaFiles; // ZeroOrMore
 
-	public static Reissue fromDoc(org.w3c.dom.Element element)
+	public Reissue()
+	{}
+
+	public Reissue(org.w3c.dom.Element element)
 	{
-		final Reissue x = new Reissue();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
-					x.reissueDate = ReissueDate.fromDoc(element);
+					reissueDate = new ReissueDate(element);
 				else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
-					x.reissueDescription = ReissueDescription.fromDoc(element);
+					reissueDescription = new ReissueDescription(element);
 				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					x.prices = DU.addToList(x.prices, Price.fromDoc(element));
+					prices = JPU.addToList(prices, new Price(element));
 				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
-					x.mediaFiles = DU.addToList(x.mediaFiles, MediaFile.fromDoc(element));
+					mediaFiles = JPU.addToList(mediaFiles, new MediaFile(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getReissueDateValue()

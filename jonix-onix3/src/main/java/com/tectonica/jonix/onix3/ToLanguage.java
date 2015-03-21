@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class ToLanguage
+@SuppressWarnings("serial")
+public class ToLanguage implements Serializable
 {
 	public static final String refname = "ToLanguage";
 	public static final String shortname = "x413";
@@ -38,16 +41,15 @@ public class ToLanguage
 
 	public LanguageCodeIso6392Bs value;
 
-	public static ToLanguage fromDoc(org.w3c.dom.Element element)
+	public ToLanguage()
+	{}
+
+	public ToLanguage(org.w3c.dom.Element element)
 	{
-		final ToLanguage x = new ToLanguage();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = LanguageCodeIso6392Bs.byValue(DU.getContentAsString(element));
-
-		return x;
+		value = LanguageCodeIso6392Bs.byValue(JPU.getContentAsString(element));
 	}
 }

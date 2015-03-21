@@ -19,7 +19,9 @@
 
 package com.tectonica.jonix.onix3;
 
-import com.tectonica.jonix.DU;
+import java.io.Serializable;
+
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -27,7 +29,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class CountriesIncluded
+@SuppressWarnings("serial")
+public class CountriesIncluded implements Serializable
 {
 	public static final String refname = "CountriesIncluded";
 	public static final String shortname = "x449";
@@ -38,18 +41,17 @@ public class CountriesIncluded
 
 	public java.util.Set<CountryCodeIso31661s> value;
 
-	public static CountriesIncluded fromDoc(org.w3c.dom.Element element)
+	public CountriesIncluded()
+	{}
+
+	public CountriesIncluded(org.w3c.dom.Element element)
 	{
-		final CountriesIncluded x = new CountriesIncluded();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		x.value = new java.util.HashSet<>();
-		for (String split : DU.getContentAsString(element).trim().split(" +"))
-			x.value.add(CountryCodeIso31661s.byValue(split));
-
-		return x;
+		value = new java.util.HashSet<>();
+		for (String split : JPU.getContentAsString(element).trim().split(" +"))
+			value.add(CountryCodeIso31661s.byValue(split));
 	}
 }

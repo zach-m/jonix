@@ -19,16 +19,18 @@
 
 package com.tectonica.jonix.onix3;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class RelatedMaterial
+@SuppressWarnings("serial")
+public class RelatedMaterial implements Serializable
 {
 	public static final String refname = "RelatedMaterial";
 	public static final String shortname = "relatedmaterial";
@@ -40,27 +42,26 @@ public class RelatedMaterial
 	public List<RelatedWork> relatedWorks; // ZeroOrMore
 	public List<RelatedProduct> relatedProducts; // ZeroOrMore
 
-	public static RelatedMaterial fromDoc(org.w3c.dom.Element element)
+	public RelatedMaterial()
+	{}
+
+	public RelatedMaterial(org.w3c.dom.Element element)
 	{
-		final RelatedMaterial x = new RelatedMaterial();
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
-					x.relatedWorks = DU.addToList(x.relatedWorks, RelatedWork.fromDoc(element));
+					relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(element));
 				else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
-					x.relatedProducts = DU.addToList(x.relatedProducts, RelatedProduct.fromDoc(element));
+					relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(element));
 			}
 		});
-
-		return x;
 	}
 }

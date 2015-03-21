@@ -19,9 +19,10 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PublishingRoles;
@@ -34,7 +35,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class Publisher
+@SuppressWarnings("serial")
+public class Publisher implements Serializable
 {
 	public static final String refname = "Publisher";
 	public static final String shortname = "publisher";
@@ -54,40 +56,39 @@ public class Publisher
 	public NameCodeValue nameCodeValue; // Required
 	public List<Website> websites; // ZeroOrMore
 
-	public static Publisher fromDoc(org.w3c.dom.Element element)
+	public Publisher()
+	{}
+
+	public Publisher(org.w3c.dom.Element element)
 	{
-		final Publisher x = new Publisher();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PublishingRole.refname) || name.equals(PublishingRole.shortname))
-					x.publishingRole = PublishingRole.fromDoc(element);
+					publishingRole = new PublishingRole(element);
 				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					x.publisherName = PublisherName.fromDoc(element);
+					publisherName = new PublisherName(element);
 				else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname))
-					x.nameCodeType = NameCodeType.fromDoc(element);
+					nameCodeType = new NameCodeType(element);
 				else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname))
-					x.nameCodeTypeName = NameCodeTypeName.fromDoc(element);
+					nameCodeTypeName = new NameCodeTypeName(element);
 				else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname))
-					x.nameCodeValue = NameCodeValue.fromDoc(element);
+					nameCodeValue = new NameCodeValue(element);
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 			}
 		});
-
-		return x;
 	}
 
 	public PublishingRoles getPublishingRoleValue()

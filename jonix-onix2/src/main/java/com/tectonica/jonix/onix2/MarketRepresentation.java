@@ -19,10 +19,11 @@
 
 package com.tectonica.jonix.onix2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.DU;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -33,7 +34,8 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
-public class MarketRepresentation
+@SuppressWarnings("serial")
+public class MarketRepresentation implements Serializable
 {
 	public static final String refname = "MarketRepresentation";
 	public static final String shortname = "marketrepresentation";
@@ -60,54 +62,53 @@ public class MarketRepresentation
 	public MarketPublishingStatus marketPublishingStatus; // Optional
 	public List<MarketDate> marketDates; // ZeroOrMore
 
-	public static MarketRepresentation fromDoc(org.w3c.dom.Element element)
+	public MarketRepresentation()
+	{}
+
+	public MarketRepresentation(org.w3c.dom.Element element)
 	{
-		final MarketRepresentation x = new MarketRepresentation();
+		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		this.datestamp = JPU.getAttribute(element, "datestamp");
+		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		x.textformat = TextFormats.byValue(DU.getAttribute(element, "textformat"));
-		x.textcase = TextCaseFlags.byValue(DU.getAttribute(element, "textcase"));
-		x.language = LanguageCodeIso6392Bs.byValue(DU.getAttribute(element, "language"));
-		x.transliteration = TransliterationSchemes.byValue(DU.getAttribute(element, "transliteration"));
-		x.datestamp = DU.getAttribute(element, "datestamp");
-		x.sourcetype = RecordSourceTypes.byValue(DU.getAttribute(element, "sourcetype"));
-		x.sourcename = DU.getAttribute(element, "sourcename");
-
-		DU.forElementsOf(element, new DU.ElementListener()
+		JPU.forElementsOf(element, new JPU.ElementListener()
 		{
 			@Override
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
 				if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
-					x.agentIdentifiers = DU.addToList(x.agentIdentifiers, AgentIdentifier.fromDoc(element));
+					agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(element));
 				else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
-					x.agentName = AgentName.fromDoc(element);
+					agentName = new AgentName(element);
 				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					x.telephoneNumbers = DU.addToList(x.telephoneNumbers, TelephoneNumber.fromDoc(element));
+					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
 				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					x.faxNumbers = DU.addToList(x.faxNumbers, FaxNumber.fromDoc(element));
+					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
 				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					x.emailAddresss = DU.addToList(x.emailAddresss, EmailAddress.fromDoc(element));
+					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					x.websites = DU.addToList(x.websites, Website.fromDoc(element));
+					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
-					x.agentRole = AgentRole.fromDoc(element);
+					agentRole = new AgentRole(element);
 				else if (name.equals(MarketCountry.refname) || name.equals(MarketCountry.shortname))
-					x.marketCountry = MarketCountry.fromDoc(element);
+					marketCountry = new MarketCountry(element);
 				else if (name.equals(MarketTerritory.refname) || name.equals(MarketTerritory.shortname))
-					x.marketTerritory = MarketTerritory.fromDoc(element);
+					marketTerritory = new MarketTerritory(element);
 				else if (name.equals(MarketCountryExcluded.refname) || name.equals(MarketCountryExcluded.shortname))
-					x.marketCountryExcluded = MarketCountryExcluded.fromDoc(element);
+					marketCountryExcluded = new MarketCountryExcluded(element);
 				else if (name.equals(MarketRestrictionDetail.refname) || name.equals(MarketRestrictionDetail.shortname))
-					x.marketRestrictionDetail = MarketRestrictionDetail.fromDoc(element);
+					marketRestrictionDetail = new MarketRestrictionDetail(element);
 				else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
-					x.marketPublishingStatus = MarketPublishingStatus.fromDoc(element);
+					marketPublishingStatus = new MarketPublishingStatus(element);
 				else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
-					x.marketDates = DU.addToList(x.marketDates, MarketDate.fromDoc(element));
+					marketDates = JPU.addToList(marketDates, new MarketDate(element));
 			}
 		});
-
-		return x;
 	}
 
 	public String getAgentNameValue()
