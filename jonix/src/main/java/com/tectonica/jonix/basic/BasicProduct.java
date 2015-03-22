@@ -197,7 +197,7 @@ public class BasicProduct implements Serializable
 
 		for (MainSubject subject : mainSubjects)
 		{
-			if (subject.mainSubjectSchemeIdentifier.name().equals(requestedScheme.name()))
+			if (subject.mainSubjectSchemeIdentifier.value.equals(requestedScheme.value))
 				matches.add(new Subject(requestedScheme, subject.subjectCode, subject.subjectHeadingText));
 		}
 		for (Subject subject : subjects)
