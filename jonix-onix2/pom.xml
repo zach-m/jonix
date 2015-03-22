@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.tectonica</groupId>
-			<artifactId>jonix-codelist</artifactId>
+			<artifactId>jonix-common</artifactId>
 		</dependency>
 			
 		<!-- Testing -->

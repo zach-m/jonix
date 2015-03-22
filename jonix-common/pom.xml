@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>jonix-codelist</artifactId>
+	<artifactId>jonix-common</artifactId>
 
 	<parent>
 		<groupId>com.tectonica</groupId>
@@ -11,7 +11,7 @@
 		<relativePath>..</relativePath>
 	</parent>
 	
-	<name>Jonix - Codelists</name>
-	<description>Collection of enums unifying Onix2 and Onix3 code-lists</description>
+	<name>Jonix - Common</name>
+	<description>Collection of enums and other structures unifying Onix2 and Onix3 models</description>
 
 </project>

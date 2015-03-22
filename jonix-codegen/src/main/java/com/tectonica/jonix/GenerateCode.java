@@ -52,7 +52,11 @@ public class GenerateCode
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException
 	{
 		final String basePackage = GenUtil.COMMON_PACKAGE;
+		final String basePath = new File("..").getAbsolutePath();
 		final String relativePath = "/src/main/java/com/tectonica/jonix";
+
+		if (!new File(basePath).exists())
+			throw new RuntimeException("couldn't find base folder for projects at " + basePath);
 
 		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2);
 		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3);
@@ -61,9 +65,9 @@ public class GenerateCode
 		// UNIFIED CODELISTS + STRUCTS
 		// //////////////////////////////////////////////////////////////////////////////////////
 
-		final String codelistHome = new File("..").getAbsolutePath() + "/jonix-codelist";
+		final String codelistHome = basePath + "/jonix-common";
 		if (!new File(codelistHome).exists())
-			throw new RuntimeException("couldn't find jonix-codelist project at " + codelistHome);
+			throw new RuntimeException("couldn't find jonix-common project at " + codelistHome);
 
 		System.out.println("Generating unified codelists..");
 		generateCodelists(basePackage, codelistHome + relativePath, "codelist", ref2, ref3);
@@ -75,7 +79,7 @@ public class GenerateCode
 		// ONIX 2
 		// //////////////////////////////////////////////////////////////////////////////////////
 
-		final String onix2home = new File("..").getAbsolutePath() + "/jonix-onix2";
+		final String onix2home = basePath + "/jonix-onix2";
 		if (!new File(onix2home).exists())
 			throw new RuntimeException("couldn't find jonix-onix2 project at " + onix2home);
 
@@ -86,7 +90,7 @@ public class GenerateCode
 		// ONIX 3
 		// //////////////////////////////////////////////////////////////////////////////////////
 
-		final String onix3home = new File("..").getAbsolutePath() + "/jonix-onix3";
+		final String onix3home = basePath + "/jonix-onix3";
 		if (!new File(onix3home).exists())
 			throw new RuntimeException("couldn't find jonix-onix3 project at " + onix3home);
 

@@ -40,7 +40,7 @@
 	<modules>
 		<module>jonix</module>
 		<module>jonix-codegen</module>
-		<module>jonix-codelist</module>
+		<module>jonix-common</module>
 		<module>jonix-onix2</module>
 		<module>jonix-onix3</module>
 	</modules>
@@ -81,7 +81,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-codelist</artifactId>
+				<artifactId>jonix-common</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
