@@ -35,9 +35,9 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.OtherTextStruct;
-import com.tectonica.jonix.struct.SeriesIdentifierStruct;
-import com.tectonica.jonix.struct.TitleStruct;
+import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixSeriesIdentifier;
+import com.tectonica.jonix.struct.JonixTitle;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -168,7 +168,7 @@ public class MainSeriesRecord implements Serializable
 		return (subordinateEntries == null) ? null : subordinateEntries.value;
 	}
 
-	public SeriesIdentifierStruct findSeriesIdentifier(SeriesIdentifierTypes seriesIDType)
+	public JonixSeriesIdentifier findSeriesIdentifier(SeriesIdentifierTypes seriesIDType)
 	{
 		if (seriesIdentifiers != null)
 		{
@@ -181,11 +181,11 @@ public class MainSeriesRecord implements Serializable
 		return null;
 	}
 
-	public List<SeriesIdentifierStruct> findSeriesIdentifiers(java.util.Set<SeriesIdentifierTypes> seriesIDTypes)
+	public List<JonixSeriesIdentifier> findSeriesIdentifiers(java.util.Set<SeriesIdentifierTypes> seriesIDTypes)
 	{
 		if (seriesIdentifiers != null)
 		{
-			List<SeriesIdentifierStruct> matches = new ArrayList<>();
+			List<JonixSeriesIdentifier> matches = new ArrayList<>();
 			for (SeriesIdentifier x : seriesIdentifiers)
 			{
 				if (seriesIDTypes == null || seriesIDTypes.contains(x.getSeriesIDTypeValue()))
@@ -196,7 +196,7 @@ public class MainSeriesRecord implements Serializable
 		return null;
 	}
 
-	public TitleStruct findTitle(TitleTypes titleType)
+	public JonixTitle findTitle(TitleTypes titleType)
 	{
 		if (titles != null)
 		{
@@ -209,11 +209,11 @@ public class MainSeriesRecord implements Serializable
 		return null;
 	}
 
-	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
 	{
 		if (titles != null)
 		{
-			List<TitleStruct> matches = new ArrayList<>();
+			List<JonixTitle> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
@@ -224,7 +224,7 @@ public class MainSeriesRecord implements Serializable
 		return null;
 	}
 
-	public OtherTextStruct findOtherText(OtherTextTypes textTypeCode)
+	public JonixOtherText findOtherText(OtherTextTypes textTypeCode)
 	{
 		if (otherTexts != null)
 		{
@@ -237,11 +237,11 @@ public class MainSeriesRecord implements Serializable
 		return null;
 	}
 
-	public List<OtherTextStruct> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	public List<JonixOtherText> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
 	{
 		if (otherTexts != null)
 		{
-			List<OtherTextStruct> matches = new ArrayList<>();
+			List<JonixOtherText> matches = new ArrayList<>();
 			for (OtherText x : otherTexts)
 			{
 				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))

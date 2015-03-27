@@ -25,7 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ContributorDateStruct;
+import com.tectonica.jonix.struct.JonixContributorDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,9 +85,9 @@ public class ContributorDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public ContributorDateStruct asStruct()
+	public JonixContributorDate asStruct()
 	{
-		ContributorDateStruct x = new ContributorDateStruct();
+		JonixContributorDate x = new JonixContributorDate();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

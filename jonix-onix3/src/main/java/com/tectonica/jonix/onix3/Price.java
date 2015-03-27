@@ -36,9 +36,9 @@ import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.PrintedOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnitOfPricings;
-import com.tectonica.jonix.struct.DiscountCodedStruct;
-import com.tectonica.jonix.struct.PriceDateStruct;
-import com.tectonica.jonix.struct.PriceIdentifierStruct;
+import com.tectonica.jonix.struct.JonixDiscountCoded;
+import com.tectonica.jonix.struct.JonixPriceDate;
+import com.tectonica.jonix.struct.JonixPriceIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -199,7 +199,7 @@ public class Price implements Serializable
 		return (positionOnProduct == null) ? null : positionOnProduct.value;
 	}
 
-	public PriceIdentifierStruct findPriceIdentifier(PriceIdentifierTypes priceIDType)
+	public JonixPriceIdentifier findPriceIdentifier(PriceIdentifierTypes priceIDType)
 	{
 		if (priceIdentifiers != null)
 		{
@@ -212,11 +212,11 @@ public class Price implements Serializable
 		return null;
 	}
 
-	public List<PriceIdentifierStruct> findPriceIdentifiers(java.util.Set<PriceIdentifierTypes> priceIDTypes)
+	public List<JonixPriceIdentifier> findPriceIdentifiers(java.util.Set<PriceIdentifierTypes> priceIDTypes)
 	{
 		if (priceIdentifiers != null)
 		{
-			List<PriceIdentifierStruct> matches = new ArrayList<>();
+			List<JonixPriceIdentifier> matches = new ArrayList<>();
 			for (PriceIdentifier x : priceIdentifiers)
 			{
 				if (priceIDTypes == null || priceIDTypes.contains(x.getPriceIDTypeValue()))
@@ -227,7 +227,7 @@ public class Price implements Serializable
 		return null;
 	}
 
-	public DiscountCodedStruct findDiscountCoded(DiscountCodeTypes discountCodeType)
+	public JonixDiscountCoded findDiscountCoded(DiscountCodeTypes discountCodeType)
 	{
 		if (discountCodeds != null)
 		{
@@ -240,11 +240,11 @@ public class Price implements Serializable
 		return null;
 	}
 
-	public List<DiscountCodedStruct> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
+	public List<JonixDiscountCoded> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
 	{
 		if (discountCodeds != null)
 		{
-			List<DiscountCodedStruct> matches = new ArrayList<>();
+			List<JonixDiscountCoded> matches = new ArrayList<>();
 			for (DiscountCoded x : discountCodeds)
 			{
 				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
@@ -255,7 +255,7 @@ public class Price implements Serializable
 		return null;
 	}
 
-	public PriceDateStruct findPriceDate(PriceDateRoles priceDateRole)
+	public JonixPriceDate findPriceDate(PriceDateRoles priceDateRole)
 	{
 		if (priceDates != null)
 		{
@@ -268,11 +268,11 @@ public class Price implements Serializable
 		return null;
 	}
 
-	public List<PriceDateStruct> findPriceDates(java.util.Set<PriceDateRoles> priceDateRoles)
+	public List<JonixPriceDate> findPriceDates(java.util.Set<PriceDateRoles> priceDateRoles)
 	{
 		if (priceDates != null)
 		{
-			List<PriceDateStruct> matches = new ArrayList<>();
+			List<JonixPriceDate> matches = new ArrayList<>();
 			for (PriceDate x : priceDates)
 			{
 				if (priceDateRoles == null || priceDateRoles.contains(x.getPriceDateRoleValue()))

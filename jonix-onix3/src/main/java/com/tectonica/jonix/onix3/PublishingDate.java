@@ -25,7 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PublishingDateStruct;
+import com.tectonica.jonix.struct.JonixPublishingDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,9 +85,9 @@ public class PublishingDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public PublishingDateStruct asStruct()
+	public JonixPublishingDate asStruct()
 	{
-		PublishingDateStruct x = new PublishingDateStruct();
+		JonixPublishingDate x = new JonixPublishingDate();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

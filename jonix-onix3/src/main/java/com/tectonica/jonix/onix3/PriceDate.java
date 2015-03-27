@@ -25,7 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PriceDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PriceDateStruct;
+import com.tectonica.jonix.struct.JonixPriceDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,9 +85,9 @@ public class PriceDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public PriceDateStruct asStruct()
+	public JonixPriceDate asStruct()
 	{
-		PriceDateStruct x = new PriceDateStruct();
+		JonixPriceDate x = new JonixPriceDate();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

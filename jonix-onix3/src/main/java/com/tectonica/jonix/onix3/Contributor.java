@@ -31,8 +31,8 @@ import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
-import com.tectonica.jonix.struct.ContributorDateStruct;
-import com.tectonica.jonix.struct.NameIdentifierStruct;
+import com.tectonica.jonix.struct.JonixContributorDate;
+import com.tectonica.jonix.struct.JonixNameIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -281,7 +281,7 @@ public class Contributor implements Serializable
 		return (unnamedPersons == null) ? null : unnamedPersons.value;
 	}
 
-	public NameIdentifierStruct findNameIdentifier(NameCodeTypes nameIDType)
+	public JonixNameIdentifier findNameIdentifier(NameCodeTypes nameIDType)
 	{
 		if (nameIdentifiers != null)
 		{
@@ -294,11 +294,11 @@ public class Contributor implements Serializable
 		return null;
 	}
 
-	public List<NameIdentifierStruct> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
+	public List<JonixNameIdentifier> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
 	{
 		if (nameIdentifiers != null)
 		{
-			List<NameIdentifierStruct> matches = new ArrayList<>();
+			List<JonixNameIdentifier> matches = new ArrayList<>();
 			for (NameIdentifier x : nameIdentifiers)
 			{
 				if (nameIDTypes == null || nameIDTypes.contains(x.getNameIDTypeValue()))
@@ -309,7 +309,7 @@ public class Contributor implements Serializable
 		return null;
 	}
 
-	public ContributorDateStruct findContributorDate(PersonOrganizationDateRoles contributorDateRole)
+	public JonixContributorDate findContributorDate(PersonOrganizationDateRoles contributorDateRole)
 	{
 		if (contributorDates != null)
 		{
@@ -322,11 +322,11 @@ public class Contributor implements Serializable
 		return null;
 	}
 
-	public List<ContributorDateStruct> findContributorDates(java.util.Set<PersonOrganizationDateRoles> contributorDateRoles)
+	public List<JonixContributorDate> findContributorDates(java.util.Set<PersonOrganizationDateRoles> contributorDateRoles)
 	{
 		if (contributorDates != null)
 		{
-			List<ContributorDateStruct> matches = new ArrayList<>();
+			List<JonixContributorDate> matches = new ArrayList<>();
 			for (ContributorDate x : contributorDates)
 			{
 				if (contributorDateRoles == null || contributorDateRoles.contains(x.getContributorDateRoleValue()))

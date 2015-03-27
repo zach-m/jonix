@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.LanguageStruct;
+import com.tectonica.jonix.struct.JonixLanguage;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -97,9 +97,9 @@ public class Language implements Serializable
 		return (countryCode == null) ? null : countryCode.value;
 	}
 
-	public LanguageStruct asStruct()
+	public JonixLanguage asStruct()
 	{
-		LanguageStruct x = new LanguageStruct();
+		JonixLanguage x = new JonixLanguage();
 		x.languageCode = getLanguageCodeValue();
 		x.countryCode = getCountryCodeValue();
 		return x;

@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.ImprintStruct;
+import com.tectonica.jonix.struct.JonixImprint;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -104,9 +104,9 @@ public class Imprint implements Serializable
 		return (nameCodeValue == null) ? null : nameCodeValue.value;
 	}
 
-	public ImprintStruct asStruct()
+	public JonixImprint asStruct()
 	{
-		ImprintStruct x = new ImprintStruct();
+		JonixImprint x = new JonixImprint();
 		x.imprintName = getImprintNameValue();
 		x.nameCodeTypeName = getNameCodeTypeNameValue();
 		x.nameCodeValue = getNameCodeValueValue();

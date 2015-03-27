@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.PersonDateStruct;
+import com.tectonica.jonix.struct.JonixPersonDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -97,9 +97,9 @@ public class PersonDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public PersonDateStruct asStruct()
+	public JonixPersonDate asStruct()
 	{
-		PersonDateStruct x = new PersonDateStruct();
+		JonixPersonDate x = new JonixPersonDate();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

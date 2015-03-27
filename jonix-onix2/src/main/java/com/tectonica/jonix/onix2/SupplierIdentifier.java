@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.SupplierIdentifierStruct;
+import com.tectonica.jonix.struct.JonixSupplierIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,9 +96,9 @@ public class SupplierIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public SupplierIdentifierStruct asStruct()
+	public JonixSupplierIdentifier asStruct()
 	{
-		SupplierIdentifierStruct x = new SupplierIdentifierStruct();
+		JonixSupplierIdentifier x = new JonixSupplierIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

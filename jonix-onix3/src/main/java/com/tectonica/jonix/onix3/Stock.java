@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
-import com.tectonica.jonix.struct.StockQuantityCodedStruct;
+import com.tectonica.jonix.struct.JonixStockQuantityCoded;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -115,7 +115,7 @@ public class Stock implements Serializable
 		return (cbo == null) ? null : cbo.value;
 	}
 
-	public StockQuantityCodedStruct findStockQuantityCoded(StockQuantityCodeTypes stockQuantityCodeType)
+	public JonixStockQuantityCoded findStockQuantityCoded(StockQuantityCodeTypes stockQuantityCodeType)
 	{
 		if (stockQuantityCodeds != null)
 		{
@@ -128,11 +128,11 @@ public class Stock implements Serializable
 		return null;
 	}
 
-	public List<StockQuantityCodedStruct> findStockQuantityCodeds(java.util.Set<StockQuantityCodeTypes> stockQuantityCodeTypes)
+	public List<JonixStockQuantityCoded> findStockQuantityCodeds(java.util.Set<StockQuantityCodeTypes> stockQuantityCodeTypes)
 	{
 		if (stockQuantityCodeds != null)
 		{
-			List<StockQuantityCodedStruct> matches = new ArrayList<>();
+			List<JonixStockQuantityCoded> matches = new ArrayList<>();
 			for (StockQuantityCoded x : stockQuantityCodeds)
 			{
 				if (stockQuantityCodeTypes == null || stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))

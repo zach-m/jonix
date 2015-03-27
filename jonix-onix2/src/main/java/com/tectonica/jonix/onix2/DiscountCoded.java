@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.DiscountCodedStruct;
+import com.tectonica.jonix.struct.JonixDiscountCoded;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,9 +96,9 @@ public class DiscountCoded implements Serializable
 		return (discountCode == null) ? null : discountCode.value;
 	}
 
-	public DiscountCodedStruct asStruct()
+	public JonixDiscountCoded asStruct()
 	{
-		DiscountCodedStruct x = new DiscountCodedStruct();
+		JonixDiscountCoded x = new JonixDiscountCoded();
 		x.discountCodeTypeName = getDiscountCodeTypeNameValue();
 		x.discountCode = getDiscountCodeValue();
 		return x;

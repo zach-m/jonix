@@ -25,7 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
 import com.tectonica.jonix.codelist.QuantityUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PriceConditionQuantityStruct;
+import com.tectonica.jonix.struct.JonixPriceConditionQuantity;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,9 +85,9 @@ public class PriceConditionQuantity implements Serializable
 		return (quantityUnit == null) ? null : quantityUnit.value;
 	}
 
-	public PriceConditionQuantityStruct asStruct()
+	public JonixPriceConditionQuantity asStruct()
 	{
-		PriceConditionQuantityStruct x = new PriceConditionQuantityStruct();
+		JonixPriceConditionQuantity x = new JonixPriceConditionQuantity();
 		x.quantity = getQuantityValue();
 		x.quantityUnit = getQuantityUnitValue();
 		return x;

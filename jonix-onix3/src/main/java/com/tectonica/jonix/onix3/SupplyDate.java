@@ -25,7 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplyDateRoles;
-import com.tectonica.jonix.struct.SupplyDateStruct;
+import com.tectonica.jonix.struct.JonixSupplyDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,9 +85,9 @@ public class SupplyDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public SupplyDateStruct asStruct()
+	public JonixSupplyDate asStruct()
 	{
-		SupplyDateStruct x = new SupplyDateStruct();
+		JonixSupplyDate x = new JonixSupplyDate();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

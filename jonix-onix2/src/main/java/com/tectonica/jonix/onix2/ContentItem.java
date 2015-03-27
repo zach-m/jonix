@@ -33,10 +33,10 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
-import com.tectonica.jonix.struct.MediaFileStruct;
-import com.tectonica.jonix.struct.OtherTextStruct;
-import com.tectonica.jonix.struct.TitleStruct;
-import com.tectonica.jonix.struct.WorkIdentifierStruct;
+import com.tectonica.jonix.struct.JonixMediaFile;
+import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -177,7 +177,7 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public TitleStruct findTitle(TitleTypes titleType)
+	public JonixTitle findTitle(TitleTypes titleType)
 	{
 		if (titles != null)
 		{
@@ -190,11 +190,11 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
 	{
 		if (titles != null)
 		{
-			List<TitleStruct> matches = new ArrayList<>();
+			List<JonixTitle> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
@@ -205,7 +205,7 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public WorkIdentifierStruct findWorkIdentifier(WorkIdentifierTypes workIDType)
+	public JonixWorkIdentifier findWorkIdentifier(WorkIdentifierTypes workIDType)
 	{
 		if (workIdentifiers != null)
 		{
@@ -218,11 +218,11 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public List<WorkIdentifierStruct> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	public List<JonixWorkIdentifier> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
 	{
 		if (workIdentifiers != null)
 		{
-			List<WorkIdentifierStruct> matches = new ArrayList<>();
+			List<JonixWorkIdentifier> matches = new ArrayList<>();
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
@@ -233,7 +233,7 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public OtherTextStruct findOtherText(OtherTextTypes textTypeCode)
+	public JonixOtherText findOtherText(OtherTextTypes textTypeCode)
 	{
 		if (otherTexts != null)
 		{
@@ -246,11 +246,11 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public List<OtherTextStruct> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	public List<JonixOtherText> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
 	{
 		if (otherTexts != null)
 		{
-			List<OtherTextStruct> matches = new ArrayList<>();
+			List<JonixOtherText> matches = new ArrayList<>();
 			for (OtherText x : otherTexts)
 			{
 				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
@@ -261,7 +261,7 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public MediaFileStruct findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	public JonixMediaFile findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
 	{
 		if (mediaFiles != null)
 		{
@@ -274,11 +274,11 @@ public class ContentItem implements Serializable
 		return null;
 	}
 
-	public List<MediaFileStruct> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	public List<JonixMediaFile> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
 	{
 		if (mediaFiles != null)
 		{
-			List<MediaFileStruct> matches = new ArrayList<>();
+			List<JonixMediaFile> matches = new ArrayList<>();
 			for (MediaFile x : mediaFiles)
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))

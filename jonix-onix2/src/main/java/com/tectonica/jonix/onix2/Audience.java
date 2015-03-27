@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.AudienceStruct;
+import com.tectonica.jonix.struct.JonixAudience;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,9 +96,9 @@ public class Audience implements Serializable
 		return (audienceCodeValue == null) ? null : audienceCodeValue.value;
 	}
 
-	public AudienceStruct asStruct()
+	public JonixAudience asStruct()
 	{
-		AudienceStruct x = new AudienceStruct();
+		JonixAudience x = new JonixAudience();
 		x.audienceCodeTypeName = getAudienceCodeTypeNameValue();
 		x.audienceCodeValue = getAudienceCodeValueValue();
 		return x;

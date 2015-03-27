@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.codelist.TextItemTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.TextItemIdentifierStruct;
+import com.tectonica.jonix.struct.JonixTextItemIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -113,7 +113,7 @@ public class TextItem implements Serializable
 		return (numberOfPages == null) ? null : numberOfPages.value;
 	}
 
-	public TextItemIdentifierStruct findTextItemIdentifier(TextItemIdentifierTypes textItemIDType)
+	public JonixTextItemIdentifier findTextItemIdentifier(TextItemIdentifierTypes textItemIDType)
 	{
 		if (textItemIdentifiers != null)
 		{
@@ -126,11 +126,11 @@ public class TextItem implements Serializable
 		return null;
 	}
 
-	public List<TextItemIdentifierStruct> findTextItemIdentifiers(java.util.Set<TextItemIdentifierTypes> textItemIDTypes)
+	public List<JonixTextItemIdentifier> findTextItemIdentifiers(java.util.Set<TextItemIdentifierTypes> textItemIDTypes)
 	{
 		if (textItemIdentifiers != null)
 		{
-			List<TextItemIdentifierStruct> matches = new ArrayList<>();
+			List<JonixTextItemIdentifier> matches = new ArrayList<>();
 			for (TextItemIdentifier x : textItemIdentifiers)
 			{
 				if (textItemIDTypes == null || textItemIDTypes.contains(x.getTextItemIDTypeValue()))

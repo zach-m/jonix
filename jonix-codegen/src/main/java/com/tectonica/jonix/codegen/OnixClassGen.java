@@ -190,7 +190,7 @@ public class OnixClassGen
 				final OnixValueStruct struct = ref.structsMap.get(m.className);
 				if (struct != null)
 				{
-					final String structName = m.className + "Struct";
+					final String structName = "Jonix" + m.className;
 					final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;
 					final TypeInfo kti = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
 					final String keyClassName = struct.key.className;
@@ -235,7 +235,7 @@ public class OnixClassGen
 		final OnixValueStruct struct = ref.structsMap.get(clz.name);
 		if (struct != null)
 		{
-			final String structName = clz.name + "Struct";
+			final String structName = "Jonix" + clz.name;
 
 			p.println();
 			p.printf("   public %s asStruct()\n", structName);

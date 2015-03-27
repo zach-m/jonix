@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
-import com.tectonica.jonix.struct.PublishingDateStruct;
+import com.tectonica.jonix.struct.JonixPublishingDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -148,7 +148,7 @@ public class PublishingDetail implements Serializable
 		return (rowSalesRightsType == null) ? null : rowSalesRightsType.value;
 	}
 
-	public PublishingDateStruct findPublishingDate(PublishingDateRoles publishingDateRole)
+	public JonixPublishingDate findPublishingDate(PublishingDateRoles publishingDateRole)
 	{
 		if (publishingDates != null)
 		{
@@ -161,11 +161,11 @@ public class PublishingDetail implements Serializable
 		return null;
 	}
 
-	public List<PublishingDateStruct> findPublishingDates(java.util.Set<PublishingDateRoles> publishingDateRoles)
+	public List<JonixPublishingDate> findPublishingDates(java.util.Set<PublishingDateRoles> publishingDateRoles)
 	{
 		if (publishingDates != null)
 		{
-			List<PublishingDateStruct> matches = new ArrayList<>();
+			List<JonixPublishingDate> matches = new ArrayList<>();
 			for (PublishingDate x : publishingDates)
 			{
 				if (publishingDateRoles == null || publishingDateRoles.contains(x.getPublishingDateRoleValue()))

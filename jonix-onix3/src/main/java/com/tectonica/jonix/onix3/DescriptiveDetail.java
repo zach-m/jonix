@@ -40,9 +40,9 @@ import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ThesisTypes;
 import com.tectonica.jonix.codelist.TradeCategorys;
-import com.tectonica.jonix.struct.AncillaryContentStruct;
-import com.tectonica.jonix.struct.AudienceStruct;
-import com.tectonica.jonix.struct.LanguageStruct;
+import com.tectonica.jonix.struct.JonixAncillaryContent;
+import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixLanguage;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -413,7 +413,7 @@ public class DescriptiveDetail implements Serializable
 		return null;
 	}
 
-	public LanguageStruct findLanguage(LanguageRoles languageRole)
+	public JonixLanguage findLanguage(LanguageRoles languageRole)
 	{
 		if (languages != null)
 		{
@@ -426,11 +426,11 @@ public class DescriptiveDetail implements Serializable
 		return null;
 	}
 
-	public List<LanguageStruct> findLanguages(java.util.Set<LanguageRoles> languageRoles)
+	public List<JonixLanguage> findLanguages(java.util.Set<LanguageRoles> languageRoles)
 	{
 		if (languages != null)
 		{
-			List<LanguageStruct> matches = new ArrayList<>();
+			List<JonixLanguage> matches = new ArrayList<>();
 			for (Language x : languages)
 			{
 				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
@@ -441,7 +441,7 @@ public class DescriptiveDetail implements Serializable
 		return null;
 	}
 
-	public AncillaryContentStruct findAncillaryContent(IllustrationAndOtherContentTypes ancillaryContentType)
+	public JonixAncillaryContent findAncillaryContent(IllustrationAndOtherContentTypes ancillaryContentType)
 	{
 		if (ancillaryContents != null)
 		{
@@ -454,11 +454,11 @@ public class DescriptiveDetail implements Serializable
 		return null;
 	}
 
-	public List<AncillaryContentStruct> findAncillaryContents(java.util.Set<IllustrationAndOtherContentTypes> ancillaryContentTypes)
+	public List<JonixAncillaryContent> findAncillaryContents(java.util.Set<IllustrationAndOtherContentTypes> ancillaryContentTypes)
 	{
 		if (ancillaryContents != null)
 		{
-			List<AncillaryContentStruct> matches = new ArrayList<>();
+			List<JonixAncillaryContent> matches = new ArrayList<>();
 			for (AncillaryContent x : ancillaryContents)
 			{
 				if (ancillaryContentTypes == null || ancillaryContentTypes.contains(x.getAncillaryContentTypeValue()))
@@ -469,7 +469,7 @@ public class DescriptiveDetail implements Serializable
 		return null;
 	}
 
-	public AudienceStruct findAudience(AudienceCodeTypes audienceCodeType)
+	public JonixAudience findAudience(AudienceCodeTypes audienceCodeType)
 	{
 		if (audiences != null)
 		{
@@ -482,11 +482,11 @@ public class DescriptiveDetail implements Serializable
 		return null;
 	}
 
-	public List<AudienceStruct> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
+	public List<JonixAudience> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
 	{
 		if (audiences != null)
 		{
-			List<AudienceStruct> matches = new ArrayList<>();
+			List<JonixAudience> matches = new ArrayList<>();
 			for (Audience x : audiences)
 			{
 				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))

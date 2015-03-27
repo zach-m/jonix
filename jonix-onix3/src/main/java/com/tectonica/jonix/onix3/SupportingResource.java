@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceContentTypes;
 import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 import com.tectonica.jonix.codelist.ResourceModes;
-import com.tectonica.jonix.struct.ResourceFeatureStruct;
+import com.tectonica.jonix.struct.JonixResourceFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -102,7 +102,7 @@ public class SupportingResource implements Serializable
 		return (resourceMode == null) ? null : resourceMode.value;
 	}
 
-	public ResourceFeatureStruct findResourceFeature(ResourceFeatureTypes resourceFeatureType)
+	public JonixResourceFeature findResourceFeature(ResourceFeatureTypes resourceFeatureType)
 	{
 		if (resourceFeatures != null)
 		{
@@ -115,11 +115,11 @@ public class SupportingResource implements Serializable
 		return null;
 	}
 
-	public List<ResourceFeatureStruct> findResourceFeatures(java.util.Set<ResourceFeatureTypes> resourceFeatureTypes)
+	public List<JonixResourceFeature> findResourceFeatures(java.util.Set<ResourceFeatureTypes> resourceFeatureTypes)
 	{
 		if (resourceFeatures != null)
 		{
-			List<ResourceFeatureStruct> matches = new ArrayList<>();
+			List<JonixResourceFeature> matches = new ArrayList<>();
 			for (ResourceFeature x : resourceFeatures)
 			{
 				if (resourceFeatureTypes == null || resourceFeatureTypes.contains(x.getResourceFeatureTypeValue()))

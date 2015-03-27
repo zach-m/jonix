@@ -45,7 +45,7 @@ public class OnixStructGen
 	{
 		try
 		{
-			final String structName = struct.containingClass.name + "Struct";
+			final String structName = "Jonix" + struct.containingClass.name;
 			String fileName = folderName + "\\" + structName + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))

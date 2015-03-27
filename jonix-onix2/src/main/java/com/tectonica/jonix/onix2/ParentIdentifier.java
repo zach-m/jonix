@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.ParentIdentifierStruct;
+import com.tectonica.jonix.struct.JonixParentIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,9 +96,9 @@ public class ParentIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public ParentIdentifierStruct asStruct()
+	public JonixParentIdentifier asStruct()
 	{
-		ParentIdentifierStruct x = new ParentIdentifierStruct();
+		JonixParentIdentifier x = new JonixParentIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

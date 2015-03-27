@@ -57,16 +57,16 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
-import com.tectonica.jonix.struct.AudienceStruct;
-import com.tectonica.jonix.struct.IllustrationsStruct;
-import com.tectonica.jonix.struct.ImprintStruct;
-import com.tectonica.jonix.struct.LanguageStruct;
-import com.tectonica.jonix.struct.MediaFileStruct;
-import com.tectonica.jonix.struct.OtherTextStruct;
-import com.tectonica.jonix.struct.ProductIdentifierStruct;
-import com.tectonica.jonix.struct.SalesRightsStruct;
-import com.tectonica.jonix.struct.TitleStruct;
-import com.tectonica.jonix.struct.WorkIdentifierStruct;
+import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixIllustrations;
+import com.tectonica.jonix.struct.JonixImprint;
+import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixMediaFile;
+import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixSalesRights;
+import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -1243,7 +1243,7 @@ public class Product implements Serializable
 		return (bookClubAdoption == null) ? null : bookClubAdoption.value;
 	}
 
-	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
 	{
 		if (productIdentifiers != null)
 		{
@@ -1256,11 +1256,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
 	{
 		if (productIdentifiers != null)
 		{
-			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			List<JonixProductIdentifier> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
@@ -1271,7 +1271,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public TitleStruct findTitle(TitleTypes titleType)
+	public JonixTitle findTitle(TitleTypes titleType)
 	{
 		if (titles != null)
 		{
@@ -1284,11 +1284,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<TitleStruct> findTitles(java.util.Set<TitleTypes> titleTypes)
+	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
 	{
 		if (titles != null)
 		{
-			List<TitleStruct> matches = new ArrayList<>();
+			List<JonixTitle> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
@@ -1299,7 +1299,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public WorkIdentifierStruct findWorkIdentifier(WorkIdentifierTypes workIDType)
+	public JonixWorkIdentifier findWorkIdentifier(WorkIdentifierTypes workIDType)
 	{
 		if (workIdentifiers != null)
 		{
@@ -1312,11 +1312,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<WorkIdentifierStruct> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	public List<JonixWorkIdentifier> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
 	{
 		if (workIdentifiers != null)
 		{
-			List<WorkIdentifierStruct> matches = new ArrayList<>();
+			List<JonixWorkIdentifier> matches = new ArrayList<>();
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
@@ -1327,7 +1327,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public LanguageStruct findLanguage(LanguageRoles languageRole)
+	public JonixLanguage findLanguage(LanguageRoles languageRole)
 	{
 		if (languages != null)
 		{
@@ -1340,11 +1340,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<LanguageStruct> findLanguages(java.util.Set<LanguageRoles> languageRoles)
+	public List<JonixLanguage> findLanguages(java.util.Set<LanguageRoles> languageRoles)
 	{
 		if (languages != null)
 		{
-			List<LanguageStruct> matches = new ArrayList<>();
+			List<JonixLanguage> matches = new ArrayList<>();
 			for (Language x : languages)
 			{
 				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
@@ -1355,7 +1355,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public IllustrationsStruct findIllustrations(IllustrationAndOtherContentTypes illustrationType)
+	public JonixIllustrations findIllustrations(IllustrationAndOtherContentTypes illustrationType)
 	{
 		if (illustrationss != null)
 		{
@@ -1368,11 +1368,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<IllustrationsStruct> findIllustrationss(java.util.Set<IllustrationAndOtherContentTypes> illustrationTypes)
+	public List<JonixIllustrations> findIllustrationss(java.util.Set<IllustrationAndOtherContentTypes> illustrationTypes)
 	{
 		if (illustrationss != null)
 		{
-			List<IllustrationsStruct> matches = new ArrayList<>();
+			List<JonixIllustrations> matches = new ArrayList<>();
 			for (Illustrations x : illustrationss)
 			{
 				if (illustrationTypes == null || illustrationTypes.contains(x.getIllustrationTypeValue()))
@@ -1383,7 +1383,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public AudienceStruct findAudience(AudienceCodeTypes audienceCodeType)
+	public JonixAudience findAudience(AudienceCodeTypes audienceCodeType)
 	{
 		if (audiences != null)
 		{
@@ -1396,11 +1396,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<AudienceStruct> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
+	public List<JonixAudience> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
 	{
 		if (audiences != null)
 		{
-			List<AudienceStruct> matches = new ArrayList<>();
+			List<JonixAudience> matches = new ArrayList<>();
 			for (Audience x : audiences)
 			{
 				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
@@ -1411,7 +1411,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public OtherTextStruct findOtherText(OtherTextTypes textTypeCode)
+	public JonixOtherText findOtherText(OtherTextTypes textTypeCode)
 	{
 		if (otherTexts != null)
 		{
@@ -1424,11 +1424,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<OtherTextStruct> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	public List<JonixOtherText> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
 	{
 		if (otherTexts != null)
 		{
-			List<OtherTextStruct> matches = new ArrayList<>();
+			List<JonixOtherText> matches = new ArrayList<>();
 			for (OtherText x : otherTexts)
 			{
 				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
@@ -1439,7 +1439,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public MediaFileStruct findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	public JonixMediaFile findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
 	{
 		if (mediaFiles != null)
 		{
@@ -1452,11 +1452,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<MediaFileStruct> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	public List<JonixMediaFile> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
 	{
 		if (mediaFiles != null)
 		{
-			List<MediaFileStruct> matches = new ArrayList<>();
+			List<JonixMediaFile> matches = new ArrayList<>();
 			for (MediaFile x : mediaFiles)
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
@@ -1467,7 +1467,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public ImprintStruct findImprint(NameCodeTypes nameCodeType)
+	public JonixImprint findImprint(NameCodeTypes nameCodeType)
 	{
 		if (imprints != null)
 		{
@@ -1480,11 +1480,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<ImprintStruct> findImprints(java.util.Set<NameCodeTypes> nameCodeTypes)
+	public List<JonixImprint> findImprints(java.util.Set<NameCodeTypes> nameCodeTypes)
 	{
 		if (imprints != null)
 		{
-			List<ImprintStruct> matches = new ArrayList<>();
+			List<JonixImprint> matches = new ArrayList<>();
 			for (Imprint x : imprints)
 			{
 				if (nameCodeTypes == null || nameCodeTypes.contains(x.getNameCodeTypeValue()))
@@ -1495,7 +1495,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public SalesRightsStruct findSalesRights(SalesRightsTypes salesRightsType)
+	public JonixSalesRights findSalesRights(SalesRightsTypes salesRightsType)
 	{
 		if (salesRightss != null)
 		{
@@ -1508,11 +1508,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<SalesRightsStruct> findSalesRightss(java.util.Set<SalesRightsTypes> salesRightsTypes)
+	public List<JonixSalesRights> findSalesRightss(java.util.Set<SalesRightsTypes> salesRightsTypes)
 	{
 		if (salesRightss != null)
 		{
-			List<SalesRightsStruct> matches = new ArrayList<>();
+			List<JonixSalesRights> matches = new ArrayList<>();
 			for (SalesRights x : salesRightss)
 			{
 				if (salesRightsTypes == null || salesRightsTypes.contains(x.getSalesRightsTypeValue()))

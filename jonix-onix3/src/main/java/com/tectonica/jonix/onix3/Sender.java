@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.SenderIdentifierStruct;
+import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -89,7 +89,7 @@ public class Sender implements Serializable
 		return (emailAddress == null) ? null : emailAddress.value;
 	}
 
-	public SenderIdentifierStruct findSenderIdentifier(NameCodeTypes senderIDType)
+	public JonixSenderIdentifier findSenderIdentifier(NameCodeTypes senderIDType)
 	{
 		if (senderIdentifiers != null)
 		{
@@ -102,11 +102,11 @@ public class Sender implements Serializable
 		return null;
 	}
 
-	public List<SenderIdentifierStruct> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
+	public List<JonixSenderIdentifier> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
 	{
 		if (senderIdentifiers != null)
 		{
-			List<SenderIdentifierStruct> matches = new ArrayList<>();
+			List<JonixSenderIdentifier> matches = new ArrayList<>();
 			for (SenderIdentifier x : senderIdentifiers)
 			{
 				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))

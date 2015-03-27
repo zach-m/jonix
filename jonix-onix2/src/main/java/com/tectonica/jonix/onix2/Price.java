@@ -38,7 +38,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.UnitOfPricings;
-import com.tectonica.jonix.struct.DiscountCodedStruct;
+import com.tectonica.jonix.struct.JonixDiscountCoded;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -295,7 +295,7 @@ public class Price implements Serializable
 		return (priceEffectiveUntil == null) ? null : priceEffectiveUntil.value;
 	}
 
-	public DiscountCodedStruct findDiscountCoded(DiscountCodeTypes discountCodeType)
+	public JonixDiscountCoded findDiscountCoded(DiscountCodeTypes discountCodeType)
 	{
 		if (discountCodeds != null)
 		{
@@ -308,11 +308,11 @@ public class Price implements Serializable
 		return null;
 	}
 
-	public List<DiscountCodedStruct> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
+	public List<JonixDiscountCoded> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
 	{
 		if (discountCodeds != null)
 		{
-			List<DiscountCodedStruct> matches = new ArrayList<>();
+			List<JonixDiscountCoded> matches = new ArrayList<>();
 			for (DiscountCoded x : discountCodeds)
 			{
 				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))

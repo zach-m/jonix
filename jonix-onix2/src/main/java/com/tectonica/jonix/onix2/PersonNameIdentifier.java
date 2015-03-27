@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.PersonNameIdentifierStruct;
+import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,9 +96,9 @@ public class PersonNameIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public PersonNameIdentifierStruct asStruct()
+	public JonixPersonNameIdentifier asStruct()
 	{
-		PersonNameIdentifierStruct x = new PersonNameIdentifierStruct();
+		JonixPersonNameIdentifier x = new JonixPersonNameIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

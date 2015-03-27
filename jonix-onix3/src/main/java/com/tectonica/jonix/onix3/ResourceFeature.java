@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceFeatureTypes;
-import com.tectonica.jonix.struct.ResourceFeatureStruct;
+import com.tectonica.jonix.struct.JonixResourceFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,9 +93,9 @@ public class ResourceFeature implements Serializable
 		return null;
 	}
 
-	public ResourceFeatureStruct asStruct()
+	public JonixResourceFeature asStruct()
 	{
-		ResourceFeatureStruct x = new ResourceFeatureStruct();
+		JonixResourceFeature x = new JonixResourceFeature();
 		x.featureValue = getFeatureValueValue();
 		x.featureNotes = getFeatureNoteValues();
 		return x;

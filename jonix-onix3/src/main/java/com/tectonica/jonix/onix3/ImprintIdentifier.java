@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ImprintIdentifierStruct;
+import com.tectonica.jonix.struct.JonixImprintIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class ImprintIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public ImprintIdentifierStruct asStruct()
+	public JonixImprintIdentifier asStruct()
 	{
-		ImprintIdentifierStruct x = new ImprintIdentifierStruct();
+		JonixImprintIdentifier x = new JonixImprintIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

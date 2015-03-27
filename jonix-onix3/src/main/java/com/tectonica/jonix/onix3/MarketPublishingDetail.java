@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.MarketPublishingStatuss;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.MarketDateStruct;
+import com.tectonica.jonix.struct.JonixMarketDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -178,7 +178,7 @@ public class MarketPublishingDetail implements Serializable
 		return null;
 	}
 
-	public MarketDateStruct findMarketDate(PublishingDateRoles marketDateRole)
+	public JonixMarketDate findMarketDate(PublishingDateRoles marketDateRole)
 	{
 		if (marketDates != null)
 		{
@@ -191,11 +191,11 @@ public class MarketPublishingDetail implements Serializable
 		return null;
 	}
 
-	public List<MarketDateStruct> findMarketDates(java.util.Set<PublishingDateRoles> marketDateRoles)
+	public List<JonixMarketDate> findMarketDates(java.util.Set<PublishingDateRoles> marketDateRoles)
 	{
 		if (marketDates != null)
 		{
-			List<MarketDateStruct> matches = new ArrayList<>();
+			List<JonixMarketDate> matches = new ArrayList<>();
 			for (MarketDate x : marketDates)
 			{
 				if (marketDateRoles == null || marketDateRoles.contains(x.getMarketDateRoleValue()))

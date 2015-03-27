@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
-import com.tectonica.jonix.struct.TextItemIdentifierStruct;
+import com.tectonica.jonix.struct.JonixTextItemIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class TextItemIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public TextItemIdentifierStruct asStruct()
+	public JonixTextItemIdentifier asStruct()
 	{
-		TextItemIdentifierStruct x = new TextItemIdentifierStruct();
+		JonixTextItemIdentifier x = new JonixTextItemIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

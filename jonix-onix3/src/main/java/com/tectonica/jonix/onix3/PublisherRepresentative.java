@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.struct.AgentIdentifierStruct;
+import com.tectonica.jonix.struct.JonixAgentIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -130,7 +130,7 @@ public class PublisherRepresentative implements Serializable
 		return null;
 	}
 
-	public AgentIdentifierStruct findAgentIdentifier(SupplierIdentifierTypes agentIDType)
+	public JonixAgentIdentifier findAgentIdentifier(SupplierIdentifierTypes agentIDType)
 	{
 		if (agentIdentifiers != null)
 		{
@@ -143,11 +143,11 @@ public class PublisherRepresentative implements Serializable
 		return null;
 	}
 
-	public List<AgentIdentifierStruct> findAgentIdentifiers(java.util.Set<SupplierIdentifierTypes> agentIDTypes)
+	public List<JonixAgentIdentifier> findAgentIdentifiers(java.util.Set<SupplierIdentifierTypes> agentIDTypes)
 	{
 		if (agentIdentifiers != null)
 		{
-			List<AgentIdentifierStruct> matches = new ArrayList<>();
+			List<JonixAgentIdentifier> matches = new ArrayList<>();
 			for (AgentIdentifier x : agentIdentifiers)
 			{
 				if (agentIDTypes == null || agentIDTypes.contains(x.getAgentIDTypeValue()))

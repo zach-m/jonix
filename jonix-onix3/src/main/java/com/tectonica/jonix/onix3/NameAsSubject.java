@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.NameIdentifierStruct;
+import com.tectonica.jonix.struct.JonixNameIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -170,7 +170,7 @@ public class NameAsSubject implements Serializable
 		return (corporateNameInverted == null) ? null : corporateNameInverted.value;
 	}
 
-	public NameIdentifierStruct findNameIdentifier(NameCodeTypes nameIDType)
+	public JonixNameIdentifier findNameIdentifier(NameCodeTypes nameIDType)
 	{
 		if (nameIdentifiers != null)
 		{
@@ -183,11 +183,11 @@ public class NameAsSubject implements Serializable
 		return null;
 	}
 
-	public List<NameIdentifierStruct> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
+	public List<JonixNameIdentifier> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
 	{
 		if (nameIdentifiers != null)
 		{
-			List<NameIdentifierStruct> matches = new ArrayList<>();
+			List<JonixNameIdentifier> matches = new ArrayList<>();
 			for (NameIdentifier x : nameIdentifiers)
 			{
 				if (nameIDTypes == null || nameIDTypes.contains(x.getNameIDTypeValue()))

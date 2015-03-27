@@ -28,8 +28,8 @@ import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
-import com.tectonica.jonix.struct.CollectionIdentifierStruct;
-import com.tectonica.jonix.struct.CollectionSequenceStruct;
+import com.tectonica.jonix.struct.JonixCollectionIdentifier;
+import com.tectonica.jonix.struct.JonixCollectionSequence;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -108,7 +108,7 @@ public class Collection implements Serializable
 		return null;
 	}
 
-	public CollectionIdentifierStruct findCollectionIdentifier(SeriesIdentifierTypes collectionIDType)
+	public JonixCollectionIdentifier findCollectionIdentifier(SeriesIdentifierTypes collectionIDType)
 	{
 		if (collectionIdentifiers != null)
 		{
@@ -121,11 +121,11 @@ public class Collection implements Serializable
 		return null;
 	}
 
-	public List<CollectionIdentifierStruct> findCollectionIdentifiers(java.util.Set<SeriesIdentifierTypes> collectionIDTypes)
+	public List<JonixCollectionIdentifier> findCollectionIdentifiers(java.util.Set<SeriesIdentifierTypes> collectionIDTypes)
 	{
 		if (collectionIdentifiers != null)
 		{
-			List<CollectionIdentifierStruct> matches = new ArrayList<>();
+			List<JonixCollectionIdentifier> matches = new ArrayList<>();
 			for (CollectionIdentifier x : collectionIdentifiers)
 			{
 				if (collectionIDTypes == null || collectionIDTypes.contains(x.getCollectionIDTypeValue()))
@@ -136,7 +136,7 @@ public class Collection implements Serializable
 		return null;
 	}
 
-	public CollectionSequenceStruct findCollectionSequence(CollectionSequenceTypes collectionSequenceType)
+	public JonixCollectionSequence findCollectionSequence(CollectionSequenceTypes collectionSequenceType)
 	{
 		if (collectionSequences != null)
 		{
@@ -149,11 +149,11 @@ public class Collection implements Serializable
 		return null;
 	}
 
-	public List<CollectionSequenceStruct> findCollectionSequences(java.util.Set<CollectionSequenceTypes> collectionSequenceTypes)
+	public List<JonixCollectionSequence> findCollectionSequences(java.util.Set<CollectionSequenceTypes> collectionSequenceTypes)
 	{
 		if (collectionSequences != null)
 		{
-			List<CollectionSequenceStruct> matches = new ArrayList<>();
+			List<JonixCollectionSequence> matches = new ArrayList<>();
 			for (CollectionSequence x : collectionSequences)
 			{
 				if (collectionSequenceTypes == null || collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))

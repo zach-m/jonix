@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ConferenceSponsorIdentifierStruct;
+import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class ConferenceSponsorIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public ConferenceSponsorIdentifierStruct asStruct()
+	public JonixConferenceSponsorIdentifier asStruct()
 	{
-		ConferenceSponsorIdentifierStruct x = new ConferenceSponsorIdentifierStruct();
+		JonixConferenceSponsorIdentifier x = new JonixConferenceSponsorIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

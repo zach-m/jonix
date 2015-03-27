@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.PersonNameIdentifierStruct;
+import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -160,7 +160,7 @@ public class PersonAsSubject implements Serializable
 		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
 	}
 
-	public PersonNameIdentifierStruct findPersonNameIdentifier(PersonNameIdentifierTypes personNameIDType)
+	public JonixPersonNameIdentifier findPersonNameIdentifier(PersonNameIdentifierTypes personNameIDType)
 	{
 		if (personNameIdentifiers != null)
 		{
@@ -173,11 +173,11 @@ public class PersonAsSubject implements Serializable
 		return null;
 	}
 
-	public List<PersonNameIdentifierStruct> findPersonNameIdentifiers(java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
 	{
 		if (personNameIdentifiers != null)
 		{
-			List<PersonNameIdentifierStruct> matches = new ArrayList<>();
+			List<JonixPersonNameIdentifier> matches = new ArrayList<>();
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
 				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))

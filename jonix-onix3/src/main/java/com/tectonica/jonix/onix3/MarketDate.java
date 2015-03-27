@@ -25,7 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.MarketDateStruct;
+import com.tectonica.jonix.struct.JonixMarketDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,9 +85,9 @@ public class MarketDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public MarketDateStruct asStruct()
+	public JonixMarketDate asStruct()
 	{
-		MarketDateStruct x = new MarketDateStruct();
+		JonixMarketDate x = new JonixMarketDate();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

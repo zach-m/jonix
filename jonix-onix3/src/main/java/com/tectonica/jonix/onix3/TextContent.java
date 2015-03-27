@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextTypes;
-import com.tectonica.jonix.struct.ContentDateStruct;
+import com.tectonica.jonix.struct.JonixContentDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -143,7 +143,7 @@ public class TextContent implements Serializable
 		return null;
 	}
 
-	public ContentDateStruct findContentDate(ContentDateRoles contentDateRole)
+	public JonixContentDate findContentDate(ContentDateRoles contentDateRole)
 	{
 		if (contentDates != null)
 		{
@@ -156,11 +156,11 @@ public class TextContent implements Serializable
 		return null;
 	}
 
-	public List<ContentDateStruct> findContentDates(java.util.Set<ContentDateRoles> contentDateRoles)
+	public List<JonixContentDate> findContentDates(java.util.Set<ContentDateRoles> contentDateRoles)
 	{
 		if (contentDates != null)
 		{
-			List<ContentDateStruct> matches = new ArrayList<>();
+			List<JonixContentDate> matches = new ArrayList<>();
 			for (ContentDate x : contentDates)
 			{
 				if (contentDateRoles == null || contentDateRoles.contains(x.getContentDateRoleValue()))

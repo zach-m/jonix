@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.struct.SupplierIdentifierStruct;
+import com.tectonica.jonix.struct.JonixSupplierIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -118,7 +118,7 @@ public class NewSupplier implements Serializable
 		return null;
 	}
 
-	public SupplierIdentifierStruct findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
+	public JonixSupplierIdentifier findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
 	{
 		if (supplierIdentifiers != null)
 		{
@@ -131,11 +131,11 @@ public class NewSupplier implements Serializable
 		return null;
 	}
 
-	public List<SupplierIdentifierStruct> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
+	public List<JonixSupplierIdentifier> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
 	{
 		if (supplierIdentifiers != null)
 		{
-			List<SupplierIdentifierStruct> matches = new ArrayList<>();
+			List<JonixSupplierIdentifier> matches = new ArrayList<>();
 			for (SupplierIdentifier x : supplierIdentifiers)
 			{
 				if (supplierIDTypes == null || supplierIDTypes.contains(x.getSupplierIDTypeValue()))

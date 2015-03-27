@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.struct.LocationIdentifierStruct;
+import com.tectonica.jonix.struct.JonixLocationIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class LocationIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public LocationIdentifierStruct asStruct()
+	public JonixLocationIdentifier asStruct()
 	{
-		LocationIdentifierStruct x = new LocationIdentifierStruct();
+		JonixLocationIdentifier x = new JonixLocationIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

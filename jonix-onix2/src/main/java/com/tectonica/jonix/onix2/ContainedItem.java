@@ -36,7 +36,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.ProductIdentifierStruct;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -195,7 +195,7 @@ public class ContainedItem implements Serializable
 		return (itemQuantity == null) ? null : itemQuantity.value;
 	}
 
-	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
 	{
 		if (productIdentifiers != null)
 		{
@@ -208,11 +208,11 @@ public class ContainedItem implements Serializable
 		return null;
 	}
 
-	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
 	{
 		if (productIdentifiers != null)
 		{
-			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			List<JonixProductIdentifier> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))

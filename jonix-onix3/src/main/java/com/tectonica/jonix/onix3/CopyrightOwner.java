@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.CopyrightOwnerIdentifierStruct;
+import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,7 +81,7 @@ public class CopyrightOwner implements Serializable
 		return (corporateName == null) ? null : corporateName.value;
 	}
 
-	public CopyrightOwnerIdentifierStruct findCopyrightOwnerIdentifier(NameCodeTypes copyrightOwnerIDType)
+	public JonixCopyrightOwnerIdentifier findCopyrightOwnerIdentifier(NameCodeTypes copyrightOwnerIDType)
 	{
 		if (copyrightOwnerIdentifiers != null)
 		{
@@ -94,11 +94,11 @@ public class CopyrightOwner implements Serializable
 		return null;
 	}
 
-	public List<CopyrightOwnerIdentifierStruct> findCopyrightOwnerIdentifiers(java.util.Set<NameCodeTypes> copyrightOwnerIDTypes)
+	public List<JonixCopyrightOwnerIdentifier> findCopyrightOwnerIdentifiers(java.util.Set<NameCodeTypes> copyrightOwnerIDTypes)
 	{
 		if (copyrightOwnerIdentifiers != null)
 		{
-			List<CopyrightOwnerIdentifierStruct> matches = new ArrayList<>();
+			List<JonixCopyrightOwnerIdentifier> matches = new ArrayList<>();
 			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
 			{
 				if (copyrightOwnerIDTypes == null || copyrightOwnerIDTypes.contains(x.getCopyrightOwnerIDTypeValue()))

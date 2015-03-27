@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.AddresseeIdentifierStruct;
+import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -89,7 +89,7 @@ public class Addressee implements Serializable
 		return (emailAddress == null) ? null : emailAddress.value;
 	}
 
-	public AddresseeIdentifierStruct findAddresseeIdentifier(NameCodeTypes addresseeIDType)
+	public JonixAddresseeIdentifier findAddresseeIdentifier(NameCodeTypes addresseeIDType)
 	{
 		if (addresseeIdentifiers != null)
 		{
@@ -102,11 +102,11 @@ public class Addressee implements Serializable
 		return null;
 	}
 
-	public List<AddresseeIdentifierStruct> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
+	public List<JonixAddresseeIdentifier> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
 	{
 		if (addresseeIdentifiers != null)
 		{
-			List<AddresseeIdentifierStruct> matches = new ArrayList<>();
+			List<JonixAddresseeIdentifier> matches = new ArrayList<>();
 			for (AddresseeIdentifier x : addresseeIdentifiers)
 			{
 				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))

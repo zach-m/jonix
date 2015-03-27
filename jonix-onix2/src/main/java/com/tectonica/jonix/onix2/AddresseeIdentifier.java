@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.AddresseeIdentifierStruct;
+import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,9 +96,9 @@ public class AddresseeIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public AddresseeIdentifierStruct asStruct()
+	public JonixAddresseeIdentifier asStruct()
 	{
-		AddresseeIdentifierStruct x = new AddresseeIdentifierStruct();
+		JonixAddresseeIdentifier x = new JonixAddresseeIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

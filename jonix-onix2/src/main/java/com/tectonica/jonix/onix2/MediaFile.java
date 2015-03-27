@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.MediaFileStruct;
+import com.tectonica.jonix.struct.JonixMediaFile;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -162,9 +162,9 @@ public class MediaFile implements Serializable
 		return (mediaFileDate == null) ? null : mediaFileDate.value;
 	}
 
-	public MediaFileStruct asStruct()
+	public JonixMediaFile asStruct()
 	{
-		MediaFileStruct x = new MediaFileStruct();
+		JonixMediaFile x = new JonixMediaFile();
 		x.mediaFileFormatCode = getMediaFileFormatCodeValue();
 		x.imageResolution = getImageResolutionValue();
 		x.mediaFileLinkTypeCode = getMediaFileLinkTypeCodeValue();

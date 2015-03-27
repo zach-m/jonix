@@ -34,8 +34,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.AddresseeIdentifierStruct;
-import com.tectonica.jonix.struct.SenderIdentifierStruct;
+import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
+import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -237,7 +237,7 @@ public class Header implements Serializable
 		return (defaultClassOfTrade == null) ? null : defaultClassOfTrade.value;
 	}
 
-	public SenderIdentifierStruct findSenderIdentifier(NameCodeTypes senderIDType)
+	public JonixSenderIdentifier findSenderIdentifier(NameCodeTypes senderIDType)
 	{
 		if (senderIdentifiers != null)
 		{
@@ -250,11 +250,11 @@ public class Header implements Serializable
 		return null;
 	}
 
-	public List<SenderIdentifierStruct> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
+	public List<JonixSenderIdentifier> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
 	{
 		if (senderIdentifiers != null)
 		{
-			List<SenderIdentifierStruct> matches = new ArrayList<>();
+			List<JonixSenderIdentifier> matches = new ArrayList<>();
 			for (SenderIdentifier x : senderIdentifiers)
 			{
 				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))
@@ -265,7 +265,7 @@ public class Header implements Serializable
 		return null;
 	}
 
-	public AddresseeIdentifierStruct findAddresseeIdentifier(NameCodeTypes addresseeIDType)
+	public JonixAddresseeIdentifier findAddresseeIdentifier(NameCodeTypes addresseeIDType)
 	{
 		if (addresseeIdentifiers != null)
 		{
@@ -278,11 +278,11 @@ public class Header implements Serializable
 		return null;
 	}
 
-	public List<AddresseeIdentifierStruct> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
+	public List<JonixAddresseeIdentifier> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
 	{
 		if (addresseeIdentifiers != null)
 		{
-			List<AddresseeIdentifierStruct> matches = new ArrayList<>();
+			List<JonixAddresseeIdentifier> matches = new ArrayList<>();
 			for (AddresseeIdentifier x : addresseeIdentifiers)
 			{
 				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))

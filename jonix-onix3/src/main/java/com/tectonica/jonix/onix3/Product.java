@@ -28,8 +28,8 @@ import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ProductIdentifierStruct;
-import com.tectonica.jonix.struct.RecordSourceIdentifierStruct;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixRecordSourceIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -139,7 +139,7 @@ public class Product implements Serializable
 		return (recordSourceName == null) ? null : recordSourceName.value;
 	}
 
-	public RecordSourceIdentifierStruct findRecordSourceIdentifier(NameCodeTypes recordSourceIDType)
+	public JonixRecordSourceIdentifier findRecordSourceIdentifier(NameCodeTypes recordSourceIDType)
 	{
 		if (recordSourceIdentifiers != null)
 		{
@@ -152,11 +152,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<RecordSourceIdentifierStruct> findRecordSourceIdentifiers(java.util.Set<NameCodeTypes> recordSourceIDTypes)
+	public List<JonixRecordSourceIdentifier> findRecordSourceIdentifiers(java.util.Set<NameCodeTypes> recordSourceIDTypes)
 	{
 		if (recordSourceIdentifiers != null)
 		{
-			List<RecordSourceIdentifierStruct> matches = new ArrayList<>();
+			List<JonixRecordSourceIdentifier> matches = new ArrayList<>();
 			for (RecordSourceIdentifier x : recordSourceIdentifiers)
 			{
 				if (recordSourceIDTypes == null || recordSourceIDTypes.contains(x.getRecordSourceIDTypeValue()))
@@ -167,7 +167,7 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public ProductIdentifierStruct findProductIdentifier(ProductIdentifierTypes productIDType)
+	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
 	{
 		if (productIdentifiers != null)
 		{
@@ -180,11 +180,11 @@ public class Product implements Serializable
 		return null;
 	}
 
-	public List<ProductIdentifierStruct> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
 	{
 		if (productIdentifiers != null)
 		{
-			List<ProductIdentifierStruct> matches = new ArrayList<>();
+			List<JonixProductIdentifier> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))

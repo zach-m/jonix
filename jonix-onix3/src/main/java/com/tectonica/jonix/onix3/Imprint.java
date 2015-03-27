@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ImprintIdentifierStruct;
+import com.tectonica.jonix.struct.JonixImprintIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -73,7 +73,7 @@ public class Imprint implements Serializable
 		return (imprintName == null) ? null : imprintName.value;
 	}
 
-	public ImprintIdentifierStruct findImprintIdentifier(NameCodeTypes imprintIDType)
+	public JonixImprintIdentifier findImprintIdentifier(NameCodeTypes imprintIDType)
 	{
 		if (imprintIdentifiers != null)
 		{
@@ -86,11 +86,11 @@ public class Imprint implements Serializable
 		return null;
 	}
 
-	public List<ImprintIdentifierStruct> findImprintIdentifiers(java.util.Set<NameCodeTypes> imprintIDTypes)
+	public List<JonixImprintIdentifier> findImprintIdentifiers(java.util.Set<NameCodeTypes> imprintIDTypes)
 	{
 		if (imprintIdentifiers != null)
 		{
-			List<ImprintIdentifierStruct> matches = new ArrayList<>();
+			List<JonixImprintIdentifier> matches = new ArrayList<>();
 			for (ImprintIdentifier x : imprintIdentifiers)
 			{
 				if (imprintIDTypes == null || imprintIDTypes.contains(x.getImprintIDTypeValue()))

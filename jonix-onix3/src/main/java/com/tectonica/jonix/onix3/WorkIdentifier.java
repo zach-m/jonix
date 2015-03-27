@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
-import com.tectonica.jonix.struct.WorkIdentifierStruct;
+import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class WorkIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public WorkIdentifierStruct asStruct()
+	public JonixWorkIdentifier asStruct()
 	{
-		WorkIdentifierStruct x = new WorkIdentifierStruct();
+		JonixWorkIdentifier x = new JonixWorkIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

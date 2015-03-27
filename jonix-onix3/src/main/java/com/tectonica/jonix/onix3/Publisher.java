@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PublishingRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PublisherIdentifierStruct;
+import com.tectonica.jonix.struct.JonixPublisherIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,7 +85,7 @@ public class Publisher implements Serializable
 		return (publisherName == null) ? null : publisherName.value;
 	}
 
-	public PublisherIdentifierStruct findPublisherIdentifier(NameCodeTypes publisherIDType)
+	public JonixPublisherIdentifier findPublisherIdentifier(NameCodeTypes publisherIDType)
 	{
 		if (publisherIdentifiers != null)
 		{
@@ -98,11 +98,11 @@ public class Publisher implements Serializable
 		return null;
 	}
 
-	public List<PublisherIdentifierStruct> findPublisherIdentifiers(java.util.Set<NameCodeTypes> publisherIDTypes)
+	public List<JonixPublisherIdentifier> findPublisherIdentifiers(java.util.Set<NameCodeTypes> publisherIDTypes)
 	{
 		if (publisherIdentifiers != null)
 		{
-			List<PublisherIdentifierStruct> matches = new ArrayList<>();
+			List<JonixPublisherIdentifier> matches = new ArrayList<>();
 			for (PublisherIdentifier x : publisherIdentifiers)
 			{
 				if (publisherIDTypes == null || publisherIDTypes.contains(x.getPublisherIDTypeValue()))

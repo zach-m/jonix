@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.MediaFileStruct;
+import com.tectonica.jonix.struct.JonixMediaFile;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -96,7 +96,7 @@ public class Reissue implements Serializable
 		return (reissueDescription == null) ? null : reissueDescription.value;
 	}
 
-	public MediaFileStruct findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	public JonixMediaFile findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
 	{
 		if (mediaFiles != null)
 		{
@@ -109,11 +109,11 @@ public class Reissue implements Serializable
 		return null;
 	}
 
-	public List<MediaFileStruct> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	public List<JonixMediaFile> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
 	{
 		if (mediaFiles != null)
 		{
-			List<MediaFileStruct> matches = new ArrayList<>();
+			List<JonixMediaFile> matches = new ArrayList<>();
 			for (MediaFile x : mediaFiles)
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))

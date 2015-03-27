@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.SenderIdentifierStruct;
+import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class SenderIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public SenderIdentifierStruct asStruct()
+	public JonixSenderIdentifier asStruct()
 	{
-		SenderIdentifierStruct x = new SenderIdentifierStruct();
+		JonixSenderIdentifier x = new JonixSenderIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

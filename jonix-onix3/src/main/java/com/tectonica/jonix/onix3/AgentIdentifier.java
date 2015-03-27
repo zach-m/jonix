@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.struct.AgentIdentifierStruct;
+import com.tectonica.jonix.struct.JonixAgentIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class AgentIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public AgentIdentifierStruct asStruct()
+	public JonixAgentIdentifier asStruct()
 	{
-		AgentIdentifierStruct x = new AgentIdentifierStruct();
+		JonixAgentIdentifier x = new JonixAgentIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

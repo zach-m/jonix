@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.AncillaryContentStruct;
+import com.tectonica.jonix.struct.JonixAncillaryContent;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,9 +93,9 @@ public class AncillaryContent implements Serializable
 		return (number == null) ? null : number.value;
 	}
 
-	public AncillaryContentStruct asStruct()
+	public JonixAncillaryContent asStruct()
 	{
-		AncillaryContentStruct x = new AncillaryContentStruct();
+		JonixAncillaryContent x = new JonixAncillaryContent();
 		x.ancillaryContentDescriptions = getAncillaryContentDescriptionValues();
 		x.number = getNumberValue();
 		return x;

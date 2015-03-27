@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ProductContactIdentifierStruct;
+import com.tectonica.jonix.struct.JonixProductContactIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -98,7 +98,7 @@ public class ProductContact implements Serializable
 		return (emailAddress == null) ? null : emailAddress.value;
 	}
 
-	public ProductContactIdentifierStruct findProductContactIdentifier(NameCodeTypes productContactIDType)
+	public JonixProductContactIdentifier findProductContactIdentifier(NameCodeTypes productContactIDType)
 	{
 		if (productContactIdentifiers != null)
 		{
@@ -111,11 +111,11 @@ public class ProductContact implements Serializable
 		return null;
 	}
 
-	public List<ProductContactIdentifierStruct> findProductContactIdentifiers(java.util.Set<NameCodeTypes> productContactIDTypes)
+	public List<JonixProductContactIdentifier> findProductContactIdentifiers(java.util.Set<NameCodeTypes> productContactIDTypes)
 	{
 		if (productContactIdentifiers != null)
 		{
-			List<ProductContactIdentifierStruct> matches = new ArrayList<>();
+			List<JonixProductContactIdentifier> matches = new ArrayList<>();
 			for (ProductContactIdentifier x : productContactIdentifiers)
 			{
 				if (productContactIDTypes == null || productContactIDTypes.contains(x.getProductContactIDTypeValue()))

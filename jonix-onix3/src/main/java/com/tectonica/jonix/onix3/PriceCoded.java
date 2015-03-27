@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PriceCodedStruct;
+import com.tectonica.jonix.struct.JonixPriceCoded;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class PriceCoded implements Serializable
 		return (priceCode == null) ? null : priceCode.value;
 	}
 
-	public PriceCodedStruct asStruct()
+	public JonixPriceCoded asStruct()
 	{
-		PriceCodedStruct x = new PriceCodedStruct();
+		JonixPriceCoded x = new JonixPriceCoded();
 		x.priceCodeTypeName = getPriceCodeTypeNameValue();
 		x.priceCode = getPriceCodeValue();
 		return x;

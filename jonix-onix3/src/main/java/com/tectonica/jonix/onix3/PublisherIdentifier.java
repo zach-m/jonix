@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PublisherIdentifierStruct;
+import com.tectonica.jonix.struct.JonixPublisherIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class PublisherIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public PublisherIdentifierStruct asStruct()
+	public JonixPublisherIdentifier asStruct()
 	{
-		PublisherIdentifierStruct x = new PublisherIdentifierStruct();
+		JonixPublisherIdentifier x = new JonixPublisherIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

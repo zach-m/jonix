@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.codelist.WorkRelations;
-import com.tectonica.jonix.struct.WorkIdentifierStruct;
+import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -74,7 +74,7 @@ public class RelatedWork implements Serializable
 		return (workRelationCode == null) ? null : workRelationCode.value;
 	}
 
-	public WorkIdentifierStruct findWorkIdentifier(WorkIdentifierTypes workIDType)
+	public JonixWorkIdentifier findWorkIdentifier(WorkIdentifierTypes workIDType)
 	{
 		if (workIdentifiers != null)
 		{
@@ -87,11 +87,11 @@ public class RelatedWork implements Serializable
 		return null;
 	}
 
-	public List<WorkIdentifierStruct> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	public List<JonixWorkIdentifier> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
 	{
 		if (workIdentifiers != null)
 		{
-			List<WorkIdentifierStruct> matches = new ArrayList<>();
+			List<JonixWorkIdentifier> matches = new ArrayList<>();
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))

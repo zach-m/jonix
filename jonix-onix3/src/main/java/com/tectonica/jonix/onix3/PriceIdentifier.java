@@ -24,7 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.PriceIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.PriceIdentifierStruct;
+import com.tectonica.jonix.struct.JonixPriceIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,9 +84,9 @@ public class PriceIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public PriceIdentifierStruct asStruct()
+	public JonixPriceIdentifier asStruct()
 	{
-		PriceIdentifierStruct x = new PriceIdentifierStruct();
+		JonixPriceIdentifier x = new JonixPriceIdentifier();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

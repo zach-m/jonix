@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
-import com.tectonica.jonix.struct.SalesOutletIdentifierStruct;
+import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -73,7 +73,7 @@ public class SalesOutlet implements Serializable
 		return (salesOutletName == null) ? null : salesOutletName.value;
 	}
 
-	public SalesOutletIdentifierStruct findSalesOutletIdentifier(SalesOutletIdentifierTypes salesOutletIDType)
+	public JonixSalesOutletIdentifier findSalesOutletIdentifier(SalesOutletIdentifierTypes salesOutletIDType)
 	{
 		if (salesOutletIdentifiers != null)
 		{
@@ -86,11 +86,11 @@ public class SalesOutlet implements Serializable
 		return null;
 	}
 
-	public List<SalesOutletIdentifierStruct> findSalesOutletIdentifiers(java.util.Set<SalesOutletIdentifierTypes> salesOutletIDTypes)
+	public List<JonixSalesOutletIdentifier> findSalesOutletIdentifiers(java.util.Set<SalesOutletIdentifierTypes> salesOutletIDTypes)
 	{
 		if (salesOutletIdentifiers != null)
 		{
-			List<SalesOutletIdentifierStruct> matches = new ArrayList<>();
+			List<JonixSalesOutletIdentifier> matches = new ArrayList<>();
 			for (SalesOutletIdentifier x : salesOutletIdentifiers)
 			{
 				if (salesOutletIDTypes == null || salesOutletIDTypes.contains(x.getSalesOutletIDTypeValue()))

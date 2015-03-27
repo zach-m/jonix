@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.struct.ConferenceSponsorIdentifierStruct;
+import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,7 +81,7 @@ public class ConferenceSponsor implements Serializable
 		return (corporateName == null) ? null : corporateName.value;
 	}
 
-	public ConferenceSponsorIdentifierStruct findConferenceSponsorIdentifier(NameCodeTypes conferenceSponsorIDType)
+	public JonixConferenceSponsorIdentifier findConferenceSponsorIdentifier(NameCodeTypes conferenceSponsorIDType)
 	{
 		if (conferenceSponsorIdentifiers != null)
 		{
@@ -94,11 +94,11 @@ public class ConferenceSponsor implements Serializable
 		return null;
 	}
 
-	public List<ConferenceSponsorIdentifierStruct> findConferenceSponsorIdentifiers(java.util.Set<NameCodeTypes> conferenceSponsorIDTypes)
+	public List<JonixConferenceSponsorIdentifier> findConferenceSponsorIdentifiers(java.util.Set<NameCodeTypes> conferenceSponsorIDTypes)
 	{
 		if (conferenceSponsorIdentifiers != null)
 		{
-			List<ConferenceSponsorIdentifierStruct> matches = new ArrayList<>();
+			List<JonixConferenceSponsorIdentifier> matches = new ArrayList<>();
 			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
 			{
 				if (conferenceSponsorIDTypes == null || conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
