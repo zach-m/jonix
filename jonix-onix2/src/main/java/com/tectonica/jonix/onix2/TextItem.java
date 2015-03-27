@@ -133,7 +133,7 @@ public class TextItem implements Serializable
 			List<TextItemIdentifierStruct> matches = new ArrayList<>();
 			for (TextItemIdentifier x : textItemIdentifiers)
 			{
-				if (textItemIDTypes.contains(x.getTextItemIDTypeValue()))
+				if (textItemIDTypes == null || textItemIDTypes.contains(x.getTextItemIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

@@ -93,7 +93,7 @@ public class SalesOutlet implements Serializable
 			List<SalesOutletIdentifierStruct> matches = new ArrayList<>();
 			for (SalesOutletIdentifier x : salesOutletIdentifiers)
 			{
-				if (salesOutletIDTypes.contains(x.getSalesOutletIDTypeValue()))
+				if (salesOutletIDTypes == null || salesOutletIDTypes.contains(x.getSalesOutletIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

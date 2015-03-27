@@ -100,7 +100,7 @@ public class PriceCondition implements Serializable
 			List<PriceConditionQuantityStruct> matches = new ArrayList<>();
 			for (PriceConditionQuantity x : priceConditionQuantitys)
 			{
-				if (priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
+				if (priceConditionQuantityTypes == null || priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -128,7 +128,7 @@ public class PriceCondition implements Serializable
 			List<ProductIdentifierStruct> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
-				if (productIDTypes.contains(x.getProductIDTypeValue()))
+				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

@@ -105,7 +105,7 @@ public class Publisher implements Serializable
 			List<PublisherIdentifierStruct> matches = new ArrayList<>();
 			for (PublisherIdentifier x : publisherIdentifiers)
 			{
-				if (publisherIDTypes.contains(x.getPublisherIDTypeValue()))
+				if (publisherIDTypes == null || publisherIDTypes.contains(x.getPublisherIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

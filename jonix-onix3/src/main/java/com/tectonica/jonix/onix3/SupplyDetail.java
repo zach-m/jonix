@@ -144,7 +144,7 @@ public class SupplyDetail implements Serializable
 			List<SupplierOwnCodingStruct> matches = new ArrayList<>();
 			for (SupplierOwnCoding x : supplierOwnCodings)
 			{
-				if (supplierCodeTypes.contains(x.getSupplierCodeTypeValue()))
+				if (supplierCodeTypes == null || supplierCodeTypes.contains(x.getSupplierCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -172,7 +172,7 @@ public class SupplyDetail implements Serializable
 			List<ReturnsConditionsStruct> matches = new ArrayList<>();
 			for (ReturnsConditions x : returnsConditionss)
 			{
-				if (returnsCodeTypes.contains(x.getReturnsCodeTypeValue()))
+				if (returnsCodeTypes == null || returnsCodeTypes.contains(x.getReturnsCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -200,7 +200,7 @@ public class SupplyDetail implements Serializable
 			List<SupplyDateStruct> matches = new ArrayList<>();
 			for (SupplyDate x : supplyDates)
 			{
-				if (supplyDateRoles.contains(x.getSupplyDateRoleValue()))
+				if (supplyDateRoles == null || supplyDateRoles.contains(x.getSupplyDateRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

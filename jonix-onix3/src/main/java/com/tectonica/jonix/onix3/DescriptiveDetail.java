@@ -433,7 +433,7 @@ public class DescriptiveDetail implements Serializable
 			List<LanguageStruct> matches = new ArrayList<>();
 			for (Language x : languages)
 			{
-				if (languageRoles.contains(x.getLanguageRoleValue()))
+				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -461,7 +461,7 @@ public class DescriptiveDetail implements Serializable
 			List<AncillaryContentStruct> matches = new ArrayList<>();
 			for (AncillaryContent x : ancillaryContents)
 			{
-				if (ancillaryContentTypes.contains(x.getAncillaryContentTypeValue()))
+				if (ancillaryContentTypes == null || ancillaryContentTypes.contains(x.getAncillaryContentTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -489,7 +489,7 @@ public class DescriptiveDetail implements Serializable
 			List<AudienceStruct> matches = new ArrayList<>();
 			for (Audience x : audiences)
 			{
-				if (audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
+				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

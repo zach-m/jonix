@@ -198,7 +198,7 @@ public class MarketPublishingDetail implements Serializable
 			List<MarketDateStruct> matches = new ArrayList<>();
 			for (MarketDate x : marketDates)
 			{
-				if (marketDateRoles.contains(x.getMarketDateRoleValue()))
+				if (marketDateRoles == null || marketDateRoles.contains(x.getMarketDateRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

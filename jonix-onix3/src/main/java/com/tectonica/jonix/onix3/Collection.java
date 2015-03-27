@@ -128,7 +128,7 @@ public class Collection implements Serializable
 			List<CollectionIdentifierStruct> matches = new ArrayList<>();
 			for (CollectionIdentifier x : collectionIdentifiers)
 			{
-				if (collectionIDTypes.contains(x.getCollectionIDTypeValue()))
+				if (collectionIDTypes == null || collectionIDTypes.contains(x.getCollectionIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -156,7 +156,7 @@ public class Collection implements Serializable
 			List<CollectionSequenceStruct> matches = new ArrayList<>();
 			for (CollectionSequence x : collectionSequences)
 			{
-				if (collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
+				if (collectionSequenceTypes == null || collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

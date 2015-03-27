@@ -116,7 +116,7 @@ public class Reissue implements Serializable
 			List<MediaFileStruct> matches = new ArrayList<>();
 			for (MediaFile x : mediaFiles)
 			{
-				if (mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
+				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

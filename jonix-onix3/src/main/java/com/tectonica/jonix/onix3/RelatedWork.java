@@ -94,7 +94,7 @@ public class RelatedWork implements Serializable
 			List<WorkIdentifierStruct> matches = new ArrayList<>();
 			for (WorkIdentifier x : workIdentifiers)
 			{
-				if (workIDTypes.contains(x.getWorkIDTypeValue()))
+				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

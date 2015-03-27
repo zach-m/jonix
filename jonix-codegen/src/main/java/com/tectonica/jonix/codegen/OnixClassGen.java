@@ -193,7 +193,8 @@ public class OnixClassGen
 					final String structName = m.className + "Struct";
 					final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;
 					final TypeInfo kti = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-					final String keyField = GenUtil.fieldOf(struct.key.className);
+					final String keyClassName = struct.key.className;
+					final String keyField = GenUtil.fieldOf(keyClassName);
 					final String memberfield = GenUtil.fieldOf(m.className) + "s";
 					final String caption = keyClass.isSpaceable ? "Set" : "Value";
 
@@ -204,7 +205,7 @@ public class OnixClassGen
 					p.printf("      {\n");
 					p.printf("         for (%s x : %s)\n", m.className, memberfield);
 					p.printf("         {\n");
-					p.printf("            if (x.get%s%s() == %s)\n", struct.key.className, caption, keyField);
+					p.printf("            if (x.get%s%s() == %s)\n", keyClassName, caption, keyField);
 					p.printf("               return x.asStruct();\n");
 					p.printf("         }\n");
 					p.printf("      }\n");
@@ -219,7 +220,7 @@ public class OnixClassGen
 					p.printf("         List<%s> matches = new ArrayList<>();\n", structName);
 					p.printf("         for (%s x : %s)\n", m.className, memberfield);
 					p.printf("         {\n");
-					p.printf("            if (%ss.contains(x.get%s%s()))\n", keyField, struct.key.className, caption);
+					p.printf("            if (%ss == null || %ss.contains(x.get%s%s()))\n", keyField, keyField, keyClassName, caption);
 					p.printf("               matches.add(x.asStruct());\n");
 					p.printf("         }\n");
 					p.printf("         return matches;\n", structName);

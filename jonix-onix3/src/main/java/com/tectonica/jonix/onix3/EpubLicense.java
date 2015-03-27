@@ -100,7 +100,7 @@ public class EpubLicense implements Serializable
 			List<EpubLicenseExpressionStruct> matches = new ArrayList<>();
 			for (EpubLicenseExpression x : epubLicenseExpressions)
 			{
-				if (epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
+				if (epubLicenseExpressionTypes == null || epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

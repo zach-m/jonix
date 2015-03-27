@@ -135,7 +135,7 @@ public class Stock implements Serializable
 			List<StockQuantityCodedStruct> matches = new ArrayList<>();
 			for (StockQuantityCoded x : stockQuantityCodeds)
 			{
-				if (stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))
+				if (stockQuantityCodeTypes == null || stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

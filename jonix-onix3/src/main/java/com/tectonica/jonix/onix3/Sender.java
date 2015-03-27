@@ -109,7 +109,7 @@ public class Sender implements Serializable
 			List<SenderIdentifierStruct> matches = new ArrayList<>();
 			for (SenderIdentifier x : senderIdentifiers)
 			{
-				if (senderIDTypes.contains(x.getSenderIDTypeValue()))
+				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

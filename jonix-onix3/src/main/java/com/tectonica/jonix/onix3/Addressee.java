@@ -109,7 +109,7 @@ public class Addressee implements Serializable
 			List<AddresseeIdentifierStruct> matches = new ArrayList<>();
 			for (AddresseeIdentifier x : addresseeIdentifiers)
 			{
-				if (addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
+				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

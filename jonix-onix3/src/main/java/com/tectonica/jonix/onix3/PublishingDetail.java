@@ -168,7 +168,7 @@ public class PublishingDetail implements Serializable
 			List<PublishingDateStruct> matches = new ArrayList<>();
 			for (PublishingDate x : publishingDates)
 			{
-				if (publishingDateRoles.contains(x.getPublishingDateRoleValue()))
+				if (publishingDateRoles == null || publishingDateRoles.contains(x.getPublishingDateRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

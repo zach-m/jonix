@@ -215,7 +215,7 @@ public class SubSeriesRecord implements Serializable
 			List<SeriesIdentifierStruct> matches = new ArrayList<>();
 			for (SeriesIdentifier x : seriesIdentifiers)
 			{
-				if (seriesIDTypes.contains(x.getSeriesIDTypeValue()))
+				if (seriesIDTypes == null || seriesIDTypes.contains(x.getSeriesIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -243,7 +243,7 @@ public class SubSeriesRecord implements Serializable
 			List<TitleStruct> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
-				if (titleTypes.contains(x.getTitleTypeValue()))
+				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -271,7 +271,7 @@ public class SubSeriesRecord implements Serializable
 			List<OtherTextStruct> matches = new ArrayList<>();
 			for (OtherText x : otherTexts)
 			{
-				if (textTypeCodes.contains(x.getTextTypeCodeValue()))
+				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

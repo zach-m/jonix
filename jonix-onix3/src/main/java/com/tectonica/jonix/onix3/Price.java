@@ -219,7 +219,7 @@ public class Price implements Serializable
 			List<PriceIdentifierStruct> matches = new ArrayList<>();
 			for (PriceIdentifier x : priceIdentifiers)
 			{
-				if (priceIDTypes.contains(x.getPriceIDTypeValue()))
+				if (priceIDTypes == null || priceIDTypes.contains(x.getPriceIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -247,7 +247,7 @@ public class Price implements Serializable
 			List<DiscountCodedStruct> matches = new ArrayList<>();
 			for (DiscountCoded x : discountCodeds)
 			{
-				if (discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
+				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -275,7 +275,7 @@ public class Price implements Serializable
 			List<PriceDateStruct> matches = new ArrayList<>();
 			for (PriceDate x : priceDates)
 			{
-				if (priceDateRoles.contains(x.getPriceDateRoleValue()))
+				if (priceDateRoles == null || priceDateRoles.contains(x.getPriceDateRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

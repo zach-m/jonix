@@ -101,7 +101,7 @@ public class CopyrightOwner implements Serializable
 			List<CopyrightOwnerIdentifierStruct> matches = new ArrayList<>();
 			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
 			{
-				if (copyrightOwnerIDTypes.contains(x.getCopyrightOwnerIDTypeValue()))
+				if (copyrightOwnerIDTypes == null || copyrightOwnerIDTypes.contains(x.getCopyrightOwnerIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

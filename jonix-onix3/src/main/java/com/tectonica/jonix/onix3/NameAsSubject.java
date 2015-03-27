@@ -190,7 +190,7 @@ public class NameAsSubject implements Serializable
 			List<NameIdentifierStruct> matches = new ArrayList<>();
 			for (NameIdentifier x : nameIdentifiers)
 			{
-				if (nameIDTypes.contains(x.getNameIDTypeValue()))
+				if (nameIDTypes == null || nameIDTypes.contains(x.getNameIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

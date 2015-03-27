@@ -197,7 +197,7 @@ public class ContentItem implements Serializable
 			List<TitleStruct> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
-				if (titleTypes.contains(x.getTitleTypeValue()))
+				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -225,7 +225,7 @@ public class ContentItem implements Serializable
 			List<WorkIdentifierStruct> matches = new ArrayList<>();
 			for (WorkIdentifier x : workIdentifiers)
 			{
-				if (workIDTypes.contains(x.getWorkIDTypeValue()))
+				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -253,7 +253,7 @@ public class ContentItem implements Serializable
 			List<OtherTextStruct> matches = new ArrayList<>();
 			for (OtherText x : otherTexts)
 			{
-				if (textTypeCodes.contains(x.getTextTypeCodeValue()))
+				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -281,7 +281,7 @@ public class ContentItem implements Serializable
 			List<MediaFileStruct> matches = new ArrayList<>();
 			for (MediaFile x : mediaFiles)
 			{
-				if (mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
+				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

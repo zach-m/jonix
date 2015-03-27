@@ -115,7 +115,7 @@ public class ResourceVersion implements Serializable
 			List<ResourceVersionFeatureStruct> matches = new ArrayList<>();
 			for (ResourceVersionFeature x : resourceVersionFeatures)
 			{
-				if (resourceVersionFeatureTypes.contains(x.getResourceVersionFeatureTypeValue()))
+				if (resourceVersionFeatureTypes == null || resourceVersionFeatureTypes.contains(x.getResourceVersionFeatureTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -143,7 +143,7 @@ public class ResourceVersion implements Serializable
 			List<ContentDateStruct> matches = new ArrayList<>();
 			for (ContentDate x : contentDates)
 			{
-				if (contentDateRoles.contains(x.getContentDateRoleValue()))
+				if (contentDateRoles == null || contentDateRoles.contains(x.getContentDateRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

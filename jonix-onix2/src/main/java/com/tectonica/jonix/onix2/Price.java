@@ -315,7 +315,7 @@ public class Price implements Serializable
 			List<DiscountCodedStruct> matches = new ArrayList<>();
 			for (DiscountCoded x : discountCodeds)
 			{
-				if (discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
+				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

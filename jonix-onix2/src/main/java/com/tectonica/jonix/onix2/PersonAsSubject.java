@@ -180,7 +180,7 @@ public class PersonAsSubject implements Serializable
 			List<PersonNameIdentifierStruct> matches = new ArrayList<>();
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
-				if (personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
+				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

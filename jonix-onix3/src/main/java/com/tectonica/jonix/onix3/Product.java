@@ -159,7 +159,7 @@ public class Product implements Serializable
 			List<RecordSourceIdentifierStruct> matches = new ArrayList<>();
 			for (RecordSourceIdentifier x : recordSourceIdentifiers)
 			{
-				if (recordSourceIDTypes.contains(x.getRecordSourceIDTypeValue()))
+				if (recordSourceIDTypes == null || recordSourceIDTypes.contains(x.getRecordSourceIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -187,7 +187,7 @@ public class Product implements Serializable
 			List<ProductIdentifierStruct> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
-				if (productIDTypes.contains(x.getProductIDTypeValue()))
+				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

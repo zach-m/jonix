@@ -122,7 +122,7 @@ public class SupportingResource implements Serializable
 			List<ResourceFeatureStruct> matches = new ArrayList<>();
 			for (ResourceFeature x : resourceFeatures)
 			{
-				if (resourceFeatureTypes.contains(x.getResourceFeatureTypeValue()))
+				if (resourceFeatureTypes == null || resourceFeatureTypes.contains(x.getResourceFeatureTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

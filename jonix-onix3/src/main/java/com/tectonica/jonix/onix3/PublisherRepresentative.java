@@ -150,7 +150,7 @@ public class PublisherRepresentative implements Serializable
 			List<AgentIdentifierStruct> matches = new ArrayList<>();
 			for (AgentIdentifier x : agentIdentifiers)
 			{
-				if (agentIDTypes.contains(x.getAgentIDTypeValue()))
+				if (agentIDTypes == null || agentIDTypes.contains(x.getAgentIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

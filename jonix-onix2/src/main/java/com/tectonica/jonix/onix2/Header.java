@@ -257,7 +257,7 @@ public class Header implements Serializable
 			List<SenderIdentifierStruct> matches = new ArrayList<>();
 			for (SenderIdentifier x : senderIdentifiers)
 			{
-				if (senderIDTypes.contains(x.getSenderIDTypeValue()))
+				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -285,7 +285,7 @@ public class Header implements Serializable
 			List<AddresseeIdentifierStruct> matches = new ArrayList<>();
 			for (AddresseeIdentifier x : addresseeIdentifiers)
 			{
-				if (addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
+				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

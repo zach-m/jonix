@@ -138,7 +138,7 @@ public class NewSupplier implements Serializable
 			List<SupplierIdentifierStruct> matches = new ArrayList<>();
 			for (SupplierIdentifier x : supplierIdentifiers)
 			{
-				if (supplierIDTypes.contains(x.getSupplierIDTypeValue()))
+				if (supplierIDTypes == null || supplierIDTypes.contains(x.getSupplierIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

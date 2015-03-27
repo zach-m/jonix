@@ -118,7 +118,7 @@ public class ProductContact implements Serializable
 			List<ProductContactIdentifierStruct> matches = new ArrayList<>();
 			for (ProductContactIdentifier x : productContactIdentifiers)
 			{
-				if (productContactIDTypes.contains(x.getProductContactIDTypeValue()))
+				if (productContactIDTypes == null || productContactIDTypes.contains(x.getProductContactIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

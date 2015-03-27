@@ -1263,7 +1263,7 @@ public class Product implements Serializable
 			List<ProductIdentifierStruct> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
-				if (productIDTypes.contains(x.getProductIDTypeValue()))
+				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1291,7 +1291,7 @@ public class Product implements Serializable
 			List<TitleStruct> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
-				if (titleTypes.contains(x.getTitleTypeValue()))
+				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1319,7 +1319,7 @@ public class Product implements Serializable
 			List<WorkIdentifierStruct> matches = new ArrayList<>();
 			for (WorkIdentifier x : workIdentifiers)
 			{
-				if (workIDTypes.contains(x.getWorkIDTypeValue()))
+				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1347,7 +1347,7 @@ public class Product implements Serializable
 			List<LanguageStruct> matches = new ArrayList<>();
 			for (Language x : languages)
 			{
-				if (languageRoles.contains(x.getLanguageRoleValue()))
+				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1375,7 +1375,7 @@ public class Product implements Serializable
 			List<IllustrationsStruct> matches = new ArrayList<>();
 			for (Illustrations x : illustrationss)
 			{
-				if (illustrationTypes.contains(x.getIllustrationTypeValue()))
+				if (illustrationTypes == null || illustrationTypes.contains(x.getIllustrationTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1403,7 +1403,7 @@ public class Product implements Serializable
 			List<AudienceStruct> matches = new ArrayList<>();
 			for (Audience x : audiences)
 			{
-				if (audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
+				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1431,7 +1431,7 @@ public class Product implements Serializable
 			List<OtherTextStruct> matches = new ArrayList<>();
 			for (OtherText x : otherTexts)
 			{
-				if (textTypeCodes.contains(x.getTextTypeCodeValue()))
+				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1459,7 +1459,7 @@ public class Product implements Serializable
 			List<MediaFileStruct> matches = new ArrayList<>();
 			for (MediaFile x : mediaFiles)
 			{
-				if (mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
+				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1487,7 +1487,7 @@ public class Product implements Serializable
 			List<ImprintStruct> matches = new ArrayList<>();
 			for (Imprint x : imprints)
 			{
-				if (nameCodeTypes.contains(x.getNameCodeTypeValue()))
+				if (nameCodeTypes == null || nameCodeTypes.contains(x.getNameCodeTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -1515,7 +1515,7 @@ public class Product implements Serializable
 			List<SalesRightsStruct> matches = new ArrayList<>();
 			for (SalesRights x : salesRightss)
 			{
-				if (salesRightsTypes.contains(x.getSalesRightsTypeValue()))
+				if (salesRightsTypes == null || salesRightsTypes.contains(x.getSalesRightsTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

@@ -166,7 +166,7 @@ public class Set implements Serializable
 			List<ProductIdentifierStruct> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
-				if (productIDTypes.contains(x.getProductIDTypeValue()))
+				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -194,7 +194,7 @@ public class Set implements Serializable
 			List<TitleStruct> matches = new ArrayList<>();
 			for (Title x : titles)
 			{
-				if (titleTypes.contains(x.getTitleTypeValue()))
+				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

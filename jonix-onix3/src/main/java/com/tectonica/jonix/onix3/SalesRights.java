@@ -108,7 +108,7 @@ public class SalesRights implements Serializable
 			List<ProductIdentifierStruct> matches = new ArrayList<>();
 			for (ProductIdentifier x : productIdentifiers)
 			{
-				if (productIDTypes.contains(x.getProductIDTypeValue()))
+				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

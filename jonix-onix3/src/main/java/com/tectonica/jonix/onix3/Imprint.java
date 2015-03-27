@@ -93,7 +93,7 @@ public class Imprint implements Serializable
 			List<ImprintIdentifierStruct> matches = new ArrayList<>();
 			for (ImprintIdentifier x : imprintIdentifiers)
 			{
-				if (imprintIDTypes.contains(x.getImprintIDTypeValue()))
+				if (imprintIDTypes == null || imprintIDTypes.contains(x.getImprintIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

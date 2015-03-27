@@ -101,7 +101,7 @@ public class ConferenceSponsor implements Serializable
 			List<ConferenceSponsorIdentifierStruct> matches = new ArrayList<>();
 			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
 			{
-				if (conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
+				if (conferenceSponsorIDTypes == null || conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;

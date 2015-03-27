@@ -318,7 +318,7 @@ public class Contributor implements Serializable
 			List<PersonNameIdentifierStruct> matches = new ArrayList<>();
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
-				if (personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
+				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
@@ -346,7 +346,7 @@ public class Contributor implements Serializable
 			List<PersonDateStruct> matches = new ArrayList<>();
 			for (PersonDate x : personDates)
 			{
-				if (personDateRoles.contains(x.getPersonDateRoleValue()))
+				if (personDateRoles == null || personDateRoles.contains(x.getPersonDateRoleValue()))
 					matches.add(x.asStruct());
 			}
 			return matches;
