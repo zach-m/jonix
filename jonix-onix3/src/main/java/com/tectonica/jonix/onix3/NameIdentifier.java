@@ -84,7 +84,7 @@ public class NameIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixNameIdentifier asStruct()
+	public JonixNameIdentifier asJonixNameIdentifier()
 	{
 		JonixNameIdentifier x = new JonixNameIdentifier();
 		x.idTypeName = getIDTypeNameValue();

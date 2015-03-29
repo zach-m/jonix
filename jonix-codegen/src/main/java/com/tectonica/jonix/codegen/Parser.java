@@ -576,7 +576,8 @@ public class Parser
 
 	public void postAnalysis()
 	{
-		classesLoop: for (OnixContentClass occ : meta.contentClassesMap.values())
+		// we're traversing all content-classes, looking for those that have ONLY value-class members
+		classesLoop: for (OnixContentClass occ : meta.getContentClasses())
 		{
 			OnixStruct struct = new OnixStruct(occ);
 			for (OnixContentClassMember m : occ.members)
@@ -607,7 +608,11 @@ public class Parser
 					continue classesLoop; // no need to check the rest of the members once we find a non-value member
 			}
 			if (struct.key != null && struct.members.size() > 0)
-				meta.structsMap.put(occ.name, struct);
+			{
+				final OnixStruct existing = meta.structsMap.put(occ.name, struct);
+				if (existing != null)
+					throw new RuntimeException("ValueClass is referenced by more than one ContentClass");
+			}
 		}
 	}
 }

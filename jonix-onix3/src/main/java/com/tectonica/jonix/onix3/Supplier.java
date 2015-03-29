@@ -137,7 +137,7 @@ public class Supplier implements Serializable
 			for (SupplierIdentifier x : supplierIdentifiers)
 			{
 				if (x.getSupplierIDTypeValue() == supplierIDType)
-					return x.asStruct();
+					return x.asJonixSupplierIdentifier();
 			}
 		}
 		return null;
@@ -151,7 +151,7 @@ public class Supplier implements Serializable
 			for (SupplierIdentifier x : supplierIdentifiers)
 			{
 				if (supplierIDTypes == null || supplierIDTypes.contains(x.getSupplierIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSupplierIdentifier());
 			}
 			return matches;
 		}

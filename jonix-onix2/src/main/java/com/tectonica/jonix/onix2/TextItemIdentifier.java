@@ -96,7 +96,7 @@ public class TextItemIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixTextItemIdentifier asStruct()
+	public JonixTextItemIdentifier asJonixTextItemIdentifier()
 	{
 		JonixTextItemIdentifier x = new JonixTextItemIdentifier();
 		x.idTypeName = getIDTypeNameValue();

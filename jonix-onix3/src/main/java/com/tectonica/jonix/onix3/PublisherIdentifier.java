@@ -84,7 +84,7 @@ public class PublisherIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixPublisherIdentifier asStruct()
+	public JonixPublisherIdentifier asJonixPublisherIdentifier()
 	{
 		JonixPublisherIdentifier x = new JonixPublisherIdentifier();
 		x.idTypeName = getIDTypeNameValue();

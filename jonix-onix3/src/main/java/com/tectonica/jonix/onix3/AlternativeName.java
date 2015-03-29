@@ -177,7 +177,7 @@ public class AlternativeName implements Serializable
 			for (NameIdentifier x : nameIdentifiers)
 			{
 				if (x.getNameIDTypeValue() == nameIDType)
-					return x.asStruct();
+					return x.asJonixNameIdentifier();
 			}
 		}
 		return null;
@@ -191,7 +191,7 @@ public class AlternativeName implements Serializable
 			for (NameIdentifier x : nameIdentifiers)
 			{
 				if (nameIDTypes == null || nameIDTypes.contains(x.getNameIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixNameIdentifier());
 			}
 			return matches;
 		}

@@ -85,7 +85,7 @@ public class MarketDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixMarketDate asStruct()
+	public JonixMarketDate asJonixMarketDate()
 	{
 		JonixMarketDate x = new JonixMarketDate();
 		x.dateFormat = getDateFormatValue();

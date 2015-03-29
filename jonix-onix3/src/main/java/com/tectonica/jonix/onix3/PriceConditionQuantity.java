@@ -85,7 +85,7 @@ public class PriceConditionQuantity implements Serializable
 		return (quantityUnit == null) ? null : quantityUnit.value;
 	}
 
-	public JonixPriceConditionQuantity asStruct()
+	public JonixPriceConditionQuantity asJonixPriceConditionQuantity()
 	{
 		JonixPriceConditionQuantity x = new JonixPriceConditionQuantity();
 		x.quantity = getQuantityValue();

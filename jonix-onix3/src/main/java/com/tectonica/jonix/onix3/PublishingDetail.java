@@ -155,7 +155,7 @@ public class PublishingDetail implements Serializable
 			for (PublishingDate x : publishingDates)
 			{
 				if (x.getPublishingDateRoleValue() == publishingDateRole)
-					return x.asStruct();
+					return x.asJonixPublishingDate();
 			}
 		}
 		return null;
@@ -169,7 +169,7 @@ public class PublishingDetail implements Serializable
 			for (PublishingDate x : publishingDates)
 			{
 				if (publishingDateRoles == null || publishingDateRoles.contains(x.getPublishingDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPublishingDate());
 			}
 			return matches;
 		}

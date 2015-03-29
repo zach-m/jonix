@@ -122,7 +122,7 @@ public class Stock implements Serializable
 			for (StockQuantityCoded x : stockQuantityCodeds)
 			{
 				if (x.getStockQuantityCodeTypeValue() == stockQuantityCodeType)
-					return x.asStruct();
+					return x.asJonixStockQuantityCoded();
 			}
 		}
 		return null;
@@ -136,7 +136,7 @@ public class Stock implements Serializable
 			for (StockQuantityCoded x : stockQuantityCodeds)
 			{
 				if (stockQuantityCodeTypes == null || stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixStockQuantityCoded());
 			}
 			return matches;
 		}

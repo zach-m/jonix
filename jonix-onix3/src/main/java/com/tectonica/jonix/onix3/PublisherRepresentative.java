@@ -137,7 +137,7 @@ public class PublisherRepresentative implements Serializable
 			for (AgentIdentifier x : agentIdentifiers)
 			{
 				if (x.getAgentIDTypeValue() == agentIDType)
-					return x.asStruct();
+					return x.asJonixAgentIdentifier();
 			}
 		}
 		return null;
@@ -151,7 +151,7 @@ public class PublisherRepresentative implements Serializable
 			for (AgentIdentifier x : agentIdentifiers)
 			{
 				if (agentIDTypes == null || agentIDTypes.contains(x.getAgentIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixAgentIdentifier());
 			}
 			return matches;
 		}

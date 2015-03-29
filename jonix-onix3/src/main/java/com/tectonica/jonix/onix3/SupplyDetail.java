@@ -131,7 +131,7 @@ public class SupplyDetail implements Serializable
 			for (SupplierOwnCoding x : supplierOwnCodings)
 			{
 				if (x.getSupplierCodeTypeValue() == supplierCodeType)
-					return x.asStruct();
+					return x.asJonixSupplierOwnCoding();
 			}
 		}
 		return null;
@@ -145,7 +145,7 @@ public class SupplyDetail implements Serializable
 			for (SupplierOwnCoding x : supplierOwnCodings)
 			{
 				if (supplierCodeTypes == null || supplierCodeTypes.contains(x.getSupplierCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSupplierOwnCoding());
 			}
 			return matches;
 		}
@@ -159,7 +159,7 @@ public class SupplyDetail implements Serializable
 			for (ReturnsConditions x : returnsConditionss)
 			{
 				if (x.getReturnsCodeTypeValue() == returnsCodeType)
-					return x.asStruct();
+					return x.asJonixReturnsConditions();
 			}
 		}
 		return null;
@@ -173,7 +173,7 @@ public class SupplyDetail implements Serializable
 			for (ReturnsConditions x : returnsConditionss)
 			{
 				if (returnsCodeTypes == null || returnsCodeTypes.contains(x.getReturnsCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixReturnsConditions());
 			}
 			return matches;
 		}
@@ -187,7 +187,7 @@ public class SupplyDetail implements Serializable
 			for (SupplyDate x : supplyDates)
 			{
 				if (x.getSupplyDateRoleValue() == supplyDateRole)
-					return x.asStruct();
+					return x.asJonixSupplyDate();
 			}
 		}
 		return null;
@@ -201,7 +201,7 @@ public class SupplyDetail implements Serializable
 			for (SupplyDate x : supplyDates)
 			{
 				if (supplyDateRoles == null || supplyDateRoles.contains(x.getSupplyDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSupplyDate());
 			}
 			return matches;
 		}

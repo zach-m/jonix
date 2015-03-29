@@ -185,7 +185,7 @@ public class MarketPublishingDetail implements Serializable
 			for (MarketDate x : marketDates)
 			{
 				if (x.getMarketDateRoleValue() == marketDateRole)
-					return x.asStruct();
+					return x.asJonixMarketDate();
 			}
 		}
 		return null;
@@ -199,7 +199,7 @@ public class MarketPublishingDetail implements Serializable
 			for (MarketDate x : marketDates)
 			{
 				if (marketDateRoles == null || marketDateRoles.contains(x.getMarketDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixMarketDate());
 			}
 			return matches;
 		}

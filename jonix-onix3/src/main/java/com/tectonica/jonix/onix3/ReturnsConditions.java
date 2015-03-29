@@ -84,7 +84,7 @@ public class ReturnsConditions implements Serializable
 		return (returnsCode == null) ? null : returnsCode.value;
 	}
 
-	public JonixReturnsConditions asStruct()
+	public JonixReturnsConditions asJonixReturnsConditions()
 	{
 		JonixReturnsConditions x = new JonixReturnsConditions();
 		x.returnsCodeTypeName = getReturnsCodeTypeNameValue();

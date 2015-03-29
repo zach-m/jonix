@@ -104,7 +104,7 @@ public class Imprint implements Serializable
 		return (nameCodeValue == null) ? null : nameCodeValue.value;
 	}
 
-	public JonixImprint asStruct()
+	public JonixImprint asJonixImprint()
 	{
 		JonixImprint x = new JonixImprint();
 		x.imprintName = getImprintNameValue();

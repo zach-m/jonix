@@ -86,7 +86,7 @@ public class PriceCondition implements Serializable
 			for (PriceConditionQuantity x : priceConditionQuantitys)
 			{
 				if (x.getPriceConditionQuantityTypeValue() == priceConditionQuantityType)
-					return x.asStruct();
+					return x.asJonixPriceConditionQuantity();
 			}
 		}
 		return null;
@@ -101,7 +101,7 @@ public class PriceCondition implements Serializable
 			for (PriceConditionQuantity x : priceConditionQuantitys)
 			{
 				if (priceConditionQuantityTypes == null || priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPriceConditionQuantity());
 			}
 			return matches;
 		}
@@ -115,7 +115,7 @@ public class PriceCondition implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (x.getProductIDTypeValue() == productIDType)
-					return x.asStruct();
+					return x.asJonixProductIdentifier();
 			}
 		}
 		return null;
@@ -129,7 +129,7 @@ public class PriceCondition implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixProductIdentifier());
 			}
 			return matches;
 		}

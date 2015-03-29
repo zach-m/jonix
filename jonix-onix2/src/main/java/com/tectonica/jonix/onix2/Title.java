@@ -128,7 +128,7 @@ public class Title implements Serializable
 		return (subtitle == null) ? null : subtitle.value;
 	}
 
-	public JonixTitle asStruct()
+	public JonixTitle asJonixTitle()
 	{
 		JonixTitle x = new JonixTitle();
 		x.abbreviatedLength = getAbbreviatedLengthValue();

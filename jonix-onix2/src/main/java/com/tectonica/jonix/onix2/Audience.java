@@ -96,7 +96,7 @@ public class Audience implements Serializable
 		return (audienceCodeValue == null) ? null : audienceCodeValue.value;
 	}
 
-	public JonixAudience asStruct()
+	public JonixAudience asJonixAudience()
 	{
 		JonixAudience x = new JonixAudience();
 		x.audienceCodeTypeName = getAudienceCodeTypeNameValue();

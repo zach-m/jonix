@@ -96,7 +96,7 @@ public class DiscountCoded implements Serializable
 		return (discountCode == null) ? null : discountCode.value;
 	}
 
-	public JonixDiscountCoded asStruct()
+	public JonixDiscountCoded asJonixDiscountCoded()
 	{
 		JonixDiscountCoded x = new JonixDiscountCoded();
 		x.discountCodeTypeName = getDiscountCodeTypeNameValue();

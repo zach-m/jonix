@@ -97,7 +97,7 @@ public class Language implements Serializable
 		return (countryCode == null) ? null : countryCode.value;
 	}
 
-	public JonixLanguage asStruct()
+	public JonixLanguage asJonixLanguage()
 	{
 		JonixLanguage x = new JonixLanguage();
 		x.languageCode = getLanguageCodeValue();

@@ -87,7 +87,7 @@ public class EpubLicense implements Serializable
 			for (EpubLicenseExpression x : epubLicenseExpressions)
 			{
 				if (x.getEpubLicenseExpressionTypeValue() == epubLicenseExpressionType)
-					return x.asStruct();
+					return x.asJonixEpubLicenseExpression();
 			}
 		}
 		return null;
@@ -101,7 +101,7 @@ public class EpubLicense implements Serializable
 			for (EpubLicenseExpression x : epubLicenseExpressions)
 			{
 				if (epubLicenseExpressionTypes == null || epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixEpubLicenseExpression());
 			}
 			return matches;
 		}

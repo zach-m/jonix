@@ -84,7 +84,7 @@ public class SupplierIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixSupplierIdentifier asStruct()
+	public JonixSupplierIdentifier asJonixSupplierIdentifier()
 	{
 		JonixSupplierIdentifier x = new JonixSupplierIdentifier();
 		x.idTypeName = getIDTypeNameValue();

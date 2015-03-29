@@ -97,7 +97,7 @@ public class PersonDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixPersonDate asStruct()
+	public JonixPersonDate asJonixPersonDate()
 	{
 		JonixPersonDate x = new JonixPersonDate();
 		x.dateFormat = getDateFormatValue();

@@ -101,7 +101,7 @@ public class ResourceVersion implements Serializable
 			for (ResourceVersionFeature x : resourceVersionFeatures)
 			{
 				if (x.getResourceVersionFeatureTypeValue() == resourceVersionFeatureType)
-					return x.asStruct();
+					return x.asJonixResourceVersionFeature();
 			}
 		}
 		return null;
@@ -116,7 +116,7 @@ public class ResourceVersion implements Serializable
 			for (ResourceVersionFeature x : resourceVersionFeatures)
 			{
 				if (resourceVersionFeatureTypes == null || resourceVersionFeatureTypes.contains(x.getResourceVersionFeatureTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixResourceVersionFeature());
 			}
 			return matches;
 		}
@@ -130,7 +130,7 @@ public class ResourceVersion implements Serializable
 			for (ContentDate x : contentDates)
 			{
 				if (x.getContentDateRoleValue() == contentDateRole)
-					return x.asStruct();
+					return x.asJonixContentDate();
 			}
 		}
 		return null;
@@ -144,7 +144,7 @@ public class ResourceVersion implements Serializable
 			for (ContentDate x : contentDates)
 			{
 				if (contentDateRoles == null || contentDateRoles.contains(x.getContentDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixContentDate());
 			}
 			return matches;
 		}

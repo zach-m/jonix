@@ -84,7 +84,7 @@ public class RecordSourceIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixRecordSourceIdentifier asStruct()
+	public JonixRecordSourceIdentifier asJonixRecordSourceIdentifier()
 	{
 		JonixRecordSourceIdentifier x = new JonixRecordSourceIdentifier();
 		x.idTypeName = getIDTypeNameValue();

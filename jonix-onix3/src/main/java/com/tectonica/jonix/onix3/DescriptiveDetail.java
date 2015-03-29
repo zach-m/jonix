@@ -420,7 +420,7 @@ public class DescriptiveDetail implements Serializable
 			for (Language x : languages)
 			{
 				if (x.getLanguageRoleValue() == languageRole)
-					return x.asStruct();
+					return x.asJonixLanguage();
 			}
 		}
 		return null;
@@ -434,7 +434,7 @@ public class DescriptiveDetail implements Serializable
 			for (Language x : languages)
 			{
 				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixLanguage());
 			}
 			return matches;
 		}
@@ -448,7 +448,7 @@ public class DescriptiveDetail implements Serializable
 			for (AncillaryContent x : ancillaryContents)
 			{
 				if (x.getAncillaryContentTypeValue() == ancillaryContentType)
-					return x.asStruct();
+					return x.asJonixAncillaryContent();
 			}
 		}
 		return null;
@@ -462,7 +462,7 @@ public class DescriptiveDetail implements Serializable
 			for (AncillaryContent x : ancillaryContents)
 			{
 				if (ancillaryContentTypes == null || ancillaryContentTypes.contains(x.getAncillaryContentTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixAncillaryContent());
 			}
 			return matches;
 		}
@@ -476,7 +476,7 @@ public class DescriptiveDetail implements Serializable
 			for (Audience x : audiences)
 			{
 				if (x.getAudienceCodeTypeValue() == audienceCodeType)
-					return x.asStruct();
+					return x.asJonixAudience();
 			}
 		}
 		return null;
@@ -490,7 +490,7 @@ public class DescriptiveDetail implements Serializable
 			for (Audience x : audiences)
 			{
 				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixAudience());
 			}
 			return matches;
 		}

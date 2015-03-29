@@ -85,7 +85,7 @@ public class PublishingDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixPublishingDate asStruct()
+	public JonixPublishingDate asJonixPublishingDate()
 	{
 		JonixPublishingDate x = new JonixPublishingDate();
 		x.dateFormat = getDateFormatValue();

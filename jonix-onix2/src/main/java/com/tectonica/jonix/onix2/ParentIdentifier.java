@@ -96,7 +96,7 @@ public class ParentIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixParentIdentifier asStruct()
+	public JonixParentIdentifier asJonixParentIdentifier()
 	{
 		JonixParentIdentifier x = new JonixParentIdentifier();
 		x.idTypeName = getIDTypeNameValue();

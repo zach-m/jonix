@@ -123,7 +123,7 @@ public class SalesRights implements Serializable
 		return null;
 	}
 
-	public JonixSalesRights asStruct()
+	public JonixSalesRights asJonixSalesRights()
 	{
 		JonixSalesRights x = new JonixSalesRights();
 		x.rightsCountrys = getRightsCountrySets();

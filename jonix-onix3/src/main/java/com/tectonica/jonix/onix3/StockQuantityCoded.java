@@ -84,7 +84,7 @@ public class StockQuantityCoded implements Serializable
 		return (stockQuantityCode == null) ? null : stockQuantityCode.value;
 	}
 
-	public JonixStockQuantityCoded asStruct()
+	public JonixStockQuantityCoded asJonixStockQuantityCoded()
 	{
 		JonixStockQuantityCoded x = new JonixStockQuantityCoded();
 		x.stockQuantityCodeTypeName = getStockQuantityCodeTypeNameValue();

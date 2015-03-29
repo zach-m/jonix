@@ -161,7 +161,7 @@ public class OtherText implements Serializable
 		return (endDate == null) ? null : endDate.value;
 	}
 
-	public JonixOtherText asStruct()
+	public JonixOtherText asJonixOtherText()
 	{
 		JonixOtherText x = new JonixOtherText();
 		x.textFormat = getTextFormatValue();

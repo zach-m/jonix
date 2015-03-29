@@ -84,7 +84,7 @@ public class AgentIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixAgentIdentifier asStruct()
+	public JonixAgentIdentifier asJonixAgentIdentifier()
 	{
 		JonixAgentIdentifier x = new JonixAgentIdentifier();
 		x.idTypeName = getIDTypeNameValue();

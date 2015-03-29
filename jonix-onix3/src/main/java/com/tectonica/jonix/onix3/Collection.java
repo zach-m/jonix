@@ -115,7 +115,7 @@ public class Collection implements Serializable
 			for (CollectionIdentifier x : collectionIdentifiers)
 			{
 				if (x.getCollectionIDTypeValue() == collectionIDType)
-					return x.asStruct();
+					return x.asJonixCollectionIdentifier();
 			}
 		}
 		return null;
@@ -129,7 +129,7 @@ public class Collection implements Serializable
 			for (CollectionIdentifier x : collectionIdentifiers)
 			{
 				if (collectionIDTypes == null || collectionIDTypes.contains(x.getCollectionIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixCollectionIdentifier());
 			}
 			return matches;
 		}
@@ -143,7 +143,7 @@ public class Collection implements Serializable
 			for (CollectionSequence x : collectionSequences)
 			{
 				if (x.getCollectionSequenceTypeValue() == collectionSequenceType)
-					return x.asStruct();
+					return x.asJonixCollectionSequence();
 			}
 		}
 		return null;
@@ -157,7 +157,7 @@ public class Collection implements Serializable
 			for (CollectionSequence x : collectionSequences)
 			{
 				if (collectionSequenceTypes == null || collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixCollectionSequence());
 			}
 			return matches;
 		}

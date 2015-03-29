@@ -85,7 +85,7 @@ public class ContributorDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixContributorDate asStruct()
+	public JonixContributorDate asJonixContributorDate()
 	{
 		JonixContributorDate x = new JonixContributorDate();
 		x.dateFormat = getDateFormatValue();

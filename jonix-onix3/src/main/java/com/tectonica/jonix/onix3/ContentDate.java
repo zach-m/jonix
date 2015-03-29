@@ -85,7 +85,7 @@ public class ContentDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixContentDate asStruct()
+	public JonixContentDate asJonixContentDate()
 	{
 		JonixContentDate x = new JonixContentDate();
 		x.dateFormat = getDateFormatValue();

@@ -80,7 +80,7 @@ public class SalesOutlet implements Serializable
 			for (SalesOutletIdentifier x : salesOutletIdentifiers)
 			{
 				if (x.getSalesOutletIDTypeValue() == salesOutletIDType)
-					return x.asStruct();
+					return x.asJonixSalesOutletIdentifier();
 			}
 		}
 		return null;
@@ -94,7 +94,7 @@ public class SalesOutlet implements Serializable
 			for (SalesOutletIdentifier x : salesOutletIdentifiers)
 			{
 				if (salesOutletIDTypes == null || salesOutletIDTypes.contains(x.getSalesOutletIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSalesOutletIdentifier());
 			}
 			return matches;
 		}

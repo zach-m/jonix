@@ -132,7 +132,7 @@ public class Series implements Serializable
 			for (SeriesIdentifier x : seriesIdentifiers)
 			{
 				if (x.getSeriesIDTypeValue() == seriesIDType)
-					return x.asStruct();
+					return x.asJonixSeriesIdentifier();
 			}
 		}
 		return null;
@@ -146,7 +146,7 @@ public class Series implements Serializable
 			for (SeriesIdentifier x : seriesIdentifiers)
 			{
 				if (seriesIDTypes == null || seriesIDTypes.contains(x.getSeriesIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSeriesIdentifier());
 			}
 			return matches;
 		}
@@ -160,7 +160,7 @@ public class Series implements Serializable
 			for (Title x : titles)
 			{
 				if (x.getTitleTypeValue() == titleType)
-					return x.asStruct();
+					return x.asJonixTitle();
 			}
 		}
 		return null;
@@ -174,7 +174,7 @@ public class Series implements Serializable
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixTitle());
 			}
 			return matches;
 		}

@@ -305,7 +305,7 @@ public class Contributor implements Serializable
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
 				if (x.getPersonNameIDTypeValue() == personNameIDType)
-					return x.asStruct();
+					return x.asJonixPersonNameIdentifier();
 			}
 		}
 		return null;
@@ -319,7 +319,7 @@ public class Contributor implements Serializable
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
 				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPersonNameIdentifier());
 			}
 			return matches;
 		}
@@ -333,7 +333,7 @@ public class Contributor implements Serializable
 			for (PersonDate x : personDates)
 			{
 				if (x.getPersonDateRoleValue() == personDateRole)
-					return x.asStruct();
+					return x.asJonixPersonDate();
 			}
 		}
 		return null;
@@ -347,7 +347,7 @@ public class Contributor implements Serializable
 			for (PersonDate x : personDates)
 			{
 				if (personDateRoles == null || personDateRoles.contains(x.getPersonDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPersonDate());
 			}
 			return matches;
 		}

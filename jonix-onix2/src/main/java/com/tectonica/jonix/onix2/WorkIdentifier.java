@@ -96,7 +96,7 @@ public class WorkIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixWorkIdentifier asStruct()
+	public JonixWorkIdentifier asJonixWorkIdentifier()
 	{
 		JonixWorkIdentifier x = new JonixWorkIdentifier();
 		x.idTypeName = getIDTypeNameValue();

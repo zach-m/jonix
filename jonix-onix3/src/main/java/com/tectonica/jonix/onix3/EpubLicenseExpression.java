@@ -84,7 +84,7 @@ public class EpubLicenseExpression implements Serializable
 		return (epubLicenseExpressionLink == null) ? null : epubLicenseExpressionLink.value;
 	}
 
-	public JonixEpubLicenseExpression asStruct()
+	public JonixEpubLicenseExpression asJonixEpubLicenseExpression()
 	{
 		JonixEpubLicenseExpression x = new JonixEpubLicenseExpression();
 		x.epubLicenseExpressionTypeName = getEpubLicenseExpressionTypeNameValue();

@@ -84,7 +84,7 @@ public class CollectionIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixCollectionIdentifier asStruct()
+	public JonixCollectionIdentifier asJonixCollectionIdentifier()
 	{
 		JonixCollectionIdentifier x = new JonixCollectionIdentifier();
 		x.idTypeName = getIDTypeNameValue();

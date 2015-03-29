@@ -84,7 +84,7 @@ public class PriceIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixPriceIdentifier asStruct()
+	public JonixPriceIdentifier asJonixPriceIdentifier()
 	{
 		JonixPriceIdentifier x = new JonixPriceIdentifier();
 		x.idTypeName = getIDTypeNameValue();

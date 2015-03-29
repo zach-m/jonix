@@ -184,7 +184,7 @@ public class ContentItem implements Serializable
 			for (Title x : titles)
 			{
 				if (x.getTitleTypeValue() == titleType)
-					return x.asStruct();
+					return x.asJonixTitle();
 			}
 		}
 		return null;
@@ -198,7 +198,7 @@ public class ContentItem implements Serializable
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixTitle());
 			}
 			return matches;
 		}
@@ -212,7 +212,7 @@ public class ContentItem implements Serializable
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (x.getWorkIDTypeValue() == workIDType)
-					return x.asStruct();
+					return x.asJonixWorkIdentifier();
 			}
 		}
 		return null;
@@ -226,7 +226,7 @@ public class ContentItem implements Serializable
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixWorkIdentifier());
 			}
 			return matches;
 		}
@@ -240,7 +240,7 @@ public class ContentItem implements Serializable
 			for (OtherText x : otherTexts)
 			{
 				if (x.getTextTypeCodeValue() == textTypeCode)
-					return x.asStruct();
+					return x.asJonixOtherText();
 			}
 		}
 		return null;
@@ -254,7 +254,7 @@ public class ContentItem implements Serializable
 			for (OtherText x : otherTexts)
 			{
 				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixOtherText());
 			}
 			return matches;
 		}
@@ -268,7 +268,7 @@ public class ContentItem implements Serializable
 			for (MediaFile x : mediaFiles)
 			{
 				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
-					return x.asStruct();
+					return x.asJonixMediaFile();
 			}
 		}
 		return null;
@@ -282,7 +282,7 @@ public class ContentItem implements Serializable
 			for (MediaFile x : mediaFiles)
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixMediaFile());
 			}
 			return matches;
 		}

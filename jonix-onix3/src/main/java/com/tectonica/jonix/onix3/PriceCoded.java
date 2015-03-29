@@ -84,7 +84,7 @@ public class PriceCoded implements Serializable
 		return (priceCode == null) ? null : priceCode.value;
 	}
 
-	public JonixPriceCoded asStruct()
+	public JonixPriceCoded asJonixPriceCoded()
 	{
 		JonixPriceCoded x = new JonixPriceCoded();
 		x.priceCodeTypeName = getPriceCodeTypeNameValue();

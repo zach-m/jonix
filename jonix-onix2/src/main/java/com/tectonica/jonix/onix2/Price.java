@@ -302,7 +302,7 @@ public class Price implements Serializable
 			for (DiscountCoded x : discountCodeds)
 			{
 				if (x.getDiscountCodeTypeValue() == discountCodeType)
-					return x.asStruct();
+					return x.asJonixDiscountCoded();
 			}
 		}
 		return null;
@@ -316,7 +316,7 @@ public class Price implements Serializable
 			for (DiscountCoded x : discountCodeds)
 			{
 				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixDiscountCoded());
 			}
 			return matches;
 		}

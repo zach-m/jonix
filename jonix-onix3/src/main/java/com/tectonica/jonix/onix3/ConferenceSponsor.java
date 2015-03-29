@@ -88,7 +88,7 @@ public class ConferenceSponsor implements Serializable
 			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
 			{
 				if (x.getConferenceSponsorIDTypeValue() == conferenceSponsorIDType)
-					return x.asStruct();
+					return x.asJonixConferenceSponsorIdentifier();
 			}
 		}
 		return null;
@@ -102,7 +102,7 @@ public class ConferenceSponsor implements Serializable
 			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
 			{
 				if (conferenceSponsorIDTypes == null || conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixConferenceSponsorIdentifier());
 			}
 			return matches;
 		}

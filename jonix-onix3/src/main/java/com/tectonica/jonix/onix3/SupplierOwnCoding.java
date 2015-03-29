@@ -84,7 +84,7 @@ public class SupplierOwnCoding implements Serializable
 		return (supplierCodeValue == null) ? null : supplierCodeValue.value;
 	}
 
-	public JonixSupplierOwnCoding asStruct()
+	public JonixSupplierOwnCoding asJonixSupplierOwnCoding()
 	{
 		JonixSupplierOwnCoding x = new JonixSupplierOwnCoding();
 		x.supplierCodeTypeName = getSupplierCodeTypeNameValue();

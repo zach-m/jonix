@@ -1250,7 +1250,7 @@ public class Product implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (x.getProductIDTypeValue() == productIDType)
-					return x.asStruct();
+					return x.asJonixProductIdentifier();
 			}
 		}
 		return null;
@@ -1264,7 +1264,7 @@ public class Product implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixProductIdentifier());
 			}
 			return matches;
 		}
@@ -1278,7 +1278,7 @@ public class Product implements Serializable
 			for (Title x : titles)
 			{
 				if (x.getTitleTypeValue() == titleType)
-					return x.asStruct();
+					return x.asJonixTitle();
 			}
 		}
 		return null;
@@ -1292,7 +1292,7 @@ public class Product implements Serializable
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixTitle());
 			}
 			return matches;
 		}
@@ -1306,7 +1306,7 @@ public class Product implements Serializable
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (x.getWorkIDTypeValue() == workIDType)
-					return x.asStruct();
+					return x.asJonixWorkIdentifier();
 			}
 		}
 		return null;
@@ -1320,7 +1320,7 @@ public class Product implements Serializable
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixWorkIdentifier());
 			}
 			return matches;
 		}
@@ -1334,7 +1334,7 @@ public class Product implements Serializable
 			for (Language x : languages)
 			{
 				if (x.getLanguageRoleValue() == languageRole)
-					return x.asStruct();
+					return x.asJonixLanguage();
 			}
 		}
 		return null;
@@ -1348,7 +1348,7 @@ public class Product implements Serializable
 			for (Language x : languages)
 			{
 				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixLanguage());
 			}
 			return matches;
 		}
@@ -1362,7 +1362,7 @@ public class Product implements Serializable
 			for (Illustrations x : illustrationss)
 			{
 				if (x.getIllustrationTypeValue() == illustrationType)
-					return x.asStruct();
+					return x.asJonixIllustrations();
 			}
 		}
 		return null;
@@ -1376,7 +1376,7 @@ public class Product implements Serializable
 			for (Illustrations x : illustrationss)
 			{
 				if (illustrationTypes == null || illustrationTypes.contains(x.getIllustrationTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixIllustrations());
 			}
 			return matches;
 		}
@@ -1390,7 +1390,7 @@ public class Product implements Serializable
 			for (Audience x : audiences)
 			{
 				if (x.getAudienceCodeTypeValue() == audienceCodeType)
-					return x.asStruct();
+					return x.asJonixAudience();
 			}
 		}
 		return null;
@@ -1404,7 +1404,7 @@ public class Product implements Serializable
 			for (Audience x : audiences)
 			{
 				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixAudience());
 			}
 			return matches;
 		}
@@ -1418,7 +1418,7 @@ public class Product implements Serializable
 			for (OtherText x : otherTexts)
 			{
 				if (x.getTextTypeCodeValue() == textTypeCode)
-					return x.asStruct();
+					return x.asJonixOtherText();
 			}
 		}
 		return null;
@@ -1432,7 +1432,7 @@ public class Product implements Serializable
 			for (OtherText x : otherTexts)
 			{
 				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixOtherText());
 			}
 			return matches;
 		}
@@ -1446,7 +1446,7 @@ public class Product implements Serializable
 			for (MediaFile x : mediaFiles)
 			{
 				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
-					return x.asStruct();
+					return x.asJonixMediaFile();
 			}
 		}
 		return null;
@@ -1460,7 +1460,7 @@ public class Product implements Serializable
 			for (MediaFile x : mediaFiles)
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixMediaFile());
 			}
 			return matches;
 		}
@@ -1474,7 +1474,7 @@ public class Product implements Serializable
 			for (Imprint x : imprints)
 			{
 				if (x.getNameCodeTypeValue() == nameCodeType)
-					return x.asStruct();
+					return x.asJonixImprint();
 			}
 		}
 		return null;
@@ -1488,7 +1488,7 @@ public class Product implements Serializable
 			for (Imprint x : imprints)
 			{
 				if (nameCodeTypes == null || nameCodeTypes.contains(x.getNameCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixImprint());
 			}
 			return matches;
 		}
@@ -1502,7 +1502,7 @@ public class Product implements Serializable
 			for (SalesRights x : salesRightss)
 			{
 				if (x.getSalesRightsTypeValue() == salesRightsType)
-					return x.asStruct();
+					return x.asJonixSalesRights();
 			}
 		}
 		return null;
@@ -1516,7 +1516,7 @@ public class Product implements Serializable
 			for (SalesRights x : salesRightss)
 			{
 				if (salesRightsTypes == null || salesRightsTypes.contains(x.getSalesRightsTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSalesRights());
 			}
 			return matches;
 		}

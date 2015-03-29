@@ -120,7 +120,7 @@ public class TextItem implements Serializable
 			for (TextItemIdentifier x : textItemIdentifiers)
 			{
 				if (x.getTextItemIDTypeValue() == textItemIDType)
-					return x.asStruct();
+					return x.asJonixTextItemIdentifier();
 			}
 		}
 		return null;
@@ -134,7 +134,7 @@ public class TextItem implements Serializable
 			for (TextItemIdentifier x : textItemIdentifiers)
 			{
 				if (textItemIDTypes == null || textItemIDTypes.contains(x.getTextItemIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixTextItemIdentifier());
 			}
 			return matches;
 		}

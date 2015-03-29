@@ -96,7 +96,7 @@ public class Addressee implements Serializable
 			for (AddresseeIdentifier x : addresseeIdentifiers)
 			{
 				if (x.getAddresseeIDTypeValue() == addresseeIDType)
-					return x.asStruct();
+					return x.asJonixAddresseeIdentifier();
 			}
 		}
 		return null;
@@ -110,7 +110,7 @@ public class Addressee implements Serializable
 			for (AddresseeIdentifier x : addresseeIdentifiers)
 			{
 				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixAddresseeIdentifier());
 			}
 			return matches;
 		}

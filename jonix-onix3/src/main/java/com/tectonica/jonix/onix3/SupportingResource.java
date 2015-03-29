@@ -109,7 +109,7 @@ public class SupportingResource implements Serializable
 			for (ResourceFeature x : resourceFeatures)
 			{
 				if (x.getResourceFeatureTypeValue() == resourceFeatureType)
-					return x.asStruct();
+					return x.asJonixResourceFeature();
 			}
 		}
 		return null;
@@ -123,7 +123,7 @@ public class SupportingResource implements Serializable
 			for (ResourceFeature x : resourceFeatures)
 			{
 				if (resourceFeatureTypes == null || resourceFeatureTypes.contains(x.getResourceFeatureTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixResourceFeature());
 			}
 			return matches;
 		}

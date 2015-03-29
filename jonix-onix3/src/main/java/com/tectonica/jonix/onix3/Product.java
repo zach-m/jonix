@@ -146,7 +146,7 @@ public class Product implements Serializable
 			for (RecordSourceIdentifier x : recordSourceIdentifiers)
 			{
 				if (x.getRecordSourceIDTypeValue() == recordSourceIDType)
-					return x.asStruct();
+					return x.asJonixRecordSourceIdentifier();
 			}
 		}
 		return null;
@@ -160,7 +160,7 @@ public class Product implements Serializable
 			for (RecordSourceIdentifier x : recordSourceIdentifiers)
 			{
 				if (recordSourceIDTypes == null || recordSourceIDTypes.contains(x.getRecordSourceIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixRecordSourceIdentifier());
 			}
 			return matches;
 		}
@@ -174,7 +174,7 @@ public class Product implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (x.getProductIDTypeValue() == productIDType)
-					return x.asStruct();
+					return x.asJonixProductIdentifier();
 			}
 		}
 		return null;
@@ -188,7 +188,7 @@ public class Product implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixProductIdentifier());
 			}
 			return matches;
 		}

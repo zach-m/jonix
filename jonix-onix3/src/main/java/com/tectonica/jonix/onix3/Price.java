@@ -206,7 +206,7 @@ public class Price implements Serializable
 			for (PriceIdentifier x : priceIdentifiers)
 			{
 				if (x.getPriceIDTypeValue() == priceIDType)
-					return x.asStruct();
+					return x.asJonixPriceIdentifier();
 			}
 		}
 		return null;
@@ -220,7 +220,7 @@ public class Price implements Serializable
 			for (PriceIdentifier x : priceIdentifiers)
 			{
 				if (priceIDTypes == null || priceIDTypes.contains(x.getPriceIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPriceIdentifier());
 			}
 			return matches;
 		}
@@ -234,7 +234,7 @@ public class Price implements Serializable
 			for (DiscountCoded x : discountCodeds)
 			{
 				if (x.getDiscountCodeTypeValue() == discountCodeType)
-					return x.asStruct();
+					return x.asJonixDiscountCoded();
 			}
 		}
 		return null;
@@ -248,7 +248,7 @@ public class Price implements Serializable
 			for (DiscountCoded x : discountCodeds)
 			{
 				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixDiscountCoded());
 			}
 			return matches;
 		}
@@ -262,7 +262,7 @@ public class Price implements Serializable
 			for (PriceDate x : priceDates)
 			{
 				if (x.getPriceDateRoleValue() == priceDateRole)
-					return x.asStruct();
+					return x.asJonixPriceDate();
 			}
 		}
 		return null;
@@ -276,7 +276,7 @@ public class Price implements Serializable
 			for (PriceDate x : priceDates)
 			{
 				if (priceDateRoles == null || priceDateRoles.contains(x.getPriceDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPriceDate());
 			}
 			return matches;
 		}

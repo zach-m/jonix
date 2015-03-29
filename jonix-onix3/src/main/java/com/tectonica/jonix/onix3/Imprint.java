@@ -80,7 +80,7 @@ public class Imprint implements Serializable
 			for (ImprintIdentifier x : imprintIdentifiers)
 			{
 				if (x.getImprintIDTypeValue() == imprintIDType)
-					return x.asStruct();
+					return x.asJonixImprintIdentifier();
 			}
 		}
 		return null;
@@ -94,7 +94,7 @@ public class Imprint implements Serializable
 			for (ImprintIdentifier x : imprintIdentifiers)
 			{
 				if (imprintIDTypes == null || imprintIDTypes.contains(x.getImprintIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixImprintIdentifier());
 			}
 			return matches;
 		}

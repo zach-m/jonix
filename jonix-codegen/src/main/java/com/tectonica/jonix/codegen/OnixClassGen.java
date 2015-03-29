@@ -206,7 +206,7 @@ public class OnixClassGen
 					p.printf("         for (%s x : %s)\n", m.className, memberfield);
 					p.printf("         {\n");
 					p.printf("            if (x.get%s%s() == %s)\n", keyClassName, caption, keyField);
-					p.printf("               return x.asStruct();\n");
+					p.printf("               return x.as%s();\n", structName);
 					p.printf("         }\n");
 					p.printf("      }\n");
 					p.printf("      return null;\n");
@@ -221,7 +221,7 @@ public class OnixClassGen
 					p.printf("         for (%s x : %s)\n", m.className, memberfield);
 					p.printf("         {\n");
 					p.printf("            if (%ss == null || %ss.contains(x.get%s%s()))\n", keyField, keyField, keyClassName, caption);
-					p.printf("               matches.add(x.asStruct());\n");
+					p.printf("               matches.add(x.as%s());\n", structName);
 					p.printf("         }\n");
 					p.printf("         return matches;\n", structName);
 					p.printf("      }\n");
@@ -238,7 +238,7 @@ public class OnixClassGen
 			final String structName = "Jonix" + clz.name;
 
 			p.println();
-			p.printf("   public %s asStruct()\n", structName);
+			p.printf("   public %s as%s()\n", structName, structName);
 			p.printf("   {\n");
 			p.printf("      %s x = new %s();\n", structName, structName);
 

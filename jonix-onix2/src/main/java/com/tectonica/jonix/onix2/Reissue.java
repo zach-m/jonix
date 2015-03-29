@@ -103,7 +103,7 @@ public class Reissue implements Serializable
 			for (MediaFile x : mediaFiles)
 			{
 				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
-					return x.asStruct();
+					return x.asJonixMediaFile();
 			}
 		}
 		return null;
@@ -117,7 +117,7 @@ public class Reissue implements Serializable
 			for (MediaFile x : mediaFiles)
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixMediaFile());
 			}
 			return matches;
 		}

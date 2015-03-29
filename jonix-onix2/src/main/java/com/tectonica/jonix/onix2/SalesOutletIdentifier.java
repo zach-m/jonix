@@ -96,7 +96,7 @@ public class SalesOutletIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixSalesOutletIdentifier asStruct()
+	public JonixSalesOutletIdentifier asJonixSalesOutletIdentifier()
 	{
 		JonixSalesOutletIdentifier x = new JonixSalesOutletIdentifier();
 		x.idTypeName = getIDTypeNameValue();

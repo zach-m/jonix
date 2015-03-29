@@ -84,7 +84,7 @@ public class ImprintIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixImprintIdentifier asStruct()
+	public JonixImprintIdentifier asJonixImprintIdentifier()
 	{
 		JonixImprintIdentifier x = new JonixImprintIdentifier();
 		x.idTypeName = getIDTypeNameValue();

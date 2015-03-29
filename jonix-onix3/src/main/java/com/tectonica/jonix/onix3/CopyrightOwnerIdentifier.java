@@ -84,7 +84,7 @@ public class CopyrightOwnerIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixCopyrightOwnerIdentifier asStruct()
+	public JonixCopyrightOwnerIdentifier asJonixCopyrightOwnerIdentifier()
 	{
 		JonixCopyrightOwnerIdentifier x = new JonixCopyrightOwnerIdentifier();
 		x.idTypeName = getIDTypeNameValue();

@@ -93,7 +93,7 @@ public class AncillaryContent implements Serializable
 		return (number == null) ? null : number.value;
 	}
 
-	public JonixAncillaryContent asStruct()
+	public JonixAncillaryContent asJonixAncillaryContent()
 	{
 		JonixAncillaryContent x = new JonixAncillaryContent();
 		x.ancillaryContentDescriptions = getAncillaryContentDescriptionValues();

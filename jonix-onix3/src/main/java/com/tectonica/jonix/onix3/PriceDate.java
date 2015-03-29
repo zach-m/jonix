@@ -85,7 +85,7 @@ public class PriceDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixPriceDate asStruct()
+	public JonixPriceDate asJonixPriceDate()
 	{
 		JonixPriceDate x = new JonixPriceDate();
 		x.dateFormat = getDateFormatValue();

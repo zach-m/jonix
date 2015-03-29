@@ -95,7 +95,7 @@ public class SalesRights implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (x.getProductIDTypeValue() == productIDType)
-					return x.asStruct();
+					return x.asJonixProductIdentifier();
 			}
 		}
 		return null;
@@ -109,7 +109,7 @@ public class SalesRights implements Serializable
 			for (ProductIdentifier x : productIdentifiers)
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixProductIdentifier());
 			}
 			return matches;
 		}

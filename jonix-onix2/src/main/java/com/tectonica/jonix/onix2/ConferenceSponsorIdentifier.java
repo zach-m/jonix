@@ -96,7 +96,7 @@ public class ConferenceSponsorIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixConferenceSponsorIdentifier asStruct()
+	public JonixConferenceSponsorIdentifier asJonixConferenceSponsorIdentifier()
 	{
 		JonixConferenceSponsorIdentifier x = new JonixConferenceSponsorIdentifier();
 		x.idTypeName = getIDTypeNameValue();

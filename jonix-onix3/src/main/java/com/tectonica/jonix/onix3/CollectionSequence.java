@@ -84,7 +84,7 @@ public class CollectionSequence implements Serializable
 		return (collectionSequenceNumber == null) ? null : collectionSequenceNumber.value;
 	}
 
-	public JonixCollectionSequence asStruct()
+	public JonixCollectionSequence asJonixCollectionSequence()
 	{
 		JonixCollectionSequence x = new JonixCollectionSequence();
 		x.collectionSequenceTypeName = getCollectionSequenceTypeNameValue();

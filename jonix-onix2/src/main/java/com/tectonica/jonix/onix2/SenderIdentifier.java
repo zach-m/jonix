@@ -96,7 +96,7 @@ public class SenderIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixSenderIdentifier asStruct()
+	public JonixSenderIdentifier asJonixSenderIdentifier()
 	{
 		JonixSenderIdentifier x = new JonixSenderIdentifier();
 		x.idTypeName = getIDTypeNameValue();

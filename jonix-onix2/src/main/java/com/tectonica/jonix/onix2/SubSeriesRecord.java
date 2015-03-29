@@ -202,7 +202,7 @@ public class SubSeriesRecord implements Serializable
 			for (SeriesIdentifier x : seriesIdentifiers)
 			{
 				if (x.getSeriesIDTypeValue() == seriesIDType)
-					return x.asStruct();
+					return x.asJonixSeriesIdentifier();
 			}
 		}
 		return null;
@@ -216,7 +216,7 @@ public class SubSeriesRecord implements Serializable
 			for (SeriesIdentifier x : seriesIdentifiers)
 			{
 				if (seriesIDTypes == null || seriesIDTypes.contains(x.getSeriesIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSeriesIdentifier());
 			}
 			return matches;
 		}
@@ -230,7 +230,7 @@ public class SubSeriesRecord implements Serializable
 			for (Title x : titles)
 			{
 				if (x.getTitleTypeValue() == titleType)
-					return x.asStruct();
+					return x.asJonixTitle();
 			}
 		}
 		return null;
@@ -244,7 +244,7 @@ public class SubSeriesRecord implements Serializable
 			for (Title x : titles)
 			{
 				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixTitle());
 			}
 			return matches;
 		}
@@ -258,7 +258,7 @@ public class SubSeriesRecord implements Serializable
 			for (OtherText x : otherTexts)
 			{
 				if (x.getTextTypeCodeValue() == textTypeCode)
-					return x.asStruct();
+					return x.asJonixOtherText();
 			}
 		}
 		return null;
@@ -272,7 +272,7 @@ public class SubSeriesRecord implements Serializable
 			for (OtherText x : otherTexts)
 			{
 				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixOtherText());
 			}
 			return matches;
 		}

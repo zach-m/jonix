@@ -174,7 +174,7 @@ public class CitedContent implements Serializable
 			for (ContentDate x : contentDates)
 			{
 				if (x.getContentDateRoleValue() == contentDateRole)
-					return x.asStruct();
+					return x.asJonixContentDate();
 			}
 		}
 		return null;
@@ -188,7 +188,7 @@ public class CitedContent implements Serializable
 			for (ContentDate x : contentDates)
 			{
 				if (contentDateRoles == null || contentDateRoles.contains(x.getContentDateRoleValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixContentDate());
 			}
 			return matches;
 		}

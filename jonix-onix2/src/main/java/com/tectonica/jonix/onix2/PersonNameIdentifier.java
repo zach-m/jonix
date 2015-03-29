@@ -96,7 +96,7 @@ public class PersonNameIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixPersonNameIdentifier asStruct()
+	public JonixPersonNameIdentifier asJonixPersonNameIdentifier()
 	{
 		JonixPersonNameIdentifier x = new JonixPersonNameIdentifier();
 		x.idTypeName = getIDTypeNameValue();

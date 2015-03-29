@@ -85,7 +85,7 @@ public class SupplyDate implements Serializable
 		return (date == null) ? null : date.value;
 	}
 
-	public JonixSupplyDate asStruct()
+	public JonixSupplyDate asJonixSupplyDate()
 	{
 		JonixSupplyDate x = new JonixSupplyDate();
 		x.dateFormat = getDateFormatValue();

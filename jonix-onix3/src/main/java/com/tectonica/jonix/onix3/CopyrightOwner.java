@@ -88,7 +88,7 @@ public class CopyrightOwner implements Serializable
 			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
 			{
 				if (x.getCopyrightOwnerIDTypeValue() == copyrightOwnerIDType)
-					return x.asStruct();
+					return x.asJonixCopyrightOwnerIdentifier();
 			}
 		}
 		return null;
@@ -102,7 +102,7 @@ public class CopyrightOwner implements Serializable
 			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
 			{
 				if (copyrightOwnerIDTypes == null || copyrightOwnerIDTypes.contains(x.getCopyrightOwnerIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixCopyrightOwnerIdentifier());
 			}
 			return matches;
 		}

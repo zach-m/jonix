@@ -84,7 +84,7 @@ public class AddresseeIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixAddresseeIdentifier asStruct()
+	public JonixAddresseeIdentifier asJonixAddresseeIdentifier()
 	{
 		JonixAddresseeIdentifier x = new JonixAddresseeIdentifier();
 		x.idTypeName = getIDTypeNameValue();

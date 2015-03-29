@@ -96,7 +96,7 @@ public class ProductIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixProductIdentifier asStruct()
+	public JonixProductIdentifier asJonixProductIdentifier()
 	{
 		JonixProductIdentifier x = new JonixProductIdentifier();
 		x.idTypeName = getIDTypeNameValue();

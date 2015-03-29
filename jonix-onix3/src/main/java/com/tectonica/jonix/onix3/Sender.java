@@ -96,7 +96,7 @@ public class Sender implements Serializable
 			for (SenderIdentifier x : senderIdentifiers)
 			{
 				if (x.getSenderIDTypeValue() == senderIDType)
-					return x.asStruct();
+					return x.asJonixSenderIdentifier();
 			}
 		}
 		return null;
@@ -110,7 +110,7 @@ public class Sender implements Serializable
 			for (SenderIdentifier x : senderIdentifiers)
 			{
 				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixSenderIdentifier());
 			}
 			return matches;
 		}

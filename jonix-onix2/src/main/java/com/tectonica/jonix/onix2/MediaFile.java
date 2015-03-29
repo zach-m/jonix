@@ -162,7 +162,7 @@ public class MediaFile implements Serializable
 		return (mediaFileDate == null) ? null : mediaFileDate.value;
 	}
 
-	public JonixMediaFile asStruct()
+	public JonixMediaFile asJonixMediaFile()
 	{
 		JonixMediaFile x = new JonixMediaFile();
 		x.mediaFileFormatCode = getMediaFileFormatCodeValue();

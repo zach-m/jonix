@@ -93,7 +93,7 @@ public class ResourceFeature implements Serializable
 		return null;
 	}
 
-	public JonixResourceFeature asStruct()
+	public JonixResourceFeature asJonixResourceFeature()
 	{
 		JonixResourceFeature x = new JonixResourceFeature();
 		x.featureValue = getFeatureValueValue();

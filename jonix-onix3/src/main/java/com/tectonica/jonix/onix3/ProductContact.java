@@ -105,7 +105,7 @@ public class ProductContact implements Serializable
 			for (ProductContactIdentifier x : productContactIdentifiers)
 			{
 				if (x.getProductContactIDTypeValue() == productContactIDType)
-					return x.asStruct();
+					return x.asJonixProductContactIdentifier();
 			}
 		}
 		return null;
@@ -119,7 +119,7 @@ public class ProductContact implements Serializable
 			for (ProductContactIdentifier x : productContactIdentifiers)
 			{
 				if (productContactIDTypes == null || productContactIDTypes.contains(x.getProductContactIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixProductContactIdentifier());
 			}
 			return matches;
 		}

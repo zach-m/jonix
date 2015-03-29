@@ -92,7 +92,7 @@ public class Publisher implements Serializable
 			for (PublisherIdentifier x : publisherIdentifiers)
 			{
 				if (x.getPublisherIDTypeValue() == publisherIDType)
-					return x.asStruct();
+					return x.asJonixPublisherIdentifier();
 			}
 		}
 		return null;
@@ -106,7 +106,7 @@ public class Publisher implements Serializable
 			for (PublisherIdentifier x : publisherIdentifiers)
 			{
 				if (publisherIDTypes == null || publisherIDTypes.contains(x.getPublisherIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPublisherIdentifier());
 			}
 			return matches;
 		}

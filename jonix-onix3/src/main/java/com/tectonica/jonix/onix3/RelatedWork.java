@@ -81,7 +81,7 @@ public class RelatedWork implements Serializable
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (x.getWorkIDTypeValue() == workIDType)
-					return x.asStruct();
+					return x.asJonixWorkIdentifier();
 			}
 		}
 		return null;
@@ -95,7 +95,7 @@ public class RelatedWork implements Serializable
 			for (WorkIdentifier x : workIdentifiers)
 			{
 				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixWorkIdentifier());
 			}
 			return matches;
 		}

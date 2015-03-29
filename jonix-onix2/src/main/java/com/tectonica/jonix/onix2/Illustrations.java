@@ -96,7 +96,7 @@ public class Illustrations implements Serializable
 		return (number == null) ? null : number.value;
 	}
 
-	public JonixIllustrations asStruct()
+	public JonixIllustrations asJonixIllustrations()
 	{
 		JonixIllustrations x = new JonixIllustrations();
 		x.illustrationTypeDescription = getIllustrationTypeDescriptionValue();

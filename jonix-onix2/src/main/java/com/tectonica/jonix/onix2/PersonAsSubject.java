@@ -167,7 +167,7 @@ public class PersonAsSubject implements Serializable
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
 				if (x.getPersonNameIDTypeValue() == personNameIDType)
-					return x.asStruct();
+					return x.asJonixPersonNameIdentifier();
 			}
 		}
 		return null;
@@ -181,7 +181,7 @@ public class PersonAsSubject implements Serializable
 			for (PersonNameIdentifier x : personNameIdentifiers)
 			{
 				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
-					matches.add(x.asStruct());
+					matches.add(x.asJonixPersonNameIdentifier());
 			}
 			return matches;
 		}

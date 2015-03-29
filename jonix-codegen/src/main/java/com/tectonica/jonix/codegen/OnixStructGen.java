@@ -97,9 +97,9 @@ public class OnixStructGen
 		}
 
 		// default-constructor
-		p.println();
-		p.printf("   public %s()\n", structName);
-		p.printf("   {}\n");
+//		p.println();
+//		p.printf("   public %s()\n", structName);
+//		p.printf("   {}\n");
 
 		p.println("}");
 	}

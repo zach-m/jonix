@@ -96,7 +96,7 @@ public class SeriesIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixSeriesIdentifier asStruct()
+	public JonixSeriesIdentifier asJonixSeriesIdentifier()
 	{
 		JonixSeriesIdentifier x = new JonixSeriesIdentifier();
 		x.idTypeName = getIDTypeNameValue();

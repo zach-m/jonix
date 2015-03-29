@@ -84,7 +84,7 @@ public class ProductContactIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixProductContactIdentifier asStruct()
+	public JonixProductContactIdentifier asJonixProductContactIdentifier()
 	{
 		JonixProductContactIdentifier x = new JonixProductContactIdentifier();
 		x.idTypeName = getIDTypeNameValue();

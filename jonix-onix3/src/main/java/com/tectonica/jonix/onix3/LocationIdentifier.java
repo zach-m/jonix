@@ -84,7 +84,7 @@ public class LocationIdentifier implements Serializable
 		return (idValue == null) ? null : idValue.value;
 	}
 
-	public JonixLocationIdentifier asStruct()
+	public JonixLocationIdentifier asJonixLocationIdentifier()
 	{
 		JonixLocationIdentifier x = new JonixLocationIdentifier();
 		x.idTypeName = getIDTypeNameValue();
