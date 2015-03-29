@@ -41,17 +41,18 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Audience;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.Imprint;
-import com.tectonica.jonix.composite.Language;
 import com.tectonica.jonix.composite.MainSubject;
 import com.tectonica.jonix.composite.OtherText;
 import com.tectonica.jonix.composite.Price;
-import com.tectonica.jonix.composite.ProductIdentifier;
 import com.tectonica.jonix.composite.Publisher;
 import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Series;
 import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.composite.SupplyDetail;
-import com.tectonica.jonix.composite.Title;
+import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixSalesRights;
+import com.tectonica.jonix.struct.JonixTitle;
 
 @SuppressWarnings("serial")
 public class BasicProduct implements Serializable
@@ -70,11 +71,12 @@ public class BasicProduct implements Serializable
 	public final EditionTypes editionType;
 	public final CountryCodeIso31661s countryOfPublication;
 
-	public final List<ProductIdentifier> productIdentifiers;
-	public final List<Title> titles;
+//	public final List<ProductIdentifier> productIdentifiers;
+//	public final List<Title> titles;
+	public final List<JonixTitle> titles;
 	public final List<Contributor> contributors;
 	public final List<Series> seriess;
-	public final List<Language> languages;
+//	public final List<Language> languages;
 	public final List<MainSubject> mainSubjects;
 	public final List<Subject> subjects;
 	public final List<Audience> audiences;
@@ -107,11 +109,12 @@ public class BasicProduct implements Serializable
 		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
 
 		// composites
-		productIdentifiers = ProductIdentifier.listFrom(product);
-		titles = Title.listFrom(product);
+//		productIdentifiers = ProductIdentifier.listFrom(product);
+//		titles = Title.listFrom(product);
+		titles = product.findTitles(null); // null = find-all
 		contributors = Contributor.listFrom(product);
 		seriess = Series.listFrom(product);
-		languages = Language.listFrom(product);
+//		languages = Language.listFrom(product);
 		mainSubjects = MainSubject.listFrom(product);
 		subjects = Subject.listFrom(product);
 		audiences = Audience.listFrom(product);
@@ -139,24 +142,14 @@ public class BasicProduct implements Serializable
 
 	// LOOKUP CONVENIENCE SERVICES
 
-	public ProductIdentifier findProductId(ProductIdentifierTypes requestedType)
+	public JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType)
 	{
-		for (ProductIdentifier prodId : productIdentifiers)
-		{
-			if (prodId.productIDType == requestedType)
-				return prodId;
-		}
-		return null;
+		return product.findProductIdentifier(requestedType);
 	}
 
-	public Title findTitle(TitleTypes requestedType)
+	public JonixTitle findTitle(TitleTypes requestedType)
 	{
-		for (Title title : titles)
-		{
-			if (title.titleType == requestedType)
-				return title;
-		}
-		return null;
+		return product.findTitle(requestedType);
 	}
 
 	public List<Contributor> findContributors(ContributorRoles requestedRole)
@@ -170,14 +163,9 @@ public class BasicProduct implements Serializable
 		return matches;
 	}
 
-	public Language findLanguage(LanguageRoles requestedType)
+	public JonixLanguage findLanguage(LanguageRoles requestedType)
 	{
-		for (Language language : languages)
-		{
-			if (language.languageRole == requestedType)
-				return language;
-		}
-		return null;
+		return product.findLanguage(requestedType);
 	}
 
 	public List<Subject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
@@ -210,6 +198,7 @@ public class BasicProduct implements Serializable
 
 	public OtherText findOtherText(OtherTextTypes requestedType)
 	{
+		// we don't use product.findOtherText() because we need the 'textFormat' attribute, not just the value
 		for (OtherText otherText : otherTexts)
 		{
 			if (otherText.textType == requestedType)
@@ -232,14 +221,8 @@ public class BasicProduct implements Serializable
 		return matches;
 	}
 
-	public List<SalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
+	public List<JonixSalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
 	{
-		List<SalesRights> matches = new ArrayList<SalesRights>();
-		for (SalesRights salesRights : salesRightss)
-		{
-			if (requestedTypes.contains(salesRights.salesRightsType))
-				matches.add(salesRights);
-		}
-		return matches;
+		return product.findSalesRightss(requestedTypes);
 	}
 }

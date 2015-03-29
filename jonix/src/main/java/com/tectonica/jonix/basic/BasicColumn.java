@@ -36,13 +36,13 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Contributor;
-import com.tectonica.jonix.composite.Language;
 import com.tectonica.jonix.composite.OtherText;
 import com.tectonica.jonix.composite.Price;
-import com.tectonica.jonix.composite.ProductIdentifier;
-import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Subject;
-import com.tectonica.jonix.composite.Title;
+import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixSalesRights;
+import com.tectonica.jonix.struct.JonixTitle;
 
 public enum BasicColumn implements JonixColumn
 {
@@ -270,7 +270,7 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractProductId(String[] fieldData, ProductIdentifierTypes stdType, BasicProduct product)
 	{
-		ProductIdentifier prodId = product.findProductId(stdType);
+		JonixProductIdentifier prodId = product.findProductId(stdType);
 		if (prodId != null)
 		{
 			fieldData[0] = prodId.idValue;
@@ -281,7 +281,7 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractTitle(String[] fieldData, TitleTypes stdType, BasicProduct product)
 	{
-		Title title = product.findTitle(stdType);
+		JonixTitle title = product.findTitle(stdType);
 		if (title != null)
 		{
 			fieldData[0] = title.titleText;
@@ -293,7 +293,7 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractLanguage(String[] fieldData, LanguageRoles stdType, BasicProduct product)
 	{
-		Language language = product.findLanguage(stdType);
+		JonixLanguage language = product.findLanguage(stdType);
 		if (language != null)
 		{
 			fieldData[0] = language.languageCode.name();
@@ -349,22 +349,22 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractSalesRights(String[] fieldData, Set<SalesRightsTypes> stdTypes, BasicProduct product)
 	{
-		List<SalesRights> salesRightss = product.findSalesRightss(stdTypes);
+		List<JonixSalesRights> salesRightss = product.findSalesRightss(stdTypes);
 		int pos = 0;
-		for (SalesRights salesRights : salesRightss)
+		for (JonixSalesRights salesRights : salesRightss)
 		{
 			StringBuffer sb = new StringBuffer();
 			if (salesRights.rightsTerritory != null)
 				sb.append(salesRights.rightsTerritory).append("#");
 			sb.append("|");
-			if (salesRights.rightsCountries != null)
-				for (Set<CountryCodeIso31661s> cc : salesRights.rightsCountries)
+			if (salesRights.rightsCountrys != null)
+				for (Set<CountryCodeIso31661s> cc : salesRights.rightsCountrys)
 					sb.append(cc).append(";");
 			sb.append("|");
 			if (salesRights.rightsRegions != null)
 				for (RightsRegions rr : salesRights.rightsRegions)
 					sb.append(rr.name()).append(",");
-			fieldData[0] = sb.toString(); //.toUpperCase();
+			fieldData[0] = sb.toString(); // .toUpperCase();
 			if (++pos == fieldData.length)
 				break;
 		}
