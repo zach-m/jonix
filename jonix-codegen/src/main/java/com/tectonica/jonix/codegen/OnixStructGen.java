@@ -25,7 +25,7 @@ import java.io.PrintStream;
 import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
 import com.tectonica.jonix.metadata.OnixContentClassMember;
 import com.tectonica.jonix.metadata.OnixValueClass;
-import com.tectonica.jonix.metadata.OnixValueStruct;
+import com.tectonica.jonix.metadata.OnixStruct;
 
 public class OnixStructGen
 {
@@ -41,7 +41,7 @@ public class OnixStructGen
 		new File(folderName).mkdirs();
 	}
 
-	public void generate(OnixValueStruct struct)
+	public void generate(OnixStruct struct)
 	{
 		try
 		{
@@ -59,7 +59,7 @@ public class OnixStructGen
 		}
 	}
 
-	private void writeStruct(OnixValueStruct struct, String structName, PrintStream p)
+	private void writeStruct(OnixStruct struct, String structName, PrintStream p)
 	{
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);

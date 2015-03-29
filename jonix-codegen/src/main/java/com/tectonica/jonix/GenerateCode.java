@@ -42,9 +42,9 @@ import com.tectonica.jonix.metadata.OnixEnumValue;
 import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
+import com.tectonica.jonix.metadata.OnixStruct;
 import com.tectonica.jonix.metadata.OnixValueClass;
 import com.tectonica.jonix.metadata.OnixValueClassMember;
-import com.tectonica.jonix.metadata.OnixValueStruct;
 import com.tectonica.jonix.util.ParseUtil;
 
 public class GenerateCode
@@ -61,48 +61,64 @@ public class GenerateCode
 		final OnixMetadata ref2 = ParseUtil.parse(ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2);
 		final OnixMetadata ref3 = ParseUtil.parse(ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3);
 
-		// //////////////////////////////////////////////////////////////////////////////////////
-		// UNIFIED CODELISTS + STRUCTS
-		// //////////////////////////////////////////////////////////////////////////////////////
+		final List<OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
+		final List<OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);
 
+		// Generate source code
+		generateCodelists(basePackage, basePath, relativePath, unifiedCodelists);
+		generateStructs(basePackage, basePath, relativePath, unifiedStructs);
+		generateOnix2(basePackage, basePath, relativePath, ref2);
+		generateOnix3(basePackage, basePath, relativePath, ref3);
+
+		System.out.println("DONE");
+	}
+
+	private static void generateCodelists(final String basePackage, final String basePath, final String relativePath,
+			final List<OnixSimpleType> unifiedCodelists)
+	{
 		final String codelistHome = basePath + "/jonix-common";
 		if (!new File(codelistHome).exists())
 			throw new RuntimeException("couldn't find jonix-common project at " + codelistHome);
 
 		System.out.println("Generating unified codelists..");
-		generateCodelists(basePackage, codelistHome + relativePath, "codelist", ref2, ref3);
+
+		final OnixEnumGen oeg = new OnixEnumGen(basePackage, codelistHome + relativePath, "codelist");
+		for (OnixSimpleType codelist : unifiedCodelists)
+			oeg.generate(codelist);
+	}
+
+	private static void generateStructs(final String basePackage, final String basePath, final String relativePath,
+			final List<OnixStruct> unifiedStructs)
+	{
+		final String codelistHome = basePath + "/jonix-common";
+		if (!new File(codelistHome).exists())
+			throw new RuntimeException("couldn't find jonix-common project at " + codelistHome);
 
 		System.out.println("Generating unified structs..");
-		generateStructs(basePackage, codelistHome + relativePath, "struct", ref2, ref3);
 
-		// //////////////////////////////////////////////////////////////////////////////////////
-		// ONIX 2
-		// //////////////////////////////////////////////////////////////////////////////////////
+		final OnixStructGen osg = new OnixStructGen(basePackage, codelistHome + relativePath, "struct");
+		for (OnixStruct struct : unifiedStructs)
+			osg.generate(struct);
+	}
 
+	private static void generateOnix2(final String basePackage, final String basePath, final String relativePath, final OnixMetadata ref2)
+	{
 		final String onix2home = basePath + "/jonix-onix2";
 		if (!new File(onix2home).exists())
 			throw new RuntimeException("couldn't find jonix-onix2 project at " + onix2home);
 
 		System.out.println("Generating code for Onix2..");
 		generateModel(basePackage, onix2home + relativePath, "onix2", ref2);
+	}
 
-		// //////////////////////////////////////////////////////////////////////////////////////
-		// ONIX 3
-		// //////////////////////////////////////////////////////////////////////////////////////
-
+	private static void generateOnix3(final String basePackage, final String basePath, final String relativePath, final OnixMetadata ref3)
+	{
 		final String onix3home = basePath + "/jonix-onix3";
 		if (!new File(onix3home).exists())
 			throw new RuntimeException("couldn't find jonix-onix3 project at " + onix3home);
 
 		System.out.println("Generating code for Onix3..");
-
 		generateModel(basePackage, onix3home + relativePath, "onix3", ref3);
-
-		// //////////////////////////////////////////////////////////////////////////////////////
-		// FINISHED
-		// //////////////////////////////////////////////////////////////////////////////////////
-
-		System.out.println("DONE");
 	}
 
 	private static void generateModel(String basePackage, String baseFolder, String subfolder, OnixMetadata ref)
@@ -119,10 +135,10 @@ public class GenerateCode
 			ccg.generate(ofc);
 	}
 
-	private static void generateCodelists(String basePackage, String baseFolder, String subfolder, OnixMetadata ref2, OnixMetadata ref3)
-	{
-		final OnixEnumGen oeg = new OnixEnumGen(basePackage, baseFolder, subfolder);
+	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	private static List<OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3)
+	{
 		final List<OnixSimpleType> enums2 = new ArrayList<>(ref2.enumsMap.values());
 		final List<OnixSimpleType> enums3 = new ArrayList<>(ref3.enumsMap.values());
 
@@ -132,6 +148,8 @@ public class GenerateCode
 		Collections.sort(enums2);
 		Collections.sort(enums3);
 
+		final List<OnixSimpleType> unifiedCodelists = new ArrayList<>();
+
 		ListDiff.compare(enums2, enums3, new CompareListener<OnixSimpleType>()
 		{
 			@Override
@@ -140,22 +158,25 @@ public class GenerateCode
 				if (enum2 != null && enum3 != null)
 				{
 //					System.out.println("                                         Common: " + enum2.enumName);
-					oeg.generate(unifiedEnum(enum2, enum3));
+					final OnixSimpleType u = unifiedCodelist(enum2, enum3);
+					unifiedCodelists.add(u);
 				}
 				else if (enum2 != null)
 				{
 //					System.out.println("Unique to Onix2: " + enum2.enumName);
 					enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3";
-					oeg.generate(enum2);
+					unifiedCodelists.add(enum2);
 				}
 				else
 				{
 //					System.out.println("Unique to Onix3: " + enum3.enumName);
 					enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3";
-					oeg.generate(enum3);
+					unifiedCodelists.add(enum3);
 				}
 			}
 		});
+
+		return unifiedCodelists;
 	}
 
 	private static void removeAliases(List<OnixSimpleType> enums)
@@ -168,7 +189,7 @@ public class GenerateCode
 		}
 	}
 
-	private static OnixSimpleType unifiedEnum(final OnixSimpleType enum2, final OnixSimpleType enum3)
+	private static OnixSimpleType unifiedCodelist(final OnixSimpleType enum2, final OnixSimpleType enum3)
 	{
 		final OnixSimpleType result = OnixSimpleType.cloneFrom(enum3);
 		ListDiff.compare(enum2.enumValues, enum3.enumValues, new CompareListener<OnixEnumValue>()
@@ -200,49 +221,52 @@ public class GenerateCode
 		return result;
 	}
 
-	private static void generateStructs(String basePackage, String baseFolder, String subfolder, final OnixMetadata ref2,
-			final OnixMetadata ref3)
-	{
-		final OnixStructGen osg = new OnixStructGen(basePackage, baseFolder, subfolder);
+	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		final List<OnixValueStruct> structs2 = new ArrayList<>(ref2.getStructs());
-		final List<OnixValueStruct> structs3 = new ArrayList<>(ref3.getStructs());
+	private static List<OnixStruct> unifyStructs(final OnixMetadata ref2, final OnixMetadata ref3)
+	{
+		final List<OnixStruct> structs2 = new ArrayList<>(ref2.getStructs());
+		final List<OnixStruct> structs3 = new ArrayList<>(ref3.getStructs());
 
 		Collections.sort(structs2);
 		Collections.sort(structs3);
 
-		ListDiff.compare(structs2, structs3, new CompareListener<OnixValueStruct>()
+		final List<OnixStruct> unifiedStructs = new ArrayList<>();
+
+		ListDiff.compare(structs2, structs3, new CompareListener<OnixStruct>()
 		{
 			@Override
-			public void onDiff(final OnixValueStruct struct2, final OnixValueStruct struct3)
+			public void onDiff(final OnixStruct struct2, final OnixStruct struct3)
 			{
 				if (struct2 != null && struct3 != null)
 				{
-					final OnixValueStruct u = unifiedStruct(struct2, struct3);
+					final OnixStruct u = unifiedStruct(struct2, struct3);
 					if (u == null)
 					{
 						ref2.structsMap.remove(struct2.containingClass.name);
 						ref3.structsMap.remove(struct3.containingClass.name);
 					}
 					else
-						osg.generate(u);
+						unifiedStructs.add(u);
 				}
 				else if (struct2 != null)
 				{
-					osg.generate(struct2);
+					unifiedStructs.add(struct2);
 				}
 				else
 				{
-					osg.generate(struct3);
+					unifiedStructs.add(struct3);
 				}
 			}
 		});
+
+		return unifiedStructs;
 	}
 
-	private static OnixValueStruct unifiedStruct(final OnixValueStruct struct2, final OnixValueStruct struct3)
+	private static OnixStruct unifiedStruct(final OnixStruct struct2, final OnixStruct struct3)
 	{
 		final String className = struct3.containingClass.name;
-		final OnixValueStruct unified = new OnixValueStruct(struct3.containingClass);
+		final OnixStruct unified = new OnixStruct(struct3.containingClass);
 
 		final String enumName2 = struct2.keyEnumType().enumName;
 		final String enumName3 = struct3.keyEnumType().enumName;

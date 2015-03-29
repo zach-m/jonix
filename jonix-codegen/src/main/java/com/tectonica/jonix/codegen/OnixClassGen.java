@@ -31,7 +31,7 @@ import com.tectonica.jonix.metadata.OnixContentClassMember;
 import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixValueClass;
-import com.tectonica.jonix.metadata.OnixValueStruct;
+import com.tectonica.jonix.metadata.OnixStruct;
 
 public class OnixClassGen
 {
@@ -187,7 +187,7 @@ public class OnixClassGen
 		{
 			if (!m.cardinality.singular)
 			{
-				final OnixValueStruct struct = ref.structsMap.get(m.className);
+				final OnixStruct struct = ref.structsMap.get(m.className);
 				if (struct != null)
 				{
 					final String structName = "Jonix" + m.className;
@@ -232,7 +232,7 @@ public class OnixClassGen
 		}
 
 		// declare struct provider
-		final OnixValueStruct struct = ref.structsMap.get(clz.name);
+		final OnixStruct struct = ref.structsMap.get(clz.name);
 		if (struct != null)
 		{
 			final String structName = "Jonix" + clz.name;

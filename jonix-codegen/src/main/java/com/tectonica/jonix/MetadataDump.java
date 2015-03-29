@@ -32,7 +32,7 @@ import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
-import com.tectonica.jonix.metadata.OnixValueStruct;
+import com.tectonica.jonix.metadata.OnixStruct;
 import com.tectonica.jonix.util.JSON;
 import com.tectonica.jonix.util.ParseUtil;
 
@@ -82,23 +82,32 @@ public class MetadataDump
 
 		new File(folder + "/contentClasses").mkdirs();
 		for (OnixContentClass occ : metadata.contentClassesMap.values())
+		{
+//			occ.sortInternally();
 			saveAsJson(occ, folder + "/contentClasses/" + occ.name + ".txt");
+		}
 
 		new File(folder + "/valueClasses").mkdirs();
 		for (OnixValueClass ovc : metadata.valueClassesMap.values())
+		{
+//			ovc.sortInternally();
 			saveAsJson(ovc, folder + "/valueClasses/" + ovc.name + ".txt");
+		}
 
 		new File(folder + "/flagClasses").mkdirs();
 		for (OnixFlagClass ofc : metadata.flagClassesMap.values())
+		{
+//			ofc.sortInternally();
 			saveAsJson(ofc, folder + "/flagClasses/" + ofc.name + ".txt");
+		}
 
 		new File(folder + "/enums").mkdirs();
 		for (OnixSimpleType ost : metadata.enumsMap.values())
 			saveAsJson(ost, folder + "/enums/" + ost.name + ".txt");
 
 		new File(folder + "/structs").mkdirs();
-		for (OnixValueStruct ost : metadata.structsMap.values())
-			saveAsJson(ost, folder + "/structs/" + ost.containingClass.name + ".txt");
+		for (OnixStruct os : metadata.structsMap.values())
+			saveAsJson(os, folder + "/structs/" + os.containingClass.name + ".txt");
 
 		System.out.println("saved results to " + folder);
 	}

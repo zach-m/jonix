@@ -40,7 +40,7 @@ public class OnixMetadata
 	@JsonIgnore
 	public Map<String, OnixSimpleType> enumsMap = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixValueStruct> structsMap = new HashMap<>();
+	public Map<String, OnixStruct> structsMap = new HashMap<>();
 
 	public Collection<OnixContentClass> getContentClasses()
 	{
@@ -67,7 +67,7 @@ public class OnixMetadata
 		return enumsMap.values();
 	}
 
-	public Collection<OnixValueStruct> getStructs()
+	public Collection<OnixStruct> getStructs()
 	{
 		return structsMap.values();
 	}

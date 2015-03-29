@@ -22,13 +22,13 @@ package com.tectonica.jonix.metadata;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OnixValueStruct implements Comparable<OnixValueStruct>
+public class OnixStruct implements Comparable<OnixStruct>
 {
 	public final OnixContentClass containingClass;
 	public OnixContentClassMember key = null;
 	public List<OnixContentClassMember> members = new ArrayList<>();
 
-	public OnixValueStruct(OnixContentClass containingClass)
+	public OnixStruct(OnixContentClass containingClass)
 	{
 		this.containingClass = containingClass;
 	}
@@ -58,7 +58,7 @@ public class OnixValueStruct implements Comparable<OnixValueStruct>
 	}
 
 	@Override
-	public int compareTo(OnixValueStruct o)
+	public int compareTo(OnixStruct o)
 	{
 		return containingClass.name.compareTo(o.containingClass.name);
 //		return keyEnumType().enumName.compareTo(o.keyEnumType().enumName);

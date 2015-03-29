@@ -42,7 +42,7 @@ import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixValueClass;
 import com.tectonica.jonix.metadata.OnixValueClassMember;
-import com.tectonica.jonix.metadata.OnixValueStruct;
+import com.tectonica.jonix.metadata.OnixStruct;
 import com.tectonica.jonix.metadata.Primitive;
 import com.tectonica.jonix.util.DOM;
 import com.tectonica.jonix.util.DOM.ElementListener;
@@ -578,7 +578,7 @@ public class Parser
 	{
 		classesLoop: for (OnixContentClass occ : meta.contentClassesMap.values())
 		{
-			OnixValueStruct struct = new OnixValueStruct(occ);
+			OnixStruct struct = new OnixStruct(occ);
 			for (OnixContentClassMember m : occ.members)
 			{
 				m.onixClass = meta.classByName(m.className);
