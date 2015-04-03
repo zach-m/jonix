@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.SalesRestrictionTypes;
  */
 
 @SuppressWarnings("serial")
-public class SalesRestrictionType implements Serializable
+public class SalesRestrictionType implements OnixValue, Serializable
 {
 	public static final String refname = "SalesRestrictionType";
 	public static final String shortname = "b381";

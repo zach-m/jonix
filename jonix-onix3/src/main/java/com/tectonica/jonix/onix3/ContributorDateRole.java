@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ContributorDateRole implements Serializable
+public class ContributorDateRole implements OnixValue, Serializable
 {
 	public static final String refname = "ContributorDateRole";
 	public static final String shortname = "x417";

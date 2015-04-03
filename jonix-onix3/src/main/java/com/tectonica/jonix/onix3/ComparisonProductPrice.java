@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -35,7 +36,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class ComparisonProductPrice implements Serializable
+public class ComparisonProductPrice implements OnixContent, Serializable
 {
 	public static final String refname = "ComparisonProductPrice";
 	public static final String shortname = "comparisonproductprice";

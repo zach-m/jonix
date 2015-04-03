@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.Regions;
  */
 
 @SuppressWarnings("serial")
-public class RegionCode implements Serializable
+public class RegionCode implements OnixValue, Serializable
 {
 	public static final String refname = "RegionCode";
 	public static final String shortname = "b398";

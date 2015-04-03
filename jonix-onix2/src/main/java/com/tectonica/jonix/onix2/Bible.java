@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.BibleContentss;
 import com.tectonica.jonix.codelist.BiblePurposes;
 import com.tectonica.jonix.codelist.BibleReferenceLocations;
@@ -42,7 +43,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class Bible implements Serializable
+public class Bible implements OnixContent, Serializable
 {
 	public static final String refname = "Bible";
 	public static final String shortname = "bible";

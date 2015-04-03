@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class DefaultLanguageOfText implements Serializable
+public class DefaultLanguageOfText implements OnixValue, Serializable
 {
 	public static final String refname = "DefaultLanguageOfText";
 	public static final String shortname = "m184";

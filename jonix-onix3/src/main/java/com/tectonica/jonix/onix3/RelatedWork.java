@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.codelist.WorkRelations;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class RelatedWork implements Serializable
+public class RelatedWork implements OnixContent, Serializable
 {
 	public static final String refname = "RelatedWork";
 	public static final String shortname = "relatedwork";

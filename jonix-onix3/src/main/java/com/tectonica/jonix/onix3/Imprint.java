@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixImprintIdentifier;
@@ -33,7 +34,7 @@ import com.tectonica.jonix.struct.JonixImprintIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Imprint implements Serializable
+public class Imprint implements OnixContent, Serializable
 {
 	public static final String refname = "Imprint";
 	public static final String shortname = "imprint";

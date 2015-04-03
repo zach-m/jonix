@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.PrintedOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class PrintedOnProduct implements Serializable
+public class PrintedOnProduct implements OnixValue, Serializable
 {
 	public static final String refname = "PrintedOnProduct";
 	public static final String shortname = "x301";

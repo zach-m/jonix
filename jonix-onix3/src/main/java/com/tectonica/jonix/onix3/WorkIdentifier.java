@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class WorkIdentifier implements Serializable
+public class WorkIdentifier implements OnixContent, Serializable
 {
 	public static final String refname = "WorkIdentifier";
 	public static final String shortname = "workidentifier";

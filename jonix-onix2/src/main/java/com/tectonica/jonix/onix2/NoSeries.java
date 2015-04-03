@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixFlag;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -33,7 +34,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class NoSeries implements Serializable
+public class NoSeries implements OnixFlag, Serializable
 {
 	public static final String refname = "NoSeries";
 	public static final String shortname = "n338";

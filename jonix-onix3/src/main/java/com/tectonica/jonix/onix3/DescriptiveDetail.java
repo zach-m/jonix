@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
@@ -49,7 +50,7 @@ import com.tectonica.jonix.struct.JonixLanguage;
  */
 
 @SuppressWarnings("serial")
-public class DescriptiveDetail implements Serializable
+public class DescriptiveDetail implements OnixContent, Serializable
 {
 	public static final String refname = "DescriptiveDetail";
 	public static final String shortname = "descriptivedetail";

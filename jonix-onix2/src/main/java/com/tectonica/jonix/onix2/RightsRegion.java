@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.RightsRegions;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class RightsRegion implements Serializable
+public class RightsRegion implements OnixValue, Serializable
 {
 	public static final String refname = "RightsRegion";
 	public static final String shortname = "b091";

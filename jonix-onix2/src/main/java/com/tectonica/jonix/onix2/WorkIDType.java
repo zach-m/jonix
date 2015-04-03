@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.codelist.WorkIdentifierTypes;
  */
 
 @SuppressWarnings("serial")
-public class WorkIDType implements Serializable
+public class WorkIDType implements OnixValue, Serializable
 {
 	public static final String refname = "WorkIDType";
 	public static final String shortname = "b201";

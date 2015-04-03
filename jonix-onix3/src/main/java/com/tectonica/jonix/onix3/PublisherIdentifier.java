@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPublisherIdentifier;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixPublisherIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class PublisherIdentifier implements Serializable
+public class PublisherIdentifier implements OnixContent, Serializable
 {
 	public static final String refname = "PublisherIdentifier";
 	public static final String shortname = "publisheridentifier";

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceModes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.ResourceModes;
  */
 
 @SuppressWarnings("serial")
-public class ResourceMode implements Serializable
+public class ResourceMode implements OnixValue, Serializable
 {
 	public static final String refname = "ResourceMode";
 	public static final String shortname = "x437";

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -36,7 +37,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class RelatedProduct implements Serializable
+public class RelatedProduct implements OnixContent, Serializable
 {
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";

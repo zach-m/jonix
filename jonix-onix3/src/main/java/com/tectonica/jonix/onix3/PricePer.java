@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnitOfPricings;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.UnitOfPricings;
  */
 
 @SuppressWarnings("serial")
-public class PricePer implements Serializable
+public class PricePer implements OnixValue, Serializable
 {
 	public static final String refname = "PricePer";
 	public static final String shortname = "j239";

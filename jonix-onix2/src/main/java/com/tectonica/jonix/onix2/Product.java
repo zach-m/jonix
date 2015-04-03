@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
@@ -73,7 +74,7 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Product implements Serializable
+public class Product implements OnixContent, Serializable
 {
 	public static final String refname = "Product";
 	public static final String shortname = "product";

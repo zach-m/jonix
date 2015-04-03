@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -32,7 +33,7 @@ import com.tectonica.jonix.struct.JonixPublishingDate;
  */
 
 @SuppressWarnings("serial")
-public class PublishingDate implements Serializable
+public class PublishingDate implements OnixContent, Serializable
 {
 	public static final String refname = "PublishingDate";
 	public static final String shortname = "publishingdate";

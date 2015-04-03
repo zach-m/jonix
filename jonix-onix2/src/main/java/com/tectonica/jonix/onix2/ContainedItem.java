@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductContentTypes;
@@ -43,7 +44,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class ContainedItem implements Serializable
+public class ContainedItem implements OnixContent, Serializable
 {
 	public static final String refname = "ContainedItem";
 	public static final String shortname = "containeditem";

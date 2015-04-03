@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkRelations;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.WorkRelations;
  */
 
 @SuppressWarnings("serial")
-public class WorkRelationCode implements Serializable
+public class WorkRelationCode implements OnixValue, Serializable
 {
 	public static final String refname = "WorkRelationCode";
 	public static final String shortname = "x454";

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.struct.JonixLocationIdentifier;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixLocationIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class LocationIdentifier implements Serializable
+public class LocationIdentifier implements OnixContent, Serializable
 {
 	public static final String refname = "LocationIdentifier";
 	public static final String shortname = "locationidentifier";

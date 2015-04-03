@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -39,7 +40,7 @@ import com.tectonica.jonix.struct.JonixTitle;
  */
 
 @SuppressWarnings("serial")
-public class Set implements Serializable
+public class Set implements OnixContent, Serializable
 {
 	public static final String refname = "Set";
 	public static final String shortname = "set";

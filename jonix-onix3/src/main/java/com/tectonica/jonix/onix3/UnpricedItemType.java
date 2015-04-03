@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
  */
 
 @SuppressWarnings("serial")
-public class UnpricedItemType implements Serializable
+public class UnpricedItemType implements OnixValue, Serializable
 {
 	public static final String refname = "UnpricedItemType";
 	public static final String shortname = "j192";

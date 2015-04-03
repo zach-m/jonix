@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixSenderIdentifier;
@@ -33,7 +34,7 @@ import com.tectonica.jonix.struct.JonixSenderIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Sender implements Serializable
+public class Sender implements OnixContent, Serializable
 {
 	public static final String refname = "Sender";
 	public static final String shortname = "sender";

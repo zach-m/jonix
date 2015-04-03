@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
@@ -35,7 +36,7 @@ import com.tectonica.jonix.struct.JonixStockQuantityCoded;
  */
 
 @SuppressWarnings("serial")
-public class StockQuantityCoded implements Serializable
+public class StockQuantityCoded implements OnixContent, Serializable
 {
 	public static final String refname = "StockQuantityCoded";
 	public static final String shortname = "stockquantitycoded";

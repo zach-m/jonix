@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.ExtentUnits;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
@@ -35,7 +36,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class Extent implements Serializable
+public class Extent implements OnixContent, Serializable
 {
 	public static final String refname = "Extent";
 	public static final String shortname = "extent";

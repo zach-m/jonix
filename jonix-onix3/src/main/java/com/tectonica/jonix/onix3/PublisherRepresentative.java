@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.struct.JonixAgentIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class PublisherRepresentative implements Serializable
+public class PublisherRepresentative implements OnixContent, Serializable
 {
 	public static final String refname = "PublisherRepresentative";
 	public static final String shortname = "publisherrepresentative";

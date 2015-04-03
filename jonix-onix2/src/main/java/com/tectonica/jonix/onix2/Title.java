@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -35,7 +36,7 @@ import com.tectonica.jonix.struct.JonixTitle;
  */
 
 @SuppressWarnings("serial")
-public class Title implements Serializable
+public class Title implements OnixContent, Serializable
 {
 	public static final String refname = "Title";
 	public static final String shortname = "title";

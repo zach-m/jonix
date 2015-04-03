@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class RelationCode implements Serializable
+public class RelationCode implements OnixValue, Serializable
 {
 	public static final String refname = "RelationCode";
 	public static final String shortname = "h208";

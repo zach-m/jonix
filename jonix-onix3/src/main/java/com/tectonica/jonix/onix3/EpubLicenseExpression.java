@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
  */
 
 @SuppressWarnings("serial")
-public class EpubLicenseExpression implements Serializable
+public class EpubLicenseExpression implements OnixContent, Serializable
 {
 	public static final String refname = "EpubLicenseExpression";
 	public static final String shortname = "epublicenseexpression";

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixFlag;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -29,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class PrimaryPart implements Serializable
+public class PrimaryPart implements OnixFlag, Serializable
 {
 	public static final String refname = "PrimaryPart";
 	public static final String shortname = "x457";

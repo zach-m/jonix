@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class RelatedMaterial implements Serializable
+public class RelatedMaterial implements OnixContent, Serializable
 {
 	public static final String refname = "RelatedMaterial";
 	public static final String shortname = "relatedmaterial";

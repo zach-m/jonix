@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductContactIdentifier;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixProductContactIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class ProductContactIdentifier implements Serializable
+public class ProductContactIdentifier implements OnixContent, Serializable
 {
 	public static final String refname = "ProductContactIdentifier";
 	public static final String shortname = "productcontactidentifier";

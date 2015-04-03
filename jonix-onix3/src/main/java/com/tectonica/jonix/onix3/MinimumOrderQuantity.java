@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -29,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class MinimumOrderQuantity implements Serializable
+public class MinimumOrderQuantity implements OnixValue, Serializable
 {
 	public static final String refname = "MinimumOrderQuantity";
 	public static final String shortname = "j263";

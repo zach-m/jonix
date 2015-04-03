@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 
@@ -31,7 +32,7 @@ import com.tectonica.jonix.codelist.TitleTypes;
  */
 
 @SuppressWarnings("serial")
-public class TitleDetail implements Serializable
+public class TitleDetail implements OnixContent, Serializable
 {
 	public static final String refname = "TitleDetail";
 	public static final String shortname = "titledetail";

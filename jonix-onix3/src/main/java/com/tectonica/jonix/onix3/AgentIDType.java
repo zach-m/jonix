@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
  */
 
 @SuppressWarnings("serial")
-public class AgentIDType implements Serializable
+public class AgentIDType implements OnixValue, Serializable
 {
 	public static final String refname = "AgentIDType";
 	public static final String shortname = "j400";

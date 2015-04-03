@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class PersonNameType implements Serializable
+public class PersonNameType implements OnixValue, Serializable
 {
 	public static final String refname = "PersonNameType";
 	public static final String shortname = "b250";

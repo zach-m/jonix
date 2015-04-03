@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
  */
 
 @SuppressWarnings("serial")
-public class SupplierCodeType implements Serializable
+public class SupplierCodeType implements OnixValue, Serializable
 {
 	public static final String refname = "SupplierCodeType";
 	public static final String shortname = "x458";

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
 import com.tectonica.jonix.codelist.PriceConditionTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -36,7 +37,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class PriceCondition implements Serializable
+public class PriceCondition implements OnixContent, Serializable
 {
 	public static final String refname = "PriceCondition";
 	public static final String shortname = "pricecondition";

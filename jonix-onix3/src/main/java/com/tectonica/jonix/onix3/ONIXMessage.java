@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ONIXMessage implements Serializable
+public class ONIXMessage implements OnixContent, Serializable
 {
 	public static final String refname = "ONIXMessage";
 	public static final String shortname = "ONIXmessage";

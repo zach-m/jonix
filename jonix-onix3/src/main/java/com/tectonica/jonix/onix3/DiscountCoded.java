@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixDiscountCoded;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixDiscountCoded;
  */
 
 @SuppressWarnings("serial")
-public class DiscountCoded implements Serializable
+public class DiscountCoded implements OnixContent, Serializable
 {
 	public static final String refname = "DiscountCoded";
 	public static final String shortname = "discountcoded";

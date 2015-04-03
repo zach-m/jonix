@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class AudienceRange implements Serializable
+public class AudienceRange implements OnixContent, Serializable
 {
 	public static final String refname = "AudienceRange";
 	public static final String shortname = "audiencerange";

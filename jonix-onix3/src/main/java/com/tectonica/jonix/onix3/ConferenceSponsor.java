@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
@@ -33,7 +34,7 @@ import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class ConferenceSponsor implements Serializable
+public class ConferenceSponsor implements OnixContent, Serializable
 {
 	public static final String refname = "ConferenceSponsor";
 	public static final String shortname = "conferencesponsor";

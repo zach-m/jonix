@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageStatuss;
 import com.tectonica.jonix.codelist.UsageTypes;
@@ -32,7 +33,7 @@ import com.tectonica.jonix.codelist.UsageTypes;
  */
 
 @SuppressWarnings("serial")
-public class EpubUsageConstraint implements Serializable
+public class EpubUsageConstraint implements OnixContent, Serializable
 {
 	public static final String refname = "EpubUsageConstraint";
 	public static final String shortname = "epubusageconstraint";

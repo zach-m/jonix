@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +33,7 @@ import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
  */
 
 @SuppressWarnings("serial")
-public class TitleText implements Serializable
+public class TitleText implements OnixValue, Serializable
 {
 	public static final String refname = "TitleText";
 	public static final String shortname = "b203";

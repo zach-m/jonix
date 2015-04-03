@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.TitleTypes;
  */
 
 @SuppressWarnings("serial")
-public class TitleType implements Serializable
+public class TitleType implements OnixValue, Serializable
 {
 	public static final String refname = "TitleType";
 	public static final String shortname = "b202";

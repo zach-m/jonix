@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TaxRateCodeds;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.TaxRateCodeds;
  */
 
 @SuppressWarnings("serial")
-public class TaxRateCode implements Serializable
+public class TaxRateCode implements OnixValue, Serializable
 {
 	public static final String refname = "TaxRateCode";
 	public static final String shortname = "x471";

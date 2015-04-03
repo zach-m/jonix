@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.MeasureUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class Measure implements Serializable
+public class Measure implements OnixContent, Serializable
 {
 	public static final String refname = "Measure";
 	public static final String shortname = "measure";

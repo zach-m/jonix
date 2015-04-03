@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.struct.JonixReturnsConditions;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixReturnsConditions;
  */
 
 @SuppressWarnings("serial")
-public class ReturnsConditions implements Serializable
+public class ReturnsConditions implements OnixContent, Serializable
 {
 	public static final String refname = "ReturnsConditions";
 	public static final String shortname = "returnsconditions";

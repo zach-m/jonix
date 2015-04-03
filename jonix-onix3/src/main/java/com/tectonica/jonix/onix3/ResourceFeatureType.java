@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.ResourceFeatureTypes;
  */
 
 @SuppressWarnings("serial")
-public class ResourceFeatureType implements Serializable
+public class ResourceFeatureType implements OnixValue, Serializable
 {
 	public static final String refname = "ResourceFeatureType";
 	public static final String shortname = "x438";

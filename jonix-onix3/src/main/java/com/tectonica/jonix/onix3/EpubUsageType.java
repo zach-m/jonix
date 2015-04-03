@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.UsageTypes;
  */
 
 @SuppressWarnings("serial")
-public class EpubUsageType implements Serializable
+public class EpubUsageType implements OnixValue, Serializable
 {
 	public static final String refname = "EpubUsageType";
 	public static final String shortname = "x318";

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -37,7 +38,7 @@ import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class PersonAsSubject implements Serializable
+public class PersonAsSubject implements OnixContent, Serializable
 {
 	public static final String refname = "PersonAsSubject";
 	public static final String shortname = "personassubject";

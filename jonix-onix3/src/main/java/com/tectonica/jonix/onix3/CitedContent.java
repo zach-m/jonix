@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.CitedContentTypes;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.ContentDateRoles;
@@ -36,7 +37,7 @@ import com.tectonica.jonix.struct.JonixContentDate;
  */
 
 @SuppressWarnings("serial")
-public class CitedContent implements Serializable
+public class CitedContent implements OnixContent, Serializable
 {
 	public static final String refname = "CitedContent";
 	public static final String shortname = "citedcontent";

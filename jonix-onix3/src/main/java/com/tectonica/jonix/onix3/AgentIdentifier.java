@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAgentIdentifier;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.struct.JonixAgentIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class AgentIdentifier implements Serializable
+public class AgentIdentifier implements OnixContent, Serializable
 {
 	public static final String refname = "AgentIdentifier";
 	public static final String shortname = "agentidentifier";

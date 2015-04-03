@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
  */
 
 @SuppressWarnings("serial")
-public class ROWSalesRightsType implements Serializable
+public class ROWSalesRightsType implements OnixValue, Serializable
 {
 	public static final String refname = "ROWSalesRightsType";
 	public static final String shortname = "x456";

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.codelist.Regions;
  */
 
 @SuppressWarnings("serial")
-public class Territory implements Serializable
+public class Territory implements OnixContent, Serializable
 {
 	public static final String refname = "Territory";
 	public static final String shortname = "territory";

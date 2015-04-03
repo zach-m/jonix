@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -35,7 +36,7 @@ import com.tectonica.jonix.struct.JonixIllustrations;
  */
 
 @SuppressWarnings("serial")
-public class Illustrations implements Serializable
+public class Illustrations implements OnixContent, Serializable
 {
 	public static final String refname = "Illustrations";
 	public static final String shortname = "illustrations";

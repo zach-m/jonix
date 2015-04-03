@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
@@ -36,7 +37,7 @@ import com.tectonica.jonix.struct.JonixLanguage;
  */
 
 @SuppressWarnings("serial")
-public class Language implements Serializable
+public class Language implements OnixContent, Serializable
 {
 	public static final String refname = "Language";
 	public static final String shortname = "language";

@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
  */
 
 @SuppressWarnings("serial")
-public class ProductWebsite implements Serializable
+public class ProductWebsite implements OnixContent, Serializable
 {
 	public static final String refname = "ProductWebsite";
 	public static final String shortname = "productwebsite";

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
@@ -33,7 +34,7 @@ import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class SalesOutlet implements Serializable
+public class SalesOutlet implements OnixContent, Serializable
 {
 	public static final String refname = "SalesOutlet";
 	public static final String shortname = "salesoutlet";

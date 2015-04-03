@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 
@@ -30,7 +31,7 @@ import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
  */
 
 @SuppressWarnings("serial")
-public class SalesOutletIDType implements Serializable
+public class SalesOutletIDType implements OnixValue, Serializable
 {
 	public static final String refname = "SalesOutletIDType";
 	public static final String shortname = "b393";

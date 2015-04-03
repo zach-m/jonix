@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
 import com.tectonica.jonix.struct.JonixResourceVersionFeature;
@@ -33,7 +34,7 @@ import com.tectonica.jonix.struct.JonixResourceVersionFeature;
  */
 
 @SuppressWarnings("serial")
-public class ResourceVersionFeature implements Serializable
+public class ResourceVersionFeature implements OnixContent, Serializable
 {
 	public static final String refname = "ResourceVersionFeature";
 	public static final String shortname = "resourceversionfeature";
