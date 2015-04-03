@@ -41,6 +41,14 @@ public class OnixMetadata
 	public Map<String, OnixSimpleType> enumsMap = new HashMap<>();
 	@JsonIgnore
 	public Map<String, OnixStruct> structsMap = new HashMap<>();
+	@JsonIgnore
+	public Map<String, OnixContentClass> intfsMap = new HashMap<>();
+
+	// the following is to be filled during code-generation, not parsing
+	@JsonIgnore
+	public Map<String, OnixStruct> unifiedStructs = null;
+
+	// convenience getters
 
 	public Collection<OnixContentClass> getContentClasses()
 	{
@@ -70,6 +78,11 @@ public class OnixMetadata
 	public Collection<OnixStruct> getStructs()
 	{
 		return structsMap.values();
+	}
+
+	public Collection<OnixContentClass> getIntfs()
+	{
+		return intfsMap.values();
 	}
 
 	public OnixSimpleType typeByName(String name)

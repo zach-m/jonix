@@ -22,7 +22,10 @@ package com.tectonica.jonix;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -63,11 +66,12 @@ public class GenerateCode
 				ParseUtil.SPACEABLE_REF_3);
 
 		final List<OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
-		final List<OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);
+		final Map<String, OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);
+//		unifyInterfaces(ref2, ref3);
 
 		// Generate source code
 		generateCodelists(basePackage, basePath, relativePath, unifiedCodelists);
-		generateStructs(basePackage, basePath, relativePath, unifiedStructs);
+		generateStructs(basePackage, basePath, relativePath, unifiedStructs.values());
 		generateOnix2(basePackage, basePath, relativePath, ref2);
 		generateOnix3(basePackage, basePath, relativePath, ref3);
 
@@ -89,7 +93,7 @@ public class GenerateCode
 	}
 
 	private static void generateStructs(final String basePackage, final String basePath, final String relativePath,
-			final List<OnixStruct> unifiedStructs)
+			final Collection<OnixStruct> unifiedStructs)
 	{
 		final String codelistHome = basePath + "/jonix-common";
 		if (!new File(codelistHome).exists())
@@ -147,7 +151,7 @@ public class GenerateCode
 			@Override
 			public boolean onDiff(OnixSimpleType enum2, OnixSimpleType enum3)
 			{
-				// skip aliases
+				// ignore aliases, we'll generate code out of the types they point to
 				if (enum2 != null && enum2.enumAliasFor != null)
 					return true;
 				if (enum3 != null && enum3.enumAliasFor != null)
@@ -156,8 +160,8 @@ public class GenerateCode
 				if (enum2 != null && enum3 != null)
 				{
 //					System.out.println("                                         Common: " + enum2.enumName);
-					final OnixSimpleType u = unifiedCodelist(enum2, enum3);
-					unifiedCodelists.add(u);
+					final OnixSimpleType unified = unifiedCodelist(enum2, enum3);
+					unifiedCodelists.add(unified);
 				}
 				else if (enum2 != null)
 				{
@@ -213,9 +217,9 @@ public class GenerateCode
 
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private static List<OnixStruct> unifyStructs(final OnixMetadata ref2, final OnixMetadata ref3)
+	private static Map<String, OnixStruct> unifyStructs(final OnixMetadata ref2, final OnixMetadata ref3)
 	{
-		final List<OnixStruct> unifiedStructs = new ArrayList<>();
+		final Map<String, OnixStruct> unifiedStructs = new HashMap<>();
 
 		ListDiff.sortAndCompare(ref2.getStructs(), ref3.getStructs(), new CompareListener<OnixStruct>()
 		{
@@ -224,26 +228,24 @@ public class GenerateCode
 			{
 				if (struct2 != null && struct3 != null)
 				{
-					final OnixStruct u = unifiedStruct(struct2, struct3);
-					if (u == null)
-					{
-						ref2.structsMap.remove(struct2.containingClass.name);
-						ref3.structsMap.remove(struct3.containingClass.name);
-					}
-					else
-						unifiedStructs.add(u);
+					final OnixStruct unified = unifiedStruct(struct2, struct3);
+					if (unified != null)
+						unifiedStructs.put(struct3.containingClass.name, unified);
 				}
 				else if (struct2 != null)
 				{
-					unifiedStructs.add(struct2);
+					unifiedStructs.put(struct2.containingClass.name, struct2);
 				}
 				else
 				{
-					unifiedStructs.add(struct3);
+					unifiedStructs.put(struct3.containingClass.name, struct3);
 				}
 				return true;
 			}
 		});
+
+		ref2.unifiedStructs = unifiedStructs;
+		ref3.unifiedStructs = unifiedStructs;
 
 		return unifiedStructs;
 	}
@@ -315,5 +317,34 @@ public class GenerateCode
 		});
 		return (completed ? unified : null);
 	}
-	}
+
+	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//	private static List<OnixContentClass> unifyInterfaces(final OnixMetadata ref2, final OnixMetadata ref3)
+//	{
+//		final List<OnixContentClass> unifiedInterfaces = new ArrayList<>();
+//
+//		ListDiff.sortAndCompare(ref2.getIntfs(), ref3.getIntfs(), new CompareListener<OnixContentClass>()
+//		{
+//			@Override
+//			public boolean onDiff(final OnixContentClass occ2, final OnixContentClass occ3)
+//			{
+//				if (occ2 != null && occ3 != null)
+//				{
+//					System.err.println("Shared non-struct: " + occ2.name);
+//				}
+//				else if (occ2 != null)
+//				{
+//					System.out.println("                             Onix2 non-struct: " + occ2.name);
+//				}
+//				else
+//				{
+//					System.out.println("                                                           Onix3 non-struct: " + occ3.name);
+//				}
+//				return true;
+//			}
+//		});
+//
+//		return unifiedInterfaces;
+//	}
 }

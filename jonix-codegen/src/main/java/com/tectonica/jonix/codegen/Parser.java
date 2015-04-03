@@ -644,14 +644,12 @@ public class Parser
 			if (hasOnlyValueMembers)
 			{
 				if (struct.members.size() == 0)
-					throw new RuntimeException("Struct with no members");
-				final OnixStruct existing = meta.structsMap.put(occ.name, struct);
-				if (existing != null)
-					throw new RuntimeException("ValueClass is referenced by more than one ContentClass");
+					throw new RuntimeException("Struct with no members - " + struct.containingClass.name);
+				meta.structsMap.put(occ.name, struct);
 			}
 			else
 			{
-//				System.out.println("Interface: " + occ.name);
+				meta.intfsMap.put(occ.name, occ);
 			}
 		}
 	}

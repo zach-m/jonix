@@ -188,7 +188,7 @@ public class OnixClassGen
 		{
 			if (!m.cardinality.singular)
 			{
-				final OnixStruct struct = ref.structsMap.get(m.className);
+				final OnixStruct struct = ref.unifiedStructs.get(m.className);
 				if (struct != null && struct.isSearchable())
 				{
 					final String structName = "Jonix" + m.className;
@@ -233,7 +233,7 @@ public class OnixClassGen
 		}
 
 		// declare struct provider
-		final OnixStruct struct = ref.structsMap.get(clz.name);
+		final OnixStruct struct = ref.unifiedStructs.get(clz.name);
 		if (struct != null)
 		{
 			final String structName = "Jonix" + clz.name;
