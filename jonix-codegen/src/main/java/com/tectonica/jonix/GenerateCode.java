@@ -22,9 +22,7 @@ package com.tectonica.jonix;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -142,22 +140,19 @@ public class GenerateCode
 
 	private static List<OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3)
 	{
-		final List<OnixSimpleType> enums2 = new ArrayList<>(ref2.enumsMap.values());
-		final List<OnixSimpleType> enums3 = new ArrayList<>(ref3.enumsMap.values());
-
-		removeAliases(enums2);
-		removeAliases(enums3);
-
-		Collections.sort(enums2);
-		Collections.sort(enums3);
-
 		final List<OnixSimpleType> unifiedCodelists = new ArrayList<>();
 
-		ListDiff.compare(enums2, enums3, new CompareListener<OnixSimpleType>()
+		ListDiff.sortAndCompare(ref2.getEnums(), ref3.getEnums(), new CompareListener<OnixSimpleType>()
 		{
 			@Override
 			public boolean onDiff(OnixSimpleType enum2, OnixSimpleType enum3)
 			{
+				// skip aliases
+				if (enum2 != null && enum2.enumAliasFor != null)
+					return true;
+				if (enum3 != null && enum3.enumAliasFor != null)
+					return true;
+
 				if (enum2 != null && enum3 != null)
 				{
 //					System.out.println("                                         Common: " + enum2.enumName);
@@ -181,16 +176,6 @@ public class GenerateCode
 		});
 
 		return unifiedCodelists;
-	}
-
-	private static void removeAliases(List<OnixSimpleType> enums)
-	{
-		for (ListIterator<OnixSimpleType> iter = enums.listIterator(); iter.hasNext();)
-		{
-			final OnixSimpleType next = iter.next();
-			if (next.enumAliasFor != null)
-				iter.remove();
-		}
 	}
 
 	private static OnixSimpleType unifiedCodelist(final OnixSimpleType enum2, final OnixSimpleType enum3)
@@ -230,15 +215,9 @@ public class GenerateCode
 
 	private static List<OnixStruct> unifyStructs(final OnixMetadata ref2, final OnixMetadata ref3)
 	{
-		final List<OnixStruct> structs2 = new ArrayList<>(ref2.getStructs());
-		final List<OnixStruct> structs3 = new ArrayList<>(ref3.getStructs());
-
-		Collections.sort(structs2);
-		Collections.sort(structs3);
-
 		final List<OnixStruct> unifiedStructs = new ArrayList<>();
 
-		ListDiff.compare(structs2, structs3, new CompareListener<OnixStruct>()
+		ListDiff.sortAndCompare(ref2.getStructs(), ref3.getStructs(), new CompareListener<OnixStruct>()
 		{
 			@Override
 			public boolean onDiff(final OnixStruct struct2, final OnixStruct struct3)
@@ -275,15 +254,16 @@ public class GenerateCode
 		final OnixStruct unified = new OnixStruct(struct3.containingClass);
 
 		if (struct2.isSearchable() != struct3.isSearchable())
-			throw new RuntimeException("In " + className + ", can't reconcile struct as keys are of different searchability: Onix2="
-					+ struct2.isSearchable() + " Onix3=" + struct3.isSearchable());
+			throw new RuntimeException("Class " + className
+					+ ", can't be unified into struct as keys are of different searchability: Onix2=" + struct2.isSearchable() + " Onix3="
+					+ struct3.isSearchable());
 
 		if (struct3.key != null)
 		{
 			final String enumName2 = struct2.keyEnumType().enumName;
 			final String enumName3 = struct3.keyEnumType().enumName;
 			if (!enumName2.equals(enumName3))
-				throw new RuntimeException("In " + className + ", can't reconcile struct as keys are of different types: Onix2="
+				throw new RuntimeException("Class " + className + ", can't be unified into struct as keys are of different types: Onix2="
 						+ enumName2 + " Onix3=" + enumName3);
 
 			unified.key = struct3.key;
@@ -291,13 +271,7 @@ public class GenerateCode
 
 		unified.members = new ArrayList<>();
 
-		final List<OnixContentClassMember> members2 = new ArrayList<>(struct2.members);
-		final List<OnixContentClassMember> members3 = new ArrayList<>(struct3.members);
-
-		Collections.sort(members2);
-		Collections.sort(members3);
-
-		boolean notCanceled = ListDiff.compare(members2, members3, new CompareListener<OnixContentClassMember>()
+		boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members, new CompareListener<OnixContentClassMember>()
 		{
 			@Override
 			public boolean onDiff(OnixContentClassMember m2, OnixContentClassMember m3)
@@ -311,14 +285,14 @@ public class GenerateCode
 					final String javaType3 = vm3.simpleType.primitiveType.javaType;
 					if (!javaType2.equals(javaType3))
 					{
-						System.err.println("In " + className + ", type mismatch in " + memberClassName + ": Onix2=" + javaType2
-								+ " vs Onix3=" + javaType3);
+						System.err.println("<" + className + "> can't be unified into struct: type mismatch in '" + memberClassName
+								+ "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
 						return false; // can't unify, we cancel the scanning of the remaining members
 					}
 					if (m2.cardinality != m3.cardinality)
 					{
-						System.err.println("In " + className + ", cardinality mismatch in " + memberClassName + ": Onix2=" + m2.cardinality
-								+ " vs Onix3=" + m3.cardinality);
+						System.err.println("<" + className + "> can't be unified into struct: cardinality mismatch in '" + memberClassName
+								+ "': Onix2=" + m2.cardinality + " vs Onix3=" + m3.cardinality);
 						return false; // can't unify, we cancel the scanning of the remaining members
 					}
 					unified.members.add(m3);
@@ -339,6 +313,7 @@ public class GenerateCode
 				return true;
 			}
 		});
-		return (notCanceled ? unified : null);
+		return (completed ? unified : null);
+	}
 	}
 }
