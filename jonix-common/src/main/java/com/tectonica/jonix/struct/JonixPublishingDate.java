@@ -35,7 +35,4 @@ public class JonixPublishingDate implements Serializable
 
 	public DateFormats dateFormat;
 	public String date; // dt.NonEmptyString
-
-	public JonixPublishingDate()
-	{}
 }

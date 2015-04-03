@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixComplexity;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -86,5 +87,13 @@ public class Complexity implements OnixContent, Serializable
 	public String getComplexityCodeValue()
 	{
 		return (complexityCode == null) ? null : complexityCode.value;
+	}
+
+	public JonixComplexity asJonixComplexity()
+	{
+		JonixComplexity x = new JonixComplexity();
+		x.complexitySchemeIdentifier = getComplexitySchemeIdentifierValue();
+		x.complexityCode = getComplexityCodeValue();
+		return x;
 	}
 }

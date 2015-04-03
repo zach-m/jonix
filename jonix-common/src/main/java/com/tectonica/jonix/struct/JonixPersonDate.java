@@ -35,7 +35,4 @@ public class JonixPersonDate implements Serializable
 
 	public DateFormats dateFormat;
 	public String date; // NonEmptyString
-
-	public JonixPersonDate()
-	{}
 }

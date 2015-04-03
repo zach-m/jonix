@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.DiscountTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixDiscount;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -98,5 +99,16 @@ public class Discount implements OnixContent, Serializable
 	public Double getDiscountAmountValue()
 	{
 		return (discountAmount == null) ? null : discountAmount.value;
+	}
+
+	public JonixDiscount asJonixDiscount()
+	{
+		JonixDiscount x = new JonixDiscount();
+		x.discountType = getDiscountTypeValue();
+		x.quantity = getQuantityValue();
+		x.toQuantity = getToQuantityValue();
+		x.discountPercent = getDiscountPercentValue();
+		x.discountAmount = getDiscountAmountValue();
+		return x;
 	}
 }

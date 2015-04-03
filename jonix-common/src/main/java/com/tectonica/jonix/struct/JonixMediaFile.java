@@ -44,7 +44,4 @@ public class JonixMediaFile implements Serializable
 	public String downloadCopyrightNotice; // XHTML
 	public String downloadTerms; // XHTML
 	public String mediaFileDate; // NonEmptyString
-
-	public JonixMediaFile()
-	{}
 }

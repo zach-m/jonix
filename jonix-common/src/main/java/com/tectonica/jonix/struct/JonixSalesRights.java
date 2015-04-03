@@ -39,7 +39,4 @@ public class JonixSalesRights implements Serializable
 	public List<java.util.Set<CountryCodeIso31661s>> rightsCountrys;
 	public java.util.Set<Regions> rightsTerritory;
 	public List<RightsRegions> rightsRegions;
-
-	public JonixSalesRights()
-	{}
 }

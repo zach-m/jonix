@@ -34,7 +34,4 @@ public class JonixAudience implements Serializable
 
 	public String audienceCodeTypeName; // dt.NonEmptyString
 	public String audienceCodeValue; // dt.NonEmptyString
-
-	public JonixAudience()
-	{}
 }

@@ -189,7 +189,7 @@ public class OnixClassGen
 			if (!m.cardinality.singular)
 			{
 				final OnixStruct struct = ref.structsMap.get(m.className);
-				if (struct != null)
+				if (struct != null && struct.isSearchable())
 				{
 					final String structName = "Jonix" + m.className;
 					final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;

@@ -34,7 +34,4 @@ public class JonixIllustrations implements Serializable
 
 	public String illustrationTypeDescription; // NonEmptyString
 	public String number; // NonEmptyString
-
-	public JonixIllustrations()
-	{}
 }

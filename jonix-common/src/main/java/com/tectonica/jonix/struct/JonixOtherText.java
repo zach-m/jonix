@@ -44,7 +44,4 @@ public class JonixOtherText implements Serializable
 	public String textPublicationDate; // NonEmptyString
 	public String startDate; // NonEmptyString
 	public String endDate; // NonEmptyString
-
-	public JonixOtherText()
-	{}
 }

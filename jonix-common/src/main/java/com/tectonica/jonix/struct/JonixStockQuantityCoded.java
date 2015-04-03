@@ -34,7 +34,4 @@ public class JonixStockQuantityCoded implements Serializable
 
 	public String stockQuantityCode; // dt.NonEmptyString
 	public String stockQuantityCodeTypeName; // dt.NonEmptyString
-
-	public JonixStockQuantityCoded()
-	{}
 }

@@ -25,9 +25,11 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixAgentIdentifier;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -80,7 +82,7 @@ public class AgentIdentifier implements OnixContent, Serializable
 		});
 	}
 
-	public String getAgentIDTypeValue()
+	public SupplierIdentifierTypes getAgentIDTypeValue()
 	{
 		return (agentIDType == null) ? null : agentIDType.value;
 	}
@@ -93,5 +95,13 @@ public class AgentIdentifier implements OnixContent, Serializable
 	public String getIDValueValue()
 	{
 		return (idValue == null) ? null : idValue.value;
+	}
+
+	public JonixAgentIdentifier asJonixAgentIdentifier()
+	{
+		JonixAgentIdentifier x = new JonixAgentIdentifier();
+		x.idTypeName = getIDTypeNameValue();
+		x.idValue = getIDValueValue();
+		return x;
 	}
 }

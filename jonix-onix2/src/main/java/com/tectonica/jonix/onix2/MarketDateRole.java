@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -47,7 +48,7 @@ public class MarketDateRole implements OnixValue, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public String value; // NonEmptyString
+	public PublishingDateRoles value;
 
 	public MarketDateRole()
 	{}
@@ -62,6 +63,6 @@ public class MarketDateRole implements OnixValue, Serializable
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
+		value = PublishingDateRoles.byValue(JPU.getContentAsString(element));
 	}
 }

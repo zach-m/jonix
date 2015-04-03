@@ -35,7 +35,4 @@ public class JonixResourceVersionFeature implements Serializable
 
 	public String featureValue; // dt.NonEmptyString
 	public List<String> featureNotes; // XHTML
-
-	public JonixResourceVersionFeature()
-	{}
 }

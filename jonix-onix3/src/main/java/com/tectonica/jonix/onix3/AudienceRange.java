@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixAudienceRange;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -83,5 +84,14 @@ public class AudienceRange implements OnixContent, Serializable
 	public String getAudienceRangeValueValue()
 	{
 		return (audienceRangeValue == null) ? null : audienceRangeValue.value;
+	}
+
+	public JonixAudienceRange asJonixAudienceRange()
+	{
+		JonixAudienceRange x = new JonixAudienceRange();
+		x.audienceRangeQualifier = getAudienceRangeQualifierValue();
+		x.audienceRangePrecision = getAudienceRangePrecisionValue();
+		x.audienceRangeValue = getAudienceRangeValueValue();
+		return x;
 	}
 }

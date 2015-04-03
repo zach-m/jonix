@@ -34,7 +34,4 @@ public class JonixEpubLicenseExpression implements Serializable
 
 	public String epubLicenseExpressionTypeName; // dt.NonEmptyString
 	public String epubLicenseExpressionLink; // dt.NonEmptyURI
-
-	public JonixEpubLicenseExpression()
-	{}
 }

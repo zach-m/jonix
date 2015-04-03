@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
+import com.tectonica.jonix.struct.JonixTerritory;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -91,5 +92,15 @@ public class Territory implements OnixContent, Serializable
 	public java.util.Set<Regions> getRegionsExcludedSet()
 	{
 		return (regionsExcluded == null) ? null : regionsExcluded.value;
+	}
+
+	public JonixTerritory asJonixTerritory()
+	{
+		JonixTerritory x = new JonixTerritory();
+		x.countriesIncluded = getCountriesIncludedSet();
+		x.regionsIncluded = getRegionsIncludedSet();
+		x.countriesExcluded = getCountriesExcludedSet();
+		x.regionsExcluded = getRegionsExcludedSet();
+		return x;
 	}
 }

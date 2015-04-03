@@ -34,7 +34,4 @@ public class JonixPriceIdentifier implements Serializable
 
 	public String idTypeName; // dt.NonEmptyString
 	public String idValue; // dt.NonEmptyString
-
-	public JonixPriceIdentifier()
-	{}
 }

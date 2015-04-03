@@ -22,6 +22,9 @@ package com.tectonica.jonix.metadata;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({ "containingClass", "searchable", "key", "members" })
 public class OnixStruct implements Comparable<OnixStruct>
 {
 	public final OnixContentClass containingClass;
@@ -33,13 +36,26 @@ public class OnixStruct implements Comparable<OnixStruct>
 		this.containingClass = containingClass;
 	}
 
+	public boolean isSearchable()
+	{
+		return (key != null);
+	}
+
+	public OnixSimpleType keyEnumType()
+	{
+		return (key == null) ? null : ((OnixValueClass) key.onixClass).valueMember.simpleType;
+	}
+
 	@Override
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.append("struct " + containingClass.name).append("\n");
-		OnixValueClassMember km = ((OnixValueClass) key.onixClass).valueMember;
-		sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
+		if (key != null)
+		{
+			OnixValueClassMember km = ((OnixValueClass) key.onixClass).valueMember;
+			sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
+		}
 		for (OnixContentClassMember m : members)
 		{
 			OnixValueClassMember vm = ((OnixValueClass) m.onixClass).valueMember;
@@ -50,11 +66,6 @@ public class OnixStruct implements Comparable<OnixStruct>
 			sb.append("         - ").append(javaType).append("\n");
 		}
 		return sb.toString();
-	}
-
-	public OnixSimpleType keyEnumType()
-	{
-		return ((OnixValueClass) key.onixClass).valueMember.simpleType;
 	}
 
 	@Override

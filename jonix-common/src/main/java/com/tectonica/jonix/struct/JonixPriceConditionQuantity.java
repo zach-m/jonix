@@ -35,7 +35,4 @@ public class JonixPriceConditionQuantity implements Serializable
 
 	public Double quantity; // dt.PositiveDecimal
 	public QuantityUnits quantityUnit;
-
-	public JonixPriceConditionQuantity()
-	{}
 }

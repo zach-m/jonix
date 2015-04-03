@@ -35,7 +35,4 @@ public class JonixImprint implements Serializable
 	public String imprintName; // NonEmptyString
 	public String nameCodeTypeName; // NonEmptyString
 	public String nameCodeValue; // NonEmptyString
-
-	public JonixImprint()
-	{}
 }

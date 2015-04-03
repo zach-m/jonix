@@ -40,28 +40,41 @@ import com.tectonica.jonix.metadata.OnixEnumValue;
 import com.tectonica.jonix.metadata.OnixFlagClass;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
+import com.tectonica.jonix.metadata.OnixStruct;
 import com.tectonica.jonix.metadata.OnixValueClass;
 import com.tectonica.jonix.metadata.OnixValueClassMember;
-import com.tectonica.jonix.metadata.OnixStruct;
 import com.tectonica.jonix.metadata.Primitive;
 import com.tectonica.jonix.util.DOM;
 import com.tectonica.jonix.util.DOM.ElementListener;
 
 public class Parser
 {
+	public static enum OnixVersion
+	{
+		Ver2_1_03, Ver3_0_02
+	}
+
 	public static class SchemaContext
 	{
+		private final OnixVersion onixVersion;
+
+		public SchemaContext(OnixVersion onixVersion)
+		{
+			this.onixVersion = onixVersion;
+		}
+
 		private Set<String> spaceables;
 		private Set<String> enumNames = new HashSet<>();
 		private Map<String, Element> groupNodes = new HashMap<>();
 		private Map<String, Element> attributeGroupNodes = new HashMap<>();
 	}
 
-	private final SchemaContext context = new SchemaContext();
+	private final SchemaContext context;
 	private final OnixMetadata meta = new OnixMetadata();
 
-	public Parser(Set<String> spaceables)
+	public Parser(OnixVersion onixVersion, Set<String> spaceables)
 	{
+		context = new SchemaContext(onixVersion);
 		context.spaceables = spaceables;
 	}
 
@@ -420,11 +433,12 @@ public class Parser
 				simpleType = OnixSimpleType.XHTML;
 			}
 
-			final OnixValueClassMember member = OnixValueClassMember.create(simpleType);
 			final OnixValueClass onixValueClass = new OnixValueClass();
+			final OnixValueClassMember member = OnixValueClassMember.create(simpleType);
 			onixValueClass.name = onixTagName;
 			onixValueClass.valueMember = member;
 			onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
+			patchValueClass(onixValueClass); // fixes some errors from the XSD, if such exist
 			meta.valueClassesMap.put(onixValueClass.name, onixValueClass);
 			onixClass = onixValueClass;
 			attributesParentElem = extensionElem;
@@ -446,6 +460,21 @@ public class Parser
 
 		if (attributesParentElem != null)
 			extractAttributes(attributesParentElem, onixClass);
+	}
+
+	private void patchValueClass(final OnixValueClass onixValueClass)
+	{
+		if (context.onixVersion == OnixVersion.Ver2_1_03)
+		{
+			// patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
+			if (onixValueClass.name.equals("AgentIDType") || onixValueClass.name.equals("j400"))
+				onixValueClass.valueMember = OnixValueClassMember.create(meta.enumsMap.get("List92"));
+
+			// patch for error in Onix2_rev03 XSD with regards to MarketDateRole (listed as free text)
+			// NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be created
+			else if (onixValueClass.name.equals("MarketDateRole") || onixValueClass.name.equals("j408"))
+				onixValueClass.valueMember = OnixValueClassMember.create(meta.enumsMap.get("List163"));
+		}
 	}
 
 	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoiceElem, final Map<String, OnixContentClassMember> members)
@@ -577,8 +606,9 @@ public class Parser
 	public void postAnalysis()
 	{
 		// we're traversing all content-classes, looking for those that have ONLY value-class members
-		classesLoop: for (OnixContentClass occ : meta.getContentClasses())
+		for (OnixContentClass occ : meta.getContentClasses())
 		{
+			boolean hasOnlyValueMembers = true;
 			OnixStruct struct = new OnixStruct(occ);
 			for (OnixContentClassMember m : occ.members)
 			{
@@ -605,13 +635,23 @@ public class Parser
 						struct.members.add(m);
 				}
 				else
-					continue classesLoop; // no need to check the rest of the members once we find a non-value member
+				{
+					hasOnlyValueMembers = false;
+					break;
+				}
 			}
-			if (struct.key != null && struct.members.size() > 0)
+
+			if (hasOnlyValueMembers)
 			{
+				if (struct.members.size() == 0)
+					throw new RuntimeException("Struct with no members");
 				final OnixStruct existing = meta.structsMap.put(occ.name, struct);
 				if (existing != null)
 					throw new RuntimeException("ValueClass is referenced by more than one ContentClass");
+			}
+			else
+			{
+//				System.out.println("Interface: " + occ.name);
 			}
 		}
 	}

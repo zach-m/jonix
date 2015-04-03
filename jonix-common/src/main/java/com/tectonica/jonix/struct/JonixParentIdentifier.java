@@ -34,7 +34,4 @@ public class JonixParentIdentifier implements Serializable
 
 	public String idTypeName; // NonEmptyString
 	public String idValue; // NonEmptyString
-
-	public JonixParentIdentifier()
-	{}
 }

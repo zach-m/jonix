@@ -37,6 +37,7 @@ import com.tectonica.jonix.codelist.StudyBibleTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixBible;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -162,5 +163,18 @@ public class Bible implements OnixContent, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public JonixBible asJonixBible()
+	{
+		JonixBible x = new JonixBible();
+		x.bibleContentss = getBibleContentsValues();
+		x.bibleVersions = getBibleVersionValues();
+		x.studyBibleType = getStudyBibleTypeValue();
+		x.biblePurposes = getBiblePurposeValues();
+		x.bibleTextOrganization = getBibleTextOrganizationValue();
+		x.bibleReferenceLocation = getBibleReferenceLocationValue();
+		x.bibleTextFeatures = getBibleTextFeatureValues();
+		return x;
 	}
 }

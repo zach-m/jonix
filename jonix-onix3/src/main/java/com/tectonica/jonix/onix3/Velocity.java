@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Velocitys;
+import com.tectonica.jonix.struct.JonixVelocity;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -83,5 +84,14 @@ public class Velocity implements OnixContent, Serializable
 	public Proximitys getProximityValue()
 	{
 		return (proximity == null) ? null : proximity.value;
+	}
+
+	public JonixVelocity asJonixVelocity()
+	{
+		JonixVelocity x = new JonixVelocity();
+		x.velocityMetric = getVelocityMetricValue();
+		x.rate = getRateValue();
+		x.proximity = getProximityValue();
+		return x;
 	}
 }

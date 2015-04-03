@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixComplexity;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -74,5 +75,13 @@ public class Complexity implements OnixContent, Serializable
 	public String getComplexityCodeValue()
 	{
 		return (complexityCode == null) ? null : complexityCode.value;
+	}
+
+	public JonixComplexity asJonixComplexity()
+	{
+		JonixComplexity x = new JonixComplexity();
+		x.complexitySchemeIdentifier = getComplexitySchemeIdentifierValue();
+		x.complexityCode = getComplexityCodeValue();
+		return x;
 	}
 }

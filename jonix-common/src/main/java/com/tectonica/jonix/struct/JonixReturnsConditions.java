@@ -34,7 +34,4 @@ public class JonixReturnsConditions implements Serializable
 
 	public String returnsCodeTypeName; // dt.NonEmptyString
 	public String returnsCode; // dt.NonEmptyString
-
-	public JonixReturnsConditions()
-	{}
 }

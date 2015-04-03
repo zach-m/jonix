@@ -75,13 +75,16 @@ public class OnixStructGen
 		p.printf("{\n");
 
 		// declare key
-		final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;
-		final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-		final String keyField = GenUtil.fieldOf(struct.key.className);
-		p.printf("   public %s %s;%s\n", keyTypeInfo.javaType, keyField, keyTypeInfo.comment);
+		if (struct.isSearchable())
+		{
+			final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;
+			final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+			final String keyField = GenUtil.fieldOf(struct.key.className);
+			p.printf("   public %s %s;%s\n", keyTypeInfo.javaType, keyField, keyTypeInfo.comment);
+			p.println();
+		}
 
 		// declare members
-		p.println();
 		for (OnixContentClassMember member : struct.members)
 		{
 			final OnixValueClass memberClass = (OnixValueClass) member.onixClass;

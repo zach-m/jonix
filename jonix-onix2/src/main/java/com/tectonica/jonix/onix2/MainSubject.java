@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixMainSubject;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -102,5 +103,15 @@ public class MainSubject implements OnixContent, Serializable
 	public String getSubjectHeadingTextValue()
 	{
 		return (subjectHeadingText == null) ? null : subjectHeadingText.value;
+	}
+
+	public JonixMainSubject asJonixMainSubject()
+	{
+		JonixMainSubject x = new JonixMainSubject();
+		x.mainSubjectSchemeIdentifier = getMainSubjectSchemeIdentifierValue();
+		x.subjectSchemeVersion = getSubjectSchemeVersionValue();
+		x.subjectCode = getSubjectCodeValue();
+		x.subjectHeadingText = getSubjectHeadingTextValue();
+		return x;
 	}
 }

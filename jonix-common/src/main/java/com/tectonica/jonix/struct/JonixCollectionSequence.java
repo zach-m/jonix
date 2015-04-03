@@ -34,7 +34,4 @@ public class JonixCollectionSequence implements Serializable
 
 	public String collectionSequenceTypeName; // dt.NonEmptyString
 	public String collectionSequenceNumber; // dt.MultiLevelNumber
-
-	public JonixCollectionSequence()
-	{}
 }

@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixPageRun;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -73,5 +74,13 @@ public class PageRun implements OnixContent, Serializable
 	public String getLastPageNumberValue()
 	{
 		return (lastPageNumber == null) ? null : lastPageNumber.value;
+	}
+
+	public JonixPageRun asJonixPageRun()
+	{
+		JonixPageRun x = new JonixPageRun();
+		x.firstPageNumber = getFirstPageNumberValue();
+		x.lastPageNumber = getLastPageNumberValue();
+		return x;
 	}
 }

@@ -33,9 +33,6 @@ public class JonixMarketDate implements Serializable
 {
 	public PublishingDateRoles marketDateRole;
 
-	public DateFormats dateFormat;
 	public String date; // dt.NonEmptyString
-
-	public JonixMarketDate()
-	{}
+	public DateFormats dateFormat;
 }

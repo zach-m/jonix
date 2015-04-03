@@ -36,6 +36,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.tectonica.jonix.codegen.Parser;
+import com.tectonica.jonix.codegen.Parser.OnixVersion;
 import com.tectonica.jonix.metadata.OnixMetadata;
 
 public class ParseUtil
@@ -59,15 +60,18 @@ public class ParseUtil
 
 	public static final Set<String> SPACEABLE_SHORT_3 = new HashSet<>(Arrays.asList("x449", "x450", "x451", "x452"));
 
-	public static OnixMetadata parse(String mainXsd, String codelistXsd, Set<String> spaceables) throws IOException, ParserConfigurationException, SAXException
+	public static OnixMetadata parse(OnixVersion onixVersion, String mainXsd, String codelistXsd, Set<String> spaceables)
+			throws IOException, ParserConfigurationException, SAXException
 	{
 		Document codelistDoc = docOf(codelistXsd);
 		Document mainDoc = docOf(mainXsd);
 
-		final Parser parser = new Parser(spaceables);
+		final Parser parser = new Parser(onixVersion, spaceables);
 		parser.analyzeSchema(codelistDoc);
 		parser.analyzeSchema(mainDoc);
 		parser.postAnalysis();
+
+		System.out.println(">>> Successfully processed " + mainXsd);
 
 		return parser.getMetadata();
 	}

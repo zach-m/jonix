@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TaxRateCodeds;
 import com.tectonica.jonix.codelist.TaxTypes;
+import com.tectonica.jonix.struct.JonixTax;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -99,5 +100,16 @@ public class Tax implements OnixContent, Serializable
 	public Double getTaxAmountValue()
 	{
 		return (taxAmount == null) ? null : taxAmount.value;
+	}
+
+	public JonixTax asJonixTax()
+	{
+		JonixTax x = new JonixTax();
+		x.taxType = getTaxTypeValue();
+		x.taxRateCode = getTaxRateCodeValue();
+		x.taxRatePercent = getTaxRatePercentValue();
+		x.taxableAmount = getTaxableAmountValue();
+		x.taxAmount = getTaxAmountValue();
+		return x;
 	}
 }

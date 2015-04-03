@@ -34,7 +34,4 @@ public class JonixSupplierOwnCoding implements Serializable
 
 	public String supplierCodeTypeName; // dt.NonEmptyString
 	public String supplierCodeValue; // dt.NonEmptyString
-
-	public JonixSupplierOwnCoding()
-	{}
 }

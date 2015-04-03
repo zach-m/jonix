@@ -34,7 +34,4 @@ public class JonixSenderIdentifier implements Serializable
 
 	public String idTypeName; // dt.NonEmptyString
 	public String idValue; // dt.NonEmptyString
-
-	public JonixSenderIdentifier()
-	{}
 }

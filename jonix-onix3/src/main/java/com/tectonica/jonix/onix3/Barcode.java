@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.BarcodeIndicatorsList141;
 import com.tectonica.jonix.codelist.PositionOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixBarcode;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -75,5 +76,13 @@ public class Barcode implements OnixContent, Serializable
 	public PositionOnProducts getPositionOnProductValue()
 	{
 		return (positionOnProduct == null) ? null : positionOnProduct.value;
+	}
+
+	public JonixBarcode asJonixBarcode()
+	{
+		JonixBarcode x = new JonixBarcode();
+		x.barcodeType = getBarcodeTypeValue();
+		x.positionOnProduct = getPositionOnProductValue();
+		return x;
 	}
 }

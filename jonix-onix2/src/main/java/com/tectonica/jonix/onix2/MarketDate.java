@@ -25,10 +25,12 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixMarketDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -81,7 +83,7 @@ public class MarketDate implements OnixContent, Serializable
 		});
 	}
 
-	public String getMarketDateRoleValue()
+	public PublishingDateRoles getMarketDateRoleValue()
 	{
 		return (marketDateRole == null) ? null : marketDateRole.value;
 	}
@@ -94,5 +96,13 @@ public class MarketDate implements OnixContent, Serializable
 	public String getDateValue()
 	{
 		return (date == null) ? null : date.value;
+	}
+
+	public JonixMarketDate asJonixMarketDate()
+	{
+		JonixMarketDate x = new JonixMarketDate();
+		x.dateFormat = getDateFormatValue();
+		x.date = getDateValue();
+		return x;
 	}
 }

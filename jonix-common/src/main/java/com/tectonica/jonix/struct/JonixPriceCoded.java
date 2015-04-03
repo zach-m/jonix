@@ -34,7 +34,4 @@ public class JonixPriceCoded implements Serializable
 
 	public String priceCodeTypeName; // dt.NonEmptyString
 	public String priceCode; // dt.NonEmptyString
-
-	public JonixPriceCoded()
-	{}
 }

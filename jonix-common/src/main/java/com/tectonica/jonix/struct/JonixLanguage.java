@@ -38,7 +38,4 @@ public class JonixLanguage implements Serializable
 	public CountryCodeIso31661s countryCode;
 	public LanguageCodeIso6392Bs languageCode;
 	public TextScriptCodeIso15924s scriptCode;
-
-	public JonixLanguage()
-	{}
 }

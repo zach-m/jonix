@@ -39,7 +39,4 @@ public class JonixTitle implements Serializable
 	public String titlePrefix; // NonEmptyString
 	public String titleWithoutPrefix; // NonEmptyString
 	public String subtitle; // NonEmptyString
-
-	public JonixTitle()
-	{}
 }

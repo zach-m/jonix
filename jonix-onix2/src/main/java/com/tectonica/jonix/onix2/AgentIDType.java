@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixValue;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
@@ -47,7 +48,7 @@ public class AgentIDType implements OnixValue, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public String value; // NonEmptyString
+	public SupplierIdentifierTypes value;
 
 	public AgentIDType()
 	{}
@@ -62,6 +63,6 @@ public class AgentIDType implements OnixValue, Serializable
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
+		value = SupplierIdentifierTypes.byValue(JPU.getContentAsString(element));
 	}
 }

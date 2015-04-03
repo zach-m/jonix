@@ -34,7 +34,4 @@ public class JonixAgentIdentifier implements Serializable
 
 	public String idTypeName; // dt.NonEmptyString
 	public String idValue; // dt.NonEmptyString
-
-	public JonixAgentIdentifier()
-	{}
 }

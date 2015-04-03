@@ -26,10 +26,14 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixAgentIdentifier;
+import com.tectonica.jonix.struct.JonixMarketDate;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -181,5 +185,61 @@ public class MarketRepresentation implements OnixContent, Serializable
 	public String getMarketPublishingStatusValue()
 	{
 		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
+	}
+
+	public JonixAgentIdentifier findAgentIdentifier(SupplierIdentifierTypes agentIDType)
+	{
+		if (agentIdentifiers != null)
+		{
+			for (AgentIdentifier x : agentIdentifiers)
+			{
+				if (x.getAgentIDTypeValue() == agentIDType)
+					return x.asJonixAgentIdentifier();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixAgentIdentifier> findAgentIdentifiers(java.util.Set<SupplierIdentifierTypes> agentIDTypes)
+	{
+		if (agentIdentifiers != null)
+		{
+			List<JonixAgentIdentifier> matches = new ArrayList<>();
+			for (AgentIdentifier x : agentIdentifiers)
+			{
+				if (agentIDTypes == null || agentIDTypes.contains(x.getAgentIDTypeValue()))
+					matches.add(x.asJonixAgentIdentifier());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixMarketDate findMarketDate(PublishingDateRoles marketDateRole)
+	{
+		if (marketDates != null)
+		{
+			for (MarketDate x : marketDates)
+			{
+				if (x.getMarketDateRoleValue() == marketDateRole)
+					return x.asJonixMarketDate();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixMarketDate> findMarketDates(java.util.Set<PublishingDateRoles> marketDateRoles)
+	{
+		if (marketDates != null)
+		{
+			List<JonixMarketDate> matches = new ArrayList<>();
+			for (MarketDate x : marketDates)
+			{
+				if (marketDateRoles == null || marketDateRoles.contains(x.getMarketDateRoleValue()))
+					matches.add(x.asJonixMarketDate());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

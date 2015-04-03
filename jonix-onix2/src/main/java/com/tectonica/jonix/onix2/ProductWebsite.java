@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WebsiteRoles;
+import com.tectonica.jonix.struct.JonixProductWebsite;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -94,5 +95,14 @@ public class ProductWebsite implements OnixContent, Serializable
 	public String getProductWebsiteLinkValue()
 	{
 		return (productWebsiteLink == null) ? null : productWebsiteLink.value;
+	}
+
+	public JonixProductWebsite asJonixProductWebsite()
+	{
+		JonixProductWebsite x = new JonixProductWebsite();
+		x.websiteRole = getWebsiteRoleValue();
+		x.productWebsiteDescription = getProductWebsiteDescriptionValue();
+		x.productWebsiteLink = getProductWebsiteLinkValue();
+		return x;
 	}
 }

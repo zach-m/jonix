@@ -35,7 +35,4 @@ public class JonixAncillaryContent implements Serializable
 
 	public List<String> ancillaryContentDescriptions; // XHTML
 	public Integer number; // dt.PositiveInteger
-
-	public JonixAncillaryContent()
-	{}
 }

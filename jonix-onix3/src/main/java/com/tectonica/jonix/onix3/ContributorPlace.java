@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.ContributorPlaceRelators;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
+import com.tectonica.jonix.struct.JonixContributorPlace;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -101,5 +102,15 @@ public class ContributorPlace implements OnixContent, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public JonixContributorPlace asJonixContributorPlace()
+	{
+		JonixContributorPlace x = new JonixContributorPlace();
+		x.contributorPlaceRelator = getContributorPlaceRelatorValue();
+		x.countryCode = getCountryCodeValue();
+		x.regionCode = getRegionCodeValue();
+		x.locationNames = getLocationNameValues();
+		return x;
 	}
 }

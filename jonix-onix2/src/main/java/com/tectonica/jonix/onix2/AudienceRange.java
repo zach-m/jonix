@@ -30,6 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixAudienceRange;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -95,5 +96,14 @@ public class AudienceRange implements OnixContent, Serializable
 	public String getAudienceRangeValueValue()
 	{
 		return (audienceRangeValue == null) ? null : audienceRangeValue.value;
+	}
+
+	public JonixAudienceRange asJonixAudienceRange()
+	{
+		JonixAudienceRange x = new JonixAudienceRange();
+		x.audienceRangeQualifier = getAudienceRangeQualifierValue();
+		x.audienceRangePrecision = getAudienceRangePrecisionValue();
+		x.audienceRangeValue = getAudienceRangeValueValue();
+		return x;
 	}
 }

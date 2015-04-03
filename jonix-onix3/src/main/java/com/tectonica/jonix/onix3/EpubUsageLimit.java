@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixContent;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnitOfUsages;
+import com.tectonica.jonix.struct.JonixEpubUsageLimit;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -74,5 +75,13 @@ public class EpubUsageLimit implements OnixContent, Serializable
 	public UnitOfUsages getEpubUsageUnitValue()
 	{
 		return (epubUsageUnit == null) ? null : epubUsageUnit.value;
+	}
+
+	public JonixEpubUsageLimit asJonixEpubUsageLimit()
+	{
+		JonixEpubUsageLimit x = new JonixEpubUsageLimit();
+		x.quantity = getQuantityValue();
+		x.epubUsageUnit = getEpubUsageUnitValue();
+		return x;
 	}
 }
