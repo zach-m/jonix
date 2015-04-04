@@ -101,6 +101,7 @@ public class PersonDate implements OnixComposite, Serializable
 	public JonixPersonDate asJonixPersonDate()
 	{
 		JonixPersonDate x = new JonixPersonDate();
+		x.personDateRole = getPersonDateRoleValue();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

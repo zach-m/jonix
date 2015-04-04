@@ -169,12 +169,12 @@ public class Bible implements OnixComposite, Serializable
 	{
 		JonixBible x = new JonixBible();
 		x.bibleContentss = getBibleContentsValues();
-		x.bibleVersions = getBibleVersionValues();
-		x.studyBibleType = getStudyBibleTypeValue();
 		x.biblePurposes = getBiblePurposeValues();
-		x.bibleTextOrganization = getBibleTextOrganizationValue();
 		x.bibleReferenceLocation = getBibleReferenceLocationValue();
 		x.bibleTextFeatures = getBibleTextFeatureValues();
+		x.bibleTextOrganization = getBibleTextOrganizationValue();
+		x.bibleVersions = getBibleVersionValues();
+		x.studyBibleType = getStudyBibleTypeValue();
 		return x;
 	}
 }

@@ -100,6 +100,7 @@ public class ParentIdentifier implements OnixComposite, Serializable
 	public JonixParentIdentifier asJonixParentIdentifier()
 	{
 		JonixParentIdentifier x = new JonixParentIdentifier();
+		x.seriesIDType = getSeriesIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

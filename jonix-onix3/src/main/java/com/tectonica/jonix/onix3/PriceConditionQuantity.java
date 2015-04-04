@@ -89,6 +89,7 @@ public class PriceConditionQuantity implements OnixComposite, Serializable
 	public JonixPriceConditionQuantity asJonixPriceConditionQuantity()
 	{
 		JonixPriceConditionQuantity x = new JonixPriceConditionQuantity();
+		x.priceConditionQuantityType = getPriceConditionQuantityTypeValue();
 		x.quantity = getQuantityValue();
 		x.quantityUnit = getQuantityUnitValue();
 		return x;

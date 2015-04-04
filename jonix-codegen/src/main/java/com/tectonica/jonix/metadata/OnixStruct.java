@@ -46,6 +46,16 @@ public class OnixStruct implements Comparable<OnixStruct>
 		return (keyMember == null) ? null : ((OnixElementDef) keyMember.onixClass).valueMember.simpleType;
 	}
 
+	public List<OnixCompositeMember> allMembers()
+	{
+		if (keyMember == null)
+			return members;
+		List<OnixCompositeMember> list = new ArrayList<>(members.size() + 1);
+		list.add(keyMember);
+		list.addAll(members);
+		return list;
+	}
+
 	@Override
 	public String toString()
 	{

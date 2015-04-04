@@ -100,6 +100,7 @@ public class Audience implements OnixComposite, Serializable
 	public JonixAudience asJonixAudience()
 	{
 		JonixAudience x = new JonixAudience();
+		x.audienceCodeType = getAudienceCodeTypeValue();
 		x.audienceCodeTypeName = getAudienceCodeTypeNameValue();
 		x.audienceCodeValue = getAudienceCodeValueValue();
 		return x;

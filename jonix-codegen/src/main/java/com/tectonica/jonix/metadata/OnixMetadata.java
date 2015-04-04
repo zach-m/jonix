@@ -105,7 +105,7 @@ public class OnixMetadata
 		return onixClass;
 	}
 
-	public OnixElementDef elementsByName(String name)
+	public OnixElementDef elementByName(String name)
 	{
 		return onixElements.get(name);
 	}

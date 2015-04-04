@@ -100,6 +100,7 @@ public class CopyrightOwnerIdentifier implements OnixComposite, Serializable
 	public JonixCopyrightOwnerIdentifier asJonixCopyrightOwnerIdentifier()
 	{
 		JonixCopyrightOwnerIdentifier x = new JonixCopyrightOwnerIdentifier();
+		x.copyrightOwnerIDType = getCopyrightOwnerIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

@@ -24,7 +24,6 @@ import java.io.Serializable;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
-import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -37,5 +36,4 @@ public class JonixLanguage implements Serializable
 
 	public CountryCodeIso31661s countryCode;
 	public LanguageCodeIso6392Bs languageCode;
-	public TextScriptCodeIso15924s scriptCode;
 }

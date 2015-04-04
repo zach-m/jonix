@@ -99,9 +99,9 @@ public class Language implements OnixComposite, Serializable
 	public JonixLanguage asJonixLanguage()
 	{
 		JonixLanguage x = new JonixLanguage();
-		x.languageCode = getLanguageCodeValue();
+		x.languageRole = getLanguageRoleValue();
 		x.countryCode = getCountryCodeValue();
-		x.scriptCode = getScriptCodeValue();
+		x.languageCode = getLanguageCodeValue();
 		return x;
 	}
 }

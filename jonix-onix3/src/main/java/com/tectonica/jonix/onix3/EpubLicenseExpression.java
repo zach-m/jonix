@@ -88,6 +88,7 @@ public class EpubLicenseExpression implements OnixComposite, Serializable
 	public JonixEpubLicenseExpression asJonixEpubLicenseExpression()
 	{
 		JonixEpubLicenseExpression x = new JonixEpubLicenseExpression();
+		x.epubLicenseExpressionType = getEpubLicenseExpressionTypeValue();
 		x.epubLicenseExpressionTypeName = getEpubLicenseExpressionTypeNameValue();
 		x.epubLicenseExpressionLink = getEpubLicenseExpressionLinkValue();
 		return x;

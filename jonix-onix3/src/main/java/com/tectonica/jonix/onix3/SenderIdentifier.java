@@ -88,6 +88,7 @@ public class SenderIdentifier implements OnixComposite, Serializable
 	public JonixSenderIdentifier asJonixSenderIdentifier()
 	{
 		JonixSenderIdentifier x = new JonixSenderIdentifier();
+		x.senderIDType = getSenderIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

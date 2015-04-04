@@ -88,6 +88,7 @@ public class PriceIdentifier implements OnixComposite, Serializable
 	public JonixPriceIdentifier asJonixPriceIdentifier()
 	{
 		JonixPriceIdentifier x = new JonixPriceIdentifier();
+		x.priceIDType = getPriceIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

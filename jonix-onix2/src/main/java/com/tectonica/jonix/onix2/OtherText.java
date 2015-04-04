@@ -165,6 +165,7 @@ public class OtherText implements OnixComposite, Serializable
 	public JonixOtherText asJonixOtherText()
 	{
 		JonixOtherText x = new JonixOtherText();
+		x.textTypeCode = getTextTypeCodeValue();
 		x.textFormat = getTextFormatValue();
 		x.text = getTextValue();
 		x.textLinkType = getTextLinkTypeValue();

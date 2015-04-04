@@ -100,6 +100,7 @@ public class AgentIdentifier implements OnixComposite, Serializable
 	public JonixAgentIdentifier asJonixAgentIdentifier()
 	{
 		JonixAgentIdentifier x = new JonixAgentIdentifier();
+		x.agentIDType = getAgentIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

@@ -100,6 +100,7 @@ public class PersonNameIdentifier implements OnixComposite, Serializable
 	public JonixPersonNameIdentifier asJonixPersonNameIdentifier()
 	{
 		JonixPersonNameIdentifier x = new JonixPersonNameIdentifier();
+		x.personNameIDType = getPersonNameIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

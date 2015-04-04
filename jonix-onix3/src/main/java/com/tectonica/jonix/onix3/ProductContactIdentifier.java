@@ -88,6 +88,7 @@ public class ProductContactIdentifier implements OnixComposite, Serializable
 	public JonixProductContactIdentifier asJonixProductContactIdentifier()
 	{
 		JonixProductContactIdentifier x = new JonixProductContactIdentifier();
+		x.productContactIDType = getProductContactIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

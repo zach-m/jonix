@@ -89,6 +89,7 @@ public class SupplyDate implements OnixComposite, Serializable
 	public JonixSupplyDate asJonixSupplyDate()
 	{
 		JonixSupplyDate x = new JonixSupplyDate();
+		x.supplyDateRole = getSupplyDateRoleValue();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

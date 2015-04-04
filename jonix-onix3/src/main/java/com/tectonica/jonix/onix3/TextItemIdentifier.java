@@ -88,6 +88,7 @@ public class TextItemIdentifier implements OnixComposite, Serializable
 	public JonixTextItemIdentifier asJonixTextItemIdentifier()
 	{
 		JonixTextItemIdentifier x = new JonixTextItemIdentifier();
+		x.textItemIDType = getTextItemIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

@@ -88,6 +88,7 @@ public class ImprintIdentifier implements OnixComposite, Serializable
 	public JonixImprintIdentifier asJonixImprintIdentifier()
 	{
 		JonixImprintIdentifier x = new JonixImprintIdentifier();
+		x.imprintIDType = getImprintIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

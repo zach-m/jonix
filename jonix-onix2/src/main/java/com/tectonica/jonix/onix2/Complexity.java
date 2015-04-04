@@ -92,8 +92,8 @@ public class Complexity implements OnixComposite, Serializable
 	public JonixComplexity asJonixComplexity()
 	{
 		JonixComplexity x = new JonixComplexity();
-		x.complexitySchemeIdentifier = getComplexitySchemeIdentifierValue();
 		x.complexityCode = getComplexityCodeValue();
+		x.complexitySchemeIdentifier = getComplexitySchemeIdentifierValue();
 		return x;
 	}
 }

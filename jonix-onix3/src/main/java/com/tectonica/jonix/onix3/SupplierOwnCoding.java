@@ -88,6 +88,7 @@ public class SupplierOwnCoding implements OnixComposite, Serializable
 	public JonixSupplierOwnCoding asJonixSupplierOwnCoding()
 	{
 		JonixSupplierOwnCoding x = new JonixSupplierOwnCoding();
+		x.supplierCodeType = getSupplierCodeTypeValue();
 		x.supplierCodeTypeName = getSupplierCodeTypeNameValue();
 		x.supplierCodeValue = getSupplierCodeValueValue();
 		return x;

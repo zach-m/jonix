@@ -88,6 +88,7 @@ public class NameIdentifier implements OnixComposite, Serializable
 	public JonixNameIdentifier asJonixNameIdentifier()
 	{
 		JonixNameIdentifier x = new JonixNameIdentifier();
+		x.nameIDType = getNameIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

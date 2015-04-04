@@ -89,6 +89,7 @@ public class ContentDate implements OnixComposite, Serializable
 	public JonixContentDate asJonixContentDate()
 	{
 		JonixContentDate x = new JonixContentDate();
+		x.contentDateRole = getContentDateRoleValue();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

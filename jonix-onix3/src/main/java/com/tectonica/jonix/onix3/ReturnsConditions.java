@@ -88,6 +88,7 @@ public class ReturnsConditions implements OnixComposite, Serializable
 	public JonixReturnsConditions asJonixReturnsConditions()
 	{
 		JonixReturnsConditions x = new JonixReturnsConditions();
+		x.returnsCodeType = getReturnsCodeTypeValue();
 		x.returnsCodeTypeName = getReturnsCodeTypeNameValue();
 		x.returnsCode = getReturnsCodeValue();
 		return x;

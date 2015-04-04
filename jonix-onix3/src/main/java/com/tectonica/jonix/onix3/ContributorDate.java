@@ -89,6 +89,7 @@ public class ContributorDate implements OnixComposite, Serializable
 	public JonixContributorDate asJonixContributorDate()
 	{
 		JonixContributorDate x = new JonixContributorDate();
+		x.contributorDateRole = getContributorDateRoleValue();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

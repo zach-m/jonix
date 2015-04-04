@@ -100,8 +100,9 @@ public class StockQuantityCoded implements OnixComposite, Serializable
 	public JonixStockQuantityCoded asJonixStockQuantityCoded()
 	{
 		JonixStockQuantityCoded x = new JonixStockQuantityCoded();
-		x.stockQuantityCodeTypeName = getStockQuantityCodeTypeNameValue();
+		x.stockQuantityCodeType = getStockQuantityCodeTypeValue();
 		x.stockQuantityCode = getStockQuantityCodeValue();
+		x.stockQuantityCodeTypeName = getStockQuantityCodeTypeNameValue();
 		return x;
 	}
 }

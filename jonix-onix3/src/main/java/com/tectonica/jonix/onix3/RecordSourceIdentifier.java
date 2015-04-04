@@ -88,6 +88,7 @@ public class RecordSourceIdentifier implements OnixComposite, Serializable
 	public JonixRecordSourceIdentifier asJonixRecordSourceIdentifier()
 	{
 		JonixRecordSourceIdentifier x = new JonixRecordSourceIdentifier();
+		x.recordSourceIDType = getRecordSourceIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

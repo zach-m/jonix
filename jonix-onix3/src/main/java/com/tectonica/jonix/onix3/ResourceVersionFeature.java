@@ -97,6 +97,7 @@ public class ResourceVersionFeature implements OnixComposite, Serializable
 	public JonixResourceVersionFeature asJonixResourceVersionFeature()
 	{
 		JonixResourceVersionFeature x = new JonixResourceVersionFeature();
+		x.resourceVersionFeatureType = getResourceVersionFeatureTypeValue();
 		x.featureValue = getFeatureValueValue();
 		x.featureNotes = getFeatureNoteValues();
 		return x;

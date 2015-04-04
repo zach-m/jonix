@@ -88,6 +88,7 @@ public class ProductIdentifier implements OnixComposite, Serializable
 	public JonixProductIdentifier asJonixProductIdentifier()
 	{
 		JonixProductIdentifier x = new JonixProductIdentifier();
+		x.productIDType = getProductIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

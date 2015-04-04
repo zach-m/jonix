@@ -89,6 +89,7 @@ public class PriceDate implements OnixComposite, Serializable
 	public JonixPriceDate asJonixPriceDate()
 	{
 		JonixPriceDate x = new JonixPriceDate();
+		x.priceDateRole = getPriceDateRoleValue();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

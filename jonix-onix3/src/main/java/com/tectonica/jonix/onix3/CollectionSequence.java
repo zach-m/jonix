@@ -88,6 +88,7 @@ public class CollectionSequence implements OnixComposite, Serializable
 	public JonixCollectionSequence asJonixCollectionSequence()
 	{
 		JonixCollectionSequence x = new JonixCollectionSequence();
+		x.collectionSequenceType = getCollectionSequenceTypeValue();
 		x.collectionSequenceTypeName = getCollectionSequenceTypeNameValue();
 		x.collectionSequenceNumber = getCollectionSequenceNumberValue();
 		return x;

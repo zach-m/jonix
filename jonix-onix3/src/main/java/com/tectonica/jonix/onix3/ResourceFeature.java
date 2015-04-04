@@ -97,6 +97,7 @@ public class ResourceFeature implements OnixComposite, Serializable
 	public JonixResourceFeature asJonixResourceFeature()
 	{
 		JonixResourceFeature x = new JonixResourceFeature();
+		x.resourceFeatureType = getResourceFeatureTypeValue();
 		x.featureValue = getFeatureValueValue();
 		x.featureNotes = getFeatureNoteValues();
 		return x;

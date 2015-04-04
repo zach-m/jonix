@@ -100,6 +100,7 @@ public class SeriesIdentifier implements OnixComposite, Serializable
 	public JonixSeriesIdentifier asJonixSeriesIdentifier()
 	{
 		JonixSeriesIdentifier x = new JonixSeriesIdentifier();
+		x.seriesIDType = getSeriesIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

@@ -88,6 +88,7 @@ public class AddresseeIdentifier implements OnixComposite, Serializable
 	public JonixAddresseeIdentifier asJonixAddresseeIdentifier()
 	{
 		JonixAddresseeIdentifier x = new JonixAddresseeIdentifier();
+		x.addresseeIDType = getAddresseeIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

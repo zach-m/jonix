@@ -91,8 +91,6 @@ public class OnixSimpleType implements Comparable<OnixSimpleType>
 	@Override
 	public int compareTo(OnixSimpleType other)
 	{
-		if (this.enumName != null && other.enumName != null)
-			return enumName.compareTo(other.enumName);
 		return name.compareTo(other.name);
 	}
 }

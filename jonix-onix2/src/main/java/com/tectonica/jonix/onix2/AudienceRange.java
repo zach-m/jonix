@@ -101,8 +101,8 @@ public class AudienceRange implements OnixComposite, Serializable
 	public JonixAudienceRange asJonixAudienceRange()
 	{
 		JonixAudienceRange x = new JonixAudienceRange();
-		x.audienceRangeQualifier = getAudienceRangeQualifierValue();
 		x.audienceRangePrecision = getAudienceRangePrecisionValue();
+		x.audienceRangeQualifier = getAudienceRangeQualifierValue();
 		x.audienceRangeValue = getAudienceRangeValueValue();
 		return x;
 	}

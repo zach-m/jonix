@@ -100,6 +100,7 @@ public class Illustrations implements OnixComposite, Serializable
 	public JonixIllustrations asJonixIllustrations()
 	{
 		JonixIllustrations x = new JonixIllustrations();
+		x.illustrationType = getIllustrationTypeValue();
 		x.illustrationTypeDescription = getIllustrationTypeDescriptionValue();
 		x.number = getNumberValue();
 		return x;

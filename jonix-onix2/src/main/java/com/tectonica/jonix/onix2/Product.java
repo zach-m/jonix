@@ -50,7 +50,6 @@ import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.ThesisTypes;
@@ -60,12 +59,10 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAudience;
 import com.tectonica.jonix.struct.JonixIllustrations;
-import com.tectonica.jonix.struct.JonixImprint;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixMediaFile;
 import com.tectonica.jonix.struct.JonixOtherText;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
-import com.tectonica.jonix.struct.JonixSalesRights;
 import com.tectonica.jonix.struct.JonixTitle;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
@@ -1462,62 +1459,6 @@ public class Product implements OnixComposite, Serializable
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
 					matches.add(x.asJonixMediaFile());
-			}
-			return matches;
-		}
-		return null;
-	}
-
-	public JonixImprint findImprint(NameCodeTypes nameCodeType)
-	{
-		if (imprints != null)
-		{
-			for (Imprint x : imprints)
-			{
-				if (x.getNameCodeTypeValue() == nameCodeType)
-					return x.asJonixImprint();
-			}
-		}
-		return null;
-	}
-
-	public List<JonixImprint> findImprints(java.util.Set<NameCodeTypes> nameCodeTypes)
-	{
-		if (imprints != null)
-		{
-			List<JonixImprint> matches = new ArrayList<>();
-			for (Imprint x : imprints)
-			{
-				if (nameCodeTypes == null || nameCodeTypes.contains(x.getNameCodeTypeValue()))
-					matches.add(x.asJonixImprint());
-			}
-			return matches;
-		}
-		return null;
-	}
-
-	public JonixSalesRights findSalesRights(SalesRightsTypes salesRightsType)
-	{
-		if (salesRightss != null)
-		{
-			for (SalesRights x : salesRightss)
-			{
-				if (x.getSalesRightsTypeValue() == salesRightsType)
-					return x.asJonixSalesRights();
-			}
-		}
-		return null;
-	}
-
-	public List<JonixSalesRights> findSalesRightss(java.util.Set<SalesRightsTypes> salesRightsTypes)
-	{
-		if (salesRightss != null)
-		{
-			List<JonixSalesRights> matches = new ArrayList<>();
-			for (SalesRights x : salesRightss)
-			{
-				if (salesRightsTypes == null || salesRightsTypes.contains(x.getSalesRightsTypeValue()))
-					matches.add(x.asJonixSalesRights());
 			}
 			return matches;
 		}

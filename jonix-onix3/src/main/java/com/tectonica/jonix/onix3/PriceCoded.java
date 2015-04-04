@@ -88,6 +88,7 @@ public class PriceCoded implements OnixComposite, Serializable
 	public JonixPriceCoded asJonixPriceCoded()
 	{
 		JonixPriceCoded x = new JonixPriceCoded();
+		x.priceCodeType = getPriceCodeTypeValue();
 		x.priceCodeTypeName = getPriceCodeTypeNameValue();
 		x.priceCode = getPriceCodeValue();
 		return x;

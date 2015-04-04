@@ -132,6 +132,7 @@ public class Title implements OnixComposite, Serializable
 	public JonixTitle asJonixTitle()
 	{
 		JonixTitle x = new JonixTitle();
+		x.titleType = getTitleTypeValue();
 		x.abbreviatedLength = getAbbreviatedLengthValue();
 		x.textCaseFlag = getTextCaseFlagValue();
 		x.titleText = getTitleTextValue();

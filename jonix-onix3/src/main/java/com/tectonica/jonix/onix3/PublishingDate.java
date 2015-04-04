@@ -89,6 +89,7 @@ public class PublishingDate implements OnixComposite, Serializable
 	public JonixPublishingDate asJonixPublishingDate()
 	{
 		JonixPublishingDate x = new JonixPublishingDate();
+		x.publishingDateRole = getPublishingDateRoleValue();
 		x.dateFormat = getDateFormatValue();
 		x.date = getDateValue();
 		return x;

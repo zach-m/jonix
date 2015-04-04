@@ -88,6 +88,7 @@ public class LocationIdentifier implements OnixComposite, Serializable
 	public JonixLocationIdentifier asJonixLocationIdentifier()
 	{
 		JonixLocationIdentifier x = new JonixLocationIdentifier();
+		x.locationIDType = getLocationIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

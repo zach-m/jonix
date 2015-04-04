@@ -34,7 +34,6 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.struct.JonixSalesRights;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -122,14 +121,5 @@ public class SalesRights implements OnixComposite, Serializable
 			return list;
 		}
 		return null;
-	}
-
-	public JonixSalesRights asJonixSalesRights()
-	{
-		JonixSalesRights x = new JonixSalesRights();
-		x.rightsCountrys = getRightsCountrySets();
-		x.rightsTerritory = getRightsTerritorySet();
-		x.rightsRegions = getRightsRegionValues();
-		return x;
 	}
 }

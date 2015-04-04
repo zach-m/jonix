@@ -153,9 +153,15 @@ public class GenerateCode
 			{
 				// ignore aliases, we'll generate code out of the types they point to
 				if (enum2 != null && enum2.enumAliasFor != null)
+				{
+//					System.out.println("Skipping " + enum2.name + ", alias for " + enum2.enumName);
 					return true;
+				}
 				if (enum3 != null && enum3.enumAliasFor != null)
+				{
+//					System.out.println("Skipping " + enum3.name + ", alias for " + enum3.enumName);
 					return true;
+				}
 
 				if (enum2 != null && enum3 != null)
 				{
@@ -234,11 +240,19 @@ public class GenerateCode
 				}
 				else if (struct2 != null)
 				{
-					unifiedStructs.put(struct2.containingComposite.name, struct2);
+					final String name = struct2.containingComposite.name;
+					if (ref3.onixComposites.containsKey(name))
+						System.err.println("<" + name + "> is a struct in Onix2 but doesn't qualify for one in Onix3");
+					else
+						unifiedStructs.put(name, struct2);
 				}
 				else
 				{
-					unifiedStructs.put(struct3.containingComposite.name, struct3);
+					final String name = struct3.containingComposite.name;
+					if (ref2.onixComposites.containsKey(name))
+						System.err.println("<" + name + "> is a struct in Onix3 but doesn't qualify for one in Onix2");
+					else
+						unifiedStructs.put(name, struct3);
 				}
 				return true;
 			}
@@ -301,16 +315,15 @@ public class GenerateCode
 				}
 				else if (m2 != null)
 				{
-					unified.members.add(m2);
-//					OnixElementClassMember vm2 = ((OnixElementClass) m2.onixClass).valueMember;
-//					System.out.println(m2.className + ": " + vm2.simpleType.name + "(" + vm2.simpleType.primitiveType + ")");
+					OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
+					System.err.println("In <" + className + "> Onix2 has a unique field '" + m2.className + "': " + vm2.simpleType.name
+							+ " (" + vm2.simpleType.primitiveType + ") - this field will not be part the unified struct");
 				}
 				else
 				{
-					unified.members.add(m3);
-//					OnixElementClassMember vm3 = ((OnixElementClass) m3.onixClass).valueMember;
-//					System.out.println(m3.className + ":                            " + vm3.simpleType.name + "("
-//							+ vm3.simpleType.primitiveType + ")");
+					OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
+					System.err.println("In <" + className + "> Onix3 has a unique field '" + m3.className + "': " + vm3.simpleType.name
+							+ " (" + vm3.simpleType.primitiveType + ") - this field will not be part the unified struct");
 				}
 				return true;
 			}

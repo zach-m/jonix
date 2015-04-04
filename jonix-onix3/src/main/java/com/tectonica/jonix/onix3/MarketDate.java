@@ -89,8 +89,9 @@ public class MarketDate implements OnixComposite, Serializable
 	public JonixMarketDate asJonixMarketDate()
 	{
 		JonixMarketDate x = new JonixMarketDate();
-		x.dateFormat = getDateFormatValue();
+		x.marketDateRole = getMarketDateRoleValue();
 		x.date = getDateValue();
+		x.dateFormat = getDateFormatValue();
 		return x;
 	}
 }

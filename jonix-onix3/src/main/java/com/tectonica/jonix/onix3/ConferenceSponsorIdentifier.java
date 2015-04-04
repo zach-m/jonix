@@ -88,6 +88,7 @@ public class ConferenceSponsorIdentifier implements OnixComposite, Serializable
 	public JonixConferenceSponsorIdentifier asJonixConferenceSponsorIdentifier()
 	{
 		JonixConferenceSponsorIdentifier x = new JonixConferenceSponsorIdentifier();
+		x.conferenceSponsorIDType = getConferenceSponsorIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

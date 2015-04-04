@@ -100,6 +100,7 @@ public class SupplierIdentifier implements OnixComposite, Serializable
 	public JonixSupplierIdentifier asJonixSupplierIdentifier()
 	{
 		JonixSupplierIdentifier x = new JonixSupplierIdentifier();
+		x.supplierIDType = getSupplierIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

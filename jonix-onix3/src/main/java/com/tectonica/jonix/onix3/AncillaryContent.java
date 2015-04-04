@@ -97,6 +97,7 @@ public class AncillaryContent implements OnixComposite, Serializable
 	public JonixAncillaryContent asJonixAncillaryContent()
 	{
 		JonixAncillaryContent x = new JonixAncillaryContent();
+		x.ancillaryContentType = getAncillaryContentTypeValue();
 		x.ancillaryContentDescriptions = getAncillaryContentDescriptionValues();
 		x.number = getNumberValue();
 		return x;

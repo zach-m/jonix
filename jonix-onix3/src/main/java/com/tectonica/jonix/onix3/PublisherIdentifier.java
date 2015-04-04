@@ -88,6 +88,7 @@ public class PublisherIdentifier implements OnixComposite, Serializable
 	public JonixPublisherIdentifier asJonixPublisherIdentifier()
 	{
 		JonixPublisherIdentifier x = new JonixPublisherIdentifier();
+		x.publisherIDType = getPublisherIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

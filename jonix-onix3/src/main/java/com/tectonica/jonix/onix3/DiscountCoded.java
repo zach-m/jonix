@@ -88,8 +88,9 @@ public class DiscountCoded implements OnixComposite, Serializable
 	public JonixDiscountCoded asJonixDiscountCoded()
 	{
 		JonixDiscountCoded x = new JonixDiscountCoded();
-		x.discountCodeTypeName = getDiscountCodeTypeNameValue();
+		x.discountCodeType = getDiscountCodeTypeValue();
 		x.discountCode = getDiscountCodeValue();
+		x.discountCodeTypeName = getDiscountCodeTypeNameValue();
 		return x;
 	}
 }

@@ -88,6 +88,7 @@ public class CollectionIdentifier implements OnixComposite, Serializable
 	public JonixCollectionIdentifier asJonixCollectionIdentifier()
 	{
 		JonixCollectionIdentifier x = new JonixCollectionIdentifier();
+		x.collectionIDType = getCollectionIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

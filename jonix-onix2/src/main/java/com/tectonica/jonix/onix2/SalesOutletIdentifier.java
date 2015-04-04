@@ -100,6 +100,7 @@ public class SalesOutletIdentifier implements OnixComposite, Serializable
 	public JonixSalesOutletIdentifier asJonixSalesOutletIdentifier()
 	{
 		JonixSalesOutletIdentifier x = new JonixSalesOutletIdentifier();
+		x.salesOutletIDType = getSalesOutletIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

@@ -100,6 +100,7 @@ public class WorkIdentifier implements OnixComposite, Serializable
 	public JonixWorkIdentifier asJonixWorkIdentifier()
 	{
 		JonixWorkIdentifier x = new JonixWorkIdentifier();
+		x.workIDType = getWorkIDTypeValue();
 		x.idTypeName = getIDTypeNameValue();
 		x.idValue = getIDValueValue();
 		return x;

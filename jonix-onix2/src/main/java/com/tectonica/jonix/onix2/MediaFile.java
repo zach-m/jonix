@@ -166,6 +166,7 @@ public class MediaFile implements OnixComposite, Serializable
 	public JonixMediaFile asJonixMediaFile()
 	{
 		JonixMediaFile x = new JonixMediaFile();
+		x.mediaFileTypeCode = getMediaFileTypeCodeValue();
 		x.mediaFileFormatCode = getMediaFileFormatCodeValue();
 		x.imageResolution = getImageResolutionValue();
 		x.mediaFileLinkTypeCode = getMediaFileLinkTypeCodeValue();

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.codegen;
 
 import com.tectonica.jonix.metadata.OnixAttribute;
+import com.tectonica.jonix.metadata.OnixCompositeMember;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 
 public class GenUtil
@@ -56,6 +57,27 @@ public class GenUtil
 			result.javaType = javaType;
 			if ((onixSimpleTypeName != null))
 				result.comment = " // " + onixSimpleTypeName;
+		}
+		return result;
+	}
+
+	public static class FieldInfo
+	{
+		String name;
+		String type;
+		String comment;
+	}
+
+	public static FieldInfo fieldInfoOf(OnixCompositeMember member)
+	{
+		FieldInfo result = new FieldInfo();
+		result.name = fieldOf(member.className);
+		result.type = member.className;
+		result.comment = member.cardinality.name();
+		if (!member.cardinality.singular)
+		{
+			result.name = String.format("%ss", result.name);
+			result.type = String.format("List<%s>", result.type);
 		}
 		return result;
 	}

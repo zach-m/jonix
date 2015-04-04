@@ -22,6 +22,7 @@ package com.tectonica.jonix.codegen;
 import java.io.File;
 import java.io.PrintStream;
 
+import com.tectonica.jonix.codegen.GenUtil.FieldInfo;
 import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
 import com.tectonica.jonix.metadata.OnixAttribute;
 import com.tectonica.jonix.metadata.OnixClass;
@@ -97,11 +98,8 @@ public class OnixClassGen
 		p.println();
 		for (OnixCompositeMember member : composite.members)
 		{
-			final String field = GenUtil.fieldOf(member.className);
-			if (member.cardinality.singular)
-				p.printf("   public %s %s; // %s\n", member.className, field, member.cardinality.name());
-			else
-				p.printf("   public List<%s> %ss; // %s\n", member.className, field, member.cardinality.name());
+			final FieldInfo fi = GenUtil.fieldInfoOf(member);
+			p.printf("   public %s %s; // %s\n", fi.type, fi.name, fi.comment);
 		}
 
 		// default-constructor
@@ -144,10 +142,10 @@ public class OnixClassGen
 
 		p.printf("   }\n");
 
-		// declare value getters
+		// declare direct value getters for element-members
 		for (OnixCompositeMember m : composite.members)
 		{
-			final OnixElementDef element = ref.elementsByName(m.className);
+			final OnixElementDef element = ref.elementByName(m.className);
 			if (element != null)
 			{
 				final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
@@ -183,7 +181,7 @@ public class OnixClassGen
 			}
 		}
 
-		// declare struct finder for Lists
+		// declare struct finder for keyed, repeatable elements
 		for (OnixCompositeMember m : composite.members)
 		{
 			if (!m.cardinality.singular)
@@ -232,7 +230,7 @@ public class OnixClassGen
 			}
 		}
 
-		// declare struct provider
+		// declare struct provider on composites that can be represented as one
 		final OnixStruct struct = ref.unifiedStructs.get(composite.name);
 		if (struct != null)
 		{
@@ -243,7 +241,7 @@ public class OnixClassGen
 			p.printf("   {\n");
 			p.printf("      %s x = new %s();\n", structName, structName);
 
-			for (OnixCompositeMember member : struct.members)
+			for (OnixCompositeMember member : struct.allMembers())
 			{
 				String field = GenUtil.fieldOf(member.className);
 				String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
