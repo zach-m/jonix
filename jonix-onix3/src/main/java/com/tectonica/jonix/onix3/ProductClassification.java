@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixProductClassification;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -82,5 +83,14 @@ public class ProductClassification implements OnixDataComposite, Serializable
 	public Double getPercentValue()
 	{
 		return (percent == null) ? null : percent.value;
+	}
+
+	public JonixProductClassification asJonixProductClassification()
+	{
+		JonixProductClassification x = new JonixProductClassification();
+		x.productClassificationType = getProductClassificationTypeValue();
+		x.percent = getPercentValue();
+		x.productClassificationCode = getProductClassificationCodeValue();
+		return x;
 	}
 }

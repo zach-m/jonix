@@ -26,6 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -82,5 +83,13 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 	public String getAffiliationValue()
 	{
 		return (affiliation == null) ? null : affiliation.value;
+	}
+
+	public JonixProfessionalAffiliation asJonixProfessionalAffiliation()
+	{
+		JonixProfessionalAffiliation x = new JonixProfessionalAffiliation();
+		x.affiliation = getAffiliationValue();
+		x.professionalPositions = getProfessionalPositionValues();
+		return x;
 	}
 }

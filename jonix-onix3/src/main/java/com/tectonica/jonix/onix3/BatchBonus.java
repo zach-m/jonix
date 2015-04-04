@@ -24,6 +24,7 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixBatchBonus;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -73,5 +74,13 @@ public class BatchBonus implements OnixDataComposite, Serializable
 	public Integer getFreeQuantityValue()
 	{
 		return (freeQuantity == null) ? null : freeQuantity.value;
+	}
+
+	public JonixBatchBonus asJonixBatchBonus()
+	{
+		JonixBatchBonus x = new JonixBatchBonus();
+		x.batchQuantity = getBatchQuantityValue();
+		x.freeQuantity = getFreeQuantityValue();
+		return x;
 	}
 }

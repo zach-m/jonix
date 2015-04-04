@@ -30,6 +30,7 @@ import com.tectonica.jonix.codelist.ReligiousTextFeatures;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixReligiousTextFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -95,5 +96,14 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 	public String getReligiousTextFeatureDescriptionValue()
 	{
 		return (religiousTextFeatureDescription == null) ? null : religiousTextFeatureDescription.value;
+	}
+
+	public JonixReligiousTextFeature asJonixReligiousTextFeature()
+	{
+		JonixReligiousTextFeature x = new JonixReligiousTextFeature();
+		x.religiousTextFeatureType = getReligiousTextFeatureTypeValue();
+		x.religiousTextFeatureCode = getReligiousTextFeatureCodeValue();
+		x.religiousTextFeatureDescriptions = java.util.Arrays.asList(getReligiousTextFeatureDescriptionValue());
+		return x;
 	}
 }

@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.BookFormDetails;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetails;
+import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
@@ -37,6 +38,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixProductFormFeature;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
@@ -218,6 +220,34 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 			{
 				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
 					matches.add(x.asJonixProductIdentifier());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixProductFormFeature findProductFormFeature(ProductFormFeatureTypes productFormFeatureType)
+	{
+		if (productFormFeatures != null)
+		{
+			for (ProductFormFeature x : productFormFeatures)
+			{
+				if (x.getProductFormFeatureTypeValue() == productFormFeatureType)
+					return x.asJonixProductFormFeature();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	{
+		if (productFormFeatures != null)
+		{
+			List<JonixProductFormFeature> matches = new ArrayList<>();
+			for (ProductFormFeature x : productFormFeatures)
+			{
+				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+					matches.add(x.asJonixProductFormFeature());
 			}
 			return matches;
 		}

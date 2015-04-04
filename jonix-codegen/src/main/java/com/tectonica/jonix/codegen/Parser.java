@@ -33,16 +33,17 @@ import org.w3c.dom.Element;
 import com.tectonica.jonix.metadata.Cardinality;
 import com.tectonica.jonix.metadata.OnixAttribute;
 import com.tectonica.jonix.metadata.OnixClass;
-import com.tectonica.jonix.metadata.OnixConst;
 import com.tectonica.jonix.metadata.OnixCompositeDef;
 import com.tectonica.jonix.metadata.OnixCompositeMember;
+import com.tectonica.jonix.metadata.OnixConst;
+import com.tectonica.jonix.metadata.OnixElementDef;
+import com.tectonica.jonix.metadata.OnixElementMember;
 import com.tectonica.jonix.metadata.OnixEnumValue;
 import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixElementDef;
-import com.tectonica.jonix.metadata.OnixElementMember;
+import com.tectonica.jonix.metadata.OnixStructMember;
 import com.tectonica.jonix.metadata.Primitive;
 import com.tectonica.jonix.util.DOM;
 import com.tectonica.jonix.util.DOM.ElementListener;
@@ -70,11 +71,12 @@ public class Parser
 	}
 
 	private final SchemaContext context;
-	private final OnixMetadata meta = new OnixMetadata();
+	private final OnixMetadata meta;
 
 	public Parser(OnixVersion onixVersion, Set<String> spaceables)
 	{
 		context = new SchemaContext(onixVersion);
+		meta = new OnixMetadata(onixVersion);
 		context.spaceables = spaceables;
 	}
 
@@ -636,13 +638,13 @@ public class Parser
 						}
 					}
 					if (isKey)
-						struct.keyMember = member;
+						struct.keyMember = new OnixStructMember(member);
 					else
-						struct.members.add(member);
+						struct.members.add(new OnixStructMember(member));
 				}
 				else if (member.onixClass instanceof OnixFlagDef)
 				{
-					struct.members.add(member);
+					struct.members.add(new OnixStructMember(member));
 				}
 				else
 				{

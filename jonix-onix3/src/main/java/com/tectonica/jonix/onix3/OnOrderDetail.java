@@ -25,6 +25,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixOnOrderDetail;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -82,5 +83,13 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 	public String getExpectedDateValue()
 	{
 		return (expectedDate == null) ? null : expectedDate.value;
+	}
+
+	public JonixOnOrderDetail asJonixOnOrderDetail()
+	{
+		JonixOnOrderDetail x = new JonixOnOrderDetail();
+		x.expectedDate = getExpectedDateValue();
+		x.onOrder = getOnOrderValue();
+		return x;
 	}
 }

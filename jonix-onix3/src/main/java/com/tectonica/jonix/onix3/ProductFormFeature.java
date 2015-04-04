@@ -27,6 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixProductFormFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -92,5 +93,14 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public JonixProductFormFeature asJonixProductFormFeature()
+	{
+		JonixProductFormFeature x = new JonixProductFormFeature();
+		x.productFormFeatureType = getProductFormFeatureTypeValue();
+		x.productFormFeatureDescriptions = getProductFormFeatureDescriptionValues();
+		x.productFormFeatureValue = getProductFormFeatureValueValue();
+		return x;
 	}
 }

@@ -47,6 +47,8 @@ import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixStruct;
+import com.tectonica.jonix.metadata.OnixStructMember;
+import com.tectonica.jonix.metadata.OnixStructMember.TransformationType;
 import com.tectonica.jonix.util.ParseUtil;
 
 public class GenerateCode
@@ -234,7 +236,7 @@ public class GenerateCode
 			{
 				if (struct2 != null && struct3 != null)
 				{
-					final OnixStruct unified = unifiedStruct(struct2, struct3);
+					final OnixStruct unified = unifiedStruct(struct2, struct3, ref2, ref3);
 					if (unified != null)
 						unifiedStructs.put(struct3.containingComposite.name, unified);
 				}
@@ -264,7 +266,8 @@ public class GenerateCode
 		return unifiedStructs;
 	}
 
-	private static OnixStruct unifiedStruct(final OnixStruct struct2, final OnixStruct struct3)
+	private static OnixStruct unifiedStruct(final OnixStruct struct2, final OnixStruct struct3, final OnixMetadata ref2,
+			final OnixMetadata ref3)
 	{
 		final String className = struct3.containingComposite.name;
 		final OnixStruct unified = new OnixStruct(struct3.containingComposite);
@@ -283,17 +286,28 @@ public class GenerateCode
 						+ enumName2 + " Onix3=" + enumName3);
 
 			unified.keyMember = struct3.keyMember;
+
+			// even though the type of the key may be the same (which is what's really important for us), we deal with the case where the
+			// elements' name is different (for example MeasureTypeCode vs MeasureType)
+			if (!struct2.keyMember.dataMember.className.equals(struct3.keyMember.dataMember.className))
+			{
+				unified.keyMember.transformationNeededInVersion = ref2.onixVersion;
+				unified.keyMember.transformationType = TransformationType.ChangeClassName;
+				unified.keyMember.transformationHint = struct2.keyMember.dataMember.className;
+			}
 		}
 
 		unified.members = new ArrayList<>();
 
-		boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members, new CompareListener<OnixCompositeMember>()
+		boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members, new CompareListener<OnixStructMember>()
 		{
 			@Override
-			public boolean onDiff(OnixCompositeMember m2, OnixCompositeMember m3)
+			public boolean onDiff(OnixStructMember osm2, OnixStructMember osm3)
 			{
-				if (m2 != null && m3 != null)
+				if (osm2 != null && osm3 != null)
 				{
+					OnixCompositeMember m2 = osm2.dataMember;
+					OnixCompositeMember m3 = osm3.dataMember;
 					if (m2.getClass() != m3.getClass()) // element vs flag
 						throw new RuntimeException("Can't deal with types collision in " + className + ": " + m2.getClass().getSimpleName()
 								+ " vs " + m3.getClass().getSimpleName());
@@ -307,27 +321,39 @@ public class GenerateCode
 						final String javaType3 = vm3.simpleType.primitiveType.javaType;
 						if (!javaType2.equals(javaType3))
 						{
-							System.err.println("<" + className + "> can't be unified into struct: type mismatch in '" + memberClassName
-									+ "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
-							return false; // can't unify, we cancel the scanning of the remaining members
+							if (javaType2.equals("String") && javaType3.equals("Integer"))
+							{
+								osm3.transformationNeededInVersion = ref2.onixVersion;
+								osm3.transformationType = TransformationType.StringToInteger;
+							}
+							else if (javaType2.equals("String") && javaType3.equals("Double"))
+							{
+								osm3.transformationNeededInVersion = ref2.onixVersion;
+								osm3.transformationType = TransformationType.StringToDouble;
+							}
+							else
+							{
+								System.err.println("<" + className + "> can't be unified into struct: type mismatch in '" + memberClassName
+										+ "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
+								return false; // can't unify, we cancel the scanning of the remaining members
+							}
 						}
-						if (m2.cardinality != m3.cardinality)
+						if (m2.cardinality.singular != m3.cardinality.singular)
 						{
-							System.err.println("<" + className + "> can't be unified into struct: cardinality mismatch in '"
-									+ memberClassName + "': Onix2=" + m2.cardinality + " vs Onix3=" + m3.cardinality);
-							return false; // can't unify, we cancel the scanning of the remaining members
+							osm3.transformationNeededInVersion = m2.cardinality.singular ? ref2.onixVersion : ref3.onixVersion;
+							osm3.transformationType = TransformationType.SingularToMultiple;
 						}
 					}
-					unified.members.add(m3);
+					unified.members.add(osm3);
 				}
-				else if (m2 != null)
+				else if (osm2 != null)
 				{
-					System.err.println("<" + className + "> Onix2 has a unique field '" + m2.className
+					System.err.println("<" + className + "> Onix2 has a unique field '" + osm2.dataMember.className
 							+ "' - this field will not be part the unified struct");
 				}
 				else
 				{
-					System.err.println("<" + className + "> Onix2 has a unique field '" + m3.className
+					System.err.println("<" + className + "> Onix2 has a unique field '" + osm3.dataMember.className
 							+ "' - this field will not be part the unified struct");
 				}
 				return true;

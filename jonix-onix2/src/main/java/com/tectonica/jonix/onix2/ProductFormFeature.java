@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixProductFormFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -94,5 +95,14 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 	public String getProductFormFeatureDescriptionValue()
 	{
 		return (productFormFeatureDescription == null) ? null : productFormFeatureDescription.value;
+	}
+
+	public JonixProductFormFeature asJonixProductFormFeature()
+	{
+		JonixProductFormFeature x = new JonixProductFormFeature();
+		x.productFormFeatureType = getProductFormFeatureTypeValue();
+		x.productFormFeatureDescriptions = java.util.Arrays.asList(getProductFormFeatureDescriptionValue());
+		x.productFormFeatureValue = getProductFormFeatureValueValue();
+		return x;
 	}
 }

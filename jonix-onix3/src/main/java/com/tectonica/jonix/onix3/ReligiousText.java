@@ -20,11 +20,14 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
+import com.tectonica.jonix.struct.JonixReligiousTextFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -72,5 +75,33 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	public String getReligiousTextIdentifierValue()
 	{
 		return (religiousTextIdentifier == null) ? null : religiousTextIdentifier.value;
+	}
+
+	public JonixReligiousTextFeature findReligiousTextFeature(ReligiousTextFeatureTypes religiousTextFeatureType)
+	{
+		if (religiousTextFeatures != null)
+		{
+			for (ReligiousTextFeature x : religiousTextFeatures)
+			{
+				if (x.getReligiousTextFeatureTypeValue() == religiousTextFeatureType)
+					return x.asJonixReligiousTextFeature();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixReligiousTextFeature> findReligiousTextFeatures(java.util.Set<ReligiousTextFeatureTypes> religiousTextFeatureTypes)
+	{
+		if (religiousTextFeatures != null)
+		{
+			List<JonixReligiousTextFeature> matches = new ArrayList<>();
+			for (ReligiousTextFeature x : religiousTextFeatures)
+			{
+				if (religiousTextFeatureTypes == null || religiousTextFeatureTypes.contains(x.getReligiousTextFeatureTypeValue()))
+					matches.add(x.asJonixReligiousTextFeature());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

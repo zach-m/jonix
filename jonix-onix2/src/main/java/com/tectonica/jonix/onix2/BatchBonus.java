@@ -28,6 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixBatchBonus;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -85,5 +86,13 @@ public class BatchBonus implements OnixDataComposite, Serializable
 	public String getFreeQuantityValue()
 	{
 		return (freeQuantity == null) ? null : freeQuantity.value;
+	}
+
+	public JonixBatchBonus asJonixBatchBonus()
+	{
+		JonixBatchBonus x = new JonixBatchBonus();
+		x.batchQuantity = JPU.convertStringToInteger(getBatchQuantityValue());
+		x.freeQuantity = JPU.convertStringToInteger(getFreeQuantityValue());
+		return x;
 	}
 }

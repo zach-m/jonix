@@ -30,6 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixPrize;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -111,5 +112,16 @@ public class Prize implements OnixDataComposite, Serializable
 	public String getPrizeJuryValue()
 	{
 		return (prizeJury == null) ? null : prizeJury.value;
+	}
+
+	public JonixPrize asJonixPrize()
+	{
+		JonixPrize x = new JonixPrize();
+		x.prizeCode = getPrizeCodeValue();
+		x.prizeCountry = getPrizeCountryValue();
+		x.prizeJurys = java.util.Arrays.asList(getPrizeJuryValue());
+		x.prizeNames = java.util.Arrays.asList(getPrizeNameValue());
+		x.prizeYear = getPrizeYearValue();
+		return x;
 	}
 }

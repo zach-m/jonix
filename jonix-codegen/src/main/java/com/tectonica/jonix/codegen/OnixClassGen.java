@@ -33,6 +33,8 @@ import com.tectonica.jonix.metadata.OnixElementDef;
 import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixStruct;
+import com.tectonica.jonix.metadata.OnixStructMember;
+import com.tectonica.jonix.metadata.OnixStructMember.TransformationType;
 
 public class OnixClassGen
 {
@@ -213,9 +215,13 @@ public class OnixClassGen
 				if (struct != null && struct.isKeyed())
 				{
 					final String structName = "Jonix" + m.className;
-					final OnixElementDef keyClass = (OnixElementDef) struct.keyMember.onixClass;
+					final OnixCompositeMember keyMember = struct.keyMember.dataMember;
+					final OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
 					final TypeInfo kti = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-					final String keyClassName = struct.keyMember.className;
+					String keyClassName = keyMember.className;
+					if (struct.keyMember.transformationNeededInVersion == ref.onixVersion
+							&& struct.keyMember.transformationType == TransformationType.ChangeClassName)
+						keyClassName = struct.keyMember.transformationHint;
 					final String keyField = GenUtil.fieldOf(keyClassName);
 					final String memberfield = GenUtil.fieldOf(m.className) + "s";
 					final String caption = keyClass.isSpaceable ? "Set" : "Value";
@@ -264,18 +270,37 @@ public class OnixClassGen
 			p.printf("   {\n");
 			p.printf("      %s x = new %s();\n", structName, structName);
 
-			for (OnixCompositeMember member : struct.allMembers())
+			for (OnixStructMember structMember : struct.allMembers())
 			{
+				final OnixCompositeMember member = structMember.dataMember;
 				if (member.onixClass instanceof OnixElementDef)
 				{
 					String field = GenUtil.fieldOf(member.className);
-					String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
 					if (!member.cardinality.singular)
-					{
 						field += "s";
-						caption += "s";
+					boolean transformationNeeded = (structMember.transformationNeededInVersion == ref.onixVersion);
+					if (transformationNeeded)
+					{
+						switch (structMember.transformationType)
+						{
+							case SingularToMultiple:
+								p.printf("      x.%s = java.util.Arrays.asList(get%sValue());\n", field, member.className);
+								break;
+							case ChangeClassName:
+								p.printf("      x.%s = get%sValue();\n", field, structMember.transformationHint);
+								break;
+							default:
+								p.printf("      x.%s = JPU.convert%s(get%sValue());\n", field, structMember.transformationType.name(),
+										member.className);
+						}
 					}
-					p.printf("      x.%s = get%s%s();\n", field, member.className, caption);
+					else
+					{
+						String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
+						if (!member.cardinality.singular)
+							caption += "s";
+						p.printf("      x.%s = get%s%s();\n", field, member.className, caption);
+					}
 				}
 				else
 				// i.e. (member.onixClass instanceof OnixFlagDef)

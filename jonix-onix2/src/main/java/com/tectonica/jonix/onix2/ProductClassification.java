@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixProductClassification;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -94,5 +95,14 @@ public class ProductClassification implements OnixDataComposite, Serializable
 	public String getPercentValue()
 	{
 		return (percent == null) ? null : percent.value;
+	}
+
+	public JonixProductClassification asJonixProductClassification()
+	{
+		JonixProductClassification x = new JonixProductClassification();
+		x.productClassificationType = getProductClassificationTypeValue();
+		x.percent = JPU.convertStringToDouble(getPercentValue());
+		x.productClassificationCode = getProductClassificationCodeValue();
+		return x;
 	}
 }

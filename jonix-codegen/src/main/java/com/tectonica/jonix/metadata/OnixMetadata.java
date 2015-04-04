@@ -25,10 +25,13 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.tectonica.jonix.codegen.Parser.OnixVersion;
 
-@JsonPropertyOrder({ "composites", "elements", "flgs", "types", "enums", "structs", "intfs" })
+@JsonPropertyOrder({ "onixVersion", "composites", "elements", "flgs", "types", "enums", "structs", "intfs" })
 public class OnixMetadata
 {
+	public final OnixVersion onixVersion;
+
 	@JsonIgnore
 	public Map<String, OnixCompositeDef> onixComposites = new HashMap<>();
 	@JsonIgnore
@@ -47,6 +50,11 @@ public class OnixMetadata
 	// the following is to be filled during code-generation, not parsing
 	@JsonIgnore
 	public Map<String, OnixStruct> unifiedStructs = null;
+
+	public OnixMetadata(OnixVersion onixVersion)
+	{
+		this.onixVersion = onixVersion;
+	}
 
 	// convenience getters
 

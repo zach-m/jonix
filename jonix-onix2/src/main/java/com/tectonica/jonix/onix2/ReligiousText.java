@@ -20,15 +20,18 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixReligiousTextFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -84,5 +87,33 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	public String getReligiousTextIDValue()
 	{
 		return (religiousTextID == null) ? null : religiousTextID.value;
+	}
+
+	public JonixReligiousTextFeature findReligiousTextFeature(ReligiousTextFeatureTypes religiousTextFeatureType)
+	{
+		if (religiousTextFeatures != null)
+		{
+			for (ReligiousTextFeature x : religiousTextFeatures)
+			{
+				if (x.getReligiousTextFeatureTypeValue() == religiousTextFeatureType)
+					return x.asJonixReligiousTextFeature();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixReligiousTextFeature> findReligiousTextFeatures(java.util.Set<ReligiousTextFeatureTypes> religiousTextFeatureTypes)
+	{
+		if (religiousTextFeatures != null)
+		{
+			List<JonixReligiousTextFeature> matches = new ArrayList<>();
+			for (ReligiousTextFeature x : religiousTextFeatures)
+			{
+				if (religiousTextFeatureTypes == null || religiousTextFeatureTypes.contains(x.getReligiousTextFeatureTypeValue()))
+					matches.add(x.asJonixReligiousTextFeature());
+			}
+			return matches;
+		}
+		return null;
 	}
 }

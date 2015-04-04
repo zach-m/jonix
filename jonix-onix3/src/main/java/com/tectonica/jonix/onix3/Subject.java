@@ -27,6 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.struct.JonixSubject;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -115,5 +116,16 @@ public class Subject implements OnixDataComposite, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public JonixSubject asJonixSubject()
+	{
+		JonixSubject x = new JonixSubject();
+		x.subjectCode = getSubjectCodeValue();
+		x.subjectHeadingTexts = getSubjectHeadingTextValues();
+		x.subjectSchemeIdentifier = getSubjectSchemeIdentifierValue();
+		x.subjectSchemeName = getSubjectSchemeNameValue();
+		x.subjectSchemeVersion = getSubjectSchemeVersionValue();
+		return x;
 	}
 }

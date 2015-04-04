@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.MeasureUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixMeasure;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -83,5 +84,14 @@ public class Measure implements OnixDataComposite, Serializable
 	public MeasureUnits getMeasureUnitCodeValue()
 	{
 		return (measureUnitCode == null) ? null : measureUnitCode.value;
+	}
+
+	public JonixMeasure asJonixMeasure()
+	{
+		JonixMeasure x = new JonixMeasure();
+		x.measureType = getMeasureTypeValue();
+		x.measureUnitCode = getMeasureUnitCodeValue();
+		x.measurement = getMeasurementValue();
+		return x;
 	}
 }

@@ -28,6 +28,7 @@ import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatures;
+import com.tectonica.jonix.struct.JonixReligiousTextFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -93,5 +94,14 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public JonixReligiousTextFeature asJonixReligiousTextFeature()
+	{
+		JonixReligiousTextFeature x = new JonixReligiousTextFeature();
+		x.religiousTextFeatureType = getReligiousTextFeatureTypeValue();
+		x.religiousTextFeatureCode = getReligiousTextFeatureCodeValue();
+		x.religiousTextFeatureDescriptions = getReligiousTextFeatureDescriptionValues();
+		return x;
 	}
 }

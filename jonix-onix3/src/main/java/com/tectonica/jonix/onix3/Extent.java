@@ -26,6 +26,7 @@ import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.ExtentUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixExtent;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -91,5 +92,14 @@ public class Extent implements OnixDataComposite, Serializable
 	public ExtentUnits getExtentUnitValue()
 	{
 		return (extentUnit == null) ? null : extentUnit.value;
+	}
+
+	public JonixExtent asJonixExtent()
+	{
+		JonixExtent x = new JonixExtent();
+		x.extentType = getExtentTypeValue();
+		x.extentUnit = getExtentUnitValue();
+		x.extentValue = getExtentValueValue();
+		return x;
 	}
 }

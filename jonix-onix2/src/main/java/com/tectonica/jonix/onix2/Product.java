@@ -33,18 +33,22 @@ import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationFormats;
 import com.tectonica.jonix.codelist.EpublicationTypes;
+import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.FrontCoverImageFileFormats;
 import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypes;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
+import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetails;
+import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
@@ -58,10 +62,14 @@ import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixIllustrations;
 import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixMeasure;
 import com.tectonica.jonix.struct.JonixMediaFile;
 import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixProductClassification;
+import com.tectonica.jonix.struct.JonixProductFormFeature;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
@@ -1284,6 +1292,62 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	public JonixProductFormFeature findProductFormFeature(ProductFormFeatureTypes productFormFeatureType)
+	{
+		if (productFormFeatures != null)
+		{
+			for (ProductFormFeature x : productFormFeatures)
+			{
+				if (x.getProductFormFeatureTypeValue() == productFormFeatureType)
+					return x.asJonixProductFormFeature();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	{
+		if (productFormFeatures != null)
+		{
+			List<JonixProductFormFeature> matches = new ArrayList<>();
+			for (ProductFormFeature x : productFormFeatures)
+			{
+				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+					matches.add(x.asJonixProductFormFeature());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixProductClassification findProductClassification(ProductClassificationTypes productClassificationType)
+	{
+		if (productClassifications != null)
+		{
+			for (ProductClassification x : productClassifications)
+			{
+				if (x.getProductClassificationTypeValue() == productClassificationType)
+					return x.asJonixProductClassification();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixProductClassification> findProductClassifications(java.util.Set<ProductClassificationTypes> productClassificationTypes)
+	{
+		if (productClassifications != null)
+		{
+			List<JonixProductClassification> matches = new ArrayList<>();
+			for (ProductClassification x : productClassifications)
+			{
+				if (productClassificationTypes == null || productClassificationTypes.contains(x.getProductClassificationTypeValue()))
+					matches.add(x.asJonixProductClassification());
+			}
+			return matches;
+		}
+		return null;
+	}
+
 	public JonixTitle findTitle(TitleTypes titleType)
 	{
 		if (titles != null)
@@ -1362,6 +1426,34 @@ public class Product implements OnixSuperComposite, Serializable
 			{
 				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
 					matches.add(x.asJonixLanguage());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixExtent findExtent(ExtentTypes extentType)
+	{
+		if (extents != null)
+		{
+			for (Extent x : extents)
+			{
+				if (x.getExtentTypeValue() == extentType)
+					return x.asJonixExtent();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixExtent> findExtents(java.util.Set<ExtentTypes> extentTypes)
+	{
+		if (extents != null)
+		{
+			List<JonixExtent> matches = new ArrayList<>();
+			for (Extent x : extents)
+			{
+				if (extentTypes == null || extentTypes.contains(x.getExtentTypeValue()))
+					matches.add(x.asJonixExtent());
 			}
 			return matches;
 		}
@@ -1474,6 +1566,34 @@ public class Product implements OnixSuperComposite, Serializable
 			{
 				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
 					matches.add(x.asJonixMediaFile());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixMeasure findMeasure(MeasureTypes measureTypeCode)
+	{
+		if (measures != null)
+		{
+			for (Measure x : measures)
+			{
+				if (x.getMeasureTypeCodeValue() == measureTypeCode)
+					return x.asJonixMeasure();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixMeasure> findMeasures(java.util.Set<MeasureTypes> measureTypeCodes)
+	{
+		if (measures != null)
+		{
+			List<JonixMeasure> matches = new ArrayList<>();
+			for (Measure x : measures)
+			{
+				if (measureTypeCodes == null || measureTypeCodes.contains(x.getMeasureTypeCodeValue()))
+					matches.add(x.asJonixMeasure());
 			}
 			return matches;
 		}

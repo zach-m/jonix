@@ -30,6 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixMeasure;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -95,5 +96,14 @@ public class Measure implements OnixDataComposite, Serializable
 	public MeasureUnits getMeasureUnitCodeValue()
 	{
 		return (measureUnitCode == null) ? null : measureUnitCode.value;
+	}
+
+	public JonixMeasure asJonixMeasure()
+	{
+		JonixMeasure x = new JonixMeasure();
+		x.measureType = getMeasureTypeCodeValue();
+		x.measureUnitCode = getMeasureUnitCodeValue();
+		x.measurement = JPU.convertStringToDouble(getMeasurementValue());
+		return x;
 	}
 }

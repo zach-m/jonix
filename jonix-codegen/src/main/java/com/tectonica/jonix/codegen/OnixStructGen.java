@@ -26,6 +26,7 @@ import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
 import com.tectonica.jonix.metadata.OnixCompositeMember;
 import com.tectonica.jonix.metadata.OnixElementDef;
 import com.tectonica.jonix.metadata.OnixStruct;
+import com.tectonica.jonix.metadata.OnixStructMember;
 
 public class OnixStructGen
 {
@@ -77,16 +78,18 @@ public class OnixStructGen
 		// declare key
 		if (struct.isKeyed())
 		{
-			final OnixElementDef keyClass = (OnixElementDef) struct.keyMember.onixClass;
+			final OnixCompositeMember keyMember = struct.keyMember.dataMember;
+			final OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
 			final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-			final String keyField = GenUtil.fieldOf(struct.keyMember.className);
+			final String keyField = GenUtil.fieldOf(keyMember.className);
 			p.printf("   public %s %s;%s\n", keyTypeInfo.javaType, keyField, keyTypeInfo.comment);
 			p.println();
 		}
 
 		// declare members
-		for (OnixCompositeMember member : struct.members)
+		for (OnixStructMember structMember : struct.members)
 		{
+			final OnixCompositeMember member = structMember.dataMember;
 			final String field;
 			String javaType;
 			final String comment;

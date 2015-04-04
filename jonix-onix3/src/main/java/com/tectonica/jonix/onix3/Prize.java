@@ -28,6 +28,7 @@ import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixPrize;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -130,5 +131,16 @@ public class Prize implements OnixDataComposite, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public JonixPrize asJonixPrize()
+	{
+		JonixPrize x = new JonixPrize();
+		x.prizeCode = getPrizeCodeValue();
+		x.prizeCountry = getPrizeCountryValue();
+		x.prizeJurys = getPrizeJuryValues();
+		x.prizeNames = getPrizeNameValues();
+		x.prizeYear = getPrizeYearValue();
+		return x;
 	}
 }

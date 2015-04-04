@@ -30,12 +30,16 @@ import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
+import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.IllustratedNotIllustrateds;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.MeasureTypes;
+import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
+import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductPackagingTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -43,7 +47,11 @@ import com.tectonica.jonix.codelist.ThesisTypes;
 import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.struct.JonixAncillaryContent;
 import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixMeasure;
+import com.tectonica.jonix.struct.JonixProductClassification;
+import com.tectonica.jonix.struct.JonixProductFormFeature;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -429,6 +437,90 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	public JonixProductFormFeature findProductFormFeature(ProductFormFeatureTypes productFormFeatureType)
+	{
+		if (productFormFeatures != null)
+		{
+			for (ProductFormFeature x : productFormFeatures)
+			{
+				if (x.getProductFormFeatureTypeValue() == productFormFeatureType)
+					return x.asJonixProductFormFeature();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	{
+		if (productFormFeatures != null)
+		{
+			List<JonixProductFormFeature> matches = new ArrayList<>();
+			for (ProductFormFeature x : productFormFeatures)
+			{
+				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+					matches.add(x.asJonixProductFormFeature());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixMeasure findMeasure(MeasureTypes measureType)
+	{
+		if (measures != null)
+		{
+			for (Measure x : measures)
+			{
+				if (x.getMeasureTypeValue() == measureType)
+					return x.asJonixMeasure();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixMeasure> findMeasures(java.util.Set<MeasureTypes> measureTypes)
+	{
+		if (measures != null)
+		{
+			List<JonixMeasure> matches = new ArrayList<>();
+			for (Measure x : measures)
+			{
+				if (measureTypes == null || measureTypes.contains(x.getMeasureTypeValue()))
+					matches.add(x.asJonixMeasure());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixProductClassification findProductClassification(ProductClassificationTypes productClassificationType)
+	{
+		if (productClassifications != null)
+		{
+			for (ProductClassification x : productClassifications)
+			{
+				if (x.getProductClassificationTypeValue() == productClassificationType)
+					return x.asJonixProductClassification();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixProductClassification> findProductClassifications(java.util.Set<ProductClassificationTypes> productClassificationTypes)
+	{
+		if (productClassifications != null)
+		{
+			List<JonixProductClassification> matches = new ArrayList<>();
+			for (ProductClassification x : productClassifications)
+			{
+				if (productClassificationTypes == null || productClassificationTypes.contains(x.getProductClassificationTypeValue()))
+					matches.add(x.asJonixProductClassification());
+			}
+			return matches;
+		}
+		return null;
+	}
+
 	public JonixLanguage findLanguage(LanguageRoles languageRole)
 	{
 		if (languages != null)
@@ -451,6 +543,34 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 			{
 				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
 					matches.add(x.asJonixLanguage());
+			}
+			return matches;
+		}
+		return null;
+	}
+
+	public JonixExtent findExtent(ExtentTypes extentType)
+	{
+		if (extents != null)
+		{
+			for (Extent x : extents)
+			{
+				if (x.getExtentTypeValue() == extentType)
+					return x.asJonixExtent();
+			}
+		}
+		return null;
+	}
+
+	public List<JonixExtent> findExtents(java.util.Set<ExtentTypes> extentTypes)
+	{
+		if (extents != null)
+		{
+			List<JonixExtent> matches = new ArrayList<>();
+			for (Extent x : extents)
+			{
+				if (extentTypes == null || extentTypes.contains(x.getExtentTypeValue()))
+					matches.add(x.asJonixExtent());
 			}
 			return matches;
 		}

@@ -29,6 +29,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WebsiteRoles;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
@@ -94,5 +95,14 @@ public class Website implements OnixDataComposite, Serializable
 	public String getWebsiteLinkValue()
 	{
 		return (websiteLink == null) ? null : websiteLink.value;
+	}
+
+	public JonixWebsite asJonixWebsite()
+	{
+		JonixWebsite x = new JonixWebsite();
+		x.websiteDescriptions = java.util.Arrays.asList(getWebsiteDescriptionValue());
+		x.websiteLink = getWebsiteLinkValue();
+		x.websiteRole = getWebsiteRoleValue();
+		return x;
 	}
 }

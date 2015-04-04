@@ -28,8 +28,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class OnixStruct implements Comparable<OnixStruct>
 {
 	public final OnixCompositeDef containingComposite;
-	public OnixCompositeMember keyMember = null;
-	public List<OnixCompositeMember> members = new ArrayList<>();
+	public OnixStructMember keyMember = null;
+	public List<OnixStructMember> members = new ArrayList<>();
 
 	public OnixStruct(OnixCompositeDef containingComposite)
 	{
@@ -43,14 +43,14 @@ public class OnixStruct implements Comparable<OnixStruct>
 
 	public OnixSimpleType keyEnumType()
 	{
-		return (keyMember == null) ? null : ((OnixElementDef) keyMember.onixClass).valueMember.simpleType;
+		return (keyMember == null) ? null : ((OnixElementDef) keyMember.dataMember.onixClass).valueMember.simpleType;
 	}
 
-	public List<OnixCompositeMember> allMembers()
+	public List<OnixStructMember> allMembers()
 	{
 		if (keyMember == null)
 			return members;
-		List<OnixCompositeMember> list = new ArrayList<>(members.size() + 1);
+		List<OnixStructMember> list = new ArrayList<>(members.size() + 1);
 		list.add(keyMember);
 		list.addAll(members);
 		return list;
@@ -63,15 +63,15 @@ public class OnixStruct implements Comparable<OnixStruct>
 		sb.append("struct " + containingComposite.name).append("\n");
 		if (keyMember != null)
 		{
-			OnixElementMember km = ((OnixElementDef) keyMember.onixClass).valueMember;
+			OnixElementMember km = ((OnixElementDef) keyMember.dataMember.onixClass).valueMember;
 			sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
 		}
-		for (OnixCompositeMember member : members)
+		for (OnixStructMember member : members)
 		{
-			OnixElementMember vm = ((OnixElementDef) member.onixClass).valueMember;
+			OnixElementMember vm = ((OnixElementDef) member.dataMember.onixClass).valueMember;
 			final OnixSimpleType simpleType = vm.simpleType;
 			String javaType = (simpleType.enumName != null) ? simpleType.enumName : simpleType.primitiveType.javaType;
-			if (!member.cardinality.singular)
+			if (!member.dataMember.cardinality.singular)
 				javaType = "List<" + javaType + ">";
 			sb.append("         - ").append(javaType).append("\n");
 		}

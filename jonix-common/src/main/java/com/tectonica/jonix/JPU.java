@@ -148,4 +148,14 @@ public class JPU
 		out.add(item);
 		return out;
 	}
+
+	public static Integer convertStringToInteger(String s)
+	{
+		return (s == null) ? null : Integer.parseInt(s.trim());
+	}
+
+	public static Double convertStringToDouble(String s)
+	{
+		return (s == null) ? null : Double.parseDouble(s.trim());
+	}
 }
