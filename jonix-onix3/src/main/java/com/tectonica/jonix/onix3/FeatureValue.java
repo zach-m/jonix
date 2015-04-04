@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class FeatureValue implements OnixValue, Serializable
+public class FeatureValue implements JonixElement, Serializable
 {
 	public static final String refname = "FeatureValue";
 	public static final String shortname = "x439";

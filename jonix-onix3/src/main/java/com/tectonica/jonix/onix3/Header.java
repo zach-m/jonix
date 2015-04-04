@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PriceTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class Header implements OnixContent, Serializable
+public class Header implements JonixComposite, Serializable
 {
 	public static final String refname = "Header";
 	public static final String shortname = "header";

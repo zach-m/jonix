@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
@@ -45,7 +45,7 @@ import com.tectonica.jonix.struct.JonixTitle;
  */
 
 @SuppressWarnings("serial")
-public class SubSeriesRecord implements OnixContent, Serializable
+public class SubSeriesRecord implements JonixComposite, Serializable
 {
 	public static final String refname = "SubSeriesRecord";
 	public static final String shortname = "subseriesrecord";

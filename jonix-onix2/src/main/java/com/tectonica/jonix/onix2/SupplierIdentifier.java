@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
@@ -36,7 +36,7 @@ import com.tectonica.jonix.struct.JonixSupplierIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class SupplierIdentifier implements OnixContent, Serializable
+public class SupplierIdentifier implements JonixComposite, Serializable
 {
 	public static final String refname = "SupplierIdentifier";
 	public static final String shortname = "supplieridentifier";

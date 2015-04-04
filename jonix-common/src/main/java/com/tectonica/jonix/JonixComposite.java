@@ -19,5 +19,5 @@
 
 package com.tectonica.jonix;
 
-public interface OnixValue
+public interface JonixComposite
 {}

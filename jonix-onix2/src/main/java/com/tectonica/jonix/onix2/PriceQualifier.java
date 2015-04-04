@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PriceTypeQualifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class PriceQualifier implements OnixValue, Serializable
+public class PriceQualifier implements JonixElement, Serializable
 {
 	public static final String refname = "PriceQualifier";
 	public static final String shortname = "j261";

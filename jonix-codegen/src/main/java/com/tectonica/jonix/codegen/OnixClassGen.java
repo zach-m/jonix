@@ -82,13 +82,13 @@ public class OnixClassGen
 		p.println("import java.util.ArrayList;");
 		p.println();
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.OnixContent;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.JonixComposite;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.struct.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements OnixContent, Serializable\n", clz.name);
+		p.printf("public class %s implements JonixComposite, Serializable\n", clz.name);
 		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);
@@ -269,12 +269,12 @@ public class OnixClassGen
 		p.println();
 		p.println("import java.io.Serializable;");
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.OnixValue;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.JonixElement;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements OnixValue, Serializable\n", clz.name);
+		p.printf("public class %s implements JonixElement, Serializable\n", clz.name);
 		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);
@@ -331,12 +331,12 @@ public class OnixClassGen
 		p.println();
 		p.println("import java.io.Serializable;");
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.OnixFlag;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.JonixFlag;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements OnixFlag, Serializable\n", clz.name);
+		p.printf("public class %s implements JonixFlag, Serializable\n", clz.name);
 		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);

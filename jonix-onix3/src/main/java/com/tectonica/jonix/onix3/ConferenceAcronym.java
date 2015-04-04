@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ConferenceAcronym implements OnixValue, Serializable
+public class ConferenceAcronym implements JonixElement, Serializable
 {
 	public static final String refname = "ConferenceAcronym";
 	public static final String shortname = "b341";

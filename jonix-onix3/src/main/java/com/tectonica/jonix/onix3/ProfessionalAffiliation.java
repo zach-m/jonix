@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ProfessionalAffiliation implements OnixContent, Serializable
+public class ProfessionalAffiliation implements JonixComposite, Serializable
 {
 	public static final String refname = "ProfessionalAffiliation";
 	public static final String shortname = "professionalaffiliation";

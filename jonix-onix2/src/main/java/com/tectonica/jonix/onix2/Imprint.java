@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -36,7 +36,7 @@ import com.tectonica.jonix.struct.JonixImprint;
  */
 
 @SuppressWarnings("serial")
-public class Imprint implements OnixContent, Serializable
+public class Imprint implements JonixComposite, Serializable
 {
 	public static final String refname = "Imprint";
 	public static final String shortname = "imprint";

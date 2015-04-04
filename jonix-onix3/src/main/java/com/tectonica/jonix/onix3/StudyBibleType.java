@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StudyBibleTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.StudyBibleTypes;
  */
 
 @SuppressWarnings("serial")
-public class StudyBibleType implements OnixValue, Serializable
+public class StudyBibleType implements JonixElement, Serializable
 {
 	public static final String refname = "StudyBibleType";
 	public static final String shortname = "b389";

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -33,7 +33,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ProductFormFeature implements OnixContent, Serializable
+public class ProductFormFeature implements JonixComposite, Serializable
 {
 	public static final String refname = "ProductFormFeature";
 	public static final String shortname = "productformfeature";

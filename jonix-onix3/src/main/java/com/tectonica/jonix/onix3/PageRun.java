@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPageRun;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.struct.JonixPageRun;
  */
 
 @SuppressWarnings("serial")
-public class PageRun implements OnixContent, Serializable
+public class PageRun implements JonixComposite, Serializable
 {
 	public static final String refname = "PageRun";
 	public static final String shortname = "pagerun";

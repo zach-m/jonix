@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.BibleTextOrganizations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class BibleTextOrganization implements OnixValue, Serializable
+public class BibleTextOrganization implements JonixElement, Serializable
 {
 	public static final String refname = "BibleTextOrganization";
 	public static final String shortname = "b355";

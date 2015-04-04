@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.ContributorPlaceRelators;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -36,7 +36,7 @@ import com.tectonica.jonix.struct.JonixContributorPlace;
  */
 
 @SuppressWarnings("serial")
-public class ContributorPlace implements OnixContent, Serializable
+public class ContributorPlace implements JonixComposite, Serializable
 {
 	public static final String refname = "ContributorPlace";
 	public static final String shortname = "contributorplace";

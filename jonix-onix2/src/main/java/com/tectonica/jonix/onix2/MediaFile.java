@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileFormats;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileLinkTypes;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
@@ -38,7 +38,7 @@ import com.tectonica.jonix.struct.JonixMediaFile;
  */
 
 @SuppressWarnings("serial")
-public class MediaFile implements OnixContent, Serializable
+public class MediaFile implements JonixComposite, Serializable
 {
 	public static final String refname = "MediaFile";
 	public static final String shortname = "mediafile";

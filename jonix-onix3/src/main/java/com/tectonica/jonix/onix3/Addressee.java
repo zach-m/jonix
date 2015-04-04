@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Addressee implements OnixContent, Serializable
+public class Addressee implements JonixComposite, Serializable
 {
 	public static final String refname = "Addressee";
 	public static final String shortname = "addressee";

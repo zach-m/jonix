@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextItemTypes;
  */
 
 @SuppressWarnings("serial")
-public class TextItemType implements OnixValue, Serializable
+public class TextItemType implements JonixElement, Serializable
 {
 	public static final String refname = "TextItemType";
 	public static final String shortname = "b290";

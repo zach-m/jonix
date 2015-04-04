@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleElementLevels;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TitleElementLevels;
  */
 
 @SuppressWarnings("serial")
-public class TitleElementLevel implements OnixValue, Serializable
+public class TitleElementLevel implements JonixElement, Serializable
 {
 	public static final String refname = "TitleElementLevel";
 	public static final String shortname = "x409";

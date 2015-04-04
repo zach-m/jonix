@@ -19,5 +19,5 @@
 
 package com.tectonica.jonix;
 
-public interface OnixFlag
+public interface JonixFlag
 {}

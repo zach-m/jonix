@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAudience;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixAudience;
  */
 
 @SuppressWarnings("serial")
-public class Audience implements OnixContent, Serializable
+public class Audience implements JonixComposite, Serializable
 {
 	public static final String refname = "Audience";
 	public static final String shortname = "audience";

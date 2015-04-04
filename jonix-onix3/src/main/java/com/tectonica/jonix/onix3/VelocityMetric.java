@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Velocitys;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.Velocitys;
  */
 
 @SuppressWarnings("serial")
-public class VelocityMetric implements OnixValue, Serializable
+public class VelocityMetric implements JonixElement, Serializable
 {
 	public static final String refname = "VelocityMetric";
 	public static final String shortname = "x504";

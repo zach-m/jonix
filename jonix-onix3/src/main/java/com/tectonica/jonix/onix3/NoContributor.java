@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixFlag;
+import com.tectonica.jonix.JonixFlag;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class NoContributor implements OnixFlag, Serializable
+public class NoContributor implements JonixFlag, Serializable
 {
 	public static final String refname = "NoContributor";
 	public static final String shortname = "n339";

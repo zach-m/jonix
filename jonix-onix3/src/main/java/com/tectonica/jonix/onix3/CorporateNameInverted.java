@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
  */
 
 @SuppressWarnings("serial")
-public class CorporateNameInverted implements OnixValue, Serializable
+public class CorporateNameInverted implements JonixElement, Serializable
 {
 	public static final String refname = "CorporateNameInverted";
 	public static final String shortname = "x443";

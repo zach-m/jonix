@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.struct.JonixNameIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class AlternativeName implements OnixContent, Serializable
+public class AlternativeName implements JonixComposite, Serializable
 {
 	public static final String refname = "AlternativeName";
 	public static final String shortname = "alternativename";

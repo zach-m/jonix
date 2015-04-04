@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
@@ -38,7 +38,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class ProductPart implements OnixContent, Serializable
+public class ProductPart implements JonixComposite, Serializable
 {
 	public static final String refname = "ProductPart";
 	public static final String shortname = "productpart";

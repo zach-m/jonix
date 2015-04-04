@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.BarcodeIndicatorsList141;
 import com.tectonica.jonix.codelist.PositionOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +33,7 @@ import com.tectonica.jonix.struct.JonixBarcode;
  */
 
 @SuppressWarnings("serial")
-public class Barcode implements OnixContent, Serializable
+public class Barcode implements JonixComposite, Serializable
 {
 	public static final String refname = "Barcode";
 	public static final String shortname = "barcode";

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAncillaryContent;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.struct.JonixAncillaryContent;
  */
 
 @SuppressWarnings("serial")
-public class AncillaryContent implements OnixContent, Serializable
+public class AncillaryContent implements JonixComposite, Serializable
 {
 	public static final String refname = "AncillaryContent";
 	public static final String shortname = "ancillarycontent";

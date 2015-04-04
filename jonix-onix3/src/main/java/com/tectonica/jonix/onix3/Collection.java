@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -37,7 +37,7 @@ import com.tectonica.jonix.struct.JonixCollectionSequence;
  */
 
 @SuppressWarnings("serial")
-public class Collection implements OnixContent, Serializable
+public class Collection implements JonixComposite, Serializable
 {
 	public static final String refname = "Collection";
 	public static final String shortname = "collection";

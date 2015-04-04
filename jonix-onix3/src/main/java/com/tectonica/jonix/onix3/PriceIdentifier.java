@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.PriceIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPriceIdentifier;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixPriceIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class PriceIdentifier implements OnixContent, Serializable
+public class PriceIdentifier implements JonixComposite, Serializable
 {
 	public static final String refname = "PriceIdentifier";
 	public static final String shortname = "priceidentifier";

@@ -19,5 +19,5 @@
 
 package com.tectonica.jonix;
 
-public interface OnixContent
+public interface JonixElement
 {}

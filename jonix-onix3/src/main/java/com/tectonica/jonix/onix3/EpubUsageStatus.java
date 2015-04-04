@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UsageStatuss;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.UsageStatuss;
  */
 
 @SuppressWarnings("serial")
-public class EpubUsageStatus implements OnixValue, Serializable
+public class EpubUsageStatus implements JonixElement, Serializable
 {
 	public static final String refname = "EpubUsageStatus";
 	public static final String shortname = "x319";

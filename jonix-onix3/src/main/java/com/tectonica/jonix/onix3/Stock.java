@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.struct.JonixStockQuantityCoded;
  */
 
 @SuppressWarnings("serial")
-public class Stock implements OnixContent, Serializable
+public class Stock implements JonixComposite, Serializable
 {
 	public static final String refname = "Stock";
 	public static final String shortname = "stock";

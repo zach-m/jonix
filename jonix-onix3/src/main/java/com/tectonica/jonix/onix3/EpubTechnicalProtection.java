@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixValue;
+import com.tectonica.jonix.JonixElement;
 import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class EpubTechnicalProtection implements OnixValue, Serializable
+public class EpubTechnicalProtection implements JonixElement, Serializable
 {
 	public static final String refname = "EpubTechnicalProtection";
 	public static final String shortname = "x317";

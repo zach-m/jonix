@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.NameCodeTypes;
@@ -40,7 +40,7 @@ import com.tectonica.jonix.struct.JonixNameIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Contributor implements OnixContent, Serializable
+public class Contributor implements JonixComposite, Serializable
 {
 	public static final String refname = "Contributor";
 	public static final String shortname = "contributor";

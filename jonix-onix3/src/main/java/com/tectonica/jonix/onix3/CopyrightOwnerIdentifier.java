@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class CopyrightOwnerIdentifier implements OnixContent, Serializable
+public class CopyrightOwnerIdentifier implements JonixComposite, Serializable
 {
 	public static final String refname = "CopyrightOwnerIdentifier";
 	public static final String shortname = "copyrightowneridentifier";

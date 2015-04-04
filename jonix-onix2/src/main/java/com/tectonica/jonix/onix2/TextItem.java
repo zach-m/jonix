@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixContent;
+import com.tectonica.jonix.JonixComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -39,7 +39,7 @@ import com.tectonica.jonix.struct.JonixTextItemIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class TextItem implements OnixContent, Serializable
+public class TextItem implements JonixComposite, Serializable
 {
 	public static final String refname = "TextItem";
 	public static final String shortname = "textitem";
