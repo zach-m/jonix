@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class SalesRights implements OnixComposite, Serializable
+public class SalesRights implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";

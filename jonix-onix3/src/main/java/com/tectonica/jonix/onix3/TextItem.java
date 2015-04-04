@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.codelist.TextItemTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.struct.JonixTextItemIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class TextItem implements OnixComposite, Serializable
+public class TextItem implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "TextItem";
 	public static final String shortname = "textitem";

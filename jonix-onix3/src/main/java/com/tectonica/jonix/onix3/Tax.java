@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TaxRateCodeds;
 import com.tectonica.jonix.codelist.TaxTypes;
@@ -33,7 +33,7 @@ import com.tectonica.jonix.struct.JonixTax;
  */
 
 @SuppressWarnings("serial")
-public class Tax implements OnixComposite, Serializable
+public class Tax implements OnixDataComposite, Serializable
 {
 	public static final String refname = "Tax";
 	public static final String shortname = "tax";

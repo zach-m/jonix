@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
@@ -39,7 +39,7 @@ import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Name implements OnixComposite, Serializable
+public class Name implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "Name";
 	public static final String shortname = "name";

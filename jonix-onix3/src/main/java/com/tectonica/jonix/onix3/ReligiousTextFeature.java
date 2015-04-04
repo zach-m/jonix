@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatures;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.codelist.ReligiousTextFeatures;
  */
 
 @SuppressWarnings("serial")
-public class ReligiousTextFeature implements OnixComposite, Serializable
+public class ReligiousTextFeature implements OnixDataComposite, Serializable
 {
 	public static final String refname = "ReligiousTextFeature";
 	public static final String shortname = "religioustextfeature";

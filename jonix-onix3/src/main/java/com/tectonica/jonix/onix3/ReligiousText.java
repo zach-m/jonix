@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ReligiousText implements OnixComposite, Serializable
+public class ReligiousText implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "ReligiousText";
 	public static final String shortname = "religioustext";

@@ -22,16 +22,17 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleElementLevels;
+import com.tectonica.jonix.struct.JonixTitleElement;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
  */
 
 @SuppressWarnings("serial")
-public class TitleElement implements OnixComposite, Serializable
+public class TitleElement implements OnixDataComposite, Serializable
 {
 	public static final String refname = "TitleElement";
 	public static final String shortname = "titleelement";
@@ -112,6 +113,11 @@ public class TitleElement implements OnixComposite, Serializable
 		return (titlePrefix == null) ? null : titlePrefix.value;
 	}
 
+	public boolean isNoPrefix()
+	{
+		return (noPrefix != null);
+	}
+
 	public String getTitleWithoutPrefixValue()
 	{
 		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
@@ -125,5 +131,20 @@ public class TitleElement implements OnixComposite, Serializable
 	public String getSubtitleValue()
 	{
 		return (subtitle == null) ? null : subtitle.value;
+	}
+
+	public JonixTitleElement asJonixTitleElement()
+	{
+		JonixTitleElement x = new JonixTitleElement();
+		x.sequenceNumber = getSequenceNumberValue();
+		x.titleElementLevel = getTitleElementLevelValue();
+		x.partNumber = getPartNumberValue();
+		x.yearOfAnnual = getYearOfAnnualValue();
+		x.titlePrefix = getTitlePrefixValue();
+		x.isNoPrefix = isNoPrefix();
+		x.titleWithoutPrefix = getTitleWithoutPrefixValue();
+		x.titleText = getTitleTextValue();
+		x.subtitle = getSubtitleValue();
+		return x;
 	}
 }

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 
@@ -33,7 +33,7 @@ import com.tectonica.jonix.codelist.SalesRestrictionTypes;
  */
 
 @SuppressWarnings("serial")
-public class SalesRestriction implements OnixComposite, Serializable
+public class SalesRestriction implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "SalesRestriction";
 	public static final String shortname = "salesrestriction";

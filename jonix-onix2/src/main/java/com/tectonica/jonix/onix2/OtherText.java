@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -37,7 +37,7 @@ import com.tectonica.jonix.struct.JonixOtherText;
  */
 
 @SuppressWarnings("serial")
-public class OtherText implements OnixComposite, Serializable
+public class OtherText implements OnixDataComposite, Serializable
 {
 	public static final String refname = "OtherText";
 	public static final String shortname = "othertext";

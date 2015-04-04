@@ -610,10 +610,10 @@ public class Parser
 
 	public void postAnalysis()
 	{
-		// we're traversing all content-classes, looking for those that have ONLY value-class members
+		// we're traversing all composites, looking for those that are data-composites, i.e. that contain ONLY elements and/or flags
 		for (OnixCompositeDef composite : meta.getComposites())
 		{
-			boolean hasOnlyValueMembers = true;
+			boolean isDataComposite = true;
 			OnixStruct struct = new OnixStruct(composite);
 			for (OnixCompositeMember member : composite.members)
 			{
@@ -640,14 +640,18 @@ public class Parser
 					else
 						struct.members.add(member);
 				}
+				else if (member.onixClass instanceof OnixFlagDef)
+				{
+					struct.members.add(member);
+				}
 				else
 				{
-					hasOnlyValueMembers = false;
+					isDataComposite = false;
 					break;
 				}
 			}
 
-			if (hasOnlyValueMembers)
+			if (isDataComposite)
 			{
 				if (struct.members.size() == 0)
 					throw new RuntimeException("Struct with no members - " + struct.containingComposite.name);

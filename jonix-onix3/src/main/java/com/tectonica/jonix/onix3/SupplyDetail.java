@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
@@ -40,7 +40,7 @@ import com.tectonica.jonix.struct.JonixSupplyDate;
  */
 
 @SuppressWarnings("serial")
-public class SupplyDetail implements OnixComposite, Serializable
+public class SupplyDetail implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";

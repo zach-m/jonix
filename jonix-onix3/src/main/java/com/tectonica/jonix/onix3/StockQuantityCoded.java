@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 import com.tectonica.jonix.struct.JonixStockQuantityCoded;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixStockQuantityCoded;
  */
 
 @SuppressWarnings("serial")
-public class StockQuantityCoded implements OnixComposite, Serializable
+public class StockQuantityCoded implements OnixDataComposite, Serializable
 {
 	public static final String refname = "StockQuantityCoded";
 	public static final String shortname = "stockquantitycoded";

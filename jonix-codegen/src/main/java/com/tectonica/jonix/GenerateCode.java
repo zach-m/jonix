@@ -294,43 +294,47 @@ public class GenerateCode
 			{
 				if (m2 != null && m3 != null)
 				{
+					if (m2.getClass() != m3.getClass()) // element vs flag
+						throw new RuntimeException("Can't deal with types collision in " + className + ": " + m2.getClass().getSimpleName()
+								+ " vs " + m3.getClass().getSimpleName());
+
 					final String memberClassName = m2.className; // = m3.className
-					OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
-					OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
-					final String javaType2 = vm2.simpleType.primitiveType.javaType;
-					final String javaType3 = vm3.simpleType.primitiveType.javaType;
-					if (!javaType2.equals(javaType3))
+					if (m2.onixClass instanceof OnixElementDef)
 					{
-						System.err.println("<" + className + "> can't be unified into struct: type mismatch in '" + memberClassName
-								+ "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
-						return false; // can't unify, we cancel the scanning of the remaining members
-					}
-					if (m2.cardinality != m3.cardinality)
-					{
-						System.err.println("<" + className + "> can't be unified into struct: cardinality mismatch in '" + memberClassName
-								+ "': Onix2=" + m2.cardinality + " vs Onix3=" + m3.cardinality);
-						return false; // can't unify, we cancel the scanning of the remaining members
+						OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
+						OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
+						final String javaType2 = vm2.simpleType.primitiveType.javaType;
+						final String javaType3 = vm3.simpleType.primitiveType.javaType;
+						if (!javaType2.equals(javaType3))
+						{
+							System.err.println("<" + className + "> can't be unified into struct: type mismatch in '" + memberClassName
+									+ "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
+							return false; // can't unify, we cancel the scanning of the remaining members
+						}
+						if (m2.cardinality != m3.cardinality)
+						{
+							System.err.println("<" + className + "> can't be unified into struct: cardinality mismatch in '"
+									+ memberClassName + "': Onix2=" + m2.cardinality + " vs Onix3=" + m3.cardinality);
+							return false; // can't unify, we cancel the scanning of the remaining members
+						}
 					}
 					unified.members.add(m3);
 				}
 				else if (m2 != null)
 				{
-					OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
-					System.err.println("In <" + className + "> Onix2 has a unique field '" + m2.className + "': " + vm2.simpleType.name
-							+ " (" + vm2.simpleType.primitiveType + ") - this field will not be part the unified struct");
+					System.err.println("<" + className + "> Onix2 has a unique field '" + m2.className
+							+ "' - this field will not be part the unified struct");
 				}
 				else
 				{
-					OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
-					System.err.println("In <" + className + "> Onix3 has a unique field '" + m3.className + "': " + vm3.simpleType.name
-							+ " (" + vm3.simpleType.primitiveType + ") - this field will not be part the unified struct");
+					System.err.println("<" + className + "> Onix2 has a unique field '" + m3.className
+							+ "' - this field will not be part the unified struct");
 				}
 				return true;
 			}
 		});
 		return (completed ? unified : null);
 	}
-
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //	private static List<OnixCompositeDef> unifyInterfaces(final OnixMetadata ref2, final OnixMetadata ref3)

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
@@ -50,7 +50,7 @@ import com.tectonica.jonix.struct.JonixLanguage;
  */
 
 @SuppressWarnings("serial")
-public class DescriptiveDetail implements OnixComposite, Serializable
+public class DescriptiveDetail implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "DescriptiveDetail";
 	public static final String shortname = "descriptivedetail";
@@ -307,6 +307,11 @@ public class DescriptiveDetail implements OnixComposite, Serializable
 		return null;
 	}
 
+	public boolean isNoCollection()
+	{
+		return (noCollection != null);
+	}
+
 	public ThesisTypes getThesisTypeValue()
 	{
 		return (thesisType == null) ? null : thesisType.value;
@@ -332,6 +337,11 @@ public class DescriptiveDetail implements OnixComposite, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public boolean isNoContributor()
+	{
+		return (noContributor != null);
 	}
 
 	public List<EditionTypes> getEditionTypeValues()
@@ -366,6 +376,11 @@ public class DescriptiveDetail implements OnixComposite, Serializable
 			return list;
 		}
 		return null;
+	}
+
+	public boolean isNoEdition()
+	{
+		return (noEdition != null);
 	}
 
 	public IllustratedNotIllustrateds getIllustratedValue()

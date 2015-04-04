@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.PublishingStatuss;
@@ -37,7 +37,7 @@ import com.tectonica.jonix.struct.JonixPublishingDate;
  */
 
 @SuppressWarnings("serial")
-public class PublishingDetail implements OnixComposite, Serializable
+public class PublishingDetail implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "PublishingDetail";
 	public static final String shortname = "publishingdetail";

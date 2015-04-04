@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.DefaultLinearUnits;
 import com.tectonica.jonix.codelist.DefaultUnitOfWeights;
@@ -43,7 +43,7 @@ import com.tectonica.jonix.struct.JonixSenderIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Header implements OnixComposite, Serializable
+public class Header implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "Header";
 	public static final String shortname = "header";

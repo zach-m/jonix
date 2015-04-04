@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class AddresseeIdentifier implements OnixComposite, Serializable
+public class AddresseeIdentifier implements OnixDataComposite, Serializable
 {
 	public static final String refname = "AddresseeIdentifier";
 	public static final String shortname = "addresseeidentifier";

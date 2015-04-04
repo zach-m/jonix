@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Velocitys;
@@ -33,7 +33,7 @@ import com.tectonica.jonix.struct.JonixVelocity;
  */
 
 @SuppressWarnings("serial")
-public class Velocity implements OnixComposite, Serializable
+public class Velocity implements OnixDataComposite, Serializable
 {
 	public static final String refname = "Velocity";
 	public static final String shortname = "velocity";

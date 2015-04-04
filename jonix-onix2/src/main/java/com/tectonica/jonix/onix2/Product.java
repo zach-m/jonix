@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
@@ -71,7 +71,7 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Product implements OnixComposite, Serializable
+public class Product implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "Product";
 	public static final String shortname = "product";
@@ -767,6 +767,11 @@ public class Product implements OnixComposite, Serializable
 		return (epubTypeNote == null) ? null : epubTypeNote.value;
 	}
 
+	public boolean isNoSeries()
+	{
+		return (noSeries != null);
+	}
+
 	public TextCaseFlags getTextCaseFlagValue()
 	{
 		return (textCaseFlag == null) ? null : textCaseFlag.value;
@@ -829,6 +834,11 @@ public class Product implements OnixComposite, Serializable
 		return (contributorStatement == null) ? null : contributorStatement.value;
 	}
 
+	public boolean isNoContributor()
+	{
+		return (noContributor != null);
+	}
+
 	public String getConferenceDescriptionValue()
 	{
 		return (conferenceDescription == null) ? null : conferenceDescription.value;
@@ -884,6 +894,11 @@ public class Product implements OnixComposite, Serializable
 	public String getEditionStatementValue()
 	{
 		return (editionStatement == null) ? null : editionStatement.value;
+	}
+
+	public boolean isNoEdition()
+	{
+		return (noEdition != null);
 	}
 
 	public List<LanguageCodeIso6392Bs> getLanguageOfTextValues()

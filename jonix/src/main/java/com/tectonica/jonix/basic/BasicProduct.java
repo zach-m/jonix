@@ -51,7 +51,6 @@ import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.composite.SupplyDetail;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
-import com.tectonica.jonix.struct.JonixSalesRights;
 import com.tectonica.jonix.struct.JonixTitle;
 
 @SuppressWarnings("serial")
@@ -112,17 +111,17 @@ public class BasicProduct implements Serializable
 //		productIdentifiers = ProductIdentifier.listFrom(product);
 //		titles = Title.listFrom(product);
 		titles = product.findTitles(null); // null = find-all
-		contributors = Contributor.listFrom(product);
-		seriess = Series.listFrom(product);
+		contributors = Contributor.listFrom(product); 		// TODO: use intf
+		seriess = Series.listFrom(product); // onix2-only
 //		languages = Language.listFrom(product);
-		mainSubjects = MainSubject.listFrom(product);
-		subjects = Subject.listFrom(product);
-		audiences = Audience.listFrom(product);
-		otherTexts = OtherText.listFrom(product);
-		publishers = Publisher.listFrom(product);
-		imprints = Imprint.listFrom(product);
-		supplyDetails = SupplyDetail.listFrom(product);
-		salesRightss = SalesRights.listFrom(product);
+		mainSubjects = MainSubject.listFrom(product); // ?
+		subjects = Subject.listFrom(product); 				// TODO: use struct
+		audiences = Audience.listFrom(product); 			// TODO: use struct
+		otherTexts = OtherText.listFrom(product); 			// TODO: use struct - although not complete
+		publishers = Publisher.listFrom(product); 			// TODO: use intf
+		imprints = Imprint.listFrom(product); // non-struct
+		supplyDetails = SupplyDetail.listFrom(product); 	// TODO: use intf
+		salesRightss = SalesRights.listFrom(product); // non-struct
 	}
 
 	public String getLabel()
@@ -221,8 +220,15 @@ public class BasicProduct implements Serializable
 		return matches;
 	}
 
-	public List<JonixSalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
+	public List<SalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
 	{
-		return product.findSalesRightss(requestedTypes);
+//		return product.findSalesRightss(requestedTypes);
+		List<SalesRights> matches = new ArrayList<SalesRights>();
+		for (SalesRights salesRights : salesRightss)
+		{
+			if (requestedTypes.contains(salesRights.salesRightsType))
+				matches.add(salesRights);
+		}
+		return matches;
 	}
 }

@@ -87,16 +87,30 @@ public class OnixStructGen
 		// declare members
 		for (OnixCompositeMember member : struct.members)
 		{
-			final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
-			final TypeInfo ti = GenUtil.typeInfoOf(memberClass.valueMember.simpleType);
-			final String field = GenUtil.fieldOf(member.className);
-			String javaType = ti.javaType;
-			if (memberClass.isSpaceable)
-				javaType = "java.util.Set<" + javaType + ">";
-			if (member.cardinality.singular)
-				p.printf("   public %s %s;%s\n", javaType, field, ti.comment);
+			final String field;
+			String javaType;
+			final String comment;
+			if (member.onixClass instanceof OnixElementDef)
+			{
+				final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
+				final TypeInfo ti = GenUtil.typeInfoOf(memberClass.valueMember.simpleType);
+				field = GenUtil.fieldOf(member.className);
+				javaType = ti.javaType;
+				if (memberClass.isSpaceable)
+					javaType = "java.util.Set<" + javaType + ">";
+				comment = ti.comment;
+			}
 			else
-				p.printf("   public List<%s> %ss;%s\n", javaType, field, ti.comment);
+			// i.e. (member.onixClass instanceof OnixFlagDef)
+			{
+				field = "is" + member.className;
+				javaType = "boolean";
+				comment = " // optional flag";
+			}
+			if (member.cardinality.singular)
+				p.printf("   public %s %s;%s\n", javaType, field, comment);
+			else
+				p.printf("   public List<%s> %ss;%s\n", javaType, field, comment);
 		}
 
 		// default-constructor

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.CurrencyZones;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
@@ -46,7 +46,7 @@ import com.tectonica.jonix.struct.JonixPriceIdentifier;
  */
 
 @SuppressWarnings("serial")
-public class Price implements OnixComposite, Serializable
+public class Price implements OnixSuperComposite, Serializable
 {
 	public static final String refname = "Price";
 	public static final String shortname = "price";

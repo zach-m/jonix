@@ -26,13 +26,13 @@ import com.tectonica.jonix.codegen.GenUtil.FieldInfo;
 import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
 import com.tectonica.jonix.metadata.OnixAttribute;
 import com.tectonica.jonix.metadata.OnixClass;
-import com.tectonica.jonix.metadata.OnixConst;
 import com.tectonica.jonix.metadata.OnixCompositeDef;
 import com.tectonica.jonix.metadata.OnixCompositeMember;
+import com.tectonica.jonix.metadata.OnixConst;
+import com.tectonica.jonix.metadata.OnixElementDef;
 import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixElementDef;
 
 public class OnixClassGen
 {
@@ -75,6 +75,9 @@ public class OnixClassGen
 
 	private void writeCompositeClass(OnixCompositeDef composite, PrintStream p)
 	{
+		final boolean isDataComposite = ref.jonixStructs.containsKey(composite.name);
+		final String markerInterfaceName = isDataComposite ? "OnixDataComposite" : "OnixSuperComposite";
+
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
 		p.println();
@@ -83,13 +86,13 @@ public class OnixClassGen
 		p.println("import java.util.ArrayList;");
 		p.println();
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.OnixComposite;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.OnixComposite.%s;\n", GenUtil.COMMON_PACKAGE, markerInterfaceName);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.struct.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements OnixComposite, Serializable\n", composite.name);
+		p.printf("public class %s implements %s, Serializable\n", composite.name, markerInterfaceName);
 		p.printf("{\n");
 
 		declareConstsAndAttributes(p, composite);
@@ -142,10 +145,11 @@ public class OnixClassGen
 
 		p.printf("   }\n");
 
-		// declare direct value getters for element-members
+		// generate getters for members that have a single value (or single collection of values)
 		for (OnixCompositeMember m : composite.members)
 		{
-			final OnixElementDef element = ref.elementByName(m.className);
+			// declare direct value getters for element-members
+			final OnixElementDef element = ref.onixElements.get(m.className);
 			if (element != null)
 			{
 				final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
@@ -177,6 +181,25 @@ public class OnixClassGen
 					p.printf("      } \n");
 					p.printf("      return null;\n");
 					p.printf("   }\n");
+				}
+			}
+
+			// declare direct boolean getter for flag-members
+			final OnixFlagDef flag = ref.onixFlags.get(m.className);
+			if (flag != null)
+			{
+				final String field = GenUtil.fieldOf(flag.name);
+				if (m.cardinality.singular)
+				{
+					p.println();
+					p.printf("   public boolean is%s()\n", flag.name);
+					p.printf("   {\n");
+					p.printf("      return (%s != null);\n", field);
+					p.printf("   }\n");
+				}
+				else
+				{
+					throw new RuntimeException("can't handle multiple flags");
 				}
 			}
 		}
@@ -243,14 +266,22 @@ public class OnixClassGen
 
 			for (OnixCompositeMember member : struct.allMembers())
 			{
-				String field = GenUtil.fieldOf(member.className);
-				String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
-				if (!member.cardinality.singular)
+				if (member.onixClass instanceof OnixElementDef)
 				{
-					field += "s";
-					caption += "s";
+					String field = GenUtil.fieldOf(member.className);
+					String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
+					if (!member.cardinality.singular)
+					{
+						field += "s";
+						caption += "s";
+					}
+					p.printf("      x.%s = get%s%s();\n", field, member.className, caption);
 				}
-				p.printf("      x.%s = get%s%s();\n", field, member.className, caption);
+				else
+				// i.e. (member.onixClass instanceof OnixFlagDef)
+				{
+					p.printf("      x.is%s = is%s();\n", member.className, member.className);
+				}
 			}
 
 			p.printf("      return x;\n");

@@ -38,10 +38,10 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.OtherText;
 import com.tectonica.jonix.composite.Price;
+import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
-import com.tectonica.jonix.struct.JonixSalesRights;
 import com.tectonica.jonix.struct.JonixTitle;
 
 public enum BasicColumn implements JonixColumn
@@ -349,16 +349,16 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractSalesRights(String[] fieldData, Set<SalesRightsTypes> stdTypes, BasicProduct product)
 	{
-		List<JonixSalesRights> salesRightss = product.findSalesRightss(stdTypes);
+		List<SalesRights> salesRightss = product.findSalesRightss(stdTypes);
 		int pos = 0;
-		for (JonixSalesRights salesRights : salesRightss)
+		for (SalesRights salesRights : salesRightss)
 		{
 			StringBuffer sb = new StringBuffer();
 			if (salesRights.rightsTerritory != null)
 				sb.append(salesRights.rightsTerritory).append("#");
 			sb.append("|");
-			if (salesRights.rightsCountrys != null)
-				for (Set<CountryCodeIso31661s> cc : salesRights.rightsCountrys)
+			if (salesRights.rightsCountries != null)
+				for (Set<CountryCodeIso31661s> cc : salesRights.rightsCountries)
 					sb.append(cc).append(";");
 			sb.append("|");
 			if (salesRights.rightsRegions != null)

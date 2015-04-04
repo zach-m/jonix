@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +33,7 @@ import com.tectonica.jonix.struct.JonixContributorDate;
  */
 
 @SuppressWarnings("serial")
-public class ContributorDate implements OnixComposite, Serializable
+public class ContributorDate implements OnixDataComposite, Serializable
 {
 	public static final String refname = "ContributorDate";
 	public static final String shortname = "contributordate";
