@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class ResourceLink implements JonixElement, Serializable
+public class ResourceLink implements OnixElement, Serializable
 {
 	public static final String refname = "ResourceLink";
 	public static final String shortname = "x435";

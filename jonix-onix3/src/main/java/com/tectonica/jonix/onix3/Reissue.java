@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class Reissue implements JonixComposite, Serializable
+public class Reissue implements OnixComposite, Serializable
 {
 	public static final String refname = "Reissue";
 	public static final String shortname = "reissue";

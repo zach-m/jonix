@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.TextFormats;
  */
 
 @SuppressWarnings("serial")
-public class AudienceDescription implements JonixElement, Serializable
+public class AudienceDescription implements OnixElement, Serializable
 {
 	public static final String refname = "AudienceDescription";
 	public static final String shortname = "b207";

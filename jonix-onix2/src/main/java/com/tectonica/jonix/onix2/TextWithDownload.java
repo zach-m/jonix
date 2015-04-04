@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class TextWithDownload implements JonixElement, Serializable
+public class TextWithDownload implements OnixElement, Serializable
 {
 	public static final String refname = "TextWithDownload";
 	public static final String shortname = "f118";

@@ -19,5 +19,8 @@
 
 package com.tectonica.jonix;
 
-public interface JonixElement
+/**
+ * represents an Onix flag (i.e. has no content, merely marks something simply by being specified)
+ */
+public interface OnixFlag
 {}

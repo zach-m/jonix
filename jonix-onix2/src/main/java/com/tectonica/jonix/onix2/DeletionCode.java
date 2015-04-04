@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -35,7 +35,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class DeletionCode implements JonixElement, Serializable
+public class DeletionCode implements OnixElement, Serializable
 {
 	public static final String refname = "DeletionCode";
 	public static final String shortname = "a198";

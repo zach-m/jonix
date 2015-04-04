@@ -24,44 +24,44 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "containingClass", "searchable", "key", "members" })
+@JsonPropertyOrder({ "containingComposite", "keyed", "keyMember", "members" })
 public class OnixStruct implements Comparable<OnixStruct>
 {
-	public final OnixContentClass containingClass;
-	public OnixContentClassMember key = null;
-	public List<OnixContentClassMember> members = new ArrayList<>();
+	public final OnixCompositeDef containingComposite;
+	public OnixCompositeMember keyMember = null;
+	public List<OnixCompositeMember> members = new ArrayList<>();
 
-	public OnixStruct(OnixContentClass containingClass)
+	public OnixStruct(OnixCompositeDef containingComposite)
 	{
-		this.containingClass = containingClass;
+		this.containingComposite = containingComposite;
 	}
 
-	public boolean isSearchable()
+	public boolean isKeyed()
 	{
-		return (key != null);
+		return (keyMember != null);
 	}
 
 	public OnixSimpleType keyEnumType()
 	{
-		return (key == null) ? null : ((OnixValueClass) key.onixClass).valueMember.simpleType;
+		return (keyMember == null) ? null : ((OnixElementDef) keyMember.onixClass).valueMember.simpleType;
 	}
 
 	@Override
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
-		sb.append("struct " + containingClass.name).append("\n");
-		if (key != null)
+		sb.append("struct " + containingComposite.name).append("\n");
+		if (keyMember != null)
 		{
-			OnixValueClassMember km = ((OnixValueClass) key.onixClass).valueMember;
+			OnixElementMember km = ((OnixElementDef) keyMember.onixClass).valueMember;
 			sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
 		}
-		for (OnixContentClassMember m : members)
+		for (OnixCompositeMember member : members)
 		{
-			OnixValueClassMember vm = ((OnixValueClass) m.onixClass).valueMember;
+			OnixElementMember vm = ((OnixElementDef) member.onixClass).valueMember;
 			final OnixSimpleType simpleType = vm.simpleType;
 			String javaType = (simpleType.enumName != null) ? simpleType.enumName : simpleType.primitiveType.javaType;
-			if (!m.cardinality.singular)
+			if (!member.cardinality.singular)
 				javaType = "List<" + javaType + ">";
 			sb.append("         - ").append(javaType).append("\n");
 		}
@@ -69,9 +69,8 @@ public class OnixStruct implements Comparable<OnixStruct>
 	}
 
 	@Override
-	public int compareTo(OnixStruct o)
+	public int compareTo(OnixStruct other)
 	{
-		return containingClass.name.compareTo(o.containingClass.name);
-//		return keyEnumType().enumName.compareTo(o.keyEnumType().enumName);
+		return containingComposite.name.compareTo(other.containingComposite.name);
 	}
 }

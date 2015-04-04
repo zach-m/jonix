@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixComplexity;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixComplexity;
  */
 
 @SuppressWarnings("serial")
-public class Complexity implements JonixComposite, Serializable
+public class Complexity implements OnixComposite, Serializable
 {
 	public static final String refname = "Complexity";
 	public static final String shortname = "complexity";

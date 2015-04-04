@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class OnOrder implements JonixElement, Serializable
+public class OnOrder implements OnixElement, Serializable
 {
 	public static final String refname = "OnOrder";
 	public static final String shortname = "j351";

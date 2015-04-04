@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WebsiteRoles;
 
@@ -33,7 +33,7 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
  */
 
 @SuppressWarnings("serial")
-public class Website implements JonixComposite, Serializable
+public class Website implements OnixComposite, Serializable
 {
 	public static final String refname = "Website";
 	public static final String shortname = "website";

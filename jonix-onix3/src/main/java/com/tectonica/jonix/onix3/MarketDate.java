@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +33,7 @@ import com.tectonica.jonix.struct.JonixMarketDate;
  */
 
 @SuppressWarnings("serial")
-public class MarketDate implements JonixComposite, Serializable
+public class MarketDate implements OnixComposite, Serializable
 {
 	public static final String refname = "MarketDate";
 	public static final String shortname = "marketdate";

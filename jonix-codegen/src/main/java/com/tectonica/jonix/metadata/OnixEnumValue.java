@@ -44,8 +44,8 @@ public class OnixEnumValue implements Comparable<OnixEnumValue>
 	}
 
 	@Override
-	public int compareTo(OnixEnumValue o)
+	public int compareTo(OnixEnumValue other)
 	{
-		return value.compareTo(o.value); // NOTE: this is a value comparison, not name
+		return value.compareTo(other.value); // NOTE: this is a value comparison, not name
 	}
 }

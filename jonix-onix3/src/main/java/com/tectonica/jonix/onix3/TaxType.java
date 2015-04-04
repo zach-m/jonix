@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TaxTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TaxTypes;
  */
 
 @SuppressWarnings("serial")
-public class TaxType implements JonixElement, Serializable
+public class TaxType implements OnixElement, Serializable
 {
 	public static final String refname = "TaxType";
 	public static final String shortname = "x470";

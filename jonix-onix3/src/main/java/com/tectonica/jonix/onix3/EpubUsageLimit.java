@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnitOfUsages;
 import com.tectonica.jonix.struct.JonixEpubUsageLimit;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixEpubUsageLimit;
  */
 
 @SuppressWarnings("serial")
-public class EpubUsageLimit implements JonixComposite, Serializable
+public class EpubUsageLimit implements OnixComposite, Serializable
 {
 	public static final String refname = "EpubUsageLimit";
 	public static final String shortname = "epubusagelimit";

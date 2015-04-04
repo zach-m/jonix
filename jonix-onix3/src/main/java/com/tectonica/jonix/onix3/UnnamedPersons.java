@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.UnnamedPersonss;
  */
 
 @SuppressWarnings("serial")
-public class UnnamedPersons implements JonixElement, Serializable
+public class UnnamedPersons implements OnixElement, Serializable
 {
 	public static final String refname = "UnnamedPersons";
 	public static final String shortname = "b249";

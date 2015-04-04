@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
@@ -37,7 +37,7 @@ import com.tectonica.jonix.struct.JonixAudienceRange;
  */
 
 @SuppressWarnings("serial")
-public class AudienceRange implements JonixComposite, Serializable
+public class AudienceRange implements OnixComposite, Serializable
 {
 	public static final String refname = "AudienceRange";
 	public static final String shortname = "audiencerange";

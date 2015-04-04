@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceContentTypes;
@@ -37,7 +37,7 @@ import com.tectonica.jonix.struct.JonixResourceFeature;
  */
 
 @SuppressWarnings("serial")
-public class SupportingResource implements JonixComposite, Serializable
+public class SupportingResource implements OnixComposite, Serializable
 {
 	public static final String refname = "SupportingResource";
 	public static final String shortname = "supportingresource";

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class Prize implements JonixComposite, Serializable
+public class Prize implements OnixComposite, Serializable
 {
 	public static final String refname = "Prize";
 	public static final String shortname = "prize";

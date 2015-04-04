@@ -28,11 +28,11 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import com.tectonica.jonix.codegen.Parser.OnixVersion;
-import com.tectonica.jonix.metadata.OnixContentClass;
-import com.tectonica.jonix.metadata.OnixFlagClass;
+import com.tectonica.jonix.metadata.OnixCompositeDef;
+import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
-import com.tectonica.jonix.metadata.OnixValueClass;
+import com.tectonica.jonix.metadata.OnixElementDef;
 import com.tectonica.jonix.metadata.OnixStruct;
 import com.tectonica.jonix.util.JSON;
 import com.tectonica.jonix.util.ParseUtil;
@@ -79,40 +79,40 @@ public class MetadataDump
 		final String folder = "C:/Users/zach/Desktop" + prefix;
 		new File(folder).mkdirs();
 
-//		saveAsJson(metadata.contentClassesMap.values(), folder + "/contentClasses.txt");
-//		saveAsJson(metadata.valueClassesMap.values(), folder + "/valueClasses.txt");
-//		saveAsJson(metadata.flagClassesMap.values(), folder + "/flagClasses.txt");
-//		saveAsJson(metadata.enumsMap.values(), folder + "/enums.txt");
-		saveAsJson(metadata.typesMap.values(), folder + "/types.txt");
+//		saveAsJson(metadata.onixComposites.values(), folder + "/composites.txt");
+//		saveAsJson(metadata.onixElements.values(), folder + "/elements.txt");
+//		saveAsJson(metadata.onixFlags.values(), folder + "/flags.txt");
+//		saveAsJson(metadata.onixEnums.values(), folder + "/enums.txt");
+		saveAsJson(metadata.onixTypes.values(), folder + "/types.txt");
 
-		new File(folder + "/contentClasses").mkdirs();
-		for (OnixContentClass occ : metadata.contentClassesMap.values())
+		new File(folder + "/composites").mkdirs();
+		for (OnixCompositeDef composite : metadata.onixComposites.values())
 		{
 //			occ.sortInternally();
-			saveAsJson(occ, folder + "/contentClasses/" + occ.name + ".txt");
+			saveAsJson(composite, folder + "/composites/" + composite.name + ".txt");
 		}
 
-		new File(folder + "/valueClasses").mkdirs();
-		for (OnixValueClass ovc : metadata.valueClassesMap.values())
+		new File(folder + "/elements").mkdirs();
+		for (OnixElementDef element : metadata.onixElements.values())
 		{
 //			ovc.sortInternally();
-			saveAsJson(ovc, folder + "/valueClasses/" + ovc.name + ".txt");
+			saveAsJson(element, folder + "/elements/" + element.name + ".txt");
 		}
 
-		new File(folder + "/flagClasses").mkdirs();
-		for (OnixFlagClass ofc : metadata.flagClassesMap.values())
+		new File(folder + "/flags").mkdirs();
+		for (OnixFlagDef flag : metadata.onixFlags.values())
 		{
 //			ofc.sortInternally();
-			saveAsJson(ofc, folder + "/flagClasses/" + ofc.name + ".txt");
+			saveAsJson(flag, folder + "/flags/" + flag.name + ".txt");
 		}
 
 		new File(folder + "/enums").mkdirs();
-		for (OnixSimpleType ost : metadata.enumsMap.values())
+		for (OnixSimpleType ost : metadata.onixEnums.values())
 			saveAsJson(ost, folder + "/enums/" + ost.name + ".txt");
 
 		new File(folder + "/structs").mkdirs();
-		for (OnixStruct os : metadata.structsMap.values())
-			saveAsJson(os, folder + "/structs/" + os.containingClass.name + ".txt");
+		for (OnixStruct os : metadata.jonixStructs.values())
+			saveAsJson(os, folder + "/structs/" + os.containingComposite.name + ".txt");
 
 		System.out.println("saved results to " + folder);
 	}

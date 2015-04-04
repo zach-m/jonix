@@ -23,16 +23,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class OnixClass implements Comparable<OnixClass>
+public abstract class OnixClass implements Comparable<OnixClass>
 {
 	public String name;
 	public List<OnixConst> consts;
 	public List<OnixAttribute> attributes;
 
 	@Override
-	public int compareTo(OnixClass o)
+	public int compareTo(OnixClass other)
 	{
-		return name.compareTo(o.name);
+		return name.compareTo(other.name);
 	}
 
 	public void add(OnixConst onixConst)

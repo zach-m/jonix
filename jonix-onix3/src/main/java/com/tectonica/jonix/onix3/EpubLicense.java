@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
  */
 
 @SuppressWarnings("serial")
-public class EpubLicense implements JonixComposite, Serializable
+public class EpubLicense implements OnixComposite, Serializable
 {
 	public static final String refname = "EpubLicense";
 	public static final String shortname = "epublicense";

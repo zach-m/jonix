@@ -68,8 +68,8 @@ public class OnixAttribute implements Comparable<OnixAttribute>
 	}
 
 	@Override
-	public int compareTo(OnixAttribute o)
+	public int compareTo(OnixAttribute other)
 	{
-		return name.compareTo(o.name);
+		return name.compareTo(other.name);
 	}
 }

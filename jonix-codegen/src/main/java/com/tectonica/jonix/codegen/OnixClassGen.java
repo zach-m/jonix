@@ -26,12 +26,12 @@ import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
 import com.tectonica.jonix.metadata.OnixAttribute;
 import com.tectonica.jonix.metadata.OnixClass;
 import com.tectonica.jonix.metadata.OnixConst;
-import com.tectonica.jonix.metadata.OnixContentClass;
-import com.tectonica.jonix.metadata.OnixContentClassMember;
-import com.tectonica.jonix.metadata.OnixFlagClass;
+import com.tectonica.jonix.metadata.OnixCompositeDef;
+import com.tectonica.jonix.metadata.OnixCompositeMember;
+import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixValueClass;
+import com.tectonica.jonix.metadata.OnixElementDef;
 
 public class OnixClassGen
 {
@@ -50,20 +50,20 @@ public class OnixClassGen
 		new File(folderName).mkdirs();
 	}
 
-	public void generate(OnixClass clz)
+	public void generate(OnixClass onixClass)
 	{
 		try
 		{
-			String fileName = folderName + "\\" + clz.name + ".java";
+			String fileName = folderName + "\\" + onixClass.name + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
 			{
-				if (clz instanceof OnixContentClass)
-					writeContentClass((OnixContentClass) clz, p);
-				else if (clz instanceof OnixValueClass)
-					writeValueClass((OnixValueClass) clz, p);
-				else if (clz instanceof OnixFlagClass)
-					writeFlagClass((OnixFlagClass) clz, p);
+				if (onixClass instanceof OnixCompositeDef)
+					writeCompositeClass((OnixCompositeDef) onixClass, p);
+				else if (onixClass instanceof OnixElementDef)
+					writeElementClass((OnixElementDef) onixClass, p);
+				else if (onixClass instanceof OnixFlagDef)
+					writeFlagClass((OnixFlagDef) onixClass, p);
 			}
 		}
 		catch (Exception e)
@@ -72,7 +72,7 @@ public class OnixClassGen
 		}
 	}
 
-	private void writeContentClass(OnixContentClass clz, PrintStream p)
+	private void writeCompositeClass(OnixCompositeDef composite, PrintStream p)
 	{
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
@@ -82,39 +82,39 @@ public class OnixClassGen
 		p.println("import java.util.ArrayList;");
 		p.println();
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.JonixComposite;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.OnixComposite;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.struct.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements JonixComposite, Serializable\n", clz.name);
+		p.printf("public class %s implements OnixComposite, Serializable\n", composite.name);
 		p.printf("{\n");
 
-		declareConstsAndAttributes(p, clz);
+		declareConstsAndAttributes(p, composite);
 
 		// declare members
 		p.println();
-		for (OnixContentClassMember m : clz.members)
+		for (OnixCompositeMember member : composite.members)
 		{
-			final String field = GenUtil.fieldOf(m.className);
-			if (m.cardinality.singular)
-				p.printf("   public %s %s; // %s\n", m.className, field, m.cardinality.name());
+			final String field = GenUtil.fieldOf(member.className);
+			if (member.cardinality.singular)
+				p.printf("   public %s %s; // %s\n", member.className, field, member.cardinality.name());
 			else
-				p.printf("   public List<%s> %ss; // %s\n", m.className, field, m.cardinality.name());
+				p.printf("   public List<%s> %ss; // %s\n", member.className, field, member.cardinality.name());
 		}
 
 		// default-constructor
 		p.println();
-		p.printf("   public %s()\n", clz.name);
+		p.printf("   public %s()\n", composite.name);
 		p.printf("   {}\n");
 
 		// constructor
 		p.println();
-		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
+		p.printf("   public %s(org.w3c.dom.Element element)\n", composite.name);
 		p.printf("   {\n");
 
-		extractAttributes(clz, p);
+		extractAttributes(composite, p);
 
 		p.println();
 		p.printf("      JPU.forElementsOf(element, new JPU.ElementListener()\n");
@@ -124,7 +124,7 @@ public class OnixClassGen
 		p.printf("         {\n");
 		p.printf("            final String name = element.getNodeName();\n");
 		boolean first = true;
-		for (OnixContentClassMember m : clz.members)
+		for (OnixCompositeMember m : composite.members)
 		{
 			final String className = m.className;
 			final String field = GenUtil.fieldOf(className);
@@ -145,19 +145,19 @@ public class OnixClassGen
 		p.printf("   }\n");
 
 		// declare value getters
-		for (OnixContentClassMember m : clz.members)
+		for (OnixCompositeMember m : composite.members)
 		{
-			final OnixValueClass ovc = ref.valueClassByName(m.className);
-			if (ovc != null)
+			final OnixElementDef element = ref.elementsByName(m.className);
+			if (element != null)
 			{
-				final TypeInfo ti = GenUtil.typeInfoOf(ovc.valueMember.simpleType);
+				final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 				final String field = GenUtil.fieldOf(m.className);
 				String javaType = ti.javaType;
-				if (ovc.isSpaceable)
+				if (element.isSpaceable)
 					javaType = "java.util.Set<" + javaType + ">";
 				if (m.cardinality.singular)
 				{
-					final String caption = ovc.isSpaceable ? "Set" : "Value";
+					final String caption = element.isSpaceable ? "Set" : "Value";
 					p.println();
 					p.printf("   public %s get%s%s()\n", javaType, m.className, caption);
 					p.printf("   {\n");
@@ -166,7 +166,7 @@ public class OnixClassGen
 				}
 				else
 				{
-					final String caption = ovc.isSpaceable ? "Sets" : "Values";
+					final String caption = element.isSpaceable ? "Sets" : "Values";
 					p.println();
 					p.printf("   public List<%s> get%s%s()\n", javaType, m.className, caption);
 					p.printf("   {\n");
@@ -184,17 +184,17 @@ public class OnixClassGen
 		}
 
 		// declare struct finder for Lists
-		for (OnixContentClassMember m : clz.members)
+		for (OnixCompositeMember m : composite.members)
 		{
 			if (!m.cardinality.singular)
 			{
 				final OnixStruct struct = ref.unifiedStructs.get(m.className);
-				if (struct != null && struct.isSearchable())
+				if (struct != null && struct.isKeyed())
 				{
 					final String structName = "Jonix" + m.className;
-					final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;
+					final OnixElementDef keyClass = (OnixElementDef) struct.keyMember.onixClass;
 					final TypeInfo kti = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-					final String keyClassName = struct.key.className;
+					final String keyClassName = struct.keyMember.className;
 					final String keyField = GenUtil.fieldOf(keyClassName);
 					final String memberfield = GenUtil.fieldOf(m.className) + "s";
 					final String caption = keyClass.isSpaceable ? "Set" : "Value";
@@ -233,20 +233,20 @@ public class OnixClassGen
 		}
 
 		// declare struct provider
-		final OnixStruct struct = ref.unifiedStructs.get(clz.name);
+		final OnixStruct struct = ref.unifiedStructs.get(composite.name);
 		if (struct != null)
 		{
-			final String structName = "Jonix" + clz.name;
+			final String structName = "Jonix" + composite.name;
 
 			p.println();
 			p.printf("   public %s as%s()\n", structName, structName);
 			p.printf("   {\n");
 			p.printf("      %s x = new %s();\n", structName, structName);
 
-			for (OnixContentClassMember member : struct.members)
+			for (OnixCompositeMember member : struct.members)
 			{
 				String field = GenUtil.fieldOf(member.className);
-				String caption = ((OnixValueClass) member.onixClass).isSpaceable ? "Set" : "Value";
+				String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
 				if (!member.cardinality.singular)
 				{
 					field += "s";
@@ -262,47 +262,47 @@ public class OnixClassGen
 		p.println("}");
 	}
 
-	private void writeValueClass(OnixValueClass clz, PrintStream p)
+	private void writeElementClass(OnixElementDef element, PrintStream p)
 	{
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
 		p.println();
 		p.println("import java.io.Serializable;");
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.JonixElement;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.OnixElement;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements JonixElement, Serializable\n", clz.name);
+		p.printf("public class %s implements OnixElement, Serializable\n", element.name);
 		p.printf("{\n");
 
-		declareConstsAndAttributes(p, clz);
+		declareConstsAndAttributes(p, element);
 
 		// declare value
-		final TypeInfo ti = GenUtil.typeInfoOf(clz.valueMember.simpleType);
+		final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 		p.println();
-		if (!clz.isSpaceable)
+		if (!element.isSpaceable)
 			p.printf("   public %s value;%s\n", ti.javaType, ti.comment);
 		else
 			p.printf("   public java.util.Set<%s> value;%s\n", ti.javaType, ti.comment);
 
 		// default-constructor
 		p.println();
-		p.printf("   public %s()\n", clz.name);
+		p.printf("   public %s()\n", element.name);
 		p.printf("   {}\n");
 
 		// constructor
 		p.println();
-		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
+		p.printf("   public %s(org.w3c.dom.Element element)\n", element.name);
 		p.printf("   {\n");
 
-		extractAttributes(clz, p);
+		extractAttributes(element, p);
 
 		p.println();
 		if (ti.isXHTML)
 			p.printf("      value = JPU.getChildXHTML(element, true);\n");
-		else if (!clz.isSpaceable)
+		else if (!element.isSpaceable)
 		{
 			if (ti.isPrimitive)
 				p.printf("      value = JPU.getContentAs%s(element);\n", ti.javaType);
@@ -324,19 +324,19 @@ public class OnixClassGen
 		p.println("}");
 	}
 
-	private void writeFlagClass(OnixFlagClass clz, PrintStream p)
+	private void writeFlagClass(OnixFlagDef clz, PrintStream p)
 	{
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
 		p.println();
 		p.println("import java.io.Serializable;");
 		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.JonixFlag;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.OnixFlag;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements JonixFlag, Serializable\n", clz.name);
+		p.printf("public class %s implements OnixFlag, Serializable\n", clz.name);
 		p.printf("{\n");
 
 		declareConstsAndAttributes(p, clz);

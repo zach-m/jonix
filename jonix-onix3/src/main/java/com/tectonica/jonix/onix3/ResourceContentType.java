@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceContentTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.ResourceContentTypes;
  */
 
 @SuppressWarnings("serial")
-public class ResourceContentType implements JonixElement, Serializable
+public class ResourceContentType implements OnixElement, Serializable
 {
 	public static final String refname = "ResourceContentType";
 	public static final String shortname = "x436";

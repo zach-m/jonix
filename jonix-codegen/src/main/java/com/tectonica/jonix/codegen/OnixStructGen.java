@@ -23,8 +23,8 @@ import java.io.File;
 import java.io.PrintStream;
 
 import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
-import com.tectonica.jonix.metadata.OnixContentClassMember;
-import com.tectonica.jonix.metadata.OnixValueClass;
+import com.tectonica.jonix.metadata.OnixCompositeMember;
+import com.tectonica.jonix.metadata.OnixElementDef;
 import com.tectonica.jonix.metadata.OnixStruct;
 
 public class OnixStructGen
@@ -45,7 +45,7 @@ public class OnixStructGen
 	{
 		try
 		{
-			final String structName = "Jonix" + struct.containingClass.name;
+			final String structName = "Jonix" + struct.containingComposite.name;
 			String fileName = folderName + "\\" + structName + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
@@ -75,19 +75,19 @@ public class OnixStructGen
 		p.printf("{\n");
 
 		// declare key
-		if (struct.isSearchable())
+		if (struct.isKeyed())
 		{
-			final OnixValueClass keyClass = (OnixValueClass) struct.key.onixClass;
+			final OnixElementDef keyClass = (OnixElementDef) struct.keyMember.onixClass;
 			final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-			final String keyField = GenUtil.fieldOf(struct.key.className);
+			final String keyField = GenUtil.fieldOf(struct.keyMember.className);
 			p.printf("   public %s %s;%s\n", keyTypeInfo.javaType, keyField, keyTypeInfo.comment);
 			p.println();
 		}
 
 		// declare members
-		for (OnixContentClassMember member : struct.members)
+		for (OnixCompositeMember member : struct.members)
 		{
-			final OnixValueClass memberClass = (OnixValueClass) member.onixClass;
+			final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
 			final TypeInfo ti = GenUtil.typeInfoOf(memberClass.valueMember.simpleType);
 			final String field = GenUtil.fieldOf(member.className);
 			String javaType = ti.javaType;

@@ -26,23 +26,23 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "contentClasses", "valueClasses", "flagClasses", "types", "enums", "structs" })
+@JsonPropertyOrder({ "composites", "elements", "flgs", "types", "enums", "structs", "intfs" })
 public class OnixMetadata
 {
 	@JsonIgnore
-	public Map<String, OnixContentClass> contentClassesMap = new HashMap<>();
+	public Map<String, OnixCompositeDef> onixComposites = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixValueClass> valueClassesMap = new HashMap<>();
+	public Map<String, OnixElementDef> onixElements = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixFlagClass> flagClassesMap = new HashMap<>();
+	public Map<String, OnixFlagDef> onixFlags = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixSimpleType> typesMap = new HashMap<>();
+	public Map<String, OnixSimpleType> onixTypes = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixSimpleType> enumsMap = new HashMap<>();
+	public Map<String, OnixSimpleType> onixEnums = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixStruct> structsMap = new HashMap<>();
+	public Map<String, OnixStruct> jonixStructs = new HashMap<>();
 	@JsonIgnore
-	public Map<String, OnixContentClass> intfsMap = new HashMap<>();
+	public Map<String, OnixCompositeDef> jonixIntfs = new HashMap<>();
 
 	// the following is to be filled during code-generation, not parsing
 	@JsonIgnore
@@ -50,63 +50,63 @@ public class OnixMetadata
 
 	// convenience getters
 
-	public Collection<OnixContentClass> getContentClasses()
+	public Collection<OnixCompositeDef> getComposites()
 	{
-		return contentClassesMap.values();
+		return onixComposites.values();
 	}
 
-	public Collection<OnixValueClass> getValueClasses()
+	public Collection<OnixElementDef> getElements()
 	{
-		return valueClassesMap.values();
+		return onixElements.values();
 	}
 
-	public Collection<OnixFlagClass> getFlagClasses()
+	public Collection<OnixFlagDef> getFlags()
 	{
-		return flagClassesMap.values();
+		return onixFlags.values();
 	}
 
 	public Collection<OnixSimpleType> getTypes()
 	{
-		return typesMap.values();
+		return onixTypes.values();
 	}
 
 	public Collection<OnixSimpleType> getEnums()
 	{
-		return enumsMap.values();
+		return onixEnums.values();
 	}
 
 	public Collection<OnixStruct> getStructs()
 	{
-		return structsMap.values();
+		return jonixStructs.values();
 	}
 
-	public Collection<OnixContentClass> getIntfs()
+	public Collection<OnixCompositeDef> getIntfs()
 	{
-		return intfsMap.values();
+		return jonixIntfs.values();
 	}
 
 	public OnixSimpleType typeByName(String name)
 	{
-		OnixSimpleType type = typesMap.get(name);
+		OnixSimpleType type = onixTypes.get(name);
 		if (type == null)
-			type = enumsMap.get(name);
+			type = onixEnums.get(name);
 		return type;
 	}
 
 	public OnixClass classByName(String name)
 	{
-		OnixClass onixClass = contentClassesMap.get(name);
+		OnixClass onixClass = onixComposites.get(name);
 		if (onixClass == null)
 		{
-			onixClass = valueClassesMap.get(name);
+			onixClass = onixElements.get(name);
 			if (onixClass == null)
-				onixClass = flagClassesMap.get(name);
+				onixClass = onixFlags.get(name);
 		}
 		return onixClass;
 	}
 
-	public OnixValueClass valueClassByName(String name)
+	public OnixElementDef elementsByName(String name)
 	{
-		return valueClassesMap.get(name);
+		return onixElements.get(name);
 	}
 }

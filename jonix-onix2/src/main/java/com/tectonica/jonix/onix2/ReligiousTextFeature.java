@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
@@ -36,7 +36,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  */
 
 @SuppressWarnings("serial")
-public class ReligiousTextFeature implements JonixComposite, Serializable
+public class ReligiousTextFeature implements OnixComposite, Serializable
 {
 	public static final String refname = "ReligiousTextFeature";
 	public static final String shortname = "religioustextfeature";

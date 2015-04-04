@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
@@ -33,7 +33,7 @@ import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
  */
 
 @SuppressWarnings("serial")
-public class Subject implements JonixComposite, Serializable
+public class Subject implements OnixComposite, Serializable
 {
 	public static final String refname = "Subject";
 	public static final String shortname = "subject";

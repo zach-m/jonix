@@ -42,8 +42,8 @@ public class OnixConst implements Comparable<OnixConst>
 	}
 
 	@Override
-	public int compareTo(OnixConst o)
+	public int compareTo(OnixConst other)
 	{
-		return name.compareTo(o.name);
+		return name.compareTo(other.name);
 	}
 }

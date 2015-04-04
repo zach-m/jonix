@@ -17,19 +17,10 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.metadata;
+package com.tectonica.jonix;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-@JsonPropertyOrder({ "name", "isSpaceable", "valueMember", "consts", "attributes" })
-public class OnixValueClass extends OnixClass
-{
-	public OnixValueClassMember valueMember;
-	public boolean isSpaceable;
-
-	@Override
-	public String toString()
-	{
-		return name + ": valueMember=" + valueMember + ", attributes=" + attributes + ", isSpaceable=" + isSpaceable;
-	}
-}
+/**
+ * represents an Onix element (i.e. contains a single value field and possibly some attributes, but nothing else)
+ */
+public interface OnixElement
+{}

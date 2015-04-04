@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  */
 
 @SuppressWarnings("serial")
-public class DefaultCurrencyCode implements JonixElement, Serializable
+public class DefaultCurrencyCode implements OnixElement, Serializable
 {
 	public static final String refname = "DefaultCurrencyCode";
 	public static final String shortname = "m186";

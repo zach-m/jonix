@@ -19,14 +19,27 @@
 
 package com.tectonica.jonix.metadata;
 
+import java.util.Collections;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "consts", "attributes" })
-public class OnixFlagClass extends OnixClass
+@JsonPropertyOrder({ "name", "members", "consts", "attributes" })
+public class OnixCompositeDef extends OnixClass
 {
+	public List<OnixCompositeMember> members;
+
+	@Override
+	public void sortInternally()
+	{
+		super.sortInternally();
+		if (members != null)
+			Collections.sort(members);
+	}
+
 	@Override
 	public String toString()
 	{
-		return name + ", attributes=" + attributes;
+		return name + ": members=" + members + ", attributes=" + attributes;
 	}
 }

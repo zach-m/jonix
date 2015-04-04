@@ -17,7 +17,16 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.metadata;
 
-public interface JonixFlag
-{}
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({ "name", "consts", "attributes" })
+public class OnixFlagDef extends OnixClass
+{
+	@Override
+	public String toString()
+	{
+		return name + ", attributes=" + attributes;
+	}
+}

@@ -22,44 +22,32 @@ package com.tectonica.jonix.metadata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "simpleTypeName", "dataType" })
-public class OnixValueClassMember implements Comparable<OnixValueClassMember>
+@JsonPropertyOrder({ "className", "cardinality" })
+public class OnixCompositeMember implements Comparable<OnixCompositeMember>
 {
+	public String className;
+	public Cardinality cardinality;
+
 	@JsonIgnore
-	public OnixSimpleType simpleType;
-
-	public String getSimpleTypeName()
-	{
-		return simpleType.name;
-	}
-
-	public Primitive getDataType()
-	{
-		return simpleType.primitiveType;
-	}
+	public OnixClass onixClass; // added after parsing is over
 
 	@Override
-	public int compareTo(OnixValueClassMember o)
+	public int compareTo(OnixCompositeMember other)
 	{
-		return simpleType.name.compareTo(o.simpleType.name);
+		return className.compareTo(other.className);
 	}
 
 	@Override
 	public String toString()
 	{
-		return simpleType.primitiveType + " (" + simpleType.name + ")";
+		return className + " [" + cardinality + "]";
 	}
 
-	private OnixValueClassMember()
-	{}
-
-	public static OnixValueClassMember create(OnixSimpleType simpleType)
+	public static OnixCompositeMember create(String className, Cardinality cardinality)
 	{
-		if (simpleType == null)
-			throw new NullPointerException("simpleType");
-		
-		OnixValueClassMember ovcm = new OnixValueClassMember();
-		ovcm.simpleType = simpleType;
-		return ovcm;
+		OnixCompositeMember member = new OnixCompositeMember();
+		member.className = className;
+		member.cardinality = cardinality;
+		return member;
 	}
 }

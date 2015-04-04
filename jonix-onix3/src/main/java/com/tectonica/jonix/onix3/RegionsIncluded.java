@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.Regions;
  */
 
 @SuppressWarnings("serial")
-public class RegionsIncluded implements JonixElement, Serializable
+public class RegionsIncluded implements OnixElement, Serializable
 {
 	public static final String refname = "RegionsIncluded";
 	public static final String shortname = "x450";

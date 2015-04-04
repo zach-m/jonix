@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceForms;
@@ -37,7 +37,7 @@ import com.tectonica.jonix.struct.JonixResourceVersionFeature;
  */
 
 @SuppressWarnings("serial")
-public class ResourceVersion implements JonixComposite, Serializable
+public class ResourceVersion implements OnixComposite, Serializable
 {
 	public static final String refname = "ResourceVersion";
 	public static final String shortname = "resourceversion";

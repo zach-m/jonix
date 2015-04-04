@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixElement;
+import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ThesisTypes;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.ThesisTypes;
  */
 
 @SuppressWarnings("serial")
-public class ThesisType implements JonixElement, Serializable
+public class ThesisType implements OnixElement, Serializable
 {
 	public static final String refname = "ThesisType";
 	public static final String shortname = "b368";

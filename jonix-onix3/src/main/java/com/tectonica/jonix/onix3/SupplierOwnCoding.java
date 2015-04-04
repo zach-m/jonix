@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
  */
 
 @SuppressWarnings("serial")
-public class SupplierOwnCoding implements JonixComposite, Serializable
+public class SupplierOwnCoding implements OnixComposite, Serializable
 {
 	public static final String refname = "SupplierOwnCoding";
 	public static final String shortname = "supplierowncoding";

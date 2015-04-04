@@ -38,15 +38,15 @@ import com.tectonica.jonix.codegen.OnixClassGen;
 import com.tectonica.jonix.codegen.OnixEnumGen;
 import com.tectonica.jonix.codegen.OnixStructGen;
 import com.tectonica.jonix.codegen.Parser.OnixVersion;
-import com.tectonica.jonix.metadata.OnixContentClass;
-import com.tectonica.jonix.metadata.OnixContentClassMember;
+import com.tectonica.jonix.metadata.OnixCompositeDef;
+import com.tectonica.jonix.metadata.OnixCompositeMember;
+import com.tectonica.jonix.metadata.OnixElementDef;
+import com.tectonica.jonix.metadata.OnixElementMember;
 import com.tectonica.jonix.metadata.OnixEnumValue;
-import com.tectonica.jonix.metadata.OnixFlagClass;
+import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixValueClass;
-import com.tectonica.jonix.metadata.OnixValueClassMember;
 import com.tectonica.jonix.util.ParseUtil;
 
 public class GenerateCode
@@ -130,14 +130,14 @@ public class GenerateCode
 	{
 		final OnixClassGen ccg = new OnixClassGen(basePackage, baseFolder, subfolder, ref);
 
-		for (OnixContentClass occ : ref.contentClassesMap.values())
-			ccg.generate(occ);
+		for (OnixCompositeDef composite : ref.onixComposites.values())
+			ccg.generate(composite);
 
-		for (OnixValueClass ovc : ref.valueClassesMap.values())
-			ccg.generate(ovc);
+		for (OnixElementDef element : ref.onixElements.values())
+			ccg.generate(element);
 
-		for (OnixFlagClass ofc : ref.flagClassesMap.values())
-			ccg.generate(ofc);
+		for (OnixFlagDef flag : ref.onixFlags.values())
+			ccg.generate(flag);
 	}
 
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -230,15 +230,15 @@ public class GenerateCode
 				{
 					final OnixStruct unified = unifiedStruct(struct2, struct3);
 					if (unified != null)
-						unifiedStructs.put(struct3.containingClass.name, unified);
+						unifiedStructs.put(struct3.containingComposite.name, unified);
 				}
 				else if (struct2 != null)
 				{
-					unifiedStructs.put(struct2.containingClass.name, struct2);
+					unifiedStructs.put(struct2.containingComposite.name, struct2);
 				}
 				else
 				{
-					unifiedStructs.put(struct3.containingClass.name, struct3);
+					unifiedStructs.put(struct3.containingComposite.name, struct3);
 				}
 				return true;
 			}
@@ -252,15 +252,15 @@ public class GenerateCode
 
 	private static OnixStruct unifiedStruct(final OnixStruct struct2, final OnixStruct struct3)
 	{
-		final String className = struct3.containingClass.name;
-		final OnixStruct unified = new OnixStruct(struct3.containingClass);
+		final String className = struct3.containingComposite.name;
+		final OnixStruct unified = new OnixStruct(struct3.containingComposite);
 
-		if (struct2.isSearchable() != struct3.isSearchable())
+		if (struct2.isKeyed() != struct3.isKeyed())
 			throw new RuntimeException("Class " + className
-					+ ", can't be unified into struct as keys are of different searchability: Onix2=" + struct2.isSearchable() + " Onix3="
-					+ struct3.isSearchable());
+					+ ", can't be unified into struct as keys are of different searchability: Onix2=" + struct2.isKeyed() + " Onix3="
+					+ struct3.isKeyed());
 
-		if (struct3.key != null)
+		if (struct3.keyMember != null)
 		{
 			final String enumName2 = struct2.keyEnumType().enumName;
 			final String enumName3 = struct3.keyEnumType().enumName;
@@ -268,21 +268,21 @@ public class GenerateCode
 				throw new RuntimeException("Class " + className + ", can't be unified into struct as keys are of different types: Onix2="
 						+ enumName2 + " Onix3=" + enumName3);
 
-			unified.key = struct3.key;
+			unified.keyMember = struct3.keyMember;
 		}
 
 		unified.members = new ArrayList<>();
 
-		boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members, new CompareListener<OnixContentClassMember>()
+		boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members, new CompareListener<OnixCompositeMember>()
 		{
 			@Override
-			public boolean onDiff(OnixContentClassMember m2, OnixContentClassMember m3)
+			public boolean onDiff(OnixCompositeMember m2, OnixCompositeMember m3)
 			{
 				if (m2 != null && m3 != null)
 				{
 					final String memberClassName = m2.className; // = m3.className
-					OnixValueClassMember vm2 = ((OnixValueClass) m2.onixClass).valueMember;
-					OnixValueClassMember vm3 = ((OnixValueClass) m3.onixClass).valueMember;
+					OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
+					OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
 					final String javaType2 = vm2.simpleType.primitiveType.javaType;
 					final String javaType3 = vm3.simpleType.primitiveType.javaType;
 					if (!javaType2.equals(javaType3))
@@ -302,13 +302,13 @@ public class GenerateCode
 				else if (m2 != null)
 				{
 					unified.members.add(m2);
-//					OnixValueClassMember vm2 = ((OnixValueClass) m2.onixClass).valueMember;
+//					OnixElementClassMember vm2 = ((OnixElementClass) m2.onixClass).valueMember;
 //					System.out.println(m2.className + ": " + vm2.simpleType.name + "(" + vm2.simpleType.primitiveType + ")");
 				}
 				else
 				{
 					unified.members.add(m3);
-//					OnixValueClassMember vm3 = ((OnixValueClass) m3.onixClass).valueMember;
+//					OnixElementClassMember vm3 = ((OnixElementClass) m3.onixClass).valueMember;
 //					System.out.println(m3.className + ":                            " + vm3.simpleType.name + "("
 //							+ vm3.simpleType.primitiveType + ")");
 				}
@@ -320,26 +320,26 @@ public class GenerateCode
 
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//	private static List<OnixContentClass> unifyInterfaces(final OnixMetadata ref2, final OnixMetadata ref3)
+//	private static List<OnixCompositeDef> unifyInterfaces(final OnixMetadata ref2, final OnixMetadata ref3)
 //	{
-//		final List<OnixContentClass> unifiedInterfaces = new ArrayList<>();
+//		final List<OnixCompositeDef> unifiedInterfaces = new ArrayList<>();
 //
-//		ListDiff.sortAndCompare(ref2.getIntfs(), ref3.getIntfs(), new CompareListener<OnixContentClass>()
+//		ListDiff.sortAndCompare(ref2.getIntfs(), ref3.getIntfs(), new CompareListener<OnixCompositeDef>()
 //		{
 //			@Override
-//			public boolean onDiff(final OnixContentClass occ2, final OnixContentClass occ3)
+//			public boolean onDiff(final OnixCompositeDef composite2, final OnixCompositeDef composite3)
 //			{
-//				if (occ2 != null && occ3 != null)
+//				if (composite2 != null && composite3 != null)
 //				{
-//					System.err.println("Shared non-struct: " + occ2.name);
+//					System.err.println("Shared non-struct: " + composite2.name);
 //				}
-//				else if (occ2 != null)
+//				else if (composite2 != null)
 //				{
-//					System.out.println("                             Onix2 non-struct: " + occ2.name);
+//					System.out.println("                             Onix2 non-struct: " + composite2.name);
 //				}
 //				else
 //				{
-//					System.out.println("                                                           Onix3 non-struct: " + occ3.name);
+//					System.out.println("                                                           Onix3 non-struct: " + composite3.name);
 //				}
 //				return true;
 //			}

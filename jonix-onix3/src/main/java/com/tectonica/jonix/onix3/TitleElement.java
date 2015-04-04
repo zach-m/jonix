@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.JonixComposite;
+import com.tectonica.jonix.OnixComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TitleElementLevels;
 
@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TitleElementLevels;
  */
 
 @SuppressWarnings("serial")
-public class TitleElement implements JonixComposite, Serializable
+public class TitleElement implements OnixComposite, Serializable
 {
 	public static final String refname = "TitleElement";
 	public static final String shortname = "titleelement";

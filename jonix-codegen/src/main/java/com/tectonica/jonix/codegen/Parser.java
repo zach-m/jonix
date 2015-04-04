@@ -34,15 +34,15 @@ import com.tectonica.jonix.metadata.Cardinality;
 import com.tectonica.jonix.metadata.OnixAttribute;
 import com.tectonica.jonix.metadata.OnixClass;
 import com.tectonica.jonix.metadata.OnixConst;
-import com.tectonica.jonix.metadata.OnixContentClass;
-import com.tectonica.jonix.metadata.OnixContentClassMember;
+import com.tectonica.jonix.metadata.OnixCompositeDef;
+import com.tectonica.jonix.metadata.OnixCompositeMember;
 import com.tectonica.jonix.metadata.OnixEnumValue;
-import com.tectonica.jonix.metadata.OnixFlagClass;
+import com.tectonica.jonix.metadata.OnixFlagDef;
 import com.tectonica.jonix.metadata.OnixMetadata;
 import com.tectonica.jonix.metadata.OnixSimpleType;
 import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixValueClass;
-import com.tectonica.jonix.metadata.OnixValueClassMember;
+import com.tectonica.jonix.metadata.OnixElementDef;
+import com.tectonica.jonix.metadata.OnixElementMember;
 import com.tectonica.jonix.metadata.Primitive;
 import com.tectonica.jonix.util.DOM;
 import com.tectonica.jonix.util.DOM.ElementListener;
@@ -139,10 +139,10 @@ public class Parser
 				if (simpleType.isEnum())
 				{
 					simpleType.enumName = enumNameOf(simpleType);
-					meta.enumsMap.put(simpleType.name, simpleType);
+					meta.onixEnums.put(simpleType.name, simpleType);
 				}
 				else
-					meta.typesMap.put(simpleType.name, simpleType);
+					meta.onixTypes.put(simpleType.name, simpleType);
 			}
 		});
 	}
@@ -315,6 +315,11 @@ public class Parser
 			}
 		});
 
+		patchSimpleType(simpleType); // fixes some errors from the XSD, if such exist
+	}
+
+	private void patchSimpleType(final OnixSimpleType simpleType)
+	{
 		// hack for "ROW" constant in country-codes (ISO 3166-1)
 		if (simpleType.name.equals("List91"))
 			simpleType.enumValues.add(0, OnixEnumValue.create("Rest Of World", "ROW", "All unspecified countries"));
@@ -382,24 +387,24 @@ public class Parser
 			// special case for Onix2 Flow
 			if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null)
 			{
-				final OnixValueClassMember member = OnixValueClassMember.create(OnixSimpleType.XHTML);
-				final OnixValueClass onixValueClass = new OnixValueClass();
-				onixValueClass.name = onixTagName;
-				onixValueClass.valueMember = member;
-				onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
-				meta.valueClassesMap.put(onixValueClass.name, onixValueClass);
-				onixClass = onixValueClass;
+				final OnixElementMember member = OnixElementMember.create(OnixSimpleType.XHTML);
+				final OnixElementDef onixElement = new OnixElementDef();
+				onixElement.name = onixTagName;
+				onixElement.valueMember = member;
+				onixElement.isSpaceable = context.spaceables.contains(onixTagName);
+				meta.onixElements.put(onixElement.name, onixElement);
+				onixClass = onixElement;
 				attributesParentElem = complexTypeElem;
 			}
 			else
 			{
-				final Map<String, OnixContentClassMember> members = new LinkedHashMap<>();
+				final Map<String, OnixCompositeMember> members = new LinkedHashMap<>();
 				extractClassFromSequencesAndChoices(contentElem, members);
-				final OnixContentClass onixContentClass = new OnixContentClass();
-				onixContentClass.name = onixTagName;
-				onixContentClass.members = new ArrayList<>(members.values());
-				meta.contentClassesMap.put(onixContentClass.name, onixContentClass);
-				onixClass = onixContentClass;
+				final OnixCompositeDef onixComposite = new OnixCompositeDef();
+				onixComposite.name = onixTagName;
+				onixComposite.members = new ArrayList<>(members.values());
+				meta.onixComposites.put(onixComposite.name, onixComposite);
+				onixClass = onixComposite;
 				attributesParentElem = complexTypeElem;
 			}
 		}
@@ -433,21 +438,21 @@ public class Parser
 				simpleType = OnixSimpleType.XHTML;
 			}
 
-			final OnixValueClass onixValueClass = new OnixValueClass();
-			final OnixValueClassMember member = OnixValueClassMember.create(simpleType);
-			onixValueClass.name = onixTagName;
-			onixValueClass.valueMember = member;
-			onixValueClass.isSpaceable = context.spaceables.contains(onixTagName);
-			patchValueClass(onixValueClass); // fixes some errors from the XSD, if such exist
-			meta.valueClassesMap.put(onixValueClass.name, onixValueClass);
-			onixClass = onixValueClass;
+			final OnixElementDef onixElement = new OnixElementDef();
+			final OnixElementMember member = OnixElementMember.create(simpleType);
+			onixElement.name = onixTagName;
+			onixElement.valueMember = member;
+			onixElement.isSpaceable = context.spaceables.contains(onixTagName);
+			patchElement(onixElement); // fixes some errors from the XSD, if such exist
+			meta.onixElements.put(onixElement.name, onixElement);
+			onixClass = onixElement;
 			attributesParentElem = extensionElem;
 		}
 		else if (defineFlag)
 		{
-			final OnixFlagClass onixFlagClass = new OnixFlagClass();
+			final OnixFlagDef onixFlagClass = new OnixFlagDef();
 			onixFlagClass.name = onixTagName;
-			meta.flagClassesMap.put(onixFlagClass.name, onixFlagClass);
+			meta.onixFlags.put(onixFlagClass.name, onixFlagClass);
 			onixClass = onixFlagClass;
 			attributesParentElem = complexTypeElem;
 		}
@@ -462,22 +467,22 @@ public class Parser
 			extractAttributes(attributesParentElem, onixClass);
 	}
 
-	private void patchValueClass(final OnixValueClass onixValueClass)
+	private void patchElement(final OnixElementDef onixElement)
 	{
 		if (context.onixVersion == OnixVersion.Ver2_1_03)
 		{
 			// patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
-			if (onixValueClass.name.equals("AgentIDType") || onixValueClass.name.equals("j400"))
-				onixValueClass.valueMember = OnixValueClassMember.create(meta.enumsMap.get("List92"));
+			if (onixElement.name.equals("AgentIDType") || onixElement.name.equals("j400"))
+				onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List92"));
 
 			// patch for error in Onix2_rev03 XSD with regards to MarketDateRole (listed as free text)
 			// NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be created
-			else if (onixValueClass.name.equals("MarketDateRole") || onixValueClass.name.equals("j408"))
-				onixValueClass.valueMember = OnixValueClassMember.create(meta.enumsMap.get("List163"));
+			else if (onixElement.name.equals("MarketDateRole") || onixElement.name.equals("j408"))
+				onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List163"));
 		}
 	}
 
-	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoiceElem, final Map<String, OnixContentClassMember> members)
+	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoiceElem, final Map<String, OnixCompositeMember> members)
 	{
 		final Cardinality parentCardinality = Cardinality.of(sequenceOrChoiceElem.getAttribute("minOccurs"),
 				sequenceOrChoiceElem.getAttribute("maxOccurs"));
@@ -497,9 +502,9 @@ public class Parser
 					final String minOccurs = isUnderChoice ? "0" : childElem.getAttribute("minOccurs");
 					final String maxOccurs = childElem.getAttribute("maxOccurs");
 					Cardinality cardinality = Cardinality.of(minOccurs, maxOccurs).mergeWith(parentCardinality);
-					final OnixContentClassMember existing = members.get(className);
+					final OnixCompositeMember existing = members.get(className);
 					if (existing == null)
-						members.put(className, OnixContentClassMember.create(className, cardinality));
+						members.put(className, OnixCompositeMember.create(className, cardinality));
 					else
 						existing.cardinality = existing.cardinality.mergeWith(cardinality);
 				}
@@ -606,33 +611,34 @@ public class Parser
 	public void postAnalysis()
 	{
 		// we're traversing all content-classes, looking for those that have ONLY value-class members
-		for (OnixContentClass occ : meta.getContentClasses())
+		for (OnixCompositeDef composite : meta.getComposites())
 		{
 			boolean hasOnlyValueMembers = true;
-			OnixStruct struct = new OnixStruct(occ);
-			for (OnixContentClassMember m : occ.members)
+			OnixStruct struct = new OnixStruct(composite);
+			for (OnixCompositeMember member : composite.members)
 			{
-				m.onixClass = meta.classByName(m.className);
-				if (m.onixClass == null)
-					throw new NullPointerException("class " + m.className + " referenced by " + occ.name + " wasn't found");
+				member.onixClass = meta.classByName(member.className);
+				if (member.onixClass == null)
+					throw new NullPointerException("class " + member.className + " referenced by " + composite.name + " wasn't found");
 
-				if (m.onixClass instanceof OnixValueClass)
+				if (member.onixClass instanceof OnixElementDef)
 				{
-					OnixSimpleType simpleType = ((OnixValueClass) m.onixClass).valueMember.simpleType;
+					OnixSimpleType simpleType = ((OnixElementDef) member.onixClass).valueMember.simpleType;
 
 					boolean isKey = false;
-					if (simpleType.isEnum() && (m.cardinality == Cardinality.Required))
+					if (simpleType.isEnum() && (member.cardinality == Cardinality.Required))
 					{
 						if (simpleType.enumName.endsWith("Types") || simpleType.enumName.endsWith("Roles"))
 						{
-							if (struct.key == null) // in rare-cases (e.g. OtherText) where there are several candidates we take the first
+							if (struct.keyMember == null) // in rare-cases (e.g. OtherText) where there are several candidates we take the
+															// first
 								isKey = true;
 						}
 					}
 					if (isKey)
-						struct.key = m;
+						struct.keyMember = member;
 					else
-						struct.members.add(m);
+						struct.members.add(member);
 				}
 				else
 				{
@@ -644,12 +650,12 @@ public class Parser
 			if (hasOnlyValueMembers)
 			{
 				if (struct.members.size() == 0)
-					throw new RuntimeException("Struct with no members - " + struct.containingClass.name);
-				meta.structsMap.put(occ.name, struct);
+					throw new RuntimeException("Struct with no members - " + struct.containingComposite.name);
+				meta.jonixStructs.put(composite.name, struct);
 			}
 			else
 			{
-				meta.intfsMap.put(occ.name, occ);
+				meta.jonixIntfs.put(composite.name, composite);
 			}
 		}
 	}
