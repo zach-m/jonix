@@ -659,10 +659,10 @@ public class Parser
 					throw new RuntimeException("Struct with no members - " + struct.containingComposite.name);
 				meta.jonixStructs.put(composite.name, struct);
 			}
-			else
-			{
-				meta.jonixIntfs.put(composite.name, composite);
-			}
+//			else
+//			{
+//				meta.jonixIntfs.put(composite.name, composite);
+//			}
 		}
 	}
 }

@@ -361,6 +361,7 @@ public class GenerateCode
 		});
 		return (completed ? unified : null);
 	}
+
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //	private static List<OnixCompositeDef> unifyInterfaces(final OnixMetadata ref2, final OnixMetadata ref3)
@@ -372,17 +373,38 @@ public class GenerateCode
 //			@Override
 //			public boolean onDiff(final OnixCompositeDef composite2, final OnixCompositeDef composite3)
 //			{
+//				System.err.println("---------------------------------------------------------------------------");
 //				if (composite2 != null && composite3 != null)
 //				{
-//					System.err.println("Shared non-struct: " + composite2.name);
+//					System.err.println("non-struct: " + composite2.name + "\n");
+//					ListDiff.sortAndCompare(composite2.members, composite3.members, new CompareListener<OnixCompositeMember>()
+//					{
+//						@Override
+//						public boolean onDiff(OnixCompositeMember m2, OnixCompositeMember m3)
+//						{
+//							if (m2 != null && m3 != null)
+//							{
+//								System.err.println("SHARED: " + m2.className);
+//							}
+//							else if (m2 != null)
+//							{
+//								System.err.println("                    ONIX-2: " + m2.className);
+//							}
+//							else
+//							{
+//								System.err.println("                    ONIX-3: " + m3.className);
+//							}
+//							return true;
+//						}
+//					});
 //				}
 //				else if (composite2 != null)
 //				{
-//					System.out.println("                             Onix2 non-struct: " + composite2.name);
+//					System.err.println("Onix2 non-struct: " + composite2.name);
 //				}
 //				else
 //				{
-//					System.out.println("                                                           Onix3 non-struct: " + composite3.name);
+//					System.err.println("Onix3 non-struct: " + composite3.name);
 //				}
 //				return true;
 //			}

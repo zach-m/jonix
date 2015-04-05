@@ -44,8 +44,8 @@ public class OnixMetadata
 	public Map<String, OnixSimpleType> onixEnums = new HashMap<>();
 	@JsonIgnore
 	public Map<String, OnixStruct> jonixStructs = new HashMap<>();
-	@JsonIgnore
-	public Map<String, OnixCompositeDef> jonixIntfs = new HashMap<>();
+//	@JsonIgnore
+//	public Map<String, OnixCompositeDef> jonixIntfs = new HashMap<>();
 
 	// the following is to be filled during code-generation, not parsing
 	@JsonIgnore
@@ -88,10 +88,10 @@ public class OnixMetadata
 		return jonixStructs.values();
 	}
 
-	public Collection<OnixCompositeDef> getIntfs()
-	{
-		return jonixIntfs.values();
-	}
+//	public Collection<OnixCompositeDef> getIntfs()
+//	{
+//		return jonixIntfs.values();
+//	}
 
 	public OnixSimpleType typeByName(String name)
 	{
