@@ -118,7 +118,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
 				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
 					supplierSAN = new SupplierSAN(element);
-				else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
+				else if (name.equals(SupplierEANLocationNumber.refname)
+						|| name.equals(SupplierEANLocationNumber.shortname))
 					supplierEANLocationNumber = new SupplierEANLocationNumber(element);
 				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
 					supplierName = new SupplierName(element);
@@ -139,7 +140,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 				else if (name.equals(SupplyToRegion.refname) || name.equals(SupplyToRegion.shortname))
 					supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(element));
 				else if (name.equals(SupplyToCountryExcluded.refname) || name.equals(SupplyToCountryExcluded.shortname))
-					supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(element));
+					supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(
+							element));
 				else if (name.equals(SupplyRestrictionDetail.refname) || name.equals(SupplyRestrictionDetail.shortname))
 					supplyRestrictionDetail = new SupplyRestrictionDetail(element);
 				else if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
@@ -152,7 +154,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 					availabilityCode = new AvailabilityCode(element);
 				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
 					productAvailability = new ProductAvailability(element);
-				else if (name.equals(IntermediaryAvailabilityCode.refname) || name.equals(IntermediaryAvailabilityCode.shortname))
+				else if (name.equals(IntermediaryAvailabilityCode.refname)
+						|| name.equals(IntermediaryAvailabilityCode.shortname))
 					intermediaryAvailabilityCode = new IntermediaryAvailabilityCode(element);
 				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
 					newSupplier = new NewSupplier(element);

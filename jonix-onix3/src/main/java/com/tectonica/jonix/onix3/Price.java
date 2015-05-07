@@ -127,7 +127,8 @@ public class Price implements OnixSuperComposite, Serializable
 				else if (name.equals(CurrencyZone.refname) || name.equals(CurrencyZone.shortname))
 					currencyZone = new CurrencyZone(element);
 				else if (name.equals(ComparisonProductPrice.refname) || name.equals(ComparisonProductPrice.shortname))
-					comparisonProductPrices = JPU.addToList(comparisonProductPrices, new ComparisonProductPrice(element));
+					comparisonProductPrices = JPU.addToList(comparisonProductPrices,
+							new ComparisonProductPrice(element));
 				else if (name.equals(PriceDate.refname) || name.equals(PriceDate.shortname))
 					priceDates = JPU.addToList(priceDates, new PriceDate(element));
 				else if (name.equals(PrintedOnProduct.refname) || name.equals(PrintedOnProduct.shortname))

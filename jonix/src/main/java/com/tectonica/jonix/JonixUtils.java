@@ -43,8 +43,7 @@ public class JonixUtils
 	 * 
 	 * @param fileName
 	 *            the file-name from which to extract the time-stamp
-	 * @return
-	 *         the extracted time-stamp, or null if such time-stamp couldn't be extracted
+	 * @return the extracted time-stamp, or null if such time-stamp couldn't be extracted
 	 */
 	public static Calendar extractTimstampFromOnixFileName(String fileName)
 	{

@@ -87,7 +87,8 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixSalesOutletIdentifier> findSalesOutletIdentifiers(java.util.Set<SalesOutletIdentifierTypes> salesOutletIDTypes)
+	public List<JonixSalesOutletIdentifier> findSalesOutletIdentifiers(
+			java.util.Set<SalesOutletIdentifierTypes> salesOutletIDTypes)
 	{
 		if (salesOutletIdentifiers != null)
 		{

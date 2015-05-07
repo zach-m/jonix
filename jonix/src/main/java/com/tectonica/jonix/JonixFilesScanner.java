@@ -120,9 +120,8 @@ public abstract class JonixFilesScanner extends JonixScanner
 	private FileExplorer fileExplorer = new FileExplorer();
 
 	/**
-	 * Simple class for scanning the file system from a given root and finding all the files with a given extension. The root may also be a
-	 * file, in which case
-	 * no further traversal is done.
+	 * Simple class for scanning the file system from a given root and finding all the files with a given extension. The
+	 * root may also be a file, in which case no further traversal is done.
 	 */
 	public static class FileExplorer
 	{

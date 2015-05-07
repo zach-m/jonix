@@ -62,7 +62,8 @@ public class ProductClassification implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname))
 					productClassificationType = new ProductClassificationType(element);
-				else if (name.equals(ProductClassificationCode.refname) || name.equals(ProductClassificationCode.shortname))
+				else if (name.equals(ProductClassificationCode.refname)
+						|| name.equals(ProductClassificationCode.shortname))
 					productClassificationCode = new ProductClassificationCode(element);
 				else if (name.equals(Percent.refname) || name.equals(Percent.shortname))
 					percent = new Percent(element);

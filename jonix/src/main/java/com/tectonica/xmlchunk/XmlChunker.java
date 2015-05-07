@@ -53,7 +53,8 @@ public class XmlChunker
 		inputFactory = XMLInputFactory.newInstance();
 		inputFactory.setProperty(XMLInputFactory.IS_VALIDATING, Boolean.FALSE);
 
-		System.setProperty("javax.xml.transform.TransformerFactory", "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
+		System.setProperty("javax.xml.transform.TransformerFactory",
+				"com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
 		transformerFactory = TransformerFactory.newInstance();
 	}
 

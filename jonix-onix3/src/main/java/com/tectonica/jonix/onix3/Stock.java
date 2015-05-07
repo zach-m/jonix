@@ -129,14 +129,16 @@ public class Stock implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixStockQuantityCoded> findStockQuantityCodeds(java.util.Set<StockQuantityCodeTypes> stockQuantityCodeTypes)
+	public List<JonixStockQuantityCoded> findStockQuantityCodeds(
+			java.util.Set<StockQuantityCodeTypes> stockQuantityCodeTypes)
 	{
 		if (stockQuantityCodeds != null)
 		{
 			List<JonixStockQuantityCoded> matches = new ArrayList<>();
 			for (StockQuantityCoded x : stockQuantityCodeds)
 			{
-				if (stockQuantityCodeTypes == null || stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))
+				if (stockQuantityCodeTypes == null
+						|| stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))
 					matches.add(x.asJonixStockQuantityCoded());
 			}
 			return matches;

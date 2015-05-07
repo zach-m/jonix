@@ -52,7 +52,7 @@ public class TestBasicProduct
 	public void test() throws FileNotFoundException
 	{
 //		final String path = "../onix_samples/SB_Ref.xml";
-		final String path = "../onix_samples/SB_short.xml"; 
+		final String path = "../onix_samples/SB_short.xml";
 //		final String path = "../onix_samples/CR.xml";
 //		final String path = "../onix_samples/MY.xml";
 

@@ -79,7 +79,8 @@ public class DOM
 	{
 		Node item = node.getNextSibling();
 		while (item != null
-				&& !((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item.getNodeName()))))
+				&& !((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item
+						.getNodeName()))))
 			item = item.getNextSibling();
 		return (Element) item;
 	}
@@ -96,7 +97,8 @@ public class DOM
 
 	public static void forElementsOf(Node node, String nodeName, ElementListener worker)
 	{
-		for (Element element = firstElemChild(node, nodeName); element != null; element = nextElemChild(element, nodeName))
+		for (Element element = firstElemChild(node, nodeName); element != null; element = nextElemChild(element,
+				nodeName))
 			worker.onElement(element);
 	}
 
@@ -134,7 +136,7 @@ public class DOM
 			throw new RuntimeException(e);
 		}
 		final String content = sw.toString();
-		
+
 		if (strip)
 		{
 			final int beginIndex = content.indexOf(">") + 1;
@@ -157,7 +159,8 @@ public class DOM
 			final String nonContentType = child.getNodeName();
 			if (!allowedTagNamesSet.contains(nonContentType)) // TODO: account for case-insensitivity
 				throw new RuntimeException("we only expect one content node");
-		} while ((child = DOM.nextElemChild(child)) != null);
+		}
+		while ((child = DOM.nextElemChild(child)) != null);
 	}
 
 }

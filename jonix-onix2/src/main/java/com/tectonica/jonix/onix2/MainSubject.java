@@ -73,7 +73,8 @@ public class MainSubject implements OnixDataComposite, Serializable
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equals(MainSubjectSchemeIdentifier.refname) || name.equals(MainSubjectSchemeIdentifier.shortname))
+				if (name.equals(MainSubjectSchemeIdentifier.refname)
+						|| name.equals(MainSubjectSchemeIdentifier.shortname))
 					mainSubjectSchemeIdentifier = new MainSubjectSchemeIdentifier(element);
 				else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
 					subjectSchemeVersion = new SubjectSchemeVersion(element);

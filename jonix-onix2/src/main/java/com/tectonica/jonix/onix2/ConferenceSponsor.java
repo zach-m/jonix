@@ -70,7 +70,8 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equals(ConferenceSponsorIdentifier.refname) || name.equals(ConferenceSponsorIdentifier.shortname))
+				if (name.equals(ConferenceSponsorIdentifier.refname)
+						|| name.equals(ConferenceSponsorIdentifier.shortname))
 					conferenceSponsorIdentifier = new ConferenceSponsorIdentifier(element);
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
 					personName = new PersonName(element);

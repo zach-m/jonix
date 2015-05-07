@@ -86,7 +86,8 @@ public class ProductPart implements OnixSuperComposite, Serializable
 				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
 					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
 				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(element));
+					productFormDescriptions = JPU.addToList(productFormDescriptions,
+							new ProductFormDescription(element));
 				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
 					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
 				else if (name.equals(NumberOfItemsOfThisForm.refname) || name.equals(NumberOfItemsOfThisForm.shortname))
@@ -201,14 +202,16 @@ public class ProductPart implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	public List<JonixProductFormFeature> findProductFormFeatures(
+			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
 	{
 		if (productFormFeatures != null)
 		{
 			List<JonixProductFormFeature> matches = new ArrayList<>();
 			for (ProductFormFeature x : productFormFeatures)
 			{
-				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+				if (productFormFeatureTypes == null
+						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
 					matches.add(x.asJonixProductFormFeature());
 			}
 			return matches;

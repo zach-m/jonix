@@ -63,7 +63,8 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 			{
 				final String name = element.getNodeName();
 				if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
-					copyrightOwnerIdentifiers = JPU.addToList(copyrightOwnerIdentifiers, new CopyrightOwnerIdentifier(element));
+					copyrightOwnerIdentifiers = JPU.addToList(copyrightOwnerIdentifiers, new CopyrightOwnerIdentifier(
+							element));
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
 					personName = new PersonName(element);
 				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
@@ -95,7 +96,8 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixCopyrightOwnerIdentifier> findCopyrightOwnerIdentifiers(java.util.Set<NameCodeTypes> copyrightOwnerIDTypes)
+	public List<JonixCopyrightOwnerIdentifier> findCopyrightOwnerIdentifiers(
+			java.util.Set<NameCodeTypes> copyrightOwnerIDTypes)
 	{
 		if (copyrightOwnerIdentifiers != null)
 		{

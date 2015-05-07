@@ -27,7 +27,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({ "name", "primitiveType", "comment", "enum", "enumName", "enumAliasFor", "enumValues" })
 public class OnixSimpleType implements Comparable<OnixSimpleType>
 {
-	public static final OnixSimpleType XHTML = OnixSimpleType.create("XHTML", Primitive.String, "Free XHTML content", null);
+	public static final OnixSimpleType XHTML = OnixSimpleType.create("XHTML", Primitive.String, "Free XHTML content",
+			null);
 
 	public String name;
 	public Primitive primitiveType;

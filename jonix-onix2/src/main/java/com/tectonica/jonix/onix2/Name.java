@@ -180,7 +180,8 @@ public class Name implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(
+			java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
 	{
 		if (personNameIdentifiers != null)
 		{

@@ -44,7 +44,8 @@ public class Subject implements Serializable
 	public String toString()
 	{
 		String subjectSchemeIdentifierStr = (subjectSchemeIdentifier == null) ? null : subjectSchemeIdentifier.name();
-		return String.format(getClass().getSimpleName() + " [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode, subjectHeadingText);
+		return String.format(getClass().getSimpleName() + " [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode,
+				subjectHeadingText);
 	}
 
 	public static List<Subject> listFrom(com.tectonica.jonix.onix2.Product product)
@@ -53,7 +54,8 @@ public class Subject implements Serializable
 		{
 			List<Subject> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Subject i : product.subjects)
-				result.add(new Subject(i.getSubjectSchemeIdentifierValue(), i.getSubjectCodeValue(), i.getSubjectHeadingTextValue()));
+				result.add(new Subject(i.getSubjectSchemeIdentifierValue(), i.getSubjectCodeValue(), i
+						.getSubjectHeadingTextValue()));
 			return result;
 		}
 		return Collections.emptyList();

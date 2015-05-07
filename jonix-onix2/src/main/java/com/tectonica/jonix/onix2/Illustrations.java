@@ -74,7 +74,8 @@ public class Illustrations implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(IllustrationType.refname) || name.equals(IllustrationType.shortname))
 					illustrationType = new IllustrationType(element);
-				else if (name.equals(IllustrationTypeDescription.refname) || name.equals(IllustrationTypeDescription.shortname))
+				else if (name.equals(IllustrationTypeDescription.refname)
+						|| name.equals(IllustrationTypeDescription.shortname))
 					illustrationTypeDescription = new IllustrationTypeDescription(element);
 				else if (name.equals(Number.refname) || name.equals(Number.shortname))
 					number = new Number(element);

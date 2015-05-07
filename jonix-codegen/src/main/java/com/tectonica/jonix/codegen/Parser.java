@@ -100,7 +100,8 @@ public class Parser
 				{
 					extractOnixClass(element);
 				}
-				else if (xsdTagName.equals("xs:simpleType") || xsdTagName.equals("xs:attributeGroup") || xsdTagName.equals("xs:group"))
+				else if (xsdTagName.equals("xs:simpleType") || xsdTagName.equals("xs:attributeGroup")
+						|| xsdTagName.equals("xs:group"))
 				{
 					// handled in SchemaContext
 				}
@@ -207,7 +208,8 @@ public class Parser
 			}
 
 			/**
-			 * restriction can define a type by inheriting an existing one (primitive / non-primitive), or be defining a new type
+			 * restriction can define a type by inheriting an existing one (primitive / non-primitive), or be defining a
+			 * new type
 			 */
 			private void handleRestriction(Element restrictionElem)
 			{
@@ -237,7 +239,8 @@ public class Parser
 								{
 									final String value = enumerationElem.getAttribute("value");
 									final Element annotationElem = DOM.firstElemChild(enumerationElem, "xs:annotation");
-									String comment = (annotationElem != null) ? extractAnnotationText(annotationElem) : null;
+									String comment = (annotationElem != null) ? extractAnnotationText(annotationElem)
+											: null;
 									final int lineBreak = comment.indexOf("\n");
 									final String name;
 									final String description;
@@ -378,7 +381,8 @@ public class Parser
 		final Element contentElem = DOM.firstElemChild(complexTypeElem);
 		final String contentType = contentElem.getNodeName();
 		final boolean defineFromScratch = contentType.equals("xs:sequence") || contentType.equals("xs:choice");
-		final boolean defineByInheritance = contentType.equals("xs:simpleContent") || contentType.equals("xs:complexContent");
+		final boolean defineByInheritance = contentType.equals("xs:simpleContent")
+				|| contentType.equals("xs:complexContent");
 		final boolean defineFlag = contentType.equals("xs:attribute") || contentType.equals("xs:attributeGroup");
 
 		OnixClass onixClass = null;
@@ -459,8 +463,9 @@ public class Parser
 			attributesParentElem = complexTypeElem;
 		}
 		else
-			throw new RuntimeException("first child of top-level xs:element's xs:complexType is expected to define a content. found: "
-					+ contentType);
+			throw new RuntimeException(
+					"first child of top-level xs:element's xs:complexType is expected to define a content. found: "
+							+ contentType);
 
 		// other than attributes, we don't expect other information about the class we just created
 		DOM.ensureTagNames(DOM.nextElemChild(contentElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
@@ -478,13 +483,15 @@ public class Parser
 				onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List92"));
 
 			// patch for error in Onix2_rev03 XSD with regards to MarketDateRole (listed as free text)
-			// NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be created
+			// NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be
+			// created
 			else if (onixElement.name.equals("MarketDateRole") || onixElement.name.equals("j408"))
 				onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List163"));
 		}
 	}
 
-	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoiceElem, final Map<String, OnixCompositeMember> members)
+	private void extractClassFromSequencesAndChoices(final Element sequenceOrChoiceElem,
+			final Map<String, OnixCompositeMember> members)
 	{
 		final Cardinality parentCardinality = Cardinality.of(sequenceOrChoiceElem.getAttribute("minOccurs"),
 				sequenceOrChoiceElem.getAttribute("maxOccurs"));
@@ -612,7 +619,8 @@ public class Parser
 
 	public void postAnalysis()
 	{
-		// we're traversing all composites, looking for those that are data-composites, i.e. that contain ONLY elements and/or flags
+		// we're traversing all composites, looking for those that are data-composites, i.e. that contain ONLY elements
+		// and/or flags
 		for (OnixCompositeDef composite : meta.getComposites())
 		{
 			boolean isDataComposite = true;
@@ -621,7 +629,8 @@ public class Parser
 			{
 				member.onixClass = meta.classByName(member.className);
 				if (member.onixClass == null)
-					throw new NullPointerException("class " + member.className + " referenced by " + composite.name + " wasn't found");
+					throw new NullPointerException("class " + member.className + " referenced by " + composite.name
+							+ " wasn't found");
 
 				if (member.onixClass instanceof OnixElementDef)
 				{
@@ -632,7 +641,8 @@ public class Parser
 					{
 						if (simpleType.enumName.endsWith("Types") || simpleType.enumName.endsWith("Roles"))
 						{
-							if (struct.keyMember == null) // in rare-cases (e.g. OtherText) where there are several candidates we take the
+							if (struct.keyMember == null) // in rare-cases (e.g. OtherText) where there are several
+															// candidates we take the
 															// first
 								isKey = true;
 						}

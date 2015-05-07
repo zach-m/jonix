@@ -62,8 +62,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equals(ConferenceSponsorIdentifier.refname) || name.equals(ConferenceSponsorIdentifier.shortname))
-					conferenceSponsorIdentifiers = JPU.addToList(conferenceSponsorIdentifiers, new ConferenceSponsorIdentifier(element));
+				if (name.equals(ConferenceSponsorIdentifier.refname)
+						|| name.equals(ConferenceSponsorIdentifier.shortname))
+					conferenceSponsorIdentifiers = JPU.addToList(conferenceSponsorIdentifiers,
+							new ConferenceSponsorIdentifier(element));
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
 					personName = new PersonName(element);
 				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
@@ -95,14 +97,16 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixConferenceSponsorIdentifier> findConferenceSponsorIdentifiers(java.util.Set<NameCodeTypes> conferenceSponsorIDTypes)
+	public List<JonixConferenceSponsorIdentifier> findConferenceSponsorIdentifiers(
+			java.util.Set<NameCodeTypes> conferenceSponsorIDTypes)
 	{
 		if (conferenceSponsorIdentifiers != null)
 		{
 			List<JonixConferenceSponsorIdentifier> matches = new ArrayList<>();
 			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
 			{
-				if (conferenceSponsorIDTypes == null || conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
+				if (conferenceSponsorIDTypes == null
+						|| conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
 					matches.add(x.asJonixConferenceSponsorIdentifier());
 			}
 			return matches;

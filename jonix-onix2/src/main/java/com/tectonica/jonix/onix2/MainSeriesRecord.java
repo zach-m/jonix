@@ -102,7 +102,8 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 					deletionText = new DeletionText(element);
 				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
 					recordSourceType = new RecordSourceType(element);
-				else if (name.equals(RecordSourceIdentifierType.refname) || name.equals(RecordSourceIdentifierType.shortname))
+				else if (name.equals(RecordSourceIdentifierType.refname)
+						|| name.equals(RecordSourceIdentifierType.shortname))
 					recordSourceIdentifierType = new RecordSourceIdentifierType(element);
 				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
 					recordSourceIdentifier = new RecordSourceIdentifier(element);

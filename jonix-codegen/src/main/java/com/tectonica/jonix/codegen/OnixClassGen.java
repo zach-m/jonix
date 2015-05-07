@@ -241,14 +241,16 @@ public class OnixClassGen
 					p.printf("   }\n");
 
 					p.println();
-					p.printf("   public List<%s> find%ss(java.util.Set<%s> %ss)\n", structName, m.className, kti.javaType, keyField);
+					p.printf("   public List<%s> find%ss(java.util.Set<%s> %ss)\n", structName, m.className,
+							kti.javaType, keyField);
 					p.printf("   {\n");
 					p.printf("      if (%s != null)\n", memberfield);
 					p.printf("      {\n");
 					p.printf("         List<%s> matches = new ArrayList<>();\n", structName);
 					p.printf("         for (%s x : %s)\n", m.className, memberfield);
 					p.printf("         {\n");
-					p.printf("            if (%ss == null || %ss.contains(x.get%s%s()))\n", keyField, keyField, keyClassName, caption);
+					p.printf("            if (%ss == null || %ss.contains(x.get%s%s()))\n", keyField, keyField,
+							keyClassName, caption);
 					p.printf("               matches.add(x.as%s());\n", structName);
 					p.printf("         }\n");
 					p.printf("         return matches;\n", structName);
@@ -283,15 +285,15 @@ public class OnixClassGen
 					{
 						switch (structMember.transformationType)
 						{
-							case SingularToMultiple:
-								p.printf("      x.%s = java.util.Arrays.asList(get%sValue());\n", field, member.className);
-								break;
-							case ChangeClassName:
-								p.printf("      x.%s = get%sValue();\n", field, structMember.transformationHint);
-								break;
-							default:
-								p.printf("      x.%s = JPU.convert%s(get%sValue());\n", field, structMember.transformationType.name(),
-										member.className);
+						case SingularToMultiple:
+							p.printf("      x.%s = java.util.Arrays.asList(get%sValue());\n", field, member.className);
+							break;
+						case ChangeClassName:
+							p.printf("      x.%s = get%sValue();\n", field, structMember.transformationHint);
+							break;
+						default:
+							p.printf("      x.%s = JPU.convert%s(get%sValue());\n", field,
+									structMember.transformationType.name(), member.className);
 						}
 					}
 					else

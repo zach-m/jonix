@@ -62,9 +62,11 @@ public class EpubLicenseExpression implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(EpubLicenseExpressionType.refname) || name.equals(EpubLicenseExpressionType.shortname))
 					epubLicenseExpressionType = new EpubLicenseExpressionType(element);
-				else if (name.equals(EpubLicenseExpressionTypeName.refname) || name.equals(EpubLicenseExpressionTypeName.shortname))
+				else if (name.equals(EpubLicenseExpressionTypeName.refname)
+						|| name.equals(EpubLicenseExpressionTypeName.shortname))
 					epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(element);
-				else if (name.equals(EpubLicenseExpressionLink.refname) || name.equals(EpubLicenseExpressionLink.shortname))
+				else if (name.equals(EpubLicenseExpressionLink.refname)
+						|| name.equals(EpubLicenseExpressionLink.shortname))
 					epubLicenseExpressionLink = new EpubLicenseExpressionLink(element);
 			}
 		});

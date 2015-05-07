@@ -94,14 +94,16 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixEpubLicenseExpression> findEpubLicenseExpressions(java.util.Set<LicenseExpressionTypes> epubLicenseExpressionTypes)
+	public List<JonixEpubLicenseExpression> findEpubLicenseExpressions(
+			java.util.Set<LicenseExpressionTypes> epubLicenseExpressionTypes)
 	{
 		if (epubLicenseExpressions != null)
 		{
 			List<JonixEpubLicenseExpression> matches = new ArrayList<>();
 			for (EpubLicenseExpression x : epubLicenseExpressions)
 			{
-				if (epubLicenseExpressionTypes == null || epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
+				if (epubLicenseExpressionTypes == null
+						|| epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
 					matches.add(x.asJonixEpubLicenseExpression());
 			}
 			return matches;

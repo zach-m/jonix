@@ -59,7 +59,8 @@ public class Complexity implements OnixDataComposite, Serializable
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equals(ComplexitySchemeIdentifier.refname) || name.equals(ComplexitySchemeIdentifier.shortname))
+				if (name.equals(ComplexitySchemeIdentifier.refname)
+						|| name.equals(ComplexitySchemeIdentifier.shortname))
 					complexitySchemeIdentifier = new ComplexitySchemeIdentifier(element);
 				else if (name.equals(ComplexityCode.refname) || name.equals(ComplexityCode.shortname))
 					complexityCode = new ComplexityCode(element);

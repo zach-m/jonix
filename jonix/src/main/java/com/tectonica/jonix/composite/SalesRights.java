@@ -38,8 +38,8 @@ public class SalesRights implements Serializable
 	public final List<Set<CountryCodeIso31661s>> rightsCountries;
 	public final List<RightsRegions> rightsRegions;
 
-	public SalesRights(SalesRightsTypes salesRightsType, Set<Regions> rightsTerritory, List<Set<CountryCodeIso31661s>> rightsCountries,
-			List<RightsRegions> rightsRegions)
+	public SalesRights(SalesRightsTypes salesRightsType, Set<Regions> rightsTerritory,
+			List<Set<CountryCodeIso31661s>> rightsCountries, List<RightsRegions> rightsRegions)
 	{
 		this.salesRightsType = salesRightsType;
 		this.rightsTerritory = rightsTerritory;
@@ -68,8 +68,8 @@ public class SalesRights implements Serializable
 		{
 			List<SalesRights> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.SalesRights i : product.salesRightss)
-				result.add(new SalesRights(i.getSalesRightsTypeValue(), i.getRightsTerritorySet(), i.getRightsCountrySets(), i
-						.getRightsRegionValues()));
+				result.add(new SalesRights(i.getSalesRightsTypeValue(), i.getRightsTerritorySet(), i
+						.getRightsCountrySets(), i.getRightsRegionValues()));
 			return result;
 		}
 		return Collections.emptyList();

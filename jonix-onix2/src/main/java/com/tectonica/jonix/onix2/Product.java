@@ -274,7 +274,8 @@ public class Product implements OnixSuperComposite, Serializable
 					deletionText = new DeletionText(element);
 				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
 					recordSourceType = new RecordSourceType(element);
-				else if (name.equals(RecordSourceIdentifierType.refname) || name.equals(RecordSourceIdentifierType.shortname))
+				else if (name.equals(RecordSourceIdentifierType.refname)
+						|| name.equals(RecordSourceIdentifierType.shortname))
 					recordSourceIdentifierType = new RecordSourceIdentifierType(element);
 				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
 					recordSourceIdentifier = new RecordSourceIdentifier(element);
@@ -443,7 +444,8 @@ public class Product implements OnixSuperComposite, Serializable
 				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
 					personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(element));
 				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
-					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(element));
+					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects,
+							new CorporateBodyAsSubject(element));
 				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
 					placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(element));
 				else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname))
@@ -1305,14 +1307,16 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	public List<JonixProductFormFeature> findProductFormFeatures(
+			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
 	{
 		if (productFormFeatures != null)
 		{
 			List<JonixProductFormFeature> matches = new ArrayList<>();
 			for (ProductFormFeature x : productFormFeatures)
 			{
-				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+				if (productFormFeatureTypes == null
+						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
 					matches.add(x.asJonixProductFormFeature());
 			}
 			return matches;
@@ -1333,14 +1337,16 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductClassification> findProductClassifications(java.util.Set<ProductClassificationTypes> productClassificationTypes)
+	public List<JonixProductClassification> findProductClassifications(
+			java.util.Set<ProductClassificationTypes> productClassificationTypes)
 	{
 		if (productClassifications != null)
 		{
 			List<JonixProductClassification> matches = new ArrayList<>();
 			for (ProductClassification x : productClassifications)
 			{
-				if (productClassificationTypes == null || productClassificationTypes.contains(x.getProductClassificationTypeValue()))
+				if (productClassificationTypes == null
+						|| productClassificationTypes.contains(x.getProductClassificationTypeValue()))
 					matches.add(x.asJonixProductClassification());
 			}
 			return matches;

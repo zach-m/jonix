@@ -140,7 +140,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
 					productPackaging = new ProductPackaging(element);
 				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(element));
+					productFormDescriptions = JPU.addToList(productFormDescriptions,
+							new ProductFormDescription(element));
 				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
 					tradeCategory = new TradeCategory(element);
 				else if (name.equals(PrimaryContentType.refname) || name.equals(PrimaryContentType.shortname))
@@ -152,7 +153,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 				else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname))
 					countryOfManufacture = new CountryOfManufacture(element);
 				else if (name.equals(EpubTechnicalProtection.refname) || name.equals(EpubTechnicalProtection.shortname))
-					epubTechnicalProtections = JPU.addToList(epubTechnicalProtections, new EpubTechnicalProtection(element));
+					epubTechnicalProtections = JPU.addToList(epubTechnicalProtections, new EpubTechnicalProtection(
+							element));
 				else if (name.equals(EpubUsageConstraint.refname) || name.equals(EpubUsageConstraint.shortname))
 					epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(element));
 				else if (name.equals(EpubLicense.refname) || name.equals(EpubLicense.shortname))
@@ -450,14 +452,16 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	public List<JonixProductFormFeature> findProductFormFeatures(
+			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
 	{
 		if (productFormFeatures != null)
 		{
 			List<JonixProductFormFeature> matches = new ArrayList<>();
 			for (ProductFormFeature x : productFormFeatures)
 			{
-				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+				if (productFormFeatureTypes == null
+						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
 					matches.add(x.asJonixProductFormFeature());
 			}
 			return matches;
@@ -506,14 +510,16 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductClassification> findProductClassifications(java.util.Set<ProductClassificationTypes> productClassificationTypes)
+	public List<JonixProductClassification> findProductClassifications(
+			java.util.Set<ProductClassificationTypes> productClassificationTypes)
 	{
 		if (productClassifications != null)
 		{
 			List<JonixProductClassification> matches = new ArrayList<>();
 			for (ProductClassification x : productClassifications)
 			{
-				if (productClassificationTypes == null || productClassificationTypes.contains(x.getProductClassificationTypeValue()))
+				if (productClassificationTypes == null
+						|| productClassificationTypes.contains(x.getProductClassificationTypeValue()))
 					matches.add(x.asJonixProductClassification());
 			}
 			return matches;
@@ -590,7 +596,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixAncillaryContent> findAncillaryContents(java.util.Set<IllustrationAndOtherContentTypes> ancillaryContentTypes)
+	public List<JonixAncillaryContent> findAncillaryContents(
+			java.util.Set<IllustrationAndOtherContentTypes> ancillaryContentTypes)
 	{
 		if (ancillaryContents != null)
 		{

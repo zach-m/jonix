@@ -165,7 +165,8 @@ public class OnixEnumGen
 
 	public String enumNameOf(String rawName)
 	{
-		return rawName.replaceAll("(.+?)\\)(.*)", "$1").trim().replaceAll("[^a-zA-Z0-9_]+", "_").replaceAll("^([0-9].*)", "_$1");
+		return rawName.replaceAll("(.+?)\\)(.*)", "$1").trim().replaceAll("[^a-zA-Z0-9_]+", "_")
+				.replaceAll("^([0-9].*)", "_$1");
 	}
 
 	public static void main(String[] args)

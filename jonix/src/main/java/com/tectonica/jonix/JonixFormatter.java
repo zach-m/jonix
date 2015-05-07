@@ -25,8 +25,8 @@ import com.tectonica.jonix.basic.BasicProduct;
 public class JonixFormatter
 {
 	/**
-	 * turns a {@link BasicProduct} object into a jagged-array of Strings, whose amount of rows and columns are defined by
-	 * {@link BasicColumn}
+	 * turns a {@link BasicProduct} object into a jagged-array of Strings, whose amount of rows and columns are defined
+	 * by {@link BasicColumn}
 	 */
 	public static String[][] productAsStringMatrix(BasicProduct product, JonixColumn[] columns)
 	{
@@ -67,7 +67,8 @@ public class JonixFormatter
 	}
 
 	/**
-	 * generates a tab-delimited string, representing the <b>headers</b> of the columns, as defined by {@link BasicColumn}
+	 * generates a tab-delimited string, representing the <b>headers</b> of the columns, as defined by
+	 * {@link BasicColumn}
 	 */
 	public static String headerAsTabDelimitedString(JonixColumn[] columns)
 	{

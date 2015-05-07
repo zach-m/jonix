@@ -111,16 +111,16 @@ public class BasicProduct implements Serializable
 //		productIdentifiers = ProductIdentifier.listFrom(product);
 //		titles = Title.listFrom(product);
 		titles = product.findTitles(null); // null = find-all
-		contributors = Contributor.listFrom(product); 		// TODO: use intf
+		contributors = Contributor.listFrom(product); // TODO: use intf
 		seriess = Series.listFrom(product); // onix2-only
 //		languages = Language.listFrom(product);
 		mainSubjects = MainSubject.listFrom(product); // ?
-		subjects = Subject.listFrom(product); 				// TODO: use struct
-		audiences = Audience.listFrom(product); 			// TODO: use struct
-		otherTexts = OtherText.listFrom(product); 			// TODO: use struct - although not complete
-		publishers = Publisher.listFrom(product); 			// TODO: use intf
+		subjects = Subject.listFrom(product); // TODO: use struct
+		audiences = Audience.listFrom(product); // TODO: use struct
+		otherTexts = OtherText.listFrom(product); // TODO: use struct - although not complete
+		publishers = Publisher.listFrom(product); // TODO: use intf
 		imprints = Imprint.listFrom(product); // non-struct
-		supplyDetails = SupplyDetail.listFrom(product); 	// TODO: use intf
+		supplyDetails = SupplyDetail.listFrom(product); // TODO: use intf
 		salesRightss = SalesRights.listFrom(product); // non-struct
 	}
 

@@ -118,7 +118,8 @@ public class ContentItem implements OnixSuperComposite, Serializable
 				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
 					personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(element));
 				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
-					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(element));
+					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects,
+							new CorporateBodyAsSubject(element));
 				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
 					placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(element));
 				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))

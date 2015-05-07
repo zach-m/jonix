@@ -45,8 +45,8 @@ public class Audience implements Serializable
 	public String toString()
 	{
 		String audienceCodeTypeStr = (audienceCodeType == null) ? null : audienceCodeType.name();
-		String audienceCodeValueStr = (audienceCodeType == AudienceCodeTypes.ONIX_audience_codes) ? Audiences.byValue(audienceCodeValue)
-				.name() : audienceCodeValue;
+		String audienceCodeValueStr = (audienceCodeType == AudienceCodeTypes.ONIX_audience_codes) ? Audiences.byValue(
+				audienceCodeValue).name() : audienceCodeValue;
 		return String.format("Audience [%s/%s]: %s", audienceCodeTypeStr, audienceCodeTypeName, audienceCodeValueStr);
 	}
 
@@ -56,7 +56,8 @@ public class Audience implements Serializable
 		{
 			List<Audience> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Audience i : product.audiences)
-				result.add(new Audience(i.getAudienceCodeTypeValue(), i.getAudienceCodeTypeNameValue(), i.getAudienceCodeValueValue()));
+				result.add(new Audience(i.getAudienceCodeTypeValue(), i.getAudienceCodeTypeNameValue(), i
+						.getAudienceCodeValueValue()));
 			return result;
 		}
 		return Collections.emptyList();

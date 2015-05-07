@@ -72,13 +72,16 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 			{
 				final String name = element.getNodeName();
 				if (name.equals(PublisherRepresentative.refname) || name.equals(PublisherRepresentative.shortname))
-					publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(element));
+					publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(
+							element));
 				else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
 					productContacts = JPU.addToList(productContacts, new ProductContact(element));
 				else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
 					marketPublishingStatus = new MarketPublishingStatus(element);
-				else if (name.equals(MarketPublishingStatusNote.refname) || name.equals(MarketPublishingStatusNote.shortname))
-					marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(element));
+				else if (name.equals(MarketPublishingStatusNote.refname)
+						|| name.equals(MarketPublishingStatusNote.shortname))
+					marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes,
+							new MarketPublishingStatusNote(element));
 				else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
 					marketDates = JPU.addToList(marketDates, new MarketDate(element));
 				else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))

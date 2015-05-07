@@ -82,7 +82,8 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
 				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
 					supplierSAN = new SupplierSAN(element);
-				else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
+				else if (name.equals(SupplierEANLocationNumber.refname)
+						|| name.equals(SupplierEANLocationNumber.shortname))
 					supplierEANLocationNumber = new SupplierEANLocationNumber(element);
 				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
 					supplierName = new SupplierName(element);

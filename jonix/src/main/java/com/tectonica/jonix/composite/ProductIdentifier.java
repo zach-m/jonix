@@ -43,7 +43,8 @@ public class ProductIdentifier implements Serializable
 	@Override
 	public String toString()
 	{
-		return String.format("ProductIdentifier [%s/%s]: %s", (productIDType == null) ? null : productIDType.name(), idTypeName, idValue);
+		return String.format("ProductIdentifier [%s/%s]: %s", (productIDType == null) ? null : productIDType.name(),
+				idTypeName, idValue);
 	}
 
 	public static List<ProductIdentifier> listFrom(com.tectonica.jonix.onix2.Product product)

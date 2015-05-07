@@ -109,7 +109,8 @@ public class Contributor implements OnixSuperComposite, Serializable
 					contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(element));
 				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
 					languageCodes = JPU.addToList(languageCodes, new LanguageCode(element));
-				else if (name.equals(SequenceNumberWithinRole.refname) || name.equals(SequenceNumberWithinRole.shortname))
+				else if (name.equals(SequenceNumberWithinRole.refname)
+						|| name.equals(SequenceNumberWithinRole.shortname))
 					sequenceNumberWithinRole = new SequenceNumberWithinRole(element);
 				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
 					personName = new PersonName(element);
@@ -138,7 +139,8 @@ public class Contributor implements OnixSuperComposite, Serializable
 				else if (name.equals(PersonDate.refname) || name.equals(PersonDate.shortname))
 					personDates = JPU.addToList(personDates, new PersonDate(element));
 				else if (name.equals(ProfessionalAffiliation.refname) || name.equals(ProfessionalAffiliation.shortname))
-					professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(element));
+					professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(
+							element));
 				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
 					corporateName = new CorporateName(element);
 				else if (name.equals(BiographicalNote.refname) || name.equals(BiographicalNote.shortname))
@@ -312,7 +314,8 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(
+			java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
 	{
 		if (personNameIdentifiers != null)
 		{

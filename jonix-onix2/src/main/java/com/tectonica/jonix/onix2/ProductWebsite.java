@@ -74,7 +74,8 @@ public class ProductWebsite implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
 					websiteRole = new WebsiteRole(element);
-				else if (name.equals(ProductWebsiteDescription.refname) || name.equals(ProductWebsiteDescription.shortname))
+				else if (name.equals(ProductWebsiteDescription.refname)
+						|| name.equals(ProductWebsiteDescription.shortname))
 					productWebsiteDescription = new ProductWebsiteDescription(element);
 				else if (name.equals(ProductWebsiteLink.refname) || name.equals(ProductWebsiteLink.shortname))
 					productWebsiteLink = new ProductWebsiteLink(element);

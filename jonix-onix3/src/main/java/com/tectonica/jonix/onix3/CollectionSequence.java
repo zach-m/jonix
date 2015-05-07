@@ -62,9 +62,11 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(CollectionSequenceType.refname) || name.equals(CollectionSequenceType.shortname))
 					collectionSequenceType = new CollectionSequenceType(element);
-				else if (name.equals(CollectionSequenceTypeName.refname) || name.equals(CollectionSequenceTypeName.shortname))
+				else if (name.equals(CollectionSequenceTypeName.refname)
+						|| name.equals(CollectionSequenceTypeName.shortname))
 					collectionSequenceTypeName = new CollectionSequenceTypeName(element);
-				else if (name.equals(CollectionSequenceNumber.refname) || name.equals(CollectionSequenceNumber.shortname))
+				else if (name.equals(CollectionSequenceNumber.refname)
+						|| name.equals(CollectionSequenceNumber.shortname))
 					collectionSequenceNumber = new CollectionSequenceNumber(element);
 			}
 		});

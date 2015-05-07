@@ -62,7 +62,8 @@ public class ResourceVersionFeature implements OnixDataComposite, Serializable
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equals(ResourceVersionFeatureType.refname) || name.equals(ResourceVersionFeatureType.shortname))
+				if (name.equals(ResourceVersionFeatureType.refname)
+						|| name.equals(ResourceVersionFeatureType.shortname))
 					resourceVersionFeatureType = new ResourceVersionFeatureType(element);
 				else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname))
 					featureValue = new FeatureValue(element);

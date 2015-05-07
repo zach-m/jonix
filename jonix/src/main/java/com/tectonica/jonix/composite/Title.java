@@ -67,8 +67,8 @@ public class Title implements Serializable
 		{
 			List<Title> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Title i : titles)
-				result.add(new Title(i.getTitleTypeValue(), noBreaks(i.getTitleTextValue()), noBreaks(i.getTitleWithoutPrefixValue()),
-						noBreaks(i.getSubtitleValue())));
+				result.add(new Title(i.getTitleTypeValue(), noBreaks(i.getTitleTextValue()), noBreaks(i
+						.getTitleWithoutPrefixValue()), noBreaks(i.getSubtitleValue())));
 			return result;
 		}
 		return Collections.emptyList();

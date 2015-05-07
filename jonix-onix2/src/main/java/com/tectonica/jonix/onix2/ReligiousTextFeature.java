@@ -75,9 +75,11 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(ReligiousTextFeatureType.refname) || name.equals(ReligiousTextFeatureType.shortname))
 					religiousTextFeatureType = new ReligiousTextFeatureType(element);
-				else if (name.equals(ReligiousTextFeatureCode.refname) || name.equals(ReligiousTextFeatureCode.shortname))
+				else if (name.equals(ReligiousTextFeatureCode.refname)
+						|| name.equals(ReligiousTextFeatureCode.shortname))
 					religiousTextFeatureCode = new ReligiousTextFeatureCode(element);
-				else if (name.equals(ReligiousTextFeatureDescription.refname) || name.equals(ReligiousTextFeatureDescription.shortname))
+				else if (name.equals(ReligiousTextFeatureDescription.refname)
+						|| name.equals(ReligiousTextFeatureDescription.shortname))
 					religiousTextFeatureDescription = new ReligiousTextFeatureDescription(element);
 			}
 		});

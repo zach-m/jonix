@@ -122,7 +122,8 @@ public class Collection implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixCollectionIdentifier> findCollectionIdentifiers(java.util.Set<SeriesIdentifierTypes> collectionIDTypes)
+	public List<JonixCollectionIdentifier> findCollectionIdentifiers(
+			java.util.Set<SeriesIdentifierTypes> collectionIDTypes)
 	{
 		if (collectionIdentifiers != null)
 		{
@@ -150,14 +151,16 @@ public class Collection implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixCollectionSequence> findCollectionSequences(java.util.Set<CollectionSequenceTypes> collectionSequenceTypes)
+	public List<JonixCollectionSequence> findCollectionSequences(
+			java.util.Set<CollectionSequenceTypes> collectionSequenceTypes)
 	{
 		if (collectionSequences != null)
 		{
 			List<JonixCollectionSequence> matches = new ArrayList<>();
 			for (CollectionSequence x : collectionSequences)
 			{
-				if (collectionSequenceTypes == null || collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
+				if (collectionSequenceTypes == null
+						|| collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
 					matches.add(x.asJonixCollectionSequence());
 			}
 			return matches;

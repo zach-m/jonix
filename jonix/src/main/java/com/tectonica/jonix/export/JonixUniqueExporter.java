@@ -183,7 +183,8 @@ public class JonixUniqueExporter extends JonixFilesExport
 	{
 		out.println(JonixFormatter.headerAsTabDelimitedString(columns) + extraConstColumnNames);
 		for (ProductEx productEx : productsEx)
-			out.println(JonixFormatter.productAsTabDelimitedString(productEx._product, columns) + extraConstColumnValues);
+			out.println(JonixFormatter.productAsTabDelimitedString(productEx._product, columns)
+					+ extraConstColumnValues);
 	}
 
 }

@@ -33,7 +33,8 @@ public class MainSubject implements Serializable
 	public final String subjectCode;
 	public final String subjectHeadingText;
 
-	public MainSubject(MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
+	public MainSubject(MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier, String subjectCode,
+			String subjectHeadingText)
 	{
 		this.mainSubjectSchemeIdentifier = mainSubjectSchemeIdentifier;
 		this.subjectCode = subjectCode;
@@ -43,8 +44,10 @@ public class MainSubject implements Serializable
 	@Override
 	public String toString()
 	{
-		String subjectSchemeIdentifierStr = (mainSubjectSchemeIdentifier == null) ? null : mainSubjectSchemeIdentifier.name();
-		return String.format(getClass().getSimpleName() + " [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode, subjectHeadingText);
+		String subjectSchemeIdentifierStr = (mainSubjectSchemeIdentifier == null) ? null : mainSubjectSchemeIdentifier
+				.name();
+		return String.format(getClass().getSimpleName() + " [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode,
+				subjectHeadingText);
 	}
 
 	public static List<MainSubject> listFrom(com.tectonica.jonix.onix2.Product product)
@@ -53,7 +56,8 @@ public class MainSubject implements Serializable
 		{
 			List<MainSubject> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.MainSubject i : product.mainSubjects)
-				result.add(new MainSubject(i.getMainSubjectSchemeIdentifierValue(), i.getSubjectCodeValue(), i.getSubjectHeadingTextValue()));
+				result.add(new MainSubject(i.getMainSubjectSchemeIdentifierValue(), i.getSubjectCodeValue(), i
+						.getSubjectHeadingTextValue()));
 			return result;
 		}
 		return Collections.emptyList();

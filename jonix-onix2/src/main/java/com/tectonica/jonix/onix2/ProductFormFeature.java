@@ -76,7 +76,8 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 					productFormFeatureType = new ProductFormFeatureType(element);
 				else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname))
 					productFormFeatureValue = new ProductFormFeatureValue(element);
-				else if (name.equals(ProductFormFeatureDescription.refname) || name.equals(ProductFormFeatureDescription.shortname))
+				else if (name.equals(ProductFormFeatureDescription.refname)
+						|| name.equals(ProductFormFeatureDescription.shortname))
 					productFormFeatureDescription = new ProductFormFeatureDescription(element);
 			}
 		});

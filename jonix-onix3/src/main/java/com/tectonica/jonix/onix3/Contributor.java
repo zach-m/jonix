@@ -132,13 +132,15 @@ public class Contributor implements OnixSuperComposite, Serializable
 				else if (name.equals(ContributorDate.refname) || name.equals(ContributorDate.shortname))
 					contributorDates = JPU.addToList(contributorDates, new ContributorDate(element));
 				else if (name.equals(ProfessionalAffiliation.refname) || name.equals(ProfessionalAffiliation.shortname))
-					professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(element));
+					professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(
+							element));
 				else if (name.equals(BiographicalNote.refname) || name.equals(BiographicalNote.shortname))
 					biographicalNotes = JPU.addToList(biographicalNotes, new BiographicalNote(element));
 				else if (name.equals(Website.refname) || name.equals(Website.shortname))
 					websites = JPU.addToList(websites, new Website(element));
 				else if (name.equals(ContributorDescription.refname) || name.equals(ContributorDescription.shortname))
-					contributorDescriptions = JPU.addToList(contributorDescriptions, new ContributorDescription(element));
+					contributorDescriptions = JPU.addToList(contributorDescriptions,
+							new ContributorDescription(element));
 				else if (name.equals(UnnamedPersons.refname) || name.equals(UnnamedPersons.shortname))
 					unnamedPersons = new UnnamedPersons(element);
 				else if (name.equals(ContributorPlace.refname) || name.equals(ContributorPlace.shortname))
@@ -323,7 +325,8 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixContributorDate> findContributorDates(java.util.Set<PersonOrganizationDateRoles> contributorDateRoles)
+	public List<JonixContributorDate> findContributorDates(
+			java.util.Set<PersonOrganizationDateRoles> contributorDateRoles)
 	{
 		if (contributorDates != null)
 		{

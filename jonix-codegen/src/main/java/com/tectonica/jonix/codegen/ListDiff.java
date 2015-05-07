@@ -35,7 +35,8 @@ public class ListDiff
 	/**
 	 * compares two <strong>sorted</strong> lists
 	 */
-	public static <T extends Comparable<? super T>> boolean compare(List<T> listL, List<T> listR, CompareListener<T> listener)
+	public static <T extends Comparable<? super T>> boolean compare(List<T> listL, List<T> listR,
+			CompareListener<T> listener)
 	{
 		final Iterator<T> iterL = (listL == null) ? null : listL.iterator();
 		final Iterator<T> iterR = (listR == null) ? null : listR.iterator();

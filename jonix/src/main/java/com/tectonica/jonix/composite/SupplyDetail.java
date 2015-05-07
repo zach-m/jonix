@@ -35,7 +35,8 @@ public class SupplyDetail implements Serializable
 	public final AvailabilityStatuss availability;
 	public final List<Price> prices;
 
-	public SupplyDetail(SupplierRoles supplierRole, String supplierName, AvailabilityStatuss availability, List<Price> prices)
+	public SupplyDetail(SupplierRoles supplierRole, String supplierName, AvailabilityStatuss availability,
+			List<Price> prices)
 	{
 		this.supplierRole = supplierRole;
 		this.supplierName = supplierName;
@@ -51,7 +52,8 @@ public class SupplyDetail implements Serializable
 			sb.append("\n    > ").append(price.toString());
 		String supplierRoleStr = (supplierRole == null) ? null : supplierRole.name();
 		String availabilityStr = (availability == null) ? null : availability.name();
-		return String.format("SupplyDetail [%s]: %s (%s) %s", supplierRoleStr, supplierName, availabilityStr, sb.toString());
+		return String.format("SupplyDetail [%s]: %s (%s) %s", supplierRoleStr, supplierName, availabilityStr,
+				sb.toString());
 	}
 
 	public static List<SupplyDetail> listFrom(com.tectonica.jonix.onix2.Product product)
@@ -60,8 +62,8 @@ public class SupplyDetail implements Serializable
 		{
 			List<SupplyDetail> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.SupplyDetail i : product.supplyDetails)
-				result.add(new SupplyDetail(i.getSupplierRoleValue(), i.getSupplierNameValue(), i.getAvailabilityCodeValue(), Price
-						.listFrom(i)));
+				result.add(new SupplyDetail(i.getSupplierRoleValue(), i.getSupplierNameValue(), i
+						.getAvailabilityCodeValue(), Price.listFrom(i)));
 			return result;
 		}
 		return Collections.emptyList();

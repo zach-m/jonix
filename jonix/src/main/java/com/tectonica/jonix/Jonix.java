@@ -37,7 +37,8 @@ public class Jonix
 			System.out.println("Usage:");
 			System.out.println("    java -jar jonix.jar <input-location> <output-file>");
 			System.out.println("");
-			System.out.println("<input-location> is an ONIX file-name, or a folder containing ONIX files with xml extension");
+			System.out.println("<input-location> is an ONIX file-name, "
+					+ "or a folder containing ONIX files with xml extension");
 			System.out.println("<output-file> is the name of the tab-delimited output file");
 			System.out.println("");
 			return;

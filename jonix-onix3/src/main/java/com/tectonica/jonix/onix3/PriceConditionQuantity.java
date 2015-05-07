@@ -61,7 +61,8 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 			public void onElement(org.w3c.dom.Element element)
 			{
 				final String name = element.getNodeName();
-				if (name.equals(PriceConditionQuantityType.refname) || name.equals(PriceConditionQuantityType.shortname))
+				if (name.equals(PriceConditionQuantityType.refname)
+						|| name.equals(PriceConditionQuantityType.shortname))
 					priceConditionQuantityType = new PriceConditionQuantityType(element);
 				else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
 					quantity = new Quantity(element);

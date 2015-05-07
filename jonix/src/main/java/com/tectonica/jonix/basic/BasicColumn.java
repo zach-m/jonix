@@ -394,9 +394,10 @@ public enum BasicColumn implements JonixColumn
 					SalesRightsTypes.Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories,
 					SalesRightsTypes.Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories }));
 
-	private static final Set<SalesRightsTypes> UNRESTRICTED_SALES_RIGHTS = new HashSet<>(Arrays.asList(new SalesRightsTypes[] {
-			SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories,
-			SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories,
-			SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies,
-			SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies }));
+	private static final Set<SalesRightsTypes> UNRESTRICTED_SALES_RIGHTS = new HashSet<>(
+			Arrays.asList(new SalesRightsTypes[] {
+					SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories,
+					SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories,
+					SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies,
+					SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies }));
 }

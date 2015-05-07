@@ -49,7 +49,8 @@ public class OnixStructMember implements Comparable<OnixStructMember>
 		if (dataMember == null)
 			throw new NullPointerException("dataMember");
 
-		final boolean isDataMember = (dataMember.onixClass instanceof OnixElementDef) || (dataMember.onixClass instanceof OnixFlagDef);
+		final boolean isDataMember = (dataMember.onixClass instanceof OnixElementDef)
+				|| (dataMember.onixClass instanceof OnixFlagDef);
 		if (!isDataMember)
 			throw new RuntimeException("passed member is neither an Element nor a Flag");
 

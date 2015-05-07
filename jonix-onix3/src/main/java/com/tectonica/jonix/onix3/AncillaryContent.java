@@ -64,8 +64,10 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(AncillaryContentType.refname) || name.equals(AncillaryContentType.shortname))
 					ancillaryContentType = new AncillaryContentType(element);
-				else if (name.equals(AncillaryContentDescription.refname) || name.equals(AncillaryContentDescription.shortname))
-					ancillaryContentDescriptions = JPU.addToList(ancillaryContentDescriptions, new AncillaryContentDescription(element));
+				else if (name.equals(AncillaryContentDescription.refname)
+						|| name.equals(AncillaryContentDescription.shortname))
+					ancillaryContentDescriptions = JPU.addToList(ancillaryContentDescriptions,
+							new AncillaryContentDescription(element));
 				else if (name.equals(Number.refname) || name.equals(Number.shortname))
 					number = new Number(element);
 			}

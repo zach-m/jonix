@@ -43,7 +43,8 @@ public class SeriesIdentifier implements Serializable
 	@Override
 	public String toString()
 	{
-		return String.format("SeriesIdentifier [%s/%s]: %s", (seriesIDType == null) ? null : seriesIDType.name(), idTypeName, idValue);
+		return String.format("SeriesIdentifier [%s/%s]: %s", (seriesIDType == null) ? null : seriesIDType.name(),
+				idTypeName, idValue);
 	}
 
 	public static List<SeriesIdentifier> listFrom(com.tectonica.jonix.onix2.Series series)

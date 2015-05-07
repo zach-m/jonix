@@ -67,8 +67,10 @@ public class ProductContact implements OnixSuperComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname))
 					productContactRole = new ProductContactRole(element);
-				else if (name.equals(ProductContactIdentifier.refname) || name.equals(ProductContactIdentifier.shortname))
-					productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(element));
+				else if (name.equals(ProductContactIdentifier.refname)
+						|| name.equals(ProductContactIdentifier.shortname))
+					productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(
+							element));
 				else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname))
 					productContactName = new ProductContactName(element);
 				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
@@ -112,7 +114,8 @@ public class ProductContact implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductContactIdentifier> findProductContactIdentifiers(java.util.Set<NameCodeTypes> productContactIDTypes)
+	public List<JonixProductContactIdentifier> findProductContactIdentifiers(
+			java.util.Set<NameCodeTypes> productContactIDTypes)
 	{
 		if (productContactIdentifiers != null)
 		{

@@ -85,7 +85,8 @@ public class Product implements OnixSuperComposite, Serializable
 				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
 					recordSourceType = new RecordSourceType(element);
 				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(element));
+					recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers,
+							new RecordSourceIdentifier(element));
 				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
 					recordSourceName = new RecordSourceName(element);
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
@@ -153,7 +154,8 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixRecordSourceIdentifier> findRecordSourceIdentifiers(java.util.Set<NameCodeTypes> recordSourceIDTypes)
+	public List<JonixRecordSourceIdentifier> findRecordSourceIdentifiers(
+			java.util.Set<NameCodeTypes> recordSourceIDTypes)
 	{
 		if (recordSourceIdentifiers != null)
 		{

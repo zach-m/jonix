@@ -304,14 +304,16 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	public List<JonixProductFormFeature> findProductFormFeatures(
+			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
 	{
 		if (productFormFeatures != null)
 		{
 			List<JonixProductFormFeature> matches = new ArrayList<>();
 			for (ProductFormFeature x : productFormFeatures)
 			{
-				if (productFormFeatureTypes == null || productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
+				if (productFormFeatureTypes == null
+						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
 					matches.add(x.asJonixProductFormFeature());
 			}
 			return matches;

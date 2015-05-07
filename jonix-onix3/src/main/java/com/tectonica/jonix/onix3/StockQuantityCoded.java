@@ -62,7 +62,8 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 				final String name = element.getNodeName();
 				if (name.equals(StockQuantityCodeType.refname) || name.equals(StockQuantityCodeType.shortname))
 					stockQuantityCodeType = new StockQuantityCodeType(element);
-				else if (name.equals(StockQuantityCodeTypeName.refname) || name.equals(StockQuantityCodeTypeName.shortname))
+				else if (name.equals(StockQuantityCodeTypeName.refname)
+						|| name.equals(StockQuantityCodeTypeName.shortname))
 					stockQuantityCodeTypeName = new StockQuantityCodeTypeName(element);
 				else if (name.equals(StockQuantityCode.refname) || name.equals(StockQuantityCode.shortname))
 					stockQuantityCode = new StockQuantityCode(element);

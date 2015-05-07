@@ -68,7 +68,8 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 				if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname))
 					priceConditionType = new PriceConditionType(element);
 				else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname))
-					priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(element));
+					priceConditionQuantitys = JPU.addToList(priceConditionQuantitys,
+							new PriceConditionQuantity(element));
 				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
 					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
 			}
@@ -101,7 +102,8 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 			List<JonixPriceConditionQuantity> matches = new ArrayList<>();
 			for (PriceConditionQuantity x : priceConditionQuantitys)
 			{
-				if (priceConditionQuantityTypes == null || priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
+				if (priceConditionQuantityTypes == null
+						|| priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
 					matches.add(x.asJonixPriceConditionQuantity());
 			}
 			return matches;

@@ -38,8 +38,8 @@ public class Contributor implements Serializable
 	public final String corporateName;
 	public final String biographicalNote;
 
-	public Contributor(Set<ContributorRoles> contributorRoles, String personName, String personNameKey, String personNameBeforeKey,
-			String corporateName, String biographicalNote)
+	public Contributor(Set<ContributorRoles> contributorRoles, String personName, String personNameKey,
+			String personNameBeforeKey, String corporateName, String biographicalNote)
 	{
 		this.contributorRoles = contributorRoles;
 		this.personName = personName;
@@ -91,8 +91,9 @@ public class Contributor implements Serializable
 		{
 			List<Contributor> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Contributor i : contributors)
-				result.add(new Contributor(new HashSet<>(i.getContributorRoleValues()), i.getPersonNameValue(), i.getKeyNamesValue(), i
-						.getNamesBeforeKeyValue(), i.getCorporateNameValue(), i.getBiographicalNoteValue()));
+				result.add(new Contributor(new HashSet<>(i.getContributorRoleValues()), i.getPersonNameValue(), i
+						.getKeyNamesValue(), i.getNamesBeforeKeyValue(), i.getCorporateNameValue(), i
+						.getBiographicalNoteValue()));
 			return result;
 		}
 		return Collections.emptyList();

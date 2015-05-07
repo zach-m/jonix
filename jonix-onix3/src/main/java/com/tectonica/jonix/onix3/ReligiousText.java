@@ -90,14 +90,16 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixReligiousTextFeature> findReligiousTextFeatures(java.util.Set<ReligiousTextFeatureTypes> religiousTextFeatureTypes)
+	public List<JonixReligiousTextFeature> findReligiousTextFeatures(
+			java.util.Set<ReligiousTextFeatureTypes> religiousTextFeatureTypes)
 	{
 		if (religiousTextFeatures != null)
 		{
 			List<JonixReligiousTextFeature> matches = new ArrayList<>();
 			for (ReligiousTextFeature x : religiousTextFeatures)
 			{
-				if (religiousTextFeatureTypes == null || religiousTextFeatureTypes.contains(x.getReligiousTextFeatureTypeValue()))
+				if (religiousTextFeatureTypes == null
+						|| religiousTextFeatureTypes.contains(x.getReligiousTextFeatureTypeValue()))
 					matches.add(x.asJonixReligiousTextFeature());
 			}
 			return matches;

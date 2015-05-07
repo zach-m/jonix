@@ -166,7 +166,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<JonixReturnsConditions> findReturnsConditionss(java.util.Set<ReturnsConditionsCodeTypes> returnsCodeTypes)
+	public List<JonixReturnsConditions> findReturnsConditionss(
+			java.util.Set<ReturnsConditionsCodeTypes> returnsCodeTypes)
 	{
 		if (returnsConditionss != null)
 		{

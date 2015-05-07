@@ -69,7 +69,8 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 				if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname))
 					resourceForm = new ResourceForm(element);
 				else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname))
-					resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(element));
+					resourceVersionFeatures = JPU.addToList(resourceVersionFeatures,
+							new ResourceVersionFeature(element));
 				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
 					resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(element));
 				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
@@ -116,7 +117,8 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 			List<JonixResourceVersionFeature> matches = new ArrayList<>();
 			for (ResourceVersionFeature x : resourceVersionFeatures)
 			{
-				if (resourceVersionFeatureTypes == null || resourceVersionFeatureTypes.contains(x.getResourceVersionFeatureTypeValue()))
+				if (resourceVersionFeatureTypes == null
+						|| resourceVersionFeatureTypes.contains(x.getResourceVersionFeatureTypeValue()))
 					matches.add(x.asJonixResourceVersionFeature());
 			}
 			return matches;

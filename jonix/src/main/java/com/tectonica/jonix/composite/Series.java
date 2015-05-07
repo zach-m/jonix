@@ -33,8 +33,8 @@ public class Series implements Serializable
 	public final List<Title> titles;
 	public final List<Contributor> contributors;
 
-	public Series(String titleOfSeries, String seriesISSN, List<SeriesIdentifier> seriesIdentifiers, List<Title> titles,
-			List<Contributor> contributors)
+	public Series(String titleOfSeries, String seriesISSN, List<SeriesIdentifier> seriesIdentifiers,
+			List<Title> titles, List<Contributor> contributors)
 	{
 		this.titleOfSeries = titleOfSeries;
 		this.seriesISSN = seriesISSN;
@@ -62,8 +62,8 @@ public class Series implements Serializable
 		{
 			List<Series> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Series i : product.seriess)
-				result.add(new Series(i.getTitleOfSeriesValue(), i.getSeriesISSNValue(), SeriesIdentifier.listFrom(i), Title.listFrom(i),
-						Contributor.listFrom(i)));
+				result.add(new Series(i.getTitleOfSeriesValue(), i.getSeriesISSNValue(), SeriesIdentifier.listFrom(i),
+						Title.listFrom(i), Contributor.listFrom(i)));
 			return result;
 		}
 		return Collections.emptyList();
