@@ -24,7 +24,7 @@ import java.util.List;
 
 import com.tectonica.jonix.JonixFilesScanner;
 import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.basic.BasicProduct2;
 
 public abstract class JonixFilesExport extends JonixFilesScanner
 {
@@ -65,7 +65,7 @@ public abstract class JonixFilesExport extends JonixFilesScanner
 	}
 
 	@Override
-	protected void onProduct(BasicProduct product, int index)
+	protected void onProduct(BasicProduct2 product, int index)
 	{
 		logProductParseSummary(product, index);
 	}
@@ -77,7 +77,7 @@ public abstract class JonixFilesExport extends JonixFilesScanner
 		log.println("-----------------------------------------------------------\n");
 	}
 
-	protected void logProductParseSummary(BasicProduct product, int index)
+	protected void logProductParseSummary(BasicProduct2 product, int index)
 	{
 		// show a log message about the product being successfully parsed
 		log.println("parsed product #" + index + " - " + product.getLabel());

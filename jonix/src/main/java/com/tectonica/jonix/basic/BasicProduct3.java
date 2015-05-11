@@ -29,12 +29,15 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTypes;
+import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.codelist.TitleTypes;
@@ -49,15 +52,21 @@ import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Series;
 import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.composite.SupplyDetail;
+import com.tectonica.jonix.onix3.CollateralDetail;
+import com.tectonica.jonix.onix3.ContentDetail;
+import com.tectonica.jonix.onix3.DescriptiveDetail;
+import com.tectonica.jonix.onix3.PublishingDetail;
+import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixPublishingDate;
 import com.tectonica.jonix.struct.JonixTitle;
 
 @SuppressWarnings("serial")
-public class BasicProduct implements Serializable
+public class BasicProduct3 implements Serializable
 {
 	public final String recordReference;
-	public final String editionNumber;
+	public final Integer editionNumber;
 	public final String cityOfPublication;
 	public final String publicationDate;
 	public final String numberOfPages;
@@ -65,7 +74,7 @@ public class BasicProduct implements Serializable
 	public final String bicMainSubject;
 
 	public final NotificationOrUpdateTypes notificationType;
-	public final ProductForms productForm;
+	public final ProductFormsList150 productForm; // compared to 'ProductForms' in Onix 2 
 	public final EpublicationTypes epubType;
 	public final EditionTypes editionType;
 	public final CountryCodeIso31661s countryOfPublication;
@@ -85,21 +94,38 @@ public class BasicProduct implements Serializable
 	public final List<SupplyDetail> supplyDetails;
 	public final List<SalesRights> salesRightss;
 
-	public final com.tectonica.jonix.onix2.Product product;
+	public final com.tectonica.jonix.onix3.Product product;
 
-	public BasicProduct(com.tectonica.jonix.onix2.Product product)
+	public BasicProduct3(com.tectonica.jonix.onix3.Product product)
 	{
 		this.product = product;
 
+		DescriptiveDetail d = product.descriptiveDetail;
+		CollateralDetail c = product.collateralDetail;
+		PublishingDetail p = product.publishingDetail;
+		ContentDetail content = product.contentDetail;
+
+		JonixPublishingDate jPublicationDate = p.findPublishingDate(PublishingDateRoles.Publication_date);
+		JonixExtent jNumberOfPages = d.findExtent(ExtentTypes.Main_content_page_count);
+
 		// singles
 		recordReference = product.getRecordReferenceValue();
-		editionNumber = product.getEditionNumberValue();
-		publicationDate = product.getPublicationDateValue();
-		numberOfPages = product.getNumberOfPagesValue();
-		bisacMainSubject = product.getBASICMainSubjectValue();
-		bicMainSubject = product.getBICMainSubjectValue();
+		editionNumber = d.getEditionNumberValue();
+		publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
+		numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
+		
+		for (com.tectonica.jonix.onix3.Subject s : d.subjects)
+		{
+			boolean isMain = s.isMainSubject();
+			SubjectSchemeIdentifiers scheme = s.getSubjectSchemeIdentifierValue();
+			if (scheme == SubjectSchemeIdentifiers.BISAC_Subject_Heading)
+				bisacMainSubject = s.getSubjectCodeValue();
+			else if (scheme == SubjectSchemeIdentifiers.BIC_subject_category)
+				bicMainSubject = s.getSubjectCodeValue();
+		}
+		
 		notificationType = product.getNotificationTypeValue();
-		productForm = product.getProductFormValue();
+		productForm = d.getProductFormValue();
 		epubType = product.getEpubTypeValue();
 		countryOfPublication = product.getCountryOfPublicationValue();
 

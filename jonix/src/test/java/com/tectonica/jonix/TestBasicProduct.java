@@ -33,7 +33,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
-import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.basic.BasicProduct2;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.xmlchunk.XmlChunker;
 
@@ -69,7 +69,7 @@ public class TestBasicProduct
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
 					final Product product = new Product(element);
-					BasicProduct bp = new BasicProduct(product);
+					BasicProduct2 bp = new BasicProduct2(product);
 					System.out.println(bp.getLabel());
 				}
 			}

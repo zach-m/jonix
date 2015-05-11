@@ -49,7 +49,7 @@ public enum BasicColumn implements JonixColumn
 	ISBN13("ISBN13", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractProductId(fieldData, ProductIdentifierTypes.ISBN_13, product);
 		}
@@ -58,7 +58,7 @@ public enum BasicColumn implements JonixColumn
 	Title(new String[] { "Title", "SubTitle" }, 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractTitle(fieldData, TitleTypes.Distinctive_title_book, product);
 		}
@@ -67,7 +67,7 @@ public enum BasicColumn implements JonixColumn
 	SeriesTitle("SeriesTitle", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			if (product.seriess.size() > 0)
 			{
@@ -82,7 +82,7 @@ public enum BasicColumn implements JonixColumn
 	Author("Author", 3)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractContributors(fieldData, ContributorRoles.By_author, product);
 		}
@@ -91,7 +91,7 @@ public enum BasicColumn implements JonixColumn
 	Editor("Editor", 2)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			if (!extractContributors(fieldData, ContributorRoles.Edited_by, product))
 			{
@@ -116,7 +116,7 @@ public enum BasicColumn implements JonixColumn
 	Language("Language", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractLanguage(fieldData, LanguageRoles.Language_of_text, product);
 		}
@@ -125,7 +125,7 @@ public enum BasicColumn implements JonixColumn
 	NumOfPages("NumOfPages", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			fieldData[0] = product.numberOfPages;
 			return true;
@@ -135,7 +135,7 @@ public enum BasicColumn implements JonixColumn
 	Publisher("Publisher", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			if (product.publishers.size() > 0)
 			{
@@ -150,7 +150,7 @@ public enum BasicColumn implements JonixColumn
 	PublicationDate("PublicationDate", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			fieldData[0] = product.publicationDate;
 			return true;
@@ -160,7 +160,7 @@ public enum BasicColumn implements JonixColumn
 	Dewey("Dewey", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractSubjects(fieldData, SubjectSchemeIdentifiers.Dewey, product);
 		}
@@ -169,7 +169,7 @@ public enum BasicColumn implements JonixColumn
 	BISAC("BISAC", 5)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractSubjects(fieldData, SubjectSchemeIdentifiers.BISAC_Subject_Heading, product);
 		}
@@ -178,7 +178,7 @@ public enum BasicColumn implements JonixColumn
 	BIC("BIC", 5)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractSubjects(fieldData, SubjectSchemeIdentifiers.BIC_subject_category, product);
 		}
@@ -187,7 +187,7 @@ public enum BasicColumn implements JonixColumn
 	Keywords("Keywords", 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractSubjects(fieldData, SubjectSchemeIdentifiers.Keywords, product);
 		}
@@ -196,7 +196,7 @@ public enum BasicColumn implements JonixColumn
 	PriceAmount(new String[] { "PriceType", "PriceAmount", "CurrencyCode" }, 3)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractPrices(fieldData, RECOMMENDED_RETAIL_PRICES, product);
 		}
@@ -205,7 +205,7 @@ public enum BasicColumn implements JonixColumn
 	SalesAllowedIn("SalesAllowed", 3)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractSalesRights(fieldData, UNRESTRICTED_SALES_RIGHTS, product);
 		}
@@ -214,7 +214,7 @@ public enum BasicColumn implements JonixColumn
 	SalesBannedIn("SalesBanned", 3)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractSalesRights(fieldData, NO_SALES_RIGHTS, product);
 		}
@@ -223,7 +223,7 @@ public enum BasicColumn implements JonixColumn
 	Description(new String[] { "Description", "DescriptionFormat" }, 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractOtherText(fieldData, OtherTextTypes.Main_description, product);
 		}
@@ -232,7 +232,7 @@ public enum BasicColumn implements JonixColumn
 	ShortDescription(new String[] { "ShortDescription", "ShortDescriptionFormat" }, 1)
 	{
 		@Override
-		public boolean extractTo(String[] fieldData, BasicProduct product)
+		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
 			return extractOtherText(fieldData, OtherTextTypes.Short_description_annotation, product);
 		}
@@ -268,7 +268,7 @@ public enum BasicColumn implements JonixColumn
 
 	// //////////////////////////////////////////////////////////////////////////////////////////////
 
-	private static boolean extractProductId(String[] fieldData, ProductIdentifierTypes stdType, BasicProduct product)
+	private static boolean extractProductId(String[] fieldData, ProductIdentifierTypes stdType, BasicProduct2 product)
 	{
 		JonixProductIdentifier prodId = product.findProductId(stdType);
 		if (prodId != null)
@@ -279,7 +279,7 @@ public enum BasicColumn implements JonixColumn
 		return false;
 	}
 
-	private static boolean extractTitle(String[] fieldData, TitleTypes stdType, BasicProduct product)
+	private static boolean extractTitle(String[] fieldData, TitleTypes stdType, BasicProduct2 product)
 	{
 		JonixTitle title = product.findTitle(stdType);
 		if (title != null)
@@ -291,7 +291,7 @@ public enum BasicColumn implements JonixColumn
 		return false;
 	}
 
-	private static boolean extractLanguage(String[] fieldData, LanguageRoles stdType, BasicProduct product)
+	private static boolean extractLanguage(String[] fieldData, LanguageRoles stdType, BasicProduct2 product)
 	{
 		JonixLanguage language = product.findLanguage(stdType);
 		if (language != null)
@@ -302,7 +302,7 @@ public enum BasicColumn implements JonixColumn
 		return false;
 	}
 
-	private static boolean extractContributors(String[] fieldData, ContributorRoles stdRole, BasicProduct product)
+	private static boolean extractContributors(String[] fieldData, ContributorRoles stdRole, BasicProduct2 product)
 	{
 		List<Contributor> contributors = product.findContributors(stdRole);
 		int pos = 0;
@@ -318,7 +318,7 @@ public enum BasicColumn implements JonixColumn
 		return pos > 0;
 	}
 
-	private static boolean extractSubjects(String[] fieldData, SubjectSchemeIdentifiers stdScheme, BasicProduct product)
+	private static boolean extractSubjects(String[] fieldData, SubjectSchemeIdentifiers stdScheme, BasicProduct2 product)
 	{
 		List<Subject> subjects = product.findSubjects(stdScheme);
 		int pos = 0;
@@ -331,7 +331,7 @@ public enum BasicColumn implements JonixColumn
 		return pos > 0;
 	}
 
-	private static boolean extractPrices(String[] fieldData, Set<PriceTypes> stdTypes, BasicProduct product)
+	private static boolean extractPrices(String[] fieldData, Set<PriceTypes> stdTypes, BasicProduct2 product)
 	{
 		List<Price> prices = product.findPrices(stdTypes);
 		int pos = 0;
@@ -347,7 +347,7 @@ public enum BasicColumn implements JonixColumn
 		return pos > 0;
 	}
 
-	private static boolean extractSalesRights(String[] fieldData, Set<SalesRightsTypes> stdTypes, BasicProduct product)
+	private static boolean extractSalesRights(String[] fieldData, Set<SalesRightsTypes> stdTypes, BasicProduct2 product)
 	{
 		List<SalesRights> salesRightss = product.findSalesRightss(stdTypes);
 		int pos = 0;
@@ -371,7 +371,7 @@ public enum BasicColumn implements JonixColumn
 		return pos > 0;
 	}
 
-	private static boolean extractOtherText(String[] fieldData, OtherTextTypes stdType, BasicProduct product)
+	private static boolean extractOtherText(String[] fieldData, OtherTextTypes stdType, BasicProduct2 product)
 	{
 		OtherText otherText = product.findOtherText(stdType);
 		if (otherText != null)
