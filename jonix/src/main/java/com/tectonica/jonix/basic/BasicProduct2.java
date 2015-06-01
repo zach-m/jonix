@@ -21,7 +21,9 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.tectonica.jonix.JPU;
@@ -30,6 +32,7 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTypes;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
@@ -42,7 +45,6 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Audience;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.Imprint;
-import com.tectonica.jonix.composite.MainSubject;
 import com.tectonica.jonix.composite.OtherText;
 import com.tectonica.jonix.composite.Price;
 import com.tectonica.jonix.composite.Publisher;
@@ -50,6 +52,7 @@ import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Series;
 import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.composite.SupplyDetail;
+import com.tectonica.jonix.onix2.CityOfPublication;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
@@ -62,8 +65,6 @@ public class BasicProduct2 implements Serializable
 	public final String cityOfPublication;
 	public final String publicationDate;
 	public final String numberOfPages;
-	public final String bisacMainSubject;
-	public final String bicMainSubject;
 
 	public final NotificationOrUpdateTypes notificationType;
 	public final ProductForms productForm;
@@ -77,8 +78,7 @@ public class BasicProduct2 implements Serializable
 	public final List<Contributor> contributors;
 	public final List<Series> seriess;
 //	public final List<Language> languages;
-	public final List<MainSubject> mainSubjects;
-	public final List<Subject> subjects;
+	public final Map<SubjectSchemeIdentifiers, List<Subject>> subjects;
 	public final List<Audience> audiences;
 	public final List<OtherText> otherTexts;
 	public final List<Publisher> publishers;
@@ -91,21 +91,19 @@ public class BasicProduct2 implements Serializable
 	public BasicProduct2(com.tectonica.jonix.onix2.Product product)
 	{
 		this.product = product;
-		
+
 		// singles
 		recordReference = product.getRecordReferenceValue();
 		editionNumber = JPU.convertStringToInteger(product.getEditionNumberValue());
 		publicationDate = product.getPublicationDateValue();
 		numberOfPages = product.getNumberOfPagesValue();
-		bisacMainSubject = product.getBASICMainSubjectValue();
-		bicMainSubject = product.getBICMainSubjectValue();
 		notificationType = product.getNotificationTypeValue();
 		productForm = product.getProductFormValue();
 		epubType = product.getEpubTypeValue();
 		countryOfPublication = product.getCountryOfPublicationValue();
 
 		// retrieve first values
-		cityOfPublication = (product.cityOfPublications == null) ? null : product.cityOfPublications.get(0).value;
+		cityOfPublication = findCityOfPublication(LanguageCodeIso6392Bs.English);
 		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
 
 		// composites
@@ -115,7 +113,6 @@ public class BasicProduct2 implements Serializable
 		contributors = Contributor.listFrom(product); // TODO: use intf
 		seriess = Series.listFrom(product); // onix2-only
 //		languages = Language.listFrom(product);
-		mainSubjects = MainSubject.listFrom(product); // ?
 		subjects = Subject.listFrom(product); // TODO: use struct
 		audiences = Audience.listFrom(product); // TODO: use struct
 		otherTexts = OtherText.listFrom(product); // TODO: use struct - although not complete
@@ -170,30 +167,10 @@ public class BasicProduct2 implements Serializable
 
 	public List<Subject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
 	{
-		List<Subject> matches = new ArrayList<Subject>();
-
-		if (requestedScheme == SubjectSchemeIdentifiers.BISAC_Subject_Heading)
-		{
-			if (bisacMainSubject != null && !bisacMainSubject.isEmpty())
-				matches.add(new Subject(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null));
-		}
-		else if (requestedScheme == SubjectSchemeIdentifiers.BIC_subject_category)
-		{
-			if (bicMainSubject != null && !bicMainSubject.isEmpty())
-				matches.add(new Subject(SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null));
-		}
-
-		for (MainSubject subject : mainSubjects)
-		{
-			if (subject.mainSubjectSchemeIdentifier.value.equals(requestedScheme.value))
-				matches.add(new Subject(requestedScheme, subject.subjectCode, subject.subjectHeadingText));
-		}
-		for (Subject subject : subjects)
-		{
-			if (subject.subjectSchemeIdentifier == requestedScheme)
-				matches.add(subject);
-		}
-		return matches;
+		List<Subject> list = subjects.get(requestedScheme);
+		if (list == null)
+			return Collections.emptyList();
+		return list;
 	}
 
 	public OtherText findOtherText(OtherTextTypes requestedType)
@@ -231,5 +208,19 @@ public class BasicProduct2 implements Serializable
 				matches.add(salesRights);
 		}
 		return matches;
+	}
+
+	public String findCityOfPublication(LanguageCodeIso6392Bs preferredLanguage)
+	{
+		if (product.cityOfPublications != null)
+		{
+			for (CityOfPublication cop : product.cityOfPublications)
+			{
+				if (cop.language == null || cop.language == preferredLanguage)
+					return cop.value;
+			}
+			return product.cityOfPublications.get(0).value; // return whatever language we have
+		}
+		return null;
 	}
 }

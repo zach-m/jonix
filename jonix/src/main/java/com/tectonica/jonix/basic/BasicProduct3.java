@@ -21,7 +21,9 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.tectonica.jonix.JonixColumn;
@@ -30,11 +32,11 @@ import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.ExtentTypes;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
-import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
@@ -44,7 +46,6 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Audience;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.Imprint;
-import com.tectonica.jonix.composite.MainSubject;
 import com.tectonica.jonix.composite.OtherText;
 import com.tectonica.jonix.composite.Price;
 import com.tectonica.jonix.composite.Publisher;
@@ -52,6 +53,7 @@ import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Series;
 import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.composite.SupplyDetail;
+import com.tectonica.jonix.onix3.CityOfPublication;
 import com.tectonica.jonix.onix3.CollateralDetail;
 import com.tectonica.jonix.onix3.ContentDetail;
 import com.tectonica.jonix.onix3.DescriptiveDetail;
@@ -70,23 +72,20 @@ public class BasicProduct3 implements Serializable
 	public final String cityOfPublication;
 	public final String publicationDate;
 	public final String numberOfPages;
-	public final String bisacMainSubject;
-	public final String bicMainSubject;
 
 	public final NotificationOrUpdateTypes notificationType;
-	public final ProductFormsList150 productForm; // compared to 'ProductForms' in Onix 2 
+	public final ProductFormsList150 productForm; // compared to 'ProductForms' in Onix 2
 	public final EpublicationTypes epubType;
 	public final EditionTypes editionType;
 	public final CountryCodeIso31661s countryOfPublication;
 
 //	public final List<ProductIdentifier> productIdentifiers;
 //	public final List<Title> titles;
-	public final List<JonixTitle> titles;
+	public final List<JonixTitle> titles; // TODO: why are these JonicTitle and not Title ?? code repeats in Onix3Utils
 	public final List<Contributor> contributors;
 	public final List<Series> seriess;
 //	public final List<Language> languages;
-	public final List<MainSubject> mainSubjects;
-	public final List<Subject> subjects;
+	public final Map<SubjectSchemeIdentifiers, List<Subject>> subjects;
 	public final List<Audience> audiences;
 	public final List<OtherText> otherTexts;
 	public final List<Publisher> publishers;
@@ -113,34 +112,27 @@ public class BasicProduct3 implements Serializable
 		editionNumber = d.getEditionNumberValue();
 		publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
 		numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
-		
-		for (com.tectonica.jonix.onix3.Subject s : d.subjects)
-		{
-			boolean isMain = s.isMainSubject();
-			SubjectSchemeIdentifiers scheme = s.getSubjectSchemeIdentifierValue();
-			if (scheme == SubjectSchemeIdentifiers.BISAC_Subject_Heading)
-				bisacMainSubject = s.getSubjectCodeValue();
-			else if (scheme == SubjectSchemeIdentifiers.BIC_subject_category)
-				bicMainSubject = s.getSubjectCodeValue();
-		}
-		
+
 		notificationType = product.getNotificationTypeValue();
 		productForm = d.getProductFormValue();
-		epubType = product.getEpubTypeValue();
-		countryOfPublication = product.getCountryOfPublicationValue();
+		epubType = null; // TODO: couldn't find in ONIX3 anything like product.getEpubTypeValue();
+		countryOfPublication = p.getCountryOfPublicationValue();
+
+//		p.getCityOfPublicationValues();
 
 		// retrieve first values
-		cityOfPublication = (product.cityOfPublications == null) ? null : product.cityOfPublications.get(0).value;
-		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
+		cityOfPublication = findCityOfPublication(LanguageCodeIso6392Bs.English);
+		List<EditionTypes> editionTypes = d.getEditionTypeValues();
+		editionType = (editionTypes == null) ? null : editionTypes.get(0);
 
 		// composites
 //		productIdentifiers = ProductIdentifier.listFrom(product);
 //		titles = Title.listFrom(product);
-		titles = product.findTitles(null); // null = find-all
+		
+		titles = Onix3Util.findTitles(product.descriptiveDetail.titleDetails, null); // null = find-all
 		contributors = Contributor.listFrom(product); // TODO: use intf
 		seriess = Series.listFrom(product); // onix2-only
 //		languages = Language.listFrom(product);
-		mainSubjects = MainSubject.listFrom(product); // ?
 		subjects = Subject.listFrom(product); // TODO: use struct
 		audiences = Audience.listFrom(product); // TODO: use struct
 		otherTexts = OtherText.listFrom(product); // TODO: use struct - although not complete
@@ -174,7 +166,7 @@ public class BasicProduct3 implements Serializable
 
 	public JonixTitle findTitle(TitleTypes requestedType)
 	{
-		return product.findTitle(requestedType);
+		return Onix3Util.findTitle(product.descriptiveDetail.titleDetails, requestedType);
 	}
 
 	public List<Contributor> findContributors(ContributorRoles requestedRole)
@@ -195,30 +187,10 @@ public class BasicProduct3 implements Serializable
 
 	public List<Subject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
 	{
-		List<Subject> matches = new ArrayList<Subject>();
-
-		if (requestedScheme == SubjectSchemeIdentifiers.BISAC_Subject_Heading)
-		{
-			if (bisacMainSubject != null && !bisacMainSubject.isEmpty())
-				matches.add(new Subject(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null));
-		}
-		else if (requestedScheme == SubjectSchemeIdentifiers.BIC_subject_category)
-		{
-			if (bicMainSubject != null && !bicMainSubject.isEmpty())
-				matches.add(new Subject(SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null));
-		}
-
-		for (MainSubject subject : mainSubjects)
-		{
-			if (subject.mainSubjectSchemeIdentifier.value.equals(requestedScheme.value))
-				matches.add(new Subject(requestedScheme, subject.subjectCode, subject.subjectHeadingText));
-		}
-		for (Subject subject : subjects)
-		{
-			if (subject.subjectSchemeIdentifier == requestedScheme)
-				matches.add(subject);
-		}
-		return matches;
+		List<Subject> list = subjects.get(requestedScheme);
+		if (list == null)
+			return Collections.emptyList();
+		return list;
 	}
 
 	public OtherText findOtherText(OtherTextTypes requestedType)
@@ -256,5 +228,19 @@ public class BasicProduct3 implements Serializable
 				matches.add(salesRights);
 		}
 		return matches;
+	}
+
+	public String findCityOfPublication(LanguageCodeIso6392Bs preferredLanguage)
+	{
+		if (product.publishingDetail.cityOfPublications != null)
+		{
+			for (CityOfPublication cop : product.publishingDetail.cityOfPublications)
+			{
+				if (cop.language == null || cop.language == preferredLanguage)
+					return cop.value;
+			}
+			return product.publishingDetail.cityOfPublications.get(0).value; // return whatever language we have
+		}
+		return null;
 	}
 }

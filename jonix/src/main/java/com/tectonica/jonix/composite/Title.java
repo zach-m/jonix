@@ -25,6 +25,8 @@ import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.onix3.TitleDetail;
+import com.tectonica.jonix.onix3.TitleElement;
 
 @SuppressWarnings("serial")
 public class Title implements Serializable
@@ -53,15 +55,15 @@ public class Title implements Serializable
 
 	public static List<Title> listFrom(com.tectonica.jonix.onix2.Product product)
 	{
-		return listFrom(product.titles);
+		return listFrom2(product.titles);
 	}
 
 	public static List<Title> listFrom(com.tectonica.jonix.onix2.Series series)
 	{
-		return listFrom(series.titles);
+		return listFrom2(series.titles);
 	}
 
-	private static List<Title> listFrom(final List<com.tectonica.jonix.onix2.Title> titles)
+	private static List<Title> listFrom2(final List<com.tectonica.jonix.onix2.Title> titles)
 	{
 		if (titles != null)
 		{
@@ -69,6 +71,32 @@ public class Title implements Serializable
 			for (com.tectonica.jonix.onix2.Title i : titles)
 				result.add(new Title(i.getTitleTypeValue(), noBreaks(i.getTitleTextValue()), noBreaks(i
 						.getTitleWithoutPrefixValue()), noBreaks(i.getSubtitleValue())));
+			return result;
+		}
+		return Collections.emptyList();
+	}
+
+	public static List<Title> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		return listFrom3(product.descriptiveDetail.titleDetails);
+	}
+
+	public static List<Title> listFrom(com.tectonica.jonix.onix3.Collection collection)
+	{
+		return listFrom3(collection.titleDetails);
+	}
+
+	private static List<Title> listFrom3(final List<com.tectonica.jonix.onix3.TitleDetail> titles)
+	{
+		if (titles != null)
+		{
+			List<Title> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix3.TitleDetail title : titles)
+			{
+				TitleElement titleElement = title.titleElements.get(0); // at least 1 is mandatory
+				result.add(new Title(title.getTitleTypeValue(), noBreaks(titleElement.getTitleTextValue()),
+						noBreaks(titleElement.getTitleWithoutPrefixValue()), noBreaks(titleElement.getSubtitleValue())));
+			}
 			return result;
 		}
 		return Collections.emptyList();

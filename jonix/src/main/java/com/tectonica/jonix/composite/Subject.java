@@ -21,9 +21,12 @@ package com.tectonica.jonix.composite;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.tectonica.jonix.basic.Onix3Util;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
 @SuppressWarnings("serial")
@@ -48,16 +51,56 @@ public class Subject implements Serializable
 				subjectHeadingText);
 	}
 
-	public static List<Subject> listFrom(com.tectonica.jonix.onix2.Product product)
+	private static void add(Map<SubjectSchemeIdentifiers, List<Subject>> map, SubjectSchemeIdentifiers type,
+			String subjectCode, String subjectHeadingText)
 	{
+		add(map, type, subjectCode, subjectHeadingText, false);
+	}
+
+	private static void add(Map<SubjectSchemeIdentifiers, List<Subject>> map, SubjectSchemeIdentifiers type,
+			String subjectCode, String subjectHeadingText, boolean isMain)
+	{
+		List<Subject> subjects = map.get(type);
+		if (subjects == null)
+			map.put(type, subjects = new ArrayList<Subject>());
+		Subject subject = new Subject(type, subjectCode, subjectHeadingText);
+		if (isMain)
+			subjects.add(0, subject);
+		else
+			subjects.add(subject);
+	}
+
+	public static Map<SubjectSchemeIdentifiers, List<Subject>> listFrom(com.tectonica.jonix.onix2.Product product)
+	{
+		Map<SubjectSchemeIdentifiers, List<Subject>> map = new HashMap<>();
+
+		String bisacMainSubject = product.getBASICMainSubjectValue();
+		if (bisacMainSubject != null)
+			add(map, SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null);
+
+		String bicMainSubject = product.getBICMainSubjectValue();
+		if (bicMainSubject != null)
+			add(map, SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null);
+
 		if (product.subjects != null)
 		{
-			List<Subject> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.Subject i : product.subjects)
-				result.add(new Subject(i.getSubjectSchemeIdentifierValue(), i.getSubjectCodeValue(), i
-						.getSubjectHeadingTextValue()));
-			return result;
+			for (com.tectonica.jonix.onix2.Subject s : product.subjects)
+				add(map, s.getSubjectSchemeIdentifierValue(), s.getSubjectCodeValue(), s.getSubjectHeadingTextValue());
 		}
-		return Collections.emptyList();
+		return map;
+	}
+
+	public static Map<SubjectSchemeIdentifiers, List<Subject>> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		Map<SubjectSchemeIdentifiers, List<Subject>> map = new HashMap<>();
+		if (product.descriptiveDetail.subjects != null)
+		{
+			for (com.tectonica.jonix.onix3.Subject s : product.descriptiveDetail.subjects)
+			{
+				add(map, s.getSubjectSchemeIdentifierValue(), s.getSubjectCodeValue(),
+						Onix3Util.findSubjectHeadingText(s, LanguageCodeIso6392Bs.English), s.isMainSubject());
+			}
+		}
+		return map;
 	}
 }

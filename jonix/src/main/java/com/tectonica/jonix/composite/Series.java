@@ -68,4 +68,19 @@ public class Series implements Serializable
 		}
 		return Collections.emptyList();
 	}
+
+	public static List<Series> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		if (product.descriptiveDetail.collections != null)
+		{
+			List<Series> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix3.Collection i : product.descriptiveDetail.collections)
+			{
+				result.add(new Series(i.getTitleOfSeriesValue(), i.getSeriesISSNValue(), SeriesIdentifier.listFrom(i),
+						Title.listFrom(i), Contributor.listFrom(i)));
+			}
+			return result;
+		}
+		return Collections.emptyList();
+	}
 }
