@@ -56,4 +56,16 @@ public class Publisher implements Serializable
 		}
 		return Collections.emptyList();
 	}
+
+	public static List<Publisher> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		if (product.publishingDetail.publishers != null)
+		{
+			List<Publisher> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix3.Publisher i : product.publishingDetail.publishers)
+				result.add(new Publisher(i.getPublishingRoleValue(), i.getPublisherNameValue()));
+			return result;
+		}
+		return Collections.emptyList();
+	}
 }

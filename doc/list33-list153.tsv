@@ -1,0 +1,41 @@
+List 33	List 33 description	List 153	Notes
+00	Unspecified		No equivalent
+01	Main description	03	Combined with former 03 as “description, length unrestricted”
+02	Short description/annotation	02	Retained as is
+03	Long description	03	Combined with former 01 as “description, length unrestricted”
+04	Table of contents	04	Retained as is
+05	Review quote, restricted length		No equivalent
+06	Quote from review of previous edition	07	Retained as is, with clearer definition
+07	Review text		No equivalent: full text would be cited, not carried in the record
+08	Review quote	06	Retained as is, with clearer definition
+09	Promotional headline	10	Retained as is
+10	Previous review quote	08	Retained as is, with clearer definition
+11	Author comments		No equivalent: expected to be incorporated into a description, or into material offered as a Supporting Resource
+12	Description for reader	03	Audience to be specified separately: see new list 154, code 02
+13	Biographical note	12	Retained as is
+14	Description for Reading Group Guide		No equivalent: expected to be offered as a Supporting Resource
+15	Discussion question for Reading Group Guide		No equivalent: expected to be offered as a Supporting Resource
+16	Competing titles	03	Expected to be incorporated into a description for trade: see new list 154, code 02
+17	Flap copy	05	Combined as “flap/cover copy”
+18	Back cover copy	05	Combined as “flap/cover copy”
+19	Feature	11	Combined as “feature”
+20	New feature	11	Combined as “feature”
+21	Publisher's notice	13	Retained as is
+22	Index	15	(ADDED BY ZACH)
+23	Excerpt from book	14	Retained, for short excerpts
+24	First chapter		No equivalent: might be offered as a Supporting Resource
+25	Description for sales people	03	Audience to be specified separately: see new list 154, code 02
+26	Description for press or other media	03	Audience to be specified separately: see new list 154, code 07
+27	Description for subsidiary rights department		No equivalent: not relevant to any known ONIX application
+28	Description for teachers/educators	03	Audience to be specified separately: see new list 154, code 05
+30	Unpublished endorsement	09	Retained as is
+31	Description for bookstore	03	Audience to be specified separately: see new list 154, code 02
+32	Description for library	03	Audience to be specified separately: see new list 154, code 04
+33	Introduction or preface		No equivalent: might be offered as a Supporting Resource
+34	Full text		No equivalent: might be offered as a Supporting Resource
+35	Promotional text		No equivalent: almost all text carried here is “promotional”
+40	Author interview / Q&A		No equivalent: might be offered as a Supporting Resource
+41	Reading Group Guide		No equivalent: might be offered as a Supporting Resource
+42	Commentary / discussion		No equivalent: might be offered as a Supporting Resource 
+
+based on http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_10_Changes_for_3.0.pdf

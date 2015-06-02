@@ -25,7 +25,6 @@ import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.onix3.TitleDetail;
 import com.tectonica.jonix.onix3.TitleElement;
 
 @SuppressWarnings("serial")

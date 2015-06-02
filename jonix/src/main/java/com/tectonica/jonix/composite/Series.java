@@ -24,20 +24,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.tectonica.jonix.struct.JonixCollectionIdentifier;
+import com.tectonica.jonix.struct.JonixSeriesIdentifier;
+
 @SuppressWarnings("serial")
 public class Series implements Serializable
 {
-	public final String titleOfSeries;
-	public final String seriesISSN;
-	public final List<SeriesIdentifier> seriesIdentifiers;
+	public final String mainTitle;
+	public final List<JonixCollectionIdentifier> seriesIdentifiers;
 	public final List<Title> titles;
 	public final List<Contributor> contributors;
 
-	public Series(String titleOfSeries, String seriesISSN, List<SeriesIdentifier> seriesIdentifiers,
-			List<Title> titles, List<Contributor> contributors)
+	public Series(String mainTitle, List<JonixCollectionIdentifier> seriesIdentifiers, List<Title> titles,
+			List<Contributor> contributors)
 	{
-		this.titleOfSeries = titleOfSeries;
-		this.seriesISSN = seriesISSN;
+		this.mainTitle = mainTitle;
 		this.seriesIdentifiers = seriesIdentifiers;
 		this.titles = titles;
 		this.contributors = contributors;
@@ -47,13 +48,13 @@ public class Series implements Serializable
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
-		for (SeriesIdentifier seriesIdentifier : seriesIdentifiers)
-			sb.append("\n    ").append(seriesIdentifier.toString());
+		for (JonixCollectionIdentifier seriesIdentifier : seriesIdentifiers)
+			sb.append("\n    ").append(String.format("(%d) %d", seriesIdentifier.idTypeName, seriesIdentifier.idValue));
 		for (Title title : titles)
 			sb.append("\n    ").append(title.toString());
 		for (Contributor contributor : contributors)
 			sb.append("\n    ").append(contributor.toString());
-		return String.format("Series: %s (%s) %s", titleOfSeries, seriesISSN, sb.toString());
+		return String.format("Series: %s %s", mainTitle, sb.toString());
 	}
 
 	public static List<Series> listFrom(com.tectonica.jonix.onix2.Product product)
@@ -61,12 +62,34 @@ public class Series implements Serializable
 		if (product.seriess != null)
 		{
 			List<Series> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.Series i : product.seriess)
-				result.add(new Series(i.getTitleOfSeriesValue(), i.getSeriesISSNValue(), SeriesIdentifier.listFrom(i),
-						Title.listFrom(i), Contributor.listFrom(i)));
+			for (com.tectonica.jonix.onix2.Series c : product.seriess)
+			{
+				List<Title> titles = Title.listFrom(c);
+				String title = c.getTitleOfSeriesValue();
+				if (title == null)
+					title = titles.get(0).titleText;
+				result.add(new Series(title, sidsToCids(c.findSeriesIdentifiers(null)), titles, Contributor.listFrom(c)));
+			}
 			return result;
 		}
 		return Collections.emptyList();
+	}
+
+	private static List<JonixCollectionIdentifier> sidsToCids(List<JonixSeriesIdentifier> sids)
+	{
+		if (sids == null)
+			return null;
+
+		List<JonixCollectionIdentifier> result = new ArrayList<>();
+		for (JonixSeriesIdentifier sid : sids)
+		{
+			JonixCollectionIdentifier cid = new JonixCollectionIdentifier();
+			cid.collectionIDType = sid.seriesIDType;
+			cid.idTypeName = sid.idTypeName;
+			cid.idValue = sid.idValue;
+			result.add(cid);
+		}
+		return result;
 	}
 
 	public static List<Series> listFrom(com.tectonica.jonix.onix3.Product product)
@@ -74,10 +97,11 @@ public class Series implements Serializable
 		if (product.descriptiveDetail.collections != null)
 		{
 			List<Series> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix3.Collection i : product.descriptiveDetail.collections)
+			for (com.tectonica.jonix.onix3.Collection c : product.descriptiveDetail.collections)
 			{
-				result.add(new Series(i.getTitleOfSeriesValue(), i.getSeriesISSNValue(), SeriesIdentifier.listFrom(i),
-						Title.listFrom(i), Contributor.listFrom(i)));
+				List<Title> titles = Title.listFrom(c);
+				String title = titles.get(0).titleText;
+				result.add(new Series(title, c.findCollectionIdentifiers(null), titles, Contributor.listFrom(c)));
 			}
 			return result;
 		}

@@ -28,7 +28,6 @@ import java.util.Set;
 
 import com.tectonica.jonix.basic.Onix3Util;
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 
 @SuppressWarnings("serial")
 public class Contributor implements Serializable
@@ -124,7 +123,7 @@ public class Contributor implements Serializable
 			{
 				result.add(new Contributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
 						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), Onix3Util
-						.findBiographicalNote(c, LanguageCodeIso6392Bs.English)));
+						.pickBiographicalNote(c)));
 			}
 			return result;
 		}

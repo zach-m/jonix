@@ -21,6 +21,7 @@ package com.tectonica.jonix.composite;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -29,22 +30,38 @@ import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.RightsRegions;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
+import com.tectonica.jonix.onix3.Territory;
 
 @SuppressWarnings("serial")
 public class SalesRights implements Serializable
 {
 	public final SalesRightsTypes salesRightsType;
-	public final Set<Regions> rightsTerritory;
-	public final List<Set<CountryCodeIso31661s>> rightsCountries;
-	public final List<RightsRegions> rightsRegions;
+	public final List<Set<CountryCodeIso31661s>> countries;
+	public final Set<Regions> regions;
+	public final List<RightsRegions> rightRegions; // only in Onix2
+	public final Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
+	public final Set<Regions> regionsExcluded; // only in Onix3
 
-	public SalesRights(SalesRightsTypes salesRightsType, Set<Regions> rightsTerritory,
-			List<Set<CountryCodeIso31661s>> rightsCountries, List<RightsRegions> rightsRegions)
+	public SalesRights(SalesRightsTypes salesRightsType, List<Set<CountryCodeIso31661s>> countries,
+			Set<Regions> regions, List<RightsRegions> rightRegions)
 	{
 		this.salesRightsType = salesRightsType;
-		this.rightsTerritory = rightsTerritory;
-		this.rightsCountries = rightsCountries;
-		this.rightsRegions = rightsRegions;
+		this.countries = countries;
+		this.regions = regions;
+		this.rightRegions = rightRegions;
+		this.countriesExcluded = null;
+		this.regionsExcluded = null;
+	}
+
+	public SalesRights(SalesRightsTypes salesRightsType, Set<CountryCodeIso31661s> countries, Set<Regions> regions,
+			Set<CountryCodeIso31661s> countriesExcluded, Set<Regions> regionsExcluded)
+	{
+		this.salesRightsType = salesRightsType;
+		this.countries = Arrays.asList(countries);
+		this.regions = regions;
+		this.rightRegions = null;
+		this.countriesExcluded = countriesExcluded;
+		this.regionsExcluded = regionsExcluded;
 	}
 
 	@Override
@@ -53,12 +70,16 @@ public class SalesRights implements Serializable
 		StringBuilder sb = new StringBuilder();
 		String salesRightsTypeStr = (salesRightsType == null) ? null : salesRightsType.name();
 		sb.append("SalesRights [").append(salesRightsTypeStr).append("]:");
-		if (rightsTerritory != null)
-			sb.append("\n    > Territory: ").append(rightsTerritory.toString());
-		if (rightsCountries != null)
-			sb.append("\n    > Countries: ").append(rightsCountries.toString());
-		if (rightsRegions != null)
-			sb.append("\n    > Regions: ").append(rightsRegions.toString());
+		if (countries != null)
+			sb.append("\n    > Countries: ").append(countries.toString());
+		if (regions != null)
+			sb.append("\n    > Regions: ").append(regions.toString());
+		if (rightRegions != null)
+			sb.append("\n    > RightRegions: ").append(rightRegions.toString());
+		if (countriesExcluded != null)
+			sb.append("\n    > Countries-Excluded: ").append(countriesExcluded.toString());
+		if (regionsExcluded != null)
+			sb.append("\n    > Regions-Excluded: ").append(regionsExcluded.toString());
 		return sb.toString();
 	}
 
@@ -67,9 +88,26 @@ public class SalesRights implements Serializable
 		if (product.salesRightss != null)
 		{
 			List<SalesRights> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.SalesRights i : product.salesRightss)
-				result.add(new SalesRights(i.getSalesRightsTypeValue(), i.getRightsTerritorySet(), i
-						.getRightsCountrySets(), i.getRightsRegionValues()));
+			for (com.tectonica.jonix.onix2.SalesRights sri : product.salesRightss)
+				result.add(new SalesRights(sri.getSalesRightsTypeValue(), sri.getRightsCountrySets(), sri
+						.getRightsTerritorySet(), sri.getRightsRegionValues()));
+			return result;
+		}
+		return Collections.emptyList();
+	}
+
+	public static List<SalesRights> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		if (product.publishingDetail != null && product.publishingDetail.salesRightss != null)
+		{
+			List<SalesRights> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix3.SalesRights sr : product.publishingDetail.salesRightss)
+			{
+				Territory territory = sr.territory;
+				result.add(new SalesRights(sr.getSalesRightsTypeValue(), territory.countriesIncluded.value,
+						territory.regionsIncluded.value, territory.countriesExcluded.value,
+						territory.regionsExcluded.value));
+			}
 			return result;
 		}
 		return Collections.emptyList();

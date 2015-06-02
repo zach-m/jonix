@@ -35,15 +35,14 @@ import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
-import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.codelist.TextTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.composite.Audience;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.Imprint;
 import com.tectonica.jonix.composite.OtherText;
@@ -53,16 +52,15 @@ import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Series;
 import com.tectonica.jonix.composite.Subject;
 import com.tectonica.jonix.composite.SupplyDetail;
+import com.tectonica.jonix.composite.Title;
 import com.tectonica.jonix.onix3.CityOfPublication;
-import com.tectonica.jonix.onix3.CollateralDetail;
-import com.tectonica.jonix.onix3.ContentDetail;
 import com.tectonica.jonix.onix3.DescriptiveDetail;
 import com.tectonica.jonix.onix3.PublishingDetail;
+import com.tectonica.jonix.struct.JonixAudience;
 import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixPublishingDate;
-import com.tectonica.jonix.struct.JonixTitle;
 
 @SuppressWarnings("serial")
 public class BasicProduct3 implements Serializable
@@ -81,12 +79,12 @@ public class BasicProduct3 implements Serializable
 
 //	public final List<ProductIdentifier> productIdentifiers;
 //	public final List<Title> titles;
-	public final List<JonixTitle> titles; // TODO: why are these JonicTitle and not Title ?? code repeats in Onix3Utils
+	public final List<Title> titles;
 	public final List<Contributor> contributors;
 	public final List<Series> seriess;
 //	public final List<Language> languages;
 	public final Map<SubjectSchemeIdentifiers, List<Subject>> subjects;
-	public final List<Audience> audiences;
+	public final List<JonixAudience> audiences;
 	public final List<OtherText> otherTexts;
 	public final List<Publisher> publishers;
 	public final List<Imprint> imprints;
@@ -100,9 +98,7 @@ public class BasicProduct3 implements Serializable
 		this.product = product;
 
 		DescriptiveDetail d = product.descriptiveDetail;
-		CollateralDetail c = product.collateralDetail;
 		PublishingDetail p = product.publishingDetail;
-		ContentDetail content = product.contentDetail;
 
 		JonixPublishingDate jPublicationDate = p.findPublishingDate(PublishingDateRoles.Publication_date);
 		JonixExtent jNumberOfPages = d.findExtent(ExtentTypes.Main_content_page_count);
@@ -118,8 +114,6 @@ public class BasicProduct3 implements Serializable
 		epubType = null; // TODO: couldn't find in ONIX3 anything like product.getEpubTypeValue();
 		countryOfPublication = p.getCountryOfPublicationValue();
 
-//		p.getCityOfPublicationValues();
-
 		// retrieve first values
 		cityOfPublication = findCityOfPublication(LanguageCodeIso6392Bs.English);
 		List<EditionTypes> editionTypes = d.getEditionTypeValues();
@@ -127,18 +121,17 @@ public class BasicProduct3 implements Serializable
 
 		// composites
 //		productIdentifiers = ProductIdentifier.listFrom(product);
-//		titles = Title.listFrom(product);
-		
-		titles = Onix3Util.findTitles(product.descriptiveDetail.titleDetails, null); // null = find-all
-		contributors = Contributor.listFrom(product); // TODO: use intf
-		seriess = Series.listFrom(product); // onix2-only
+
+		titles = Title.listFrom(product);
+		contributors = Contributor.listFrom(product);
+		seriess = Series.listFrom(product); // series and collections are composites, not structs
 //		languages = Language.listFrom(product);
-		subjects = Subject.listFrom(product); // TODO: use struct
-		audiences = Audience.listFrom(product); // TODO: use struct
-		otherTexts = OtherText.listFrom(product); // TODO: use struct - although not complete
-		publishers = Publisher.listFrom(product); // TODO: use intf
-		imprints = Imprint.listFrom(product); // non-struct
-		supplyDetails = SupplyDetail.listFrom(product); // TODO: use intf
+		subjects = Subject.listFrom(product); // not struct due to Onix2's BASICMainSubject and BICMainSubject
+		audiences = product.descriptiveDetail.findAudiences(null);
+		otherTexts = OtherText.listFrom(product);
+		publishers = Publisher.listFrom(product);
+		imprints = Imprint.listFrom(product); // publishers are composites, not structs
+		supplyDetails = SupplyDetail.listFrom(product);
 		salesRightss = SalesRights.listFrom(product); // non-struct
 	}
 
@@ -164,9 +157,14 @@ public class BasicProduct3 implements Serializable
 		return product.findProductIdentifier(requestedType);
 	}
 
-	public JonixTitle findTitle(TitleTypes requestedType)
+	public Title findTitle(TitleTypes requestedType)
 	{
-		return Onix3Util.findTitle(product.descriptiveDetail.titleDetails, requestedType);
+		for (Title title : titles)
+		{
+			if (title.titleType == requestedType)
+				return title;
+		}
+		return null;
 	}
 
 	public List<Contributor> findContributors(ContributorRoles requestedRole)
@@ -182,7 +180,7 @@ public class BasicProduct3 implements Serializable
 
 	public JonixLanguage findLanguage(LanguageRoles requestedType)
 	{
-		return product.findLanguage(requestedType);
+		return product.descriptiveDetail.findLanguage(requestedType);
 	}
 
 	public List<Subject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
@@ -193,7 +191,7 @@ public class BasicProduct3 implements Serializable
 		return list;
 	}
 
-	public OtherText findOtherText(OtherTextTypes requestedType)
+	public OtherText findOtherText(TextTypes requestedType)
 	{
 		// we don't use product.findOtherText() because we need the 'textFormat' attribute, not just the value
 		for (OtherText otherText : otherTexts)

@@ -24,19 +24,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.codelist.SupplierRoles;
+import com.tectonica.jonix.onix3.ProductSupply;
 
 @SuppressWarnings("serial")
 public class SupplyDetail implements Serializable
 {
 	public final SupplierRoles supplierRole;
 	public final String supplierName;
-	public final AvailabilityStatuss availability;
+	public final String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys
 	public final List<Price> prices;
 
-	public SupplyDetail(SupplierRoles supplierRole, String supplierName, AvailabilityStatuss availability,
-			List<Price> prices)
+	public SupplyDetail(SupplierRoles supplierRole, String supplierName, String availability, List<Price> prices)
 	{
 		this.supplierRole = supplierRole;
 		this.supplierName = supplierName;
@@ -51,8 +50,7 @@ public class SupplyDetail implements Serializable
 		for (Price price : prices)
 			sb.append("\n    > ").append(price.toString());
 		String supplierRoleStr = (supplierRole == null) ? null : supplierRole.name();
-		String availabilityStr = (availability == null) ? null : availability.name();
-		return String.format("SupplyDetail [%s]: %s (%s) %s", supplierRoleStr, supplierName, availabilityStr,
+		return String.format("SupplyDetail [%s]: %s (%s) %s", supplierRoleStr, supplierName, availability,
 				sb.toString());
 	}
 
@@ -61,9 +59,25 @@ public class SupplyDetail implements Serializable
 		if (product.supplyDetails != null)
 		{
 			List<SupplyDetail> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.SupplyDetail i : product.supplyDetails)
-				result.add(new SupplyDetail(i.getSupplierRoleValue(), i.getSupplierNameValue(), i
-						.getAvailabilityCodeValue(), Price.listFrom(i)));
+			for (com.tectonica.jonix.onix2.SupplyDetail sd : product.supplyDetails)
+				result.add(new SupplyDetail(sd.getSupplierRoleValue(), sd.getSupplierNameValue(), sd
+						.getAvailabilityCodeValue().name(), Price.listFrom(sd)));
+			return result;
+		}
+		return Collections.emptyList();
+	}
+
+	public static List<SupplyDetail> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		if (product.productSupplys != null)
+		{
+			List<SupplyDetail> result = new ArrayList<>();
+			for (ProductSupply ps : product.productSupplys) // scanning all markets, maybe not good idea
+			{
+				for (com.tectonica.jonix.onix3.SupplyDetail sd : ps.supplyDetails)
+					result.add(new SupplyDetail(sd.supplier.getSupplierRoleValue(), sd.supplier.getSupplierNameValue(),
+							sd.getProductAvailabilityValue().name(), Price.listFrom(sd)));
+			}
 			return result;
 		}
 		return Collections.emptyList();

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.PriceTypes;
 
@@ -31,21 +32,23 @@ import com.tectonica.jonix.codelist.PriceTypes;
 public class Price implements Serializable
 {
 	public final PriceTypes priceType;
-	public final String priceAmount;
+	public final Double priceAmount;
+	public final String priceAmountAsStr;
 	public final CurrencyCodeIso4217s currencyCode;
 
-	public Price(PriceTypes priceType, String priceAmount, CurrencyCodeIso4217s currencyCode)
+	public Price(PriceTypes priceType, Double priceAmount, CurrencyCodeIso4217s currencyCode)
 	{
 		this.priceType = priceType;
 		this.priceAmount = priceAmount;
+		this.priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
 		this.currencyCode = currencyCode;
 	}
 
 	@Override
 	public String toString()
 	{
-		String prictTypeStr = (priceType == null) ? null : priceType.name();
-		return String.format("Price [%s]: %s %s", prictTypeStr, priceAmount, currencyCode.name());
+		String priceTypeAsStr = (priceType == null) ? "" : priceType.name();
+		return String.format("Price [%s]: %s %s", priceTypeAsStr, priceAmountAsStr, currencyCode.name());
 	}
 
 	public static List<Price> listFrom(com.tectonica.jonix.onix2.SupplyDetail supplyDetail)
@@ -54,7 +57,20 @@ public class Price implements Serializable
 		{
 			List<Price> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Price i : supplyDetail.prices)
-				result.add(new Price(i.getPriceTypeCodeValue(), i.getPriceAmountValue(), i.getCurrencyCodeValue()));
+				result.add(new Price(i.getPriceTypeCodeValue(), JPU.convertStringToDouble(i.getPriceAmountValue()), i
+						.getCurrencyCodeValue()));
+			return result;
+		}
+		return Collections.emptyList();
+	}
+
+	public static List<Price> listFrom(com.tectonica.jonix.onix3.SupplyDetail supplyDetail)
+	{
+		if (supplyDetail.prices != null)
+		{
+			List<Price> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix3.Price i : supplyDetail.prices)
+				result.add(new Price(i.getPriceTypeValue(), i.getPriceAmountValue(), i.getCurrencyCodeValue()));
 			return result;
 		}
 		return Collections.emptyList();

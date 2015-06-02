@@ -56,4 +56,21 @@ public class Imprint implements Serializable
 		}
 		return Collections.emptyList();
 	}
+
+	public static List<Imprint> listFrom(com.tectonica.jonix.onix3.Product product)
+	{
+		if (product.publishingDetail.imprints != null)
+		{
+			List<Imprint> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix3.Imprint i : product.publishingDetail.imprints)
+			{
+				// TODO: we should at least read one required field (unlike ImprintName)
+				final String imprintNameValue = i.getImprintNameValue();
+				if (imprintNameValue != null)
+					result.add(new Imprint(imprintNameValue));
+			}
+			return result;
+		}
+		return Collections.emptyList();
+	}
 }

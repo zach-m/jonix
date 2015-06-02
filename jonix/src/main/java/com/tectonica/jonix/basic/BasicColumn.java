@@ -28,21 +28,21 @@ import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageRoles;
-import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RightsRegions;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.codelist.TextTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.OtherText;
 import com.tectonica.jonix.composite.Price;
 import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Subject;
+import com.tectonica.jonix.composite.Title;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
-import com.tectonica.jonix.struct.JonixTitle;
 
 public enum BasicColumn implements JonixColumn
 {
@@ -71,7 +71,7 @@ public enum BasicColumn implements JonixColumn
 		{
 			if (product.seriess.size() > 0)
 			{
-				fieldData[0] = product.seriess.get(0).titleOfSeries;
+				fieldData[0] = product.seriess.get(0).mainTitle;
 				return true;
 			}
 			// NOTE: we should probably drill down to the 'titles' member of the series if 'titleOfSeries' is blank
@@ -225,7 +225,7 @@ public enum BasicColumn implements JonixColumn
 		@Override
 		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
-			return extractOtherText(fieldData, OtherTextTypes.Main_description, product);
+			return extractOtherText(fieldData, TextTypes.Description, product);
 		}
 	},
 
@@ -234,7 +234,7 @@ public enum BasicColumn implements JonixColumn
 		@Override
 		public boolean extractTo(String[] fieldData, BasicProduct2 product)
 		{
-			return extractOtherText(fieldData, OtherTextTypes.Short_description_annotation, product);
+			return extractOtherText(fieldData, TextTypes.Short_description_annotation, product);
 		}
 	};
 
@@ -281,7 +281,7 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractTitle(String[] fieldData, TitleTypes stdType, BasicProduct2 product)
 	{
-		JonixTitle title = product.findTitle(stdType);
+		Title title = product.findTitle(stdType);
 		if (title != null)
 		{
 			fieldData[0] = title.titleText;
@@ -338,7 +338,7 @@ public enum BasicColumn implements JonixColumn
 		for (Price price : prices)
 		{
 			fieldData[pos + 0] = price.priceType.name();
-			fieldData[pos + 1] = price.priceAmount;
+			fieldData[pos + 1] = price.priceAmountAsStr;
 			fieldData[pos + 2] = price.currencyCode.name();
 			pos += 3;
 			if (pos >= fieldData.length)
@@ -354,15 +354,15 @@ public enum BasicColumn implements JonixColumn
 		for (SalesRights salesRights : salesRightss)
 		{
 			StringBuffer sb = new StringBuffer();
-			if (salesRights.rightsTerritory != null)
-				sb.append(salesRights.rightsTerritory).append("#");
+			if (salesRights.regions != null)
+				sb.append(salesRights.regions).append("#");
 			sb.append("|");
-			if (salesRights.rightsCountries != null)
-				for (Set<CountryCodeIso31661s> cc : salesRights.rightsCountries)
+			if (salesRights.countries != null)
+				for (Set<CountryCodeIso31661s> cc : salesRights.countries)
 					sb.append(cc).append(";");
 			sb.append("|");
-			if (salesRights.rightsRegions != null)
-				for (RightsRegions rr : salesRights.rightsRegions)
+			if (salesRights.rightRegions != null)
+				for (RightsRegions rr : salesRights.rightRegions)
 					sb.append(rr.name()).append(",");
 			fieldData[0] = sb.toString(); // .toUpperCase();
 			if (++pos == fieldData.length)
@@ -371,7 +371,7 @@ public enum BasicColumn implements JonixColumn
 		return pos > 0;
 	}
 
-	private static boolean extractOtherText(String[] fieldData, OtherTextTypes stdType, BasicProduct2 product)
+	private static boolean extractOtherText(String[] fieldData, TextTypes stdType, BasicProduct2 product)
 	{
 		OtherText otherText = product.findOtherText(stdType);
 		if (otherText != null)
