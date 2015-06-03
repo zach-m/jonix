@@ -32,9 +32,9 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import com.tectonica.jonix.basic.BasicHeader;
+import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.basic.BasicProduct2;
 import com.tectonica.jonix.basic.BasicProduct3;
-import com.tectonica.jonix.onix2.Header;
-import com.tectonica.jonix.onix3.Product;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class JonixParser
@@ -43,7 +43,7 @@ public class JonixParser
 	{
 		public void onHeader(BasicHeader header);
 
-		public void onProduct(BasicProduct3 product, int index);
+		public void onProduct(BasicProduct product, int index);
 	}
 
 	private JonixParserListener jonixParserListener;
@@ -70,6 +70,8 @@ public class JonixParser
 			XmlChunker.parse(new BOMInputStream(source), 2, new XmlChunker.Listener()
 			{
 				private int productCount = 0;
+				boolean isOnix2 = false;
+				boolean isOnix3 = false;
 
 				@Override
 				public void onTarget(Element element)
@@ -77,12 +79,24 @@ public class JonixParser
 					final String nodeName = element.getNodeName();
 					if (nodeName.equalsIgnoreCase("Product"))
 					{
-						BasicProduct3 product = new BasicProduct3(new Product(element));
+						final BasicProduct product;
+						if (isOnix2)
+							product = new BasicProduct2(new com.tectonica.jonix.onix2.Product(element));
+						else if (isOnix3)
+							product = new BasicProduct3(new com.tectonica.jonix.onix3.Product(element));
+						else
+							throw new RuntimeException("Couldn't determine the ONIX version of the file");
 						jonixParserListener.onProduct(product, ++productCount);
 					}
 					else if (nodeName.equalsIgnoreCase("Header"))
 					{
-						BasicHeader header = new BasicHeader(new Header(element));
+						final BasicHeader header;
+						if (isOnix2)
+							header = new BasicHeader(new com.tectonica.jonix.onix2.Header(element));
+						else if (isOnix3)
+							header = new BasicHeader(new com.tectonica.jonix.onix3.Header(element));
+						else
+							throw new RuntimeException("Couldn't determine the ONIX version of the file");
 						jonixParserListener.onHeader(header);
 					}
 				}
@@ -93,8 +107,8 @@ public class JonixParser
 					if (!element.getName().getLocalPart().equalsIgnoreCase("ONIXMessage"))
 						throw new RuntimeException("file doesn't start with the mandatory <ONIXMessage> tag");
 					final Attribute release = element.getAttributeByName(new QName("release"));
-					boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
-					boolean isOnix3 = (release != null && release.getValue().startsWith("3"));
+					isOnix2 = (release == null || release.getValue().startsWith("2"));
+					isOnix3 = (release != null && release.getValue().startsWith("3"));
 					if (!isOnix2 && !isOnix3)
 						throw new RuntimeException("file doesn't comply with neither Onix2 nor Onix3");
 				}

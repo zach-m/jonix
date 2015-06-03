@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.basic.BasicProduct3;
+import com.tectonica.jonix.basic.BasicProduct;
 
 public interface JonixColumn
 {
@@ -27,5 +27,5 @@ public interface JonixColumn
 
 	String[] getSubColumnNames();
 
-	boolean extractTo(String[] fieldData, BasicProduct3 product);
+	boolean extractTo(String[] fieldData, BasicProduct product);
 }

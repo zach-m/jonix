@@ -20,6 +20,11 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.tectonica.jonix.onix3.Addressee;
 
 @SuppressWarnings("serial")
 public class BasicHeader implements Serializable
@@ -27,7 +32,7 @@ public class BasicHeader implements Serializable
 	public final String fromCompany;
 	public final String fromPerson;
 	public final String fromEmail;
-	public final String toCompany;
+	public final List<String> toCompanies;
 	public final String sentDate;
 
 	public BasicHeader(com.tectonica.jonix.onix2.Header header)
@@ -35,8 +40,33 @@ public class BasicHeader implements Serializable
 		fromCompany = header.getFromCompanyValue();
 		fromPerson = header.getFromPersonValue();
 		fromEmail = header.getFromEmailValue();
-		toCompany = header.getToCompanyValue();
+		String toCompany = header.getToCompanyValue();
+		toCompanies = (toCompany == null) ? null : Arrays.asList(toCompany);
 		sentDate = header.getSentDateValue();
+	}
+
+	public BasicHeader(com.tectonica.jonix.onix3.Header header)
+	{
+		fromCompany = header.sender.getSenderNameValue();
+		fromPerson = header.sender.getContactNameValue();
+		fromEmail = header.sender.getEmailAddressValue();
+		toCompanies = extractToCompanies(header);
+		sentDate = header.getSentDateTimeValue();
+	}
+
+	private List<String> extractToCompanies(com.tectonica.jonix.onix3.Header header)
+	{
+		List<String> list = new ArrayList<>();
+		if (header.addressees != null)
+		{
+			for (Addressee addressee : header.addressees)
+			{
+				String toCompany = addressee.getAddresseeNameValue();
+				if (toCompany != null)
+					list.add(toCompany);
+			}
+		}
+		return list.size() > 0 ? list : null;
 	}
 
 	@Override
@@ -49,8 +79,8 @@ public class BasicHeader implements Serializable
 			sb.append("FromPerson:  ").append(fromPerson).append("\n");
 		if (fromEmail != null)
 			sb.append("FromEmail:   ").append(fromEmail).append("\n");
-		if (toCompany != null)
-			sb.append("ToCompany:   ").append(toCompany).append("\n");
+		if (toCompanies != null)
+			sb.append("ToCompany:   ").append(toCompanies).append("\n");
 		if (sentDate != null)
 			sb.append("SentDate:    ").append(sentDate);
 		return sb.toString();

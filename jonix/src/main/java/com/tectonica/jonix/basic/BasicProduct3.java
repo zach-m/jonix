@@ -19,34 +19,18 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-import com.tectonica.jonix.JonixColumn;
-import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
-import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
-import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
-import com.tectonica.jonix.codelist.TextTypes;
-import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.composite.Contributor;
 import com.tectonica.jonix.composite.Imprint;
 import com.tectonica.jonix.composite.OtherText;
-import com.tectonica.jonix.composite.Price;
 import com.tectonica.jonix.composite.Publisher;
 import com.tectonica.jonix.composite.SalesRights;
 import com.tectonica.jonix.composite.Series;
@@ -56,78 +40,49 @@ import com.tectonica.jonix.composite.Title;
 import com.tectonica.jonix.onix3.CityOfPublication;
 import com.tectonica.jonix.onix3.DescriptiveDetail;
 import com.tectonica.jonix.onix3.PublishingDetail;
-import com.tectonica.jonix.struct.JonixAudience;
 import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixPublishingDate;
 
 @SuppressWarnings("serial")
-public class BasicProduct3 implements Serializable
+public class BasicProduct3 extends BasicProduct
 {
-	public final String recordReference;
-	public final Integer editionNumber;
-	public final String cityOfPublication;
-	public final String publicationDate;
-	public final String numberOfPages;
-
-	public final NotificationOrUpdateTypes notificationType;
-	public final ProductFormsList150 productForm; // compared to 'ProductForms' in Onix 2
-	public final EpublicationTypes epubType;
-	public final EditionTypes editionType;
-	public final CountryCodeIso31661s countryOfPublication;
-
-//	public final List<ProductIdentifier> productIdentifiers;
-//	public final List<Title> titles;
-	public final List<Title> titles;
-	public final List<Contributor> contributors;
-	public final List<Series> seriess;
-//	public final List<Language> languages;
-	public final Map<SubjectSchemeIdentifiers, List<Subject>> subjects;
-	public final List<JonixAudience> audiences;
-	public final List<OtherText> otherTexts;
-	public final List<Publisher> publishers;
-	public final List<Imprint> imprints;
-	public final List<SupplyDetail> supplyDetails;
-	public final List<SalesRights> salesRightss;
-
 	public final com.tectonica.jonix.onix3.Product product;
 
 	public BasicProduct3(com.tectonica.jonix.onix3.Product product)
 	{
 		this.product = product;
 
-		DescriptiveDetail d = product.descriptiveDetail;
-		PublishingDetail p = product.publishingDetail;
-
-		JonixPublishingDate jPublicationDate = p.findPublishingDate(PublishingDateRoles.Publication_date);
-		JonixExtent jNumberOfPages = d.findExtent(ExtentTypes.Main_content_page_count);
-
-		// singles
 		recordReference = product.getRecordReferenceValue();
-		editionNumber = d.getEditionNumberValue();
-		publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
-		numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
-
 		notificationType = product.getNotificationTypeValue();
-		productForm = d.getProductFormValue();
-		epubType = null; // TODO: couldn't find in ONIX3 anything like product.getEpubTypeValue();
-		countryOfPublication = p.getCountryOfPublicationValue();
 
-		// retrieve first values
-		cityOfPublication = findCityOfPublication(LanguageCodeIso6392Bs.English);
-		List<EditionTypes> editionTypes = d.getEditionTypeValues();
-		editionType = (editionTypes == null) ? null : editionTypes.get(0);
+		DescriptiveDetail dd = product.descriptiveDetail;
+		if (dd != null)
+		{
+			List<EditionTypes> editionTypes = dd.getEditionTypeValues();
+			editionType = (editionTypes == null) ? null : editionTypes.get(0);
+			editionNumber = dd.getEditionNumberValue();
+			ProductFormsList150 productFormValue = dd.getProductFormValue();
+			productForm = (productFormValue == null) ? null : productFormValue.name();
+			audiences = dd.findAudiences(null);
+		}
 
-		// composites
-//		productIdentifiers = ProductIdentifier.listFrom(product);
+		PublishingDetail pd = product.publishingDetail;
+		if (pd != null)
+		{
+			JonixPublishingDate jPublicationDate = pd.findPublishingDate(PublishingDateRoles.Publication_date);
+			publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
+			countryOfPublication = pd.getCountryOfPublicationValue();
+			cityOfPublication = findCityOfPublication(LanguageCodeIso6392Bs.English);
+			JonixExtent jNumberOfPages = dd.findExtent(ExtentTypes.Main_content_page_count);
+			numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
+		}
 
 		titles = Title.listFrom(product);
 		contributors = Contributor.listFrom(product);
 		seriess = Series.listFrom(product); // series and collections are composites, not structs
-//		languages = Language.listFrom(product);
 		subjects = Subject.listFrom(product); // not struct due to Onix2's BASICMainSubject and BICMainSubject
-		audiences = product.descriptiveDetail.findAudiences(null);
 		otherTexts = OtherText.listFrom(product);
 		publishers = Publisher.listFrom(product);
 		imprints = Imprint.listFrom(product); // publishers are composites, not structs
@@ -135,110 +90,42 @@ public class BasicProduct3 implements Serializable
 		salesRightss = SalesRights.listFrom(product); // non-struct
 	}
 
-	public String getLabel()
+	@Override
+	public Object getProductObject()
 	{
-		return (titles.size() > 0) ? titles.get(0).titleText : recordReference;
+		return product;
 	}
 
-	public static JonixColumn[] getDefaultColumns()
-	{
-		return BasicColumn.all;
-	}
-
-	public static JonixColumn getDefaultIdColumn()
-	{
-		return BasicColumn.ISBN13;
-	}
-
-	// LOOKUP CONVENIENCE SERVICES
-
+	@Override
 	public JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType)
 	{
 		return product.findProductIdentifier(requestedType);
 	}
 
-	public Title findTitle(TitleTypes requestedType)
-	{
-		for (Title title : titles)
-		{
-			if (title.titleType == requestedType)
-				return title;
-		}
-		return null;
-	}
-
-	public List<Contributor> findContributors(ContributorRoles requestedRole)
-	{
-		List<Contributor> matches = new ArrayList<Contributor>();
-		for (Contributor contributor : contributors)
-		{
-			if (contributor.contributorRoles.contains(requestedRole))
-				matches.add(contributor);
-		}
-		return matches;
-	}
-
+	@Override
 	public JonixLanguage findLanguage(LanguageRoles requestedType)
 	{
+		if (product.descriptiveDetail == null)
+			return null;
+
 		return product.descriptiveDetail.findLanguage(requestedType);
 	}
 
-	public List<Subject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
-	{
-		List<Subject> list = subjects.get(requestedScheme);
-		if (list == null)
-			return Collections.emptyList();
-		return list;
-	}
-
-	public OtherText findOtherText(TextTypes requestedType)
-	{
-		// we don't use product.findOtherText() because we need the 'textFormat' attribute, not just the value
-		for (OtherText otherText : otherTexts)
-		{
-			if (otherText.textType == requestedType)
-				return otherText;
-		}
-		return null;
-	}
-
-	public List<Price> findPrices(Set<PriceTypes> requestedTypes)
-	{
-		List<Price> matches = new ArrayList<Price>();
-		for (SupplyDetail supplyDetail : supplyDetails)
-		{
-			for (Price price : supplyDetail.prices)
-			{
-				if (requestedTypes.contains(price.priceType))
-					matches.add(price);
-			}
-		}
-		return matches;
-	}
-
-	public List<SalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
-	{
-//		return product.findSalesRightss(requestedTypes);
-		List<SalesRights> matches = new ArrayList<SalesRights>();
-		for (SalesRights salesRights : salesRightss)
-		{
-			if (requestedTypes.contains(salesRights.salesRightsType))
-				matches.add(salesRights);
-		}
-		return matches;
-	}
-
+	@Override
 	public String findCityOfPublication(LanguageCodeIso6392Bs preferredLanguage)
 	{
-		if (product.publishingDetail.cityOfPublications != null)
+		if (product.publishingDetail == null)
+			return null;
+
+		List<CityOfPublication> cops = product.publishingDetail.cityOfPublications;
+		if (cops == null)
+			return null;
+		
+		for (CityOfPublication cop : cops)
 		{
-			for (CityOfPublication cop : product.publishingDetail.cityOfPublications)
-			{
-				if (cop.language == null || cop.language == preferredLanguage)
-					return cop.value;
-			}
-			return product.publishingDetail.cityOfPublications.get(0).value; // return whatever language we have
+			if (cop.language == null || cop.language == preferredLanguage)
+				return cop.value;
 		}
-		return null;
+		return cops.get(0).value; // return whatever language we have
 	}
 }

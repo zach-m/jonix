@@ -22,13 +22,13 @@ package com.tectonica.jonix.export;
 import java.io.PrintStream;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicProduct3;
+import com.tectonica.jonix.basic.BasicProduct;
 
 public class JonixInMemExporter extends JonixFilesExport
 {
-	protected List<BasicProduct3> output;
+	protected List<BasicProduct> output;
 
-	public JonixInMemExporter(List<BasicProduct3> output, PrintStream log)
+	public JonixInMemExporter(List<BasicProduct> output, PrintStream log)
 	{
 		super(null, log);
 		if (output == null)
@@ -37,7 +37,7 @@ public class JonixInMemExporter extends JonixFilesExport
 	}
 
 	@Override
-	public void onProduct(BasicProduct3 product, int index)
+	public void onProduct(BasicProduct product, int index)
 	{
 		super.onProduct(product, index);
 		output.add(product);

@@ -31,6 +31,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
+import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.util.JSON;
@@ -60,7 +61,7 @@ public class TestBasicProduct3
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
 					final Product product = new Product(element);
-					BasicProduct3 bp = new BasicProduct3(product);
+					BasicProduct bp = new BasicProduct3(product);
 					System.out.println(JSON.toJson(bp));
 				}
 			}
