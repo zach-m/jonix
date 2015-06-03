@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.util;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -28,7 +28,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 /**
@@ -59,7 +58,6 @@ public class JSON
 
 		// general configuration
 		mapper.setSerializationInclusion(Include.NON_NULL);
-		mapper.setPropertyNamingStrategy(PropertyNamingStrategy.PASCAL_CASE_TO_CAMEL_CASE);
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 

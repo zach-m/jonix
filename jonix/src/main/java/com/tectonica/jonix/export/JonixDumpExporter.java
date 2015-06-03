@@ -19,18 +19,10 @@
 
 package com.tectonica.jonix.export;
 
-import java.io.IOException;
 import java.io.PrintStream;
-import java.text.SimpleDateFormat;
-import java.util.TimeZone;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.tectonica.jonix.basic.BasicProduct3;
+import com.tectonica.jonix.util.JSON;
 
 public class JonixDumpExporter extends JonixFilesExport
 {
@@ -49,52 +41,7 @@ public class JonixDumpExporter extends JonixFilesExport
 	{
 		super.onProduct(product, index);
 
-		out.println(toJson(product.product));
+		out.println(JSON.toJson(product.product));
 		out.println("**********************************************************************************\n");
-	}
-
-	private ObjectMapper mapper = createPropsMapper(false);
-
-	private ObjectMapper createPropsMapper(boolean useProps)
-	{
-		ObjectMapper mapper = new ObjectMapper();
-
-		if (useProps)
-		{
-			// limit to props only
-			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NONE);
-			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.ANY);
-			mapper.setVisibility(PropertyAccessor.SETTER, Visibility.ANY);
-		}
-		else
-		{
-			// limit to fields only
-			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NON_PRIVATE);
-			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
-			mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
-		}
-
-		// general configuration
-		mapper.setSerializationInclusion(Include.NON_NULL);
-		mapper.enable(SerializationFeature.INDENT_OUTPUT);
-		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-		mapper.setDateFormat(sdf);
-
-		return mapper;
-	}
-
-	public String toJson(Object o)
-	{
-		try
-		{
-			return mapper.writeValueAsString(o);
-		}
-		catch (IOException e)
-		{
-			throw new RuntimeException(e);
-		}
 	}
 }

@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 /**
@@ -52,12 +53,13 @@ public class JSON
 		ObjectMapper mapper = new ObjectMapper();
 
 		// configure to use public fields only, consistent with Jonix design
-		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NON_PRIVATE);
-		mapper.setVisibility(PropertyAccessor.GETTER, Visibility.PUBLIC_ONLY);
+		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.PUBLIC_ONLY);
+		mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
 		mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
 
 		// general configuration
 		mapper.setSerializationInclusion(Include.NON_NULL);
+		mapper.setPropertyNamingStrategy(PropertyNamingStrategy.PASCAL_CASE_TO_CAMEL_CASE);
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
