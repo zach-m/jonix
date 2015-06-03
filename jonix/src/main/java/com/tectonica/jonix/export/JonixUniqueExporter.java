@@ -31,7 +31,7 @@ import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixFormatter;
 import com.tectonica.jonix.JonixUtils;
 import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 
 public class JonixUniqueExporter extends JonixFilesExport
 {
@@ -78,15 +78,15 @@ public class JonixUniqueExporter extends JonixFilesExport
 	}
 
 	/**
-	 * a wrapper for {@link BasicProduct2} with some exxtra information needed for sorting and filtering
+	 * a wrapper for {@link BasicProduct3} with some exxtra information needed for sorting and filtering
 	 */
 	protected static class ProductEx implements Comparable<ProductEx>
 	{
 		public final String _id;
 		public final Calendar _timestamp;
-		public final BasicProduct2 _product;
+		public final BasicProduct3 _product;
 
-		public ProductEx(String id, Calendar timestamp, BasicProduct2 product)
+		public ProductEx(String id, Calendar timestamp, BasicProduct3 product)
 		{
 			this._id = id;
 			this._timestamp = timestamp;
@@ -128,9 +128,9 @@ public class JonixUniqueExporter extends JonixFilesExport
 
 		// if no columns-set was explicitly set, ask for the default one
 		if (columns == null)
-			columns = BasicProduct2.getDefaultColumns();
+			columns = BasicProduct3.getDefaultColumns();
 		if (idColumn == null)
-			idColumn = BasicProduct2.getDefaultIdColumn();
+			idColumn = BasicProduct3.getDefaultIdColumn();
 
 		return super.onBeforeFile(fileName);
 	}
@@ -142,7 +142,7 @@ public class JonixUniqueExporter extends JonixFilesExport
 	}
 
 	@Override
-	protected void onProduct(BasicProduct2 product, int index)
+	protected void onProduct(BasicProduct3 product, int index)
 	{
 		super.onProduct(product, index);
 

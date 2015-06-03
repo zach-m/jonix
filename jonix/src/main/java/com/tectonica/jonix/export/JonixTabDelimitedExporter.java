@@ -24,7 +24,7 @@ import java.util.List;
 
 import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixFormatter;
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 
 public class JonixTabDelimitedExporter extends JonixFilesExport
 {
@@ -55,13 +55,13 @@ public class JonixTabDelimitedExporter extends JonixFilesExport
 	{
 		super.onBeforeFiles(onixFileNames);
 		if (columns == null)
-			columns = BasicProduct2.getDefaultColumns();
+			columns = BasicProduct3.getDefaultColumns();
 		out.println(JonixFormatter.headerAsTabDelimitedString(columns));
 		return true;
 	}
 
 	@Override
-	protected void onProduct(BasicProduct2 product, int index)
+	protected void onProduct(BasicProduct3 product, int index)
 	{
 		out.println(JonixFormatter.productAsTabDelimitedString(product, columns));
 		logProductParseSummary(product, index);

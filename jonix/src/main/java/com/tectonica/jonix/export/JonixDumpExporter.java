@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 
 public class JonixDumpExporter extends JonixFilesExport
 {
@@ -45,7 +45,7 @@ public class JonixDumpExporter extends JonixFilesExport
 	}
 
 	@Override
-	protected void onProduct(BasicProduct2 product, int index)
+	protected void onProduct(BasicProduct3 product, int index)
 	{
 		super.onProduct(product, index);
 

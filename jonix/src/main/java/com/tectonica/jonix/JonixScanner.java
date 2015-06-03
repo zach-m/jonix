@@ -26,7 +26,7 @@ import java.io.UnsupportedEncodingException;
 
 import com.tectonica.jonix.JonixParser.JonixParserListener;
 import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 
 public abstract class JonixScanner
 {
@@ -45,9 +45,10 @@ public abstract class JonixScanner
 			}
 
 			@Override
-			public void onProduct(BasicProduct2 product, int index)
+			public void onProduct(BasicProduct3 product, int index)
 			{
 				JonixScanner.this.onProduct(product, index);
+
 			}
 		});
 	}
@@ -103,7 +104,7 @@ public abstract class JonixScanner
 
 	protected abstract void onHeader(BasicHeader header);
 
-	protected abstract void onProduct(BasicProduct2 product, int index);
+	protected abstract void onProduct(BasicProduct3 product, int index);
 
 	protected void onAfterSource()
 	{

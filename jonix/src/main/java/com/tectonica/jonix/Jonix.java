@@ -22,7 +22,7 @@ package com.tectonica.jonix;
 import java.io.PrintStream;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.export.JonixDumpExporter;
 import com.tectonica.jonix.export.JonixInMemExporter;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
@@ -69,7 +69,7 @@ public class Jonix
 		return new JonixUniqueExporter(out, log);
 	}
 
-	public static JonixInMemExporter createBasicInMemExporter(List<BasicProduct2> out, PrintStream log)
+	public static JonixInMemExporter createBasicInMemExporter(List<BasicProduct3> out, PrintStream log)
 	{
 		return new JonixInMemExporter(out, log);
 	}

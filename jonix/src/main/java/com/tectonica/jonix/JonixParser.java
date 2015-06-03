@@ -32,9 +32,9 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.onix2.Header;
-import com.tectonica.jonix.onix2.Product;
+import com.tectonica.jonix.onix3.Product;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class JonixParser
@@ -43,7 +43,7 @@ public class JonixParser
 	{
 		public void onHeader(BasicHeader header);
 
-		public void onProduct(BasicProduct2 product, int index);
+		public void onProduct(BasicProduct3 product, int index);
 	}
 
 	private JonixParserListener jonixParserListener;
@@ -77,7 +77,7 @@ public class JonixParser
 					final String nodeName = element.getNodeName();
 					if (nodeName.equalsIgnoreCase("Product"))
 					{
-						BasicProduct2 product = new BasicProduct2(new Product(element));
+						BasicProduct3 product = new BasicProduct3(new Product(element));
 						jonixParserListener.onProduct(product, ++productCount);
 					}
 					else if (nodeName.equalsIgnoreCase("Header"))

@@ -20,15 +20,15 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.basic.BasicColumn;
-import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 
 public class JonixFormatter
 {
 	/**
-	 * turns a {@link BasicProduct2} object into a jagged-array of Strings, whose amount of rows and columns are defined
+	 * turns a {@link BasicProduct3} object into a jagged-array of Strings, whose amount of rows and columns are defined
 	 * by {@link BasicColumn}
 	 */
-	public static String[][] productAsStringMatrix(BasicProduct2 product, JonixColumn[] columns)
+	public static String[][] productAsStringMatrix(BasicProduct3 product, JonixColumn[] columns)
 	{
 		// prepare the resulting jagged-array of values
 		String[][] prodMatrix = new String[columns.length][];
@@ -43,9 +43,9 @@ public class JonixFormatter
 	}
 
 	/**
-	 * turns a {@link BasicProduct2} object into a tab-delimited string, whose columns are defined by {@link BasicColumn}
+	 * turns a {@link BasicProduct3} object into a tab-delimited string, whose columns are defined by {@link BasicColumn}
 	 */
-	public static String productAsTabDelimitedString(BasicProduct2 product, JonixColumn[] columns)
+	public static String productAsTabDelimitedString(BasicProduct3 product, JonixColumn[] columns)
 	{
 		String[][] prodMatrix = productAsStringMatrix(product, columns);
 
