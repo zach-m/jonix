@@ -33,6 +33,7 @@ import org.w3c.dom.Element;
 
 import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.onix3.Product;
+import com.tectonica.jonix.util.JSON;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class TestBasicProduct3
@@ -48,8 +49,6 @@ public class TestBasicProduct3
 	@Test
 	public void test() throws FileNotFoundException
 	{
-		Double d = Double.valueOf("197");
-		System.out.println(d);
 		InputStream stream = TestBasicProduct3.class.getResourceAsStream("/single-book-onix3.xml");
 
 		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
@@ -62,7 +61,7 @@ public class TestBasicProduct3
 				{
 					final Product product = new Product(element);
 					BasicProduct3 bp = new BasicProduct3(product);
-					System.out.println(bp.getLabel());
+					System.out.println(JSON.toJson(bp));
 				}
 			}
 
@@ -75,7 +74,5 @@ public class TestBasicProduct3
 					throw new RuntimeException("this test is suitable for Onix3 only at this time");
 			}
 		});
-
-		System.err.println("** DONE");
 	}
 }

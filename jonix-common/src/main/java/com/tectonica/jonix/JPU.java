@@ -114,7 +114,7 @@ public class JPU
 			child = child.getNextSibling();
 		}
 
-		return str.toString();
+		return str.toString().trim();
 	}
 
 	public static String getChildXHTML(Node node, boolean strip)

@@ -104,9 +104,9 @@ public class SalesRights implements Serializable
 			for (com.tectonica.jonix.onix3.SalesRights sr : product.publishingDetail.salesRightss)
 			{
 				Territory territory = sr.territory;
-				result.add(new SalesRights(sr.getSalesRightsTypeValue(), territory.countriesIncluded.value,
-						territory.regionsIncluded.value, territory.countriesExcluded.value,
-						territory.regionsExcluded.value));
+				result.add(new SalesRights(sr.getSalesRightsTypeValue(), territory.getCountriesIncludedSet(), territory
+						.getRegionsIncludedSet(), territory.getCountriesExcludedSet(), territory
+						.getRegionsExcludedSet()));
 			}
 			return result;
 		}

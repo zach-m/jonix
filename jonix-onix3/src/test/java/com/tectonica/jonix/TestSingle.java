@@ -80,7 +80,6 @@ public class TestSingle
 			final Element productElem = (Element) products.item(i);
 			final Product product = new Product(productElem);
 			System.out.println(JSON.toJson(product));
-			System.out.println("\n-------------------------------------------------------------------------------\n");
 		}
 	}
 

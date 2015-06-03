@@ -19,9 +19,8 @@
 
 package com.tectonica.jonix;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
@@ -29,15 +28,15 @@ import javax.xml.stream.events.StartElement;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
 import com.tectonica.jonix.basic.BasicProduct2;
 import com.tectonica.jonix.onix2.Product;
+import com.tectonica.jonix.util.JSON;
 import com.tectonica.xmlchunk.XmlChunker;
 
-public class TestBasicProduct
+public class TestBasicProduct2
 {
 	@Before
 	public void setUp() throws Exception
@@ -48,19 +47,22 @@ public class TestBasicProduct
 	{}
 
 	@Test
-	@Ignore
 	public void test() throws FileNotFoundException
 	{
-//		final String path = "../onix_samples/SB_Ref.xml";
-		final String path = "../onix_samples/SB_short.xml";
-//		final String path = "../onix_samples/CR.xml";
-//		final String path = "../onix_samples/MY.xml";
-
-		final File file = new File(path);
-		if (!file.exists())
-			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
-
-		XmlChunker.parse(new FileInputStream(file), 2, new XmlChunker.Listener()
+////		final String path = "../onix_samples/SB_Ref.xml";
+//		final String path = "../onix_samples/SB_short.xml";
+////		final String path = "../onix_samples/CR.xml";
+////		final String path = "../onix_samples/MY.xml";
+//
+//		final File file = new File(path);
+//		if (!file.exists())
+//			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
+//
+//		InputStream stream = new FileInputStream(file);
+		
+		InputStream stream = TestBasicProduct2.class.getResourceAsStream("/single-book-onix2.xml");
+		
+		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
 		{
 			@Override
 			public void onTarget(Element element)
@@ -70,7 +72,7 @@ public class TestBasicProduct
 				{
 					final Product product = new Product(element);
 					BasicProduct2 bp = new BasicProduct2(product);
-					System.out.println(bp.getLabel());
+					System.out.println(JSON.toJson(bp));
 				}
 			}
 
@@ -83,7 +85,5 @@ public class TestBasicProduct
 					throw new RuntimeException("this test is suitable for Onix2 only at this time");
 			}
 		});
-
-		System.err.println("** DONE");
 	}
 }
