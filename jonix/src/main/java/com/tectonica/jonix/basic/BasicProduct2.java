@@ -54,7 +54,7 @@ public class BasicProduct2 extends BasicProduct
 		ProductForms productFormValue = product.getProductFormValue();
 		productForm = (productFormValue == null) ? null : productFormValue.name();
 		audiences = product.findAudiences(null);
-		
+
 		publicationDate = product.getPublicationDateValue();
 		countryOfPublication = product.getCountryOfPublicationValue();
 		cityOfPublication = findCityOfPublication(LanguageCodeIso6392Bs.English);
@@ -70,7 +70,7 @@ public class BasicProduct2 extends BasicProduct
 		supplyDetails = SupplyDetail.listFrom(product); // TODO: use intf
 		salesRightss = SalesRights.listFrom(product); // non-struct
 	}
-	
+
 	@Override
 	public Object getProductObject()
 	{

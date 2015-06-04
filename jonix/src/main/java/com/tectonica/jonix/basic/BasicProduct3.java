@@ -120,7 +120,7 @@ public class BasicProduct3 extends BasicProduct
 		List<CityOfPublication> cops = product.publishingDetail.cityOfPublications;
 		if (cops == null)
 			return null;
-		
+
 		for (CityOfPublication cop : cops)
 		{
 			if (cop.language == null || cop.language == preferredLanguage)
