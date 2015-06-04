@@ -48,7 +48,7 @@ import com.tectonica.jonix.struct.JonixPublishingDate;
 @SuppressWarnings("serial")
 public class BasicProduct3 extends BasicProduct
 {
-	public final com.tectonica.jonix.onix3.Product product;
+	private final com.tectonica.jonix.onix3.Product product;
 
 	public BasicProduct3(com.tectonica.jonix.onix3.Product product)
 	{

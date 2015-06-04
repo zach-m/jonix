@@ -42,7 +42,7 @@ public class TestTabDelimited
 	@Ignore
 	public void test() throws FileNotFoundException
 	{
-		final String path = "../onix_samples/BK";
+		final String path = "../onix_samples/ONIX2/BK";
 
 		final File file = new File(path);
 		if (!file.exists())

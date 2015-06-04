@@ -40,7 +40,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
 @SuppressWarnings("serial")
 public class BasicProduct2 extends BasicProduct
 {
-	public final com.tectonica.jonix.onix2.Product product;
+	private final com.tectonica.jonix.onix2.Product product;
 
 	public BasicProduct2(com.tectonica.jonix.onix2.Product product)
 	{

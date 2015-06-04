@@ -53,7 +53,7 @@ public class TestXmlChunkerWithProcessing
 	@Ignore
 	public void test() throws FileNotFoundException
 	{
-		final File file = new File("../onix_samples/SB_Ref.xml"); // SB_short.xml
+		final File file = new File("../onix_samples/ONIX2/SB_Ref.xml"); // SB_short.xml
 		if (!file.exists())
 			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
 

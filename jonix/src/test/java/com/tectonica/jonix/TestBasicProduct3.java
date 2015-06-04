@@ -50,6 +50,14 @@ public class TestBasicProduct3
 	@Test
 	public void test() throws FileNotFoundException
 	{
+//		final String path = "../onix_samples/ONIX3/BQ.onix";
+//
+//		final File file = new File(path);
+//		if (!file.exists())
+//			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
+//
+//		InputStream stream = new BOMInputStream(new FileInputStream(file));
+
 		InputStream stream = TestBasicProduct3.class.getResourceAsStream("/single-book-onix3.xml");
 
 		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
@@ -63,6 +71,8 @@ public class TestBasicProduct3
 					final Product product = new Product(element);
 					BasicProduct bp = new BasicProduct3(product);
 					System.out.println(JSON.toJson(bp));
+//					System.out.println(bp);
+//					System.out.println(JSON.toJson(bp.getProductObject()));
 				}
 			}
 

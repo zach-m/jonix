@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.codelist.SupplierRoles;
 import com.tectonica.jonix.onix3.ProductSupply;
 
@@ -50,8 +51,7 @@ public class SupplyDetail implements Serializable
 		for (Price price : prices)
 			sb.append("\n    > ").append(price.toString());
 		String supplierRoleStr = (supplierRole == null) ? null : supplierRole.name();
-		return String.format("SupplyDetail [%s]: %s (%s) %s", supplierRoleStr, supplierName, availability,
-				sb.toString());
+		return String.format("SupplyDetail [%s]: %s (%s) %s", supplierRoleStr, supplierName, availability, sb.toString());
 	}
 
 	public static List<SupplyDetail> listFrom(com.tectonica.jonix.onix2.Product product)
@@ -60,8 +60,12 @@ public class SupplyDetail implements Serializable
 		{
 			List<SupplyDetail> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.SupplyDetail sd : product.supplyDetails)
-				result.add(new SupplyDetail(sd.getSupplierRoleValue(), sd.getSupplierNameValue(), sd
-						.getAvailabilityCodeValue().name(), Price.listFrom(sd)));
+			{
+				final AvailabilityStatuss availabilityCode = sd.getAvailabilityCodeValue();
+				// NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
+				final String availCodeAsStr = (availabilityCode == null) ? null : availabilityCode.name();
+				result.add(new SupplyDetail(sd.getSupplierRoleValue(), sd.getSupplierNameValue(), availCodeAsStr, Price.listFrom(sd)));
+			}
 			return result;
 		}
 		return Collections.emptyList();
@@ -75,8 +79,8 @@ public class SupplyDetail implements Serializable
 			for (ProductSupply ps : product.productSupplys) // scanning all markets, maybe not good idea
 			{
 				for (com.tectonica.jonix.onix3.SupplyDetail sd : ps.supplyDetails)
-					result.add(new SupplyDetail(sd.supplier.getSupplierRoleValue(), sd.supplier.getSupplierNameValue(),
-							sd.getProductAvailabilityValue().name(), Price.listFrom(sd)));
+					result.add(new SupplyDetail(sd.supplier.getSupplierRoleValue(), sd.supplier.getSupplierNameValue(), sd
+							.getProductAvailabilityValue().name(), Price.listFrom(sd)));
 			}
 			return result;
 		}

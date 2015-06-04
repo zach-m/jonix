@@ -57,7 +57,7 @@ public class Price implements Serializable
 		{
 			List<Price> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Price i : supplyDetail.prices)
-				result.add(new Price(i.getPriceTypeCodeValue(), JPU.convertStringToDouble(i.getPriceAmountValue()), i
+				result.add(new Price(i.getPriceTypeCodeValue(), JPU.convertStringToDoubleSafe(i.getPriceAmountValue()), i
 						.getCurrencyCodeValue()));
 			return result;
 		}

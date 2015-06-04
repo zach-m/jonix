@@ -158,4 +158,33 @@ public class JPU
 	{
 		return (s == null) ? null : Double.parseDouble(s.trim());
 	}
+
+	/**
+	 * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes, etc.
+	 */
+	public static Double convertStringToDoubleSafe(String s)
+	{
+		try
+		{
+			return convertStringToDouble(s);
+		}
+		catch (Exception e)
+		{
+			s = s.trim();
+
+			if (s.isEmpty())
+				return null;
+
+			if (Character.getType(s.charAt(0)) == Character.CURRENCY_SYMBOL)
+				return convertStringToDoubleSafe(s.substring(1, s.length()));
+
+			final boolean quoted1 = s.startsWith("'") && s.endsWith("'");
+			final boolean quoted2 = s.startsWith("\"") && s.endsWith("\"");
+			final boolean quoted3 = s.startsWith("`") && s.endsWith("`");
+			if (quoted1 || quoted2 || quoted3)
+				return convertStringToDoubleSafe(s.substring(1, s.length() - 1));
+
+			return null;
+		}
+	}
 }

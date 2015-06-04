@@ -119,6 +119,7 @@ public class XmlChunker
 		}
 		catch (XMLStreamException e)
 		{
+			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}

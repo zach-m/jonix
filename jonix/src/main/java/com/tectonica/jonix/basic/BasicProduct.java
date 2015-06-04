@@ -85,7 +85,7 @@ public abstract class BasicProduct implements Serializable
 	public List<Imprint> imprints;
 	public List<SupplyDetail> supplyDetails;
 	public List<SalesRights> salesRightss;
-	
+
 	public abstract Object getProductObject();
 
 	public String getLabel()
@@ -176,4 +176,31 @@ public abstract class BasicProduct implements Serializable
 	public abstract JonixLanguage findLanguage(LanguageRoles requestedType);
 
 	public abstract String findCityOfPublication(LanguageCodeIso6392Bs preferredLanguage);
+
+	@Override
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("------------------------------------------------------------------------").append("\n");
+		sb.append("recordReference=      ").append(recordReference).append("\n");
+		sb.append("notificationType=     ").append(notificationType).append("\n");
+		sb.append("editionType=          ").append(editionType).append("\n");
+		sb.append("editionNumber=        ").append(editionNumber).append("\n");
+		sb.append("productForm=          ").append(productForm).append("\n");
+		sb.append("audiences=            ").append(audiences).append("\n");
+		sb.append("publicationDate=      ").append(publicationDate).append("\n");
+		sb.append("countryOfPublication= ").append(countryOfPublication).append("\n");
+		sb.append("cityOfPublication=    ").append(cityOfPublication).append("\n");
+		sb.append("numberOfPages=        ").append(numberOfPages).append("\n");
+		sb.append("titles=               ").append(titles).append("\n");
+		sb.append("contributors=         ").append(contributors).append("\n");
+		sb.append("seriess=              ").append(seriess).append("\n");
+		sb.append("subjects=             ").append(subjects).append("\n");
+		sb.append("otherTexts=           ").append(otherTexts).append("\n");
+		sb.append("publishers=           ").append(publishers).append("\n");
+		sb.append("imprints=             ").append(imprints).append("\n");
+		sb.append("supplyDetails=        ").append(supplyDetails).append("\n");
+		sb.append("salesRightss=         ").append(salesRightss).append("\n");
+		return sb.toString();
+	}
 }

@@ -49,16 +49,16 @@ public class TestBasicProduct2
 	@Test
 	public void test() throws FileNotFoundException
 	{
-////		final String path = "../onix_samples/SB_Ref.xml";
-//		final String path = "../onix_samples/SB_short.xml";
-////		final String path = "../onix_samples/CR.xml";
-////		final String path = "../onix_samples/MY.xml";
+//		final String path = "../onix_samples/ONIX2/SB_Ref.xml";
+////		final String path = "../onix_samples/ONIX2/SB_short.xml";
+////		final String path = "../onix_samples/ONIX2/CR.xml";
+////		final String path = "../onix_samples/ONIX2/MY.xml";
 //
 //		final File file = new File(path);
 //		if (!file.exists())
 //			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
 //
-//		InputStream stream = new FileInputStream(file);
+//		InputStream stream = new BOMInputStream(new FileInputStream(file));
 		
 		InputStream stream = TestBasicProduct2.class.getResourceAsStream("/single-book-onix2.xml");
 		
@@ -73,6 +73,8 @@ public class TestBasicProduct2
 					final Product product = new Product(element);
 					BasicProduct2 bp = new BasicProduct2(product);
 					System.out.println(JSON.toJson(bp));
+//					System.out.println(bp);
+//					System.out.println(JSON.toJson(bp.getProductObject()));
 				}
 			}
 
