@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.basic.BasicColumn;
 import com.tectonica.jonix.basic.BasicProduct;
 
 public class JonixFormatter

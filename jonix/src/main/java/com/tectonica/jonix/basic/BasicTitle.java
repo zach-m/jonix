@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,19 +28,24 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix3.TitleElement;
 
 @SuppressWarnings("serial")
-public class Title implements Serializable
+public class BasicTitle implements Serializable
 {
 	public final TitleTypes titleType;
 	public final String titleText;
 	public final String titleWithoutPrefix;
 	public final String subtitle;
 
-	public Title(TitleTypes titleType, String titleText, String titleWithoutPrefix, String subtitle)
+	public BasicTitle(TitleTypes titleType, String titleText, String titleWithoutPrefix, String subtitle)
 	{
 		this.titleType = titleType;
-		this.titleText = titleText;
-		this.titleWithoutPrefix = titleWithoutPrefix;
-		this.subtitle = subtitle;
+		this.titleText = noBreaks(titleText);
+		this.titleWithoutPrefix = noBreaks(titleWithoutPrefix);
+		this.subtitle = noBreaks(subtitle);
+	}
+
+	private static String noBreaks(String s)
+	{
+		return (s == null || s.isEmpty()) ? s : s.replaceAll("\\t|\\n|\\r", " ");
 	}
 
 	@Override
@@ -52,57 +57,52 @@ public class Title implements Serializable
 		return String.format("Title [%s]: %s%s", titleTypeStr, titleTestStr, subtitleStr);
 	}
 
-	public static List<Title> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static List<BasicTitle> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
-		return listFrom2(product.titles);
+		return extractFrom2(product.titles);
 	}
 
-	public static List<Title> listFrom(com.tectonica.jonix.onix2.Series series)
+	public static List<BasicTitle> extractFrom(com.tectonica.jonix.onix2.Series series)
 	{
-		return listFrom2(series.titles);
+		return extractFrom2(series.titles);
 	}
 
-	private static List<Title> listFrom2(final List<com.tectonica.jonix.onix2.Title> titles)
+	private static List<BasicTitle> extractFrom2(final List<com.tectonica.jonix.onix2.Title> titles)
 	{
 		if (titles != null)
 		{
-			List<Title> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.Title i : titles)
-				result.add(new Title(i.getTitleTypeValue(), noBreaks(i.getTitleTextValue()), noBreaks(i
-						.getTitleWithoutPrefixValue()), noBreaks(i.getSubtitleValue())));
+			List<BasicTitle> result = new ArrayList<>();
+			for (com.tectonica.jonix.onix2.Title title : titles)
+				result.add(new BasicTitle(title.getTitleTypeValue(), title.getTitleTextValue(), title.getTitleWithoutPrefixValue(),
+						title.getSubtitleValue()));
 			return result;
 		}
 		return Collections.emptyList();
 	}
 
-	public static List<Title> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static List<BasicTitle> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
-		return listFrom3(product.descriptiveDetail.titleDetails);
+		return extractFrom3(product.descriptiveDetail.titleDetails);
 	}
 
-	public static List<Title> listFrom(com.tectonica.jonix.onix3.Collection collection)
+	public static List<BasicTitle> extractFrom(com.tectonica.jonix.onix3.Collection collection)
 	{
-		return listFrom3(collection.titleDetails);
+		return extractFrom3(collection.titleDetails);
 	}
 
-	private static List<Title> listFrom3(final List<com.tectonica.jonix.onix3.TitleDetail> titles)
+	private static List<BasicTitle> extractFrom3(final List<com.tectonica.jonix.onix3.TitleDetail> titles)
 	{
 		if (titles != null)
 		{
-			List<Title> result = new ArrayList<>();
+			List<BasicTitle> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix3.TitleDetail title : titles)
 			{
 				TitleElement titleElement = title.titleElements.get(0); // at least 1 is mandatory
-				result.add(new Title(title.getTitleTypeValue(), noBreaks(titleElement.getTitleTextValue()),
-						noBreaks(titleElement.getTitleWithoutPrefixValue()), noBreaks(titleElement.getSubtitleValue())));
+				result.add(new BasicTitle(title.getTitleTypeValue(), titleElement.getTitleTextValue(), titleElement
+						.getTitleWithoutPrefixValue(), titleElement.getSubtitleValue()));
 			}
 			return result;
 		}
 		return Collections.emptyList();
-	}
-
-	public static String noBreaks(String s)
-	{
-		return (s == null || s.isEmpty()) ? s : s.replaceAll("\\t|\\n|\\r", " ");
 	}
 }

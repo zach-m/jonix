@@ -35,6 +35,9 @@ public class BasicHeader implements Serializable
 	public final List<String> toCompanies;
 	public final String sentDate;
 
+	/**
+	 * constructor for ONIX2 &lt;Header&gt; element
+	 */
 	public BasicHeader(com.tectonica.jonix.onix2.Header header)
 	{
 		fromCompany = header.getFromCompanyValue();
@@ -45,6 +48,9 @@ public class BasicHeader implements Serializable
 		sentDate = header.getSentDateValue();
 	}
 
+	/**
+	 * constructor for ONIX3 &lt;Header&gt; element
+	 */
 	public BasicHeader(com.tectonica.jonix.onix3.Header header)
 	{
 		fromCompany = header.sender.getSenderNameValue();
@@ -73,16 +79,11 @@ public class BasicHeader implements Serializable
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
-		if (fromCompany != null)
-			sb.append("FromCompany: ").append(fromCompany).append("\n");
-		if (fromPerson != null)
-			sb.append("FromPerson:  ").append(fromPerson).append("\n");
-		if (fromEmail != null)
-			sb.append("FromEmail:   ").append(fromEmail).append("\n");
-		if (toCompanies != null)
-			sb.append("ToCompany:   ").append(toCompanies).append("\n");
-		if (sentDate != null)
-			sb.append("SentDate:    ").append(sentDate);
+		sb.append("FromCompany: ").append(fromCompany).append("\n");
+		sb.append("FromPerson:  ").append(fromPerson).append("\n");
+		sb.append("FromEmail:   ").append(fromEmail).append("\n");
+		sb.append("ToCompany:   ").append(toCompanies).append("\n");
+		sb.append("SentDate:    ").append(sentDate);
 		return sb.toString();
 	}
 }

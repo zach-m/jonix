@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,17 +25,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.tectonica.jonix.basic.BasicPicker;
+import com.tectonica.jonix.BasicPicker;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
 @SuppressWarnings("serial")
-public class Subject implements Serializable
+public class BasicSubject implements Serializable
 {
 	public final SubjectSchemeIdentifiers subjectSchemeIdentifier;
 	public final String subjectCode;
 	public final String subjectHeadingText;
 
-	public Subject(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
+	public BasicSubject(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
 	{
 		this.subjectSchemeIdentifier = subjectSchemeIdentifier;
 		this.subjectCode = subjectCode;
@@ -46,32 +46,32 @@ public class Subject implements Serializable
 	public String toString()
 	{
 		String subjectSchemeIdentifierStr = (subjectSchemeIdentifier == null) ? null : subjectSchemeIdentifier.name();
-		return String.format(getClass().getSimpleName() + " [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode,
+		return String.format("Subject [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode,
 				subjectHeadingText);
 	}
 
-	private static void add(Map<SubjectSchemeIdentifiers, List<Subject>> map, SubjectSchemeIdentifiers type,
+	private static void add(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, SubjectSchemeIdentifiers type,
 			String subjectCode, String subjectHeadingText)
 	{
 		add(map, type, subjectCode, subjectHeadingText, false);
 	}
 
-	private static void add(Map<SubjectSchemeIdentifiers, List<Subject>> map, SubjectSchemeIdentifiers type,
+	private static void add(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, SubjectSchemeIdentifiers type,
 			String subjectCode, String subjectHeadingText, boolean isMain)
 	{
-		List<Subject> subjects = map.get(type);
+		List<BasicSubject> subjects = map.get(type);
 		if (subjects == null)
-			map.put(type, subjects = new ArrayList<Subject>());
-		Subject subject = new Subject(type, subjectCode, subjectHeadingText);
+			map.put(type, subjects = new ArrayList<BasicSubject>());
+		BasicSubject subject = new BasicSubject(type, subjectCode, subjectHeadingText);
 		if (isMain)
 			subjects.add(0, subject);
 		else
 			subjects.add(subject);
 	}
 
-	public static Map<SubjectSchemeIdentifiers, List<Subject>> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static Map<SubjectSchemeIdentifiers, List<BasicSubject>> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
-		Map<SubjectSchemeIdentifiers, List<Subject>> map = new HashMap<>();
+		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
 
 		String bisacMainSubject = product.getBASICMainSubjectValue();
 		if (bisacMainSubject != null)
@@ -89,9 +89,9 @@ public class Subject implements Serializable
 		return map;
 	}
 
-	public static Map<SubjectSchemeIdentifiers, List<Subject>> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static Map<SubjectSchemeIdentifiers, List<BasicSubject>> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
-		Map<SubjectSchemeIdentifiers, List<Subject>> map = new HashMap<>();
+		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
 		if (product.descriptiveDetail.subjects != null)
 		{
 			for (com.tectonica.jonix.onix3.Subject s : product.descriptiveDetail.subjects)

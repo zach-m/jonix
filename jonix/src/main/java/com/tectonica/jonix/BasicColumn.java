@@ -17,14 +17,20 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.basic;
+package com.tectonica.jonix;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.JonixColumn;
+import com.tectonica.jonix.basic.BasicContributor;
+import com.tectonica.jonix.basic.BasicPrice;
+import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.basic.BasicSalesRights;
+import com.tectonica.jonix.basic.BasicSubject;
+import com.tectonica.jonix.basic.BasicText;
+import com.tectonica.jonix.basic.BasicTitle;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.LanguageRoles;
@@ -35,12 +41,6 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.codelist.TextTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.composite.Contributor;
-import com.tectonica.jonix.composite.OtherText;
-import com.tectonica.jonix.composite.Price;
-import com.tectonica.jonix.composite.SalesRights;
-import com.tectonica.jonix.composite.Subject;
-import com.tectonica.jonix.composite.Title;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
@@ -69,9 +69,9 @@ public enum BasicColumn implements JonixColumn
 		@Override
 		public boolean extractTo(String[] fieldData, BasicProduct product)
 		{
-			if (product.seriess.size() > 0)
+			if (product.collections.size() > 0)
 			{
-				fieldData[0] = product.seriess.get(0).mainTitle;
+				fieldData[0] = product.collections.get(0).mainTitle;
 				return true;
 			}
 			// NOTE: we should probably drill down to the 'titles' member of the series if 'titleOfSeries' is blank
@@ -281,7 +281,7 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractTitle(String[] fieldData, TitleTypes stdType, BasicProduct product)
 	{
-		Title title = product.findTitle(stdType);
+		BasicTitle title = product.findTitle(stdType);
 		if (title != null)
 		{
 			fieldData[0] = title.titleText;
@@ -304,9 +304,9 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractContributors(String[] fieldData, ContributorRoles stdRole, BasicProduct product)
 	{
-		List<Contributor> contributors = product.findContributors(stdRole);
+		List<BasicContributor> contributors = product.findContributors(stdRole);
 		int pos = 0;
-		for (Contributor contributor : contributors)
+		for (BasicContributor contributor : contributors)
 		{
 			String displayName = contributor.displayName();
 			if (displayName == null)
@@ -320,9 +320,9 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractSubjects(String[] fieldData, SubjectSchemeIdentifiers stdScheme, BasicProduct product)
 	{
-		List<Subject> subjects = product.findSubjects(stdScheme);
+		List<BasicSubject> subjects = product.findSubjects(stdScheme);
 		int pos = 0;
-		for (Subject subject : subjects)
+		for (BasicSubject subject : subjects)
 		{
 			fieldData[pos] = (subject.subjectCode != null) ? subject.subjectCode : subject.subjectHeadingText;
 			if (++pos == fieldData.length)
@@ -333,9 +333,9 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractPrices(String[] fieldData, Set<PriceTypes> stdTypes, BasicProduct product)
 	{
-		List<Price> prices = product.findPrices(stdTypes);
+		List<BasicPrice> prices = product.findPrices(stdTypes);
 		int pos = 0;
-		for (Price price : prices)
+		for (BasicPrice price : prices)
 		{
 			fieldData[pos + 0] = price.priceType.name();
 			fieldData[pos + 1] = price.priceAmountAsStr;
@@ -349,9 +349,9 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractSalesRights(String[] fieldData, Set<SalesRightsTypes> stdTypes, BasicProduct product)
 	{
-		List<SalesRights> salesRightss = product.findSalesRightss(stdTypes);
+		List<BasicSalesRights> salesRightss = product.findSalesRightss(stdTypes);
 		int pos = 0;
-		for (SalesRights salesRights : salesRightss)
+		for (BasicSalesRights salesRights : salesRightss)
 		{
 			StringBuffer sb = new StringBuffer();
 			if (salesRights.regions != null)
@@ -373,7 +373,7 @@ public enum BasicColumn implements JonixColumn
 
 	private static boolean extractOtherText(String[] fieldData, TextTypes stdType, BasicProduct product)
 	{
-		OtherText otherText = product.findOtherText(stdType);
+		BasicText otherText = product.findOtherText(stdType);
 		if (otherText != null)
 		{
 			fieldData[0] = otherText.text;

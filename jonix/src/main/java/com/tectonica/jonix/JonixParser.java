@@ -32,8 +32,6 @@ import org.xml.sax.SAXException;
 
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.basic.BasicProduct2;
-import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 
@@ -81,9 +79,9 @@ public class JonixParser
 					{
 						final BasicProduct product;
 						if (isOnix2)
-							product = new BasicProduct2(new com.tectonica.jonix.onix2.Product(element));
+							product = new BasicProduct(new com.tectonica.jonix.onix2.Product(element));
 						else if (isOnix3)
-							product = new BasicProduct3(new com.tectonica.jonix.onix3.Product(element));
+							product = new BasicProduct(new com.tectonica.jonix.onix3.Product(element));
 						else
 							throw new RuntimeException("Couldn't determine the ONIX version of the file");
 						jonixParserListener.onProduct(product, ++productCount);

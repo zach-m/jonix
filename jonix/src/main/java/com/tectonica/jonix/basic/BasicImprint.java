@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,11 +25,11 @@ import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("serial")
-public class Imprint implements Serializable
+public class BasicImprint implements Serializable
 {
 	public final String imprintName;
 
-	public Imprint(String imprintName)
+	public BasicImprint(String imprintName)
 	{
 		this.imprintName = imprintName;
 	}
@@ -40,34 +40,34 @@ public class Imprint implements Serializable
 		return String.format("Imprint: %s", imprintName);
 	}
 
-	public static List<Imprint> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static List<BasicImprint> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.imprints != null)
 		{
-			List<Imprint> result = new ArrayList<>();
+			List<BasicImprint> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Imprint i : product.imprints)
 			{
 				// TODO: we should at least read one required field (unlike ImprintName)
 				final String imprintNameValue = i.getImprintNameValue();
 				if (imprintNameValue != null)
-					result.add(new Imprint(imprintNameValue));
+					result.add(new BasicImprint(imprintNameValue));
 			}
 			return result;
 		}
 		return Collections.emptyList();
 	}
 
-	public static List<Imprint> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static List<BasicImprint> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
 		if (product.publishingDetail.imprints != null)
 		{
-			List<Imprint> result = new ArrayList<>();
+			List<BasicImprint> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix3.Imprint i : product.publishingDetail.imprints)
 			{
 				// TODO: we should at least read one required field (unlike ImprintName)
 				final String imprintNameValue = i.getImprintNameValue();
 				if (imprintNameValue != null)
-					result.add(new Imprint(imprintNameValue));
+					result.add(new BasicImprint(imprintNameValue));
 			}
 			return result;
 		}

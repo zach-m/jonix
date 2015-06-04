@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,15 +28,15 @@ import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 
 @SuppressWarnings("serial")
-public class Series implements Serializable
+public class BasicCollection implements Serializable
 {
 	public final String mainTitle;
 	public final List<JonixCollectionIdentifier> seriesIdentifiers;
-	public final List<Title> titles;
-	public final List<Contributor> contributors;
+	public final List<BasicTitle> titles;
+	public final List<BasicContributor> contributors;
 
-	public Series(String mainTitle, List<JonixCollectionIdentifier> seriesIdentifiers, List<Title> titles,
-			List<Contributor> contributors)
+	public BasicCollection(String mainTitle, List<JonixCollectionIdentifier> seriesIdentifiers, List<BasicTitle> titles,
+			List<BasicContributor> contributors)
 	{
 		this.mainTitle = mainTitle;
 		this.seriesIdentifiers = seriesIdentifiers;
@@ -50,25 +50,25 @@ public class Series implements Serializable
 		StringBuilder sb = new StringBuilder();
 		for (JonixCollectionIdentifier seriesIdentifier : seriesIdentifiers)
 			sb.append("\n    ").append(String.format("(%d) %d", seriesIdentifier.idTypeName, seriesIdentifier.idValue));
-		for (Title title : titles)
+		for (BasicTitle title : titles)
 			sb.append("\n    ").append(title.toString());
-		for (Contributor contributor : contributors)
+		for (BasicContributor contributor : contributors)
 			sb.append("\n    ").append(contributor.toString());
-		return String.format("Series: %s %s", mainTitle, sb.toString());
+		return String.format("Collection: %s %s", mainTitle, sb.toString());
 	}
 
-	public static List<Series> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static List<BasicCollection> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.seriess != null)
 		{
-			List<Series> result = new ArrayList<>();
+			List<BasicCollection> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Series c : product.seriess)
 			{
-				List<Title> titles = Title.listFrom(c);
+				List<BasicTitle> titles = BasicTitle.extractFrom(c);
 				String title = c.getTitleOfSeriesValue();
 				if (title == null)
 					title = titles.get(0).titleText;
-				result.add(new Series(title, sidsToCids(c.findSeriesIdentifiers(null)), titles, Contributor.listFrom(c)));
+				result.add(new BasicCollection(title, sidsToCids(c.findSeriesIdentifiers(null)), titles, BasicContributor.extractFrom(c)));
 			}
 			return result;
 		}
@@ -92,16 +92,16 @@ public class Series implements Serializable
 		return result;
 	}
 
-	public static List<Series> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static List<BasicCollection> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
 		if (product.descriptiveDetail.collections != null)
 		{
-			List<Series> result = new ArrayList<>();
+			List<BasicCollection> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix3.Collection c : product.descriptiveDetail.collections)
 			{
-				List<Title> titles = Title.listFrom(c);
+				List<BasicTitle> titles = BasicTitle.extractFrom(c);
 				String title = titles.get(0).titleText;
-				result.add(new Series(title, c.findCollectionIdentifiers(null), titles, Contributor.listFrom(c)));
+				result.add(new BasicCollection(title, c.findCollectionIdentifiers(null), titles, BasicContributor.extractFrom(c)));
 			}
 			return result;
 		}

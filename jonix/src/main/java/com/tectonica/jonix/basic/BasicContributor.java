@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,11 +26,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.basic.BasicPicker;
+import com.tectonica.jonix.BasicPicker;
 import com.tectonica.jonix.codelist.ContributorRoles;
 
 @SuppressWarnings("serial")
-public class Contributor implements Serializable
+public class BasicContributor implements Serializable
 {
 	public final Set<ContributorRoles> contributorRoles;
 	public final String personName;
@@ -39,7 +39,7 @@ public class Contributor implements Serializable
 	public final String corporateName;
 	public final String biographicalNote;
 
-	public Contributor(Set<ContributorRoles> contributorRoles, String personName, String personNameKey,
+	public BasicContributor(Set<ContributorRoles> contributorRoles, String personName, String personNameKey,
 			String personNameBeforeKey, String corporateName, String biographicalNote)
 	{
 		this.contributorRoles = contributorRoles;
@@ -78,23 +78,23 @@ public class Contributor implements Serializable
 
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static List<Contributor> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
 		return listFrom2(product.contributors);
 	}
 
-	public static List<Contributor> listFrom(com.tectonica.jonix.onix2.Series series)
+	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix2.Series series)
 	{
 		return listFrom2(series.contributors);
 	}
 
-	private static List<Contributor> listFrom2(final List<com.tectonica.jonix.onix2.Contributor> contributors)
+	private static List<BasicContributor> listFrom2(final List<com.tectonica.jonix.onix2.Contributor> contributors)
 	{
 		if (contributors != null)
 		{
-			List<Contributor> result = new ArrayList<>();
+			List<BasicContributor> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Contributor c : contributors)
-				result.add(new Contributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
+				result.add(new BasicContributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
 						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), c
 						.getBiographicalNoteValue()));
 			return result;
@@ -104,24 +104,24 @@ public class Contributor implements Serializable
 
 	// /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static List<Contributor> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
 		return listFrom3(product.descriptiveDetail.contributors);
 	}
 
-	public static List<Contributor> listFrom(com.tectonica.jonix.onix3.Collection collection)
+	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix3.Collection collection)
 	{
 		return listFrom3(collection.contributors);
 	}
 
-	private static List<Contributor> listFrom3(final List<com.tectonica.jonix.onix3.Contributor> contributors)
+	private static List<BasicContributor> listFrom3(final List<com.tectonica.jonix.onix3.Contributor> contributors)
 	{
 		if (contributors != null)
 		{
-			List<Contributor> result = new ArrayList<>();
+			List<BasicContributor> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix3.Contributor c : contributors)
 			{
-				result.add(new Contributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
+				result.add(new BasicContributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
 						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), BasicPicker
 						.pickBiographicalNote(c)));
 			}

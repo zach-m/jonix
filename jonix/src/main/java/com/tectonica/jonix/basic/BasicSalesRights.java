@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.onix3.Territory;
 
 @SuppressWarnings("serial")
-public class SalesRights implements Serializable
+public class BasicSalesRights implements Serializable
 {
 	public final SalesRightsTypes salesRightsType;
 	public final List<Set<CountryCodeIso31661s>> countries;
@@ -42,7 +42,7 @@ public class SalesRights implements Serializable
 	public final Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
 	public final Set<Regions> regionsExcluded; // only in Onix3
 
-	public SalesRights(SalesRightsTypes salesRightsType, List<Set<CountryCodeIso31661s>> countries,
+	public BasicSalesRights(SalesRightsTypes salesRightsType, List<Set<CountryCodeIso31661s>> countries,
 			Set<Regions> regions, List<RightsRegions> rightRegions)
 	{
 		this.salesRightsType = salesRightsType;
@@ -53,7 +53,7 @@ public class SalesRights implements Serializable
 		this.regionsExcluded = null;
 	}
 
-	public SalesRights(SalesRightsTypes salesRightsType, Set<CountryCodeIso31661s> countries, Set<Regions> regions,
+	public BasicSalesRights(SalesRightsTypes salesRightsType, Set<CountryCodeIso31661s> countries, Set<Regions> regions,
 			Set<CountryCodeIso31661s> countriesExcluded, Set<Regions> regionsExcluded)
 	{
 		this.salesRightsType = salesRightsType;
@@ -83,28 +83,28 @@ public class SalesRights implements Serializable
 		return sb.toString();
 	}
 
-	public static List<SalesRights> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static List<BasicSalesRights> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.salesRightss != null)
 		{
-			List<SalesRights> result = new ArrayList<>();
+			List<BasicSalesRights> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.SalesRights sri : product.salesRightss)
-				result.add(new SalesRights(sri.getSalesRightsTypeValue(), sri.getRightsCountrySets(), sri
+				result.add(new BasicSalesRights(sri.getSalesRightsTypeValue(), sri.getRightsCountrySets(), sri
 						.getRightsTerritorySet(), sri.getRightsRegionValues()));
 			return result;
 		}
 		return Collections.emptyList();
 	}
 
-	public static List<SalesRights> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static List<BasicSalesRights> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
 		if (product.publishingDetail != null && product.publishingDetail.salesRightss != null)
 		{
-			List<SalesRights> result = new ArrayList<>();
+			List<BasicSalesRights> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix3.SalesRights sr : product.publishingDetail.salesRightss)
 			{
 				Territory territory = sr.territory;
-				result.add(new SalesRights(sr.getSalesRightsTypeValue(), territory.getCountriesIncludedSet(), territory
+				result.add(new BasicSalesRights(sr.getSalesRightsTypeValue(), territory.getCountriesIncludedSet(), territory
 						.getRegionsIncludedSet(), territory.getCountriesExcludedSet(), territory
 						.getRegionsExcludedSet()));
 			}

@@ -26,67 +26,191 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.tectonica.jonix.BasicColumn;
+import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodeIso31661s;
 import com.tectonica.jonix.codelist.EditionTypes;
+import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
+import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.codelist.TextTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.composite.Contributor;
-import com.tectonica.jonix.composite.Imprint;
-import com.tectonica.jonix.composite.OtherText;
-import com.tectonica.jonix.composite.Price;
-import com.tectonica.jonix.composite.Publisher;
-import com.tectonica.jonix.composite.SalesRights;
-import com.tectonica.jonix.composite.Series;
-import com.tectonica.jonix.composite.Subject;
-import com.tectonica.jonix.composite.SupplyDetail;
-import com.tectonica.jonix.composite.Title;
 import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixPublishingDate;
 
 @SuppressWarnings("serial")
-public abstract class BasicProduct implements Serializable
+public class BasicProduct implements Serializable
 {
 	// basic
-	public String recordReference;
-	public NotificationOrUpdateTypes notificationType;
+	public final String recordReference;
+	public final NotificationOrUpdateTypes notificationType;
+	public final List<JonixProductIdentifier> productIds;
 
 	// descriptive
-	public EditionTypes editionType;
-	public Integer editionNumber;
-	public String productForm;
-	public List<JonixAudience> audiences;
+	public final EditionTypes editionType;
+	public final Integer editionNumber;
+	public final String productForm;
+	public final List<JonixLanguage> languages;
+	public final List<JonixAudience> audiences;
 
 	// publication
-	public String publicationDate;
-	public CountryCodeIso31661s countryOfPublication;
-	public String cityOfPublication;
-	public String numberOfPages;
+	public final String publicationDate;
+	public final CountryCodeIso31661s countryOfPublication;
+	public final String cityOfPublication;
+	public final String numberOfPages;
 
 	// others
-	// TODO: maybe return productIdentifiers languages
-//	public List<ProductIdentifier> productIdentifiers;
-//	public List<Title> titles;
-	public List<Title> titles;
-	public List<Contributor> contributors;
-	public List<Series> seriess;
-	public Map<SubjectSchemeIdentifiers, List<Subject>> subjects;
-	public List<OtherText> otherTexts;
-	public List<Publisher> publishers;
-	public List<Imprint> imprints;
-	public List<SupplyDetail> supplyDetails;
-	public List<SalesRights> salesRightss;
+	public final List<BasicTitle> titles;
+	public final List<BasicContributor> contributors;
+	public final List<BasicCollection> collections;
+	public final Map<SubjectSchemeIdentifiers, List<BasicSubject>> subjects;
+	public final List<BasicText> texts;
+	public final List<BasicPublisher> publishers;
+	public final List<BasicImprint> imprints;
+	public final List<BasicSupplyDetail> supplyDetails;
+	public final List<BasicSalesRights> salesRights;
 
-	public abstract Object getProductObject();
+	private final Object productObject;
+
+	public BasicProduct(com.tectonica.jonix.onix3.Product product)
+	{
+		productObject = product;
+
+		recordReference = product.getRecordReferenceValue();
+		notificationType = product.getNotificationTypeValue();
+		productIds = product.findProductIdentifiers(null);
+
+		com.tectonica.jonix.onix3.DescriptiveDetail dd = product.descriptiveDetail;
+		if (dd != null)
+		{
+			List<EditionTypes> editionTypes = dd.getEditionTypeValues();
+			editionType = (editionTypes == null) ? null : editionTypes.get(0);
+			editionNumber = dd.getEditionNumberValue();
+			ProductFormsList150 productFormValue = dd.getProductFormValue();
+			productForm = (productFormValue == null) ? null : productFormValue.name();
+			languages = dd.findLanguages(null);
+			audiences = dd.findAudiences(null);
+		}
+		else
+		{
+			editionType = null;
+			editionNumber = null;
+			productForm = null;
+			languages = Collections.emptyList();
+			audiences = Collections.emptyList();
+
+		}
+
+		com.tectonica.jonix.onix3.PublishingDetail pd = product.publishingDetail;
+		if (pd != null)
+		{
+			JonixPublishingDate jPublicationDate = pd.findPublishingDate(PublishingDateRoles.Publication_date);
+			publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
+			countryOfPublication = pd.getCountryOfPublicationValue();
+			cityOfPublication = pickCityOfPublication(product, LanguageCodeIso6392Bs.English);
+			JonixExtent jNumberOfPages = dd.findExtent(ExtentTypes.Main_content_page_count);
+			numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
+		}
+		else
+		{
+			publicationDate = null;
+			countryOfPublication = null;
+			cityOfPublication = null;
+			numberOfPages = null;
+		}
+
+		titles = BasicTitle.extractFrom(product);
+		contributors = BasicContributor.extractFrom(product);
+		collections = BasicCollection.extractFrom(product); // series and collections are composites, not structs
+		subjects = BasicSubject.extractFrom(product); // not struct due to Onix2's BASICMainSubject and BICMainSubject
+		texts = BasicText.extractFrom(product);
+		publishers = BasicPublisher.extractFrom(product);
+		imprints = BasicImprint.extractFrom(product); // publishers are composites, not structs
+		supplyDetails = BasicSupplyDetail.extractFrom(product);
+		salesRights = BasicSalesRights.extractFrom(product); // non-struct
+	}
+
+	public BasicProduct(com.tectonica.jonix.onix2.Product product)
+	{
+		productObject = product;
+
+		recordReference = product.getRecordReferenceValue();
+		notificationType = product.getNotificationTypeValue();
+		productIds = product.findProductIdentifiers(null);
+
+		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
+		editionNumber = JPU.convertStringToInteger(product.getEditionNumberValue());
+		ProductForms productFormValue = product.getProductFormValue();
+		productForm = (productFormValue == null) ? null : productFormValue.name();
+		languages = product.findLanguages(null);
+		audiences = product.findAudiences(null);
+
+		publicationDate = product.getPublicationDateValue();
+		countryOfPublication = product.getCountryOfPublicationValue();
+		cityOfPublication = pickCityOfPublication(product, LanguageCodeIso6392Bs.English);
+		numberOfPages = product.getNumberOfPagesValue();
+
+		titles = BasicTitle.extractFrom(product);
+		contributors = BasicContributor.extractFrom(product); // TODO: use intf
+		collections = BasicCollection.extractFrom(product); // onix2-only
+		subjects = BasicSubject.extractFrom(product); // TODO: use struct
+		texts = BasicText.extractFrom(product); // TODO: use struct - although not complete
+		publishers = BasicPublisher.extractFrom(product); // TODO: use intf
+		imprints = BasicImprint.extractFrom(product); // non-struct
+		supplyDetails = BasicSupplyDetail.extractFrom(product); // TODO: use intf
+		salesRights = BasicSalesRights.extractFrom(product); // non-struct
+	}
+
+	private String pickCityOfPublication(com.tectonica.jonix.onix3.Product product,
+			LanguageCodeIso6392Bs preferredLanguage)
+	{
+		if (product.publishingDetail == null)
+			return null;
+
+		List<com.tectonica.jonix.onix3.CityOfPublication> cops = product.publishingDetail.cityOfPublications;
+		if (cops == null)
+			return null;
+
+		for (com.tectonica.jonix.onix3.CityOfPublication cop : cops)
+		{
+			if (cop.language == null || cop.language == preferredLanguage)
+				return cop.value;
+		}
+		return cops.get(0).value; // return whatever language we have
+	}
+
+	private String pickCityOfPublication(com.tectonica.jonix.onix2.Product product,
+			LanguageCodeIso6392Bs preferredLanguage)
+	{
+		if (product.cityOfPublications != null)
+		{
+			for (com.tectonica.jonix.onix2.CityOfPublication cop : product.cityOfPublications)
+			{
+				if (cop.language == null || cop.language == preferredLanguage)
+					return cop.value;
+			}
+			return product.cityOfPublications.get(0).value; // return whatever language we have
+		}
+		return null;
+	}
+
+	public Object getProductObject()
+	{
+		return productObject;
+	}
 
 	public String getLabel()
 	{
@@ -105,9 +229,29 @@ public abstract class BasicProduct implements Serializable
 
 	// LOOKUP CONVENIENCE SERVICES
 
-	public Title findTitle(TitleTypes requestedType)
+	public JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType)
 	{
-		for (Title title : titles)
+		for (JonixProductIdentifier pid : productIds)
+		{
+			if (pid.productIDType == requestedType)
+				return pid;
+		}
+		return null;
+	}
+
+	public JonixLanguage findLanguage(LanguageRoles requestedType)
+	{
+		for (JonixLanguage lang : languages)
+		{
+			if (lang.languageRole == requestedType)
+				return lang;
+		}
+		return null;
+	}
+
+	public BasicTitle findTitle(TitleTypes requestedType)
+	{
+		for (BasicTitle title : titles)
 		{
 			if (title.titleType == requestedType)
 				return title;
@@ -115,10 +259,10 @@ public abstract class BasicProduct implements Serializable
 		return null;
 	}
 
-	public List<Contributor> findContributors(ContributorRoles requestedRole)
+	public List<BasicContributor> findContributors(ContributorRoles requestedRole)
 	{
-		List<Contributor> matches = new ArrayList<Contributor>();
-		for (Contributor contributor : contributors)
+		List<BasicContributor> matches = new ArrayList<BasicContributor>();
+		for (BasicContributor contributor : contributors)
 		{
 			if (contributor.contributorRoles.contains(requestedRole))
 				matches.add(contributor);
@@ -126,18 +270,18 @@ public abstract class BasicProduct implements Serializable
 		return matches;
 	}
 
-	public List<Subject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
+	public List<BasicSubject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
 	{
-		List<Subject> list = subjects.get(requestedScheme);
+		List<BasicSubject> list = subjects.get(requestedScheme);
 		if (list == null)
 			return Collections.emptyList();
 		return list;
 	}
 
-	public OtherText findOtherText(TextTypes requestedType)
+	public BasicText findOtherText(TextTypes requestedType)
 	{
 		// we don't use product.findOtherText() because we need the 'textFormat' attribute, not just the value
-		for (OtherText otherText : otherTexts)
+		for (BasicText otherText : texts)
 		{
 			if (otherText.textType == requestedType)
 				return otherText;
@@ -145,12 +289,12 @@ public abstract class BasicProduct implements Serializable
 		return null;
 	}
 
-	public List<Price> findPrices(Set<PriceTypes> requestedTypes)
+	public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes)
 	{
-		List<Price> matches = new ArrayList<Price>();
-		for (SupplyDetail supplyDetail : supplyDetails)
+		List<BasicPrice> matches = new ArrayList<BasicPrice>();
+		for (BasicSupplyDetail supplyDetail : supplyDetails)
 		{
-			for (Price price : supplyDetail.prices)
+			for (BasicPrice price : supplyDetail.prices)
 			{
 				if (requestedTypes.contains(price.priceType))
 					matches.add(price);
@@ -159,23 +303,17 @@ public abstract class BasicProduct implements Serializable
 		return matches;
 	}
 
-	public List<SalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
+	public List<BasicSalesRights> findSalesRightss(Set<SalesRightsTypes> requestedTypes)
 	{
 //		return product.findSalesRightss(requestedTypes);
-		List<SalesRights> matches = new ArrayList<SalesRights>();
-		for (SalesRights salesRights : salesRightss)
+		List<BasicSalesRights> matches = new ArrayList<BasicSalesRights>();
+		for (BasicSalesRights salesRights : salesRights)
 		{
 			if (requestedTypes.contains(salesRights.salesRightsType))
 				matches.add(salesRights);
 		}
 		return matches;
 	}
-
-	public abstract JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType);
-
-	public abstract JonixLanguage findLanguage(LanguageRoles requestedType);
-
-	public abstract String findCityOfPublication(LanguageCodeIso6392Bs preferredLanguage);
 
 	@Override
 	public String toString()
@@ -184,9 +322,11 @@ public abstract class BasicProduct implements Serializable
 		sb.append("------------------------------------------------------------------------").append("\n");
 		sb.append("recordReference=      ").append(recordReference).append("\n");
 		sb.append("notificationType=     ").append(notificationType).append("\n");
+		sb.append("productIds=           ").append(productIds).append("\n");
 		sb.append("editionType=          ").append(editionType).append("\n");
 		sb.append("editionNumber=        ").append(editionNumber).append("\n");
 		sb.append("productForm=          ").append(productForm).append("\n");
+		sb.append("languages=            ").append(languages).append("\n");
 		sb.append("audiences=            ").append(audiences).append("\n");
 		sb.append("publicationDate=      ").append(publicationDate).append("\n");
 		sb.append("countryOfPublication= ").append(countryOfPublication).append("\n");
@@ -194,13 +334,13 @@ public abstract class BasicProduct implements Serializable
 		sb.append("numberOfPages=        ").append(numberOfPages).append("\n");
 		sb.append("titles=               ").append(titles).append("\n");
 		sb.append("contributors=         ").append(contributors).append("\n");
-		sb.append("seriess=              ").append(seriess).append("\n");
+		sb.append("seriess=              ").append(collections).append("\n");
 		sb.append("subjects=             ").append(subjects).append("\n");
-		sb.append("otherTexts=           ").append(otherTexts).append("\n");
+		sb.append("otherTexts=           ").append(texts).append("\n");
 		sb.append("publishers=           ").append(publishers).append("\n");
 		sb.append("imprints=             ").append(imprints).append("\n");
 		sb.append("supplyDetails=        ").append(supplyDetails).append("\n");
-		sb.append("salesRightss=         ").append(salesRightss).append("\n");
+		sb.append("salesRightss=         ").append(salesRights).append("\n");
 		return sb.toString();
 	}
 }

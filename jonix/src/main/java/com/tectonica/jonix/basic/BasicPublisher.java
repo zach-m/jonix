@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.composite;
+package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -27,12 +27,12 @@ import java.util.List;
 import com.tectonica.jonix.codelist.PublishingRoles;
 
 @SuppressWarnings("serial")
-public class Publisher implements Serializable
+public class BasicPublisher implements Serializable
 {
 	public final PublishingRoles publishingRole;
 	public final String publisherName;
 
-	public Publisher(PublishingRoles publishingRole, String publisherName)
+	public BasicPublisher(PublishingRoles publishingRole, String publisherName)
 	{
 		this.publishingRole = publishingRole;
 		this.publisherName = publisherName;
@@ -45,25 +45,25 @@ public class Publisher implements Serializable
 		return String.format("Publisher [%s]: %s", publishingRoleStr, publisherName);
 	}
 
-	public static List<Publisher> listFrom(com.tectonica.jonix.onix2.Product product)
+	public static List<BasicPublisher> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.publishers != null)
 		{
-			List<Publisher> result = new ArrayList<>();
+			List<BasicPublisher> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix2.Publisher i : product.publishers)
-				result.add(new Publisher(i.getPublishingRoleValue(), i.getPublisherNameValue()));
+				result.add(new BasicPublisher(i.getPublishingRoleValue(), i.getPublisherNameValue()));
 			return result;
 		}
 		return Collections.emptyList();
 	}
 
-	public static List<Publisher> listFrom(com.tectonica.jonix.onix3.Product product)
+	public static List<BasicPublisher> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
 		if (product.publishingDetail.publishers != null)
 		{
-			List<Publisher> result = new ArrayList<>();
+			List<BasicPublisher> result = new ArrayList<>();
 			for (com.tectonica.jonix.onix3.Publisher i : product.publishingDetail.publishers)
-				result.add(new Publisher(i.getPublishingRoleValue(), i.getPublisherNameValue()));
+				result.add(new BasicPublisher(i.getPublishingRoleValue(), i.getPublisherNameValue()));
 			return result;
 		}
 		return Collections.emptyList();
