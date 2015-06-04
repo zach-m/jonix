@@ -26,7 +26,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.basic.Onix3Util;
+import com.tectonica.jonix.basic.BasicPicker;
 import com.tectonica.jonix.codelist.ContributorRoles;
 
 @SuppressWarnings("serial")
@@ -122,7 +122,7 @@ public class Contributor implements Serializable
 			for (com.tectonica.jonix.onix3.Contributor c : contributors)
 			{
 				result.add(new Contributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
-						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), Onix3Util
+						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), BasicPicker
 						.pickBiographicalNote(c)));
 			}
 			return result;

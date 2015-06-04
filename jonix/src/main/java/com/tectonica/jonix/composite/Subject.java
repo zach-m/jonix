@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.tectonica.jonix.basic.Onix3Util;
+import com.tectonica.jonix.basic.BasicPicker;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
 @SuppressWarnings("serial")
@@ -97,7 +97,7 @@ public class Subject implements Serializable
 			for (com.tectonica.jonix.onix3.Subject s : product.descriptiveDetail.subjects)
 			{
 				add(map, s.getSubjectSchemeIdentifierValue(), s.getSubjectCodeValue(),
-						Onix3Util.pickSubjectHeadingText(s), s.isMainSubject());
+						BasicPicker.pickSubjectHeadingText(s), s.isMainSubject());
 			}
 		}
 		return map;

@@ -8,7 +8,7 @@ import com.tectonica.jonix.onix3.SubjectHeadingText;
 import com.tectonica.jonix.onix3.Text;
 import com.tectonica.jonix.onix3.TextContent;
 
-public class Onix3Util
+public class BasicPicker
 {
 	public static String pickBiographicalNote(Contributor contributor)
 	{

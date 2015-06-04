@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.tectonica.jonix.basic.Onix3Util;
+import com.tectonica.jonix.basic.BasicPicker;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextTypes;
@@ -81,7 +81,7 @@ public class OtherText implements Serializable
 			for (com.tectonica.jonix.onix3.TextContent tc : product.collateralDetail.textContents)
 			{
 				TextTypes type = tc.getTextTypeValue();
-				com.tectonica.jonix.onix3.Text textObject = Onix3Util.pickTextObject(tc);
+				com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(tc);
 				TextFormats format = textObject.textformat;
 				String text = textObject.value;
 				result.add(new OtherText(type, format, text));
