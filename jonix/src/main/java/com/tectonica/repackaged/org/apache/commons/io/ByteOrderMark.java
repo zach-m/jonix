@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.commons.io;
+package com.tectonica.repackaged.org.apache.commons.io;
 
 import java.io.Serializable;
 
 /**
  * Byte Order Mark (BOM) representation - see {@link org.apache.commons.io.input.BOMInputStream}.
- *
+ * 
  * @see org.apache.commons.io.input.BOMInputStream
  * @see <a href="http://en.wikipedia.org/wiki/Byte_order_mark">Wikipedia - Byte Order Mark</a>
  * @version $Id: ByteOrderMark.java 1005099 2010-10-06 16:13:01Z niallp $
@@ -43,7 +43,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Construct a new BOM.
-	 *
+	 * 
 	 * @param charsetName
 	 *            The name of the charset the BOM represents
 	 * @param bytes
@@ -70,7 +70,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Return the name of the {@link java.nio.charset.Charset} the BOM represents.
-	 *
+	 * 
 	 * @return the character set name
 	 */
 	public String getCharsetName()
@@ -80,7 +80,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Return the length of the BOM's bytes.
-	 *
+	 * 
 	 * @return the length of the BOM's bytes
 	 */
 	public int length()
@@ -90,7 +90,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * The byte at the specified position.
-	 *
+	 * 
 	 * @param pos
 	 *            The position
 	 * @return The specified byte
@@ -102,7 +102,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Return a copy of the BOM's bytes.
-	 *
+	 * 
 	 * @return a copy of the BOM's bytes
 	 */
 	public byte[] getBytes()
@@ -117,7 +117,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Indicates if this BOM's bytes equals another.
-	 *
+	 * 
 	 * @param obj
 	 *            The object to compare to
 	 * @return true if the bom's bytes are equal, otherwise false
@@ -146,7 +146,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Return the hashcode for this BOM.
-	 *
+	 * 
 	 * @return the hashcode for this BOM.
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -163,7 +163,7 @@ public class ByteOrderMark implements Serializable
 
 	/**
 	 * Provide a String representation of the BOM.
-	 *
+	 * 
 	 * @return the length of the BOM's bytes
 	 */
 	@Override

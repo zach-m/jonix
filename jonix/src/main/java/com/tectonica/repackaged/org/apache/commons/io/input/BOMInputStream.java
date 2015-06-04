@@ -14,29 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.commons.io.input;
+package com.tectonica.repackaged.org.apache.commons.io.input;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.io.ByteOrderMark;
+import com.tectonica.repackaged.org.apache.commons.io.ByteOrderMark;
 
 /**
  * This class is used to wrap a stream that includes an encoded {@link ByteOrderMark} as its first bytes.
- *
+ * 
  * This class detects these bytes and, if required, can automatically skip them and return the subsequent byte as the
  * first byte in the stream.
- *
+ * 
  * The {@link ByteOrderMark} implementation has the following pre-defined BOMs:
  * <ul>
  * <li>UTF-8 - {@link ByteOrderMark#UTF_8}</li>
  * <li>UTF-16BE - {@link ByteOrderMark#UTF_16LE}</li>
  * <li>UTF-16LE - {@link ByteOrderMark#UTF_16BE}</li>
  * </ul>
- *
- *
+ * 
+ * 
  * <h3>Example 1 - Detect and exclude a UTF-8 BOM</h3>
  * 
  * <pre>
@@ -46,7 +46,7 @@ import org.apache.commons.io.ByteOrderMark;
  * 	// has a UTF-8 BOM
  * }
  * </pre>
- *
+ * 
  * <h3>Example 2 - Detect a UTF-8 BOM (but don't exclude it)</h3>
  * 
  * <pre>
@@ -57,7 +57,7 @@ import org.apache.commons.io.ByteOrderMark;
  * 	// has a UTF-8 BOM
  * }
  * </pre>
- *
+ * 
  * <h3>Example 3 - Detect Multiple BOMs</h3>
  * 
  * <pre>
@@ -75,7 +75,7 @@ import org.apache.commons.io.ByteOrderMark;
  * 	// has a UTF-16BE BOM
  * }
  * </pre>
- *
+ * 
  * @see org.apache.commons.io.ByteOrderMark
  * @see <a href="http://en.wikipedia.org/wiki/Byte_order_mark">Wikipedia - Byte Order Mark</a>
  * @version $Revision: 1052095 $ $Date: 2010-12-22 23:03:20 +0000 (Wed, 22 Dec 2010) $
@@ -152,7 +152,7 @@ public class BOMInputStream extends ProxyInputStream
 
 	/**
 	 * Indicates whether the stream contains one of the specified BOMs.
-	 *
+	 * 
 	 * @return true if the stream has one of the specified BOMs, otherwise false if it does not
 	 * @throws IOException
 	 *             if an error reading the first bytes of the stream occurs
@@ -164,7 +164,7 @@ public class BOMInputStream extends ProxyInputStream
 
 	/**
 	 * Indicates whether the stream contains the specified BOM.
-	 *
+	 * 
 	 * @param bom
 	 *            The BOM to check for
 	 * @return true if the stream has the specified BOM, otherwise false if it does not
@@ -184,7 +184,7 @@ public class BOMInputStream extends ProxyInputStream
 
 	/**
 	 * Return the BOM (Byte Order Mark).
-	 *
+	 * 
 	 * @return The BOM or null if none
 	 * @throws IOException
 	 *             if an error reading the first bytes of the stream occurs
@@ -224,7 +224,7 @@ public class BOMInputStream extends ProxyInputStream
 
 	/**
 	 * Return the BOM charset Name - {@link ByteOrderMark#getCharsetName()}.
-	 *
+	 * 
 	 * @return The BOM charset Name or null if no BOM found
 	 * @throws IOException
 	 *             if an error reading the first bytes of the stream occurs
@@ -237,8 +237,8 @@ public class BOMInputStream extends ProxyInputStream
 	}
 
 	/**
-	 * This method reads and either preserves or skips the first bytes in the stream. It behaves like the single-byte
-	 * <code>read()</code> method, either returning a valid byte or -1 to indicate that the initial bytes have been
+	 * This method reads and either preserves or skips the first bytes in the stream. It behaves like the single-byte <code>read()</code>
+	 * method, either returning a valid byte or -1 to indicate that the initial bytes have been
 	 * processed already.
 	 * 
 	 * @return the byte read (excluding BOM) or -1 if the end of stream
@@ -253,7 +253,7 @@ public class BOMInputStream extends ProxyInputStream
 
 	/**
 	 * Find a BOM with the specified bytes.
-	 *
+	 * 
 	 * @return The matched BOM or null if none matched
 	 */
 	private ByteOrderMark find()
@@ -270,7 +270,7 @@ public class BOMInputStream extends ProxyInputStream
 
 	/**
 	 * Check if the bytes match a BOM.
-	 *
+	 * 
 	 * @param bom
 	 *            The BOM
 	 * @return true if the bytes match the bom, otherwise false

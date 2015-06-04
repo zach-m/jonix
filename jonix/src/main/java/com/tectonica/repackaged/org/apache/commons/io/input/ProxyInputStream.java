@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.commons.io.input;
+package com.tectonica.repackaged.org.apache.commons.io.input;
 
 import java.io.FilterInputStream;
 import java.io.IOException;
@@ -24,12 +24,12 @@ import java.io.InputStream;
  * A Proxy stream which acts as expected, that is it passes the method calls on to the proxied stream and doesn't change
  * which methods are being called.
  * <p>
- * It is an alternative base class to FilterInputStream to increase reusability, because FilterInputStream changes the
- * methods being called, such as read(byte[]) to read(byte[], int, int).
+ * It is an alternative base class to FilterInputStream to increase reusability, because FilterInputStream changes the methods being called,
+ * such as read(byte[]) to read(byte[], int, int).
  * <p>
- * See the protected methods for ways in which a subclass can easily decorate a stream with custom pre-, post- or error
- * processing functionality.
- *
+ * See the protected methods for ways in which a subclass can easily decorate a stream with custom pre-, post- or error processing
+ * functionality.
+ * 
  * @author Stephen Colebourne
  * @version $Id: ProxyInputStream.java 934041 2010-04-14 17:37:24Z jukka $
  */
@@ -38,7 +38,7 @@ public abstract class ProxyInputStream extends FilterInputStream
 
 	/**
 	 * Constructs a new ProxyInputStream.
-	 *
+	 * 
 	 * @param proxy
 	 *            the InputStream to delegate to
 	 */
@@ -237,12 +237,12 @@ public abstract class ProxyInputStream extends FilterInputStream
 	 * Invoked by the read methods before the call is proxied. The number of bytes that the caller wanted to read (1 for
 	 * the {@link #read()} method, buffer length for {@link #read(byte[])}, etc.) is given as an argument.
 	 * <p>
-	 * Subclasses can override this method to add common pre-processing functionality without having to override all the
-	 * read methods. The default implementation does nothing.
+	 * Subclasses can override this method to add common pre-processing functionality without having to override all the read methods. The
+	 * default implementation does nothing.
 	 * <p>
-	 * Note this method is <em>not</em> called from {@link #skip(long)} or {@link #reset()}. You need to explicitly
-	 * override those methods if you want to add pre-processing steps also to them.
-	 *
+	 * Note this method is <em>not</em> called from {@link #skip(long)} or {@link #reset()}. You need to explicitly override those methods
+	 * if you want to add pre-processing steps also to them.
+	 * 
 	 * @since Commons IO 2.0
 	 * @param n
 	 *            number of bytes that the caller asked to be read
@@ -256,12 +256,12 @@ public abstract class ProxyInputStream extends FilterInputStream
 	 * Invoked by the read methods after the proxied call has returned successfully. The number of bytes returned to the
 	 * caller (or -1 if the end of stream was reached) is given as an argument.
 	 * <p>
-	 * Subclasses can override this method to add common post-processing functionality without having to override all
-	 * the read methods. The default implementation does nothing.
+	 * Subclasses can override this method to add common post-processing functionality without having to override all the read methods. The
+	 * default implementation does nothing.
 	 * <p>
-	 * Note this method is <em>not</em> called from {@link #skip(long)} or {@link #reset()}. You need to explicitly
-	 * override those methods if you want to add post-processing steps also to them.
-	 *
+	 * Note this method is <em>not</em> called from {@link #skip(long)} or {@link #reset()}. You need to explicitly override those methods
+	 * if you want to add post-processing steps also to them.
+	 * 
 	 * @since Commons IO 2.0
 	 * @param n
 	 *            number of bytes read, or -1 if the end of stream was reached
@@ -274,8 +274,7 @@ public abstract class ProxyInputStream extends FilterInputStream
 	/**
 	 * Handle any IOExceptions thrown.
 	 * <p>
-	 * This method provides a point to implement custom exception handling. The default behaviour is to re-throw the
-	 * exception.
+	 * This method provides a point to implement custom exception handling. The default behaviour is to re-throw the exception.
 	 * 
 	 * @param e
 	 *            The IOException thrown

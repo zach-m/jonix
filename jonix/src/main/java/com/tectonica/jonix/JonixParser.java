@@ -27,7 +27,6 @@ import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 
-import org.apache.commons.io.input.BOMInputStream;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
@@ -35,6 +34,7 @@ import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.basic.BasicProduct2;
 import com.tectonica.jonix.basic.BasicProduct3;
+import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class JonixParser
