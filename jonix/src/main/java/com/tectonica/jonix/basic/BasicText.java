@@ -20,9 +20,6 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import com.tectonica.jonix.BasicPicker;
 import com.tectonica.jonix.codelist.OtherTextTypes;
@@ -32,63 +29,31 @@ import com.tectonica.jonix.codelist.TextTypes;
 @SuppressWarnings("serial")
 public class BasicText implements Serializable
 {
-	public final TextTypes textType;
-	public final TextFormats textFormat;
-	public final String text;
+	public TextTypes textType;
+	public TextFormats textFormat;
+	public String text;
 
-	public BasicText(TextTypes textType, TextFormats textFormat, String text)
+	public BasicText extractFrom(com.tectonica.jonix.onix2.OtherText ot)
 	{
-		this.textType = textType;
-		this.textFormat = textFormat;
-		this.text = text;
-	}
-
-	@Override
-	public String toString()
-	{
-		return String.format("Text [%s/%s]: %s", (textType == null) ? null : textType.name(),
-				(textFormat == null) ? null : textFormat.name(), text);
-	}
-
-	public static List<BasicText> extractFrom(com.tectonica.jonix.onix2.Product product)
-	{
-		if (product.otherTexts != null)
+		textType = translate33to153(ot.getTextTypeCodeValue());
+		textFormat = ot.getTextFormatValue();
+		text = null;
+		if (ot.text != null)
 		{
-			List<BasicText> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.OtherText ot : product.otherTexts)
-			{
-				TextTypes type = translate33to153(ot.getTextTypeCodeValue());
-				TextFormats format = ot.getTextFormatValue();
-				String text = null;
-				if (ot.text != null)
-				{
-					text = ot.text.value;
-					if (format == null)
-						format = ot.text.textformat;
-				}
-				result.add(new BasicText(type, format, text));
-			}
-			return result;
+			text = ot.text.value;
+			if (textFormat == null)
+				textFormat = ot.text.textformat;
 		}
-		return Collections.emptyList();
+		return this;
 	}
 
-	public static List<BasicText> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicText extractFrom(com.tectonica.jonix.onix3.TextContent tc)
 	{
-		if (product.collateralDetail.textContents != null)
-		{
-			List<BasicText> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix3.TextContent tc : product.collateralDetail.textContents)
-			{
-				TextTypes type = tc.getTextTypeValue();
-				com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(tc);
-				TextFormats format = textObject.textformat;
-				String text = textObject.value;
-				result.add(new BasicText(type, format, text));
-			}
-			return result;
-		}
-		return Collections.emptyList();
+		textType = tc.getTextTypeValue();
+		com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(tc);
+		textFormat = textObject.textformat;
+		text = textObject.value;
+		return this;
 	}
 
 	/**
@@ -96,7 +61,7 @@ public class BasicText implements Serializable
 	 * "http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_10_Changes_for_3.0.pdf"
 	 * >this document from Editeur</a>
 	 */
-	private static TextTypes translate33to153(OtherTextTypes o)
+	private TextTypes translate33to153(OtherTextTypes o)
 	{
 		switch (o)
 		{

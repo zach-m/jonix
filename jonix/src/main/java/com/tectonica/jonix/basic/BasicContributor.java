@@ -20,10 +20,7 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import com.tectonica.jonix.BasicPicker;
@@ -32,25 +29,39 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 @SuppressWarnings("serial")
 public class BasicContributor implements Serializable
 {
-	public final Set<ContributorRoles> contributorRoles;
-	public final String personName;
-	public final String personNameKey;
-	public final String personNameBeforeKey;
-	public final String corporateName;
-	public final String biographicalNote;
+	public Set<ContributorRoles> contributorRoles;
+	public String displayName;
+	public String personName;
+	public String personNameKey;
+	public String personNameBeforeKey;
+	public String corporateName;
+	public String biographicalNote;
 
-	public BasicContributor(Set<ContributorRoles> contributorRoles, String personName, String personNameKey,
-			String personNameBeforeKey, String corporateName, String biographicalNote)
+	public BasicContributor extractFrom(com.tectonica.jonix.onix2.Contributor c)
 	{
-		this.contributorRoles = contributorRoles;
-		this.personName = personName;
-		this.personNameKey = personNameKey;
-		this.personNameBeforeKey = personNameBeforeKey;
-		this.corporateName = corporateName;
-		this.biographicalNote = biographicalNote;
+		contributorRoles = new HashSet<>(c.getContributorRoleValues());
+		personName = c.getPersonNameValue();
+		personNameKey = c.getKeyNamesValue();
+		personNameBeforeKey = c.getNamesBeforeKeyValue();
+		corporateName = c.getCorporateNameValue();
+		biographicalNote = c.getBiographicalNoteValue();
+		displayName = phraseDisplayName();
+		return this;
 	}
 
-	public String displayName()
+	public BasicContributor extractFrom(com.tectonica.jonix.onix3.Contributor c)
+	{
+		contributorRoles = new HashSet<>(c.getContributorRoleValues());
+		personName = c.getPersonNameValue();
+		personNameKey = c.getKeyNamesValue();
+		personNameBeforeKey = c.getNamesBeforeKeyValue();
+		corporateName = c.getCorporateNameValue();
+		biographicalNote = BasicPicker.pickBiographicalNote(c);
+		displayName = phraseDisplayName();
+		return this;
+	}
+
+	private String phraseDisplayName()
 	{
 		if (personName != null)
 			return personName;
@@ -66,67 +77,5 @@ public class BasicContributor implements Serializable
 			return personNameBeforeKey;
 
 		return corporateName;
-	}
-
-	@Override
-	public String toString()
-	{
-		String contributorRoleStr = (contributorRoles == null) ? null : contributorRoles.toString();
-		String biographicalNoteStr = biographicalNote == null ? "" : " (" + biographicalNote + ")";
-		return String.format("Contributor [%s]: %s%s", contributorRoleStr, personName, biographicalNoteStr);
-	}
-
-	// /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix2.Product product)
-	{
-		return listFrom2(product.contributors);
-	}
-
-	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix2.Series series)
-	{
-		return listFrom2(series.contributors);
-	}
-
-	private static List<BasicContributor> listFrom2(final List<com.tectonica.jonix.onix2.Contributor> contributors)
-	{
-		if (contributors != null)
-		{
-			List<BasicContributor> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.Contributor c : contributors)
-				result.add(new BasicContributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
-						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), c
-						.getBiographicalNoteValue()));
-			return result;
-		}
-		return Collections.emptyList();
-	}
-
-	// /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix3.Product product)
-	{
-		return listFrom3(product.descriptiveDetail.contributors);
-	}
-
-	public static List<BasicContributor> extractFrom(com.tectonica.jonix.onix3.Collection collection)
-	{
-		return listFrom3(collection.contributors);
-	}
-
-	private static List<BasicContributor> listFrom3(final List<com.tectonica.jonix.onix3.Contributor> contributors)
-	{
-		if (contributors != null)
-		{
-			List<BasicContributor> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix3.Contributor c : contributors)
-			{
-				result.add(new BasicContributor(new HashSet<>(c.getContributorRoleValues()), c.getPersonNameValue(), c
-						.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getCorporateNameValue(), BasicPicker
-						.pickBiographicalNote(c)));
-			}
-			return result;
-		}
-		return Collections.emptyList();
 	}
 }

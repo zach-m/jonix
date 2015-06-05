@@ -19,27 +19,31 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
-import com.tectonica.jonix.codelist.PublishingRoles;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("serial")
-public class BasicPublisher implements Serializable
+public class BasicCollections extends ArrayList<BasicCollection>
 {
-	public PublishingRoles publishingRole;
-	public String publisherName;
-
-	public BasicPublisher extractFrom(com.tectonica.jonix.onix2.Publisher i)
+	public List<BasicCollection> extractFrom(com.tectonica.jonix.onix2.Product product)
 	{
-		publishingRole = i.getPublishingRoleValue();
-		publisherName = i.getPublisherNameValue();
+		clear();
+		if (product.seriess != null)
+		{
+			for (com.tectonica.jonix.onix2.Series c : product.seriess)
+				add(new BasicCollection().extractFrom(c));
+		}
 		return this;
 	}
 
-	public BasicPublisher extractFrom(com.tectonica.jonix.onix3.Publisher i)
+	public List<BasicCollection> extractFrom(com.tectonica.jonix.onix3.Product product)
 	{
-		publishingRole = i.getPublishingRoleValue();
-		publisherName = i.getPublisherNameValue();
+		clear();
+		if (product.descriptiveDetail.collections != null)
+		{
+			for (com.tectonica.jonix.onix3.Collection c : product.descriptiveDetail.collections)
+				add(new BasicCollection().extractFrom(c));
+		}
 		return this;
 	}
 }

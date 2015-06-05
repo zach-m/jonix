@@ -20,9 +20,7 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -35,81 +33,33 @@ import com.tectonica.jonix.onix3.Territory;
 @SuppressWarnings("serial")
 public class BasicSalesRights implements Serializable
 {
-	public final SalesRightsTypes salesRightsType;
-	public final List<Set<CountryCodeIso31661s>> countries;
-	public final Set<Regions> regions;
-	public final List<RightsRegions> rightRegions; // only in Onix2
-	public final Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
-	public final Set<Regions> regionsExcluded; // only in Onix3
+	public SalesRightsTypes salesRightsType;
+	public List<Set<CountryCodeIso31661s>> countries;
+	public Set<Regions> regions;
+	public List<RightsRegions> rightRegions; // only in Onix2
+	public Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
+	public Set<Regions> regionsExcluded; // only in Onix3
 
-	public BasicSalesRights(SalesRightsTypes salesRightsType, List<Set<CountryCodeIso31661s>> countries,
-			Set<Regions> regions, List<RightsRegions> rightRegions)
+	public BasicSalesRights extractFrom(com.tectonica.jonix.onix2.SalesRights sr)
 	{
-		this.salesRightsType = salesRightsType;
-		this.countries = countries;
-		this.regions = regions;
-		this.rightRegions = rightRegions;
-		this.countriesExcluded = null;
-		this.regionsExcluded = null;
+		salesRightsType = sr.getSalesRightsTypeValue();
+		countries = sr.getRightsCountrySets();
+		regions = sr.getRightsTerritorySet();
+		rightRegions = sr.getRightsRegionValues();
+		countriesExcluded = null;
+		regionsExcluded = null;
+		return this;
 	}
 
-	public BasicSalesRights(SalesRightsTypes salesRightsType, Set<CountryCodeIso31661s> countries, Set<Regions> regions,
-			Set<CountryCodeIso31661s> countriesExcluded, Set<Regions> regionsExcluded)
+	public BasicSalesRights extractFrom(com.tectonica.jonix.onix3.SalesRights sr)
 	{
-		this.salesRightsType = salesRightsType;
-		this.countries = Arrays.asList(countries);
-		this.regions = regions;
-		this.rightRegions = null;
-		this.countriesExcluded = countriesExcluded;
-		this.regionsExcluded = regionsExcluded;
-	}
-
-	@Override
-	public String toString()
-	{
-		StringBuilder sb = new StringBuilder();
-		String salesRightsTypeStr = (salesRightsType == null) ? null : salesRightsType.name();
-		sb.append("SalesRights [").append(salesRightsTypeStr).append("]:");
-		if (countries != null)
-			sb.append("\n    > Countries: ").append(countries.toString());
-		if (regions != null)
-			sb.append("\n    > Regions: ").append(regions.toString());
-		if (rightRegions != null)
-			sb.append("\n    > RightRegions: ").append(rightRegions.toString());
-		if (countriesExcluded != null)
-			sb.append("\n    > Countries-Excluded: ").append(countriesExcluded.toString());
-		if (regionsExcluded != null)
-			sb.append("\n    > Regions-Excluded: ").append(regionsExcluded.toString());
-		return sb.toString();
-	}
-
-	public static List<BasicSalesRights> extractFrom(com.tectonica.jonix.onix2.Product product)
-	{
-		if (product.salesRightss != null)
-		{
-			List<BasicSalesRights> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.SalesRights sri : product.salesRightss)
-				result.add(new BasicSalesRights(sri.getSalesRightsTypeValue(), sri.getRightsCountrySets(), sri
-						.getRightsTerritorySet(), sri.getRightsRegionValues()));
-			return result;
-		}
-		return Collections.emptyList();
-	}
-
-	public static List<BasicSalesRights> extractFrom(com.tectonica.jonix.onix3.Product product)
-	{
-		if (product.publishingDetail != null && product.publishingDetail.salesRightss != null)
-		{
-			List<BasicSalesRights> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix3.SalesRights sr : product.publishingDetail.salesRightss)
-			{
-				Territory territory = sr.territory;
-				result.add(new BasicSalesRights(sr.getSalesRightsTypeValue(), territory.getCountriesIncludedSet(), territory
-						.getRegionsIncludedSet(), territory.getCountriesExcludedSet(), territory
-						.getRegionsExcludedSet()));
-			}
-			return result;
-		}
-		return Collections.emptyList();
+		Territory territory = sr.territory;
+		salesRightsType = sr.getSalesRightsTypeValue();
+		countries = Arrays.asList(territory.getCountriesIncludedSet());
+		regions = territory.getRegionsIncludedSet();
+		rightRegions = null;
+		countriesExcluded = territory.getCountriesExcludedSet();
+		regionsExcluded = territory.getRegionsExcludedSet();
+		return this;
 	}
 }

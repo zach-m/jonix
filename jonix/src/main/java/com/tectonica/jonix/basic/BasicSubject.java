@@ -20,10 +20,6 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.tectonica.jonix.BasicPicker;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
@@ -31,9 +27,12 @@ import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 @SuppressWarnings("serial")
 public class BasicSubject implements Serializable
 {
-	public final SubjectSchemeIdentifiers subjectSchemeIdentifier;
-	public final String subjectCode;
-	public final String subjectHeadingText;
+	public SubjectSchemeIdentifiers subjectSchemeIdentifier;
+	public String subjectCode;
+	public String subjectHeadingText;
+
+	public BasicSubject()
+	{}
 
 	public BasicSubject(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
 	{
@@ -42,64 +41,19 @@ public class BasicSubject implements Serializable
 		this.subjectHeadingText = subjectHeadingText;
 	}
 
-	@Override
-	public String toString()
+	public BasicSubject extractFrom(com.tectonica.jonix.onix2.Subject s)
 	{
-		String subjectSchemeIdentifierStr = (subjectSchemeIdentifier == null) ? null : subjectSchemeIdentifier.name();
-		return String.format("Subject [%s]: %s | %s", subjectSchemeIdentifierStr, subjectCode,
-				subjectHeadingText);
+		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
+		subjectCode = s.getSubjectCodeValue();
+		subjectHeadingText = s.getSubjectHeadingTextValue();
+		return this;
 	}
 
-	private static void add(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, SubjectSchemeIdentifiers type,
-			String subjectCode, String subjectHeadingText)
+	public BasicSubject extractFrom(com.tectonica.jonix.onix3.Subject s)
 	{
-		add(map, type, subjectCode, subjectHeadingText, false);
-	}
-
-	private static void add(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, SubjectSchemeIdentifiers type,
-			String subjectCode, String subjectHeadingText, boolean isMain)
-	{
-		List<BasicSubject> subjects = map.get(type);
-		if (subjects == null)
-			map.put(type, subjects = new ArrayList<BasicSubject>());
-		BasicSubject subject = new BasicSubject(type, subjectCode, subjectHeadingText);
-		if (isMain)
-			subjects.add(0, subject);
-		else
-			subjects.add(subject);
-	}
-
-	public static Map<SubjectSchemeIdentifiers, List<BasicSubject>> extractFrom(com.tectonica.jonix.onix2.Product product)
-	{
-		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
-
-		String bisacMainSubject = product.getBASICMainSubjectValue();
-		if (bisacMainSubject != null)
-			add(map, SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null);
-
-		String bicMainSubject = product.getBICMainSubjectValue();
-		if (bicMainSubject != null)
-			add(map, SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null);
-
-		if (product.subjects != null)
-		{
-			for (com.tectonica.jonix.onix2.Subject s : product.subjects)
-				add(map, s.getSubjectSchemeIdentifierValue(), s.getSubjectCodeValue(), s.getSubjectHeadingTextValue());
-		}
-		return map;
-	}
-
-	public static Map<SubjectSchemeIdentifiers, List<BasicSubject>> extractFrom(com.tectonica.jonix.onix3.Product product)
-	{
-		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
-		if (product.descriptiveDetail.subjects != null)
-		{
-			for (com.tectonica.jonix.onix3.Subject s : product.descriptiveDetail.subjects)
-			{
-				add(map, s.getSubjectSchemeIdentifierValue(), s.getSubjectCodeValue(),
-						BasicPicker.pickSubjectHeadingText(s), s.isMainSubject());
-			}
-		}
-		return map;
+		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
+		subjectCode = s.getSubjectCodeValue();
+		subjectHeadingText = BasicPicker.pickSubjectHeadingText(s);
+		return this;
 	}
 }

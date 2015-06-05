@@ -77,22 +77,22 @@ public class JonixParser
 					final String nodeName = element.getNodeName();
 					if (nodeName.equalsIgnoreCase("Product"))
 					{
-						final BasicProduct product;
+						final BasicProduct product = new BasicProduct();
 						if (isOnix2)
-							product = new BasicProduct(new com.tectonica.jonix.onix2.Product(element));
+							product.extractFrom(new com.tectonica.jonix.onix2.Product(element));
 						else if (isOnix3)
-							product = new BasicProduct(new com.tectonica.jonix.onix3.Product(element));
+							product.extractFrom(new com.tectonica.jonix.onix3.Product(element));
 						else
 							throw new RuntimeException("Couldn't determine the ONIX version of the file");
 						jonixParserListener.onProduct(product, ++productCount);
 					}
 					else if (nodeName.equalsIgnoreCase("Header"))
 					{
-						final BasicHeader header;
+						final BasicHeader header = new BasicHeader();
 						if (isOnix2)
-							header = new BasicHeader(new com.tectonica.jonix.onix2.Header(element));
+							header.extractFrom(new com.tectonica.jonix.onix2.Header(element));
 						else if (isOnix3)
-							header = new BasicHeader(new com.tectonica.jonix.onix3.Header(element));
+							header.extractFrom(new com.tectonica.jonix.onix3.Header(element));
 						else
 							throw new RuntimeException("Couldn't determine the ONIX version of the file");
 						jonixParserListener.onHeader(header);

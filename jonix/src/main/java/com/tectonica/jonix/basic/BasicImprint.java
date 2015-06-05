@@ -20,57 +20,23 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 @SuppressWarnings("serial")
 public class BasicImprint implements Serializable
 {
-	public final String imprintName;
+	public String imprintName;
 
-	public BasicImprint(String imprintName)
+	public BasicImprint extractFrom(com.tectonica.jonix.onix2.Imprint imprint)
 	{
-		this.imprintName = imprintName;
+		// TODO: we should at least read one required field (unlike ImprintName)
+		this.imprintName = imprint.getImprintNameValue();
+		return this;
 	}
 
-	@Override
-	public String toString()
+	public BasicImprint extractFrom(com.tectonica.jonix.onix3.Imprint imprint)
 	{
-		return String.format("Imprint: %s", imprintName);
-	}
-
-	public static List<BasicImprint> extractFrom(com.tectonica.jonix.onix2.Product product)
-	{
-		if (product.imprints != null)
-		{
-			List<BasicImprint> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix2.Imprint i : product.imprints)
-			{
-				// TODO: we should at least read one required field (unlike ImprintName)
-				final String imprintNameValue = i.getImprintNameValue();
-				if (imprintNameValue != null)
-					result.add(new BasicImprint(imprintNameValue));
-			}
-			return result;
-		}
-		return Collections.emptyList();
-	}
-
-	public static List<BasicImprint> extractFrom(com.tectonica.jonix.onix3.Product product)
-	{
-		if (product.publishingDetail.imprints != null)
-		{
-			List<BasicImprint> result = new ArrayList<>();
-			for (com.tectonica.jonix.onix3.Imprint i : product.publishingDetail.imprints)
-			{
-				// TODO: we should at least read one required field (unlike ImprintName)
-				final String imprintNameValue = i.getImprintNameValue();
-				if (imprintNameValue != null)
-					result.add(new BasicImprint(imprintNameValue));
-			}
-			return result;
-		}
-		return Collections.emptyList();
+		// TODO: we should at least read one required field (unlike ImprintName)
+		this.imprintName = imprint.getImprintNameValue();
+		return this;
 	}
 }
