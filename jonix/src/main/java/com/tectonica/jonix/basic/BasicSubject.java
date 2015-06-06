@@ -21,7 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
-import com.tectonica.jonix.BasicPicker;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
 @SuppressWarnings("serial")

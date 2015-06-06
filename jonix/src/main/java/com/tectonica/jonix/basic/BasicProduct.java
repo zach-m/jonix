@@ -21,9 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
-import com.tectonica.jonix.BasicColumn;
-import com.tectonica.jonix.JonixColumn;
-
 @SuppressWarnings("serial")
 public class BasicProduct implements Serializable
 {
@@ -41,11 +38,11 @@ public class BasicProduct implements Serializable
 	public final BasicSupplyDetails supplyDetails;
 	public final BasicSalesRightss salesRightss;
 
-	private final Object productObject;
+	private final Object onixProduct;
 
 	public BasicProduct(com.tectonica.jonix.onix3.Product product)
 	{
-		productObject = product;
+		onixProduct = product;
 		info = new BasicInfo(product);
 		description = new BasicDescription(product);
 		publishingDetails = new BasicPublishingDetails(product);
@@ -62,7 +59,7 @@ public class BasicProduct implements Serializable
 
 	public BasicProduct(com.tectonica.jonix.onix2.Product product)
 	{
-		productObject = product;
+		onixProduct = product;
 		info = new BasicInfo(product);
 		description = new BasicDescription(product);
 		publishingDetails = new BasicPublishingDetails(product);
@@ -77,23 +74,13 @@ public class BasicProduct implements Serializable
 		salesRightss = new BasicSalesRightss(product);
 	}
 
-	public Object getProductObject()
-	{
-		return productObject;
-	}
-
 	public String getLabel()
 	{
 		return (titles.size() > 0) ? titles.get(0).titleText : info.recordReference;
 	}
 
-	public static JonixColumn[] getDefaultColumns()
+	public Object getOnixProductObject()
 	{
-		return BasicColumn.all;
-	}
-
-	public static JonixColumn getDefaultIdColumn()
-	{
-		return BasicColumn.ISBN13;
+		return onixProduct;
 	}
 }

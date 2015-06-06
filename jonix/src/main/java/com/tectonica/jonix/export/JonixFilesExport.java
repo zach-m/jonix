@@ -19,23 +19,16 @@
 
 package com.tectonica.jonix.export;
 
-import java.io.PrintStream;
 import java.util.List;
 
+import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.JonixFilesScanner;
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
 
-public abstract class JonixFilesExport extends JonixFilesScanner
+public abstract class JonixFilesExport<H, P> extends JonixFilesScanner<H, P>
 {
-	public JonixFilesExport()
+	public JonixFilesExport(JonixContext<H, P> context)
 	{
-		super();
-	}
-
-	public JonixFilesExport(PrintStream out, PrintStream log)
-	{
-		super(out, log);
+		super(context);
 	}
 
 	@Override
@@ -59,27 +52,27 @@ public abstract class JonixFilesExport extends JonixFilesScanner
 	}
 
 	@Override
-	protected void onHeader(BasicHeader header)
+	protected void onHeader(H header)
 	{
 		logHeaderParseSummary(header);
 	}
 
 	@Override
-	protected void onProduct(BasicProduct product, int index)
+	protected void onProduct(P product, int index)
 	{
 		logProductParseSummary(product, index);
 	}
 
-	protected void logHeaderParseSummary(BasicHeader header)
+	protected void logHeaderParseSummary(H header)
 	{
 		log.println("-----------------------------------------------------------\n");
 		log.println(header.toString());
 		log.println("-----------------------------------------------------------\n");
 	}
 
-	protected void logProductParseSummary(BasicProduct product, int index)
+	protected void logProductParseSummary(P product, int index)
 	{
 		// show a log message about the product being successfully parsed
-		log.println("parsed product #" + index + " - " + product.getLabel());
+		log.println("parsed product #" + index + " - " + context.labelOf(product));
 	}
 }

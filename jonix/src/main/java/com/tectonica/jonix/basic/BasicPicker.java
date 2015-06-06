@@ -1,4 +1,4 @@
-package com.tectonica.jonix;
+package com.tectonica.jonix.basic;
 
 import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.onix3.BiographicalNote;

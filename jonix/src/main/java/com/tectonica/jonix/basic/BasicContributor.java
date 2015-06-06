@@ -23,7 +23,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.tectonica.jonix.BasicPicker;
 import com.tectonica.jonix.codelist.ContributorRoles;
 
 @SuppressWarnings("serial")

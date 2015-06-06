@@ -25,27 +25,31 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 
 import com.tectonica.jonix.JonixParser.JonixParserListener;
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
 
-public abstract class JonixScanner
+public abstract class JonixScanner<H, P>
 {
-	protected PrintStream log = System.err;
-	private final JonixParser parser;
+	protected final JonixContext<H, P> context;
 
-	public JonixScanner()
+	protected PrintStream log = System.err;
+	private final JonixParser<H, P> parser;
+
+	public JonixScanner(JonixContext<H, P> context)
 	{
-		parser = new JonixParser();
-		parser.setJonixParserListener(new JonixParserListener()
+		if (context == null)
+			throw new NullPointerException("context is required");
+		this.context = context;
+
+		parser = new JonixParser<H, P>(context);
+		parser.setJonixParserListener(new JonixParserListener<H, P>()
 		{
 			@Override
-			public void onHeader(BasicHeader header)
+			public void onHeader(H header)
 			{
 				JonixScanner.this.onHeader(header);
 			}
 
 			@Override
-			public void onProduct(BasicProduct product, int index)
+			public void onProduct(P product, int index)
 			{
 				JonixScanner.this.onProduct(product, index);
 
@@ -53,20 +57,16 @@ public abstract class JonixScanner
 		});
 	}
 
-	public JonixScanner(PrintStream log)
-	{
-		this();
-		setLog(log);
-	}
-
-	public void setLog(PrintStream log)
+	public JonixScanner<H, P> setLog(PrintStream log)
 	{
 		this.log = (log == null) ? System.err : log;
+		return this;
 	}
 
-	public void setLog(String fileName) throws UnsupportedEncodingException, FileNotFoundException
+	public JonixScanner<H, P> setLog(String fileName) throws UnsupportedEncodingException, FileNotFoundException
 	{
-		this.log = new PrintStream(fileName, "UTF8");
+		this.log = new PrintStream(fileName, "UTF-8");
+		return this;
 	}
 
 	public PrintStream getLog()
@@ -97,14 +97,14 @@ public abstract class JonixScanner
 		return true;
 	}
 
-	protected void doScan(JonixParser parser, InputStream source)
+	protected void doScan(JonixParser<H, P> parser, InputStream source)
 	{
 		parser.parse(source);
 	}
 
-	protected abstract void onHeader(BasicHeader header);
+	protected abstract void onHeader(H header);
 
-	protected abstract void onProduct(BasicProduct product, int index);
+	protected abstract void onProduct(P product, int index);
 
 	protected void onAfterSource()
 	{

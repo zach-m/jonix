@@ -30,28 +30,35 @@ import javax.xml.stream.events.StartElement;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 
-public class JonixParser
+public class JonixParser<H, P>
 {
-	public static interface JonixParserListener
-	{
-		public void onHeader(BasicHeader header);
+	protected final JonixContext<H, P> context;
 
-		public void onProduct(BasicProduct product, int index);
+	public JonixParser(JonixContext<H, P> context)
+	{
+		if (context == null)
+			throw new NullPointerException("context is required");
+		this.context = context;
 	}
 
-	private JonixParserListener jonixParserListener;
+	public static interface JonixParserListener<H, P>
+	{
+		public void onHeader(H header);
 
-	public JonixParserListener getJonixParserListener()
+		public void onProduct(P product, int index);
+	}
+
+	private JonixParserListener<H, P> jonixParserListener;
+
+	public JonixParserListener<H, P> getJonixParserListener()
 	{
 		return jonixParserListener;
 	}
 
-	public void setJonixParserListener(JonixParserListener jonixParserListener)
+	public void setJonixParserListener(JonixParserListener<H, P> jonixParserListener)
 	{
 		this.jonixParserListener = jonixParserListener;
 	}
@@ -75,27 +82,27 @@ public class JonixParser
 				public void onTarget(Element element)
 				{
 					final String nodeName = element.getNodeName();
-					if (nodeName.equalsIgnoreCase("Product"))
+					if (nodeName.equalsIgnoreCase("Header"))
 					{
-						final BasicProduct product;
+						final H header;
 						if (isOnix2)
-							product = new BasicProduct(new com.tectonica.jonix.onix2.Product(element));
+							header = context.createFrom(new com.tectonica.jonix.onix2.Header(element));
 						else if (isOnix3)
-							product = new BasicProduct(new com.tectonica.jonix.onix3.Product(element));
-						else
-							throw new RuntimeException("Couldn't determine the ONIX version of the file");
-						jonixParserListener.onProduct(product, ++productCount);
-					}
-					else if (nodeName.equalsIgnoreCase("Header"))
-					{
-						final BasicHeader header;
-						if (isOnix2)
-							header = new BasicHeader(new com.tectonica.jonix.onix2.Header(element));
-						else if (isOnix3)
-							header = new BasicHeader(new com.tectonica.jonix.onix3.Header(element));
+							header = context.createFrom(new com.tectonica.jonix.onix3.Header(element));
 						else
 							throw new RuntimeException("Couldn't determine the ONIX version of the file");
 						jonixParserListener.onHeader(header);
+					}
+					else if (nodeName.equalsIgnoreCase("Product"))
+					{
+						final P product;
+						if (isOnix2)
+							product = context.createFrom(new com.tectonica.jonix.onix2.Product(element));
+						else if (isOnix3)
+							product = context.createFrom(new com.tectonica.jonix.onix3.Product(element));
+						else
+							throw new RuntimeException("Couldn't determine the ONIX version of the file");
+						jonixParserListener.onProduct(product, ++productCount);
 					}
 				}
 

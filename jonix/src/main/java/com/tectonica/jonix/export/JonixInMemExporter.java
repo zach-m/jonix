@@ -19,25 +19,24 @@
 
 package com.tectonica.jonix.export;
 
-import java.io.PrintStream;
-import java.util.List;
+import java.util.Collection;
 
-import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.JonixContext;
 
-public class JonixInMemExporter extends JonixFilesExport
+public class JonixInMemExporter<H, P> extends JonixFilesExport<H, P>
 {
-	protected List<BasicProduct> output;
+	protected Collection<P> output;
 
-	public JonixInMemExporter(List<BasicProduct> output, PrintStream log)
+	public JonixInMemExporter(JonixContext<H, P> context, Collection<P> output)
 	{
-		super(null, log);
+		super(context);
 		if (output == null)
 			throw new NullPointerException();
 		this.output = output;
 	}
 
 	@Override
-	public void onProduct(BasicProduct product, int index)
+	public void onProduct(P product, int index)
 	{
 		super.onProduct(product, index);
 		output.add(product);

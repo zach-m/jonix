@@ -19,33 +19,27 @@
 
 package com.tectonica.jonix.export;
 
-import java.io.PrintStream;
 import java.util.List;
 
 import com.tectonica.jonix.JonixColumn;
-import com.tectonica.jonix.JonixFormatter;
-import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.JonixContext;
+import com.tectonica.jonix.JonixTabulator;
 
-public class JonixTabDelimitedExporter extends JonixFilesExport
+public class JonixTabDelimitedExporter<H, P> extends JonixFilesExport<H, P>
 {
-	protected JonixColumn[] columns;
+	protected JonixColumn<P>[] columns;
 
-	public JonixTabDelimitedExporter()
+	public JonixTabDelimitedExporter(JonixContext<H, P> context)
 	{
-		super();
+		super(context);
 	}
 
-	public JonixTabDelimitedExporter(PrintStream out, PrintStream log)
-	{
-		super(out, log);
-	}
-
-	public JonixColumn[] getColumns()
+	public JonixColumn<P>[] getColumns()
 	{
 		return columns;
 	}
 
-	public void setColumns(JonixColumn[] columns)
+	public void setColumns(JonixColumn<P>[] columns)
 	{
 		this.columns = columns;
 	}
@@ -55,15 +49,15 @@ public class JonixTabDelimitedExporter extends JonixFilesExport
 	{
 		super.onBeforeFiles(onixFileNames);
 		if (columns == null)
-			columns = BasicProduct.getDefaultColumns();
-		out.println(JonixFormatter.headerAsTabDelimitedString(columns));
+			columns = context.getDefaultColumns();
+		out.println(JonixTabulator.headerAsTabDelimitedString(columns));
 		return true;
 	}
 
 	@Override
-	protected void onProduct(BasicProduct product, int index)
+	protected void onProduct(P product, int index)
 	{
-		out.println(JonixFormatter.productAsTabDelimitedString(product, columns));
+		out.println(JonixTabulator.productAsTabDelimitedString(product, columns));
 		logProductParseSummary(product, index);
 	}
 }

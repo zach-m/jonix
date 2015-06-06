@@ -19,29 +19,22 @@
 
 package com.tectonica.jonix.export;
 
-import java.io.PrintStream;
-
-import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.util.JSON;
 
-public class JonixDumpExporter extends JonixFilesExport
+public class JonixDumpExporter<H, P> extends JonixFilesExport<H, P>
 {
-	public JonixDumpExporter()
+	public JonixDumpExporter(JonixContext<H, P> context)
 	{
-		super();
-	}
-
-	public JonixDumpExporter(PrintStream out, PrintStream log)
-	{
-		super(out, log);
+		super(context);
 	}
 
 	@Override
-	protected void onProduct(BasicProduct product, int index)
+	protected void onProduct(P product, int index)
 	{
 		super.onProduct(product, index);
 
-		out.println(JSON.toJson(product.getProductObject()));
+		out.println(JSON.toJson(context.onixProductObjectOf(product)));
 		out.println("**********************************************************************************\n");
 	}
 }

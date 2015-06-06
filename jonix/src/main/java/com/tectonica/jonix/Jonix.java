@@ -22,6 +22,8 @@ package com.tectonica.jonix;
 import java.io.PrintStream;
 import java.util.List;
 
+import com.tectonica.jonix.basic.BasicColumn;
+import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.export.JonixDumpExporter;
 import com.tectonica.jonix.export.JonixInMemExporter;
@@ -51,7 +53,7 @@ public class Jonix
 
 			PrintStream out = new PrintStream(outputFile);
 
-			createBasicTabDelimitedExporter(out, null).scanFolder(inputFile, ".xml");
+			createBasicTabDelimitedExporter().setOut(out).scanFolder(inputFile, ".xml");
 		}
 		catch (Exception e)
 		{
@@ -59,23 +61,74 @@ public class Jonix
 		}
 	}
 
-	public static JonixTabDelimitedExporter createBasicTabDelimitedExporter(PrintStream out, PrintStream log)
+	public static final JonixContext<BasicHeader, BasicProduct> BASIC_CONTEXT = new JonixContext<BasicHeader, BasicProduct>()
 	{
-		return new JonixTabDelimitedExporter(out, log);
+		@Override
+		public BasicHeader createFrom(com.tectonica.jonix.onix2.Header header)
+		{
+			return new BasicHeader(header);
+		}
+
+		@Override
+		public BasicHeader createFrom(com.tectonica.jonix.onix3.Header header)
+		{
+			return new BasicHeader(header);
+		}
+
+		@Override
+		public BasicProduct createFrom(com.tectonica.jonix.onix2.Product product)
+		{
+			return new BasicProduct(product);
+		}
+
+		@Override
+		public BasicProduct createFrom(com.tectonica.jonix.onix3.Product product)
+		{
+			return new BasicProduct(product);
+		}
+
+		@Override
+		public String labelOf(BasicProduct product)
+		{
+			return product.getLabel();
+		}
+
+		@Override
+		public Object onixProductObjectOf(BasicProduct product)
+		{
+			return product.getOnixProductObject();
+		}
+
+		@Override
+		public JonixColumn<BasicProduct>[] getDefaultColumns()
+		{
+			return BasicColumn.ALL_COLUMNS;
+		}
+
+		@Override
+		public JonixColumn<BasicProduct> getDefaultIdColumn()
+		{
+			return BasicColumn.ISBN13;
+		}
+	};
+
+	public static JonixTabDelimitedExporter<BasicHeader, BasicProduct> createBasicTabDelimitedExporter()
+	{
+		return new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT);
 	}
 
-	public static JonixUniqueExporter createBasicUniqueExporter(PrintStream out, PrintStream log)
+	public static JonixUniqueExporter<BasicHeader, BasicProduct> createBasicUniqueExporter()
 	{
-		return new JonixUniqueExporter(out, log);
+		return new JonixUniqueExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT);
 	}
 
-	public static JonixInMemExporter createBasicInMemExporter(List<BasicProduct> out, PrintStream log)
+	public static JonixInMemExporter<BasicHeader, BasicProduct> createBasicInMemExporter(List<BasicProduct> out)
 	{
-		return new JonixInMemExporter(out, log);
+		return new JonixInMemExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, out);
 	}
 
-	public static JonixDumpExporter createBasicDumpExporter(PrintStream out, PrintStream log)
+	public static JonixDumpExporter<BasicHeader, BasicProduct> createBasicDumpExporter()
 	{
-		return new JonixDumpExporter(out, log);
+		return new JonixDumpExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT);
 	}
 }

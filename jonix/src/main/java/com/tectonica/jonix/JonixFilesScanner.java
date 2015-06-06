@@ -29,35 +29,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class JonixFilesScanner extends JonixScanner
+public abstract class JonixFilesScanner<H, P> extends JonixScanner<H, P>
 {
 	protected PrintStream out = System.out;
 
-	public JonixFilesScanner()
+	public JonixFilesScanner(JonixContext<H, P> context)
 	{
-		super();
+		super(context);
 	}
 
-	/**
-	 * @param out
-	 *            A stream into which the output of the scanning is intended
-	 * @param log
-	 *            A stream into which status and error messages will be sent
-	 */
-	public JonixFilesScanner(PrintStream out, PrintStream log)
-	{
-		super(log);
-		setOut(out);
-	}
-
-	public void setOut(PrintStream out)
+	public JonixFilesScanner<H, P> setOut(PrintStream out)
 	{
 		this.out = (out == null) ? System.out : out;
+		return this;
 	}
 
-	public void setOut(String fileName) throws UnsupportedEncodingException, FileNotFoundException
+	public JonixFilesScanner<H, P> setOut(String fileName) throws UnsupportedEncodingException, FileNotFoundException
 	{
 		this.out = new PrintStream(fileName, "UTF8");
+		return this;
 	}
 
 	public PrintStream getOut()

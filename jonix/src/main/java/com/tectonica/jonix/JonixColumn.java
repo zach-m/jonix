@@ -19,13 +19,11 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.basic.BasicProduct;
-
-public interface JonixColumn
+public interface JonixColumn<P>
 {
 	int getRepetitions();
 
 	String[] getSubColumnNames();
 
-	boolean extractTo(String[] fieldData, BasicProduct product);
+	boolean extractFrom(P product, String[] columnBuffer);
 }

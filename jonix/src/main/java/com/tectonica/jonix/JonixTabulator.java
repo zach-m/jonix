@@ -19,15 +19,13 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.basic.BasicProduct;
-
-public class JonixFormatter
+public class JonixTabulator<H, P>
 {
 	/**
-	 * turns a {@link BasicProduct} object into a jagged-array of Strings, whose amount of rows and columns are defined
-	 * by {@link BasicColumn}
+	 * turns a Product object into a jagged-array of Strings, whose amount of rows and columns are defined by the
+	 * provided array of {@link JonixColumn}s
 	 */
-	public static String[][] productAsStringMatrix(BasicProduct product, JonixColumn[] columns)
+	public static <H, P> String[][] productAsStringMatrix(P product, JonixColumn<P>[] columns)
 	{
 		// prepare the resulting jagged-array of values
 		String[][] prodMatrix = new String[columns.length][];
@@ -35,16 +33,17 @@ public class JonixFormatter
 		// populate it by extracting information from the 'product' object
 		for (int i = 0; i < columns.length; i++)
 		{
-			JonixColumn column = columns[i];
-			column.extractTo(prodMatrix[i] = allocateMem(column), product);
+			JonixColumn<P> column = columns[i];
+			column.extractFrom(product, prodMatrix[i] = newColumnBuffer(column));
 		}
 		return prodMatrix;
 	}
 
 	/**
-	 * turns a {@link BasicProduct} object into a tab-delimited string, whose columns are defined by {@link BasicColumn}
+	 * turns a Product object into a tab-delimited string, whose columns are defined by the provided array of
+	 * {@link JonixColumn}s
 	 */
-	public static String productAsTabDelimitedString(BasicProduct product, JonixColumn[] columns)
+	public static <H, P> String productAsTabDelimitedString(P product, JonixColumn<P>[] columns)
 	{
 		String[][] prodMatrix = productAsStringMatrix(product, columns);
 
@@ -66,13 +65,13 @@ public class JonixFormatter
 	}
 
 	/**
-	 * generates a tab-delimited string, representing the <b>headers</b> of the columns, as defined by
-	 * {@link BasicColumn}
+	 * generates a tab-delimited string, representing the <b>headers</b> of the columns, as specified in the provided
+	 * array of {@link JonixColumn}s
 	 */
-	public static String headerAsTabDelimitedString(JonixColumn[] columns)
+	public static <H, P> String headerAsTabDelimitedString(JonixColumn<P>[] columns)
 	{
 		StringBuilder sb = new StringBuilder();
-		for (JonixColumn column : columns)
+		for (JonixColumn<P> column : columns)
 		{
 			int repetition = column.getRepetitions();
 			for (int i = 0; i < repetition; i++)
@@ -90,7 +89,7 @@ public class JonixFormatter
 		return sb.toString();
 	}
 
-	public static String[] allocateMem(JonixColumn column)
+	public static <H, P> String[] newColumnBuffer(JonixColumn<P> column)
 	{
 		return new String[column.getRepetitions() * column.getSubColumnNames().length];
 	}

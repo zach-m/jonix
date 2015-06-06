@@ -42,7 +42,7 @@ import org.w3c.dom.Element;
 
 public class XmlChunker
 {
-	public static final String DEFAULT_INPUT_CHARSET = "UTF8";
+	public static final String DEFAULT_INPUT_CHARSET = "UTF-8";
 
 	private static final XMLInputFactory inputFactory;
 	private static final TransformerFactory transformerFactory;
@@ -51,7 +51,7 @@ public class XmlChunker
 	static
 	{
 		inputFactory = XMLInputFactory.newInstance();
-		inputFactory.setProperty(XMLInputFactory.IS_VALIDATING, Boolean.FALSE);
+		inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
 
 		System.setProperty("javax.xml.transform.TransformerFactory",
 				"com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
