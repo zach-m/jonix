@@ -27,28 +27,26 @@ import com.tectonica.jonix.onix3.TitleElement;
 @SuppressWarnings("serial")
 public class BasicTitle implements Serializable
 {
-	public TitleTypes titleType;
-	public String titleText;
-	public String titleWithoutPrefix;
-	public String subtitle;
+	public final TitleTypes titleType;
+	public final String titleText;
+	public final String titleWithoutPrefix;
+	public final String subtitle;
 
-	public BasicTitle extractFrom(com.tectonica.jonix.onix2.Title title)
+	public BasicTitle(com.tectonica.jonix.onix2.Title title)
 	{
 		titleType = title.getTitleTypeValue();
 		titleText = noBreaks(title.getTitleTextValue());
 		titleWithoutPrefix = noBreaks(title.getTitleWithoutPrefixValue());
 		subtitle = noBreaks(title.getSubtitleValue());
-		return this;
 	}
 
-	public BasicTitle extractFrom(com.tectonica.jonix.onix3.TitleDetail title)
+	public BasicTitle(com.tectonica.jonix.onix3.TitleDetail title)
 	{
 		TitleElement titleElement = title.titleElements.get(0); // at least 1 is mandatory
 		titleType = title.getTitleTypeValue();
 		titleText = noBreaks(titleElement.getTitleTextValue());
 		titleWithoutPrefix = noBreaks(titleElement.getTitleWithoutPrefixValue());
 		subtitle = noBreaks(titleElement.getSubtitleValue());
-		return this;
 	}
 
 	private String noBreaks(String s)

@@ -26,20 +26,18 @@ import com.tectonica.jonix.codelist.PublishingRoles;
 @SuppressWarnings("serial")
 public class BasicPublisher implements Serializable
 {
-	public PublishingRoles publishingRole;
-	public String publisherName;
+	public final PublishingRoles publishingRole;
+	public final String publisherName;
 
-	public BasicPublisher extractFrom(com.tectonica.jonix.onix2.Publisher i)
+	public BasicPublisher(com.tectonica.jonix.onix2.Publisher i)
 	{
 		publishingRole = i.getPublishingRoleValue();
 		publisherName = i.getPublisherNameValue();
-		return this;
 	}
 
-	public BasicPublisher extractFrom(com.tectonica.jonix.onix3.Publisher i)
+	public BasicPublisher(com.tectonica.jonix.onix3.Publisher i)
 	{
 		publishingRole = i.getPublishingRoleValue();
 		publisherName = i.getPublisherNameValue();
-		return this;
 	}
 }

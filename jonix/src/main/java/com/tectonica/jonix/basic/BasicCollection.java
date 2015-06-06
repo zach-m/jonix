@@ -29,29 +29,25 @@ import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 @SuppressWarnings("serial")
 public class BasicCollection implements Serializable
 {
-	public String mainTitle;
-	public List<JonixCollectionIdentifier> seriesIdentifiers;
-	public List<BasicTitle> titles;
-	public List<BasicContributor> contributors;
+	public final String mainTitle;
+	public final List<JonixCollectionIdentifier> seriesIdentifiers;
+	public final BasicTitles titles;
+	public final BasicContributors contributors;
 
-	public BasicCollection extractFrom(com.tectonica.jonix.onix2.Series c)
+	public BasicCollection(com.tectonica.jonix.onix2.Series c)
 	{
-		this.mainTitle = c.getTitleOfSeriesValue();
-		this.seriesIdentifiers = sidsToCids(c.findSeriesIdentifiers(null));
-		this.titles = new BasicTitles().extractFrom(c);
-		this.contributors = new BasicContributors().extractFrom(c);
-
-		return this;
+		mainTitle = c.getTitleOfSeriesValue();
+		seriesIdentifiers = sidsToCids(c.findSeriesIdentifiers(null));
+		titles = new BasicTitles(c);
+		contributors = new BasicContributors(c);
 	}
 
-	public BasicCollection extractFrom(com.tectonica.jonix.onix3.Collection c)
+	public BasicCollection(com.tectonica.jonix.onix3.Collection c)
 	{
-		this.titles = new BasicTitles().extractFrom(c);
-		this.mainTitle = titles.get(0).titleText;
-		this.seriesIdentifiers = c.findCollectionIdentifiers(null);
-		this.contributors = new BasicContributors().extractFrom(c);
-
-		return this;
+		titles = new BasicTitles(c);
+		mainTitle = titles.get(0).titleText;
+		seriesIdentifiers = c.findCollectionIdentifiers(null);
+		contributors = new BasicContributors(c);
 	}
 
 	private List<JonixCollectionIdentifier> sidsToCids(List<JonixSeriesIdentifier> sids)

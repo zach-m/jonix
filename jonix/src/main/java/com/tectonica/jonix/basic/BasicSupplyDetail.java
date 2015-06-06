@@ -20,7 +20,6 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
-import java.util.List;
 
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.codelist.SupplierRoles;
@@ -28,28 +27,26 @@ import com.tectonica.jonix.codelist.SupplierRoles;
 @SuppressWarnings("serial")
 public class BasicSupplyDetail implements Serializable
 {
-	public SupplierRoles supplierRole;
-	public String supplierName;
-	public String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys
-	public List<BasicPrice> prices;
+	public final SupplierRoles supplierRole;
+	public final String supplierName;
+	public final String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys
+	public final BasicPrices prices;
 
-	public BasicSupplyDetail extractFrom(com.tectonica.jonix.onix2.SupplyDetail sd)
+	public BasicSupplyDetail(com.tectonica.jonix.onix2.SupplyDetail sd)
 	{
 		final AvailabilityStatuss availabilityCode = sd.getAvailabilityCodeValue();
 		// NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
 		supplierRole = sd.getSupplierRoleValue();
 		supplierName = sd.getSupplierNameValue();
 		availability = (availabilityCode == null) ? null : availabilityCode.name();
-		prices = new BasicPrices().extractFrom(sd);
-		return this;
+		prices = new BasicPrices(sd);
 	}
 
-	public BasicSupplyDetail extractFrom(com.tectonica.jonix.onix3.SupplyDetail sd)
+	public BasicSupplyDetail(com.tectonica.jonix.onix3.SupplyDetail sd)
 	{
 		supplierRole = sd.supplier.getSupplierRoleValue();
 		supplierName = sd.supplier.getSupplierNameValue();
 		availability = sd.getProductAvailabilityValue().name();
-		prices = new BasicPrices().extractFrom(sd);
-		return this;
+		prices = new BasicPrices(sd);
 	}
 }

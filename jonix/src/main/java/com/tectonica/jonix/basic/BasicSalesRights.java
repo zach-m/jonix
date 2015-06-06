@@ -33,14 +33,14 @@ import com.tectonica.jonix.onix3.Territory;
 @SuppressWarnings("serial")
 public class BasicSalesRights implements Serializable
 {
-	public SalesRightsTypes salesRightsType;
-	public List<Set<CountryCodeIso31661s>> countries;
-	public Set<Regions> regions;
-	public List<RightsRegions> rightRegions; // only in Onix2
-	public Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
-	public Set<Regions> regionsExcluded; // only in Onix3
+	public final SalesRightsTypes salesRightsType;
+	public final List<Set<CountryCodeIso31661s>> countries; // TODO: need to be contracted to merely a Set
+	public final Set<Regions> regions;
+	public final List<RightsRegions> rightRegions; // only in Onix2
+	public final Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
+	public final Set<Regions> regionsExcluded; // only in Onix3
 
-	public BasicSalesRights extractFrom(com.tectonica.jonix.onix2.SalesRights sr)
+	public BasicSalesRights(com.tectonica.jonix.onix2.SalesRights sr)
 	{
 		salesRightsType = sr.getSalesRightsTypeValue();
 		countries = sr.getRightsCountrySets();
@@ -48,10 +48,9 @@ public class BasicSalesRights implements Serializable
 		rightRegions = sr.getRightsRegionValues();
 		countriesExcluded = null;
 		regionsExcluded = null;
-		return this;
 	}
 
-	public BasicSalesRights extractFrom(com.tectonica.jonix.onix3.SalesRights sr)
+	public BasicSalesRights(com.tectonica.jonix.onix3.SalesRights sr)
 	{
 		Territory territory = sr.territory;
 		salesRightsType = sr.getSalesRightsTypeValue();
@@ -60,6 +59,5 @@ public class BasicSalesRights implements Serializable
 		rightRegions = null;
 		countriesExcluded = territory.getCountriesExcludedSet();
 		regionsExcluded = territory.getRegionsExcludedSet();
-		return this;
 	}
 }

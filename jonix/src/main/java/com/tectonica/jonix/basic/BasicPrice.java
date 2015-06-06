@@ -28,26 +28,24 @@ import com.tectonica.jonix.codelist.PriceTypes;
 @SuppressWarnings("serial")
 public class BasicPrice implements Serializable
 {
-	public PriceTypes priceType;
-	public Double priceAmount;
-	public String priceAmountAsStr;
-	public CurrencyCodeIso4217s currencyCode;
+	public final PriceTypes priceType;
+	public final Double priceAmount;
+	public final String priceAmountAsStr;
+	public final CurrencyCodeIso4217s currencyCode;
 
-	public BasicPrice extractFrom(com.tectonica.jonix.onix2.Price p)
+	public BasicPrice(com.tectonica.jonix.onix2.Price p)
 	{
 		priceType = p.getPriceTypeCodeValue();
 		priceAmount = JPU.convertStringToDoubleSafe(p.getPriceAmountValue());
 		priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
 		currencyCode = p.getCurrencyCodeValue();
-		return this;
 	}
 
-	public BasicPrice extractFrom(com.tectonica.jonix.onix3.Price p)
+	public BasicPrice(com.tectonica.jonix.onix3.Price p)
 	{
 		priceType = p.getPriceTypeValue();
 		priceAmount = p.getPriceAmountValue();
 		priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
 		currencyCode = p.getCurrencyCodeValue();
-		return this;
 	}
 }

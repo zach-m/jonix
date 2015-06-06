@@ -29,18 +29,17 @@ import com.tectonica.jonix.onix3.ProductSupply;
 @SuppressWarnings("serial")
 public class BasicSupplyDetails extends ArrayList<BasicSupplyDetail>
 {
-	public List<BasicSupplyDetail> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicSupplyDetails(com.tectonica.jonix.onix2.Product product)
 	{
 		clear();
 		if (product.supplyDetails != null)
 		{
 			for (com.tectonica.jonix.onix2.SupplyDetail sd : product.supplyDetails)
-				add(new BasicSupplyDetail().extractFrom(sd));
+				add(new BasicSupplyDetail(sd));
 		}
-		return this;
 	}
 
-	public List<BasicSupplyDetail> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicSupplyDetails(com.tectonica.jonix.onix3.Product product)
 	{
 		clear();
 		if (product.productSupplys != null)
@@ -48,10 +47,9 @@ public class BasicSupplyDetails extends ArrayList<BasicSupplyDetail>
 			for (ProductSupply ps : product.productSupplys) // scanning all markets, maybe not good idea
 			{
 				for (com.tectonica.jonix.onix3.SupplyDetail sd : ps.supplyDetails)
-					add(new BasicSupplyDetail().extractFrom(sd));
+					add(new BasicSupplyDetail(sd));
 			}
 		}
-		return this;
 	}
 
 	public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes)

@@ -23,14 +23,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
 @SuppressWarnings("serial")
 public class BasicSubjects extends HashMap<SubjectSchemeIdentifiers, List<BasicSubject>>
 {
-	public Map<SubjectSchemeIdentifiers, List<BasicSubject>> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicSubjects(com.tectonica.jonix.onix2.Product product)
 	{
 		clear();
 
@@ -45,23 +44,19 @@ public class BasicSubjects extends HashMap<SubjectSchemeIdentifiers, List<BasicS
 		if (product.subjects != null)
 		{
 			for (com.tectonica.jonix.onix2.Subject s : product.subjects)
-				addKV(new BasicSubject().extractFrom(s), false);
+				addKV(new BasicSubject(s), false);
 		}
-
-		return this;
 	}
 
-	public Map<SubjectSchemeIdentifiers, List<BasicSubject>> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicSubjects(com.tectonica.jonix.onix3.Product product)
 	{
 		clear();
 
 		if (product.descriptiveDetail.subjects != null)
 		{
 			for (com.tectonica.jonix.onix3.Subject s : product.descriptiveDetail.subjects)
-				addKV(new BasicSubject().extractFrom(s), s.isMainSubject());
+				addKV(new BasicSubject(s), s.isMainSubject());
 		}
-
-		return this;
 	}
 
 	private void addKV(BasicSubject subject, boolean insertFirst)

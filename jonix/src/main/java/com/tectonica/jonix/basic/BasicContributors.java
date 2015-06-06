@@ -27,46 +27,44 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 @SuppressWarnings("serial")
 public class BasicContributors extends ArrayList<BasicContributor>
 {
-	public List<BasicContributor> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicContributors(com.tectonica.jonix.onix2.Product product)
 	{
-		return extractFrom2(product.contributors);
+		extractFrom2(product.contributors);
 	}
 
-	public List<BasicContributor> extractFrom(com.tectonica.jonix.onix2.Series series)
+	public BasicContributors(com.tectonica.jonix.onix2.Series series)
 	{
-		return extractFrom2(series.contributors);
+		extractFrom2(series.contributors);
 	}
 
-	public List<BasicContributor> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicContributors(com.tectonica.jonix.onix3.Product product)
 	{
-		return extractFrom3(product.descriptiveDetail.contributors);
+		extractFrom3(product.descriptiveDetail.contributors);
 	}
 
-	public List<BasicContributor> extractFrom(com.tectonica.jonix.onix3.Collection collection)
+	public BasicContributors(com.tectonica.jonix.onix3.Collection collection)
 	{
-		return extractFrom3(collection.contributors);
+		extractFrom3(collection.contributors);
 	}
 
-	private List<BasicContributor> extractFrom2(final List<com.tectonica.jonix.onix2.Contributor> contributors)
+	private void extractFrom2(final List<com.tectonica.jonix.onix2.Contributor> contributors)
 	{
 		clear();
 		if (contributors != null)
 		{
 			for (com.tectonica.jonix.onix2.Contributor c : contributors)
-				add(new BasicContributor().extractFrom(c));
+				add(new BasicContributor(c));
 		}
-		return this;
 	}
 
-	private List<BasicContributor> extractFrom3(final List<com.tectonica.jonix.onix3.Contributor> contributors)
+	private void extractFrom3(final List<com.tectonica.jonix.onix3.Contributor> contributors)
 	{
 		clear();
 		if (contributors != null)
 		{
 			for (com.tectonica.jonix.onix3.Contributor c : contributors)
-				add(new BasicContributor().extractFrom(c));
+				add(new BasicContributor(c));
 		}
-		return this;
 	}
 
 	public List<BasicContributor> findContributors(ContributorRoles requestedType)

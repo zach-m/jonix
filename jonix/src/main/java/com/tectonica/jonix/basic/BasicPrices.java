@@ -20,30 +20,27 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @SuppressWarnings("serial")
 public class BasicPrices extends ArrayList<BasicPrice>
 {
-	public List<BasicPrice> extractFrom(com.tectonica.jonix.onix2.SupplyDetail supplyDetail)
+	public BasicPrices(com.tectonica.jonix.onix2.SupplyDetail supplyDetail)
 	{
 		clear();
 		if (supplyDetail.prices != null)
 		{
 			for (com.tectonica.jonix.onix2.Price i : supplyDetail.prices)
-				add(new BasicPrice().extractFrom(i));
+				add(new BasicPrice(i));
 		}
-		return this;
 	}
 
-	public List<BasicPrice> extractFrom(com.tectonica.jonix.onix3.SupplyDetail supplyDetail)
+	public BasicPrices(com.tectonica.jonix.onix3.SupplyDetail supplyDetail)
 	{
 		clear();
 		if (supplyDetail.prices != null)
 		{
 			for (com.tectonica.jonix.onix3.Price i : supplyDetail.prices)
-				add(new BasicPrice().extractFrom(i));
+				add(new BasicPrice(i));
 		}
-		return this;
 	}
 }

@@ -20,30 +20,27 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @SuppressWarnings("serial")
 public class BasicImprints extends ArrayList<BasicImprint>
 {
-	public List<BasicImprint> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicImprints(com.tectonica.jonix.onix2.Product product)
 	{
 		clear();
 		if (product.imprints != null)
 		{
 			for (com.tectonica.jonix.onix2.Imprint i : product.imprints)
-				add(new BasicImprint().extractFrom(i));
+				add(new BasicImprint(i));
 		}
-		return this;
 	}
 
-	public List<BasicImprint> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicImprints(com.tectonica.jonix.onix3.Product product)
 	{
 		clear();
 		if (product.publishingDetail.imprints != null)
 		{
 			for (com.tectonica.jonix.onix3.Imprint i : product.publishingDetail.imprints)
-				add(new BasicImprint().extractFrom(i));
+				add(new BasicImprint(i));
 		}
-		return this;
 	}
 }

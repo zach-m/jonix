@@ -10,24 +10,22 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
 @SuppressWarnings("serial")
 public class BasicInfo implements Serializable
 {
-	public String recordReference;
-	public NotificationOrUpdateTypes notificationType;
-	public List<JonixProductIdentifier> productIds;
+	public final String recordReference;
+	public final NotificationOrUpdateTypes notificationType;
+	public final List<JonixProductIdentifier> productIds;
 
-	public BasicInfo extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicInfo(com.tectonica.jonix.onix2.Product product)
 	{
 		recordReference = product.getRecordReferenceValue();
 		notificationType = product.getNotificationTypeValue();
 		productIds = product.findProductIdentifiers(null);
-		return this;
 	}
 
-	public BasicInfo extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicInfo(com.tectonica.jonix.onix3.Product product)
 	{
 		recordReference = product.getRecordReferenceValue();
 		notificationType = product.getNotificationTypeValue();
 		productIds = product.findProductIdentifiers(null);
-		return this;
 	}
 
 	public JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType)

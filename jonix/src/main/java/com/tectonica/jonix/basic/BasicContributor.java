@@ -29,15 +29,15 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 @SuppressWarnings("serial")
 public class BasicContributor implements Serializable
 {
-	public Set<ContributorRoles> contributorRoles;
-	public String displayName;
-	public String personName;
-	public String personNameKey;
-	public String personNameBeforeKey;
-	public String corporateName;
-	public String biographicalNote;
+	public final Set<ContributorRoles> contributorRoles;
+	public final String displayName;
+	public final String personName;
+	public final String personNameKey;
+	public final String personNameBeforeKey;
+	public final String corporateName;
+	public final String biographicalNote;
 
-	public BasicContributor extractFrom(com.tectonica.jonix.onix2.Contributor c)
+	public BasicContributor(com.tectonica.jonix.onix2.Contributor c)
 	{
 		contributorRoles = new HashSet<>(c.getContributorRoleValues());
 		personName = c.getPersonNameValue();
@@ -46,10 +46,9 @@ public class BasicContributor implements Serializable
 		corporateName = c.getCorporateNameValue();
 		biographicalNote = c.getBiographicalNoteValue();
 		displayName = phraseDisplayName();
-		return this;
 	}
 
-	public BasicContributor extractFrom(com.tectonica.jonix.onix3.Contributor c)
+	public BasicContributor(com.tectonica.jonix.onix3.Contributor c)
 	{
 		contributorRoles = new HashSet<>(c.getContributorRoleValues());
 		personName = c.getPersonNameValue();
@@ -58,7 +57,6 @@ public class BasicContributor implements Serializable
 		corporateName = c.getCorporateNameValue();
 		biographicalNote = BasicPicker.pickBiographicalNote(c);
 		displayName = phraseDisplayName();
-		return this;
 	}
 
 	private String phraseDisplayName()

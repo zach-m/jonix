@@ -71,7 +71,7 @@ public class TestBasicProduct2
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
 					final Product product = new Product(element);
-					BasicProduct bp = new BasicProduct().extractFrom(product);
+					BasicProduct bp = new BasicProduct(product);
 					System.out.println(JSON.toJson(bp));
 //					System.out.println(bp);
 //					System.out.println(JSON.toJson(bp.getProductObject()));

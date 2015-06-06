@@ -30,19 +30,18 @@ import com.tectonica.jonix.struct.JonixPublishingDate;
 @SuppressWarnings("serial")
 public class BasicPublishingDetails implements Serializable
 {
-	public String publicationDate;
-	public CountryCodeIso31661s countryOfPublication;
-	public String cityOfPublication;
+	public final String publicationDate;
+	public final CountryCodeIso31661s countryOfPublication;
+	public final String cityOfPublication;
 
-	public BasicPublishingDetails extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicPublishingDetails(com.tectonica.jonix.onix2.Product product)
 	{
 		publicationDate = product.getPublicationDateValue();
 		countryOfPublication = product.getCountryOfPublicationValue();
 		cityOfPublication = pickCityOfPublication(product, LanguageCodeIso6392Bs.English);
-		return this;
 	}
 
-	public BasicPublishingDetails extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicPublishingDetails(com.tectonica.jonix.onix3.Product product)
 	{
 		com.tectonica.jonix.onix3.PublishingDetail pd = product.publishingDetail;
 		if (pd != null)
@@ -58,7 +57,6 @@ public class BasicPublishingDetails implements Serializable
 			countryOfPublication = null;
 			cityOfPublication = null;
 		}
-		return this;
 	}
 
 	private String pickCityOfPublication(com.tectonica.jonix.onix3.Product product,

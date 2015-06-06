@@ -20,30 +20,27 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @SuppressWarnings("serial")
 public class BasicPublishers extends ArrayList<BasicPublisher>
 {
-	public List<BasicPublisher> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicPublishers(com.tectonica.jonix.onix2.Product product)
 	{
 		clear();
 		if (product.publishers != null)
 		{
 			for (com.tectonica.jonix.onix2.Publisher i : product.publishers)
-				add(new BasicPublisher().extractFrom(i));
+				add(new BasicPublisher(i));
 		}
-		return this;
 	}
 
-	public List<BasicPublisher> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicPublishers(com.tectonica.jonix.onix3.Product product)
 	{
 		clear();
 		if (product.publishingDetail.publishers != null)
 		{
 			for (com.tectonica.jonix.onix3.Publisher i : product.publishingDetail.publishers)
-				add(new BasicPublisher().extractFrom(i));
+				add(new BasicPublisher(i));
 		}
-		return this;
 	}
 }

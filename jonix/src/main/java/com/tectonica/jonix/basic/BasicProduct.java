@@ -27,56 +27,54 @@ import com.tectonica.jonix.JonixColumn;
 @SuppressWarnings("serial")
 public class BasicProduct implements Serializable
 {
-	public BasicInfo info = new BasicInfo();
-	public BasicDescription description = new BasicDescription();
-	public BasicPublishingDetails publishingDetails = new BasicPublishingDetails();
+	public final BasicInfo info;
+	public final BasicDescription description;
+	public final BasicPublishingDetails publishingDetails;
 
-	public BasicTitles titles = new BasicTitles();
-	public BasicContributors contributors = new BasicContributors();
-	public BasicCollections collections = new BasicCollections();
-	public BasicSubjects subjects = new BasicSubjects();
-	public BasicTexts texts = new BasicTexts();
-	public BasicPublishers publishers = new BasicPublishers();
-	public BasicImprints imprints = new BasicImprints();
-	public BasicSupplyDetails supplyDetails = new BasicSupplyDetails();
-	public BasicSalesRightss salesRightss = new BasicSalesRightss();
+	public final BasicTitles titles;
+	public final BasicContributors contributors;;
+	public final BasicCollections collections;
+	public final BasicSubjects subjects;
+	public final BasicTexts texts;
+	public final BasicPublishers publishers;
+	public final BasicImprints imprints;
+	public final BasicSupplyDetails supplyDetails;
+	public final BasicSalesRightss salesRightss;
 
-	private Object productObject;
+	private final Object productObject;
 
-	public BasicProduct extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicProduct(com.tectonica.jonix.onix3.Product product)
 	{
 		productObject = product;
-		info.extractFrom(product);
-		description.extractFrom(product);
-		publishingDetails.extractFrom(product);
-		titles.extractFrom(product);
-		contributors.extractFrom(product);
-		collections.extractFrom(product);
-		subjects.extractFrom(product);
-		texts.extractFrom(product);
-		publishers.extractFrom(product);
-		imprints.extractFrom(product);
-		supplyDetails.extractFrom(product);
-		salesRightss.extractFrom(product);
-		return this;
+		info = new BasicInfo(product);
+		description = new BasicDescription(product);
+		publishingDetails = new BasicPublishingDetails(product);
+		titles = new BasicTitles(product);
+		contributors = new BasicContributors(product);
+		collections = new BasicCollections(product);
+		subjects = new BasicSubjects(product);
+		texts = new BasicTexts(product);
+		publishers = new BasicPublishers(product);
+		imprints = new BasicImprints(product);
+		supplyDetails = new BasicSupplyDetails(product);
+		salesRightss = new BasicSalesRightss(product);
 	}
 
-	public BasicProduct extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicProduct(com.tectonica.jonix.onix2.Product product)
 	{
 		productObject = product;
-		info.extractFrom(product);
-		description.extractFrom(product);
-		publishingDetails.extractFrom(product);
-		titles.extractFrom(product);
-		contributors.extractFrom(product);
-		collections.extractFrom(product);
-		subjects.extractFrom(product);
-		texts.extractFrom(product);
-		publishers.extractFrom(product);
-		imprints.extractFrom(product);
-		supplyDetails.extractFrom(product);
-		salesRightss.extractFrom(product);
-		return this;
+		info = new BasicInfo(product);
+		description = new BasicDescription(product);
+		publishingDetails = new BasicPublishingDetails(product);
+		titles = new BasicTitles(product);
+		contributors = new BasicContributors(product);
+		collections = new BasicCollections(product);
+		subjects = new BasicSubjects(product);
+		texts = new BasicTexts(product);
+		publishers = new BasicPublishers(product);
+		imprints = new BasicImprints(product);
+		supplyDetails = new BasicSupplyDetails(product);
+		salesRightss = new BasicSalesRightss(product);
 	}
 
 	public Object getProductObject()

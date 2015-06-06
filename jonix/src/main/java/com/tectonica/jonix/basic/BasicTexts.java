@@ -20,33 +20,30 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.codelist.TextTypes;
 
 @SuppressWarnings("serial")
 public class BasicTexts extends ArrayList<BasicText>
 {
-	public List<BasicText> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicTexts(com.tectonica.jonix.onix2.Product product)
 	{
 		clear();
 		if (product.otherTexts != null)
 		{
 			for (com.tectonica.jonix.onix2.OtherText ot : product.otherTexts)
-				add(new BasicText().extractFrom(ot));
+				add(new BasicText(ot));
 		}
-		return this;
 	}
 
-	public List<BasicText> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicTexts(com.tectonica.jonix.onix3.Product product)
 	{
 		clear();
 		if (product.collateralDetail.textContents != null)
 		{
 			for (com.tectonica.jonix.onix3.TextContent tc : product.collateralDetail.textContents)
-				add(new BasicText().extractFrom(tc));
+				add(new BasicText(tc));
 		}
-		return this;
 	}
 
 	public BasicText findText(TextTypes requestedType)

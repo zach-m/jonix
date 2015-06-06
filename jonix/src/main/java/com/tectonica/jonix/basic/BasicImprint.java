@@ -24,19 +24,17 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class BasicImprint implements Serializable
 {
-	public String imprintName;
+	public final String imprintName;
 
-	public BasicImprint extractFrom(com.tectonica.jonix.onix2.Imprint imprint)
+	public BasicImprint(com.tectonica.jonix.onix2.Imprint imprint)
 	{
 		// TODO: we should at least read one required field (unlike ImprintName)
-		this.imprintName = imprint.getImprintNameValue();
-		return this;
+		imprintName = imprint.getImprintNameValue();
 	}
 
-	public BasicImprint extractFrom(com.tectonica.jonix.onix3.Imprint imprint)
+	public BasicImprint(com.tectonica.jonix.onix3.Imprint imprint)
 	{
 		// TODO: we should at least read one required field (unlike ImprintName)
-		this.imprintName = imprint.getImprintNameValue();
-		return this;
+		imprintName = imprint.getImprintNameValue();
 	}
 }

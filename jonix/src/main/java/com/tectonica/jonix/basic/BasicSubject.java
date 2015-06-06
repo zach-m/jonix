@@ -27,12 +27,9 @@ import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 @SuppressWarnings("serial")
 public class BasicSubject implements Serializable
 {
-	public SubjectSchemeIdentifiers subjectSchemeIdentifier;
-	public String subjectCode;
-	public String subjectHeadingText;
-
-	public BasicSubject()
-	{}
+	public final SubjectSchemeIdentifiers subjectSchemeIdentifier;
+	public final String subjectCode;
+	public final String subjectHeadingText;
 
 	public BasicSubject(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
 	{
@@ -41,19 +38,17 @@ public class BasicSubject implements Serializable
 		this.subjectHeadingText = subjectHeadingText;
 	}
 
-	public BasicSubject extractFrom(com.tectonica.jonix.onix2.Subject s)
+	public BasicSubject(com.tectonica.jonix.onix2.Subject s)
 	{
 		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
 		subjectCode = s.getSubjectCodeValue();
 		subjectHeadingText = s.getSubjectHeadingTextValue();
-		return this;
 	}
 
-	public BasicSubject extractFrom(com.tectonica.jonix.onix3.Subject s)
+	public BasicSubject(com.tectonica.jonix.onix3.Subject s)
 	{
 		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
 		subjectCode = s.getSubjectCodeValue();
 		subjectHeadingText = BasicPicker.pickSubjectHeadingText(s);
-		return this;
 	}
 }

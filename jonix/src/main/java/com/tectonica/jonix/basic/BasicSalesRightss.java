@@ -28,26 +28,24 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
 @SuppressWarnings("serial")
 public class BasicSalesRightss extends ArrayList<BasicSalesRights>
 {
-	public List<BasicSalesRights> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicSalesRightss(com.tectonica.jonix.onix2.Product product)
 	{
 		clear();
 		if (product.salesRightss != null)
 		{
 			for (com.tectonica.jonix.onix2.SalesRights sr : product.salesRightss)
-				add(new BasicSalesRights().extractFrom(sr));
+				add(new BasicSalesRights(sr));
 		}
-		return this;
 	}
 
-	public List<BasicSalesRights> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicSalesRightss(com.tectonica.jonix.onix3.Product product)
 	{
 		clear();
 		if (product.publishingDetail != null && product.publishingDetail.salesRightss != null)
 		{
 			for (com.tectonica.jonix.onix3.SalesRights sr : product.publishingDetail.salesRightss)
-				add(new BasicSalesRights().extractFrom(sr));
+				add(new BasicSalesRights(sr));
 		}
-		return this;
 	}
 
 	public List<BasicSalesRights> findSalesRights(Set<SalesRightsTypes> requestedTypes)

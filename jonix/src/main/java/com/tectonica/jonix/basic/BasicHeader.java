@@ -29,16 +29,16 @@ import com.tectonica.jonix.onix3.Addressee;
 @SuppressWarnings("serial")
 public class BasicHeader implements Serializable
 {
-	public String fromCompany;
-	public String fromPerson;
-	public String fromEmail;
-	public List<String> toCompanies;
-	public String sentDate;
+	public final String fromCompany;
+	public final String fromPerson;
+	public final String fromEmail;
+	public final List<String> toCompanies;
+	public final String sentDate;
 
 	/**
 	 * constructor for ONIX2 &lt;Header&gt; element
 	 */
-	public BasicHeader extractFrom(com.tectonica.jonix.onix2.Header header)
+	public BasicHeader(com.tectonica.jonix.onix2.Header header)
 	{
 		fromCompany = header.getFromCompanyValue();
 		fromPerson = header.getFromPersonValue();
@@ -46,20 +46,18 @@ public class BasicHeader implements Serializable
 		String toCompany = header.getToCompanyValue();
 		toCompanies = (toCompany == null) ? null : Arrays.asList(toCompany);
 		sentDate = header.getSentDateValue();
-		return this;
 	}
 
 	/**
 	 * constructor for ONIX3 &lt;Header&gt; element
 	 */
-	public BasicHeader extractFrom(com.tectonica.jonix.onix3.Header header)
+	public BasicHeader(com.tectonica.jonix.onix3.Header header)
 	{
 		fromCompany = header.sender.getSenderNameValue();
 		fromPerson = header.sender.getContactNameValue();
 		fromEmail = header.sender.getEmailAddressValue();
 		toCompanies = extractToCompanies(header);
 		sentDate = header.getSentDateTimeValue();
-		return this;
 	}
 
 	private List<String> extractToCompanies(com.tectonica.jonix.onix3.Header header)

@@ -27,46 +27,44 @@ import com.tectonica.jonix.codelist.TitleTypes;
 @SuppressWarnings("serial")
 public class BasicTitles extends ArrayList<BasicTitle>
 {
-	public List<BasicTitle> extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicTitles(com.tectonica.jonix.onix2.Product product)
 	{
-		return extractFrom2(product.titles);
+		extractFrom2(product.titles);
 	}
 
-	public List<BasicTitle> extractFrom(com.tectonica.jonix.onix2.Series series)
+	public BasicTitles(com.tectonica.jonix.onix2.Series series)
 	{
-		return extractFrom2(series.titles);
+		extractFrom2(series.titles);
 	}
 
-	public List<BasicTitle> extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicTitles(com.tectonica.jonix.onix3.Product product)
 	{
-		return extractFrom3(product.descriptiveDetail.titleDetails);
+		extractFrom3(product.descriptiveDetail.titleDetails);
 	}
 
-	public List<BasicTitle> extractFrom(com.tectonica.jonix.onix3.Collection collection)
+	public BasicTitles(com.tectonica.jonix.onix3.Collection collection)
 	{
-		return extractFrom3(collection.titleDetails);
+		extractFrom3(collection.titleDetails);
 	}
 
-	private List<BasicTitle> extractFrom2(final List<com.tectonica.jonix.onix2.Title> titles)
+	private void extractFrom2(final List<com.tectonica.jonix.onix2.Title> titles)
 	{
 		clear();
 		if (titles != null)
 		{
 			for (com.tectonica.jonix.onix2.Title title : titles)
-				add(new BasicTitle().extractFrom(title));
+				add(new BasicTitle(title));
 		}
-		return this;
 	}
 
-	private List<BasicTitle> extractFrom3(final List<com.tectonica.jonix.onix3.TitleDetail> titles)
+	private void extractFrom3(final List<com.tectonica.jonix.onix3.TitleDetail> titles)
 	{
 		clear();
 		if (titles != null)
 		{
 			for (com.tectonica.jonix.onix3.TitleDetail title : titles)
-				add(new BasicTitle().extractFrom(title));
+				add(new BasicTitle(title));
 		}
-		return this;
 	}
 
 	public BasicTitle findTitle(TitleTypes requestedType)

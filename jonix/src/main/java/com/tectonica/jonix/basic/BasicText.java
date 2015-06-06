@@ -29,31 +29,31 @@ import com.tectonica.jonix.codelist.TextTypes;
 @SuppressWarnings("serial")
 public class BasicText implements Serializable
 {
-	public TextTypes textType;
-	public TextFormats textFormat;
-	public String text;
+	public final TextTypes textType;
+	public final TextFormats textFormat;
+	public final String text;
 
-	public BasicText extractFrom(com.tectonica.jonix.onix2.OtherText ot)
+	public BasicText(com.tectonica.jonix.onix2.OtherText ot)
 	{
 		textType = translate33to153(ot.getTextTypeCodeValue());
-		textFormat = ot.getTextFormatValue();
-		text = null;
+		TextFormats textFormatAux = ot.getTextFormatValue();
+		String textAux = null;
 		if (ot.text != null)
 		{
-			text = ot.text.value;
-			if (textFormat == null)
-				textFormat = ot.text.textformat;
+			textAux = ot.text.value;
+			if (textFormatAux == null)
+				textFormatAux = ot.text.textformat;
 		}
-		return this;
+		text = textAux;
+		textFormat = textFormatAux;
 	}
 
-	public BasicText extractFrom(com.tectonica.jonix.onix3.TextContent tc)
+	public BasicText(com.tectonica.jonix.onix3.TextContent tc)
 	{
 		textType = tc.getTextTypeValue();
 		com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(tc);
 		textFormat = textObject.textformat;
 		text = textObject.value;
-		return this;
 	}
 
 	/**

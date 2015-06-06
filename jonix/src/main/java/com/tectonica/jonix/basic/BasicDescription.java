@@ -36,14 +36,14 @@ import com.tectonica.jonix.struct.JonixLanguage;
 @SuppressWarnings("serial")
 public class BasicDescription implements Serializable
 {
-	public EditionTypes editionType;
-	public Integer editionNumber;
-	public String productForm;
-	public String numberOfPages;
-	public List<JonixLanguage> languages;
-	public List<JonixAudience> audiences;
+	public final EditionTypes editionType;
+	public final Integer editionNumber;
+	public final String productForm;
+	public final String numberOfPages;
+	public final List<JonixLanguage> languages;
+	public final List<JonixAudience> audiences;
 
-	public BasicDescription extractFrom(com.tectonica.jonix.onix2.Product product)
+	public BasicDescription(com.tectonica.jonix.onix2.Product product)
 	{
 		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
 		editionNumber = JPU.convertStringToInteger(product.getEditionNumberValue());
@@ -52,10 +52,9 @@ public class BasicDescription implements Serializable
 		numberOfPages = product.getNumberOfPagesValue();
 		languages = product.findLanguages(null);
 		audiences = product.findAudiences(null);
-		return this;
 	}
 
-	public BasicDescription extractFrom(com.tectonica.jonix.onix3.Product product)
+	public BasicDescription(com.tectonica.jonix.onix3.Product product)
 	{
 		com.tectonica.jonix.onix3.DescriptiveDetail dd = product.descriptiveDetail;
 		if (dd != null)
@@ -79,7 +78,6 @@ public class BasicDescription implements Serializable
 			languages = Collections.emptyList();
 			audiences = Collections.emptyList();
 		}
-		return this;
 	}
 
 	public JonixLanguage findLanguage(LanguageRoles requestedType)
