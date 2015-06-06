@@ -39,7 +39,8 @@ public class BasicContributors extends ArrayList<BasicContributor>
 
 	public BasicContributors(com.tectonica.jonix.onix3.Product product)
 	{
-		extractFrom3(product.descriptiveDetail.contributors);
+		if (product.descriptiveDetail != null)
+			extractFrom3(product.descriptiveDetail.contributors);
 	}
 
 	public BasicContributors(com.tectonica.jonix.onix3.Collection collection)
@@ -49,21 +50,19 @@ public class BasicContributors extends ArrayList<BasicContributor>
 
 	private void extractFrom2(final List<com.tectonica.jonix.onix2.Contributor> contributors)
 	{
-		clear();
 		if (contributors != null)
 		{
-			for (com.tectonica.jonix.onix2.Contributor c : contributors)
-				add(new BasicContributor(c));
+			for (com.tectonica.jonix.onix2.Contributor contributor : contributors)
+				add(new BasicContributor(contributor));
 		}
 	}
 
 	private void extractFrom3(final List<com.tectonica.jonix.onix3.Contributor> contributors)
 	{
-		clear();
 		if (contributors != null)
 		{
-			for (com.tectonica.jonix.onix3.Contributor c : contributors)
-				add(new BasicContributor(c));
+			for (com.tectonica.jonix.onix3.Contributor contributor : contributors)
+				add(new BasicContributor(contributor));
 		}
 	}
 

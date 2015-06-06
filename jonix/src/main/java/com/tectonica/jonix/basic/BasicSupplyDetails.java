@@ -31,23 +31,21 @@ public class BasicSupplyDetails extends ArrayList<BasicSupplyDetail>
 {
 	public BasicSupplyDetails(com.tectonica.jonix.onix2.Product product)
 	{
-		clear();
 		if (product.supplyDetails != null)
 		{
-			for (com.tectonica.jonix.onix2.SupplyDetail sd : product.supplyDetails)
-				add(new BasicSupplyDetail(sd));
+			for (com.tectonica.jonix.onix2.SupplyDetail supplyDetail : product.supplyDetails)
+				add(new BasicSupplyDetail(supplyDetail));
 		}
 	}
 
 	public BasicSupplyDetails(com.tectonica.jonix.onix3.Product product)
 	{
-		clear();
 		if (product.productSupplys != null)
 		{
 			for (ProductSupply ps : product.productSupplys) // scanning all markets, maybe not good idea
 			{
-				for (com.tectonica.jonix.onix3.SupplyDetail sd : ps.supplyDetails)
-					add(new BasicSupplyDetail(sd));
+				for (com.tectonica.jonix.onix3.SupplyDetail supplyDetail : ps.supplyDetails)
+					add(new BasicSupplyDetail(supplyDetail));
 			}
 		}
 	}

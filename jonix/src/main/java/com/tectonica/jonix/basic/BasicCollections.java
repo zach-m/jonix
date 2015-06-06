@@ -26,21 +26,19 @@ public class BasicCollections extends ArrayList<BasicCollection>
 {
 	public BasicCollections(com.tectonica.jonix.onix2.Product product)
 	{
-		clear();
 		if (product.seriess != null)
 		{
-			for (com.tectonica.jonix.onix2.Series c : product.seriess)
-				add(new BasicCollection(c));
+			for (com.tectonica.jonix.onix2.Series series : product.seriess)
+				add(new BasicCollection(series));
 		}
 	}
 
 	public BasicCollections(com.tectonica.jonix.onix3.Product product)
 	{
-		clear();
-		if (product.descriptiveDetail.collections != null)
+		if (product.descriptiveDetail != null && product.descriptiveDetail.collections != null)
 		{
-			for (com.tectonica.jonix.onix3.Collection c : product.descriptiveDetail.collections)
-				add(new BasicCollection(c));
+			for (com.tectonica.jonix.onix3.Collection collection : product.descriptiveDetail.collections)
+				add(new BasicCollection(collection));
 		}
 	}
 }

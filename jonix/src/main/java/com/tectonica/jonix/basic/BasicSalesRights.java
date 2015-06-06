@@ -40,20 +40,20 @@ public class BasicSalesRights implements Serializable
 	public final Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
 	public final Set<Regions> regionsExcluded; // only in Onix3
 
-	public BasicSalesRights(com.tectonica.jonix.onix2.SalesRights sr)
+	public BasicSalesRights(com.tectonica.jonix.onix2.SalesRights salesRights)
 	{
-		salesRightsType = sr.getSalesRightsTypeValue();
-		countries = sr.getRightsCountrySets();
-		regions = sr.getRightsTerritorySet();
-		rightRegions = sr.getRightsRegionValues();
+		salesRightsType = salesRights.getSalesRightsTypeValue();
+		countries = salesRights.getRightsCountrySets();
+		regions = salesRights.getRightsTerritorySet();
+		rightRegions = salesRights.getRightsRegionValues();
 		countriesExcluded = null;
 		regionsExcluded = null;
 	}
 
-	public BasicSalesRights(com.tectonica.jonix.onix3.SalesRights sr)
+	public BasicSalesRights(com.tectonica.jonix.onix3.SalesRights salesRights)
 	{
-		Territory territory = sr.territory;
-		salesRightsType = sr.getSalesRightsTypeValue();
+		Territory territory = salesRights.territory;
+		salesRightsType = salesRights.getSalesRightsTypeValue();
 		countries = Arrays.asList(territory.getCountriesIncludedSet());
 		regions = territory.getRegionsIncludedSet();
 		rightRegions = null;

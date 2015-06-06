@@ -26,21 +26,19 @@ public class BasicPrices extends ArrayList<BasicPrice>
 {
 	public BasicPrices(com.tectonica.jonix.onix2.SupplyDetail supplyDetail)
 	{
-		clear();
 		if (supplyDetail.prices != null)
 		{
-			for (com.tectonica.jonix.onix2.Price i : supplyDetail.prices)
-				add(new BasicPrice(i));
+			for (com.tectonica.jonix.onix2.Price price : supplyDetail.prices)
+				add(new BasicPrice(price));
 		}
 	}
 
 	public BasicPrices(com.tectonica.jonix.onix3.SupplyDetail supplyDetail)
 	{
-		clear();
 		if (supplyDetail.prices != null)
 		{
-			for (com.tectonica.jonix.onix3.Price i : supplyDetail.prices)
-				add(new BasicPrice(i));
+			for (com.tectonica.jonix.onix3.Price price : supplyDetail.prices)
+				add(new BasicPrice(price));
 		}
 	}
 }

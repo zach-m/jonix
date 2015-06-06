@@ -32,21 +32,21 @@ public class BasicSupplyDetail implements Serializable
 	public final String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys
 	public final BasicPrices prices;
 
-	public BasicSupplyDetail(com.tectonica.jonix.onix2.SupplyDetail sd)
+	public BasicSupplyDetail(com.tectonica.jonix.onix2.SupplyDetail supplyDetail)
 	{
-		final AvailabilityStatuss availabilityCode = sd.getAvailabilityCodeValue();
+		final AvailabilityStatuss availabilityCode = supplyDetail.getAvailabilityCodeValue();
 		// NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
-		supplierRole = sd.getSupplierRoleValue();
-		supplierName = sd.getSupplierNameValue();
+		supplierRole = supplyDetail.getSupplierRoleValue();
+		supplierName = supplyDetail.getSupplierNameValue();
 		availability = (availabilityCode == null) ? null : availabilityCode.name();
-		prices = new BasicPrices(sd);
+		prices = new BasicPrices(supplyDetail);
 	}
 
-	public BasicSupplyDetail(com.tectonica.jonix.onix3.SupplyDetail sd)
+	public BasicSupplyDetail(com.tectonica.jonix.onix3.SupplyDetail supplyDetail)
 	{
-		supplierRole = sd.supplier.getSupplierRoleValue();
-		supplierName = sd.supplier.getSupplierNameValue();
-		availability = sd.getProductAvailabilityValue().name();
-		prices = new BasicPrices(sd);
+		supplierRole = supplyDetail.supplier.getSupplierRoleValue();
+		supplierName = supplyDetail.supplier.getSupplierNameValue();
+		availability = supplyDetail.getProductAvailabilityValue().name();
+		prices = new BasicPrices(supplyDetail);
 	}
 }

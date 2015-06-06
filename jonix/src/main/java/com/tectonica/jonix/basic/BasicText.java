@@ -33,25 +33,25 @@ public class BasicText implements Serializable
 	public final TextFormats textFormat;
 	public final String text;
 
-	public BasicText(com.tectonica.jonix.onix2.OtherText ot)
+	public BasicText(com.tectonica.jonix.onix2.OtherText otherText)
 	{
-		textType = translate33to153(ot.getTextTypeCodeValue());
-		TextFormats textFormatAux = ot.getTextFormatValue();
+		textType = translate33to153(otherText.getTextTypeCodeValue());
+		TextFormats textFormatAux = otherText.getTextFormatValue();
 		String textAux = null;
-		if (ot.text != null)
+		if (otherText.text != null)
 		{
-			textAux = ot.text.value;
+			textAux = otherText.text.value;
 			if (textFormatAux == null)
-				textFormatAux = ot.text.textformat;
+				textFormatAux = otherText.text.textformat;
 		}
 		text = textAux;
 		textFormat = textFormatAux;
 	}
 
-	public BasicText(com.tectonica.jonix.onix3.TextContent tc)
+	public BasicText(com.tectonica.jonix.onix3.TextContent textContent)
 	{
-		textType = tc.getTextTypeValue();
-		com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(tc);
+		textType = textContent.getTextTypeValue();
+		com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(textContent);
 		textFormat = textObject.textformat;
 		text = textObject.value;
 	}

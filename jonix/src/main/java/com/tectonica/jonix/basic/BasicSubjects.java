@@ -31,8 +31,6 @@ public class BasicSubjects extends HashMap<SubjectSchemeIdentifiers, List<BasicS
 {
 	public BasicSubjects(com.tectonica.jonix.onix2.Product product)
 	{
-		clear();
-
 		String bisacMainSubject = product.getBASICMainSubjectValue();
 		if (bisacMainSubject != null)
 			addKV(new BasicSubject(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null), false);
@@ -43,19 +41,17 @@ public class BasicSubjects extends HashMap<SubjectSchemeIdentifiers, List<BasicS
 
 		if (product.subjects != null)
 		{
-			for (com.tectonica.jonix.onix2.Subject s : product.subjects)
-				addKV(new BasicSubject(s), false);
+			for (com.tectonica.jonix.onix2.Subject subject : product.subjects)
+				addKV(new BasicSubject(subject), false);
 		}
 	}
 
 	public BasicSubjects(com.tectonica.jonix.onix3.Product product)
 	{
-		clear();
-
-		if (product.descriptiveDetail.subjects != null)
+		if (product.descriptiveDetail != null && product.descriptiveDetail.subjects != null)
 		{
-			for (com.tectonica.jonix.onix3.Subject s : product.descriptiveDetail.subjects)
-				addKV(new BasicSubject(s), s.isMainSubject());
+			for (com.tectonica.jonix.onix3.Subject subject : product.descriptiveDetail.subjects)
+				addKV(new BasicSubject(subject), subject.isMainSubject());
 		}
 	}
 

@@ -26,21 +26,19 @@ public class BasicImprints extends ArrayList<BasicImprint>
 {
 	public BasicImprints(com.tectonica.jonix.onix2.Product product)
 	{
-		clear();
 		if (product.imprints != null)
 		{
-			for (com.tectonica.jonix.onix2.Imprint i : product.imprints)
-				add(new BasicImprint(i));
+			for (com.tectonica.jonix.onix2.Imprint imprint : product.imprints)
+				add(new BasicImprint(imprint));
 		}
 	}
 
 	public BasicImprints(com.tectonica.jonix.onix3.Product product)
 	{
-		clear();
 		if (product.publishingDetail.imprints != null)
 		{
-			for (com.tectonica.jonix.onix3.Imprint i : product.publishingDetail.imprints)
-				add(new BasicImprint(i));
+			for (com.tectonica.jonix.onix3.Imprint imprint : product.publishingDetail.imprints)
+				add(new BasicImprint(imprint));
 		}
 	}
 }

@@ -28,21 +28,19 @@ public class BasicTexts extends ArrayList<BasicText>
 {
 	public BasicTexts(com.tectonica.jonix.onix2.Product product)
 	{
-		clear();
 		if (product.otherTexts != null)
 		{
-			for (com.tectonica.jonix.onix2.OtherText ot : product.otherTexts)
-				add(new BasicText(ot));
+			for (com.tectonica.jonix.onix2.OtherText otherText : product.otherTexts)
+				add(new BasicText(otherText));
 		}
 	}
 
 	public BasicTexts(com.tectonica.jonix.onix3.Product product)
 	{
-		clear();
 		if (product.collateralDetail.textContents != null)
 		{
-			for (com.tectonica.jonix.onix3.TextContent tc : product.collateralDetail.textContents)
-				add(new BasicText(tc));
+			for (com.tectonica.jonix.onix3.TextContent textContent : product.collateralDetail.textContents)
+				add(new BasicText(textContent));
 		}
 	}
 

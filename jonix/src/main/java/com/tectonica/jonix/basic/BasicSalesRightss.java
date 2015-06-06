@@ -30,21 +30,19 @@ public class BasicSalesRightss extends ArrayList<BasicSalesRights>
 {
 	public BasicSalesRightss(com.tectonica.jonix.onix2.Product product)
 	{
-		clear();
 		if (product.salesRightss != null)
 		{
-			for (com.tectonica.jonix.onix2.SalesRights sr : product.salesRightss)
-				add(new BasicSalesRights(sr));
+			for (com.tectonica.jonix.onix2.SalesRights salesRights : product.salesRightss)
+				add(new BasicSalesRights(salesRights));
 		}
 	}
 
 	public BasicSalesRightss(com.tectonica.jonix.onix3.Product product)
 	{
-		clear();
 		if (product.publishingDetail != null && product.publishingDetail.salesRightss != null)
 		{
-			for (com.tectonica.jonix.onix3.SalesRights sr : product.publishingDetail.salesRightss)
-				add(new BasicSalesRights(sr));
+			for (com.tectonica.jonix.onix3.SalesRights salesRights : product.publishingDetail.salesRightss)
+				add(new BasicSalesRights(salesRights));
 		}
 	}
 

@@ -39,7 +39,8 @@ public class BasicTitles extends ArrayList<BasicTitle>
 
 	public BasicTitles(com.tectonica.jonix.onix3.Product product)
 	{
-		extractFrom3(product.descriptiveDetail.titleDetails);
+		if (product.descriptiveDetail != null)
+			extractFrom3(product.descriptiveDetail.titleDetails);
 	}
 
 	public BasicTitles(com.tectonica.jonix.onix3.Collection collection)
@@ -49,7 +50,6 @@ public class BasicTitles extends ArrayList<BasicTitle>
 
 	private void extractFrom2(final List<com.tectonica.jonix.onix2.Title> titles)
 	{
-		clear();
 		if (titles != null)
 		{
 			for (com.tectonica.jonix.onix2.Title title : titles)
@@ -59,7 +59,6 @@ public class BasicTitles extends ArrayList<BasicTitle>
 
 	private void extractFrom3(final List<com.tectonica.jonix.onix3.TitleDetail> titles)
 	{
-		clear();
 		if (titles != null)
 		{
 			for (com.tectonica.jonix.onix3.TitleDetail title : titles)
