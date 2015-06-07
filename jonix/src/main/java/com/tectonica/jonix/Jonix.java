@@ -25,8 +25,8 @@ import java.util.List;
 import com.tectonica.jonix.basic.BasicColumn;
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.export.JonixDumpExporter;
 import com.tectonica.jonix.export.JonixInMemExporter;
+import com.tectonica.jonix.export.JonixJsonExporter;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.export.JonixUniqueExporter;
 
@@ -94,12 +94,6 @@ public class Jonix
 		}
 
 		@Override
-		public Object onixProductObjectOf(BasicProduct product)
-		{
-			return product.getOnixProductObject();
-		}
-
-		@Override
 		public JonixColumn<BasicProduct>[] getDefaultColumns()
 		{
 			return BasicColumn.ALL_COLUMNS;
@@ -111,6 +105,11 @@ public class Jonix
 			return BasicColumn.ISBN13;
 		}
 	};
+
+	public static JonixReader<BasicHeader, BasicProduct> createBasicReader()
+	{
+		return new JonixReader<BasicHeader, BasicProduct>(BASIC_CONTEXT);
+	}
 
 	public static JonixTabDelimitedExporter<BasicHeader, BasicProduct> createBasicTabDelimitedExporter()
 	{
@@ -127,8 +126,8 @@ public class Jonix
 		return new JonixInMemExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, out);
 	}
 
-	public static JonixDumpExporter<BasicHeader, BasicProduct> createBasicDumpExporter()
+	public static JonixJsonExporter<BasicHeader, BasicProduct> createJsonExporter(boolean writeRawProduct)
 	{
-		return new JonixDumpExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT);
+		return new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, writeRawProduct);
 	}
 }

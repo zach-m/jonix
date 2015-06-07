@@ -24,14 +24,14 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 
-import com.tectonica.jonix.JonixParser.JonixParserListener;
+import com.tectonica.jonix.JonixReader.JonixReaderListener;
 
 public abstract class JonixScanner<H, P>
 {
 	protected final JonixContext<H, P> context;
 
 	protected PrintStream log = System.err;
-	private final JonixParser<H, P> parser;
+	private final JonixReader<H, P> reader;
 
 	public JonixScanner(JonixContext<H, P> context)
 	{
@@ -39,8 +39,8 @@ public abstract class JonixScanner<H, P>
 			throw new NullPointerException("context is required");
 		this.context = context;
 
-		parser = new JonixParser<H, P>(context);
-		parser.setJonixParserListener(new JonixParserListener<H, P>()
+		reader = new JonixReader<H, P>(context);
+		reader.setListener(new JonixReaderListener<H, P>()
 		{
 			@Override
 			public void onHeader(H header)
@@ -80,7 +80,7 @@ public abstract class JonixScanner<H, P>
 		{
 			try
 			{
-				doScan(parser, source);
+				doScan(reader, source);
 			}
 			catch (Exception e)
 			{
@@ -97,9 +97,14 @@ public abstract class JonixScanner<H, P>
 		return true;
 	}
 
-	protected void doScan(JonixParser<H, P> parser, InputStream source)
+	protected void doScan(JonixReader<H, P> parser, InputStream source)
 	{
-		parser.parse(source);
+		parser.read(source);
+	}
+
+	protected Object getRawOnixObject()
+	{
+		return reader.rawOnixObject;
 	}
 
 	protected abstract void onHeader(H header);

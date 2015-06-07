@@ -41,7 +41,7 @@ public class TestXmlChunker
 	{}
 
 	@Test
-	public void test()
+	public void xmlReadParseAndThenWriteAsXml()
 	{
 		InputStream stream = TestXmlChunker.class.getResourceAsStream("/single-book-onix2.xml");
 		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
@@ -49,7 +49,10 @@ public class TestXmlChunker
 			@Override
 			public void onTarget(Element element)
 			{
-				System.out.println(XmlChunker.elementToString(element, false));
+				// turn the DOM element back to XML
+				String asXml = XmlChunker.elementToString(element, false);
+
+				System.out.println("\t" + asXml);
 				System.out.println("------------------------------------------------------------------------------");
 			}
 

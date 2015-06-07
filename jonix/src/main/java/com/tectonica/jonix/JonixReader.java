@@ -33,44 +33,45 @@ import org.xml.sax.SAXException;
 import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 
-public class JonixParser<H, P>
+public class JonixReader<H, P>
 {
 	protected final JonixContext<H, P> context;
+	protected Object rawOnixObject;
 
-	public JonixParser(JonixContext<H, P> context)
+	public JonixReader(JonixContext<H, P> context)
 	{
 		if (context == null)
 			throw new NullPointerException("context is required");
 		this.context = context;
 	}
 
-	public static interface JonixParserListener<H, P>
+	public static interface JonixReaderListener<H, P>
 	{
 		public void onHeader(H header);
 
 		public void onProduct(P product, int index);
 	}
 
-	private JonixParserListener<H, P> jonixParserListener;
+	private JonixReaderListener<H, P> listener;
 
-	public JonixParserListener<H, P> getJonixParserListener()
+	public JonixReaderListener<H, P> getListener()
 	{
-		return jonixParserListener;
+		return listener;
 	}
 
-	public void setJonixParserListener(JonixParserListener<H, P> jonixParserListener)
+	public void setListener(JonixReaderListener<H, P> listener)
 	{
-		this.jonixParserListener = jonixParserListener;
+		this.listener = listener;
 	}
 
-	public void parse(String fileName) throws IOException, SAXException
+	public void read(String fileName) throws IOException, SAXException
 	{
-		parse(new FileInputStream(fileName));
+		read(new FileInputStream(fileName));
 	}
 
-	public void parse(InputStream source)
+	public void read(InputStream source)
 	{
-		if (jonixParserListener != null) // not too useful to parse if nobody is listening..
+		if (listener != null) // not too useful to parse if nobody is listening..
 		{
 			XmlChunker.parse(new BOMInputStream(source), 2, new XmlChunker.Listener()
 			{
@@ -86,23 +87,39 @@ public class JonixParser<H, P>
 					{
 						final H header;
 						if (isOnix2)
-							header = context.createFrom(new com.tectonica.jonix.onix2.Header(element));
+						{
+							com.tectonica.jonix.onix2.Header h2 = new com.tectonica.jonix.onix2.Header(element);
+							header = context.createFrom(h2);
+							rawOnixObject = h2;
+						}
 						else if (isOnix3)
-							header = context.createFrom(new com.tectonica.jonix.onix3.Header(element));
+						{
+							com.tectonica.jonix.onix3.Header h3 = new com.tectonica.jonix.onix3.Header(element);
+							header = context.createFrom(h3);
+							rawOnixObject = h3;
+						}
 						else
 							throw new RuntimeException("Couldn't determine the ONIX version of the file");
-						jonixParserListener.onHeader(header);
+						listener.onHeader(header);
 					}
 					else if (nodeName.equalsIgnoreCase("Product"))
 					{
 						final P product;
 						if (isOnix2)
-							product = context.createFrom(new com.tectonica.jonix.onix2.Product(element));
+						{
+							com.tectonica.jonix.onix2.Product p2 = new com.tectonica.jonix.onix2.Product(element);
+							product = context.createFrom(p2);
+							rawOnixObject = p2;
+						}
 						else if (isOnix3)
-							product = context.createFrom(new com.tectonica.jonix.onix3.Product(element));
+						{
+							com.tectonica.jonix.onix3.Product p3 = new com.tectonica.jonix.onix3.Product(element);
+							product = context.createFrom(p3);
+							rawOnixObject = p3;
+						}
 						else
 							throw new RuntimeException("Couldn't determine the ONIX version of the file");
-						jonixParserListener.onProduct(product, ++productCount);
+						listener.onProduct(product, ++productCount);
 					}
 				}
 
@@ -115,7 +132,7 @@ public class JonixParser<H, P>
 					isOnix2 = (release == null || release.getValue().startsWith("2"));
 					isOnix3 = (release != null && release.getValue().startsWith("3"));
 					if (!isOnix2 && !isOnix3)
-						throw new RuntimeException("file doesn't comply with neither Onix2 nor Onix3");
+						throw new RuntimeException("file doesn't comply with neither ONIX2 nor ONIX3");
 				}
 			});
 		}

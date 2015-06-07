@@ -22,7 +22,6 @@ package com.tectonica.jonix;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
@@ -34,12 +33,15 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.Product;
-import com.tectonica.jonix.onix2.Title;
+import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.jonix.util.JSON;
 import com.tectonica.xmlchunk.XmlChunker;
 
-public class TestXmlChunkerWithProcessing
+public class TestXmlChunkerWithProducts
 {
 	@Before
 	public void setUp() throws Exception
@@ -51,7 +53,8 @@ public class TestXmlChunkerWithProcessing
 
 	@Test
 	@Ignore
-	public void test() throws FileNotFoundException
+	// ignored by default. the sample files are not checked in to SCM
+	public void readProductsAndExtractProperties() throws FileNotFoundException
 	{
 		final File file = new File("../onix_samples/ONIX2/SB_Ref.xml"); // SB_short.xml
 		if (!file.exists())
@@ -59,21 +62,33 @@ public class TestXmlChunkerWithProcessing
 
 		XmlChunker.parse(new FileInputStream(file), 2, new XmlChunker.Listener()
 		{
+			private int count = 0;
+
 			@Override
 			public void onTarget(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
 				{
-					final Product product = new Product(element);
-					if (product.titles != null)
-					{
-						final Title title = findTitle(product.titles, TitleTypes.Distinctive_title_book);
-						if (title != null && title.titleText != null)
-							System.out.println(title.titleText.value);
-						else
-							System.err.println("NO-TITLE");
-					}
+					// parse a Product XML element into a corresponding Java structure
+					Product product = new Product(element);
+
+					// get some basic properties of the book
+					JonixProductIdentifier isbn = product.findProductIdentifier(ProductIdentifierTypes.ISBN_13);
+					JonixTitle title = product.findTitle(TitleTypes.Distinctive_title_book);
+					String titleValue = (title == null) ? "N/A" : title.titleText;
+					String isbnValue = (isbn == null) ? "N/A" : isbn.idValue;
+					boolean hasSeriesInfo = (product.seriess != null) && !product.seriess.isEmpty();
+					String seriesTitleValue = hasSeriesInfo ? product.seriess.get(0).titleOfSeries.value + " / " : "";
+
+					// print
+					++count;
+					System.out.println(String.format("#%04d: title='%s', isbn='%s'", count, seriesTitleValue
+							+ titleValue, isbnValue));
+
+					// in rare cases where there is no title, we print the entire XML record (as JSON)
+					if (title == null)
+						System.err.println(JSON.toJson(product));
 				}
 			}
 
@@ -88,15 +103,5 @@ public class TestXmlChunkerWithProcessing
 		});
 
 		System.err.println("** DONE");
-	}
-
-	private static Title findTitle(List<Title> titles, TitleTypes requestedType)
-	{
-		for (Title title : titles)
-		{
-			if (title.titleType != null && title.titleType.value == requestedType)
-				return title;
-		}
-		return null;
 	}
 }

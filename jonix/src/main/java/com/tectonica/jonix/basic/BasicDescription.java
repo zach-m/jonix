@@ -82,10 +82,13 @@ public class BasicDescription implements Serializable
 
 	public JonixLanguage findLanguage(LanguageRoles requestedType)
 	{
-		for (JonixLanguage lang : languages)
+		if (languages != null)
 		{
-			if (lang.languageRole == requestedType)
-				return lang;
+			for (JonixLanguage lang : languages)
+			{
+				if (lang.languageRole == requestedType)
+					return lang;
+			}
 		}
 		return null;
 	}

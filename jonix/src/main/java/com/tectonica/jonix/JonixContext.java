@@ -12,8 +12,6 @@ public interface JonixContext<H, P>
 
 	String labelOf(P product);
 
-	Object onixProductObjectOf(P product);
-
 	JonixColumn<P>[] getDefaultColumns();
 
 	JonixColumn<P> getDefaultIdColumn();

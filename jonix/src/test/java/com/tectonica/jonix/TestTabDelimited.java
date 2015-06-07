@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
@@ -28,11 +27,19 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.tectonica.jonix.basic.BasicHeader;
+import com.tectonica.jonix.basic.BasicProduct;
+
 public class TestTabDelimited
 {
+	private JonixFilesScanner<BasicHeader, BasicProduct> exporter;
+
 	@Before
 	public void setUp() throws Exception
-	{}
+	{
+		PrintStream outFile = new PrintStream("Catalog.tsv");
+		exporter = Jonix.createBasicTabDelimitedExporter().setOut(outFile);
+	}
 
 	@After
 	public void tearDown() throws Exception
@@ -40,16 +47,12 @@ public class TestTabDelimited
 
 	@Test
 	@Ignore
-	public void test() throws FileNotFoundException
+	// ignored by default. the sample files are not checked in to SCM
+	public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException
 	{
-		final String path = "../onix_samples/ONIX2/BK";
-
-		final File file = new File(path);
-		if (!file.exists())
-			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
-
-		PrintStream outFile = new PrintStream("BK.tsv");
-
-		Jonix.createBasicTabDelimitedExporter().setOut(outFile).scanFolder(path, ".xml");
+		exporter.scanFolder("../onix_samples/ONIX3", ".onix"); // ONIX3 files
+		exporter.scanFolder("../onix_samples/ONIX2/BK", ".xml"); // ONIX2 files
+		exporter.scanFile("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
+		exporter.scanFile("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
 	}
 }

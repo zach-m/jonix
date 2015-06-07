@@ -51,8 +51,15 @@ public class XmlChunker
 	static
 	{
 		inputFactory = XMLInputFactory.newInstance();
+
+		// no need to validate, or even try to access, the remote DTD file
 		inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
 
+		// no need to validate internal entities - this is important because ONIX files are designed to contain HTML
+		// sections inside them. these sections may include entities (such as '&nbsp;') that aren't XML-compatible
+		inputFactory.setProperty(XMLInputFactory.IS_REPLACING_ENTITY_REFERENCES, false);
+
+		// this is our Transformer of choice
 		System.setProperty("javax.xml.transform.TransformerFactory",
 				"com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
 		transformerFactory = TransformerFactory.newInstance();
@@ -142,14 +149,23 @@ public class XmlChunker
 		}
 	}
 
-	public static String elementToString(Element node, boolean strip)
+	/**
+	 * transforms an {@link Element} into an XML text
+	 * 
+	 * @param elem
+	 *            the element to transform into text
+	 * @param strip
+	 *            if true, removes the containing tag of the XML node
+	 * @return an XML text representation of the given element
+	 */
+	public static String elementToString(Element elem, boolean strip)
 	{
 		StringWriter sw = new StringWriter();
 		try
 		{
 			Transformer t = transformerFactory.newTransformer();
 			t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-			t.transform(new DOMSource(node), new StreamResult(sw));
+			t.transform(new DOMSource(elem), new StreamResult(sw));
 		}
 		catch (TransformerException e)
 		{

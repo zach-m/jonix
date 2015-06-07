@@ -30,10 +30,13 @@ public class BasicInfo implements Serializable
 
 	public JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType)
 	{
-		for (JonixProductIdentifier pid : productIds)
+		if (productIds != null)
 		{
-			if (pid.productIDType == requestedType)
-				return pid;
+			for (JonixProductIdentifier pid : productIds)
+			{
+				if (pid.productIDType == requestedType)
+					return pid;
+			}
 		}
 		return null;
 	}
