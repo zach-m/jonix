@@ -25,9 +25,10 @@ import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.JonixTabulator;
 
-public class JonixTabDelimitedExporter<H, P> extends JonixFilesExport<H, P>
+public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 {
 	protected JonixColumn<P>[] columns;
+	private boolean headerPrinted = false;
 
 	public JonixTabDelimitedExporter(JonixContext<H, P> context)
 	{
@@ -45,19 +46,23 @@ public class JonixTabDelimitedExporter<H, P> extends JonixFilesExport<H, P>
 	}
 
 	@Override
-	protected boolean onBeforeFiles(List<String> onixFileNames)
+	protected boolean onBeforeFileList(List<String> onixFileNames)
 	{
-		super.onBeforeFiles(onixFileNames);
+		super.onBeforeFileList(onixFileNames);
 		if (columns == null)
 			columns = context.getDefaultColumns();
-		out.println(JonixTabulator.headerAsTabDelimitedString(columns));
+		if (!headerPrinted)
+		{
+			out.println(JonixTabulator.headerAsTabDelimitedString(columns));
+			headerPrinted = true;
+		}
 		return true;
 	}
 
 	@Override
-	protected void onProduct(P product, int index)
+	protected void onProduct(P product)
 	{
+		super.onProduct(product); // logs an info line
 		out.println(JonixTabulator.productAsTabDelimitedString(product, columns));
-		logProductParseSummary(product, index);
 	}
 }

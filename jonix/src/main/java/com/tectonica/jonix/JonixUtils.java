@@ -86,4 +86,50 @@ public class JonixUtils
 			return new GregorianCalendar(yyyy, MM, dd, hh, mm, ss);
 		return null;
 	}
+
+	public static <T extends Comparable<T>> int compare(T[] a, T[] b)
+	{
+		if (a == b)
+			return 0;
+
+		// arbitrary: two null arrays are considered 'equal'
+		if (a == null && b == null)
+			return 0;
+
+		// arbitrary: non-null array is considered 'greater than' null array
+		if (a == null)
+			return -1; // "a < b"
+		else if (b == null)
+			return 1; // "a > b"
+
+		// now the item-by-item comparison - the loop runs as long as items in both arrays are equal
+		for (int i = 0;; i++)
+		{
+			// shorter array whose items are all equal to the first items of a longer array is considered 'less than'
+			boolean pastA = (i == a.length);
+			boolean pastB = (i == b.length);
+			if (pastA && !pastB)
+				return -1; // "a < b"
+			else if (!pastA && pastB)
+				return 1; // "a > b"
+			else if (pastA && pastB)
+				return 0; // "a = b", same length, all items equal
+
+			T ai = a[i];
+			T bi = b[i];
+			if (ai == null && bi == null)
+				continue; // again, two null items are assumed 'equal'
+
+			// arbitrary: non-null item is considered 'greater than' null item
+			if (ai == null)
+				return -1; // "a < b"
+			else if (bi == null)
+				return 1; // "a > b"
+
+			int comp = ai.compareTo(bi);
+			if (comp != 0)
+				return comp;
+		}
+	}
+
 }

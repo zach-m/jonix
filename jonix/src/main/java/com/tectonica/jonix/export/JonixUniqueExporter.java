@@ -21,6 +21,7 @@ package com.tectonica.jonix.export;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.GregorianCalendar;
@@ -30,9 +31,8 @@ import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.JonixTabulator;
 import com.tectonica.jonix.JonixUtils;
-import com.tectonica.jonix.basic.BasicProduct;
 
-public class JonixUniqueExporter<H, P> extends JonixFilesExport<H, P>
+public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 {
 	public JonixUniqueExporter(JonixContext<H, P> context)
 	{
@@ -47,9 +47,10 @@ public class JonixUniqueExporter<H, P> extends JonixFilesExport<H, P>
 		return columns;
 	}
 
-	public void setColumns(JonixColumn<P>[] columns)
+	public JonixUniqueExporter<H, P> setColumns(JonixColumn<P>[] columns)
 	{
 		this.columns = columns;
+		return this;
 	}
 
 	public JonixColumn<P> getIdColumn()
@@ -57,30 +58,32 @@ public class JonixUniqueExporter<H, P> extends JonixFilesExport<H, P>
 		return idColumn;
 	}
 
-	public void setIdColumn(JonixColumn<P> idColumn)
+	public JonixUniqueExporter<H, P> setIdColumn(JonixColumn<P> idColumn)
 	{
 		this.idColumn = idColumn;
+		return this;
 	}
 
 	protected String extraConstColumnNames;
 	protected String extraConstColumnValues;
 
-	public void setExtraConstColumns(String columnName, String columnValue)
+	public JonixUniqueExporter<H, P> setExtraConstColumns(String columnName, String columnValue)
 	{
 		this.extraConstColumnNames = columnName;
 		this.extraConstColumnValues = columnValue;
+		return this;
 	}
 
 	/**
-	 * a wrapper for {@link BasicProduct} with some exxtra information needed for sorting and filtering
+	 * a wrapper for Product with some extra information needed for sorting and filtering
 	 */
-	protected static class ProductEx<H, P> implements Comparable<ProductEx<H, P>>
+	protected static class ComparableProduct<H, P> implements Comparable<ComparableProduct<H, P>>
 	{
-		public final String _id;
+		public final String[] _id;
 		public final Calendar _timestamp;
 		public final P _product;
 
-		public ProductEx(String id, Calendar timestamp, P product)
+		public ComparableProduct(String[] id, Calendar timestamp, P product)
 		{
 			this._id = id;
 			this._timestamp = timestamp;
@@ -91,19 +94,19 @@ public class JonixUniqueExporter<H, P> extends JonixFilesExport<H, P>
 		 * sort the records by ascending order of ID, and then by descending order of timestamp
 		 */
 		@Override
-		public int compareTo(ProductEx<H, P> o)
+		public int compareTo(ComparableProduct<H, P> o)
 		{
-			int result = _id.compareTo(o._id);
+			int result = JonixUtils.compare(_id, o._id);
 			return (result == 0) ? (-_timestamp.compareTo(o._timestamp)) : result;
 		}
 	}
 
-	protected List<ProductEx<H, P>> productsEx;
+	protected List<ComparableProduct<H, P>> compProducts;
 
 	@Override
-	protected boolean onBeforeFiles(List<String> onixFileNames)
+	protected boolean onBeforeFileList(List<String> onixFileNames)
 	{
-		productsEx = new ArrayList<>();
+		compProducts = new ArrayList<>();
 		return true;
 	}
 
@@ -130,39 +133,39 @@ public class JonixUniqueExporter<H, P> extends JonixFilesExport<H, P>
 	}
 
 	@Override
-	protected void logHeaderParseSummary(H header)
+	protected void onHeader(H header)
 	{
-		// in this particular exporter, we prefer not printing header information to the log
+		// no super(). in this particular exporter, we prefer not printing header information to the log
 	}
 
 	@Override
-	protected void onProduct(P product, int index)
+	protected void onProduct(P product)
 	{
-		super.onProduct(product, index);
+		super.onProduct(product);
 
 		String[] idData = JonixTabulator.newColumnBuffer(idColumn);
 
 		if (idColumn.extractFrom(product, idData))
-			productsEx.add(new ProductEx<H, P>(idData[0], lastFileTimestamp, product));
+			compProducts.add(new ComparableProduct<H, P>(idData, lastFileTimestamp, product));
 	}
 
 	@Override
-	protected void onAfterFiles()
+	protected void onAfterFileList(List<String> processedFileNames)
 	{
-		log.println("Sorting " + productsEx.size() + " products..");
-		Collections.sort(productsEx);
+		log.println("Sorting " + compProducts.size() + " products..");
+		Collections.sort(compProducts);
 
 		log.println("Cleaning up..");
-		List<ProductEx<H, P>> filteredProductsEx = new ArrayList<>();
-		String lastId = null;
-		for (ProductEx<H, P> productEx : productsEx)
+		List<ComparableProduct<H, P>> filteredProductsEx = new ArrayList<>();
+		String[] lastId = null;
+		for (ComparableProduct<H, P> productEx : compProducts)
 		{
 			if (productEx._id.equals(lastId))
 				continue;
 			filteredProductsEx.add(productEx);
 			lastId = productEx._id;
 		}
-		productsEx = null;
+		compProducts = null;
 
 		log.println("Exporting " + filteredProductsEx.size() + " products..");
 		onExportUniqueList(filteredProductsEx);
@@ -173,12 +176,11 @@ public class JonixUniqueExporter<H, P> extends JonixFilesExport<H, P>
 	/**
 	 * Override this method to generate your own needed output. By default generates tab-delimited output.
 	 */
-	protected void onExportUniqueList(List<ProductEx<H, P>> productsEx)
+	protected void onExportUniqueList(List<ComparableProduct<H, P>> productsEx)
 	{
 		out.println(JonixTabulator.headerAsTabDelimitedString(columns) + extraConstColumnNames);
-		for (ProductEx<H, P> productEx : productsEx)
+		for (ComparableProduct<H, P> productEx : productsEx)
 			out.println(JonixTabulator.productAsTabDelimitedString(productEx._product, columns)
 					+ extraConstColumnValues);
 	}
-
 }

@@ -23,7 +23,7 @@ import java.util.Collection;
 
 import com.tectonica.jonix.JonixContext;
 
-public class JonixInMemExporter<H, P> extends JonixFilesExport<H, P>
+public class JonixInMemExporter<H, P> extends JonixExporter<H, P>
 {
 	protected Collection<P> output;
 
@@ -36,9 +36,9 @@ public class JonixInMemExporter<H, P> extends JonixFilesExport<H, P>
 	}
 
 	@Override
-	public void onProduct(P product, int index)
+	public void onProduct(P product)
 	{
-		super.onProduct(product, index);
+		super.onProduct(product); // logs an info line
 		output.add(product);
 	}
 }

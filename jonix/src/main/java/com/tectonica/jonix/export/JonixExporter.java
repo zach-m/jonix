@@ -19,29 +19,57 @@
 
 package com.tectonica.jonix.export;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import com.tectonica.jonix.JonixContext;
-import com.tectonica.jonix.JonixFilesScanner;
+import com.tectonica.jonix.JonixReader;
 
-public abstract class JonixFilesExport<H, P> extends JonixFilesScanner<H, P>
+public abstract class JonixExporter<H, P> extends JonixReader<H, P>
 {
-	public JonixFilesExport(JonixContext<H, P> context)
+	protected PrintStream out = System.out;
+
+	public JonixExporter(JonixContext<H, P> context)
 	{
 		super(context);
 	}
 
-	@Override
-	protected boolean onBeforeFiles(List<String> onixFileNames)
+	public void setOut(PrintStream out)
 	{
-		log.println("Parsing " + onixFileNames.size() + " files");
+		this.out = (out == null) ? System.out : out;
+	}
+
+	public void setOut(String fileName)
+	{
+		try
+		{
+			this.out = new PrintStream(fileName, "UTF8");
+		}
+		catch (FileNotFoundException | UnsupportedEncodingException e)
+		{
+			e.printStackTrace(log);
+			throw new RuntimeException(e);
+		}
+	}
+
+	public PrintStream getOut()
+	{
+		return out;
+	}
+
+	@Override
+	protected boolean onBeforeFileList(List<String> onixFileNames)
+	{
+		log.println("Parsing " + onixFileNames.size() + " files..");
 		return true;
 	}
 
 	@Override
-	protected void onAfterFiles()
+	protected void onAfterFileList(List<String> processedFileNames)
 	{
-		log.println("** DONE **");
+		log.printf("** DONE, %d products found **\n", productNo);
 	}
 
 	@Override
@@ -52,27 +80,34 @@ public abstract class JonixFilesExport<H, P> extends JonixFilesScanner<H, P>
 	}
 
 	@Override
-	protected void onHeader(H header)
+	protected void onAfterSource()
 	{
-		logHeaderParseSummary(header);
+		super.onAfterSource();
+		out.flush();
 	}
 
 	@Override
-	protected void onProduct(P product, int index)
+	protected void onHeader(H header)
 	{
-		logProductParseSummary(product, index);
+		logHeaderSummary(header);
 	}
 
-	protected void logHeaderParseSummary(H header)
+	@Override
+	protected void onProduct(P product)
+	{
+		logProductSummary(product);
+	}
+
+	protected void logHeaderSummary(H header)
 	{
 		log.println("-----------------------------------------------------------\n");
 		log.println(header.toString());
 		log.println("-----------------------------------------------------------\n");
 	}
 
-	protected void logProductParseSummary(P product, int index)
+	protected void logProductSummary(P product)
 	{
 		// show a log message about the product being successfully parsed
-		log.println("parsed product #" + index + " - " + context.labelOf(product));
+		log.println("retrieved product #" + productNo + " - " + context.labelOf(product));
 	}
 }

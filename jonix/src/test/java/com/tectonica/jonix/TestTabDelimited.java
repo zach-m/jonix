@@ -29,16 +29,17 @@ import org.junit.Test;
 
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 
 public class TestTabDelimited
 {
-	private JonixFilesScanner<BasicHeader, BasicProduct> exporter;
+	private JonixTabDelimitedExporter<BasicHeader, BasicProduct> exporter;
 
 	@Before
 	public void setUp() throws Exception
 	{
 		PrintStream outFile = new PrintStream("Catalog.tsv");
-		exporter = Jonix.createBasicTabDelimitedExporter().setOut(outFile);
+		exporter = Jonix.createBasicTabDelimitedExporter(outFile);
 	}
 
 	@After
@@ -50,9 +51,9 @@ public class TestTabDelimited
 	// ignored by default. the sample files are not checked in to SCM
 	public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException
 	{
-		exporter.scanFolder("../onix_samples/ONIX3", ".onix"); // ONIX3 files
-		exporter.scanFolder("../onix_samples/ONIX2/BK", ".xml"); // ONIX2 files
-		exporter.scanFile("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
-		exporter.scanFile("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
+		exporter.readFolder("../onix_samples/ONIX3", ".onix"); // ONIX3 files
+		exporter.readFolder("../onix_samples/ONIX2/BK", ".xml"); // ONIX2 files
+		exporter.read("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
+		exporter.read("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
 	}
 }

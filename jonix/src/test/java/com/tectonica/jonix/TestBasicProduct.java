@@ -30,7 +30,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
-import com.tectonica.jonix.JonixReader.JonixReaderListener;
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.util.JSON;
@@ -93,7 +92,7 @@ public class TestBasicProduct
 	{
 		String resourceName = "/single-book-onix3.xml";
 
-		InputStream stream = this.getClass().getResourceAsStream(resourceName);
+		InputStream stream = getClass().getResourceAsStream(resourceName);
 
 		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
 		{
@@ -123,20 +122,15 @@ public class TestBasicProduct
 		});
 
 		// read the same file, this time using a JonixReader
-		JonixReader<BasicHeader, BasicProduct> reader = Jonix.createBasicReader();
-		reader.setListener(new JonixReaderListener<BasicHeader, BasicProduct>()
+		JonixReader<BasicHeader, BasicProduct> reader = new JonixReader<BasicHeader, BasicProduct>(Jonix.BASIC_CONTEXT)
 		{
 			@Override
-			public void onHeader(BasicHeader header)
-			{}
-
-			@Override
-			public void onProduct(BasicProduct product, int index)
+			protected void onProduct(BasicProduct product)
 			{
 				jsonViaReader = JSON.toJson(product);
 			}
-		});
-		reader.read(this.getClass().getResourceAsStream(resourceName));
+		};
+		reader.read(getClass().getResourceAsStream(resourceName));
 
 		// compare the JSON received in both methods
 		org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);

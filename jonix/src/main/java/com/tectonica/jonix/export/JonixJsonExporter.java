@@ -22,7 +22,7 @@ package com.tectonica.jonix.export;
 import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.util.JSON;
 
-public class JonixJsonExporter<H, P> extends JonixFilesExport<H, P>
+public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 {
 	private final boolean writeRawProduct;
 
@@ -33,9 +33,9 @@ public class JonixJsonExporter<H, P> extends JonixFilesExport<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, int index)
+	protected void onProduct(P product)
 	{
-		super.onProduct(product, index);
+		super.onProduct(product);  // logs an info line
 
 		out.println(writeRawProduct ? JSON.toJson(getRawOnixObject()) : JSON.toJson(product));
 		out.println("**********************************************************************************\n");

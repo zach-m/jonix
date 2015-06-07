@@ -53,7 +53,7 @@ public class Jonix
 
 			PrintStream out = new PrintStream(outputFile);
 
-			createBasicTabDelimitedExporter().setOut(out).scanFolder(inputFile, ".xml");
+			createBasicTabDelimitedExporter(out).readFolder(inputFile, ".xml");
 		}
 		catch (Exception e)
 		{
@@ -106,28 +106,35 @@ public class Jonix
 		}
 	};
 
-	public static JonixReader<BasicHeader, BasicProduct> createBasicReader()
+	public static JonixTabDelimitedExporter<BasicHeader, BasicProduct> createBasicTabDelimitedExporter(PrintStream out)
 	{
-		return new JonixReader<BasicHeader, BasicProduct>(BASIC_CONTEXT);
+		JonixTabDelimitedExporter<BasicHeader, BasicProduct> exporter = new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(
+				BASIC_CONTEXT);
+		exporter.setOut(out);
+		return exporter;
 	}
 
-	public static JonixTabDelimitedExporter<BasicHeader, BasicProduct> createBasicTabDelimitedExporter()
+	public static JonixUniqueExporter<BasicHeader, BasicProduct> createBasicUniqueExporter(PrintStream out)
 	{
-		return new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT);
-	}
-
-	public static JonixUniqueExporter<BasicHeader, BasicProduct> createBasicUniqueExporter()
-	{
-		return new JonixUniqueExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT);
+		JonixUniqueExporter<BasicHeader, BasicProduct> exporter = new JonixUniqueExporter<BasicHeader, BasicProduct>(
+				BASIC_CONTEXT);
+		exporter.setOut(out);
+		return exporter;
 	}
 
 	public static JonixInMemExporter<BasicHeader, BasicProduct> createBasicInMemExporter(List<BasicProduct> out)
 	{
-		return new JonixInMemExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, out);
+		JonixInMemExporter<BasicHeader, BasicProduct> exporter = new JonixInMemExporter<BasicHeader, BasicProduct>(
+				BASIC_CONTEXT, out);
+		return exporter;
 	}
 
-	public static JonixJsonExporter<BasicHeader, BasicProduct> createJsonExporter(boolean writeRawProduct)
+	public static JonixJsonExporter<BasicHeader, BasicProduct> createJsonExporter(PrintStream out,
+			boolean writeRawProduct)
 	{
-		return new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, writeRawProduct);
+		JonixJsonExporter<BasicHeader, BasicProduct> exporter = new JonixJsonExporter<BasicHeader, BasicProduct>(
+				BASIC_CONTEXT, writeRawProduct);
+		exporter.setOut(out);
+		return exporter;
 	}
 }

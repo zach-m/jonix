@@ -20,23 +20,31 @@
 package com.tectonica.jonix;
 
 import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 
 import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
 
 import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 
-public class JonixReader<H, P>
+public abstract class JonixReader<H, P>
 {
 	protected final JonixContext<H, P> context;
-	protected Object rawOnixObject;
+	protected int productNo = 0; // TODO: make a getter
+	protected Object rawOnixObject; // TODO: make private
+	protected boolean isOnix2 = false; // TODO: make a getter
+	protected boolean isOnix3 = false;// TODO: make a getter
+
+	protected PrintStream log = System.err;
 
 	public JonixReader(JonixContext<H, P> context)
 	{
@@ -45,96 +53,180 @@ public class JonixReader<H, P>
 		this.context = context;
 	}
 
-	public static interface JonixReaderListener<H, P>
+	protected Object getRawOnixObject()
 	{
-		public void onHeader(H header);
-
-		public void onProduct(P product, int index);
+		return rawOnixObject;
 	}
 
-	private JonixReaderListener<H, P> listener;
-
-	public JonixReaderListener<H, P> getListener()
+	public JonixReader<H, P> setLog(PrintStream log)
 	{
-		return listener;
+		this.log = (log == null) ? System.err : log;
+		return this;
 	}
 
-	public void setListener(JonixReaderListener<H, P> listener)
+	public JonixReader<H, P> setLog(String fileName) throws UnsupportedEncodingException, FileNotFoundException
 	{
-		this.listener = listener;
+		this.log = new PrintStream(fileName, "UTF-8");
+		return this;
 	}
 
-	public void read(String fileName) throws IOException, SAXException
+	public PrintStream getLog()
 	{
-		read(new FileInputStream(fileName));
+		return log;
 	}
 
-	public void read(InputStream source)
+	protected void doRead(InputStream source)
 	{
-		if (listener != null) // not too useful to parse if nobody is listening..
+		XmlChunker.parse(new BOMInputStream(source), 2, new XmlChunker.Listener()
 		{
-			XmlChunker.parse(new BOMInputStream(source), 2, new XmlChunker.Listener()
+			@Override
+			public void onTarget(Element element)
 			{
-				private int productCount = 0;
-				boolean isOnix2 = false;
-				boolean isOnix3 = false;
-
-				@Override
-				public void onTarget(Element element)
+				final String nodeName = element.getNodeName();
+				if (nodeName.equalsIgnoreCase("Header"))
 				{
-					final String nodeName = element.getNodeName();
-					if (nodeName.equalsIgnoreCase("Header"))
+					final H header;
+					if (isOnix2)
 					{
-						final H header;
-						if (isOnix2)
-						{
-							com.tectonica.jonix.onix2.Header h2 = new com.tectonica.jonix.onix2.Header(element);
-							header = context.createFrom(h2);
-							rawOnixObject = h2;
-						}
-						else if (isOnix3)
-						{
-							com.tectonica.jonix.onix3.Header h3 = new com.tectonica.jonix.onix3.Header(element);
-							header = context.createFrom(h3);
-							rawOnixObject = h3;
-						}
-						else
-							throw new RuntimeException("Couldn't determine the ONIX version of the file");
-						listener.onHeader(header);
+						com.tectonica.jonix.onix2.Header h2 = new com.tectonica.jonix.onix2.Header(element);
+						header = context.createFrom(h2);
+						rawOnixObject = h2;
 					}
-					else if (nodeName.equalsIgnoreCase("Product"))
+					else if (isOnix3)
 					{
-						final P product;
-						if (isOnix2)
-						{
-							com.tectonica.jonix.onix2.Product p2 = new com.tectonica.jonix.onix2.Product(element);
-							product = context.createFrom(p2);
-							rawOnixObject = p2;
-						}
-						else if (isOnix3)
-						{
-							com.tectonica.jonix.onix3.Product p3 = new com.tectonica.jonix.onix3.Product(element);
-							product = context.createFrom(p3);
-							rawOnixObject = p3;
-						}
-						else
-							throw new RuntimeException("Couldn't determine the ONIX version of the file");
-						listener.onProduct(product, ++productCount);
+						com.tectonica.jonix.onix3.Header h3 = new com.tectonica.jonix.onix3.Header(element);
+						header = context.createFrom(h3);
+						rawOnixObject = h3;
 					}
+					else
+						throw new RuntimeException("Couldn't determine the ONIX version of the file");
+					onHeader(header);
 				}
-
-				@Override
-				public void onPreTargetStart(int depth, StartElement element)
+				else if (nodeName.equalsIgnoreCase("Product"))
 				{
-					if (!element.getName().getLocalPart().equalsIgnoreCase("ONIXMessage"))
-						throw new RuntimeException("file doesn't start with the mandatory <ONIXMessage> tag");
-					final Attribute release = element.getAttributeByName(new QName("release"));
-					isOnix2 = (release == null || release.getValue().startsWith("2"));
-					isOnix3 = (release != null && release.getValue().startsWith("3"));
-					if (!isOnix2 && !isOnix3)
-						throw new RuntimeException("file doesn't comply with neither ONIX2 nor ONIX3");
+					final P product;
+					if (isOnix2)
+					{
+						com.tectonica.jonix.onix2.Product p2 = new com.tectonica.jonix.onix2.Product(element);
+						product = context.createFrom(p2);
+						rawOnixObject = p2;
+					}
+					else if (isOnix3)
+					{
+						com.tectonica.jonix.onix3.Product p3 = new com.tectonica.jonix.onix3.Product(element);
+						product = context.createFrom(p3);
+						rawOnixObject = p3;
+					}
+					else
+						throw new RuntimeException("Couldn't determine the ONIX version of the file");
+					++productNo;
+					onProduct(product);
 				}
-			});
+			}
+
+			@Override
+			public void onPreTargetStart(int depth, StartElement element)
+			{
+				if (!element.getName().getLocalPart().equalsIgnoreCase("ONIXMessage"))
+					throw new RuntimeException("file doesn't start with the mandatory <ONIXMessage> tag");
+				final Attribute release = element.getAttributeByName(new QName("release"));
+				isOnix2 = (release == null || release.getValue().startsWith("2"));
+				isOnix3 = (release != null && release.getValue().startsWith("3"));
+				if (!isOnix2 && !isOnix3)
+					throw new RuntimeException("file doesn't comply with neither ONIX2 nor ONIX3");
+			}
+		});
+	}
+
+	public void read(final InputStream source)
+	{
+		if (onBeforeSource(source))
+		{
+			try
+			{
+				doRead(source);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace(log);
+				throw new RuntimeException(e);
+			}
+			log.flush();
+			onAfterSource();
 		}
 	}
+
+	public void read(final String fileName)
+	{
+		final FileInputStream fos;
+		try
+		{
+			fos = new FileInputStream(fileName);
+		}
+		catch (FileNotFoundException e)
+		{
+			e.printStackTrace(log);
+			throw new RuntimeException(e);
+		}
+		read(fos);
+	}
+
+	public void read(List<String> fileNames)
+	{
+		if (onBeforeFileList(fileNames))
+		{
+			List<String> processedFileNames = new ArrayList<>();
+			for (String fileName : fileNames)
+			{
+				try
+				{
+					if (!onBeforeFile(fileName))
+						continue;
+					read(fileName);
+					processedFileNames.add(fileName);
+				}
+				catch (Exception ignored)
+				{
+					// we move on to the next file
+				}
+			}
+			onAfterFileList(processedFileNames);
+		}
+	}
+
+	private FileExplorer fileExplorer = new FileExplorer();
+
+	public void readFolder(String rootLocation, String extension)
+	{
+		// NOTE: also assumed to be reading a single file
+		read(fileExplorer.getFilesRootedAt(rootLocation, extension));
+	}
+
+	// OVERRIDE CANDIDATES:
+
+	protected void onHeader(H header)
+	{}
+
+	protected abstract void onProduct(P product);
+
+	protected boolean onBeforeSource(InputStream source)
+	{
+		return true;
+	}
+
+	protected void onAfterSource()
+	{}
+
+	protected boolean onBeforeFileList(List<String> fileNames)
+	{
+		return true;
+	}
+
+	protected boolean onBeforeFile(String fileName)
+	{
+		return true;
+	}
+
+	protected void onAfterFileList(List<String> processedFileNames)
+	{}
 }
