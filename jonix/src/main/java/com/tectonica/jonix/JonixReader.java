@@ -25,12 +25,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,19 +215,7 @@ public abstract class JonixReader<H, P>
 	{
 		try
 		{
-			final List<String> fileNames = new ArrayList<>();
-			Files.walkFileTree(Paths.get(rootLocation), new SimpleFileVisitor<Path>()
-			{
-				@Override
-				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
-				{
-					String fileName = file.toString();
-					if (fileName.endsWith(suffix))
-						fileNames.add(fileName);
-					return FileVisitResult.CONTINUE;
-				}
-			});
-			read(fileNames);
+			read(JonixUtil.scanFolder(rootLocation, suffix));
 		}
 		catch (IOException e)
 		{

@@ -19,9 +19,13 @@
 
 package com.tectonica.jonix;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestJonixUtil
@@ -62,4 +66,14 @@ public class TestJonixUtil
 		Assert.assertEquals(compare(a_b, ab), -1);
 		Assert.assertEquals(compare(a_b, a_c), -1);
 	}
+
+	@Test
+	@Ignore
+	public void testFolderScanWithPattern() throws IOException
+	{
+		System.err.println(new File(".").getAbsolutePath());
+		for (String s : JonixUtil.scanFolderWithPattern(".", "*.ja*"))
+			System.out.println(s);
+	}
+
 }

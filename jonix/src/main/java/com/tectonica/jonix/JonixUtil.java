@@ -1,12 +1,22 @@
 package com.tectonica.jonix;
 
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -94,6 +104,41 @@ public class JonixUtil
 		if (yyyy > 0)
 			return new GregorianCalendar(yyyy, MM, dd, hh, mm, ss);
 		return null;
+	}
+
+	public static List<String> scanFolder(final String rootLocation, final String suffix) throws IOException
+	{
+		final List<String> fileNames = new ArrayList<>();
+		Files.walkFileTree(Paths.get(rootLocation), new SimpleFileVisitor<Path>()
+		{
+			@Override
+			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
+			{
+				String fileName = file.toString();
+				if (fileName.endsWith(suffix))
+					fileNames.add(fileName);
+				return FileVisitResult.CONTINUE;
+			}
+		});
+		return fileNames;
+	}
+
+	public static List<String> scanFolderWithPattern(final String rootLocation, final String pattern) throws IOException
+	{
+		final PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:" + pattern);
+		final List<String> fileNames = new ArrayList<>();
+		Files.walkFileTree(Paths.get(rootLocation), new SimpleFileVisitor<Path>()
+		{
+			@Override
+			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
+			{
+				Path name = file.getFileName();
+				if (name != null && matcher.matches(name))
+					fileNames.add(file.toAbsolutePath().toString());
+				return FileVisitResult.CONTINUE;
+			}
+		});
+		return fileNames;
 	}
 
 	public static <T extends Comparable<T>> int compare(T[] a, T[] b)
