@@ -36,8 +36,8 @@ import com.tectonica.xmlchunk.XmlChunker;
 
 public class TestBasicProduct
 {
-	private static final String refname = com.tectonica.jonix.onix2.Product.refname;
-	private static final String shortname = com.tectonica.jonix.onix2.Product.shortname;
+	private static final String PRODUCT_REF = com.tectonica.jonix.onix2.Product.refname;
+	private static final String PRODUCT_SHORT = com.tectonica.jonix.onix2.Product.shortname;
 
 	@Before
 	public void setUp() throws Exception
@@ -60,7 +60,7 @@ public class TestBasicProduct
 			public void onTarget(Element element)
 			{
 				final String nodeName = element.getNodeName();
-				if (nodeName.equals(refname) || nodeName.equals(shortname))
+				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
 				{
 					final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
 					BasicProduct bp = new BasicProduct(product);
@@ -85,12 +85,12 @@ public class TestBasicProduct
 	private String jsonDirect = null;
 	private String jsonViaReader = null;
 
+	private static final String RESOURCE_NAME = "/single-book-onix3.xml";
+
 	@Test
 	public void readSingleProductOfOnix3AlsoWithReader()
 	{
-		String resourceName = "/single-book-onix3.xml";
-
-		InputStream stream = getClass().getResourceAsStream(resourceName);
+		InputStream stream = getClass().getResourceAsStream(RESOURCE_NAME);
 
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
@@ -98,7 +98,7 @@ public class TestBasicProduct
 			public void onTarget(Element element)
 			{
 				final String nodeName = element.getNodeName();
-				if (nodeName.equals(refname) || nodeName.equals(shortname))
+				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
 				{
 					final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
 					BasicProduct bp = new BasicProduct(product);
@@ -128,7 +128,7 @@ public class TestBasicProduct
 				jsonViaReader = JonixUtil.toJson(product);
 			}
 		};
-		reader.read(getClass().getResourceAsStream(resourceName));
+		reader.read(getClass().getResourceAsStream(RESOURCE_NAME));
 
 		// compare the JSON received in both methods
 		org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);

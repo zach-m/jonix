@@ -130,10 +130,10 @@ public class Jonix
 	}
 
 	public static JonixJsonExporter<BasicHeader, BasicProduct> createJsonExporter(PrintStream out,
-			boolean writeRawProduct)
+			boolean exportRawProduct)
 	{
 		JonixJsonExporter<BasicHeader, BasicProduct> exporter = new JonixJsonExporter<BasicHeader, BasicProduct>(
-				BASIC_CONTEXT, writeRawProduct);
+				BASIC_CONTEXT, exportRawProduct);
 		exporter.setOut(out);
 		return exporter;
 	}
