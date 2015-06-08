@@ -43,9 +43,14 @@ public abstract class JonixExporter<H, P> extends JonixReader<H, P>
 
 	public void setOut(String fileName)
 	{
+		setOut(fileName, "UTF-8");
+	}
+
+	public void setOut(String fileName, String encoding)
+	{
 		try
 		{
-			this.out = new PrintStream(fileName, "UTF8");
+			this.out = new PrintStream(fileName, encoding);
 		}
 		catch (FileNotFoundException | UnsupportedEncodingException e)
 		{
@@ -69,7 +74,7 @@ public abstract class JonixExporter<H, P> extends JonixReader<H, P>
 	@Override
 	protected void onAfterFileList(List<String> processedFileNames)
 	{
-		log.printf("** DONE, %d products found **\n", productNo);
+		log.printf("** DONE, %d products exported so far **\n", productNo);
 	}
 
 	@Override

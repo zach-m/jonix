@@ -47,16 +47,15 @@ public class TestBasicProduct
 	@After
 	public void tearDown() throws Exception
 	{
-		System.out
-				.println("\n**********************************************************************************************");
+		System.out.println("\n***********************************************************************************");
 	}
 
 	@Test
 	public void readSingleProductOfOnix2()
 	{
-		InputStream stream = this.getClass().getResourceAsStream("/single-book-onix2.xml");
+		InputStream stream = getClass().getResourceAsStream("/single-book-onix2.xml");
 
-		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
+		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
 			public void onTarget(Element element)
@@ -94,7 +93,7 @@ public class TestBasicProduct
 
 		InputStream stream = getClass().getResourceAsStream(resourceName);
 
-		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
+		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
 			public void onTarget(Element element)

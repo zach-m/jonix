@@ -60,7 +60,7 @@ public class TestXmlChunkerWithProducts
 		if (!file.exists())
 			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
 
-		XmlChunker.parse(new FileInputStream(file), 2, new XmlChunker.Listener()
+		XmlChunker.parse(new FileInputStream(file), "UTF-8", 2, new XmlChunker.Listener()
 		{
 			private int count = 0;
 

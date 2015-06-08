@@ -44,7 +44,7 @@ public class TestXmlChunker
 	public void xmlReadParseAndThenWriteAsXml()
 	{
 		InputStream stream = TestXmlChunker.class.getResourceAsStream("/single-book-onix2.xml");
-		XmlChunker.parse(stream, 2, new XmlChunker.Listener()
+		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
 			public void onTarget(Element element)

@@ -75,9 +75,9 @@ public abstract class JonixReader<H, P>
 		return log;
 	}
 
-	protected void doRead(InputStream source)
+	protected void doRead(InputStream source, String encoding)
 	{
-		XmlChunker.parse(new BOMInputStream(source), 2, new XmlChunker.Listener()
+		XmlChunker.parse(new BOMInputStream(source), encoding, 2, new XmlChunker.Listener()
 		{
 			@Override
 			public void onTarget(Element element)
@@ -140,11 +140,16 @@ public abstract class JonixReader<H, P>
 
 	public void read(final InputStream source)
 	{
+		read(source, "UTF-8");
+	}
+
+	public void read(final InputStream source, final String encoding)
+	{
 		if (onBeforeSource(source))
 		{
 			try
 			{
-				doRead(source);
+				doRead(source, encoding);
 			}
 			catch (Exception e)
 			{
@@ -158,6 +163,11 @@ public abstract class JonixReader<H, P>
 
 	public void read(final String fileName)
 	{
+		read(fileName, getFileEncoding(fileName));
+	}
+
+	public void read(final String fileName, String encoding)
+	{
 		final FileInputStream fos;
 		try
 		{
@@ -168,7 +178,7 @@ public abstract class JonixReader<H, P>
 			e.printStackTrace(log);
 			throw new RuntimeException(e);
 		}
-		read(fos);
+		read(fos, encoding);
 	}
 
 	public void read(List<String> fileNames)
@@ -202,12 +212,14 @@ public abstract class JonixReader<H, P>
 		read(fileExplorer.getFilesRootedAt(rootLocation, extension));
 	}
 
-	// OVERRIDE CANDIDATES:
+	// MAIN EVENTS
 
 	protected void onHeader(H header)
 	{}
 
 	protected abstract void onProduct(P product);
+
+	// OTHER EVENTS
 
 	protected boolean onBeforeSource(InputStream source)
 	{
@@ -229,4 +241,9 @@ public abstract class JonixReader<H, P>
 
 	protected void onAfterFileList(List<String> processedFileNames)
 	{}
+
+	public String getFileEncoding(String fileName)
+	{
+		return "UTF-8";
+	}
 }

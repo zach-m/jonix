@@ -42,8 +42,6 @@ import org.w3c.dom.Element;
 
 public class XmlChunker
 {
-	public static final String DEFAULT_INPUT_CHARSET = "UTF-8";
-
 	private static final XMLInputFactory inputFactory;
 	private static final TransformerFactory transformerFactory;
 	private static final XmlChunkerEndDocument endDocumentEvent = new XmlChunkerEndDocument();
@@ -72,14 +70,14 @@ public class XmlChunker
 		public void onTarget(Element element);
 	}
 
-	public static void parse(InputStream is, int targetDepth, Listener listener)
+	public static void parse(InputStream is, String encoding, int targetDepth, Listener listener)
 	{
 		int depth = -1;
 		List<XMLEvent> events = null;
 
 		try
 		{
-			XMLEventReader reader = inputFactory.createXMLEventReader(is, DEFAULT_INPUT_CHARSET);
+			XMLEventReader reader = inputFactory.createXMLEventReader(is, encoding);
 			XMLEvent startDocumentEvent = null;
 
 			while (reader.hasNext())
