@@ -65,9 +65,9 @@ public abstract class JonixExporter<H, P> extends JonixReader<H, P>
 	}
 
 	@Override
-	protected boolean onBeforeFileList(List<String> onixFileNames)
+	protected boolean onBeforeFileList(List<String> fileNames)
 	{
-		log.println("Parsing " + onixFileNames.size() + " files..");
+		log.println("Found " + fileNames.size() + " files..");
 		return true;
 	}
 

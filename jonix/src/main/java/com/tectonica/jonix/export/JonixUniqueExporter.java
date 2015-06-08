@@ -31,6 +31,8 @@ import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.JonixTabulator;
 import com.tectonica.jonix.JonixUtil;
 
+// TODO: make this work also on repeated calls for readFolder()
+
 public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 {
 	public JonixUniqueExporter(JonixContext<H, P> context)

@@ -21,9 +21,16 @@ package com.tectonica.jonix;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -204,12 +211,35 @@ public abstract class JonixReader<H, P>
 		}
 	}
 
-	private FileExplorer fileExplorer = new FileExplorer();
-
-	public void readFolder(String rootLocation, String extension)
+	/**
+	 * 
+	 * @param rootLocation
+	 *            may be a directory or a file
+	 * @param suffix
+	 */
+	public void readFolder(final String rootLocation, final String suffix)
 	{
-		// NOTE: also assumed to be reading a single file
-		read(fileExplorer.getFilesRootedAt(rootLocation, extension));
+		try
+		{
+			final List<String> fileNames = new ArrayList<>();
+			Files.walkFileTree(Paths.get(rootLocation), new SimpleFileVisitor<Path>()
+			{
+				@Override
+				public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
+				{
+					String fileName = file.toString();
+					if (fileName.endsWith(suffix))
+						fileNames.add(fileName);
+					return FileVisitResult.CONTINUE;
+				}
+			});
+			read(fileNames);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace(log);
+			throw new RuntimeException(e);
+		}
 	}
 
 	// MAIN EVENTS
