@@ -21,7 +21,6 @@ package com.tectonica.jonix.export;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.GregorianCalendar;
@@ -30,7 +29,7 @@ import java.util.List;
 import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.JonixTabulator;
-import com.tectonica.jonix.JonixUtils;
+import com.tectonica.jonix.JonixUtil;
 
 public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 {
@@ -96,7 +95,7 @@ public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 		@Override
 		public int compareTo(ComparableProduct<H, P> o)
 		{
-			int result = JonixUtils.compare(_id, o._id);
+			int result = JonixUtil.compare(_id, o._id);
 			return (result == 0) ? (-_timestamp.compareTo(o._timestamp)) : result;
 		}
 	}
@@ -115,7 +114,7 @@ public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 	@Override
 	protected boolean onBeforeFile(String fileName)
 	{
-		lastFileTimestamp = JonixUtils.extractTimstampFromOnixFileName(fileName);
+		lastFileTimestamp = JonixUtil.extractTimstampFromOnixFileName(fileName);
 
 		if (lastFileTimestamp == null)
 		{

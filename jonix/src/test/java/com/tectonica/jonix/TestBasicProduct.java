@@ -32,7 +32,6 @@ import org.w3c.dom.Element;
 
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.util.JSON;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class TestBasicProduct
@@ -66,9 +65,9 @@ public class TestBasicProduct
 					final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
 					BasicProduct bp = new BasicProduct(product);
 					System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
-					System.out.println(JSON.toJson(product));
-					System.out.println("\nORGANIZED ONIX2  --------------------------------------------------------");
-					System.out.println(JSON.toJson(bp));
+					System.out.println(JonixUtil.toJson(product));
+					System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
+					System.out.println(JonixUtil.toJson(bp));
 				}
 			}
 
@@ -104,9 +103,9 @@ public class TestBasicProduct
 					final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
 					BasicProduct bp = new BasicProduct(product);
 					System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
-					System.out.println(JSON.toJson(product));
-					System.out.println("\nORGANIZED ONIX3  --------------------------------------------------------");
-					System.out.println(jsonDirect = JSON.toJson(bp));
+					System.out.println(JonixUtil.toJson(product));
+					System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
+					System.out.println(jsonDirect = JonixUtil.toJson(bp));
 				}
 			}
 
@@ -126,7 +125,7 @@ public class TestBasicProduct
 			@Override
 			protected void onProduct(BasicProduct product)
 			{
-				jsonViaReader = JSON.toJson(product);
+				jsonViaReader = JonixUtil.toJson(product);
 			}
 		};
 		reader.read(getClass().getResourceAsStream(resourceName));

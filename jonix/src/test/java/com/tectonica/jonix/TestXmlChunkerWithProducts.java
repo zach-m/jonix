@@ -38,7 +38,6 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
-import com.tectonica.jonix.util.JSON;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class TestXmlChunkerWithProducts
@@ -88,7 +87,7 @@ public class TestXmlChunkerWithProducts
 
 					// in rare cases where there is no title, we print the entire XML record (as JSON)
 					if (title == null)
-						System.err.println(JSON.toJson(product));
+						System.err.println(JonixUtil.toJson(product));
 				}
 			}
 

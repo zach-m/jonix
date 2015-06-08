@@ -1,15 +1,24 @@
 package com.tectonica.jonix;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class JonixUtils
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+public class JonixUtil
 {
 	private static final Pattern timestampPattern = Pattern.compile("[^0-9]([0-9]{4,14})(?=[_\\.])");
 
@@ -132,4 +141,38 @@ public class JonixUtils
 		}
 	}
 
+	private static final ObjectMapper mapper = createPropsMapper();
+
+	private static ObjectMapper createPropsMapper()
+	{
+		ObjectMapper mapper = new ObjectMapper();
+
+		// configure to use public fields only, consistent with Jonix design
+		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.PUBLIC_ONLY);
+		mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
+		mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
+
+		// general configuration
+		mapper.setSerializationInclusion(Include.NON_NULL);
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		mapper.setDateFormat(sdf);
+
+		return mapper;
+	}
+
+	public static String toJson(Object o)
+	{
+		try
+		{
+			return mapper.writeValueAsString(o);
+		}
+		catch (IOException e)
+		{
+			throw new RuntimeException(e);
+		}
+	}
 }
