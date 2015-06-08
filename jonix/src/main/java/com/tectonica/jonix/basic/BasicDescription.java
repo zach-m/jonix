@@ -33,9 +33,20 @@ import com.tectonica.jonix.struct.JonixAudience;
 import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixLanguage;
 
-@SuppressWarnings("serial")
+/**
+ * Bundles together some descriptive information included in an ONIX product
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Product} or a
+ * {@link com.tectonica.jonix.onix3.Product}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicDescription implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final EditionTypes editionType;
 	public final Integer editionNumber;
 	public final String productForm;

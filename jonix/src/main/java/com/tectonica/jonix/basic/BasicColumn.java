@@ -38,6 +38,12 @@ import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
+/**
+ * A base class for all the {@link JonixColumn}s provided by the 'basic' suite of classes. Deriving from it are the
+ * columns themselves - {@link #ISBN13}, {@link #Author}, etc. - all intended to be presented in a tabular format.
+ * 
+ * @author Zach Melamed
+ */
 public abstract class BasicColumn implements JonixColumn<BasicProduct>
 {
 	protected final int repetition;

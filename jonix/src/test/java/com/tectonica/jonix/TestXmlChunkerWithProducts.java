@@ -64,7 +64,7 @@ public class TestXmlChunkerWithProducts
 			private int count = 0;
 
 			@Override
-			public void onTarget(Element element)
+			public void onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))

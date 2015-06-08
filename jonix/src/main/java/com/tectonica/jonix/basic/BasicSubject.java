@@ -21,11 +21,25 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+import com.tectonica.jonix.onix3.Subject;
+import com.tectonica.jonix.onix3.SubjectHeadingText;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX &lt;Subject&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Subject} or a
+ * {@link com.tectonica.jonix.onix3.Subject}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicSubject implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final SubjectSchemeIdentifiers subjectSchemeIdentifier;
 	public final String subjectCode;
 	public final String subjectHeadingText;
@@ -48,6 +62,21 @@ public class BasicSubject implements Serializable
 	{
 		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
 		subjectCode = s.getSubjectCodeValue();
-		subjectHeadingText = BasicPicker.pickSubjectHeadingText(s);
+		subjectHeadingText = pickSubjectHeadingText(s);
 	}
+
+	private String pickSubjectHeadingText(Subject subject)
+	{
+		if (subject.subjectHeadingTexts != null)
+		{
+			for (SubjectHeadingText sht : subject.subjectHeadingTexts)
+			{
+				if (sht.language == null || sht.language == LanguageCodeIso6392Bs.English)
+					return sht.value;
+			}
+			return subject.subjectHeadingTexts.get(0).value; // return whatever language we have
+		}
+		return null;
+	}
+
 }

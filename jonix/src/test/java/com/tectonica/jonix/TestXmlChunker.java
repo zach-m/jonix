@@ -47,7 +47,7 @@ public class TestXmlChunker
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onTarget(Element element)
+			public void onChunk(Element element)
 			{
 				// turn the DOM element back to XML
 				String asXml = XmlChunker.elementToString(element, false);

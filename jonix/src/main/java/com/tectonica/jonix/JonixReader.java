@@ -87,7 +87,7 @@ public abstract class JonixReader<H, P>
 		XmlChunker.parse(new BOMInputStream(source), encoding, 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onTarget(Element element)
+			public void onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equalsIgnoreCase("Header"))
@@ -185,7 +185,7 @@ public abstract class JonixReader<H, P>
 			e.printStackTrace(log);
 			throw new RuntimeException(e);
 		}
-		read(fos, encoding);
+		read(fos, encoding); // outside the try{} to avoid double catching
 	}
 
 	public void read(List<String> fileNames)

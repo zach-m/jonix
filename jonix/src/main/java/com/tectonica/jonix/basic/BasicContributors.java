@@ -24,9 +24,16 @@ import java.util.List;
 
 import com.tectonica.jonix.codelist.ContributorRoles;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX &lt;Contributor&gt; that may exist in an ONIX product or an
+ * ONIX collection (series)
+ * 
+ * @author Zach Melamed
+ */
 public class BasicContributors extends ArrayList<BasicContributor>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicContributors(com.tectonica.jonix.onix2.Product product)
 	{
 		extractFrom2(product.contributors);

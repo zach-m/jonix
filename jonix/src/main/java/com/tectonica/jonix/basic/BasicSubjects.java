@@ -26,9 +26,15 @@ import java.util.List;
 
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX &lt;Subject&gt; that may exist in an ONIX product
+ * 
+ * @author Zach Melamed
+ */
 public class BasicSubjects extends HashMap<SubjectSchemeIdentifiers, List<BasicSubject>>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicSubjects(com.tectonica.jonix.onix2.Product product)
 	{
 		String bisacMainSubject = product.getBASICMainSubjectValue();

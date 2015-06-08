@@ -27,9 +27,20 @@ import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.struct.JonixPublishingDate;
 
-@SuppressWarnings("serial")
+/**
+ * Bundles together some publishing-related information included in an ONIX product
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Product} or a
+ * {@link com.tectonica.jonix.onix3.Product}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicPublishingDetails implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final String publicationDate;
 	public final CountryCodeIso31661s countryOfPublication;
 	public final String cityOfPublication;

@@ -21,15 +21,31 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX &lt;Product&gt;.
+ * <p>
+ * Provided as part of the 'basic' suite of classes whose goal is to extract the most important information from an ONIX
+ * source (be it ONIX2 or ONIX3) and make it available for other various uses (print in a tabular format, etc.). The
+ * classes of the 'basic' bridge the gap between ONIX versions, and provide a unified view of the content, allowing the
+ * user to write a version-agnostic code.
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Product} or a
+ * {@link com.tectonica.jonix.onix3.Product}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicProduct implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final BasicInfo info;
 	public final BasicDescription description;
 	public final BasicPublishingDetails publishingDetails;
 
 	public final BasicTitles titles;
-	public final BasicContributors contributors;;
+	public final BasicContributors contributors;
 	public final BasicCollections collections;
 	public final BasicSubjects subjects;
 	public final BasicTexts texts;

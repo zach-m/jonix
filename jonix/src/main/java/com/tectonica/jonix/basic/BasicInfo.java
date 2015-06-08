@@ -7,9 +7,20 @@ import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
-@SuppressWarnings("serial")
+/**
+ * Bundles together some general information included in an ONIX product
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Product} or a
+ * {@link com.tectonica.jonix.onix3.Product}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicInfo implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final String recordReference;
 	public final NotificationOrUpdateTypes notificationType;
 	public final List<JonixProductIdentifier> productIds;

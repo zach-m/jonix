@@ -40,6 +40,52 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Element;
 
+/**
+ * An XML data extraction class, intended for XML sources that have the following properties:
+ * <p>
+ * <ul>
+ * <li>May be infinitely large (can't be held in memory in its entirety)
+ * <li>Has a repetitive structure, where sub-XML records of interest are all located at some constant depth/level
+ * </ul>
+ * <p>
+ * The XML source will be broken into 'chunks', each representing one XML sub-tree positioned at the target depth
+ * (assuming it is small enough to fit in memory). The chunk will be passed to the caller as an in-memory DOM
+ * {@link Element}.
+ * <p>
+ * For example, given the following XML:
+ * 
+ * <pre>
+ * &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ * &lt;Level1&gt;
+ *     &lt;Level2a&gt;
+ *         ..
+ *         &lt;Level3a&gt;
+ *             ..
+ *             &lt;Level4&gt;
+ *                 ..
+ *             &lt;/Level4&gt;
+ *             ..
+ *         &lt;/Level3a&gt;
+ *         ..
+ *         &lt;Level3b&gt;
+ *             ..
+ *         &lt;/Level3b&gt;
+ *         ..
+ *     &lt;/Level2a&gt;
+ *     ..
+ *     &lt;Level2b&gt;
+ *     ..
+ *     &lt;/Level2b&gt;
+ * &lt;/Level1&gt; *
+ * </pre>
+ * 
+ * Requesting a target depth of 2 would yield two chunks, {@code <Level2a>..</Level2a>} (including its entire sub-tree),
+ * and {@code <Level2b>..</Level2b>}.
+ * <p>
+ * The main API of this class is {@link XmlChunker#parse(InputStream, String, int, Listener)}.
+ * 
+ * @author Zach Melamed
+ */
 public class XmlChunker
 {
 	private static final XMLInputFactory inputFactory;
@@ -63,13 +109,45 @@ public class XmlChunker
 		transformerFactory = TransformerFactory.newInstance();
 	}
 
+	/**
+	 * An interface that the user of {@link XmlChunker} must implement in order to get the 'chunks' extracted from the
+	 * XML source
+	 * 
+	 * @author Zach Melamed
+	 */
 	public static interface Listener
 	{
+		/**
+		 * Fired for elements in the XML source positioned at a level lower than the target depth, giving the user a
+		 * chance to look at their name and attributes
+		 * 
+		 * @param depth
+		 *            level at which the element is positioned
+		 * @param element
+		 *            the element itself (this is NOT a DOM element)
+		 */
 		public void onPreTargetStart(int depth, StartElement element);
 
-		public void onTarget(Element element);
+		/**
+		 * Fired with an in-memory DOM representation of an XML sub-tree positioned at the target depth
+		 * 
+		 * @param element
+		 */
+		public void onChunk(Element element);
 	}
 
+	/**
+	 * Extracts 'chunks' of an XML source into a user-provided {@link Listener}
+	 * 
+	 * @param is
+	 *            the {@link InputStream} of the XML source
+	 * @param encoding
+	 *            the text encoding of the XML source (use {@code "UTF-8"} if not sure)
+	 * @param targetDepth
+	 *            the level at which the chunks are positioned in the XML source
+	 * @param listener
+	 *            an implementation of a {@link Listener} for taking the chunks
+	 */
 	public static void parse(InputStream is, String encoding, int targetDepth, Listener listener)
 	{
 		int depth = -1;
@@ -115,7 +193,7 @@ public class XmlChunker
 						domEvents.addAll(events);
 						domEvents.add(endDocumentEvent);
 						Element element = elementFromEvents(domEvents, reader);
-						listener.onTarget(element);
+						listener.onChunk(element);
 						events = null;
 					}
 					depth--;
@@ -148,7 +226,7 @@ public class XmlChunker
 	}
 
 	/**
-	 * transforms an {@link Element} into an XML text
+	 * Transforms a DOM {@link Element} into an XML text
 	 * 
 	 * @param elem
 	 *            the element to transform into text

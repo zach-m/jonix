@@ -24,9 +24,20 @@ import java.io.Serializable;
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.codelist.SupplierRoles;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX's &lt;SupplyDetail&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.SupplyDetail} or a
+ * {@link com.tectonica.jonix.onix3.SupplyDetail}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicSupplyDetail implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final SupplierRoles supplierRole;
 	public final String supplierName;
 	public final String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys

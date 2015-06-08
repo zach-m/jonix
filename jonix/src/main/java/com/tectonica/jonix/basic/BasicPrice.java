@@ -25,9 +25,19 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
 import com.tectonica.jonix.codelist.PriceTypes;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX &lt;Price&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Price} or a {@link com.tectonica.jonix.onix3.Price}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicPrice implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final PriceTypes priceType;
 	public final Double priceAmount;
 	public final String priceAmountAsStr;

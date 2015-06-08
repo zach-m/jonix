@@ -21,13 +21,27 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextTypes;
+import com.tectonica.jonix.onix3.Text;
+import com.tectonica.jonix.onix3.TextContent;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX2 &lt;OtherText&gt; / ONIX3 &lt;TextContent&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.OtherText} or a
+ * {@link com.tectonica.jonix.onix3.TextContent}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicText implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final TextTypes textType;
 	public final TextFormats textFormat;
 	public final String text;
@@ -50,9 +64,23 @@ public class BasicText implements Serializable
 	public BasicText(com.tectonica.jonix.onix3.TextContent textContent)
 	{
 		textType = textContent.getTextTypeValue();
-		com.tectonica.jonix.onix3.Text textObject = BasicPicker.pickTextObject(textContent);
+		com.tectonica.jonix.onix3.Text textObject = pickTextObject(textContent);
 		textFormat = textObject.textformat;
 		text = textObject.value;
+	}
+
+	private Text pickTextObject(TextContent textContent)
+	{
+		if (textContent.texts != null)
+		{
+			for (Text text : textContent.texts)
+			{
+				if (text.language == null || text.language == LanguageCodeIso6392Bs.English)
+					return text;
+			}
+			return textContent.texts.get(0); // return whatever language we have
+		}
+		return null;
 	}
 
 	/**

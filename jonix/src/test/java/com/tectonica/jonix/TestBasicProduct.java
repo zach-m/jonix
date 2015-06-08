@@ -57,7 +57,7 @@ public class TestBasicProduct
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onTarget(Element element)
+			public void onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
@@ -95,7 +95,7 @@ public class TestBasicProduct
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onTarget(Element element)
+			public void onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))

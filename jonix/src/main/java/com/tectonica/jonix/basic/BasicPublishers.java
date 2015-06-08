@@ -20,10 +20,17 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX &lt;Publisher&gt; that may exist in an ONIX product
+ * 
+ * @author Zach Melamed
+ */
 public class BasicPublishers extends ArrayList<BasicPublisher>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicPublishers(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.publishers != null)

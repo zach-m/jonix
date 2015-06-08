@@ -24,9 +24,16 @@ import java.util.List;
 
 import com.tectonica.jonix.codelist.TitleTypes;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
+ * a product
+ * 
+ * @author Zach Melamed
+ */
 public class BasicTitles extends ArrayList<BasicTitle>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicTitles(com.tectonica.jonix.onix2.Product product)
 	{
 		extractFrom2(product.titles);

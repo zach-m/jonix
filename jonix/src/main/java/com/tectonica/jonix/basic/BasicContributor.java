@@ -24,10 +24,24 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.onix3.BiographicalNote;
+import com.tectonica.jonix.onix3.Contributor;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX &lt;Contributor&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Contributor} or a
+ * {@link com.tectonica.jonix.onix3.Contributor}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicContributor implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final Set<ContributorRoles> contributorRoles;
 	public final String displayName;
 	public final String personName;
@@ -54,7 +68,7 @@ public class BasicContributor implements Serializable
 		personNameKey = c.getKeyNamesValue();
 		personNameBeforeKey = c.getNamesBeforeKeyValue();
 		corporateName = c.getCorporateNameValue();
-		biographicalNote = BasicPicker.pickBiographicalNote(c);
+		biographicalNote = pickBiographicalNote(c);
 		displayName = phraseDisplayName();
 	}
 
@@ -74,5 +88,19 @@ public class BasicContributor implements Serializable
 			return personNameBeforeKey;
 
 		return corporateName;
+	}
+
+	private String pickBiographicalNote(Contributor contributor)
+	{
+		if (contributor.biographicalNotes != null)
+		{
+			for (BiographicalNote bio : contributor.biographicalNotes)
+			{
+				if (bio.language == null || bio.language == LanguageCodeIso6392Bs.English)
+					return bio.value;
+			}
+			return contributor.biographicalNotes.get(0).value; // return whatever language we have
+		}
+		return null;
 	}
 }

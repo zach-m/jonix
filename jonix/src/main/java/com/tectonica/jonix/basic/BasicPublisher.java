@@ -23,9 +23,20 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.codelist.PublishingRoles;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX &lt;Publisher&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Publisher} or a
+ * {@link com.tectonica.jonix.onix3.Publisher}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicPublisher implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final PublishingRoles publishingRole;
 	public final String publisherName;
 

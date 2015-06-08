@@ -24,9 +24,20 @@ import java.io.Serializable;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix3.TitleElement;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX2 &lt;Title&gt; / ONIX3 &lt;TitleDetail&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Title} or a
+ * {@link com.tectonica.jonix.onix3.TitleDetail}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicTitle implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final TitleTypes titleType;
 	public final String titleText;
 	public final String titleWithoutPrefix;

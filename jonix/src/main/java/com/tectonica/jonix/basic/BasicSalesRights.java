@@ -30,9 +30,20 @@ import com.tectonica.jonix.codelist.RightsRegions;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.onix3.Territory;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX &lt;SalesRights&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.SalesRights} or a
+ * {@link com.tectonica.jonix.onix3.SalesRights}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicSalesRights implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final SalesRightsTypes salesRightsType;
 	public final List<Set<CountryCodeIso31661s>> countries; // TODO: need to be contracted to merely a Set
 	public final Set<Regions> regions;

@@ -26,9 +26,20 @@ import java.util.List;
 import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 
-@SuppressWarnings("serial")
+/**
+ * Contains the essential information included in ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt;
+ * <p>
+ * NOTE: to access the information, read the (public final) fields directly. No getters() are included..
+ * <p>
+ * May be constructed from either a {@link com.tectonica.jonix.onix2.Series} or a
+ * {@link com.tectonica.jonix.onix3.Collection}.
+ * 
+ * @author Zach Melamed
+ */
 public class BasicCollection implements Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public final String mainTitle;
 	public final List<JonixCollectionIdentifier> seriesIdentifiers;
 	public final BasicTitles titles;

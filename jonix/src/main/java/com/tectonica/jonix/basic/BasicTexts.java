@@ -20,12 +20,20 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.tectonica.jonix.codelist.TextTypes;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX2 &lt;OtherText&gt; / ONIX3 &lt;TextContent&gt; that may
+ * exist in a product
+ * 
+ * @author Zach Melamed
+ */
 public class BasicTexts extends ArrayList<BasicText>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicTexts(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.otherTexts != null)

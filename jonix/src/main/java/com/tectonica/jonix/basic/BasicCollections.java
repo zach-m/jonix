@@ -20,10 +20,18 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
+ * an ONIX product
+ * 
+ * @author Zach Melamed
+ */
 public class BasicCollections extends ArrayList<BasicCollection>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicCollections(com.tectonica.jonix.onix2.Product product)
 	{
 		if (product.seriess != null)

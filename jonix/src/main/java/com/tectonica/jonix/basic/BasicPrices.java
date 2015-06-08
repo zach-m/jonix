@@ -20,10 +20,17 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@SuppressWarnings("serial")
+/**
+ * A {@link List} containing the multiple instances of ONIX &lt;Price&gt; that may exist in ONIX supply-details
+ * 
+ * @author Zach Melamed
+ */
 public class BasicPrices extends ArrayList<BasicPrice>
 {
+	private static final long serialVersionUID = 1L;
+
 	public BasicPrices(com.tectonica.jonix.onix2.SupplyDetail supplyDetail)
 	{
 		if (supplyDetail.prices != null)
