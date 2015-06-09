@@ -211,11 +211,11 @@ public abstract class JonixReader<H, P>
 	 *            may be a directory or a file
 	 * @param suffix
 	 */
-	public void readFolder(final String rootLocation, final String suffix)
+	public void readFolder(final String rootLocation, final String pattern)
 	{
 		try
 		{
-			read(JonixUtil.scanFolder(rootLocation, suffix));
+			read(JonixUtil.findFiles(rootLocation, pattern));
 		}
 		catch (IOException e)
 		{

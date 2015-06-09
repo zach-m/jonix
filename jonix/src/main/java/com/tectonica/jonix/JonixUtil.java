@@ -106,24 +106,7 @@ public class JonixUtil
 		return null;
 	}
 
-	public static List<String> scanFolder(final String rootLocation, final String suffix) throws IOException
-	{
-		final List<String> fileNames = new ArrayList<>();
-		Files.walkFileTree(Paths.get(rootLocation), new SimpleFileVisitor<Path>()
-		{
-			@Override
-			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
-			{
-				String fileName = file.toString();
-				if (fileName.endsWith(suffix))
-					fileNames.add(fileName);
-				return FileVisitResult.CONTINUE;
-			}
-		});
-		return fileNames;
-	}
-
-	public static List<String> scanFolderWithPattern(final String rootLocation, final String pattern) throws IOException
+	public static List<String> findFiles(final String rootLocation, final String pattern) throws IOException
 	{
 		final PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:" + pattern);
 		final List<String> fileNames = new ArrayList<>();

@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+import java.io.File;
 import java.io.PrintStream;
 import java.util.List;
 
@@ -32,34 +33,60 @@ import com.tectonica.jonix.export.JonixUniqueExporter;
 
 public class Jonix
 {
+	private static void usage()
+	{
+		p("Usage:");
+		p("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
+		p("or:     java -jar jonix.jar OUTPUT INPUT");
+		p("");
+		p("Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:");
+		p("- any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)");
+		p("- the single file INPUT");
+		p("");
+	}
+
 	public static void main(String[] args)
 	{
-		if (args.length != 2)
+		if (args.length < 1 || args.length > 3)
 		{
-			System.out.println("Usage:");
-			System.out.println("    java -jar jonix.jar <input-location> <output-file>");
-			System.out.println("");
-			System.out.println("<input-location> is an ONIX file-name, "
-					+ "or a folder containing ONIX files with xml extension");
-			System.out.println("<output-file> is the name of the tab-delimited output file");
-			System.out.println("");
+			usage();
 			return;
 		}
 
 		try
 		{
-			String inputFile = args[0];
-			String outputFile = args[1];
+			final String outputFile = args[0];
+
+			final String input = (args.length < 2) ? "." : args[1];
+			final File inputFile = new File(input);
+			if (!inputFile.exists())
+			{
+				System.err.println("couldn't find " + input);
+				return;
+			}
+
+			final String pattern;
+			if (!inputFile.isDirectory())
+				pattern = "*";
+			else
+				pattern = (args.length < 3) ? "*.xml" : args[2];
 
 			PrintStream out = new PrintStream(outputFile);
 
-			createBasicTabDelimitedExporter(out).readFolder(inputFile, ".xml");
+			createBasicTabDelimitedExporter(out).readFolder(input, pattern);
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
 	}
+
+	private static void p(String s)
+	{
+		System.out.println(s);
+	}
+
+	// /////////////////////////////////////////////////////////////////////////////////////////
 
 	public static final JonixContext<BasicHeader, BasicProduct> BASIC_CONTEXT = new JonixContext<BasicHeader, BasicProduct>()
 	{

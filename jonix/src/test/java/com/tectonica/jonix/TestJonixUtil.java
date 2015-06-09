@@ -72,7 +72,7 @@ public class TestJonixUtil
 	public void testFolderScanWithPattern() throws IOException
 	{
 		System.err.println(new File(".").getAbsolutePath());
-		for (String s : JonixUtil.scanFolderWithPattern(".", "*.ja*"))
+		for (String s : JonixUtil.findFiles(".", "*.ja*"))
 			System.out.println(s);
 	}
 

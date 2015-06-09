@@ -51,8 +51,8 @@ public class TestTabDelimited
 	// ignored by default. the sample files are not checked in to SCM
 	public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException
 	{
-		exporter.readFolder("../onix_samples/ONIX3", ".onix"); // ONIX3 files
-		exporter.readFolder("../onix_samples/ONIX2/BK", ".xml"); // ONIX2 files
+		exporter.readFolder("../onix_samples/ONIX3", "*.onix"); // ONIX3 files
+		exporter.readFolder("../onix_samples/ONIX2/BK", "*.xml"); // ONIX2 files
 		exporter.read("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
 		exporter.read("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
 	}
