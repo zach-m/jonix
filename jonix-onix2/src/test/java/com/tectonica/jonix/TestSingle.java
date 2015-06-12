@@ -71,7 +71,7 @@ public class TestSingle
 	}
 
 	@Test
-	public void test()
+	public void testViaDOM()
 	{
 		final Document doc = docOf("/single-book-onix2.xml");
 		final NodeList products = doc.getElementsByTagName("Product");
@@ -80,8 +80,21 @@ public class TestSingle
 			final Element productElem = (Element) products.item(i);
 			final Product product = new Product(productElem);
 			System.out.println(JSON.toJson(product));
-			System.out.println("\n-------------------------------------------------------------------------------\n");
 		}
 	}
 
+	@Test
+	public void testViaReader()
+	{
+		Onix2Reader reader = new Onix2Reader()
+		{
+			@Override
+			protected void onProduct(Product product)
+			{
+				System.out.println(JSON.toJson(product));
+			}
+		};
+
+		reader.read(getClass().getResourceAsStream("/single-book-onix2.xml"));
+	}
 }
