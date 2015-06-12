@@ -37,7 +37,7 @@ public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 	{
 		super.onProduct(product); // logs an info line
 
-		out.println(exportRawProduct ? JonixUtil.toJson(getRawOnixObject()) : JonixUtil.toJson(product));
+		out.println(exportRawProduct ? JonixUtil.toJson(rawOnixObject) : JonixUtil.toJson(product));
 		out.println("\n");
 	}
 }

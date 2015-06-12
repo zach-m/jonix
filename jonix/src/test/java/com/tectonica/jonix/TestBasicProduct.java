@@ -32,6 +32,8 @@ import org.w3c.dom.Element;
 
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.stream.JonixReader;
+import com.tectonica.jonix.stream.JonixUnifiedListener;
 import com.tectonica.xmlchunk.XmlChunker;
 
 public class TestBasicProduct
@@ -120,14 +122,14 @@ public class TestBasicProduct
 		});
 
 		// read the same file, this time using a JonixReader
-		JonixReader<BasicHeader, BasicProduct> reader = new JonixReader<BasicHeader, BasicProduct>(Jonix.BASIC_CONTEXT)
+		JonixReader reader = new JonixReader(new JonixUnifiedListener<BasicHeader, BasicProduct>(Jonix.BASIC_CONTEXT)
 		{
 			@Override
 			protected void onProduct(BasicProduct product)
 			{
 				jsonViaReader = JonixUtil.toJson(product);
 			}
-		};
+		});
 		reader.read(getClass().getResourceAsStream(RESOURCE_NAME));
 
 		// compare the JSON received in both methods

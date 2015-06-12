@@ -27,13 +27,11 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.export.JonixTabDelimitedExporter;
+import com.tectonica.jonix.stream.JonixReader;
 
 public class TestTabDelimited
 {
-	private JonixTabDelimitedExporter<BasicHeader, BasicProduct> exporter;
+	private JonixReader exporter;
 
 	@Before
 	public void setUp() throws Exception

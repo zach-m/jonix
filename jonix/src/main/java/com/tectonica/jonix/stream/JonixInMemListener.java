@@ -17,17 +17,17 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.export;
+package com.tectonica.jonix.stream;
 
 import java.util.Collection;
 
 import com.tectonica.jonix.JonixContext;
 
-public class JonixInMemExporter<H, P> extends JonixExporter<H, P>
+public class JonixInMemListener<H, P> extends JonixUnifiedListener<H, P>
 {
 	protected Collection<P> output;
 
-	public JonixInMemExporter(JonixContext<H, P> context, Collection<P> output)
+	public JonixInMemListener(JonixContext<H, P> context, Collection<P> output)
 	{
 		super(context);
 		if (output == null)
@@ -38,7 +38,6 @@ public class JonixInMemExporter<H, P> extends JonixExporter<H, P>
 	@Override
 	public void onProduct(P product)
 	{
-		super.onProduct(product); // logs an info line
 		output.add(product);
 	}
 }

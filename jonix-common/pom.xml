@@ -10,8 +10,16 @@
 		<version>3.0-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	
+
 	<name>Jonix - Common</name>
 	<description>Collection of enums and other structures unifying Onix2 and Onix3 models</description>
+
+	<dependencies>
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+
 public class JonixTabulator<H, P>
 {
 	/**
