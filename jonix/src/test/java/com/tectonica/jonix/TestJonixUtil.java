@@ -19,13 +19,9 @@
 
 package com.tectonica.jonix;
 
-import java.io.File;
-import java.io.IOException;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestJonixUtil
@@ -40,8 +36,8 @@ public class TestJonixUtil
 
 	private int compare(String[] a, String[] b)
 	{
-		int c1 = JonixUtil.compare(a, b);
-		int c2 = JonixUtil.compare(b, a);
+		int c1 = JonixUtil.compareArray(a, b);
+		int c2 = JonixUtil.compareArray(b, a);
 		Assert.assertEquals(c1, -c2);
 //		String sign = (c1 < 0) ? " < " : ((c1 > 0) ? " > " : " = ");
 //		System.out.println(Arrays.toString(a) + sign + Arrays.toString(b));
@@ -66,14 +62,4 @@ public class TestJonixUtil
 		Assert.assertEquals(compare(a_b, ab), -1);
 		Assert.assertEquals(compare(a_b, a_c), -1);
 	}
-
-	@Test
-	@Ignore
-	public void testFolderScanWithPattern() throws IOException
-	{
-		System.err.println(new File(".").getAbsolutePath());
-		for (String s : JonixUtil.findFiles(".", "*.ja*"))
-			System.out.println(s);
-	}
-
 }

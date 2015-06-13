@@ -29,8 +29,8 @@ import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.export.JonixJsonExporter;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.export.JonixUniqueExporter;
-import com.tectonica.jonix.stream.JonixInMemListener;
-import com.tectonica.jonix.stream.JonixReader;
+import com.tectonica.jonix.extract.JonixInMemExtractor;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 public class Jonix
 {
@@ -74,7 +74,7 @@ public class Jonix
 
 			PrintStream out = new PrintStream(outputFile);
 
-			createBasicTabDelimitedExporter(out).readFolder(input, pattern);
+			createBasicTabDelimitedStreamer(out).readFolder(input, pattern);
 		}
 		catch (Exception e)
 		{
@@ -89,7 +89,7 @@ public class Jonix
 
 	// /////////////////////////////////////////////////////////////////////////////////////////
 
-	public static final JonixContext<BasicHeader, BasicProduct> BASIC_CONTEXT = new JonixContext<BasicHeader, BasicProduct>()
+	public static final JonixUnifier<BasicHeader, BasicProduct> BASIC_CONTEXT = new JonixUnifier<BasicHeader, BasicProduct>()
 	{
 		@Override
 		public BasicHeader createFrom(com.tectonica.jonix.onix2.Header header)
@@ -136,23 +136,23 @@ public class Jonix
 
 	// /////////////////////////////////////////////////////////////////////////////////////////
 
-	public static JonixReader createBasicTabDelimitedExporter(PrintStream out)
+	public static JonixStreamer createBasicTabDelimitedStreamer(PrintStream out)
 	{
-		return new JonixReader(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
+		return new JonixStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
 	}
 
-	public static JonixReader createBasicUniqueExporter(PrintStream out)
+	public static JonixStreamer createJsonStreamer(PrintStream out, boolean exportRaw)
 	{
-		return new JonixReader(new JonixUniqueExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
+		return new JonixStreamer(new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, exportRaw).setOut(out));
 	}
 
-	public static JonixReader createBasicInMemExporter(List<BasicProduct> out)
+	public static JonixStreamer createBasicUniqueStreamer(PrintStream out)
 	{
-		return new JonixReader(new JonixInMemListener<BasicHeader, BasicProduct>(BASIC_CONTEXT, out));
+		return new JonixStreamer(new JonixUniqueExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
 	}
 
-	public static JonixReader createJsonExporter(PrintStream out, boolean exportRaw)
+	public static JonixStreamer createBasicInMemStreamer(List<BasicProduct> out)
 	{
-		return new JonixReader(new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, exportRaw).setOut(out));
+		return new JonixStreamer(new JonixInMemExtractor<BasicHeader, BasicProduct>(BASIC_CONTEXT, out));
 	}
 }

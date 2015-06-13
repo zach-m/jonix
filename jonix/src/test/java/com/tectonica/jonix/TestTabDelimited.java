@@ -27,17 +27,17 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.tectonica.jonix.stream.JonixReader;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 public class TestTabDelimited
 {
-	private JonixReader exporter;
+	private JonixStreamer streamer;
 
 	@Before
 	public void setUp() throws Exception
 	{
 		PrintStream outFile = new PrintStream("Catalog.tsv");
-		exporter = Jonix.createBasicTabDelimitedExporter(outFile);
+		streamer = Jonix.createBasicTabDelimitedStreamer(outFile);
 	}
 
 	@After
@@ -49,9 +49,9 @@ public class TestTabDelimited
 	// ignored by default. the sample files are not checked in to SCM
 	public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException
 	{
-		exporter.readFolder("../onix_samples/ONIX3", "*.onix"); // ONIX3 files
-		exporter.readFolder("../onix_samples/ONIX2/BK", "*.xml"); // ONIX2 files
-		exporter.read("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
-		exporter.read("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
+		streamer.readFolder("../onix_samples/ONIX3", "*.onix"); // ONIX3 files
+		streamer.readFolder("../onix_samples/ONIX2/BK", "*.xml"); // ONIX2 files
+		streamer.read("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
+		streamer.read("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
 	}
 }

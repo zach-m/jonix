@@ -45,26 +45,16 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  */
 public class JSON
 {
-	private static ObjectMapper mapper = createPropsMapper(false);
+	private static ObjectMapper publicFieldsAndGettersMapper = createPublicFieldsAndGettersMapper();
 
-	private static ObjectMapper createPropsMapper(boolean useProps)
+	private static ObjectMapper createPublicFieldsAndGettersMapper()
 	{
 		ObjectMapper mapper = new ObjectMapper();
 
-		if (useProps)
-		{
-			// limit to props only
-			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NONE);
-			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.ANY);
-			mapper.setVisibility(PropertyAccessor.SETTER, Visibility.ANY);
-		}
-		else
-		{
-			// limit to fields only
-			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NON_PRIVATE);
-			mapper.setVisibility(PropertyAccessor.GETTER, Visibility.PUBLIC_ONLY);
-			mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
-		}
+		// limit to public fields and getters only
+		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.NON_PRIVATE);
+		mapper.setVisibility(PropertyAccessor.GETTER, Visibility.PUBLIC_ONLY);
+		mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
 
 		// general configuration
 		mapper.setSerializationInclusion(Include.NON_NULL);
@@ -82,7 +72,7 @@ public class JSON
 	{
 		try
 		{
-			return mapper.writeValueAsString(o);
+			return publicFieldsAndGettersMapper.writeValueAsString(o);
 		}
 		catch (IOException e)
 		{

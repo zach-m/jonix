@@ -22,15 +22,16 @@ package com.tectonica.jonix.export;
 import java.util.List;
 
 import com.tectonica.jonix.JonixColumn;
-import com.tectonica.jonix.JonixContext;
 import com.tectonica.jonix.JonixTabulator;
+import com.tectonica.jonix.JonixUnifier;
+import com.tectonica.jonix.stream.JonixAbstractStreamer;
 
 public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 {
 	protected JonixColumn<P>[] columns;
 	private boolean headerPrinted = false;
 
-	public JonixTabDelimitedExporter(JonixContext<H, P> context)
+	public JonixTabDelimitedExporter(JonixUnifier<H, P> context)
 	{
 		super(context);
 	}
@@ -46,11 +47,11 @@ public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected boolean onBeforeFileList(List<String> onixFileNames)
+	protected boolean onBeforeFileList(List<String> onixFileNames, JonixAbstractStreamer streamer)
 	{
-		super.onBeforeFileList(onixFileNames);
+		super.onBeforeFileList(onixFileNames, streamer);
 		if (columns == null)
-			columns = context.getDefaultColumns();
+			columns = unifier.getDefaultColumns();
 		if (!headerPrinted)
 		{
 			out.println(JonixTabulator.headerAsTabDelimitedString(columns));
@@ -60,9 +61,9 @@ public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product)
+	protected void onProduct(P product, JonixAbstractStreamer streamer)
 	{
-		super.onProduct(product); // logs an info line
+		super.onProduct(product, streamer); // logs an info line
 		out.println(JonixTabulator.productAsTabDelimitedString(product, columns));
 	}
 }

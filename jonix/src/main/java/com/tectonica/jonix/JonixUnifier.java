@@ -1,6 +1,6 @@
 package com.tectonica.jonix;
 
-public interface JonixContext<H, P>
+public interface JonixUnifier<H, P>
 {
 	H createFrom(com.tectonica.jonix.onix2.Header header);
 

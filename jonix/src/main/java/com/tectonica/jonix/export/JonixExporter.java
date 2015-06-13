@@ -23,17 +23,41 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 
-import com.tectonica.jonix.JonixContext;
-import com.tectonica.jonix.stream.JonixUnifiedListener;
+import com.tectonica.jonix.JonixUnifier;
+import com.tectonica.jonix.extract.JonixUnifiedExtractor;
+import com.tectonica.jonix.stream.JonixAbstractStreamer;
 
-public abstract class JonixExporter<H, P> extends JonixUnifiedListener<H, P>
+/**
+ * an extractor with the addition of an 'out' member
+ * 
+ * @author zach
+ *
+ * @param <H>
+ * @param <P>
+ */
+public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 {
-	public JonixExporter(JonixContext<H, P> context)
+	@Override
+	protected void onHeader(H header, JonixAbstractStreamer streamer)
 	{
-		super(context);
+		log("-----------------------------------------------------------\n");
+		log(header.toString());
+		log("-----------------------------------------------------------\n");
 	}
 
-	// //////////////////////////////////////////////////////////////////////
+	@Override
+	protected void onProduct(P product, JonixAbstractStreamer streamer)
+	{
+		// show a log message about the product being successfully parsed
+		log("retrieved product #" + streamer.getProductNo() + " - " + unifier.labelOf(product));
+	}
+
+	// ///////////////////////////////////////////////////////////////////////////////
+
+	public JonixExporter(JonixUnifier<H, P> unifier)
+	{
+		super(unifier);
+	}
 
 	protected PrintStream out = System.out;
 
@@ -50,7 +74,7 @@ public abstract class JonixExporter<H, P> extends JonixUnifiedListener<H, P>
 		}
 		catch (FileNotFoundException | UnsupportedEncodingException e)
 		{
-			e.printStackTrace(log);
+			logStackTrace(e);
 			throw new RuntimeException(e);
 		}
 	}
@@ -67,26 +91,9 @@ public abstract class JonixExporter<H, P> extends JonixUnifiedListener<H, P>
 	}
 
 	@Override
-	protected void onAfterSource()
+	protected void onAfterSource(JonixAbstractStreamer streamer)
 	{
-		super.onAfterSource();
+		super.onAfterSource(streamer);
 		out.flush();
-	}
-
-	// //////////////////////////////////////////////////////////////////////
-
-	@Override
-	protected void onHeader(H header)
-	{
-		log.println("-----------------------------------------------------------\n");
-		log.println(header.toString());
-		log.println("-----------------------------------------------------------\n");
-	}
-
-	@Override
-	protected void onProduct(P product)
-	{
-		// show a log message about the product being successfully parsed
-		log.println("retrieved product #" + productNo + " - " + context.labelOf(product));
 	}
 }

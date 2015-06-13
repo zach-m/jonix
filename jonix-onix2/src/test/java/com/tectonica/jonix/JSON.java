@@ -46,9 +46,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  */
 public class JSON
 {
-	private static final ObjectMapper mapper = createPropsMapper();
+	private static final ObjectMapper publicFieldsPascalStyleMapper = createPublicFieldsPascalStyleMapper();
 
-	private static ObjectMapper createPropsMapper()
+	private static ObjectMapper createPublicFieldsPascalStyleMapper()
 	{
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -74,7 +74,7 @@ public class JSON
 	{
 		try
 		{
-			return mapper.writeValueAsString(o);
+			return publicFieldsPascalStyleMapper.writeValueAsString(o);
 		}
 		catch (IOException e)
 		{

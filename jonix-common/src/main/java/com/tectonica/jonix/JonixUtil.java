@@ -1,22 +1,12 @@
 package com.tectonica.jonix;
 
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.PathMatcher;
-import java.nio.file.Paths;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -64,7 +54,7 @@ public class JonixUtil
 	 *            the file-name from which to extract the time-stamp
 	 * @return the extracted time-stamp, or null if such time-stamp couldn't be extracted
 	 */
-	public static Calendar extractTimstampFromOnixFileName(String fileName)
+	public static Calendar extractTimstampFromFileName(String fileName)
 	{
 		Matcher matcher = timestampPattern.matcher(fileName);
 		Calendar aux = new GregorianCalendar();
@@ -106,25 +96,7 @@ public class JonixUtil
 		return null;
 	}
 
-	public static List<String> findFiles(final String rootLocation, final String pattern) throws IOException
-	{
-		final PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:" + pattern);
-		final List<String> fileNames = new ArrayList<>();
-		Files.walkFileTree(Paths.get(rootLocation), new SimpleFileVisitor<Path>()
-		{
-			@Override
-			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException
-			{
-				Path name = file.getFileName();
-				if (name != null && matcher.matches(name))
-					fileNames.add(file.toAbsolutePath().toString());
-				return FileVisitResult.CONTINUE;
-			}
-		});
-		return fileNames;
-	}
-
-	public static <T extends Comparable<T>> int compare(T[] a, T[] b)
+	public static <T extends Comparable<T>> int compareArray(T[] a, T[] b)
 	{
 		if (a == b)
 			return 0;
@@ -169,9 +141,9 @@ public class JonixUtil
 		}
 	}
 
-	private static final ObjectMapper mapper = createPropsMapper();
+	private static final ObjectMapper publicFieldsMapper = createPublicFieldsMapper();
 
-	private static ObjectMapper createPropsMapper()
+	private static ObjectMapper createPublicFieldsMapper()
 	{
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -192,11 +164,14 @@ public class JonixUtil
 		return mapper;
 	}
 
+	/**
+	 * returns a JSON string, based on the given Object's public fields
+	 */
 	public static String toJson(Object o)
 	{
 		try
 		{
-			return mapper.writeValueAsString(o);
+			return publicFieldsMapper.writeValueAsString(o);
 		}
 		catch (IOException e)
 		{

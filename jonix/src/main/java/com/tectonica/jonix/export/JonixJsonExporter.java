@@ -19,23 +19,24 @@
 
 package com.tectonica.jonix.export;
 
-import com.tectonica.jonix.JonixContext;
+import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.JonixUtil;
+import com.tectonica.jonix.stream.JonixAbstractStreamer;
 
 public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 {
 	private final boolean exportRawProduct;
 
-	public JonixJsonExporter(JonixContext<H, P> context, boolean exportRawProduct)
+	public JonixJsonExporter(JonixUnifier<H, P> context, boolean exportRawProduct)
 	{
 		super(context);
 		this.exportRawProduct = exportRawProduct;
 	}
 
 	@Override
-	protected void onProduct(P product)
+	protected void onProduct(P product, JonixAbstractStreamer streamer)
 	{
-		super.onProduct(product); // logs an info line
+		super.onProduct(product, streamer); // logs an info line
 
 		out.println(exportRawProduct ? JonixUtil.toJson(rawOnixObject) : JonixUtil.toJson(product));
 		out.println("\n");
