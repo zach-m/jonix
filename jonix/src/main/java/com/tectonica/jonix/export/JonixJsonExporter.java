@@ -21,7 +21,7 @@ package com.tectonica.jonix.export;
 
 import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.JonixUtil;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 {
@@ -34,7 +34,7 @@ public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixAbstractStreamer streamer)
+	protected void onProduct(P product, JonixStreamer streamer)
 	{
 		super.onProduct(product, streamer); // logs an info line
 

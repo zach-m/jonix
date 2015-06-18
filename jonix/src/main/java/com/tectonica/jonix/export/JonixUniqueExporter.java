@@ -30,7 +30,7 @@ import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixTabulator;
 import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.JonixUtil;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 // TODO: make this work also on repeated calls for readFolder()
 
@@ -106,7 +106,7 @@ public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 	protected List<ComparableProduct<H, P>> compProducts;
 
 	@Override
-	protected boolean onBeforeFileList(List<String> onixFileNames, JonixAbstractStreamer streamer)
+	protected boolean onBeforeFileList(List<String> onixFileNames, JonixStreamer streamer)
 	{
 		compProducts = new ArrayList<>();
 		return true;
@@ -115,7 +115,7 @@ public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 	private Calendar lastFileTimestamp;
 
 	@Override
-	protected boolean onBeforeFile(String fileName, JonixAbstractStreamer streamer)
+	protected boolean onBeforeFile(String fileName, JonixStreamer streamer)
 	{
 		lastFileTimestamp = JonixUtil.extractTimstampFromFileName(fileName);
 
@@ -135,13 +135,13 @@ public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onHeader(H header, JonixAbstractStreamer streamer)
+	protected void onHeader(H header, JonixStreamer streamer)
 	{
 		// no super(). in this particular exporter, we prefer not printing header information to the log
 	}
 
 	@Override
-	protected void onProduct(P product, JonixAbstractStreamer streamer)
+	protected void onProduct(P product, JonixStreamer streamer)
 	{
 		super.onProduct(product, streamer);
 
@@ -152,7 +152,7 @@ public class JonixUniqueExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onAfterFileList(List<String> processedFileNames, JonixAbstractStreamer streamer)
+	protected void onAfterFileList(List<String> processedFileNames, JonixStreamer streamer)
 	{
 		log("Sorting " + compProducts.size() + " products..");
 		Collections.sort(compProducts);

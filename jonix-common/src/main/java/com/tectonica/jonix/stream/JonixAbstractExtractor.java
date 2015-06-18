@@ -9,9 +9,9 @@ import org.w3c.dom.Element;
 
 public abstract class JonixAbstractExtractor
 {
-	protected abstract void onHeaderElement(Element header, JonixAbstractStreamer streamer);
+	protected abstract void onHeaderElement(Element header, JonixStreamer streamer);
 
-	protected abstract void onProductElement(Element product, JonixAbstractStreamer streamer);
+	protected abstract void onProductElement(Element product, JonixStreamer streamer);
 
 	// /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21,12 +21,12 @@ public abstract class JonixAbstractExtractor
 	 * @param source
 	 * @return
 	 */
-	protected boolean onBeforeSource(InputStream source, JonixAbstractStreamer streamer)
+	protected boolean onBeforeSource(InputStream source, JonixStreamer streamer)
 	{
 		return true;
 	}
 
-	protected void onAfterSource(JonixAbstractStreamer streamer)
+	protected void onAfterSource(JonixStreamer streamer)
 	{}
 
 	// /////////////////////////////////////////////////////////////////////////////////////////

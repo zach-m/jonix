@@ -33,7 +33,6 @@ import org.w3c.dom.Element;
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.extract.JonixUnifiedExtractor;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
 import com.tectonica.jonix.stream.JonixStreamer;
 import com.tectonica.xmlchunk.XmlChunker;
 
@@ -126,7 +125,7 @@ public class TestBasicProduct
 		JonixStreamer streamer = new JonixStreamer(new JonixUnifiedExtractor<BasicHeader, BasicProduct>(Jonix.BASIC_CONTEXT)
 		{
 			@Override
-			protected void onProduct(BasicProduct product, JonixAbstractStreamer streamer)
+			protected void onProduct(BasicProduct product, JonixStreamer streamer)
 			{
 				jsonViaReader = JonixUtil.toJson(product);
 			}

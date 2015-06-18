@@ -24,16 +24,16 @@ import java.util.List;
 import org.w3c.dom.Element;
 
 import com.tectonica.jonix.JonixUnifier;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
-import com.tectonica.jonix.stream.JonixExtractor;
+import com.tectonica.jonix.stream.JonixStreamer;
+import com.tectonica.jonix.stream.JonixAbstractFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 
-public abstract class JonixUnifiedExtractor<H, P> extends JonixExtractor
+public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtractor
 {
-	protected void onHeader(H header, JonixAbstractStreamer streamer)
+	protected void onHeader(H header, JonixStreamer streamer)
 	{}
 
-	protected abstract void onProduct(P product, JonixAbstractStreamer streamer);
+	protected abstract void onProduct(P product, JonixStreamer streamer);
 
 	// ///////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +48,7 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixExtractor
 	}
 
 	@Override
-	protected void onHeaderElement(Element domHeader, JonixAbstractStreamer streamer)
+	protected void onHeaderElement(Element domHeader, JonixStreamer streamer)
 	{
 		final H unifiedHeader;
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
@@ -66,7 +66,7 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixExtractor
 	}
 
 	@Override
-	protected void onProductElement(Element domProduct, JonixAbstractStreamer streamer)
+	protected void onProductElement(Element domProduct, JonixStreamer streamer)
 	{
 		final P unifiedProduct;
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
@@ -84,20 +84,20 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixExtractor
 	}
 
 	@Override
-	protected boolean onBeforeFileList(List<String> fileNames, JonixAbstractStreamer streamer)
+	protected boolean onBeforeFileList(List<String> fileNames, JonixStreamer streamer)
 	{
 		log("Found " + fileNames.size() + " files..");
 		return true;
 	}
 
 	@Override
-	protected void onAfterFileList(List<String> processedFileNames, JonixAbstractStreamer streamer)
+	protected void onAfterFileList(List<String> processedFileNames, JonixStreamer streamer)
 	{
 		logf("** DONE, %d products extracted in total **\n", streamer.getProductNo());
 	}
 
 	@Override
-	protected boolean onBeforeFile(String fileName, JonixAbstractStreamer streamer)
+	protected boolean onBeforeFile(String fileName, JonixStreamer streamer)
 	{
 		log("opening " + fileName + ".. ");
 		return true;

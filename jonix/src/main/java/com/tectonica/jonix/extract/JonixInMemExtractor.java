@@ -22,7 +22,7 @@ package com.tectonica.jonix.extract;
 import java.util.Collection;
 
 import com.tectonica.jonix.JonixUnifier;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 {
@@ -37,7 +37,7 @@ public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixAbstractStreamer streamer)
+	protected void onProduct(P product, JonixStreamer streamer)
 	{
 		output.add(product);
 	}

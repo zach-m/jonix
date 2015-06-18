@@ -35,19 +35,14 @@ import com.tectonica.xmlchunk.XmlChunker;
  * 
  * @author zach
  */
-public class JonixStreamer extends JonixAbstractFileStreamer
+public class JonixStreamer
 {
-	public JonixStreamer(JonixExtractor extractor)
-	{
-		super(extractor);
-	}
-
 	protected void readSource(InputStream source, String encoding)
 	{
-		XmlChunker.parse(new BOMInputStream(source), encoding, 2, listener);
+		XmlChunker.parse(new BOMInputStream(source), encoding, 2, new XmlChunkerListener());
 	}
 
-	private XmlChunker.Listener listener = new XmlChunker.Listener()
+	protected class XmlChunkerListener implements XmlChunker.Listener
 	{
 		@Override
 		public void onPreTargetStart(int depth, StartElement element)
@@ -80,4 +75,70 @@ public class JonixStreamer extends JonixAbstractFileStreamer
 			}
 		}
 	};
+
+	// ///////////////////////////////////////////////////////////////////////////////
+
+	protected final JonixAbstractExtractor extractor;
+	protected int productNo = 0;
+	protected JonixOnixVersion sourceOnixVersion = JonixOnixVersion.UNKNOWN;
+
+	/**
+	 * provided extractor may be SHARED between streamers
+	 * 
+	 * @param extractor
+	 */
+	public JonixStreamer(JonixAbstractExtractor extractor)
+	{
+		if (extractor == null)
+			throw new NullPointerException("extractor is required");
+		this.extractor = extractor;
+	}
+
+	public JonixOnixVersion getSourceOnixVersion()
+	{
+		return sourceOnixVersion;
+	}
+
+	public int getProductNo()
+	{
+		return productNo;
+	}
+
+	// /////////////////////////////////////////////////////////////////////////////////
+
+	public void read(final InputStream source)
+	{
+		read(source, "UTF-8");
+	}
+
+	public void read(final InputStream source, final String encoding)
+	{
+		if (extractor.onBeforeSource(source, this))
+		{
+			try
+			{
+				readSource(source, encoding);
+			}
+			catch (Exception e)
+			{
+				extractor.logStackTrace(e);
+				throw new RuntimeException(e);
+			}
+			extractor.getLogger().flush();
+			extractor.onAfterSource(this);
+		}
+	}
+
+	// /////////////////////////////////////////////////////////////////////////////////
+	// ACCESSOR FUNCTIONS FOR CUSTOM STREAMERS OUTSIDE THE PACKAGE
+
+	protected void onHeaderElement(Element element)
+	{
+		extractor.onHeaderElement(element, this);
+	}
+
+	protected void onProductElement(Element element)
+	{
+		extractor.onProductElement(element, this);
+	}
 }

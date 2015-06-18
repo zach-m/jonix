@@ -24,7 +24,7 @@ import java.util.List;
 import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.JonixTabulator;
 import com.tectonica.jonix.JonixUnifier;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 {
@@ -47,7 +47,7 @@ public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected boolean onBeforeFileList(List<String> onixFileNames, JonixAbstractStreamer streamer)
+	protected boolean onBeforeFileList(List<String> onixFileNames, JonixStreamer streamer)
 	{
 		super.onBeforeFileList(onixFileNames, streamer);
 		if (columns == null)
@@ -61,7 +61,7 @@ public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixAbstractStreamer streamer)
+	protected void onProduct(P product, JonixStreamer streamer)
 	{
 		super.onProduct(product, streamer); // logs an info line
 		out.println(JonixTabulator.productAsTabDelimitedString(product, columns));

@@ -27,11 +27,11 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.tectonica.jonix.stream.JonixStreamer;
+import com.tectonica.jonix.stream.JonixFilesStreamer;
 
 public class TestTabDelimited
 {
-	private JonixStreamer streamer;
+	private JonixFilesStreamer streamer;
 
 	@Before
 	public void setUp() throws Exception

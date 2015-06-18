@@ -21,26 +21,26 @@ package com.tectonica.jonix.extract;
 
 import org.w3c.dom.Element;
 
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
-import com.tectonica.jonix.stream.JonixExtractor;
+import com.tectonica.jonix.stream.JonixStreamer;
+import com.tectonica.jonix.stream.JonixAbstractFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 
-public abstract class JonixRawExtractor extends JonixExtractor
+public abstract class JonixRawExtractor extends JonixAbstractFilesExtractor
 {
-	protected void onOnix2Header(com.tectonica.jonix.onix2.Header header, JonixAbstractStreamer streamer)
+	protected void onOnix2Header(com.tectonica.jonix.onix2.Header header, JonixStreamer streamer)
 	{}
 
-	protected abstract void onOnix2Product(com.tectonica.jonix.onix2.Product product, JonixAbstractStreamer streamer);
+	protected abstract void onOnix2Product(com.tectonica.jonix.onix2.Product product, JonixStreamer streamer);
 
-	protected void onOnix3Header(com.tectonica.jonix.onix3.Header header, JonixAbstractStreamer streamer)
+	protected void onOnix3Header(com.tectonica.jonix.onix3.Header header, JonixStreamer streamer)
 	{}
 
-	protected abstract void onOnix3Product(com.tectonica.jonix.onix3.Product product, JonixAbstractStreamer streamer);
+	protected abstract void onOnix3Product(com.tectonica.jonix.onix3.Product product, JonixStreamer streamer);
 
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	@Override
-	protected void onHeaderElement(Element domHeader, JonixAbstractStreamer streamer)
+	protected void onHeaderElement(Element domHeader, JonixStreamer streamer)
 	{
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
 			onOnix2Header(new com.tectonica.jonix.onix2.Header(domHeader), streamer);
@@ -50,7 +50,7 @@ public abstract class JonixRawExtractor extends JonixExtractor
 	}
 
 	@Override
-	protected void onProductElement(Element domProduct, JonixAbstractStreamer streamer)
+	protected void onProductElement(Element domProduct, JonixStreamer streamer)
 	{
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
 			onOnix2Product(new com.tectonica.jonix.onix2.Product(domProduct), streamer);

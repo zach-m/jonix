@@ -30,7 +30,7 @@ import com.tectonica.jonix.export.JonixJsonExporter;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.export.JonixUniqueExporter;
 import com.tectonica.jonix.extract.JonixInMemExtractor;
-import com.tectonica.jonix.stream.JonixStreamer;
+import com.tectonica.jonix.stream.JonixFilesStreamer;
 
 public class Jonix
 {
@@ -136,23 +136,23 @@ public class Jonix
 
 	// /////////////////////////////////////////////////////////////////////////////////////////
 
-	public static JonixStreamer createBasicTabDelimitedStreamer(PrintStream out)
+	public static JonixFilesStreamer createBasicTabDelimitedStreamer(PrintStream out)
 	{
-		return new JonixStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
+		return new JonixFilesStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
 	}
 
-	public static JonixStreamer createJsonStreamer(PrintStream out, boolean exportRaw)
+	public static JonixFilesStreamer createJsonStreamer(PrintStream out, boolean exportRaw)
 	{
-		return new JonixStreamer(new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, exportRaw).setOut(out));
+		return new JonixFilesStreamer(new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT, exportRaw).setOut(out));
 	}
 
-	public static JonixStreamer createBasicUniqueStreamer(PrintStream out)
+	public static JonixFilesStreamer createBasicUniqueStreamer(PrintStream out)
 	{
-		return new JonixStreamer(new JonixUniqueExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
+		return new JonixFilesStreamer(new JonixUniqueExporter<BasicHeader, BasicProduct>(BASIC_CONTEXT).setOut(out));
 	}
 
-	public static JonixStreamer createBasicInMemStreamer(List<BasicProduct> out)
+	public static JonixFilesStreamer createBasicInMemStreamer(List<BasicProduct> out)
 	{
-		return new JonixStreamer(new JonixInMemExtractor<BasicHeader, BasicProduct>(BASIC_CONTEXT, out));
+		return new JonixFilesStreamer(new JonixInMemExtractor<BasicHeader, BasicProduct>(BASIC_CONTEXT, out));
 	}
 }

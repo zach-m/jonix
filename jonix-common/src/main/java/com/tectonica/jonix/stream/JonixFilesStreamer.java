@@ -33,16 +33,16 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class JonixAbstractFileStreamer extends JonixAbstractStreamer
+public class JonixFilesStreamer extends JonixStreamer
 {
-	public JonixAbstractFileStreamer(JonixExtractor extractor)
+	public JonixFilesStreamer(JonixAbstractFilesExtractor extractor)
 	{
 		super(extractor);
 	}
 
-	private JonixExtractor extractor()
+	private JonixAbstractFilesExtractor extractor()
 	{
-		return (JonixExtractor) extractor;
+		return (JonixAbstractFilesExtractor) extractor;
 	}
 
 	// /////////////////////////////////////////////////////////////////////////////

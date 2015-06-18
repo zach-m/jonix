@@ -25,7 +25,7 @@ import java.io.UnsupportedEncodingException;
 
 import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.extract.JonixUnifiedExtractor;
-import com.tectonica.jonix.stream.JonixAbstractStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 /**
  * an extractor with the addition of an 'out' member
@@ -38,7 +38,7 @@ import com.tectonica.jonix.stream.JonixAbstractStreamer;
 public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 {
 	@Override
-	protected void onHeader(H header, JonixAbstractStreamer streamer)
+	protected void onHeader(H header, JonixStreamer streamer)
 	{
 		log("-----------------------------------------------------------\n");
 		log(header.toString());
@@ -46,7 +46,7 @@ public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixAbstractStreamer streamer)
+	protected void onProduct(P product, JonixStreamer streamer)
 	{
 		// show a log message about the product being successfully parsed
 		log("retrieved product #" + streamer.getProductNo() + " - " + unifier.labelOf(product));
@@ -91,7 +91,7 @@ public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 	}
 
 	@Override
-	protected void onAfterSource(JonixAbstractStreamer streamer)
+	protected void onAfterSource(JonixStreamer streamer)
 	{
 		super.onAfterSource(streamer);
 		out.flush();
