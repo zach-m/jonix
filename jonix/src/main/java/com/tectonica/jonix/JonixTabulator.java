@@ -19,24 +19,37 @@
 
 package com.tectonica.jonix;
 
+/**
+ * A helper class, turning a given set of {@link JonixColumn}s into a tab-delimited string ready for writing into a
+ * file.
+ * 
+ * @author Zach Melamed
+ */
 public class JonixTabulator<H, P>
 {
 	/**
-	 * turns a Product object into a jagged-array of Strings, whose amount of rows and columns are defined by the
-	 * provided array of {@link JonixColumn}s
+	 * generates a tab-delimited string, representing the <b>headers</b> of the columns, as specified in the provided
+	 * array of {@link JonixColumn}s
 	 */
-	public static <H, P> String[][] productAsStringMatrix(P product, JonixColumn<P>[] columns)
+	public static <H, P> String headerAsTabDelimitedString(JonixColumn<P>[] columns)
 	{
-		// prepare the resulting jagged-array of values
-		String[][] prodMatrix = new String[columns.length][];
-
-		// populate it by extracting information from the 'product' object
-		for (int i = 0; i < columns.length; i++)
+		StringBuilder sb = new StringBuilder();
+		for (JonixColumn<P> column : columns)
 		{
-			JonixColumn<P> column = columns[i];
-			column.extractFrom(product, prodMatrix[i] = newColumnBuffer(column));
+			int repetition = column.getRepetitions();
+			for (int i = 0; i < repetition; i++)
+			{
+				String[] subColumnNames = column.getSubColumnNames();
+				for (int j = 0; j < subColumnNames.length; j++)
+				{
+					sb.append(subColumnNames[j]);
+					if (repetition > 1)
+						sb.append(".").append(i + 1);
+					sb.append("\t");
+				}
+			}
 		}
-		return prodMatrix;
+		return sb.toString();
 	}
 
 	/**
@@ -65,28 +78,21 @@ public class JonixTabulator<H, P>
 	}
 
 	/**
-	 * generates a tab-delimited string, representing the <b>headers</b> of the columns, as specified in the provided
-	 * array of {@link JonixColumn}s
+	 * turns a Product object into a jagged-array of Strings, whose amount of rows and columns are defined by the
+	 * provided array of {@link JonixColumn}s
 	 */
-	public static <H, P> String headerAsTabDelimitedString(JonixColumn<P>[] columns)
+	public static <H, P> String[][] productAsStringMatrix(P product, JonixColumn<P>[] columns)
 	{
-		StringBuilder sb = new StringBuilder();
-		for (JonixColumn<P> column : columns)
+		// prepare the resulting jagged-array of values
+		String[][] prodMatrix = new String[columns.length][];
+
+		// populate it by extracting information from the 'product' object
+		for (int i = 0; i < columns.length; i++)
 		{
-			int repetition = column.getRepetitions();
-			for (int i = 0; i < repetition; i++)
-			{
-				String[] subColumnNames = column.getSubColumnNames();
-				for (int j = 0; j < subColumnNames.length; j++)
-				{
-					sb.append(subColumnNames[j]);
-					if (repetition > 1)
-						sb.append(".").append(i + 1);
-					sb.append("\t");
-				}
-			}
+			JonixColumn<P> column = columns[i];
+			column.extractFrom(product, prodMatrix[i] = newColumnBuffer(column));
 		}
-		return sb.toString();
+		return prodMatrix;
 	}
 
 	public static <H, P> String[] newColumnBuffer(JonixColumn<P> column)

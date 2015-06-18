@@ -28,12 +28,9 @@ import com.tectonica.jonix.extract.JonixUnifiedExtractor;
 import com.tectonica.jonix.stream.JonixStreamer;
 
 /**
- * an extractor with the addition of an 'out' member
+ * A {@link JonixUnifiedExtractor} with additional 'out' member, intended as an output target for the extracted data.
  * 
- * @author zach
- *
- * @param <H>
- * @param <P>
+ * @author Zach Melamed
  */
 public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 {

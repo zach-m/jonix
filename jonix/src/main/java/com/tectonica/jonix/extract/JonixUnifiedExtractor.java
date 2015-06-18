@@ -23,11 +23,27 @@ import java.util.List;
 
 import org.w3c.dom.Element;
 
+import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixUnifier;
+import com.tectonica.jonix.basic.BasicHeader;
+import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.stream.JonixStreamer;
 import com.tectonica.jonix.stream.JonixAbstractFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 
+/**
+ * Abstract base-class for extractors whose goal is to facilitate reading from both ONIX2 and ONIX3 sources, and
+ * represent their data in in a single pair of classes (header + product), as opposed to a pair for each ONIX version.
+ * Jonix provides its own pair of such unified classes, {@link BasicHeader} and {@link BasicProduct}, which you can use
+ * as is or extend where applicable.
+ * 
+ * @author Zach Melamed
+ *
+ * @param <H>
+ *            class of the unified header
+ * @param <P>
+ *            class of the unified product
+ */
 public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtractor
 {
 	protected void onHeader(H header, JonixStreamer streamer)
@@ -38,8 +54,14 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtr
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	protected final JonixUnifier<H, P> unifier;
-	protected Object rawOnixObject; // TODO: make private
+	protected Object rawOnixHeader;
+	protected Object rawOnixProduct;
 
+	/**
+	 * 
+	 * @param unifier
+	 *            use {@link Jonix#BASIC_UNIFIER} for the Jonix 'basic' suite
+	 */
 	public JonixUnifiedExtractor(final JonixUnifier<H, P> unifier)
 	{
 		if (unifier == null)
@@ -55,12 +77,14 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtr
 		{
 			com.tectonica.jonix.onix2.Header rawHeader2 = new com.tectonica.jonix.onix2.Header(domHeader);
 			unifiedHeader = unifier.createFrom(rawHeader2);
+			rawOnixHeader = rawHeader2;
 		}
 		else
 		// if (isOnix3)
 		{
 			com.tectonica.jonix.onix3.Header rawHeader3 = new com.tectonica.jonix.onix3.Header(domHeader);
 			unifiedHeader = unifier.createFrom(rawHeader3);
+			rawOnixHeader = rawHeader3;
 		}
 		onHeader(unifiedHeader, streamer);
 	}
@@ -73,12 +97,14 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtr
 		{
 			com.tectonica.jonix.onix2.Product rawProduct2 = new com.tectonica.jonix.onix2.Product(domProduct);
 			unifiedProduct = unifier.createFrom(rawProduct2);
+			rawOnixProduct = rawProduct2;
 		}
 		else
 		// if (isOnix3)
 		{
 			com.tectonica.jonix.onix3.Product rawProduct3 = new com.tectonica.jonix.onix3.Product(domProduct);
 			unifiedProduct = unifier.createFrom(rawProduct3);
+			rawOnixProduct = rawProduct3;
 		}
 		onProduct(unifiedProduct, streamer);
 	}

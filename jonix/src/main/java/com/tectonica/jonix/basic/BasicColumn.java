@@ -83,7 +83,7 @@ public abstract class BasicColumn implements JonixColumn<BasicProduct>
 		}
 	};
 
-	public static BasicColumn Title = new BasicColumn(new String[] { "Title", "SubTitle" }, 1)
+	public static BasicColumn Title = new BasicColumn(new String[] { "Title", "Subtitle" }, 1)
 	{
 		@Override
 		public boolean extractFrom(BasicProduct product, String[] columnBuffer)

@@ -26,19 +26,19 @@ import com.tectonica.jonix.stream.JonixStreamer;
 
 public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 {
-	protected Collection<P> output;
+	protected Collection<P> products;
 
-	public JonixInMemExtractor(JonixUnifier<H, P> context, Collection<P> output)
+	public JonixInMemExtractor(JonixUnifier<H, P> context, Collection<P> collection)
 	{
 		super(context);
-		if (output == null)
+		if (collection == null)
 			throw new NullPointerException();
-		this.output = output;
+		this.products = collection;
 	}
 
 	@Override
 	protected void onProduct(P product, JonixStreamer streamer)
 	{
-		output.add(product);
+		products.add(product);
 	}
 }

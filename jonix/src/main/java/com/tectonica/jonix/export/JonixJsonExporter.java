@@ -23,6 +23,21 @@ import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.JonixUtil;
 import com.tectonica.jonix.stream.JonixStreamer;
 
+/**
+ * An exporter for generating JSON output out of ONIX source(s). The output may be of the:
+ * <ul>
+ * <li>unified products (i.e. listing the after-unification fields, which are the same for ONIX2 and ONIX3)
+ * <li>raw products (i.e. listing the exact same fields and values included in the XML source, which are organized
+ * differently in ONIX2 and ONIX3)
+ * </ul>
+ * When exporting the unified fields, the information may not be complete, but it's better suited for system who don't
+ * want to deal with the many discrepancies between ONIX2 and ONIX3.
+ * <p>
+ * Exporting the raw fields, however, is pretty much a XML-to-JSON functionality, suitable for data inspection
+ * scenarios.
+ * 
+ * @author Zach Melamed
+ */
 public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 {
 	private final boolean exportRawProduct;
@@ -38,7 +53,7 @@ public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 	{
 		super.onProduct(product, streamer); // logs an info line
 
-		out.println(exportRawProduct ? JonixUtil.toJson(rawOnixObject) : JonixUtil.toJson(product));
+		out.println(exportRawProduct ? JonixUtil.toJson(rawOnixProduct) : JonixUtil.toJson(product));
 		out.println("\n");
 	}
 }

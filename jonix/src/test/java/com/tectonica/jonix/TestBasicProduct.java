@@ -122,7 +122,7 @@ public class TestBasicProduct
 		});
 
 		// read the same file, this time using a JonixReader
-		JonixStreamer streamer = new JonixStreamer(new JonixUnifiedExtractor<BasicHeader, BasicProduct>(Jonix.BASIC_CONTEXT)
+		JonixStreamer streamer = new JonixStreamer(new JonixUnifiedExtractor<BasicHeader, BasicProduct>(Jonix.BASIC_UNIFIER)
 		{
 			@Override
 			protected void onProduct(BasicProduct product, JonixStreamer streamer)
