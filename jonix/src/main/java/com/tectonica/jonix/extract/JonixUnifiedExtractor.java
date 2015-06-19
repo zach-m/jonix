@@ -28,7 +28,7 @@ import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.stream.JonixStreamer;
-import com.tectonica.jonix.stream.JonixAbstractFilesExtractor;
+import com.tectonica.jonix.stream.JonixFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 
 /**
@@ -44,7 +44,7 @@ import com.tectonica.jonix.stream.JonixOnixVersion;
  * @param <P>
  *            class of the unified product
  */
-public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtractor
+public abstract class JonixUnifiedExtractor<H, P> extends JonixFilesExtractor
 {
 	protected void onHeader(H header, JonixStreamer streamer)
 	{}
@@ -65,7 +65,7 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixAbstractFilesExtr
 	public JonixUnifiedExtractor(final JonixUnifier<H, P> unifier)
 	{
 		if (unifier == null)
-			throw new NullPointerException("context is required");
+			throw new NullPointerException("unifier is required");
 		this.unifier = unifier;
 	}
 

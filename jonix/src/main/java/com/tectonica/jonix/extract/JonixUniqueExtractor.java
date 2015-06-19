@@ -50,9 +50,9 @@ public class JonixUniqueExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 {
 	protected final JonixColumn<P> idColumn;
 
-	public JonixUniqueExtractor(JonixUnifier<H, P> context, JonixColumn<P> idColumn)
+	public JonixUniqueExtractor(JonixUnifier<H, P> unifier, JonixColumn<P> idColumn)
 	{
-		super(context);
+		super(unifier);
 		if (idColumn == null)
 			throw new RuntimeException("ID column is required to define uniqueness");
 		this.idColumn = idColumn;

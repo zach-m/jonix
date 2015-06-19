@@ -35,6 +35,8 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
 import com.tectonica.jonix.onix2.Product;
+import com.tectonica.jonix.stream.JonixFilesStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 public class TestSingle
 {
@@ -86,15 +88,15 @@ public class TestSingle
 	@Test
 	public void testViaReader()
 	{
-		Onix2Reader reader = new Onix2Reader()
+		JonixFilesStreamer streamer = new JonixFilesStreamer(new Onix2Extractor()
 		{
 			@Override
-			protected void onProduct(Product product)
+			protected void onProduct(Product product, JonixStreamer streamer)
 			{
 				System.out.println(JSON.toJson(product));
 			}
-		};
+		});
 
-		reader.read(getClass().getResourceAsStream("/single-book-onix2.xml"));
+		streamer.read(getClass().getResourceAsStream("/single-book-onix2.xml"));
 	}
 }

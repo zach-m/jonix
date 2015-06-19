@@ -31,12 +31,60 @@ import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 
 /**
- * an implementation of streamer based on the {@link XmlChunker} class, with file/folder support
+ * This is a fundamental class in Jonix. Its role is to read ONIX source(s), and fire two types of events as it parses
+ * the ONIX records:
+ * <ul>
+ * <li> {@code onHeaderElement} - when an ONIX &lt;Header&gt; tag was parsed (once per ONIX source)
+ * <li> {@code onProductElement} - when an ONIX &lt;Product&gt; tag was parsed
+ * </ul>
+ * The events are fired to an <b>extractor</b> - some implementation of {@link JonixExtractor} (passed in the
+ * constructor), which does the actual processing of the data when sources are being read by this streamer.
+ * <p>
+ * When events are fired, they pass a DOM {@link Element} to the extractor, which is the most fundamental form of the
+ * ONIX data. Jonix offers several built-in extractors to transform the DOM elements into higher-level objects. Also,
+ * when starting to process an ONIX source, its ONIX version is detected (available at {@link #getSourceOnixVersion()})
+ * and its product count is being tracked (available at {@link #getProductNo()}).
+ * <p>
+ * This class basically exposes one public API, {@link #read(InputStream, String)} which takes an {@link InputStream} as
+ * the ONIX source (of course it may be called repeatedly). However, if your ONIX input is stored in files and
+ * directories, you may benefit from the extra services offered by the subclass {@link JonixFilesStreamer}.
+ * <p>
+ * The processing of the ONIX sources by this class is based on Jonix's built-in {@link XmlChunker} service, which can
+ * read infinitely large sources by handling them in 'chunks'. You may offer your own implementation by overriding
+ * {@link JonixStreamer#readSource(InputStream, String)}.
  * 
- * @author zach
+ * @author Zach Melamed
  */
 public class JonixStreamer
 {
+	protected final JonixExtractor extractor;
+	protected int productNo = 0;
+	protected JonixOnixVersion sourceOnixVersion = JonixOnixVersion.UNKNOWN;
+
+	/**
+	 * provided extractor may be SHARED between streamers
+	 * 
+	 * @param extractor
+	 */
+	public JonixStreamer(JonixExtractor extractor)
+	{
+		if (extractor == null)
+			throw new NullPointerException("extractor is required");
+		this.extractor = extractor;
+	}
+
+	public JonixOnixVersion getSourceOnixVersion()
+	{
+		return sourceOnixVersion;
+	}
+
+	public int getProductNo()
+	{
+		return productNo;
+	}
+
+	// /////////////////////////////////////////////////////////////////////////////////
+
 	protected void readSource(InputStream source, String encoding)
 	{
 		XmlChunker.parse(new BOMInputStream(source), encoding, 2, new XmlChunkerListener());
@@ -77,34 +125,6 @@ public class JonixStreamer
 	};
 
 	// ///////////////////////////////////////////////////////////////////////////////
-
-	protected final JonixAbstractExtractor extractor;
-	protected int productNo = 0;
-	protected JonixOnixVersion sourceOnixVersion = JonixOnixVersion.UNKNOWN;
-
-	/**
-	 * provided extractor may be SHARED between streamers
-	 * 
-	 * @param extractor
-	 */
-	public JonixStreamer(JonixAbstractExtractor extractor)
-	{
-		if (extractor == null)
-			throw new NullPointerException("extractor is required");
-		this.extractor = extractor;
-	}
-
-	public JonixOnixVersion getSourceOnixVersion()
-	{
-		return sourceOnixVersion;
-	}
-
-	public int getProductNo()
-	{
-		return productNo;
-	}
-
-	// /////////////////////////////////////////////////////////////////////////////////
 
 	public void read(final InputStream source)
 	{

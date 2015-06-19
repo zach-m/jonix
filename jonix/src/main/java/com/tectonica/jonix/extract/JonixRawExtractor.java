@@ -22,10 +22,10 @@ package com.tectonica.jonix.extract;
 import org.w3c.dom.Element;
 
 import com.tectonica.jonix.stream.JonixStreamer;
-import com.tectonica.jonix.stream.JonixAbstractFilesExtractor;
+import com.tectonica.jonix.stream.JonixFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 
-public abstract class JonixRawExtractor extends JonixAbstractFilesExtractor
+public abstract class JonixRawExtractor extends JonixFilesExtractor
 {
 	protected void onOnix2Header(com.tectonica.jonix.onix2.Header header, JonixStreamer streamer)
 	{}

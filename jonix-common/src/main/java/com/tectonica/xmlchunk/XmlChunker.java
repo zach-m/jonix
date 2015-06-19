@@ -66,13 +66,13 @@ import org.w3c.dom.Element;
  *             &lt;/Level4&gt;
  *             ..
  *         &lt;/Level3a&gt;
- *         ..
+ *          
  *         &lt;Level3b&gt;
  *             ..
  *         &lt;/Level3b&gt;
  *         ..
  *     &lt;/Level2a&gt;
- *     ..
+ *      
  *     &lt;Level2b&gt;
  *     ..
  *     &lt;/Level2b&gt;

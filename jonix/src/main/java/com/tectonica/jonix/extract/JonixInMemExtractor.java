@@ -28,9 +28,9 @@ public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 {
 	protected Collection<P> products;
 
-	public JonixInMemExtractor(JonixUnifier<H, P> context, Collection<P> collection)
+	public JonixInMemExtractor(JonixUnifier<H, P> unifier, Collection<P> collection)
 	{
-		super(context);
+		super(unifier);
 		if (collection == null)
 			throw new NullPointerException();
 		this.products = collection;

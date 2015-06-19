@@ -22,6 +22,7 @@ package com.tectonica.jonix.stream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -33,16 +34,26 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Simple extension of {@link JonixStreamer} that adds some APIs for handling ONIX sources stored in files and
+ * directories (and not just {@link InputStream} as the parent). It accepts file names and file lists, as well as
+ * directory names for pattern-based scanning.
+ * <p>
+ * In its constructor it takes a {@link JonixFilesExtractor} which is a corresponding extension to the basic
+ * {@link JonixExtractor}, adding file-related events.
+ * 
+ * @author Zach Melamed
+ */
 public class JonixFilesStreamer extends JonixStreamer
 {
-	public JonixFilesStreamer(JonixAbstractFilesExtractor extractor)
+	public JonixFilesStreamer(JonixFilesExtractor extractor)
 	{
 		super(extractor);
 	}
 
-	private JonixAbstractFilesExtractor extractor()
+	private JonixFilesExtractor extractor()
 	{
-		return (JonixAbstractFilesExtractor) extractor;
+		return (JonixFilesExtractor) extractor;
 	}
 
 	// /////////////////////////////////////////////////////////////////////////////

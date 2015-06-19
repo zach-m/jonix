@@ -42,9 +42,9 @@ public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 {
 	private final boolean exportRawProduct;
 
-	public JonixJsonExporter(JonixUnifier<H, P> context, boolean exportRawProduct)
+	public JonixJsonExporter(JonixUnifier<H, P> unifier, boolean exportRawProduct)
 	{
-		super(context);
+		super(unifier);
 		this.exportRawProduct = exportRawProduct;
 	}
 

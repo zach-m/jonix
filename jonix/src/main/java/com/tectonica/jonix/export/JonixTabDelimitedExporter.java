@@ -37,9 +37,9 @@ public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 	private final JonixColumn<P>[] columns;
 	protected boolean headerPrinted = false;
 
-	public JonixTabDelimitedExporter(JonixUnifier<H, P> context, JonixColumn<P>[] columns)
+	public JonixTabDelimitedExporter(JonixUnifier<H, P> unifier, JonixColumn<P>[] columns)
 	{
-		super(context);
+		super(unifier);
 		if (columns == null)
 			throw new RuntimeException("At least one column must be specified");
 		this.columns = columns;
