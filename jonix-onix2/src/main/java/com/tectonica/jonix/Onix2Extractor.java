@@ -24,7 +24,6 @@ import org.w3c.dom.Element;
 import com.tectonica.jonix.onix2.Header;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.stream.JonixFilesExtractor;
-import com.tectonica.jonix.stream.JonixFilesStreamer;
 import com.tectonica.jonix.stream.JonixStreamer;
 
 /**

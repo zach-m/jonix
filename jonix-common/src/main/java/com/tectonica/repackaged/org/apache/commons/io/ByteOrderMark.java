@@ -18,8 +18,10 @@ package com.tectonica.repackaged.org.apache.commons.io;
 
 import java.io.Serializable;
 
+import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
+
 /**
- * Byte Order Mark (BOM) representation - see {@link org.apache.commons.io.input.BOMInputStream}.
+ * Byte Order Mark (BOM) representation - see {@link BOMInputStream}.
  * 
  * @see org.apache.commons.io.input.BOMInputStream
  * @see <a href="http://en.wikipedia.org/wiki/Byte_order_mark">Wikipedia - Byte Order Mark</a>
