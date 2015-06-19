@@ -31,7 +31,7 @@ import java.util.Map;
  * <p>
  * Language code – ISO 639-2/B
  * 
- * @see http://www.editeur.org/14/code-lists/
+ * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
  */
 public enum LanguageCodeIso6392Bs
 {

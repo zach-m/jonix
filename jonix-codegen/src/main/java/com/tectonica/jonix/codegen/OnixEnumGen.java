@@ -87,7 +87,7 @@ public class OnixEnumGen
 			p.printf(" * %s\n", enumType.comment);
 		}
 		p.printf(" * \n");
-		p.printf(" * @see http://www.editeur.org/14/code-lists/\n");
+		p.printf(" * @see <a href=\"http://www.editeur.org/14/code-lists/\">http://www.editeur.org/14/code-lists/</a>\n");
 		p.printf(" */\n");
 
 		p.println("public enum " + enumType.enumName);

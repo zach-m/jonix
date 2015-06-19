@@ -28,7 +28,7 @@ package com.tectonica.jonix.codelist;
  * <p>
  * Person name identifier type
  * 
- * @see http://www.editeur.org/14/code-lists/
+ * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
  */
 public enum PersonNameIdentifierTypes
 {

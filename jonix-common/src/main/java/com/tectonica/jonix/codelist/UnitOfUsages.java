@@ -31,7 +31,7 @@ import java.util.Map;
  * <p>
  * Unit of usage
  * 
- * @see http://www.editeur.org/14/code-lists/
+ * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
  */
 public enum UnitOfUsages
 {

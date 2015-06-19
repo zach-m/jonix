@@ -28,7 +28,7 @@ package com.tectonica.jonix.codelist;
  * <p>
  * US CPSIA choking hazard warning code
  * 
- * @see http://www.editeur.org/14/code-lists/
+ * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
  */
 public enum UsCpsiaChokingHazardWarnings
 {
