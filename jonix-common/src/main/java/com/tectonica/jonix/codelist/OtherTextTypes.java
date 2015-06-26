@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList33
+ * Enum that corresponds to ONIX's <b>CodeList33</b>
  * <p>
  * Other text type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum OtherTextTypes
 {
@@ -45,8 +45,8 @@ public enum OtherTextTypes
 	Long_description("03"), //
 
 	/**
-	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed through HTML etc.
-	 * Alternatively, a fully structured table of contents may be sent by using the <ContentItem> composite.
+	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed through
+	 * HTML etc. Alternatively, a fully structured table of contents may be sent by using the <ContentItem> composite.
 	 */
 	Table_of_contents("04"), //
 
@@ -103,8 +103,9 @@ public enum OtherTextTypes
 	Discussion_question_for_Reading_Group_Guide("15"), //
 
 	/**
-	 * Free text listing of other titles with which the product is in competition: although this text might not appear in “public” ONIX
-	 * records, it could be required where ONIX Is used as a communication format within a group of publishing and distribution companies.
+	 * Free text listing of other titles with which the product is in competition: although this text might not appear
+	 * in “public” ONIX records, it could be required where ONIX Is used as a communication format within a group of
+	 * publishing and distribution companies.
 	 */
 	Competing_titles("16"), //
 
@@ -113,9 +114,9 @@ public enum OtherTextTypes
 	Back_cover_copy("18"), //
 
 	/**
-	 * Text describing a feature of a product to which the publisher wishes to draw attention for promotional purposes. Each separate
-	 * feature should be described by a separate repeat, so that formatting can be applied at the discretion of the receiver of the ONIX
-	 * record.
+	 * Text describing a feature of a product to which the publisher wishes to draw attention for promotional purposes.
+	 * Each separate feature should be described by a separate repeat, so that formatting can be applied at the
+	 * discretion of the receiver of the ONIX record.
 	 */
 	Feature("19"), //
 
@@ -125,9 +126,9 @@ public enum OtherTextTypes
 	New_feature("20"), //
 
 	/**
-	 * A statement included by a publisher in fulfillment of its contractual obligations, such as a disclaimer, sponsor statement, or legal
-	 * notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a user of the ONIX record is obliged to
-	 * reproduce it.
+	 * A statement included by a publisher in fulfillment of its contractual obligations, such as a disclaimer, sponsor
+	 * statement, or legal notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a
+	 * user of the ONIX record is obliged to reproduce it.
 	 */
 	Publisher_s_notice("21"), //
 
@@ -196,29 +197,31 @@ public enum OtherTextTypes
 	License("46"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg “Open access – no commercial use”), primarily for
-	 * marketing purposes. Should always be accompanied by a link to the complete license (see code 46).
+	 * Short summary statement of open access status and any related conditions (eg “Open access – no commercial use”),
+	 * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see code 46).
 	 */
 	Open_access_statement("47"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg “Digital exclusive”). If a non-digital version is
-	 * planned, an <EndDate> can be used to specify the date when exclusivity will end.
+	 * Short summary statement that the product is available only in digital formats (eg “Digital exclusive”). If a
+	 * non-digital version is planned, an <EndDate> can be used to specify the date when exclusivity will end.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
 	Digital_exclusivity_statement("48"), //
 
 	/**
-	 * A master brand name or title, where the use of the brand spans multiple sets, series and product forms, and possibly multiple
-	 * imprints and publishers. Used only for branded media properties such as children’s character properties. (This functionality is
-	 * provided as a workaround in ONIX 2.1 only. ONIX 3.0 has specific provision for master brands as title elements.
+	 * A master brand name or title, where the use of the brand spans multiple sets, series and product forms, and
+	 * possibly multiple imprints and publishers. Used only for branded media properties such as children’s character
+	 * properties. (This functionality is provided as a workaround in ONIX 2.1 only. ONIX 3.0 has specific provision for
+	 * master brands as title elements.
 	 */
 	Master_brand_name("98"), //
 
 	/**
-	 * A single ISO 3166-1 country code from List 91 designating the country of final manufacture of the product. (This functionality is
-	 * provided as a workaround in ONIX 2.1. ONIX 3.0 has specific provision for country of manufacture as a separate element.).
+	 * A single ISO 3166-1 country code from List 91 designating the country of final manufacture of the product. (This
+	 * functionality is provided as a workaround in ONIX 2.1. ONIX 3.0 has specific provision for country of manufacture
+	 * as a separate element.).
 	 */
 	Country_of_final_manufacture("99");
 

@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList80
+ * Enum that corresponds to ONIX's <b>CodeList80</b>
  * <p>
  * Product packaging type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductPackagingTypes
 {
@@ -46,7 +46,8 @@ public enum ProductPackagingTypes
 	Slip_sleeve("01"), //
 
 	/**
-	 * Packaging consisting of formed plastic sealed around each side of the product. Not to be confused with single-sided Blister pack.
+	 * Packaging consisting of formed plastic sealed around each side of the product. Not to be confused with
+	 * single-sided Blister pack.
 	 */
 	Clamshell("02"), //
 
@@ -61,12 +62,14 @@ public enum ProductPackagingTypes
 	Jewel_case("05"), //
 
 	/**
-	 * Common CD-style packaging, a card folder with one or more panels incorporating a tray, hub or pocket to hold the disc(s).
+	 * Common CD-style packaging, a card folder with one or more panels incorporating a tray, hub or pocket to hold the
+	 * disc(s).
 	 */
 	Digipak("06"), //
 
 	/**
-	 * Individual item, items or set in card box with separate or hinged lid: not to be confused with the commonly-used ‘boxed set’.
+	 * Individual item, items or set in card box with separate or hinged lid: not to be confused with the commonly-used
+	 * ‘boxed set’.
 	 */
 	In_box("09"), //
 
@@ -123,8 +126,8 @@ public enum ProductPackagingTypes
 	Cardboard_case("20"), //
 
 	/**
-	 * Use for products or product bundles supplied for retail sale in shrink-wrapped packaging. For shrink-wrapped packs of multiple
-	 * products for trade supply only, see code XL in List 7.
+	 * Use for products or product bundles supplied for retail sale in shrink-wrapped packaging. For shrink-wrapped
+	 * packs of multiple products for trade supply only, see code XL in List 7.
 	 */
 	Shrink_wrapped("21"), //
 

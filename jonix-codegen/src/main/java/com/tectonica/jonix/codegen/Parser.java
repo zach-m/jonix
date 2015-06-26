@@ -168,7 +168,9 @@ public class Parser
 		for (int i = 0; i < splits.length; i++)
 		{
 			String split = splits[i].toLowerCase();
-			if (i == splits.length - 1 && (split.equalsIgnoreCase("code") || split.equalsIgnoreCase("codes")))
+			if (i == splits.length - 1 && (split.equals("code") || split.equals("codes")))
+				break;
+			if ((i > 0 && i < splits.length - 1) && (split.equals("iso")))
 				break;
 			sb.append(Character.toUpperCase(split.charAt(0))).append(split.substring(1));
 		}

@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList147
+ * Enum that corresponds to ONIX's <b>CodeList147</b>
  * <p>
  * Unit of usage
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum UnitOfUsages
 {
@@ -66,14 +66,14 @@ public enum UnitOfUsages
 	Devices("06"), //
 
 	/**
-	 * Maximum number of concurrent users. NB where the number of concurrent users is specifically not limited, set the number of concurrent
-	 * users to zero.
+	 * Maximum number of concurrent users. NB where the number of concurrent users is specifically not limited, set the
+	 * number of concurrent users to zero.
 	 */
 	Concurrent_users("07"), //
 
 	/**
-	 * Maximum percentage of total content which may be used in a specified usage per time period; the time period being specified as
-	 * another EpubUsageQuantity.
+	 * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
+	 * specified as another EpubUsageQuantity.
 	 */
 	Percentage_per_time_period("08"), //
 
@@ -105,36 +105,36 @@ public enum UnitOfUsages
 	Dots_per_inch("21"), //
 
 	/**
-	 * Page number where allowed usage begins. <Quantity> should contain an absolute page number, counting the cover as page 1. (This type
-	 * of page numbering should not be used where the e-publication has no fixed pagination). Use with (max number of) Pages, Percentage of
-	 * content, or End page to specify pages allowed in Preview.
+	 * Page number where allowed usage begins. <Quantity> should contain an absolute page number, counting the cover as
+	 * page 1. (This type of page numbering should not be used where the e-publication has no fixed pagination). Use
+	 * with (max number of) Pages, Percentage of content, or End page to specify pages allowed in Preview.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
 	Allowed_usage_start_page("11"), //
 
 	/**
-	 * Page number at which allowed usage ends. <Quantity> should contain an absolute page number, counting the cover as page 1. (This type
-	 * of page numbering should not be used where the e-publication has no fixed pagination). Use with Start page to specify pages allowed
-	 * in a preview.
+	 * Page number at which allowed usage ends. <Quantity> should contain an absolute page number, counting the cover as
+	 * page 1. (This type of page numbering should not be used where the e-publication has no fixed pagination). Use
+	 * with Start page to specify pages allowed in a preview.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
 	Allowed_usage_end_page("12"), //
 
 	/**
-	 * Page number where allowed usage begins. <Quantity> should contain an absolute page number, counting the cover as page 1. (This type
-	 * of page numbering should not be used where the e-publication has no fixed pagination). Use with (max number of) Pages, Percentage of
-	 * content, or End page to specify pages allowed in Preview.
+	 * Page number where allowed usage begins. <Quantity> should contain an absolute page number, counting the cover as
+	 * page 1. (This type of page numbering should not be used where the e-publication has no fixed pagination). Use
+	 * with (max number of) Pages, Percentage of content, or End page to specify pages allowed in Preview.
 	 * <p>
 	 * NOTE: Deprecated in Onix3
 	 */
 	Allowed_usage_start_page_("11"), //
 
 	/**
-	 * Page number at which allowed usage ends. <Quantity> should contain an absolute page number, counting the cover as page 1. (This type
-	 * of page numbering should not be used where the e-publication has no fixed pagination). Use with Start page to specify pages allowed
-	 * in a preview.
+	 * Page number at which allowed usage ends. <Quantity> should contain an absolute page number, counting the cover as
+	 * page 1. (This type of page numbering should not be used where the e-publication has no fixed pagination). Use
+	 * with Start page to specify pages allowed in a preview.
 	 * <p>
 	 * NOTE: Deprecated in Onix3
 	 */

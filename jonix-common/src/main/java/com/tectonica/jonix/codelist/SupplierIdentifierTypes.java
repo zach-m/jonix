@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList92
+ * Enum that corresponds to ONIX's <b>CodeList92</b>
  * <p>
  * Supplier identifier type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SupplierIdentifierTypes
 {
@@ -68,10 +68,11 @@ public enum SupplierIdentifierTypes
 
 	/**
 	 * Identifier for a business organization for VAT purposes, eg within the EU’s VIES system. See
-	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country. Generally these
-	 * consist of a two-letter country code followed by the 8–12 digits of the national VAT ID. Some countries include one or two letters
-	 * within their VAT ID. See http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar
-	 * identifiers. Spaces, dashes etc should be omitted.
+	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country.
+	 * Generally these consist of a two-letter country code followed by the 8–12 digits of the national VAT ID. Some
+	 * countries include one or two letters within their VAT ID. See
+	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
+	 * Spaces, dashes etc should be omitted.
 	 */
 	VAT_Identity_Number("23");
 

@@ -26,8 +26,8 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PersonDateRoles;
 import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -39,7 +39,7 @@ import com.tectonica.jonix.struct.JonixPersonDate;
 import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -50,7 +50,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -91,7 +91,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
@@ -180,11 +180,11 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<LanguageCodeIso6392Bs> getLanguageCodeValues()
+	public List<LanguageCodes> getLanguageCodeValues()
 	{
 		if (languageCodes != null)
 		{
-			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			List<LanguageCodes> list = new ArrayList<>();
 			for (LanguageCode i : languageCodes)
 				list.add(i.value);
 			return list;
@@ -277,11 +277,11 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return (unnamedPersons == null) ? null : unnamedPersons.value;
 	}
 
-	public List<CountryCodeIso31661s> getCountryCodeValues()
+	public List<CountryCodes> getCountryCodeValues()
 	{
 		if (countryCodes != null)
 		{
-			List<CountryCodeIso31661s> list = new ArrayList<>();
+			List<CountryCodes> list = new ArrayList<>();
 			for (CountryCode i : countryCodes)
 				list.add(i.value);
 			return list;

@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList215
+ * Enum that corresponds to ONIX's <b>CodeList215</b>
  * <p>
  * Proximity
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum Proximitys
 {
@@ -37,20 +37,22 @@ public enum Proximitys
 	Not_more_than("02"), //
 
 	/**
-	 * The supplier’s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a quoted figure of 100 could
-	 * in fact be anything between 91 and 111).
+	 * The supplier’s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a quoted
+	 * figure of 100 could in fact be anything between 91 and 111).
 	 */
 	Exactly("03"), //
 
 	/**
-	 * Generally interpreted as within 25% of the true figure (ie a quoted figure of 100 could in fact be anything between 80 and 133). The
-	 * supplier may introduce a deliberate approximation to reduce the commercial sensitivity of the figure.
+	 * Generally interpreted as within 25% of the true figure (ie a quoted figure of 100 could in fact be anything
+	 * between 80 and 133). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity
+	 * of the figure.
 	 */
 	Approximately("04"), //
 
 	/**
-	 * Generally interpreted as within a factor of two of the true figure (ie a quoted figure of 100 could in fact be anything between 50
-	 * and 200). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity of the figure.
+	 * Generally interpreted as within a factor of two of the true figure (ie a quoted figure of 100 could in fact be
+	 * anything between 50 and 200). The supplier may introduce a deliberate approximation to reduce the commercial
+	 * sensitivity of the figure.
 	 */
 	About("05"), //
 

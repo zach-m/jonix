@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList38
+ * Enum that corresponds to ONIX's <b>CodeList38</b>
  * <p>
  * Image/audio/video file type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ImageAudioVideoFileTypes
 {
@@ -43,14 +43,14 @@ public enum ImageAudioVideoFileTypes
 	Application_software_demo("02"), //
 
 	/**
-	 * Includes cover, back cover, spine and – where appropriate – any flaps. Quality unspecified: if sending both a standard quality and a
-	 * high quality image, use 03 for standard quality and 05 for high quality.
+	 * Includes cover, back cover, spine and – where appropriate – any flaps. Quality unspecified: if sending both a
+	 * standard quality and a high quality image, use 03 for standard quality and 05 for high quality.
 	 */
 	Image_whole_cover("03"), //
 
 	/**
-	 * Quality unspecified: if sending both a standard quality and a high quality image, use 04 for standard quality and 06 for high
-	 * quality.
+	 * Quality unspecified: if sending both a standard quality and a high quality image, use 04 for standard quality and
+	 * 06 for high quality.
 	 */
 	Image_front_cover("04"), //
 
@@ -94,8 +94,8 @@ public enum ImageAudioVideoFileTypes
 	Image_sample_content("23"), //
 
 	/**
-	 * Quality unspecified: if sending both a standard quality and a high quality image, use 24 for standard quality and 25 for high
-	 * quality.
+	 * Quality unspecified: if sending both a standard quality and a high quality image, use 24 for standard quality and
+	 * 25 for high quality.
 	 */
 	Image_back_cover("24"), //
 

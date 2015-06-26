@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList25
+ * Enum that corresponds to ONIX's <b>CodeList25</b>
  * <p>
  * Illustration and other content type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum IllustrationAndOtherContentTypes
 {
@@ -96,8 +96,8 @@ public enum IllustrationAndOtherContentTypes
 	Printed_music_items("20"), //
 
 	/**
-	 * To be used in the mathematical sense of a diagram that represents numerical values plotted against an origin and axes, cf codes 16
-	 * and 18.
+	 * To be used in the mathematical sense of a diagram that represents numerical values plotted against an origin and
+	 * axes, cf codes 16 and 18.
 	 */
 	Graphs("21"), //
 

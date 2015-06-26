@@ -22,8 +22,8 @@ package com.tectonica.jonix.basic;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.struct.JonixPublishingDate;
 
@@ -42,14 +42,14 @@ public class BasicPublishingDetails implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	public final String publicationDate;
-	public final CountryCodeIso31661s countryOfPublication;
+	public final CountryCodes countryOfPublication;
 	public final String cityOfPublication;
 
 	public BasicPublishingDetails(com.tectonica.jonix.onix2.Product product)
 	{
 		publicationDate = product.getPublicationDateValue();
 		countryOfPublication = product.getCountryOfPublicationValue();
-		cityOfPublication = pickCityOfPublication(product, LanguageCodeIso6392Bs.English);
+		cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 	}
 
 	public BasicPublishingDetails(com.tectonica.jonix.onix3.Product product)
@@ -60,7 +60,7 @@ public class BasicPublishingDetails implements Serializable
 			JonixPublishingDate jPublicationDate = pd.findPublishingDate(PublishingDateRoles.Publication_date);
 			publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
 			countryOfPublication = pd.getCountryOfPublicationValue();
-			cityOfPublication = pickCityOfPublication(product, LanguageCodeIso6392Bs.English);
+			cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 		}
 		else
 		{
@@ -71,7 +71,7 @@ public class BasicPublishingDetails implements Serializable
 	}
 
 	private String pickCityOfPublication(com.tectonica.jonix.onix3.Product product,
-			LanguageCodeIso6392Bs preferredLanguage)
+			LanguageCodes preferredLanguage)
 	{
 		if (product.publishingDetail == null)
 			return null;
@@ -89,7 +89,7 @@ public class BasicPublishingDetails implements Serializable
 	}
 
 	private String pickCityOfPublication(com.tectonica.jonix.onix2.Product product,
-			LanguageCodeIso6392Bs preferredLanguage)
+			LanguageCodes preferredLanguage)
 	{
 		if (product.cityOfPublications != null)
 		{

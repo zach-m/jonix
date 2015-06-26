@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.RightsRegions;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
@@ -45,10 +45,10 @@ public class BasicSalesRights implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	public final SalesRightsTypes salesRightsType;
-	public final List<Set<CountryCodeIso31661s>> countries; // TODO: need to be contracted to merely a Set
+	public final List<Set<CountryCodes>> countries; // TODO: need to be contracted to merely a Set
 	public final Set<Regions> regions;
 	public final List<RightsRegions> rightRegions; // only in Onix2
-	public final Set<CountryCodeIso31661s> countriesExcluded; // only in Onix3
+	public final Set<CountryCodes> countriesExcluded; // only in Onix3
 	public final Set<Regions> regionsExcluded; // only in Onix3
 
 	public BasicSalesRights(com.tectonica.jonix.onix2.SalesRights salesRights)

@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
 import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

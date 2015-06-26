@@ -20,21 +20,21 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList165
+ * Enum that corresponds to ONIX's <b>CodeList165</b>
  * <p>
  * Supplier own code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SupplierOwnCodeTypes
 {
 	/**
-	 * A rating applied by a supplier (typically a wholesaler) to indicate its assessment of the expected or actual sales performance of a
-	 * product.
+	 * A rating applied by a supplier (typically a wholesaler) to indicate its assessment of the expected or actual
+	 * sales performance of a product.
 	 */
 	Supplier_s_sales_classification("01"), //
 
@@ -44,13 +44,14 @@ public enum SupplierOwnCodeTypes
 	Supplier_s_bonus_eligibility("02"), //
 
 	/**
-	 * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only when the publisher
-	 * is not the ‘supplier’.
+	 * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
+	 * when the publisher is not the ‘supplier’.
 	 */
 	Publisher_s_sales_classification("03"), //
 
 	/**
-	 * A classification applied by a supplier to a product sold on Agency terms, to indicate that retail price restrictions are applicable.
+	 * A classification applied by a supplier to a product sold on Agency terms, to indicate that retail price
+	 * restrictions are applicable.
 	 */
 	Supplier_s_pricing_restriction_classification("04");
 

@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList164
+ * Enum that corresponds to ONIX's <b>CodeList164</b>
  * <p>
  * Work relation code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum WorkRelations
 {
@@ -38,15 +38,15 @@ public enum WorkRelations
 	Manifestation_of("01"), //
 
 	/**
-	 * Product X is or includes a manifestation of a work derived (directly) from related work Y in one or more of the ways specified in
-	 * ISTC rules. This relation type is intended to enable products with a common ‘parent’ work to be linked without specifying the precise
-	 * nature of their derivation.
+	 * Product X is or includes a manifestation of a work derived (directly) from related work Y in one or more of the
+	 * ways specified in ISTC rules. This relation type is intended to enable products with a common ‘parent’ work to be
+	 * linked without specifying the precise nature of their derivation.
 	 */
 	Derived_from("02"), //
 
 	/**
-	 * Product X is a manifestation of a work from which related work Y is (directly) derived in one or more of the ways specified in ISTC
-	 * rules (reciprocal of code 02).
+	 * Product X is a manifestation of a work from which related work Y is (directly) derived in one or more of the ways
+	 * specified in ISTC rules (reciprocal of code 02).
 	 */
 	Related_work_is_derived_from_this("03"), //
 

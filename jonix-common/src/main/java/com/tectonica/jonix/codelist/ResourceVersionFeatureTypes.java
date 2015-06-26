@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList162
+ * Enum that corresponds to ONIX's <b>CodeList162</b>
  * <p>
  * Resource version feature type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ResourceVersionFeatureTypes
 {
@@ -56,13 +56,15 @@ public enum ResourceVersionFeatureTypes
 	Filename("04"), //
 
 	/**
-	 * Resource Version Feature Value carries a decimal number only, suggested no more than 2 significant digits (eg 1.7, not 1.7462).
+	 * Resource Version Feature Value carries a decimal number only, suggested no more than 2 significant digits (eg
+	 * 1.7, not 1.7462).
 	 */
 	Approximate_download_file_size_in_megabytes("05"), //
 
 	/**
-	 * MD5 hash value of the resource file. <ResourceVersionFeatureValue> should contain the 128-bit digest value (as 32 hexadecimal
-	 * digits). Can be used as a cryptographic check on the integrity of a resource after it has been retrieved.
+	 * MD5 hash value of the resource file. <ResourceVersionFeatureValue> should contain the 128-bit digest value (as 32
+	 * hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
+	 * retrieved.
 	 */
 	MD5_hash_value("06"), //
 
@@ -72,8 +74,9 @@ public enum ResourceVersionFeatureTypes
 	Exact_download_file_size_in_bytes("07"), //
 
 	/**
-	 * SHA-256 hash value of the resource file. <ResourceVersionFeatureValue> should contain the 256-bit digest value (as 64 hexadecimal
-	 * digits). Can be used as a cryptographic check on the integrity of a resource after it has been retrieved.
+	 * SHA-256 hash value of the resource file. <ResourceVersionFeatureValue> should contain the 256-bit digest value
+	 * (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
+	 * retrieved.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */

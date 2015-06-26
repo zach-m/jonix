@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList49
+ * Enum that corresponds to ONIX's <b>CodeList49</b>
  * <p>
  * Region code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum Regions
 {
@@ -620,11 +620,12 @@ public enum Regions
 	Wyoming("US-WY"), //
 
 	/**
-	 * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of writing, this is a
-	 * synonym for “AT BE CY EE FI FR DE ES GR IE IT LU LV MT NL PT SI SK” (the official Eurozone 18), plus “AD MC SM VA ME” (other
-	 * Euro-using countries in continental Europe). Note some other territories using the Euro, but outside continental Europe are excluded
-	 * from this list, and may need to be specified separately. Only valid in ONIX 3, and only within P.26. Use of an explicit list of
-	 * countries instead of ECZ is strongly encouraged.
+	 * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
+	 * writing, this is a synonym for “AT BE CY EE FI FR DE ES GR IE IT LU LV MT NL PT SI SK” (the official Eurozone
+	 * 18), plus “AD MC SM VA ME” (other Euro-using countries in continental Europe). Note some other territories using
+	 * the Euro, but outside continental Europe are excluded from this list, and may need to be specified separately.
+	 * Only valid in ONIX 3, and only within P.26. Use of an explicit list of countries instead of ECZ is strongly
+	 * encouraged.
 	 */
 	Eurozone("ECZ"), //
 

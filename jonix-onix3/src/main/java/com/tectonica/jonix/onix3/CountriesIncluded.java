@@ -23,11 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -40,7 +40,7 @@ public class CountriesIncluded implements OnixElement, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public java.util.Set<CountryCodeIso31661s> value;
+	public java.util.Set<CountryCodes> value;
 
 	public CountriesIncluded()
 	{}
@@ -53,6 +53,6 @@ public class CountriesIncluded implements OnixElement, Serializable
 
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
-			value.add(CountryCodeIso31661s.byValue(split));
+			value.add(CountryCodes.byValue(split));
 	}
 }

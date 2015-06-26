@@ -23,33 +23,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList48
+ * Enum that corresponds to ONIX's <b>CodeList48</b>
  * <p>
  * Measure type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum MeasureTypes
 {
 	/**
-	 * For a book, the spine height when standing on a shelf. For a folded map, the height when folded. In general, the height of a product
-	 * in the form in which it is presented or packaged for retail sale.
+	 * For a book, the spine height when standing on a shelf. For a folded map, the height when folded. In general, the
+	 * height of a product in the form in which it is presented or packaged for retail sale.
 	 */
 	Height("01"), //
 
 	/**
-	 * For a book, the horizontal dimension of the cover when standing upright. For a folded map, the width when folded. In general, the
-	 * width of a product in the form in which it is presented or packaged for retail sale.
+	 * For a book, the horizontal dimension of the cover when standing upright. For a folded map, the width when folded.
+	 * In general, the width of a product in the form in which it is presented or packaged for retail sale.
 	 */
 	Width("02"), //
 
 	/**
-	 * For a book, the thickness of the spine. For a folded map, the thickness when folded. In general, the thickness or depth of a product
-	 * in the form in which it is presented or packaged for retail sale.
+	 * For a book, the thickness of the spine. For a folded map, the thickness when folded. In general, the thickness or
+	 * depth of a product in the form in which it is presented or packaged for retail sale.
 	 */
 	Thickness("03"), //
 
@@ -81,14 +81,14 @@ public enum MeasureTypes
 	Unfolded_unrolled_sheet_width("11"), //
 
 	/**
-	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 “height” for the height or
-	 * length of the tube.
+	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 “height”
+	 * for the height or length of the tube.
 	 */
 	Diameter_tube_or_cylinder("12"), //
 
 	/**
-	 * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet product. Use 01
-	 * “height” for the height or length of the package.
+	 * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet
+	 * product. Use 01 “height” for the height or length of the package.
 	 */
 	Rolled_sheet_package_side_measure("13");
 

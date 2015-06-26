@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.struct.JonixTextItemIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

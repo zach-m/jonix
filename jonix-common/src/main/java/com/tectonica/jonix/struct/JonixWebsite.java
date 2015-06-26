@@ -25,7 +25,7 @@ import java.util.List;
 import com.tectonica.jonix.codelist.WebsiteRoles;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

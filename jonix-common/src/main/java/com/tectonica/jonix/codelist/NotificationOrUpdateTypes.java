@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList1
+ * Enum that corresponds to ONIX's <b>CodeList1</b>
  * <p>
  * Notification or update type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum NotificationOrUpdateTypes
 {
@@ -41,28 +41,29 @@ public enum NotificationOrUpdateTypes
 	Early_notification("01"), //
 
 	/**
-	 * Use for a complete record issued to confirm advance information approximately six months before publication; or for a complete record
-	 * issued after that date and before information has been confirmed from the book-in-hand.
+	 * Use for a complete record issued to confirm advance information approximately six months before publication; or
+	 * for a complete record issued after that date and before information has been confirmed from the book-in-hand.
 	 */
 	Advance_notification_confirmed("02"), //
 
 	/**
-	 * Use for a complete record issued to confirm advance information at or just before actual publication date; or for a complete record
-	 * issued at any later date.
+	 * Use for a complete record issued to confirm advance information at or just before actual publication date; or for
+	 * a complete record issued at any later date.
 	 */
 	Notification_confirmed_on_publication("03"), //
 
 	/**
-	 * In ONIX 3.0 only, use when sending a ‘block update’ record. In previous ONIX releases, ONIX updating has generally been by complete
-	 * record replacement using code 03, and code 04 is not used.
+	 * In ONIX 3.0 only, use when sending a ‘block update’ record. In previous ONIX releases, ONIX updating has
+	 * generally been by complete record replacement using code 03, and code 04 is not used.
 	 */
 	Update_partial("04"), //
 
 	/**
-	 * Use when sending an instruction to delete a record which was previously issued. Note that a Delete instruction should NOT be used
-	 * when a product is cancelled, put out of print, or otherwise withdrawn from sale: this should be handled as a change of Publishing
-	 * status, leaving the receiver to decide whether to retain or delete the record. A Delete instruction is only used when there is a
-	 * particular reason to withdraw a record completely, eg because it was issued in error.
+	 * Use when sending an instruction to delete a record which was previously issued. Note that a Delete instruction
+	 * should NOT be used when a product is cancelled, put out of print, or otherwise withdrawn from sale: this should
+	 * be handled as a change of Publishing status, leaving the receiver to decide whether to retain or delete the
+	 * record. A Delete instruction is only used when there is a particular reason to withdraw a record completely, eg
+	 * because it was issued in error.
 	 */
 	Delete("05"), //
 
@@ -92,14 +93,14 @@ public enum NotificationOrUpdateTypes
 	Update_SupplyDetail_and_MarketRepresentation("14"), //
 
 	/**
-	 * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded. Sender must ensure the <RecordReference>
-	 * matches a previously-sent Test record.
+	 * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded. Sender must ensure the
+	 * <RecordReference> matches a previously-sent Test record.
 	 */
 	Test_update_Partial("88"), //
 
 	/**
-	 * Record may be processed for test purposes, but data should be discarded. Sender must ensure the <RecordReference> does not match any
-	 * previously-sent live product record.
+	 * Record may be processed for test purposes, but data should be discarded. Sender must ensure the <RecordReference>
+	 * does not match any previously-sent live product record.
 	 */
 	Test_record("89");
 

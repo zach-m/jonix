@@ -20,23 +20,23 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList53
+ * Enum that corresponds to ONIX's <b>CodeList53</b>
  * <p>
  * Returns conditions code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ReturnsConditionsCodeTypes
 {
 	Proprietary("00"), //
 
 	/**
-	 * Maintained by CLIL (Commission Interprofessionnel du Livre). Returns conditions values in <ReturnsCode> should be taken from the CLIL
-	 * list.
+	 * Maintained by CLIL (Commission Interprofessionnel du Livre). Returns conditions values in <ReturnsCode> should be
+	 * taken from the CLIL list.
 	 */
 	French_book_trade_returns_conditions_code("01"), //
 
@@ -46,8 +46,8 @@ public enum ReturnsConditionsCodeTypes
 	BISAC_Returnable_Indicator_code("02"), //
 
 	/**
-	 * NOT CURRENTLY USED – BIC has decided that it will not maintain a code list for this purpose, since returns conditions are usually at
-	 * least partly based on the trading relationship.
+	 * NOT CURRENTLY USED – BIC has decided that it will not maintain a code list for this purpose, since returns
+	 * conditions are usually at least partly based on the trading relationship.
 	 */
 	UK_book_trade_returns_conditions_code("03"), //
 

@@ -23,15 +23,15 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CurrencyCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -42,13 +42,13 @@ public class CurrencyCode implements OnixElement, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CurrencyCodeIso4217s value;
+	public CurrencyCodes value;
 
 	public CurrencyCode()
 	{}
@@ -57,12 +57,12 @@ public class CurrencyCode implements OnixElement, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = CurrencyCodeIso4217s.byValue(JPU.getContentAsString(element));
+		value = CurrencyCodes.byValue(JPU.getContentAsString(element));
 	}
 }

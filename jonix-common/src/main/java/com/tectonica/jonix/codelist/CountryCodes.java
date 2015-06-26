@@ -23,17 +23,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList91
+ * Enum that corresponds to ONIX's <b>CodeList91</b>
  * <p>
  * Country code – ISO 3166-1
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
-public enum CountryCodeIso31661s
+public enum CountryCodes
 {
 	/**
 	 * All unspecified countries
@@ -555,25 +555,25 @@ public enum CountryCodeIso31661s
 
 	public final String value;
 
-	private CountryCodeIso31661s(String value)
+	private CountryCodes(String value)
 	{
 		this.value = value;
 	}
 
-	private static Map<String, CountryCodeIso31661s> map;
+	private static Map<String, CountryCodes> map;
 
-	private static Map<String, CountryCodeIso31661s> map()
+	private static Map<String, CountryCodes> map()
 	{
 		if (map == null)
 		{
 			map = new HashMap<>();
-			for (CountryCodeIso31661s e : values())
+			for (CountryCodes e : values())
 				map.put(e.value, e);
 		}
 		return map;
 	}
 
-	public static CountryCodeIso31661s byValue(String value)
+	public static CountryCodes byValue(String value)
 	{
 		if (value == null || value.isEmpty())
 			return null;

@@ -23,11 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -40,7 +40,7 @@ public class DefaultCurrencyCode implements OnixElement, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CurrencyCodeIso4217s value;
+	public CurrencyCodes value;
 
 	public DefaultCurrencyCode()
 	{}
@@ -51,6 +51,6 @@ public class DefaultCurrencyCode implements OnixElement, Serializable
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = CurrencyCodeIso4217s.byValue(JPU.getContentAsString(element));
+		value = CurrencyCodes.byValue(JPU.getContentAsString(element));
 	}
 }

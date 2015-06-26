@@ -23,11 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -39,7 +39,7 @@ public class ConferenceName implements OnixElement, Serializable
 	public String datestamp; // dt.DateOrDateTime
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 
 	public String value; // XHTML
 
@@ -51,7 +51,7 @@ public class ConferenceName implements OnixElement, Serializable
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 
 		value = JPU.getChildXHTML(element, true);
 	}

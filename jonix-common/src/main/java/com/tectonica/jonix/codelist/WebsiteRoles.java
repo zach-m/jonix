@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList73
+ * Enum that corresponds to ONIX's <b>CodeList73</b>
  * <p>
  * Website role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum WebsiteRoles
 {
@@ -43,8 +43,8 @@ public enum WebsiteRoles
 	Publisher_s_corporate_website("01"), //
 
 	/**
-	 * A publisher’s informative and/or promotional webpage relating to a specified work (book, journal, online resource or other
-	 * publication type).
+	 * A publisher’s informative and/or promotional webpage relating to a specified work (book, journal, online resource
+	 * or other publication type).
 	 */
 	Publisher_s_website_for_a_specified_work("02"), //
 
@@ -59,8 +59,8 @@ public enum WebsiteRoles
 	Journal_home_page("04"), //
 
 	/**
-	 * A webpage giving direct access to the content that is available online for a specified resource version. Generally used for content
-	 * available online under subscription terms.
+	 * A webpage giving direct access to the content that is available online for a specified resource version.
+	 * Generally used for content available online under subscription terms.
 	 */
 	Online_resource_available_content_page("05"), //
 
@@ -75,8 +75,8 @@ public enum WebsiteRoles
 	Publisher_s_website_relating_to_specified_contributor("07"), //
 
 	/**
-	 * A webpage devoted to a specific author or other contributor, and maintained by a publisher other than the publisher of the item
-	 * described in the ONIX record.
+	 * A webpage devoted to a specific author or other contributor, and maintained by a publisher other than the
+	 * publisher of the item described in the ONIX record.
 	 */
 	Other_publisher_s_website_relating_to_specified_contributor("08"), //
 
@@ -91,8 +91,8 @@ public enum WebsiteRoles
 	Contributor_s_own_website_for_specified_work("10"), //
 
 	/**
-	 * A webpage devoted to an individual work, and maintained by a publisher other than the publisher of the item described in the ONIX
-	 * record.
+	 * A webpage devoted to an individual work, and maintained by a publisher other than the publisher of the item
+	 * described in the ONIX record.
 	 */
 	Other_publisher_s_website_relating_to_specified_work("11"), //
 
@@ -112,8 +112,8 @@ public enum WebsiteRoles
 	Publisher_s_website_relating_to_group_or_series_of_works("14"), //
 
 	/**
-	 * A webpage devoted to a group or series of works, and maintained by a publisher other than the publisher of the item described in the
-	 * ONIX record.
+	 * A webpage devoted to a group or series of works, and maintained by a publisher other than the publisher of the
+	 * item described in the ONIX record.
 	 */
 	Other_publisher_s_website_relating_to_group_or_series_of_works("15"), //
 
@@ -148,8 +148,8 @@ public enum WebsiteRoles
 	Web_page_for_sample_content("28"), //
 
 	/**
-	 * Use this value in the <Website> composite in <SupplyDetail> when sending a link to a webpage at which a digital product is available
-	 * for download and/or online access.
+	 * Use this value in the <Website> composite in <SupplyDetail> when sending a link to a webpage at which a digital
+	 * product is available for download and/or online access.
 	 */
 	Web_page_for_full_content("29"), //
 
@@ -221,7 +221,8 @@ public enum WebsiteRoles
 	Publisher_s_social_networking_URL("43"), //
 
 	/**
-	 * For example, a Facebook, Google+ or Twitter page. Use only in the context of a specific content item (eg within <ContentItem>).
+	 * For example, a Facebook, Google+ or Twitter page. Use only in the context of a specific content item (eg within
+	 * <ContentItem>).
 	 */
 	Social_networking_URL_for_specific_article_chapter_or_content_item("44");
 

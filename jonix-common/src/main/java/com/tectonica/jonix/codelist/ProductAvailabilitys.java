@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList65
+ * Enum that corresponds to ONIX's <b>CodeList65</b>
  * <p>
  * Product availability
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductAvailabilitys
 {
@@ -46,16 +46,16 @@ public enum ProductAvailabilitys
 	Not_yet_available("10"), //
 
 	/**
-	 * Not yet available, but will be a stock item when available (requires <ExpectedShipDate>, except in exceptional circumstances where no
-	 * date is known). Used particularly for imports which have been published in the country of origin but have not yet arrived in the
-	 * importing country.
+	 * Not yet available, but will be a stock item when available (requires <ExpectedShipDate>, except in exceptional
+	 * circumstances where no date is known). Used particularly for imports which have been published in the country of
+	 * origin but have not yet arrived in the importing country.
 	 */
 	Awaiting_stock("11"), //
 
 	/**
-	 * Not yet available, to be published as print-on-demand only. May apply either to a POD successor to an existing conventional edition,
-	 * when the successor will be published under a different ISBN (normally because different trade terms apply); or to a title that is
-	 * being published as a POD original.
+	 * Not yet available, to be published as print-on-demand only. May apply either to a POD successor to an existing
+	 * conventional edition, when the successor will be published under a different ISBN (normally because different
+	 * trade terms apply); or to a title that is being published as a POD original.
 	 */
 	Not_yet_available_will_be_POD("12"), //
 
@@ -80,33 +80,37 @@ public enum ProductAvailabilitys
 	POD("23"), //
 
 	/**
-	 * Temporarily unavailable: temporarily unavailable from us (reason unspecified) (requires expected date, either as <ExpectedShipDate>
-	 * (ONIX 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is
-	 * known).
+	 * Temporarily unavailable: temporarily unavailable from us (reason unspecified) (requires expected date, either as
+	 * <ExpectedShipDate> (ONIX 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in
+	 * exceptional circumstances where no date is known).
 	 */
 	Temporarily_unavailable("30"), //
 
 	/**
-	 * Stock item, temporarily out of stock (requires expected date, either as <ExpectedShipDate> (ONIX 2.1) or as <SupplyDate> with
-	 * <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is known).
+	 * Stock item, temporarily out of stock (requires expected date, either as <ExpectedShipDate> (ONIX 2.1) or as
+	 * <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is
+	 * known).
 	 */
 	Out_of_stock("31"), //
 
 	/**
-	 * Temporarily unavailable, reprinting (requires expected date, either as <ExpectedShipDate> (ONIX 2.1) or as <SupplyDate> with
-	 * <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is known).
+	 * Temporarily unavailable, reprinting (requires expected date, either as <ExpectedShipDate> (ONIX 2.1) or as
+	 * <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is
+	 * known).
 	 */
 	Reprinting("32"), //
 
 	/**
-	 * Temporarily unavailable, awaiting reissue (requires the <Reissue> composite, and expected date, either as <ExpectedShipDate> (ONIX
-	 * 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is known).
+	 * Temporarily unavailable, awaiting reissue (requires the <Reissue> composite, and expected date, either as
+	 * <ExpectedShipDate> (ONIX 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in
+	 * exceptional circumstances where no date is known).
 	 */
 	Awaiting_reissue("33"), //
 
 	/**
-	 * May be for quality or technical reasons. Requires expected availability date, either as <ExpectedShipDate> (ONIX 2.1) or as
-	 * <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is known.
+	 * May be for quality or technical reasons. Requires expected availability date, either as <ExpectedShipDate> (ONIX
+	 * 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no
+	 * date is known.
 	 */
 	Temporarily_withdrawn_from_sale("34"), //
 
@@ -116,14 +120,14 @@ public enum ProductAvailabilitys
 	Not_available_reason_unspecified("40"), //
 
 	/**
-	 * This product is unavailable, but a successor product or edition is or will be available from us (identify successor in
-	 * <RelatedProduct>).
+	 * This product is unavailable, but a successor product or edition is or will be available from us (identify
+	 * successor in <RelatedProduct>).
 	 */
 	Not_available_replaced_by_new_product("41"), //
 
 	/**
-	 * This product is unavailable, but the same content is or will be available from us in an alternative format (identify other format
-	 * product in <RelatedProduct>).
+	 * This product is unavailable, but the same content is or will be available from us in an alternative format
+	 * (identify other format product in <RelatedProduct>).
 	 */
 	Not_available_other_format_available("42"), //
 
@@ -153,8 +157,8 @@ public enum ProductAvailabilitys
 	Remaindered("47"), //
 
 	/**
-	 * Out of print, but a print-on-demand edition is or will be available under a different ISBN. Use only when the POD successor has a
-	 * different ISBN, normally because different trade terms apply.
+	 * Out of print, but a print-on-demand edition is or will be available under a different ISBN. Use only when the POD
+	 * successor has a different ISBN, normally because different trade terms apply.
 	 */
 	Not_available_replaced_by_POD("48"), //
 
@@ -169,25 +173,28 @@ public enum ProductAvailabilitys
 	Not_sold_as_set("50"), //
 
 	/**
-	 * This product is unavailable, no successor product or alternative format is available or planned. Use this code only when the
-	 * publisher has indicated the product is out of print.
+	 * This product is unavailable, no successor product or alternative format is available or planned. Use this code
+	 * only when the publisher has indicated the product is out of print.
 	 */
 	Not_available_publisher_indicates_OP("51"), //
 
 	/**
-	 * This product is unavailable in this market, no successor product or alternative format is available or planned. Use this code when a
-	 * publisher has indicated the product is permanently unavailable (in this market) while remaining available elsewhere.
+	 * This product is unavailable in this market, no successor product or alternative format is available or planned.
+	 * Use this code when a publisher has indicated the product is permanently unavailable (in this market) while
+	 * remaining available elsewhere.
 	 */
 	Not_available_publisher_no_longer_sells_product_in_this_market("52"), //
 
 	/**
-	 * Sender has not received any recent update for this product from the publisher/supplier (for use when the sender is a data
-	 * aggregator): the definition of “recent” must be specified by the aggregator, or by agreement between parties to an exchange.
+	 * Sender has not received any recent update for this product from the publisher/supplier (for use when the sender
+	 * is a data aggregator): the definition of “recent” must be specified by the aggregator, or by agreement between
+	 * parties to an exchange.
 	 */
 	No_recent_update_received("97"), //
 
 	/**
-	 * Sender is no longer receiving any updates from the publisher/supplier of this product (for use when the sender is a data aggregator).
+	 * Sender is no longer receiving any updates from the publisher/supplier of this product (for use when the sender is
+	 * a data aggregator).
 	 */
 	No_longer_receiving_updates("98"), //
 

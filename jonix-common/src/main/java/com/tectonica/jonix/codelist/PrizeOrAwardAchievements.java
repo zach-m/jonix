@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList41
+ * Enum that corresponds to ONIX's <b>CodeList41</b>
  * <p>
  * Prize or award achievement code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PrizeOrAwardAchievements
 {
@@ -40,20 +40,21 @@ public enum PrizeOrAwardAchievements
 	Runner_up("02"), //
 
 	/**
-	 * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically as winner or
-	 * runner-up. Possible terminology used by a particular prize includes ‘specially commended’ or ‘honored’.
+	 * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically
+	 * as winner or runner-up. Possible terminology used by a particular prize includes ‘specially commended’ or
+	 * ‘honored’.
 	 */
 	Commended("03"), //
 
 	/**
-	 * Title named by the judging process to be one of the final list of candidates, such as a ‘short-list’ from which the winner is
-	 * selected, or a title named as ‘finalist’.
+	 * Title named by the judging process to be one of the final list of candidates, such as a ‘short-list’ from which
+	 * the winner is selected, or a title named as ‘finalist’.
 	 */
 	Short_listed("04"), //
 
 	/**
-	 * Title named by the judging process to be one of the preliminary list of candidates, such as a ‘long-list’ from which first a shorter
-	 * list or set of finalists is selected, and then the winner is announced.
+	 * Title named by the judging process to be one of the preliminary list of candidates, such as a ‘long-list’ from
+	 * which first a shorter list or set of finalists is selected, and then the winner is announced.
 	 */
 	Long_listed("05"), //
 
@@ -63,8 +64,8 @@ public enum PrizeOrAwardAchievements
 	Joint_winner("06"), //
 
 	/**
-	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honour for which no
-	 * “short-list” or “long list” exists.
+	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honour
+	 * for which no “short-list” or “long list” exists.
 	 */
 	Nominated("07");
 

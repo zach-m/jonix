@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList71
+ * Enum that corresponds to ONIX's <b>CodeList71</b>
  * <p>
  * Sales restriction type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SalesRestrictionTypes
 {
@@ -41,14 +41,14 @@ public enum SalesRestrictionTypes
 	Unspecified_see_text("00"), //
 
 	/**
-	 * For sale only through designated retailer. Retailer must be identified or named in an instance of the <SalesOutlet> composite. Use
-	 * only when it is not possible to assign the more explicit code 04 or 05.
+	 * For sale only through designated retailer. Retailer must be identified or named in an instance of the
+	 * <SalesOutlet> composite. Use only when it is not possible to assign the more explicit code 04 or 05.
 	 */
 	Retailer_exclusive_own_brand("01"), //
 
 	/**
-	 * For editions sold only though office supplies wholesalers. Retailer(s) and/or distributor(s) may be identified or named in an
-	 * instance of the <SalesOutlet> composite.
+	 * For editions sold only though office supplies wholesalers. Retailer(s) and/or distributor(s) may be identified or
+	 * named in an instance of the <SalesOutlet> composite.
 	 */
 	Office_supplies_edition("02"), //
 
@@ -58,14 +58,14 @@ public enum SalesRestrictionTypes
 	Internal_publisher_use_only_do_not_list("03"), //
 
 	/**
-	 * For sale only through designated retailer, though not under retailer’s own brand/imprint. Retailer must be identified or named in an
-	 * instance of the <SalesOutlet> composite.
+	 * For sale only through designated retailer, though not under retailer’s own brand/imprint. Retailer must be
+	 * identified or named in an instance of the <SalesOutlet> composite.
 	 */
 	Retailer_exclusive("04"), //
 
 	/**
-	 * For sale only through designated retailer under retailer’s own brand/imprint. Retailer must be identified or named in an instance of
-	 * the <SalesOutlet> composite.
+	 * For sale only through designated retailer under retailer’s own brand/imprint. Retailer must be identified or
+	 * named in an instance of the <SalesOutlet> composite.
 	 */
 	Retailer_own_brand("05"), //
 
@@ -85,8 +85,8 @@ public enum SalesRestrictionTypes
 	Indiziert("08"), //
 
 	/**
-	 * Expected to apply in particular to digital products for consumer sale where the publisher does not permit the product to be supplied
-	 * to libraries who provide an ebook loan service.
+	 * Expected to apply in particular to digital products for consumer sale where the publisher does not permit the
+	 * product to be supplied to libraries who provide an ebook loan service.
 	 */
 	Not_for_sale_to_libraries("09"), //
 
@@ -96,7 +96,8 @@ public enum SalesRestrictionTypes
 	News_outlet_edition("10"), //
 
 	/**
-	 * Not for sale through designated retailer. Retailer must be identified or named in an instance of the <SalesOutlet> composite.
+	 * Not for sale through designated retailer. Retailer must be identified or named in an instance of the
+	 * <SalesOutlet> composite.
 	 */
 	Retailer_exception("11");
 

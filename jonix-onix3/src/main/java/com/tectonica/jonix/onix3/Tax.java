@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.TaxTypes;
 import com.tectonica.jonix.struct.JonixTax;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

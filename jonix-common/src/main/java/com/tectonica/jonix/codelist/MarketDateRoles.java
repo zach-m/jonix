@@ -20,27 +20,27 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList67
+ * Enum that corresponds to ONIX's <b>CodeList67</b>
  * <p>
  * Market date role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum MarketDateRoles
 {
 	/**
-	 * The nominal date of publication in this market. If there is a strict embargo on retail sales before the expected date, it should be
-	 * specified separately as an embargo date.
+	 * The nominal date of publication in this market. If there is a strict embargo on retail sales before the expected
+	 * date, it should be specified separately as an embargo date.
 	 */
 	Publication_date("01"), //
 
 	/**
-	 * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is lifted and retail
-	 * sales are permitted.
+	 * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is
+	 * lifted and retail sales are permitted.
 	 */
 	Embargo_date("02");
 

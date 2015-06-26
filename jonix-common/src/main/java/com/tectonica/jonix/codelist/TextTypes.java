@@ -23,22 +23,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList153
+ * Enum that corresponds to ONIX's <b>CodeList153</b>
  * <p>
  * Text type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TextTypes
 {
 	/**
-	 * To be used only in circumstances where the parties to an exchange have agreed to include text which (a) is not for general
-	 * distribution, and (b) cannot be coded elsewhere. If more than one type of text is sent, it must be identified by tagging within the
-	 * text itself.
+	 * To be used only in circumstances where the parties to an exchange have agreed to include text which (a) is not
+	 * for general distribution, and (b) cannot be coded elsewhere. If more than one type of text is sent, it must be
+	 * identified by tagging within the text itself.
 	 */
 	Sender_defined_text("01"), //
 
@@ -53,7 +53,8 @@ public enum TextTypes
 	Description("03"), //
 
 	/**
-	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed as XHTML.
+	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed as
+	 * XHTML.
 	 */
 	Table_of_contents("04"), //
 
@@ -63,7 +64,8 @@ public enum TextTypes
 	Flap_cover_copy("05"), //
 
 	/**
-	 * A quote taken from a review of the product or of the work in question where there is no need to take account of different editions.
+	 * A quote taken from a review of the product or of the work in question where there is no need to take account of
+	 * different editions.
 	 */
 	Review_quote("06"), //
 
@@ -88,9 +90,10 @@ public enum TextTypes
 	Promotional_headline("10"), //
 
 	/**
-	 * Text describing a feature of a product to which the publisher wishes to draw attention for promotional purposes. Each separate
-	 * feature should be described by a separate repeat, so that formatting can be applied at the discretion of the receiver of the ONIX
-	 * record, or multiple features can be described using appropriate XHTML markup.
+	 * Text describing a feature of a product to which the publisher wishes to draw attention for promotional purposes.
+	 * Each separate feature should be described by a separate repeat, so that formatting can be applied at the
+	 * discretion of the receiver of the ONIX record, or multiple features can be described using appropriate XHTML
+	 * markup.
 	 */
 	Feature("11"), //
 
@@ -100,9 +103,9 @@ public enum TextTypes
 	Biographical_note("12"), //
 
 	/**
-	 * A statement included by a publisher in fulfillment of contractual obligations, such as a disclaimer, sponsor statement, or legal
-	 * notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a user of the ONIX record is obliged to
-	 * reproduce it.
+	 * A statement included by a publisher in fulfillment of contractual obligations, such as a disclaimer, sponsor
+	 * statement, or legal notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a
+	 * user of the ONIX record is obliged to reproduce it.
 	 */
 	Publisher_s_notice("13"), //
 
@@ -134,14 +137,16 @@ public enum TextTypes
 	Version_history("19"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg “Open access – no commercial use”), primarily for
-	 * marketing purposes. Should always be accompanied by a link to the complete license (see <EpubLicense> or code 99 in List 158).
+	 * Short summary statement of open access status and any related conditions (eg “Open access – no commercial use”),
+	 * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see
+	 * <EpubLicense> or code 99 in List 158).
 	 */
 	Open_access_statement("20"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg “Digital exclusive”). If a non-digital version is
-	 * planned, <ContentDate> can be used to specify the date when exclusivity will end (use content date role code 15).
+	 * Short summary statement that the product is available only in digital formats (eg “Digital exclusive”). If a
+	 * non-digital version is planned, <ContentDate> can be used to specify the date when exclusivity will end (use
+	 * content date role code 15).
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */

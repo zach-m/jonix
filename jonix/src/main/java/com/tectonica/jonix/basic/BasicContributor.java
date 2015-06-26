@@ -24,7 +24,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.onix3.BiographicalNote;
 import com.tectonica.jonix.onix3.Contributor;
 
@@ -96,7 +96,7 @@ public class BasicContributor implements Serializable
 		{
 			for (BiographicalNote bio : contributor.biographicalNotes)
 			{
-				if (bio.language == null || bio.language == LanguageCodeIso6392Bs.English)
+				if (bio.language == null || bio.language == LanguageCodes.English)
 					return bio.value;
 			}
 			return contributor.biographicalNotes.get(0).value; // return whatever language we have

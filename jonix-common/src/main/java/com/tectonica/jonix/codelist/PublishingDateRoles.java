@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList163
+ * Enum that corresponds to ONIX's <b>CodeList163</b>
  * <p>
  * Publishing date role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PublishingDateRoles
 {
@@ -41,8 +41,8 @@ public enum PublishingDateRoles
 	Publication_date("01"), //
 
 	/**
-	 * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is lifted and retail
-	 * sales are permitted.
+	 * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is
+	 * lifted and retail sales are permitted.
 	 */
 	Embargo_date("02"), //
 
@@ -82,8 +82,8 @@ public enum PublishingDateRoles
 	Publication_date_of_print_counterpart("19"), //
 
 	/**
-	 * Year when the original language version of work incorporated in a product was first published (note, use only when different from
-	 * code 11).
+	 * Year when the original language version of work incorporated in a product was first published (note, use only
+	 * when different from code 11).
 	 */
 	Date_of_first_publication_in_original_language("20"), //
 
@@ -93,20 +93,20 @@ public enum PublishingDateRoles
 	Forthcoming_reissue_date("21"), //
 
 	/**
-	 * Date when a product that has been temporary withdrawn from sale or recalled for any reason is expected to become available again, eg
-	 * after correction of quality or technical issues.
+	 * Date when a product that has been temporary withdrawn from sale or recalled for any reason is expected to become
+	 * available again, eg after correction of quality or technical issues.
 	 */
 	Expected_availability_date_after_temporary_withdrawal("22"), //
 
 	/**
-	 * Date from which reviews of a product may be published eg in newspapers and magazines or online. Provided to the book trade for
-	 * information only: newspapers and magazines are not expected to be recipients of ONIX metadata.
+	 * Date from which reviews of a product may be published eg in newspapers and magazines or online. Provided to the
+	 * book trade for information only: newspapers and magazines are not expected to be recipients of ONIX metadata.
 	 */
 	Review_embargo_date("23"), //
 
 	/**
-	 * Latest date on which an order may be placed with the publisher for guaranteed delivery prior to the publication date. May or may not
-	 * be linked to a special reservation or pre-publication price.
+	 * Latest date on which an order may be placed with the publisher for guaranteed delivery prior to the publication
+	 * date. May or may not be linked to a special reservation or pre-publication price.
 	 */
 	Publisher_s_reservation_order_deadline("25"), //
 
@@ -116,9 +116,10 @@ public enum PublishingDateRoles
 	Forthcoming_reprint_date("26"), //
 
 	/**
-	 * Earliest date a retail ‘preorder’ can be placed (where this is distinct from the public announcement date). In the absence of a
-	 * preorder embargo, advance orders can be placed as soon as metadata is available to the consumer (this would be the public
-	 * announcement date, or in the absence of a public announcement date, the earliest date metadata is available to the retailer).
+	 * Earliest date a retail ‘preorder’ can be placed (where this is distinct from the public announcement date). In
+	 * the absence of a preorder embargo, advance orders can be placed as soon as metadata is available to the consumer
+	 * (this would be the public announcement date, or in the absence of a public announcement date, the earliest date
+	 * metadata is available to the retailer).
 	 */
 	Preorder_embargo_date("27"), //
 

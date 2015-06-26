@@ -20,27 +20,28 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList166
+ * Enum that corresponds to ONIX's <b>CodeList166</b>
  * <p>
  * Supply date role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SupplyDateRoles
 {
 	/**
-	 * If there is an embargo on retail sales before a certain date, the date from which the embargo is lifted and retail sales are
-	 * permitted.
+	 * If there is an embargo on retail sales before a certain date, the date from which the embargo is lifted and
+	 * retail sales are permitted.
 	 */
 	Embargo_date("02"), //
 
 	/**
-	 * The date on which physical stock is expected to be available to be shipped to retailers, or a digital product is expected to be
-	 * released by the publisher or digital asset distributor to retailers or their retail platform providers.
+	 * The date on which physical stock is expected to be available to be shipped to retailers, or a digital product is
+	 * expected to be released by the publisher or digital asset distributor to retailers or their retail platform
+	 * providers.
 	 */
 	Expected_availability_date("08"), //
 
@@ -50,8 +51,8 @@ public enum SupplyDateRoles
 	Last_date_for_returns("18"), //
 
 	/**
-	 * Latest date on which an order may be placed for guaranteed delivery prior to the publication date. May or may not be linked to a
-	 * special reservation or pre-publication price.
+	 * Latest date on which an order may be placed for guaranteed delivery prior to the publication date. May or may not
+	 * be linked to a special reservation or pre-publication price.
 	 */
 	Reservation_order_deadline("25");
 

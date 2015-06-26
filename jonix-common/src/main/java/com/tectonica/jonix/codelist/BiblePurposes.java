@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList85
+ * Enum that corresponds to ONIX's <b>CodeList85</b>
  * <p>
  * Bible purpose
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum BiblePurposes
 {
@@ -81,12 +81,14 @@ public enum BiblePurposes
 	Devotional("DV"), //
 
 	/**
-	 * A Bible (or selected Biblical text) containing family record pages and/or additional study material for family devotion.
+	 * A Bible (or selected Biblical text) containing family record pages and/or additional study material for family
+	 * devotion.
 	 */
 	Family("FM"), //
 
 	/**
-	 * A standard Bible (or selected Biblical text) of any version with no distinguishing characteristics beyond the canonical text.
+	 * A standard Bible (or selected Biblical text) of any version with no distinguishing characteristics beyond the
+	 * canonical text.
 	 */
 	General_Text("GT"), //
 
@@ -96,8 +98,8 @@ public enum BiblePurposes
 	Gift("GF"), //
 
 	/**
-	 * A large Bible (or selected Biblical text) with large print designed for use in reading scriptures in public worship from either the
-	 * pulpit or lectern.
+	 * A large Bible (or selected Biblical text) with large print designed for use in reading scriptures in public
+	 * worship from either the pulpit or lectern.
 	 */
 	Lectern_Pulpit("LP"), //
 
@@ -129,8 +131,8 @@ public enum BiblePurposes
 	Student("ST"), //
 
 	/**
-	 * A Bible (or selected Biblical text) with many extra features, e.g. book introductions, dictionary, concordance, references, maps,
-	 * etc., to help readers better understand the scripture.
+	 * A Bible (or selected Biblical text) with many extra features, e.g. book introductions, dictionary, concordance,
+	 * references, maps, etc., to help readers better understand the scripture.
 	 */
 	Study("SU"), //
 
@@ -145,7 +147,8 @@ public enum BiblePurposes
 	Women_s("WM"), //
 
 	/**
-	 * A Bible (or selected Biblical text) containing special study and devotional helps designed specifically for the needs of teenagers.
+	 * A Bible (or selected Biblical text) containing special study and devotional helps designed specifically for the
+	 * needs of teenagers.
 	 */
 	Youth("YT");
 

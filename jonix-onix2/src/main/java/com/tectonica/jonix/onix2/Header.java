@@ -25,10 +25,10 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.DefaultLinearUnits;
 import com.tectonica.jonix.codelist.DefaultUnitOfWeights;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -39,7 +39,7 @@ import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -50,7 +50,7 @@ public class Header implements OnixSuperComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -85,7 +85,7 @@ public class Header implements OnixSuperComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
@@ -208,7 +208,7 @@ public class Header implements OnixSuperComposite, Serializable
 		return (messageNote == null) ? null : messageNote.value;
 	}
 
-	public LanguageCodeIso6392Bs getDefaultLanguageOfTextValue()
+	public LanguageCodes getDefaultLanguageOfTextValue()
 	{
 		return (defaultLanguageOfText == null) ? null : defaultLanguageOfText.value;
 	}
@@ -218,7 +218,7 @@ public class Header implements OnixSuperComposite, Serializable
 		return (defaultPriceTypeCode == null) ? null : defaultPriceTypeCode.value;
 	}
 
-	public CurrencyCodeIso4217s getDefaultCurrencyCodeValue()
+	public CurrencyCodes getDefaultCurrencyCodeValue()
 	{
 		return (defaultCurrencyCode == null) ? null : defaultCurrencyCode.value;
 	}

@@ -23,26 +23,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList15
+ * Enum that corresponds to ONIX's <b>CodeList15</b>
  * <p>
  * Title type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TitleTypes
 {
 	Undefined("00"), //
 
 	/**
-	 * The full text of the distinctive title of the item, without abbreviation or abridgement. For books, where the title alone is not
-	 * distinctive, elements may be taken from a set or series title and part number etc to create a distinctive title. Where the item is an
-	 * omnibus edition containing two or more works by the same author, and there is no separate combined title, a distinctive title may be
-	 * constructed by concatenating the individual titles, with suitable punctuation, as in “Pride and prejudice / Sense and sensibility /
-	 * Northanger Abbey”.
+	 * The full text of the distinctive title of the item, without abbreviation or abridgement. For books, where the
+	 * title alone is not distinctive, elements may be taken from a set or series title and part number etc to create a
+	 * distinctive title. Where the item is an omnibus edition containing two or more works by the same author, and
+	 * there is no separate combined title, a distinctive title may be constructed by concatenating the individual
+	 * titles, with suitable punctuation, as in “Pride and prejudice / Sense and sensibility / Northanger Abbey”.
 	 */
 	Distinctive_title_book("01"), //
 
@@ -82,8 +82,8 @@ public enum TitleTypes
 	Former_title("08"), //
 
 	/**
-	 * For books: the title carried in a book distributor’s title file: frequently incomplete, and may include elements not properly part of
-	 * the title.
+	 * For books: the title carried in a book distributor’s title file: frequently incomplete, and may include elements
+	 * not properly part of the title.
 	 */
 	Distributor_s_title("10"), //
 
@@ -98,9 +98,9 @@ public enum TitleTypes
 	Alternative_title_on_back("12"), //
 
 	/**
-	 * An expanded form of the title, eg the title of a school text book with grade and type and other details added to make the title
-	 * meaningful, where otherwise it would comprise only the curriculum subject. This title type is required for submissions to the Spanish
-	 * ISBN Agency.
+	 * An expanded form of the title, eg the title of a school text book with grade and type and other details added to
+	 * make the title meaningful, where otherwise it would comprise only the curriculum subject. This title type is
+	 * required for submissions to the Spanish ISBN Agency.
 	 */
 	Expanded_title("13"), //
 

@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList29
+ * Enum that corresponds to ONIX's <b>CodeList29</b>
  * <p>
  * Audience code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum AudienceCodeTypes
 {
@@ -68,12 +68,14 @@ public enum AudienceCodeTypes
 	Electre_audience_code("07"), //
 
 	/**
-	 * Spain: educational audience and material type code of the Asociación Nacional de Editores de Libros y Material de Enseñanza.
+	 * Spain: educational audience and material type code of the Asociación Nacional de Editores de Libros y Material de
+	 * Enseñanza.
 	 */
 	ANELE_Tipo("08"), //
 
 	/**
-	 * Code list used to specify reading levels for children’s books, used in Flanders, and formerly in the Netherlands – see also code 18.
+	 * Code list used to specify reading levels for children’s books, used in Flanders, and formerly in the Netherlands
+	 * – see also code 18.
 	 */
 	AVI("09"), //
 
@@ -88,19 +90,20 @@ public enum AudienceCodeTypes
 	AWS("11"), //
 
 	/**
-	 * Type of school: codelist maintained by VdS Bildungsmedien eV, the German association of educational media publishers.
+	 * Type of school: codelist maintained by VdS Bildungsmedien eV, the German association of educational media
+	 * publishers.
 	 */
 	Schulform("12"), //
 
 	/**
-	 * School region: codelist maintained by VdS Bildungsmedien eV, the German association of educational media publishers, indicating where
-	 * products are licensed to be used in schools.
+	 * School region: codelist maintained by VdS Bildungsmedien eV, the German association of educational media
+	 * publishers, indicating where products are licensed to be used in schools.
 	 */
 	Bundesland("13"), //
 
 	/**
-	 * Occupation: codelist for vocational training materials, maintained by VdS Bildungsmedien eV, the German association of educational
-	 * media publishers.
+	 * Occupation: codelist for vocational training materials, maintained by VdS Bildungsmedien eV, the German
+	 * association of educational media publishers.
 	 */
 	Ausbildungsberuf("14"), //
 
@@ -110,7 +113,8 @@ public enum AudienceCodeTypes
 	Suomalainen_kouluasteluokitus("15"), //
 
 	/**
-	 * UK Publishers Association, Children’s Book Group, coded indication of intended reader age, carried on book covers.
+	 * UK Publishers Association, Children’s Book Group, coded indication of intended reader age, carried on book
+	 * covers.
 	 */
 	CBG_age_guidance("16"), //
 
@@ -125,19 +129,20 @@ public enum AudienceCodeTypes
 	AVI_revised("18"), //
 
 	/**
-	 * Lexile measure (the Lexile measure in <AudienceCodeValue> may optionally be prefixed by the Lexile code). Examples might be ‘880L’,
-	 * ‘AD0L’ or ‘HL600L’. Deprecated – use <Complexity> instead.
+	 * Lexile measure (the Lexile measure in <AudienceCodeValue> may optionally be prefixed by the Lexile code).
+	 * Examples might be ‘880L’, ‘AD0L’ or ‘HL600L’. Deprecated – use <Complexity> instead.
 	 */
 	Lexile_measure("19"), //
 
 	/**
-	 * Fry readability metric based on number of sentences and syllables per 100 words. Expressed as a number from 1 to 15 in
-	 * <AudienceCodeValue>. Deprecated – use <Complexity> instead.
+	 * Fry readability metric based on number of sentences and syllables per 100 words. Expressed as a number from 1 to
+	 * 15 in <AudienceCodeValue>. Deprecated – use <Complexity> instead.
 	 */
 	Fry_Readability_score("20"), //
 
 	/**
-	 * Children’s audience code (対象読者), two-digit encoding of intended target readership from 0–2 years up to High School level.
+	 * Children’s audience code (対象読者), two-digit encoding of intended target readership from 0–2 years up to High
+	 * School level.
 	 */
 	Japanese_Children_s_audience_code("21"), //
 
@@ -147,31 +152,32 @@ public enum AudienceCodeTypes
 	ONIX_Adult_audience_rating("22"), //
 
 	/**
-	 * Codes A1 to C2 indicating standardised level of language learning or teaching material, from beginner to advanced, used in EU.
+	 * Codes A1 to C2 indicating standardised level of language learning or teaching material, from beginner to
+	 * advanced, used in EU.
 	 */
 	Common_European_Framework_for_Language_Learning("23"), //
 
 	/**
-	 * Rating used in Korea to control selling of books and e-books to minors. Current values are 0 (suitable for all) and 19 (only for sale
-	 * to ages 19+). See ‘http://www.kpec.or.kr/english/’.
+	 * Rating used in Korea to control selling of books and e-books to minors. Current values are 0 (suitable for all)
+	 * and 19 (only for sale to ages 19+). See ‘http://www.kpec.or.kr/english/’.
 	 */
 	Korean_Publication_Ethics_Commission_rating("24"), //
 
 	/**
-	 * UK Institute of Education Book Bands for Guided Reading scheme (see http://www.ioe.ac.uk/research/4664.html). <AudienceCodeValue> is
-	 * a colour, eg ‘Pink A’ or ‘Copper’. Deprecated – use <Complexity> instead.
+	 * UK Institute of Education Book Bands for Guided Reading scheme (see http://www.ioe.ac.uk/research/4664.html).
+	 * <AudienceCodeValue> is a colour, eg ‘Pink A’ or ‘Copper’. Deprecated – use <Complexity> instead.
 	 */
 	IoE_Book_Band("25"), //
 
 	/**
-	 * Used for German videos/DVDs with educational or informative content; value for <AudienceCodeValue> must be either ‘Infoprogramm gemäß
-	 * § 14 JuSchG’ or ‘Lehrprogramm gemäß § 14 JuSchG’.
+	 * Used for German videos/DVDs with educational or informative content; value for <AudienceCodeValue> must be either
+	 * ‘Infoprogramm gemäß § 14 JuSchG’ or ‘Lehrprogramm gemäß § 14 JuSchG’.
 	 */
 	FSK_Lehr_Infoprogramm("26"), //
 
 	/**
-	 * Where this is different from the language of the text of the book recorded in <Language>. <AudienceCodeValue> should be a value from
-	 * List 74.
+	 * Where this is different from the language of the text of the book recorded in <Language>. <AudienceCodeValue>
+	 * should be a value from List 74.
 	 */
 	Intended_audience_language("27"), //
 
@@ -181,7 +187,8 @@ public enum AudienceCodeTypes
 	PEGI_rating("28"), //
 
 	/**
-	 * Code indicating the intended curriculum (eg Naturvetenskapsprogrammet, Estetica programmet) in Swedish higher secondary education.
+	 * Code indicating the intended curriculum (eg Naturvetenskapsprogrammet, Estetica programmet) in Swedish higher
+	 * secondary education.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */

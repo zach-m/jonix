@@ -22,18 +22,18 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
 public class JonixPrize implements Serializable
 {
 	public PrizeOrAwardAchievements prizeCode;
-	public CountryCodeIso31661s prizeCountry;
+	public CountryCodes prizeCountry;
 	public List<String> prizeJurys; // XHTML
 	public List<String> prizeNames; // dt.NonEmptyString
 	public String prizeYear; // dt.Year

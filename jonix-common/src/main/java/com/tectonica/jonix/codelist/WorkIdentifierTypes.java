@@ -20,25 +20,26 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList16
+ * Enum that corresponds to ONIX's <b>CodeList16</b>
  * <p>
  * Work identifier type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum WorkIdentifierTypes
 {
 	Proprietary("01"), //
 
 	/**
-	 * 10-character ISBN of manifestation of work, when this is the only work identifier available – now DEPRECATED in ONIX for Books,
-	 * except where providing historical information for compatibility with legacy systems. It should only be used in relation to products
-	 * published before 2007 – when ISBN-13 superseded it – and should never be used as the ONLY identifier (it should always be accompanied
-	 * by the correct GTIN-13 / ISBN-13 of the manifestation of the work).
+	 * 10-character ISBN of manifestation of work, when this is the only work identifier available – now DEPRECATED in
+	 * ONIX for Books, except where providing historical information for compatibility with legacy systems. It should
+	 * only be used in relation to products published before 2007 – when ISBN-13 superseded it – and should never be
+	 * used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13 of the
+	 * manifestation of the work).
 	 */
 	ISBN_10("02"), //
 

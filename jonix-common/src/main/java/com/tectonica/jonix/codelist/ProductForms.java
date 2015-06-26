@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList7
+ * Enum that corresponds to ONIX's <b>CodeList7</b>
  * <p>
  * Product form code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductForms
 {
@@ -48,8 +48,8 @@ public enum ProductForms
 	Audio_cassette("AB"), //
 
 	/**
-	 * Audio compact disc, in any recording format: use for ‘red book’ (conventional audio CD) and SACD, and use coding in Product Form
-	 * Detail to specify the format, if required.
+	 * Audio compact disc, in any recording format: use for ‘red book’ (conventional audio CD) and SACD, and use coding
+	 * in Product Form Detail to specify the format, if required.
 	 */
 	CD_Audio("AC"), //
 
@@ -74,8 +74,8 @@ public enum ProductForms
 	MiniDisc("AG"), //
 
 	/**
-	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for ‘blue book’ and ‘yellow/red book’
-	 * two-session discs.
+	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for ‘blue book’ and
+	 * ‘yellow/red book’ two-session discs.
 	 */
 	CD_Extra("AH"), //
 
@@ -87,7 +87,8 @@ public enum ProductForms
 	Downloadable_audio_file("AJ"), //
 
 	/**
-	 * For example, Playaway audiobook and player: use coding in Product Form Detail to specify the recording format, if required.
+	 * For example, Playaway audiobook and player: use coding in Product Form Detail to specify the recording format, if
+	 * required.
 	 */
 	Pre_recorded_digital_audio_player("AK"), //
 
@@ -149,9 +150,9 @@ public enum ProductForms
 	Bath_book("BJ"), //
 
 	/**
-	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code – a ‘conventional’
-	 * format code is always to be preferred; one or more Product Form Detail codes, eg from the B2nn group, should be used whenever
-	 * possible to provide additional description.
+	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code
+	 * – a ‘conventional’ format code is always to be preferred; one or more Product Form Detail codes, eg from the B2nn
+	 * group, should be used whenever possible to provide additional description.
 	 */
 	Novelty_book("BK"), //
 
@@ -161,7 +162,8 @@ public enum ProductForms
 	Slide_bound("BL"), //
 
 	/**
-	 * Extra-large format for teaching etc; this format and terminology may be specifically UK; required as a top-level differentiator.
+	 * Extra-large format for teaching etc; this format and terminology may be specifically UK; required as a top-level
+	 * differentiator.
 	 */
 	Big_book("BM"), //
 
@@ -254,13 +256,14 @@ public enum ProductForms
 	USB_Flash_Drive("DM"), //
 
 	/**
-	 * Double-sided disc, one side CD-Audio/CD-ROM, other side DVD-Audio/DVD-Video/DVD-ROM (at least one side must be -ROM).
+	 * Double-sided disc, one side CD-Audio/CD-ROM, other side DVD-Audio/DVD-Video/DVD-ROM (at least one side must be
+	 * -ROM).
 	 */
 	Double_sided_CD_DVD("DN"), //
 
 	/**
-	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or booklet containing a code
-	 * enabling the purchaser to download or activate the associated product.
+	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or
+	 * booklet containing a code enabling the purchaser to download or activate the associated product.
 	 */
 	Digital_product_license_key("DO"), //
 
@@ -346,8 +349,8 @@ public enum ProductForms
 	Diary("PF"), //
 
 	/**
-	 * Narrow strip-shaped printed sheet used mostly for education or children’s products (eg depicting alphabet, number line, procession of
-	 * illustrated characters etc). Usually intended for horizontal display.
+	 * Narrow strip-shaped printed sheet used mostly for education or children’s products (eg depicting alphabet, number
+	 * line, procession of illustrated characters etc). Usually intended for horizontal display.
 	 */
 	Frieze("PG"), //
 
@@ -371,8 +374,8 @@ public enum ProductForms
 	Record_book("PL"), //
 
 	/**
-	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat ‘wallet’ as packaging (List 80), but
-	 * if this is not possible the product as a whole may be coded as a ‘wallet’.
+	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat ‘wallet’ as
+	 * packaging (List 80), but if this is not possible the product as a whole may be coded as a ‘wallet’.
 	 */
 	Wallet_or_folder("PM"), //
 
@@ -388,7 +391,8 @@ public enum ProductForms
 	Plate_l_mina("PQ"), //
 
 	/**
-	 * A book with all pages blank for the buyer’s own use: may use product form detail codes P201 to P204 to specify binding.
+	 * A book with all pages blank for the buyer’s own use: may use product form detail codes P201 to P204 to specify
+	 * binding.
 	 */
 	Notebook_blank_book("PR"), //
 
@@ -490,18 +494,19 @@ public enum ProductForms
 	Other_video_format("VZ"), //
 
 	/**
-	 * A product consisting of two or more items in different media or different product forms, eg book and CD-ROM, book and toy, hardback
-	 * book and e-book, etc.
+	 * A product consisting of two or more items in different media or different product forms, eg book and CD-ROM, book
+	 * and toy, hardback book and e-book, etc.
 	 */
 	Mixed_media_product("WW"), //
 
 	/**
-	 * A product containing multiple copies of one or more items packaged together for retail sale, consisting of either (a) several copies
-	 * of a single item (eg 6 copies of a graded reader), or (b) several copies of each of several items (eg 3 copies each of 3 different
-	 * graded readers), or (c) several copies of one or more single items plus a single copy of one or more related items (eg 30 copies of a
-	 * pupil’s textbook plus 1 of teacher’s text). NOT TO BE CONFUSED WITH: multi-volume sets, or sets containing a single copy of a number
-	 * of different items (boxed, slip-cased or otherwise); items with several components of different physical forms (see WW); or packs
-	 * intended for trade distribution only, where the contents are retailed separately (see XC, XE, XL).
+	 * A product containing multiple copies of one or more items packaged together for retail sale, consisting of either
+	 * (a) several copies of a single item (eg 6 copies of a graded reader), or (b) several copies of each of several
+	 * items (eg 3 copies each of 3 different graded readers), or (c) several copies of one or more single items plus a
+	 * single copy of one or more related items (eg 30 copies of a pupil’s textbook plus 1 of teacher’s text). NOT TO BE
+	 * CONFUSED WITH: multi-volume sets, or sets containing a single copy of a number of different items (boxed,
+	 * slip-cased or otherwise); items with several components of different physical forms (see WW); or packs intended
+	 * for trade distribution only, where the contents are retailed separately (see XC, XE, XL).
 	 */
 	Multiple_copy_pack("WX"), //
 
@@ -546,16 +551,16 @@ public enum ProductForms
 	Large_book_display("XK"), //
 
 	/**
-	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually –
-	 * see also WX. For products or product bundles supplied shrink-wrapped for retail sale, use the Product Form code of the contents plus
-	 * code 21 from List 80.
+	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
+	 * sale individually – see also WX. For products or product bundles supplied shrink-wrapped for retail sale, use the
+	 * Product Form code of the contents plus code 21 from List 80.
 	 */
 	Shrink_wrapped_pack("XL"), //
 
 	/**
-	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually –
-	 * see also WX. For products or product bundles supplied boxed for retail sale, use the Product Form code of the contents plus code 09
-	 * from List 80.
+	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
+	 * sale individually – see also WX. For products or product bundles supplied boxed for retail sale, use the Product
+	 * Form code of the contents plus code 09 from List 80.
 	 */
 	Boxed_pack("XM"), //
 

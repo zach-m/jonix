@@ -21,18 +21,18 @@ package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
 
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.Regions;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
 public class JonixTerritory implements Serializable
 {
-	public java.util.Set<CountryCodeIso31661s> countriesIncluded;
+	public java.util.Set<CountryCodes> countriesIncluded;
 	public java.util.Set<Regions> regionsIncluded;
-	public java.util.Set<CountryCodeIso31661s> countriesExcluded;
+	public java.util.Set<CountryCodes> countriesExcluded;
 	public java.util.Set<Regions> regionsExcluded;
 }

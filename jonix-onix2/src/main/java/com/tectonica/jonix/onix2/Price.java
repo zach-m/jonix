@@ -25,10 +25,10 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PriceStatuss;
 import com.tectonica.jonix.codelist.PriceTypeQualifiers;
 import com.tectonica.jonix.codelist.PriceTypes;
@@ -42,7 +42,7 @@ import com.tectonica.jonix.codelist.UnitOfPricings;
 import com.tectonica.jonix.struct.JonixDiscountCoded;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -53,7 +53,7 @@ public class Price implements OnixSuperComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -94,7 +94,7 @@ public class Price implements OnixSuperComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
@@ -214,16 +214,16 @@ public class Price implements OnixSuperComposite, Serializable
 		return (priceAmount == null) ? null : priceAmount.value;
 	}
 
-	public CurrencyCodeIso4217s getCurrencyCodeValue()
+	public CurrencyCodes getCurrencyCodeValue()
 	{
 		return (currencyCode == null) ? null : currencyCode.value;
 	}
 
-	public List<CountryCodeIso31661s> getCountryCodeValues()
+	public List<CountryCodes> getCountryCodeValues()
 	{
 		if (countryCodes != null)
 		{
-			List<CountryCodeIso31661s> list = new ArrayList<>();
+			List<CountryCodes> list = new ArrayList<>();
 			for (CountryCode i : countryCodes)
 				list.add(i.value);
 			return list;
@@ -236,7 +236,7 @@ public class Price implements OnixSuperComposite, Serializable
 		return (territory == null) ? null : territory.value;
 	}
 
-	public java.util.Set<CountryCodeIso31661s> getCountryExcludedSet()
+	public java.util.Set<CountryCodes> getCountryExcludedSet()
 	{
 		return (countryExcluded == null) ? null : countryExcluded.value;
 	}

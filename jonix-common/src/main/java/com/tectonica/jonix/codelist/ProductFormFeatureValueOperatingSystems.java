@@ -23,20 +23,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList176
+ * Enum that corresponds to ONIX's <b>CodeList176</b>
  * <p>
  * Product form feature value – operating system
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductFormFeatureValueOperatingSystems
 {
 	/**
-	 * An Open Source mobile device operating system originally developed by Google and supported by the Open Handset Alliance.
+	 * An Open Source mobile device operating system originally developed by Google and supported by the Open Handset
+	 * Alliance.
 	 */
 	Android("01"), //
 
@@ -46,7 +47,8 @@ public enum ProductFormFeatureValueOperatingSystems
 	BlackBerry_OS("02"), //
 
 	/**
-	 * A proprietary operating system based on Mac OS X supplied by Apple for its iPhone, iPad and iPod Touch handheld devices.
+	 * A proprietary operating system based on Mac OS X supplied by Apple for its iPhone, iPad and iPod Touch handheld
+	 * devices.
 	 */
 	iOS("03"), //
 
@@ -56,14 +58,14 @@ public enum ProductFormFeatureValueOperatingSystems
 	Linux("04"), //
 
 	/**
-	 * [A proprietary operating system supplied by Apple on Macintosh computers up to 2002] DEPRECATED – use code 13 for all Mac OS
-	 * versions.
+	 * [A proprietary operating system supplied by Apple on Macintosh computers up to 2002] DEPRECATED – use code 13 for
+	 * all Mac OS versions.
 	 */
 	Mac_OS("05"), //
 
 	/**
-	 * [A proprietary operating system supplied by Apple on Macintosh computers from 2001/2002] DEPRECATED – use code 13 for all Mac OS
-	 * versions.
+	 * [A proprietary operating system supplied by Apple on Macintosh computers from 2001/2002] DEPRECATED – use code 13
+	 * for all Mac OS versions.
 	 */
 	Mac_OS_X("06"), //
 
@@ -78,8 +80,8 @@ public enum ProductFormFeatureValueOperatingSystems
 	webOS("08"), //
 
 	/**
-	 * An operating system for hand-held devices, originally developed as a proprietary system, but planned to become wholly Open Source by
-	 * 2010.
+	 * An operating system for hand-held devices, originally developed as a proprietary system, but planned to become
+	 * wholly Open Source by 2010.
 	 */
 	Symbian("09"), //
 
@@ -89,7 +91,8 @@ public enum ProductFormFeatureValueOperatingSystems
 	Windows("10"), //
 
 	/**
-	 * A proprietary operating system (AKA Windows Embedded Compact, WinCE) supplied by Microsoft for small-scale devices.
+	 * A proprietary operating system (AKA Windows Embedded Compact, WinCE) supplied by Microsoft for small-scale
+	 * devices.
 	 */
 	Windows_CE("11"), //
 

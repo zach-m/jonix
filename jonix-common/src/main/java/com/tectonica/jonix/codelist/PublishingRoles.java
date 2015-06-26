@@ -23,24 +23,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList45
+ * Enum that corresponds to ONIX's <b>CodeList45</b>
  * <p>
  * Publishing role code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PublishingRoles
 {
 	Publisher("01"), //
 
 	/**
-	 * Use where two or more publishers co-publish the exact same product, either under a single ISBN (in which case both publishers are
-	 * co-publishers), or under different ISBNs (in which case the publisher of THIS ISBN is the publisher and the publishers of OTHER ISBNs
-	 * are co-publishers. Note this is different from publication of ‘co-editions’.
+	 * Use where two or more publishers co-publish the exact same product, either under a single ISBN (in which case
+	 * both publishers are co-publishers), or under different ISBNs (in which case the publisher of THIS ISBN is the
+	 * publisher and the publishers of OTHER ISBNs are co-publishers. Note this is different from publication of
+	 * ‘co-editions’.
 	 */
 	Co_publisher("02"), //
 
@@ -71,7 +72,8 @@ public enum PublishingRoles
 	New_or_acquiring_publisher("09"), //
 
 	/**
-	 * The group to which a publisher (publishing role 01) belongs: use only if a publisher has been identified with role code 01.
+	 * The group to which a publisher (publishing role 01) belongs: use only if a publisher has been identified with
+	 * role code 01.
 	 */
 	Publishing_group("10"), //
 
@@ -81,9 +83,10 @@ public enum PublishingRoles
 	Publisher_of_facsimile_original("11"), //
 
 	/**
-	 * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a ‘prebound edition’ is a book that was
-	 * previously bound, normally as a paperback, and has been rebound with a library-quality hardcover binding by a supplier other than the
-	 * original publisher.) Required when the <EditionType> is coded PRB. The original publisher should be named as the ‘publisher’.
+	 * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a ‘prebound edition’
+	 * is a book that was previously bound, normally as a paperback, and has been rebound with a library-quality
+	 * hardcover binding by a supplier other than the original publisher.) Required when the <EditionType> is coded PRB.
+	 * The original publisher should be named as the ‘publisher’.
 	 */
 	Repackager_of_prebound_edition("12"), //
 
@@ -93,13 +96,14 @@ public enum PublishingRoles
 	Former_publisher("13"), //
 
 	/**
-	 * Body funding publication fees, if different from the body funding the underlying research. For use with open access publications.
+	 * Body funding publication fees, if different from the body funding the underlying research. For use with open
+	 * access publications.
 	 */
 	Publication_funder("14"), //
 
 	/**
-	 * Body funding the research on which publication is based, if different from the body funding the publication. For use with open access
-	 * publications.
+	 * Body funding the research on which publication is based, if different from the body funding the publication. For
+	 * use with open access publications.
 	 */
 	Research_funder("15"), //
 
@@ -109,14 +113,15 @@ public enum PublishingRoles
 	Funding_body("16"), //
 
 	/**
-	 * Organisation responsible for printing a printed product. Supplied primarily to meet legal deposit requirements, and may apply only to
-	 * the first impression. The organisation may also be responsible for binding, when a separate binder is not specified.
+	 * Organisation responsible for printing a printed product. Supplied primarily to meet legal deposit requirements,
+	 * and may apply only to the first impression. The organisation may also be responsible for binding, when a separate
+	 * binder is not specified.
 	 */
 	Printer("17"), //
 
 	/**
-	 * Organisation responsible for binding a printed product (where distinct from the printer). Supplied primarily to meet legal deposit
-	 * requirements, and may apply only to the first impression.
+	 * Organisation responsible for binding a printed product (where distinct from the printer). Supplied primarily to
+	 * meet legal deposit requirements, and may apply only to the first impression.
 	 */
 	Binder("18");
 

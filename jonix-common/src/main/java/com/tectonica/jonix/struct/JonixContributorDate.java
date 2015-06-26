@@ -25,7 +25,7 @@ import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList173
+ * Enum that corresponds to ONIX's <b>CodeList173</b>
  * <p>
  * Price date role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PriceDateRoles
 {
@@ -43,7 +43,8 @@ public enum PriceDateRoles
 	Until_date("15"), //
 
 	/**
-	 * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat 06.
+	 * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
+	 * 06.
 	 */
 	From_until_date("24");
 

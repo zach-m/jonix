@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList145
+ * Enum that corresponds to ONIX's <b>CodeList145</b>
  * <p>
  * Usage type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum UsageTypes
 {
@@ -61,8 +61,9 @@ public enum UsageTypes
 	Text_to_speech("05"), //
 
 	/**
-	 * Lendable to other device owner or account holder, eg ‘Lend-to-a-friend’, library lending. The ‘primary’ copy becomes unusable while
-	 * the secondary copy is ‘on loan’ unless a number of concurrent borrowers is also specified).
+	 * Lendable to other device owner or account holder, eg ‘Lend-to-a-friend’, library lending. The ‘primary’ copy
+	 * becomes unusable while the secondary copy is ‘on loan’ unless a number of concurrent borrowers is also
+	 * specified).
 	 */
 	Lend("06"), //
 

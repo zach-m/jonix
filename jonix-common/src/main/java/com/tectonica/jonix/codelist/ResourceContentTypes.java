@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList158
+ * Enum that corresponds to ONIX's <b>CodeList158</b>
  * <p>
  * Resource content type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ResourceContentTypes
 {
@@ -92,10 +92,10 @@ public enum ResourceContentTypes
 	Widget("16"), //
 
 	/**
-	 * Review text held in a separate downloadable file, not in the ONIX record. Equivalent of code 06 in List 153. Use the <TextContent>
-	 * composite for review quotes carried in the ONIX record. Use the <CitedContent> composite for a third-party review which is referenced
-	 * from the ONIX record. Use <SupportingResource> for review text offered as a separate file resource for reproduction as part of
-	 * promotional material for the product.
+	 * Review text held in a separate downloadable file, not in the ONIX record. Equivalent of code 06 in List 153. Use
+	 * the <TextContent> composite for review quotes carried in the ONIX record. Use the <CitedContent> composite for a
+	 * third-party review which is referenced from the ONIX record. Use <SupportingResource> for review text offered as
+	 * a separate file resource for reproduction as part of promotional material for the product.
 	 */
 	Review("17"), //
 
@@ -120,9 +120,9 @@ public enum ResourceContentTypes
 	Press_release("24"), //
 
 	/**
-	 * A table of contents held in a separate downloadable file, not in the ONIX record. Equivalent of code 04 in List 153. Use the
-	 * <TextContent> composite for a table of contents carried in the ONIX record. Use <Supporting Resource> for text offered as a separate
-	 * file resource.
+	 * A table of contents held in a separate downloadable file, not in the ONIX record. Equivalent of code 04 in List
+	 * 153. Use the <TextContent> composite for a table of contents carried in the ONIX record. Use <Supporting
+	 * Resource> for text offered as a separate file resource.
 	 */
 	Table_of_contents("25"), //
 
@@ -132,13 +132,15 @@ public enum ResourceContentTypes
 	Trailer("26"), //
 
 	/**
-	 * Intended ONLY for transitional use, where ONIX 2.1 records referencing existing thumbnail assets of unknown pixel size are being
-	 * re-expressed in ONIX 3.0. Use code 01 for all new cover assets, and where the pixel size of older assets is known.
+	 * Intended ONLY for transitional use, where ONIX 2.1 records referencing existing thumbnail assets of unknown pixel
+	 * size are being re-expressed in ONIX 3.0. Use code 01 for all new cover assets, and where the pixel size of older
+	 * assets is known.
 	 */
 	Cover_thumbnail("27"), //
 
 	/**
-	 * The full content of the product (or the product itself), supplied for example to support full-text search or indexing.
+	 * The full content of the product (or the product itself), supplied for example to support full-text search or
+	 * indexing.
 	 */
 	Full_content("28"), //
 
@@ -150,21 +152,22 @@ public enum ResourceContentTypes
 	Master_brand_logo("30"), //
 
 	/**
-	 * Descriptive text in a separate downloadable file, not in the ONIX record. Equivalent of code 03 in List 153. Use the <TextContent>
-	 * composite for descriptions carried in the ONIX record. Use <Supporting Resource> for text offered as a separate file resource for
-	 * reproduction as part of promotional material for the product.
+	 * Descriptive text in a separate downloadable file, not in the ONIX record. Equivalent of code 03 in List 153. Use
+	 * the <TextContent> composite for descriptions carried in the ONIX record. Use <Supporting Resource> for text
+	 * offered as a separate file resource for reproduction as part of promotional material for the product.
 	 */
 	Description("31"), //
 
 	/**
-	 * Index text held in a separate downloadable file, not in the ONIX record. Equivalent of code 15 in List 153. Use the <TextContent>
-	 * composite for index text carried in the ONIX record. Use <Supporting Resource> for an index offered as a separate file resource.
+	 * Index text held in a separate downloadable file, not in the ONIX record. Equivalent of code 15 in List 153. Use
+	 * the <TextContent> composite for index text carried in the ONIX record. Use <Supporting Resource> for an index
+	 * offered as a separate file resource.
 	 */
 	Index("32"), //
 
 	/**
-	 * Link to a license covering permitted usage of the product content. Deprecated in favor of <EpubLicense>. This was a temporary
-	 * workaround in ONIX 3.0, and use of <EpubLicense> is strongly preferred.
+	 * Link to a license covering permitted usage of the product content. Deprecated in favor of <EpubLicense>. This was
+	 * a temporary workaround in ONIX 3.0, and use of <EpubLicense> is strongly preferred.
 	 */
 	License("99");
 

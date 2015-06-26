@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList150
+ * Enum that corresponds to ONIX's <b>CodeList150</b>
  * <p>
  * Product form
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductFormsList150
 {
@@ -48,8 +48,8 @@ public enum ProductFormsList150
 	Audio_cassette("AB"), //
 
 	/**
-	 * Audio compact disc, in any recording format: use for ‘red book’ (conventional audio CD) and SACD, and use coding in Product Form
-	 * Detail to specify the format, if required.
+	 * Audio compact disc, in any recording format: use for ‘red book’ (conventional audio CD) and SACD, and use coding
+	 * in Product Form Detail to specify the format, if required.
 	 */
 	CD_Audio("AC"), //
 
@@ -74,8 +74,8 @@ public enum ProductFormsList150
 	MiniDisc("AG"), //
 
 	/**
-	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for ‘blue book’ and ‘yellow/red book’
-	 * two-session discs.
+	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for ‘blue book’ and
+	 * ‘yellow/red book’ two-session discs.
 	 */
 	CD_Extra("AH"), //
 
@@ -87,7 +87,8 @@ public enum ProductFormsList150
 	Downloadable_audio_file("AJ"), //
 
 	/**
-	 * For example, Playaway audiobook and player: use coding in Product Form Detail to specify the recording format, if required.
+	 * For example, Playaway audiobook and player: use coding in Product Form Detail to specify the recording format, if
+	 * required.
 	 */
 	Pre_recorded_digital_audio_player("AK"), //
 
@@ -149,9 +150,9 @@ public enum ProductFormsList150
 	Bath_book("BJ"), //
 
 	/**
-	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code – a ‘conventional’
-	 * format code is always to be preferred; one or more Product Form Detail codes, eg from the B2nn group, should be used whenever
-	 * possible to provide additional description.
+	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code
+	 * – a ‘conventional’ format code is always to be preferred; one or more Product Form Detail codes, eg from the B2nn
+	 * group, should be used whenever possible to provide additional description.
 	 */
 	Novelty_book("BK"), //
 
@@ -161,7 +162,8 @@ public enum ProductFormsList150
 	Slide_bound("BL"), //
 
 	/**
-	 * Extra-large format for teaching etc; this format and terminology may be specifically UK; required as a top-level differentiator.
+	 * Extra-large format for teaching etc; this format and terminology may be specifically UK; required as a top-level
+	 * differentiator.
 	 */
 	Big_book("BM"), //
 
@@ -301,14 +303,14 @@ public enum ProductFormsList150
 	Digital_product_license("LA"), //
 
 	/**
-	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or booklet containing a code
-	 * enabling the purchaser to download the associated product.
+	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or
+	 * booklet containing a code enabling the purchaser to download the associated product.
 	 */
 	Digital_product_license_key("LB"), //
 
 	/**
-	 * Digital product license delivered by email or other electronic distribution, typically providing a code enabling the purchaser to
-	 * upgrade or extend the license supplied with the associated product.
+	 * Digital product license delivered by email or other electronic distribution, typically providing a code enabling
+	 * the purchaser to upgrade or extend the license supplied with the associated product.
 	 */
 	Digital_product_license_code("LC"), //
 
@@ -357,8 +359,8 @@ public enum ProductFormsList150
 	Diary("PF"), //
 
 	/**
-	 * Narrow strip-shaped printed sheet used mostly for education or children’s products (eg depicting alphabet, number line, procession of
-	 * illustrated characters etc). Usually intended for horizontal display.
+	 * Narrow strip-shaped printed sheet used mostly for education or children’s products (eg depicting alphabet, number
+	 * line, procession of illustrated characters etc). Usually intended for horizontal display.
 	 */
 	Frieze("PG"), //
 
@@ -377,14 +379,14 @@ public enum ProductFormsList150
 	Poster("PK"), //
 
 	/**
-	 * Record book (eg ‘birthday book’, ‘baby book’): binding unspecified; may use product form detail codes P201 to P204 to specify
-	 * binding.
+	 * Record book (eg ‘birthday book’, ‘baby book’): binding unspecified; may use product form detail codes P201 to
+	 * P204 to specify binding.
 	 */
 	Record_book("PL"), //
 
 	/**
-	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat ‘wallet’ as packaging (List 80), but
-	 * if this is not possible the product as a whole may be coded as a ‘wallet’.
+	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat ‘wallet’ as
+	 * packaging (List 80), but if this is not possible the product as a whole may be coded as a ‘wallet’.
 	 */
 	Wallet_or_folder("PM"), //
 
@@ -400,7 +402,8 @@ public enum ProductFormsList150
 	Plate_l_mina("PQ"), //
 
 	/**
-	 * A book with all pages blank for the buyer’s own use; may use product form detail codes P201 to P204 to specify binding.
+	 * A book with all pages blank for the buyer’s own use; may use product form detail codes P201 to P204 to specify
+	 * binding.
 	 */
 	Notebook_blank_book("PR"), //
 
@@ -432,8 +435,8 @@ public enum ProductFormsList150
 	Multiple_item_retail_product_slip_cased("SC"), //
 
 	/**
-	 * Format of product items must be given in <ProductPart>. Use code XL for a shrink-wrapped pack for trade supply, where the retail
-	 * items it contains are intended for sale individually.
+	 * Format of product items must be given in <ProductPart>. Use code XL for a shrink-wrapped pack for trade supply,
+	 * where the retail items it contains are intended for sale individually.
 	 */
 	Multiple_item_retail_product_shrinkwrapped("SD"), //
 
@@ -443,8 +446,9 @@ public enum ProductFormsList150
 	Multiple_item_retail_product_loose("SE"), //
 
 	/**
-	 * Multiple item product where subsidiary product part(s) is/are supplied as enclosures to the primary part, eg a book with a CD
-	 * packaged in a sleeve glued within the back cover. Format of product items must be given in <ProductPart>.
+	 * Multiple item product where subsidiary product part(s) is/are supplied as enclosures to the primary part, eg a
+	 * book with a CD packaged in a sleeve glued within the back cover. Format of product items must be given in
+	 * <ProductPart>.
 	 */
 	Multiple_item_retail_product_part_s("SF"), //
 
@@ -549,16 +553,16 @@ public enum ProductFormsList150
 	Large_book_display("XK"), //
 
 	/**
-	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually.
-	 * ISBN (where applicable) and format of contained items must be given in Product Part. For products or product bundles supplied
-	 * individually shrink-wrapped for retail sale, use code SD.
+	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
+	 * sale individually. ISBN (where applicable) and format of contained items must be given in Product Part. For
+	 * products or product bundles supplied individually shrink-wrapped for retail sale, use code SD.
 	 */
 	Shrink_wrapped_pack("XL"), //
 
 	/**
-	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for sale individually.
-	 * ISBN (where applicable) and format of contained items must be given in Product Part. For products or product bundles boxed
-	 * individually for retail sale, use code SB.
+	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
+	 * sale individually. ISBN (where applicable) and format of contained items must be given in Product Part. For
+	 * products or product bundles boxed individually for retail sale, use code SB.
 	 */
 	Boxed_pack("XM"), //
 

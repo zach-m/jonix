@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList86
+ * Enum that corresponds to ONIX's <b>CodeList86</b>
  * <p>
  * Bible text organization
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum BibleTextOrganizations
 {
@@ -43,8 +43,8 @@ public enum BibleTextOrganizations
 	Chain_reference("CHA"), //
 
 	/**
-	 * A Bible or other text in which different versions are printed one line above the other, so that the variations can easily be
-	 * detected.
+	 * A Bible or other text in which different versions are printed one line above the other, so that the variations
+	 * can easily be detected.
 	 */
 	Interlinear("INT"), //
 

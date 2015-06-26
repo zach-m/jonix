@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList83
+ * Enum that corresponds to ONIX's <b>CodeList83</b>
  * <p>
  * Bible version
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum BibleVersions
 {
@@ -41,8 +41,8 @@ public enum BibleVersions
 	Alberto_Vaccari("ALV"), //
 
 	/**
-	 * A translation based on the American Standard Version and showing multiple options for the translation of ancient text. Published in
-	 * full in 1965. Sponsored by the Lockman Foundation.
+	 * A translation based on the American Standard Version and showing multiple options for the translation of ancient
+	 * text. Published in full in 1965. Sponsored by the Lockman Foundation.
 	 */
 	Amplified("AMP"), //
 
@@ -57,47 +57,51 @@ public enum BibleVersions
 	American_Standard("ASV"), //
 
 	/**
-	 * 2011 contemporary English translation of the Bible sponsored by the US-based Christian Resources Development Corporation. The
-	 * translation includes Old Testament, Apocrypha and New Testament, and is aimed to be accessible to most English readers (minimum 7th
-	 * grade reading age).
+	 * 2011 contemporary English translation of the Bible sponsored by the US-based Christian Resources Development
+	 * Corporation. The translation includes Old Testament, Apocrypha and New Testament, and is aimed to be accessible
+	 * to most English readers (minimum 7th grade reading age).
 	 */
 	Common_English_Bible("CEB"), //
 
 	/**
-	 * Italian Episcopal Conference 1971 translation suitable for Italian Catholic liturgy. (Includes minor 1974 revision).
+	 * Italian Episcopal Conference 1971 translation suitable for Italian Catholic liturgy. (Includes minor 1974
+	 * revision).
 	 */
 	Conferenza_Episcopale_Italiana("CEI"), //
 
 	/**
-	 * New translation of the C.E.I. first published in 2008 – the version most widely used by the Italian Catholic Church.
+	 * New translation of the C.E.I. first published in 2008 – the version most widely used by the Italian Catholic
+	 * Church.
 	 */
 	Conferenza_Episcopale_Italiana_2008("CEN"), //
 
 	/**
-	 * A translation completed in 1995 and sponsored by the American Bible Society under the leadership of Barclay Newman.
+	 * A translation completed in 1995 and sponsored by the American Bible Society under the leadership of Barclay
+	 * Newman.
 	 */
 	Contemporary_English("CEV"), //
 
 	/**
-	 * 1968 Interfaith version promoted by the Italian Bible Society. Has a Catholic ‘imprimateur’, but its ecumenical approach has Jewish,
-	 * Protestant and Christian Orthodox approval.
+	 * 1968 Interfaith version promoted by the Italian Bible Society. Has a Catholic ‘imprimateur’, but its ecumenical
+	 * approach has Jewish, Protestant and Christian Orthodox approval.
 	 */
 	Concordata("CNC"), //
 
 	/**
-	 * Version based on original documents, edited by Giovanni Diodati in 1607, revised by Diodati in 1641 and again in 1894. It is the
-	 * reference version for many Italian Protestants.
+	 * Version based on original documents, edited by Giovanni Diodati in 1607, revised by Diodati in 1641 and again in
+	 * 1894. It is the reference version for many Italian Protestants.
 	 */
 	Diodati("DDI"), //
 
 	/**
-	 * Revision of the Diodati Bible dating to the 1990s, aiming at highest fidelity to original ancient Greek (New Testament) and Hebrew
-	 * (Old Testament) texts.
+	 * Revision of the Diodati Bible dating to the 1990s, aiming at highest fidelity to original ancient Greek (New
+	 * Testament) and Hebrew (Old Testament) texts.
 	 */
 	Nuova_Diodati("DDN"), //
 
 	/**
-	 * An early (1580-1609) English translation from the Latin Vulgate designed for Catholics and performed by George Martin.
+	 * An early (1580-1609) English translation from the Latin Vulgate designed for Catholics and performed by George
+	 * Martin.
 	 */
 	Douay_Rheims("DOU"), //
 
@@ -132,8 +136,8 @@ public enum BibleVersions
 	Raamattu_1992("FRM"), //
 
 	/**
-	 * A 1995 translation by the World Bible Publishing Company using the English language in a manner to communicate to the late 20th
-	 * century American.
+	 * A 1995 translation by the World Bible Publishing Company using the English language in a manner to communicate to
+	 * the late 20th century American.
 	 */
 	God_s_Word("GDW"), //
 
@@ -143,14 +147,15 @@ public enum BibleVersions
 	Geneva("GEN"), //
 
 	/**
-	 * A translation sponsored by the American Bible Society. The New Testament was first published (as “Today’s English Version” TEV) in
-	 * 1966. The Old Testament was completed in 1976, and the whole was published as the “Good News Bible”.
+	 * A translation sponsored by the American Bible Society. The New Testament was first published (as “Today’s English
+	 * Version” TEV) in 1966. The Old Testament was completed in 1976, and the whole was published as the “Good News
+	 * Bible”.
 	 */
 	Good_News("GNB"), //
 
 	/**
-	 * Version edited by E. Galbiati, A. Penna and P. Rossano, and published by UTET. This version, based on original texts, is rich in
-	 * notes and has been used as the basis for CEI translation.
+	 * Version edited by E. Galbiati, A. Penna and P. Rossano, and published by UTET. This version, based on original
+	 * texts, is rich in notes and has been used as the basis for CEI translation.
 	 */
 	Galbiati_Penna_Rossano_UTET("GPR"), //
 
@@ -170,8 +175,8 @@ public enum BibleVersions
 	Original_Hebrew("HBR"), //
 
 	/**
-	 * Published by Broadman and Holman this translation rejects all forms of gender-neutral wording and is written with strong influences
-	 * from the Southern Baptist perspective of biblical scholarship.
+	 * Published by Broadman and Holman this translation rejects all forms of gender-neutral wording and is written with
+	 * strong influences from the Southern Baptist perspective of biblical scholarship.
 	 */
 	Holman_Christian_Standard("HCS"), //
 
@@ -181,14 +186,14 @@ public enum BibleVersions
 	International_Children_s("ICB"), //
 
 	/**
-	 * Interconfessional translation resulting from 1985 effort by Catholic and Protestant scholars, aimed at delivering an
-	 * easy-to-understand message.
+	 * Interconfessional translation resulting from 1985 effort by Catholic and Protestant scholars, aimed at delivering
+	 * an easy-to-understand message.
 	 */
 	Traduzione_Interconfessionale_in_Lingua_Corrente("ILC"), //
 
 	/**
-	 * A translation designed for English speaking Catholics based on the original languages. It is based on French as well as ancient texts
-	 * and was first published in 1966.
+	 * A translation designed for English speaking Catholics based on the original languages. It is based on French as
+	 * well as ancient texts and was first published in 1966.
 	 */
 	Jerusalem("JER"), //
 
@@ -198,8 +203,8 @@ public enum BibleVersions
 	King_James("KJV"), //
 
 	/**
-	 * A verbal translation led by William Prindele. Published in 1994, it was designed to modernize the language of the King James Version
-	 * based on Webster’s New International Dictionary, 2nd edition, unabridged.
+	 * A verbal translation led by William Prindele. Published in 1994, it was designed to modernize the language of the
+	 * King James Version based on Webster’s New International Dictionary, 2nd edition, unabridged.
 	 */
 	_21st_Century_King_James("KJT"), //
 
@@ -209,8 +214,8 @@ public enum BibleVersions
 	Living_Bible("LVB"), //
 
 	/**
-	 * 1924 translation by Giovanni Luzzi, Professor at the Waldensian Faculty of Theology in Rome, who revised the 17th Century Diodati
-	 * version.
+	 * 1924 translation by Giovanni Luzzi, Professor at the Waldensian Faculty of Theology in Rome, who revised the 17th
+	 * Century Diodati version.
 	 */
 	Luzzi("LZZ"), //
 
@@ -220,14 +225,16 @@ public enum BibleVersions
 	Message_Bible("MSG"), //
 
 	/**
-	 * A translation aimed at Catholic readers first published in its entirety in 1970. A revised New Testament was issued in 1986 as the
-	 * 2nd Edition. The 3rd Edtion was published in 1991 with a revision to Psalms. The 4th Edition (also known as the New American Bible
-	 * Revised Edition) was published in 2011, incorporating revisions to the Old Testament.
+	 * A translation aimed at Catholic readers first published in its entirety in 1970. A revised New Testament was
+	 * issued in 1986 as the 2nd Edition. The 3rd Edtion was published in 1991 with a revision to Psalms. The 4th
+	 * Edition (also known as the New American Bible Revised Edition) was published in 2011, incorporating revisions to
+	 * the Old Testament.
 	 */
 	New_American("NAB"), //
 
 	/**
-	 * A translation commissioned by the Lockman Foundation. The New Testament was published in 1960 followed by the entire Bible in 1971.
+	 * A translation commissioned by the Lockman Foundation. The New Testament was published in 1960 followed by the
+	 * entire Bible in 1971.
 	 */
 	New_American_Standard("NAS"), //
 
@@ -287,8 +294,8 @@ public enum BibleVersions
 	New_Century("NCV"), //
 
 	/**
-	 * A translation first issued in 1961 (New Testament) and 1970 (complete Bible) as a result of a proposal at the 1946 General Assembly
-	 * of the Church of Scotland.
+	 * A translation first issued in 1961 (New Testament) and 1970 (complete Bible) as a result of a proposal at the
+	 * 1946 General Assembly of the Church of Scotland.
 	 */
 	New_English("NEB"), //
 
@@ -298,8 +305,9 @@ public enum BibleVersions
 	Bibelen_Guds_ord("NGO"), //
 
 	/**
-	 * A translation underwritten by Biblica (formerly the International Bible Society, and previously the New York Bible Society). The New
-	 * Testament was published in 1973 followed by the entire Bible in 1978. The NIV text was revised in 1984 and again in 2011.
+	 * A translation underwritten by Biblica (formerly the International Bible Society, and previously the New York
+	 * Bible Society). The New Testament was published in 1973 followed by the entire Bible in 1978. The NIV text was
+	 * revised in 1984 and again in 2011.
 	 */
 	New_International("NIV"), //
 
@@ -314,8 +322,8 @@ public enum BibleVersions
 	New_Jerusalem("NJB"), //
 
 	/**
-	 * A version issued by Thomas Nelson Publishers in 1982-83 designed to update the language of the King James Version while maintaining
-	 * the phrasing and rhythm and using the same sources as its predecessor.
+	 * A version issued by Thomas Nelson Publishers in 1982-83 designed to update the language of the King James Version
+	 * while maintaining the phrasing and rhythm and using the same sources as its predecessor.
 	 */
 	New_King_James("NKJ"), //
 
@@ -325,7 +333,8 @@ public enum BibleVersions
 	Bibelen_nynorsk("NNK"), //
 
 	/**
-	 * A translation sponsored by Tyndale House and first released in 1996. It is considered a revision and updating of the Living Bible.
+	 * A translation sponsored by Tyndale House and first released in 1996. It is considered a revision and updating of
+	 * the Living Bible.
 	 */
 	New_Living("NLV"), //
 
@@ -340,14 +349,14 @@ public enum BibleVersions
 	Nueva_Traduccion_Vivienta("NTV"), //
 
 	/**
-	 * Nuovissima version – a Catholic-oriented translation in modern Italian, edited by a group including Carlo Martini, Gianfranco Ravasi
-	 * and Ugo Vanni and first published (in 48 volumes, 1967-1980) by Edizioni San Paolo.
+	 * Nuovissima version – a Catholic-oriented translation in modern Italian, edited by a group including Carlo
+	 * Martini, Gianfranco Ravasi and Ugo Vanni and first published (in 48 volumes, 1967-1980) by Edizioni San Paolo.
 	 */
 	Novissima_Versione_della_Bibbia("NVB"), //
 
 	/**
-	 * A Spanish translation from the original Greek and Hebrew, sponsored by the International Bible Society/Sociedad Bíblica
-	 * Internacional.
+	 * A Spanish translation from the original Greek and Hebrew, sponsored by the International Bible Society/Sociedad
+	 * Bíblica Internacional.
 	 */
 	Nueva_Biblia_al_Dia("NVD"), //
 
@@ -367,15 +376,16 @@ public enum BibleVersions
 	Revised_English("REB"), //
 
 	/**
-	 * The first major revision of the King James Version, the Revised Version incorporates insights from early manuscripts discovered
-	 * between 1611 and 1870, and corrects readings in the KJV which nineteenth-century scholarship deemed mistaken. The New Testament was
-	 * published in 1881, the Old Testament in 1885, and the Apocrypha in 1895.
+	 * The first major revision of the King James Version, the Revised Version incorporates insights from early
+	 * manuscripts discovered between 1611 and 1870, and corrects readings in the KJV which nineteenth-century
+	 * scholarship deemed mistaken. The New Testament was published in 1881, the Old Testament in 1885, and the
+	 * Apocrypha in 1895.
 	 */
 	Revised_Version("REV"), //
 
 	/**
-	 * A translation authorized by the National Council of Churches of Christ in the USA. The New Testament was published in 1946 followed
-	 * by a complete Protestant canon in 1951.
+	 * A translation authorized by the National Council of Churches of Christ in the USA. The New Testament was
+	 * published in 1946 followed by a complete Protestant canon in 1951.
 	 */
 	Revised_Standard("RSV"), //
 
@@ -395,14 +405,14 @@ public enum BibleVersions
 	Bibelen_samisk("SMK"), //
 
 	/**
-	 * A translation of the New Testament sponsored by the American Bible Society and first published in 1966. It was incorporated into the
-	 * “Good News Bible” GNB in 1976.
+	 * A translation of the New Testament sponsored by the American Bible Society and first published in 1966. It was
+	 * incorporated into the “Good News Bible” GNB in 1976.
 	 */
 	Today_s_English("TEV"), //
 
 	/**
-	 * An updating of the New International Version. The New Testament was published in 2002, and the entire Bible in 2005. Superseded by
-	 * the 2011 NIV update.
+	 * An updating of the New International Version. The New Testament was published in 2002, and the entire Bible in
+	 * 2005. Superseded by the 2011 NIV update.
 	 */
 	Today_s_New_International("TNI"), //
 

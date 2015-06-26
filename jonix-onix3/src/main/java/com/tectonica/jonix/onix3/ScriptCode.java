@@ -24,10 +24,10 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
+import com.tectonica.jonix.codelist.TextScriptCodes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -40,7 +40,7 @@ public class ScriptCode implements OnixElement, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TextScriptCodeIso15924s value;
+	public TextScriptCodes value;
 
 	public ScriptCode()
 	{}
@@ -51,6 +51,6 @@ public class ScriptCode implements OnixElement, Serializable
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = TextScriptCodeIso15924s.byValue(JPU.getContentAsString(element));
+		value = TextScriptCodes.byValue(JPU.getContentAsString(element));
 	}
 }

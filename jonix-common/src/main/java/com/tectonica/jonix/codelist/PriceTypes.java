@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList58
+ * Enum that corresponds to ONIX's <b>CodeList58</b>
  * <p>
  * Price type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PriceTypes
 {
@@ -61,35 +61,39 @@ public enum PriceTypes
 	Supplier_s_net_price_excluding_tax("05"), //
 
 	/**
-	 * Unit price charged by supplier to reseller / rental outlet, excluding any sales tax or value-added tax: goods for rental (used for
-	 * video and DVD).
+	 * Unit price charged by supplier to reseller / rental outlet, excluding any sales tax or value-added tax: goods for
+	 * rental (used for video and DVD).
 	 */
 	Supplier_s_net_price_excluding_tax_rental_goods("06"), //
 
 	/**
-	 * Unit price charged by supplier to reseller including any sales tax or value-added tax if applicable: goods for retail sale.
+	 * Unit price charged by supplier to reseller including any sales tax or value-added tax if applicable: goods for
+	 * retail sale.
 	 */
 	Supplier_s_net_price_including_tax("07"), //
 
 	/**
-	 * Unit price charged by supplier to a specified class of reseller excluding any sales tax or value-added tax: goods for retail sale
-	 * (this value is for use only in countries, eg Finland, where trade practice requires two different net prices to be listed for
-	 * different classes of resellers, and where national guidelines specify how the code should be used).
+	 * Unit price charged by supplier to a specified class of reseller excluding any sales tax or value-added tax: goods
+	 * for retail sale (this value is for use only in countries, eg Finland, where trade practice requires two different
+	 * net prices to be listed for different classes of resellers, and where national guidelines specify how the code
+	 * should be used).
 	 */
 	Supplier_s_alternative_net_price_excluding_tax("08"), //
 
 	/**
-	 * Unit price charged by supplier to a specified class of reseller including any sales tax or value-added tax: goods for retail sale
-	 * (this value is for use only in countries, eg Finland, where trade practice requires two different net prices to be listed for
-	 * different classes of resellers, and where national guidelines specify how the code should be used).
+	 * Unit price charged by supplier to a specified class of reseller including any sales tax or value-added tax: goods
+	 * for retail sale (this value is for use only in countries, eg Finland, where trade practice requires two different
+	 * net prices to be listed for different classes of resellers, and where national guidelines specify how the code
+	 * should be used).
 	 */
 	Supplier_s_alternative_net_price_including_tax("09"), //
 
 	/**
-	 * Special sale RRP excluding any sales tax or value-added tax. Note ‘special sales’ are sales where terms and conditions are different
-	 * from normal trade sales, when for example products that are normally sold on a sale-or-return basis are sold on firm-sale terms,
-	 * where a particular product is tailored for a specific retail outlet (often termed a ‘premium’ product), or where other specific
-	 * conditions or qualiifications apply. Further details of the modified terms and conditions should be given in <PriceTypeDescription>.
+	 * Special sale RRP excluding any sales tax or value-added tax. Note ‘special sales’ are sales where terms and
+	 * conditions are different from normal trade sales, when for example products that are normally sold on a
+	 * sale-or-return basis are sold on firm-sale terms, where a particular product is tailored for a specific retail
+	 * outlet (often termed a ‘premium’ product), or where other specific conditions or qualiifications apply. Further
+	 * details of the modified terms and conditions should be given in <PriceTypeDescription>.
 	 */
 	Special_sale_RRP_excluding_tax("11"), //
 
@@ -119,13 +123,14 @@ public enum PriceTypes
 	Supplier_s_net_price_for_special_sale_including_tax("17"), //
 
 	/**
-	 * Pre-publication RRP excluding any sales tax or value-added tax. Use where RRP for pre-orders is different from post-publication RRP.
+	 * Pre-publication RRP excluding any sales tax or value-added tax. Use where RRP for pre-orders is different from
+	 * post-publication RRP.
 	 */
 	Pre_publication_RRP_excluding_tax("21"), //
 
 	/**
-	 * Pre-publication RRP including sales or value-added tax if applicable. Use where RRP for pre-orders is different from post-publication
-	 * RRP.
+	 * Pre-publication RRP including sales or value-added tax if applicable. Use where RRP for pre-orders is different
+	 * from post-publication RRP.
 	 */
 	Pre_publication_RRP_including_tax("22"), //
 
@@ -150,41 +155,44 @@ public enum PriceTypes
 	Supplier_s_pre_publication_net_price_including_tax("27"), //
 
 	/**
-	 * In the US, books are sometimes supplied on ‘freight-pass-through’ terms, where a price that is different from the RRP is used as the
-	 * basis for calculating the supplier’s charge to a reseller. To make it clear when such terms are being invoked, code 31 is used
-	 * instead of code 01 to indicate the RRP. Code 32 is used for the ‘billing price’.
+	 * In the US, books are sometimes supplied on ‘freight-pass-through’ terms, where a price that is different from the
+	 * RRP is used as the basis for calculating the supplier’s charge to a reseller. To make it clear when such terms
+	 * are being invoked, code 31 is used instead of code 01 to indicate the RRP. Code 32 is used for the ‘billing
+	 * price’.
 	 */
 	Freight_pass_through_RRP_excluding_tax("31"), //
 
 	/**
-	 * When freight-pass-through terms apply, the price on which the supplier’s charge to a reseller is calculated, ie the price to which
-	 * trade discount terms are applied. See also code 31.
+	 * When freight-pass-through terms apply, the price on which the supplier’s charge to a reseller is calculated, ie
+	 * the price to which trade discount terms are applied. See also code 31.
 	 */
 	Freight_pass_through_billing_price_excluding_tax("32"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the importer or local sales
-	 * agent, not the foreign publisher. In France, ‘prix catalogue éditeur étranger’.
+	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the
+	 * importer or local sales agent, not the foreign publisher. In France, ‘prix catalogue éditeur étranger’.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
 	Importer_s_Fixed_retail_price_excluding_tax("33"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the importer or local sales
-	 * agent, not the foreign publisher. In France, ‘prix catalogue éditeur étranger’.
+	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the
+	 * importer or local sales agent, not the foreign publisher. In France, ‘prix catalogue éditeur étranger’.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
 	Importer_s_Fixed_retail_price_including_tax("34"), //
 
 	/**
-	 * For a product supplied on agency terms, the retail price set by the publisher, excluding any sales tax or value-added tax.
+	 * For a product supplied on agency terms, the retail price set by the publisher, excluding any sales tax or
+	 * value-added tax.
 	 */
 	Publishers_retail_price_excluding_tax("41"), //
 
 	/**
-	 * For a product supplied on agency terms, the retail price set by the publisher, including sales or value-added tax if applicable.
+	 * For a product supplied on agency terms, the retail price set by the publisher, including sales or value-added tax
+	 * if applicable.
 	 */
 	Publishers_retail_price_including_tax("42");
 

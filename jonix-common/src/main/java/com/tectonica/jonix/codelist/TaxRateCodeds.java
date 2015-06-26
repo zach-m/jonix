@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList62
+ * Enum that corresponds to ONIX's <b>CodeList62</b>
  * <p>
  * Tax rate, coded
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TaxRateCodeds
 {
@@ -38,8 +38,8 @@ public enum TaxRateCodeds
 	Higher_rate("H"), //
 
 	/**
-	 * Under Italian tax rules, VAT on books may be paid at source by the publisher, and subsequent transactions through the supply chain
-	 * are tax-exempt.
+	 * Under Italian tax rules, VAT on books may be paid at source by the publisher, and subsequent transactions through
+	 * the supply chain are tax-exempt.
 	 */
 	Tax_paid_at_source_Italy("P"), //
 

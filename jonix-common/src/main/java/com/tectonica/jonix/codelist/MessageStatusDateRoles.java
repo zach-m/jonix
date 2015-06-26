@@ -20,17 +20,17 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList222
+ * Enum that corresponds to ONIX's <b>CodeList222</b>
  * <p>
  * Message status date role
  * <p>
  * NOTE: Introduced in Onix3
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum MessageStatusDateRoles
 {
@@ -40,8 +40,8 @@ public enum MessageStatusDateRoles
 	Ingest_date("01"), //
 
 	/**
-	 * Expected or actual date for data to be available from the recipient’s system to downstream supply chain partners (or where the
-	 * recipient is a retailer, to consumers).
+	 * Expected or actual date for data to be available from the recipient’s system to downstream supply chain partners
+	 * (or where the recipient is a retailer, to consumers).
 	 */
 	Export_date("02");
 

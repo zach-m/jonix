@@ -20,43 +20,44 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList221
+ * Enum that corresponds to ONIX's <b>CodeList221</b>
  * <p>
  * Message status
  * <p>
  * NOTE: Introduced in Onix3
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum MessageStatuss
 {
 	/**
-	 * Message received but not yet parsed (Acknowledgement must contain neither <MessageStatusDetail> nor <RecordStatusSummary>, and should
-	 * include <NoProduct/>). There is no particular implication that the acknowledgement message is valid – the status is based solely on
-	 * receipt of a file and minimal parsing of the original ONIX message header to ascertain <MessageNumber> etc.. The Acknowledgement
-	 * message MAY give a date when parsing is planned.
+	 * Message received but not yet parsed (Acknowledgement must contain neither <MessageStatusDetail> nor
+	 * <RecordStatusSummary>, and should include <NoProduct/>). There is no particular implication that the
+	 * acknowledgement message is valid – the status is based solely on receipt of a file and minimal parsing of the
+	 * original ONIX message header to ascertain <MessageNumber> etc.. The Acknowledgement message MAY give a date when
+	 * parsing is planned.
 	 */
 	Message_received("00"), //
 
 	/**
-	 * Entire original ONIX message rejected (ie NONE of the data records have been ingested). The status of any recognisable records MAY be
-	 * summarised in the remainder of the Acknowledgement Message.
+	 * Entire original ONIX message rejected (ie NONE of the data records have been ingested). The status of any
+	 * recognisable records MAY be summarised in the remainder of the Acknowledgement Message.
 	 */
 	Message_rejected("01"), //
 
 	/**
-	 * Original ONIX message partially parsed (ie at least SOME of the data records have been ingested, in whole or in part). Records
-	 * processed to date MUST be summarised in the remainder of the Acknowledgement Message.
+	 * Original ONIX message partially parsed (ie at least SOME of the data records have been ingested, in whole or in
+	 * part). Records processed to date MUST be summarised in the remainder of the Acknowledgement Message.
 	 */
 	Message_part_processed("02"), //
 
 	/**
-	 * Original ONIX message parsed and processed in full, and at least SOME of the data records have been ingested, in whole or in part),
-	 * Results MUST be summarised in the remainder of the Acknowledgement Message.
+	 * Original ONIX message parsed and processed in full, and at least SOME of the data records have been ingested, in
+	 * whole or in part), Results MUST be summarised in the remainder of the Acknowledgement Message.
 	 */
 	Message_processed("03");
 

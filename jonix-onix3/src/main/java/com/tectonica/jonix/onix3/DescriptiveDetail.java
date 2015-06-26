@@ -27,7 +27,7 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationTechnicalProtections;
 import com.tectonica.jonix.codelist.ExtentTypes;
@@ -54,7 +54,7 @@ import com.tectonica.jonix.struct.JonixProductClassification;
 import com.tectonica.jonix.struct.JonixProductFormFeature;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -288,7 +288,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public CountryCodeIso31661s getCountryOfManufactureValue()
+	public CountryCodes getCountryOfManufactureValue()
 	{
 		return (countryOfManufacture == null) ? null : countryOfManufacture.value;
 	}

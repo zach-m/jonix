@@ -21,12 +21,12 @@ package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
 
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -34,6 +34,6 @@ public class JonixLanguage implements Serializable
 {
 	public LanguageRoles languageRole;
 
-	public CountryCodeIso31661s countryCode;
-	public LanguageCodeIso6392Bs languageCode;
+	public CountryCodes countryCode;
+	public LanguageCodes languageCode;
 }

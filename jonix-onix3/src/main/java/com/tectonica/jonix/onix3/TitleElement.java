@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.TitleElementLevels;
 import com.tectonica.jonix.struct.JonixTitleElement;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

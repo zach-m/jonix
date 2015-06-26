@@ -23,27 +23,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList12
+ * Enum that corresponds to ONIX's <b>CodeList12</b>
  * <p>
  * Trade category code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TradeCategorys
 {
 	/**
-	 * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details should be carried in
-	 * PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
+	 * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details
+	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
 	 */
 	UK_open_market_edition("01"), //
 
 	/**
-	 * In UK, an edition intended primarily for airside sales in UK airports, though it may be available for sale in other territories where
-	 * exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
+	 * In UK, an edition intended primarily for airside sales in UK airports, though it may be available for sale in
+	 * other territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR
+	 * P.21 (ONIX 3.0) as usual.
 	 */
 	Airport_edition("02"), //
 
@@ -53,8 +54,8 @@ public enum TradeCategorys
 	Sonderausgabe("03"), //
 
 	/**
-	 * In countries where recognised as a distinct trade category, eg France ‘livre de poche’, Germany ‘Taschenbuch’, Italy ‘tascabile’,
-	 * Spain ‘libro de bolsillo’.
+	 * In countries where recognised as a distinct trade category, eg France ‘livre de poche’, Germany ‘Taschenbuch’,
+	 * Italy ‘tascabile’, Spain ‘libro de bolsillo’.
 	 */
 	Pocket_paperback("04"), //
 
@@ -64,14 +65,14 @@ public enum TradeCategorys
 	International_edition_US("05"), //
 
 	/**
-	 * Audio product sold in special durable packaging and with a replacement guarantee for the contained cassettes or CDs for a specified
-	 * shelf-life.
+	 * Audio product sold in special durable packaging and with a replacement guarantee for the contained cassettes or
+	 * CDs for a specified shelf-life.
 	 */
 	Library_audio_edition("06"), //
 
 	/**
-	 * An edition from a US publisher sold only in territories where exclusive rights are not held. Rights details should be carried in
-	 * PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
+	 * An edition from a US publisher sold only in territories where exclusive rights are not held. Rights details
+	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
 	 */
 	US_open_market_edition("07"), //
 
@@ -91,8 +92,8 @@ public enum TradeCategorys
 	Supplement_to_newspaper("10"), //
 
 	/**
-	 * In Spain, a school textbook for which there is no fixed or suggested retail price and which is supplied by the publisher on terms
-	 * individually agreed with the bookseller.
+	 * In Spain, a school textbook for which there is no fixed or suggested retail price and which is supplied by the
+	 * publisher on terms individually agreed with the bookseller.
 	 */
 	Precio_libre_textbook("11"), //
 
@@ -102,17 +103,18 @@ public enum TradeCategorys
 	News_outlet_edition("12"), //
 
 	/**
-	 * In the US and Canada, a book that is published primarily for use by students in school or college education as a basis for study.
-	 * Textbooks published for the elementary and secondary school markets are generally purchased by school districts for the use of
-	 * students. Textbooks published for the higher education market are generally adopted for use in particular classes by the instructors
-	 * of those classes. Textbooks are usually not marketed to the general public, which distinguishes them from trade books. Note that
-	 * trade books adopted for course use are not considered to be textbooks (though a specific education edition of a trade title may be).
+	 * In the US and Canada, a book that is published primarily for use by students in school or college education as a
+	 * basis for study. Textbooks published for the elementary and secondary school markets are generally purchased by
+	 * school districts for the use of students. Textbooks published for the higher education market are generally
+	 * adopted for use in particular classes by the instructors of those classes. Textbooks are usually not marketed to
+	 * the general public, which distinguishes them from trade books. Note that trade books adopted for course use are
+	 * not considered to be textbooks (though a specific education edition of a trade title may be).
 	 */
 	US_textbook("13"), //
 
 	/**
-	 * ‘Short’ e-book (sometimes also called a ‘single’), typically containing a single short story, an essay or piece of long-form
-	 * journalism.
+	 * ‘Short’ e-book (sometimes also called a ‘single’), typically containing a single short story, an essay or piece
+	 * of long-form journalism.
 	 */
 	E_book_short("14");
 

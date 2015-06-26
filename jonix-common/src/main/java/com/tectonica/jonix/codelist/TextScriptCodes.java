@@ -23,17 +23,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList121
+ * Enum that corresponds to ONIX's <b>CodeList121</b>
  * <p>
  * Text script code – ISO 15924
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
-public enum TextScriptCodeIso15924s
+public enum TextScriptCodes
 {
 	/**
 	 * Script is not supported by Unicode.
@@ -513,25 +513,25 @@ public enum TextScriptCodeIso15924s
 
 	public final String value;
 
-	private TextScriptCodeIso15924s(String value)
+	private TextScriptCodes(String value)
 	{
 		this.value = value;
 	}
 
-	private static Map<String, TextScriptCodeIso15924s> map;
+	private static Map<String, TextScriptCodes> map;
 
-	private static Map<String, TextScriptCodeIso15924s> map()
+	private static Map<String, TextScriptCodes> map()
 	{
 		if (map == null)
 		{
 			map = new HashMap<>();
-			for (TextScriptCodeIso15924s e : values())
+			for (TextScriptCodes e : values())
 				map.put(e.value, e);
 		}
 		return map;
 	}
 
-	public static TextScriptCodeIso15924s byValue(String value)
+	public static TextScriptCodes byValue(String value)
 	{
 		if (value == null || value.isEmpty())
 			return null;

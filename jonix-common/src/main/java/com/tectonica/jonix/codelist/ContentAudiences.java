@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList154
+ * Enum that corresponds to ONIX's <b>CodeList154</b>
  * <p>
  * Content audience
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ContentAudiences
 {
@@ -41,8 +41,8 @@ public enum ContentAudiences
 	Unrestricted("00"), //
 
 	/**
-	 * Distribution by agreement between the parties to the ONIX exchange (this value is provided to cover applications where ONIX content
-	 * includes material which is not for general distribution).
+	 * Distribution by agreement between the parties to the ONIX exchange (this value is provided to cover applications
+	 * where ONIX content includes material which is not for general distribution).
 	 */
 	Restricted("01"), //
 

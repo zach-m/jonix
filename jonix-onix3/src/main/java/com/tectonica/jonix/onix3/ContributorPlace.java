@@ -26,13 +26,13 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.ContributorPlaceRelators;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.struct.JonixContributorPlace;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -82,7 +82,7 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 		return (contributorPlaceRelator == null) ? null : contributorPlaceRelator.value;
 	}
 
-	public CountryCodeIso31661s getCountryCodeValue()
+	public CountryCodes getCountryCodeValue()
 	{
 		return (countryCode == null) ? null : countryCode.value;
 	}

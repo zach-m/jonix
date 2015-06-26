@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList3
+ * Enum that corresponds to ONIX's <b>CodeList3</b>
  * <p>
  * Record source type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum RecordSourceTypes
 {
@@ -40,8 +40,8 @@ public enum RecordSourceTypes
 	Publisher("01"), //
 
 	/**
-	 * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher’s sales agent, as distinct
-	 * from a wholesaler.
+	 * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher’s sales
+	 * agent, as distinct from a wholesaler.
 	 */
 	Publisher_s_distributor("02"), //
 
@@ -58,21 +58,22 @@ public enum RecordSourceTypes
 	Library_bookseller("05"), //
 
 	/**
-	 * Use for a publisher’s sales agent responsible for marketing the publisher’s products within a territory, as opposed to a publisher’s
-	 * distributor who fulfills orders but does not market.
+	 * Use for a publisher’s sales agent responsible for marketing the publisher’s products within a territory, as
+	 * opposed to a publisher’s distributor who fulfills orders but does not market.
 	 */
 	Publisher_s_sales_agent("06"), //
 
 	/**
-	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of the converted
-	 * e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the publisher’s ISBN prefix.
+	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
+	 * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
+	 * publisher’s ISBN prefix.
 	 */
 	Publisher_s_conversion_service_provider("07"), //
 
 	/**
-	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of the converted
-	 * e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the service provider’s prefix (whether
-	 * or not the service provider dedicates that prefix to a particular publisher).
+	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
+	 * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
+	 * service provider’s prefix (whether or not the service provider dedicates that prefix to a particular publisher).
 	 */
 	Conversion_service_provider("08"), //
 

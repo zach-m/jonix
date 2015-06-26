@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.MainSubjectSchemeIdentifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixMainSubject;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -43,7 +43,7 @@ public class MainSubject implements OnixDataComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -61,7 +61,7 @@ public class MainSubject implements OnixDataComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));

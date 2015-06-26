@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.WorkRelations;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

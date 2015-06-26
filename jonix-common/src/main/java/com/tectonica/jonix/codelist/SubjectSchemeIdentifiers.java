@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList27
+ * Enum that corresponds to ONIX's <b>CodeList27</b>
  * <p>
  * Subject scheme identifier code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SubjectSchemeIdentifiers
 {
@@ -78,8 +78,8 @@ public enum SubjectSchemeIdentifiers
 	UDC("09"), //
 
 	/**
-	 * BISAC Subject Headings are used in the North American market to categorize books based on topical content. They serve as a guideline
-	 * for shelving books in physical stores and browsing books in online stores. See
+	 * BISAC Subject Headings are used in the North American market to categorize books based on topical content. They
+	 * serve as a guideline for shelving books in physical stores and browsing books in online stores. See
 	 * ‘https://www.bisg.org/complete-bisac-subject-headings-2013-edition’.
 	 */
 	BISAC_Subject_Heading("10"), //
@@ -106,15 +106,17 @@ public enum SubjectSchemeIdentifiers
 
 	/**
 	 * Used for German National Bibliography since 2004 (100 subjects). Is different from value 30. See
-	 * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English).
+	 * http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf (in German) or
+	 * http://www.d-nb.de/eng/service/pdf/ddc_wv_aktuell_eng.pdf (English).
 	 */
 	DDC_Sachgruppen_der_Deutschen_Nationalbibliografie("18"), //
 
 	LC_fiction_genre_heading("19"), //
 
 	/**
-	 * Where multiple keywords or keyword phrases are sent in a single instance of the <SubjectHeadingText> element, it is recommended that
-	 * they should be separated by semi-colons (this is consistent with Library of Congress preferred practice).
+	 * Where multiple keywords or keyword phrases are sent in a single instance of the <SubjectHeadingText> element, it
+	 * is recommended that they should be separated by semi-colons (this is consistent with Library of Congress
+	 * preferred practice).
 	 */
 	Keywords("20"), //
 
@@ -124,9 +126,9 @@ public enum SubjectSchemeIdentifiers
 	BIC_children_s_book_marketing_category("21"), //
 
 	/**
-	 * BISAC Merchandising Themes are used in addition to BISAC Subject Headings to denote an audience to which a work may be of particular
-	 * appeal, a time of year or event for which a work may be especially appropriate, or to further describe fictional works that have been
-	 * subject-coded by genre.
+	 * BISAC Merchandising Themes are used in addition to BISAC Subject Headings to denote an audience to which a work
+	 * may be of particular appeal, a time of year or event for which a work may be especially appropriate, or to
+	 * further describe fictional works that have been subject-coded by genre.
 	 */
 	BISAC_Merchandising_Theme("22"), //
 
@@ -149,8 +151,8 @@ public enum SubjectSchemeIdentifiers
 
 	/**
 	 * Schlagwortnormdatei – Subject Headings Authority File in the German-speaking countries. See
-	 * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm
-	 * (English). DEPRECATED in favour of the GND.
+	 * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm (English). DEPRECATED in favour of the GND.
 	 */
 	SWD("27"), //
 
@@ -160,14 +162,14 @@ public enum SubjectSchemeIdentifiers
 	Th_mes_Electre("28"), //
 
 	/**
-	 * France. A four-digit number, see http://www.clil.org/information/documentation.html (in French). The first digit identifies the
-	 * version of the scheme.
+	 * France. A four-digit number, see http://www.clil.org/information/documentation.html (in French). The first digit
+	 * identifies the version of the scheme.
 	 */
 	CLIL("29"), //
 
 	/**
-	 * Deutsche Bibliothek subject groups. Used for German National Bibliography until 2003 (65 subjects). Is different from value 18. See
-	 * http://www.d-nb.de/service/pdf/ddc_wv_alt_neu.pdf (in German).
+	 * Deutsche Bibliothek subject groups. Used for German National Bibliography until 2003 (65 subjects). Is different
+	 * from value 18. See http://www.d-nb.de/service/pdf/ddc_wv_alt_neu.pdf (in German).
 	 */
 	DNB_Sachgruppen("30"), //
 
@@ -177,13 +179,14 @@ public enum SubjectSchemeIdentifiers
 	NUGI("31"), //
 
 	/**
-	 * Nederlandstalige Uniforme Rubrieksindeling (Dutch book trade classification, from 2002, see http://www.boek.nl/nur (in Dutch).
+	 * Nederlandstalige Uniforme Rubrieksindeling (Dutch book trade classification, from 2002, see
+	 * http://www.boek.nl/nur (in Dutch).
 	 */
 	NUR("32"), //
 
 	/**
-	 * ECPA Christian Product Category Book Codes, consisting of up to three x 3-letter blocks, for Super Category, Primary Category and
-	 * Sub-Category. See ‘http://www.ecpa.org/ECPA/cbacategories.xls’.
+	 * ECPA Christian Product Category Book Codes, consisting of up to three x 3-letter blocks, for Super Category,
+	 * Primary Category and Sub-Category. See ‘http://www.ecpa.org/ECPA/cbacategories.xls’.
 	 */
 	ECPA_Christian_Book_Category("33"), //
 
@@ -210,8 +213,8 @@ public enum SubjectSchemeIdentifiers
 	Bokgrupper("37"), //
 
 	/**
-	 * Norwegian bookselling subject categories (Bokhandelens varegrupper) administered by the Norwegian Booksellers Association
-	 * (http://bokhandlerforeningen.no/).
+	 * Norwegian bookselling subject categories (Bokhandelens varegrupper) administered by the Norwegian Booksellers
+	 * Association (http://bokhandlerforeningen.no/).
 	 */
 	Varegrupper("38"), //
 
@@ -236,7 +239,8 @@ public enum SubjectSchemeIdentifiers
 	ANELE_Materias("42"), //
 
 	/**
-	 * Codes for Norwegian ‘utdanningsprogram’ used in secondary education. See: http://www.udir.no/. (Formerly ‘Skolefag’.)
+	 * Codes for Norwegian ‘utdanningsprogram’ used in secondary education. See: http://www.udir.no/. (Formerly
+	 * ‘Skolefag’.)
 	 */
 	Utdanningsprogram("43"), //
 
@@ -286,8 +290,8 @@ public enum SubjectSchemeIdentifiers
 	ECI_subject_categories("52"), //
 
 	/**
-	 * Classificazione commerciale editoriale (Italian book trade subject category based on BIC). CCE documentation available at
-	 * ‘http://www.ie-online.it/CCE2_2.0.pdf’.
+	 * Classificazione commerciale editoriale (Italian book trade subject category based on BIC). CCE documentation
+	 * available at ‘http://www.ie-online.it/CCE2_2.0.pdf’.
 	 */
 	Soggetto_CCE("53"), //
 
@@ -347,12 +351,14 @@ public enum SubjectSchemeIdentifiers
 	YSA("64"), //
 
 	/**
-	 * Allmän tesaurus på svenska: Swedish translation of the Finnish General Thesaurus. See http://onki.fi/fi/browser/ (in Finnish).
+	 * Allmän tesaurus på svenska: Swedish translation of the Finnish General Thesaurus. See http://onki.fi/fi/browser/
+	 * (in Finnish).
 	 */
 	All_rs("65"), //
 
 	/**
-	 * Yleisten kirjastojen luokitusjärjestelmä: Finnish Public Libraries Classification System. See http://ykl.kirjastot.fi/ (in Finnish).
+	 * Yleisten kirjastojen luokitusjärjestelmä: Finnish Public Libraries Classification System. See
+	 * http://ykl.kirjastot.fi/ (in Finnish).
 	 */
 	YKL("66"), //
 
@@ -362,7 +368,8 @@ public enum SubjectSchemeIdentifiers
 	MUSA("67"), //
 
 	/**
-	 * Specialtesaurus för musik: Swedish translation of the Finnish Music Thesaurus. See http://onki.fi/fi/browser/ (in Finnish).
+	 * Specialtesaurus för musik: Swedish translation of the Finnish Music Thesaurus. See http://onki.fi/fi/browser/ (in
+	 * Finnish).
 	 */
 	CILLA("68"), //
 
@@ -442,8 +449,8 @@ public enum SubjectSchemeIdentifiers
 	Bibliotheca_Alexandrina_Subject_Headings("84"), //
 
 	/**
-	 * Location defined by postal code. Format is two-letter country code (from List 91), space, postal code. Note some postal codes
-	 * themselves contain spaces, eg “GB N7 9DP” or “US 10125”.
+	 * Location defined by postal code. Format is two-letter country code (from List 91), space, postal code. Note some
+	 * postal codes themselves contain spaces, eg “GB N7 9DP” or “US 10125”.
 	 */
 	Postal_code("85"), //
 
@@ -461,13 +468,14 @@ public enum SubjectSchemeIdentifiers
 	NewBooks_Subject_Classification("87"), //
 
 	/**
-	 * Subject classification maintained by the Editorial Board of Chinese Library Classification. See http://cct.nlc.gov.cn for access to
-	 * details of the scheme.
+	 * Subject classification maintained by the Editorial Board of Chinese Library Classification. See
+	 * http://cct.nlc.gov.cn for access to details of the scheme.
 	 */
 	Chinese_Library_Classification("88"), //
 
 	/**
-	 * Subject classification for Books, Audiovisual products and E-publications formulated by China National Technical Committee 505.
+	 * Subject classification for Books, Audiovisual products and E-publications formulated by China National Technical
+	 * Committee 505.
 	 */
 	NTCPDSAC_Classification("89"), //
 
@@ -478,8 +486,8 @@ public enum SubjectSchemeIdentifiers
 
 	/**
 	 * Gemeinsame Normdatei – Joint Authority File in the German-speaking countries. See
-	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a single authority
-	 * file, and should be used in preference to the older codes.
+	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a
+	 * single authority file, and should be used in preference to the older codes.
 	 */
 	GND("91"), //
 
@@ -513,8 +521,8 @@ public enum SubjectSchemeIdentifiers
 	Statystyka_Ksi_ek_Papierowych_M_wionych_I_Elektronicznych("A3"), //
 
 	/**
-	 * Common Core State Standards curriculum alignment, for links to US educational standards. <SubjectCode> uses the full dot notation.
-	 * See ‘http://www.corestandards.org/developers-and-publishers’.
+	 * Common Core State Standards curriculum alignment, for links to US educational standards. <SubjectCode> uses the
+	 * full dot notation. See ‘http://www.corestandards.org/developers-and-publishers’.
 	 */
 	CCSS("A4"), //
 
@@ -530,9 +538,10 @@ public enum SubjectSchemeIdentifiers
 	Nomenclature_discipline_scolaire("A6"), //
 
 	/**
-	 * International Standard Industry Classification, a classification of economic activities. Use for books that are about a particular
-	 * industry or economic activity. See ‘http://unstats.un.org/unsd/cr/registry/isic- 4.asp’. <SubjectCode> should be a single letter
-	 * denoting an ISIC section OR a 2-, 3- or 4-digit number denoting an ISIC division, group or class.
+	 * International Standard Industry Classification, a classification of economic activities. Use for books that are
+	 * about a particular industry or economic activity. See ‘http://unstats.un.org/unsd/cr/registry/isic- 4.asp’.
+	 * <SubjectCode> should be a single letter denoting an ISIC section OR a 2-, 3- or 4-digit number denoting an ISIC
+	 * division, group or class.
 	 */
 	ISIC("A7"), //
 

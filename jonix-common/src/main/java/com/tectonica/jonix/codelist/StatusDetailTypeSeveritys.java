@@ -20,28 +20,29 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList224
+ * Enum that corresponds to ONIX's <b>CodeList224</b>
  * <p>
  * Status detail type severity
  * <p>
  * NOTE: Introduced in Onix3
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum StatusDetailTypeSeveritys
 {
 	/**
-	 * Use ONLY if the message severity cannot be determined (eg with a legacy system unable to provide detailed error codes).
+	 * Use ONLY if the message severity cannot be determined (eg with a legacy system unable to provide detailed error
+	 * codes).
 	 */
 	Unclassifiable("U"), //
 
 	/**
-	 * For information only, provided to encourage the ONIX data supplier to improve the quality of their data (eg provision of a
-	 * non-mandatory data element that is currently missing, better conformity with best practice, etc).
+	 * For information only, provided to encourage the ONIX data supplier to improve the quality of their data (eg
+	 * provision of a non-mandatory data element that is currently missing, better conformity with best practice, etc).
 	 */
 	Info("I"), //
 
@@ -56,15 +57,16 @@ public enum StatusDetailTypeSeveritys
 	Warning("W"), //
 
 	/**
-	 * Some data in an ONIX data element or message structure caused an error due to not meeting the requirements of the standard. The data
-	 * in question has been rejected, but processing of the remaining elements in the record (or the remain records in the message, if used
-	 * within <MessageStatusDetail>) has continued.
+	 * Some data in an ONIX data element or message structure caused an error due to not meeting the requirements of the
+	 * standard. The data in question has been rejected, but processing of the remaining elements in the record (or the
+	 * remain records in the message, if used within <MessageStatusDetail>) has continued.
 	 */
 	Error("E"), //
 
 	/**
-	 * Some data in an ONIX data element or message structure caused an unrecoverable error due to not meeting the requirements of the
-	 * standard. The entire ONIX record has been rejected (or the entire message, if used within <MessageStatusDetail>).
+	 * Some data in an ONIX data element or message structure caused an unrecoverable error due to not meeting the
+	 * requirements of the standard. The entire ONIX record has been rejected (or the entire message, if used within
+	 * <MessageStatusDetail>).
 	 */
 	Fatal_error("F");
 

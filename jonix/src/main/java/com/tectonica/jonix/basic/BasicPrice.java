@@ -22,7 +22,7 @@ package com.tectonica.jonix.basic;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
+import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.PriceTypes;
 
 /**
@@ -41,7 +41,7 @@ public class BasicPrice implements Serializable
 	public final PriceTypes priceType;
 	public final Double priceAmount;
 	public final String priceAmountAsStr;
-	public final CurrencyCodeIso4217s currencyCode;
+	public final CurrencyCodes currencyCode;
 
 	public BasicPrice(com.tectonica.jonix.onix2.Price p)
 	{

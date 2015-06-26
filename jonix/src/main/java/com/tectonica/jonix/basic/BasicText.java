@@ -21,7 +21,7 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextTypes;
@@ -75,7 +75,7 @@ public class BasicText implements Serializable
 		{
 			for (Text text : textContent.texts)
 			{
-				if (text.language == null || text.language == LanguageCodeIso6392Bs.English)
+				if (text.language == null || text.language == LanguageCodes.English)
 					return text;
 			}
 			return textContent.texts.get(0); // return whatever language we have

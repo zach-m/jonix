@@ -80,14 +80,15 @@ public class OnixEnumGen
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("/**\n");
-		p.printf(" * Enum that corresponds to ONIX's Code%s\n", enumType.name);
+		p.printf(" * Enum that corresponds to ONIX's <b>Code%s</b>\n", enumType.name);
 		if (enumType.comment != null)
 		{
 			p.printf(" * <p>\n");
 			p.printf(" * %s\n", enumType.comment);
 		}
+		String link = "http://www.editeur.org/14/code-lists";
 		p.printf(" * \n");
-		p.printf(" * @see <a href=\"http://www.editeur.org/14/code-lists/\">http://www.editeur.org/14/code-lists/</a>\n");
+		p.printf(" * @see <a href=\"%s\">%s</a>\n", link, link);
 		p.printf(" */\n");
 
 		p.println("public enum " + enumType.enumName);

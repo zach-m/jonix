@@ -27,9 +27,9 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.AudienceRestrictionFlags;
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.DateFormats;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
@@ -44,7 +44,7 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
 import com.tectonica.jonix.struct.JonixSupplierIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -55,7 +55,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -102,7 +102,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
@@ -243,11 +243,11 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return (supplierRole == null) ? null : supplierRole.value;
 	}
 
-	public List<java.util.Set<CountryCodeIso31661s>> getSupplyToCountrySets()
+	public List<java.util.Set<CountryCodes>> getSupplyToCountrySets()
 	{
 		if (supplyToCountrys != null)
 		{
-			List<java.util.Set<CountryCodeIso31661s>> list = new ArrayList<>();
+			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
 			for (SupplyToCountry i : supplyToCountrys)
 				list.add(i.value);
 			return list;
@@ -272,11 +272,11 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<java.util.Set<CountryCodeIso31661s>> getSupplyToCountryExcludedSets()
+	public List<java.util.Set<CountryCodes>> getSupplyToCountryExcludedSets()
 	{
 		if (supplyToCountryExcludeds != null)
 		{
-			List<java.util.Set<CountryCodeIso31661s>> list = new ArrayList<>();
+			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
 			for (SupplyToCountryExcluded i : supplyToCountryExcludeds)
 				list.add(i.value);
 			return list;

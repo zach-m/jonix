@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList76
+ * Enum that corresponds to ONIX's <b>CodeList76</b>
  * <p>
  * Product form feature value – DVD region codes
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductFormFeatureValueDvdRegions
 {
@@ -81,12 +81,14 @@ public enum ProductFormFeatureValueDvdRegions
 	DVD_region_8("8"), //
 
 	/**
-	 * North America, Central America, South America, Japan, Taiwan, North Korea, South Korea, Hong Kong, and Southeast Asia.
+	 * North America, Central America, South America, Japan, Taiwan, North Korea, South Korea, Hong Kong, and Southeast
+	 * Asia.
 	 */
 	Blu_Ray_region_A("A"), //
 
 	/**
-	 * Most of Europe, Greenland, French territories, Middle East, Africa, Australia, and New Zealand, plus all of Oceania.
+	 * Most of Europe, Greenland, French territories, Middle East, Africa, Australia, and New Zealand, plus all of
+	 * Oceania.
 	 */
 	Blu_Ray_region_B("B"), //
 

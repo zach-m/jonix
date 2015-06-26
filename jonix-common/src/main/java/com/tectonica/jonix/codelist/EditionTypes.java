@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList21
+ * Enum that corresponds to ONIX's <b>CodeList21</b>
  * <p>
  * Edition type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum EditionTypes
 {
@@ -41,14 +41,14 @@ public enum EditionTypes
 	Abridged_edition("ABR"), //
 
 	/**
-	 * Version of a play or script intended for use of those directly involved in a production, usually including full stage directions in
-	 * addition to the text of the script.
+	 * Version of a play or script intended for use of those directly involved in a production, usually including full
+	 * stage directions in addition to the text of the script.
 	 */
 	Acting_edition("ACT"), //
 
 	/**
-	 * Content has been adapted to serve a different purpose or audience, or from one medium to another: use for dramatization, novelization
-	 * etc. Use <EditionStatement> to describe the exact nature of the adaptation.
+	 * Content has been adapted to serve a different purpose or audience, or from one medium to another: use for
+	 * dramatization, novelization etc. Use <EditionStatement> to describe the exact nature of the adaptation.
 	 */
 	Adapted_edition("ADP"), //
 
@@ -73,7 +73,8 @@ public enum EditionTypes
 	Braille_edition("BRL"), //
 
 	/**
-	 * An edition in which two or more works also published separately are combined in a single volume; AKA ‘omnibus’ edition.
+	 * An edition in which two or more works also published separately are combined in a single volume; AKA ‘omnibus’
+	 * edition.
 	 */
 	Combined_volume("CMB"), //
 
@@ -88,13 +89,14 @@ public enum EditionTypes
 	Coursepack("CSP"), //
 
 	/**
-	 * A digital product that, at the time of publication, has or had no print counterpart and that is or was not expected to have a print
-	 * counterpart for a reasonable time (recommended at least 30 days following publication).
+	 * A digital product that, at the time of publication, has or had no print counterpart and that is or was not
+	 * expected to have a print counterpart for a reasonable time (recommended at least 30 days following publication).
 	 */
 	Digital_original("DGO"), //
 
 	/**
-	 * Use for e-publications that have been enhanced with additional text, speech, other audio, video, interactive or other content.
+	 * Use for e-publications that have been enhanced with additional text, speech, other audio, video, interactive or
+	 * other content.
 	 */
 	Enhanced_edition("ENH"), //
 
@@ -134,8 +136,8 @@ public enum EditionTypes
 	Microprint_edition("MCP"), //
 
 	/**
-	 * An edition published to coincide with the release of a film, TV program, or electronic game based on the same work. Use
-	 * <EditionStatement> to describe the exact nature of the tie-in.
+	 * An edition published to coincide with the release of a film, TV program, or electronic game based on the same
+	 * work. Use <EditionStatement> to describe the exact nature of the tie-in.
 	 */
 	Media_tie_in("MDT"), //
 
@@ -155,9 +157,9 @@ public enum EditionTypes
 	Edition_with_numbered_copies("NUM"), //
 
 	/**
-	 * In the US, a book that was previously bound, normally as a paperback, and has been rebound with a library-quality hardcover binding
-	 * by a supplier other than the original publisher. See also the <Publisher> and <RelatedProduct> composites for other aspects of the
-	 * treatment of prebound editions in ONIX.
+	 * In the US, a book that was previously bound, normally as a paperback, and has been rebound with a library-quality
+	 * hardcover binding by a supplier other than the original publisher. See also the <Publisher> and <RelatedProduct>
+	 * composites for other aspects of the treatment of prebound editions in ONIX.
 	 */
 	Prebound_edition("PRB"), //
 
@@ -177,8 +179,8 @@ public enum EditionTypes
 	Simplified_language_edition("SMP"), //
 
 	/**
-	 * Use for anniversary, collectors’, de luxe, gift, limited (but unnumbered), autographed edition. Use <EditionStatement> to describe
-	 * the exact nature of the special edition.
+	 * Use for anniversary, collectors’, de luxe, gift, limited (but unnumbered), autographed edition. Use
+	 * <EditionStatement> to describe the exact nature of the special edition.
 	 */
 	Special_edition("SPE"), //
 
@@ -193,8 +195,8 @@ public enum EditionTypes
 	Teacher_s_edition("TCH"), //
 
 	/**
-	 * Where a title has also been published in an abridged edition; also for audiobooks, regardless of whether an abridged audio version
-	 * also exists.
+	 * Where a title has also been published in an abridged edition; also for audiobooks, regardless of whether an
+	 * abridged audio version also exists.
 	 */
 	Unabridged_edition("UBR"), //
 
@@ -209,7 +211,8 @@ public enum EditionTypes
 	Unexpurgated_edition("UXP"), //
 
 	/**
-	 * Content includes notes by various commentators, and/or includes and compares several variant texts of the same work.
+	 * Content includes notes by various commentators, and/or includes and compares several variant texts of the same
+	 * work.
 	 */
 	Variorum_edition("VAR");
 

@@ -23,17 +23,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList74
+ * Enum that corresponds to ONIX's <b>CodeList74</b>
  * <p>
  * Language code – ISO 639-2/B
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
-public enum LanguageCodeIso6392Bs
+public enum LanguageCodes
 {
 	Afar("aar"), //
 
@@ -1257,25 +1257,25 @@ public enum LanguageCodeIso6392Bs
 
 	public final String value;
 
-	private LanguageCodeIso6392Bs(String value)
+	private LanguageCodes(String value)
 	{
 		this.value = value;
 	}
 
-	private static Map<String, LanguageCodeIso6392Bs> map;
+	private static Map<String, LanguageCodes> map;
 
-	private static Map<String, LanguageCodeIso6392Bs> map()
+	private static Map<String, LanguageCodes> map()
 	{
 		if (map == null)
 		{
 			map = new HashMap<>();
-			for (LanguageCodeIso6392Bs e : values())
+			for (LanguageCodes e : values())
 				map.put(e.value, e);
 		}
 		return map;
 	}
 
-	public static LanguageCodeIso6392Bs byValue(String value)
+	public static LanguageCodes byValue(String value)
 	{
 		if (value == null || value.isEmpty())
 			return null;

@@ -20,24 +20,24 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList101
+ * Enum that corresponds to ONIX's <b>CodeList101</b>
  * <p>
  * Person name identifier type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PersonNameIdentifierTypes
 {
 	Proprietary("01"), //
 
 	/**
-	 * Personennamendatei – person name authority file used by Deutsche Nationalbibliothek and in other German-speaking countries. See
-	 * http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm
-	 * (English). DEPRECATED in favour of the GND.
+	 * Personennamendatei – person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
+	 * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND.
 	 */
 	PND("02"), //
 
@@ -53,8 +53,8 @@ public enum PersonNameIdentifierTypes
 
 	/**
 	 * Gemeinsame Normdatei – Joint Authority File in the German-speaking countries. See
-	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a single authority
-	 * file, and should be used in preference.
+	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a
+	 * single authority file, and should be used in preference.
 	 */
 	GND("25");
 

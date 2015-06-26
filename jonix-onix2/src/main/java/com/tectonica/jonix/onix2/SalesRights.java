@@ -25,8 +25,8 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.RightsRegions;
@@ -36,7 +36,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -47,7 +47,7 @@ public class SalesRights implements OnixDataComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -65,7 +65,7 @@ public class SalesRights implements OnixDataComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
@@ -94,11 +94,11 @@ public class SalesRights implements OnixDataComposite, Serializable
 		return (salesRightsType == null) ? null : salesRightsType.value;
 	}
 
-	public List<java.util.Set<CountryCodeIso31661s>> getRightsCountrySets()
+	public List<java.util.Set<CountryCodes>> getRightsCountrySets()
 	{
 		if (rightsCountrys != null)
 		{
-			List<java.util.Set<CountryCodeIso31661s>> list = new ArrayList<>();
+			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
 			for (RightsCountry i : rightsCountrys)
 				list.add(i.value);
 			return list;

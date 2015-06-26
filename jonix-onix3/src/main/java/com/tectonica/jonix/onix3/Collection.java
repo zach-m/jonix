@@ -33,7 +33,7 @@ import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.struct.JonixCollectionSequence;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

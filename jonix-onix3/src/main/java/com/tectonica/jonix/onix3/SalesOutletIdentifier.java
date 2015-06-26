@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

@@ -41,6 +41,6 @@ public class Comments
 			" */\n";
 
 	public static final String AutoGen = "/*\n" + //
-			" * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT\n" + //
+			" * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY\n" + //
 			" */\n";
 }

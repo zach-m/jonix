@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList167
+ * Enum that corresponds to ONIX's <b>CodeList167</b>
  * <p>
  * Price condition type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum PriceConditionTypes
 {
@@ -71,14 +71,14 @@ public enum PriceConditionTypes
 	Rental_duration("10"), //
 
 	/**
-	 * Purchase at this price requires prior rental of the product. <PriceConditionQuantity> gives minimum prior rental period, and
-	 * <ProductIdentifier> may be used if rental uses a different product identifier.
+	 * Purchase at this price requires prior rental of the product. <PriceConditionQuantity> gives minimum prior rental
+	 * period, and <ProductIdentifier> may be used if rental uses a different product identifier.
 	 */
 	Rental_to_purchase("11"), //
 
 	/**
-	 * Upgrade to longer rental duration. <PriceConditionQuantity> gives minimum prior rental duration. Separate price condition with rental
-	 * duration (code 10) specifies the new combined rental duration.
+	 * Upgrade to longer rental duration. <PriceConditionQuantity> gives minimum prior rental duration. Separate price
+	 * condition with rental duration (code 10) specifies the new combined rental duration.
 	 */
 	Rental_extension("12");
 

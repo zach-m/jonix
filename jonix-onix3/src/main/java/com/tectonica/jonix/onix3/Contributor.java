@@ -26,7 +26,7 @@ import java.util.List;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
@@ -36,7 +36,7 @@ import com.tectonica.jonix.struct.JonixContributorDate;
 import com.tectonica.jonix.struct.JonixNameIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -166,11 +166,11 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<LanguageCodeIso6392Bs> getFromLanguageValues()
+	public List<LanguageCodes> getFromLanguageValues()
 	{
 		if (fromLanguages != null)
 		{
-			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			List<LanguageCodes> list = new ArrayList<>();
 			for (FromLanguage i : fromLanguages)
 				list.add(i.value);
 			return list;
@@ -178,11 +178,11 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public List<LanguageCodeIso6392Bs> getToLanguageValues()
+	public List<LanguageCodes> getToLanguageValues()
 	{
 		if (toLanguages != null)
 		{
-			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			List<LanguageCodes> list = new ArrayList<>();
 			for (ToLanguage i : toLanguages)
 				list.add(i.value);
 			return list;

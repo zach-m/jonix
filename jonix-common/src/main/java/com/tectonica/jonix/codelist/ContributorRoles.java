@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList17
+ * Enum that corresponds to ONIX's <b>CodeList17</b>
  * <p>
  * Contributor role code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ContributorRoles
 {
@@ -82,7 +82,8 @@ public enum ContributorRoles
 	Designed_by("A11"), //
 
 	/**
-	 * Artist when named as the creator of artwork which illustrates a text, or of the artwork of a graphic novel or comic book.
+	 * Artist when named as the creator of artwork which illustrates a text, or of the artwork of a graphic novel or
+	 * comic book.
 	 */
 	Illustrated_by("A12"), //
 
@@ -92,7 +93,8 @@ public enum ContributorRoles
 	Photographs_by("A13"), //
 
 	/**
-	 * Author of text which accompanies art reproductions or photographs, or which is part of a graphic novel or comic book.
+	 * Author of text which accompanies art reproductions or photographs, or which is part of a graphic novel or comic
+	 * book.
 	 */
 	Text_by("A14"), //
 
@@ -214,8 +216,8 @@ public enum ContributorRoles
 	Maps_by("A39"), //
 
 	/**
-	 * When separate persons are named as having respectively drawn and colored artwork, eg for a graphic novel or comic book, use A12 for
-	 * ‘drawn by’ and A40 for ‘colored by’.
+	 * When separate persons are named as having respectively drawn and colored artwork, eg for a graphic novel or comic
+	 * book, use A12 for ‘drawn by’ and A40 for ‘colored by’.
 	 */
 	Inked_or_colored_by("A40"), //
 
@@ -253,8 +255,8 @@ public enum ContributorRoles
 	As_told_by("B07"), //
 
 	/**
-	 * This code applies where a translator has provided a commentary on issues relating to the translation. If the translator has also
-	 * provided a commentary on the work itself, codes B06 and A21 should be used.
+	 * This code applies where a translator has provided a commentary on issues relating to the translation. If the
+	 * translator has also provided a commentary on the work itself, codes B06 and A21 should be used.
 	 */
 	Translated_with_commentary_by("B08"), //
 
@@ -301,8 +303,8 @@ public enum ContributorRoles
 	General_rapporteur("B23"), //
 
 	/**
-	 * An editor who is responsible for establishing the text used in an edition of a literary work, where this is recognised as a
-	 * distinctive role (in Spain, ‘editor literario’).
+	 * An editor who is responsible for establishing the text used in an edition of a literary work, where this is
+	 * recognised as a distinctive role (in Spain, ‘editor literario’).
 	 */
 	Literary_editor("B24"), //
 
@@ -373,8 +375,8 @@ public enum ContributorRoles
 	Speaker("E09"), //
 
 	/**
-	 * Other type of performer not specified above: use for a recorded performance which does not fit a category above, eg a performance by
-	 * a stand-up comedian.
+	 * Other type of performer not specified above: use for a recorded performance which does not fit a category above,
+	 * eg a performance by a stand-up comedian.
 	 */
 	Performed_by("E99"), //
 
@@ -391,12 +393,14 @@ public enum ContributorRoles
 	Other_recording_by("F99"), //
 
 	/**
-	 * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence numbering.
+	 * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence
+	 * numbering.
 	 */
 	Assisted_by("Z01"), //
 
 	/**
-	 * For use ONLY with ‘et al’ or ‘Various’ within <UnnamedPersons>, where the roles of the multiple contributors vary.
+	 * For use ONLY with ‘et al’ or ‘Various’ within <UnnamedPersons>, where the roles of the multiple contributors
+	 * vary.
 	 */
 	_Various_roles("Z98"), //
 

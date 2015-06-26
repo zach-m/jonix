@@ -23,31 +23,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList42
+ * Enum that corresponds to ONIX's <b>CodeList42</b>
  * <p>
  * Text item type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TextItemTypes
 {
 	/**
-	 * A complete work which is published as a content item in a product which carries two or more such works, eg when two or three novels
-	 * are published in a single omnibus volume.
+	 * A complete work which is published as a content item in a product which carries two or more such works, eg when
+	 * two or three novels are published in a single omnibus volume.
 	 */
 	Textual_work("01"), //
 
 	/**
-	 * Text components such as Preface, Introduction etc which appear as preliminaries to the main body of text content in a product.
+	 * Text components such as Preface, Introduction etc which appear as preliminaries to the main body of text content
+	 * in a product.
 	 */
 	Front_matter("02"), //
 
 	/**
-	 * Text components such as Part, Chapter, Section etc which appear as part of the main body of text content in a product.
+	 * Text components such as Part, Chapter, Section etc which appear as part of the main body of text content in a
+	 * product.
 	 */
 	Body_matter("03"), //
 

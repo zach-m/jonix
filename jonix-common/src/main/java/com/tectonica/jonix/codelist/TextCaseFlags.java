@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList14
+ * Enum that corresponds to ONIX's <b>CodeList14</b>
  * <p>
  * Text case flag
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TextCaseFlags
 {
@@ -43,9 +43,9 @@ public enum TextCaseFlags
 	Sentence_case("01"), //
 
 	/**
-	 * Initial capitals on first word and subsequently on all significant words (nouns, pronouns, adjectives, verbs, adverbs, subordinate
-	 * conjunctions) thereafter. Unless they appear as the first word, articles, prepositions and coordinating conjunctions remain lower
-	 * case, eg “The Conquest of Mexico”.
+	 * Initial capitals on first word and subsequently on all significant words (nouns, pronouns, adjectives, verbs,
+	 * adverbs, subordinate conjunctions) thereafter. Unless they appear as the first word, articles, prepositions and
+	 * coordinating conjunctions remain lower case, eg “The Conquest of Mexico”.
 	 */
 	Title_case("02"), //
 

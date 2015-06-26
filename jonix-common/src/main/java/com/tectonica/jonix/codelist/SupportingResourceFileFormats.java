@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList178
+ * Enum that corresponds to ONIX's <b>CodeList178</b>
  * <p>
  * Supporting resource file format
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SupportingResourceFileFormats
 {
@@ -136,8 +136,8 @@ public enum SupportingResourceFileFormats
 	TIFF("D504"), //
 
 	/**
-	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum (IDPF) [File extension
-	 * .epub].
+	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
+	 * (IDPF) [File extension .epub].
 	 */
 	EPUB("E101"), //
 
@@ -162,7 +162,8 @@ public enum SupportingResourceFileFormats
 	XPS("E115"), //
 
 	/**
-	 * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw, .mobi, .prc].
+	 * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw,
+	 * .mobi, .prc].
 	 */
 	Amazon_Kindle("E116"), //
 

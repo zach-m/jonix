@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList54
+ * Enum that corresponds to ONIX's <b>CodeList54</b>
  * <p>
  * Availability status code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum AvailabilityStatuss
 {
@@ -76,7 +76,8 @@ public enum AvailabilityStatuss
 	Newly_catalogued_not_yet_in_stock("NY"), //
 
 	/**
-	 * This format is out of print, but another format is available: should be accompanied by an identifier for the alternative product.
+	 * This format is out of print, but another format is available: should be accompanied by an identifier for the
+	 * alternative product.
 	 */
 	Other_format_available("OF"), //
 
@@ -91,8 +92,8 @@ public enum AvailabilityStatuss
 	Out_of_print("OP"), //
 
 	/**
-	 * This edition is out of print, but a new edition has been or will soon be published: should be accompanied by an identifier for the
-	 * new edition.
+	 * This edition is out of print, but a new edition has been or will soon be published: should be accompanied by an
+	 * identifier for the new edition.
 	 */
 	Replaced_by_new_edition("OR"), //
 
@@ -102,8 +103,8 @@ public enum AvailabilityStatuss
 	Publication_postponed_indefinitely("PP"), //
 
 	/**
-	 * Supply of this item has been transferred to another publisher or distributor: should be accompanied by an identifier for the new
-	 * supplier.
+	 * Supply of this item has been transferred to another publisher or distributor: should be accompanied by an
+	 * identifier for the new supplier.
 	 */
 	Refer_to_another_supplier("RF"), //
 
@@ -120,8 +121,8 @@ public enum AvailabilityStatuss
 	Reprinting_undated("RU"), //
 
 	/**
-	 * This item is not stocked but has to be specially ordered from a supplier (eg import item not stocked locally): may be accompanied by
-	 * an estimated average time to supply.
+	 * This item is not stocked but has to be specially ordered from a supplier (eg import item not stocked locally):
+	 * may be accompanied by an estimated average time to supply.
 	 */
 	Special_order("TO"), //
 
@@ -136,9 +137,9 @@ public enum AvailabilityStatuss
 	Temporarily_unavailable("TU"), //
 
 	/**
-	 * The item is out of stock but will be reissued under the same ISBN: MUST be accompanied by an expected availability date and by the
-	 * reissue date in the <Reissue> composite. See notes on the <Reissue> composite for details on treatment of availability status during
-	 * reissue.
+	 * The item is out of stock but will be reissued under the same ISBN: MUST be accompanied by an expected
+	 * availability date and by the reissue date in the <Reissue> composite. See notes on the <Reissue> composite for
+	 * details on treatment of availability status during reissue.
 	 */
 	Unavailable_awaiting_reissue("UR"), //
 

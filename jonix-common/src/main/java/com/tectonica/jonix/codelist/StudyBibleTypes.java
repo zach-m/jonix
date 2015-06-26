@@ -23,27 +23,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList84
+ * Enum that corresponds to ONIX's <b>CodeList84</b>
  * <p>
  * Study Bible type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum StudyBibleTypes
 {
 	/**
-	 * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the books, notes and
-	 * cross references. Originally published in 1993, NRSV.
+	 * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the
+	 * books, notes and cross references. Originally published in 1993, NRSV.
 	 */
 	Cambridge_Annotated("CAM"), //
 
 	/**
-	 * A project of Tyndale House Publishers and Zondervan intended to help readers apply the Bible to daily living. Living Bible, King
-	 * James, New International, NASB.
+	 * A project of Tyndale House Publishers and Zondervan intended to help readers apply the Bible to daily living.
+	 * Living Bible, King James, New International, NASB.
 	 */
 	Life_Application("LIF"), //
 

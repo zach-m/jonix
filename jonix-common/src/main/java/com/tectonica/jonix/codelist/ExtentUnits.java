@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList24
+ * Enum that corresponds to ONIX's <b>CodeList24</b>
  * <p>
  * Extent unit code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ExtentUnits
 {
@@ -49,9 +49,10 @@ public enum ExtentUnits
 	Seconds_integer_only("06"), //
 
 	/**
-	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3–6 minutes of running time,
-	 * and track counts are misleading and inappropriate if the average track duration is significantly more or less than this. Note that
-	 * track breaks are not necessarily aligned with structural breaks in the text (eg chapter breaks).
+	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3–6
+	 * minutes of running time, and track counts are misleading and inappropriate if the average track duration is
+	 * significantly more or less than this. Note that track breaks are not necessarily aligned with structural breaks
+	 * in the text (eg chapter breaks).
 	 */
 	Tracks("11"), //
 

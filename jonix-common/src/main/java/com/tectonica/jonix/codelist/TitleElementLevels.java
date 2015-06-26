@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList149
+ * Enum that corresponds to ONIX's <b>CodeList149</b>
  * <p>
  * Title element level
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TitleElementLevels
 {
@@ -43,25 +43,27 @@ public enum TitleElementLevels
 	Collection_level("02"), //
 
 	/**
-	 * The title element refers to an intermediate level of a bibliographic collection that comprises two or more ‘sub-collections’.
+	 * The title element refers to an intermediate level of a bibliographic collection that comprises two or more
+	 * ‘sub-collections’.
 	 */
 	Subcollection("03"), //
 
 	/**
-	 * The title element refers to a content item within a product, eg a work included in a combined or ‘omnibus’ edition, or a chapter in a
-	 * book.
+	 * The title element refers to a content item within a product, eg a work included in a combined or ‘omnibus’
+	 * edition, or a chapter in a book.
 	 */
 	Content_item("04"), //
 
 	/**
-	 * The title element names a master brand where the use of the brand spans multiple collections and product forms, and possibly multiple
-	 * imprints and publishers. Used only for branded media properties such as children’s character properties.
+	 * The title element names a master brand where the use of the brand spans multiple collections and product forms,
+	 * and possibly multiple imprints and publishers. Used only for branded media properties such as children’s
+	 * character properties.
 	 */
 	Master_brand("05"), //
 
 	/**
-	 * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a sub-collection (a third
-	 * level of collective identity).
+	 * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a
+	 * sub-collection (a third level of collective identity).
 	 */
 	Sub_subcollection("06");
 

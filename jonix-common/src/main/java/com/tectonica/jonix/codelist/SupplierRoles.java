@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList93
+ * Enum that corresponds to ONIX's <b>CodeList93</b>
  * <p>
  * Supplier role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum SupplierRoles
 {
@@ -55,13 +55,14 @@ public enum SupplierRoles
 	Wholesaler("04"), //
 
 	/**
-	 * DEPRECATED – use <MarketRepresentation> (ONIX 2.1) or <MarketPublishingDetail> (ONIX 3.0) to specify a sales agent.
+	 * DEPRECATED – use <MarketRepresentation> (ONIX 2.1) or <MarketPublishingDetail> (ONIX 3.0) to specify a sales
+	 * agent.
 	 */
 	Sales_agent("05"), //
 
 	/**
-	 * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as appropriate, where
-	 * possible.
+	 * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as
+	 * appropriate, where possible.
 	 */
 	Publisher_s_distributor_to_retailers("06"), //
 

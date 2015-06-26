@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList78
+ * Enum that corresponds to ONIX's <b>CodeList78</b>
  * <p>
  * Product form detail
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductFormDetails
 {
@@ -134,15 +134,15 @@ public enum ProductFormDetails
 	Standalone_audio("A301"), //
 
 	/**
-	 * Audio intended exclusively for use alongside a printed copy of the book. Most often a children’s product. Normally contains
-	 * instructions such as “turn the page now” and other references to the printed item, and is usually sold packaged together with a
-	 * printed copy.
+	 * Audio intended exclusively for use alongside a printed copy of the book. Most often a children’s product.
+	 * Normally contains instructions such as “turn the page now” and other references to the printed item, and is
+	 * usually sold packaged together with a printed copy.
 	 */
 	Readalong_audio("A302"), //
 
 	/**
-	 * Audio intended for musical accompaniment, eg ‘Music minus one’, etc, often used for music learning. Includes singalong backing audio
-	 * for musical learning or for Karaoke-style entertainment.
+	 * Audio intended for musical accompaniment, eg ‘Music minus one’, etc, often used for music learning. Includes
+	 * singalong backing audio for musical learning or for Karaoke-style entertainment.
 	 */
 	Playalong_audio("A303"), //
 
@@ -152,49 +152,52 @@ public enum ProductFormDetails
 	Speakalong_audio("A304"), //
 
 	/**
-	 * Audio synchronised to text within an e-publication, for example an EPUB3 with audio overlay. Synchronisation at least at paragraph
-	 * level, and covering the full content.
+	 * Audio synchronised to text within an e-publication, for example an EPUB3 with audio overlay. Synchronisation at
+	 * least at paragraph level, and covering the full content.
 	 */
 	Synchronised_audio("A305"), //
 
 	/**
-	 * In North America, a category of paperback characterized partly by page size (typically 4¼ x 7 1/8 inches) and partly by target market
-	 * and terms of trade. Use with Product Form code BC.
+	 * In North America, a category of paperback characterized partly by page size (typically 4¼ x 7 1/8 inches) and
+	 * partly by target market and terms of trade. Use with Product Form code BC.
 	 */
 	Mass_market_rack("B101"), //
 
 	/**
-	 * In North America, a category of paperback characterized partly by page size and partly by target market and terms of trade. AKA
-	 * ‘quality paperback’, and including textbooks. Most paperback books sold in North America except ‘mass-market’ (B101) and ‘tall rack’
-	 * (B107) are correctly described with this code. Use with Product Form code BC.
+	 * In North America, a category of paperback characterized partly by page size and partly by target market and terms
+	 * of trade. AKA ‘quality paperback’, and including textbooks. Most paperback books sold in North America except
+	 * ‘mass-market’ (B101) and ‘tall rack’ (B107) are correctly described with this code. Use with Product Form code
+	 * BC.
 	 */
 	Trade_paperback_US("B102"), //
 
 	/**
-	 * In North America, a category of paperback characterized by page size and generally used for children’s books; use with Product Form
-	 * code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3.
+	 * In North America, a category of paperback characterized by page size and generally used for children’s books; use
+	 * with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3.
 	 */
 	Digest_format_paperback("B103"), //
 
 	/**
-	 * In UK, a category of paperback characterized by page size (normally 178 x 111 mm approx); use with Product Form code BC.
+	 * In UK, a category of paperback characterized by page size (normally 178 x 111 mm approx); use with Product Form
+	 * code BC.
 	 */
 	A_format_paperback("B104"), //
 
 	/**
-	 * In UK, a category of paperback characterized by page size (normally 198 x 129 mm approx); use with Product Form code BC.
+	 * In UK, a category of paperback characterized by page size (normally 198 x 129 mm approx); use with Product Form
+	 * code BC.
 	 */
 	B_format_paperback("B105"), //
 
 	/**
-	 * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and often used for
-	 * paperback originals; use with Product Form code BC (replaces ‘C-format’ from former List 8).
+	 * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and
+	 * often used for paperback originals; use with Product Form code BC (replaces ‘C-format’ from former List 8).
 	 */
 	Trade_paperback_UK("B106"), //
 
 	/**
-	 * In North America, a category of paperback characterised partly by page size and partly by target market and terms of trade; use with
-	 * Product Form code BC.
+	 * In North America, a category of paperback characterised partly by page size and partly by target market and terms
+	 * of trade; use with Product Form code BC.
 	 */
 	Tall_rack_paperback_US("B107"), //
 
@@ -249,8 +252,8 @@ public enum ProductFormDetails
 	Mook("B117"), //
 
 	/**
-	 * Also called ‘Flipback’. A softback book in a specially compact proprietary format with pages printed in landscape on very thin paper
-	 * and bound along the long (top) edge – see www.dwarsligger.com.
+	 * Also called ‘Flipback’. A softback book in a specially compact proprietary format with pages printed in landscape
+	 * on very thin paper and bound along the long (top) edge – see www.dwarsligger.com.
 	 */
 	Dwarsligger("B118"), //
 
@@ -344,7 +347,8 @@ public enum ProductFormDetails
 	Sticker_book("B209"), //
 
 	/**
-	 * A book whose pages have a variety of textured inserts designed to stimulate tactile exploration: see also B214 and B215.
+	 * A book whose pages have a variety of textured inserts designed to stimulate tactile exploration: see also B214
+	 * and B215.
 	 */
 	Touch_and_feel_book("B210"), //
 
@@ -354,14 +358,15 @@ public enum ProductFormDetails
 	Toy_die_cut_book("B211"), //
 
 	/**
-	 * A book which is cut into a distinctive non-rectilinear shape and/or in which holes or shapes have been cut internally. (‘Die-cut’ is
-	 * used here as a convenient shorthand, and does not imply strict limitation to a particular production process.).
+	 * A book which is cut into a distinctive non-rectilinear shape and/or in which holes or shapes have been cut
+	 * internally. (‘Die-cut’ is used here as a convenient shorthand, and does not imply strict limitation to a
+	 * particular production process.).
 	 */
 	Die_cut_book("B212"), //
 
 	/**
-	 * A book which is also a toy, or which incorporates a toy as an integral part. (Do not, however, use B213 for a multiple-item product
-	 * which includes a book and a toy as separate items.).
+	 * A book which is also a toy, or which incorporates a toy as an integral part. (Do not, however, use B213 for a
+	 * multiple-item product which includes a book and a toy as separate items.).
 	 */
 	Book_as_toy("B213"), //
 
@@ -381,7 +386,8 @@ public enum ProductFormDetails
 	Picture_book("B221"), //
 
 	/**
-	 * (aka ‘Star’ book). Tax treatment of products may differ from that of products with similar codes such as Book as toy or Pop-up book).
+	 * (aka ‘Star’ book). Tax treatment of products may differ from that of products with similar codes such as Book as
+	 * toy or Pop-up book).
 	 */
 	_Carousel_book("B222"), //
 
@@ -451,15 +457,16 @@ public enum ProductFormDetails
 	Concealed_wire("B313"), //
 
 	/**
-	 * Spiral wire bound. Use with product form code BE. The default if a spiral binding type is not stated. Cf. Comb and Wire-O binding.
+	 * Spiral wire bound. Use with product form code BE. The default if a spiral binding type is not stated. Cf. Comb
+	 * and Wire-O binding.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
 	Coiled_wire_bound("B314"), //
 
 	/**
-	 * Hardcover binding intended for general consumers rather than libraries, use with Product form code BB. The default if a hardcover
-	 * binding detail is not stated. cf. Library binding.
+	 * Hardcover binding intended for general consumers rather than libraries, use with Product form code BB. The
+	 * default if a hardcover binding detail is not stated. cf. Library binding.
 	 * <p>
 	 * NOTE: Introduced in Onix3
 	 */
@@ -512,7 +519,8 @@ public enum ProductFormDetails
 	Vinyl_covered("B414"), //
 
 	/**
-	 * Book, laminating material unspecified: use L101 for ‘whole product laminated’, eg a laminated sheet map or wallchart.
+	 * Book, laminating material unspecified: use L101 for ‘whole product laminated’, eg a laminated sheet map or
+	 * wallchart.
 	 */
 	Laminated_cover("B415"), //
 
@@ -553,8 +561,8 @@ public enum ProductFormDetails
 	With_leather_edge_lining("B509"), //
 
 	/**
-	 * With edge trimming such that the front edge is ragged, not neatly and squarely trimmed: AKA deckle edge, feather edge, uncut edge,
-	 * rough cut.
+	 * With edge trimming such that the front edge is ragged, not neatly and squarely trimmed: AKA deckle edge, feather
+	 * edge, uncut edge, rough cut.
 	 */
 	Rough_front("B510"), //
 
@@ -576,8 +584,8 @@ public enum ProductFormDetails
 	With_fastening_strap("B513"), //
 
 	/**
-	 * A book in which half the content is printed upside-down, to be read the other way round. Also known as a ‘flip-book’, ‘back-to-back’,
-	 * (fr.) ‘tête-bêche’ (usually an omnibus of two works).
+	 * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
+	 * ‘flip-book’, ‘back-to-back’, (fr.) ‘tête-bêche’ (usually an omnibus of two works).
 	 */
 	Turn_around_book("B601"), //
 
@@ -631,8 +639,8 @@ public enum ProductFormDetails
 	MPEG_4("D105"), //
 
 	/**
-	 * Use with an applicable Product Form code D*; note that more detail of operating system requirements can be given in a Product Form
-	 * Feature composite.
+	 * Use with an applicable Product Form code D*; note that more detail of operating system requirements can be given
+	 * in a Product Form Feature composite.
 	 */
 	MS_DOS("D201"), //
 
@@ -732,12 +740,14 @@ public enum ProductFormDetails
 	Sony_PlayStation_Portable_PSP("D316"), //
 
 	/**
-	 * Use where a particular e-publication type (specified in <EpubType>) has both reflowable and fixed-format variants.
+	 * Use where a particular e-publication type (specified in <EpubType>) has both reflowable and fixed-format
+	 * variants.
 	 */
 	Reflowable("E200"), //
 
 	/**
-	 * Use where a particular e-publication type (specified in <EpubType>) has both reflowable and fixed-format variants.
+	 * Use where a particular e-publication type (specified in <EpubType>) has both reflowable and fixed-format
+	 * variants.
 	 */
 	Fixed_format("E201"), //
 
@@ -747,8 +757,8 @@ public enum ProductFormDetails
 	Readable_offline("E202"), //
 
 	/**
-	 * E-publication requires a network connection to access some resources (eg an enhanced e-book where video clips are not stored within
-	 * the e-publication ‘package’ itself, but are delivered via an internet connection).
+	 * E-publication requires a network connection to access some resources (eg an enhanced e-book where video clips are
+	 * not stored within the e-publication ‘package’ itself, but are delivered via an internet connection).
 	 */
 	Requires_network_connection("E203"), //
 
@@ -758,24 +768,27 @@ public enum ProductFormDetails
 	Content_removed("E204"), //
 
 	/**
-	 * Use for fixed-format e-books optimised for landscape display. Also include an indication of the optimal screen aspect ratio.
+	 * Use for fixed-format e-books optimised for landscape display. Also include an indication of the optimal screen
+	 * aspect ratio.
 	 */
 	Landscape("E210"), //
 
 	/**
-	 * Use for fixed-format e-books optimised for portrait display. Also include an indication of the optimal screen aspect ratio.
+	 * Use for fixed-format e-books optimised for portrait display. Also include an indication of the optimal screen
+	 * aspect ratio.
 	 */
 	Portrait("E211"), //
 
 	/**
-	 * Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc, assuming square pixels). Note
-	 * that aspect ratio codes are NOT specific to actual screen dimensions or pixel counts, but to the ratios between two dimensions or two
-	 * pixel counts.
+	 * Use for fixed-format e-books optimised for displays with a 5:4 aspect ratio (eg 1280x1024 pixels etc, assuming
+	 * square pixels). Note that aspect ratio codes are NOT specific to actual screen dimensions or pixel counts, but to
+	 * the ratios between two dimensions or two pixel counts.
 	 */
 	_5_4("E221"), //
 
 	/**
-	 * Use for fixed-format e-books optimised for displays with a 4:3 aspect ratio (eg 800x600, 1024x768, 2048x1536 pixels etc).
+	 * Use for fixed-format e-books optimised for displays with a 4:3 aspect ratio (eg 800x600, 1024x768, 2048x1536
+	 * pixels etc).
 	 */
 	_4_3("E222"), //
 
@@ -785,17 +798,20 @@ public enum ProductFormDetails
 	_3_2("E223"), //
 
 	/**
-	 * Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600 pixels etc).
+	 * Use for fixed-format e-books optimised for displays with a 16:10 aspect ratio (eg 1440x900, 2560x1600 pixels
+	 * etc).
 	 */
 	_16_10("E224"), //
 
 	/**
-	 * Use for fixed-format e-books optimised for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080, 2048x1152 pixels etc).
+	 * Use for fixed-format e-books optimised for displays with a 16:9 aspect ratio (eg 1024x576, 1920x1080, 2048x1152
+	 * pixels etc).
 	 */
 	_16_9("E225"), //
 
 	/**
-	 * Whole product laminated (eg laminated map, fold-out chart, wallchart, etc): use B415 for book with laminated cover.
+	 * Whole product laminated (eg laminated map, fold-out chart, wallchart, etc): use B415 for book with laminated
+	 * cover.
 	 */
 	Laminated("L101"), //
 
@@ -865,8 +881,8 @@ public enum ProductFormDetails
 	Other_calendar("P113"), //
 
 	/**
-	 * A product that is associated with or ancillary to a calendar or organiser, eg a deskstand for a calendar, or an insert for an
-	 * organiser: use with Product Form code PC or PS.
+	 * A product that is associated with or ancillary to a calendar or organiser, eg a deskstand for a calendar, or an
+	 * insert for an organiser: use with Product Form code PC or PS.
 	 */
 	Other_calendar_or_organiser_product("P114"), //
 

@@ -23,15 +23,15 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
+import com.tectonica.jonix.codelist.TextScriptCodes;
 import com.tectonica.jonix.struct.JonixLanguage;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -81,17 +81,17 @@ public class Language implements OnixDataComposite, Serializable
 		return (languageRole == null) ? null : languageRole.value;
 	}
 
-	public LanguageCodeIso6392Bs getLanguageCodeValue()
+	public LanguageCodes getLanguageCodeValue()
 	{
 		return (languageCode == null) ? null : languageCode.value;
 	}
 
-	public CountryCodeIso31661s getCountryCodeValue()
+	public CountryCodes getCountryCodeValue()
 	{
 		return (countryCode == null) ? null : countryCode.value;
 	}
 
-	public TextScriptCodeIso15924s getScriptCodeValue()
+	public TextScriptCodes getScriptCodeValue()
 	{
 		return (scriptCode == null) ? null : scriptCode.value;
 	}

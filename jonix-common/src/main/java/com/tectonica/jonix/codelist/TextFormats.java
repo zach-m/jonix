@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList34
+ * Enum that corresponds to ONIX's <b>CodeList34</b>
  * <p>
  * Text format code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum TextFormats
 {
@@ -60,15 +60,15 @@ public enum TextFormats
 	XHTML("05"), //
 
 	/**
-	 * Default: text in the encoding declared at the head of the message or in the XML default (UTF-8 or UTF-16) if there is no explicit
-	 * declaration.
+	 * Default: text in the encoding declared at the head of the message or in the XML default (UTF-8 or UTF-16) if
+	 * there is no explicit declaration.
 	 */
 	Default_text_format("06"), //
 
 	/**
-	 * Plain text containing no tags of any kind, except for the tags &amp; and &lt; that XML insists must be used to represent ampersand
-	 * and less-than characters in text; and with the character set limited to the ASCII range, i.e. valid UTF-8 characters whose character
-	 * number lies between 32 (space) and 126 (tilde).
+	 * Plain text containing no tags of any kind, except for the tags &amp; and &lt; that XML insists must be used to
+	 * represent ampersand and less-than characters in text; and with the character set limited to the ASCII range, i.e.
+	 * valid UTF-8 characters whose character number lies between 32 (space) and 126 (tilde).
 	 */
 	Basic_ASCII_text("07"), //
 
@@ -94,8 +94,8 @@ public enum TextFormats
 	Corel_Wordperfect_binary_format_DOC("13"), //
 
 	/**
-	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum (IDPF) [File extension
-	 * .epub].
+	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
+	 * (IDPF) [File extension .epub].
 	 */
 	EPUB("14"), //
 

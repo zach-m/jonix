@@ -21,7 +21,7 @@ package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
 
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix3.Subject;
 import com.tectonica.jonix.onix3.SubjectHeadingText;
@@ -71,7 +71,7 @@ public class BasicSubject implements Serializable
 		{
 			for (SubjectHeadingText sht : subject.subjectHeadingTexts)
 			{
-				if (sht.language == null || sht.language == LanguageCodeIso6392Bs.English)
+				if (sht.language == null || sht.language == LanguageCodes.English)
 					return sht.value;
 			}
 			return subject.subjectHeadingTexts.get(0).value; // return whatever language we have

@@ -23,13 +23,13 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TextScriptCodeIso15924s;
+import com.tectonica.jonix.codelist.TextScriptCodes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -42,8 +42,8 @@ public class TitlePrefix implements OnixElement, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 	public String collationkey;
-	public LanguageCodeIso6392Bs language;
-	public TextScriptCodeIso15924s textscript;
+	public LanguageCodes language;
+	public TextScriptCodes textscript;
 	public TextCaseFlags textcase;
 
 	public String value; // dt.NonEmptyString
@@ -57,8 +57,8 @@ public class TitlePrefix implements OnixElement, Serializable
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
 		this.sourcename = JPU.getAttribute(element, "sourcename");
 		this.collationkey = JPU.getAttribute(element, "collationkey");
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
-		this.textscript = TextScriptCodeIso15924s.byValue(JPU.getAttribute(element, "textscript"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
+		this.textscript = TextScriptCodes.byValue(JPU.getAttribute(element, "textscript"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
 
 		value = JPU.getContentAsString(element);

@@ -25,13 +25,13 @@ import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CurrencyCodeIso4217s;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.CurrencyCodes;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -118,7 +118,7 @@ public class Header implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public LanguageCodeIso6392Bs getDefaultLanguageOfTextValue()
+	public LanguageCodes getDefaultLanguageOfTextValue()
 	{
 		return (defaultLanguageOfText == null) ? null : defaultLanguageOfText.value;
 	}
@@ -128,7 +128,7 @@ public class Header implements OnixSuperComposite, Serializable
 		return (defaultPriceType == null) ? null : defaultPriceType.value;
 	}
 
-	public CurrencyCodeIso4217s getDefaultCurrencyCodeValue()
+	public CurrencyCodes getDefaultCurrencyCodeValue()
 	{
 		return (defaultCurrencyCode == null) ? null : defaultCurrencyCode.value;
 	}

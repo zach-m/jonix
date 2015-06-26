@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
 import com.tectonica.jonix.codelist.BookFormDetails;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.EpublicationFormats;
 import com.tectonica.jonix.codelist.EpublicationTypes;
@@ -38,7 +38,7 @@ import com.tectonica.jonix.codelist.FrontCoverImageFileFormats;
 import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypes;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
-import com.tectonica.jonix.codelist.LanguageCodeIso6392Bs;
+import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
@@ -75,7 +75,7 @@ import com.tectonica.jonix.struct.JonixTitle;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
@@ -86,7 +86,7 @@ public class Product implements OnixSuperComposite, Serializable
 
 	public TextFormats textformat;
 	public TextCaseFlags textcase;
-	public LanguageCodeIso6392Bs language;
+	public LanguageCodes language;
 	public TransliterationSchemes transliteration;
 	public String datestamp; // DateOrDateTime
 	public RecordSourceTypes sourcetype;
@@ -252,7 +252,7 @@ public class Product implements OnixSuperComposite, Serializable
 	{
 		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodeIso6392Bs.byValue(JPU.getAttribute(element, "language"));
+		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
 		this.datestamp = JPU.getAttribute(element, "datestamp");
 		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
@@ -911,11 +911,11 @@ public class Product implements OnixSuperComposite, Serializable
 		return (noEdition != null);
 	}
 
-	public List<LanguageCodeIso6392Bs> getLanguageOfTextValues()
+	public List<LanguageCodes> getLanguageOfTextValues()
 	{
 		if (languageOfTexts != null)
 		{
-			List<LanguageCodeIso6392Bs> list = new ArrayList<>();
+			List<LanguageCodes> list = new ArrayList<>();
 			for (LanguageOfText i : languageOfTexts)
 				list.add(i.value);
 			return list;
@@ -923,7 +923,7 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public LanguageCodeIso6392Bs getOriginalLanguageValue()
+	public LanguageCodes getOriginalLanguageValue()
 	{
 		return (originalLanguage == null) ? null : originalLanguage.value;
 	}
@@ -1100,7 +1100,7 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
-	public CountryCodeIso31661s getCountryOfPublicationValue()
+	public CountryCodes getCountryOfPublicationValue()
 	{
 		return (countryOfPublication == null) ? null : countryOfPublication.value;
 	}

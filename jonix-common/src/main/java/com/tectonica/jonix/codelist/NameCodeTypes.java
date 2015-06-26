@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList44
+ * Enum that corresponds to ONIX's <b>CodeList44</b>
  * <p>
  * Name code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum NameCodeTypes
 {
@@ -89,9 +89,9 @@ public enum NameCodeTypes
 	ISNI("16"), //
 
 	/**
-	 * Personennamendatei – person name authority file used by Deutsche Nationalbibliothek and in other German-speaking countries. See
-	 * http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm
-	 * (English). DEPRECATED in favour of the GND.
+	 * Personennamendatei – person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
+	 * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND.
 	 */
 	PND("17"), //
 
@@ -107,8 +107,8 @@ public enum NameCodeTypes
 
 	/**
 	 * Gemeinsame Körperschaftsdatei – Corporate Body Authority File in the German-speaking countries. See
-	 * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm
-	 * (English). DEPRECATED in favour of the GND.
+	 * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favour of the GND.
 	 */
 	GKD("20"), //
 
@@ -124,10 +124,11 @@ public enum NameCodeTypes
 
 	/**
 	 * Identifier for a business organization for VAT purposes, eg within the EU’s VIES system. See
-	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country. Generally these
-	 * consist of a two-letter country code followed by the 8–12 digits of the national VAT ID. Some countries include one or two letters
-	 * within their VAT ID. See http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar
-	 * identifiers. Spaces, dashes etc should be omitted.
+	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country.
+	 * Generally these consist of a two-letter country code followed by the 8–12 digits of the national VAT ID. Some
+	 * countries include one or two letters within their VAT ID. See
+	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
+	 * Spaces, dashes etc should be omitted.
 	 */
 	VAT_Identity_Number("23"), //
 
@@ -138,8 +139,8 @@ public enum NameCodeTypes
 
 	/**
 	 * Gemeinsame Normdatei – Joint Authority File in the German-speaking countries. See
-	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a single authority
-	 * file, and should be used in preference.
+	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a
+	 * single authority file, and should be used in preference.
 	 */
 	GND("25"), //
 
@@ -164,8 +165,8 @@ public enum NameCodeTypes
 	Identifiant_Marque_Electre("30"), //
 
 	/**
-	 * DOI used in CrossRef’s Fundref list of academic research funding bodies, for example "10.13039/100004440“ (Wellcome Trust). See
-	 * ‘http://www.crossref.org/fundref/fundref_registry.html’.
+	 * DOI used in CrossRef’s Fundref list of academic research funding bodies, for example "10.13039/100004440“
+	 * (Wellcome Trust). See ‘http://www.crossref.org/fundref/fundref_registry.html’.
 	 */
 	FundRef_DOI("32");
 

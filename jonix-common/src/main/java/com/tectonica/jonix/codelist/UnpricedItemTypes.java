@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList57
+ * Enum that corresponds to ONIX's <b>CodeList57</b>
  * <p>
  * Unpriced item type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum UnpricedItemTypes
 {
@@ -42,9 +42,9 @@ public enum UnpricedItemTypes
 	Not_sold_separately("03"), //
 
 	/**
-	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered ‘in person’ from a sales
-	 * representative; when an ONIX file is “broadcast” rather than sent one-to-one to a single trading partner; or for digital products
-	 * offered on subscription or with pricing which is too complex to specify in ONIX.
+	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered ‘in person’
+	 * from a sales representative; when an ONIX file is “broadcast” rather than sent one-to-one to a single trading
+	 * partner; or for digital products offered on subscription or with pricing which is too complex to specify in ONIX.
 	 */
 	Contact_supplier("04"), //
 

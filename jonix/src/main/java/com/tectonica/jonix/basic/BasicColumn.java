@@ -26,7 +26,7 @@ import java.util.Set;
 
 import com.tectonica.jonix.JonixColumn;
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -362,7 +362,7 @@ public abstract class BasicColumn implements JonixColumn<BasicProduct>
 				sb.append(salesRights.regions).append("#");
 			sb.append("|");
 			if (salesRights.countries != null)
-				for (Set<CountryCodeIso31661s> cc : salesRights.countries)
+				for (Set<CountryCodes> cc : salesRights.countries)
 					sb.append(cc).append(";");
 			sb.append("|");
 			if (salesRights.rightRegions != null)

@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList9
+ * Enum that corresponds to ONIX's <b>CodeList9</b>
  * <p>
  * Product classification type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductClassificationTypes
 {
@@ -71,14 +71,16 @@ public enum ProductClassificationTypes
 	Sender_s_product_category("07"), //
 
 	/**
-	 * Product classification maintained by the Chinese General Administration of Press and Publication (http://www.gapp.gov.cn).
+	 * Product classification maintained by the Chinese General Administration of Press and Publication
+	 * (http://www.gapp.gov.cn).
 	 */
 	GAPP_Product_Class("08"), //
 
 	/**
 	 * Statistical Classification of Products by Activity in the European Economic Community, see
-	 * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=CPA_2008. Up to six digits, with one or two
-	 * periods. For example, printed children’s books are “58.11.13”, but the periods are normally ommited in ONIX.
+	 * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=CPA_2008. Up to six
+	 * digits, with one or two periods. For example, printed children’s books are “58.11.13”, but the periods are
+	 * normally ommited in ONIX.
 	 */
 	CPA("09"), //
 

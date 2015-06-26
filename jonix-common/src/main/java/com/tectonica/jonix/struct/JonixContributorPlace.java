@@ -23,18 +23,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.tectonica.jonix.codelist.ContributorPlaceRelators;
-import com.tectonica.jonix.codelist.CountryCodeIso31661s;
+import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.Regions;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
 public class JonixContributorPlace implements Serializable
 {
 	public ContributorPlaceRelators contributorPlaceRelator;
-	public CountryCodeIso31661s countryCode;
+	public CountryCodes countryCode;
 	public Regions regionCode;
 	public List<String> locationNames; // dt.NonEmptyString
 }

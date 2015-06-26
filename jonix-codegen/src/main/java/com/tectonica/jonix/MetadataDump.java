@@ -39,6 +39,8 @@ import com.tectonica.jonix.util.ParseUtil;
 
 public class MetadataDump
 {
+	private static final String DUMP_FOLDER = "C:/Users/zach/Desktop";
+
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException
 	{
 		System.out.println("Parsing Onix2..");
@@ -54,7 +56,7 @@ public class MetadataDump
 	{
 		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
 				ParseUtil.SPACEABLE_REF_2);
-		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver3_0_02, ParseUtil.RES_SHORT_2,
+		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver2_1_03, ParseUtil.RES_SHORT_2,
 				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_SHORT_2);
 
 		saveMetadata(ref2, "/onix2/reference");
@@ -63,7 +65,7 @@ public class MetadataDump
 
 	private static void parse3() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver2_1_03, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
+		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
 				ParseUtil.SPACEABLE_REF_3);
 		final OnixMetadata short3 = ParseUtil.parse(OnixVersion.Ver3_0_02, ParseUtil.RES_SHORT_3,
 				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_SHORT_3);
@@ -76,7 +78,7 @@ public class MetadataDump
 
 	public static void saveMetadata(OnixMetadata metadata, String prefix) throws IOException
 	{
-		final String folder = "C:/Users/zach/Desktop" + prefix;
+		final String folder = DUMP_FOLDER + prefix;
 		new File(folder).mkdirs();
 
 //		saveAsJson(metadata.onixComposites.values(), folder + "/composites.txt");

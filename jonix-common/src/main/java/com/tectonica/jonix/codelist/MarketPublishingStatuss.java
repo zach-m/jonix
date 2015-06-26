@@ -23,20 +23,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList68
+ * Enum that corresponds to ONIX's <b>CodeList68</b>
  * <p>
  * Market publishing status
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum MarketPublishingStatuss
 {
 	/**
-	 * Status is not specified (as distinct from unknown): the default if the <MarketPublishingStatus> element is not sent.
+	 * Status is not specified (as distinct from unknown): the default if the <MarketPublishingStatus> element is not
+	 * sent.
 	 */
 	Unspecified("00"), //
 
@@ -51,13 +52,14 @@ public enum MarketPublishingStatuss
 	Forthcoming("02"), //
 
 	/**
-	 * The product was announced for publication in this market, and subsequently postponed with no expected local publication date.
+	 * The product was announced for publication in this market, and subsequently postponed with no expected local
+	 * publication date.
 	 */
 	Postponed_indefinitely("03"), //
 
 	/**
-	 * The product was published in this market, and is still active in the sense that the publisher will accept orders for it, though it
-	 * may or may not be immediately available, for which see <SupplyDetail>.
+	 * The product was published in this market, and is still active in the sense that the publisher will accept orders
+	 * for it, though it may or may not be immediately available, for which see <SupplyDetail>.
 	 */
 	Active("04"), //
 
@@ -67,22 +69,24 @@ public enum MarketPublishingStatuss
 	No_longer_our_product("05"), //
 
 	/**
-	 * The product was active, but is now inactive in the sense that (a) no further stock is expected to be made available in this market,
-	 * though stock may still be available elsewhere in the supply chain, and (b) there are no current plans to bring it back into stock.
+	 * The product was active, but is now inactive in the sense that (a) no further stock is expected to be made
+	 * available in this market, though stock may still be available elsewhere in the supply chain, and (b) there are no
+	 * current plans to bring it back into stock.
 	 */
 	Out_of_stock_indefinitely("06"), //
 
 	/**
-	 * The product was active, but is now permanently inactive in the sense that (a) no further stock is expected to be made available in
-	 * this market, though stock may still be available elsewhere in the supply chain, and (b) the product will not be made available again
-	 * under the same ISBN.
+	 * The product was active, but is now permanently inactive in the sense that (a) no further stock is expected to be
+	 * made available in this market, though stock may still be available elsewhere in the supply chain, and (b) the
+	 * product will not be made available again under the same ISBN.
 	 */
 	Out_of_print("07"), //
 
 	/**
-	 * The product was active, but is now permanently or indefinitely inactive in the sense that no further stock is expected to be made
-	 * available in this market, though stock may still be available elsewhere in the supply chain. Code 08 covers both of codes 06 and 07,
-	 * and may be used where the distinction between those values is either unnecessary or meaningless.
+	 * The product was active, but is now permanently or indefinitely inactive in the sense that no further stock is
+	 * expected to be made available in this market, though stock may still be available elsewhere in the supply chain.
+	 * Code 08 covers both of codes 06 and 07, and may be used where the distinction between those values is either
+	 * unnecessary or meaningless.
 	 */
 	Inactive("08"), //
 
@@ -92,8 +96,8 @@ public enum MarketPublishingStatuss
 	Unknown("09"), //
 
 	/**
-	 * The product is no longer available in this market from the local publisher, under the current ISBN, at the current price. It may be
-	 * available to be traded through another channel, usually at a reduced price.
+	 * The product is no longer available in this market from the local publisher, under the current ISBN, at the
+	 * current price. It may be available to be traded through another channel, usually at a reduced price.
 	 */
 	Remaindered("10"), //
 
@@ -103,22 +107,22 @@ public enum MarketPublishingStatuss
 	Withdrawn_from_sale("11"), //
 
 	/**
-	 * Either no rights are held for the product in this market, or for other reasons the publisher has decided not to make it available in
-	 * this market.
+	 * Either no rights are held for the product in this market, or for other reasons the publisher has decided not to
+	 * make it available in this market.
 	 */
 	Not_available_in_this_market("12"), //
 
 	/**
-	 * The product is published in this market and active but, as a publishing decision, it is not sold separately – only in an assembly or
-	 * as part of a package.
+	 * The product is published in this market and active but, as a publishing decision, it is not sold separately –
+	 * only in an assembly or as part of a package.
 	 */
 	Active_but_not_sold_separately("13"), //
 
 	/**
-	 * The product is published in this market and active, but is not available to all customer types, typically because the market is split
-	 * between exclusive sales agents for different market segments. In ONIX 2.1, should be accompanied by a free-text statement in
-	 * <MarketRestrictionDetail> describing the nature of the restriction. In ONIX 3.0, the <SalesRestriction> composite in Group P.24
-	 * should be used.
+	 * The product is published in this market and active, but is not available to all customer types, typically because
+	 * the market is split between exclusive sales agents for different market segments. In ONIX 2.1, should be
+	 * accompanied by a free-text statement in <MarketRestrictionDetail> describing the nature of the restriction. In
+	 * ONIX 3.0, the <SalesRestriction> composite in Group P.24 should be used.
 	 */
 	Active_with_market_restrictions("14"), //
 
@@ -128,9 +132,9 @@ public enum MarketPublishingStatuss
 	Recalled("15"), //
 
 	/**
-	 * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be accompanied by
-	 * expected availability date coded ‘22’ within the <MarketPublishingDate> composite, except in exceptional circumstances where no date
-	 * is known.
+	 * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be
+	 * accompanied by expected availability date coded ‘22’ within the <MarketPublishingDate> composite, except in
+	 * exceptional circumstances where no date is known.
 	 */
 	Temporarily_withdrawn_from_sale("16");
 

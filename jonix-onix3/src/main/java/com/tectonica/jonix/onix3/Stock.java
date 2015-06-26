@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 import com.tectonica.jonix.struct.JonixStockQuantityCoded;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")

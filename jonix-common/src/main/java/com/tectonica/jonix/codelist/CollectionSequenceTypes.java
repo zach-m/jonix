@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList197
+ * Enum that corresponds to ONIX's <b>CodeList197</b>
  * <p>
  * Collection sequence type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum CollectionSequenceTypes
 {
@@ -48,13 +48,14 @@ public enum CollectionSequenceTypes
 	Publication_order("03"), //
 
 	/**
-	 * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to either fiction or to
-	 * non-fiction (eg within a collection of history textbooks).
+	 * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to
+	 * either fiction or to non-fiction (eg within a collection of history textbooks).
 	 */
 	Temporal_narrative_order("04"), //
 
 	/**
-	 * Original publication order, for a republished collection or collected works originally published outside a collection.
+	 * Original publication order, for a republished collection or collected works originally published outside a
+	 * collection.
 	 */
 	Original_publication_order("05");
 

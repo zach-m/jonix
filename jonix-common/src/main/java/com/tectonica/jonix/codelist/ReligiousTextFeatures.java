@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList90
+ * Enum that corresponds to ONIX's <b>CodeList90</b>
  * <p>
  * Religious text feature code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ReligiousTextFeatures
 {
@@ -71,7 +71,8 @@ public enum ReligiousTextFeatures
 	Confirmation_and_Holy_Communion("07"), //
 
 	/**
-	 * For example, summer camps and other youth recreational activities: use with code 01 in <ReligiousTextFeatureType>.
+	 * For example, summer camps and other youth recreational activities: use with code 01 in
+	 * <ReligiousTextFeatureType>.
 	 */
 	Summer_activites("08"), //
 

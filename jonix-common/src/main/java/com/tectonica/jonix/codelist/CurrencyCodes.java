@@ -23,17 +23,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList96
+ * Enum that corresponds to ONIX's <b>CodeList96</b>
  * <p>
  * Currency code – ISO 4217
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
-public enum CurrencyCodeIso4217s
+public enum CurrencyCodes
 {
 	/**
 	 * United Arab Emirates.
@@ -81,7 +81,8 @@ public enum CurrencyCodeIso4217s
 	Austria_Schilling("ATS"), //
 
 	/**
-	 * Australia, Christmas Island, Cocos (Keeling) Islands, Heard Island and McDonald Islands, Kiribati, Nauru, Norfolk Island, Tuvalu.
+	 * Australia, Christmas Island, Cocos (Keeling) Islands, Heard Island and McDonald Islands, Kiribati, Nauru, Norfolk
+	 * Island, Tuvalu.
 	 */
 	Australian_Dollar("AUD"), //
 
@@ -271,7 +272,8 @@ public enum CurrencyCodeIso4217s
 	Algerian_Dinar("DZD"), //
 
 	/**
-	 * Estonia – now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Estonia – now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro.
 	 */
 	Kroon("EEK"), //
 
@@ -286,8 +288,8 @@ public enum CurrencyCodeIso4217s
 	Nakfa("ERN"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices normally quoted as
-	 * integers).
+	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices
+	 * normally quoted as integers).
 	 */
 	Spain_Peseta("ESP"), //
 
@@ -297,9 +299,9 @@ public enum CurrencyCodeIso4217s
 	Ethiopian_Birr("ETB"), //
 
 	/**
-	 * Eurozone: Andorra, Austria, Belgium, Cyprus, Estonia, Finland, France, Fr Guiana, Fr S Territories, Germany, Greece, Guadeloupe, Holy
-	 * See (Vatican City), Ireland, Italy, Latvia, Lithuania, Luxembourg, Martinique, Malta, Mayotte, Monaco, Montenegro, Netherlands,
-	 * Portugal, Réunion, St Pierre and Miquelon, San Marino, Spain.
+	 * Eurozone: Andorra, Austria, Belgium, Cyprus, Estonia, Finland, France, Fr Guiana, Fr S Territories, Germany,
+	 * Greece, Guadeloupe, Holy See (Vatican City), Ireland, Italy, Latvia, Lithuania, Luxembourg, Martinique, Malta,
+	 * Mayotte, Monaco, Montenegro, Netherlands, Portugal, Réunion, St Pierre and Miquelon, San Marino, Spain.
 	 */
 	Euro("EUR"), //
 
@@ -324,7 +326,8 @@ public enum CurrencyCodeIso4217s
 	France_Franc("FRF"), //
 
 	/**
-	 * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands, British Indian Ocean Territory.
+	 * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands, British Indian Ocean
+	 * Territory.
 	 */
 	Pound_Sterling("GBP"), //
 
@@ -439,8 +442,8 @@ public enum CurrencyCodeIso4217s
 	Iceland_Krona("ISK"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices normally quoted as
-	 * integers).
+	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices
+	 * normally quoted as integers).
 	 */
 	Italy_Lira("ITL"), //
 
@@ -535,8 +538,8 @@ public enum CurrencyCodeIso4217s
 	Lithuanian_Litus("LTL"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices normally quoted as
-	 * integers).
+	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices
+	 * normally quoted as integers).
 	 */
 	Luxembourg_Franc("LUF"), //
 
@@ -596,7 +599,8 @@ public enum CurrencyCodeIso4217s
 	Ouguiya("MRO"), //
 
 	/**
-	 * Malta – now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Malta – now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro.
 	 */
 	Maltese_Lira("MTL"), //
 
@@ -906,8 +910,9 @@ public enum CurrencyCodeIso4217s
 	Uganda_Shilling("UGX"), //
 
 	/**
-	 * United States, American Samoa, British Indian Ocean Territory, Ecuador, Guam, Marshall Is, Micronesia (Federated States of), Northern
-	 * Mariana Is, Palau, Puerto Rico, Timor-Leste, Turks and Caicos Is, US Minor Outlying Is, Virgin Is (British), Virgin Is (US).
+	 * United States, American Samoa, British Indian Ocean Territory, Ecuador, Guam, Marshall Is, Micronesia (Federated
+	 * States of), Northern Mariana Is, Palau, Puerto Rico, Timor-Leste, Turks and Caicos Is, US Minor Outlying Is,
+	 * Virgin Is (British), Virgin Is (US).
 	 */
 	US_Dollar("USD"), //
 
@@ -952,12 +957,14 @@ public enum CurrencyCodeIso4217s
 	CFA_Franc_BEAC("XAF"), //
 
 	/**
-	 * Anguilla, Antigua and Barbuda, Dominica, Grenada, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines.
+	 * Anguilla, Antigua and Barbuda, Dominica, Grenada, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent
+	 * and the Grenadines.
 	 */
 	East_Caribbean_Dollar("XCD"), //
 
 	/**
-	 * Benin, Burkina Faso, Côte D’Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted as integers).
+	 * Benin, Burkina Faso, Côte D’Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted as
+	 * integers).
 	 */
 	CFA_Franc_BCEAO("XOF"), //
 
@@ -1003,25 +1010,25 @@ public enum CurrencyCodeIso4217s
 
 	public final String value;
 
-	private CurrencyCodeIso4217s(String value)
+	private CurrencyCodes(String value)
 	{
 		this.value = value;
 	}
 
-	private static Map<String, CurrencyCodeIso4217s> map;
+	private static Map<String, CurrencyCodes> map;
 
-	private static Map<String, CurrencyCodeIso4217s> map()
+	private static Map<String, CurrencyCodes> map()
 	{
 		if (map == null)
 		{
 			map = new HashMap<>();
-			for (CurrencyCodeIso4217s e : values())
+			for (CurrencyCodes e : values())
 				map.put(e.value, e);
 		}
 		return map;
 	}
 
-	public static CurrencyCodeIso4217s byValue(String value)
+	public static CurrencyCodes byValue(String value)
 	{
 		if (value == null || value.isEmpty())
 			return null;

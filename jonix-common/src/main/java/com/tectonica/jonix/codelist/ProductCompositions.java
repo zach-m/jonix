@@ -20,15 +20,15 @@
 package com.tectonica.jonix.codelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList2
+ * Enum that corresponds to ONIX's <b>CodeList2</b>
  * <p>
  * Product composition
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductCompositions
 {
@@ -40,7 +40,8 @@ public enum ProductCompositions
 	Multiple_item_retail_product("10"), //
 
 	/**
-	 * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as such.
+	 * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as
+	 * such.
 	 */
 	Multiple_item_collection_retailed_as_separate_parts("11"), //
 
@@ -50,14 +51,15 @@ public enum ProductCompositions
 	Trade_only_product("20"), //
 
 	/**
-	 * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled counterpack.
+	 * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled
+	 * counterpack.
 	 */
 	Multiple_item_trade_pack("30"), //
 
 	/**
-	 * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as separate items OR retailed
-	 * as a single item. Use instead of Multiple item trade pack (code 30) only if the data provider specifically wishes to make explicit
-	 * that the pack may optionally be retailed as a whole.
+	 * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as
+	 * separate items OR retailed as a single item. Use instead of Multiple item trade pack (code 30) only if the data
+	 * provider specifically wishes to make explicit that the pack may optionally be retailed as a whole.
 	 */
 	Multiple_item_pack("31");
 

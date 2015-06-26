@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList203
+ * Enum that corresponds to ONIX's <b>CodeList203</b>
  * <p>
  * ONIX Adult Audience rating
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum OnixAdultAudienceRatings
 {
@@ -68,7 +68,8 @@ public enum OnixAdultAudienceRatings
 	Content_warning_language("06"), //
 
 	/**
-	 * The publisher warns the product includes content involving intolerance of particular groups (eg religious, ethnic, racial, social).
+	 * The publisher warns the product includes content involving intolerance of particular groups (eg religious,
+	 * ethnic, racial, social).
 	 */
 	Content_warning_intolerance("07");
 

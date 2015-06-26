@@ -23,15 +23,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT IT
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
 /**
- * Enum that corresponds to ONIX's CodeList5
+ * Enum that corresponds to ONIX's <b>CodeList5</b>
  * <p>
  * Product identifier type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists/">http://www.editeur.org/14/code-lists/</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
  */
 public enum ProductIdentifierTypes
 {
@@ -41,10 +41,10 @@ public enum ProductIdentifierTypes
 	Proprietary("01"), //
 
 	/**
-	 * International Standard Book Number, pre-2007, unhyphenated (10 characters) – now DEPRECATED in ONIX for Books, except where providing
-	 * historical information for compatibility with legacy systems. It should only be used in relation to products published before 2007 –
-	 * when ISBN-13 superseded it – and should never be used as the ONLY identifier (it should always be accompanied by the correct GTIN-13
-	 * / ISBN-13).
+	 * International Standard Book Number, pre-2007, unhyphenated (10 characters) – now DEPRECATED in ONIX for Books,
+	 * except where providing historical information for compatibility with legacy systems. It should only be used in
+	 * relation to products published before 2007 – when ISBN-13 superseded it – and should never be used as the ONLY
+	 * identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13).
 	 */
 	ISBN_10("02"), //
 
@@ -59,10 +59,10 @@ public enum ProductIdentifierTypes
 	UPC("04"), //
 
 	/**
-	 * International Standard Music Number (M plus nine digits). Pre-2008 – now DEPRECATED in ONIX for Books, except where providing
-	 * historical information for compatibility with legacy systems. It should only be used in relation to products published before 2008 –
-	 * when ISMN-13 superseded it – and should never be used as the ONLY identifier (it should always be accompanied by the correct
-	 * ISMN-13).
+	 * International Standard Music Number (M plus nine digits). Pre-2008 – now DEPRECATED in ONIX for Books, except
+	 * where providing historical information for compatibility with legacy systems. It should only be used in relation
+	 * to products published before 2008 – when ISMN-13 superseded it – and should never be used as the ONLY identifier
+	 * (it should always be accompanied by the correct ISMN-13).
 	 */
 	ISMN_10("05"), //
 
@@ -92,8 +92,8 @@ public enum ProductIdentifierTypes
 	Legal_deposit_number("17"), //
 
 	/**
-	 * Uniform Resource Name: note that in trade applications an ISBN must be sent as a GTIN-13 and, where required, as an ISBN-13 – it
-	 * should not be sent as a URN.
+	 * Uniform Resource Name: note that in trade applications an ISBN must be sent as a GTIN-13 and, where required, as
+	 * an ISBN-13 – it should not be sent as a URN.
 	 */
 	URN("22"), //
 
@@ -103,9 +103,10 @@ public enum ProductIdentifierTypes
 	OCLC_number("23"), //
 
 	/**
-	 * An ISBN-13 assigned by a co-publisher. The ‘main’ ISBN sent with ID type code 03 and/or 15 should always be the ISBN that is used for
-	 * ordering from the supplier identified in Supply Detail. However, ISBN rules allow a co-published title to carry more than one ISBN.
-	 * The co-publisher should be identified in an instance of the <Publisher> composite, with the applicable <PublishingRole> code.
+	 * An ISBN-13 assigned by a co-publisher. The ‘main’ ISBN sent with ID type code 03 and/or 15 should always be the
+	 * ISBN that is used for ordering from the supplier identified in Supply Detail. However, ISBN rules allow a
+	 * co-published title to carry more than one ISBN. The co-publisher should be identified in an instance of the
+	 * <Publisher> composite, with the applicable <PublishingRole> code.
 	 */
 	Co_publisher_s_ISBN_13("24"), //
 
@@ -115,14 +116,16 @@ public enum ProductIdentifierTypes
 	ISMN_13("25"), //
 
 	/**
-	 * Actionable ISBN, in fact a special DOI incorporating the ISBN-13 within the DOI syntax. Begins ‘10.978.’ or ‘10.979.’ and includes a
-	 * / character between the registrant element (publisher prefix) and publication element of the ISBN, eg 10.978.000/1234567. Note the
-	 * ISBN-A should always be accompanied by the ISBN itself, using codes 03 and/or 15.
+	 * Actionable ISBN, in fact a special DOI incorporating the ISBN-13 within the DOI syntax. Begins ‘10.978.’ or
+	 * ‘10.979.’ and includes a / character between the registrant element (publisher prefix) and publication element of
+	 * the ISBN, eg 10.978.000/1234567. Note the ISBN-A should always be accompanied by the ISBN itself, using codes 03
+	 * and/or 15.
 	 */
 	ISBN_A("26"), //
 
 	/**
-	 * E-publication identifier controlled by JPOIID’s Committee for Research and Management of Electronic Publishing Codes.
+	 * E-publication identifier controlled by JPOIID’s Committee for Research and Management of Electronic Publishing
+	 * Codes.
 	 */
 	JP_e_code("27"), //
 
@@ -132,8 +135,8 @@ public enum ProductIdentifierTypes
 	OLCC_number("28"), //
 
 	/**
-	 * Japanese magazine identifier, similar in scope to ISSN but identifying a specific issue of a serial publication. Five digits to
-	 * identify the periodical, plus a hyphen and two digits to identify the issue.
+	 * Japanese magazine identifier, similar in scope to ISSN but identifying a specific issue of a serial publication.
+	 * Five digits to identify the periodical, plus a hyphen and two digits to identify the issue.
 	 */
 	JP_Magazine_ID("29");
 
