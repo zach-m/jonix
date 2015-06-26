@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.codegen;
+package com.tectonica.jonix.codegen.generator;
 
 public class Comments
 {

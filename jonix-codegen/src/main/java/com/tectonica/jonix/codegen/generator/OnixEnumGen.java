@@ -17,15 +17,15 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.codegen;
+package com.tectonica.jonix.codegen.generator;
 
 import java.io.File;
 import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.tectonica.jonix.metadata.OnixEnumValue;
-import com.tectonica.jonix.metadata.OnixSimpleType;
+import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
+import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 
 public class OnixEnumGen
 {

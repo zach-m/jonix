@@ -17,16 +17,16 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.codegen;
+package com.tectonica.jonix.codegen.generator;
 
 import java.io.File;
 import java.io.PrintStream;
 
-import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
-import com.tectonica.jonix.metadata.OnixCompositeMember;
-import com.tectonica.jonix.metadata.OnixElementDef;
-import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixStructMember;
+import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
+import com.tectonica.jonix.codegen.metadata.OnixElementDef;
+import com.tectonica.jonix.codegen.metadata.OnixStruct;
+import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 
 public class OnixStructGen
 {

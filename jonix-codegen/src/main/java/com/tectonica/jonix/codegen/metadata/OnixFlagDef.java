@@ -17,33 +17,16 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.metadata;
+package com.tectonica.jonix.codegen.metadata;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public enum Primitive
+@JsonPropertyOrder({ "name", "consts", "attributes" })
+public class OnixFlagDef extends OnixClass
 {
-	String("String", "xs:string", "xs:token", "xs:NMTOKEN"), //
-	AnyURI("String", "xs:anyURI"), //
-	Int("Integer", "xs:int"), //
-	Decimal("Double", "xs:decimal");
-
-	public final String javaType;
-	public final Set<String> xsdTokens;
-
-	private Primitive(String javaType, String... xsdTokens)
+	@Override
+	public String toString()
 	{
-		this.javaType = javaType;
-		this.xsdTokens = new HashSet<String>(Arrays.asList(xsdTokens));
-	}
-
-	public static Primitive fromXsdToken(String xsdToken)
-	{
-		for (Primitive primitive : values())
-			if (primitive.xsdTokens.contains(xsdToken))
-				return primitive;
-		return null;
+		return name + ", attributes=" + attributes;
 	}
 }

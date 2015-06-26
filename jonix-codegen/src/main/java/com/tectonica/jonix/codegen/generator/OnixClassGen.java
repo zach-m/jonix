@@ -17,24 +17,24 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.codegen;
+package com.tectonica.jonix.codegen.generator;
 
 import java.io.File;
 import java.io.PrintStream;
 
-import com.tectonica.jonix.codegen.GenUtil.FieldInfo;
-import com.tectonica.jonix.codegen.GenUtil.TypeInfo;
-import com.tectonica.jonix.metadata.OnixAttribute;
-import com.tectonica.jonix.metadata.OnixClass;
-import com.tectonica.jonix.metadata.OnixCompositeDef;
-import com.tectonica.jonix.metadata.OnixCompositeMember;
-import com.tectonica.jonix.metadata.OnixConst;
-import com.tectonica.jonix.metadata.OnixElementDef;
-import com.tectonica.jonix.metadata.OnixFlagDef;
-import com.tectonica.jonix.metadata.OnixMetadata;
-import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixStructMember;
-import com.tectonica.jonix.metadata.OnixStructMember.TransformationType;
+import com.tectonica.jonix.codegen.generator.GenUtil.FieldInfo;
+import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
+import com.tectonica.jonix.codegen.metadata.OnixAttribute;
+import com.tectonica.jonix.codegen.metadata.OnixClass;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
+import com.tectonica.jonix.codegen.metadata.OnixConst;
+import com.tectonica.jonix.codegen.metadata.OnixElementDef;
+import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
+import com.tectonica.jonix.codegen.metadata.OnixMetadata;
+import com.tectonica.jonix.codegen.metadata.OnixStruct;
+import com.tectonica.jonix.codegen.metadata.OnixStructMember;
+import com.tectonica.jonix.codegen.metadata.OnixStructMember.TransformationType;
 
 public class OnixClassGen
 {

@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.codegen;
+package com.tectonica.jonix.codegen.generator;
 
-import com.tectonica.jonix.metadata.OnixAttribute;
-import com.tectonica.jonix.metadata.OnixCompositeMember;
-import com.tectonica.jonix.metadata.OnixSimpleType;
+import com.tectonica.jonix.codegen.metadata.OnixAttribute;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
+import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 
 public class GenUtil
 {

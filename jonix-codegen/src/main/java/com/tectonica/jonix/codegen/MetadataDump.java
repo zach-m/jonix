@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.codegen;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -27,15 +27,15 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import com.tectonica.jonix.codegen.Parser.OnixVersion;
-import com.tectonica.jonix.metadata.OnixCompositeDef;
-import com.tectonica.jonix.metadata.OnixFlagDef;
-import com.tectonica.jonix.metadata.OnixMetadata;
-import com.tectonica.jonix.metadata.OnixSimpleType;
-import com.tectonica.jonix.metadata.OnixElementDef;
-import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.util.JSON;
-import com.tectonica.jonix.util.ParseUtil;
+import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
+import com.tectonica.jonix.codegen.metadata.OnixElementDef;
+import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
+import com.tectonica.jonix.codegen.metadata.OnixMetadata;
+import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
+import com.tectonica.jonix.codegen.metadata.OnixStruct;
+import com.tectonica.jonix.codegen.util.JSON;
+import com.tectonica.jonix.codegen.util.ParseUtil;
 
 public class MetadataDump
 {

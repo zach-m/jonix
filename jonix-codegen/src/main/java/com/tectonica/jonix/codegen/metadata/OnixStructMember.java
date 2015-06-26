@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.metadata;
+package com.tectonica.jonix.codegen.metadata;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.tectonica.jonix.codegen.Parser.OnixVersion;
+import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 
 @JsonPropertyOrder({ "dataMember" })
 public class OnixStructMember implements Comparable<OnixStructMember>

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.util;
+package com.tectonica.jonix.codegen.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,9 +35,9 @@ import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.tectonica.jonix.codegen.Parser;
-import com.tectonica.jonix.codegen.Parser.OnixVersion;
-import com.tectonica.jonix.metadata.OnixMetadata;
+import com.tectonica.jonix.codegen.generator.Parser;
+import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
+import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 
 public class ParseUtil
 {

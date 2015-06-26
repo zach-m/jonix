@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.util;
+package com.tectonica.jonix.codegen.util;
 
 import java.io.StringWriter;
 import java.util.HashSet;

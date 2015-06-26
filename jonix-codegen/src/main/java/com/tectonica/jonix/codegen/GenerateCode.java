@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.codegen;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,25 +31,25 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import com.tectonica.jonix.codegen.GenUtil;
-import com.tectonica.jonix.codegen.ListDiff;
-import com.tectonica.jonix.codegen.ListDiff.CompareListener;
-import com.tectonica.jonix.codegen.OnixClassGen;
-import com.tectonica.jonix.codegen.OnixEnumGen;
-import com.tectonica.jonix.codegen.OnixStructGen;
-import com.tectonica.jonix.codegen.Parser.OnixVersion;
-import com.tectonica.jonix.metadata.OnixCompositeDef;
-import com.tectonica.jonix.metadata.OnixCompositeMember;
-import com.tectonica.jonix.metadata.OnixElementDef;
-import com.tectonica.jonix.metadata.OnixElementMember;
-import com.tectonica.jonix.metadata.OnixEnumValue;
-import com.tectonica.jonix.metadata.OnixFlagDef;
-import com.tectonica.jonix.metadata.OnixMetadata;
-import com.tectonica.jonix.metadata.OnixSimpleType;
-import com.tectonica.jonix.metadata.OnixStruct;
-import com.tectonica.jonix.metadata.OnixStructMember;
-import com.tectonica.jonix.metadata.OnixStructMember.TransformationType;
-import com.tectonica.jonix.util.ParseUtil;
+import com.tectonica.jonix.codegen.generator.GenUtil;
+import com.tectonica.jonix.codegen.generator.OnixClassGen;
+import com.tectonica.jonix.codegen.generator.OnixEnumGen;
+import com.tectonica.jonix.codegen.generator.OnixStructGen;
+import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
+import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
+import com.tectonica.jonix.codegen.metadata.OnixElementDef;
+import com.tectonica.jonix.codegen.metadata.OnixElementMember;
+import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
+import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
+import com.tectonica.jonix.codegen.metadata.OnixMetadata;
+import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
+import com.tectonica.jonix.codegen.metadata.OnixStruct;
+import com.tectonica.jonix.codegen.metadata.OnixStructMember;
+import com.tectonica.jonix.codegen.metadata.OnixStructMember.TransformationType;
+import com.tectonica.jonix.codegen.util.ListDiff;
+import com.tectonica.jonix.codegen.util.ParseUtil;
+import com.tectonica.jonix.codegen.util.ListDiff.CompareListener;
 
 public class GenerateCode
 {

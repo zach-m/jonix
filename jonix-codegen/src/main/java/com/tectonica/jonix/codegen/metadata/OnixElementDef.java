@@ -17,35 +17,19 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.metadata;
+package com.tectonica.jonix.codegen.metadata;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "value", "description" })
-public class OnixEnumValue implements Comparable<OnixEnumValue>
+@JsonPropertyOrder({ "name", "isSpaceable", "valueMember", "consts", "attributes" })
+public class OnixElementDef extends OnixClass
 {
-	public String name;
-	public String value;
-	public String description;
-
-	public static OnixEnumValue create(String name, String value, String description)
-	{
-		OnixEnumValue oev = new OnixEnumValue();
-		oev.name = name;
-		oev.value = value;
-		oev.description = description;
-		return oev;
-	}
+	public OnixElementMember valueMember;
+	public boolean isSpaceable;
 
 	@Override
 	public String toString()
 	{
-		return "{" + value + "=" + name + "}";
-	}
-
-	@Override
-	public int compareTo(OnixEnumValue other)
-	{
-		return value.compareTo(other.value); // NOTE: this is a value comparison, not name
+		return name + ": valueMember=" + valueMember + ", attributes=" + attributes + ", isSpaceable=" + isSpaceable;
 	}
 }

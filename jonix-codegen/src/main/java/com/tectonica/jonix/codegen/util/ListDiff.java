@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.codegen;
+package com.tectonica.jonix.codegen.util;
 
 import java.util.ArrayList;
 import java.util.Collection;

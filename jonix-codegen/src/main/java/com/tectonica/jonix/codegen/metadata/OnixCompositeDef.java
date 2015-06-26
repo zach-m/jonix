@@ -17,43 +17,29 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.metadata;
+package com.tectonica.jonix.codegen.metadata;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class OnixClass implements Comparable<OnixClass>
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({ "name", "members", "consts", "attributes" })
+public class OnixCompositeDef extends OnixClass
 {
-	public String name;
-	public List<OnixConst> consts;
-	public List<OnixAttribute> attributes;
+	public List<OnixCompositeMember> members;
 
 	@Override
-	public int compareTo(OnixClass other)
-	{
-		return name.compareTo(other.name);
-	}
-
-	public void add(OnixConst onixConst)
-	{
-		if (consts == null)
-			consts = new ArrayList<>();
-		consts.add(onixConst);
-	}
-
-	public void add(OnixAttribute onixAttribute)
-	{
-		if (attributes == null)
-			attributes = new ArrayList<>();
-		attributes.add(onixAttribute);
-	}
-
 	public void sortInternally()
 	{
-		if (attributes != null)
-			Collections.sort(attributes);
-		if (consts != null)
-			Collections.sort(consts);
+		super.sortInternally();
+		if (members != null)
+			Collections.sort(members);
+	}
+
+	@Override
+	public String toString()
+	{
+		return name + ": members=" + members + ", attributes=" + attributes;
 	}
 }
