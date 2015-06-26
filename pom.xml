@@ -53,6 +53,7 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<!-- Configure Compiler -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -60,6 +61,20 @@
 					<configuration>
 						<source>1.7</source>
 						<target>1.7</target>
+					</configuration>
+				</plugin>
+
+				<!-- Configure the Master Javadocs -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.3</version>
+					<configuration>
+						<doctitle>JONIX Framework ${project.version} APIs</doctitle>
+						<windowtitle>JONIX Framework ${project.version} APIs</windowtitle>
+						<encoding>UTF-8</encoding>
+						<aggregate>true</aggregate>
+						<excludePackageNames>com.tectonica.jonix.codegen</excludePackageNames>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -101,14 +116,14 @@
 				<artifactId>jackson-databind</artifactId>
 				<version>${version.jackson}</version>
 			</dependency>
-		
-		<!-- Testing -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
+
+			<!-- Testing -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
@@ -150,7 +165,12 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.10.1</version>
+						<configuration>
+							<doctitle>${project.name} ${project.version} APIs</doctitle>
+							<windowtitle>${project.name} ${project.version} APIs</windowtitle>
+							<encoding>UTF-8</encoding>
+							<aggregate>false</aggregate>
+						</configuration>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>

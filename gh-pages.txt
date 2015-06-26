@@ -1,0 +1,13 @@
+This is how to create a separate git repository of the 'gh-pages' branch:
+
+	cd [the home directory of the project]
+	git clone -b gh-pages --single-branch https://github.com/zach-m/jonix.git gh-pages
+
+Once cloned, you can copy into it the javadocs created by:
+
+	mvn clean javadoc:javadoc
+
+and placed under:
+
+	target/site/apidocs
+
