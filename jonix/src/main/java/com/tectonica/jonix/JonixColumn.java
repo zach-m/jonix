@@ -22,7 +22,7 @@ package com.tectonica.jonix;
 /**
  * An interface for representing a specific ONIX information (e.g. title, ISBN, description) in a fixed-size String
  * array. In practice, many ONIX fields may repeat anywhere from 0 to N in a given product, making this attempt to
- * fixate their length somewhat awkward (this is why the data is presented as an XML and not as a table, for instance).
+ * fixate their length is somewhat awkward (this is why the data is presented as an XML and not as, say, a table).
  * However, in many real-world scenarios, the variability in the fields repetitions makes it very hard to deal with the
  * data. Many tools are tabular and schema-based in nature (database tables, spreadsheets, etc). Therefore, this
  * interface is a compromise between the need for tabulation and the nature of ONIX sources.
