@@ -38,7 +38,7 @@ public class OnixStructGen
 	public OnixStructGen(String basePackage, String baseFolder, String subfolder)
 	{
 		packageName = basePackage + "." + subfolder;
-		folderName = baseFolder + "\\" + subfolder;
+		folderName = baseFolder + "/" + subfolder;
 		new File(folderName).mkdirs();
 	}
 
@@ -47,7 +47,7 @@ public class OnixStructGen
 		try
 		{
 			final String structName = "Jonix" + struct.containingComposite.name;
-			String fileName = folderName + "\\" + structName + ".java";
+			String fileName = folderName + "/" + structName + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
 			{

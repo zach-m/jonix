@@ -48,7 +48,7 @@ public class OnixClassGen
 	public OnixClassGen(String basePackage, String baseFolder, String subfolder, OnixMetadata ref)
 	{
 		packageName = basePackage + "." + subfolder;
-		folderName = baseFolder + "\\" + subfolder;
+		folderName = baseFolder + "/" + subfolder;
 		this.ref = ref;
 		new File(folderName).mkdirs();
 	}
@@ -57,7 +57,7 @@ public class OnixClassGen
 	{
 		try
 		{
-			String fileName = folderName + "\\" + onixClass.name + ".java";
+			String fileName = folderName + "/" + onixClass.name + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
 			{
