@@ -41,9 +41,20 @@ public class ProductClassification implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProductClassificationType productClassificationType; // Required
-	public ProductClassificationCode productClassificationCode; // Required
-	public Percent percent; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public ProductClassificationType productClassificationType;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductClassificationCode productClassificationCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Percent percent;
 
 	public ProductClassification()
 	{}

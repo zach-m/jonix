@@ -44,9 +44,20 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ReligiousTextFeatureType religiousTextFeatureType; // Required
-	public ReligiousTextFeatureCode religiousTextFeatureCode; // Required
-	public List<ReligiousTextFeatureDescription> religiousTextFeatureDescriptions; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ReligiousTextFeatureType religiousTextFeatureType;
+
+	/**
+	 * (this field is required)
+	 */
+	public ReligiousTextFeatureCode religiousTextFeatureCode;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ReligiousTextFeatureDescription> religiousTextFeatureDescriptions;
 
 	public ReligiousTextFeature()
 	{}

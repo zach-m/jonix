@@ -45,10 +45,25 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ContributorPlaceRelator contributorPlaceRelator; // Required
-	public CountryCode countryCode; // Required
-	public RegionCode regionCode; // Optional
-	public List<LocationName> locationNames; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ContributorPlaceRelator contributorPlaceRelator;
+
+	/**
+	 * (this field is required)
+	 */
+	public CountryCode countryCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RegionCode regionCode;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<LocationName> locationNames;
 
 	public ContributorPlace()
 	{}

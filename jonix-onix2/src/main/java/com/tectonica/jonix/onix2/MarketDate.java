@@ -50,9 +50,20 @@ public class MarketDate implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public MarketDateRole marketDateRole; // Required
-	public DateFormat dateFormat; // Optional
-	public Date date; // Required
+	/**
+	 * (this field is required)
+	 */
+	public MarketDateRole marketDateRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date;
 
 	public MarketDate()
 	{}

@@ -41,9 +41,20 @@ public class TextItemIdentifier implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TextItemIDType textItemIDType; // Required
-	public IDTypeName idTypeName; // Optional
-	public IDValue idValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public TextItemIDType textItemIDType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IDTypeName idTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue;
 
 	public TextItemIdentifier()
 	{}

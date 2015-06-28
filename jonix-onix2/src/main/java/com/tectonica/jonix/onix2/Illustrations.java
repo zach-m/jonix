@@ -49,9 +49,20 @@ public class Illustrations implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public IllustrationType illustrationType; // Required
-	public IllustrationTypeDescription illustrationTypeDescription; // Optional
-	public Number number; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public IllustrationType illustrationType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IllustrationTypeDescription illustrationTypeDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Number number;
 
 	public Illustrations()
 	{}

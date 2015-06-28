@@ -40,9 +40,20 @@ public class ProductSupply implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<Market> markets; // ZeroOrMore
-	public MarketPublishingDetail marketPublishingDetail; // Optional
-	public List<SupplyDetail> supplyDetails; // OneOrMore
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Market> markets;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketPublishingDetail marketPublishingDetail;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SupplyDetail> supplyDetails;
 
 	public ProductSupply()
 	{}

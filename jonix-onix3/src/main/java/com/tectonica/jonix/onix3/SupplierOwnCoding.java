@@ -41,9 +41,20 @@ public class SupplierOwnCoding implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SupplierCodeType supplierCodeType; // Required
-	public SupplierCodeTypeName supplierCodeTypeName; // Optional
-	public SupplierCodeValue supplierCodeValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public SupplierCodeType supplierCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplierCodeTypeName supplierCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public SupplierCodeValue supplierCodeValue;
 
 	public SupplierOwnCoding()
 	{}

@@ -40,8 +40,15 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<RelatedWork> relatedWorks; // ZeroOrMore
-	public List<RelatedProduct> relatedProducts; // ZeroOrMore
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedWork> relatedWorks;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedProduct> relatedProducts;
 
 	public RelatedMaterial()
 	{}

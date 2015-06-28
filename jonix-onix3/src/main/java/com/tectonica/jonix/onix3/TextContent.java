@@ -45,13 +45,40 @@ public class TextContent implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TextType textType; // Required
-	public List<ContentAudience> contentAudiences; // OneOrMore
-	public List<Text> texts; // OneOrMore
-	public List<TextAuthor> textAuthors; // ZeroOrMore
-	public TextSourceCorporate textSourceCorporate; // Optional
-	public List<SourceTitle> sourceTitles; // ZeroOrMore
-	public List<ContentDate> contentDates; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public TextType textType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ContentAudience> contentAudiences;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<Text> texts;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TextAuthor> textAuthors;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextSourceCorporate textSourceCorporate;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SourceTitle> sourceTitles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContentDate> contentDates;
 
 	public TextContent()
 	{}

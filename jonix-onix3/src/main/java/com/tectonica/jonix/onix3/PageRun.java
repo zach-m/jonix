@@ -40,8 +40,15 @@ public class PageRun implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public FirstPageNumber firstPageNumber; // Required
-	public LastPageNumber lastPageNumber; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public FirstPageNumber firstPageNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LastPageNumber lastPageNumber;
 
 	public PageRun()
 	{}

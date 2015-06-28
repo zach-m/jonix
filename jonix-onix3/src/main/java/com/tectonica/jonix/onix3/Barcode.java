@@ -42,8 +42,15 @@ public class Barcode implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public BarcodeType barcodeType; // Required
-	public PositionOnProduct positionOnProduct; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public BarcodeType barcodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PositionOnProduct positionOnProduct;
 
 	public Barcode()
 	{}

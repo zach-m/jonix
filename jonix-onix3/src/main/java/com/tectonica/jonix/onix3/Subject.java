@@ -43,12 +43,35 @@ public class Subject implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public MainSubject mainSubject; // Optional
-	public SubjectSchemeIdentifier subjectSchemeIdentifier; // Required
-	public SubjectSchemeName subjectSchemeName; // Optional
-	public SubjectSchemeVersion subjectSchemeVersion; // Optional
-	public SubjectCode subjectCode; // Required
-	public List<SubjectHeadingText> subjectHeadingTexts; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public MainSubject mainSubject;
+
+	/**
+	 * (this field is required)
+	 */
+	public SubjectSchemeIdentifier subjectSchemeIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubjectSchemeName subjectSchemeName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubjectSchemeVersion subjectSchemeVersion;
+
+	/**
+	 * (this field is required)
+	 */
+	public SubjectCode subjectCode;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SubjectHeadingText> subjectHeadingTexts;
 
 	public Subject()
 	{}

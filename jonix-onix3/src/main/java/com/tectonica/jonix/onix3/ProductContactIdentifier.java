@@ -41,9 +41,20 @@ public class ProductContactIdentifier implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProductContactIDType productContactIDType; // Required
-	public IDTypeName idTypeName; // Optional
-	public IDValue idValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public ProductContactIDType productContactIDType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IDTypeName idTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue;
 
 	public ProductContactIdentifier()
 	{}

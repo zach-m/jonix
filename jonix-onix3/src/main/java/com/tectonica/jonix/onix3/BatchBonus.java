@@ -40,8 +40,15 @@ public class BatchBonus implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public BatchQuantity batchQuantity; // Required
-	public FreeQuantity freeQuantity; // Required
+	/**
+	 * (this field is required)
+	 */
+	public BatchQuantity batchQuantity;
+
+	/**
+	 * (this field is required)
+	 */
+	public FreeQuantity freeQuantity;
 
 	public BatchBonus()
 	{}

@@ -92,158 +92,765 @@ public class Product implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public RecordReference recordReference; // Required
-	public NotificationType notificationType; // Required
-	public DeletionCode deletionCode; // Optional
-	public DeletionText deletionText; // Optional
-	public RecordSourceType recordSourceType; // Optional
-	public RecordSourceIdentifierType recordSourceIdentifierType; // Optional
-	public RecordSourceIdentifier recordSourceIdentifier; // Optional
-	public RecordSourceName recordSourceName; // Optional
-	public ISBN isbn; // Required
-	public EAN13 ean13; // Optional
-	public UPC upc; // Optional
-	public PublisherProductNo publisherProductNo; // Optional
-	public ISMN ismn; // Optional
-	public DOI doi; // Optional
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public List<Barcode> barcodes; // ZeroOrMore
-	public ReplacesISBN replacesISBN; // Optional
-	public ReplacesEAN13 replacesEAN13; // Optional
-	public ProductForm productForm; // Optional
-	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
-	public List<ProductFormFeature> productFormFeatures; // ZeroOrMore
-	public List<BookFormDetail> bookFormDetails; // ZeroOrMore
-	public ProductPackaging productPackaging; // Optional
-	public ProductFormDescription productFormDescription; // Optional
-	public NumberOfPieces numberOfPieces; // Optional
-	public TradeCategory tradeCategory; // Optional
-	public List<ProductContentType> productContentTypes; // ZeroOrMore
-	public List<ContainedItem> containedItems; // ZeroOrMore
-	public List<ProductClassification> productClassifications; // ZeroOrMore
-	public EpubType epubType; // Optional
-	public EpubTypeVersion epubTypeVersion; // Optional
-	public EpubTypeDescription epubTypeDescription; // Optional
-	public EpubFormat epubFormat; // Optional
-	public EpubFormatVersion epubFormatVersion; // Optional
-	public EpubFormatDescription epubFormatDescription; // Optional
-	public EpubSource epubSource; // Optional
-	public EpubSourceVersion epubSourceVersion; // Optional
-	public EpubSourceDescription epubSourceDescription; // Optional
-	public EpubTypeNote epubTypeNote; // Optional
-	public List<Series> seriess; // ZeroOrMore
-	public NoSeries noSeries; // Optional
-	public List<Set> sets; // ZeroOrMore
-	public TextCaseFlag textCaseFlag; // Optional
-	public DistinctiveTitle distinctiveTitle; // Required
-	public TitlePrefix titlePrefix; // Optional
-	public TitleWithoutPrefix titleWithoutPrefix; // Optional
-	public Subtitle subtitle; // Optional
-	public TranslationOfTitle translationOfTitle; // Optional
-	public List<FormerTitle> formerTitles; // ZeroOrMore
-	public List<Title> titles; // ZeroOrMore
-	public List<WorkIdentifier> workIdentifiers; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
-	public ThesisType thesisType; // Optional
-	public ThesisPresentedTo thesisPresentedTo; // Optional
-	public ThesisYear thesisYear; // Optional
-	public List<Contributor> contributors; // OneOrMore
-	public ContributorStatement contributorStatement; // Optional
-	public NoContributor noContributor; // Optional
-	public ConferenceDescription conferenceDescription; // Optional
-	public ConferenceRole conferenceRole; // Optional
-	public ConferenceName conferenceName; // Required
-	public ConferenceNumber conferenceNumber; // Optional
-	public ConferenceDate conferenceDate; // Optional
-	public ConferencePlace conferencePlace; // Optional
-	public List<Conference> conferences; // ZeroOrMore
-	public List<EditionTypeCode> editionTypeCodes; // ZeroOrMore
-	public EditionNumber editionNumber; // Optional
-	public EditionVersionNumber editionVersionNumber; // Optional
-	public EditionStatement editionStatement; // Optional
-	public NoEdition noEdition; // Optional
-	public ReligiousText religiousText; // Optional
-	public List<LanguageOfText> languageOfTexts; // ZeroOrMore
-	public OriginalLanguage originalLanguage; // Optional
-	public List<Language> languages; // ZeroOrMore
-	public NumberOfPages numberOfPages; // Optional
-	public PagesRoman pagesRoman; // Optional
-	public PagesArabic pagesArabic; // Optional
-	public List<Extent> extents; // ZeroOrMore
-	public NumberOfIllustrations numberOfIllustrations; // Optional
-	public IllustrationsNote illustrationsNote; // Optional
-	public List<Illustrations> illustrationss; // ZeroOrMore
-	public List<MapScale> mapScales; // ZeroOrMore
-	public BASICMainSubject basicMainSubject; // Optional
-	public BASICVersion basicVersion; // Optional
-	public BICMainSubject bicMainSubject; // Optional
-	public BICVersion bicVersion; // Optional
-	public List<MainSubject> mainSubjects; // ZeroOrMore
-	public List<Subject> subjects; // ZeroOrMore
-	public List<PersonAsSubject> personAsSubjects; // ZeroOrMore
-	public List<CorporateBodyAsSubject> corporateBodyAsSubjects; // ZeroOrMore
-	public List<PlaceAsSubject> placeAsSubjects; // ZeroOrMore
-	public List<AudienceCode> audienceCodes; // ZeroOrMore
-	public List<Audience> audiences; // ZeroOrMore
-	public USSchoolGrade usSchoolGrade; // Optional
-	public InterestAge interestAge; // Optional
-	public List<AudienceRange> audienceRanges; // ZeroOrMore
-	public AudienceDescription audienceDescription; // Optional
-	public List<Complexity> complexitys; // ZeroOrMore
-	public Annotation annotation; // Optional
-	public MainDescription mainDescription; // Optional
-	public List<OtherText> otherTexts; // ZeroOrMore
-	public List<ReviewQuote> reviewQuotes; // ZeroOrMore
-	public CoverImageFormatCode coverImageFormatCode; // Optional
-	public CoverImageLinkTypeCode coverImageLinkTypeCode; // Optional
-	public CoverImageLink coverImageLink; // Optional
-	public List<MediaFile> mediaFiles; // ZeroOrMore
-	public List<ProductWebsite> productWebsites; // ZeroOrMore
-	public PrizesDescription prizesDescription; // Optional
-	public List<Prize> prizes; // ZeroOrMore
-	public List<ContentItem> contentItems; // ZeroOrMore
-	public ImprintName imprintName; // Required
-	public List<Imprint> imprints; // ZeroOrMore
-	public PublisherName publisherName; // Optional
-	public List<Publisher> publishers; // ZeroOrMore
-	public List<CityOfPublication> cityOfPublications; // ZeroOrMore
-	public CountryOfPublication countryOfPublication; // Optional
-	public List<CopublisherName> copublisherNames; // ZeroOrMore
-	public List<SponsorName> sponsorNames; // ZeroOrMore
-	public OriginalPublisher originalPublisher; // Optional
-	public PublishingStatus publishingStatus; // Optional
-	public PublishingStatusNote publishingStatusNote; // Optional
-	public AnnouncementDate announcementDate; // Optional
-	public TradeAnnouncementDate tradeAnnouncementDate; // Optional
-	public PublicationDate publicationDate; // Optional
-	public List<CopyrightStatement> copyrightStatements; // ZeroOrMore
-	public CopyrightYear copyrightYear; // Optional
-	public YearFirstPublished yearFirstPublished; // Optional
-	public List<SalesRights> salesRightss; // ZeroOrMore
-	public List<NotForSale> notForSales; // ZeroOrMore
-	public List<SalesRestriction> salesRestrictions; // ZeroOrMore
-	public Height height; // Required
-	public Width width; // Optional
-	public Thickness thickness; // Optional
-	public Weight weight; // Optional
-	public List<Measure> measures; // ZeroOrMore
-	public Dimensions dimensions; // Optional
-	public ReplacedByISBN replacedByISBN; // Optional
-	public ReplacedByEAN13 replacedByEAN13; // Optional
-	public AlternativeFormatISBN alternativeFormatISBN; // Optional
-	public AlternativeFormatEAN13 alternativeFormatEAN13; // Optional
-	public AlternativeProductISBN alternativeProductISBN; // Optional
-	public AlternativeProductEAN13 alternativeProductEAN13; // Optional
-	public List<RelatedProduct> relatedProducts; // ZeroOrMore
-	public OutOfPrintDate outOfPrintDate; // Optional
-	public List<SupplyDetail> supplyDetails; // ZeroOrMore
-	public List<MarketRepresentation> marketRepresentations; // ZeroOrMore
-	public PromotionCampaign promotionCampaign; // Optional
-	public PromotionContact promotionContact; // Optional
-	public InitialPrintRun initialPrintRun; // Optional
-	public List<ReprintDetail> reprintDetails; // ZeroOrMore
-	public CopiesSold copiesSold; // Optional
-	public BookClubAdoption bookClubAdoption; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public RecordReference recordReference;
+
+	/**
+	 * (this field is required)
+	 */
+	public NotificationType notificationType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DeletionCode deletionCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DeletionText deletionText;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceType recordSourceType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceIdentifierType recordSourceIdentifierType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceIdentifier recordSourceIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceName recordSourceName;
+
+	/**
+	 * (this field is required)
+	 */
+	public ISBN isbn;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EAN13 ean13;
+
+	/**
+	 * (this field is optional)
+	 */
+	public UPC upc;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherProductNo publisherProductNo;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ISMN ismn;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DOI doi;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Barcode> barcodes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReplacesISBN replacesISBN;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReplacesEAN13 replacesEAN13;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductForm productForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDetail> productFormDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormFeature> productFormFeatures;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BookFormDetail> bookFormDetails;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductPackaging productPackaging;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormDescription productFormDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPieces numberOfPieces;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeCategory tradeCategory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContentType> productContentTypes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContainedItem> containedItems;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductClassification> productClassifications;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubType epubType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeVersion epubTypeVersion;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeDescription epubTypeDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormat epubFormat;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatVersion epubFormatVersion;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatDescription epubFormatDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubSource epubSource;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubSourceVersion epubSourceVersion;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubSourceDescription epubSourceDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeNote epubTypeNote;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Series> seriess;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoSeries noSeries;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Set> sets;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextCaseFlag textCaseFlag;
+
+	/**
+	 * (this field is required)
+	 */
+	public DistinctiveTitle distinctiveTitle;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlePrefix titlePrefix;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitleWithoutPrefix titleWithoutPrefix;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Subtitle subtitle;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TranslationOfTitle translationOfTitle;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FormerTitle> formerTitles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Title> titles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<WorkIdentifier> workIdentifiers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisType thesisType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisPresentedTo thesisPresentedTo;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisYear thesisYear;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContributorStatement contributorStatement;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoContributor noContributor;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceDescription conferenceDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceRole conferenceRole;
+
+	/**
+	 * (this field is required)
+	 */
+	public ConferenceName conferenceName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceNumber conferenceNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceDate conferenceDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferencePlace conferencePlace;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Conference> conferences;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EditionTypeCode> editionTypeCodes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionNumber editionNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionVersionNumber editionVersionNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionStatement editionStatement;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoEdition noEdition;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReligiousText religiousText;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<LanguageOfText> languageOfTexts;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OriginalLanguage originalLanguage;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Language> languages;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPages numberOfPages;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PagesRoman pagesRoman;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PagesArabic pagesArabic;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Extent> extents;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfIllustrations numberOfIllustrations;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IllustrationsNote illustrationsNote;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Illustrations> illustrationss;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MapScale> mapScales;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BASICMainSubject basicMainSubject;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BASICVersion basicVersion;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BICMainSubject bicMainSubject;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BICVersion bicVersion;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MainSubject> mainSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Subject> subjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PersonAsSubject> personAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CorporateBodyAsSubject> corporateBodyAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PlaceAsSubject> placeAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AudienceCode> audienceCodes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Audience> audiences;
+
+	/**
+	 * (this field is optional)
+	 */
+	public USSchoolGrade usSchoolGrade;
+
+	/**
+	 * (this field is optional)
+	 */
+	public InterestAge interestAge;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AudienceRange> audienceRanges;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceDescription audienceDescription;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Complexity> complexitys;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Annotation annotation;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MainDescription mainDescription;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<OtherText> otherTexts;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ReviewQuote> reviewQuotes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CoverImageFormatCode coverImageFormatCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CoverImageLinkTypeCode coverImageLinkTypeCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CoverImageLink coverImageLink;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MediaFile> mediaFiles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductWebsite> productWebsites;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizesDescription prizesDescription;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Prize> prizes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContentItem> contentItems;
+
+	/**
+	 * (this field is required)
+	 */
+	public ImprintName imprintName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Imprint> imprints;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Publisher> publishers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CityOfPublication> cityOfPublications;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryOfPublication countryOfPublication;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopublisherName> copublisherNames;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SponsorName> sponsorNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OriginalPublisher originalPublisher;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingStatus publishingStatus;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingStatusNote publishingStatusNote;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AnnouncementDate announcementDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeAnnouncementDate tradeAnnouncementDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublicationDate publicationDate;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopyrightStatement> copyrightStatements;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CopyrightYear copyrightYear;
+
+	/**
+	 * (this field is optional)
+	 */
+	public YearFirstPublished yearFirstPublished;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRights> salesRightss;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<NotForSale> notForSales;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions;
+
+	/**
+	 * (this field is required)
+	 */
+	public Height height;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Width width;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Thickness thickness;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Weight weight;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Measure> measures;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Dimensions dimensions;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReplacedByISBN replacedByISBN;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReplacedByEAN13 replacedByEAN13;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeFormatISBN alternativeFormatISBN;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeFormatEAN13 alternativeFormatEAN13;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeProductISBN alternativeProductISBN;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeProductEAN13 alternativeProductEAN13;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedProduct> relatedProducts;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OutOfPrintDate outOfPrintDate;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplyDetail> supplyDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MarketRepresentation> marketRepresentations;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PromotionCampaign promotionCampaign;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PromotionContact promotionContact;
+
+	/**
+	 * (this field is optional)
+	 */
+	public InitialPrintRun initialPrintRun;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ReprintDetail> reprintDetails;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CopiesSold copiesSold;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BookClubAdoption bookClubAdoption;
 
 	public Product()
 	{}

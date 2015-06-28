@@ -44,15 +44,50 @@ public class Stock implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public LocationIdentifier locationIdentifier; // Optional
-	public LocationName locationName; // Optional
-	public List<StockQuantityCoded> stockQuantityCodeds; // ZeroOrMore
-	public OnHand onHand; // Required
-	public Proximity proximity; // Optional
-	public OnOrder onOrder; // Optional
-	public CBO cbo; // Optional
-	public List<OnOrderDetail> onOrderDetails; // ZeroOrMore
-	public List<Velocity> velocitys; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public LocationIdentifier locationIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LocationName locationName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<StockQuantityCoded> stockQuantityCodeds;
+
+	/**
+	 * (this field is required)
+	 */
+	public OnHand onHand;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Proximity proximity;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OnOrder onOrder;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CBO cbo;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<OnOrderDetail> onOrderDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Velocity> velocitys;
 
 	public Stock()
 	{}

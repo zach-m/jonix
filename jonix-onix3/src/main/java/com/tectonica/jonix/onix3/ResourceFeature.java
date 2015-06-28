@@ -43,9 +43,20 @@ public class ResourceFeature implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ResourceFeatureType resourceFeatureType; // Required
-	public FeatureValue featureValue; // Optional
-	public List<FeatureNote> featureNotes; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ResourceFeatureType resourceFeatureType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public FeatureValue featureValue;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FeatureNote> featureNotes;
 
 	public ResourceFeature()
 	{}

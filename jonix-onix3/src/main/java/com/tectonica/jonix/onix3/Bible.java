@@ -49,13 +49,40 @@ public class Bible implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<BibleContents> bibleContentss; // OneOrMore
-	public List<BibleVersion> bibleVersions; // OneOrMore
-	public StudyBibleType studyBibleType; // Optional
-	public List<BiblePurpose> biblePurposes; // ZeroOrMore
-	public BibleTextOrganization bibleTextOrganization; // Optional
-	public BibleReferenceLocation bibleReferenceLocation; // Optional
-	public List<BibleTextFeature> bibleTextFeatures; // ZeroOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<BibleContents> bibleContentss;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<BibleVersion> bibleVersions;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StudyBibleType studyBibleType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BiblePurpose> biblePurposes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BibleTextOrganization bibleTextOrganization;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BibleReferenceLocation bibleReferenceLocation;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BibleTextFeature> bibleTextFeatures;
 
 	public Bible()
 	{}

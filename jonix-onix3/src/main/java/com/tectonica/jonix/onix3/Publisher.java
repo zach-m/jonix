@@ -44,10 +44,25 @@ public class Publisher implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PublishingRole publishingRole; // Required
-	public List<PublisherIdentifier> publisherIdentifiers; // OneOrMore
-	public PublisherName publisherName; // Optional
-	public List<Website> websites; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public PublishingRole publishingRole;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<PublisherIdentifier> publisherIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
 
 	public Publisher()
 	{}

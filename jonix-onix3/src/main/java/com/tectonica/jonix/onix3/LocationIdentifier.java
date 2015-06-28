@@ -41,9 +41,20 @@ public class LocationIdentifier implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public LocationIDType locationIDType; // Required
-	public IDTypeName idTypeName; // Optional
-	public IDValue idValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public LocationIDType locationIDType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IDTypeName idTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue;
 
 	public LocationIdentifier()
 	{}

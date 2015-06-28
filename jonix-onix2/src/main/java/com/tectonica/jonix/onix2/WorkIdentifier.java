@@ -49,9 +49,20 @@ public class WorkIdentifier implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public WorkIDType workIDType; // Required
-	public IDTypeName idTypeName; // Optional
-	public IDValue idValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public WorkIDType workIDType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IDTypeName idTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue;
 
 	public WorkIdentifier()
 	{}

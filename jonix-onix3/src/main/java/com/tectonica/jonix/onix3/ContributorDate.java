@@ -42,9 +42,20 @@ public class ContributorDate implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ContributorDateRole contributorDateRole; // Required
-	public DateFormat dateFormat; // Optional
-	public Date date; // Required
+	/**
+	 * (this field is required)
+	 */
+	public ContributorDateRole contributorDateRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date;
 
 	public ContributorDate()
 	{}

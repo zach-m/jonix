@@ -50,9 +50,20 @@ public class Extent implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ExtentType extentType; // Required
-	public ExtentValue extentValue; // Required
-	public ExtentUnit extentUnit; // Required
+	/**
+	 * (this field is required)
+	 */
+	public ExtentType extentType;
+
+	/**
+	 * (this field is required)
+	 */
+	public ExtentValue extentValue;
+
+	/**
+	 * (this field is required)
+	 */
+	public ExtentUnit extentUnit;
 
 	public Extent()
 	{}

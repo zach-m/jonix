@@ -42,11 +42,30 @@ public class Tax implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TaxType taxType; // Optional
-	public TaxRateCode taxRateCode; // Optional
-	public TaxRatePercent taxRatePercent; // Required
-	public TaxableAmount taxableAmount; // Optional
-	public TaxAmount taxAmount; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public TaxType taxType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRateCode taxRateCode;
+
+	/**
+	 * (this field is required)
+	 */
+	public TaxRatePercent taxRatePercent;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxableAmount taxableAmount;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxAmount taxAmount;
 
 	public Tax()
 	{}

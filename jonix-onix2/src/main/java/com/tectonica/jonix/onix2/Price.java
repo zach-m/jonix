@@ -59,33 +59,140 @@ public class Price implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PriceTypeCode priceTypeCode; // Optional
-	public PriceQualifier priceQualifier; // Optional
-	public PriceTypeDescription priceTypeDescription; // Optional
-	public PricePer pricePer; // Optional
-	public MinimumOrderQuantity minimumOrderQuantity; // Optional
-	public List<BatchBonus> batchBonuss; // ZeroOrMore
-	public ClassOfTrade classOfTrade; // Optional
-	public BICDiscountGroupCode bicDiscountGroupCode; // Optional
-	public List<DiscountCoded> discountCodeds; // ZeroOrMore
-	public DiscountPercent discountPercent; // Optional
-	public PriceStatus priceStatus; // Optional
-	public PriceAmount priceAmount; // Required
-	public CurrencyCode currencyCode; // Optional
-	public List<CountryCode> countryCodes; // OneOrMore
-	public Territory territory; // Optional
-	public CountryExcluded countryExcluded; // Optional
-	public TerritoryExcluded territoryExcluded; // Optional
-	public TaxRateCode1 taxRateCode1; // Optional
-	public TaxRatePercent1 taxRatePercent1; // Optional
-	public TaxableAmount1 taxableAmount1; // Optional
-	public TaxAmount1 taxAmount1; // Optional
-	public TaxRateCode2 taxRateCode2; // Optional
-	public TaxRatePercent2 taxRatePercent2; // Optional
-	public TaxableAmount2 taxableAmount2; // Optional
-	public TaxAmount2 taxAmount2; // Optional
-	public PriceEffectiveFrom priceEffectiveFrom; // Optional
-	public PriceEffectiveUntil priceEffectiveUntil; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public PriceTypeCode priceTypeCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceQualifier priceQualifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceTypeDescription priceTypeDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PricePer pricePer;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MinimumOrderQuantity minimumOrderQuantity;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BatchBonus> batchBonuss;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ClassOfTrade classOfTrade;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BICDiscountGroupCode bicDiscountGroupCode;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<DiscountCoded> discountCodeds;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DiscountPercent discountPercent;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceStatus priceStatus;
+
+	/**
+	 * (this field is required)
+	 */
+	public PriceAmount priceAmount;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyCode currencyCode;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<CountryCode> countryCodes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Territory territory;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryExcluded countryExcluded;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TerritoryExcluded territoryExcluded;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRateCode1 taxRateCode1;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRatePercent1 taxRatePercent1;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxableAmount1 taxableAmount1;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxAmount1 taxAmount1;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRateCode2 taxRateCode2;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRatePercent2 taxRatePercent2;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxableAmount2 taxableAmount2;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxAmount2 taxAmount2;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceEffectiveFrom priceEffectiveFrom;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceEffectiveUntil priceEffectiveUntil;
 
 	public Price()
 	{}

@@ -44,11 +44,30 @@ public class ProductContact implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProductContactRole productContactRole; // Required
-	public List<ProductContactIdentifier> productContactIdentifiers; // OneOrMore
-	public ProductContactName productContactName; // Optional
-	public ContactName contactName; // Optional
-	public EmailAddress emailAddress; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public ProductContactRole productContactRole;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ProductContactIdentifier> productContactIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductContactName productContactName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContactName contactName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EmailAddress emailAddress;
 
 	public ProductContact()
 	{}

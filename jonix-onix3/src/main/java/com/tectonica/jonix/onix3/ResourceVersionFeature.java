@@ -43,9 +43,20 @@ public class ResourceVersionFeature implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ResourceVersionFeatureType resourceVersionFeatureType; // Required
-	public FeatureValue featureValue; // Optional
-	public List<FeatureNote> featureNotes; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ResourceVersionFeatureType resourceVersionFeatureType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public FeatureValue featureValue;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FeatureNote> featureNotes;
 
 	public ResourceVersionFeature()
 	{}

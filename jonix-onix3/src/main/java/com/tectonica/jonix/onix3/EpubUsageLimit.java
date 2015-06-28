@@ -41,8 +41,15 @@ public class EpubUsageLimit implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Quantity quantity; // Required
-	public EpubUsageUnit epubUsageUnit; // Required
+	/**
+	 * (this field is required)
+	 */
+	public Quantity quantity;
+
+	/**
+	 * (this field is required)
+	 */
+	public EpubUsageUnit epubUsageUnit;
 
 	public EpubUsageLimit()
 	{}

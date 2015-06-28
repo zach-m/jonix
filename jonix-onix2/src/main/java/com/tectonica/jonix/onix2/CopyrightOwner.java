@@ -47,9 +47,20 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CopyrightOwnerIdentifier copyrightOwnerIdentifier; // Required
-	public PersonName personName; // Optional
-	public CorporateName corporateName; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public CopyrightOwnerIdentifier copyrightOwnerIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonName personName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateName corporateName;
 
 	public CopyrightOwner()
 	{}

@@ -67,52 +67,235 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProductComposition productComposition; // Required
-	public ProductForm productForm; // Required
-	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
-	public List<ProductFormFeature> productFormFeatures; // ZeroOrMore
-	public ProductPackaging productPackaging; // Optional
-	public List<ProductFormDescription> productFormDescriptions; // ZeroOrMore
-	public TradeCategory tradeCategory; // Optional
-	public PrimaryContentType primaryContentType; // Optional
-	public List<ProductContentType> productContentTypes; // ZeroOrMore
-	public List<Measure> measures; // ZeroOrMore
-	public CountryOfManufacture countryOfManufacture; // Optional
-	public List<EpubTechnicalProtection> epubTechnicalProtections; // ZeroOrMore
-	public List<EpubUsageConstraint> epubUsageConstraints; // ZeroOrMore
-	public EpubLicense epubLicense; // Optional
-	public List<MapScale> mapScales; // ZeroOrMore
-	public List<ProductClassification> productClassifications; // ZeroOrMore
-	public List<ProductPart> productParts; // ZeroOrMore
-	public List<Collection> collections; // ZeroOrMore
-	public NoCollection noCollection; // Optional
-	public List<TitleDetail> titleDetails; // OneOrMore
-	public ThesisType thesisType; // Optional
-	public ThesisPresentedTo thesisPresentedTo; // Optional
-	public ThesisYear thesisYear; // Optional
-	public List<Contributor> contributors; // OneOrMore
-	public List<ContributorStatement> contributorStatements; // ZeroOrMore
-	public NoContributor noContributor; // Optional
-	public List<Conference> conferences; // ZeroOrMore
-	public List<EditionType> editionTypes; // ZeroOrMore
-	public EditionNumber editionNumber; // Optional
-	public EditionVersionNumber editionVersionNumber; // Optional
-	public List<EditionStatement> editionStatements; // ZeroOrMore
-	public NoEdition noEdition; // Optional
-	public ReligiousText religiousText; // Optional
-	public List<Language> languages; // ZeroOrMore
-	public List<Extent> extents; // ZeroOrMore
-	public Illustrated illustrated; // Optional
-	public NumberOfIllustrations numberOfIllustrations; // Optional
-	public List<IllustrationsNote> illustrationsNotes; // ZeroOrMore
-	public List<AncillaryContent> ancillaryContents; // ZeroOrMore
-	public List<Subject> subjects; // ZeroOrMore
-	public List<NameAsSubject> nameAsSubjects; // ZeroOrMore
-	public List<AudienceCode> audienceCodes; // ZeroOrMore
-	public List<Audience> audiences; // ZeroOrMore
-	public List<AudienceRange> audienceRanges; // ZeroOrMore
-	public List<AudienceDescription> audienceDescriptions; // ZeroOrMore
-	public List<Complexity> complexitys; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ProductComposition productComposition;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductForm productForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDetail> productFormDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormFeature> productFormFeatures;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductPackaging productPackaging;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDescription> productFormDescriptions;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeCategory tradeCategory;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrimaryContentType primaryContentType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContentType> productContentTypes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Measure> measures;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryOfManufacture countryOfManufacture;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EpubTechnicalProtection> epubTechnicalProtections;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EpubUsageConstraint> epubUsageConstraints;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubLicense epubLicense;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MapScale> mapScales;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductClassification> productClassifications;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductPart> productParts;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Collection> collections;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoCollection noCollection;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<TitleDetail> titleDetails;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisType thesisType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisPresentedTo thesisPresentedTo;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisYear thesisYear;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContributorStatement> contributorStatements;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoContributor noContributor;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Conference> conferences;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EditionType> editionTypes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionNumber editionNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionVersionNumber editionVersionNumber;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EditionStatement> editionStatements;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoEdition noEdition;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReligiousText religiousText;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Language> languages;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Extent> extents;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Illustrated illustrated;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfIllustrations numberOfIllustrations;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<IllustrationsNote> illustrationsNotes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AncillaryContent> ancillaryContents;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Subject> subjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<NameAsSubject> nameAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AudienceCode> audienceCodes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Audience> audiences;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AudienceRange> audienceRanges;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AudienceDescription> audienceDescriptions;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Complexity> complexitys;
 
 	public DescriptiveDetail()
 	{}

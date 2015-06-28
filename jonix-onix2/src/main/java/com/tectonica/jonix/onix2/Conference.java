@@ -48,15 +48,50 @@ public class Conference implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ConferenceRole conferenceRole; // Optional
-	public ConferenceName conferenceName; // Required
-	public ConferenceAcronym conferenceAcronym; // Optional
-	public ConferenceNumber conferenceNumber; // Optional
-	public ConferenceTheme conferenceTheme; // Optional
-	public ConferenceDate conferenceDate; // Optional
-	public ConferencePlace conferencePlace; // Optional
-	public List<ConferenceSponsor> conferenceSponsors; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceRole conferenceRole;
+
+	/**
+	 * (this field is required)
+	 */
+	public ConferenceName conferenceName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceAcronym conferenceAcronym;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceNumber conferenceNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceTheme conferenceTheme;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceDate conferenceDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferencePlace conferencePlace;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ConferenceSponsor> conferenceSponsors;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
 
 	public Conference()
 	{}

@@ -56,27 +56,110 @@ public class Header implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public FromEANNumber fromEANNumber; // Required
-	public FromSAN fromSAN; // Optional
-	public List<SenderIdentifier> senderIdentifiers; // ZeroOrMore
-	public FromCompany fromCompany; // Optional
-	public FromPerson fromPerson; // Optional
-	public FromEmail fromEmail; // Optional
-	public ToEANNumber toEANNumber; // Optional
-	public ToSAN toSAN; // Optional
-	public List<AddresseeIdentifier> addresseeIdentifiers; // ZeroOrMore
-	public ToCompany toCompany; // Optional
-	public ToPerson toPerson; // Optional
-	public MessageNumber messageNumber; // Optional
-	public MessageRepeat messageRepeat; // Optional
-	public SentDate sentDate; // Required
-	public MessageNote messageNote; // Optional
-	public DefaultLanguageOfText defaultLanguageOfText; // Optional
-	public DefaultPriceTypeCode defaultPriceTypeCode; // Optional
-	public DefaultCurrencyCode defaultCurrencyCode; // Optional
-	public DefaultLinearUnit defaultLinearUnit; // Optional
-	public DefaultWeightUnit defaultWeightUnit; // Optional
-	public DefaultClassOfTrade defaultClassOfTrade; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public FromEANNumber fromEANNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public FromSAN fromSAN;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SenderIdentifier> senderIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public FromCompany fromCompany;
+
+	/**
+	 * (this field is optional)
+	 */
+	public FromPerson fromPerson;
+
+	/**
+	 * (this field is optional)
+	 */
+	public FromEmail fromEmail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ToEANNumber toEANNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ToSAN toSAN;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AddresseeIdentifier> addresseeIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ToCompany toCompany;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ToPerson toPerson;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageNumber messageNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageRepeat messageRepeat;
+
+	/**
+	 * (this field is required)
+	 */
+	public SentDate sentDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageNote messageNote;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultLanguageOfText defaultLanguageOfText;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultPriceTypeCode defaultPriceTypeCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultCurrencyCode defaultCurrencyCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultLinearUnit defaultLinearUnit;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultWeightUnit defaultWeightUnit;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultClassOfTrade defaultClassOfTrade;
 
 	public Header()
 	{}

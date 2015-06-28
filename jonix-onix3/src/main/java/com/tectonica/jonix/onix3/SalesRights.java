@@ -44,11 +44,30 @@ public class SalesRights implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SalesRightsType salesRightsType; // Required
-	public Territory territory; // Required
-	public List<SalesRestriction> salesRestrictions; // ZeroOrMore
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public PublisherName publisherName; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public SalesRightsType salesRightsType;
+
+	/**
+	 * (this field is required)
+	 */
+	public Territory territory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName;
 
 	public SalesRights()
 	{}

@@ -55,27 +55,110 @@ public class Price implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<PriceIdentifier> priceIdentifiers; // ZeroOrMore
-	public PriceType priceType; // Optional
-	public PriceQualifier priceQualifier; // Optional
-	public List<PriceTypeDescription> priceTypeDescriptions; // ZeroOrMore
-	public PricePer pricePer; // Optional
-	public List<PriceCondition> priceConditions; // ZeroOrMore
-	public MinimumOrderQuantity minimumOrderQuantity; // Optional
-	public List<BatchBonus> batchBonuss; // ZeroOrMore
-	public List<DiscountCoded> discountCodeds; // ZeroOrMore
-	public List<Discount> discounts; // ZeroOrMore
-	public PriceStatus priceStatus; // Optional
-	public PriceAmount priceAmount; // Optional
-	public PriceCoded priceCoded; // Optional
-	public List<Tax> taxs; // ZeroOrMore
-	public CurrencyCode currencyCode; // Optional
-	public Territory territory; // Optional
-	public CurrencyZone currencyZone; // Optional
-	public List<ComparisonProductPrice> comparisonProductPrices; // ZeroOrMore
-	public List<PriceDate> priceDates; // ZeroOrMore
-	public PrintedOnProduct printedOnProduct; // Optional
-	public PositionOnProduct positionOnProduct; // Optional
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PriceIdentifier> priceIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceType priceType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceQualifier priceQualifier;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PriceTypeDescription> priceTypeDescriptions;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PricePer pricePer;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PriceCondition> priceConditions;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MinimumOrderQuantity minimumOrderQuantity;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BatchBonus> batchBonuss;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<DiscountCoded> discountCodeds;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Discount> discounts;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceStatus priceStatus;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceAmount priceAmount;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceCoded priceCoded;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Tax> taxs;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyCode currencyCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Territory territory;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyZone currencyZone;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ComparisonProductPrice> comparisonProductPrices;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PriceDate> priceDates;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrintedOnProduct printedOnProduct;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PositionOnProduct positionOnProduct;
 
 	public Price()
 	{}

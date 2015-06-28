@@ -50,11 +50,30 @@ public class Prize implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PrizeName prizeName; // Required
-	public PrizeYear prizeYear; // Optional
-	public PrizeCountry prizeCountry; // Optional
-	public PrizeCode prizeCode; // Optional
-	public PrizeJury prizeJury; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public PrizeName prizeName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeYear prizeYear;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeCountry prizeCountry;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeCode prizeCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeJury prizeJury;
 
 	public Prize()
 	{}

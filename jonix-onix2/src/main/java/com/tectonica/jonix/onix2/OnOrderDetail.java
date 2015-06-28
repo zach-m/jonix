@@ -48,8 +48,15 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public OnOrder onOrder; // Required
-	public ExpectedDate expectedDate; // Required
+	/**
+	 * (this field is required)
+	 */
+	public OnOrder onOrder;
+
+	/**
+	 * (this field is required)
+	 */
+	public ExpectedDate expectedDate;
 
 	public OnOrderDetail()
 	{}

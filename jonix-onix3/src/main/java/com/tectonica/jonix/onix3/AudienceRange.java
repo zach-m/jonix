@@ -42,9 +42,20 @@ public class AudienceRange implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public AudienceRangeQualifier audienceRangeQualifier; // Required
-	public AudienceRangePrecision audienceRangePrecision; // Optional
-	public AudienceRangeValue audienceRangeValue; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public AudienceRangeQualifier audienceRangeQualifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceRangePrecision audienceRangePrecision;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceRangeValue audienceRangeValue;
 
 	public AudienceRange()
 	{}

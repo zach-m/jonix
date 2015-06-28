@@ -42,9 +42,20 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CopyrightType copyrightType; // Optional
-	public List<CopyrightYear> copyrightYears; // OneOrMore
-	public List<CopyrightOwner> copyrightOwners; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public CopyrightType copyrightType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<CopyrightYear> copyrightYears;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopyrightOwner> copyrightOwners;
 
 	public CopyrightStatement()
 	{}

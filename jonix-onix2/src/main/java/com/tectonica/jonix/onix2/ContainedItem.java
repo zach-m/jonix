@@ -59,19 +59,70 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ISBN isbn; // Required
-	public EAN13 ean13; // Optional
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public ProductForm productForm; // Optional
-	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
-	public List<ProductFormFeature> productFormFeatures; // ZeroOrMore
-	public List<BookFormDetail> bookFormDetails; // ZeroOrMore
-	public ProductPackaging productPackaging; // Optional
-	public ProductFormDescription productFormDescription; // Optional
-	public NumberOfPieces numberOfPieces; // Optional
-	public TradeCategory tradeCategory; // Optional
-	public List<ProductContentType> productContentTypes; // ZeroOrMore
-	public ItemQuantity itemQuantity; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public ISBN isbn;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EAN13 ean13;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductForm productForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDetail> productFormDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormFeature> productFormFeatures;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BookFormDetail> bookFormDetails;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductPackaging productPackaging;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormDescription productFormDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPieces numberOfPieces;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeCategory tradeCategory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContentType> productContentTypes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ItemQuantity itemQuantity;
 
 	public ContainedItem()
 	{}

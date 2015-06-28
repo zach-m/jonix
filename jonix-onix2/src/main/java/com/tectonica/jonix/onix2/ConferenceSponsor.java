@@ -47,9 +47,20 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ConferenceSponsorIdentifier conferenceSponsorIdentifier; // Required
-	public PersonName personName; // Optional
-	public CorporateName corporateName; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public ConferenceSponsorIdentifier conferenceSponsorIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonName personName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateName corporateName;
 
 	public ConferenceSponsor()
 	{}

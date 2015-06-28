@@ -41,9 +41,20 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CollectionSequenceType collectionSequenceType; // Required
-	public CollectionSequenceTypeName collectionSequenceTypeName; // Optional
-	public CollectionSequenceNumber collectionSequenceNumber; // Required
+	/**
+	 * (this field is required)
+	 */
+	public CollectionSequenceType collectionSequenceType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CollectionSequenceTypeName collectionSequenceTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public CollectionSequenceNumber collectionSequenceNumber;
 
 	public CollectionSequence()
 	{}

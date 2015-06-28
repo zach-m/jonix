@@ -42,9 +42,20 @@ public class Velocity implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public VelocityMetric velocityMetric; // Required
-	public Rate rate; // Required
-	public Proximity proximity; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public VelocityMetric velocityMetric;
+
+	/**
+	 * (this field is required)
+	 */
+	public Rate rate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Proximity proximity;
 
 	public Velocity()
 	{}

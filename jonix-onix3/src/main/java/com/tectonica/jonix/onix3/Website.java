@@ -43,9 +43,20 @@ public class Website implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public WebsiteRole websiteRole; // Optional
-	public List<WebsiteDescription> websiteDescriptions; // ZeroOrMore
-	public WebsiteLink websiteLink; // Required
+	/**
+	 * (this field is optional)
+	 */
+	public WebsiteRole websiteRole;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<WebsiteDescription> websiteDescriptions;
+
+	/**
+	 * (this field is required)
+	 */
+	public WebsiteLink websiteLink;
 
 	public Website()
 	{}

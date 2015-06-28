@@ -41,15 +41,50 @@ public class TitleElement implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SequenceNumber sequenceNumber; // Optional
-	public TitleElementLevel titleElementLevel; // Required
-	public PartNumber partNumber; // Required
-	public YearOfAnnual yearOfAnnual; // Optional
-	public TitlePrefix titlePrefix; // Optional
-	public NoPrefix noPrefix; // Optional
-	public TitleWithoutPrefix titleWithoutPrefix; // Required
-	public TitleText titleText; // Optional
-	public Subtitle subtitle; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public SequenceNumber sequenceNumber;
+
+	/**
+	 * (this field is required)
+	 */
+	public TitleElementLevel titleElementLevel;
+
+	/**
+	 * (this field is required)
+	 */
+	public PartNumber partNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public YearOfAnnual yearOfAnnual;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlePrefix titlePrefix;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoPrefix noPrefix;
+
+	/**
+	 * (this field is required)
+	 */
+	public TitleWithoutPrefix titleWithoutPrefix;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitleText titleText;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Subtitle subtitle;
 
 	public TitleElement()
 	{}

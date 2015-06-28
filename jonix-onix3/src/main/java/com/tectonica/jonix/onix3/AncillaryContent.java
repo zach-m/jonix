@@ -43,9 +43,20 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public AncillaryContentType ancillaryContentType; // Required
-	public List<AncillaryContentDescription> ancillaryContentDescriptions; // ZeroOrMore
-	public Number number; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public AncillaryContentType ancillaryContentType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AncillaryContentDescription> ancillaryContentDescriptions;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Number number;
 
 	public AncillaryContent()
 	{}

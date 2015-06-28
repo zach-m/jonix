@@ -41,9 +41,20 @@ public class PriceCoded implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PriceCodeType priceCodeType; // Required
-	public PriceCodeTypeName priceCodeTypeName; // Optional
-	public PriceCode priceCode; // Required
+	/**
+	 * (this field is required)
+	 */
+	public PriceCodeType priceCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceCodeTypeName priceCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public PriceCode priceCode;
 
 	public PriceCoded()
 	{}

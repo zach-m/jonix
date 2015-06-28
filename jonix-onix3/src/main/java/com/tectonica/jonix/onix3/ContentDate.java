@@ -42,9 +42,20 @@ public class ContentDate implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ContentDateRole contentDateRole; // Required
-	public DateFormat dateFormat; // Optional
-	public Date date; // Required
+	/**
+	 * (this field is required)
+	 */
+	public ContentDateRole contentDateRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date;
 
 	public ContentDate()
 	{}

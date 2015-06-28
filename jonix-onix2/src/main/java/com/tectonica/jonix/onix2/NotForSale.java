@@ -53,12 +53,35 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<RightsCountry> rightsCountrys; // OneOrMore
-	public RightsTerritory rightsTerritory; // Optional
-	public ISBN isbn; // Optional
-	public EAN13 ean13; // Optional
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public PublisherName publisherName; // Optional
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<RightsCountry> rightsCountrys;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RightsTerritory rightsTerritory;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ISBN isbn;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EAN13 ean13;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName;
 
 	public NotForSale()
 	{}

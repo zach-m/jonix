@@ -43,11 +43,30 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<SupplierIdentifier> supplierIdentifiers; // OneOrMore
-	public SupplierName supplierName; // Optional
-	public List<TelephoneNumber> telephoneNumbers; // ZeroOrMore
-	public List<FaxNumber> faxNumbers; // ZeroOrMore
-	public List<EmailAddress> emailAddresss; // ZeroOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SupplierIdentifier> supplierIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplierName supplierName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TelephoneNumber> telephoneNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FaxNumber> faxNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EmailAddress> emailAddresss;
 
 	public NewSupplier()
 	{}

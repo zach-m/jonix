@@ -40,10 +40,25 @@ public class CollateralDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<TextContent> textContents; // ZeroOrMore
-	public List<CitedContent> citedContents; // ZeroOrMore
-	public List<SupportingResource> supportingResources; // ZeroOrMore
-	public List<Prize> prizes; // ZeroOrMore
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TextContent> textContents;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CitedContent> citedContents;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupportingResource> supportingResources;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Prize> prizes;
 
 	public CollateralDetail()
 	{}

@@ -42,11 +42,30 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SalesRestrictionType salesRestrictionType; // Required
-	public List<SalesOutlet> salesOutlets; // ZeroOrMore
-	public List<SalesRestrictionNote> salesRestrictionNotes; // ZeroOrMore
-	public StartDate startDate; // Optional
-	public EndDate endDate; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public SalesRestrictionType salesRestrictionType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesOutlet> salesOutlets;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestrictionNote> salesRestrictionNotes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StartDate startDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EndDate endDate;
 
 	public SalesRestriction()
 	{}

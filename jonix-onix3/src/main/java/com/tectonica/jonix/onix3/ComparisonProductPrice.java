@@ -45,10 +45,25 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<ProductIdentifier> productIdentifiers; // OneOrMore
-	public PriceType priceType; // Optional
-	public PriceAmount priceAmount; // Required
-	public CurrencyCode currencyCode; // Optional
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceType priceType;
+
+	/**
+	 * (this field is required)
+	 */
+	public PriceAmount priceAmount;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyCode currencyCode;
 
 	public ComparisonProductPrice()
 	{}

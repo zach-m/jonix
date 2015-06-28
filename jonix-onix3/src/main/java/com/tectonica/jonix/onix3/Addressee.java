@@ -43,10 +43,25 @@ public class Addressee implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<AddresseeIdentifier> addresseeIdentifiers; // OneOrMore
-	public AddresseeName addresseeName; // Optional
-	public ContactName contactName; // Optional
-	public EmailAddress emailAddress; // Optional
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<AddresseeIdentifier> addresseeIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AddresseeName addresseeName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContactName contactName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EmailAddress emailAddress;
 
 	public Addressee()
 	{}

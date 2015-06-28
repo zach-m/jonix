@@ -53,10 +53,25 @@ public class SalesRights implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SalesRightsType salesRightsType; // Required
-	public List<RightsCountry> rightsCountrys; // OneOrMore
-	public RightsTerritory rightsTerritory; // Optional
-	public List<RightsRegion> rightsRegions; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public SalesRightsType salesRightsType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<RightsCountry> rightsCountrys;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RightsTerritory rightsTerritory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RightsRegion> rightsRegions;
 
 	public SalesRights()
 	{}

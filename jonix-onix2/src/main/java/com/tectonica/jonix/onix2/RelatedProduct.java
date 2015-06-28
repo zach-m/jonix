@@ -62,28 +62,115 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public RelationCode relationCode; // Required
-	public ISBN isbn; // Required
-	public EAN13 ean13; // Optional
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
-	public ProductForm productForm; // Optional
-	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
-	public List<ProductFormFeature> productFormFeatures; // ZeroOrMore
-	public List<BookFormDetail> bookFormDetails; // ZeroOrMore
-	public ProductPackaging productPackaging; // Optional
-	public ProductFormDescription productFormDescription; // Optional
-	public NumberOfPieces numberOfPieces; // Optional
-	public TradeCategory tradeCategory; // Optional
-	public List<ProductContentType> productContentTypes; // ZeroOrMore
-	public EpubType epubType; // Optional
-	public EpubTypeVersion epubTypeVersion; // Optional
-	public EpubTypeDescription epubTypeDescription; // Optional
-	public EpubFormat epubFormat; // Optional
-	public EpubFormatVersion epubFormatVersion; // Optional
-	public EpubFormatDescription epubFormatDescription; // Optional
-	public EpubTypeNote epubTypeNote; // Optional
-	public List<Publisher> publishers; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public RelationCode relationCode;
+
+	/**
+	 * (this field is required)
+	 */
+	public ISBN isbn;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EAN13 ean13;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductForm productForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDetail> productFormDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormFeature> productFormFeatures;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BookFormDetail> bookFormDetails;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductPackaging productPackaging;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormDescription productFormDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPieces numberOfPieces;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeCategory tradeCategory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContentType> productContentTypes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubType epubType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeVersion epubTypeVersion;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeDescription epubTypeDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormat epubFormat;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatVersion epubFormatVersion;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatDescription epubFormatDescription;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeNote epubTypeNote;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Publisher> publishers;
 
 	public RelatedProduct()
 	{}

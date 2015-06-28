@@ -46,10 +46,25 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ResourceForm resourceForm; // Required
-	public List<ResourceVersionFeature> resourceVersionFeatures; // ZeroOrMore
-	public List<ResourceLink> resourceLinks; // OneOrMore
-	public List<ContentDate> contentDates; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ResourceForm resourceForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ResourceVersionFeature> resourceVersionFeatures;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ResourceLink> resourceLinks;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContentDate> contentDates;
 
 	public ResourceVersion()
 	{}

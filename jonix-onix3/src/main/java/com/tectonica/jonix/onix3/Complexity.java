@@ -41,8 +41,15 @@ public class Complexity implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ComplexitySchemeIdentifier complexitySchemeIdentifier; // Required
-	public ComplexityCode complexityCode; // Required
+	/**
+	 * (this field is required)
+	 */
+	public ComplexitySchemeIdentifier complexitySchemeIdentifier;
+
+	/**
+	 * (this field is required)
+	 */
+	public ComplexityCode complexityCode;
 
 	public Complexity()
 	{}

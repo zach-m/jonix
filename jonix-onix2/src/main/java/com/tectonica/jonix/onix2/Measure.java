@@ -50,9 +50,20 @@ public class Measure implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public MeasureTypeCode measureTypeCode; // Required
-	public Measurement measurement; // Required
-	public MeasureUnitCode measureUnitCode; // Required
+	/**
+	 * (this field is required)
+	 */
+	public MeasureTypeCode measureTypeCode;
+
+	/**
+	 * (this field is required)
+	 */
+	public Measurement measurement;
+
+	/**
+	 * (this field is required)
+	 */
+	public MeasureUnitCode measureUnitCode;
 
 	public Measure()
 	{}

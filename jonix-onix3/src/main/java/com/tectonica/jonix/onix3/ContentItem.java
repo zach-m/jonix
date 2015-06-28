@@ -40,18 +40,65 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public LevelSequenceNumber levelSequenceNumber; // Optional
-	public TextItem textItem; // Required
-	public ComponentTypeName componentTypeName; // Required
-	public ComponentNumber componentNumber; // Optional
-	public List<TitleDetail> titleDetails; // ZeroOrMore
-	public List<Contributor> contributors; // ZeroOrMore
-	public List<Subject> subjects; // ZeroOrMore
-	public List<NameAsSubject> nameAsSubjects; // ZeroOrMore
-	public List<TextContent> textContents; // ZeroOrMore
-	public List<CitedContent> citedContents; // ZeroOrMore
-	public List<SupportingResource> supportingResources; // ZeroOrMore
-	public List<RelatedWork> relatedWorks; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public LevelSequenceNumber levelSequenceNumber;
+
+	/**
+	 * (this field is required)
+	 */
+	public TextItem textItem;
+
+	/**
+	 * (this field is required)
+	 */
+	public ComponentTypeName componentTypeName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ComponentNumber componentNumber;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TitleDetail> titleDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Subject> subjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<NameAsSubject> nameAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TextContent> textContents;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CitedContent> citedContents;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupportingResource> supportingResources;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedWork> relatedWorks;
 
 	public ContentItem()
 	{}

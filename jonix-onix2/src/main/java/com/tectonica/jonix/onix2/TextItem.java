@@ -52,12 +52,35 @@ public class TextItem implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TextItemType textItemType; // Required
-	public List<TextItemIdentifier> textItemIdentifiers; // ZeroOrMore
-	public FirstPageNumber firstPageNumber; // Required
-	public LastPageNumber lastPageNumber; // Optional
-	public List<PageRun> pageRuns; // ZeroOrMore
-	public NumberOfPages numberOfPages; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public TextItemType textItemType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TextItemIdentifier> textItemIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public FirstPageNumber firstPageNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LastPageNumber lastPageNumber;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PageRun> pageRuns;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPages numberOfPages;
 
 	public TextItem()
 	{}

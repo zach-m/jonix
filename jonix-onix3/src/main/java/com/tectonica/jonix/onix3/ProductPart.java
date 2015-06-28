@@ -49,16 +49,55 @@ public class ProductPart implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PrimaryPart primaryPart; // Optional
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public ProductForm productForm; // Required
-	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
-	public List<ProductFormFeature> productFormFeatures; // ZeroOrMore
-	public List<ProductFormDescription> productFormDescriptions; // ZeroOrMore
-	public List<ProductContentType> productContentTypes; // ZeroOrMore
-	public NumberOfItemsOfThisForm numberOfItemsOfThisForm; // Required
-	public NumberOfCopies numberOfCopies; // Optional
-	public CountryOfManufacture countryOfManufacture; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public PrimaryPart primaryPart;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductForm productForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDetail> productFormDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormFeature> productFormFeatures;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDescription> productFormDescriptions;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContentType> productContentTypes;
+
+	/**
+	 * (this field is required)
+	 */
+	public NumberOfItemsOfThisForm numberOfItemsOfThisForm;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfCopies numberOfCopies;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryOfManufacture countryOfManufacture;
 
 	public ProductPart()
 	{}

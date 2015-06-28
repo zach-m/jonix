@@ -42,9 +42,20 @@ public class PublishingDate implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PublishingDateRole publishingDateRole; // Required
-	public DateFormat dateFormat; // Optional
-	public Date date; // Required
+	/**
+	 * (this field is required)
+	 */
+	public PublishingDateRole publishingDateRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date;
 
 	public PublishingDate()
 	{}

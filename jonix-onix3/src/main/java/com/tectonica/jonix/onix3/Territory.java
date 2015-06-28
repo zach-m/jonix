@@ -42,10 +42,25 @@ public class Territory implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CountriesIncluded countriesIncluded; // Required
-	public RegionsIncluded regionsIncluded; // Optional
-	public CountriesExcluded countriesExcluded; // Optional
-	public RegionsExcluded regionsExcluded; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public CountriesIncluded countriesIncluded;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RegionsIncluded regionsIncluded;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountriesExcluded countriesExcluded;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RegionsExcluded regionsExcluded;
 
 	public Territory()
 	{}

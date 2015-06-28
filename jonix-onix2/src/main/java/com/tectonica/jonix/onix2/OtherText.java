@@ -50,17 +50,60 @@ public class OtherText implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TextTypeCode textTypeCode; // Required
-	public TextFormat textFormat; // Optional
-	public Text text; // Optional
-	public TextLinkType textLinkType; // Required
-	public TextLink textLink; // Required
-	public TextAuthor textAuthor; // Optional
-	public TextSourceCorporate textSourceCorporate; // Optional
-	public TextSourceTitle textSourceTitle; // Optional
-	public TextPublicationDate textPublicationDate; // Optional
-	public StartDate startDate; // Optional
-	public EndDate endDate; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public TextTypeCode textTypeCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextFormat textFormat;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Text text;
+
+	/**
+	 * (this field is required)
+	 */
+	public TextLinkType textLinkType;
+
+	/**
+	 * (this field is required)
+	 */
+	public TextLink textLink;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextAuthor textAuthor;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextSourceCorporate textSourceCorporate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextSourceTitle textSourceTitle;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextPublicationDate textPublicationDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StartDate startDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EndDate endDate;
 
 	public OtherText()
 	{}

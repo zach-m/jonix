@@ -44,10 +44,25 @@ public class Language implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public LanguageRole languageRole; // Required
-	public LanguageCode languageCode; // Required
-	public CountryCode countryCode; // Optional
-	public ScriptCode scriptCode; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public LanguageRole languageRole;
+
+	/**
+	 * (this field is required)
+	 */
+	public LanguageCode languageCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryCode countryCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ScriptCode scriptCode;
 
 	public Language()
 	{}

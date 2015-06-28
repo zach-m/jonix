@@ -40,10 +40,25 @@ public class Reissue implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ReissueDate reissueDate; // Required
-	public ReissueDescription reissueDescription; // Optional
-	public List<Price> prices; // ZeroOrMore
-	public List<SupportingResource> supportingResources; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ReissueDate reissueDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReissueDescription reissueDescription;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupportingResource> supportingResources;
 
 	public Reissue()
 	{}

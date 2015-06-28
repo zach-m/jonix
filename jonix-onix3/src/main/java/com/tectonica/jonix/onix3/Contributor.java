@@ -49,32 +49,135 @@ public class Contributor implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SequenceNumber sequenceNumber; // Optional
-	public List<ContributorRole> contributorRoles; // OneOrMore
-	public List<FromLanguage> fromLanguages; // ZeroOrMore
-	public List<ToLanguage> toLanguages; // ZeroOrMore
-	public NameType nameType; // Optional
-	public List<NameIdentifier> nameIdentifiers; // OneOrMore
-	public PersonName personName; // Required
-	public PersonNameInverted personNameInverted; // Optional
-	public TitlesBeforeNames titlesBeforeNames; // Optional
-	public NamesBeforeKey namesBeforeKey; // Optional
-	public PrefixToKey prefixToKey; // Optional
-	public KeyNames keyNames; // Required
-	public NamesAfterKey namesAfterKey; // Optional
-	public SuffixToKey suffixToKey; // Optional
-	public LettersAfterNames lettersAfterNames; // Optional
-	public TitlesAfterNames titlesAfterNames; // Optional
-	public CorporateName corporateName; // Required
-	public CorporateNameInverted corporateNameInverted; // Optional
-	public List<AlternativeName> alternativeNames; // ZeroOrMore
-	public List<ContributorDate> contributorDates; // ZeroOrMore
-	public List<ProfessionalAffiliation> professionalAffiliations; // ZeroOrMore
-	public List<BiographicalNote> biographicalNotes; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
-	public List<ContributorDescription> contributorDescriptions; // ZeroOrMore
-	public UnnamedPersons unnamedPersons; // Required
-	public List<ContributorPlace> contributorPlaces; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public SequenceNumber sequenceNumber;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ContributorRole> contributorRoles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FromLanguage> fromLanguages;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ToLanguage> toLanguages;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NameType nameType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<NameIdentifier> nameIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public PersonName personName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonNameInverted personNameInverted;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesBeforeNames titlesBeforeNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NamesBeforeKey namesBeforeKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrefixToKey prefixToKey;
+
+	/**
+	 * (this field is required)
+	 */
+	public KeyNames keyNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NamesAfterKey namesAfterKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SuffixToKey suffixToKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LettersAfterNames lettersAfterNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesAfterNames titlesAfterNames;
+
+	/**
+	 * (this field is required)
+	 */
+	public CorporateName corporateName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateNameInverted corporateNameInverted;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<AlternativeName> alternativeNames;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContributorDate> contributorDates;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProfessionalAffiliation> professionalAffiliations;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BiographicalNote> biographicalNotes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContributorDescription> contributorDescriptions;
+
+	/**
+	 * (this field is required)
+	 */
+	public UnnamedPersons unnamedPersons;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContributorPlace> contributorPlaces;
 
 	public Contributor()
 	{}

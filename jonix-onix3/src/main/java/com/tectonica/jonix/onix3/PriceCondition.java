@@ -46,9 +46,20 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PriceConditionType priceConditionType; // Required
-	public List<PriceConditionQuantity> priceConditionQuantitys; // ZeroOrMore
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public PriceConditionType priceConditionType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PriceConditionQuantity> priceConditionQuantitys;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
 
 	public PriceCondition()
 	{}

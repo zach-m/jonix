@@ -51,17 +51,60 @@ public class MediaFile implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public MediaFileTypeCode mediaFileTypeCode; // Required
-	public MediaFileFormatCode mediaFileFormatCode; // Optional
-	public ImageResolution imageResolution; // Optional
-	public MediaFileLinkTypeCode mediaFileLinkTypeCode; // Required
-	public MediaFileLink mediaFileLink; // Required
-	public TextWithDownload textWithDownload; // Optional
-	public DownloadCaption downloadCaption; // Required
-	public DownloadCredit downloadCredit; // Optional
-	public DownloadCopyrightNotice downloadCopyrightNotice; // Optional
-	public DownloadTerms downloadTerms; // Optional
-	public MediaFileDate mediaFileDate; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public MediaFileTypeCode mediaFileTypeCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MediaFileFormatCode mediaFileFormatCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ImageResolution imageResolution;
+
+	/**
+	 * (this field is required)
+	 */
+	public MediaFileLinkTypeCode mediaFileLinkTypeCode;
+
+	/**
+	 * (this field is required)
+	 */
+	public MediaFileLink mediaFileLink;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextWithDownload textWithDownload;
+
+	/**
+	 * (this field is required)
+	 */
+	public DownloadCaption downloadCaption;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DownloadCredit downloadCredit;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DownloadCopyrightNotice downloadCopyrightNotice;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DownloadTerms downloadTerms;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MediaFileDate mediaFileDate;
 
 	public MediaFile()
 	{}

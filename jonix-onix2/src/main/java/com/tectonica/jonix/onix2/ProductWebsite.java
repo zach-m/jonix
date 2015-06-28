@@ -49,9 +49,20 @@ public class ProductWebsite implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public WebsiteRole websiteRole; // Optional
-	public ProductWebsiteDescription productWebsiteDescription; // Optional
-	public ProductWebsiteLink productWebsiteLink; // Required
+	/**
+	 * (this field is optional)
+	 */
+	public WebsiteRole websiteRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductWebsiteDescription productWebsiteDescription;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductWebsiteLink productWebsiteLink;
 
 	public ProductWebsite()
 	{}

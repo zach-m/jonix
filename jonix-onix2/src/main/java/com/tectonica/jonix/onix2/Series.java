@@ -53,14 +53,45 @@ public class Series implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SeriesISSN seriesISSN; // Optional
-	public PublisherSeriesCode publisherSeriesCode; // Optional
-	public List<SeriesIdentifier> seriesIdentifiers; // ZeroOrMore
-	public TitleOfSeries titleOfSeries; // Required
-	public List<Title> titles; // ZeroOrMore
-	public List<Contributor> contributors; // ZeroOrMore
-	public NumberWithinSeries numberWithinSeries; // Optional
-	public YearOfAnnual yearOfAnnual; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public SeriesISSN seriesISSN;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherSeriesCode publisherSeriesCode;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SeriesIdentifier> seriesIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public TitleOfSeries titleOfSeries;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Title> titles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberWithinSeries numberWithinSeries;
+
+	/**
+	 * (this field is optional)
+	 */
+	public YearOfAnnual yearOfAnnual;
 
 	public Series()
 	{}

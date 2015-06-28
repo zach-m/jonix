@@ -44,13 +44,40 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public AgentRole agentRole; // Required
-	public List<AgentIdentifier> agentIdentifiers; // OneOrMore
-	public AgentName agentName; // Optional
-	public List<TelephoneNumber> telephoneNumbers; // ZeroOrMore
-	public List<FaxNumber> faxNumbers; // ZeroOrMore
-	public List<EmailAddress> emailAddresss; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public AgentRole agentRole;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<AgentIdentifier> agentIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AgentName agentName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TelephoneNumber> telephoneNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FaxNumber> faxNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EmailAddress> emailAddresss;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
 
 	public PublisherRepresentative()
 	{}

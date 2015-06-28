@@ -41,9 +41,20 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ReturnsCodeType returnsCodeType; // Required
-	public ReturnsCodeTypeName returnsCodeTypeName; // Optional
-	public ReturnsCode returnsCode; // Required
+	/**
+	 * (this field is required)
+	 */
+	public ReturnsCodeType returnsCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReturnsCodeTypeName returnsCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public ReturnsCode returnsCode;
 
 	public ReturnsConditions()
 	{}

@@ -41,9 +41,20 @@ public class PriceIdentifier implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PriceIDType priceIDType; // Required
-	public IDTypeName idTypeName; // Optional
-	public IDValue idValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public PriceIDType priceIDType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IDTypeName idTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue;
 
 	public PriceIdentifier()
 	{}

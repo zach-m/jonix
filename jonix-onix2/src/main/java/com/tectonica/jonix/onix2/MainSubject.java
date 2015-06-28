@@ -49,10 +49,25 @@ public class MainSubject implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier; // Required
-	public SubjectSchemeVersion subjectSchemeVersion; // Optional
-	public SubjectCode subjectCode; // Required
-	public SubjectHeadingText subjectHeadingText; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubjectSchemeVersion subjectSchemeVersion;
+
+	/**
+	 * (this field is required)
+	 */
+	public SubjectCode subjectCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubjectHeadingText subjectHeadingText;
 
 	public MainSubject()
 	{}

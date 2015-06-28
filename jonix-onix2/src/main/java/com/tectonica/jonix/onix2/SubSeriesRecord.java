@@ -58,24 +58,95 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public RecordReference recordReference; // Required
-	public NotificationType notificationType; // Required
-	public DeletionCode deletionCode; // Optional
-	public DeletionText deletionText; // Optional
-	public RecordSourceType recordSourceType; // Optional
-	public RecordSourceIdentifierType recordSourceIdentifierType; // Optional
-	public RecordSourceIdentifier recordSourceIdentifier; // Optional
-	public RecordSourceName recordSourceName; // Optional
-	public List<SeriesIdentifier> seriesIdentifiers; // OneOrMore
-	public ParentIdentifier parentIdentifier; // Required
-	public LevelSequenceNumber levelSequenceNumber; // Required
-	public SeriesPartName seriesPartName; // Optional
-	public NumberWithinSeries numberWithinSeries; // Optional
-	public List<Title> titles; // OneOrMore
-	public List<Contributor> contributors; // ZeroOrMore
-	public List<OtherText> otherTexts; // ZeroOrMore
-	public List<Publisher> publishers; // ZeroOrMore
-	public SubordinateEntries subordinateEntries; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public RecordReference recordReference;
+
+	/**
+	 * (this field is required)
+	 */
+	public NotificationType notificationType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DeletionCode deletionCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DeletionText deletionText;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceType recordSourceType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceIdentifierType recordSourceIdentifierType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceIdentifier recordSourceIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceName recordSourceName;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SeriesIdentifier> seriesIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public ParentIdentifier parentIdentifier;
+
+	/**
+	 * (this field is required)
+	 */
+	public LevelSequenceNumber levelSequenceNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SeriesPartName seriesPartName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberWithinSeries numberWithinSeries;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<Title> titles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<OtherText> otherTexts;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Publisher> publishers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubordinateEntries subordinateEntries;
 
 	public SubSeriesRecord()
 	{}

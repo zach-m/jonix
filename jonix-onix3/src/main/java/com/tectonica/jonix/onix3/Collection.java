@@ -46,13 +46,40 @@ public class Collection implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CollectionType collectionType; // Required
-	public SourceName sourceName; // Optional
-	public List<CollectionIdentifier> collectionIdentifiers; // ZeroOrMore
-	public List<CollectionSequence> collectionSequences; // ZeroOrMore
-	public List<TitleDetail> titleDetails; // ZeroOrMore
-	public List<Contributor> contributors; // ZeroOrMore
-	public List<ContributorStatement> contributorStatements; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public CollectionType collectionType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SourceName sourceName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CollectionIdentifier> collectionIdentifiers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CollectionSequence> collectionSequences;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TitleDetail> titleDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContributorStatement> contributorStatements;
 
 	public Collection()
 	{}

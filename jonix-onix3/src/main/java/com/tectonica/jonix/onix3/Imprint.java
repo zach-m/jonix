@@ -43,8 +43,15 @@ public class Imprint implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<ImprintIdentifier> imprintIdentifiers; // OneOrMore
-	public ImprintName imprintName; // Optional
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ImprintIdentifier> imprintIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ImprintName imprintName;
 
 	public Imprint()
 	{}

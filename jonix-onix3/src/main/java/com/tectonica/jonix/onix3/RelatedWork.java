@@ -44,8 +44,15 @@ public class RelatedWork implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public WorkRelationCode workRelationCode; // Required
-	public List<WorkIdentifier> workIdentifiers; // OneOrMore
+	/**
+	 * (this field is required)
+	 */
+	public WorkRelationCode workRelationCode;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<WorkIdentifier> workIdentifiers;
 
 	public RelatedWork()
 	{}

@@ -48,10 +48,25 @@ public class Imprint implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ImprintName imprintName; // Optional
-	public NameCodeType nameCodeType; // Required
-	public NameCodeTypeName nameCodeTypeName; // Optional
-	public NameCodeValue nameCodeValue; // Required
+	/**
+	 * (this field is optional)
+	 */
+	public ImprintName imprintName;
+
+	/**
+	 * (this field is required)
+	 */
+	public NameCodeType nameCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NameCodeTypeName nameCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public NameCodeValue nameCodeValue;
 
 	public Imprint()
 	{}

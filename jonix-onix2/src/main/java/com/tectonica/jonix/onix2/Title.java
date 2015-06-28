@@ -49,13 +49,40 @@ public class Title implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TitleType titleType; // Required
-	public AbbreviatedLength abbreviatedLength; // Optional
-	public TextCaseFlag textCaseFlag; // Optional
-	public TitleText titleText; // Required
-	public TitlePrefix titlePrefix; // Optional
-	public TitleWithoutPrefix titleWithoutPrefix; // Optional
-	public Subtitle subtitle; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public TitleType titleType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AbbreviatedLength abbreviatedLength;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextCaseFlag textCaseFlag;
+
+	/**
+	 * (this field is required)
+	 */
+	public TitleText titleText;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlePrefix titlePrefix;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitleWithoutPrefix titleWithoutPrefix;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Subtitle subtitle;
 
 	public Title()
 	{}

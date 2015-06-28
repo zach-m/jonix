@@ -49,18 +49,65 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Supplier supplier; // Required
-	public List<SupplierOwnCoding> supplierOwnCodings; // ZeroOrMore
-	public List<ReturnsConditions> returnsConditionss; // ZeroOrMore
-	public ProductAvailability productAvailability; // Required
-	public List<SupplyDate> supplyDates; // ZeroOrMore
-	public OrderTime orderTime; // Optional
-	public NewSupplier newSupplier; // Optional
-	public List<Stock> stocks; // ZeroOrMore
-	public PackQuantity packQuantity; // Optional
-	public UnpricedItemType unpricedItemType; // Optional
-	public List<Price> prices; // ZeroOrMore
-	public Reissue reissue; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public Supplier supplier;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplierOwnCoding> supplierOwnCodings;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ReturnsConditions> returnsConditionss;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductAvailability productAvailability;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplyDate> supplyDates;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OrderTime orderTime;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NewSupplier newSupplier;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Stock> stocks;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PackQuantity packQuantity;
+
+	/**
+	 * (this field is optional)
+	 */
+	public UnpricedItemType unpricedItemType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Reissue reissue;
 
 	public SupplyDetail()
 	{}

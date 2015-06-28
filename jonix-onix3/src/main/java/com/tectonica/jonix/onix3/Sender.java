@@ -43,10 +43,25 @@ public class Sender implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<SenderIdentifier> senderIdentifiers; // OneOrMore
-	public SenderName senderName; // Optional
-	public ContactName contactName; // Optional
-	public EmailAddress emailAddress; // Optional
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SenderIdentifier> senderIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SenderName senderName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContactName contactName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EmailAddress emailAddress;
 
 	public Sender()
 	{}

@@ -51,9 +51,20 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Bible bible; // Optional
-	public ReligiousTextID religiousTextID; // Required
-	public List<ReligiousTextFeature> religiousTextFeatures; // OneOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public Bible bible;
+
+	/**
+	 * (this field is required)
+	 */
+	public ReligiousTextID religiousTextID;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ReligiousTextFeature> religiousTextFeatures;
 
 	public ReligiousText()
 	{}

@@ -47,8 +47,15 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SalesOutletIdentifier salesOutletIdentifier; // Required
-	public SalesOutletName salesOutletName; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public SalesOutletIdentifier salesOutletIdentifier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SalesOutletName salesOutletName;
 
 	public SalesOutlet()
 	{}

@@ -57,22 +57,85 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public LevelSequenceNumber levelSequenceNumber; // Optional
-	public TextItem textItem; // Required
-	public List<Website> websites; // ZeroOrMore
-	public ComponentTypeName componentTypeName; // Required
-	public ComponentNumber componentNumber; // Optional
-	public DistinctiveTitle distinctiveTitle; // Optional
-	public List<Title> titles; // ZeroOrMore
-	public List<WorkIdentifier> workIdentifiers; // ZeroOrMore
-	public List<Contributor> contributors; // ZeroOrMore
-	public ContributorStatement contributorStatement; // Optional
-	public List<Subject> subjects; // ZeroOrMore
-	public List<PersonAsSubject> personAsSubjects; // ZeroOrMore
-	public List<CorporateBodyAsSubject> corporateBodyAsSubjects; // ZeroOrMore
-	public List<PlaceAsSubject> placeAsSubjects; // ZeroOrMore
-	public List<OtherText> otherTexts; // ZeroOrMore
-	public List<MediaFile> mediaFiles; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public LevelSequenceNumber levelSequenceNumber;
+
+	/**
+	 * (this field is required)
+	 */
+	public TextItem textItem;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
+
+	/**
+	 * (this field is required)
+	 */
+	public ComponentTypeName componentTypeName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ComponentNumber componentNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DistinctiveTitle distinctiveTitle;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Title> titles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<WorkIdentifier> workIdentifiers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContributorStatement contributorStatement;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Subject> subjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PersonAsSubject> personAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CorporateBodyAsSubject> corporateBodyAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PlaceAsSubject> placeAsSubjects;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<OtherText> otherTexts;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MediaFile> mediaFiles;
 
 	public ContentItem()
 	{}

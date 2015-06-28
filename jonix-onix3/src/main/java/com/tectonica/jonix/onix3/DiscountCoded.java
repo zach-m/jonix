@@ -41,9 +41,20 @@ public class DiscountCoded implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public DiscountCodeType discountCodeType; // Required
-	public DiscountCodeTypeName discountCodeTypeName; // Optional
-	public DiscountCode discountCode; // Required
+	/**
+	 * (this field is required)
+	 */
+	public DiscountCodeType discountCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DiscountCodeTypeName discountCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public DiscountCode discountCode;
 
 	public DiscountCoded()
 	{}

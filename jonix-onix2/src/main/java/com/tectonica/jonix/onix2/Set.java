@@ -53,16 +53,55 @@ public class Set implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ISBNOfSet isbnOfSet; // Optional
-	public EAN13OfSet ean13OfSet; // Optional
-	public List<ProductIdentifier> productIdentifiers; // ZeroOrMore
-	public TitleOfSet titleOfSet; // Required
-	public List<Title> titles; // ZeroOrMore
-	public SetPartNumber setPartNumber; // Optional
-	public SetPartTitle setPartTitle; // Optional
-	public ItemNumberWithinSet itemNumberWithinSet; // Optional
-	public LevelSequenceNumber levelSequenceNumber; // Optional
-	public SetItemTitle setItemTitle; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public ISBNOfSet isbnOfSet;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EAN13OfSet ean13OfSet;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public TitleOfSet titleOfSet;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Title> titles;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SetPartNumber setPartNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SetPartTitle setPartTitle;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ItemNumberWithinSet itemNumberWithinSet;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LevelSequenceNumber levelSequenceNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SetItemTitle setItemTitle;
 
 	public Set()
 	{}

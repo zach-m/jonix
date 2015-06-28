@@ -44,20 +44,75 @@ public class NameAsSubject implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public NameType nameType; // Optional
-	public List<NameIdentifier> nameIdentifiers; // OneOrMore
-	public PersonName personName; // Required
-	public PersonNameInverted personNameInverted; // Optional
-	public TitlesBeforeNames titlesBeforeNames; // Optional
-	public NamesBeforeKey namesBeforeKey; // Optional
-	public PrefixToKey prefixToKey; // Optional
-	public KeyNames keyNames; // Required
-	public NamesAfterKey namesAfterKey; // Optional
-	public SuffixToKey suffixToKey; // Optional
-	public LettersAfterNames lettersAfterNames; // Optional
-	public TitlesAfterNames titlesAfterNames; // Optional
-	public CorporateName corporateName; // Required
-	public CorporateNameInverted corporateNameInverted; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public NameType nameType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<NameIdentifier> nameIdentifiers;
+
+	/**
+	 * (this field is required)
+	 */
+	public PersonName personName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonNameInverted personNameInverted;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesBeforeNames titlesBeforeNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NamesBeforeKey namesBeforeKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrefixToKey prefixToKey;
+
+	/**
+	 * (this field is required)
+	 */
+	public KeyNames keyNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NamesAfterKey namesAfterKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SuffixToKey suffixToKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LettersAfterNames lettersAfterNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesAfterNames titlesAfterNames;
+
+	/**
+	 * (this field is required)
+	 */
+	public CorporateName corporateName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateNameInverted corporateNameInverted;
 
 	public NameAsSubject()
 	{}

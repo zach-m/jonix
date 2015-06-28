@@ -46,20 +46,75 @@ public class Product implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public RecordReference recordReference; // Required
-	public NotificationType notificationType; // Required
-	public List<DeletionText> deletionTexts; // ZeroOrMore
-	public RecordSourceType recordSourceType; // Optional
-	public List<RecordSourceIdentifier> recordSourceIdentifiers; // ZeroOrMore
-	public RecordSourceName recordSourceName; // Optional
-	public List<ProductIdentifier> productIdentifiers; // OneOrMore
-	public List<Barcode> barcodes; // ZeroOrMore
-	public DescriptiveDetail descriptiveDetail; // Optional
-	public CollateralDetail collateralDetail; // Optional
-	public ContentDetail contentDetail; // Optional
-	public PublishingDetail publishingDetail; // Optional
-	public RelatedMaterial relatedMaterial; // Optional
-	public List<ProductSupply> productSupplys; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public RecordReference recordReference;
+
+	/**
+	 * (this field is required)
+	 */
+	public NotificationType notificationType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<DeletionText> deletionTexts;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceType recordSourceType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RecordSourceIdentifier> recordSourceIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceName recordSourceName;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Barcode> barcodes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DescriptiveDetail descriptiveDetail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CollateralDetail collateralDetail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContentDetail contentDetail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingDetail publishingDetail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RelatedMaterial relatedMaterial;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductSupply> productSupplys;
 
 	public Product()
 	{}

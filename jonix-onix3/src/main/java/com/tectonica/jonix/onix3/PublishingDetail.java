@@ -46,19 +46,70 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<Imprint> imprints; // OneOrMore
-	public List<Publisher> publishers; // ZeroOrMore
-	public List<CityOfPublication> cityOfPublications; // ZeroOrMore
-	public CountryOfPublication countryOfPublication; // Optional
-	public List<ProductContact> productContacts; // ZeroOrMore
-	public PublishingStatus publishingStatus; // Optional
-	public List<PublishingStatusNote> publishingStatusNotes; // ZeroOrMore
-	public List<PublishingDate> publishingDates; // ZeroOrMore
-	public LatestReprintNumber latestReprintNumber; // Optional
-	public List<CopyrightStatement> copyrightStatements; // ZeroOrMore
-	public List<SalesRights> salesRightss; // ZeroOrMore
-	public ROWSalesRightsType rowSalesRightsType; // Optional
-	public List<SalesRestriction> salesRestrictions; // ZeroOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<Imprint> imprints;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Publisher> publishers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CityOfPublication> cityOfPublications;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryOfPublication countryOfPublication;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContact> productContacts;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingStatus publishingStatus;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PublishingStatusNote> publishingStatusNotes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PublishingDate> publishingDates;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LatestReprintNumber latestReprintNumber;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopyrightStatement> copyrightStatements;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRights> salesRightss;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ROWSalesRightsType rowSalesRightsType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions;
 
 	public PublishingDetail()
 	{}

@@ -61,39 +61,170 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<SupplierIdentifier> supplierIdentifiers; // ZeroOrMore
-	public SupplierSAN supplierSAN; // Optional
-	public SupplierEANLocationNumber supplierEANLocationNumber; // Required
-	public SupplierName supplierName; // Optional
-	public List<TelephoneNumber> telephoneNumbers; // ZeroOrMore
-	public List<FaxNumber> faxNumbers; // ZeroOrMore
-	public List<EmailAddress> emailAddresss; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
-	public SupplierRole supplierRole; // Optional
-	public List<SupplyToCountry> supplyToCountrys; // OneOrMore
-	public SupplyToTerritory supplyToTerritory; // Optional
-	public List<SupplyToRegion> supplyToRegions; // ZeroOrMore
-	public List<SupplyToCountryExcluded> supplyToCountryExcludeds; // ZeroOrMore
-	public SupplyRestrictionDetail supplyRestrictionDetail; // Optional
-	public ReturnsCodeType returnsCodeType; // Optional
-	public ReturnsCode returnsCode; // Optional
-	public LastDateForReturns lastDateForReturns; // Optional
-	public AvailabilityCode availabilityCode; // Required
-	public ProductAvailability productAvailability; // Optional
-	public IntermediaryAvailabilityCode intermediaryAvailabilityCode; // Optional
-	public NewSupplier newSupplier; // Optional
-	public DateFormat dateFormat; // Optional
-	public ExpectedShipDate expectedShipDate; // Optional
-	public OnSaleDate onSaleDate; // Optional
-	public OrderTime orderTime; // Optional
-	public List<Stock> stocks; // ZeroOrMore
-	public PackQuantity packQuantity; // Optional
-	public AudienceRestrictionFlag audienceRestrictionFlag; // Optional
-	public AudienceRestrictionNote audienceRestrictionNote; // Optional
-	public PriceAmount priceAmount; // Optional
-	public UnpricedItemType unpricedItemType; // Optional
-	public List<Price> prices; // ZeroOrMore
-	public Reissue reissue; // Optional
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplierIdentifier> supplierIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplierSAN supplierSAN;
+
+	/**
+	 * (this field is required)
+	 */
+	public SupplierEANLocationNumber supplierEANLocationNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplierName supplierName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TelephoneNumber> telephoneNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FaxNumber> faxNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EmailAddress> emailAddresss;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplierRole supplierRole;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SupplyToCountry> supplyToCountrys;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplyToTerritory supplyToTerritory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplyToRegion> supplyToRegions;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplyToCountryExcluded> supplyToCountryExcludeds;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SupplyRestrictionDetail supplyRestrictionDetail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReturnsCodeType returnsCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReturnsCode returnsCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LastDateForReturns lastDateForReturns;
+
+	/**
+	 * (this field is required)
+	 */
+	public AvailabilityCode availabilityCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductAvailability productAvailability;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IntermediaryAvailabilityCode intermediaryAvailabilityCode;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NewSupplier newSupplier;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ExpectedShipDate expectedShipDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OnSaleDate onSaleDate;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OrderTime orderTime;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Stock> stocks;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PackQuantity packQuantity;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceRestrictionFlag audienceRestrictionFlag;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceRestrictionNote audienceRestrictionNote;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceAmount priceAmount;
+
+	/**
+	 * (this field is optional)
+	 */
+	public UnpricedItemType unpricedItemType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Reissue reissue;
 
 	public SupplyDetail()
 	{}

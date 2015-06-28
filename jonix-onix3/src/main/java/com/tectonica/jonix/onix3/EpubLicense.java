@@ -43,8 +43,15 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<EpubLicenseName> epubLicenseNames; // OneOrMore
-	public List<EpubLicenseExpression> epubLicenseExpressions; // ZeroOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<EpubLicenseName> epubLicenseNames;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EpubLicenseExpression> epubLicenseExpressions;
 
 	public EpubLicense()
 	{}

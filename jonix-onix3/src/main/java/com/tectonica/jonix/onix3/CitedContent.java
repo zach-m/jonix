@@ -46,15 +46,50 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public CitedContentType citedContentType; // Required
-	public List<ContentAudience> contentAudiences; // ZeroOrMore
-	public SourceType sourceType; // Optional
-	public List<SourceTitle> sourceTitles; // OneOrMore
-	public List<ListName> listNames; // ZeroOrMore
-	public PositionOnList positionOnList; // Optional
-	public List<CitationNote> citationNotes; // ZeroOrMore
-	public List<ResourceLink> resourceLinks; // ZeroOrMore
-	public List<ContentDate> contentDates; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public CitedContentType citedContentType;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContentAudience> contentAudiences;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SourceType sourceType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SourceTitle> sourceTitles;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ListName> listNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PositionOnList positionOnList;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CitationNote> citationNotes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ResourceLink> resourceLinks;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContentDate> contentDates;
 
 	public CitedContent()
 	{}

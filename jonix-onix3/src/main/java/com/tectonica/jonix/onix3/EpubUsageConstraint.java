@@ -42,9 +42,20 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public EpubUsageType epubUsageType; // Required
-	public EpubUsageStatus epubUsageStatus; // Required
-	public List<EpubUsageLimit> epubUsageLimits; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public EpubUsageType epubUsageType;
+
+	/**
+	 * (this field is required)
+	 */
+	public EpubUsageStatus epubUsageStatus;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EpubUsageLimit> epubUsageLimits;
 
 	public EpubUsageConstraint()
 	{}

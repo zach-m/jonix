@@ -41,11 +41,30 @@ public class Discount implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public DiscountType discountType; // Optional
-	public Quantity quantity; // Optional
-	public ToQuantity toQuantity; // Optional
-	public DiscountPercent discountPercent; // Required
-	public DiscountAmount discountAmount; // Optional
+	/**
+	 * (this field is optional)
+	 */
+	public DiscountType discountType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Quantity quantity;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ToQuantity toQuantity;
+
+	/**
+	 * (this field is required)
+	 */
+	public DiscountPercent discountPercent;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DiscountAmount discountAmount;
 
 	public Discount()
 	{}

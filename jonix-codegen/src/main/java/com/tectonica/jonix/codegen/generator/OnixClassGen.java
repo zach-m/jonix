@@ -100,11 +100,14 @@ public class OnixClassGen
 		declareConstsAndAttributes(p, composite);
 
 		// declare members
-		p.println();
 		for (OnixCompositeMember member : composite.members)
 		{
 			final FieldInfo fi = GenUtil.fieldInfoOf(member);
-			p.printf("   public %s %s; // %s\n", fi.type, fi.name, fi.comment);
+			p.println();
+			p.printf("   /**\n");
+			p.printf("    * %s\n", fi.comment);
+			p.printf("    */\n");
+			p.printf("   public %s %s;\n", fi.type, fi.name, fi.comment);
 		}
 
 		// default-constructor

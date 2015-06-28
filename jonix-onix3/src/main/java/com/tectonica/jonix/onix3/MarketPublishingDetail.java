@@ -44,17 +44,60 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<PublisherRepresentative> publisherRepresentatives; // ZeroOrMore
-	public List<ProductContact> productContacts; // ZeroOrMore
-	public MarketPublishingStatus marketPublishingStatus; // Required
-	public List<MarketPublishingStatusNote> marketPublishingStatusNotes; // ZeroOrMore
-	public List<MarketDate> marketDates; // ZeroOrMore
-	public List<PromotionCampaign> promotionCampaigns; // ZeroOrMore
-	public PromotionContact promotionContact; // Optional
-	public List<InitialPrintRun> initialPrintRuns; // ZeroOrMore
-	public List<ReprintDetail> reprintDetails; // ZeroOrMore
-	public List<CopiesSold> copiesSolds; // ZeroOrMore
-	public List<BookClubAdoption> bookClubAdoptions; // ZeroOrMore
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PublisherRepresentative> publisherRepresentatives;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContact> productContacts;
+
+	/**
+	 * (this field is required)
+	 */
+	public MarketPublishingStatus marketPublishingStatus;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MarketPublishingStatusNote> marketPublishingStatusNotes;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MarketDate> marketDates;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PromotionCampaign> promotionCampaigns;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PromotionContact promotionContact;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<InitialPrintRun> initialPrintRuns;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ReprintDetail> reprintDetails;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopiesSold> copiesSolds;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<BookClubAdoption> bookClubAdoptions;
 
 	public MarketPublishingDetail()
 	{}

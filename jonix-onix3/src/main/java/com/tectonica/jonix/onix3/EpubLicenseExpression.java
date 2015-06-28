@@ -41,9 +41,20 @@ public class EpubLicenseExpression implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public EpubLicenseExpressionType epubLicenseExpressionType; // Required
-	public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName; // Optional
-	public EpubLicenseExpressionLink epubLicenseExpressionLink; // Required
+	/**
+	 * (this field is required)
+	 */
+	public EpubLicenseExpressionType epubLicenseExpressionType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public EpubLicenseExpressionLink epubLicenseExpressionLink;
 
 	public EpubLicenseExpression()
 	{}

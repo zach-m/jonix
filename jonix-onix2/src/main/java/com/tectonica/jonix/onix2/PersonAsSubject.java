@@ -51,18 +51,65 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PersonName personName; // Required
-	public PersonNameInverted personNameInverted; // Optional
-	public TitlesBeforeNames titlesBeforeNames; // Optional
-	public NamesBeforeKey namesBeforeKey; // Optional
-	public PrefixToKey prefixToKey; // Optional
-	public KeyNames keyNames; // Optional
-	public NamesAfterKey namesAfterKey; // Optional
-	public SuffixToKey suffixToKey; // Optional
-	public LettersAfterNames lettersAfterNames; // Optional
-	public TitlesAfterNames titlesAfterNames; // Optional
-	public List<Name> names; // ZeroOrMore
-	public List<PersonNameIdentifier> personNameIdentifiers; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public PersonName personName;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonNameInverted personNameInverted;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesBeforeNames titlesBeforeNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NamesBeforeKey namesBeforeKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrefixToKey prefixToKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public KeyNames keyNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NamesAfterKey namesAfterKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SuffixToKey suffixToKey;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LettersAfterNames lettersAfterNames;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesAfterNames titlesAfterNames;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Name> names;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PersonNameIdentifier> personNameIdentifiers;
 
 	public PersonAsSubject()
 	{}

@@ -49,9 +49,20 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProductFormFeatureType productFormFeatureType; // Required
-	public ProductFormFeatureValue productFormFeatureValue; // Optional
-	public ProductFormFeatureDescription productFormFeatureDescription; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public ProductFormFeatureType productFormFeatureType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormFeatureValue productFormFeatureValue;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormFeatureDescription productFormFeatureDescription;
 
 	public ProductFormFeature()
 	{}

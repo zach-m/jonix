@@ -40,8 +40,15 @@ public class Market implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Territory territory; // Required
-	public List<SalesRestriction> salesRestrictions; // ZeroOrMore
+	/**
+	 * (this field is required)
+	 */
+	public Territory territory;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions;
 
 	public Market()
 	{}

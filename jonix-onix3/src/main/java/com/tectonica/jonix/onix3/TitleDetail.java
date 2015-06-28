@@ -41,9 +41,20 @@ public class TitleDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public TitleType titleType; // Required
-	public List<TitleElement> titleElements; // OneOrMore
-	public TitleStatement titleStatement; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public TitleType titleType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<TitleElement> titleElements;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitleStatement titleStatement;
 
 	public TitleDetail()
 	{}

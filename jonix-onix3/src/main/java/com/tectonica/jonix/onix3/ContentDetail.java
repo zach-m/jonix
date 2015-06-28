@@ -40,7 +40,10 @@ public class ContentDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<ContentItem> contentItems; // OneOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ContentItem> contentItems;
 
 	public ContentDetail()
 	{}

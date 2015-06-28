@@ -42,9 +42,20 @@ public class SupplyDate implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public SupplyDateRole supplyDateRole; // Required
-	public DateFormat dateFormat; // Optional
-	public Date date; // Required
+	/**
+	 * (this field is required)
+	 */
+	public SupplyDateRole supplyDateRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date;
 
 	public SupplyDate()
 	{}

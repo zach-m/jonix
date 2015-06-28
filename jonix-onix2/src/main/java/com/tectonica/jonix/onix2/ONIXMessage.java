@@ -49,10 +49,25 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Header header; // Optional
-	public List<Product> products; // ZeroOrMore
-	public List<MainSeriesRecord> mainSeriesRecords; // ZeroOrMore
-	public List<SubSeriesRecord> subSeriesRecords; // ZeroOrMore
+	/**
+	 * (this field is optional)
+	 */
+	public Header header;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Product> products;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MainSeriesRecord> mainSeriesRecords;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SubSeriesRecord> subSeriesRecords;
 
 	public ONIXMessage()
 	{}

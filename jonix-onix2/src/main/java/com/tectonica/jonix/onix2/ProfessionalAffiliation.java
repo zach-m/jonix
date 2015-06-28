@@ -48,8 +48,15 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ProfessionalPosition professionalPosition; // Required
-	public Affiliation affiliation; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public ProfessionalPosition professionalPosition;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Affiliation affiliation;
 
 	public ProfessionalAffiliation()
 	{}

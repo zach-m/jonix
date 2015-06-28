@@ -53,19 +53,70 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<AgentIdentifier> agentIdentifiers; // OneOrMore
-	public AgentName agentName; // Optional
-	public List<TelephoneNumber> telephoneNumbers; // ZeroOrMore
-	public List<FaxNumber> faxNumbers; // ZeroOrMore
-	public List<EmailAddress> emailAddresss; // ZeroOrMore
-	public List<Website> websites; // ZeroOrMore
-	public AgentRole agentRole; // Optional
-	public MarketCountry marketCountry; // Optional
-	public MarketTerritory marketTerritory; // Required
-	public MarketCountryExcluded marketCountryExcluded; // Optional
-	public MarketRestrictionDetail marketRestrictionDetail; // Optional
-	public MarketPublishingStatus marketPublishingStatus; // Optional
-	public List<MarketDate> marketDates; // ZeroOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<AgentIdentifier> agentIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AgentName agentName;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TelephoneNumber> telephoneNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<FaxNumber> faxNumbers;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<EmailAddress> emailAddresss;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Website> websites;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AgentRole agentRole;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketCountry marketCountry;
+
+	/**
+	 * (this field is required)
+	 */
+	public MarketTerritory marketTerritory;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketCountryExcluded marketCountryExcluded;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketRestrictionDetail marketRestrictionDetail;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketPublishingStatus marketPublishingStatus;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MarketDate> marketDates;
 
 	public MarketRepresentation()
 	{}

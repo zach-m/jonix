@@ -42,9 +42,20 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public PriceConditionQuantityType priceConditionQuantityType; // Required
-	public Quantity quantity; // Required
-	public QuantityUnit quantityUnit; // Required
+	/**
+	 * (this field is required)
+	 */
+	public PriceConditionQuantityType priceConditionQuantityType;
+
+	/**
+	 * (this field is required)
+	 */
+	public Quantity quantity;
+
+	/**
+	 * (this field is required)
+	 */
+	public QuantityUnit quantityUnit;
 
 	public PriceConditionQuantity()
 	{}

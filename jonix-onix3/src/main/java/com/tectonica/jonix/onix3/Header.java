@@ -44,15 +44,50 @@ public class Header implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public Sender sender; // Required
-	public List<Addressee> addressees; // ZeroOrMore
-	public MessageNumber messageNumber; // Optional
-	public MessageRepeat messageRepeat; // Optional
-	public SentDateTime sentDateTime; // Required
-	public List<MessageNote> messageNotes; // ZeroOrMore
-	public DefaultLanguageOfText defaultLanguageOfText; // Optional
-	public DefaultPriceType defaultPriceType; // Optional
-	public DefaultCurrencyCode defaultCurrencyCode; // Optional
+	/**
+	 * (this field is required)
+	 */
+	public Sender sender;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Addressee> addressees;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageNumber messageNumber;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageRepeat messageRepeat;
+
+	/**
+	 * (this field is required)
+	 */
+	public SentDateTime sentDateTime;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MessageNote> messageNotes;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultLanguageOfText defaultLanguageOfText;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultPriceType defaultPriceType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultCurrencyCode defaultCurrencyCode;
 
 	public Header()
 	{}

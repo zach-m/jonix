@@ -46,11 +46,30 @@ public class SupportingResource implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public ResourceContentType resourceContentType; // Required
-	public List<ContentAudience> contentAudiences; // OneOrMore
-	public ResourceMode resourceMode; // Required
-	public List<ResourceFeature> resourceFeatures; // ZeroOrMore
-	public List<ResourceVersion> resourceVersions; // OneOrMore
+	/**
+	 * (this field is required)
+	 */
+	public ResourceContentType resourceContentType;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ContentAudience> contentAudiences;
+
+	/**
+	 * (this field is required)
+	 */
+	public ResourceMode resourceMode;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ResourceFeature> resourceFeatures;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ResourceVersion> resourceVersions;
 
 	public SupportingResource()
 	{}

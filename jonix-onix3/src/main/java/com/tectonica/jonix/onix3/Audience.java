@@ -41,9 +41,20 @@ public class Audience implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public AudienceCodeType audienceCodeType; // Required
-	public AudienceCodeTypeName audienceCodeTypeName; // Optional
-	public AudienceCodeValue audienceCodeValue; // Required
+	/**
+	 * (this field is required)
+	 */
+	public AudienceCodeType audienceCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceCodeTypeName audienceCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public AudienceCodeValue audienceCodeValue;
 
 	public Audience()
 	{}

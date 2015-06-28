@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.generator;
 
+import com.tectonica.jonix.codegen.metadata.Cardinality;
 import com.tectonica.jonix.codegen.metadata.OnixAttribute;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
@@ -68,12 +69,29 @@ public class GenUtil
 		String comment;
 	}
 
+	private static String commentOf(Cardinality cardinality)
+	{
+		switch (cardinality)
+		{
+		case Required:
+			return "(this field is required)";
+		case Optional:
+			return "(this field is optional)";
+		case OneOrMore:
+			return "(this list is required to contain at least one item)";
+		case ZeroOrMore:
+			return "(this list may be empty)";
+		default:
+			throw new RuntimeException();
+		}
+	}
+
 	public static FieldInfo fieldInfoOf(OnixCompositeMember member)
 	{
 		FieldInfo result = new FieldInfo();
 		result.name = fieldOf(member.className);
 		result.type = member.className;
-		result.comment = member.cardinality.name();
+		result.comment = commentOf(member.cardinality);
 		if (!member.cardinality.singular)
 		{
 			result.name = String.format("%ss", result.name);

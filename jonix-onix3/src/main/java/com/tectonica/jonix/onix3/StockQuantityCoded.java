@@ -41,9 +41,20 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public StockQuantityCodeType stockQuantityCodeType; // Required
-	public StockQuantityCodeTypeName stockQuantityCodeTypeName; // Optional
-	public StockQuantityCode stockQuantityCode; // Required
+	/**
+	 * (this field is required)
+	 */
+	public StockQuantityCodeType stockQuantityCodeType;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StockQuantityCodeTypeName stockQuantityCodeTypeName;
+
+	/**
+	 * (this field is required)
+	 */
+	public StockQuantityCode stockQuantityCode;
 
 	public StockQuantityCoded()
 	{}

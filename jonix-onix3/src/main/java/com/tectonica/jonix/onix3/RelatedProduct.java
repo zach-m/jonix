@@ -46,10 +46,25 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 	public String sourcename;
 
-	public List<ProductRelationCode> productRelationCodes; // OneOrMore
-	public List<ProductIdentifier> productIdentifiers; // OneOrMore
-	public ProductForm productForm; // Optional
-	public List<ProductFormDetail> productFormDetails; // ZeroOrMore
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ProductRelationCode> productRelationCodes;
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<ProductIdentifier> productIdentifiers;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductForm productForm;
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductFormDetail> productFormDetails;
 
 	public RelatedProduct()
 	{}
