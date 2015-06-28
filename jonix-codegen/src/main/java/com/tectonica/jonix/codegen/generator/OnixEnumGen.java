@@ -26,6 +26,7 @@ import java.util.Set;
 
 import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
+import com.tectonica.jonix.codegen.util.XML;
 
 public class OnixEnumGen
 {
@@ -37,7 +38,7 @@ public class OnixEnumGen
 	public OnixEnumGen(String basePackage, String baseFolder, String subfolder)
 	{
 		packageName = basePackage + "." + subfolder;
-		folderName = baseFolder + "\\" + subfolder;
+		folderName = baseFolder + "/" + subfolder;
 		new File(folderName).mkdirs();
 	}
 
@@ -52,7 +53,7 @@ public class OnixEnumGen
 
 		try
 		{
-			String fileName = folderName + "\\" + enumType.enumName + ".java";
+			String fileName = folderName + "/" + enumType.enumName + ".java";
 
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
 			{
@@ -80,15 +81,16 @@ public class OnixEnumGen
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("/**\n");
-		p.printf(" * Enum that corresponds to ONIX's <b>Code%s</b>\n", enumType.name);
+		String codelistNum = enumType.name.substring("List".length());
+		p.printf(" * <code>Enum</code> that corresponds to ONIX <b>Codelist %s</b>\n", codelistNum);
 		if (enumType.comment != null)
 		{
 			p.printf(" * <p>\n");
-			p.printf(" * %s\n", enumType.comment);
+			p.printf(" * Description: %s\n", XML.escape(enumType.comment));
 		}
 		String link = "http://www.editeur.org/14/code-lists";
 		p.printf(" * \n");
-		p.printf(" * @see <a href=\"%s\">%s</a>\n", link, link);
+		p.printf(" * @see <a href=\"%s\">ONIX Codelists</a>\n", link);
 		p.printf(" */\n");
 
 		p.println("public enum " + enumType.enumName);
@@ -109,7 +111,7 @@ public class OnixEnumGen
 			if (ev.description != null)
 			{
 				p.printf("   /**\n");
-				p.printf("    * %s\n", ev.description);
+				p.printf("    * %s\n", XML.escape(ev.description));
 				p.printf("    */\n");
 			}
 			p.printf("   %s(\"%s\")", token, ev.value);

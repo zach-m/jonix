@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList171</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 171</b>
  * <p>
- * Tax type
+ * Description: Tax type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TaxTypes
 {

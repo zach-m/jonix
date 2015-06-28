@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList34</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 34</b>
  * <p>
- * Text format code
+ * Description: Text format code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TextFormats
 {
@@ -66,14 +66,14 @@ public enum TextFormats
 	Default_text_format("06"), //
 
 	/**
-	 * Plain text containing no tags of any kind, except for the tags &amp; and &lt; that XML insists must be used to
-	 * represent ampersand and less-than characters in text; and with the character set limited to the ASCII range, i.e.
-	 * valid UTF-8 characters whose character number lies between 32 (space) and 126 (tilde).
+	 * Plain text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
+	 * used to represent ampersand and less-than characters in text; and with the character set limited to the ASCII
+	 * range, i.e. valid UTF-8 characters whose character number lies between 32 (space) and 126 (tilde).
 	 */
 	Basic_ASCII_text("07"), //
 
 	/**
-	 * Replaces 04 for the <TextFormat> element, but cannot of course be used as a textformat attribute.
+	 * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute.
 	 */
 	PDF_("08"), //
 

@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList139</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 139</b>
  * <p>
- * ONIX sales outlet IDs
+ * Description: ONIX sales outlet IDs
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum OnixSalesOutletIdss
 {
@@ -96,9 +96,7 @@ public enum OnixSalesOutletIdss
 	Cyberlibris("CYB"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	De_Marque("DEM"), //
 
@@ -127,27 +125,21 @@ public enum OnixSalesOutletIdss
 	English_Heritage("ENH"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	E_Pagine("EPA"), //
 
 	FeedBooks("FDB"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	FlipKart("FLP"), //
 
 	Fnac("FNC"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Follett("FOL"), //
 
@@ -218,9 +210,7 @@ public enum OnixSalesOutletIdss
 	OLF("OLF"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	OverDrive("OVD"), //
 
@@ -292,7 +282,7 @@ public enum OnixSalesOutletIdss
 	Zavvi("ZVV"), //
 
 	/**
-	 * Include retailer name in <SalesOutletName>.
+	 * Include retailer name in &lt;SalesOutletName&gt;.
 	 */
 	Other("ZZZ");
 

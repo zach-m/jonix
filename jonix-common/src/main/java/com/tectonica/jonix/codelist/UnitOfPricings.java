@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList60</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 60</b>
  * <p>
- * Unit of pricing code
+ * Description: Unit of pricing code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum UnitOfPricings
 {

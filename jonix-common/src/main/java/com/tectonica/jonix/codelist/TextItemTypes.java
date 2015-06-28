@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList42</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 42</b>
  * <p>
- * Text item type code
+ * Description: Text item type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TextItemTypes
 {

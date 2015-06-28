@@ -24,22 +24,20 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList221</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 221</b>
  * <p>
- * Message status
- * <p>
- * NOTE: Introduced in Onix3
+ * Description: Message status &lt;p&gt;NOTE: Introduced in Onix3
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum MessageStatuss
 {
 	/**
-	 * Message received but not yet parsed (Acknowledgement must contain neither <MessageStatusDetail> nor
-	 * <RecordStatusSummary>, and should include <NoProduct/>). There is no particular implication that the
-	 * acknowledgement message is valid – the status is based solely on receipt of a file and minimal parsing of the
-	 * original ONIX message header to ascertain <MessageNumber> etc.. The Acknowledgement message MAY give a date when
-	 * parsing is planned.
+	 * Message received but not yet parsed (Acknowledgement must contain neither &lt;MessageStatusDetail&gt; nor
+	 * &lt;RecordStatusSummary&gt;, and should include &lt;NoProduct/&gt;). There is no particular implication that the
+	 * acknowledgement message is valid &#8211; the status is based solely on receipt of a file and minimal parsing of
+	 * the original ONIX message header to ascertain &lt;MessageNumber&gt; etc.. The Acknowledgement message MAY give a
+	 * date when parsing is planned.
 	 */
 	Message_received("00"), //
 

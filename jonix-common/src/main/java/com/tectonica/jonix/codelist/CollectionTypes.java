@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList148</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 148</b>
  * <p>
- * Collection type
+ * Description: Collection type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum CollectionTypes
 {
@@ -38,7 +38,7 @@ public enum CollectionTypes
 	Unspecified_default("00"), //
 
 	/**
-	 * The collection is a bibliographic collection (eg a series or set (Fr. série)) defined and identified by a
+	 * The collection is a bibliographic collection (eg a series or set (Fr. s&#233;rie)) defined and identified by a
 	 * publisher, either on the product itself or in product information supplied by the publisher. The books in the
 	 * collection generally share a subject, narrative, design style or authorship. They may may have a specific order,
 	 * or the collection may be unordered.
@@ -50,8 +50,8 @@ public enum CollectionTypes
 	 * or in product information supplied by the publisher, where the books in the collection have no specific order,
 	 * shared subject, narrative, style or shared authorship, and are grouped by the publisher largely for marketing
 	 * purposes. The collection has many of the characteristics of an imprint or marque. Used only in French book
-	 * publishing, to distinguish between ‘série’ (using the normal code 10) and ‘collection’ (code 11), and where the
-	 * collection éditoriale is not an imprint.
+	 * publishing, to distinguish between &#8216;s&#233;rie&#8217; (using the normal code 10) and
+	 * &#8216;collection&#8217; (code 11), and where the collection &#233;ditoriale is not an imprint.
 	 */
 	Collection_ditoriale("11"), //
 

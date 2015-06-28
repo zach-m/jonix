@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList15</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 15</b>
  * <p>
- * Title type code
+ * Description: Title type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TitleTypes
 {
@@ -42,7 +42,8 @@ public enum TitleTypes
 	 * title alone is not distinctive, elements may be taken from a set or series title and part number etc to create a
 	 * distinctive title. Where the item is an omnibus edition containing two or more works by the same author, and
 	 * there is no separate combined title, a distinctive title may be constructed by concatenating the individual
-	 * titles, with suitable punctuation, as in “Pride and prejudice / Sense and sensibility / Northanger Abbey”.
+	 * titles, with suitable punctuation, as in &#8220;Pride and prejudice / Sense and sensibility / Northanger
+	 * Abbey&#8221;.
 	 */
 	Distinctive_title_book("01"), //
 
@@ -57,7 +58,7 @@ public enum TitleTypes
 	Title_in_original_language("03"), //
 
 	/**
-	 * For serials: an acronym or initialism of Title Type 01, eg “JAMA”, “JACM”.
+	 * For serials: an acronym or initialism of Title Type 01, eg &#8220;JAMA&#8221;, &#8220;JACM&#8221;.
 	 */
 	Title_acronym_or_initialism("04"), //
 
@@ -82,8 +83,8 @@ public enum TitleTypes
 	Former_title("08"), //
 
 	/**
-	 * For books: the title carried in a book distributor’s title file: frequently incomplete, and may include elements
-	 * not properly part of the title.
+	 * For books: the title carried in a book distributor&#8217;s title file: frequently incomplete, and may include
+	 * elements not properly part of the title.
 	 */
 	Distributor_s_title("10"), //
 

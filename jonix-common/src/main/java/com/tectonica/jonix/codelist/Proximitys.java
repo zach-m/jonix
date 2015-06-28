@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList215</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 215</b>
  * <p>
- * Proximity
+ * Description: Proximity
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum Proximitys
 {
@@ -37,8 +37,8 @@ public enum Proximitys
 	Not_more_than("02"), //
 
 	/**
-	 * The supplier’s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a quoted
-	 * figure of 100 could in fact be anything between 91 and 111).
+	 * The supplier&#8217;s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a
+	 * quoted figure of 100 could in fact be anything between 91 and 111).
 	 */
 	Exactly("03"), //
 

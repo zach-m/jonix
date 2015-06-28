@@ -24,18 +24,18 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList56</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 56</b>
  * <p>
- * Audience restriction flag
+ * Description: Audience restriction flag
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum AudienceRestrictionFlags
 {
 	Restrictions_apply_see_note("R"), //
 
 	/**
-	 * Indexed for the German market – in Deutschland indiziert.
+	 * Indexed for the German market &#8211; in Deutschland indiziert.
 	 */
 	Indiziert("X");
 

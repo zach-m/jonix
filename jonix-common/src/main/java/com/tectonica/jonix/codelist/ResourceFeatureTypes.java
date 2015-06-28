@@ -24,42 +24,42 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList160</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 160</b>
  * <p>
- * Resource feature type
+ * Description: Resource feature type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ResourceFeatureTypes
 {
 	/**
-	 * Credit that must be displayed when a resource is used (eg ‘Photo Jerry Bauer’ or ‘© Magnum Photo’). Credit text
-	 * should be carried in <FeatureNote>.
+	 * Credit that must be displayed when a resource is used (eg &#8216;Photo Jerry Bauer&#8217; or &#8216;&#169; Magnum
+	 * Photo&#8217;). Credit text should be carried in &lt;FeatureNote&gt;.
 	 */
 	Required_credit("01"), //
 
 	/**
 	 * Explanatory caption that may accompany a resource (eg use to identify an author in a photograph). Caption text
-	 * should be carried in <FeatureNote>.
+	 * should be carried in &lt;FeatureNote&gt;.
 	 */
 	Caption("02"), //
 
 	/**
 	 * Copyright holder of resource (indicative only, as the resource can be used without consultation). Copyright text
-	 * should be carried in <FeatureNote>.
+	 * should be carried in &lt;FeatureNote&gt;.
 	 */
 	Copyright_holder("03"), //
 
 	/**
-	 * Approximate length in minutes of an audio or video resource. <FeatureValue> should contain the length of time as
-	 * an integer number of minutes.
+	 * Approximate length in minutes of an audio or video resource. &lt;FeatureValue&gt; should contain the length of
+	 * time as an integer number of minutes.
 	 */
 	Length_in_minutes("04"), //
 
 	/**
-	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11–14 from List
-	 * 158, particularly where the product has more than a single contributor. <FeatureValue> contains the 16-digit
-	 * ISNI.
+	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from
+	 * List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
+	 * 16-digit ISNI.
 	 */
 	ISNI_of_resource_contributor("05");
 

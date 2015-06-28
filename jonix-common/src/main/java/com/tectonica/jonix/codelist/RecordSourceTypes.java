@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList3</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 3</b>
  * <p>
- * Record source type code
+ * Description: Record source type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum RecordSourceTypes
 {
@@ -40,8 +40,8 @@ public enum RecordSourceTypes
 	Publisher("01"), //
 
 	/**
-	 * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher’s sales
-	 * agent, as distinct from a wholesaler.
+	 * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher&#8217;s
+	 * sales agent, as distinct from a wholesaler.
 	 */
 	Publisher_s_distributor("02"), //
 
@@ -58,22 +58,23 @@ public enum RecordSourceTypes
 	Library_bookseller("05"), //
 
 	/**
-	 * Use for a publisher’s sales agent responsible for marketing the publisher’s products within a territory, as
-	 * opposed to a publisher’s distributor who fulfills orders but does not market.
+	 * Use for a publisher&#8217;s sales agent responsible for marketing the publisher&#8217;s products within a
+	 * territory, as opposed to a publisher&#8217;s distributor who fulfills orders but does not market.
 	 */
 	Publisher_s_sales_agent("06"), //
 
 	/**
 	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
 	 * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
-	 * publisher’s ISBN prefix.
+	 * publisher&#8217;s ISBN prefix.
 	 */
 	Publisher_s_conversion_service_provider("07"), //
 
 	/**
 	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
 	 * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
-	 * service provider’s prefix (whether or not the service provider dedicates that prefix to a particular publisher).
+	 * service provider&#8217;s prefix (whether or not the service provider dedicates that prefix to a particular
+	 * publisher).
 	 */
 	Conversion_service_provider("08"), //
 
@@ -82,16 +83,12 @@ public enum RecordSourceTypes
 	ISTC_Registration_Agency("10"), //
 
 	/**
-	 * Bookseller selling primarily to consumers.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Bookseller selling primarily to consumers. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Retail_bookseller("11"), //
 
 	/**
-	 * Bookseller selling primarily to educational institutions.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Bookseller selling primarily to educational institutions. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Education_bookseller("12");
 

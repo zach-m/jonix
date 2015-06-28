@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList144</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 144</b>
  * <p>
- * E-publication technical protection
+ * Description: E-publication technical protection
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum EpublicationTechnicalProtections
 {
@@ -53,7 +53,7 @@ public enum EpublicationTechnicalProtections
 	Adobe_DRM("03"), //
 
 	/**
-	 * FairPlay’ DRM protection applied via Apple proprietary online store.
+	 * FairPlay&#8217; DRM protection applied via Apple proprietary online store.
 	 */
 	Apple_DRM("04"), //
 

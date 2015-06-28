@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList6</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 6</b>
  * <p>
- * Barcode indicator
+ * Description: Barcode indicator
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum BarcodeIndicators
 {
@@ -80,92 +80,92 @@ public enum BarcodeIndicators
 	UPC12_5_price_point("09"), //
 
 	/**
-	 * ‘Cover 4’ is defined as the back cover of a book.
+	 * &#8216;Cover 4&#8217; is defined as the back cover of a book.
 	 */
 	EAN13_on_cover_4("10"), //
 
 	/**
-	 * ‘Cover 4’ is defined as the back cover of a book.
+	 * &#8216;Cover 4&#8217; is defined as the back cover of a book.
 	 */
 	EAN13_5_on_cover_4_US_dollar_price_encoded("11"), //
 
 	/**
-	 * AKA item/price; ‘cover 4’ is defined as the back cover of a book.
+	 * AKA item/price; &#8216;cover 4&#8217; is defined as the back cover of a book.
 	 */
 	UPC12_item_specific_("12"), //
 
 	/**
-	 * AKA item/price; ‘cover 4’ is defined as the back cover of a book.
+	 * AKA item/price; &#8216;cover 4&#8217; is defined as the back cover of a book.
 	 */
 	UPC12_5_item_specific_("13"), //
 
 	/**
-	 * AKA price/item; ‘cover 4’ is defined as the back cover of a book.
+	 * AKA price/item; &#8216;cover 4&#8217; is defined as the back cover of a book.
 	 */
 	UPC12_price_point_("14"), //
 
 	/**
-	 * AKA price/item; ‘cover 4’ is defined as the back cover of a book.
+	 * AKA price/item; &#8216;cover 4&#8217; is defined as the back cover of a book.
 	 */
 	UPC12_5_price_point_("15"), //
 
 	/**
-	 * ‘Cover 3’ is defined as the inside back cover of a book.
+	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	EAN13_on_cover_3("16"), //
 
 	/**
-	 * ‘Cover 3’ is defined as the inside back cover of a book.
+	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	EAN13_5_on_cover_3_US_dollar_price_encoded("17"), //
 
 	/**
-	 * AKA item/price; ‘cover 3’ is defined as the inside back cover of a book.
+	 * AKA item/price; &#8216;cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	UPC12_item_specific__("18"), //
 
 	/**
-	 * AKA item/price; ‘cover 3’ is defined as the inside back cover of a book.
+	 * AKA item/price; &#8216;cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	UPC12_5_item_specific__("19"), //
 
 	/**
-	 * AKA price/item; ‘cover 3’ is defined as the inside back cover of a book.
+	 * AKA price/item; &#8216;cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	UPC12_price_point__("20"), //
 
 	/**
-	 * AKA price/item; ‘cover 3’ is defined as the inside back cover of a book.
+	 * AKA price/item; &#8216;cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	UPC12_5_price_point__("21"), //
 
 	/**
-	 * ‘Cover 2’ is defined as the inside front cover of a book.
+	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	EAN13_on_cover_2("22"), //
 
 	/**
-	 * ‘Cover 2’ is defined as the inside front cover of a book.
+	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	EAN13_5_on_cover_2_US_dollar_price_encoded("23"), //
 
 	/**
-	 * AKA item/price; ‘cover 2’ is defined as the inside front cover of a book.
+	 * AKA item/price; &#8216;cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	UPC12_item_specific___("24"), //
 
 	/**
-	 * AKA item/price; ‘cover 2’ is defined as the inside front cover of a book.
+	 * AKA item/price; &#8216;cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	UPC12_5_item_specific___("25"), //
 
 	/**
-	 * AKA price/item; ‘cover 2’ is defined as the inside front cover of a book.
+	 * AKA price/item; &#8216;cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	UPC12_price_point___("26"), //
 
 	/**
-	 * AKA price/item; ‘cover 2’ is defined as the inside front cover of a book.
+	 * AKA price/item; &#8216;cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	UPC12_5_price_point___("27"), //
 
@@ -325,17 +325,17 @@ public enum BarcodeIndicators
 	EAN13_5_no_price_encoded("58"), //
 
 	/**
-	 * ‘Cover 4’ is defined as the back cover of a book.
+	 * &#8216;Cover 4&#8217; is defined as the back cover of a book.
 	 */
 	EAN13_5_on_cover_4_no_price_encoded("59"), //
 
 	/**
-	 * ‘Cover 3’ is defined as the inside back cover of a book.
+	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	EAN13_5_on_cover_3_no_price_encoded("60"), //
 
 	/**
-	 * ‘Cover 2’ is defined as the inside front cover of a book.
+	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	EAN13_5_on_cover_2_no_price_encoded("61"), //
 
@@ -370,17 +370,17 @@ public enum BarcodeIndicators
 	EAN13_5_CAN_dollar_price_encoded("67"), //
 
 	/**
-	 * ‘Cover 4’ is defined as the back cover of a book.
+	 * &#8216;Cover 4&#8217; is defined as the back cover of a book.
 	 */
 	EAN13_5_on_cover_4_CAN_dollar_price_encoded("68"), //
 
 	/**
-	 * ‘Cover 3’ is defined as the inside back cover of a book.
+	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book.
 	 */
 	EAN13_5_on_cover_3_CAN_dollar_price_encoded("69"), //
 
 	/**
-	 * ‘Cover 2’ is defined as the inside front cover of a book.
+	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book.
 	 */
 	EAN13_5_on_cover_2_CAN_dollar_price_encoded("70"), //
 

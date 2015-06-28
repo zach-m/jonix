@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList145</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 145</b>
  * <p>
- * Usage type
+ * Description: Usage type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum UsageTypes
 {
@@ -56,26 +56,24 @@ public enum UsageTypes
 	Share("04"), //
 
 	/**
-	 * ‘Read aloud’ with text to speech functionality.
+	 * &#8216;Read aloud&#8217; with text to speech functionality.
 	 */
 	Text_to_speech("05"), //
 
 	/**
-	 * Lendable to other device owner or account holder, eg ‘Lend-to-a-friend’, library lending. The ‘primary’ copy
-	 * becomes unusable while the secondary copy is ‘on loan’ unless a number of concurrent borrowers is also
-	 * specified).
+	 * Lendable to other device owner or account holder, eg &#8216;Lend-to-a-friend&#8217;, library lending. The
+	 * &#8216;primary&#8217; copy becomes unusable while the secondary copy is &#8216;on loan&#8217; unless a number of
+	 * concurrent borrowers is also specified).
 	 */
 	Lend("06"), //
 
 	/**
-	 * E-publication license is time limited. Use with 02 from List 146 and a number of days in <EpubUsageLimit>.
+	 * E-publication license is time limited. Use with 02 from List 146 and a number of days in &lt;EpubUsageLimit&gt;.
 	 */
 	Time_limited_license("07"), //
 
 	/**
-	 * Maximum quality (in dots per inch) of any allowed printing (see also code 02).
-	 * <p>
-	 * NOTE: Deprecated in Onix3
+	 * Maximum quality (in dots per inch) of any allowed printing (see also code 02). &lt;p&gt;NOTE: Deprecated in Onix3
 	 */
 	Max_print_DPI("08");
 

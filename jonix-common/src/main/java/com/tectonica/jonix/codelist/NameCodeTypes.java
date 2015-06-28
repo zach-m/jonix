@@ -27,18 +27,18 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList44</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 44</b>
  * <p>
- * Name code type
+ * Description: Name code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum NameCodeTypes
 {
 	Proprietary("01"), //
 
 	/**
-	 * DEPRECATED – use 01.
+	 * DEPRECATED &#8211; use 01.
 	 */
 	Proprietary_("02"), //
 
@@ -57,14 +57,13 @@ public enum NameCodeTypes
 	GLN("06"), //
 
 	/**
-	 * Book trade Standard Address Number – US, UK etc.
+	 * Book trade Standard Address Number &#8211; US, UK etc.
 	 */
 	SAN("07"), //
 
 	/**
-	 * MARC code list for organizations – see ‘http://www.loc.gov/marc/organizations/orgshome.html’
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * MARC code list for organizations &#8211; see &#8216;http://www.loc.gov/marc/organizations/orgshome.html&#8217;
+	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	MARC_organization_code("08"), //
 
@@ -84,13 +83,13 @@ public enum NameCodeTypes
 	Y_tunnus("15"), //
 
 	/**
-	 * International Standard Name Identifier. See ‘http://www.isni.org/’.
+	 * International Standard Name Identifier. See &#8216;http://www.isni.org/&#8217;.
 	 */
 	ISNI("16"), //
 
 	/**
-	 * Personennamendatei – person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
-	 * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
+	 * Personennamendatei &#8211; person name authority file used by Deutsche Nationalbibliothek and in other
+	 * German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND.
 	 */
 	PND("17"), //
@@ -106,14 +105,14 @@ public enum NameCodeTypes
 	Japanese_Publisher_identifier("19"), //
 
 	/**
-	 * Gemeinsame Körperschaftsdatei – Corporate Body Authority File in the German-speaking countries. See
+	 * Gemeinsame K&#246;rperschaftsdatei &#8211; Corporate Body Authority File in the German-speaking countries. See
 	 * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favour of the GND.
 	 */
 	GKD("20"), //
 
 	/**
-	 * Open Researcher and Contributor ID. See ‘http://www.orcid.org/’.
+	 * Open Researcher and Contributor ID. See &#8216;http://www.orcid.org/&#8217;.
 	 */
 	ORCID("21"), //
 
@@ -123,10 +122,10 @@ public enum NameCodeTypes
 	GAPP_Publisher_Identifier("22"), //
 
 	/**
-	 * Identifier for a business organization for VAT purposes, eg within the EU’s VIES system. See
+	 * Identifier for a business organization for VAT purposes, eg within the EU&#8217;s VIES system. See
 	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country.
-	 * Generally these consist of a two-letter country code followed by the 8–12 digits of the national VAT ID. Some
-	 * countries include one or two letters within their VAT ID. See
+	 * Generally these consist of a two-letter country code followed by the 8&#8211;12 digits of the national VAT ID.
+	 * Some countries include one or two letters within their VAT ID. See
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
 	 * Spaces, dashes etc should be omitted.
 	 */
@@ -138,19 +137,19 @@ public enum NameCodeTypes
 	JP_Distribution_Identifier("24"), //
 
 	/**
-	 * Gemeinsame Normdatei – Joint Authority File in the German-speaking countries. See
+	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See
 	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a
 	 * single authority file, and should be used in preference.
 	 */
 	GND("25"), //
 
 	/**
-	 * Dunn and Bradstreet Universal Numbering System, see ‘www.dnb.co.uk/dandb-duns-number’.
+	 * Dunn and Bradstreet Universal Numbering System, see &#8216;www.dnb.co.uk/dandb-duns-number&#8217;.
 	 */
 	DUNS("26"), //
 
 	/**
-	 * Ringgold organizational identifier, see ‘http://www.ringgold.com/pages/identify.html’.
+	 * Ringgold organizational identifier, see &#8216;http://www.ringgold.com/pages/identify.html&#8217;.
 	 */
 	Ringgold_ID("27"), //
 
@@ -165,8 +164,9 @@ public enum NameCodeTypes
 	Identifiant_Marque_Electre("30"), //
 
 	/**
-	 * DOI used in CrossRef’s Fundref list of academic research funding bodies, for example "10.13039/100004440“
-	 * (Wellcome Trust). See ‘http://www.crossref.org/fundref/fundref_registry.html’.
+	 * DOI used in CrossRef&#8217;s Fundref list of academic research funding bodies, for example
+	 * &quot;10.13039/100004440&#8220; (Wellcome Trust). See
+	 * &#8216;http://www.crossref.org/fundref/fundref_registry.html&#8217;.
 	 */
 	FundRef_DOI("32");
 

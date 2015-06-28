@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList65</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 65</b>
  * <p>
- * Product availability
+ * Description: Product availability
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductAvailabilitys
 {
@@ -41,14 +41,15 @@ public enum ProductAvailabilitys
 	Cancelled("01"), //
 
 	/**
-	 * Not yet available (requires <ExpectedShipDate>, except in exceptional circumstances where no date is known).
+	 * Not yet available (requires &lt;ExpectedShipDate&gt;, except in exceptional circumstances where no date is
+	 * known).
 	 */
 	Not_yet_available("10"), //
 
 	/**
-	 * Not yet available, but will be a stock item when available (requires <ExpectedShipDate>, except in exceptional
-	 * circumstances where no date is known). Used particularly for imports which have been published in the country of
-	 * origin but have not yet arrived in the importing country.
+	 * Not yet available, but will be a stock item when available (requires &lt;ExpectedShipDate&gt;, except in
+	 * exceptional circumstances where no date is known). Used particularly for imports which have been published in the
+	 * country of origin but have not yet arrived in the importing country.
 	 */
 	Awaiting_stock("11"), //
 
@@ -81,36 +82,36 @@ public enum ProductAvailabilitys
 
 	/**
 	 * Temporarily unavailable: temporarily unavailable from us (reason unspecified) (requires expected date, either as
-	 * <ExpectedShipDate> (ONIX 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in
-	 * exceptional circumstances where no date is known).
+	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217;
+	 * (ONIX 3.0), except in exceptional circumstances where no date is known).
 	 */
 	Temporarily_unavailable("30"), //
 
 	/**
-	 * Stock item, temporarily out of stock (requires expected date, either as <ExpectedShipDate> (ONIX 2.1) or as
-	 * <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is
-	 * known).
+	 * Stock item, temporarily out of stock (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1) or as
+	 * &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in exceptional
+	 * circumstances where no date is known).
 	 */
 	Out_of_stock("31"), //
 
 	/**
-	 * Temporarily unavailable, reprinting (requires expected date, either as <ExpectedShipDate> (ONIX 2.1) or as
-	 * <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no date is
-	 * known).
+	 * Temporarily unavailable, reprinting (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1) or as
+	 * &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in exceptional
+	 * circumstances where no date is known).
 	 */
 	Reprinting("32"), //
 
 	/**
-	 * Temporarily unavailable, awaiting reissue (requires the <Reissue> composite, and expected date, either as
-	 * <ExpectedShipDate> (ONIX 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in
-	 * exceptional circumstances where no date is known).
+	 * Temporarily unavailable, awaiting reissue (requires the &lt;Reissue&gt; composite, and expected date, either as
+	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217;
+	 * (ONIX 3.0), except in exceptional circumstances where no date is known).
 	 */
 	Awaiting_reissue("33"), //
 
 	/**
-	 * May be for quality or technical reasons. Requires expected availability date, either as <ExpectedShipDate> (ONIX
-	 * 2.1) or as <SupplyDate> with <SupplyDateRole> coded ‘08’ (ONIX 3.0), except in exceptional circumstances where no
-	 * date is known.
+	 * May be for quality or technical reasons. Requires expected availability date, either as &lt;ExpectedShipDate&gt;
+	 * (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in
+	 * exceptional circumstances where no date is known.
 	 */
 	Temporarily_withdrawn_from_sale("34"), //
 
@@ -121,18 +122,18 @@ public enum ProductAvailabilitys
 
 	/**
 	 * This product is unavailable, but a successor product or edition is or will be available from us (identify
-	 * successor in <RelatedProduct>).
+	 * successor in &lt;RelatedProduct&gt;).
 	 */
 	Not_available_replaced_by_new_product("41"), //
 
 	/**
 	 * This product is unavailable, but the same content is or will be available from us in an alternative format
-	 * (identify other format product in <RelatedProduct>).
+	 * (identify other format product in &lt;RelatedProduct&gt;).
 	 */
 	Not_available_other_format_available("42"), //
 
 	/**
-	 * Identify new supplier in <NewSupplier> if possible.
+	 * Identify new supplier in &lt;NewSupplier&gt; if possible.
 	 */
 	No_longer_supplied_by_us("43"), //
 
@@ -142,7 +143,7 @@ public enum ProductAvailabilitys
 	Apply_direct("44"), //
 
 	/**
-	 * Must be bought as part of a set (identify set in <RelatedProduct>).
+	 * Must be bought as part of a set (identify set in &lt;RelatedProduct&gt;).
 	 */
 	Not_sold_separately("45"), //
 
@@ -187,8 +188,8 @@ public enum ProductAvailabilitys
 
 	/**
 	 * Sender has not received any recent update for this product from the publisher/supplier (for use when the sender
-	 * is a data aggregator): the definition of “recent” must be specified by the aggregator, or by agreement between
-	 * parties to an exchange.
+	 * is a data aggregator): the definition of &#8220;recent&#8221; must be specified by the aggregator, or by
+	 * agreement between parties to an exchange.
 	 */
 	No_recent_update_received("97"), //
 

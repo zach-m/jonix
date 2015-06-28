@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList203</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 203</b>
  * <p>
- * ONIX Adult Audience rating
+ * Description: ONIX Adult Audience rating
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum OnixAdultAudienceRatings
 {

@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList196</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 196</b>
  * <p>
- * E-publication Accessibility Details
+ * Description: E-publication Accessibility Details
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum EpublicationAccessibilityDetailss
 {
@@ -40,10 +40,10 @@ public enum EpublicationAccessibilityDetailss
 	/**
 	 * No accessibility features offered by the reading system, device or reading software (including but not limited to
 	 * choice of text size or typeface, choice of text or background color, text-to-speech) are disabled, overridden or
-	 * otherwise unusable with the product EXCEPT – in ONIX 3 messages only – those specifically noted as subject to
-	 * restriction or prohibition in <EpubUsageConstraint>. Note that provision of any significant part of the textual
-	 * content as images (ie as pictures of text, rather than as text) inevitably prevents use of these accessibility
-	 * options.
+	 * otherwise unusable with the product EXCEPT &#8211; in ONIX 3 messages only &#8211; those specifically noted as
+	 * subject to restriction or prohibition in &lt;EpubUsageConstraint&gt;. Note that provision of any significant part
+	 * of the textual content as images (ie as pictures of text, rather than as text) inevitably prevents use of these
+	 * accessibility options.
 	 */
 	No_reading_system_accessibility_options_disabled_except("10"), //
 
@@ -129,40 +129,40 @@ public enum EpublicationAccessibilityDetailss
 	Language_tagging_provided("22"), //
 
 	/**
-	 * <ProductFormFeatureDescription> carries the URL of a web page giving further detailed description of the
+	 * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
 	 * accessibility features, compatibility, testing etc. The web page should be maintained by an independent
 	 * compliance scheme or testing organization.
 	 */
 	Compliance_web_page_for_detailed_accessibility_information("94"), //
 
 	/**
-	 * <ProductFormFeatureDescription> carries the URL of a web page giving further detailed description of the
+	 * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
 	 * accessibility features, compatibility, testing etc. The web page should be provided by a trusted intermediary or
 	 * third party nominated by the publisher.
 	 */
 	Trusted_intermediary_s_web_page_for_detailed_accessibility_information("95"), //
 
 	/**
-	 * <ProductFormFeatureDescription> carries the URL of a web page giving further detailed description of the
+	 * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
 	 * accessibility features, compatibility, testing etc. The web page should be provided by the publisher.
 	 */
 	Publisher_s_web_page_for_detailed_accessibility_information("96"), //
 
 	/**
-	 * <ProductFormFeatureDescription> carries a short description of compatibility testing carried out for this
+	 * &lt;ProductFormFeatureDescription&gt; carries a short description of compatibility testing carried out for this
 	 * product, including detailed compatibility with various assistive technology such as third-party screen-reading
 	 * software.
 	 */
 	Compatibility_tested("97"), //
 
 	/**
-	 * <ProductFormFeatureDescription> carries the e-mail address for a contact at a ‘trusted intermediary’, to whom
-	 * detailed questions about accessibility for this product may be directed.
+	 * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at a &#8216;trusted
+	 * intermediary&#8217;, to whom detailed questions about accessibility for this product may be directed.
 	 */
 	Trusted_Intermediary_contact("98"), //
 
 	/**
-	 * <ProductFormFeatureDescription> carries the e-mail address for a contact at the publisher to whom detailed
+	 * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at the publisher to whom detailed
 	 * questions about accessibility of this product may be directed.
 	 */
 	Publisher_contact_for_further_accessibility_information("99");

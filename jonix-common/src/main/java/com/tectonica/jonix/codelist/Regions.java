@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList49</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 49</b>
  * <p>
- * Region code
+ * Description: Region code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum Regions
 {
@@ -90,7 +90,7 @@ public enum Regions
 	UK_airports("GB-APS"), //
 
 	/**
-	 * DEPRECATED, replaced by country codes GG – Guernsey, and JE – Jersey.
+	 * DEPRECATED, replaced by country codes GG &#8211; Guernsey, and JE &#8211; Jersey.
 	 */
 	Channel_Islands("GB-CHA"), //
 
@@ -102,7 +102,7 @@ public enum Regions
 	England_Wales_Scotland("GB-EWS"), //
 
 	/**
-	 * DEPRECATED, replaced by country code IM – Isle of Man.
+	 * DEPRECATED, replaced by country code IM &#8211; Isle of Man.
 	 */
 	Isle_of_Man("GB-IOM"), //
 
@@ -338,16 +338,12 @@ public enum Regions
 	Viterbo("IT-VT"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Kosovo_Metohija("RS-KM"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Vojvodina("RS-VO"), //
 
@@ -621,11 +617,11 @@ public enum Regions
 
 	/**
 	 * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
-	 * writing, this is a synonym for “AT BE CY EE FI FR DE ES GR IE IT LU LV MT NL PT SI SK” (the official Eurozone
-	 * 18), plus “AD MC SM VA ME” (other Euro-using countries in continental Europe). Note some other territories using
-	 * the Euro, but outside continental Europe are excluded from this list, and may need to be specified separately.
-	 * Only valid in ONIX 3, and only within P.26. Use of an explicit list of countries instead of ECZ is strongly
-	 * encouraged.
+	 * writing, this is a synonym for &#8220;AT BE CY EE FI FR DE ES GR IE IT LU LV MT NL PT SI SK&#8221; (the official
+	 * Eurozone 18), plus &#8220;AD MC SM VA ME&#8221; (other Euro-using countries in continental Europe). Note some
+	 * other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
+	 * specified separately. Only valid in ONIX 3, and only within P.26. Use of an explicit list of countries instead of
+	 * ECZ is strongly encouraged.
 	 */
 	Eurozone("ECZ"), //
 

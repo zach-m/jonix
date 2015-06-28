@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList98</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 98</b>
  * <p>
- * Product form feature value – binding or page edge color
+ * Description: Product form feature value &#8211; binding or page edge color
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductFormFeatureValueBindingOrPageEdgeColors
 {
@@ -56,7 +56,7 @@ public enum ProductFormFeatureValueBindingOrPageEdgeColors
 	Grey("GRY"), //
 
 	/**
-	 * Use <ProductFormFeatureDescription> to add brief details if required.
+	 * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required.
 	 */
 	Multicolor("MUL"), //
 

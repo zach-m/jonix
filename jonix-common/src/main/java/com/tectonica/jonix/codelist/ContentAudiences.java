@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList154</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 154</b>
  * <p>
- * Content audience
+ * Description: Content audience
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ContentAudiences
 {
@@ -47,7 +47,7 @@ public enum ContentAudiences
 	Restricted("01"), //
 
 	/**
-	 * Distributors, bookstores, publisher’s own staff etc.
+	 * Distributors, bookstores, publisher&#8217;s own staff etc.
 	 */
 	Booktrade("02"), //
 

@@ -24,18 +24,18 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList102</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 102</b>
  * <p>
- * Sales outlet identifier type
+ * Description: Sales outlet identifier type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SalesOutletIdentifierTypes
 {
 	Proprietary("01"), //
 
 	/**
-	 * DEPRECATED – use code 03.
+	 * DEPRECATED &#8211; use code 03.
 	 */
 	BIC_sales_outlet_ID_code("02"), //
 

@@ -24,16 +24,16 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList138</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 138</b>
  * <p>
- * Transliteration scheme code
+ * Description: Transliteration scheme code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TransliterationSchemes
 {
 	/**
-	 * Transliteration of Cyrillic characters – Slavic languages.
+	 * Transliteration of Cyrillic characters &#8211; Slavic languages.
 	 */
 	Finnish_standard_SFS_4900("SFS4900"), //
 
@@ -53,12 +53,12 @@ public enum TransliterationSchemes
 	Finnish_standard_SFS_5824("SFS3602"), //
 
 	/**
-	 * Documentation – Romanization of Japanese (kana script).
+	 * Documentation &#8211; Romanization of Japanese (kana script).
 	 */
 	ISO_3602("ISO3602"), //
 
 	/**
-	 * Information and documentation – Romanization of Chinese.
+	 * Information and documentation &#8211; Romanization of Chinese.
 	 */
 	ISO_7098("ISO7098");
 

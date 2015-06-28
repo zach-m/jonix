@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList29</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 29</b>
  * <p>
- * Audience code type
+ * Description: Audience code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum AudienceCodeTypes
 {
@@ -68,14 +68,14 @@ public enum AudienceCodeTypes
 	Electre_audience_code("07"), //
 
 	/**
-	 * Spain: educational audience and material type code of the Asociación Nacional de Editores de Libros y Material de
-	 * Enseñanza.
+	 * Spain: educational audience and material type code of the Asociaci&#243;n Nacional de Editores de Libros y
+	 * Material de Ense&#241;anza.
 	 */
 	ANELE_Tipo("08"), //
 
 	/**
-	 * Code list used to specify reading levels for children’s books, used in Flanders, and formerly in the Netherlands
-	 * – see also code 18.
+	 * Code list used to specify reading levels for children&#8217;s books, used in Flanders, and formerly in the
+	 * Netherlands &#8211; see also code 18.
 	 */
 	AVI("09"), //
 
@@ -113,7 +113,7 @@ public enum AudienceCodeTypes
 	Suomalainen_kouluasteluokitus("15"), //
 
 	/**
-	 * UK Publishers Association, Children’s Book Group, coded indication of intended reader age, carried on book
+	 * UK Publishers Association, Children&#8217;s Book Group, coded indication of intended reader age, carried on book
 	 * covers.
 	 */
 	CBG_age_guidance("16"), //
@@ -124,30 +124,32 @@ public enum AudienceCodeTypes
 	Nielsen_Book_audience_code("17"), //
 
 	/**
-	 * Code list used to specify reading levels for children’s books, used in the Netherlands – see also code 09.
+	 * Code list used to specify reading levels for children&#8217;s books, used in the Netherlands &#8211; see also
+	 * code 09.
 	 */
 	AVI_revised("18"), //
 
 	/**
-	 * Lexile measure (the Lexile measure in <AudienceCodeValue> may optionally be prefixed by the Lexile code).
-	 * Examples might be ‘880L’, ‘AD0L’ or ‘HL600L’. Deprecated – use <Complexity> instead.
+	 * Lexile measure (the Lexile measure in &lt;AudienceCodeValue&gt; may optionally be prefixed by the Lexile code).
+	 * Examples might be &#8216;880L&#8217;, &#8216;AD0L&#8217; or &#8216;HL600L&#8217;. Deprecated &#8211; use
+	 * &lt;Complexity&gt; instead.
 	 */
 	Lexile_measure("19"), //
 
 	/**
 	 * Fry readability metric based on number of sentences and syllables per 100 words. Expressed as a number from 1 to
-	 * 15 in <AudienceCodeValue>. Deprecated – use <Complexity> instead.
+	 * 15 in &lt;AudienceCodeValue&gt;. Deprecated &#8211; use &lt;Complexity&gt; instead.
 	 */
 	Fry_Readability_score("20"), //
 
 	/**
-	 * Children’s audience code (対象読者), two-digit encoding of intended target readership from 0–2 years up to High
-	 * School level.
+	 * Children&#8217;s audience code (&#23550;&#35937;&#35501;&#32773;), two-digit encoding of intended target
+	 * readership from 0&#8211;2 years up to High School level.
 	 */
 	Japanese_Children_s_audience_code("21"), //
 
 	/**
-	 * Publisher’s rating indicating suitability for an particular adult audience, using a code from List 203.
+	 * Publisher&#8217;s rating indicating suitability for an particular adult audience, using a code from List 203.
 	 */
 	ONIX_Adult_audience_rating("22"), //
 
@@ -159,25 +161,27 @@ public enum AudienceCodeTypes
 
 	/**
 	 * Rating used in Korea to control selling of books and e-books to minors. Current values are 0 (suitable for all)
-	 * and 19 (only for sale to ages 19+). See ‘http://www.kpec.or.kr/english/’.
+	 * and 19 (only for sale to ages 19+). See &#8216;http://www.kpec.or.kr/english/&#8217;.
 	 */
 	Korean_Publication_Ethics_Commission_rating("24"), //
 
 	/**
 	 * UK Institute of Education Book Bands for Guided Reading scheme (see http://www.ioe.ac.uk/research/4664.html).
-	 * <AudienceCodeValue> is a colour, eg ‘Pink A’ or ‘Copper’. Deprecated – use <Complexity> instead.
+	 * &lt;AudienceCodeValue&gt; is a colour, eg &#8216;Pink A&#8217; or &#8216;Copper&#8217;. Deprecated &#8211; use
+	 * &lt;Complexity&gt; instead.
 	 */
 	IoE_Book_Band("25"), //
 
 	/**
-	 * Used for German videos/DVDs with educational or informative content; value for <AudienceCodeValue> must be either
-	 * ‘Infoprogramm gemäß § 14 JuSchG’ or ‘Lehrprogramm gemäß § 14 JuSchG’.
+	 * Used for German videos/DVDs with educational or informative content; value for &lt;AudienceCodeValue&gt; must be
+	 * either &#8216;Infoprogramm gem&#228;&#223; &#167; 14 JuSchG&#8217; or &#8216;Lehrprogramm gem&#228;&#223; &#167;
+	 * 14 JuSchG&#8217;.
 	 */
 	FSK_Lehr_Infoprogramm("26"), //
 
 	/**
-	 * Where this is different from the language of the text of the book recorded in <Language>. <AudienceCodeValue>
-	 * should be a value from List 74.
+	 * Where this is different from the language of the text of the book recorded in &lt;Language&gt;.
+	 * &lt;AudienceCodeValue&gt; should be a value from List 74.
 	 */
 	Intended_audience_language("27"), //
 
@@ -188,9 +192,7 @@ public enum AudienceCodeTypes
 
 	/**
 	 * Code indicating the intended curriculum (eg Naturvetenskapsprogrammet, Estetica programmet) in Swedish higher
-	 * secondary education.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * secondary education. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Gymnasieprogram("29");
 

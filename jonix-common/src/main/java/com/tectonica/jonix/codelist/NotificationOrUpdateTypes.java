@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList1</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 1</b>
  * <p>
- * Notification or update type code
+ * Description: Notification or update type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum NotificationOrUpdateTypes
 {
@@ -53,8 +53,8 @@ public enum NotificationOrUpdateTypes
 	Notification_confirmed_on_publication("03"), //
 
 	/**
-	 * In ONIX 3.0 only, use when sending a ‘block update’ record. In previous ONIX releases, ONIX updating has
-	 * generally been by complete record replacement using code 03, and code 04 is not used.
+	 * In ONIX 3.0 only, use when sending a &#8216;block update&#8217; record. In previous ONIX releases, ONIX updating
+	 * has generally been by complete record replacement using code 03, and code 04 is not used.
 	 */
 	Update_partial("04"), //
 
@@ -78,29 +78,30 @@ public enum NotificationOrUpdateTypes
 	Notice_of_acquisition("09"), //
 
 	/**
-	 * ONIX Books 2.1 supply update – <SupplyDetail> only (not used in ONIX 3.0).
+	 * ONIX Books 2.1 supply update &#8211; &lt;SupplyDetail&gt; only (not used in ONIX 3.0).
 	 */
 	Update_SupplyDetail_only("12"), //
 
 	/**
-	 * ONIX Books 2.1 supply update – <MarketRepresentation> only (not used in ONIX 3.0).
+	 * ONIX Books 2.1 supply update &#8211; &lt;MarketRepresentation&gt; only (not used in ONIX 3.0).
 	 */
 	Update_MarketRepresentation_only("13"), //
 
 	/**
-	 * ONIX Books 2.1 supply update – both <SupplyDetail> and <MarketRepresentation> (not used in ONIX 3.0).
+	 * ONIX Books 2.1 supply update &#8211; both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX
+	 * 3.0).
 	 */
 	Update_SupplyDetail_and_MarketRepresentation("14"), //
 
 	/**
 	 * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded. Sender must ensure the
-	 * <RecordReference> matches a previously-sent Test record.
+	 * &lt;RecordReference&gt; matches a previously-sent Test record.
 	 */
 	Test_update_Partial("88"), //
 
 	/**
-	 * Record may be processed for test purposes, but data should be discarded. Sender must ensure the <RecordReference>
-	 * does not match any previously-sent live product record.
+	 * Record may be processed for test purposes, but data should be discarded. Sender must ensure the
+	 * &lt;RecordReference&gt; does not match any previously-sent live product record.
 	 */
 	Test_record("89");
 

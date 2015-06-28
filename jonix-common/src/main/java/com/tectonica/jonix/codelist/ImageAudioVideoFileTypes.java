@@ -27,24 +27,24 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList38</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 38</b>
  * <p>
- * Image/audio/video file type code
+ * Description: Image/audio/video file type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ImageAudioVideoFileTypes
 {
 	/**
-	 * Link to a location where the whole product may be found – used for epublications.
+	 * Link to a location where the whole product may be found &#8211; used for epublications.
 	 */
 	Whole_product("01"), //
 
 	Application_software_demo("02"), //
 
 	/**
-	 * Includes cover, back cover, spine and – where appropriate – any flaps. Quality unspecified: if sending both a
-	 * standard quality and a high quality image, use 03 for standard quality and 05 for high quality.
+	 * Includes cover, back cover, spine and &#8211; where appropriate &#8211; any flaps. Quality unspecified: if
+	 * sending both a standard quality and a high quality image, use 03 for standard quality and 05 for high quality.
 	 */
 	Image_whole_cover("03"), //
 
@@ -69,7 +69,7 @@ public enum ImageAudioVideoFileTypes
 	Image_contributor_s("08"), //
 
 	/**
-	 * Use for an image, other than a logo, that is part of the ‘branding’ of a series.
+	 * Use for an image, other than a logo, that is part of the &#8216;branding&#8217; of a series.
 	 */
 	Image_for_series("10"), //
 
@@ -145,7 +145,7 @@ public enum ImageAudioVideoFileTypes
 	Audio_other_commentary_discussion("47"), //
 
 	/**
-	 * Use for ‘look inside’ facility or ‘widget’.
+	 * Use for &#8216;look inside&#8217; facility or &#8216;widget&#8217;.
 	 */
 	Application_sample_content("51"), //
 

@@ -24,47 +24,47 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList140</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 140</b>
  * <p>
- * US CPSIA choking hazard warning code
+ * Description: US CPSIA choking hazard warning code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum UsCpsiaChokingHazardWarnings
 {
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	WARNING_CHOKING_HAZARD_Small_parts_Not_for_children_under_3_yrs_("01"), //
 
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	WARNING_CHOKING_HAZARD_This_toy_is_a_small_ball_Not_for_children_under_3_yrs_("02"), //
 
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	WARNING_CHOKING_HAZARD_Toy_contains_a_small_ball_Not_for_children_under_3_yrs_("03"), //
 
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	WARNING_CHOKING_HAZARD_Children_under_8_yrs_can_choke_or_suffocate_on_uninflated_or_broken_balloons_Adult_supervision_required_Keep_uninflated_balloons_from_children_Discard_broken_balloons_at_once_(
 			"04"), //
 
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	WARNING_CHOKING_HAZARD_This_toy_is_a_marble_Not_for_children_under_3_yrs_("05"), //
 
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	WARNING_CHOKING_HAZARD_Toy_contains_a_marble_Not_for_children_under_3_yrs_("06"), //
 
 	/**
-	 * List withdrawn – use List 143.
+	 * List withdrawn &#8211; use List 143.
 	 */
 	No_choking_hazard_warning_necessary("07");
 

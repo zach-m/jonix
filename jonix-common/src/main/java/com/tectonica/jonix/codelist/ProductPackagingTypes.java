@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList80</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 80</b>
  * <p>
- * Product packaging type
+ * Description: Product packaging type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductPackagingTypes
 {
@@ -52,7 +52,7 @@ public enum ProductPackagingTypes
 	Clamshell("02"), //
 
 	/**
-	 * Typical DVD-style packaging, sometimes known as an ‘Amaray’ case.
+	 * Typical DVD-style packaging, sometimes known as an &#8216;Amaray&#8217; case.
 	 */
 	Keep_case("03"), //
 
@@ -69,17 +69,18 @@ public enum ProductPackagingTypes
 
 	/**
 	 * Individual item, items or set in card box with separate or hinged lid: not to be confused with the commonly-used
-	 * ‘boxed set’.
+	 * &#8216;boxed set&#8217;.
 	 */
 	In_box("09"), //
 
 	/**
-	 * Slip-case for single item only: German ‘Schuber’.
+	 * Slip-case for single item only: German &#8216;Schuber&#8217;.
 	 */
 	Slip_cased("10"), //
 
 	/**
-	 * Slip-case for multi-volume set: German ‘Kassette’; also commonly referred to as ‘boxed set’.
+	 * Slip-case for multi-volume set: German &#8216;Kassette&#8217;; also commonly referred to as &#8216;boxed
+	 * set&#8217;.
 	 */
 	Slip_cased_set("11"), //
 

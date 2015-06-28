@@ -24,21 +24,21 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList69</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 69</b>
  * <p>
- * Agent role
+ * Description: Agent role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum AgentRoles
 {
 	/**
-	 * Publisher’s exclusive sales agent in a specified territory.
+	 * Publisher&#8217;s exclusive sales agent in a specified territory.
 	 */
 	Exclusive_sales_agent("05"), //
 
 	/**
-	 * Publisher’s non-exclusive sales agent in a specified territory.
+	 * Publisher&#8217;s non-exclusive sales agent in a specified territory.
 	 */
 	Non_exclusive_sales_agent("06"), //
 
@@ -48,8 +48,8 @@ public enum AgentRoles
 	Local_publisher("07"), //
 
 	/**
-	 * Publisher’s sales agent in a specific territory. Use only where exclusive / non-exclusive status is not known.
-	 * Prefer 05 or 06 as appropriate, where possible.
+	 * Publisher&#8217;s sales agent in a specific territory. Use only where exclusive / non-exclusive status is not
+	 * known. Prefer 05 or 06 as appropriate, where possible.
 	 */
 	Sales_agent("08");
 

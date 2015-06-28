@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList19</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 19</b>
  * <p>
- * Unnamed person(s)
+ * Description: Unnamed person(s)
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum UnnamedPersonss
 {
@@ -47,17 +47,17 @@ public enum UnnamedPersonss
 	Various_authors("04"), //
 
 	/**
-	 * Use with Contributor role code E07 “read by”, for audio books for the blind.
+	 * Use with Contributor role code E07 &#8220;read by&#8221;, for audio books for the blind.
 	 */
 	Synthesized_voice_male("05"), //
 
 	/**
-	 * Use with Contributor role code E07 “read by”, for audio books for the blind.
+	 * Use with Contributor role code E07 &#8220;read by&#8221;, for audio books for the blind.
 	 */
 	Synthesized_voice_female("06"), //
 
 	/**
-	 * Use with Contributor role code E07 “read by”, for audio books for the blind.
+	 * Use with Contributor role code E07 &#8220;read by&#8221;, for audio books for the blind.
 	 */
 	Synthesized_voice_unspecified("07");
 

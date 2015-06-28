@@ -24,35 +24,35 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList53</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 53</b>
  * <p>
- * Returns conditions code type
+ * Description: Returns conditions code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ReturnsConditionsCodeTypes
 {
 	Proprietary("00"), //
 
 	/**
-	 * Maintained by CLIL (Commission Interprofessionnel du Livre). Returns conditions values in <ReturnsCode> should be
-	 * taken from the CLIL list.
+	 * Maintained by CLIL (Commission Interprofessionnel du Livre). Returns conditions values in &lt;ReturnsCode&gt;
+	 * should be taken from the CLIL list.
 	 */
 	French_book_trade_returns_conditions_code("01"), //
 
 	/**
-	 * Maintained by BISAC: Returns conditions values in <ReturnsCode> should be taken from List 66.
+	 * Maintained by BISAC: Returns conditions values in &lt;ReturnsCode&gt; should be taken from List 66.
 	 */
 	BISAC_Returnable_Indicator_code("02"), //
 
 	/**
-	 * NOT CURRENTLY USED – BIC has decided that it will not maintain a code list for this purpose, since returns
+	 * NOT CURRENTLY USED &#8211; BIC has decided that it will not maintain a code list for this purpose, since returns
 	 * conditions are usually at least partly based on the trading relationship.
 	 */
 	UK_book_trade_returns_conditions_code("03"), //
 
 	/**
-	 * Returns conditions values in <ReturnsCode> should be taken from List 204.
+	 * Returns conditions values in &lt;ReturnsCode&gt; should be taken from List 204.
 	 */
 	ONIX_Returns_conditions_code("04");
 

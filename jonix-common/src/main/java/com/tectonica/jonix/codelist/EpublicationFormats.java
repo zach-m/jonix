@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList11</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 11</b>
  * <p>
- * Epublication format code
+ * Description: Epublication format code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum EpublicationFormats
 {
@@ -40,7 +40,7 @@ public enum EpublicationFormats
 	PDF("02"), //
 
 	/**
-	 * ‘.LIT’ file format used by Microsoft Reader software.
+	 * &#8216;.LIT&#8217; file format used by Microsoft Reader software.
 	 */
 	Microsoft_Reader("03"), //
 
@@ -55,12 +55,13 @@ public enum EpublicationFormats
 	SGML("08"), //
 
 	/**
-	 * ‘.EXE’ file format used when an epublication is delivered as a self-executing package of software and content.
+	 * &#8216;.EXE&#8217; file format used when an epublication is delivered as a self-executing package of software and
+	 * content.
 	 */
 	EXE("09"), //
 
 	/**
-	 * ‘.TXT’ file format.
+	 * &#8216;.TXT&#8217; file format.
 	 */
 	ASCII("10"), //
 

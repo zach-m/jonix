@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList82</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 82</b>
  * <p>
- * Bible contents
+ * Description: Bible contents
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum BibleContentss
 {

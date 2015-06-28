@@ -27,16 +27,16 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList78</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 78</b>
  * <p>
- * Product form detail
+ * Description: Product form detail
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductFormDetails
 {
 	/**
-	 * CD ‘red book’ format.
+	 * CD &#8216;red book&#8217; format.
 	 */
 	CD_standard_audio_format("A101"), //
 
@@ -134,15 +134,15 @@ public enum ProductFormDetails
 	Standalone_audio("A301"), //
 
 	/**
-	 * Audio intended exclusively for use alongside a printed copy of the book. Most often a children’s product.
-	 * Normally contains instructions such as “turn the page now” and other references to the printed item, and is
-	 * usually sold packaged together with a printed copy.
+	 * Audio intended exclusively for use alongside a printed copy of the book. Most often a children&#8217;s product.
+	 * Normally contains instructions such as &#8220;turn the page now&#8221; and other references to the printed item,
+	 * and is usually sold packaged together with a printed copy.
 	 */
 	Readalong_audio("A302"), //
 
 	/**
-	 * Audio intended for musical accompaniment, eg ‘Music minus one’, etc, often used for music learning. Includes
-	 * singalong backing audio for musical learning or for Karaoke-style entertainment.
+	 * Audio intended for musical accompaniment, eg &#8216;Music minus one&#8217;, etc, often used for music learning.
+	 * Includes singalong backing audio for musical learning or for Karaoke-style entertainment.
 	 */
 	Playalong_audio("A303"), //
 
@@ -158,22 +158,22 @@ public enum ProductFormDetails
 	Synchronised_audio("A305"), //
 
 	/**
-	 * In North America, a category of paperback characterized partly by page size (typically 4¼ x 7 1/8 inches) and
-	 * partly by target market and terms of trade. Use with Product Form code BC.
+	 * In North America, a category of paperback characterized partly by page size (typically 4&#188; x 7 1/8 inches)
+	 * and partly by target market and terms of trade. Use with Product Form code BC.
 	 */
 	Mass_market_rack("B101"), //
 
 	/**
 	 * In North America, a category of paperback characterized partly by page size and partly by target market and terms
-	 * of trade. AKA ‘quality paperback’, and including textbooks. Most paperback books sold in North America except
-	 * ‘mass-market’ (B101) and ‘tall rack’ (B107) are correctly described with this code. Use with Product Form code
-	 * BC.
+	 * of trade. AKA &#8216;quality paperback&#8217;, and including textbooks. Most paperback books sold in North
+	 * America except &#8216;mass-market&#8217; (B101) and &#8216;tall rack&#8217; (B107) are correctly described with
+	 * this code. Use with Product Form code BC.
 	 */
 	Trade_paperback_US("B102"), //
 
 	/**
-	 * In North America, a category of paperback characterized by page size and generally used for children’s books; use
-	 * with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3.
+	 * In North America, a category of paperback characterized by page size and generally used for children&#8217;s
+	 * books; use with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3.
 	 */
 	Digest_format_paperback("B103"), //
 
@@ -191,7 +191,8 @@ public enum ProductFormDetails
 
 	/**
 	 * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and
-	 * often used for paperback originals; use with Product Form code BC (replaces ‘C-format’ from former List 8).
+	 * often used for paperback originals; use with Product Form code BC (replaces &#8216;C-format&#8217; from former
+	 * List 8).
 	 */
 	Trade_paperback_UK("B106"), //
 
@@ -252,8 +253,8 @@ public enum ProductFormDetails
 	Mook("B117"), //
 
 	/**
-	 * Also called ‘Flipback’. A softback book in a specially compact proprietary format with pages printed in landscape
-	 * on very thin paper and bound along the long (top) edge – see www.dwarsligger.com.
+	 * Also called &#8216;Flipback&#8217;. A softback book in a specially compact proprietary format with pages printed
+	 * in landscape on very thin paper and bound along the long (top) edge &#8211; see www.dwarsligger.com.
 	 */
 	Dwarsligger("B118"), //
 
@@ -327,7 +328,7 @@ public enum ProductFormDetails
 	Lift_the_flap_book("B202"), //
 
 	/**
-	 * DEPRECATED because of ambiguity – use B210, B214 or B215 as appropriate.
+	 * DEPRECATED because of ambiguity &#8211; use B210, B214 or B215 as appropriate.
 	 */
 	Fuzzy_book("B203"), //
 
@@ -353,14 +354,14 @@ public enum ProductFormDetails
 	Touch_and_feel_book("B210"), //
 
 	/**
-	 * DEPRECATED – use B212 or B213 as appropriate.
+	 * DEPRECATED &#8211; use B212 or B213 as appropriate.
 	 */
 	Toy_die_cut_book("B211"), //
 
 	/**
 	 * A book which is cut into a distinctive non-rectilinear shape and/or in which holes or shapes have been cut
-	 * internally. (‘Die-cut’ is used here as a convenient shorthand, and does not imply strict limitation to a
-	 * particular production process.).
+	 * internally. (&#8216;Die-cut&#8217; is used here as a convenient shorthand, and does not imply strict limitation
+	 * to a particular production process.).
 	 */
 	Die_cut_book("B212"), //
 
@@ -381,13 +382,13 @@ public enum ProductFormDetails
 	Fuzzy_felt_book("B215"), //
 
 	/**
-	 * Children’s picture book: use with applicable Product Form code.
+	 * Children&#8217;s picture book: use with applicable Product Form code.
 	 */
 	Picture_book("B221"), //
 
 	/**
-	 * (aka ‘Star’ book). Tax treatment of products may differ from that of products with similar codes such as Book as
-	 * toy or Pop-up book).
+	 * (aka &#8216;Star&#8217; book). Tax treatment of products may differ from that of products with similar codes such
+	 * as Book as toy or Pop-up book).
 	 */
 	_Carousel_book("B222"), //
 
@@ -407,12 +408,12 @@ public enum ProductFormDetails
 	Loose_leaf_sheets_only("B303"), //
 
 	/**
-	 * AKA stitched; for ‘saddle-sewn’, see code B310.
+	 * AKA stitched; for &#8216;saddle-sewn&#8217;, see code B310.
 	 */
 	Sewn("B304"), //
 
 	/**
-	 * Including ‘perfect bound’, ‘glued’.
+	 * Including &#8216;perfect bound&#8217;, &#8216;glued&#8217;.
 	 */
 	Unsewn_adhesive_bound("B305"), //
 
@@ -427,17 +428,17 @@ public enum ProductFormDetails
 	Reinforced_binding("B307"), //
 
 	/**
-	 * Must be accompanied by a code specifiying a material, eg ‘half-bound real leather’.
+	 * Must be accompanied by a code specifiying a material, eg &#8216;half-bound real leather&#8217;.
 	 */
 	Half_bound("B308"), //
 
 	/**
-	 * Must be accompanied by a code specifiying a material, eg ‘quarter bound real leather’.
+	 * Must be accompanied by a code specifiying a material, eg &#8216;quarter bound real leather&#8217;.
 	 */
 	Quarter_bound("B309"), //
 
 	/**
-	 * AKA ‘saddle-stitched’ or ‘wire-stitched’.
+	 * AKA &#8216;saddle-stitched&#8217; or &#8216;wire-stitched&#8217;.
 	 */
 	Saddle_sewn("B310"), //
 
@@ -458,17 +459,13 @@ public enum ProductFormDetails
 
 	/**
 	 * Spiral wire bound. Use with product form code BE. The default if a spiral binding type is not stated. Cf. Comb
-	 * and Wire-O binding.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * and Wire-O binding. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Coiled_wire_bound("B314"), //
 
 	/**
 	 * Hardcover binding intended for general consumers rather than libraries, use with Product form code BB. The
-	 * default if a hardcover binding detail is not stated. cf. Library binding.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * default if a hardcover binding detail is not stated. cf. Library binding. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Trade_binding("B315"), //
 
@@ -488,29 +485,29 @@ public enum ProductFormDetails
 	Vellum("B406"), //
 
 	/**
-	 * DEPRECATED – use new B412 or B413 as appropriate.
+	 * DEPRECATED &#8211; use new B412 or B413 as appropriate.
 	 */
 	Plastic("B407"), //
 
 	/**
-	 * DEPRECATED – use new B412 or B414 as appropriate.
+	 * DEPRECATED &#8211; use new B412 or B414 as appropriate.
 	 */
 	Vinyl("B408"), //
 
 	/**
-	 * Cloth, not necessarily over boards – cf B401.
+	 * Cloth, not necessarily over boards &#8211; cf B401.
 	 */
 	Cloth("B409"), //
 
 	/**
-	 * Spanish ‘simil-tela’.
+	 * Spanish &#8216;simil-tela&#8217;.
 	 */
 	Imitation_cloth("B410"), //
 
 	Velvet("B411"), //
 
 	/**
-	 * AKA ‘flexibound’: use with Product Form code BC.
+	 * AKA &#8216;flexibound&#8217;: use with Product Form code BC.
 	 */
 	Flexible_plastic_vinyl_cover("B412"), //
 
@@ -519,8 +516,8 @@ public enum ProductFormDetails
 	Vinyl_covered("B414"), //
 
 	/**
-	 * Book, laminating material unspecified: use L101 for ‘whole product laminated’, eg a laminated sheet map or
-	 * wallchart.
+	 * Book, laminating material unspecified: use L101 for &#8216;whole product laminated&#8217;, eg a laminated sheet
+	 * map or wallchart.
 	 */
 	Laminated_cover("B415"), //
 
@@ -547,7 +544,7 @@ public enum ProductFormDetails
 	With_thumb_index("B505"), //
 
 	/**
-	 * If the number of markers is significant, it can be stated as free text in <ProductFormDescription>.
+	 * If the number of markers is significant, it can be stated as free text in &lt;ProductFormDescription&gt;.
 	 */
 	With_ribbon_marker_s("B506"), //
 
@@ -577,15 +574,14 @@ public enum ProductFormDetails
 	Wide_margin("B512"), //
 
 	/**
-	 * Book with attached loop for fixing to baby stroller, cot, chair etc.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Book with attached loop for fixing to baby stroller, cot, chair etc. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	With_fastening_strap("B513"), //
 
 	/**
 	 * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
-	 * ‘flip-book’, ‘back-to-back’, (fr.) ‘tête-bêche’ (usually an omnibus of two works).
+	 * &#8216;flip-book&#8217;, &#8216;back-to-back&#8217;, (fr.) &#8216;t&#234;te-b&#234;che&#8217; (usually an omnibus
+	 * of two works).
 	 */
 	Turn_around_book("B601"), //
 
@@ -740,13 +736,13 @@ public enum ProductFormDetails
 	Sony_PlayStation_Portable_PSP("D316"), //
 
 	/**
-	 * Use where a particular e-publication type (specified in <EpubType>) has both reflowable and fixed-format
+	 * Use where a particular e-publication type (specified in &lt;EpubType&gt;) has both reflowable and fixed-format
 	 * variants.
 	 */
 	Reflowable("E200"), //
 
 	/**
-	 * Use where a particular e-publication type (specified in <EpubType>) has both reflowable and fixed-format
+	 * Use where a particular e-publication type (specified in &lt;EpubType&gt;) has both reflowable and fixed-format
 	 * variants.
 	 */
 	Fixed_format("E201"), //
@@ -758,7 +754,7 @@ public enum ProductFormDetails
 
 	/**
 	 * E-publication requires a network connection to access some resources (eg an enhanced e-book where video clips are
-	 * not stored within the e-publication ‘package’ itself, but are delivered via an internet connection).
+	 * not stored within the e-publication &#8216;package&#8217; itself, but are delivered via an internet connection).
 	 */
 	Requires_network_connection("E203"), //
 
@@ -922,16 +918,12 @@ public enum ProductFormDetails
 	SECAM("V203"), //
 
 	/**
-	 * Licensed for use in domestic contexts only.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Licensed for use in domestic contexts only. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Home_use("V220"), //
 
 	/**
-	 * Licensed for use in education.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Licensed for use in education. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Classroom_use("V221");
 

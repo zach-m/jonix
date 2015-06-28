@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList96</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 96</b>
  * <p>
- * Currency code – ISO 4217
+ * Description: Currency code &#8211; ISO 4217
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum CurrencyCodes
 {
@@ -61,7 +61,7 @@ public enum CurrencyCodes
 	Armenian_Dram("AMD"), //
 
 	/**
-	 * Curaçao, Sint Maarten.
+	 * Cura&#231;ao, Sint Maarten.
 	 */
 	Netherlands_Antillian_Guilder("ANG"), //
 
@@ -272,8 +272,8 @@ public enum CurrencyCodes
 	Algerian_Dinar("DZD"), //
 
 	/**
-	 * Estonia – now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-	 * Euro.
+	 * Estonia &#8211; now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of
+	 * the Euro.
 	 */
 	Kroon("EEK"), //
 
@@ -301,7 +301,7 @@ public enum CurrencyCodes
 	/**
 	 * Eurozone: Andorra, Austria, Belgium, Cyprus, Estonia, Finland, France, Fr Guiana, Fr S Territories, Germany,
 	 * Greece, Guadeloupe, Holy See (Vatican City), Ireland, Italy, Latvia, Lithuania, Luxembourg, Martinique, Malta,
-	 * Mayotte, Monaco, Montenegro, Netherlands, Portugal, Réunion, St Pierre and Miquelon, San Marino, Spain.
+	 * Mayotte, Monaco, Montenegro, Netherlands, Portugal, R&#233;union, St Pierre and Miquelon, San Marino, Spain.
 	 */
 	Euro("EUR"), //
 
@@ -483,7 +483,7 @@ public enum CurrencyCodes
 	Comoro_Franc("KMF"), //
 
 	/**
-	 * Korea (Democratic People’s Republic of) (prices normally quoted as integers).
+	 * Korea (Democratic People&#8217;s Republic of) (prices normally quoted as integers).
 	 */
 	North_Korean_Won("KPW"), //
 
@@ -508,7 +508,7 @@ public enum CurrencyCodes
 	Tenge("KZT"), //
 
 	/**
-	 * Lao People’s Democratic Republic (prices normally quoted as integers).
+	 * Lao People&#8217;s Democratic Republic (prices normally quoted as integers).
 	 */
 	Kip("LAK"), //
 
@@ -564,7 +564,7 @@ public enum CurrencyCodes
 	Moldovan_Leu("MDL"), //
 
 	/**
-	 * Madagascar (0 or 1 – 1 iraimbilanja = Ar0.2).
+	 * Madagascar (0 or 1 &#8211; 1 iraimbilanja = Ar0.2).
 	 */
 	Ariary("MGA"), //
 
@@ -594,13 +594,13 @@ public enum CurrencyCodes
 	Pataca("MOP"), //
 
 	/**
-	 * Mauritania (0 or 1 – 1 khoums = UM0.2).
+	 * Mauritania (0 or 1 &#8211; 1 khoums = UM0.2).
 	 */
 	Ouguiya("MRO"), //
 
 	/**
-	 * Malta – now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
-	 * Euro.
+	 * Malta &#8211; now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of
+	 * the Euro.
 	 */
 	Maltese_Lira("MTL"), //
 
@@ -820,7 +820,7 @@ public enum CurrencyCodes
 	Suriname_Guilder("SRG"), //
 
 	/**
-	 * São Tome and Principe (prices normally quoted as integers).
+	 * S&#227;o Tome and Principe (prices normally quoted as integers).
 	 */
 	Dobra("STD"), //
 
@@ -963,8 +963,8 @@ public enum CurrencyCodes
 	East_Caribbean_Dollar("XCD"), //
 
 	/**
-	 * Benin, Burkina Faso, Côte D’Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted as
-	 * integers).
+	 * Benin, Burkina Faso, C&#244;te D&#8217;Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted
+	 * as integers).
 	 */
 	CFA_Franc_BCEAO("XOF"), //
 

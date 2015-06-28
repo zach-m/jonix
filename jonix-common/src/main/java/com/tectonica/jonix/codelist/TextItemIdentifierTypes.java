@@ -24,16 +24,16 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList43</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 43</b>
  * <p>
- * Text item identifier type code
+ * Description: Text item identifier type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TextItemIdentifierTypes
 {
 	/**
-	 * For example, a publisher’s own identifier.
+	 * For example, a publisher&#8217;s own identifier.
 	 */
 	Proprietary("01"), //
 

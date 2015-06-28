@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList178</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 178</b>
  * <p>
- * Supporting resource file format
+ * Description: Supporting resource file format
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SupportingResourceFileFormats
 {
@@ -168,12 +168,12 @@ public enum SupportingResourceFileFormats
 	Amazon_Kindle("E116"), //
 
 	/**
-	 * Founder Apabi’s proprietary basic e-book format.
+	 * Founder Apabi&#8217;s proprietary basic e-book format.
 	 */
 	CEB("E139"), //
 
 	/**
-	 * Founder Apabi’s proprietary XML e-book format.
+	 * Founder Apabi&#8217;s proprietary XML e-book format.
 	 */
 	CEBX("E140");
 

@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList41</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 41</b>
  * <p>
- * Prize or award achievement code
+ * Description: Prize or award achievement code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum PrizeOrAwardAchievements
 {
@@ -41,20 +41,21 @@ public enum PrizeOrAwardAchievements
 
 	/**
 	 * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically
-	 * as winner or runner-up. Possible terminology used by a particular prize includes ‘specially commended’ or
-	 * ‘honored’.
+	 * as winner or runner-up. Possible terminology used by a particular prize includes &#8216;specially
+	 * commended&#8217; or &#8216;honored&#8217;.
 	 */
 	Commended("03"), //
 
 	/**
-	 * Title named by the judging process to be one of the final list of candidates, such as a ‘short-list’ from which
-	 * the winner is selected, or a title named as ‘finalist’.
+	 * Title named by the judging process to be one of the final list of candidates, such as a &#8216;short-list&#8217;
+	 * from which the winner is selected, or a title named as &#8216;finalist&#8217;.
 	 */
 	Short_listed("04"), //
 
 	/**
-	 * Title named by the judging process to be one of the preliminary list of candidates, such as a ‘long-list’ from
-	 * which first a shorter list or set of finalists is selected, and then the winner is announced.
+	 * Title named by the judging process to be one of the preliminary list of candidates, such as a
+	 * &#8216;long-list&#8217; from which first a shorter list or set of finalists is selected, and then the winner is
+	 * announced.
 	 */
 	Long_listed("05"), //
 
@@ -65,7 +66,7 @@ public enum PrizeOrAwardAchievements
 
 	/**
 	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honour
-	 * for which no “short-list” or “long list” exists.
+	 * for which no &#8220;short-list&#8221; or &#8220;long list&#8221; exists.
 	 */
 	Nominated("07");
 

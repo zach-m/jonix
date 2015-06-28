@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList164</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 164</b>
  * <p>
- * Work relation code
+ * Description: Work relation code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum WorkRelations
 {
@@ -39,8 +39,8 @@ public enum WorkRelations
 
 	/**
 	 * Product X is or includes a manifestation of a work derived (directly) from related work Y in one or more of the
-	 * ways specified in ISTC rules. This relation type is intended to enable products with a common ‘parent’ work to be
-	 * linked without specifying the precise nature of their derivation.
+	 * ways specified in ISTC rules. This relation type is intended to enable products with a common
+	 * &#8216;parent&#8217; work to be linked without specifying the precise nature of their derivation.
 	 */
 	Derived_from("02"), //
 

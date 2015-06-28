@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList73</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 73</b>
  * <p>
- * Website role
+ * Description: Website role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum WebsiteRoles
 {
@@ -43,8 +43,8 @@ public enum WebsiteRoles
 	Publisher_s_corporate_website("01"), //
 
 	/**
-	 * A publisher’s informative and/or promotional webpage relating to a specified work (book, journal, online resource
-	 * or other publication type).
+	 * A publisher&#8217;s informative and/or promotional webpage relating to a specified work (book, journal, online
+	 * resource or other publication type).
 	 */
 	Publisher_s_website_for_a_specified_work("02"), //
 
@@ -70,7 +70,7 @@ public enum WebsiteRoles
 	Contributor_s_own_website("06"), //
 
 	/**
-	 * A publisher’s webpage devoted to a specific author or other contributor.
+	 * A publisher&#8217;s webpage devoted to a specific author or other contributor.
 	 */
 	Publisher_s_website_relating_to_specified_contributor("07"), //
 
@@ -107,7 +107,7 @@ public enum WebsiteRoles
 	Contributor_s_own_website_for_group_or_series_of_works("13"), //
 
 	/**
-	 * A publisher’s webpage devoted to a group or series of works.
+	 * A publisher&#8217;s webpage devoted to a group or series of works.
 	 */
 	Publisher_s_website_relating_to_group_or_series_of_works("14"), //
 
@@ -123,12 +123,12 @@ public enum WebsiteRoles
 	Third_party_website_relating_to_group_or_series_of_works_eg_a_fan_site("16"), //
 
 	/**
-	 * Use instead of code 01 to specify a publisher’s website for trade users.
+	 * Use instead of code 01 to specify a publisher&#8217;s website for trade users.
 	 */
 	Publisher_s_B2B_website("17"), //
 
 	/**
-	 * Use instead of code 01 to specify a publisher’s website for end customers (consumers).
+	 * Use instead of code 01 to specify a publisher&#8217;s website for end customers (consumers).
 	 */
 	Publisher_s_B2C_website("18"), //
 
@@ -148,8 +148,8 @@ public enum WebsiteRoles
 	Web_page_for_sample_content("28"), //
 
 	/**
-	 * Use this value in the <Website> composite in <SupplyDetail> when sending a link to a webpage at which a digital
-	 * product is available for download and/or online access.
+	 * Use this value in the &lt;Website&gt; composite in &lt;SupplyDetail&gt; when sending a link to a webpage at which
+	 * a digital product is available for download and/or online access.
 	 */
 	Web_page_for_full_content("29"), //
 
@@ -181,22 +181,22 @@ public enum WebsiteRoles
 	Supplier_s_B2C_website("35"), //
 
 	/**
-	 * A distributor or supplier’s webpage describing a specified work.
+	 * A distributor or supplier&#8217;s webpage describing a specified work.
 	 */
 	Supplier_s_website_for_a_specified_work("36"), //
 
 	/**
-	 * A distributor or supplier’s webpage describing a specified work, and aimed at trade customers.
+	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at trade customers.
 	 */
 	Supplier_s_B2B_website_for_a_specified_work("37"), //
 
 	/**
-	 * A distributor or supplier’s webpage describing a specified work, and aimed at consumers.
+	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at consumers.
 	 */
 	Supplier_s_B2C_website_for_a_specified_work("38"), //
 
 	/**
-	 * A distributor or supplier’s webpage describing a group or series of works.
+	 * A distributor or supplier&#8217;s webpage describing a group or series of works.
 	 */
 	Supplier_s_website_for_a_group_or_series_of_works("39"), //
 
@@ -222,7 +222,7 @@ public enum WebsiteRoles
 
 	/**
 	 * For example, a Facebook, Google+ or Twitter page. Use only in the context of a specific content item (eg within
-	 * <ContentItem>).
+	 * &lt;ContentItem&gt;).
 	 */
 	Social_networking_URL_for_specific_article_chapter_or_content_item("44");
 

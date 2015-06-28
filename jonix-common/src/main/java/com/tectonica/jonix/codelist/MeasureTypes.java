@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList48</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 48</b>
  * <p>
- * Measure type code
+ * Description: Measure type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum MeasureTypes
 {
@@ -81,14 +81,14 @@ public enum MeasureTypes
 	Unfolded_unrolled_sheet_width("11"), //
 
 	/**
-	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 “height”
-	 * for the height or length of the tube.
+	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01
+	 * &#8220;height&#8221; for the height or length of the tube.
 	 */
 	Diameter_tube_or_cylinder("12"), //
 
 	/**
 	 * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet
-	 * product. Use 01 “height” for the height or length of the package.
+	 * product. Use 01 &#8220;height&#8221; for the height or length of the package.
 	 */
 	Rolled_sheet_package_side_measure("13");
 

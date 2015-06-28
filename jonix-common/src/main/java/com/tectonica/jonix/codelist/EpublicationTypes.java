@@ -27,18 +27,18 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList10</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 10</b>
  * <p>
- * Epublication type code
+ * Description: Epublication type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum EpublicationTypes
 {
 	/**
 	 * An epublication viewed as a unique package of content which may be converted into any of a number of different
-	 * types for delivery to the consumer. This code is used when an ONIX <Product> record describes the content package
-	 * and lists within the record the different forms in which it is available.
+	 * types for delivery to the consumer. This code is used when an ONIX &lt;Product&gt; record describes the content
+	 * package and lists within the record the different forms in which it is available.
 	 */
 	Epublication_content_package_("000"), //
 
@@ -61,9 +61,9 @@ public enum EpublicationTypes
 	PDF_Merchant("003"), //
 
 	/**
-	 * An epublication delivered in an enhanced PDF format, using Adobe’s proprietary EBX DRM, capable of being read in
-	 * the Adobe Ebook Reader software, on any platform which can support this software, which was formerly known as
-	 * Glassbook.
+	 * An epublication delivered in an enhanced PDF format, using Adobe&#8217;s proprietary EBX DRM, capable of being
+	 * read in the Adobe Ebook Reader software, on any platform which can support this software, which was formerly
+	 * known as Glassbook.
 	 */
 	Adobe_Ebook_Reader("004"), //
 
@@ -106,13 +106,14 @@ public enum EpublicationTypes
 
 	/**
 	 * An epublication delivered in a proprietary format capable of being read in reading software which is specific to
-	 * the Softbook hardware platform. Also capable of being read on the Softbook’s successor, the Gemstar REB 1200.
+	 * the Softbook hardware platform. Also capable of being read on the Softbook&#8217;s successor, the Gemstar REB
+	 * 1200.
 	 */
 	Softbook("011"), //
 
 	/**
 	 * An epublication delivered in a proprietary .RB format, capable of being read in reading software which is
-	 * specific to the RocketBook hardware platform. Also capable of being read on the RocketBook’s successor, the
+	 * specific to the RocketBook hardware platform. Also capable of being read on the RocketBook&#8217;s successor, the
 	 * Gemstar REB 1100.
 	 */
 	RocketBook("012"), //
@@ -132,8 +133,8 @@ public enum EpublicationTypes
 	Gemstar_REB_1200("014"), //
 
 	/**
-	 * An epublication delivered in Franklin’s proprietary HTML-based format, capable of being read in reading software
-	 * which is specific to the Franklin eBookman platform.
+	 * An epublication delivered in Franklin&#8217;s proprietary HTML-based format, capable of being read in reading
+	 * software which is specific to the Franklin eBookman platform.
 	 */
 	Franklin_eBookman("015"), //
 
@@ -176,15 +177,15 @@ public enum EpublicationTypes
 	/**
 	 * An epublication delivered in a proprietary format, capable of being read in the MobiPocket software on PalmOS,
 	 * WindowsCE /Pocket PC, Franklin eBookman, and EPOC32 handheld devices, available through the MobiPocket service.
-	 * Includes Amazon Kindle formats up to and including version 7 – but prefer code 031 for version 7, and always use
-	 * 031 for KF8.
+	 * Includes Amazon Kindle formats up to and including version 7 &#8211; but prefer code 031 for version 7, and
+	 * always use 031 for KF8.
 	 */
 	MobiPocket("022"), //
 
 	/**
 	 * An epublication delivered in the standard distribution format specified in the Open Ebook Publication Structure
 	 * (OEBPS) format and capable of being read in any OEBPS-compliant reading system. Includes EPUB format up to and
-	 * including version 2 – but prefer code 029 for EPUB 2, and always use 029 for EPUB 3.
+	 * including version 2 &#8211; but prefer code 029 for EPUB 2, and always use 029 for EPUB 3.
 	 */
 	Open_Ebook("023"), //
 
@@ -207,7 +208,7 @@ public enum EpublicationTypes
 	ExeBook("026"), //
 
 	/**
-	 * An epublication in a Sony proprietary format for use with the Sony Reader and LIBRIé reading devices.
+	 * An epublication in a Sony proprietary format for use with the Sony Reader and LIBRI&#233; reading devices.
 	 */
 	Sony_BBeB("027"), //
 
@@ -215,10 +216,10 @@ public enum EpublicationTypes
 
 	/**
 	 * An epublication delivered using the Open Publication Structure / OPS Container Format standard of the
-	 * International Digital Publishing Forum (IDPF). [This value was originally defined as ‘Adobe Digital Editions’,
-	 * which is not an epublication format but a reader which supports PDF or EPUB (IDPF) formats. Since PDF is already
-	 * covered by code 002, it was agreed, and announced to the ONIX listserv in September 2009, that code 029 should be
-	 * refined to represent EPUB format.].
+	 * International Digital Publishing Forum (IDPF). [This value was originally defined as &#8216;Adobe Digital
+	 * Editions&#8217;, which is not an epublication format but a reader which supports PDF or EPUB (IDPF) formats.
+	 * Since PDF is already covered by code 002, it was agreed, and announced to the ONIX listserv in September 2009,
+	 * that code 029 should be refined to represent EPUB format.].
 	 */
 	EPUB("029"), //
 
@@ -238,7 +239,7 @@ public enum EpublicationTypes
 
 	/**
 	 * An epublication in a proprietary format combining text and video content and available to be used online or as a
-	 * downloadable application for a mobile device – see www.vook.com.
+	 * downloadable application for a mobile device &#8211; see www.vook.com.
 	 */
 	Vook("033"), //
 
@@ -274,19 +275,19 @@ public enum EpublicationTypes
 
 	/**
 	 * Epublication packaged as an application for iOS (eg Apple iPhone, iPad etc) containing both executable code and
-	 * content. Content can be described with <ProductContentType>.
+	 * content. Content can be described with &lt;ProductContentType&gt;.
 	 */
 	Book_app_for_iOS("040"), //
 
 	/**
 	 * Epublication packaged as an application for Android (eg Android phone or tablet) containing both executable code
-	 * and content. Content can be described with <ProductContentType>.
+	 * and content. Content can be described with &lt;ProductContentType&gt;.
 	 */
 	Android_app_("041"), //
 
 	/**
 	 * Epublication packaged as an application. Technical requirements such as target operating system and/or device
-	 * should be provided in <EpubTypeNote>. Content can be described with <ProductContentType>.
+	 * should be provided in &lt;EpubTypeNote&gt;. Content can be described with &lt;ProductContentType&gt;.
 	 */
 	Other_app_("042"), //
 
@@ -296,7 +297,7 @@ public enum EpublicationTypes
 	XPS("043"), //
 
 	/**
-	 * Apple’s iBook format (a proprietary extension of EPUB), can only be read on Apple iOS devices.
+	 * Apple&#8217;s iBook format (a proprietary extension of EPUB), can only be read on Apple iOS devices.
 	 */
 	iBook("044"), //
 
@@ -318,9 +319,7 @@ public enum EpublicationTypes
 
 	/**
 	 * Proprietary format based on PDF used by Barnes and Noble for fixed-format e-books, readable on some NOOK devices
-	 * and Nook reader software.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * and Nook reader software. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Page_Perfect("048"), //
 

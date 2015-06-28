@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList121</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 121</b>
  * <p>
- * Text script code – ISO 15924
+ * Description: Text script code &#8211; ISO 15924
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TextScriptCodes
 {

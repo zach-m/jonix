@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList162</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 162</b>
  * <p>
- * Resource version feature type
+ * Description: Resource version feature type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ResourceVersionFeatureTypes
 {
@@ -62,8 +62,8 @@ public enum ResourceVersionFeatureTypes
 	Approximate_download_file_size_in_megabytes("05"), //
 
 	/**
-	 * MD5 hash value of the resource file. <ResourceVersionFeatureValue> should contain the 128-bit digest value (as 32
-	 * hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
+	 * MD5 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 128-bit digest value
+	 * (as 32 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
 	 * retrieved.
 	 */
 	MD5_hash_value("06"), //
@@ -74,11 +74,9 @@ public enum ResourceVersionFeatureTypes
 	Exact_download_file_size_in_bytes("07"), //
 
 	/**
-	 * SHA-256 hash value of the resource file. <ResourceVersionFeatureValue> should contain the 256-bit digest value
-	 * (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
-	 * retrieved.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * SHA-256 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 256-bit digest
+	 * value (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it
+	 * has been retrieved. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	SHA_256_hash_value("08");
 

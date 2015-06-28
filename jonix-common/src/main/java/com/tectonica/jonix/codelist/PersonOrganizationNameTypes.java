@@ -24,18 +24,18 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList18</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 18</b>
  * <p>
- * Person / organization name type
+ * Description: Person / organization name type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum PersonOrganizationNameTypes
 {
 	Unspecified("00"), //
 
 	/**
-	 * May be used to give a well-known pseudonym, where the primary name is a ‘real’ name.
+	 * May be used to give a well-known pseudonym, where the primary name is a &#8216;real&#8217; name.
 	 */
 	Pseudonym("01"), //
 
@@ -49,7 +49,7 @@ public enum PersonOrganizationNameTypes
 	_Real_name("04"), //
 
 	/**
-	 * Use only within <AlternativeName>, when the primary name type is unspecified.
+	 * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified.
 	 */
 	Transliterated_form_of_primary_name("05");
 

@@ -27,16 +27,16 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList25</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 25</b>
  * <p>
- * Illustration and other content type code
+ * Description: Illustration and other content type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum IllustrationAndOtherContentTypes
 {
 	/**
-	 * See description in the <IllustrationTypeDescription> element.
+	 * See description in the &lt;IllustrationTypeDescription&gt; element.
 	 */
 	Unspecified_see_description("00"), //
 
@@ -102,17 +102,17 @@ public enum IllustrationAndOtherContentTypes
 	Graphs("21"), //
 
 	/**
-	 * ‘Plates’ means illustrations that are on separate pages bound into the body of a book.
+	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book.
 	 */
 	Plates_unspecified("22"), //
 
 	/**
-	 * ‘Plates’ means illustrations that are on separate pages bound into the body of a book.
+	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book.
 	 */
 	Plates_black_and_white("23"), //
 
 	/**
-	 * ‘Plates’ means illustrations that are on separate pages bound into the body of a book.
+	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book.
 	 */
 	Plates_color("24"), //
 
@@ -131,9 +131,7 @@ public enum IllustrationAndOtherContentTypes
 	GPS_grids("28"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Glossary("29");
 

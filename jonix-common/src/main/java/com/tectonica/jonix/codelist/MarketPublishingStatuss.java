@@ -27,17 +27,17 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList68</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 68</b>
  * <p>
- * Market publishing status
+ * Description: Market publishing status
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum MarketPublishingStatuss
 {
 	/**
-	 * Status is not specified (as distinct from unknown): the default if the <MarketPublishingStatus> element is not
-	 * sent.
+	 * Status is not specified (as distinct from unknown): the default if the &lt;MarketPublishingStatus&gt; element is
+	 * not sent.
 	 */
 	Unspecified("00"), //
 
@@ -59,7 +59,7 @@ public enum MarketPublishingStatuss
 
 	/**
 	 * The product was published in this market, and is still active in the sense that the publisher will accept orders
-	 * for it, though it may or may not be immediately available, for which see <SupplyDetail>.
+	 * for it, though it may or may not be immediately available, for which see &lt;SupplyDetail&gt;.
 	 */
 	Active("04"), //
 
@@ -113,16 +113,16 @@ public enum MarketPublishingStatuss
 	Not_available_in_this_market("12"), //
 
 	/**
-	 * The product is published in this market and active but, as a publishing decision, it is not sold separately –
-	 * only in an assembly or as part of a package.
+	 * The product is published in this market and active but, as a publishing decision, it is not sold separately
+	 * &#8211; only in an assembly or as part of a package.
 	 */
 	Active_but_not_sold_separately("13"), //
 
 	/**
 	 * The product is published in this market and active, but is not available to all customer types, typically because
 	 * the market is split between exclusive sales agents for different market segments. In ONIX 2.1, should be
-	 * accompanied by a free-text statement in <MarketRestrictionDetail> describing the nature of the restriction. In
-	 * ONIX 3.0, the <SalesRestriction> composite in Group P.24 should be used.
+	 * accompanied by a free-text statement in &lt;MarketRestrictionDetail&gt; describing the nature of the restriction.
+	 * In ONIX 3.0, the &lt;SalesRestriction&gt; composite in Group P.24 should be used.
 	 */
 	Active_with_market_restrictions("14"), //
 
@@ -133,8 +133,8 @@ public enum MarketPublishingStatuss
 
 	/**
 	 * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be
-	 * accompanied by expected availability date coded ‘22’ within the <MarketPublishingDate> composite, except in
-	 * exceptional circumstances where no date is known.
+	 * accompanied by expected availability date coded &#8216;22&#8217; within the &lt;MarketPublishingDate&gt;
+	 * composite, except in exceptional circumstances where no date is known.
 	 */
 	Temporarily_withdrawn_from_sale("16");
 

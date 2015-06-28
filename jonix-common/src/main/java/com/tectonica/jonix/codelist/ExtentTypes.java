@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList23</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 23</b>
  * <p>
- * Extent type code
+ * Description: Extent type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ExtentTypes
 {
@@ -93,15 +93,15 @@ public enum ExtentTypes
 	Number_of_pages_in_print_counterpart("08"), //
 
 	/**
-	 * Total duration in time, expressed in the specified extent unit. This is the ‘running time’ equivalent of codes 05
-	 * or 11.
+	 * Total duration in time, expressed in the specified extent unit. This is the &#8216;running time&#8217; equivalent
+	 * of codes 05 or 11.
 	 */
 	Duration("09"), //
 
 	/**
-	 * An estimate of the number of ‘pages’ in a digital product delivered without fixed pagination, and with no print
-	 * counterpart, given as an indication of the size of the work. Equivalent to code 08, but for exclusively digital
-	 * products.
+	 * An estimate of the number of &#8216;pages&#8217; in a digital product delivered without fixed pagination, and
+	 * with no print counterpart, given as an indication of the size of the work. Equivalent to code 08, but for
+	 * exclusively digital products.
 	 */
 	Notional_number_of_pages_in_digital_product("10"), //
 
@@ -112,22 +112,22 @@ public enum ExtentTypes
 	Content_page_count("11"), //
 
 	/**
-	 * The total number of unnumbered pages with content inserted within the main content of a book – for example
+	 * The total number of unnumbered pages with content inserted within the main content of a book &#8211; for example
 	 * inserts/plate sections that are not numbered.
 	 */
 	Total_unnumbered_insert_page_count("12"), //
 
 	/**
-	 * Duration in time, expressed in the specified extent units, of introductory matter. This is the ‘running time’
-	 * equivalent of code 03, and comprises any significant amount of running time represented by announcements, titles,
-	 * introduction or other material prefacing the main content.
+	 * Duration in time, expressed in the specified extent units, of introductory matter. This is the &#8216;running
+	 * time&#8217; equivalent of code 03, and comprises any significant amount of running time represented by
+	 * announcements, titles, introduction or other material prefacing the main content.
 	 */
 	Duration_of_introductory_matter("13"), //
 
 	/**
-	 * Duration in time, expressed in the specified extent units, of the main content. This is the ‘running time’
-	 * equivalent of code 00, and excludes time represented by announcements, titles, introduction or other prefatory
-	 * material or ‘back matter’.
+	 * Duration in time, expressed in the specified extent units, of the main content. This is the &#8216;running
+	 * time&#8217; equivalent of code 00, and excludes time represented by announcements, titles, introduction or other
+	 * prefatory material or &#8216;back matter&#8217;.
 	 */
 	Duration_of_main_content("14"), //
 

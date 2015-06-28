@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList55</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 55</b>
  * <p>
- * Date format
+ * Description: Date format
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum DateFormats
 {
@@ -56,7 +56,7 @@ public enum DateFormats
 	YYYYQ("03"), //
 
 	/**
-	 * Year and season (S = 1, 2, 3, 4, with 1 = “Spring”).
+	 * Year and season (S = 1, 2, 3, 4, with 1 = &#8220;Spring&#8221;).
 	 */
 	YYYYS("04"), //
 
@@ -102,17 +102,17 @@ public enum DateFormats
 
 	/**
 	 * Exact time. Use ONLY when exact times with hour/minute precision are relevant. By default, time is local.
-	 * Alternatively, the time may be suffixed with an optional ‘Z’ for UTC times, or with ‘+’ or ‘-’ and an hhmm
-	 * timezone offset from UTC. Times without a timezone are ‘rolling’ local times, times qualified with a timezone
-	 * (using Z, + or -) specify a particular instant in time.
+	 * Alternatively, the time may be suffixed with an optional &#8216;Z&#8217; for UTC times, or with &#8216;+&#8217;
+	 * or &#8216;-&#8217; and an hhmm timezone offset from UTC. Times without a timezone are &#8216;rolling&#8217; local
+	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time.
 	 */
 	YYYYMMDDThhmm("13"), //
 
 	/**
 	 * Exact time. Use ONLY when exact times with second precision are relevant. By default, time is local.
-	 * Alternatively, the time may be suffixed with an optional ‘Z’ for UTC times, or with ‘+’ or ‘-’ and an hhmm
-	 * timezone offset from UTC. Times without a timezone are ‘rolling’ local times, times qualified with a timezone
-	 * (using Z, + or -) specify a particular instant in time.
+	 * Alternatively, the time may be suffixed with an optional &#8216;Z&#8217; for UTC times, or with &#8216;+&#8217;
+	 * or &#8216;-&#8217; and an hhmm timezone offset from UTC. Times without a timezone are &#8216;rolling&#8217; local
+	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time.
 	 */
 	YYYYMMDDThhmmss("14"), //
 

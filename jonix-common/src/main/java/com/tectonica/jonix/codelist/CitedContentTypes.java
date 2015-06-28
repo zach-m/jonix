@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList156</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 156</b>
  * <p>
- * Cited content type
+ * Description: Cited content type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum CitedContentTypes
 {
@@ -45,7 +45,7 @@ public enum CitedContentTypes
 	Media_mention("03"), //
 
 	/**
-	 * (North America) Inclusion in a program such as ‘Chicago Reads’, ‘Seattle Reads’.
+	 * (North America) Inclusion in a program such as &#8216;Chicago Reads&#8217;, &#8216;Seattle Reads&#8217;.
 	 */
 	_One_locality_one_book_program("04");
 

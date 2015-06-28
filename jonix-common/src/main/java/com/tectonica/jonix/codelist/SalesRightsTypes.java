@@ -27,16 +27,16 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList46</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 46</b>
  * <p>
- * Sales rights type code
+ * Description: Sales rights type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SalesRightsTypes
 {
 	/**
-	 * May only be used with the ONIX 3 <ROWSalesRightsType> element.
+	 * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element.
 	 */
 	Sales_rights_unknown_or_unstated_for_any_reason("00"), //
 

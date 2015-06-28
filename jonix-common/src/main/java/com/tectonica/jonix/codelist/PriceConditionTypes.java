@@ -27,16 +27,16 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList167</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 167</b>
  * <p>
- * Price condition type
+ * Description: Price condition type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum PriceConditionTypes
 {
 	/**
-	 * Allows positive indication that there are no conditions (the default if <PriceCondition> is omitted).
+	 * Allows positive indication that there are no conditions (the default if &lt;PriceCondition&gt; is omitted).
 	 */
 	No_conditions("00"), //
 
@@ -71,14 +71,14 @@ public enum PriceConditionTypes
 	Rental_duration("10"), //
 
 	/**
-	 * Purchase at this price requires prior rental of the product. <PriceConditionQuantity> gives minimum prior rental
-	 * period, and <ProductIdentifier> may be used if rental uses a different product identifier.
+	 * Purchase at this price requires prior rental of the product. &lt;PriceConditionQuantity&gt; gives minimum prior
+	 * rental period, and &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier.
 	 */
 	Rental_to_purchase("11"), //
 
 	/**
-	 * Upgrade to longer rental duration. <PriceConditionQuantity> gives minimum prior rental duration. Separate price
-	 * condition with rental duration (code 10) specifies the new combined rental duration.
+	 * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration. Separate
+	 * price condition with rental duration (code 10) specifies the new combined rental duration.
 	 */
 	Rental_extension("12");
 

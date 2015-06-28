@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList155</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 155</b>
  * <p>
- * Content date role
+ * Description: Content date role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ContentDateRoles
 {
@@ -76,7 +76,7 @@ public enum ContentDateRoles
 
 	/**
 	 * Date until which a supporting resource is available for download. Note that this date does not imply it must be
-	 * removed from display to the intended audience on this date – for this, use Until date (code 15).
+	 * removed from display to the intended audience on this date &#8211; for this, use Until date (code 15).
 	 */
 	Available_until("28");
 

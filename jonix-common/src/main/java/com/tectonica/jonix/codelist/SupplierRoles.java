@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList93</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 93</b>
  * <p>
- * Supplier role
+ * Description: Supplier role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SupplierRoles
 {
@@ -55,8 +55,8 @@ public enum SupplierRoles
 	Wholesaler("04"), //
 
 	/**
-	 * DEPRECATED – use <MarketRepresentation> (ONIX 2.1) or <MarketPublishingDetail> (ONIX 3.0) to specify a sales
-	 * agent.
+	 * DEPRECATED &#8211; use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to
+	 * specify a sales agent.
 	 */
 	Sales_agent("05"), //
 

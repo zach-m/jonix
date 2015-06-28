@@ -24,16 +24,16 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList197</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 197</b>
  * <p>
- * Collection sequence type
+ * Description: Collection sequence type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum CollectionSequenceTypes
 {
 	/**
-	 * A short explanatory label for the sequence should be provided in <CollectionSequenceTypeName>.
+	 * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;.
 	 */
 	Proprietary("01"), //
 

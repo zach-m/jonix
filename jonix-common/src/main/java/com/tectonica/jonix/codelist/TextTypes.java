@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList153</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 153</b>
  * <p>
- * Text type
+ * Description: Text type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TextTypes
 {
@@ -98,7 +98,7 @@ public enum TextTypes
 	Feature("11"), //
 
 	/**
-	 * A note referring to all contributors to a product – NOT linked to a single contributor.
+	 * A note referring to all contributors to a product &#8211; NOT linked to a single contributor.
 	 */
 	Biographical_note("12"), //
 
@@ -137,18 +137,16 @@ public enum TextTypes
 	Version_history("19"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg “Open access – no commercial use”),
-	 * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see
-	 * <EpubLicense> or code 99 in List 158).
+	 * Short summary statement of open access status and any related conditions (eg &#8220;Open access &#8211; no
+	 * commercial use&#8221;), primarily for marketing purposes. Should always be accompanied by a link to the complete
+	 * license (see &lt;EpubLicense&gt; or code 99 in List 158).
 	 */
 	Open_access_statement("20"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg “Digital exclusive”). If a
-	 * non-digital version is planned, <ContentDate> can be used to specify the date when exclusivity will end (use
-	 * content date role code 15).
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Short summary statement that the product is available only in digital formats (eg &#8220;Digital
+	 * exclusive&#8221;). If a non-digital version is planned, &lt;ContentDate&gt; can be used to specify the date when
+	 * exclusivity will end (use content date role code 15). &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Digital_exclusivity_statement("21");
 

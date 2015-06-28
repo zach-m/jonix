@@ -27,40 +27,40 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList64</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 64</b>
  * <p>
- * Publishing status
+ * Description: Publishing status
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum PublishingStatuss
 {
 	/**
-	 * Status is not specified (as distinct from unknown): the default if the <PublishingStatus> element is not sent.
-	 * Also to be used in applications where the element is considered mandatory, but the sender of the ONIX message
-	 * chooses not to pass on status information.
+	 * Status is not specified (as distinct from unknown): the default if the &lt;PublishingStatus&gt; element is not
+	 * sent. Also to be used in applications where the element is considered mandatory, but the sender of the ONIX
+	 * message chooses not to pass on status information.
 	 */
 	Unspecified("00"), //
 
 	/**
-	 * The product was announced, and subsequently abandoned; the <PublicationDate> element must not be sent.
+	 * The product was announced, and subsequently abandoned; the &lt;PublicationDate&gt; element must not be sent.
 	 */
 	Cancelled("01"), //
 
 	/**
-	 * Not yet published, must be accompanied by expected date in <PublicationDate>.
+	 * Not yet published, must be accompanied by expected date in &lt;PublicationDate&gt;.
 	 */
 	Forthcoming("02"), //
 
 	/**
-	 * The product was announced, and subsequently postponed with no expected publication date; the <Publication Date>
-	 * element (ONIX 2.1), or its equivalent as a date composite in ONIX 3.0, must not be sent.
+	 * The product was announced, and subsequently postponed with no expected publication date; the &lt;Publication
+	 * Date&gt; element (ONIX 2.1), or its equivalent as a date composite in ONIX 3.0, must not be sent.
 	 */
 	Postponed_indefinitely("03"), //
 
 	/**
 	 * The product was published, and is still active in the sense that the publisher will accept orders for it, though
-	 * it may or may not be immediately available, for which see <SupplyDetail>.
+	 * it may or may not be immediately available, for which see &lt;SupplyDetail&gt;.
 	 */
 	Active("04"), //
 
@@ -73,8 +73,8 @@ public enum PublishingStatuss
 	/**
 	 * The product was active, but is now inactive in the sense that (a) the publisher cannot fulfill orders for it,
 	 * though stock may still be available elsewhere in the supply chain, and (b) there are no current plans to bring it
-	 * back into stock. Use this code for ‘reprint under consideration’. Code 06 does not specifically imply that
-	 * returns are or are not still accepted.
+	 * back into stock. Use this code for &#8216;reprint under consideration&#8217;. Code 06 does not specifically imply
+	 * that returns are or are not still accepted.
 	 */
 	Out_of_stock_indefinitely("06"), //
 
@@ -100,15 +100,15 @@ public enum PublishingStatuss
 
 	/**
 	 * The product is no longer available from the current publisher, under the current ISBN, at the current price. It
-	 * may be available to be traded through another channel. A Publishing Status code 10 ‘Remaindered’ usually but not
-	 * always means that the publisher has decided to sell off excess inventory of the book. Copies of books that are
-	 * remaindered are often made available in the supply chain at a reduced price. However, such remainders are often
-	 * sold under a product identifier that differs from the ISBN on the full-priced copy of the book. A Publishing
-	 * Status code 10 ‘Remaindered’ on a given product record may or may not be followed by a Publishing Status code 06
-	 * ‘Out of Stock Indefinitely’ or 07 ‘Out of Print’: the practise varies from one publisher to another. Some
-	 * publishers may revert to a Publishing Status code 04 “Active” if a desired inventory level on the product in
-	 * question has subsequently been reached. No change in rights should ever be inferred from this (or any other)
-	 * Publishing Status code value.
+	 * may be available to be traded through another channel. A Publishing Status code 10 &#8216;Remaindered&#8217;
+	 * usually but not always means that the publisher has decided to sell off excess inventory of the book. Copies of
+	 * books that are remaindered are often made available in the supply chain at a reduced price. However, such
+	 * remainders are often sold under a product identifier that differs from the ISBN on the full-priced copy of the
+	 * book. A Publishing Status code 10 &#8216;Remaindered&#8217; on a given product record may or may not be followed
+	 * by a Publishing Status code 06 &#8216;Out of Stock Indefinitely&#8217; or 07 &#8216;Out of Print&#8217;: the
+	 * practise varies from one publisher to another. Some publishers may revert to a Publishing Status code 04
+	 * &#8220;Active&#8221; if a desired inventory level on the product in question has subsequently been reached. No
+	 * change in rights should ever be inferred from this (or any other) Publishing Status code value.
 	 */
 	Remaindered("10"), //
 
@@ -129,14 +129,15 @@ public enum PublishingStatuss
 
 	/**
 	 * Withdrawn temporarily, typically for quality or technical reasons. In ONIX 3.0, must be accompanied by expected
-	 * availability date coded ‘22’ within the <PublishingDate> composite, except in exceptional circumstances where no
-	 * date is known.
+	 * availability date coded &#8216;22&#8217; within the &lt;PublishingDate&gt; composite, except in exceptional
+	 * circumstances where no date is known.
 	 */
 	Temporarily_withdrawn_from_sale("16"), //
 
 	/**
-	 * Withdrawn permanently from the market. Effectively synonymous with ‘Out of print’ (code 07), but specific to
-	 * downloadable and online digital products (where no ‘stock’ would remain in the supply chain).
+	 * Withdrawn permanently from the market. Effectively synonymous with &#8216;Out of print&#8217; (code 07), but
+	 * specific to downloadable and online digital products (where no &#8216;stock&#8217; would remain in the supply
+	 * chain).
 	 */
 	Permanently_withdrawn_from_sale("17");
 

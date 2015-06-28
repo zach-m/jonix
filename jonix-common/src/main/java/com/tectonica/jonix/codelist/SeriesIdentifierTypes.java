@@ -27,16 +27,16 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList13</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 13</b>
  * <p>
- * Series identifier type code
+ * Description: Series identifier type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SeriesIdentifierTypes
 {
 	/**
-	 * For example, publisher’s own series ID.
+	 * For example, publisher&#8217;s own series ID.
 	 */
 	Proprietary("01"), //
 
@@ -76,7 +76,7 @@ public enum SeriesIdentifierTypes
 	URN("22"), //
 
 	/**
-	 * French National Bibliography series ID, maintained by the Bibliothèque Nationale de France.
+	 * French National Bibliography series ID, maintained by the Biblioth&#232;que Nationale de France.
 	 */
 	Identifiant_BNF_des_publications_en_s_rie("29");
 

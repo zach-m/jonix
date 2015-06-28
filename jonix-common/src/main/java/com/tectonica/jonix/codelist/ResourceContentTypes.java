@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList158</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 158</b>
  * <p>
- * Resource content type
+ * Description: Resource content type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ResourceContentTypes
 {
@@ -87,15 +87,15 @@ public enum ResourceContentTypes
 	Sample_content("15"), //
 
 	/**
-	 * A ‘look inside’ feature presented as a small embeddable application.
+	 * A &#8216;look inside&#8217; feature presented as a small embeddable application.
 	 */
 	Widget("16"), //
 
 	/**
 	 * Review text held in a separate downloadable file, not in the ONIX record. Equivalent of code 06 in List 153. Use
-	 * the <TextContent> composite for review quotes carried in the ONIX record. Use the <CitedContent> composite for a
-	 * third-party review which is referenced from the ONIX record. Use <SupportingResource> for review text offered as
-	 * a separate file resource for reproduction as part of promotional material for the product.
+	 * the &lt;TextContent&gt; composite for review quotes carried in the ONIX record. Use the &lt;CitedContent&gt;
+	 * composite for a third-party review which is referenced from the ONIX record. Use &lt;SupportingResource&gt; for
+	 * review text offered as a separate file resource for reproduction as part of promotional material for the product.
 	 */
 	Review("17"), //
 
@@ -111,7 +111,7 @@ public enum ResourceContentTypes
 	Feature_article("21"), //
 
 	/**
-	 * Fictional character ‘interview’.
+	 * Fictional character &#8216;interview&#8217;.
 	 */
 	Character_interview_("22"), //
 
@@ -121,13 +121,13 @@ public enum ResourceContentTypes
 
 	/**
 	 * A table of contents held in a separate downloadable file, not in the ONIX record. Equivalent of code 04 in List
-	 * 153. Use the <TextContent> composite for a table of contents carried in the ONIX record. Use <Supporting
-	 * Resource> for text offered as a separate file resource.
+	 * 153. Use the &lt;TextContent&gt; composite for a table of contents carried in the ONIX record. Use &lt;Supporting
+	 * Resource&gt; for text offered as a separate file resource.
 	 */
 	Table_of_contents("25"), //
 
 	/**
-	 * A promotional video, similar to a movie trailer (sometimes referred to as a ‘book trailer’).
+	 * A promotional video, similar to a movie trailer (sometimes referred to as a &#8216;book trailer&#8217;).
 	 */
 	Trailer("26"), //
 
@@ -145,7 +145,7 @@ public enum ResourceContentTypes
 	Full_content("28"), //
 
 	/**
-	 * Includes cover, back cover, spine and – where appropriate – any flaps.
+	 * Includes cover, back cover, spine and &#8211; where appropriate &#8211; any flaps.
 	 */
 	Full_cover("29"), //
 
@@ -153,21 +153,21 @@ public enum ResourceContentTypes
 
 	/**
 	 * Descriptive text in a separate downloadable file, not in the ONIX record. Equivalent of code 03 in List 153. Use
-	 * the <TextContent> composite for descriptions carried in the ONIX record. Use <Supporting Resource> for text
-	 * offered as a separate file resource for reproduction as part of promotional material for the product.
+	 * the &lt;TextContent&gt; composite for descriptions carried in the ONIX record. Use &lt;Supporting Resource&gt;
+	 * for text offered as a separate file resource for reproduction as part of promotional material for the product.
 	 */
 	Description("31"), //
 
 	/**
 	 * Index text held in a separate downloadable file, not in the ONIX record. Equivalent of code 15 in List 153. Use
-	 * the <TextContent> composite for index text carried in the ONIX record. Use <Supporting Resource> for an index
-	 * offered as a separate file resource.
+	 * the &lt;TextContent&gt; composite for index text carried in the ONIX record. Use &lt;Supporting Resource&gt; for
+	 * an index offered as a separate file resource.
 	 */
 	Index("32"), //
 
 	/**
-	 * Link to a license covering permitted usage of the product content. Deprecated in favor of <EpubLicense>. This was
-	 * a temporary workaround in ONIX 3.0, and use of <EpubLicense> is strongly preferred.
+	 * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.
+	 * This was a temporary workaround in ONIX 3.0, and use of &lt;EpubLicense&gt; is strongly preferred.
 	 */
 	License("99");
 

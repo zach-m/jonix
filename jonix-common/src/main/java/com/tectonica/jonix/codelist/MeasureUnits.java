@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList50</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 50</b>
  * <p>
- * Measure unit code
+ * Description: Measure unit code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum MeasureUnits
 {

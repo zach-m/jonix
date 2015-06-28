@@ -27,16 +27,16 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList30</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 30</b>
  * <p>
- * Audience range qualifier
+ * Description: Audience range qualifier
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum AudienceRangeQualifiers
 {
 	/**
-	 * Values for <AudienceRangeValue> are specified in List 77.
+	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77.
 	 */
 	US_school_grade_range("11"), //
 
@@ -46,27 +46,27 @@ public enum AudienceRangeQualifiers
 	UK_school_grade("12"), //
 
 	/**
-	 * Values in <AudienceRangeValue> must be integers.
+	 * Values in &lt;AudienceRangeValue&gt; must be integers.
 	 */
 	Reading_speed_words_per_minute("15"), //
 
 	/**
-	 * For use up to 36 months only: values in <AudienceRangeValue> must be integers.
+	 * For use up to 36 months only: values in &lt;AudienceRangeValue&gt; must be integers.
 	 */
 	Interest_age_months("16"), //
 
 	/**
-	 * Values in <AudienceRangeValue> must be integers.
+	 * Values in &lt;AudienceRangeValue&gt; must be integers.
 	 */
 	Interest_age_years("17"), //
 
 	/**
-	 * Values in <AudienceRangeValue> must be integers.
+	 * Values in &lt;AudienceRangeValue&gt; must be integers.
 	 */
 	Reading_age_years("18"), //
 
 	/**
-	 * Spain: combined grade and region code, maintained by the Ministerio de Educación.
+	 * Spain: combined grade and region code, maintained by the Ministerio de Educaci&#243;n.
 	 */
 	Spanish_school_grade("19"), //
 
@@ -83,22 +83,22 @@ public enum AudienceRangeQualifiers
 	Italian_school_grade("22"), //
 
 	/**
-	 * DEPRECATED – assigned in error: see List 29.
+	 * DEPRECATED &#8211; assigned in error: see List 29.
 	 */
 	Schulform("23"), //
 
 	/**
-	 * DEPRECATED – assigned in error: see List 29.
+	 * DEPRECATED &#8211; assigned in error: see List 29.
 	 */
 	Bundesland("24"), //
 
 	/**
-	 * DEPRECATED – assigned in error: see List 29.
+	 * DEPRECATED &#8211; assigned in error: see List 29.
 	 */
 	Ausbildungsberuf("25"), //
 
 	/**
-	 * Values for <AudienceRangeValue> are specified in List 77.
+	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77.
 	 */
 	Canadian_school_grade_range("26"), //
 
@@ -110,13 +110,13 @@ public enum AudienceRangeQualifiers
 	Finnish_Upper_secondary_school_course("28"), //
 
 	/**
-	 * Values are P, K, 1–17 (including college-level audiences).
+	 * Values are P, K, 1&#8211;17 (including college-level audiences).
 	 */
 	Chinese_School_Grade_code("29"), //
 
 	/**
 	 * French educational level classification, used for example on WizWiz.fr. See
-	 * http://www.kiosque-edu.com/html/onix/Nomenclature_niveaux.csv’.
+	 * http://www.kiosque-edu.com/html/onix/Nomenclature_niveaux.csv&#8217;.
 	 */
 	Nomenclature_niveaux("30");
 

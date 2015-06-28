@@ -24,18 +24,18 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList146</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 146</b>
  * <p>
- * Usage status
+ * Description: Usage status
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum UsageStatuss
 {
 	Permitted_unlimited("01"), //
 
 	/**
-	 * Limit should be specified in <EpubUsageLimit>.
+	 * Limit should be specified in &lt;EpubUsageLimit&gt;.
 	 */
 	Permitted_subject_to_limit("02"), //
 

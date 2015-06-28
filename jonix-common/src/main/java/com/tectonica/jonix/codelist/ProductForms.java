@@ -27,18 +27,18 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList7</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 7</b>
  * <p>
- * Product form code
+ * Description: Product form code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductForms
 {
 	Undefined("00"), //
 
 	/**
-	 * Audio recording – detail unspecified.
+	 * Audio recording &#8211; detail unspecified.
 	 */
 	Audio("AA"), //
 
@@ -48,8 +48,8 @@ public enum ProductForms
 	Audio_cassette("AB"), //
 
 	/**
-	 * Audio compact disc, in any recording format: use for ‘red book’ (conventional audio CD) and SACD, and use coding
-	 * in Product Form Detail to specify the format, if required.
+	 * Audio compact disc, in any recording format: use for &#8216;red book&#8217; (conventional audio CD) and SACD, and
+	 * use coding in Product Form Detail to specify the format, if required.
 	 */
 	CD_Audio("AC"), //
 
@@ -74,8 +74,8 @@ public enum ProductForms
 	MiniDisc("AG"), //
 
 	/**
-	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for ‘blue book’ and
-	 * ‘yellow/red book’ two-session discs.
+	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for &#8216;blue book&#8217;
+	 * and &#8216;yellow/red book&#8217; two-session discs.
 	 */
 	CD_Extra("AH"), //
 
@@ -103,7 +103,7 @@ public enum ProductForms
 	Other_audio_format("AZ"), //
 
 	/**
-	 * Book – detail unspecified.
+	 * Book &#8211; detail unspecified.
 	 */
 	Book("BA"), //
 
@@ -128,31 +128,31 @@ public enum ProductForms
 	Spiral_bound("BE"), //
 
 	/**
-	 * Pamphlet or brochure, stapled; German ‘geheftet’.
+	 * Pamphlet or brochure, stapled; German &#8216;geheftet&#8217;.
 	 */
 	Pamphlet("BF"), //
 
 	Leather_fine_binding("BG"), //
 
 	/**
-	 * Child’s book with all pages printed on board.
+	 * Child&#8217;s book with all pages printed on board.
 	 */
 	Board_book("BH"), //
 
 	/**
-	 * Child’s book with all pages printed on textile.
+	 * Child&#8217;s book with all pages printed on textile.
 	 */
 	Rag_book("BI"), //
 
 	/**
-	 * Child’s book printed on waterproof material.
+	 * Child&#8217;s book printed on waterproof material.
 	 */
 	Bath_book("BJ"), //
 
 	/**
 	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code
-	 * – a ‘conventional’ format code is always to be preferred; one or more Product Form Detail codes, eg from the B2nn
-	 * group, should be used whenever possible to provide additional description.
+	 * &#8211; a &#8216;conventional&#8217; format code is always to be preferred; one or more Product Form Detail
+	 * codes, eg from the B2nn group, should be used whenever possible to provide additional description.
 	 */
 	Novelty_book("BK"), //
 
@@ -173,12 +173,13 @@ public enum ProductForms
 	Part_work_fasc_culo("BN"), //
 
 	/**
-	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German ‘Leporello’.
+	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German
+	 * &#8216;Leporello&#8217;.
 	 */
 	Fold_out_book_or_chart("BO"), //
 
 	/**
-	 * A children’s book whose cover and pages are made of foam.
+	 * A children&#8217;s book whose cover and pages are made of foam.
 	 */
 	Foam_book("BP"), //
 
@@ -188,7 +189,7 @@ public enum ProductForms
 	Other_book_format("BZ"), //
 
 	/**
-	 * Sheet map – detail unspecified.
+	 * Sheet map &#8211; detail unspecified.
 	 */
 	Sheet_map("CA"), //
 
@@ -197,7 +198,7 @@ public enum ProductForms
 	Sheet_map_flat("CC"), //
 
 	/**
-	 * See Code List 80 for ‘rolled in tube’.
+	 * See Code List 80 for &#8216;rolled in tube&#8217;.
 	 */
 	Sheet_map_rolled("CD"), //
 
@@ -219,19 +220,19 @@ public enum ProductForms
 	CD_ROM("DB"), //
 
 	/**
-	 * CD interactive, use for ‘green book’ discs.
+	 * CD interactive, use for &#8216;green book&#8217; discs.
 	 */
 	CD_I("DC"), //
 
 	/**
-	 * DEPRECATED – use VI for DVD video, AI for DVD audio, DI for DVD-ROM.
+	 * DEPRECATED &#8211; use VI for DVD video, AI for DVD audio, DI for DVD-ROM.
 	 */
 	DVD("DD"), //
 
 	Game_cartridge("DE"), //
 
 	/**
-	 * AKA ‘floppy disc’.
+	 * AKA &#8216;floppy disc&#8217;.
 	 */
 	Diskette("DF"), //
 
@@ -262,8 +263,8 @@ public enum ProductForms
 	Double_sided_CD_DVD("DN"), //
 
 	/**
-	 * Digital product license delivered through the retail supply chain as a physical “key”, typically a card or
-	 * booklet containing a code enabling the purchaser to download or activate the associated product.
+	 * Digital product license delivered through the retail supply chain as a physical &#8220;key&#8221;, typically a
+	 * card or booklet containing a code enabling the purchaser to download or activate the associated product.
 	 */
 	Digital_product_license_key("DO"), //
 
@@ -273,12 +274,12 @@ public enum ProductForms
 	Other_digital("DZ"), //
 
 	/**
-	 * Film or transparency – detail unspecified.
+	 * Film or transparency &#8211; detail unspecified.
 	 */
 	Film_or_transparency("FA"), //
 
 	/**
-	 * Continuous film or filmstrip: DEPRECATED – use FE or FF.
+	 * Continuous film or filmstrip: DEPRECATED &#8211; use FE or FF.
 	 */
 	Film("FB"), //
 
@@ -305,7 +306,7 @@ public enum ProductForms
 	Other_film_or_transparency_format("FZ"), //
 
 	/**
-	 * Microform – detail unspecified.
+	 * Microform &#8211; detail unspecified.
 	 */
 	Microform("MA"), //
 
@@ -322,7 +323,7 @@ public enum ProductForms
 	Other_microform("MZ"), //
 
 	/**
-	 * Miscellaneous printed material – detail unspecified.
+	 * Miscellaneous printed material &#8211; detail unspecified.
 	 */
 	Miscellaneous_print("PA"), //
 
@@ -349,8 +350,8 @@ public enum ProductForms
 	Diary("PF"), //
 
 	/**
-	 * Narrow strip-shaped printed sheet used mostly for education or children’s products (eg depicting alphabet, number
-	 * line, procession of illustrated characters etc). Usually intended for horizontal display.
+	 * Narrow strip-shaped printed sheet used mostly for education or children&#8217;s products (eg depicting alphabet,
+	 * number line, procession of illustrated characters etc). Usually intended for horizontal display.
 	 */
 	Frieze("PG"), //
 
@@ -364,18 +365,20 @@ public enum ProductForms
 	Postcard_book_or_pack("PJ"), //
 
 	/**
-	 * Poster for retail sale – see also XF.
+	 * Poster for retail sale &#8211; see also XF.
 	 */
 	Poster("PK"), //
 
 	/**
-	 * Record book (eg ‘birthday book’, ‘baby book’): may use product form detail codes P201 to P204 to specify binding.
+	 * Record book (eg &#8216;birthday book&#8217;, &#8216;baby book&#8217;): may use product form detail codes P201 to
+	 * P204 to specify binding.
 	 */
 	Record_book("PL"), //
 
 	/**
-	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat ‘wallet’ as
-	 * packaging (List 80), but if this is not possible the product as a whole may be coded as a ‘wallet’.
+	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat
+	 * &#8216;wallet&#8217; as packaging (List 80), but if this is not possible the product as a whole may be coded as a
+	 * &#8216;wallet&#8217;.
 	 */
 	Wallet_or_folder("PM"), //
 
@@ -391,8 +394,8 @@ public enum ProductForms
 	Plate_l_mina("PQ"), //
 
 	/**
-	 * A book with all pages blank for the buyer’s own use: may use product form detail codes P201 to P204 to specify
-	 * binding.
+	 * A book with all pages blank for the buyer&#8217;s own use: may use product form detail codes P201 to P204 to
+	 * specify binding.
 	 */
 	Notebook_blank_book("PR"), //
 
@@ -409,27 +412,27 @@ public enum ProductForms
 	Other_printed_item("PZ"), //
 
 	/**
-	 * Video – detail unspecified.
+	 * Video &#8211; detail unspecified.
 	 */
 	Video("VA"), //
 
 	/**
-	 * DEPRECATED – use new VJ.
+	 * DEPRECATED &#8211; use new VJ.
 	 */
 	Video_VHS_PAL("VB"), //
 
 	/**
-	 * DEPRECATED – use new VJ.
+	 * DEPRECATED &#8211; use new VJ.
 	 */
 	Video_VHS_NTSC("VC"), //
 
 	/**
-	 * DEPRECATED – use new VK.
+	 * DEPRECATED &#8211; use new VK.
 	 */
 	Video_Betamax_PAL("VD"), //
 
 	/**
-	 * DEPRECATED – use new VK.
+	 * DEPRECATED &#8211; use new VK.
 	 */
 	Video_Betamax_NTSC("VE"), //
 
@@ -439,12 +442,12 @@ public enum ProductForms
 	Videodisc("VF"), //
 
 	/**
-	 * DEPRECATED – use new VJ.
+	 * DEPRECATED &#8211; use new VJ.
 	 */
 	Video_VHS_SECAM("VG"), //
 
 	/**
-	 * DEPRECATED – use new VK.
+	 * DEPRECATED &#8211; use new VK.
 	 */
 	Video_Betamax_SECAM("VH"), //
 
@@ -503,10 +506,10 @@ public enum ProductForms
 	 * A product containing multiple copies of one or more items packaged together for retail sale, consisting of either
 	 * (a) several copies of a single item (eg 6 copies of a graded reader), or (b) several copies of each of several
 	 * items (eg 3 copies each of 3 different graded readers), or (c) several copies of one or more single items plus a
-	 * single copy of one or more related items (eg 30 copies of a pupil’s textbook plus 1 of teacher’s text). NOT TO BE
-	 * CONFUSED WITH: multi-volume sets, or sets containing a single copy of a number of different items (boxed,
-	 * slip-cased or otherwise); items with several components of different physical forms (see WW); or packs intended
-	 * for trade distribution only, where the contents are retailed separately (see XC, XE, XL).
+	 * single copy of one or more related items (eg 30 copies of a pupil&#8217;s textbook plus 1 of teacher&#8217;s
+	 * text). NOT TO BE CONFUSED WITH: multi-volume sets, or sets containing a single copy of a number of different
+	 * items (boxed, slip-cased or otherwise); items with several components of different physical forms (see WW); or
+	 * packs intended for trade distribution only, where the contents are retailed separately (see XC, XE, XL).
 	 */
 	Multiple_copy_pack("WX"), //
 
@@ -530,7 +533,7 @@ public enum ProductForms
 	Counterpack_filled("XE"), //
 
 	/**
-	 * Promotional poster for display, not for sale – see also PK.
+	 * Promotional poster for display, not for sale &#8211; see also PK.
 	 */
 	Poster_promotional("XF"), //
 
@@ -552,15 +555,15 @@ public enum ProductForms
 
 	/**
 	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
-	 * sale individually – see also WX. For products or product bundles supplied shrink-wrapped for retail sale, use the
-	 * Product Form code of the contents plus code 21 from List 80.
+	 * sale individually &#8211; see also WX. For products or product bundles supplied shrink-wrapped for retail sale,
+	 * use the Product Form code of the contents plus code 21 from List 80.
 	 */
 	Shrink_wrapped_pack("XL"), //
 
 	/**
 	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
-	 * sale individually – see also WX. For products or product bundles supplied boxed for retail sale, use the Product
-	 * Form code of the contents plus code 09 from List 80.
+	 * sale individually &#8211; see also WX. For products or product bundles supplied boxed for retail sale, use the
+	 * Product Form code of the contents plus code 09 from List 80.
 	 */
 	Boxed_pack("XM"), //
 
@@ -570,7 +573,7 @@ public enum ProductForms
 	Other_point_of_sale("XZ"), //
 
 	/**
-	 * General merchandise – unspecified.
+	 * General merchandise &#8211; unspecified.
 	 */
 	General_merchandise("ZA"), //
 

@@ -24,36 +24,36 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList220</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 220</b>
  * <p>
- * E-publication version number
+ * Description: E-publication version number
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum EpublicationVersionNumbers
 {
 	/**
-	 * Use only with <ProductFormDetail> codes E101 or E102.
+	 * Use only with &lt;ProductFormDetail&gt; codes E101 or E102.
 	 */
 	EPUB_2_0_1("101A"), //
 
 	/**
-	 * Use only with <ProductFormDetail> code E101.
+	 * Use only with &lt;ProductFormDetail&gt; code E101.
 	 */
 	EPUB_3_0("101B"), //
 
 	/**
-	 * Use only with <ProductFormDetail> code E101.
+	 * Use only with &lt;ProductFormDetail&gt; code E101.
 	 */
 	EPUB_3_0_1("101C"), //
 
 	/**
-	 * Use only with <ProductFormDetail> codes E116 or E127.
+	 * Use only with &lt;ProductFormDetail&gt; codes E116 or E127.
 	 */
 	Kindle_mobi_7("116A"), //
 
 	/**
-	 * Use only with <ProductFormDetail> code E116.
+	 * Use only with &lt;ProductFormDetail&gt; code E116.
 	 */
 	Kindle_KF8("116B");
 

@@ -24,29 +24,29 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList179</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 179</b>
  * <p>
- * Price code type
+ * Description: Price code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum PriceCodeTypes
 {
 	/**
-	 * A publisher or retailer’s proprietary code list which identifies particular codes with particular price points,
-	 * price tiers or bands.
+	 * A publisher or retailer&#8217;s proprietary code list which identifies particular codes with particular price
+	 * points, price tiers or bands.
 	 */
 	Proprietary("01"), //
 
 	/**
-	 * Price Code scheme for Finnish Pocket Books (Pokkareiden hintaryhmä). Price codes expressed as letters A–J in
-	 * <PriceCode>.
+	 * Price Code scheme for Finnish Pocket Books (Pokkareiden hintaryhm&#228;). Price codes expressed as letters
+	 * A&#8211;J in &lt;PriceCode&gt;.
 	 */
 	Finnish_Pocket_Book_price_code("02"), //
 
 	/**
-	 * Price Code scheme for Finnish Miki Books (Miki-kirjojen hintaryhmä). Price codes expressed as an integer 1–n in
-	 * <PriceCode>.
+	 * Price Code scheme for Finnish Miki Books (Miki-kirjojen hintaryhm&#228;). Price codes expressed as an integer
+	 * 1&#8211;n in &lt;PriceCode&gt;.
 	 */
 	Finnish_Miki_Book_price_code("03");
 

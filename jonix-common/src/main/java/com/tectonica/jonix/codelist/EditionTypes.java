@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList21</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 21</b>
  * <p>
- * Edition type code
+ * Description: Edition type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum EditionTypes
 {
@@ -48,7 +48,7 @@ public enum EditionTypes
 
 	/**
 	 * Content has been adapted to serve a different purpose or audience, or from one medium to another: use for
-	 * dramatization, novelization etc. Use <EditionStatement> to describe the exact nature of the adaptation.
+	 * dramatization, novelization etc. Use &lt;EditionStatement&gt; to describe the exact nature of the adaptation.
 	 */
 	Adapted_edition("ADP"), //
 
@@ -63,7 +63,8 @@ public enum EditionTypes
 	Annotated_edition("ANN"), //
 
 	/**
-	 * Both languages should be specified in the ‘Language’ group. Use MLL for an edition in more than two languages.
+	 * Both languages should be specified in the &#8216;Language&#8217; group. Use MLL for an edition in more than two
+	 * languages.
 	 */
 	Bilingual_edition("BLL"), //
 
@@ -73,8 +74,8 @@ public enum EditionTypes
 	Braille_edition("BRL"), //
 
 	/**
-	 * An edition in which two or more works also published separately are combined in a single volume; AKA ‘omnibus’
-	 * edition.
+	 * An edition in which two or more works also published separately are combined in a single volume; AKA
+	 * &#8216;omnibus&#8217; edition.
 	 */
 	Combined_volume("CMB"), //
 
@@ -106,7 +107,7 @@ public enum EditionTypes
 	Enlarged_edition("ENL"), //
 
 	/**
-	 * ‘Offensive’ content has been removed.
+	 * &#8216;Offensive&#8217; content has been removed.
 	 */
 	Expurgated_edition("EXP"), //
 
@@ -126,7 +127,7 @@ public enum EditionTypes
 	Illustrated_edition("ILL"), //
 
 	/**
-	 * Large print edition, print sizes 14 to 19 pt – see also ULP.
+	 * Large print edition, print sizes 14 to 19 pt &#8211; see also ULP.
 	 */
 	Large_type_large_print_edition("LTE"), //
 
@@ -137,12 +138,12 @@ public enum EditionTypes
 
 	/**
 	 * An edition published to coincide with the release of a film, TV program, or electronic game based on the same
-	 * work. Use <EditionStatement> to describe the exact nature of the tie-in.
+	 * work. Use &lt;EditionStatement&gt; to describe the exact nature of the tie-in.
 	 */
 	Media_tie_in("MDT"), //
 
 	/**
-	 * All languages should be specified in the ‘Language’ group. Use BLL for a bilingual edition.
+	 * All languages should be specified in the &#8216;Language&#8217; group. Use BLL for a bilingual edition.
 	 */
 	Multilingual_edition("MLL"), //
 
@@ -158,8 +159,8 @@ public enum EditionTypes
 
 	/**
 	 * In the US, a book that was previously bound, normally as a paperback, and has been rebound with a library-quality
-	 * hardcover binding by a supplier other than the original publisher. See also the <Publisher> and <RelatedProduct>
-	 * composites for other aspects of the treatment of prebound editions in ONIX.
+	 * hardcover binding by a supplier other than the original publisher. See also the &lt;Publisher&gt; and
+	 * &lt;RelatedProduct&gt; composites for other aspects of the treatment of prebound editions in ONIX.
 	 */
 	Prebound_edition("PRB"), //
 
@@ -174,23 +175,24 @@ public enum EditionTypes
 	School_edition("SCH"), //
 
 	/**
-	 * An edition that uses simplified language (Finnish ‘Selkokirja’).
+	 * An edition that uses simplified language (Finnish &#8216;Selkokirja&#8217;).
 	 */
 	Simplified_language_edition("SMP"), //
 
 	/**
-	 * Use for anniversary, collectors’, de luxe, gift, limited (but unnumbered), autographed edition. Use
-	 * <EditionStatement> to describe the exact nature of the special edition.
+	 * Use for anniversary, collectors&#8217;, de luxe, gift, limited (but unnumbered), autographed edition. Use
+	 * &lt;EditionStatement&gt; to describe the exact nature of the special edition.
 	 */
 	Special_edition("SPE"), //
 
 	/**
-	 * Where a text is available in both student and teacher’s editions.
+	 * Where a text is available in both student and teacher&#8217;s editions.
 	 */
 	Student_edition("STU"), //
 
 	/**
-	 * Where a text is available in both student and teacher’s editions; use also for instructor’s or leader’s editions.
+	 * Where a text is available in both student and teacher&#8217;s editions; use also for instructor&#8217;s or
+	 * leader&#8217;s editions.
 	 */
 	Teacher_s_edition("TCH"), //
 
@@ -201,12 +203,12 @@ public enum EditionTypes
 	Unabridged_edition("UBR"), //
 
 	/**
-	 * For print sizes 20pt and above, and with typefaces designed for the visually impaired – see also LTE.
+	 * For print sizes 20pt and above, and with typefaces designed for the visually impaired &#8211; see also LTE.
 	 */
 	Ultra_large_print_edition("ULP"), //
 
 	/**
-	 * Content previously considered ‘offensive’ has been restored.
+	 * Content previously considered &#8216;offensive&#8217; has been restored.
 	 */
 	Unexpurgated_edition("UXP"), //
 

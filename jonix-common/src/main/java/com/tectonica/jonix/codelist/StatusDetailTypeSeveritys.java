@@ -24,13 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList224</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 224</b>
  * <p>
- * Status detail type severity
- * <p>
- * NOTE: Introduced in Onix3
+ * Description: Status detail type severity &lt;p&gt;NOTE: Introduced in Onix3
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum StatusDetailTypeSeveritys
 {
@@ -59,14 +57,14 @@ public enum StatusDetailTypeSeveritys
 	/**
 	 * Some data in an ONIX data element or message structure caused an error due to not meeting the requirements of the
 	 * standard. The data in question has been rejected, but processing of the remaining elements in the record (or the
-	 * remain records in the message, if used within <MessageStatusDetail>) has continued.
+	 * remain records in the message, if used within &lt;MessageStatusDetail&gt;) has continued.
 	 */
 	Error("E"), //
 
 	/**
 	 * Some data in an ONIX data element or message structure caused an unrecoverable error due to not meeting the
 	 * requirements of the standard. The entire ONIX record has been rejected (or the entire message, if used within
-	 * <MessageStatusDetail>).
+	 * &lt;MessageStatusDetail&gt;).
 	 */
 	Fatal_error("F");
 

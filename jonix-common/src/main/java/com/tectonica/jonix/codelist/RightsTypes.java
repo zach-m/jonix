@@ -24,21 +24,21 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList219</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 219</b>
  * <p>
- * Rights type code
+ * Description: Rights type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum RightsTypes
 {
 	/**
-	 * Text or image copyright (normally indicated by the © symbol).
+	 * Text or image copyright (normally indicated by the &#169; symbol).
 	 */
 	Copyright("C"), //
 
 	/**
-	 * Phonogram copyright or neighbouring right (normally indicated by the ℗ symbol).
+	 * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol).
 	 */
 	Phonogram_right("P"), //
 

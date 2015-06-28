@@ -27,25 +27,25 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList81</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 81</b>
  * <p>
- * Product content type
+ * Description: Product content type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductContentTypes
 {
 	/**
-	 * Readable text of the main work: this value is required, together with applicable <ProductForm> and
-	 * <ProductFormDetail> values, to designate an e-book or other digital product whose primary content is eye-readable
-	 * text.
+	 * Readable text of the main work: this value is required, together with applicable &lt;ProductForm&gt; and
+	 * &lt;ProductFormDetail&gt; values, to designate an e-book or other digital product whose primary content is
+	 * eye-readable text.
 	 */
 	Text_eye_readable("10"), //
 
 	/**
 	 * E-publication is enhanced with a significant number of actionable cross-references, hyperlinked notes and
-	 * annotations, or with other links between largely textual elements (eg quiz/test questions, ‘choose your own
-	 * ending’ etc).
+	 * annotations, or with other links between largely textual elements (eg quiz/test questions, &#8216;choose your own
+	 * ending&#8217; etc).
 	 */
 	Extensive_links_between_internal_content("15"), //
 
@@ -56,8 +56,8 @@ public enum ProductContentTypes
 
 	/**
 	 * E-publication is enhanced with additional textual content such as interview, feature article, essay,
-	 * bibliography, quiz/test, other background material or text that is not included in a primary or ‘unenhanced’
-	 * version.
+	 * bibliography, quiz/test, other background material or text that is not included in a primary or
+	 * &#8216;unenhanced&#8217; version.
 	 */
 	Additional_eye_readable_text_not_part_of_main_work("16"), //
 
@@ -79,13 +79,13 @@ public enum ProductContentTypes
 	Photographs("18"), //
 
 	/**
-	 * Including other ‘mechanical’ (ie non-photographic) illustrations.
+	 * Including other &#8216;mechanical&#8217; (ie non-photographic) illustrations.
 	 */
 	Figures_diagrams_charts_graphs("19"), //
 
 	/**
 	 * E-publication is enhanced with additional images or graphical content such as supplementary photographs that are
-	 * not included in a primary or ‘unenhanced’ version.
+	 * not included in a primary or &#8216;unenhanced&#8217; version.
 	 */
 	Additional_images_graphics_not_part_of_main_work("20"), //
 
@@ -102,7 +102,7 @@ public enum ProductContentTypes
 	Performance_spoken_word("02"), //
 
 	/**
-	 * eg an interview, not a ‘reading’ or ‘performance’).
+	 * eg an interview, not a &#8216;reading&#8217; or &#8216;performance&#8217;).
 	 */
 	Other_speech_content("13"), //
 
@@ -123,7 +123,7 @@ public enum ProductContentTypes
 
 	/**
 	 * Product is enhanced with audio recording of full or partial reading, performance, dramatization, interview,
-	 * background documentary or other audio content not included in the primary or ‘unenhanced’ version.
+	 * background documentary or other audio content not included in the primary or &#8216;unenhanced&#8217; version.
 	 */
 	Additional_audio_content_not_part_of_main_work("22"), //
 
@@ -133,8 +133,8 @@ public enum ProductContentTypes
 	Promotional_audio_for_other_book_product("23"), //
 
 	/**
-	 * Includes Film, video, animation etc. Use only when no more detailed specification is provided. Formerly ‘Moving
-	 * images’.
+	 * Includes Film, video, animation etc. Use only when no more detailed specification is provided. Formerly
+	 * &#8216;Moving images&#8217;.
 	 */
 	Video("06"), //
 
@@ -167,7 +167,7 @@ public enum ProductContentTypes
 
 	/**
 	 * E-publication is enhanced with video recording of full or partial reading, performance, dramatization, interview,
-	 * background documentary or other content not included in the primary or ‘unenhanced’ version.
+	 * background documentary or other content not included in the primary or &#8216;unenhanced&#8217; version.
 	 */
 	Additional_video_content_not_part_of_main_work("30"), //
 
@@ -177,7 +177,7 @@ public enum ProductContentTypes
 	Promotional_video_for_other_book_product("31"), //
 
 	/**
-	 * No multi-user functionality. Formerly just ‘Game’.
+	 * No multi-user functionality. Formerly just &#8216;Game&#8217;.
 	 */
 	Game_Puzzle("05"), //
 
@@ -187,7 +187,7 @@ public enum ProductContentTypes
 	Contest("32"), //
 
 	/**
-	 * Largely ‘content free’.
+	 * Largely &#8216;content free&#8217;.
 	 */
 	Software("08"), //
 
@@ -209,7 +209,8 @@ public enum ProductContentTypes
 	Advertising_content("35"), //
 
 	/**
-	 * ‘Back ads’ – promotional pages for other books (that do not include sample content, cf codes 17, 23).
+	 * &#8216;Back ads&#8217; &#8211; promotional pages for other books (that do not include sample content, cf codes
+	 * 17, 23).
 	 */
 	Advertising_first_party("37"), //
 

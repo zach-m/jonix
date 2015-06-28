@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList59</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 59</b>
  * <p>
- * Price type qualifier
+ * Description: Price type qualifier
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum PriceTypeQualifiers
 {
@@ -61,8 +61,9 @@ public enum PriceTypeQualifiers
 	/**
 	 * In the Netherlands (or any other market where similar arrangements exist): a reduced fixed price available for a
 	 * limited time on presentation of a voucher or coupon published in a specified medium, eg a newspaper. Should be
-	 * accompanied by Price Type code 13 and additional detail in <PriceTypeDescription>, and by validity dates in
-	 * <PriceEffectiveFrom> and <PriceEffectiveUntil> (ONIX 2.1) or in the <PriceDate> composite (ONIX 3.0).
+	 * accompanied by Price Type code 13 and additional detail in &lt;PriceTypeDescription&gt;, and by validity dates in
+	 * &lt;PriceEffectiveFrom&gt; and &lt;PriceEffectiveUntil&gt; (ONIX 2.1) or in the &lt;PriceDate&gt; composite (ONIX
+	 * 3.0).
 	 */
 	Voucher_price("04"), //
 
@@ -79,21 +80,22 @@ public enum PriceTypeQualifiers
 	/**
 	 * Price valid for a specified period prior to publication. Orders placed prior to the end of the period are
 	 * guaranteed to be delivered to the retailer before the nominal publication date. The price may or may not be
-	 * different from the ‘normal’ price, which carries no such delivery guarantee. Must be accompanied by a
-	 * <PriceEffectiveUntil> date (or equivalent <PriceDate> composite in ONIX 3), and should also be accompanied by a
-	 * ‘normal’ price.
+	 * different from the &#8216;normal&#8217; price, which carries no such delivery guarantee. Must be accompanied by a
+	 * &lt;PriceEffectiveUntil&gt; date (or equivalent &lt;PriceDate&gt; composite in ONIX 3), and should also be
+	 * accompanied by a &#8216;normal&#8217; price.
 	 */
 	Reservation_order_price("07"), //
 
 	/**
-	 * Temporary ‘Special offer’ price. Must be accompanied by <PriceEffectiveFrom> and <PriceEffectiveUntil> dates (or
-	 * equivalent <PriceDate> composites in ONIX 3), and may also be accompanied by a ‘normal’ price.
+	 * Temporary &#8216;Special offer&#8217; price. Must be accompanied by &lt;PriceEffectiveFrom&gt; and
+	 * &lt;PriceEffectiveUntil&gt; dates (or equivalent &lt;PriceDate&gt; composites in ONIX 3), and may also be
+	 * accompanied by a &#8216;normal&#8217; price.
 	 */
 	Promotional_offer_price("08"), //
 
 	/**
 	 * Price requires purchase with, or proof of ownership of another product. Further details of purchase or ownership
-	 * requirements must be given in <PriceTypeDescription>.
+	 * requirements must be given in &lt;PriceTypeDescription&gt;.
 	 */
 	Linked_price("09");
 

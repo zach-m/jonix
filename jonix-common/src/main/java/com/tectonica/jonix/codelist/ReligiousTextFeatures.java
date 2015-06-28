@@ -27,67 +27,67 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList90</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 90</b>
  * <p>
- * Religious text feature code
+ * Description: Religious text feature code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ReligiousTextFeatures
 {
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Academic_year("01"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Catechistic_year("02"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Liturgical_year("03"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Advent_and_Christmas("04"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Blessings("05"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Scholastic_cycles("06"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Confirmation_and_Holy_Communion("07"), //
 
 	/**
 	 * For example, summer camps and other youth recreational activities: use with code 01 in
-	 * <ReligiousTextFeatureType>.
+	 * &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Summer_activites("08"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Easter("09"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Lent("10"), //
 
 	/**
-	 * Use with code 01 in <ReligiousTextFeatureType>.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
 	 */
 	Marian_themes("11");
 

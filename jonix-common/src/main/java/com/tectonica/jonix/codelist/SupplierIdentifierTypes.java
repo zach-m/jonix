@@ -27,18 +27,18 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList92</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 92</b>
  * <p>
- * Supplier identifier type
+ * Description: Supplier identifier type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SupplierIdentifierTypes
 {
 	Proprietary("01"), //
 
 	/**
-	 * DEPRECATED – use 01.
+	 * DEPRECATED &#8211; use 01.
 	 */
 	Proprietary_("02"), //
 
@@ -52,7 +52,7 @@ public enum SupplierIdentifierTypes
 	GLN("06"), //
 
 	/**
-	 * Book trade Standard Address Number – US, UK etc.
+	 * Book trade Standard Address Number &#8211; US, UK etc.
 	 */
 	SAN("07"), //
 
@@ -67,10 +67,10 @@ public enum SupplierIdentifierTypes
 	Fondscode_Boekenbank("13"), //
 
 	/**
-	 * Identifier for a business organization for VAT purposes, eg within the EU’s VIES system. See
+	 * Identifier for a business organization for VAT purposes, eg within the EU&#8217;s VIES system. See
 	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country.
-	 * Generally these consist of a two-letter country code followed by the 8–12 digits of the national VAT ID. Some
-	 * countries include one or two letters within their VAT ID. See
+	 * Generally these consist of a two-letter country code followed by the 8&#8211;12 digits of the national VAT ID.
+	 * Some countries include one or two letters within their VAT ID. See
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
 	 * Spaces, dashes etc should be omitted.
 	 */

@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList9</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 9</b>
  * <p>
- * Product classification type code
+ * Description: Product classification type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductClassificationTypes
 {
@@ -78,9 +78,9 @@ public enum ProductClassificationTypes
 
 	/**
 	 * Statistical Classification of Products by Activity in the European Economic Community, see
-	 * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=CPA_2008. Up to six
-	 * digits, with one or two periods. For example, printed children’s books are “58.11.13”, but the periods are
-	 * normally ommited in ONIX.
+	 * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=CPA_2008. Up to six
+	 * digits, with one or two periods. For example, printed children&#8217;s books are &#8220;58.11.13&#8221;, but the
+	 * periods are normally ommited in ONIX.
 	 */
 	CPA("09"), //
 
@@ -90,7 +90,7 @@ public enum ProductClassificationTypes
 	NCM("10"), //
 
 	/**
-	 * Typologie de marché géré par Electre (Market segment code maintained by Electre).
+	 * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre).
 	 */
 	Electre_genre("50");
 

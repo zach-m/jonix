@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList33</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 33</b>
  * <p>
- * Other text type code
+ * Description: Other text type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum OtherTextTypes
 {
@@ -46,7 +46,8 @@ public enum OtherTextTypes
 
 	/**
 	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed through
-	 * HTML etc. Alternatively, a fully structured table of contents may be sent by using the <ContentItem> composite.
+	 * HTML etc. Alternatively, a fully structured table of contents may be sent by using the &lt;ContentItem&gt;
+	 * composite.
 	 */
 	Table_of_contents("04"), //
 
@@ -88,7 +89,7 @@ public enum OtherTextTypes
 	Description_for_reader("12"), //
 
 	/**
-	 * A note referring to all contributors to a product – NOT linked to a single contributor.
+	 * A note referring to all contributors to a product &#8211; NOT linked to a single contributor.
 	 */
 	Biographical_note("13"), //
 
@@ -104,8 +105,8 @@ public enum OtherTextTypes
 
 	/**
 	 * Free text listing of other titles with which the product is in competition: although this text might not appear
-	 * in “public” ONIX records, it could be required where ONIX Is used as a communication format within a group of
-	 * publishing and distribution companies.
+	 * in &#8220;public&#8221; ONIX records, it could be required where ONIX Is used as a communication format within a
+	 * group of publishing and distribution companies.
 	 */
 	Competing_titles("16"), //
 
@@ -197,24 +198,24 @@ public enum OtherTextTypes
 	License("46"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg “Open access – no commercial use”),
-	 * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see code 46).
+	 * Short summary statement of open access status and any related conditions (eg &#8220;Open access &#8211; no
+	 * commercial use&#8221;), primarily for marketing purposes. Should always be accompanied by a link to the complete
+	 * license (see code 46).
 	 */
 	Open_access_statement("47"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg “Digital exclusive”). If a
-	 * non-digital version is planned, an <EndDate> can be used to specify the date when exclusivity will end.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * Short summary statement that the product is available only in digital formats (eg &#8220;Digital
+	 * exclusive&#8221;). If a non-digital version is planned, an &lt;EndDate&gt; can be used to specify the date when
+	 * exclusivity will end. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Digital_exclusivity_statement("48"), //
 
 	/**
 	 * A master brand name or title, where the use of the brand spans multiple sets, series and product forms, and
-	 * possibly multiple imprints and publishers. Used only for branded media properties such as children’s character
-	 * properties. (This functionality is provided as a workaround in ONIX 2.1 only. ONIX 3.0 has specific provision for
-	 * master brands as title elements.
+	 * possibly multiple imprints and publishers. Used only for branded media properties such as children&#8217;s
+	 * character properties. (This functionality is provided as a workaround in ONIX 2.1 only. ONIX 3.0 has specific
+	 * provision for master brands as title elements.
 	 */
 	Master_brand_name("98"), //
 

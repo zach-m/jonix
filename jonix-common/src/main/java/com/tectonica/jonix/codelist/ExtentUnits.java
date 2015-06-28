@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList24</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 24</b>
  * <p>
- * Extent unit code
+ * Description: Extent unit code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ExtentUnits
 {
@@ -49,7 +49,7 @@ public enum ExtentUnits
 	Seconds_integer_only("06"), //
 
 	/**
-	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3–6
+	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3&#8211;6
 	 * minutes of running time, and track counts are misleading and inappropriate if the average track duration is
 	 * significantly more or less than this. Note that track breaks are not necessarily aligned with structural breaks
 	 * in the text (eg chapter breaks).

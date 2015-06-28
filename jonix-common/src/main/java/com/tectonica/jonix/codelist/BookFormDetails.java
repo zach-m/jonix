@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList8</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 8</b>
  * <p>
- * Book form detail
+ * Description: Book form detail
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum BookFormDetails
 {
@@ -38,12 +38,12 @@ public enum BookFormDetails
 	A_format_paperback("01"), //
 
 	/**
-	 * ‘B’ format paperback: UK 198 x 129 mm – DEPRECATED.
+	 * &#8216;B&#8217; format paperback: UK 198 x 129 mm &#8211; DEPRECATED.
 	 */
 	B_format_paperback("02"), //
 
 	/**
-	 * ‘C’ format paperback: UK 216 x 135 mm – DEPRECATED.
+	 * &#8216;C&#8217; format paperback: UK 216 x 135 mm &#8211; DEPRECATED.
 	 */
 	C_format_paperback("03"), //
 

@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList165</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 165</b>
  * <p>
- * Supplier own code type
+ * Description: Supplier own code type
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum SupplierOwnCodeTypes
 {
@@ -39,13 +39,13 @@ public enum SupplierOwnCodeTypes
 	Supplier_s_sales_classification("01"), //
 
 	/**
-	 * A supplier’s coding of the eligibility of a product for a bonus scheme on overall sales.
+	 * A supplier&#8217;s coding of the eligibility of a product for a bonus scheme on overall sales.
 	 */
 	Supplier_s_bonus_eligibility("02"), //
 
 	/**
 	 * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
-	 * when the publisher is not the ‘supplier’.
+	 * when the publisher is not the &#8216;supplier&#8217;.
 	 */
 	Publisher_s_sales_classification("03"), //
 

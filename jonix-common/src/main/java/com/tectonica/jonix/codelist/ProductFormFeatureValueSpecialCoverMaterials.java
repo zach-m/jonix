@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList99</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 99</b>
  * <p>
- * Product form feature value – special cover material
+ * Description: Product form feature value &#8211; special cover material
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductFormFeatureValueSpecialCoverMaterials
 {
@@ -86,12 +86,12 @@ public enum ProductFormFeatureValueSpecialCoverMaterials
 	Metal("19"), //
 
 	/**
-	 * German ‘Samt’.
+	 * German &#8216;Samt&#8217;.
 	 */
 	Velvet("20"), //
 
 	/**
-	 * Spanish ‘nácar’.
+	 * Spanish &#8216;n&#225;car&#8217;.
 	 */
 	Mother_of_pearl("21"), //
 
@@ -108,23 +108,17 @@ public enum ProductFormFeatureValueSpecialCoverMaterials
 	Guaflex("24"), //
 
 	/**
-	 * An imitation made of any non-leather material.
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * An imitation made of any non-leather material. &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Imitation_leather("25"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Pigskin("26"), //
 
 	/**
-	 * null
-	 * <p>
-	 * NOTE: Introduced in Onix3
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Goatskin("27");
 

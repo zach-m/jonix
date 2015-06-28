@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList54</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 54</b>
  * <p>
- * Availability status code
+ * Description: Availability status code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum AvailabilityStatuss
 {
@@ -138,8 +138,8 @@ public enum AvailabilityStatuss
 
 	/**
 	 * The item is out of stock but will be reissued under the same ISBN: MUST be accompanied by an expected
-	 * availability date and by the reissue date in the <Reissue> composite. See notes on the <Reissue> composite for
-	 * details on treatment of availability status during reissue.
+	 * availability date and by the reissue date in the &lt;Reissue&gt; composite. See notes on the &lt;Reissue&gt;
+	 * composite for details on treatment of availability status during reissue.
 	 */
 	Unavailable_awaiting_reissue("UR"), //
 

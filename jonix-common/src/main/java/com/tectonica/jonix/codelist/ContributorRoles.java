@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList17</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 17</b>
  * <p>
- * Contributor role code
+ * Description: Contributor role code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ContributorRoles
 {
@@ -41,7 +41,7 @@ public enum ContributorRoles
 	By_author("A01"), //
 
 	/**
-	 * With or as told to: ‘ghost’ author of a literary work.
+	 * With or as told to: &#8216;ghost&#8217; author of a literary work.
 	 */
 	With("A02"), //
 
@@ -217,7 +217,7 @@ public enum ContributorRoles
 
 	/**
 	 * When separate persons are named as having respectively drawn and colored artwork, eg for a graphic novel or comic
-	 * book, use A12 for ‘drawn by’ and A40 for ‘colored by’.
+	 * book, use A12 for &#8216;drawn by&#8217; and A40 for &#8216;colored by&#8217;.
 	 */
 	Inked_or_colored_by("A40"), //
 
@@ -289,7 +289,7 @@ public enum ContributorRoles
 	Associate_editor("B19"), //
 
 	/**
-	 * Use also for ‘advisory editor’.
+	 * Use also for &#8216;advisory editor&#8217;.
 	 */
 	Consultant_editor("B20"), //
 
@@ -304,7 +304,7 @@ public enum ContributorRoles
 
 	/**
 	 * An editor who is responsible for establishing the text used in an edition of a literary work, where this is
-	 * recognised as a distinctive role (in Spain, ‘editor literario’).
+	 * recognised as a distinctive role (in Spain, &#8216;editor literario&#8217;).
 	 */
 	Literary_editor("B24"), //
 
@@ -399,8 +399,8 @@ public enum ContributorRoles
 	Assisted_by("Z01"), //
 
 	/**
-	 * For use ONLY with ‘et al’ or ‘Various’ within <UnnamedPersons>, where the roles of the multiple contributors
-	 * vary.
+	 * For use ONLY with &#8216;et al&#8217; or &#8216;Various&#8217; within &lt;UnnamedPersons&gt;, where the roles of
+	 * the multiple contributors vary.
 	 */
 	_Various_roles("Z98"), //
 

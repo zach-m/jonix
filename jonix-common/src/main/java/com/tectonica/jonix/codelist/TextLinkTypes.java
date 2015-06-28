@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList35</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 35</b>
  * <p>
- * Text link type code
+ * Description: Text link type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum TextLinkTypes
 {

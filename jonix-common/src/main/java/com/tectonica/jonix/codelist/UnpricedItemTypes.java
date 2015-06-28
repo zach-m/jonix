@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList57</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 57</b>
  * <p>
- * Unpriced item type code
+ * Description: Unpriced item type code
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum UnpricedItemTypes
 {
@@ -42,9 +42,10 @@ public enum UnpricedItemTypes
 	Not_sold_separately("03"), //
 
 	/**
-	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered ‘in person’
-	 * from a sales representative; when an ONIX file is “broadcast” rather than sent one-to-one to a single trading
-	 * partner; or for digital products offered on subscription or with pricing which is too complex to specify in ONIX.
+	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered &#8216;in
+	 * person&#8217; from a sales representative; when an ONIX file is &#8220;broadcast&#8221; rather than sent
+	 * one-to-one to a single trading partner; or for digital products offered on subscription or with pricing which is
+	 * too complex to specify in ONIX.
 	 */
 	Contact_supplier("04"), //
 

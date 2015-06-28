@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList77</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 77</b>
  * <p>
- * North American school or college grade
+ * Description: North American school or college grade
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum NorthAmericanSchoolOrCollegeGrades
 {
@@ -86,22 +86,22 @@ public enum NorthAmericanSchoolOrCollegeGrades
 	Eighth_Grade("8"), //
 
 	/**
-	 * High School Freshman – age typically 14 years.
+	 * High School Freshman &#8211; age typically 14 years.
 	 */
 	Ninth_Grade("9"), //
 
 	/**
-	 * High School Sophomore – age typically 15 years.
+	 * High School Sophomore &#8211; age typically 15 years.
 	 */
 	Tenth_Grade("10"), //
 
 	/**
-	 * High School Junior – age typically 16 years.
+	 * High School Junior &#8211; age typically 16 years.
 	 */
 	Eleventh_Grade("11"), //
 
 	/**
-	 * High School Senior – age typically 17 years.
+	 * High School Senior &#8211; age typically 17 years.
 	 */
 	Twelfth_Grade("12"), //
 

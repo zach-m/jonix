@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList74</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 74</b>
  * <p>
- * Language code – ISO 639-2/B
+ * Description: Language code &#8211; ISO 639-2/B
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum LanguageCodes
 {
@@ -746,7 +746,7 @@ public enum LanguageCodes
 	Mohawk("moh"), //
 
 	/**
-	 * DEPRECATED – use rum.
+	 * DEPRECATED &#8211; use rum.
 	 */
 	Moldavian_Moldovan("mol"), //
 
@@ -966,7 +966,7 @@ public enum LanguageCodes
 	Santali("sat"), //
 
 	/**
-	 * DEPRECATED – use srp.
+	 * DEPRECATED &#8211; use srp.
 	 */
 	Serbian("scc"), //
 
@@ -975,7 +975,7 @@ public enum LanguageCodes
 	Scots_lallans("sco"), //
 
 	/**
-	 * DEPRECATED – use hrv.
+	 * DEPRECATED &#8211; use hrv.
 	 */
 	Croatian_("scr"), //
 

@@ -24,11 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList198</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 198</b>
  * <p>
- * Product contact role
+ * Description: Product contact role
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum ProductContactRoles
 {

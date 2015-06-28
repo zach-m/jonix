@@ -27,11 +27,11 @@ import java.util.Map;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList85</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 85</b>
  * <p>
- * Bible purpose
+ * Description: Bible purpose
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum BiblePurposes
 {
@@ -41,7 +41,7 @@ public enum BiblePurposes
 	Award("AW"), //
 
 	/**
-	 * A Bible (or selected Biblical text) designed to be a gift to commemorate a child’s birth.
+	 * A Bible (or selected Biblical text) designed to be a gift to commemorate a child&#8217;s birth.
 	 */
 	Baby("BB"), //
 

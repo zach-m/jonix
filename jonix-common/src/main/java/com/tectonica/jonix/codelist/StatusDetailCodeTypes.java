@@ -24,13 +24,11 @@ package com.tectonica.jonix.codelist;
  */
 
 /**
- * Enum that corresponds to ONIX's <b>CodeList223</b>
+ * <code>Enum</code> that corresponds to ONIX <b>Codelist 223</b>
  * <p>
- * Status detail code type
- * <p>
- * NOTE: Introduced in Onix3
+ * Description: Status detail code type &lt;p&gt;NOTE: Introduced in Onix3
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">http://www.editeur.org/14/code-lists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
 public enum StatusDetailCodeTypes
 {
