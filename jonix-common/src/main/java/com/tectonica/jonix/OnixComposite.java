@@ -20,18 +20,18 @@
 package com.tectonica.jonix;
 
 /**
- * represents an Onix composite (i.e. a container for Onix elements and possibly other Onix composites)
+ * represents an ONIX composite (i.e. a container for ONIX elements and possibly other ONIX composites)
  */
 public interface OnixComposite
 {
 	/**
-	 * represents an Onix composite that contains other composites
+	 * represents an ONIX composite that contains other composites
 	 */
 	public static interface OnixSuperComposite extends OnixComposite
 	{}
 
 	/**
-	 * represents an Onix composite that contains only Onix elements (i.e. no composites)
+	 * represents an ONIX composite that contains only ONIX elements (i.e. no composites)
 	 */
 	public static interface OnixDataComposite extends OnixComposite
 	{}

@@ -20,7 +20,7 @@
 package com.tectonica.jonix;
 
 /**
- * represents an Onix flag (i.e. has no content, merely marks something simply by being specified)
+ * represents an ONIX flag (i.e. has no content, marks something simply by being present)
  */
 public interface OnixFlag
 {}

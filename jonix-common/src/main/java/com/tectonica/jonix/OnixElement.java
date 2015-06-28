@@ -20,7 +20,7 @@
 package com.tectonica.jonix;
 
 /**
- * represents an Onix element (i.e. contains a single value field and possibly some attributes, but nothing else)
+ * represents an ONIX element (i.e. contains a single value field and possibly some attributes, but nothing else)
  */
 public interface OnixElement
 {}
