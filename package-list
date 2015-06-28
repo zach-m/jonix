@@ -7,6 +7,4 @@ com.tectonica.jonix.onix2
 com.tectonica.jonix.onix3
 com.tectonica.jonix.stream
 com.tectonica.jonix.struct
-com.tectonica.repackaged.org.apache.commons.io
-com.tectonica.repackaged.org.apache.commons.io.input
 com.tectonica.xmlchunk
