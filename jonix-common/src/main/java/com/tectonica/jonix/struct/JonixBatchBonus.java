@@ -28,6 +28,13 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class JonixBatchBonus implements Serializable
 {
-	public Integer batchQuantity; // dt.StrictPositiveInteger
-	public Integer freeQuantity; // dt.StrictPositiveInteger
+	/**
+	 * (type: dt.StrictPositiveInteger)
+	 */
+	public Integer batchQuantity;
+
+	/**
+	 * (type: dt.StrictPositiveInteger)
+	 */
+	public Integer freeQuantity;
 }

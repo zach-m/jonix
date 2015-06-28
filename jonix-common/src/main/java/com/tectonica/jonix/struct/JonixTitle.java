@@ -31,12 +31,35 @@ import com.tectonica.jonix.codelist.TitleTypes;
 @SuppressWarnings("serial")
 public class JonixTitle implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public TitleTypes titleType;
 
-	public String abbreviatedLength; // NonEmptyString
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String abbreviatedLength;
+
 	public TextCaseFlags textCaseFlag;
-	public String titleText; // NonEmptyString
-	public String titlePrefix; // NonEmptyString
-	public String titleWithoutPrefix; // NonEmptyString
-	public String subtitle; // NonEmptyString
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String titleText;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String titlePrefix;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String titleWithoutPrefix;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String subtitle;
 }

@@ -36,8 +36,13 @@ public class PrizeCode implements OnixElement, Serializable
 	public static final String refname = "PrizeCode";
 	public static final String shortname = "g129";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	public PrizeOrAwardAchievements value;
@@ -47,9 +52,9 @@ public class PrizeCode implements OnixElement, Serializable
 
 	public PrizeCode(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = PrizeOrAwardAchievements.byValue(JPU.getContentAsString(element));
 	}

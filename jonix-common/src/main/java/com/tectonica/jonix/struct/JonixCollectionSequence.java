@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 @SuppressWarnings("serial")
 public class JonixCollectionSequence implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public CollectionSequenceTypes collectionSequenceType;
 
-	public String collectionSequenceTypeName; // dt.NonEmptyString
-	public String collectionSequenceNumber; // dt.MultiLevelNumber
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String collectionSequenceTypeName;
+
+	/**
+	 * (type: dt.MultiLevelNumber)
+	 */
+	public String collectionSequenceNumber;
 }

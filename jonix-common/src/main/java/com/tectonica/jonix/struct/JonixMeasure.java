@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.MeasureUnits;
 @SuppressWarnings("serial")
 public class JonixMeasure implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public MeasureTypes measureType;
 
 	public MeasureUnits measureUnitCode;
-	public Double measurement; // dt.StrictPositiveDecimal
+
+	/**
+	 * (type: dt.StrictPositiveDecimal)
+	 */
+	public Double measurement;
 }

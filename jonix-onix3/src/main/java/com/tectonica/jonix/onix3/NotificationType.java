@@ -36,8 +36,13 @@ public class NotificationType implements OnixElement, Serializable
 	public static final String refname = "NotificationType";
 	public static final String shortname = "a002";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	public NotificationOrUpdateTypes value;
@@ -47,9 +52,9 @@ public class NotificationType implements OnixElement, Serializable
 
 	public NotificationType(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = NotificationOrUpdateTypes.byValue(JPU.getContentAsString(element));
 	}

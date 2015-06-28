@@ -52,12 +52,12 @@ public class GenUtil
 		result.isXHTML = (onixSimpleTypeName == null) ? false : onixSimpleTypeName.equals(OnixSimpleType.XHTML.name);
 		result.javaType = result.isXHTML ? null : enumName;
 		result.isPrimitive = (result.javaType == null);
-		result.comment = "";
+		result.comment = null;
 		if (result.javaType == null)
 		{
 			result.javaType = javaType;
 			if ((onixSimpleTypeName != null))
-				result.comment = " // " + onixSimpleTypeName;
+				result.comment = "(type: " + onixSimpleTypeName + ")";
 		}
 		return result;
 	}

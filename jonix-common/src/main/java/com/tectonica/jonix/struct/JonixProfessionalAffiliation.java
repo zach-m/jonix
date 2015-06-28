@@ -29,6 +29,13 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class JonixProfessionalAffiliation implements Serializable
 {
-	public String affiliation; // dt.NonEmptyString
-	public List<String> professionalPositions; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String affiliation;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public List<String> professionalPositions;
 }

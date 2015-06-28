@@ -36,8 +36,13 @@ public class PriceCodeType implements OnixElement, Serializable
 	public static final String refname = "PriceCodeType";
 	public static final String shortname = "x465";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	public PriceCodeTypes value;
@@ -47,9 +52,9 @@ public class PriceCodeType implements OnixElement, Serializable
 
 	public PriceCodeType(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = PriceCodeTypes.byValue(JPU.getContentAsString(element));
 	}

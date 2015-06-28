@@ -32,8 +32,12 @@ import com.tectonica.jonix.codelist.LanguageRoles;
 @SuppressWarnings("serial")
 public class JonixLanguage implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public LanguageRoles languageRole;
 
 	public CountryCodes countryCode;
+
 	public LanguageCodes languageCode;
 }

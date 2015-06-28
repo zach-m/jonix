@@ -36,22 +36,31 @@ public class Affiliation implements OnixElement, Serializable
 	public static final String refname = "Affiliation";
 	public static final String shortname = "b046";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
+
 	public LanguageCodes language;
 
-	public String value; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String value;
 
 	public Affiliation()
 	{}
 
 	public Affiliation(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
-		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
+		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 
 		value = JPU.getContentAsString(element);
 	}

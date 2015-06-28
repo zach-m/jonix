@@ -36,22 +36,31 @@ public class EndDate implements OnixElement, Serializable
 	public static final String refname = "EndDate";
 	public static final String shortname = "b325";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
+
 	public DateFormats dateformat;
 
-	public String value; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String value;
 
 	public EndDate()
 	{}
 
 	public EndDate(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
-		this.dateformat = DateFormats.byValue(JPU.getAttribute(element, "dateformat"));
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
+		dateformat = DateFormats.byValue(JPU.getAttribute(element, "dateformat"));
 
 		value = JPU.getContentAsString(element);
 	}

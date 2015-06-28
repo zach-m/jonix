@@ -36,8 +36,13 @@ public class PageRun implements OnixDataComposite, Serializable
 	public static final String refname = "PageRun";
 	public static final String shortname = "pagerun";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	/**
@@ -55,9 +60,9 @@ public class PageRun implements OnixDataComposite, Serializable
 
 	public PageRun(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		JPU.forElementsOf(element, new JPU.ElementListener()
 		{

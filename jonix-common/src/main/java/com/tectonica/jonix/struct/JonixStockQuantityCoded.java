@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 @SuppressWarnings("serial")
 public class JonixStockQuantityCoded implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public StockQuantityCodeTypes stockQuantityCodeType;
 
-	public String stockQuantityCode; // dt.NonEmptyString
-	public String stockQuantityCodeTypeName; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String stockQuantityCode;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String stockQuantityCodeTypeName;
 }

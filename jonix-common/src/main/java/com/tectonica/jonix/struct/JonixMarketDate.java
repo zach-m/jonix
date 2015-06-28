@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.PublishingDateRoles;
 @SuppressWarnings("serial")
 public class JonixMarketDate implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public PublishingDateRoles marketDateRole;
 
-	public String date; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String date;
+
 	public DateFormats dateFormat;
 }

@@ -41,11 +41,20 @@ public class TextItemType implements OnixElement, Serializable
 	public static final String shortname = "b290";
 
 	public TextFormats textformat;
+
 	public TextCaseFlags textcase;
+
 	public LanguageCodes language;
+
 	public TransliterationSchemes transliteration;
-	public String datestamp; // DateOrDateTime
+
+	/**
+	 * (type: DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	public TextItemTypes value;
@@ -55,13 +64,13 @@ public class TextItemType implements OnixElement, Serializable
 
 	public TextItemType(org.w3c.dom.Element element)
 	{
-		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
-		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
-		this.transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
+		transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = TextItemTypes.byValue(JPU.getContentAsString(element));
 	}

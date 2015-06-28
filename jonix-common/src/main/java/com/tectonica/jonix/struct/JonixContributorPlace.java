@@ -34,7 +34,13 @@ import com.tectonica.jonix.codelist.Regions;
 public class JonixContributorPlace implements Serializable
 {
 	public ContributorPlaceRelators contributorPlaceRelator;
+
 	public CountryCodes countryCode;
+
 	public Regions regionCode;
-	public List<String> locationNames; // dt.NonEmptyString
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public List<String> locationNames;
 }

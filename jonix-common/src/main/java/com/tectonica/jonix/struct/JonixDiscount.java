@@ -31,8 +31,24 @@ import com.tectonica.jonix.codelist.DiscountTypes;
 public class JonixDiscount implements Serializable
 {
 	public DiscountTypes discountType;
-	public Double quantity; // dt.PositiveDecimal
-	public Double toQuantity; // dt.StrictPositiveDecimal
-	public Double discountPercent; // dt.PercentDecimal
-	public Double discountAmount; // dt.PositiveDecimal
+
+	/**
+	 * (type: dt.PositiveDecimal)
+	 */
+	public Double quantity;
+
+	/**
+	 * (type: dt.StrictPositiveDecimal)
+	 */
+	public Double toQuantity;
+
+	/**
+	 * (type: dt.PercentDecimal)
+	 */
+	public Double discountPercent;
+
+	/**
+	 * (type: dt.PositiveDecimal)
+	 */
+	public Double discountAmount;
 }

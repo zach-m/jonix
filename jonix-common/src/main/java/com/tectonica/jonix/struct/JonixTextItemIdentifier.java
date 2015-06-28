@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 @SuppressWarnings("serial")
 public class JonixTextItemIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public TextItemIdentifierTypes textItemIDType;
 
-	public String idTypeName; // dt.NonEmptyString
-	public String idValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idValue;
 }

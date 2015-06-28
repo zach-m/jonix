@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 @SuppressWarnings("serial")
 public class JonixEpubLicenseExpression implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public LicenseExpressionTypes epubLicenseExpressionType;
 
-	public String epubLicenseExpressionTypeName; // dt.NonEmptyString
-	public String epubLicenseExpressionLink; // dt.NonEmptyURI
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String epubLicenseExpressionTypeName;
+
+	/**
+	 * (type: dt.NonEmptyURI)
+	 */
+	public String epubLicenseExpressionLink;
 }

@@ -28,6 +28,13 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class JonixPageRun implements Serializable
 {
-	public String firstPageNumber; // dt.NonEmptyString
-	public String lastPageNumber; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String firstPageNumber;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String lastPageNumber;
 }

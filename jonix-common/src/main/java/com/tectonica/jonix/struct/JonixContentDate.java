@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.DateFormats;
 @SuppressWarnings("serial")
 public class JonixContentDate implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ContentDateRoles contentDateRole;
 
 	public DateFormats dateFormat;
-	public String date; // dt.NonEmptyString
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String date;
 }

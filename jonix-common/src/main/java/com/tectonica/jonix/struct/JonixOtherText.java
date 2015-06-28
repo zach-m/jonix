@@ -32,16 +32,52 @@ import com.tectonica.jonix.codelist.TextLinkTypes;
 @SuppressWarnings("serial")
 public class JonixOtherText implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public OtherTextTypes textTypeCode;
 
 	public TextFormats textFormat;
-	public String text; // XHTML
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String text;
+
 	public TextLinkTypes textLinkType;
-	public String textLink; // NonEmptyString
-	public String textAuthor; // NonEmptyString
-	public String textSourceCorporate; // NonEmptyString
-	public String textSourceTitle; // NonEmptyString
-	public String textPublicationDate; // NonEmptyString
-	public String startDate; // NonEmptyString
-	public String endDate; // NonEmptyString
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String textLink;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String textAuthor;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String textSourceCorporate;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String textSourceTitle;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String textPublicationDate;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String startDate;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String endDate;
 }

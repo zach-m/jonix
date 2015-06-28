@@ -32,16 +32,52 @@ import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 @SuppressWarnings("serial")
 public class JonixMediaFile implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ImageAudioVideoFileTypes mediaFileTypeCode;
 
 	public ImageAudioVideoFileFormats mediaFileFormatCode;
-	public String imageResolution; // NonEmptyString
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String imageResolution;
+
 	public ImageAudioVideoFileLinkTypes mediaFileLinkTypeCode;
-	public String mediaFileLink; // NonEmptyString
-	public String textWithDownload; // XHTML
-	public String downloadCaption; // XHTML
-	public String downloadCredit; // XHTML
-	public String downloadCopyrightNotice; // XHTML
-	public String downloadTerms; // XHTML
-	public String mediaFileDate; // NonEmptyString
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String mediaFileLink;
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String textWithDownload;
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String downloadCaption;
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String downloadCredit;
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String downloadCopyrightNotice;
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String downloadTerms;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String mediaFileDate;
 }

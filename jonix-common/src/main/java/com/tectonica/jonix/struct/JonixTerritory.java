@@ -32,7 +32,10 @@ import com.tectonica.jonix.codelist.Regions;
 public class JonixTerritory implements Serializable
 {
 	public java.util.Set<CountryCodes> countriesIncluded;
+
 	public java.util.Set<Regions> regionsIncluded;
+
 	public java.util.Set<CountryCodes> countriesExcluded;
+
 	public java.util.Set<Regions> regionsExcluded;
 }

@@ -33,8 +33,21 @@ import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 public class JonixPrize implements Serializable
 {
 	public PrizeOrAwardAchievements prizeCode;
+
 	public CountryCodes prizeCountry;
-	public List<String> prizeJurys; // XHTML
-	public List<String> prizeNames; // dt.NonEmptyString
-	public String prizeYear; // dt.Year
+
+	/**
+	 * (type: XHTML)
+	 */
+	public List<String> prizeJurys;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public List<String> prizeNames;
+
+	/**
+	 * (type: dt.Year)
+	 */
+	public String prizeYear;
 }

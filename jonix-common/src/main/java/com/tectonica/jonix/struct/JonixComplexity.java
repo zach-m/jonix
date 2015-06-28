@@ -30,6 +30,10 @@ import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
 @SuppressWarnings("serial")
 public class JonixComplexity implements Serializable
 {
-	public String complexityCode; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String complexityCode;
+
 	public ComplexitySchemeIdentifiers complexitySchemeIdentifier;
 }

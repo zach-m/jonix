@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 @SuppressWarnings("serial")
 public class JonixLocationIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public SupplierIdentifierTypes locationIDType;
 
-	public String idTypeName; // dt.NonEmptyString
-	public String idValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idValue;
 }

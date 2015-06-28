@@ -341,10 +341,16 @@ public class OnixClassGen
 		// declare value
 		final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 		p.println();
+		if (ti.comment != null)
+		{
+			p.printf("   /**\n");
+			p.printf("    * %s\n", ti.comment);
+			p.printf("    */\n");
+		}
 		if (!element.isSpaceable)
-			p.printf("   public %s value;%s\n", ti.javaType, ti.comment);
+			p.printf("   public %s value;\n", ti.javaType);
 		else
-			p.printf("   public java.util.Set<%s> value;%s\n", ti.javaType, ti.comment);
+			p.printf("   public java.util.Set<%s> value;\n", ti.javaType);
 
 		// default-constructor
 		p.println();
@@ -426,7 +432,14 @@ public class OnixClassGen
 		for (OnixAttribute a : clz.attributes)
 		{
 			final TypeInfo ti = GenUtil.typeInfoOf(a);
-			p.printf("   public %s %s;%s\n", ti.javaType, a.name, ti.comment);
+			p.println();
+			if (ti.comment != null)
+			{
+				p.printf("   /**\n");
+				p.printf("    * %s\n", ti.comment);
+				p.printf("    */\n");
+			}
+			p.printf("   public %s %s;\n", ti.javaType, a.name);
 		}
 	}
 
@@ -437,9 +450,9 @@ public class OnixClassGen
 			String enumType = a.getEnumName();
 
 			if (enumType == null)
-				p.printf("      this.%s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
+				p.printf("      %s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
 			else
-				p.printf("      this.%s = %s.byValue(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
+				p.printf("      %s = %s.byValue(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
 		}
 	}
 }

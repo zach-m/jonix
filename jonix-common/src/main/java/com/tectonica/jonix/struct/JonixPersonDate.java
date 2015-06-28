@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.PersonDateRoles;
 @SuppressWarnings("serial")
 public class JonixPersonDate implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public PersonDateRoles personDateRole;
 
 	public DateFormats dateFormat;
-	public String date; // NonEmptyString
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String date;
 }

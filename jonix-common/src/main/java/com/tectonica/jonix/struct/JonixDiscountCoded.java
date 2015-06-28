@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.DiscountCodeTypes;
 @SuppressWarnings("serial")
 public class JonixDiscountCoded implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public DiscountCodeTypes discountCodeType;
 
-	public String discountCode; // dt.NonEmptyString
-	public String discountCodeTypeName; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String discountCode;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String discountCodeTypeName;
 }

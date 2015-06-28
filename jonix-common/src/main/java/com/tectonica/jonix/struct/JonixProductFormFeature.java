@@ -31,8 +31,18 @@ import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 @SuppressWarnings("serial")
 public class JonixProductFormFeature implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ProductFormFeatureTypes productFormFeatureType;
 
-	public List<String> productFormFeatureDescriptions; // dt.NonEmptyString
-	public String productFormFeatureValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public List<String> productFormFeatureDescriptions;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String productFormFeatureValue;
 }

@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.ProductClassificationTypes;
 @SuppressWarnings("serial")
 public class JonixProductClassification implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ProductClassificationTypes productClassificationType;
 
-	public Double percent; // dt.PercentDecimal
-	public String productClassificationCode; // dt.NonEmptyString
+	/**
+	 * (type: dt.PercentDecimal)
+	 */
+	public Double percent;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String productClassificationCode;
 }

@@ -32,5 +32,6 @@ import com.tectonica.jonix.codelist.PositionOnProducts;
 public class JonixBarcode implements Serializable
 {
 	public BarcodeIndicatorsList141 barcodeType;
+
 	public PositionOnProducts positionOnProduct;
 }

@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.PriceCodeTypes;
 @SuppressWarnings("serial")
 public class JonixPriceCoded implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public PriceCodeTypes priceCodeType;
 
-	public String priceCodeTypeName; // dt.NonEmptyString
-	public String priceCode; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String priceCodeTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String priceCode;
 }

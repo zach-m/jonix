@@ -38,10 +38,16 @@ import com.tectonica.jonix.codelist.StudyBibleTypes;
 public class JonixBible implements Serializable
 {
 	public List<BibleContentss> bibleContentss;
+
 	public List<BiblePurposes> biblePurposes;
+
 	public BibleReferenceLocations bibleReferenceLocation;
+
 	public List<BibleTextFeatures> bibleTextFeatures;
+
 	public BibleTextOrganizations bibleTextOrganization;
+
 	public List<BibleVersions> bibleVersions;
+
 	public StudyBibleTypes studyBibleType;
 }

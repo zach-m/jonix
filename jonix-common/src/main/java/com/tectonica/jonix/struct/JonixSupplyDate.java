@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.SupplyDateRoles;
 @SuppressWarnings("serial")
 public class JonixSupplyDate implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public SupplyDateRoles supplyDateRole;
 
 	public DateFormats dateFormat;
-	public String date; // dt.NonEmptyString
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String date;
 }

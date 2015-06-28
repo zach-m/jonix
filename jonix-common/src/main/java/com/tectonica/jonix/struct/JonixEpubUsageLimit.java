@@ -30,6 +30,10 @@ import com.tectonica.jonix.codelist.UnitOfUsages;
 @SuppressWarnings("serial")
 public class JonixEpubUsageLimit implements Serializable
 {
-	public Double quantity; // dt.PositiveDecimal
+	/**
+	 * (type: dt.PositiveDecimal)
+	 */
+	public Double quantity;
+
 	public UnitOfUsages epubUsageUnit;
 }

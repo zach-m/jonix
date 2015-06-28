@@ -36,8 +36,13 @@ public class TextItemIDType implements OnixElement, Serializable
 	public static final String refname = "TextItemIDType";
 	public static final String shortname = "b285";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	public TextItemIdentifierTypes value;
@@ -47,9 +52,9 @@ public class TextItemIDType implements OnixElement, Serializable
 
 	public TextItemIDType(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = TextItemIdentifierTypes.byValue(JPU.getContentAsString(element));
 	}

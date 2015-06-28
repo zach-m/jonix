@@ -37,24 +37,34 @@ public class BookClubAdoption implements OnixElement, Serializable
 	public static final String refname = "BookClubAdoption";
 	public static final String shortname = "k169";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
+
 	public LanguageCodes language;
+
 	public TextFormats textformat;
 
-	public String value; // XHTML
+	/**
+	 * (type: XHTML)
+	 */
+	public String value;
 
 	public BookClubAdoption()
 	{}
 
 	public BookClubAdoption(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
-		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
-		this.textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
+		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
+		textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
 
 		value = JPU.getChildXHTML(element, true);
 	}

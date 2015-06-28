@@ -36,8 +36,13 @@ public class AudienceRangePrecision implements OnixElement, Serializable
 	public static final String refname = "AudienceRangePrecision";
 	public static final String shortname = "b075";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
 	public AudienceRangePrecisions value;
@@ -47,9 +52,9 @@ public class AudienceRangePrecision implements OnixElement, Serializable
 
 	public AudienceRangePrecision(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = AudienceRangePrecisions.byValue(JPU.getContentAsString(element));
 	}

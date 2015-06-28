@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 @SuppressWarnings("serial")
 public class JonixPersonNameIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public PersonNameIdentifierTypes personNameIDType;
 
-	public String idTypeName; // NonEmptyString
-	public String idValue; // NonEmptyString
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String idValue;
 }

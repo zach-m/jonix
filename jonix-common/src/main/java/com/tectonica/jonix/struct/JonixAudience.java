@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.AudienceCodeTypes;
 @SuppressWarnings("serial")
 public class JonixAudience implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public AudienceCodeTypes audienceCodeType;
 
-	public String audienceCodeTypeName; // dt.NonEmptyString
-	public String audienceCodeValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String audienceCodeTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String audienceCodeValue;
 }

@@ -35,20 +35,28 @@ public class MessageNumber implements OnixElement, Serializable
 	public static final String refname = "MessageNumber";
 	public static final String shortname = "m180";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
 
-	public Integer value; // dt.StrictPositiveInteger
+	/**
+	 * (type: dt.StrictPositiveInteger)
+	 */
+	public Integer value;
 
 	public MessageNumber()
 	{}
 
 	public MessageNumber(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsInteger(element);
 	}

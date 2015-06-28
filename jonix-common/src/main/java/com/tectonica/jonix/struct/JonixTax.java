@@ -32,8 +32,21 @@ import com.tectonica.jonix.codelist.TaxTypes;
 public class JonixTax implements Serializable
 {
 	public TaxTypes taxType;
+
 	public TaxRateCodeds taxRateCode;
-	public Double taxRatePercent; // dt.PercentDecimal
-	public Double taxableAmount; // dt.PositiveDecimal
-	public Double taxAmount; // dt.PositiveDecimal
+
+	/**
+	 * (type: dt.PercentDecimal)
+	 */
+	public Double taxRatePercent;
+
+	/**
+	 * (type: dt.PositiveDecimal)
+	 */
+	public Double taxableAmount;
+
+	/**
+	 * (type: dt.PositiveDecimal)
+	 */
+	public Double taxAmount;
 }

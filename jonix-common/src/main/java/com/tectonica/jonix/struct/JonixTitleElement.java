@@ -30,13 +30,45 @@ import com.tectonica.jonix.codelist.TitleElementLevels;
 @SuppressWarnings("serial")
 public class JonixTitleElement implements Serializable
 {
-	public Integer sequenceNumber; // dt.StrictPositiveInteger
+	/**
+	 * (type: dt.StrictPositiveInteger)
+	 */
+	public Integer sequenceNumber;
+
 	public TitleElementLevels titleElementLevel;
-	public String partNumber; // dt.NonEmptyString
-	public String yearOfAnnual; // dt.YearOrYearRange
-	public String titlePrefix; // dt.NonEmptyString
-	public boolean isNoPrefix; // optional flag
-	public String titleWithoutPrefix; // dt.NonEmptyString
-	public String titleText; // dt.NonEmptyString
-	public String subtitle; // dt.NonEmptyString
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String partNumber;
+
+	/**
+	 * (type: dt.YearOrYearRange)
+	 */
+	public String yearOfAnnual;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String titlePrefix;
+
+	/**
+	 * (optional flag)
+	 */
+	public boolean isNoPrefix;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String titleWithoutPrefix;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String titleText;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String subtitle;
 }

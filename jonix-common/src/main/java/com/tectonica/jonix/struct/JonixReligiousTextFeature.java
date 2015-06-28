@@ -32,8 +32,15 @@ import com.tectonica.jonix.codelist.ReligiousTextFeatures;
 @SuppressWarnings("serial")
 public class JonixReligiousTextFeature implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ReligiousTextFeatureTypes religiousTextFeatureType;
 
 	public ReligiousTextFeatures religiousTextFeatureCode;
-	public List<String> religiousTextFeatureDescriptions; // XHTML
+
+	/**
+	 * (type: XHTML)
+	 */
+	public List<String> religiousTextFeatureDescriptions;
 }

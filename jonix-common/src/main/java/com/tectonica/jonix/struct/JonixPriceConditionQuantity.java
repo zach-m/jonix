@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.QuantityUnits;
 @SuppressWarnings("serial")
 public class JonixPriceConditionQuantity implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public PriceConditionQuantityTypes priceConditionQuantityType;
 
-	public Double quantity; // dt.PositiveDecimal
+	/**
+	 * (type: dt.PositiveDecimal)
+	 */
+	public Double quantity;
+
 	public QuantityUnits quantityUnit;
 }

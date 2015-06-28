@@ -31,7 +31,15 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
 @SuppressWarnings("serial")
 public class JonixWebsite implements Serializable
 {
-	public List<String> websiteDescriptions; // XHTML
-	public String websiteLink; // dt.NonEmptyURI
+	/**
+	 * (type: XHTML)
+	 */
+	public List<String> websiteDescriptions;
+
+	/**
+	 * (type: dt.NonEmptyURI)
+	 */
+	public String websiteLink;
+
 	public WebsiteRoles websiteRole;
 }

@@ -31,8 +31,18 @@ import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 @SuppressWarnings("serial")
 public class JonixResourceFeature implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ResourceFeatureTypes resourceFeatureType;
 
-	public String featureValue; // dt.NonEmptyString
-	public List<String> featureNotes; // XHTML
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String featureValue;
+
+	/**
+	 * (type: XHTML)
+	 */
+	public List<String> featureNotes;
 }

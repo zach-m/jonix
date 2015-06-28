@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 @SuppressWarnings("serial")
 public class JonixReturnsConditions implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ReturnsConditionsCodeTypes returnsCodeType;
 
-	public String returnsCodeTypeName; // dt.NonEmptyString
-	public String returnsCode; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String returnsCodeTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String returnsCode;
 }

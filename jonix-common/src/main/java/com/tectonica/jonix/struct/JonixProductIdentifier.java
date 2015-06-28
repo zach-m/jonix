@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 @SuppressWarnings("serial")
 public class JonixProductIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ProductIdentifierTypes productIDType;
 
-	public String idTypeName; // dt.NonEmptyString
-	public String idValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idValue;
 }

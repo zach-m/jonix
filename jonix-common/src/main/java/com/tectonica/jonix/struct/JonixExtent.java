@@ -31,8 +31,15 @@ import com.tectonica.jonix.codelist.ExtentUnits;
 @SuppressWarnings("serial")
 public class JonixExtent implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public ExtentTypes extentType;
 
 	public ExtentUnits extentUnit;
-	public Double extentValue; // dt.StrictPositiveDecimal
+
+	/**
+	 * (type: dt.StrictPositiveDecimal)
+	 */
+	public Double extentValue;
 }

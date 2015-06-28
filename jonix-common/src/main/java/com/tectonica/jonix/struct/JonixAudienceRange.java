@@ -32,6 +32,11 @@ import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 public class JonixAudienceRange implements Serializable
 {
 	public AudienceRangePrecisions audienceRangePrecision;
+
 	public AudienceRangeQualifiers audienceRangeQualifier;
-	public String audienceRangeValue; // dt.NonEmptyString
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String audienceRangeValue;
 }

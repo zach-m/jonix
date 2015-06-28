@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.NameCodeTypes;
 @SuppressWarnings("serial")
 public class JonixPublisherIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public NameCodeTypes publisherIDType;
 
-	public String idTypeName; // dt.NonEmptyString
-	public String idValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idValue;
 }

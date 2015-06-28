@@ -31,7 +31,19 @@ import com.tectonica.jonix.codelist.MainSubjectSchemeIdentifiers;
 public class JonixMainSubject implements Serializable
 {
 	public MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier;
-	public String subjectSchemeVersion; // NonEmptyString
-	public String subjectCode; // NonEmptyString
-	public String subjectHeadingText; // NonEmptyString
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String subjectSchemeVersion;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String subjectCode;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String subjectHeadingText;
 }

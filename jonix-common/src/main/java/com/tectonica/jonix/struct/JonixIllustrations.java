@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 @SuppressWarnings("serial")
 public class JonixIllustrations implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public IllustrationAndOtherContentTypes illustrationType;
 
-	public String illustrationTypeDescription; // NonEmptyString
-	public String number; // NonEmptyString
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String illustrationTypeDescription;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String number;
 }

@@ -32,6 +32,11 @@ import com.tectonica.jonix.codelist.Velocitys;
 public class JonixVelocity implements Serializable
 {
 	public Velocitys velocityMetric;
-	public Integer rate; // dt.Integer
+
+	/**
+	 * (type: dt.Integer)
+	 */
+	public Integer rate;
+
 	public Proximitys proximity;
 }

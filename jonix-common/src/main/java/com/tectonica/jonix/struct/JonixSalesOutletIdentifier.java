@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 @SuppressWarnings("serial")
 public class JonixSalesOutletIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public SalesOutletIdentifierTypes salesOutletIDType;
 
-	public String idTypeName; // dt.NonEmptyString
-	public String idValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idValue;
 }

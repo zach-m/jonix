@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 @SuppressWarnings("serial")
 public class JonixSupplierOwnCoding implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public SupplierOwnCodeTypes supplierCodeType;
 
-	public String supplierCodeTypeName; // dt.NonEmptyString
-	public String supplierCodeValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String supplierCodeTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String supplierCodeValue;
 }

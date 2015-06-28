@@ -30,8 +30,18 @@ import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 @SuppressWarnings("serial")
 public class JonixCollectionIdentifier implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public SeriesIdentifierTypes collectionIDType;
 
-	public String idTypeName; // dt.NonEmptyString
-	public String idValue; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idTypeName;
+
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String idValue;
 }

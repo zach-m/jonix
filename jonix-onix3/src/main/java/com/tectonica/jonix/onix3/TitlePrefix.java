@@ -38,28 +38,40 @@ public class TitlePrefix implements OnixElement, Serializable
 	public static final String refname = "TitlePrefix";
 	public static final String shortname = "b030";
 
-	public String datestamp; // dt.DateOrDateTime
+	/**
+	 * (type: dt.DateOrDateTime)
+	 */
+	public String datestamp;
+
 	public RecordSourceTypes sourcetype;
+
 	public String sourcename;
+
 	public String collationkey;
+
 	public LanguageCodes language;
+
 	public TextScriptCodes textscript;
+
 	public TextCaseFlags textcase;
 
-	public String value; // dt.NonEmptyString
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String value;
 
 	public TitlePrefix()
 	{}
 
 	public TitlePrefix(org.w3c.dom.Element element)
 	{
-		this.datestamp = JPU.getAttribute(element, "datestamp");
-		this.sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
-		this.sourcename = JPU.getAttribute(element, "sourcename");
-		this.collationkey = JPU.getAttribute(element, "collationkey");
-		this.language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
-		this.textscript = TextScriptCodes.byValue(JPU.getAttribute(element, "textscript"));
-		this.textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		datestamp = JPU.getAttribute(element, "datestamp");
+		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcename = JPU.getAttribute(element, "sourcename");
+		collationkey = JPU.getAttribute(element, "collationkey");
+		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
+		textscript = TextScriptCodes.byValue(JPU.getAttribute(element, "textscript"));
+		textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
 
 		value = JPU.getContentAsString(element);
 	}

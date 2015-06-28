@@ -31,8 +31,18 @@ import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 @SuppressWarnings("serial")
 public class JonixAncillaryContent implements Serializable
 {
+	/**
+	 * The key of this struct
+	 */
 	public IllustrationAndOtherContentTypes ancillaryContentType;
 
-	public List<String> ancillaryContentDescriptions; // XHTML
-	public Integer number; // dt.PositiveInteger
+	/**
+	 * (type: XHTML)
+	 */
+	public List<String> ancillaryContentDescriptions;
+
+	/**
+	 * (type: dt.PositiveInteger)
+	 */
+	public Integer number;
 }

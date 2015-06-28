@@ -28,6 +28,13 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class JonixOnOrderDetail implements Serializable
 {
-	public String expectedDate; // dt.NonEmptyString
-	public Integer onOrder; // dt.PositiveInteger
+	/**
+	 * (type: dt.NonEmptyString)
+	 */
+	public String expectedDate;
+
+	/**
+	 * (type: dt.PositiveInteger)
+	 */
+	public Integer onOrder;
 }

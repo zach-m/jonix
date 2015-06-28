@@ -31,6 +31,14 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
 public class JonixProductWebsite implements Serializable
 {
 	public WebsiteRoles websiteRole;
-	public String productWebsiteDescription; // XHTML
-	public String productWebsiteLink; // NonEmptyString
+
+	/**
+	 * (type: XHTML)
+	 */
+	public String productWebsiteDescription;
+
+	/**
+	 * (type: NonEmptyString)
+	 */
+	public String productWebsiteLink;
 }

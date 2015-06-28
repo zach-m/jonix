@@ -82,11 +82,17 @@ public class OnixStructGen
 			final OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
 			final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
 			final String keyField = GenUtil.fieldOf(keyMember.className);
-			p.printf("   public %s %s;%s\n", keyTypeInfo.javaType, keyField, keyTypeInfo.comment);
+			p.printf("   /**\n");
+			p.printf("    * The key of this struct\n");
+			if (keyTypeInfo.comment != null)
+				p.printf("    * <p>%s\n", keyTypeInfo.comment);
+			p.printf("    */\n");
+			p.printf("   public %s %s;\n", keyTypeInfo.javaType, keyField);
 			p.println();
 		}
 
 		// declare members
+		boolean firstField = true;
 		for (OnixStructMember structMember : struct.members)
 		{
 			final OnixCompositeMember member = structMember.dataMember;
@@ -108,12 +114,23 @@ public class OnixStructGen
 			{
 				field = "is" + member.className;
 				javaType = "boolean";
-				comment = " // optional flag";
+				comment = "(optional flag)";
+			}
+
+			if (!firstField)
+				p.println();
+			else
+				firstField = false;
+			if (comment != null)
+			{
+				p.printf("   /**\n");
+				p.printf("    * %s\n", comment);
+				p.printf("    */\n");
 			}
 			if (member.cardinality.singular)
-				p.printf("   public %s %s;%s\n", javaType, field, comment);
+				p.printf("   public %s %s;\n", javaType, field);
 			else
-				p.printf("   public List<%s> %ss;%s\n", javaType, field, comment);
+				p.printf("   public List<%s> %ss;\n", javaType, field);
 		}
 
 		// default-constructor
