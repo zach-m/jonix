@@ -49,9 +49,10 @@ public class TestTabDelimited
 	// ignored by default. the sample files are not checked in to SCM
 	public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException
 	{
-		streamer.readFolder("../onix_samples/ONIX3", "*.onix"); // ONIX3 files
-		streamer.readFolder("../onix_samples/ONIX2/BK", "*.xml"); // ONIX2 files
-		streamer.read("../onix_samples/ONIX2/SB_short.xml"); // short-references ONIX2 file
-		streamer.read("../onix_samples/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
+		String samplesFolder = "C:/Users/zach/Dropbox/Projects/Jonix/onix_samples";
+		streamer.readFolder(samplesFolder + "/ONIX3", "*.onix"); // ONIX3 files
+		streamer.readFolder(samplesFolder + "/ONIX2/BK", "*.xml"); // ONIX2 files
+		streamer.read(samplesFolder + "/ONIX2/SB_short.xml"); // short-references ONIX2 file
+		streamer.read(samplesFolder + "/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
 	}
 }
