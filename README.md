@@ -46,7 +46,7 @@ Jonix provides solutions for all the above:
 
 On top of the low-level functions, Jonix offers assorted services for data manipulation, including:
 
-* **Unification**. This is one of the most powerful features in Jonix, which enables processing of **mixed** sources, i.e. a group of sources, where each may have a different ONIX version (2 or 3) and sub-schema (_Reference_ or _Short_). These sources will be transformed in a single, common, set of Java classes, on which version-agnostic operations can be made (such as writing into a database, sort, search, etc.).
+* **Unification**. This is one of the most powerful features in Jonix, which enables processing of **mixed** sources, i.e. a group of sources, where each may have a different ONIX version (2 or 3) and sub-schema (_Reference_ or _Short_). These sources will be transformed into a single, common, set of Java classes, on which version-agnostic operations can be made (such as writing into a database, sort, search, etc.).
 * **Tabulation**. While ONIX records are organized as trees (i.e. XML records), it is sometimes easier to analyze them as if they were rows in a table. Presenting a tree as a plain list of columns can't be done without loss of generality, but with the proper knowledge of the ONIX content, it can be done at a reasonable compromise. Jonix offers a default tabulation scheme, which you can override to your needs. For more information see the documentation for [JonixColumn](http://zach-m.github.io/jonix/com/tectonica/jonix/JonixColumn.html)  
 * **Bulk Processing**. Jonix provides methods for handling multiple ONIX sources, scattered in the file system.
 

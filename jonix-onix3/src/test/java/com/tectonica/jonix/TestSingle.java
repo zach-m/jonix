@@ -81,7 +81,7 @@ public class TestSingle
 		{
 			final Element productElem = (Element) products.item(i);
 			final Product product = new Product(productElem);
-			System.out.println(JSON.toJson(product));
+			System.out.println(JonixUtil.toJson(product));
 		}
 	}
 
@@ -93,7 +93,7 @@ public class TestSingle
 			@Override
 			protected void onProduct(Product product, JonixStreamer streamer)
 			{
-				System.out.println(JSON.toJson(product));
+				System.out.println(JonixUtil.toJson(product));
 			}
 		});
 

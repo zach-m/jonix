@@ -19,11 +19,11 @@
 
 package com.tectonica.jonix.stream;
 
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 /**
@@ -39,6 +39,8 @@ import org.w3c.dom.Element;
  */
 public abstract class JonixExtractor
 {
+	protected static final Logger LOG = LoggerFactory.getLogger(JonixExtractor.class);
+
 	protected abstract void onHeaderElement(Element header, JonixStreamer streamer);
 
 	protected abstract void onProductElement(Element product, JonixStreamer streamer);
@@ -55,40 +57,4 @@ public abstract class JonixExtractor
 
 	protected void onAfterSource(JonixStreamer streamer)
 	{}
-
-	// /////////////////////////////////////////////////////////////////////////////////////////
-
-	// TODO: consider using a standard logging package (e.g. SLF4J) instead of this proprietary support
-	protected PrintStream logger = System.err;
-
-	public JonixExtractor setLogger(String fileName) throws UnsupportedEncodingException, FileNotFoundException
-	{
-		return setLogger(new PrintStream(fileName, "UTF-8"));
-	}
-
-	public JonixExtractor setLogger(PrintStream logger)
-	{
-		this.logger = (logger == null) ? System.err : logger;
-		return this;
-	}
-
-	public PrintStream getLogger()
-	{
-		return logger; // never a null
-	}
-
-	public void log(String x)
-	{
-		logger.println(x);
-	}
-
-	public void logf(String format, Object... args)
-	{
-		logger.printf(format, args);
-	}
-
-	public void logStackTrace(Throwable e)
-	{
-		e.printStackTrace(logger);
-	}
 }

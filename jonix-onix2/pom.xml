@@ -10,7 +10,7 @@
 		<version>3.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	
+
 	<name>Jonix - Onix2</name>
 	<description>Collection of classes for processing Onix-2 sources</description>
 
@@ -19,11 +19,17 @@
 			<groupId>com.tectonica</groupId>
 			<artifactId>jonix-common</artifactId>
 		</dependency>
-			
+
 		<!-- Testing -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>${version.slf4j}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

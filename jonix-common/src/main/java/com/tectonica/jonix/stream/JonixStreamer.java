@@ -25,6 +25,8 @@ import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
@@ -57,6 +59,8 @@ import com.tectonica.xmlchunk.XmlChunker;
  */
 public class JonixStreamer
 {
+	protected static final Logger LOG = LoggerFactory.getLogger(JonixStreamer.class);
+
 	protected final JonixExtractor extractor;
 	protected int productNo = 0;
 	protected JonixOnixVersion sourceOnixVersion = JonixOnixVersion.UNKNOWN;
@@ -141,10 +145,9 @@ public class JonixStreamer
 			}
 			catch (Exception e)
 			{
-				extractor.logStackTrace(e);
+				LOG.error("Couldn't read source " + source + ", encoding: " + encoding, e);
 				throw new RuntimeException(e);
 			}
-			extractor.getLogger().flush();
 			extractor.onAfterSource(this);
 		}
 	}

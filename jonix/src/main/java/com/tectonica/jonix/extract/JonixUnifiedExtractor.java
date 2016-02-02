@@ -112,20 +112,20 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixFilesExtractor
 	@Override
 	protected boolean onBeforeFileList(List<String> fileNames, JonixStreamer streamer)
 	{
-		log("Found " + fileNames.size() + " files..");
+		LOG.info("Found {} files..", fileNames.size());
 		return true;
 	}
 
 	@Override
 	protected void onAfterFileList(List<String> processedFileNames, JonixStreamer streamer)
 	{
-		logf("** DONE, %d products extracted in total **\n", streamer.getProductNo());
+		LOG.info("** DONE, {} products extracted in total **\n", streamer.getProductNo());
 	}
 
 	@Override
 	protected boolean onBeforeFile(String fileName, JonixStreamer streamer)
 	{
-		log("opening " + fileName + ".. ");
+		LOG.info("opening {}.. ", fileName);
 		return true;
 	}
 }

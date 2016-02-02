@@ -146,7 +146,7 @@ public class JonixUniqueExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 	{
 		if (changed)
 		{
-			log("Sorting " + uniqueProducts.size() + " products..");
+			LOG.info("Sorting {} products..", uniqueProducts.size());
 			Collections.sort(uniqueProducts, new Comparator<ProductInfo<H, P>>()
 			{
 				@Override
@@ -159,7 +159,7 @@ public class JonixUniqueExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 				}
 			});
 
-			log("Compacting..");
+			LOG.info("Compacting..");
 			String[] lastId = null;
 			ListIterator<ProductInfo<H, P>> iter = uniqueProducts.listIterator();
 			while (iter.hasNext())

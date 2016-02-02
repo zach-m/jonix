@@ -37,16 +37,16 @@ public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 	@Override
 	protected void onHeader(H header, JonixStreamer streamer)
 	{
-		log("-----------------------------------------------------------\n");
-		log(header.toString());
-		log("-----------------------------------------------------------\n");
+		LOG.info("-----------------------------------------------------------\n");
+		LOG.info(header.toString());
+		LOG.info("-----------------------------------------------------------\n");
 	}
 
 	@Override
 	protected void onProduct(P product, JonixStreamer streamer)
 	{
 		// show a log message about the product being successfully parsed
-		log("retrieved product #" + streamer.getProductNo() + " - " + unifier.labelOf(product));
+		LOG.info("retrieved product #{} - {}", streamer.getProductNo(), unifier.labelOf(product));
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////
@@ -71,7 +71,7 @@ public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 		}
 		catch (FileNotFoundException | UnsupportedEncodingException e)
 		{
-			logStackTrace(e);
+			LOG.error("Couldn't setOut to '" + fileName + "', encoding: " + encoding, e);
 			throw new RuntimeException(e);
 		}
 	}

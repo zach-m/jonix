@@ -72,7 +72,7 @@ public class JonixFilesStreamer extends JonixStreamer
 		}
 		catch (FileNotFoundException e)
 		{
-			extractor.logStackTrace(e);
+			LOG.error("Couldn't read from '" + fileName + "', encoding: " + encoding, e);
 			throw new RuntimeException(e);
 		}
 		read(fos, encoding); // outside the try{} to avoid double catching
@@ -115,7 +115,7 @@ public class JonixFilesStreamer extends JonixStreamer
 		}
 		catch (IOException e)
 		{
-			extractor.logStackTrace(e);
+			LOG.error("Couldn't read folder '" + rootLocation + "', pattern: " + pattern, e);
 			throw new RuntimeException(e);
 		}
 	}
