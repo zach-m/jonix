@@ -87,7 +87,7 @@ public class TestXmlChunkerWithProducts
 
 					// in rare cases where there is no title, we print the entire XML record (as JSON)
 					if (title == null)
-						System.err.println(JonixUtil.toJson(product));
+						System.err.println(JonixJson.toJson(product));
 				}
 			}
 

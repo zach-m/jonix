@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.export;
 
+import com.tectonica.jonix.JonixJson;
 import com.tectonica.jonix.JonixUnifier;
-import com.tectonica.jonix.JonixUtil;
 import com.tectonica.jonix.stream.JonixStreamer;
 
 /**
@@ -53,7 +53,7 @@ public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 	{
 		super.onProduct(product, streamer); // logs an info line
 
-		out.println(exportRawProduct ? JonixUtil.toJson(rawOnixProduct) : JonixUtil.toJson(product));
+		out.println(exportRawProduct ? JonixJson.toJson(rawOnixProduct) : JonixJson.toJson(product));
 		out.println("\n");
 	}
 }

@@ -67,9 +67,9 @@ public class TestBasicProduct
 					final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
 					BasicProduct bp = new BasicProduct(product);
 					System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
-					System.out.println(JonixUtil.toJson(product));
+					System.out.println(JonixJson.toJson(product));
 					System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
-					System.out.println(JonixUtil.toJson(bp));
+					System.out.println(JonixJson.toJson(bp));
 				}
 			}
 
@@ -105,9 +105,9 @@ public class TestBasicProduct
 					final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
 					BasicProduct bp = new BasicProduct(product);
 					System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
-					System.out.println(JonixUtil.toJson(product));
+					System.out.println(JonixJson.toJson(product));
 					System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
-					System.out.println(jsonDirect = JonixUtil.toJson(bp));
+					System.out.println(jsonDirect = JonixJson.toJson(bp));
 				}
 			}
 
@@ -127,7 +127,7 @@ public class TestBasicProduct
 			@Override
 			protected void onProduct(BasicProduct product, JonixStreamer streamer)
 			{
-				jsonViaReader = JonixUtil.toJson(product);
+				jsonViaReader = JonixJson.toJson(product);
 			}
 		});
 		streamer.read(getClass().getResourceAsStream(RESOURCE_NAME));
