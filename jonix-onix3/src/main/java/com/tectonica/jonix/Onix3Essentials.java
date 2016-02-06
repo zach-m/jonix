@@ -24,13 +24,11 @@ public class Onix3Essentials implements JonixEssentials
 		switch (fieldType)
 		{
 		case Isbn13:
-			JonixProductIdentifier isbn13Tag = product.findProductIdentifier(ProductIdentifierTypes.ISBN_13);
-			return (isbn13Tag == null) ? null : isbn13Tag.idValue;
-			
+			return getProductIdentifier(ProductIdentifierTypes.ISBN_13);
+
 		case Isbn10:
-			JonixProductIdentifier isbn10Tag = product.findProductIdentifier(ProductIdentifierTypes.ISBN_10);
-			return (isbn10Tag == null) ? null : isbn10Tag.idValue;
-			
+			return getProductIdentifier(ProductIdentifierTypes.ISBN_10);
+
 		case Title:
 			if (product.descriptiveDetail != null)
 			{
@@ -50,5 +48,11 @@ public class Onix3Essentials implements JonixEssentials
 			return null;
 		}
 		return null;
+	}
+
+	public String getProductIdentifier(ProductIdentifierTypes idType)
+	{
+		JonixProductIdentifier productIdentifier = product.findProductIdentifier(idType);
+		return (productIdentifier == null) ? null : productIdentifier.idValue;
 	}
 }

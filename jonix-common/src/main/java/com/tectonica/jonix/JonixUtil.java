@@ -3,9 +3,12 @@ package com.tectonica.jonix;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -130,5 +133,47 @@ public class JonixUtil
 			if (comp != 0)
 				return comp;
 		}
+	}
+
+	/**
+	 * simple auxiliary function to be statically imported into your code when calling lookup services in the various
+	 * onix classes (that take a set as an input parameter)
+	 */
+	@SafeVarargs
+	public static <T> Set<T> setOf(T... items)
+	{
+		return new HashSet<>(Arrays.asList(items));
+	}
+
+	public static String hyphenatedIsbn(String isbn)
+	{
+		if (isbn == null)
+			return null;
+		if (isbn.length() == 13)
+			return isbn.substring(0, 0 + 3) + "-" + isbn.substring(3, 3 + 1) + "-" + isbn.substring(4, 4 + 4) + "-"
+					+ isbn.substring(8, 8 + 4) + "-" + isbn.substring(12, 12 + 1);
+		if (isbn.length() == 10)
+			return isbn.substring(0, 0 + 1) + "-" + isbn.substring(1, 1 + 4) + "-" + isbn.substring(5, 5 + 4) + "-"
+					+ isbn.substring(9, 9 + 1);
+		return isbn;
+	}
+
+	public static String contributorDisplayName(String personName, String personNameKey, String personNameBeforeKey,
+			String corporateName)
+	{
+		if (personName != null)
+			return personName;
+
+		if (personNameKey != null)
+		{
+			if (personNameBeforeKey != null)
+				return personNameBeforeKey + " " + personNameKey;
+			return personNameKey;
+		}
+
+		if (personNameBeforeKey != null)
+			return personNameBeforeKey;
+
+		return corporateName;
 	}
 }

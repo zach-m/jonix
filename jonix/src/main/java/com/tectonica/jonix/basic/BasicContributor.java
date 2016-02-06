@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.tectonica.jonix.JonixUtil;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.onix3.BiographicalNote;
@@ -58,7 +59,7 @@ public class BasicContributor implements Serializable
 		personNameBeforeKey = c.getNamesBeforeKeyValue();
 		corporateName = c.getCorporateNameValue();
 		biographicalNote = c.getBiographicalNoteValue();
-		displayName = phraseDisplayName();
+		displayName = JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, corporateName);
 	}
 
 	public BasicContributor(com.tectonica.jonix.onix3.Contributor c)
@@ -69,25 +70,7 @@ public class BasicContributor implements Serializable
 		personNameBeforeKey = c.getNamesBeforeKeyValue();
 		corporateName = c.getCorporateNameValue();
 		biographicalNote = pickBiographicalNote(c);
-		displayName = phraseDisplayName();
-	}
-
-	private String phraseDisplayName()
-	{
-		if (personName != null)
-			return personName;
-
-		if (personNameKey != null)
-		{
-			if (personNameBeforeKey != null)
-				return personNameBeforeKey + " " + personNameKey;
-			return personNameKey;
-		}
-
-		if (personNameBeforeKey != null)
-			return personNameBeforeKey;
-
-		return corporateName;
+		displayName = JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, corporateName);
 	}
 
 	private String pickBiographicalNote(Contributor contributor)
