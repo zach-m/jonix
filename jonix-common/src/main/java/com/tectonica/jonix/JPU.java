@@ -37,7 +37,7 @@ import org.w3c.dom.NodeList;
 /**
  * an all-static Jonix Processing Utility class, assisting in run time processing of the DOM elements.
  * <p>
- * IMPORTANT: don't edit! the auto-generated classes all rely heavily on the methods in this class
+ * IMPORTANT: Beware editing! the auto-generated classes all rely heavily on the methods in this class
  * 
  * @author Zach Melamed
  */

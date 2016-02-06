@@ -275,6 +275,7 @@ public abstract class BasicColumn implements JonixColumn<BasicProduct>
 	{
 		if (product.collections.size() > 0)
 		{
+			// we take the first (typically the only) series tag listed
 			columnBuffer[0] = product.collections.get(0).mainTitle;
 			return true;
 		}
