@@ -11,9 +11,13 @@ public interface JonixEssentials
 		UPC, //
 		Title, //
 		Subtitle, //
+		TitleInOriginalLanguage, //
+		SubtitleInOriginalLanguage, //
 		TitleOfSeries, //
 		NumberWithinSeries, //
-//		Language, NumOfPages, Publisher, PublicationDate, Dewey, Keywords
+		Language,
+		Audience
+		// NumOfPages, Publisher, PublicationDate, Dewey, Keywords
 
 		// TBD: prices and descriptions
 	}

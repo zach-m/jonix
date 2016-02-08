@@ -7,13 +7,19 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
+import com.tectonica.jonix.codelist.AudienceRangePrecisions;
+import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
+import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Contributor;
 import com.tectonica.jonix.onix2.ContributorRole;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Series;
+import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
@@ -42,15 +48,11 @@ public class Onix2Essentials implements JonixEssentials
 
 		case Title:
 		case Subtitle:
-			// we pick the main ("distinctive") title of the book
-			JonixTitle titleTag = product.findTitle(TitleTypes.Distinctive_title_book);
-			if (titleTag != null)
-			{
-				if (fieldType == TextFields.Title)
-					return titleTag.titleText;
-				return titleTag.subtitle;
-			}
-			return null;
+			return getTitle(TitleTypes.Distinctive_title_book, fieldType == TextFields.Subtitle);
+
+		case TitleInOriginalLanguage:
+		case SubtitleInOriginalLanguage:
+			return getTitle(TitleTypes.Title_in_original_language, fieldType == TextFields.SubtitleInOriginalLanguage);
 
 		case TitleOfSeries:
 		case NumberWithinSeries:
@@ -64,8 +66,49 @@ public class Onix2Essentials implements JonixEssentials
 				return series.getNumberWithinSeriesValue();
 			}
 			return null;
+
+		case Language:
+			JonixLanguage languageTag = product.findLanguage(LanguageRoles.Language_of_text);
+			return (languageTag == null) ? null : languageTag.languageCode.name();
+
+		case Audience:
+			List<Audiences> audiences = product.getAudienceCodeValues();
+			if (audiences != null && !audiences.isEmpty())
+			{
+				// we pick the first audience, as in practice it's very rare to see more than one
+				return JonixUtil.audienceLabel(audiences.get(0));
+			}
+			return null;
 		}
 
+		AudienceRange audienceRange = product.audienceRanges.get(0);
+		AudienceRangeQualifiers qualifier = audienceRange.getAudienceRangeQualifierValue();
+		if (qualifier == AudienceRangeQualifiers.Interest_age_years)
+		{
+			AudienceRangePrecisions precision = audienceRange.getAudienceRangePrecisionValue();
+			String value = audienceRange.getAudienceRangeValueValue();
+			if (precision == AudienceRangePrecisions.From)
+			{
+				// ageFrom = Integer.valueOf(value);
+			}
+			else if (precision == AudienceRangePrecisions.To)
+			{
+				// ageTo = Integer.valueOf(value);
+			}
+		}
+
+		return null;
+	}
+
+	private String getTitle(TitleTypes titleType, boolean returnSubtitle)
+	{
+		JonixTitle titleTag = product.findTitle(titleType);
+		if (titleTag != null)
+		{
+			if (returnSubtitle)
+				return titleTag.subtitle;
+			return titleTag.titleText;
+		}
 		return null;
 	}
 
@@ -97,37 +140,53 @@ public class Onix2Essentials implements JonixEssentials
 
 		if (requestedRoles == null || requestedRoles.length == 0)
 		{
-			// even though the ONIX standard requires at least one contributor, we don't take chances here
-			// and always return a non-null list
-			return (product.contributors == null) ? result : product.contributors;
-		}
-
-		HashSet<ContributorRoles> rolesSet = new HashSet<>(Arrays.asList(requestedRoles));
-
-		if (product.contributors != null)
-		{
-			boolean isSequenced = false;
-			
-			for (Contributor contributor : product.contributors)
+			// if no filtering by role is required, we take all contributors and avoid unnecessary search
+			if (product.contributors != null) // safety only. the ONIX standard requires at least one contributor
 			{
-				if (!isSequenced)
-					isSequenced = (contributor.sequenceNumber != null);
-				for (ContributorRole role : contributor.contributorRoles)
+				// copying is needed so that consequent sorting won't affect the original
+				result = new ArrayList<>(product.contributors);
+			}
+		}
+		else
+		{
+			// we perform a search according to the roles filter
+			HashSet<ContributorRoles> rolesSet = new HashSet<>(Arrays.asList(requestedRoles));
+			if (product.contributors != null)
+			{
+				for (Contributor contributor : product.contributors)
 				{
-					if (rolesSet.contains(role.value))
-						result.add(contributor);
+					for (ContributorRole role : contributor.contributorRoles)
+					{
+						if (rolesSet.contains(role.value))
+							result.add(contributor);
+					}
 				}
 			}
-
-			if (isSequenced)
-				sortContributuresBySequence(result);
 		}
+
+		sortContributuresBySequence(result);
 
 		return result;
 	}
 
 	public static void sortContributuresBySequence(List<Contributor> contributors)
 	{
+		// run a quick test to see if the list is at all sequenced. If it is, then this loop should really stop after
+		// one iteration. The only reason to run a loop (rather than examining the first item) is that we want to
+		// support a hybrid, ill-posed sequencing, where only SOME of the items are sequenced
+		boolean isSequenced = false;
+		for (Contributor contributor : contributors)
+		{
+			if (contributor.sequenceNumber != null)
+			{
+				isSequenced = true;
+				break;
+			}
+		}
+
+		if (!isSequenced)
+			return;
+
 		Collections.sort(contributors, new Comparator<Contributor>()
 		{
 			@Override
@@ -144,7 +203,7 @@ public class Onix2Essentials implements JonixEssentials
 				}
 				catch (NumberFormatException nfe)
 				{
-					return Integer.MAX_VALUE;
+					return Integer.MAX_VALUE; // i.e. unsequenced items in an hybrid list go to the end
 				}
 			}
 		});
@@ -162,5 +221,29 @@ public class Onix2Essentials implements JonixEssentials
 		}
 
 		return result;
+	}
+
+	public static String[] getContributorNameParts(Contributor contributor)
+	{
+		String inverted = contributor.getPersonNameInvertedValue();
+		if (inverted != null)
+		{
+			String[] splits = inverted.split(",");
+			String[] names = new String[splits.length];
+			for (int i = 0; i < splits.length; i++)
+				names[i] = splits[splits.length - 1 - i].trim();
+			return names;
+		}
+
+		String straight = contributor.getPersonNameValue();
+		if (straight != null)
+		{
+			String[] names = straight.split(",");
+			for (int i = 0; i < names.length; i++)
+				names[i] = names[i].trim();
+			return names;
+		}
+
+		return new String[0];
 	}
 }

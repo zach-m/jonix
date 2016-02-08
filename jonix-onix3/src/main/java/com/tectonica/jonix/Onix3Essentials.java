@@ -2,6 +2,7 @@ package com.tectonica.jonix;
 
 import java.util.List;
 
+import com.tectonica.jonix.JonixEssentials.TextFields;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix3.Product;
@@ -9,7 +10,7 @@ import com.tectonica.jonix.onix3.TitleDetail;
 import com.tectonica.jonix.onix3.TitleElement;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
-public class Onix3Essentials implements JonixEssentials
+public class Onix3Essentials // implements JonixEssentials
 {
 	private final Product product;
 
@@ -18,7 +19,7 @@ public class Onix3Essentials implements JonixEssentials
 		this.product = product;
 	}
 
-	@Override
+//	@Override
 	public String get(TextFields fieldType)
 	{
 		switch (fieldType)

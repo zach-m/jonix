@@ -12,6 +12,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.tectonica.jonix.codelist.Audiences;
+
 public class JonixUtil
 {
 	private static final Pattern timestampPattern = Pattern.compile("[^0-9]([0-9]{4,14})(?=[_\\.])");
@@ -175,5 +177,29 @@ public class JonixUtil
 			return personNameBeforeKey;
 
 		return corporateName;
+	}
+
+	public static String audienceLabel(Audiences audience)
+	{
+		switch (audience)
+		{
+		case General_trade:
+			return "General/trade";
+		case Children_juvenile:
+			return "Children/juvenile";
+		case Young_adult:
+			return "Young adult";
+		case Primary_and_secondary_elementary_and_high_school:
+			return "Primary & secondary/elementary & high school";
+		case College_higher_education:
+			return "College/higher education";
+		case Professional_and_scholarly:
+			return "Professional and scholarly";
+		case ELT_ESL:
+			return "English as a second language";
+		case Adult_education:
+			return "Adult education";
+		}
+		return null;
 	}
 }
