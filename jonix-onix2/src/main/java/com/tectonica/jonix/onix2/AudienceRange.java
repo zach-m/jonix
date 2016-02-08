@@ -20,6 +20,8 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
@@ -65,14 +67,14 @@ public class AudienceRange implements OnixDataComposite, Serializable
 	public AudienceRangeQualifier audienceRangeQualifier;
 
 	/**
-	 * (this field is optional)
+	 * (this list may be empty)
 	 */
-	public AudienceRangePrecision audienceRangePrecision;
+	public List<AudienceRangePrecision> audienceRangePrecisions;
 
 	/**
-	 * (this field is optional)
+	 * (this list may be empty)
 	 */
-	public AudienceRangeValue audienceRangeValue;
+	public List<AudienceRangeValue> audienceRangeValues;
 
 	public AudienceRange()
 	{}
@@ -96,9 +98,10 @@ public class AudienceRange implements OnixDataComposite, Serializable
 				if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname))
 					audienceRangeQualifier = new AudienceRangeQualifier(element);
 				else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname))
-					audienceRangePrecision = new AudienceRangePrecision(element);
+					audienceRangePrecisions = JPU.addToList(audienceRangePrecisions,
+							new AudienceRangePrecision(element));
 				else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname))
-					audienceRangeValue = new AudienceRangeValue(element);
+					audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(element));
 			}
 		});
 	}
@@ -108,22 +111,36 @@ public class AudienceRange implements OnixDataComposite, Serializable
 		return (audienceRangeQualifier == null) ? null : audienceRangeQualifier.value;
 	}
 
-	public AudienceRangePrecisions getAudienceRangePrecisionValue()
+	public List<AudienceRangePrecisions> getAudienceRangePrecisionValues()
 	{
-		return (audienceRangePrecision == null) ? null : audienceRangePrecision.value;
+		if (audienceRangePrecisions != null)
+		{
+			List<AudienceRangePrecisions> list = new ArrayList<>();
+			for (AudienceRangePrecision i : audienceRangePrecisions)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
-	public String getAudienceRangeValueValue()
+	public List<String> getAudienceRangeValueValues()
 	{
-		return (audienceRangeValue == null) ? null : audienceRangeValue.value;
+		if (audienceRangeValues != null)
+		{
+			List<String> list = new ArrayList<>();
+			for (AudienceRangeValue i : audienceRangeValues)
+				list.add(i.value);
+			return list;
+		}
+		return null;
 	}
 
 	public JonixAudienceRange asJonixAudienceRange()
 	{
 		JonixAudienceRange x = new JonixAudienceRange();
-		x.audienceRangePrecision = getAudienceRangePrecisionValue();
+		x.audienceRangePrecisions = getAudienceRangePrecisionValues();
 		x.audienceRangeQualifier = getAudienceRangeQualifierValue();
-		x.audienceRangeValue = getAudienceRangeValueValue();
+		x.audienceRangeValues = getAudienceRangeValueValues();
 		return x;
 	}
 }

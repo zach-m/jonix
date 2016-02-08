@@ -20,6 +20,7 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
@@ -31,12 +32,12 @@ import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 @SuppressWarnings("serial")
 public class JonixAudienceRange implements Serializable
 {
-	public AudienceRangePrecisions audienceRangePrecision;
+	public List<AudienceRangePrecisions> audienceRangePrecisions;
 
 	public AudienceRangeQualifiers audienceRangeQualifier;
 
 	/**
 	 * (type: dt.NonEmptyString)
 	 */
-	public String audienceRangeValue;
+	public List<String> audienceRangeValues;
 }

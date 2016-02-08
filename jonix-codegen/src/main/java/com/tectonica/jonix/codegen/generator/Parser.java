@@ -515,7 +515,11 @@ public class Parser
 					Cardinality cardinality = Cardinality.of(minOccurs, maxOccurs).mergeWith(parentCardinality);
 					final OnixCompositeMember existing = members.get(className);
 					if (existing == null)
-						members.put(className, OnixCompositeMember.create(className, cardinality));
+					{
+						OnixCompositeMember onixCompositeMember = OnixCompositeMember.create(className, cardinality);
+						patchCompositeMember(onixCompositeMember);
+						members.put(className, onixCompositeMember);
+					}
 					else
 						existing.cardinality = existing.cardinality.mergeWith(cardinality);
 				}
@@ -534,6 +538,18 @@ public class Parser
 					throw new RuntimeException("under content - node of invalid type found: " + childType);
 			}
 		});
+	}
+
+	private void patchCompositeMember(OnixCompositeMember onixCompositeMember)
+	{
+		// in Onix's <AudienceRange> there are two members <AudienceRangePrecision> and <AudienceRangeValue>
+		// with a very unique cardinality - they can appear once, twice or not at all. the XSD doesn't reflect that
+		if (onixCompositeMember.className.equals("AudienceRangePrecision")
+				|| onixCompositeMember.className.equals("AudienceRangeValue")
+				|| onixCompositeMember.className.equals("b075") || onixCompositeMember.className.equals("b076"))
+		{
+			onixCompositeMember.cardinality = Cardinality.ZeroOrMore;
+		}
 	}
 
 	private void extractAttributes(Element attributesParentElem, final OnixClass onixClass)

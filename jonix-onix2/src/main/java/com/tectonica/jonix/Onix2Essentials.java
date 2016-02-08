@@ -81,34 +81,6 @@ public class Onix2Essentials implements JonixEssentials
 			return null;
 		}
 
-		AudienceRange audienceRange = product.audienceRanges.get(0);
-		AudienceRangeQualifiers qualifier = audienceRange.getAudienceRangeQualifierValue();
-		if (qualifier == AudienceRangeQualifiers.Interest_age_years)
-		{
-			AudienceRangePrecisions precision = audienceRange.getAudienceRangePrecisionValue();
-			String value = audienceRange.getAudienceRangeValueValue();
-			if (precision == AudienceRangePrecisions.From)
-			{
-				// ageFrom = Integer.valueOf(value);
-			}
-			else if (precision == AudienceRangePrecisions.To)
-			{
-				// ageTo = Integer.valueOf(value);
-			}
-		}
-
-		return null;
-	}
-
-	private String getTitle(TitleTypes titleType, boolean returnSubtitle)
-	{
-		JonixTitle titleTag = product.findTitle(titleType);
-		if (titleTag != null)
-		{
-			if (returnSubtitle)
-				return titleTag.subtitle;
-			return titleTag.titleText;
-		}
 		return null;
 	}
 
@@ -123,6 +95,10 @@ public class Onix2Essentials implements JonixEssentials
 			return getContributors(ContributorRoles.By_author);
 		case Editors:
 			return getContributors(ContributorRoles.Edited_by);
+		case AudienceAgeRange:
+			Integer[] ageRange = getAudienceAgeRange();
+			return Arrays.asList(new String[] { ageRange[0] == null ? null : ageRange[0].toString(),
+				ageRange[1] == null ? null : ageRange[1].toString() });
 		}
 
 		return null;
@@ -132,6 +108,18 @@ public class Onix2Essentials implements JonixEssentials
 	{
 		JonixProductIdentifier productIdentifier = product.findProductIdentifier(idType);
 		return (productIdentifier == null) ? null : productIdentifier.idValue;
+	}
+
+	private String getTitle(TitleTypes titleType, boolean returnSubtitle)
+	{
+		JonixTitle titleTag = product.findTitle(titleType);
+		if (titleTag != null)
+		{
+			if (returnSubtitle)
+				return titleTag.subtitle;
+			return titleTag.titleText;
+		}
+		return null;
 	}
 
 	public List<Contributor> findContributors(ContributorRoles... requestedRoles)
@@ -245,5 +233,47 @@ public class Onix2Essentials implements JonixEssentials
 		}
 
 		return new String[0];
+	}
+
+	public Integer[] getAudienceAgeRange()
+	{
+		Integer[] ageRange = new Integer[] { null, null };
+		if (product.audienceRanges != null)
+		{
+			AudienceRange audienceRange = product.audienceRanges.get(0);
+			AudienceRangeQualifiers qualifier = audienceRange.getAudienceRangeQualifierValue();
+			if (qualifier == AudienceRangeQualifiers.Interest_age_years)
+			{
+				List<AudienceRangePrecisions> precisions = audienceRange.getAudienceRangePrecisionValues();
+				List<String> values = audienceRange.getAudienceRangeValueValues();
+				if (precisions.size() != values.size())
+				{
+					// invalid ONIX
+				}
+				else
+				{
+					for (int i = 0; i < precisions.size(); i++)
+					{
+						Integer value = Integer.valueOf(values.get(i));
+						switch (precisions.get(i))
+						{
+						case From:
+							ageRange[0] = value;
+							break;
+
+						case To:
+							ageRange[1] = value;
+							break;
+
+						case Exact:
+							ageRange[0] = value;
+							ageRange[1] = value;
+							break;
+						}
+					}
+				}
+			}
+		}
+		return ageRange;
 	}
 }

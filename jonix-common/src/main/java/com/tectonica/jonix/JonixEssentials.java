@@ -27,6 +27,7 @@ public interface JonixEssentials
 		Contributors, //
 		Authors, //
 		Editors, //
+		AudienceAgeRange
 //		BISACs, //
 //		BICs
 	}
