@@ -16,7 +16,7 @@ public interface JonixEssentials
 		TitleOfSeries, //
 		NumberWithinSeries, //
 		Language,
-		Audience
+		Audience,
 		// NumOfPages, Publisher, PublicationDate, Dewey, Keywords
 
 		// TBD: prices and descriptions
@@ -27,7 +27,9 @@ public interface JonixEssentials
 		Contributors, //
 		Authors, //
 		Editors, //
-		AudienceAgeRange
+		AudienceAgeRange,
+		RetailPriceIncTax,
+		RetailPriceExcTax,
 //		BISACs, //
 //		BICs
 	}

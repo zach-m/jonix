@@ -11,14 +11,18 @@ import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Contributor;
 import com.tectonica.jonix.onix2.ContributorRole;
+import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Series;
+import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
@@ -99,8 +103,38 @@ public class Onix2Essentials implements JonixEssentials
 			Integer[] ageRange = getAudienceAgeRange();
 			return Arrays.asList(new String[] { ageRange[0] == null ? null : ageRange[0].toString(),
 				ageRange[1] == null ? null : ageRange[1].toString() });
+		case RetailPriceIncTax:
+		case RetailPriceExcTax:
+			boolean includingTax = (fieldType == ListFields.RetailPriceIncTax);
+			return getRetailPrice(includingTax);
 		}
 
+		return null;
+	}
+
+	private List<String> getRetailPrice(boolean includingTax)
+	{
+		if (product.supplyDetails != null)
+		{
+			for (SupplyDetail supplyDetail : product.supplyDetails)
+			{
+				if (supplyDetail.prices != null)
+				{
+					for (Price price : supplyDetail.prices)
+					{
+						PriceTypes type = price.getPriceTypeCodeValue();
+						boolean found = (includingTax && type == PriceTypes.RRP_including_tax)
+								|| (!includingTax && type == PriceTypes.RRP_excluding_tax);
+						if (found)
+						{
+							String amount = price.getPriceAmountValue();
+							CurrencyCodes currency = price.getCurrencyCodeValue();
+							return Arrays.asList(amount, (currency == null) ? null : currency.value);
+						}
+					}
+				}
+			}
+		}
 		return null;
 	}
 
@@ -226,7 +260,7 @@ public class Onix2Essentials implements JonixEssentials
 		String straight = contributor.getPersonNameValue();
 		if (straight != null)
 		{
-			String[] names = straight.split(",");
+			String[] names = straight.split(" ");
 			for (int i = 0; i < names.length; i++)
 				names[i] = names[i].trim();
 			return names;
@@ -248,7 +282,7 @@ public class Onix2Essentials implements JonixEssentials
 				List<String> values = audienceRange.getAudienceRangeValueValues();
 				if (precisions.size() != values.size())
 				{
-					// invalid ONIX
+					// TODO: invalid ONIX
 				}
 				else
 				{
