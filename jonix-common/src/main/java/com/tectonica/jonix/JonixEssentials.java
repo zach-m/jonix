@@ -17,7 +17,12 @@ public interface JonixEssentials
 		NumberWithinSeries, //
 		Language,
 		Audience,
-		// NumOfPages, Publisher, PublicationDate, Dewey, Keywords
+		PackQuantity,
+		Annotation,
+		BackCover,
+		NumOfPages,
+		ShippingWeightLB,
+		//Publisher, PublicationDate, Dewey, Keywords
 
 		// TBD: prices and descriptions
 	}
@@ -30,6 +35,7 @@ public interface JonixEssentials
 		AudienceAgeRange,
 		RetailPriceIncTax,
 		RetailPriceExcTax,
+		Measurements,
 //		BISACs, //
 //		BICs
 	}

@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
@@ -13,17 +14,22 @@ import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.codelist.MeasureTypes;
+import com.tectonica.jonix.codelist.MeasureUnits;
+import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Contributor;
 import com.tectonica.jonix.onix2.ContributorRole;
+import com.tectonica.jonix.onix2.Measure;
 import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixOtherText;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
@@ -83,11 +89,49 @@ public class Onix2Essentials implements JonixEssentials
 				return JonixUtil.audienceLabel(audiences.get(0));
 			}
 			return null;
+
+		case PackQuantity:
+			if (product.supplyDetails != null)
+			{
+				SupplyDetail supplyDetail = product.supplyDetails.get(0);
+				return supplyDetail.getPackQuantityValue();
+			}
+			return null;
+
+		case Annotation:
+			JonixOtherText annotationTag = product.findOtherText(OtherTextTypes.Main_description);
+			if (annotationTag == null)
+				annotationTag = product.findOtherText(OtherTextTypes.Long_description);
+			return (annotationTag == null) ? null : annotationTag.text;
+
+		case BackCover:
+			JonixOtherText backCoverTag = product.findOtherText(OtherTextTypes.Back_cover_copy);
+			return (backCoverTag == null) ? null : backCoverTag.text;
+
+		case NumOfPages:
+			return product.getNumberOfPagesValue();
+
+		case ShippingWeightLB:
+			List<Measure> weight = findMeasures(product.measures, MeasureTypes.Unit_weight);
+			if (!weight.isEmpty())
+			{
+				if (weight.get(0).getMeasureUnitCodeValue() == MeasureUnits.Ounces_US)
+				{
+					Double oz = JPU.convertStringToDouble(weight.get(0).getMeasurementValue());
+					return String.valueOf(oz * 0.0625);
+				}
+				else
+					return weight.get(0).getMeasurementValue(); // presumably, in Pounds_US
+			}
+			return null;
 		}
 
 		return null;
 	}
 
+	/**
+	 * NOTE: never returns a null, only empty lists
+	 */
 	@Override
 	public List<String> get(ListFields fieldType)
 	{
@@ -95,47 +139,80 @@ public class Onix2Essentials implements JonixEssentials
 		{
 		case Contributors:
 			return getContributors();
+
 		case Authors:
 			return getContributors(ContributorRoles.By_author);
+
 		case Editors:
 			return getContributors(ContributorRoles.Edited_by);
+
 		case AudienceAgeRange:
 			Integer[] ageRange = getAudienceAgeRange();
 			return Arrays.asList(new String[] { ageRange[0] == null ? null : ageRange[0].toString(),
 				ageRange[1] == null ? null : ageRange[1].toString() });
+
 		case RetailPriceIncTax:
 		case RetailPriceExcTax:
 			boolean includingTax = (fieldType == ListFields.RetailPriceIncTax);
 			return getRetailPrice(includingTax);
+
+		case Measurements:
+			List<String> wht = new ArrayList<>();
+			List<Measure> widthHeight = findMeasures(product.measures, MeasureTypes.Width, MeasureTypes.Height);
+			if (widthHeight.size() == 2)
+			{
+				String mv0 = widthHeight.get(0).getMeasurementValue();
+				String mv1 = widthHeight.get(1).getMeasurementValue();
+				boolean mv0IsWidth = (widthHeight.get(0).getMeasureTypeCodeValue() == MeasureTypes.Width);
+				wht.add(mv0IsWidth ? mv0 : mv1);
+				wht.add(mv0IsWidth ? mv1 : mv0);
+
+				List<Measure> thickness = findMeasures(product.measures, MeasureTypes.Thickness);
+				if (!thickness.isEmpty())
+				{
+					wht.add(thickness.get(0).getMeasurementValue());
+				}
+			}
+			return wht;
 		}
 
 		return null;
+	}
+
+	public List<Measure> findMeasures(List<Measure> measures, MeasureTypes... measureTypeCodes)
+	{
+		Set<MeasureTypes> measureTypeCodesSet = JonixUtil.setOf(measureTypeCodes);
+		List<Measure> matches = new ArrayList<>();
+		for (Measure x : measures)
+		{
+			if (measureTypeCodes == null || measureTypeCodesSet.contains(x.getMeasureTypeCodeValue()))
+				matches.add(x);
+		}
+		return matches;
 	}
 
 	private List<String> getRetailPrice(boolean includingTax)
 	{
 		if (product.supplyDetails != null)
 		{
-			for (SupplyDetail supplyDetail : product.supplyDetails)
+			SupplyDetail supplyDetail = product.supplyDetails.get(0);
+			if (supplyDetail.prices != null)
 			{
-				if (supplyDetail.prices != null)
+				for (Price price : supplyDetail.prices)
 				{
-					for (Price price : supplyDetail.prices)
+					PriceTypes type = price.getPriceTypeCodeValue();
+					boolean found = (includingTax && type == PriceTypes.RRP_including_tax)
+							|| (!includingTax && type == PriceTypes.RRP_excluding_tax);
+					if (found)
 					{
-						PriceTypes type = price.getPriceTypeCodeValue();
-						boolean found = (includingTax && type == PriceTypes.RRP_including_tax)
-								|| (!includingTax && type == PriceTypes.RRP_excluding_tax);
-						if (found)
-						{
-							String amount = price.getPriceAmountValue();
-							CurrencyCodes currency = price.getCurrencyCodeValue();
-							return Arrays.asList(amount, (currency == null) ? null : currency.value);
-						}
+						String amount = price.getPriceAmountValue();
+						CurrencyCodes currency = price.getCurrencyCodeValue();
+						return Arrays.asList(amount, (currency == null) ? null : currency.value);
 					}
 				}
 			}
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	public String getProductIdentifier(ProductIdentifierTypes idType)

@@ -202,4 +202,18 @@ public class JonixUtil
 		}
 		return null;
 	}
+
+	private static SimpleDateFormat yyyymmdd = new SimpleDateFormat("yyyyMMdd");
+
+	public static Date parseYYYYMMDD(String s)
+	{
+		try
+		{
+			return (s == null) ? null : yyyymmdd.parse(s);
+		}
+		catch (ParseException e)
+		{
+			throw new RuntimeException(e);
+		}
+	}
 }
