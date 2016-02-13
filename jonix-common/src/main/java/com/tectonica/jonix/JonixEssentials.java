@@ -20,9 +20,13 @@ public interface JonixEssentials
 		PackQuantity,
 		Annotation,
 		BackCover,
+		BiographicalNote,
+		Endorsement,
 		NumOfPages,
 		ShippingWeightLB,
-		//Publisher, PublicationDate, Dewey, Keywords
+		FontSize,
+		Publisher, 
+		//PublicationDate, Dewey, Keywords
 
 		// TBD: prices and descriptions
 	}

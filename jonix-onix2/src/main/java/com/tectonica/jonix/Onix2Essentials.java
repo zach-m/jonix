@@ -18,7 +18,9 @@ import com.tectonica.jonix.codelist.MeasureTypes;
 import com.tectonica.jonix.codelist.MeasureUnits;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.PriceTypes;
+import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.codelist.PublishingRoles;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Contributor;
@@ -26,10 +28,12 @@ import com.tectonica.jonix.onix2.ContributorRole;
 import com.tectonica.jonix.onix2.Measure;
 import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.Product;
+import com.tectonica.jonix.onix2.Publisher;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.struct.JonixLanguage;
 import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixProductFormFeature;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
@@ -108,6 +112,14 @@ public class Onix2Essentials implements JonixEssentials
 			JonixOtherText backCoverTag = product.findOtherText(OtherTextTypes.Back_cover_copy);
 			return (backCoverTag == null) ? null : backCoverTag.text;
 
+		case BiographicalNote:
+			JonixOtherText bioTag = product.findOtherText(OtherTextTypes.Biographical_note);
+			return (bioTag == null) ? null : bioTag.text;
+
+		case Endorsement:
+			JonixOtherText endorsementTag = product.findOtherText(OtherTextTypes.Unpublished_endorsement);
+			return (endorsementTag == null) ? null : endorsementTag.text;
+
 		case NumOfPages:
 			return product.getNumberOfPagesValue();
 
@@ -124,6 +136,30 @@ public class Onix2Essentials implements JonixEssentials
 					return weight.get(0).getMeasurementValue(); // presumably, in Pounds_US
 			}
 			return null;
+
+		case FontSize:
+			JonixProductFormFeature textFontTag = product.findProductFormFeature(ProductFormFeatureTypes.Text_font);
+			if (textFontTag != null && textFontTag.productFormFeatureDescriptions != null)
+				return textFontTag.productFormFeatureDescriptions.get(0);
+			return null;
+
+		case Publisher:
+			if (product.publishers != null)
+			{
+				Publisher candidatePublisher = null;
+				// first we look for the main publisher by its role
+				for (Publisher publisher : product.publishers)
+				{
+					PublishingRoles role = publisher.getPublishingRoleValue();
+					if (role == PublishingRoles.Publisher)
+						return publisher.getPublisherNameValue();
+					if (role == null && candidatePublisher == null)
+						candidatePublisher = publisher;
+				}
+				// if no designated publisher found, we return the first un-designated
+				if (candidatePublisher != null)
+					return candidatePublisher.getPublisherNameValue();
+			}
 		}
 
 		return null;
