@@ -33,18 +33,18 @@ package com.tectonica.jonix.codelist;
 public enum PriceDateRoles
 {
 	/**
-	 * Date on which a price becomes effective.
+	 * Date on which a price becomes effective
 	 */
 	From_date("14"), //
 
 	/**
-	 * Date on which a price ceases to be effective.
+	 * Date on which a price ceases to be effective
 	 */
 	Until_date("15"), //
 
 	/**
 	 * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
-	 * 06.
+	 * 06
 	 */
 	From_until_date("24");
 

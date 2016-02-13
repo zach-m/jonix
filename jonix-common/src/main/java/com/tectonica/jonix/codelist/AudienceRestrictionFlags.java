@@ -35,7 +35,7 @@ public enum AudienceRestrictionFlags
 	Restrictions_apply_see_note("R"), //
 
 	/**
-	 * Indexed for the German market &#8211; in Deutschland indiziert.
+	 * Indexed for the German market &#8211; in Deutschland indiziert
 	 */
 	Indiziert("X");
 

@@ -35,7 +35,7 @@ public enum UsageStatuss
 	Permitted_unlimited("01"), //
 
 	/**
-	 * Limit should be specified in &lt;EpubUsageLimit&gt;.
+	 * Limit should be specified in &lt;EpubUsageLimit&gt;
 	 */
 	Permitted_subject_to_limit("02"), //
 

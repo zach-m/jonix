@@ -35,14 +35,14 @@ public enum RecordStatuss
 	/**
 	 * Entire record parsed and ingested without errors, record may have a Product record in the Acknowledgement which
 	 * itself may have a &lt;RecordStatusNote&gt; or &lt;RecordStatusDetail&gt; to convey information, editorial queries
-	 * or warnings.
+	 * or warnings
 	 */
 	No_record_errors("00"), //
 
 	/**
 	 * Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a
 	 * &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors in associated media files
-	 * (and possibly supplementary editorial queries).
+	 * (and possibly supplementary editorial queries)
 	 */
 	No_record_errors_errors_in_collateral("01"), //
 
@@ -50,20 +50,20 @@ public enum RecordStatuss
 	 * Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a
 	 * &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary
 	 * information, editorial queries or warnings). At least SOME of the data in the original Product record has been
-	 * ingested. There may also be errors in associated media files.
+	 * ingested. There may also be errors in associated media files
 	 */
 	Record_with_errors("02"), //
 
 	/**
 	 * Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt;
 	 * or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial
-	 * queries or warnings). NONE of the data in the original Product record has been ingested.
+	 * queries or warnings). NONE of the data in the original Product record has been ingested
 	 */
 	Record_rejected("03"), //
 
 	/**
 	 * Record status reported in an earlier Acknowledgement message, based on partial processing of ONIX message. The
-	 * record MUST NOT have a Product record in this Acknowledgement. Code not valid in &lt;RecordStatusDetail&gt;.
+	 * record MUST NOT have a Product record in this Acknowledgement. Code not valid in &lt;RecordStatusDetail&gt;
 	 */
 	Reported_previously("09");
 

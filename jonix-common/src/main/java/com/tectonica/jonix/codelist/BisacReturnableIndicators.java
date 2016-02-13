@@ -39,7 +39,7 @@ public enum BisacReturnableIndicators
 	Yes_returnable_stripped_cover("S"), //
 
 	/**
-	 * Contact publisher for requirements and/or authorization.
+	 * Contact publisher for requirements and/or authorization
 	 */
 	Conditional("C");
 

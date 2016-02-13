@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum SupplytoRegions
 {
 	/**
-	 * When the same ISBN is used for open market and UK editions.
+	 * When the same ISBN is used for open market and UK editions
 	 */
 	UK_open_market_("004");
 

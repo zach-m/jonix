@@ -33,23 +33,23 @@ package com.tectonica.jonix.codelist;
 public enum AgentRoles
 {
 	/**
-	 * Publisher&#8217;s exclusive sales agent in a specified territory.
+	 * Publisher&#8217;s exclusive sales agent in a specified territory
 	 */
 	Exclusive_sales_agent("05"), //
 
 	/**
-	 * Publisher&#8217;s non-exclusive sales agent in a specified territory.
+	 * Publisher&#8217;s non-exclusive sales agent in a specified territory
 	 */
 	Non_exclusive_sales_agent("06"), //
 
 	/**
-	 * Publisher for a specified territory.
+	 * Publisher for a specified territory
 	 */
 	Local_publisher("07"), //
 
 	/**
 	 * Publisher&#8217;s sales agent in a specific territory. Use only where exclusive / non-exclusive status is not
-	 * known. Prefer 05 or 06 as appropriate, where possible.
+	 * known. Prefer 05 or 06 as appropriate, where possible
 	 */
 	Sales_agent("08");
 

@@ -33,14 +33,21 @@ package com.tectonica.jonix.codelist;
 public enum TaxTypes
 {
 	/**
-	 * Value added tax (TVA, IVA, MwSt etc).
+	 * Value-added tax (TVA, IVA, MwSt etc)
 	 */
 	VAT("01"), //
 
 	/**
-	 * General sales tax.
+	 * General sales tax
 	 */
-	GST("02");
+	GST("02"), //
+
+	/**
+	 * &#8216;Green&#8217; or eco-tax, levied to encourage responsible production or disposal, used only where this is
+	 * identified separately from value-added or sales taxes (eg French &#233;co-participation tax) &lt;p&gt;NOTE:
+	 * Introduced in Onix3
+	 */
+	ECO("03");
 
 	public final String value;
 

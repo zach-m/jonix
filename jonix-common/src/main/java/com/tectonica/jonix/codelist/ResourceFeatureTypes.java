@@ -34,34 +34,42 @@ public enum ResourceFeatureTypes
 {
 	/**
 	 * Credit that must be displayed when a resource is used (eg &#8216;Photo Jerry Bauer&#8217; or &#8216;&#169; Magnum
-	 * Photo&#8217;). Credit text should be carried in &lt;FeatureNote&gt;.
+	 * Photo&#8217;). Credit text should be carried in &lt;FeatureNote&gt;
 	 */
 	Required_credit("01"), //
 
 	/**
 	 * Explanatory caption that may accompany a resource (eg use to identify an author in a photograph). Caption text
-	 * should be carried in &lt;FeatureNote&gt;.
+	 * should be carried in &lt;FeatureNote&gt;
 	 */
 	Caption("02"), //
 
 	/**
 	 * Copyright holder of resource (indicative only, as the resource can be used without consultation). Copyright text
-	 * should be carried in &lt;FeatureNote&gt;.
+	 * should be carried in &lt;FeatureNote&gt;
 	 */
 	Copyright_holder("03"), //
 
 	/**
 	 * Approximate length in minutes of an audio or video resource. &lt;FeatureValue&gt; should contain the length of
-	 * time as an integer number of minutes.
+	 * time as an integer number of minutes
 	 */
 	Length_in_minutes("04"), //
 
 	/**
 	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from
 	 * List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
-	 * 16-digit ISNI.
+	 * 16-digit ISNI
 	 */
-	ISNI_of_resource_contributor("05");
+	ISNI_of_resource_contributor("05"), //
+
+	/**
+	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from
+	 * List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
+	 * proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt; &lt;p&gt;NOTE:
+	 * Introduced in Onix3
+	 */
+	Proprietary_ID_of_resource_contributor("06");
 
 	public final String value;
 

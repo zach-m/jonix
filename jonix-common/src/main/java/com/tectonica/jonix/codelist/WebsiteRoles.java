@@ -38,102 +38,102 @@ public enum WebsiteRoles
 	Unspecified_see_website_description("00"), //
 
 	/**
-	 * See also codes 17 and 18.
+	 * See also codes 17 and 18
 	 */
 	Publisher_s_corporate_website("01"), //
 
 	/**
 	 * A publisher&#8217;s informative and/or promotional webpage relating to a specified work (book, journal, online
-	 * resource or other publication type).
+	 * resource or other publication type)
 	 */
 	Publisher_s_website_for_a_specified_work("02"), //
 
 	/**
-	 * A webpage giving access to an online content hosting service as a whole.
+	 * A webpage giving access to an online content hosting service as a whole
 	 */
 	Online_hosting_service_home_page("03"), //
 
 	/**
-	 * A webpage giving general information about a serial, in print or electronic format or both.
+	 * A webpage giving general information about a serial, in print or electronic format or both
 	 */
 	Journal_home_page("04"), //
 
 	/**
 	 * A webpage giving direct access to the content that is available online for a specified resource version.
-	 * Generally used for content available online under subscription terms.
+	 * Generally used for content available online under subscription terms
 	 */
 	Online_resource_available_content_page("05"), //
 
 	/**
-	 * A webpage maintained by an author or other contributor about her/his publications and personal background.
+	 * A webpage maintained by an author or other contributor about her/his publications and personal background
 	 */
 	Contributor_s_own_website("06"), //
 
 	/**
-	 * A publisher&#8217;s webpage devoted to a specific author or other contributor.
+	 * A publisher&#8217;s webpage devoted to a specific author or other contributor
 	 */
 	Publisher_s_website_relating_to_specified_contributor("07"), //
 
 	/**
 	 * A webpage devoted to a specific author or other contributor, and maintained by a publisher other than the
-	 * publisher of the item described in the ONIX record.
+	 * publisher of the item described in the ONIX record
 	 */
 	Other_publisher_s_website_relating_to_specified_contributor("08"), //
 
 	/**
-	 * A webpage devoted to a specific author or other contributor, and maintained by a third party (eg a fan site).
+	 * A webpage devoted to a specific author or other contributor, and maintained by a third party (eg a fan site)
 	 */
 	Third_party_website_relating_to_specified_contributor("09"), //
 
 	/**
-	 * A webpage maintained by an author or other contributor and specific to an individual work.
+	 * A webpage maintained by an author or other contributor and specific to an individual work
 	 */
 	Contributor_s_own_website_for_specified_work("10"), //
 
 	/**
 	 * A webpage devoted to an individual work, and maintained by a publisher other than the publisher of the item
-	 * described in the ONIX record.
+	 * described in the ONIX record
 	 */
 	Other_publisher_s_website_relating_to_specified_work("11"), //
 
 	/**
-	 * A webpage devoted to an individual work, and maintained by a third party (eg a fan site).
+	 * A webpage devoted to an individual work, and maintained by a third party (eg a fan site)
 	 */
 	Third_party_website_relating_to_specified_work("12"), //
 
 	/**
-	 * A webpage maintained by an author or other contributor and specific to a group or series of works.
+	 * A webpage maintained by an author or other contributor and specific to a group or series of works
 	 */
 	Contributor_s_own_website_for_group_or_series_of_works("13"), //
 
 	/**
-	 * A publisher&#8217;s webpage devoted to a group or series of works.
+	 * A publisher&#8217;s webpage devoted to a group or series of works
 	 */
 	Publisher_s_website_relating_to_group_or_series_of_works("14"), //
 
 	/**
 	 * A webpage devoted to a group or series of works, and maintained by a publisher other than the publisher of the
-	 * item described in the ONIX record.
+	 * item described in the ONIX record
 	 */
 	Other_publisher_s_website_relating_to_group_or_series_of_works("15"), //
 
 	/**
-	 * A webpage devoted to a group or series of works, and maintained by a third party (eg a fan site).
+	 * A webpage devoted to a group or series of works, and maintained by a third party (eg a fan site)
 	 */
 	Third_party_website_relating_to_group_or_series_of_works_eg_a_fan_site("16"), //
 
 	/**
-	 * Use instead of code 01 to specify a publisher&#8217;s website for trade users.
+	 * Use instead of code 01 to specify a publisher&#8217;s website for trade users
 	 */
 	Publisher_s_B2B_website("17"), //
 
 	/**
-	 * Use instead of code 01 to specify a publisher&#8217;s website for end customers (consumers).
+	 * Use instead of code 01 to specify a publisher&#8217;s website for end customers (consumers)
 	 */
 	Publisher_s_B2C_website("18"), //
 
 	/**
-	 * For example, a Blogger or Tumblr URL, a Wordpress website or other blog URL.
+	 * For example, a Blogger or Tumblr URL, a Wordpress website or other blog URL
 	 */
 	Author_blog("23"), //
 
@@ -149,82 +149,87 @@ public enum WebsiteRoles
 
 	/**
 	 * Use this value in the &lt;Website&gt; composite in &lt;SupplyDetail&gt; when sending a link to a webpage at which
-	 * a digital product is available for download and/or online access.
+	 * a digital product is available for download and/or online access
 	 */
 	Web_page_for_full_content("29"), //
 
 	Web_page_for_other_commentary_discussion("30"), //
 
 	/**
-	 * URL needed by the German National Library for direct access, harvesting and storage of an electronic resource.
+	 * URL needed by the German National Library for direct access, harvesting and storage of an electronic resource
 	 */
 	Transfer_URL("31"), //
 
 	/**
-	 * Link needed by German Books in Print (VLB) for DOI registration and ONIX DOI conversion.
+	 * Link needed by German Books in Print (VLB) for DOI registration and ONIX DOI conversion
 	 */
 	DOI_Website_Link("32"), //
 
 	/**
-	 * A corporate website operated by a distributor or other supplier (not the publisher).
+	 * A corporate website operated by a distributor or other supplier (not the publisher)
 	 */
 	Supplier_s_corporate_website("33"), //
 
 	/**
-	 * A website operated by a distributor or other supplier (not the publisher) and aimed at trade customers.
+	 * A website operated by a distributor or other supplier (not the publisher) and aimed at trade customers
 	 */
 	Supplier_s_B2B_website("34"), //
 
 	/**
-	 * A website operated by a distributor or other supplier (not the publisher) and aimed at consumers.
+	 * A website operated by a distributor or other supplier (not the publisher) and aimed at consumers
 	 */
 	Supplier_s_B2C_website("35"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a specified work.
+	 * A distributor or supplier&#8217;s webpage describing a specified work
 	 */
 	Supplier_s_website_for_a_specified_work("36"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at trade customers.
+	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at trade customers
 	 */
 	Supplier_s_B2B_website_for_a_specified_work("37"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at consumers.
+	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at consumers
 	 */
 	Supplier_s_B2C_website_for_a_specified_work("38"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a group or series of works.
+	 * A distributor or supplier&#8217;s webpage describing a group or series of works
 	 */
 	Supplier_s_website_for_a_group_or_series_of_works("39"), //
 
 	/**
-	 * For example an ONIX or MARC record for the product, available online.
+	 * For example an ONIX or MARC record for the product, available online
 	 */
 	URL_of_full_metadata_description("40"), //
 
 	/**
-	 * For example, a Facebook, Google+ or Twitter URL for the product or work.
+	 * For example, a Facebook, Google+ or Twitter URL for the product or work
 	 */
 	Social_networking_URL_for_specific_work_or_product("41"), //
 
 	/**
-	 * For example, a Facebook, Google+ or Twitter page.
+	 * For example, a Facebook, Google+ or Twitter page
 	 */
 	Author_s_social_networking_URL("42"), //
 
 	/**
-	 * For example, a Facebook, Google+ or Twitter page.
+	 * For example, a Facebook, Google+ or Twitter page
 	 */
 	Publisher_s_social_networking_URL("43"), //
 
 	/**
 	 * For example, a Facebook, Google+ or Twitter page. Use only in the context of a specific content item (eg within
-	 * &lt;ContentItem&gt;).
+	 * &lt;ContentItem&gt;)
 	 */
-	Social_networking_URL_for_specific_article_chapter_or_content_item("44");
+	Social_networking_URL_for_specific_article_chapter_or_content_item("44"), //
+
+	/**
+	 * For example, a service offering click-through licensing of extracts &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Publisher_s_or_third_party_website_for_permissions_requests("45");
 
 	public final String value;
 

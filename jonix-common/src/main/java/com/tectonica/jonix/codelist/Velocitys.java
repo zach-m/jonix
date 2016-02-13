@@ -36,47 +36,47 @@ import java.util.Map;
 public enum Velocitys
 {
 	/**
-	 * Typically measured over most recent 1 month period.
+	 * Typically measured over most recent 1 month period
 	 */
 	Mean_daily_sale("01"), //
 
 	/**
-	 * Typically measured over most recent 1 month period.
+	 * Typically measured over most recent 1 month period
 	 */
 	Maximum_daily_sale("02"), //
 
 	/**
-	 * Typically measured over most recent 1 month period.
+	 * Typically measured over most recent 1 month period
 	 */
 	Minimum_daily_sale("03"), //
 
 	/**
-	 * Typically measured over most recent rolling 12 week period.
+	 * Typically measured over most recent rolling 12 week period
 	 */
 	Mean_weekly_sale("04"), //
 
 	/**
-	 * Typically measured over most recent rolling 12 week period.
+	 * Typically measured over most recent rolling 12 week period
 	 */
 	Maximum_weekly_sale("05"), //
 
 	/**
-	 * Typically measured over most recent rolling 12 week period.
+	 * Typically measured over most recent rolling 12 week period
 	 */
 	Minimum_weekly_sale("06"), //
 
 	/**
-	 * Typically measured over most recent rolling 6 month period.
+	 * Typically measured over most recent rolling 6 month period
 	 */
 	Mean_monthly_sale("07"), //
 
 	/**
-	 * Typically measured over the most recent rolling 6 month period.
+	 * Typically measured over the most recent rolling 6 month period
 	 */
 	Maximum_monthly_sale("08"), //
 
 	/**
-	 * Typically measured over the most recent rolling 6 month period.
+	 * Typically measured over the most recent rolling 6 month period
 	 */
 	Minimum_monthly_sale("09");
 

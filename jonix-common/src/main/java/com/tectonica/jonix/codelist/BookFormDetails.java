@@ -33,37 +33,37 @@ package com.tectonica.jonix.codelist;
 public enum BookFormDetails
 {
 	/**
-	 * DEPRECATED.
+	 * DEPRECATED
 	 */
 	A_format_paperback("01"), //
 
 	/**
-	 * &#8216;B&#8217; format paperback: UK 198 x 129 mm &#8211; DEPRECATED.
+	 * &#8216;B&#8217; format paperback: UK 198 x 129 mm &#8211; DEPRECATED
 	 */
 	B_format_paperback("02"), //
 
 	/**
-	 * &#8216;C&#8217; format paperback: UK 216 x 135 mm &#8211; DEPRECATED.
+	 * &#8216;C&#8217; format paperback: UK 216 x 135 mm &#8211; DEPRECATED
 	 */
 	C_format_paperback("03"), //
 
 	/**
-	 * DEPRECATED.
+	 * DEPRECATED
 	 */
 	Paper_over_boards("04"), //
 
 	/**
-	 * DEPRECATED.
+	 * DEPRECATED
 	 */
 	Cloth("05"), //
 
 	/**
-	 * DEPRECATED.
+	 * DEPRECATED
 	 */
 	With_dust_jacket("06"), //
 
 	/**
-	 * DEPRECATED.
+	 * DEPRECATED
 	 */
 	Reinforced_binding("07");
 

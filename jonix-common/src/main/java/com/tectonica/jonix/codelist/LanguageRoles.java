@@ -38,42 +38,42 @@ public enum LanguageRoles
 	Language_of_text("01"), //
 
 	/**
-	 * Where the text in the original language is NOT part of the current product.
+	 * Where the text in the original language is NOT part of the current product
 	 */
 	Original_language_of_a_translated_text("02"), //
 
 	/**
-	 * Where different from language of text: used mainly for serials.
+	 * Where different from language of text: used mainly for serials
 	 */
 	Language_of_abstracts("03"), //
 
 	/**
-	 * Language to which specified rights apply.
+	 * Language to which specified rights apply
 	 */
 	Rights_language("04"), //
 
 	/**
-	 * Language to which specified rights do not apply.
+	 * Language to which specified rights do not apply
 	 */
 	Rights_excluded_language("05"), //
 
 	/**
-	 * Where the text in the original language is part of a bilingual or multilingual edition.
+	 * Where the text in the original language is part of a bilingual or multilingual edition
 	 */
 	Original_language_in_a_multilingual_edition("06"), //
 
 	/**
-	 * Where the text in a translated language is part of a bilingual or multilingual edition.
+	 * Where the text in a translated language is part of a bilingual or multilingual edition
 	 */
 	Translated_language_in_a_multilingual_edition("07"), //
 
 	/**
-	 * For example, on a DVD.
+	 * For example, on a DVD
 	 */
 	Language_of_audio_track("08"), //
 
 	/**
-	 * For example, on a DVD.
+	 * For example, on a DVD
 	 */
 	Language_of_subtitles("09");
 

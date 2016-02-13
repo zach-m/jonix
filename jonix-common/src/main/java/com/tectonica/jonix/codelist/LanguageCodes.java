@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 74</b>
  * <p>
- * Description: Language code &#8211; ISO 639-2/B
+ * Description: Language code &#8211; based on ISO 639-2/B
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
  */
@@ -48,12 +48,12 @@ public enum LanguageCodes
 	Adygei("ady"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Afro_Asiatic_languages("afa"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Afrihili("afh"), //
 
@@ -61,16 +61,22 @@ public enum LanguageCodes
 
 	Ainu("ain"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Akan("aka"), //
 
 	Akkadian("akk"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Albanian("alb"), //
 
 	Aleut("ale"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Algonquian_languages("alg"), //
 
@@ -83,10 +89,13 @@ public enum LanguageCodes
 	Angika("anp"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Apache_languages("apa"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Arabic("ara"), //
 
 	Official_Aramaic_Imperial_Aramaic_700_300_BCE("arc"), //
@@ -100,7 +109,7 @@ public enum LanguageCodes
 	Arapaho("arp"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Artificial_languages("art"), //
 
@@ -111,12 +120,12 @@ public enum LanguageCodes
 	Asturian_Bable_Leonese_Asturleonese("ast"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Athapascan_languages("ath"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Australian_languages("aus"), //
 
@@ -126,22 +135,31 @@ public enum LanguageCodes
 
 	Awadhi("awa"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Aymara("aym"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Azerbaijani("aze"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Banda_languages("bad"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Bamileke_languages("bai"), //
 
 	Bashkir("bak"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Baluchi("bal"), //
 
 	Bambara("bam"), //
@@ -153,7 +171,7 @@ public enum LanguageCodes
 	Basa("bas"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Baltic_languages("bat"), //
 
@@ -166,17 +184,20 @@ public enum LanguageCodes
 	Bengali("ben"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Berber_languages("ber"), //
 
 	Bhojpuri("bho"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Bihari_languages("bih"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Bikol("bik"), //
 
 	Bini_Edo("bin"), //
@@ -186,7 +207,7 @@ public enum LanguageCodes
 	Siksika("bla"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Bantu_languages("bnt"), //
 
@@ -197,10 +218,13 @@ public enum LanguageCodes
 	Breton("bre"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Batak_languages("btk"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Buriat("bua"), //
 
 	Buginese("bug"), //
@@ -214,7 +238,7 @@ public enum LanguageCodes
 	Caddo("cad"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Central_American_Indian_languages("cai"), //
 
@@ -223,14 +247,14 @@ public enum LanguageCodes
 	Catalan("cat"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Caucasian_languages("cau"), //
 
 	Cebuano("ceb"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Celtic_languages("cel"), //
 
@@ -242,10 +266,16 @@ public enum LanguageCodes
 
 	Chagatai("chg"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Chinese("chi"), //
 
 	Chuukese_Truk("chk"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Mari("chm"), //
 
 	Chinook_jargon("chn"), //
@@ -263,7 +293,7 @@ public enum LanguageCodes
 	Cheyenne("chy"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Chamic_languages("cmc"), //
 
@@ -274,33 +304,36 @@ public enum LanguageCodes
 	Corsican("cos"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Creoles_and_pidgins_English_based("cpe"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Creoles_and_pidgins_French_based("cpf"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Creoles_and_pidgins_Portuguese_based("cpp"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Cree("cre"), //
 
 	Crimean_Turkish_Crimean_Tatar("crh"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Creoles_and_pidgins("crp"), //
 
 	Kashubian("csb"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Cushitic_languages("cus"), //
 
@@ -313,24 +346,36 @@ public enum LanguageCodes
 	Dargwa("dar"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Land_Dayak_languages("day"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Delaware("del"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Slave_Athapascan("den"), //
 
 	Dogrib("dgr"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Dinka("din"), //
 
 	Divehi_Dhivehi_Maldivian("div"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Dogri("doi"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Dravidian_languages("dra"), //
 
@@ -359,10 +404,13 @@ public enum LanguageCodes
 	English_Middle_1100_1500("enm"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Esperanto("epo"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Estonian("est"), //
 
 	Ewe("ewe"), //
@@ -382,12 +430,17 @@ public enum LanguageCodes
 	Finnish("fin"), //
 
 	/**
-	 * Collective name.
+	 * ONIX local code, equivalent to fit in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Me_nkieli_Tournedalen_Finnish("fit"), //
+
+	/**
+	 * Collective name
 	 */
 	Finno_Ugrian_languages("fiu"), //
 
 	/**
-	 * ONIX local code, equivalent to fkv in ISO 639-3.
+	 * ONIX local code, equivalent to fkv in ISO 639-3
 	 */
 	Kvensk("fkv"), //
 
@@ -413,10 +466,13 @@ public enum LanguageCodes
 
 	Gayo("gay"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Gbaya("gba"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Germanic_languages("gem"), //
 
@@ -440,18 +496,27 @@ public enum LanguageCodes
 
 	German_Old_High_ca_750_1050("goh"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Gondi("gon"), //
 
 	Gorontalo("gor"), //
 
 	Gothic("got"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Grebo("grb"), //
 
 	Greek_Ancient_to_1453("grc"), //
 
 	Greek_Modern_1453_("gre"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Guarani("grn"), //
 
 	Swiss_German_Alemannic("gsw"), //
@@ -460,6 +525,9 @@ public enum LanguageCodes
 
 	Gwich_in("gwi"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Haida("hai"), //
 
 	Haitian_French_Creole("hat"), //
@@ -475,7 +543,7 @@ public enum LanguageCodes
 	Hiligaynon("hil"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Himachali_languages_Western_Pahari_languages("him"), //
 
@@ -483,6 +551,9 @@ public enum LanguageCodes
 
 	Hittite("hit"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Hmong_Mong("hmn"), //
 
 	Hiri_Motu("hmo"), //
@@ -502,54 +573,60 @@ public enum LanguageCodes
 	Icelandic("ice"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Ido("ido"), //
 
 	Sichuan_Yi_Nuosu("iii"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Ijo_languages("ijo"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Inuktitut("iku"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Interlingue_Occidental("ile"), //
 
 	Iloko("ilo"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Interlingua_International_Auxiliary_Language_Association("ina"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Indic_languages("inc"), //
 
 	Indonesian("ind"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Indo_European_languages("ine"), //
 
 	Ingush("inh"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Inupiaq("ipk"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Iranian_languages("ira"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Iroquoian_languages("iro"), //
 
@@ -563,6 +640,9 @@ public enum LanguageCodes
 
 	Judeo_Persian("jpr"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Judeo_Arabic("jrb"), //
 
 	Kara_Kalpak("kaa"), //
@@ -578,12 +658,15 @@ public enum LanguageCodes
 	Kannada("kan"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Karen_languages("kar"), //
 
 	Kashmiri("kas"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Kanuri("kau"), //
 
 	Kawi("kaw"), //
@@ -592,10 +675,15 @@ public enum LanguageCodes
 
 	Kabardian_Circassian("kbd"), //
 
+	/**
+	 * ONIX local code, equivalent to kdr in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Karaim("kdr"), //
+
 	Khasi("kha"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Khoisan_languages("khi"), //
 
@@ -611,16 +699,28 @@ public enum LanguageCodes
 
 	Kimbundu("kmb"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Konkani("kok"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Komi("kom"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Kongo("kon"), //
 
 	Korean("kor"), //
 
 	Kusaiean_Caroline_Islands("kos"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Kpelle("kpe"), //
 
 	Karachay_Balkar("krc"), //
@@ -628,7 +728,7 @@ public enum LanguageCodes
 	Karelian("krl"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Kru_languages("kro"), //
 
@@ -638,12 +738,18 @@ public enum LanguageCodes
 
 	Kumyk("kum"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Kurdish("kur"), //
 
 	Kutenai("kut"), //
 
 	Ladino("lad"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Lahnda("lah"), //
 
 	Lamba("lam"), //
@@ -652,6 +758,9 @@ public enum LanguageCodes
 
 	Latin("lat"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Latvian("lav"), //
 
 	Lezgian("lez"), //
@@ -696,12 +805,15 @@ public enum LanguageCodes
 
 	Malayalam("mal"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Mandingo("man"), //
 
 	Maori("mao"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Austronesian_languages("map"), //
 
@@ -709,6 +821,9 @@ public enum LanguageCodes
 
 	Masai("mas"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Malay("may"), //
 
 	Moksha("mdf"), //
@@ -723,13 +838,19 @@ public enum LanguageCodes
 
 	Minangkabau("min"), //
 
+	/**
+	 * Use where no suitable code is available
+	 */
 	Uncoded_languages("mis"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Mon_Khmer_languages("mkh"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Malagasy("mlg"), //
 
 	Maltese("mlt"), //
@@ -739,17 +860,20 @@ public enum LanguageCodes
 	Manipuri("mni"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Manobo_languages("mno"), //
 
 	Mohawk("moh"), //
 
 	/**
-	 * DEPRECATED &#8211; use rum.
+	 * DEPRECATED &#8211; use rum
 	 */
 	Moldavian_Moldovan("mol"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Mongolian("mon"), //
 
 	Moor_Mossi("mos"), //
@@ -757,7 +881,7 @@ public enum LanguageCodes
 	Multiple_languages("mul"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Munda_languages("mun"), //
 
@@ -765,22 +889,25 @@ public enum LanguageCodes
 
 	Mirandese("mwl"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Marwari("mwr"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Mayan_languages("myn"), //
 
 	Erzya("myv"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Nahuatl_languages("nah"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	North_American_Indian_languages("nai"), //
 
@@ -798,6 +925,9 @@ public enum LanguageCodes
 
 	Low_German_Low_Saxon("nds"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Nepali("nep"), //
 
 	Newari_Nepal_Bhasa("new"), //
@@ -805,7 +935,7 @@ public enum LanguageCodes
 	Nias("nia"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Niger_Kordofanian_languages("nic"), //
 
@@ -819,6 +949,9 @@ public enum LanguageCodes
 
 	Old_Norse("non"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Norwegian("nor"), //
 
 	N_Ko("nqo"), //
@@ -826,7 +959,7 @@ public enum LanguageCodes
 	Pedi_Sepedi_Northern_Sotho("nso"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Nubian_languages("nub"), //
 
@@ -844,10 +977,29 @@ public enum LanguageCodes
 
 	Occitan_post_1500("oci"), //
 
+	/**
+	 * ONIX local code, equivalent to odt in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Old_Dutch_Old_Low_Franconian_ca_400_1050("odt"), //
+
+	/**
+	 * Macrolanguage
+	 */
 	Ojibwa("oji"), //
 
+	/**
+	 * ONIX local code, equivalent to omq in ISO 639-5. Collective name &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Oto_Manguean_languages("omq"), //
+
+	/**
+	 * Macrolanguage
+	 */
 	Oriya("ori"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Oromo("orm"), //
 
 	Osage("osa"), //
@@ -857,12 +1009,12 @@ public enum LanguageCodes
 	Turkish_Ottoman("ota"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Otomian_languages("oto"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Papuan_languages("paa"), //
 
@@ -880,10 +1032,13 @@ public enum LanguageCodes
 
 	Old_Persian_ca_600_400_B_C_("peo"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Persian("per"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Philippine_languages("phi"), //
 
@@ -898,26 +1053,35 @@ public enum LanguageCodes
 	Portuguese("por"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Prakrit_languages("pra"), //
 
 	Proven_al_Old_to_1500("pro"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Pushto_Pashto("pus"), //
 
 	/**
-	 * ONIX local code, distinct dialect of Occitan (not distinguished from oci by ISO 639-3).
+	 * ONIX local code, distinct dialect of Occitan (not distinguished from oci by ISO 639-3)
 	 */
 	Aran_s("qar"), //
 
 	/**
-	 * ONIX local code, distinct dialect of Catalan (not distinguished from cat by ISO 639-3).
+	 * ONIX local code, distinct dialect of Catalan (not distinguished from cat by ISO 639-3)
 	 */
 	Valencian("qav"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Quechua("que"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Rajasthani("raj"), //
 
 	Rapanui("rap"), //
@@ -925,12 +1089,15 @@ public enum LanguageCodes
 	Rarotongan_Cook_Islands_Maori("rar"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Romance_languages("roa"), //
 
 	Romansh("roh"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Romany("rom"), //
 
 	Romanian("rum"), //
@@ -948,12 +1115,12 @@ public enum LanguageCodes
 	Yakut("sah"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	South_American_Indian_languages("sai"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Salishan_languages("sal"), //
 
@@ -966,7 +1133,7 @@ public enum LanguageCodes
 	Santali("sat"), //
 
 	/**
-	 * DEPRECATED &#8211; use srp.
+	 * DEPRECATED &#8211; use srp
 	 */
 	Serbian("scc"), //
 
@@ -975,21 +1142,21 @@ public enum LanguageCodes
 	Scots_lallans("sco"), //
 
 	/**
-	 * DEPRECATED &#8211; use hrv.
+	 * DEPRECATED &#8211; use hrv
 	 */
 	Croatian_("scr"), //
 
 	Selkup("sel"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Semitic_languages("sem"), //
 
 	Irish_Old_to_1100("sga"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Sign_languages("sgn"), //
 
@@ -1000,17 +1167,17 @@ public enum LanguageCodes
 	Sinhala_Sinhalese("sin"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Siouan_languages("sio"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Sino_Tibetan_languages("sit"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Slavic_languages("sla"), //
 
@@ -1023,7 +1190,7 @@ public enum LanguageCodes
 	Northern_Sami("sme"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Sami_languages("smi"), //
 
@@ -1046,7 +1213,7 @@ public enum LanguageCodes
 	Somali("som"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Songhai_languages("son"), //
 
@@ -1054,6 +1221,9 @@ public enum LanguageCodes
 
 	Spanish("spa"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Sardinian("srd"), //
 
 	Sranan_Tongo("srn"), //
@@ -1063,7 +1233,7 @@ public enum LanguageCodes
 	Serer("srr"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Nilo_Saharan_languages("ssa"), //
 
@@ -1077,18 +1247,24 @@ public enum LanguageCodes
 
 	Sumerian("sux"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Swahili("swa"), //
 
 	Swedish("swe"), //
 
 	Classical_Syriac("syc"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Syriac("syr"), //
 
 	Tahitian("tah"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Tai_languages("tai"), //
 
@@ -1121,12 +1297,15 @@ public enum LanguageCodes
 	Tokelauan("tkl"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Klingon_tlhIngan_Hol("tlh"), //
 
 	Tlingit("tli"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Tamashek("tmh"), //
 
 	Tonga_Nyasa("tog"), //
@@ -1138,7 +1317,7 @@ public enum LanguageCodes
 	Tsimshian("tsi"), //
 
 	/**
-	 * AKA Setswana.
+	 * AKA Setswana
 	 */
 	Tswana("tsn"), //
 
@@ -1149,7 +1328,7 @@ public enum LanguageCodes
 	Tumbuka("tum"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Tupi_languages("tup"), //
 
@@ -1162,6 +1341,11 @@ public enum LanguageCodes
 	Twi("twi"), //
 
 	Tuvinian("tyv"), //
+
+	/**
+	 * ONIX local code, equivalent to tzo in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Tzotzil("tzo"), //
 
 	Udmurt("udm"), //
 
@@ -1177,6 +1361,9 @@ public enum LanguageCodes
 
 	Urdu("urd"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Uzbek("uzb"), //
 
 	Vai("vai"), //
@@ -1186,14 +1373,14 @@ public enum LanguageCodes
 	Vietnamese("vie"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Volap_k("vol"), //
 
 	Votic("vot"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Wakashan_languages("wak"), //
 
@@ -1206,7 +1393,7 @@ public enum LanguageCodes
 	Welsh("wel"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Sorbian_languages("wen"), //
 
@@ -1222,28 +1409,42 @@ public enum LanguageCodes
 
 	Yapese("yap"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Yiddish("yid"), //
 
 	Yoruba("yor"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Yupik_languages("ypk"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Zapotec("zap"), //
 
 	/**
-	 * Artificial language.
+	 * Artificial language
 	 */
 	Blissymbols_Blissymbolics_Bliss("zbl"), //
 
 	Zenaga("zen"), //
 
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Standard_Moroccan_Tamazight("zgh"), //
+
+	/**
+	 * Macrolanguage
+	 */
 	Zhuang_Chuang("zha"), //
 
 	/**
-	 * Collective name.
+	 * Collective name
 	 */
 	Zande_languages("znd"), //
 
@@ -1253,6 +1454,9 @@ public enum LanguageCodes
 
 	No_linguistic_content("zxx"), //
 
+	/**
+	 * Macrolanguage
+	 */
 	Zaza_Dimili_Dimli_Kirdki_Kirmanjki_Zazaki("zza");
 
 	public final String value;

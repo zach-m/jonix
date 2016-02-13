@@ -36,7 +36,7 @@ import java.util.Map;
 public enum TextScriptCodes
 {
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Afaka("Afak"), //
 
@@ -53,7 +53,7 @@ public enum TextScriptCodes
 	Bamun("Bamu"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Bassa_Vah("Bass"), //
 
@@ -62,7 +62,7 @@ public enum TextScriptCodes
 	Bengali("Beng"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Blissymbols("Blis"), //
 
@@ -77,7 +77,7 @@ public enum TextScriptCodes
 	Buhid("Buhd"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Chakma("Cakm"), //
 
@@ -90,7 +90,7 @@ public enum TextScriptCodes
 	Cherokee("Cher"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Cirth("Cirt"), //
 
@@ -101,7 +101,7 @@ public enum TextScriptCodes
 	Cyrillic("Cyrl"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Cyrillic_Old_Church_Slavonic_variant("Cyrs"), //
 
@@ -110,31 +110,31 @@ public enum TextScriptCodes
 	Deseret_Mormon("Dsrt"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Duployan_shorthand_Duployan_stenography("Dupl"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Egyptian_demotic("Egyd"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Egyptian_hieratic("Egyh"), //
 
 	Egyptian_hieroglyphs("Egyp"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Elbasan("Elba"), //
 
 	Ethiopic_Ge_ez("Ethi"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Khutsuri_Asomtavruli_and_Khutsuri("Geok"), //
 
@@ -145,7 +145,7 @@ public enum TextScriptCodes
 	Gothic("Goth"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Grantha("Gran"), //
 
@@ -170,19 +170,19 @@ public enum TextScriptCodes
 	Hiragana("Hira"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Pahawh_Hmong("Hmng"), //
 
 	Japanese_syllabaries_alias_for_Hiragana_Katakana("Hrkt"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Old_Hungarian("Hung"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Indus_Harappan("Inds"), //
 
@@ -193,7 +193,7 @@ public enum TextScriptCodes
 	Japanese_syllabaries_alias_for_Han_Hiragana_Katakana("Jpan"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Jurchen("Jurc"), //
 
@@ -212,7 +212,7 @@ public enum TextScriptCodes
 	Korean_alias_for_Hangul_Han("Kore"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Kpelle("Kpel"), //
 
@@ -223,12 +223,12 @@ public enum TextScriptCodes
 	Lao("Laoo"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Latin_Fraktur_variant("Latf"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Latin_Gaelic_variant("Latg"), //
 
@@ -239,7 +239,7 @@ public enum TextScriptCodes
 	Limbu("Limb"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Linear_A("Lina"), //
 
@@ -248,7 +248,7 @@ public enum TextScriptCodes
 	Lisu_Fraser("Lisu"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Loma("Loma"), //
 
@@ -259,27 +259,27 @@ public enum TextScriptCodes
 	Mandaic_Mandaean("Mand"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Manichaean("Mani"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Mayan_hieroglyphs("Maya"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Mende("Mend"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Meroitic_Cursive("Merc"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Meroitic_Hieroglyphs("Mero"), //
 
@@ -288,12 +288,12 @@ public enum TextScriptCodes
 	Mongolian("Mong"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Moon_Moon_code_Moon_script_Moon_type("Moon"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Mro_Mru("Mroo"), //
 
@@ -302,24 +302,24 @@ public enum TextScriptCodes
 	Myanmar_Burmese("Mymr"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Old_North_Arabian_Ancient_North_Arabian("Narb"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Nabatean("Nbat"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Nakhi_Geba_Na_Khi_Gg_baw_Naxi_Geba("Nkgb"), //
 
 	N_Ko("Nkoo"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	N_shu("Nshu"), //
 
@@ -334,12 +334,12 @@ public enum TextScriptCodes
 	Osmanya("Osma"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Palmyrene("Palm"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Old_Permic("Perm"), //
 
@@ -348,19 +348,19 @@ public enum TextScriptCodes
 	Inscriptional_Pahlavi("Phli"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Psalter_Pahlavi("Phlp"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Book_Pahlavi("Phlv"), //
 
 	Phoenician("Phnx"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Miao_Pollard("Plrd"), //
 
@@ -373,7 +373,7 @@ public enum TextScriptCodes
 	Rejang_Redjang_Kaganga("Rjng"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Rongorongo("Roro"), //
 
@@ -382,7 +382,7 @@ public enum TextScriptCodes
 	Samaritan("Samr"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Sarati("Sara"), //
 
@@ -391,26 +391,26 @@ public enum TextScriptCodes
 	Saurashtra("Saur"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	SignWriting("Sgnw"), //
 
 	Shavian_Shaw("Shaw"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Sharada_rad_("Shrd"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Khudawadi_Sindhi("Sind"), //
 
 	Sinhala("Sinh"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Sora_Sompeng("Sora"), //
 
@@ -429,7 +429,7 @@ public enum TextScriptCodes
 	Tagbanwa("Tagb"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Takri_kr_kr_("Takr"), //
 
@@ -440,7 +440,7 @@ public enum TextScriptCodes
 	Tamil("Taml"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Tangut("Tang"), //
 
@@ -449,7 +449,7 @@ public enum TextScriptCodes
 	Telugu("Telu"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Tengwar("Teng"), //
 
@@ -470,17 +470,17 @@ public enum TextScriptCodes
 	Vai("Vaii"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Visible_Speech("Visp"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Warang_Citi_Varang_Kshiti("Wara"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Woleai("Wole"), //
 
@@ -493,17 +493,17 @@ public enum TextScriptCodes
 	Code_for_inherited_script("Zinh"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Mathematical_notation("Zmth"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Symbols("Zsym"), //
 
 	/**
-	 * Script is not supported by Unicode.
+	 * Script is not supported by Unicode
 	 */
 	Code_for_unwritten_documents("Zxxx"), //
 

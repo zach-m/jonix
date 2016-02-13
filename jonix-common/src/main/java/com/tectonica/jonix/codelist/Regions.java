@@ -77,32 +77,202 @@ public enum Regions
 
 	Yukon_Territory("CA-YT"), //
 
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Beijing_Municipality("CN-11"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Tianjin_Municipality("CN-12"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Hebei_Province("CN-13"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Shanxi_Province("CN-14"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Inner_Mongolia_Autonomous_Region("CN-15"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Liaoning_Province("CN-21"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Jilin_Province("CN-22"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Heilongjiang_Province("CN-23"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Shanghai_Municipality("CN-31"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Jiangsu_Province("CN-32"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Zhejiang_Province("CN-33"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Anhui_Province("CN-34"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Fujian_Province("CN-35"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Jiangxi_Province("CN-36"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Shandong_Province("CN-37"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Henan_Province("CN-41"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Hubei_Province("CN-42"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Hunan_Province("CN-43"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Guangdong_Province("CN-44"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Guangxi_Zhuang_Autonomous_Region("CN-45"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Hainan_Province("CN-46"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Chongqing_Municipality("CN-50"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Sichuan_Province("CN-51"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Guizhou_Province("CN-52"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Yunnan_Province("CN-53"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Tibet_Autonomous_Region("CN-54"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Shaanxi_Province("CN-61"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Gansu_Province("CN-62"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Qinghai_Province("CN-63"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Ningxia_Hui_Autonomous_Region("CN-64"), //
+
+	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Xinjiang_Uyghur_Autonomous_Region("CN-65"), //
+
+	/**
+	 * Prefer code TW (Taiwan, Province of China) from List 91 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Taiwan_Province("CN-71"), //
+
+	/**
+	 * Prefer code HK (Hong Kong) from List 91 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Hong_Kong_Special_Administrative_Region("CN-91"), //
+
+	/**
+	 * Prefer code MO (Macao) from List 91 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Macau_Special_Administrative_Region("CN-92"), //
+
 	Canary_Islands("ES-CN"), //
 
 	/**
-	 * Airside outlets at UK international airports only.
+	 * Airside outlets at UK international airports only
 	 */
 	UK_airside("GB-AIR"), //
 
 	/**
-	 * All UK airports, including both airside and other outlets.
+	 * All UK airports, including both airside and other outlets
 	 */
 	UK_airports("GB-APS"), //
 
 	/**
-	 * DEPRECATED, replaced by country codes GG &#8211; Guernsey, and JE &#8211; Jersey.
+	 * DEPRECATED, replaced by country codes GG &#8211; Guernsey, and JE &#8211; Jersey
 	 */
 	Channel_Islands("GB-CHA"), //
 
 	England("GB-ENG"), //
 
 	/**
-	 * UK excluding Northern Ireland.
+	 * UK excluding Northern Ireland
 	 */
 	England_Wales_Scotland("GB-EWS"), //
 
 	/**
-	 * DEPRECATED, replaced by country code IM &#8211; Isle of Man.
+	 * DEPRECATED, replaced by country code IM &#8211; Isle of Man
 	 */
 	Isle_of_Man("GB-IOM"), //
 
@@ -113,7 +283,7 @@ public enum Regions
 	Wales("GB-WLS"), //
 
 	/**
-	 * Airside outlets at Irish international airports only.
+	 * Airside outlets at Irish international airports only
 	 */
 	Ireland_airside("IE-AIR"), //
 
@@ -617,16 +787,16 @@ public enum Regions
 
 	/**
 	 * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
-	 * writing, this is a synonym for &#8220;AT BE CY EE FI FR DE ES GR IE IT LU LV MT NL PT SI SK&#8221; (the official
-	 * Eurozone 18), plus &#8220;AD MC SM VA ME&#8221; (other Euro-using countries in continental Europe). Note some
-	 * other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
-	 * specified separately. Only valid in ONIX 3, and only within P.26. Use of an explicit list of countries instead of
-	 * ECZ is strongly encouraged.
+	 * writing, this is a synonym for &#8216;AT BE CY EE FI FR DE ES GR IE IT LT LU LV MT NL PT SI SK&#8217; (the
+	 * official Eurozone 19), plus &#8216;AD MC SM VA ME&#8217; and Kosovo (other Euro-using countries in continental
+	 * Europe). Note some other territories using the Euro, but outside continental Europe are excluded from this list,
+	 * and may need to be specified separately. ONLY valid in ONIX 3, and ONLY within P.26. Use of an explicit list of
+	 * countries instead of ECZ is strongly encouraged
 	 */
 	Eurozone("ECZ"), //
 
 	/**
-	 * World except as otherwise specified. NOT USED in ONIX 3.
+	 * World except as otherwise specified. NOT USED in ONIX 3
 	 */
 	Rest_of_world("ROW"), //
 

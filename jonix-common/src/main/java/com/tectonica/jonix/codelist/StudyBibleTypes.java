@@ -37,53 +37,53 @@ public enum StudyBibleTypes
 {
 	/**
 	 * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the
-	 * books, notes and cross references. Originally published in 1993, NRSV.
+	 * books, notes and cross references. Originally published in 1993, NRSV
 	 */
 	Cambridge_Annotated("CAM"), //
 
 	/**
 	 * A project of Tyndale House Publishers and Zondervan intended to help readers apply the Bible to daily living.
-	 * Living Bible, King James, New International, NASB.
+	 * Living Bible, King James, New International, NASB
 	 */
 	Life_Application("LIF"), //
 
 	/**
-	 * A King James version study Bible with notes by James Macarthur first published in 1997.
+	 * A King James version study Bible with notes by James Macarthur first published in 1997
 	 */
 	Macarthur("MAC"), //
 
 	/**
-	 * A study Bible originally published in the 1960s and based on the RSV / NRSV.
+	 * A study Bible originally published in the 1960s and based on the RSV / NRSV
 	 */
 	Oxford_Annotated("OXF"), //
 
 	/**
-	 * Norwegian study Bible, New Testament.
+	 * Norwegian study Bible, New Testament
 	 */
 	Studiebibel_Det_Nye_testamentet("NNT"), //
 
 	/**
-	 * Published in 1991 and based on the New Revised Standard version.
+	 * Published in 1991 and based on the New Revised Standard version
 	 */
 	New_Oxford_Annotated("NOX"), //
 
 	/**
-	 * Norwegian study Bible.
+	 * Norwegian study Bible
 	 */
 	Norsk_studiebibel("NSB"), //
 
 	/**
-	 * Based on the work of Charles C. Ryrie. King James, NI, NASB.
+	 * Based on the work of Charles C. Ryrie. King James, NI, NASB
 	 */
 	Ryrie("RYR"), //
 
 	/**
-	 * A study Bible based on the early 20th century work of C.I. Scofield. Based on the King James version.
+	 * A study Bible based on the early 20th century work of C.I. Scofield. Based on the King James version
 	 */
 	Scofield("SCO"), //
 
 	/**
-	 * A transdenominational study Bible for persons from the Pentecostal/Charismatic traditions.
+	 * A transdenominational study Bible for persons from the Pentecostal/Charismatic traditions
 	 */
 	Spirit_Filled("SPR");
 

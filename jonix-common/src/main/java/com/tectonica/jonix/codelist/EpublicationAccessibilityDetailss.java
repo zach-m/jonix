@@ -43,7 +43,7 @@ public enum EpublicationAccessibilityDetailss
 	 * otherwise unusable with the product EXCEPT &#8211; in ONIX 3 messages only &#8211; those specifically noted as
 	 * subject to restriction or prohibition in &lt;EpubUsageConstraint&gt;. Note that provision of any significant part
 	 * of the textual content as images (ie as pictures of text, rather than as text) inevitably prevents use of these
-	 * accessibility options.
+	 * accessibility options
 	 */
 	No_reading_system_accessibility_options_disabled_except("10"), //
 
@@ -51,12 +51,12 @@ public enum EpublicationAccessibilityDetailss
 	 * Table of contents allows direct (eg hyperlinked) access to all levels of text organization above individual
 	 * paragraphs (eg to all sections and subsections) and to all tables, figures, illustrations etc. Non-textual items
 	 * such as illustrations, tables, audio or video content may be directly accessible from the Table of contents, or
-	 * from a similar List of illustrations, List of tables, etc.
+	 * from a similar List of illustrations, List of tables, etc
 	 */
 	Table_of_contents_navigation("11"), //
 
 	/**
-	 * Index provides direct (eg hyperlinked) access to uses of the index terms in the document body.
+	 * Index provides direct (eg hyperlinked) access to uses of the index terms in the document body
 	 */
 	Index_navigation("12"), //
 
@@ -64,7 +64,7 @@ public enum EpublicationAccessibilityDetailss
 	 * All or substantially all textual matter is arranged in a single logical reading order (including text that is
 	 * visually presented as separate from the main text flow, eg in boxouts, captions, tables, footnotes, endnotes,
 	 * citations, etc). Non-textual content is also linked from within this logical reading order. (Purely decorative
-	 * non-text content can be ignored.)
+	 * non-text content can be ignored)
 	 */
 	Reading_order("13"), //
 
@@ -74,7 +74,7 @@ public enum EpublicationAccessibilityDetailss
 	 * audio, video etc. Audio and video content should include alternative descriptions suitable for hearing-impaired
 	 * as well as for visually-impaired readers. (Purely decorative non-text content can be ignored, but the
 	 * accessibility of resources delivered via a network connection rather than as part of the e-publication package
-	 * must be included.)
+	 * must be included)
 	 */
 	Short_alternative_descriptions("14"), //
 
@@ -84,86 +84,86 @@ public enum EpublicationAccessibilityDetailss
 	 * include full alternative descriptions (eg audio-described video) and subtitles or closed captions suitable for
 	 * hearing-impaired as well as for visually-impaired readers. (Purely decorative non-text content can be ignored,
 	 * but the accessibility of resources delivered via a network connection rather than as part of the e-publication
-	 * package must be included.)
+	 * package must be included)
 	 */
 	Full_alternative_descriptions("15"), //
 
 	/**
 	 * Where data visualisations are provided (eg graphs and charts), the underlying data is also available in
-	 * non-graphical (usually tabular, textual) form.
+	 * non-graphical (usually tabular, textual) form
 	 */
 	Visualised_data_also_available_as_non_graphical_data("16"), //
 
 	/**
 	 * Mathematical content such as equations is usable with assistive technology, eg through use of MathML. Semantic
-	 * MathML is preferred but Presentational MathML is acceptable.
+	 * MathML is preferred but Presentational MathML is acceptable
 	 */
 	Accessible_math_content("17"), //
 
 	/**
-	 * Chemistry content such as chemical formulae is usable with assistive technology, eg through use of ChemML.
+	 * Chemistry content such as chemical formulae is usable with assistive technology, eg through use of ChemML
 	 */
 	Accessible_chem_content("18"), //
 
 	/**
-	 * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product.
+	 * For a reflowable e-publication, contains references to the page numbering of an equivalent printed product
 	 */
 	Print_equivalent_page_numbering("19"), //
 
 	/**
 	 * Text-synchronised pre-recorded audio narration (natural or synthesised voice) is included for substantially all
-	 * textual matter, including all alternative descriptions.
+	 * textual matter, including all alternative descriptions
 	 */
 	Synchronised_pre_recorded_audio("20"), //
 
 	/**
-	 * Text-to-speech has been optimised through provision of PLS lexicons, SSML or CSS Speech synthesis hints.
+	 * Text-to-speech has been optimised through provision of PLS lexicons, SSML or CSS Speech synthesis hints
 	 */
 	Text_to_speech_hinting_provided("21"), //
 
 	/**
 	 * The language of the text has been specified (eg via the HTML or XML lang attribute) to optimise text-to-speech
 	 * (and other alternative renderings), both at whole document level and, where appropriate, for individual words,
-	 * phrases or passages in a different language.
+	 * phrases or passages in a different language
 	 */
 	Language_tagging_provided("22"), //
 
 	/**
 	 * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
 	 * accessibility features, compatibility, testing etc. The web page should be maintained by an independent
-	 * compliance scheme or testing organization.
+	 * compliance scheme or testing organization
 	 */
 	Compliance_web_page_for_detailed_accessibility_information("94"), //
 
 	/**
 	 * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
 	 * accessibility features, compatibility, testing etc. The web page should be provided by a trusted intermediary or
-	 * third party nominated by the publisher.
+	 * third party nominated by the publisher
 	 */
 	Trusted_intermediary_s_web_page_for_detailed_accessibility_information("95"), //
 
 	/**
 	 * &lt;ProductFormFeatureDescription&gt; carries the URL of a web page giving further detailed description of the
-	 * accessibility features, compatibility, testing etc. The web page should be provided by the publisher.
+	 * accessibility features, compatibility, testing etc. The web page should be provided by the publisher
 	 */
 	Publisher_s_web_page_for_detailed_accessibility_information("96"), //
 
 	/**
 	 * &lt;ProductFormFeatureDescription&gt; carries a short description of compatibility testing carried out for this
 	 * product, including detailed compatibility with various assistive technology such as third-party screen-reading
-	 * software.
+	 * software
 	 */
 	Compatibility_tested("97"), //
 
 	/**
 	 * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at a &#8216;trusted
-	 * intermediary&#8217;, to whom detailed questions about accessibility for this product may be directed.
+	 * intermediary&#8217;, to whom detailed questions about accessibility for this product may be directed
 	 */
 	Trusted_Intermediary_contact("98"), //
 
 	/**
 	 * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at the publisher to whom detailed
-	 * questions about accessibility of this product may be directed.
+	 * questions about accessibility of this product may be directed
 	 */
 	Publisher_contact_for_further_accessibility_information("99");
 

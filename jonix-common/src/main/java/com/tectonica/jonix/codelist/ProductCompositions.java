@@ -35,31 +35,31 @@ public enum ProductCompositions
 	Single_item_retail_product("00"), //
 
 	/**
-	 * Multiple-item product retailed as a whole.
+	 * Multiple-item product retailed as a whole
 	 */
 	Multiple_item_retail_product("10"), //
 
 	/**
 	 * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as
-	 * such.
+	 * such
 	 */
 	Multiple_item_collection_retailed_as_separate_parts("11"), //
 
 	/**
-	 * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material.
+	 * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material
 	 */
 	Trade_only_product("20"), //
 
 	/**
 	 * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled
-	 * counterpack.
+	 * counterpack
 	 */
 	Multiple_item_trade_pack("30"), //
 
 	/**
 	 * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as
 	 * separate items OR retailed as a single item. Use instead of Multiple item trade pack (code 30) only if the data
-	 * provider specifically wishes to make explicit that the pack may optionally be retailed as a whole.
+	 * provider specifically wishes to make explicit that the pack may optionally be retailed as a whole
 	 */
 	Multiple_item_pack("31");
 

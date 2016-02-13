@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum ReligiousTextFeatureTypes
 {
 	/**
-	 * A church season or activity for which a religious text is intended.
+	 * A church season or activity for which a religious text is intended
 	 */
 	Church_season_or_activity("01");
 

@@ -36,7 +36,7 @@ import java.util.Map;
 public enum EuToySafetyDirectiveHazardWarnings
 {
 	/**
-	 * Use to provide positive indication that no warnings are applicable.
+	 * Use to provide positive indication that no warnings are applicable
 	 */
 	No_warning("00"), //
 
@@ -44,7 +44,7 @@ public enum EuToySafetyDirectiveHazardWarnings
 
 	/**
 	 * Use to specify age (in years, or years and months). Provide specific wording in
-	 * &lt;ProductFormFeatureDescription&gt;.
+	 * &lt;ProductFormFeatureDescription&gt;
 	 */
 	Carries_minimum_age_warning("02"), //
 
@@ -52,31 +52,31 @@ public enum EuToySafetyDirectiveHazardWarnings
 	 * Carries logo, and must be accompanied by the default warning &#8216;Not suitable for children under 36
 	 * months&#8217; (or its approved equivalent in a language other than English, as appropriate), unless specific
 	 * wording is provided in &lt;ProductFormFeatureDescription&gt;. If specific alternative wording is carried in
-	 * &lt;ProductFormFeatureDescription&gt;, this must be used in place of the default text.
+	 * &lt;ProductFormFeatureDescription&gt;, this must be used in place of the default text
 	 */
 	Carries_EU_Toy_Safety_Directive_Unsuitable_for_children_ages_0_3_warning_logo("03"), //
 
 	/**
-	 * Exact text of warning must be included in &lt;ProductFormFeatureDescription&gt;.
+	 * Exact text of warning must be included in &lt;ProductFormFeatureDescription&gt;
 	 */
 	Carries_EU_Toy_Safety_Directive_hazard_warning("04"), //
 
 	/**
 	 * Exact text (not in itself a warning) must be included in &lt;ProductFormFeatureDescription&gt;. May be used
 	 * either without any warning, or as text additional to a warning. Note that if no warnings apply, code 00 can
-	 * provide positive indication of this. Example use: &#8220;Suitable for all ages&#8221;.
+	 * provide positive indication of this. Example use: &#8216;Suitable for all ages&#8217;
 	 */
 	Carries_other_text_associated_with_toy_safety("05"), //
 
 	/**
 	 * Material Safety Data Sheet (a document required by the EU Toy Safety Directive) available online, typically as a
-	 * PDF file or similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document.
+	 * PDF file or similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document
 	 */
 	Material_Safety_Data_Sheet_available("06"), //
 
 	/**
 	 * Declaration of Conformity (the document that backs up the CE mark) available online, typically as a PDF file or
-	 * similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document.
+	 * similar. &lt;ProductFormFeatureDescription&gt; must carry the URL of the document
 	 */
 	Declaration_of_Conformity_available("07");
 

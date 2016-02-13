@@ -45,7 +45,7 @@ public class TaxableAmount implements OnixElement, Serializable
 	public String sourcename;
 
 	/**
-	 * (type: dt.PositiveDecimal)
+	 * (type: dt.StrictPositiveDecimal)
 	 */
 	public Double value;
 

@@ -33,17 +33,17 @@ package com.tectonica.jonix.codelist;
 public enum RightsTypes
 {
 	/**
-	 * Text or image copyright (normally indicated by the &#169; symbol).
+	 * Text or image copyright (normally indicated by the &#169; symbol)
 	 */
 	Copyright("C"), //
 
 	/**
-	 * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol).
+	 * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol)
 	 */
 	Phonogram_right("P"), //
 
 	/**
-	 * Sui generis database right.
+	 * Sui generis database right
 	 */
 	Database_right("D");
 

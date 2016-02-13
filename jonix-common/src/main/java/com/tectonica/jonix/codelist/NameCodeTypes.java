@@ -38,12 +38,12 @@ public enum NameCodeTypes
 	Proprietary("01"), //
 
 	/**
-	 * DEPRECATED &#8211; use 01.
+	 * DEPRECATED &#8211; use 01
 	 */
 	Proprietary_("02"), //
 
 	/**
-	 * Deutsche Nationalbibliothek publisher identifier.
+	 * Deutsche Nationalbibliothek publisher identifier
 	 */
 	DNB_publisher_identifier("03"), //
 
@@ -52,72 +52,72 @@ public enum NameCodeTypes
 	German_ISBN_Agency_publisher_identifier("05"), //
 
 	/**
-	 * GS1 global location number (formerly EAN location number).
+	 * GS1 global location number (formerly EAN location number)
 	 */
 	GLN("06"), //
 
 	/**
-	 * Book trade Standard Address Number &#8211; US, UK etc.
+	 * Book trade Standard Address Number &#8211; US, UK etc
 	 */
 	SAN("07"), //
 
 	/**
-	 * MARC code list for organizations &#8211; see &#8216;http://www.loc.gov/marc/organizations/orgshome.html&#8217;
-	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 * MARC code list for organizations &#8211; see http://www.loc.gov/marc/organizations/orgshome.html &lt;p&gt;NOTE:
+	 * Introduced in Onix3
 	 */
 	MARC_organization_code("08"), //
 
 	/**
-	 * Trading party identifier used in the Netherlands.
+	 * Trading party identifier used in the Netherlands
 	 */
 	Centraal_Boekhuis_Relatie_ID("10"), //
 
 	/**
-	 * Flemish publisher code.
+	 * Flemish publisher code
 	 */
 	Fondscode_Boekenbank("13"), //
 
 	/**
-	 * Business Identity Code (Finland). See http://www.ytj.fi/ (in Finnish).
+	 * Business Identity Code (Finland). See http://www.ytj.fi/ (in Finnish)
 	 */
 	Y_tunnus("15"), //
 
 	/**
-	 * International Standard Name Identifier. See &#8216;http://www.isni.org/&#8217;.
+	 * International Standard Name Identifier. See http://www.isni.org/
 	 */
 	ISNI("16"), //
 
 	/**
 	 * Personennamendatei &#8211; person name authority file used by Deutsche Nationalbibliothek and in other
 	 * German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
-	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND.
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
 	 */
 	PND("17"), //
 
 	/**
-	 * A control number assigned to a Library of Congress Name Authority record.
+	 * A control number assigned to a Library of Congress Name Authority record
 	 */
 	LCCN("18"), //
 
 	/**
-	 * Publisher identifier administered by Japanese ISBN Agency.
+	 * Publisher identifier administered by Japanese ISBN Agency
 	 */
 	Japanese_Publisher_identifier("19"), //
 
 	/**
 	 * Gemeinsame K&#246;rperschaftsdatei &#8211; Corporate Body Authority File in the German-speaking countries. See
 	 * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or
-	 * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favour of the GND.
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favour of the GND
 	 */
 	GKD("20"), //
 
 	/**
-	 * Open Researcher and Contributor ID. See &#8216;http://www.orcid.org/&#8217;.
+	 * Open Researcher and Contributor ID. See http://www.orcid.org/
 	 */
 	ORCID("21"), //
 
 	/**
-	 * Publisher identifier maintained by the Chinese ISBN Agency (GAPP).
+	 * Publisher identifier maintained by the Chinese ISBN Agency (GAPP)
 	 */
 	GAPP_Publisher_Identifier("22"), //
 
@@ -127,46 +127,57 @@ public enum NameCodeTypes
 	 * Generally these consist of a two-letter country code followed by the 8&#8211;12 digits of the national VAT ID.
 	 * Some countries include one or two letters within their VAT ID. See
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
-	 * Spaces, dashes etc should be omitted.
+	 * Spaces, dashes etc should be omitted
 	 */
 	VAT_Identity_Number("23"), //
 
 	/**
-	 * 4-digit business organization identifier controlled by the Japanese Publication Wholesalers Association.
+	 * 4-digit business organization identifier controlled by the Japanese Publication Wholesalers Association
 	 */
 	JP_Distribution_Identifier("24"), //
 
 	/**
-	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See
-	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a
-	 * single authority file, and should be used in preference.
+	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
+	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
 	 */
 	GND("25"), //
 
 	/**
-	 * Dunn and Bradstreet Universal Numbering System, see &#8216;www.dnb.co.uk/dandb-duns-number&#8217;.
+	 * Dunn and Bradstreet Universal Numbering System, see http://www.dnb.co.uk/dandb-duns-number
 	 */
 	DUNS("26"), //
 
 	/**
-	 * Ringgold organizational identifier, see &#8216;http://www.ringgold.com/pages/identify.html&#8217;.
+	 * Ringgold organizational identifier, see http://www.ringgold.com/pages/identify.html
 	 */
 	Ringgold_ID("27"), //
 
 	/**
-	 * French Electre publisher identifier.
+	 * French Electre publisher identifier
 	 */
 	Identifiant_Editeur_Electre("28"), //
 
 	/**
-	 * French Electre imprint Identifier.
+	 * DOI used in EIDR party registry, for example &#8216;10.5237/C9F6-F41F&#8217; (Sam Raimi). See http://eidr.org
+	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	EIDR_Party_DOI("29"), //
+
+	/**
+	 * French Electre imprint Identifier
 	 */
 	Identifiant_Marque_Electre("30"), //
 
 	/**
+	 * Virtual Internet Authority File. &lt;IDValue&gt; should be a number. The URI form of the identifier can be
+	 * created by prefixing the number with &#8216;https://viaf.org/viaf/&#8217;. See https://viaf.org &lt;p&gt;NOTE:
+	 * Introduced in Onix3
+	 */
+	VIAF_ID("31"), //
+
+	/**
 	 * DOI used in CrossRef&#8217;s Fundref list of academic research funding bodies, for example
-	 * &quot;10.13039/100004440&#8220; (Wellcome Trust). See
-	 * &#8216;http://www.crossref.org/fundref/fundref_registry.html&#8217;.
+	 * &#8216;10.13039/100004440&#8217; (Wellcome Trust). See http://www.crossref.org/fundref/fundref_registry.html
 	 */
 	FundRef_DOI("32");
 

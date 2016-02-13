@@ -40,7 +40,7 @@ public enum EpublicationFormats
 	PDF("02"), //
 
 	/**
-	 * &#8216;.LIT&#8217; file format used by Microsoft Reader software.
+	 * &#8216;.LIT&#8217; file format used by Microsoft Reader software
 	 */
 	Microsoft_Reader("03"), //
 
@@ -56,17 +56,17 @@ public enum EpublicationFormats
 
 	/**
 	 * &#8216;.EXE&#8217; file format used when an epublication is delivered as a self-executing package of software and
-	 * content.
+	 * content
 	 */
 	EXE("09"), //
 
 	/**
-	 * &#8216;.TXT&#8217; file format.
+	 * &#8216;.TXT&#8217; file format
 	 */
 	ASCII("10"), //
 
 	/**
-	 * Proprietary file format used for the MobiPocket reader software.
+	 * Proprietary file format used for the MobiPocket reader software
 	 */
 	MobiPocket_format("11");
 

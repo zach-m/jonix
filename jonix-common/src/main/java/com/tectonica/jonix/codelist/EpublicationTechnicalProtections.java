@@ -33,32 +33,32 @@ package com.tectonica.jonix.codelist;
 public enum EpublicationTechnicalProtections
 {
 	/**
-	 * Has no technical protection.
+	 * Has no technical protection
 	 */
 	None("00"), //
 
 	/**
-	 * Has DRM protection.
+	 * Has DRM protection
 	 */
 	DRM("01"), //
 
 	/**
-	 * Has digital watermarking.
+	 * Has digital watermarking
 	 */
 	Digital_watermarking("02"), //
 
 	/**
-	 * Has DRM protection applied by the Adobe CS4 Content Server Package or by the Adobe ADEPT hosted service.
+	 * Has DRM protection applied by the Adobe CS4 Content Server Package or by the Adobe ADEPT hosted service
 	 */
 	Adobe_DRM("03"), //
 
 	/**
-	 * FairPlay&#8217; DRM protection applied via Apple proprietary online store.
+	 * FairPlay&#8217; DRM protection applied via Apple proprietary online store
 	 */
 	Apple_DRM("04"), //
 
 	/**
-	 * Has OMA v2 DRM protection applied, as used to protect some mobile phone content.
+	 * Has OMA v2 DRM protection applied, as used to protect some mobile phone content
 	 */
 	OMA_DRM("05");
 

@@ -33,37 +33,36 @@ package com.tectonica.jonix.codelist;
 public enum DiscountCodeTypes
 {
 	/**
-	 * UK publisher&#8217;s or distributor&#8217;s discount group code in a format specified by BIC to ensure
-	 * uniqueness.
+	 * UK publisher&#8217;s or distributor&#8217;s discount group code in a format specified by BIC to ensure uniqueness
 	 */
 	BIC_discount_group_code("01"), //
 
 	/**
 	 * A publisher&#8217;s or supplier&#8217;s own code which identifies a trade discount category, the actual discount
-	 * being set by trading partner agreement (applies to goods supplied on standard trade discounting terms).
+	 * being set by trading partner agreement (applies to goods supplied on standard trade discounting terms)
 	 */
 	Proprietary_discount_code("02"), //
 
 	/**
-	 * Terms code used in the Netherlands book trade.
+	 * Terms code used in the Netherlands book trade
 	 */
 	Boeksoort("03"), //
 
 	/**
-	 * Terms code used in German ONIX applications.
+	 * Terms code used in German ONIX applications
 	 */
 	German_terms_code("04"), //
 
 	/**
 	 * A publisher&#8217;s or supplier&#8217;s own code which identifies a commission rate category, the actual
-	 * commission rate being set by trading partner agreement (applies to goods supplied on agency terms).
+	 * commission rate being set by trading partner agreement (applies to goods supplied on agency terms)
 	 */
 	Proprietary_commission_code("05"), //
 
 	/**
 	 * UK publisher&#8217;s or distributor&#8217;s commission group code in format specified by BIC to ensure
 	 * uniqueness. Format is identical to BIC discount group code, but indicates a commission rather than a discount
-	 * (applies to goods supplied on agency terms).
+	 * (applies to goods supplied on agency terms)
 	 */
 	BIC_commission_group_code("06");
 

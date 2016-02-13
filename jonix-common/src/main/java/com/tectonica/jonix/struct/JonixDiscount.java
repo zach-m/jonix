@@ -38,7 +38,7 @@ public class JonixDiscount implements Serializable
 	public Double quantity;
 
 	/**
-	 * (type: dt.StrictPositiveDecimal)
+	 * (type: dt.PositiveDecimal)
 	 */
 	public Double toQuantity;
 

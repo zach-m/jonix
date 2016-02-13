@@ -36,58 +36,58 @@ import java.util.Map;
 public enum ReligiousTextFeatures
 {
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Academic_year("01"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Catechistic_year("02"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Liturgical_year("03"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Advent_and_Christmas("04"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Blessings("05"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Scholastic_cycles("06"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Confirmation_and_Holy_Communion("07"), //
 
 	/**
 	 * For example, summer camps and other youth recreational activities: use with code 01 in
-	 * &lt;ReligiousTextFeatureType&gt;.
+	 * &lt;ReligiousTextFeatureType&gt;
 	 */
 	Summer_activites("08"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Easter("09"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Lent("10"), //
 
 	/**
-	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;.
+	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
 	Marian_themes("11");
 

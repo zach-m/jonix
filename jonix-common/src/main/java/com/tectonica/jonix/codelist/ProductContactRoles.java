@@ -33,32 +33,32 @@ package com.tectonica.jonix.codelist;
 public enum ProductContactRoles
 {
 	/**
-	 * Eg for requests for supply of mutable digital files for conversion to other formats.
+	 * Eg for requests for supply of mutable digital files for conversion to other formats
 	 */
 	Accessibility_request_contact("01"), //
 
 	/**
-	 * Eg for requests relating to interviews, author events.
+	 * Eg for requests relating to interviews, author events
 	 */
 	Promotional_contact("02"), //
 
 	/**
-	 * Eg for co-op advertising.
+	 * Eg for co-op advertising
 	 */
 	Advertising_contact("03"), //
 
 	/**
-	 * Eg for requests for review copies.
+	 * Eg for requests for review copies
 	 */
 	Review_copy_contact("04"), //
 
 	/**
-	 * Eg for requests for approval or evaluation copies (particularly within education).
+	 * Eg for requests for approval or evaluation copies (particularly within education)
 	 */
 	Evaluation_copy_contact("05"), //
 
 	/**
-	 * Eg for requests to reproduce or repurpose parts of the publication.
+	 * Eg for requests to reproduce or repurpose parts of the publication
 	 */
 	Permissions_contact("06");
 

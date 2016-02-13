@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codegen.generator;
 
+import java.io.File;
+
 import com.tectonica.jonix.codegen.metadata.Cardinality;
 import com.tectonica.jonix.codegen.metadata.OnixAttribute;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
@@ -34,6 +36,17 @@ public class GenUtil
 		String comment;
 		boolean isPrimitive;
 		boolean isXHTML;
+	}
+
+	/**
+	 * makes sure a target folder exists and empty
+	 */
+	public static void prepareOutputFolder(String folderName)
+	{
+		File dir = new File(folderName);
+		dir.mkdirs();
+		for (File file : dir.listFiles())
+			file.delete();
 	}
 
 	public static TypeInfo typeInfoOf(OnixSimpleType simpleType)

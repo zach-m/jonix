@@ -18,9 +18,9 @@
 	*                   Revision 2                   *
 	*                Status: RELEASED                *
 	*            Release date: 2009-04-09            *
-	*              Revised: 2014-11-23               *
+	*              Revised: 2016-01-24               *
 	*                                                *
-	*             (c) 2000-2014 EDItEUR              *
+	*             (c) 2000-2016 EDItEUR              *
 	*             http://www.editeur.org/            *
 	*                                                *
 	**************************************************
@@ -43,6 +43,9 @@
 	and comment on your proposed use, in the interest of securing an orderly 
 	development of the Schema for the benefit of other users.
 
+	A full licence agreement (DOI: 10.4400/nwgj) that governs use of EDItEUR’s ONIX
+	documentation, DTDs and schemas is available on the EDItEUR website.
+
 	If you do not accept these terms, you must not use any version of the ONIX Product 
 	Information Message Schema.
 
@@ -55,6 +58,13 @@
 
 
 	SCHEMA REVISION HISTORY (IN REVERSE CHRONOLOGICAL ORDER)
+
+	2016-01-24: 1. enforce positive (>= 0), strict positive (> 0) or percentage (0..100) real numbers in various fields
+	            2. enforce positive (0, 1, 2…) or strict positive (1, 2, 3…) integers in various fields
+
+	               note these changes were included in 'strict' version of schema from 2015-01-24
+
+	2015-07-29: corrected Flow to dt.NonEmptyString in ConferenceName to match documentation
 
 	2014-11-23: enforce 'either <ComponentTypeName> or <TitleDetail> or both' in <ContentItem>
 
@@ -1655,9 +1665,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceName">
-		<xs:complexType mixed="true">
-			<xs:complexContent>
-				<xs:extension base="Flow">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="dt.NonEmptyString">
 					<xs:attribute name="refname">
 						<xs:simpleType>
 							<xs:restriction base="xs:token">
@@ -1675,7 +1685,7 @@
 					<xs:attributeGroup ref="generalAttributes"/>
 					<xs:attributeGroup ref="languageAttribute"/>
 				</xs:extension>
-			</xs:complexContent>
+			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConferenceNumber">
@@ -9288,7 +9298,7 @@
 	<xs:element name="TaxableAmount">
 		<xs:complexType>
 			<xs:simpleContent>
-				<xs:extension base="dt.PositiveDecimal">
+				<xs:extension base="dt.StrictPositiveDecimal">
 					<xs:attribute name="refname">
 						<xs:simpleType>
 							<xs:restriction base="xs:token">
@@ -9994,7 +10004,7 @@
 	<xs:element name="ToQuantity">
 		<xs:complexType>
 			<xs:simpleContent>
-				<xs:extension base="dt.StrictPositiveDecimal">
+				<xs:extension base="dt.PositiveDecimal">
 					<xs:attribute name="refname">
 						<xs:simpleType>
 							<xs:restriction base="xs:token">
@@ -10542,30 +10552,28 @@
 	</xs:simpleType>
 	<xs:simpleType name="dt.PositiveDecimal">
 		<xs:restriction base="xs:decimal">
-			<!-- xs:minInclusive value="0"/ -->
+			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.StrictPositiveDecimal">
 		<xs:restriction base="xs:decimal">
-			<!-- xs:minExclusive value="0"/ -->
+			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.PercentDecimal">
 		<xs:restriction base="xs:decimal">
-			<!-- xs:minInclusive value="0"/ -->
-			<!-- xs:maxInclusive value="100"/ -->
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="dt.Integer">
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.PositiveInteger">
-		<xs:restriction base="xs:int"/>
-		<!-- xs:restriction base="xs:nonNegativeInteger"/ -->
+		<xs:restriction base="xs:nonNegativeInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.StrictPositiveInteger">
-		<xs:restriction base="xs:int"/>
-		<!-- xs:restriction base="xs:positiveInteger"/ -->
+		<xs:restriction base="xs:positiveInteger"/>
 	</xs:simpleType>
 	<xs:simpleType name="dt.NonEmptyString">
 		<xs:restriction base="xs:string">

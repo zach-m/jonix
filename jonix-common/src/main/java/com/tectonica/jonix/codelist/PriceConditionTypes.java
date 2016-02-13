@@ -36,49 +36,49 @@ import java.util.Map;
 public enum PriceConditionTypes
 {
 	/**
-	 * Allows positive indication that there are no conditions (the default if &lt;PriceCondition&gt; is omitted).
+	 * Allows positive indication that there are no conditions (the default if &lt;PriceCondition&gt; is omitted)
 	 */
 	No_conditions("00"), //
 
 	/**
-	 * Purchase at this price includes specified updates.
+	 * Purchase at this price includes specified updates
 	 */
 	Includes_updates("01"), //
 
 	/**
-	 * Purchase at this price requires commitment to purchase specified updates, not included in price.
+	 * Purchase at this price requires commitment to purchase specified updates, not included in price
 	 */
 	Must_also_purchase_updates("02"), //
 
 	/**
-	 * Updates may be purchased separately, no minimum commitment required.
+	 * Updates may be purchased separately, no minimum commitment required
 	 */
 	Updates_available("03"), //
 
 	/**
-	 * Purchase at this price requires prior purchase of other product.
+	 * Purchase at this price requires prior purchase of other product
 	 */
 	Linked_prior_purchase_price("05"), //
 
 	/**
-	 * Purchase at this price requires simultaneous purchase of other product.
+	 * Purchase at this price requires simultaneous purchase of other product
 	 */
 	Linked_price("06"), //
 
 	/**
-	 * The duration of the rental to which the price applies.
+	 * The duration of the rental to which the price applies
 	 */
 	Rental_duration("10"), //
 
 	/**
 	 * Purchase at this price requires prior rental of the product. &lt;PriceConditionQuantity&gt; gives minimum prior
-	 * rental period, and &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier.
+	 * rental period, and &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier
 	 */
 	Rental_to_purchase("11"), //
 
 	/**
 	 * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration. Separate
-	 * price condition with rental duration (code 10) specifies the new combined rental duration.
+	 * price condition with rental duration (code 10) specifies the new combined rental duration
 	 */
 	Rental_extension("12");
 

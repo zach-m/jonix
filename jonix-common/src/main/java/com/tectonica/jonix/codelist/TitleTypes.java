@@ -42,71 +42,71 @@ public enum TitleTypes
 	 * title alone is not distinctive, elements may be taken from a set or series title and part number etc to create a
 	 * distinctive title. Where the item is an omnibus edition containing two or more works by the same author, and
 	 * there is no separate combined title, a distinctive title may be constructed by concatenating the individual
-	 * titles, with suitable punctuation, as in &#8220;Pride and prejudice / Sense and sensibility / Northanger
-	 * Abbey&#8221;.
+	 * titles, with suitable punctuation, as in &#8216;Pride and prejudice / Sense and sensibility / Northanger
+	 * Abbey&#8217;
 	 */
 	Distinctive_title_book("01"), //
 
 	/**
-	 * Serials only.
+	 * Serials only
 	 */
 	ISSN_key_title_of_serial("02"), //
 
 	/**
-	 * Where the subject of the ONIX record is a translated item.
+	 * Where the subject of the ONIX record is a translated item
 	 */
 	Title_in_original_language("03"), //
 
 	/**
-	 * For serials: an acronym or initialism of Title Type 01, eg &#8220;JAMA&#8221;, &#8220;JACM&#8221;.
+	 * For serials: an acronym or initialism of Title Type 01, eg &#8216;JAMA&#8217;, &#8216;JACM&#8217;
 	 */
 	Title_acronym_or_initialism("04"), //
 
 	/**
-	 * An abbreviated form of Title Type 01.
+	 * An abbreviated form of Title Type 01
 	 */
 	Abbreviated_title("05"), //
 
 	/**
-	 * A translation of Title Type 01 into another language.
+	 * A translation of Title Type 01 into another language
 	 */
 	Title_in_other_language("06"), //
 
 	/**
-	 * Serials only: when a journal issue is explicitly devoted to a specified topic.
+	 * Serials only: when a journal issue is explicitly devoted to a specified topic
 	 */
 	Thematic_title_of_journal_issue("07"), //
 
 	/**
-	 * Books or serials: when an item was previously published under another title.
+	 * Books or serials: when an item was previously published under another title
 	 */
 	Former_title("08"), //
 
 	/**
 	 * For books: the title carried in a book distributor&#8217;s title file: frequently incomplete, and may include
-	 * elements not properly part of the title.
+	 * elements not properly part of the title
 	 */
 	Distributor_s_title("10"), //
 
 	/**
-	 * An alternative title that appears on the cover of a book.
+	 * An alternative title that appears on the cover of a book
 	 */
 	Alternative_title_on_cover("11"), //
 
 	/**
-	 * An alternative title that appears on the back of a book.
+	 * An alternative title that appears on the back of a book
 	 */
 	Alternative_title_on_back("12"), //
 
 	/**
 	 * An expanded form of the title, eg the title of a school text book with grade and type and other details added to
 	 * make the title meaningful, where otherwise it would comprise only the curriculum subject. This title type is
-	 * required for submissions to the Spanish ISBN Agency.
+	 * required for submissions to the Spanish ISBN Agency
 	 */
 	Expanded_title("13"), //
 
 	/**
-	 * An alternative title that the book is widely known by, whether it appears on the book or not.
+	 * An alternative title that the book is widely known by, whether it appears on the book or not
 	 */
 	Alternative_title("14");
 

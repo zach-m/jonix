@@ -56,7 +56,7 @@ public enum ProductFormFeatureValueBindingOrPageEdgeColors
 	Grey("GRY"), //
 
 	/**
-	 * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required.
+	 * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
 	 */
 	Multicolor("MUL"), //
 

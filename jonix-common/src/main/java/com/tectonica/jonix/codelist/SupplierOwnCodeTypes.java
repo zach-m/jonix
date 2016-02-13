@@ -34,26 +34,40 @@ public enum SupplierOwnCodeTypes
 {
 	/**
 	 * A rating applied by a supplier (typically a wholesaler) to indicate its assessment of the expected or actual
-	 * sales performance of a product.
+	 * sales performance of a product
 	 */
 	Supplier_s_sales_classification("01"), //
 
 	/**
-	 * A supplier&#8217;s coding of the eligibility of a product for a bonus scheme on overall sales.
+	 * A supplier&#8217;s coding of the eligibility of a product for a bonus scheme on overall sales
 	 */
 	Supplier_s_bonus_eligibility("02"), //
 
 	/**
 	 * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
-	 * when the publisher is not the &#8216;supplier&#8217;.
+	 * when the publisher is not the &#8216;supplier&#8217;
 	 */
 	Publisher_s_sales_classification("03"), //
 
 	/**
 	 * A classification applied by a supplier to a product sold on Agency terms, to indicate that retail price
-	 * restrictions are applicable.
+	 * restrictions are applicable
 	 */
-	Supplier_s_pricing_restriction_classification("04");
+	Supplier_s_pricing_restriction_classification("04"), //
+
+	/**
+	 * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
+	 * to that the distributor or supplier estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or
+	 * GTIN-13 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Supplier_s_sales_expectation("05"), //
+
+	/**
+	 * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
+	 * to that the publisher estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
+	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Publisher_s_sales_expectation("06");
 
 	public final String value;
 

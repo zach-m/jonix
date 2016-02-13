@@ -35,7 +35,7 @@ public enum PersonOrganizationNameTypes
 	Unspecified("00"), //
 
 	/**
-	 * May be used to give a well-known pseudonym, where the primary name is a &#8216;real&#8217; name.
+	 * May be used to give a well-known pseudonym, where the primary name is a &#8216;real&#8217; name
 	 */
 	Pseudonym("01"), //
 
@@ -44,12 +44,12 @@ public enum PersonOrganizationNameTypes
 	Earlier_name("03"), //
 
 	/**
-	 * May be used to identify a well-known real name, where the primary name is a pseudonym.
+	 * May be used to identify a well-known real name, where the primary name is a pseudonym
 	 */
 	_Real_name("04"), //
 
 	/**
-	 * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified.
+	 * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified
 	 */
 	Transliterated_form_of_primary_name("05");
 

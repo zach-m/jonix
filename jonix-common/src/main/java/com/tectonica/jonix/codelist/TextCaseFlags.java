@@ -33,24 +33,24 @@ package com.tectonica.jonix.codelist;
 public enum TextCaseFlags
 {
 	/**
-	 * Default.
+	 * Default
 	 */
 	Undefined("00"), //
 
 	/**
-	 * Initial capitals on first word and subsequently on proper names only, eg &#8220;The conquest of Mexico&#8221;.
+	 * Initial capitals on first word and subsequently on proper names only, eg &#8216;The conquest of Mexico&#8217;
 	 */
 	Sentence_case("01"), //
 
 	/**
 	 * Initial capitals on first word and subsequently on all significant words (nouns, pronouns, adjectives, verbs,
 	 * adverbs, subordinate conjunctions) thereafter. Unless they appear as the first word, articles, prepositions and
-	 * coordinating conjunctions remain lower case, eg &#8220;The Conquest of Mexico&#8221;.
+	 * coordinating conjunctions remain lower case, eg &#8216;The Conquest of Mexico&#8217;
 	 */
 	Title_case("02"), //
 
 	/**
-	 * For example, &#8220;THE CONQUEST OF MEXICO&#8221;.
+	 * For example, &#8216;THE CONQUEST OF MEXICO&#8217;
 	 */
 	All_capitals("03");
 

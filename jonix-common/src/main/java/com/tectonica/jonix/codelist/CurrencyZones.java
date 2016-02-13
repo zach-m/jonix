@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum CurrencyZones
 {
 	/**
-	 * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3.
+	 * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3
 	 */
 	Eurozone("EUR");
 

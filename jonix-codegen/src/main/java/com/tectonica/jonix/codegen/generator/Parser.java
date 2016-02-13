@@ -161,16 +161,33 @@ public class Parser
 		return enumName;
 	}
 
+	/**
+	 * encodes the (free-text) comment of the code-list (i.e. its annotation from the XSD schema) into a proper Java
+	 * name for the enum representing that code-list.
+	 * <p>
+	 * The process is NOT guaranteed to be forward-compatible as it only deals with cases observed.
+	 * <p>
+	 * Examples:
+	 * <ul>
+	 * <li>Title type code --> <code>TitleTypes</code>
+	 * <li>Product composition --> <code>ProductCompositions</code>
+	 * <li>Language code – based on ISO 639-2/B --> <code>LanguageCodes</code>
+	 * </ul>
+	 */
 	private String enumJavaName(String enumComment)
 	{
-		final String[] splits = enumComment.replaceAll("[^a-zA-Z0-9 /]+", "").replaceAll("[ /]{2,}", " ").split(" |/");
+		final String[] splits = enumComment.replaceAll("[^a-zA-Z0-9 /]+", "").replaceAll("[ /]{2,}", " ").toLowerCase()
+				.split(" |/");
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < splits.length; i++)
 		{
-			String split = splits[i].toLowerCase();
+			String split = splits[i];
 			if (i == splits.length - 1 && (split.equals("code") || split.equals("codes")))
 				break;
 			if ((i > 0 && i < splits.length - 1) && (split.equals("iso")))
+				break;
+			if ((i > 0 && i < splits.length - 3) && (split.equals("based")) && (splits[i + 1].equals("on"))
+					&& (splits[i + 2].equals("iso")))
 				break;
 			sb.append(Character.toUpperCase(split.charAt(0))).append(split.substring(1));
 		}

@@ -36,18 +36,18 @@ import java.util.Map;
 public enum ContentAudiences
 {
 	/**
-	 * Any audience.
+	 * Any audience
 	 */
 	Unrestricted("00"), //
 
 	/**
 	 * Distribution by agreement between the parties to the ONIX exchange (this value is provided to cover applications
-	 * where ONIX content includes material which is not for general distribution).
+	 * where ONIX content includes material which is not for general distribution)
 	 */
 	Restricted("01"), //
 
 	/**
-	 * Distributors, bookstores, publisher&#8217;s own staff etc.
+	 * Distributors, bookstores, publisher&#8217;s own staff etc
 	 */
 	Booktrade("02"), //
 
@@ -60,14 +60,20 @@ public enum ContentAudiences
 	Students("06"), //
 
 	/**
-	 * Press or other media.
+	 * Press or other media
 	 */
 	Press("07"), //
 
 	/**
-	 * Where a specially formatted description is required for this audience.
+	 * Where a specially formatted description is required for this audience
 	 */
-	Shopping_comparison_service("08");
+	Shopping_comparison_service("08"), //
+
+	/**
+	 * Text not intended for display, but may be used (in addition to any less restricted text) for indexing and search
+	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Search_engine_index("09");
 
 	public final String value;
 

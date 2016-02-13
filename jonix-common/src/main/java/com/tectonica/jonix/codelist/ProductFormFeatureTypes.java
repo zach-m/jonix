@@ -36,41 +36,41 @@ import java.util.Map;
 public enum ProductFormFeatureTypes
 {
 	/**
-	 * For Product Form Feature values see code list 98.
+	 * For Product Form Feature values see code list 98
 	 */
 	Color_of_cover("01"), //
 
 	/**
-	 * For Product Form Feature values see code list 98.
+	 * For Product Form Feature values see code list 98
 	 */
 	Color_of_page_edge("02"), //
 
 	/**
 	 * The principal font used for body text, when this is a significant aspect of product description, eg for some
 	 * Bibles, and for large print product. The accompanying Product Form Feature Description is text specifying font
-	 * size and, if desired, typeface.
+	 * size and, if desired, typeface
 	 */
 	Text_font("03"), //
 
 	/**
-	 * For Product Form Feature values see code list 99.
+	 * For Product Form Feature values see code list 99
 	 */
 	Special_cover_material("04"), //
 
 	/**
-	 * For Product Form Feature values see code list 76.
+	 * For Product Form Feature values see code list 76
 	 */
 	DVD_region("05"), //
 
 	/**
 	 * A computer or handheld device operating system required to use a digital product, with version detail if
 	 * applicable. The accompanying Product Form Feature Value is a code from List 176. Version detail, when applicable,
-	 * is carried in Product Form Feature Description.
+	 * is carried in Product Form Feature Description
 	 */
 	Operating_system_requirements("06"), //
 
 	/**
-	 * Other system requirements for a digital product, described by free text in Product Form Feature Description.
+	 * Other system requirements for a digital product, described by free text in Product Form Feature Description
 	 */
 	Other_system_requirements("07"), //
 
@@ -78,12 +78,12 @@ public enum ProductFormFeatureTypes
 	 * Indicates compatibility with proprietary &#8216;point and listen&#8217; devices such as Ting Pen
 	 * (http://www.ting.eu) or the iSmart Touch and Read Pen. These devices scan invisible codes specially printed on
 	 * the page to identify the book and position of the word, and the word is then read aloud by the device. The name
-	 * of the compatible device (or range of devices) should be given in &lt;ProductFormFeatureDescription&gt;.
+	 * of the compatible device (or range of devices) should be given in &lt;ProductFormFeatureDescription&gt;
 	 */
 	_Point_and_listen_device_compatibility("08"), //
 
 	/**
-	 * For &lt;ProductFormFeatureValue&gt; codes, see Codelist 196.
+	 * For &lt;ProductFormFeatureValue&gt; codes, see Codelist 196
 	 */
 	E_publication_accessibility_detail("09"), //
 
@@ -91,43 +91,52 @@ public enum ProductFormFeatureTypes
 	 * For versioned e-book file formats (or in some cases, devices). &lt;ProductFormFeatureValue&gt; should contain the
 	 * version number as a period-separated list of numbers (eg &#8216;7&#8217;, &#8216;1.5&#8217; or
 	 * &#8216;3.10.7&#8217;). Use only with ONIX 3.0 &#8211; in ONIX 2.1, use &lt;EpubTypeVersion&gt; instead. For the
-	 * most common file formats, code 15 and List 220 is strongly preferred.
+	 * most common file formats, code 15 and List 220 is strongly preferred
 	 */
 	E_publication_format_version("10"), //
 
 	/**
-	 * DEPRECATED &#8211; use code 12 and List 143.
+	 * DEPRECATED &#8211; use code 12 and List 143
 	 */
 	CPSIA_choking_hazard_warning("11"), //
 
 	/**
 	 * Choking hazard warning required by US Consumer Product Safety Improvement Act (CPSIA) of 2008. Required, when
 	 * applicable, for products sold in the US. The Product Form Feature Value is a code from List 143. Further
-	 * explanation may be given in Product Form Feature Description.
+	 * explanation may be given in Product Form Feature Description
 	 */
 	CPSIA_choking_hazard_warning_("12"), //
 
 	/**
 	 * Product carries hazard warning required by EU Toy Safety Directive. The Product Form Feature Value is a code from
-	 * List 184, and (for some codes) the exact wording of the warning may be given in Product Form Feature Description.
+	 * List 184, and (for some codes) the exact wording of the warning may be given in Product Form Feature Description
 	 */
 	EU_Toy_Safety_Hazard_warning("13"), //
 
 	/**
-	 * Product Form Feature Description must give further details of the warning.
+	 * Product Form Feature Description must give further details of the warning
 	 */
 	IATA_Dangerous_Goods_warning("14"), //
 
 	/**
 	 * For common versioned e-book formats (or in some cases, devices) &#8211; for example EPUB 2.0.1 or EPUB 3.0.
-	 * &lt;ProductFormFeatureValue&gt; is a code from list 220. Use in ONIX 3.0 only.
+	 * &lt;ProductFormFeatureValue&gt; is a code from list 220. Use in ONIX 3.0 only
 	 */
 	E_publication_format_version_code("15"), //
 
 	/**
+	 * For common versioned e-book formats, the name and version of the validator used to check conformance.
+	 * &lt;ProductFormFeatureDescription&gt; is the common name of the validator used (eg EpubCheck, Flightdeck), and
+	 * &lt;ProductFormFeatureValue&gt; is the version number of the validator (eg 4.0.0a). Use with code 15 (or possibly
+	 * code 10), or with &lt;EpubTypeVersion&gt;, to specify the version the e-publication conforms with &lt;p&gt;NOTE:
+	 * Introduced in Onix3
+	 */
+	E_publication_format_validator_version("16"), //
+
+	/**
 	 * Product does not carry FSC or PEFC logo. The Product Form Feature Value and Description elements are not used.
 	 * The product may, however, still carry a claimed Pre- and Post-Consumer Waste (PCW) content (type code 37) in a
-	 * separate repeat of the Product Form Feature composite.
+	 * separate repeat of the Product Form Feature composite
 	 */
 	Not_FSC_or_PEFC_certified("30"), //
 
@@ -135,10 +144,10 @@ public enum ProductFormFeatureTypes
 	 * Product carries FSC logo (Pure, 100%). &lt;ProductFormFeatureValue&gt; is the Certification number (ie either a
 	 * Chain Of Custody (COC) number or a Trademark License number) printed on the book. Format: Chain of Custody number
 	 * is two to five letters-COC-six digits (the digits should include leading zeros if necessary), eg
-	 * &#8220;AB-COC-001234&#8221; or &#8220;ABCDE-COC-123456&#8221;; Trademark License number is C followed by six
-	 * digits, eg &#8220;C005678&#8221; (this would normally be prefixed by &#8216;FSC&#174;&#8217; when displayed). By
-	 * definition, a product certified Pure does not contain Pre- and Post-Consumer-Waste (PCW), so type code 31 can
-	 * only occur on its own. Certification numbers may be checked at &#8216;http://info.fsc.org/&#8217;.
+	 * &#8216;AB-COC-001234&#8217; or &#8216;ABCDE-COC-123456&#8217;; Trademark License number is C followed by six
+	 * digits, eg &#8216;C005678&#8217; (this would normally be prefixed by &#8216;FSC&#174;&#8217; when displayed). By
+	 * definition, a product certified Pure does not contain Pre- or Post-Consumer-Waste (PCW), so type code 31 can only
+	 * occur on its own. Certification numbers may be checked at http://info.fsc.org/
 	 */
 	FSC_certified_pure("31"), //
 
@@ -146,8 +155,8 @@ public enum ProductFormFeatureTypes
 	 * Product carries FSC logo (Mixed sources, Mix). &lt;ProductFormFeatureValue&gt; is the Certification number (ie
 	 * either a Chain Of Custody (COC) number or a Trademark License number) printed on the book. Format: Chain of
 	 * Custody number is two to five letters-COC-six digits (the digits should include leading zeros if necessary), eg
-	 * &#8220;AB-COC-001234&#8221; or &#8220;ABCDE-COC-123456&#8221;; Trademark License number is C followed by six
-	 * digits, eg &#8220;C005678&#8221; (this would normally be prefixed by &#8216;FSC&#174;&#8217; when displayed). May
+	 * &#8216;AB-COC-001234&#8217; or &#8216;ABCDE-COC-123456&#8217;; Trademark License number is C followed by six
+	 * digits, eg &#8216;C005678&#8217; (this would normally be prefixed by &#8216;FSC&#174;&#8217; when displayed). May
 	 * be accompanied by a Pre- and Post-Consumer-Waste (PCW) percentage value, to be reported in another instance of
 	 * &lt;ProductFormFeature&gt; with type code 36. Certification numbers may be checked at http://info.fsc.org/
 	 */
@@ -157,32 +166,32 @@ public enum ProductFormFeatureTypes
 	 * Product carries FSC logo (Recycled). &lt;ProductFormFeatureValue&gt; is the Certification number (ie either a
 	 * Chain Of Custody (COC) number or a Trademark License number) printed on the book. Format: Chain of Custody number
 	 * is two to five letters-COC-six digits (the digits should include leading zeroes if necessary), eg
-	 * &#8220;AB-COC-001234&#8221; or &#8220;ABCDE-COC-123456&#8221;; Trademark License number is C followed by six
-	 * digits, eg &#8220;C005678&#8221; (this would normally be prefixed by &#8216;FSC&#174;&#8217; when displayed).
+	 * &#8216;AB-COC-001234&#8217; or &#8216;ABCDE-COC-123456&#8217;; Trademark License number is C followed by six
+	 * digits, eg &#8216;C005678&#8217; (this would normally be prefixed by &#8216;FSC&#174;&#8217; when displayed).
 	 * Should be accompanied by a Pre- and Post-Consumer-Waste (PCW) percentage value, to be reported in another
-	 * instance of &lt;ProductFormFeature&gt; with type code 36. Certification numbers may be checked at&#8216;
-	 * http://info.fsc.org/&#8217;.
+	 * instance of &lt;ProductFormFeature&gt; with type code 36. Certification numbers may be checked at
+	 * http://info.fsc.org/
 	 */
 	FSC_certified_recycled("33"), //
 
 	/**
 	 * Product carries PEFC logo (certified). &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number
 	 * printed on the book. May be accompanied by a Post-Consumer Waste (PCW) percentage value, to be reported in
-	 * another instance of &lt;ProductFormFeature&gt; with type code 36.
+	 * another instance of &lt;ProductFormFeature&gt; with type code 36
 	 */
 	PEFC_certified("34"), //
 
 	/**
 	 * Product carries PEFC logo (recycled). &lt;ProductFormFeatureValue&gt; is the Chain Of Custody (COC) number
 	 * printed on the book. Should be accompanied by a Post-Consumer-Waste (PCW) percentage value, to be reported in
-	 * another instance of &lt;ProductFormFeature&gt; with type code 36.
+	 * another instance of &lt;ProductFormFeature&gt; with type code 36
 	 */
 	PEFC_recycled("35"), //
 
 	/**
 	 * The percentage of recycled Pre- and Post-Consumer-Waste (PCW) used in a product where the composition is
 	 * certified by FSC or PEFC. &lt;ProductFormFeatureValue&gt; is an integer. May occur together with type code 32,
-	 * 33, 34 or 35.
+	 * 33, 34 or 35
 	 */
 	FSC_or_PEFC_certified_Pre_and_Post_Consumer_Waste_PCW("36"), //
 
@@ -190,13 +199,13 @@ public enum ProductFormFeatureTypes
 	 * The percentage of recycled Pre- and Post-Consumer Waste (PCW) claimed to be used in a product where the
 	 * composition is not certified by FSC or PEFC. &lt;Product FormFeatureValue&gt; is an integer.
 	 * &lt;ProductFormFeatureDescription&gt; may carry free text supporting the claim. Must be accompanied by type code
-	 * 30.
+	 * 30
 	 */
 	Claimed_Pre_and_Post_Consumer_Waste_PCW("37"), //
 
 	/**
 	 * Product made from paper produced using environmentally-conscious technology.
-	 * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement.
+	 * &lt;ProductFormFeatureDescription&gt; may carry free text with a more detailed statement
 	 */
 	Paper_produced_by_green_technology("40");
 

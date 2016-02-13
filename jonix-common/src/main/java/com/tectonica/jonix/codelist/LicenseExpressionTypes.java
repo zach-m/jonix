@@ -33,12 +33,12 @@ package com.tectonica.jonix.codelist;
 public enum LicenseExpressionTypes
 {
 	/**
-	 * Document (eg Word file, PDF or web page) Intended for the lay reader.
+	 * Document (eg Word file, PDF or web page) Intended for the lay reader
 	 */
 	Human_readable("01"), //
 
 	/**
-	 * Document (eg Word file, PDF or web page) Intended for the legal specialist reader.
+	 * Document (eg Word file, PDF or web page) Intended for the legal specialist reader
 	 */
 	Professional_readable("02"), //
 

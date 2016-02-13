@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum PriceStatuss
 {
 	/**
-	 * Default.
+	 * Default
 	 */
 	Unspecified("00"), //
 

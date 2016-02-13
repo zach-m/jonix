@@ -37,27 +37,27 @@ public enum UnnamedPersonss
 	Anonymous("02"), //
 
 	/**
-	 * And others: additional contributors not listed.
+	 * And others: additional contributors not listed
 	 */
 	et_al("03"), //
 
 	/**
-	 * When the product is a pack of books by different authors.
+	 * When the product is a pack of books by different authors
 	 */
 	Various_authors("04"), //
 
 	/**
-	 * Use with Contributor role code E07 &#8220;read by&#8221;, for audio books for the blind.
+	 * Use with Contributor role code E07 &#8216;read by&#8217;, for audio books for the blind
 	 */
 	Synthesized_voice_male("05"), //
 
 	/**
-	 * Use with Contributor role code E07 &#8220;read by&#8221;, for audio books for the blind.
+	 * Use with Contributor role code E07 &#8216;read by&#8217;, for audio books for the blind
 	 */
 	Synthesized_voice_female("06"), //
 
 	/**
-	 * Use with Contributor role code E07 &#8220;read by&#8221;, for audio books for the blind.
+	 * Use with Contributor role code E07 &#8216;read by&#8217;, for audio books for the blind
 	 */
 	Synthesized_voice_unspecified("07");
 

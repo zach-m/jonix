@@ -37,68 +37,68 @@ public enum TradeCategorys
 {
 	/**
 	 * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details
-	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
+	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
 	 */
 	UK_open_market_edition("01"), //
 
 	/**
 	 * In UK, an edition intended primarily for airside sales in UK airports, though it may be available for sale in
 	 * other territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR
-	 * P.21 (ONIX 3.0) as usual.
+	 * P.21 (ONIX 3.0) as usual
 	 */
 	Airport_edition("02"), //
 
 	/**
-	 * In Germany, a special printing sold at a lower price than the regular hardback.
+	 * In Germany, a special printing sold at a lower price than the regular hardback
 	 */
 	Sonderausgabe("03"), //
 
 	/**
 	 * In countries where recognised as a distinct trade category, eg France &#8216;livre de poche&#8217;, Germany
-	 * &#8216;Taschenbuch&#8217;, Italy &#8216;tascabile&#8217;, Spain &#8216;libro de bolsillo&#8217;.
+	 * &#8216;Taschenbuch&#8217;, Italy &#8216;tascabile&#8217;, Spain &#8216;libro de bolsillo&#8217;
 	 */
 	Pocket_paperback("04"), //
 
 	/**
-	 * Edition produced solely for sale in designated export markets.
+	 * Edition produced solely for sale in designated export markets
 	 */
 	International_edition_US("05"), //
 
 	/**
 	 * Audio product sold in special durable packaging and with a replacement guarantee for the contained cassettes or
-	 * CDs for a specified shelf-life.
+	 * CDs for a specified shelf-life
 	 */
 	Library_audio_edition("06"), //
 
 	/**
 	 * An edition from a US publisher sold only in territories where exclusive rights are not held. Rights details
-	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual.
+	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
 	 */
 	US_open_market_edition("07"), //
 
 	/**
-	 * In France, a category of book that has a particular legal status, claimed by the publisher.
+	 * In France, a category of book that has a particular legal status, claimed by the publisher
 	 */
 	Livre_scolaire_d_clar_par_l_diteur("08"), //
 
 	/**
-	 * In France, a category of book that has a particular legal status, designated independently of the publisher.
+	 * In France, a category of book that has a particular legal status, designated independently of the publisher
 	 */
 	Livre_scolaire_non_sp_cifi_("09"), //
 
 	/**
-	 * Edition published for sale only with a newspaper or periodical.
+	 * Edition published for sale only with a newspaper or periodical
 	 */
 	Supplement_to_newspaper("10"), //
 
 	/**
 	 * In Spain, a school textbook for which there is no fixed or suggested retail price and which is supplied by the
-	 * publisher on terms individually agreed with the bookseller.
+	 * publisher on terms individually agreed with the bookseller
 	 */
 	Precio_libre_textbook("11"), //
 
 	/**
-	 * For editions sold only through newsstands/newsagents.
+	 * For editions sold only through newsstands/newsagents
 	 */
 	News_outlet_edition("12"), //
 
@@ -108,13 +108,13 @@ public enum TradeCategorys
 	 * school districts for the use of students. Textbooks published for the higher education market are generally
 	 * adopted for use in particular classes by the instructors of those classes. Textbooks are usually not marketed to
 	 * the general public, which distinguishes them from trade books. Note that trade books adopted for course use are
-	 * not considered to be textbooks (though a specific education edition of a trade title may be).
+	 * not considered to be textbooks (though a specific education edition of a trade title may be)
 	 */
 	US_textbook("13"), //
 
 	/**
 	 * &#8216;Short&#8217; e-book (sometimes also called a &#8216;single&#8217;), typically containing a single short
-	 * story, an essay or piece of long-form journalism.
+	 * story, an essay or piece of long-form journalism
 	 */
 	E_book_short("14");
 

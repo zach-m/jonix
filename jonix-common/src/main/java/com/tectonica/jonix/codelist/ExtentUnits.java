@@ -36,7 +36,7 @@ import java.util.Map;
 public enum ExtentUnits
 {
 	/**
-	 * Words of natural language text.
+	 * Words of natural language text
 	 */
 	Words("02"), //
 
@@ -52,22 +52,22 @@ public enum ExtentUnits
 	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3&#8211;6
 	 * minutes of running time, and track counts are misleading and inappropriate if the average track duration is
 	 * significantly more or less than this. Note that track breaks are not necessarily aligned with structural breaks
-	 * in the text (eg chapter breaks).
+	 * in the text (eg chapter breaks)
 	 */
 	Tracks("11"), //
 
 	/**
-	 * Fill with leading zeroes if any elements are missing.
+	 * Fill with leading zeroes if any elements are missing
 	 */
 	Hours_HHH("14"), //
 
 	/**
-	 * Fill with leading zeroes if any elements are missing.
+	 * Fill with leading zeroes if any elements are missing
 	 */
 	Hours_and_minutes_HHHMM("15"), //
 
 	/**
-	 * Fill with leading zeroes if any elements are missing.
+	 * Fill with leading zeroes if any elements are missing
 	 */
 	Hours_minutes_seconds_HHHMMSS("16"), //
 

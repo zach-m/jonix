@@ -36,7 +36,7 @@ import java.util.Map;
 public enum IllustrationAndOtherContentTypes
 {
 	/**
-	 * See description in the &lt;IllustrationTypeDescription&gt; element.
+	 * See description in the &lt;IllustrationTypeDescription&gt; element
 	 */
 	Unspecified_see_description("00"), //
 
@@ -45,12 +45,12 @@ public enum IllustrationAndOtherContentTypes
 	Illustrations_color("02"), //
 
 	/**
-	 * Including black and white photographs.
+	 * Including black and white photographs
 	 */
 	Halftones_black_and_white("03"), //
 
 	/**
-	 * Including color photographs.
+	 * Including color photographs
 	 */
 	Halftones_color("04"), //
 
@@ -65,7 +65,7 @@ public enum IllustrationAndOtherContentTypes
 	Illustrations_unspecified("09"), //
 
 	/**
-	 * Including photographs.
+	 * Including photographs
 	 */
 	Halftones_unspecified("10"), //
 
@@ -86,33 +86,33 @@ public enum IllustrationAndOtherContentTypes
 	Charts("18"), //
 
 	/**
-	 * Recorded music extracts or examples, or complete recorded work(s), accompanying textual or other content.
+	 * Recorded music extracts or examples, or complete recorded work(s), accompanying textual or other content
 	 */
 	Recorded_music_items("19"), //
 
 	/**
-	 * Printed music extracts or examples, or complete music score(s), accompanying textual or other content.
+	 * Printed music extracts or examples, or complete music score(s), accompanying textual or other content
 	 */
 	Printed_music_items("20"), //
 
 	/**
 	 * To be used in the mathematical sense of a diagram that represents numerical values plotted against an origin and
-	 * axes, cf codes 16 and 18.
+	 * axes, cf codes 16 and 18
 	 */
 	Graphs("21"), //
 
 	/**
-	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book.
+	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
 	 */
 	Plates_unspecified("22"), //
 
 	/**
-	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book.
+	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
 	 */
 	Plates_black_and_white("23"), //
 
 	/**
-	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book.
+	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
 	 */
 	Plates_color("24"), //
 
@@ -121,12 +121,12 @@ public enum IllustrationAndOtherContentTypes
 	Bibliography("26"), //
 
 	/**
-	 * Larger-scale inset maps of places or features of interest included in a map product.
+	 * Larger-scale inset maps of places or features of interest included in a map product
 	 */
 	Inset_maps("27"), //
 
 	/**
-	 * GPS grids included in a map product.
+	 * GPS grids included in a map product
 	 */
 	GPS_grids("28"), //
 

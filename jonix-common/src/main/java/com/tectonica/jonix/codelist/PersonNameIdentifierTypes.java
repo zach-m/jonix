@@ -37,24 +37,23 @@ public enum PersonNameIdentifierTypes
 	/**
 	 * Personennamendatei &#8211; person name authority file used by Deutsche Nationalbibliothek and in other
 	 * German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
-	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND.
+	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
 	 */
 	PND("02"), //
 
 	/**
-	 * Library of Congress control number assigned to a Library of Congress Name Authority record.
+	 * Library of Congress control number assigned to a Library of Congress Name Authority record
 	 */
 	LCCN("04"), //
 
 	/**
-	 * International Standard Name Identifier. See &#8216;http://www.isni.org/&#8217;.
+	 * International Standard Name Identifier. See http://www.isni.org/
 	 */
 	ISNI("16"), //
 
 	/**
-	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See
-	 * http://www.dnb.de/EN/Standardisierung/Normdaten/GND/gnd_node.html (English). Combines the PND, SWD and GKD into a
-	 * single authority file, and should be used in preference.
+	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
+	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
 	 */
 	GND("25");
 

@@ -33,12 +33,12 @@ package com.tectonica.jonix.codelist;
 public enum PrintedOnProducts
 {
 	/**
-	 * Price not printed on product.
+	 * Price not printed on product
 	 */
 	No("01"), //
 
 	/**
-	 * Price printed on product.
+	 * Price printed on product
 	 */
 	Yes("02");
 

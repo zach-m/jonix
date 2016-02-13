@@ -36,19 +36,19 @@ import java.util.Map;
 public enum ProductFormFeatureValueSpecialCoverMaterials
 {
 	/**
-	 * Pigskin.
+	 * Pigskin
 	 */
 	Berkshire_leather("01"), //
 
 	Calfskin("02"), //
 
 	/**
-	 * Calf split or sheep split.
+	 * Calf split or sheep split
 	 */
 	French_Morocco("03"), //
 
 	/**
-	 * Goatskin.
+	 * Goatskin
 	 */
 	Morocco("04"), //
 
@@ -75,7 +75,7 @@ public enum ProductFormFeatureValueSpecialCoverMaterials
 	Kivar("15"), //
 
 	/**
-	 * An imitation leather binding material.
+	 * An imitation leather binding material
 	 */
 	Leatherflex("16"), //
 
@@ -86,29 +86,29 @@ public enum ProductFormFeatureValueSpecialCoverMaterials
 	Metal("19"), //
 
 	/**
-	 * German &#8216;Samt&#8217;.
+	 * German &#8216;Samt&#8217;
 	 */
 	Velvet("20"), //
 
 	/**
-	 * Spanish &#8216;n&#225;car&#8217;.
+	 * Spanish &#8216;n&#225;car&#8217;
 	 */
 	Mother_of_pearl("21"), //
 
 	Papyrus("22"), //
 
 	/**
-	 * An imitation cloth binding material.
+	 * An imitation cloth binding material
 	 */
 	G_ltex("23"), //
 
 	/**
-	 * An imitation leather binding material.
+	 * An imitation leather binding material
 	 */
 	Guaflex("24"), //
 
 	/**
-	 * An imitation made of any non-leather material. &lt;p&gt;NOTE: Introduced in Onix3
+	 * An imitation made of any non-leather material &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Imitation_leather("25"), //
 

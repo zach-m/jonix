@@ -33,37 +33,37 @@ package com.tectonica.jonix.codelist;
 public enum TitleElementLevels
 {
 	/**
-	 * The title element refers to an individual product.
+	 * The title element refers to an individual product
 	 */
 	Product("01"), //
 
 	/**
-	 * The title element refers to the top level of a bibliographic collection.
+	 * The title element refers to the top level of a bibliographic collection
 	 */
 	Collection_level("02"), //
 
 	/**
 	 * The title element refers to an intermediate level of a bibliographic collection that comprises two or more
-	 * &#8216;sub-collections&#8217;.
+	 * &#8216;sub-collections&#8217;
 	 */
 	Subcollection("03"), //
 
 	/**
 	 * The title element refers to a content item within a product, eg a work included in a combined or
-	 * &#8216;omnibus&#8217; edition, or a chapter in a book.
+	 * &#8216;omnibus&#8217; edition, or a chapter in a book
 	 */
 	Content_item("04"), //
 
 	/**
 	 * The title element names a master brand where the use of the brand spans multiple collections and product forms,
-	 * and possibly multiple imprints and publishers. Used only for branded media properties such as children&#8217;s
-	 * character properties.
+	 * and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
+	 * children&#8217;s character brand
 	 */
 	Master_brand("05"), //
 
 	/**
 	 * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a
-	 * sub-collection (a third level of collective identity).
+	 * sub-collection (a third level of collective identity)
 	 */
 	Sub_subcollection("06");
 

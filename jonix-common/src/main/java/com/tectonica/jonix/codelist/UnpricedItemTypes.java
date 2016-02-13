@@ -37,22 +37,27 @@ public enum UnpricedItemTypes
 	Price_to_be_announced("02"), //
 
 	/**
-	 * Not sold separately at retail.
+	 * Not sold separately at retail
 	 */
 	Not_sold_separately("03"), //
 
 	/**
 	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered &#8216;in
-	 * person&#8217; from a sales representative; when an ONIX file is &#8220;broadcast&#8221; rather than sent
+	 * person&#8217; from a sales representative; when an ONIX file is &#8216;broadcast&#8217; rather than sent
 	 * one-to-one to a single trading partner; or for digital products offered on subscription or with pricing which is
-	 * too complex to specify in ONIX.
+	 * too complex to specify in ONIX
 	 */
 	Contact_supplier("04"), //
 
 	/**
-	 * When a collection that is not sold as a set nevertheless has its own ONIX record.
+	 * When a collection that is not sold as a set nevertheless has its own ONIX record
 	 */
-	Not_sold_as_set("05");
+	Not_sold_as_set("05"), //
+
+	/**
+	 * Unpriced, but available via a pre-determined revenue share agreement &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Revenue_share("06");
 
 	public final String value;
 

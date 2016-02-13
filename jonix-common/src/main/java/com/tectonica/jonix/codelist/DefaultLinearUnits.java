@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum DefaultLinearUnits
 {
 	/**
-	 * Millimeters are the preferred metric unit of length.
+	 * Millimeters are the preferred metric unit of length
 	 */
 	Centimeters("cm"), //
 

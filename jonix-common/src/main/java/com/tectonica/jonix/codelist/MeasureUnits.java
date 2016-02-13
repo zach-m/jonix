@@ -36,7 +36,7 @@ import java.util.Map;
 public enum MeasureUnits
 {
 	/**
-	 * Millimeters are the preferred metric unit of length.
+	 * Millimeters are the preferred metric unit of length
 	 */
 	Centimeters("cm"), //
 
@@ -45,7 +45,7 @@ public enum MeasureUnits
 	Inches_US("in"), //
 
 	/**
-	 * Grams are the preferred metric unit of weight.
+	 * Grams are the preferred metric unit of weight
 	 */
 	Kilograms("kg"), //
 

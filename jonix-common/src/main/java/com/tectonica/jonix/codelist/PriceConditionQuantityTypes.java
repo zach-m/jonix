@@ -33,12 +33,12 @@ package com.tectonica.jonix.codelist;
 public enum PriceConditionQuantityTypes
 {
 	/**
-	 * The price condition quantity represents a time period.
+	 * The price condition quantity represents a time period
 	 */
 	Time_period("01"), //
 
 	/**
-	 * The price condition quantity is a number of updates.
+	 * The price condition quantity is a number of updates
 	 */
 	Number_of_updates("02");
 

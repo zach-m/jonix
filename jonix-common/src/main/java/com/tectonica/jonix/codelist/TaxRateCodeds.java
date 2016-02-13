@@ -33,18 +33,18 @@ package com.tectonica.jonix.codelist;
 public enum TaxRateCodeds
 {
 	/**
-	 * Specifies that tax is applied at a higher rate than standard.
+	 * Specifies that tax is applied at a higher rate than standard
 	 */
 	Higher_rate("H"), //
 
 	/**
 	 * Under Italian tax rules, VAT on books may be paid at source by the publisher, and subsequent transactions through
-	 * the supply chain are tax-exempt.
+	 * the supply chain are tax-exempt
 	 */
 	Tax_paid_at_source_Italy("P"), //
 
 	/**
-	 * Specifies that tax is applied at a lower rate than standard.
+	 * Specifies that tax is applied at a lower rate than standard
 	 */
 	Lower_rate("R"), //
 

@@ -36,46 +36,47 @@ import java.util.Map;
 public enum UsageTypes
 {
 	/**
-	 * Preview before purchase.
+	 * Preview before purchase
 	 */
 	Preview("01"), //
 
 	/**
-	 * Print paper copy of extract.
+	 * Print paper copy of extract
 	 */
 	Print("02"), //
 
 	/**
-	 * Make digital copy of extract.
+	 * Make digital copy of extract
 	 */
 	Copy_paste("03"), //
 
 	/**
-	 * Share product across multiple concurrent devices.
+	 * Share product across multiple concurrent devices
 	 */
 	Share("04"), //
 
 	/**
-	 * &#8216;Read aloud&#8217; with text to speech functionality.
+	 * &#8216;Read aloud&#8217; with text to speech functionality
 	 */
 	Text_to_speech("05"), //
 
 	/**
 	 * Lendable to other device owner or account holder, eg &#8216;Lend-to-a-friend&#8217;, library lending. The
 	 * &#8216;primary&#8217; copy becomes unusable while the secondary copy is &#8216;on loan&#8217; unless a number of
-	 * concurrent borrowers is also specified).
+	 * concurrent borrowers is also specified)
 	 */
 	Lend("06"), //
 
 	/**
-	 * E-publication license is time limited. Use with 02 from List 146 and a number of days in &lt;EpubUsageLimit&gt;.
+	 * E-publication license is time limited. Use with 02 from List 146 and a number of days in &lt;EpubUsageLimit&gt;
 	 */
 	Time_limited_license("07"), //
 
 	/**
-	 * Maximum quality (in dots per inch) of any allowed printing (see also code 02). &lt;p&gt;NOTE: Deprecated in Onix3
+	 * Maximum number of consecutive loans (eg from a library) to a single device owner or account holder. Note that a
+	 * limit of 1 indicates that a loan cannot be renewed
 	 */
-	Max_print_DPI("08");
+	Loan_renewal("08");
 
 	public final String value;
 

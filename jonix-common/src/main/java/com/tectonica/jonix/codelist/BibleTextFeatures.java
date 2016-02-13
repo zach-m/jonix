@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum BibleTextFeatures
 {
 	/**
-	 * Words spoken by Christ are printed in red.
+	 * Words spoken by Christ are printed in red
 	 */
 	Red_letter("RL");
 

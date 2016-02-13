@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.codegen.generator;
 
-import java.io.File;
 import java.io.PrintStream;
 
 import com.tectonica.jonix.codegen.generator.GenUtil.FieldInfo;
@@ -50,7 +49,7 @@ public class OnixClassGen
 		packageName = basePackage + "." + subfolder;
 		folderName = baseFolder + "/" + subfolder;
 		this.ref = ref;
-		new File(folderName).mkdirs();
+		GenUtil.prepareOutputFolder(folderName);
 	}
 
 	public void generate(OnixClass onixClass)

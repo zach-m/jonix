@@ -33,19 +33,19 @@ package com.tectonica.jonix.codelist;
 public enum CitedContentTypes
 {
 	/**
-	 * The full text of a review in a third-party publication in any medium.
+	 * The full text of a review in a third-party publication in any medium
 	 */
 	Review("01"), //
 
 	Bestseller_list("02"), //
 
 	/**
-	 * Other than a review.
+	 * Other than a review
 	 */
 	Media_mention("03"), //
 
 	/**
-	 * (North America) Inclusion in a program such as &#8216;Chicago Reads&#8217;, &#8216;Seattle Reads&#8217;.
+	 * (North America) Inclusion in a program such as &#8216;Chicago Reads&#8217;, &#8216;Seattle Reads&#8217;
 	 */
 	_One_locality_one_book_program("04");
 

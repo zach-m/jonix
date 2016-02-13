@@ -36,37 +36,37 @@ import java.util.Map;
 public enum AudienceRangeQualifiers
 {
 	/**
-	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77.
+	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77
 	 */
 	US_school_grade_range("11"), //
 
 	/**
-	 * Values are defined by BIC for England and Wales, Scotland and N Ireland.
+	 * Values are defined by BIC for England and Wales, Scotland and N Ireland
 	 */
 	UK_school_grade("12"), //
 
 	/**
-	 * Values in &lt;AudienceRangeValue&gt; must be integers.
+	 * Values in &lt;AudienceRangeValue&gt; must be integers
 	 */
 	Reading_speed_words_per_minute("15"), //
 
 	/**
-	 * For use up to 36 months only: values in &lt;AudienceRangeValue&gt; must be integers.
+	 * For use up to 36 months only: values in &lt;AudienceRangeValue&gt; must be integers
 	 */
 	Interest_age_months("16"), //
 
 	/**
-	 * Values in &lt;AudienceRangeValue&gt; must be integers.
+	 * Values in &lt;AudienceRangeValue&gt; must be integers
 	 */
 	Interest_age_years("17"), //
 
 	/**
-	 * Values in &lt;AudienceRangeValue&gt; must be integers.
+	 * Values in &lt;AudienceRangeValue&gt; must be integers
 	 */
 	Reading_age_years("18"), //
 
 	/**
-	 * Spain: combined grade and region code, maintained by the Ministerio de Educaci&#243;n.
+	 * Spain: combined grade and region code, maintained by the Ministerio de Educaci&#243;n
 	 */
 	Spanish_school_grade("19"), //
 
@@ -76,47 +76,47 @@ public enum AudienceRangeQualifiers
 	Skoletrinn("20"), //
 
 	/**
-	 * Swedish educational qualifier (code).
+	 * Swedish educational qualifier (code)
 	 */
 	Niv_("21"), //
 
 	Italian_school_grade("22"), //
 
 	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29.
+	 * DEPRECATED &#8211; assigned in error: see List 29
 	 */
 	Schulform("23"), //
 
 	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29.
+	 * DEPRECATED &#8211; assigned in error: see List 29
 	 */
 	Bundesland("24"), //
 
 	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29.
+	 * DEPRECATED &#8211; assigned in error: see List 29
 	 */
 	Ausbildungsberuf("25"), //
 
 	/**
-	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77.
+	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77
 	 */
 	Canadian_school_grade_range("26"), //
 
 	Finnish_school_grade_range("27"), //
 
 	/**
-	 * Lukion kurssi.
+	 * Lukion kurssi
 	 */
 	Finnish_Upper_secondary_school_course("28"), //
 
 	/**
-	 * Values are P, K, 1&#8211;17 (including college-level audiences).
+	 * Values are P, K, 1&#8211;17 (including college-level audiences), see List 227
 	 */
-	Chinese_School_Grade_code("29"), //
+	Chinese_School_Grade_range("29"), //
 
 	/**
-	 * French educational level classification, used for example on WizWiz.fr. See
-	 * http://www.kiosque-edu.com/html/onix/Nomenclature_niveaux.csv&#8217;.
+	 * French educational level classification scolomfr-voc-022, used for example on WizWiz.fr. See
+	 * http://www.lom-fr.fr/scolomfr/vocabulaires/consultation-des-vocabulaires.html
 	 */
 	Nomenclature_niveaux("30");
 

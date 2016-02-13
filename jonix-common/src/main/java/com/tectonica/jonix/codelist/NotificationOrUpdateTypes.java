@@ -36,25 +36,25 @@ import java.util.Map;
 public enum NotificationOrUpdateTypes
 {
 	/**
-	 * Use for a complete record issued earlier than approximately six months before publication.
+	 * Use for a complete record issued earlier than approximately six months before publication
 	 */
 	Early_notification("01"), //
 
 	/**
 	 * Use for a complete record issued to confirm advance information approximately six months before publication; or
-	 * for a complete record issued after that date and before information has been confirmed from the book-in-hand.
+	 * for a complete record issued after that date and before information has been confirmed from the book-in-hand
 	 */
 	Advance_notification_confirmed("02"), //
 
 	/**
 	 * Use for a complete record issued to confirm advance information at or just before actual publication date; or for
-	 * a complete record issued at any later date.
+	 * a complete record issued at any later date
 	 */
 	Notification_confirmed_on_publication("03"), //
 
 	/**
 	 * In ONIX 3.0 only, use when sending a &#8216;block update&#8217; record. In previous ONIX releases, ONIX updating
-	 * has generally been by complete record replacement using code 03, and code 04 is not used.
+	 * has generally been by complete record replacement using code 03, and code 04 is not used
 	 */
 	Update_partial("04"), //
 
@@ -63,45 +63,45 @@ public enum NotificationOrUpdateTypes
 	 * should NOT be used when a product is cancelled, put out of print, or otherwise withdrawn from sale: this should
 	 * be handled as a change of Publishing status, leaving the receiver to decide whether to retain or delete the
 	 * record. A Delete instruction is only used when there is a particular reason to withdraw a record completely, eg
-	 * because it was issued in error.
+	 * because it was issued in error
 	 */
 	Delete("05"), //
 
 	/**
-	 * Notice of sale of a product, from one publisher to another: sent by the publisher disposing of the product.
+	 * Notice of sale of a product, from one publisher to another: sent by the publisher disposing of the product
 	 */
 	Notice_of_sale("08"), //
 
 	/**
-	 * Notice of acquisition of a product, by one publisher from another: sent by the acquiring publisher.
+	 * Notice of acquisition of a product, by one publisher from another: sent by the acquiring publisher
 	 */
 	Notice_of_acquisition("09"), //
 
 	/**
-	 * ONIX Books 2.1 supply update &#8211; &lt;SupplyDetail&gt; only (not used in ONIX 3.0).
+	 * ONIX Books 2.1 supply update &#8211; &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
 	 */
 	Update_SupplyDetail_only("12"), //
 
 	/**
-	 * ONIX Books 2.1 supply update &#8211; &lt;MarketRepresentation&gt; only (not used in ONIX 3.0).
+	 * ONIX Books 2.1 supply update &#8211; &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
 	 */
 	Update_MarketRepresentation_only("13"), //
 
 	/**
 	 * ONIX Books 2.1 supply update &#8211; both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX
-	 * 3.0).
+	 * 3.0)
 	 */
 	Update_SupplyDetail_and_MarketRepresentation("14"), //
 
 	/**
 	 * ONIX 3.0 only. Record may be processed for test purposes, but data should be discarded. Sender must ensure the
-	 * &lt;RecordReference&gt; matches a previously-sent Test record.
+	 * &lt;RecordReference&gt; matches a previously-sent Test record
 	 */
 	Test_update_Partial("88"), //
 
 	/**
 	 * Record may be processed for test purposes, but data should be discarded. Sender must ensure the
-	 * &lt;RecordReference&gt; does not match any previously-sent live product record.
+	 * &lt;RecordReference&gt; does not match any previously-sent live product record
 	 */
 	Test_record("89");
 

@@ -36,62 +36,62 @@ import java.util.Map;
 public enum PositionOnProducts
 {
 	/**
-	 * Position unknown or unspecified.
+	 * Position unknown or unspecified
 	 */
 	Unknown_unspecified("00"), //
 
 	/**
-	 * The back cover of a book.
+	 * The back cover of a book
 	 */
 	Cover_4("01"), //
 
 	/**
-	 * The inside back cover of a book.
+	 * The inside back cover of a book
 	 */
 	Cover_3("02"), //
 
 	/**
-	 * The inside front cover of a book.
+	 * The inside front cover of a book
 	 */
 	Cover_2("03"), //
 
 	/**
-	 * The front cover of a book.
+	 * The front cover of a book
 	 */
 	Cover_1("04"), //
 
 	/**
-	 * The spine of a book.
+	 * The spine of a book
 	 */
 	On_spine("05"), //
 
 	/**
-	 * Used only for boxed products.
+	 * Used only for boxed products
 	 */
 	On_box("06"), //
 
 	/**
-	 * Used only for products fitted with hanging tags.
+	 * Used only for products fitted with hanging tags
 	 */
 	On_tag("07"), //
 
 	/**
-	 * Not be used for books unless they are contained within outer packaging.
+	 * Not be used for books unless they are contained within outer packaging
 	 */
 	On_bottom("08"), //
 
 	/**
-	 * Not be used for books unless they are contained within outer packaging.
+	 * Not be used for books unless they are contained within outer packaging
 	 */
 	On_back("09"), //
 
 	/**
-	 * Used only for products packaged in outer sleeves.
+	 * Used only for products packaged in outer sleeves
 	 */
 	On_outer_sleeve_back("10"), //
 
 	/**
-	 * Used only for products packaged in shrink-wrap or other removable wrapping.
+	 * Used only for products packaged in shrink-wrap or other removable wrapping
 	 */
 	On_removable_wrapping("11");
 

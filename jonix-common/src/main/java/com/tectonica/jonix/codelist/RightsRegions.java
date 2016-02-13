@@ -39,7 +39,7 @@ public enum RightsRegions
 	UK_airports("002"), //
 
 	/**
-	 * Use when an open market edition is published under its own ISBN.
+	 * Use when an open market edition is published under its own ISBN
 	 */
 	UK_open_market_("003");
 

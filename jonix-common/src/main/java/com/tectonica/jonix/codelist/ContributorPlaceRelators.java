@@ -50,7 +50,7 @@ public enum ContributorPlaceRelators
 	Flourished_in("07"), //
 
 	/**
-	 * Or nationality. For use with country codes only.
+	 * Or nationality. For use with country codes only
 	 */
 	Citizen_of("08");
 

@@ -37,77 +37,77 @@ public enum ProductFormFeatureValueOperatingSystems
 {
 	/**
 	 * An Open Source mobile device operating system originally developed by Google and supported by the Open Handset
-	 * Alliance.
+	 * Alliance
 	 */
 	Android("01"), //
 
 	/**
-	 * A proprietary operating system supplied by Research In Motion for its BlackBerry handheld devices.
+	 * A proprietary operating system supplied by Research In Motion for its BlackBerry handheld devices
 	 */
 	BlackBerry_OS("02"), //
 
 	/**
 	 * A proprietary operating system based on Mac OS X supplied by Apple for its iPhone, iPad and iPod Touch handheld
-	 * devices.
+	 * devices
 	 */
 	iOS("03"), //
 
 	/**
-	 * An operating system based on the Linux kernel.
+	 * An operating system based on the Linux kernel
 	 */
 	Linux("04"), //
 
 	/**
 	 * [A proprietary operating system supplied by Apple on Macintosh computers up to 2002] DEPRECATED &#8211; use code
-	 * 13 for all Mac OS versions.
+	 * 13 for all Mac OS versions
 	 */
 	Mac_OS("05"), //
 
 	/**
 	 * [A proprietary operating system supplied by Apple on Macintosh computers from 2001/2002] DEPRECATED &#8211; use
-	 * code 13 for all Mac OS versions.
+	 * code 13 for all Mac OS versions
 	 */
 	Mac_OS_X("06"), //
 
 	/**
-	 * A proprietary operating system (AKA Garnet OS) originally developed for handheld devices.
+	 * A proprietary operating system (AKA Garnet OS) originally developed for handheld devices
 	 */
 	Palm_OS("07"), //
 
 	/**
-	 * A proprietry Linux-based operating system for handheld devices, originally developed by Palm (now owned by LG).
+	 * A proprietry Linux-based operating system for handheld devices, originally developed by Palm (now owned by LG)
 	 */
 	webOS("08"), //
 
 	/**
 	 * An operating system for hand-held devices, originally developed as a proprietary system, but planned to become
-	 * wholly Open Source by 2010.
+	 * wholly Open Source by 2010
 	 */
 	Symbian("09"), //
 
 	/**
-	 * A proprietary operating system supplied by Microsoft.
+	 * A proprietary operating system supplied by Microsoft
 	 */
 	Windows("10"), //
 
 	/**
 	 * A proprietary operating system (AKA Windows Embedded Compact, WinCE) supplied by Microsoft for small-scale
-	 * devices.
+	 * devices
 	 */
 	Windows_CE("11"), //
 
 	/**
-	 * A proprietary operating system supplied by Microsoft for mobile devices.
+	 * A proprietary operating system supplied by Microsoft for mobile devices
 	 */
 	Windows_Mobile("12"), //
 
 	/**
-	 * A proprietary operating system supplied by Apple on Macintosh computers.
+	 * A proprietary operating system supplied by Apple on Macintosh computers
 	 */
 	Mac_OS_("13"), //
 
 	/**
-	 * A proprietary operating system supplied by Microsoft for mobile devices, successor to Windows Mobile.
+	 * A proprietary operating system supplied by Microsoft for mobile devices, successor to Windows Mobile
 	 */
 	Windows_Phone_7("14");
 

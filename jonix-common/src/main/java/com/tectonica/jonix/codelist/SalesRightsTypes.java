@@ -36,7 +36,7 @@ import java.util.Map;
 public enum SalesRightsTypes
 {
 	/**
-	 * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element.
+	 * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element
 	 */
 	Sales_rights_unknown_or_unstated_for_any_reason("00"), //
 
@@ -54,12 +54,12 @@ public enum SalesRightsTypes
 			"06"), //
 
 	/**
-	 * Only for use with ONIX 3. Deprecated.
+	 * Only for use with ONIX 3. Deprecated
 	 */
 	For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("07"), //
 
 	/**
-	 * Only for use with ONIX 3. Deprecated.
+	 * Only for use with ONIX 3. Deprecated
 	 */
 	For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("08");
 

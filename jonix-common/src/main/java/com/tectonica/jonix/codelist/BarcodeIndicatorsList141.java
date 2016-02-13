@@ -48,22 +48,22 @@ public enum BarcodeIndicatorsList141
 	GTIN_13_5_no_price_encoded("05"), //
 
 	/**
-	 * AKA item/price.
+	 * AKA item/price
 	 */
 	UPC_12_item_specific("06"), //
 
 	/**
-	 * AKA item/price.
+	 * AKA item/price
 	 */
 	UPC_12_5_item_specific("07"), //
 
 	/**
-	 * AKA price/item.
+	 * AKA price/item
 	 */
 	UPC_12_price_point("08"), //
 
 	/**
-	 * AKA price/item.
+	 * AKA price/item
 	 */
 	UPC_12_5_price_point("09");
 

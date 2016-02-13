@@ -33,29 +33,29 @@ package com.tectonica.jonix.codelist;
 public enum CollectionSequenceTypes
 {
 	/**
-	 * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;.
+	 * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;
 	 */
 	Proprietary("01"), //
 
 	/**
-	 * Order as specified by the title, eg by volume or part number sequence, provided for confirmation.
+	 * Order as specified by the title, eg by volume or part number sequence, provided for confirmation
 	 */
 	Title_order("02"), //
 
 	/**
-	 * Order of publication of products within the collection.
+	 * Order of publication of products within the collection
 	 */
 	Publication_order("03"), //
 
 	/**
 	 * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to
-	 * either fiction or to non-fiction (eg within a collection of history textbooks).
+	 * either fiction or to non-fiction (eg within a collection of history textbooks)
 	 */
 	Temporal_narrative_order("04"), //
 
 	/**
 	 * Original publication order, for a republished collection or collected works originally published outside a
-	 * collection.
+	 * collection
 	 */
 	Original_publication_order("05");
 

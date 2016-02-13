@@ -36,42 +36,42 @@ import java.util.Map;
 public enum ContributorRoles
 {
 	/**
-	 * Author of a textual work.
+	 * Author of a textual work
 	 */
 	By_author("A01"), //
 
 	/**
-	 * With or as told to: &#8216;ghost&#8217; author of a literary work.
+	 * With or as told to: &#8216;ghost&#8217; author of a literary work
 	 */
 	With("A02"), //
 
 	/**
-	 * Writer of screenplay or script (film or video).
+	 * Writer of screenplay or script (film or video)
 	 */
 	Screenplay_by("A03"), //
 
 	/**
-	 * Writer of libretto (opera): see also A31.
+	 * Writer of libretto (opera): see also A31
 	 */
 	Libretto_by("A04"), //
 
 	/**
-	 * Author of lyrics (song): see also A31.
+	 * Author of lyrics (song): see also A31
 	 */
 	Lyrics_by("A05"), //
 
 	/**
-	 * Composer of music.
+	 * Composer of music
 	 */
 	By_composer("A06"), //
 
 	/**
-	 * Visual artist when named as the primary creator of, eg, a book of reproductions of artworks.
+	 * Visual artist when named as the primary creator of, eg, a book of reproductions of artworks
 	 */
 	By_artist("A07"), //
 
 	/**
-	 * Photographer when named as the primary creator of, eg, a book of photographs.
+	 * Photographer when named as the primary creator of, eg, a book of photographs
 	 */
 	By_photographer("A08"), //
 
@@ -82,152 +82,154 @@ public enum ContributorRoles
 	Designed_by("A11"), //
 
 	/**
-	 * Artist when named as the creator of artwork which illustrates a text, or of the artwork of a graphic novel or
-	 * comic book.
+	 * Artist when named as the creator of artwork which illustrates a text, or the originator (sometimes
+	 * &#8216;penciller&#8217; for collaborative art) of the artwork of a graphic novel or comic book
 	 */
 	Illustrated_by("A12"), //
 
 	/**
-	 * Photographer when named as the creator of photographs which illustrate a text.
+	 * Photographer when named as the creator of photographs which illustrate a text
 	 */
 	Photographs_by("A13"), //
 
 	/**
 	 * Author of text which accompanies art reproductions or photographs, or which is part of a graphic novel or comic
-	 * book.
+	 * book
 	 */
 	Text_by("A14"), //
 
 	/**
-	 * Author of preface.
+	 * Author of preface
 	 */
 	Preface_by("A15"), //
 
 	/**
-	 * Author of prologue.
+	 * Author of prologue
 	 */
 	Prologue_by("A16"), //
 
 	/**
-	 * Author of summary.
+	 * Author of summary
 	 */
 	Summary_by("A17"), //
 
 	/**
-	 * Author of supplement.
+	 * Author of supplement
 	 */
 	Supplement_by("A18"), //
 
 	/**
-	 * Author of afterword.
+	 * Author of afterword
 	 */
 	Afterword_by("A19"), //
 
 	/**
-	 * Author of notes or annotations: see also A29.
+	 * Author of notes or annotations: see also A29
 	 */
 	Notes_by("A20"), //
 
 	/**
-	 * Author of commentaries on the main text.
+	 * Author of commentaries on the main text
 	 */
 	Commentaries_by("A21"), //
 
 	/**
-	 * Author of epilogue.
+	 * Author of epilogue
 	 */
 	Epilogue_by("A22"), //
 
 	/**
-	 * Author of foreword.
+	 * Author of foreword
 	 */
 	Foreword_by("A23"), //
 
 	/**
-	 * Author of introduction: see also A29.
+	 * Author of introduction: see also A29
 	 */
 	Introduction_by("A24"), //
 
 	/**
-	 * Author/compiler of footnotes.
+	 * Author/compiler of footnotes
 	 */
 	Footnotes_by("A25"), //
 
 	/**
-	 * Author of memoir accompanying main text.
+	 * Author of memoir accompanying main text
 	 */
 	Memoir_by("A26"), //
 
 	/**
-	 * Person who carried out experiments reported in the text.
+	 * Person who carried out experiments reported in the text
 	 */
 	Experiments_by("A27"), //
 
 	/**
-	 * Author of introduction and notes: see also A20 and A24.
+	 * Author of introduction and notes: see also A20 and A24
 	 */
 	Introduction_and_notes_by("A29"), //
 
 	/**
-	 * Writer of computer programs ancillary to the text.
+	 * Writer of computer programs ancillary to the text
 	 */
 	Software_written_by("A30"), //
 
 	/**
-	 * Author of the textual content of a musical drama: see also A04 and A05.
+	 * Author of the textual content of a musical drama: see also A04 and A05
 	 */
 	Book_and_lyrics_by("A31"), //
 
 	/**
-	 * Author of additional contributions to the text.
+	 * Author of additional contributions to the text
 	 */
 	Contributions_by("A32"), //
 
 	/**
-	 * Author of appendix.
+	 * Author of appendix
 	 */
 	Appendix_by("A33"), //
 
 	/**
-	 * Compiler of index.
+	 * Compiler of index
 	 */
 	Index_by("A34"), //
 
 	Drawings_by("A35"), //
 
 	/**
-	 * Use also for the cover artist of a graphic novel or comic book if named separately.
+	 * Use also for the cover artist of a graphic novel or comic book if named separately
 	 */
 	Cover_design_or_artwork_by("A36"), //
 
 	/**
-	 * Responsible for preliminary work on which the work is based.
+	 * Responsible for preliminary work on which the work is based
 	 */
 	Preliminary_work_by("A37"), //
 
 	/**
-	 * Author of the first edition (usually of a standard work) who is not an author of the current edition.
+	 * Author of the first edition (usually of a standard work) who is not an author of the current edition
 	 */
 	Original_author("A38"), //
 
 	/**
-	 * Maps drawn or otherwise contributed by.
+	 * Maps drawn or otherwise contributed by
 	 */
 	Maps_by("A39"), //
 
 	/**
-	 * When separate persons are named as having respectively drawn and colored artwork, eg for a graphic novel or comic
-	 * book, use A12 for &#8216;drawn by&#8217; and A40 for &#8216;colored by&#8217;.
+	 * Use for secondary creators when separate persons are named as having respectively drawn and
+	 * inked/colored/finished artwork, eg for a graphic novel or comic book. Use with A12 for &#8216;drawn by&#8217;.
+	 * Use A40 for &apos;finished by&apos;, but prefer more specific codes A46 to A48 instead of A40 unless the more
+	 * specific secondary roles are inappropriate, unclear or unavailable
 	 */
 	Inked_or_colored_by("A40"), //
 
 	/**
-	 * Designer of pop-ups in a pop-up book, who may be different from the illustrator.
+	 * Designer of pop-ups in a pop-up book, who may be different from the illustrator
 	 */
 	Pop_ups_by("A41"), //
 
 	/**
-	 * Use where a standard work is being continued by somebody other than the original author.
+	 * Use where a standard work is being continued by somebody other than the original author
 	 */
 	Continued_by("A42"), //
 
@@ -236,7 +238,30 @@ public enum ContributorRoles
 	Interviewee("A44"), //
 
 	/**
-	 * Other type of primary creator not specified above.
+	 * Writer of dialogue, captions in a comic book (following an outline by the primary writer) &lt;p&gt;NOTE:
+	 * Introduced in Onix3
+	 */
+	Comic_script_by("A45"), //
+
+	/**
+	 * Renders final comic book line art based on work of the illustrator or penciller. Preferred to code A40
+	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Inker("A46"), //
+
+	/**
+	 * Provides comic book color art and effects. Preferred to code A40 &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Colorist("A47"), //
+
+	/**
+	 * Creates comic book text balloons and other text elements (where this is a distinct role from script writer and/or
+	 * illustrator) &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Letterer("A48"), //
+
+	/**
+	 * Other type of primary creator not specified above
 	 */
 	Other_primary_creator("A99"), //
 
@@ -256,12 +281,12 @@ public enum ContributorRoles
 
 	/**
 	 * This code applies where a translator has provided a commentary on issues relating to the translation. If the
-	 * translator has also provided a commentary on the work itself, codes B06 and A21 should be used.
+	 * translator has also provided a commentary on the work itself, codes B06 and A21 should be used
 	 */
 	Translated_with_commentary_by("B08"), //
 
 	/**
-	 * Name of a series editor when the product belongs to a series.
+	 * Name of a series editor when the product belongs to a series
 	 */
 	Series_edited_by("B09"), //
 
@@ -280,7 +305,7 @@ public enum ContributorRoles
 	Managing_editor("B16"), //
 
 	/**
-	 * Usually the founder editor of a serial publication: Begruendet von.
+	 * Usually the founder editor of a serial publication: Begruendet von
 	 */
 	Founded_by("B17"), //
 
@@ -289,7 +314,7 @@ public enum ContributorRoles
 	Associate_editor("B19"), //
 
 	/**
-	 * Use also for &#8216;advisory editor&#8217;.
+	 * Use also for &#8216;advisory editor&#8217;, &#8216;series advisor&#8217;, &#8216;editorial consultant&#8217; etc
 	 */
 	Consultant_editor("B20"), //
 
@@ -298,18 +323,22 @@ public enum ContributorRoles
 	Dramatized_by("B22"), //
 
 	/**
-	 * In Europe, an expert editor who takes responsibility for the legal content of a collaborative law volume.
+	 * In Europe, an expert editor who takes responsibility for the legal content of a collaborative law volume
 	 */
 	General_rapporteur("B23"), //
 
 	/**
 	 * An editor who is responsible for establishing the text used in an edition of a literary work, where this is
-	 * recognised as a distinctive role (in Spain, &#8216;editor literario&#8217;).
+	 * recognised as a distinctive role (in Spain, &#8216;editor literario&#8217;)
 	 */
 	Literary_editor("B24"), //
 
 	Arranged_by_music("B25"), //
 
+	/**
+	 * Responsible for the technical accuracy and language, may also be involved in coordinating and preparing technical
+	 * material for publication
+	 */
 	Technical_editor("B26"), //
 
 	Thesis_advisor_or_supervisor("B27"), //
@@ -317,16 +346,37 @@ public enum ContributorRoles
 	Thesis_examiner("B28"), //
 
 	/**
-	 * Other type of adaptation or editing not specified above.
+	 * Responsible overall for the scientific content of the publication &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Scientific_editor("B29"), //
+
+	/**
+	 * Other type of adaptation or editing not specified above
 	 */
 	Other_adaptation_by("B99"), //
 
+	/**
+	 * For puzzles, directories, statistics, etc
+	 */
 	Compiled_by("C01"), //
 
+	/**
+	 * For textual material (eg for an anthology)
+	 */
 	Selected_by("C02"), //
 
 	/**
-	 * Other type of compilation not specified above.
+	 * Eg for a collection of photographs etc &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Non_text_material_selected_by("C03"), //
+
+	/**
+	 * Eg for an exhibition &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Curated_by("C04"), //
+
+	/**
+	 * Other type of compilation not specified above
 	 */
 	Other_compilation_by("C99"), //
 
@@ -335,12 +385,12 @@ public enum ContributorRoles
 	Director("D02"), //
 
 	/**
-	 * Conductor of a musical performance.
+	 * Conductor of a musical performance
 	 */
 	Conductor("D03"), //
 
 	/**
-	 * Other type of direction not specified above.
+	 * Other type of direction not specified above
 	 */
 	Other_direction_by("D99"), //
 
@@ -353,59 +403,69 @@ public enum ContributorRoles
 	Commentator("E04"), //
 
 	/**
-	 * Singer etc.
+	 * Singer etc
 	 */
 	Vocal_soloist("E05"), //
 
 	Instrumental_soloist("E06"), //
 
 	/**
-	 * Reader of recorded text, as in an audiobook.
+	 * Reader of recorded text, as in an audiobook
 	 */
 	Read_by("E07"), //
 
 	/**
-	 * Name of a musical group in a performing role.
+	 * Name of a musical group in a performing role
 	 */
 	Performed_by_orchestra_band_ensemble("E08"), //
 
 	/**
-	 * Of a speech, lecture etc.
+	 * Of a speech, lecture etc
 	 */
 	Speaker("E09"), //
 
 	/**
+	 * Introduces and links other contributors and material, eg within a documentary &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Presenter("E10"), //
+
+	/**
 	 * Other type of performer not specified above: use for a recorded performance which does not fit a category above,
-	 * eg a performance by a stand-up comedian.
+	 * eg a performance by a stand-up comedian
 	 */
 	Performed_by("E99"), //
 
 	/**
-	 * Cinematographer, etc.
+	 * Cinematographer, etc
 	 */
 	Filmed_photographed_by("F01"), //
 
 	Editor_film_or_video("F02"), //
 
 	/**
-	 * Other type of recording not specified above.
+	 * Other type of recording not specified above
 	 */
 	Other_recording_by("F99"), //
 
 	/**
 	 * May be associated with any contributor role, and placement should therefore be controlled by contributor sequence
-	 * numbering.
+	 * numbering
 	 */
 	Assisted_by("Z01"), //
 
 	/**
+	 * null &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Honored_dedicated_to("Z02"), //
+
+	/**
 	 * For use ONLY with &#8216;et al&#8217; or &#8216;Various&#8217; within &lt;UnnamedPersons&gt;, where the roles of
-	 * the multiple contributors vary.
+	 * the multiple contributors vary
 	 */
 	_Various_roles("Z98"), //
 
 	/**
-	 * Other creative responsibility not falling within A to F above.
+	 * Other creative responsibility not falling within A to F above
 	 */
 	Other("Z99");
 

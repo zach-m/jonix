@@ -36,7 +36,7 @@ import java.util.Map;
 public enum ImageAudioVideoFileTypes
 {
 	/**
-	 * Link to a location where the whole product may be found &#8211; used for epublications.
+	 * Link to a location where the whole product may be found &#8211; used for epublications
 	 */
 	Whole_product("01"), //
 
@@ -44,23 +44,23 @@ public enum ImageAudioVideoFileTypes
 
 	/**
 	 * Includes cover, back cover, spine and &#8211; where appropriate &#8211; any flaps. Quality unspecified: if
-	 * sending both a standard quality and a high quality image, use 03 for standard quality and 05 for high quality.
+	 * sending both a standard quality and a high quality image, use 03 for standard quality and 05 for high quality
 	 */
 	Image_whole_cover("03"), //
 
 	/**
 	 * Quality unspecified: if sending both a standard quality and a high quality image, use 04 for standard quality and
-	 * 06 for high quality.
+	 * 06 for high quality
 	 */
 	Image_front_cover("04"), //
 
 	/**
-	 * Should have a minimum resolution of 300 dpi when rendered at the intended size for display or print.
+	 * Should have a minimum resolution of 300 dpi when rendered at the intended size for display or print
 	 */
 	Image_whole_cover_high_quality("05"), //
 
 	/**
-	 * Should have a minimum resolution of 300 dpi when rendered at the intended size for display or print.
+	 * Should have a minimum resolution of 300 dpi when rendered at the intended size for display or print
 	 */
 	Image_front_cover_high_quality("06"), //
 
@@ -69,14 +69,14 @@ public enum ImageAudioVideoFileTypes
 	Image_contributor_s("08"), //
 
 	/**
-	 * Use for an image, other than a logo, that is part of the &#8216;branding&#8217; of a series.
+	 * Use for an image, other than a logo, that is part of the &#8216;branding&#8217; of a series
 	 */
 	Image_for_series("10"), //
 
 	Image_series_logo("11"), //
 
 	/**
-	 * Use only for a logo which is specific to an individual product.
+	 * Use only for a logo which is specific to an individual product
 	 */
 	Image_product_logo("12"), //
 
@@ -89,18 +89,18 @@ public enum ImageAudioVideoFileTypes
 	Image_table_of_contents("22"), //
 
 	/**
-	 * Use for inside page image for book, or screenshot for software or game (revised definition from Issue 8).
+	 * Use for inside page image for book, or screenshot for software or game (revised definition from Issue 8)
 	 */
 	Image_sample_content("23"), //
 
 	/**
 	 * Quality unspecified: if sending both a standard quality and a high quality image, use 24 for standard quality and
-	 * 25 for high quality.
+	 * 25 for high quality
 	 */
 	Image_back_cover("24"), //
 
 	/**
-	 * Should have a minimum resolution of 300 dpi when rendered at the intended size for display or print.
+	 * Should have a minimum resolution of 300 dpi when rendered at the intended size for display or print
 	 */
 	Image_back_cover_high_quality("25"), //
 
@@ -145,7 +145,7 @@ public enum ImageAudioVideoFileTypes
 	Audio_other_commentary_discussion("47"), //
 
 	/**
-	 * Use for &#8216;look inside&#8217; facility or &#8216;widget&#8217;.
+	 * Use for &#8216;look inside&#8217; facility or &#8216;widget&#8217;
 	 */
 	Application_sample_content("51"), //
 

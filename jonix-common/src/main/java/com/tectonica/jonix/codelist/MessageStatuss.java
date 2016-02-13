@@ -37,25 +37,25 @@ public enum MessageStatuss
 	 * &lt;RecordStatusSummary&gt;, and should include &lt;NoProduct/&gt;). There is no particular implication that the
 	 * acknowledgement message is valid &#8211; the status is based solely on receipt of a file and minimal parsing of
 	 * the original ONIX message header to ascertain &lt;MessageNumber&gt; etc.. The Acknowledgement message MAY give a
-	 * date when parsing is planned.
+	 * date when parsing is planned
 	 */
 	Message_received("00"), //
 
 	/**
 	 * Entire original ONIX message rejected (ie NONE of the data records have been ingested). The status of any
-	 * recognisable records MAY be summarised in the remainder of the Acknowledgement Message.
+	 * recognisable records MAY be summarised in the remainder of the Acknowledgement Message
 	 */
 	Message_rejected("01"), //
 
 	/**
 	 * Original ONIX message partially parsed (ie at least SOME of the data records have been ingested, in whole or in
-	 * part). Records processed to date MUST be summarised in the remainder of the Acknowledgement Message.
+	 * part). Records processed to date MUST be summarised in the remainder of the Acknowledgement Message
 	 */
 	Message_part_processed("02"), //
 
 	/**
 	 * Original ONIX message parsed and processed in full, and at least SOME of the data records have been ingested, in
-	 * whole or in part), Results MUST be summarised in the remainder of the Acknowledgement Message.
+	 * whole or in part), Results MUST be summarised in the remainder of the Acknowledgement Message
 	 */
 	Message_processed("03");
 

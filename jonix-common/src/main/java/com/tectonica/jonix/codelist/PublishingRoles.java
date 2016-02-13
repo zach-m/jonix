@@ -41,14 +41,14 @@ public enum PublishingRoles
 	 * Use where two or more publishers co-publish the exact same product, either under a single ISBN (in which case
 	 * both publishers are co-publishers), or under different ISBNs (in which case the publisher of THIS ISBN is the
 	 * publisher and the publishers of OTHER ISBNs are co-publishers. Note this is different from publication of
-	 * &#8216;co-editions&#8217;.
+	 * &#8216;co-editions&#8217;
 	 */
 	Co_publisher("02"), //
 
 	Sponsor("03"), //
 
 	/**
-	 * Of a translated work.
+	 * Of a translated work
 	 */
 	Publisher_of_original_language_version("04"), //
 
@@ -57,28 +57,28 @@ public enum PublishingRoles
 	Published_for_on_behalf_of("06"), //
 
 	/**
-	 * Use also for &#8220;Published in cooperation with&#8221;.
+	 * Use also for &#8216;Published in cooperation with&#8217;
 	 */
 	Published_in_association_with("07"), //
 
 	/**
-	 * DEPRECATED: use code 06.
+	 * DEPRECATED: use code 06
 	 */
 	Published_on_behalf_of("08"), //
 
 	/**
-	 * When ownership of a product or title is transferred from one publisher to another.
+	 * When ownership of a product or title is transferred from one publisher to another
 	 */
 	New_or_acquiring_publisher("09"), //
 
 	/**
 	 * The group to which a publisher (publishing role 01) belongs: use only if a publisher has been identified with
-	 * role code 01.
+	 * role code 01
 	 */
 	Publishing_group("10"), //
 
 	/**
-	 * The publisher of the edition of which a product is a facsimile.
+	 * The publisher of the edition of which a product is a facsimile
 	 */
 	Publisher_of_facsimile_original("11"), //
 
@@ -86,44 +86,51 @@ public enum PublishingRoles
 	 * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a &#8216;prebound
 	 * edition&#8217; is a book that was previously bound, normally as a paperback, and has been rebound with a
 	 * library-quality hardcover binding by a supplier other than the original publisher.) Required when the
-	 * &lt;EditionType&gt; is coded PRB. The original publisher should be named as the &#8216;publisher&#8217;.
+	 * &lt;EditionType&gt; is coded PRB. The original publisher should be named as the &#8216;publisher&#8217;
 	 */
 	Repackager_of_prebound_edition("12"), //
 
 	/**
-	 * When ownership of a product or title is transferred from one publisher to another (complement of code 09).
+	 * When ownership of a product or title is transferred from one publisher to another (complement of code 09)
 	 */
 	Former_publisher("13"), //
 
 	/**
 	 * Body funding publication fees, if different from the body funding the underlying research. For use with open
-	 * access publications.
+	 * access publications
 	 */
 	Publication_funder("14"), //
 
 	/**
 	 * Body funding the research on which publication is based, if different from the body funding the publication. For
-	 * use with open access publications.
+	 * use with open access publications
 	 */
 	Research_funder("15"), //
 
 	/**
-	 * Body funding research and publication. For use with open access publications.
+	 * Body funding research and publication. For use with open access publications
 	 */
 	Funding_body("16"), //
 
 	/**
 	 * Organisation responsible for printing a printed product. Supplied primarily to meet legal deposit requirements,
 	 * and may apply only to the first impression. The organisation may also be responsible for binding, when a separate
-	 * binder is not specified.
+	 * binder is not specified
 	 */
 	Printer("17"), //
 
 	/**
 	 * Organisation responsible for binding a printed product (where distinct from the printer). Supplied primarily to
-	 * meet legal deposit requirements, and may apply only to the first impression.
+	 * meet legal deposit requirements, and may apply only to the first impression
 	 */
-	Binder("18");
+	Binder("18"), //
+
+	/**
+	 * Organisation primarily responsible for physical manufacture of a product, when neither Printer nor Binder is
+	 * directly appropriate (for example, with disc or tape products, or digital products on a physical carrier)
+	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Manufacturer("19");
 
 	public final String value;
 

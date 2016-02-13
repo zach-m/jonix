@@ -33,27 +33,27 @@ package com.tectonica.jonix.codelist;
 public enum EpublicationVersionNumbers
 {
 	/**
-	 * Use only with &lt;ProductFormDetail&gt; codes E101 or E102.
+	 * Use only with &lt;ProductFormDetail&gt; codes E101 or E102
 	 */
 	EPUB_2_0_1("101A"), //
 
 	/**
-	 * Use only with &lt;ProductFormDetail&gt; code E101.
+	 * Use only with &lt;ProductFormDetail&gt; code E101
 	 */
 	EPUB_3_0("101B"), //
 
 	/**
-	 * Use only with &lt;ProductFormDetail&gt; code E101.
+	 * Use only with &lt;ProductFormDetail&gt; code E101
 	 */
 	EPUB_3_0_1("101C"), //
 
 	/**
-	 * Use only with &lt;ProductFormDetail&gt; codes E116 or E127.
+	 * Use only with &lt;ProductFormDetail&gt; codes E116 or E127
 	 */
 	Kindle_mobi_7("116A"), //
 
 	/**
-	 * Use only with &lt;ProductFormDetail&gt; code E116.
+	 * Use only with &lt;ProductFormDetail&gt; code E116
 	 */
 	Kindle_KF8("116B");
 

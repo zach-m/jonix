@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.codegen.generator;
 
-import java.io.File;
 import java.io.PrintStream;
 
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
@@ -39,7 +38,7 @@ public class OnixStructGen
 	{
 		packageName = basePackage + "." + subfolder;
 		folderName = baseFolder + "/" + subfolder;
-		new File(folderName).mkdirs();
+		GenUtil.prepareOutputFolder(folderName);
 	}
 
 	public void generate(OnixStruct struct)

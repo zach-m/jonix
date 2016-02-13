@@ -36,44 +36,50 @@ import java.util.Map;
 public enum Audiences
 {
 	/**
-	 * For a non-specialist adult audience.
+	 * For a non-specialist adult audience
 	 */
 	General_trade("01"), //
 
 	/**
-	 * For a juvenile audience, not specifically for any educational purpose.
+	 * For a juvenile audience, not specifically for any educational purpose
 	 */
 	Children_juvenile("02"), //
 
 	/**
-	 * For a teenage audience, not specifically for any educational purpose.
+	 * For a teenage audience, not specifically for any educational purpose
 	 */
 	Young_adult("03"), //
 
 	/**
-	 * Kindergarten, pre-school, primary/elementary or secondary/high school education.
+	 * Kindergarten, pre-school, primary/elementary or secondary/high school education
 	 */
 	Primary_and_secondary_elementary_and_high_school("04"), //
 
 	/**
-	 * For universities and colleges of further and higher education.
+	 * For universities and colleges of further and higher education
 	 */
 	College_higher_education("05"), //
 
 	/**
-	 * For an expert adult audience, including academic research.
+	 * For an expert adult audience, including academic research
 	 */
 	Professional_and_scholarly("06"), //
 
 	/**
-	 * Intended for use in teaching English as a second language.
+	 * Intended for use in teaching English as a second language
 	 */
 	ELT_ESL("07"), //
 
 	/**
-	 * For centres providing academic, vocational or recreational courses for adults.
+	 * For centres providing academic, vocational or recreational courses for adults
 	 */
-	Adult_education("08");
+	Adult_education("08"), //
+
+	/**
+	 * Intended for use in teaching second languages, for example teaching German to Spanish speakers. Prefer code 07
+	 * for products specific to teaching English &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Second_language_teaching("09");
 
 	public final String value;
 

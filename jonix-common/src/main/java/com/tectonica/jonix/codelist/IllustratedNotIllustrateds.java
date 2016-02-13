@@ -33,12 +33,12 @@ package com.tectonica.jonix.codelist;
 public enum IllustratedNotIllustrateds
 {
 	/**
-	 * Not illustrated.
+	 * Not illustrated
 	 */
 	No("01"), //
 
 	/**
-	 * Illustrated.
+	 * Illustrated
 	 */
 	Yes("02");
 

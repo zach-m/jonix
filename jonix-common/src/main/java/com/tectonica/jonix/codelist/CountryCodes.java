@@ -55,7 +55,7 @@ public enum CountryCodes
 	Armenia("AM"), //
 
 	/**
-	 * Deprecated &#8211; use BQ, CW or SX as appropriate.
+	 * Deprecated &#8211; use BQ, CW or SX as appropriate
 	 */
 	Netherlands_Antilles("AN"), //
 
@@ -146,7 +146,7 @@ public enum CountryCodes
 	Costa_Rica("CR"), //
 
 	/**
-	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia.
+	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia
 	 */
 	Serbia_and_Montenegro("CS"), //
 
@@ -543,7 +543,7 @@ public enum CountryCodes
 	Mayotte("YT"), //
 
 	/**
-	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia.
+	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia
 	 */
 	Yugoslavia("YU"), //
 

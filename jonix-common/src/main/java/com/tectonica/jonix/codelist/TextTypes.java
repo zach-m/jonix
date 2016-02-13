@@ -38,54 +38,53 @@ public enum TextTypes
 	/**
 	 * To be used only in circumstances where the parties to an exchange have agreed to include text which (a) is not
 	 * for general distribution, and (b) cannot be coded elsewhere. If more than one type of text is sent, it must be
-	 * identified by tagging within the text itself.
+	 * identified by tagging within the text itself
 	 */
 	Sender_defined_text("01"), //
 
 	/**
-	 * Limited to a maximum of 350 characters.
+	 * Limited to a maximum of 350 characters
 	 */
 	Short_description_annotation("02"), //
 
 	/**
-	 * Length unrestricted.
+	 * Length unrestricted
 	 */
 	Description("03"), //
 
 	/**
-	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed as
-	 * XHTML.
+	 * Used for a table of contents sent as a single text field, which may or may not carry structure expressed as XHTML
 	 */
 	Table_of_contents("04"), //
 
 	/**
-	 * Descriptive blurb taken from the back cover and/or flaps.
+	 * Descriptive blurb taken from the back cover and/or flaps
 	 */
 	Flap_cover_copy("05"), //
 
 	/**
 	 * A quote taken from a review of the product or of the work in question where there is no need to take account of
-	 * different editions.
+	 * different editions
 	 */
 	Review_quote("06"), //
 
 	/**
-	 * A quote taken from a review of a previous edition of the work.
+	 * A quote taken from a review of a previous edition of the work
 	 */
 	Review_quote_previous_edition("07"), //
 
 	/**
-	 * A quote taken from a review of a previous work by the same author(s) or in the same series.
+	 * A quote taken from a review of a previous work by the same author(s) or in the same series
 	 */
 	Review_quote_previous_work("08"), //
 
 	/**
-	 * A quote usually provided by a celebrity or another author to promote a new book, not from a review.
+	 * A quote usually provided by a celebrity or another author to promote a new book, not from a review
 	 */
 	Endorsement("09"), //
 
 	/**
-	 * A promotional phrase which is intended to headline a description of the product.
+	 * A promotional phrase which is intended to headline a description of the product
 	 */
 	Promotional_headline("10"), //
 
@@ -93,62 +92,75 @@ public enum TextTypes
 	 * Text describing a feature of a product to which the publisher wishes to draw attention for promotional purposes.
 	 * Each separate feature should be described by a separate repeat, so that formatting can be applied at the
 	 * discretion of the receiver of the ONIX record, or multiple features can be described using appropriate XHTML
-	 * markup.
+	 * markup
 	 */
 	Feature("11"), //
 
 	/**
-	 * A note referring to all contributors to a product &#8211; NOT linked to a single contributor.
+	 * A note referring to all contributors to a product &#8211; NOT linked to a single contributor
 	 */
 	Biographical_note("12"), //
 
 	/**
 	 * A statement included by a publisher in fulfillment of contractual obligations, such as a disclaimer, sponsor
 	 * statement, or legal notice of any sort. Note that the inclusion of such a notice cannot and does not imply that a
-	 * user of the ONIX record is obliged to reproduce it.
+	 * user of the ONIX record is obliged to reproduce it
 	 */
 	Publisher_s_notice("13"), //
 
 	/**
-	 * A short excerpt from the work.
+	 * A short excerpt from the work
 	 */
 	Excerpt("14"), //
 
 	/**
-	 * Used for an index sent as a single text field, which may be structured using XHTML.
+	 * Used for an index sent as a single text field, which may be structured using XHTML
 	 */
 	Index("15"), //
 
 	/**
-	 * (of which the product is a part.) Limited to a maximum of 350 characters.
+	 * (of which the product is a part.) Limited to a maximum of 350 characters
 	 */
 	Short_description_annotation_for_collection("16"), //
 
 	/**
-	 * (of which the product is a part.) Length unrestricted.
+	 * (of which the product is a part.) Length unrestricted
 	 */
 	Description_for_collection("17"), //
 
 	/**
-	 * As code 11 but used for a new feature of this edition or version.
+	 * As code 11 but used for a new feature of this edition or version
 	 */
 	New_feature("18"), //
 
 	Version_history("19"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg &#8220;Open access &#8211; no
-	 * commercial use&#8221;), primarily for marketing purposes. Should always be accompanied by a link to the complete
-	 * license (see &lt;EpubLicense&gt; or code 99 in List 158).
+	 * Short summary statement of open access status and any related conditions (eg &#8216;Open access &#8211; no
+	 * commercial use&#8217;), primarily for marketing purposes. Should always be accompanied by a link to the complete
+	 * license (see &lt;EpubLicense&gt; or code 99 in List 158)
 	 */
 	Open_access_statement("20"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg &#8220;Digital
-	 * exclusive&#8221;). If a non-digital version is planned, &lt;ContentDate&gt; can be used to specify the date when
-	 * exclusivity will end (use content date role code 15). &lt;p&gt;NOTE: Introduced in Onix3
+	 * Short summary statement that the product is available only in digital formats (eg &#8216;Digital
+	 * exclusive&#8217;). If a non-digital version is planned, &lt;ContentDate&gt; should be used to specify the date
+	 * when exclusivity will end (use content date role code 15). If a non-digital version is available, the statement
+	 * should not be included &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Digital_exclusivity_statement("21");
+	Digital_exclusivity_statement("21"), //
+
+	/**
+	 * For example a recommendation or approval provided by a ministry of education or other official body. Use
+	 * &lt;Text&gt; to provide details and ideally use &lt;TextSourceCorporate&gt; to name the approver &lt;p&gt;NOTE:
+	 * Introduced in Onix3
+	 */
+	Official_recommendation("22"), //
+
+	/**
+	 * Short description in format specified by Japanese Book Publishers Association &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	JBPA_description("23");
 
 	public final String value;
 

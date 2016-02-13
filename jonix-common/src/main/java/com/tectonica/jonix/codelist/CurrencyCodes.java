@@ -36,975 +36,989 @@ import java.util.Map;
 public enum CurrencyCodes
 {
 	/**
-	 * United Arab Emirates.
+	 * United Arab Emirates
 	 */
 	UAE_Dirham("AED"), //
 
 	/**
-	 * DEPRECATED, replaced by AFN.
+	 * Afghanistan. DEPRECATED, replaced by AFN
 	 */
 	Afghani("AFA"), //
 
 	/**
-	 * Afghanistan (prices normally quoted as integers).
+	 * Afghanistan (prices normally quoted as integers)
 	 */
 	Afghani_("AFN"), //
 
 	/**
-	 * Albania (prices normally quoted as integers).
+	 * Albania (prices normally quoted as integers)
 	 */
 	Lek("ALL"), //
 
 	/**
-	 * Armenia (prices normally quoted as integers).
+	 * Armenia (prices normally quoted as integers)
 	 */
 	Armenian_Dram("AMD"), //
 
 	/**
-	 * Cura&#231;ao, Sint Maarten.
+	 * Cura&#231;ao, Sint Maarten
 	 */
 	Netherlands_Antillian_Guilder("ANG"), //
 
 	/**
-	 * Angola.
+	 * Angola
 	 */
-	Angolan_Kwanza("AOA"), //
+	Kwanza("AOA"), //
 
 	/**
-	 * Argentina.
+	 * Argentina
 	 */
 	Argentine_Peso("ARS"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Austria. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Austria_Schilling("ATS"), //
+	Schilling("ATS"), //
 
 	/**
 	 * Australia, Christmas Island, Cocos (Keeling) Islands, Heard Island and McDonald Islands, Kiribati, Nauru, Norfolk
-	 * Island, Tuvalu.
+	 * Island, Tuvalu
 	 */
 	Australian_Dollar("AUD"), //
 
 	/**
-	 * Aruba.
+	 * Aruba
 	 */
 	Aruban_Florin("AWG"), //
 
 	/**
-	 * Azerbaijan.
+	 * Azerbaijan
 	 */
 	Azerbaijanian_Manat("AZN"), //
 
 	/**
-	 * Bosnia and Herzegovina.
+	 * Bosnia and Herzegovina
 	 */
 	Convertible_Marks("BAM"), //
 
 	/**
-	 * Barbados.
+	 * Barbados
 	 */
 	Barbados_Dollar("BBD"), //
 
 	/**
-	 * Bangladesh.
+	 * Bangladesh
 	 */
 	Taka("BDT"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Belgium. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Belgium_Franc("BEF"), //
+	Belgian_Franc("BEF"), //
 
 	/**
-	 * DEPRECATED, replaced by BGN.
+	 * DEPRECATED, replaced by BGN
 	 */
-	Lev("BGL"), //
+	Bulgarian_Lev("BGL"), //
 
 	/**
-	 * Bulgaria.
+	 * Bulgaria
 	 */
-	Lev_("BGN"), //
+	Bulgarian_Lev_("BGN"), //
 
 	/**
-	 * Bahrain (prices normally quoted with 3 decimal places).
+	 * Bahrain (prices normally quoted with 3 decimal places)
 	 */
 	Bahraini_Dinar("BHD"), //
 
 	/**
-	 * Burundi (prices normally quoted as integers).
+	 * Burundi (prices normally quoted as integers)
 	 */
 	Burundi_Franc("BIF"), //
 
 	/**
-	 * Bermuda.
+	 * Bermuda
 	 */
-	Bermuda_Dollar("BMD"), //
+	Bermudian_Dollar("BMD"), //
 
 	/**
-	 * Brunei Darussalam.
+	 * Brunei Darussalam
 	 */
 	Brunei_Dollar("BND"), //
 
 	/**
-	 * Bolivia.
+	 * Bolivia
 	 */
 	Boliviano("BOB"), //
 
 	/**
-	 * Brazil.
+	 * Brazil
 	 */
 	Brazilian_Real("BRL"), //
 
 	/**
-	 * Bahamas.
+	 * Bahamas
 	 */
 	Bahamian_Dollar("BSD"), //
 
 	/**
-	 * Bhutan.
+	 * Bhutan
 	 */
 	Ngultrun("BTN"), //
 
 	/**
-	 * Botswana.
+	 * Botswana
 	 */
 	Pula("BWP"), //
 
 	/**
-	 * Belarus (prices normally quoted as integers).
+	 * Belarus (prices normally quoted as integers). Now replaced by new Belarussian Ruble (BYN): use only for
+	 * historical prices that pre-date the introduction of the new Belarussian Ruble
 	 */
 	Belarussian_Ruble("BYR"), //
 
 	/**
-	 * Belize.
+	 * Belarus &lt;p&gt;NOTE: Introduced in Onix3
+	 */
+	Belarussian_Ruble_("BYN"), //
+
+	/**
+	 * Belize
 	 */
 	Belize_Dollar("BZD"), //
 
 	/**
-	 * Canada.
+	 * Canada
 	 */
 	Canadian_Dollar("CAD"), //
 
 	/**
-	 * Congo (Democratic Republic of the).
+	 * Congo (Democratic Republic of the)
 	 */
 	Franc_Congolais("CDF"), //
 
 	/**
-	 * Switzerland, Liechtenstein.
+	 * Switzerland, Liechtenstein
 	 */
 	Swiss_Franc("CHF"), //
 
 	/**
-	 * Chile (prices normally quoted as integers).
+	 * Chile (prices normally quoted as integers)
 	 */
 	Chilean_Peso("CLP"), //
 
 	/**
-	 * China.
+	 * China
 	 */
 	Yuan_Renminbi("CNY"), //
 
 	/**
-	 * Colombia (prices normally quoted as integers).
+	 * Colombia (prices normally quoted as integers)
 	 */
 	Colombian_Peso("COP"), //
 
 	/**
-	 * Costa Rica (prices normally quoted as integers).
+	 * Costa Rica (prices normally quoted as integers)
 	 */
 	Costa_Rican_Colon("CRC"), //
 
 	/**
-	 * Deprecated, replaced by RSD.
+	 * Deprecated, replaced by RSD
 	 */
 	Serbian_Dinar("CSD"), //
 
 	/**
-	 * Cuba (alternative currency).
+	 * Cuba (alternative currency)
 	 */
 	Cuban_Convertible_Peso("CUC"), //
 
 	/**
-	 * Cuba.
+	 * Cuba
 	 */
 	Cuban_Peso("CUP"), //
 
 	/**
-	 * Cabo Verde (prices normally quoted as integers).
+	 * Cabo Verde (prices normally quoted as integers)
 	 */
 	Cabo_Verde_Escudo("CVE"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Cyprus. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
 	 */
 	Cyprus_Pound("CYP"), //
 
 	/**
-	 * Czech Republic.
+	 * Czech Republic
 	 */
 	Czech_Koruna("CZK"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Germany. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Germany_Mark("DEM"), //
+	Mark("DEM"), //
 
 	/**
-	 * Djibouti (prices normally quoted as integers).
+	 * Djibouti (prices normally quoted as integers)
 	 */
 	Djibouti_Franc("DJF"), //
 
 	/**
-	 * Denmark, Faroe Islands, Greenland.
+	 * Denmark, Faroe Islands, Greenland
 	 */
 	Danish_Krone("DKK"), //
 
 	/**
-	 * Dominican Republic.
+	 * Dominican Republic
 	 */
 	Dominican_Peso("DOP"), //
 
 	/**
-	 * Algeria.
+	 * Algeria
 	 */
 	Algerian_Dinar("DZD"), //
 
 	/**
-	 * Estonia &#8211; now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of
-	 * the Euro.
+	 * Estonia.Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
 	 */
 	Kroon("EEK"), //
 
 	/**
-	 * Egypt.
+	 * Egypt
 	 */
 	Egyptian_Pound("EGP"), //
 
 	/**
-	 * Eritrea.
+	 * Eritrea
 	 */
 	Nakfa("ERN"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices
-	 * normally quoted as integers).
+	 * Spain. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
+	 * (prices normally quoted as integers)
 	 */
-	Spain_Peseta("ESP"), //
+	Peseta("ESP"), //
 
 	/**
-	 * Ethiopia.
+	 * Ethiopia
 	 */
 	Ethiopian_Birr("ETB"), //
 
 	/**
 	 * Eurozone: Andorra, Austria, Belgium, Cyprus, Estonia, Finland, France, Fr Guiana, Fr S Territories, Germany,
 	 * Greece, Guadeloupe, Holy See (Vatican City), Ireland, Italy, Latvia, Lithuania, Luxembourg, Martinique, Malta,
-	 * Mayotte, Monaco, Montenegro, Netherlands, Portugal, R&#233;union, St Pierre and Miquelon, San Marino, Spain.
+	 * Mayotte, Monaco, Montenegro, Netherlands, Portugal, R&#233;union, St Barthelemy, St Martin, St Pierre and
+	 * Miquelon, San Marino, Slovakia, Slovenia, Spain
 	 */
 	Euro("EUR"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Finland. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Finland_Markka("FIM"), //
+	Markka("FIM"), //
 
 	/**
-	 * Fiji.
+	 * Fiji
 	 */
 	Fiji_Dollar("FJD"), //
 
 	/**
-	 * Falkland Islands (Malvinas).
+	 * Falkland Islands (Malvinas)
 	 */
 	Falkland_Islands_Pound("FKP"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * France. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
 	 */
-	France_Franc("FRF"), //
+	Franc("FRF"), //
 
 	/**
-	 * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands, British Indian Ocean
-	 * Territory.
+	 * United Kingdom, Isle of Man, Channel Islands, South Georgia, South Sandwich Islands
 	 */
 	Pound_Sterling("GBP"), //
 
 	/**
-	 * Georgia.
+	 * Georgia
 	 */
 	Lari("GEL"), //
 
 	/**
-	 * Deprecated, replaced by GHS.
+	 * Deprecated, replaced by GHS
 	 */
-	Cedi("GHC"), //
+	Ghana_Cedi("GHC"), //
 
 	/**
-	 * Ghana.
+	 * Ghana
 	 */
-	Cedi_("GHS"), //
+	Ghana_Cedi_("GHS"), //
 
 	/**
-	 * Gibraltar.
+	 * Gibraltar
 	 */
 	Gibraltar_Pound("GIP"), //
 
 	/**
-	 * Gambia.
+	 * Gambia
 	 */
 	Dalasi("GMD"), //
 
 	/**
-	 * Guinea (prices normally quoted as integers).
+	 * Guinea (prices normally quoted as integers)
 	 */
 	Guinea_Franc("GNF"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Greece. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
 	 */
-	Greece_Drachma("GRD"), //
+	Drachma("GRD"), //
 
 	/**
-	 * Guatemala.
+	 * Guatemala
 	 */
 	Quetzal("GTQ"), //
 
 	/**
-	 * Now replaced by the CFA Franc BCEAO XOF use only for historical prices that pre-date use of the CFA Franc.
+	 * Now replaced by the CFA Franc BCEAO XOF use only for historical prices that pre-date use of the CFA Franc
 	 */
 	Guinea_Bissau_Peso("GWP"), //
 
 	/**
-	 * Guyana (prices normally quoted as integers).
+	 * Guyana (prices normally quoted as integers)
 	 */
 	Guyana_Dollar("GYD"), //
 
 	/**
-	 * Hong Kong, Macao.
+	 * Hong Kong
 	 */
 	Hong_Kong_Dollar("HKD"), //
 
 	/**
-	 * Honduras.
+	 * Honduras
 	 */
 	Lempira("HNL"), //
 
 	/**
-	 * Croatia.
+	 * Croatia
 	 */
-	Croatian_Kuna("HRK"), //
+	Kuna("HRK"), //
 
 	/**
-	 * Haiti.
+	 * Haiti
 	 */
 	Gourde("HTG"), //
 
 	/**
-	 * Hungary (prices normally quoted as integers).
+	 * Hungary (prices normally quoted as integers)
 	 */
 	Forint("HUF"), //
 
 	/**
-	 * Indonesia (prices normally quoted as integers).
+	 * Indonesia (prices normally quoted as integers)
 	 */
 	Rupiah("IDR"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Ireland. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Ireland_Punt("IEP"), //
+	Punt("IEP"), //
 
 	/**
-	 * Israel.
+	 * Israel
 	 */
-	Israeli_Sheqel("ILS"), //
+	New_Israeli_Sheqel("ILS"), //
 
 	/**
-	 * India (prices normally quoted as integers).
+	 * India, Bhutan (prices normally quoted as integers)
 	 */
 	Indian_Rupee("INR"), //
 
 	/**
-	 * Iraq (prices normally quoted as integers).
+	 * Iraq (prices normally quoted as integers)
 	 */
 	Iraqi_Dinar("IQD"), //
 
 	/**
-	 * Iran (Islamic Republic of) (prices normally quoted as integers).
+	 * Iran (Islamic Republic of) (prices normally quoted as integers)
 	 */
 	Iranian_Rial("IRR"), //
 
 	/**
-	 * Iceland (prices normally quoted as integers).
+	 * Iceland (prices normally quoted as integers)
 	 */
 	Iceland_Krona("ISK"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices
-	 * normally quoted as integers).
+	 * italy. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
+	 * (prices normally quoted as integers)
 	 */
-	Italy_Lira("ITL"), //
+	Lira("ITL"), //
 
 	/**
-	 * Jamaica.
+	 * Jamaica
 	 */
 	Jamaican_Dollar("JMD"), //
 
 	/**
-	 * Jordan (prices normally quoted with 3 decimal places).
+	 * Jordan (prices normally quoted with 3 decimal places)
 	 */
 	Jordanian_Dinar("JOD"), //
 
 	/**
-	 * Japan (prices normally quoted as integers).
+	 * Japan (prices normally quoted as integers)
 	 */
 	Yen("JPY"), //
 
 	/**
-	 * Kenya.
+	 * Kenya
 	 */
 	Kenyan_Shilling("KES"), //
 
 	/**
-	 * Kyrgyzstan.
+	 * Kyrgyzstan
 	 */
 	Som("KGS"), //
 
 	/**
-	 * Cambodia.
+	 * Cambodia
 	 */
 	Riel("KHR"), //
 
 	/**
-	 * Comoros (prices normally quoted as integers).
+	 * Comoros (prices normally quoted as integers)
 	 */
 	Comoro_Franc("KMF"), //
 
 	/**
-	 * Korea (Democratic People&#8217;s Republic of) (prices normally quoted as integers).
+	 * Korea (Democratic People&#8217;s Republic of) (prices normally quoted as integers)
 	 */
 	North_Korean_Won("KPW"), //
 
 	/**
-	 * Korea (Republic of) (prices normally quoted as integers).
+	 * Korea (Republic of) (prices normally quoted as integers)
 	 */
 	Won("KRW"), //
 
 	/**
-	 * Kuwait (prices normally quoted with 3 decimal places).
+	 * Kuwait (prices normally quoted with 3 decimal places)
 	 */
 	Kuwaiti_Dinar("KWD"), //
 
 	/**
-	 * Cayman Islands.
+	 * Cayman Islands
 	 */
 	Cayman_Islands_Dollar("KYD"), //
 
 	/**
-	 * Kazakstan.
+	 * Kazakstan
 	 */
 	Tenge("KZT"), //
 
 	/**
-	 * Lao People&#8217;s Democratic Republic (prices normally quoted as integers).
+	 * Lao People&#8217;s Democratic Republic (prices normally quoted as integers)
 	 */
 	Kip("LAK"), //
 
 	/**
-	 * Lebanon (prices normally quoted as integers).
+	 * Lebanon (prices normally quoted as integers)
 	 */
 	Lebanese_Pound("LBP"), //
 
 	/**
-	 * Sri Lanka.
+	 * Sri Lanka
 	 */
 	Sri_Lanka_Rupee("LKR"), //
 
 	/**
-	 * Liberia.
+	 * Liberia
 	 */
 	Liberian_Dollar("LRD"), //
 
 	/**
-	 * Lesotho.
+	 * Lesotho
 	 */
 	Loti("LSL"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Lithuania. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Lithuanian_Litus("LTL"), //
+	Litus("LTL"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro (prices
-	 * normally quoted as integers).
+	 * Luxembourg. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro (prices normally quoted as integers)
 	 */
 	Luxembourg_Franc("LUF"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Latvia. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
 	 */
 	Latvian_Lats("LVL"), //
 
 	/**
-	 * Libyan Arab Jamahiriya (prices normally quoted with 3 decimal places).
+	 * Libyan Arab Jamahiriya (prices normally quoted with 3 decimal places)
 	 */
 	Libyan_Dinar("LYD"), //
 
 	/**
-	 * Morocco, Western Sahara.
+	 * Morocco, Western Sahara
 	 */
 	Moroccan_Dirham("MAD"), //
 
 	/**
-	 * Moldova, Republic of.
+	 * Moldova, Republic of
 	 */
 	Moldovan_Leu("MDL"), //
 
 	/**
-	 * Madagascar (0 or 1 &#8211; 1 iraimbilanja = Ar0.2).
+	 * Madagascar (prices normally quoted with 0 or 1 decimal place &#8211; 1 iraimbilanja = Ar0.2)
 	 */
-	Ariary("MGA"), //
+	Malagasy_Ariary("MGA"), //
 
 	/**
-	 * Now replaced by the Ariary (MGA) (prices normally quoted as integers).
+	 * Now replaced by the Ariary (MGA) (prices normally quoted as integers)
 	 */
 	Malagasy_Franc("MGF"), //
 
 	/**
-	 * Macedonia (former Yugoslav Republic of).
+	 * Macedonia (former Yugoslav Republic of)
 	 */
 	Denar("MKD"), //
 
 	/**
-	 * Myanmar (prices normally quoted as integers).
+	 * Myanmar (prices normally quoted as integers)
 	 */
 	Kyat("MMK"), //
 
 	/**
-	 * Mongolia (prices normally quoted as integers).
+	 * Mongolia (prices normally quoted as integers)
 	 */
 	Tugrik("MNT"), //
 
 	/**
-	 * Macau.
+	 * Macau
 	 */
 	Pataca("MOP"), //
 
 	/**
-	 * Mauritania (0 or 1 &#8211; 1 khoums = UM0.2).
+	 * Mauritania (0 or 1 &#8211; 1 khoums = UM0.2)
 	 */
 	Ouguiya("MRO"), //
 
 	/**
-	 * Malta &#8211; now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of
-	 * the Euro.
+	 * Malta. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro
 	 */
 	Maltese_Lira("MTL"), //
 
 	/**
-	 * Mauritius (prices normally quoted as integers).
+	 * Mauritius (prices normally quoted as integers)
 	 */
 	Mauritius_Rupee("MUR"), //
 
 	/**
-	 * Maldives.
+	 * Maldives
 	 */
 	Rufiyaa("MVR"), //
 
 	/**
-	 * Malawi.
+	 * Malawi
 	 */
 	Kwacha("MWK"), //
 
 	/**
-	 * Mexico.
+	 * Mexico
 	 */
 	Mexican_Peso("MXN"), //
 
 	/**
-	 * Malaysia.
+	 * Malaysia
 	 */
 	Malaysian_Ringgit("MYR"), //
 
 	/**
-	 * Mozambique.
+	 * Mozambique
 	 */
-	Metical("MZN"), //
+	Mozambique_Metical("MZN"), //
 
 	/**
-	 * Namibia.
+	 * Namibia
 	 */
 	Namibia_Dollar("NAD"), //
 
 	/**
-	 * Nigeria.
+	 * Nigeria
 	 */
 	Naira("NGN"), //
 
 	/**
-	 * Nicaragua.
+	 * Nicaragua
 	 */
 	Cordoba_Oro("NIO"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Netherlands. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Netherlands_Guilder("NLG"), //
+	Guilder("NLG"), //
 
 	/**
-	 * Norway, Bouvet Island, Svalbard and Jan Mayen.
+	 * Norway, Bouvet Island, Svalbard and Jan Mayen
 	 */
 	Norwegian_Krone("NOK"), //
 
 	/**
-	 * Nepal.
+	 * Nepal
 	 */
 	Nepalese_Rupee("NPR"), //
 
 	/**
-	 * New Zealand, Cook Islands, Niue, Pitcairn, Tokelau.
+	 * New Zealand, Cook Islands, Niue, Pitcairn, Tokelau
 	 */
 	New_Zealand_Dollar("NZD"), //
 
 	/**
-	 * Oman (prices normally quoted with 3 decimal places).
+	 * Oman (prices normally quoted with 3 decimal places)
 	 */
 	Rial_Omani("OMR"), //
 
 	/**
-	 * Panama.
+	 * Panama
 	 */
 	Balboa("PAB"), //
 
 	/**
-	 * Peru.
+	 * Peru
 	 */
 	Nuevo_Sol("PEN"), //
 
 	/**
-	 * Papua New Guinea.
+	 * Papua New Guinea
 	 */
 	Kina("PGK"), //
 
 	/**
-	 * Philippines.
+	 * Philippines
 	 */
 	Philippine_Peso("PHP"), //
 
 	/**
-	 * Pakistan (prices normally quoted as integers).
+	 * Pakistan (prices normally quoted as integers)
 	 */
 	Pakistan_Rupee("PKR"), //
 
 	/**
-	 * Poland.
+	 * Poland
 	 */
 	Zloty("PLN"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Portugal. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
-	Portugal_Escudo("PTE"), //
+	Escudo("PTE"), //
 
 	/**
-	 * Paraguay (prices normally quoted as integers).
+	 * Paraguay (prices normally quoted as integers)
 	 */
 	Guarani("PYG"), //
 
 	/**
-	 * Qatar.
+	 * Qatar
 	 */
 	Qatari_Rial("QAR"), //
 
 	/**
-	 * Deprecated, replaced by RON.
+	 * Deprecated, replaced by RON
 	 */
-	Old_Leu("ROL"), //
+	Romanian_Old_Leu("ROL"), //
 
 	/**
-	 * Romania.
+	 * Romania
 	 */
-	New_Leu("RON"), //
+	Romanian_Leu("RON"), //
 
 	/**
-	 * Serbia (prices normally quoted as integers).
+	 * Serbia (prices normally quoted as integers)
 	 */
 	Serbian_Dinar_("RSD"), //
 
 	/**
-	 * Russian Federation.
+	 * Russian Federation
 	 */
 	Russian_Ruble("RUB"), //
 
 	/**
-	 * DEPRECATED, replaced by RUB.
+	 * DEPRECATED, replaced by RUB
 	 */
 	Russian_Ruble_("RUR"), //
 
 	/**
-	 * Rwanda (prices normally quoted as integers).
+	 * Rwanda (prices normally quoted as integers)
 	 */
 	Rwanda_Franc("RWF"), //
 
 	/**
-	 * Saudi Arabia.
+	 * Saudi Arabia
 	 */
 	Saudi_Riyal("SAR"), //
 
 	/**
-	 * Solomon Islands.
+	 * Solomon Islands
 	 */
 	Solomon_Islands_Dollar("SBD"), //
 
 	/**
-	 * Seychelles.
+	 * Seychelles
 	 */
 	Seychelles_Rupee("SCR"), //
 
 	/**
-	 * Now replaced by the Sudanese Pound (SDG).
+	 * Now replaced by the Sudanese Pound (SDG)
 	 */
 	Sudanese_Dinar("SDD"), //
 
 	/**
-	 * Sudan.
+	 * Sudan
 	 */
 	Sudanese_Pound("SDG"), //
 
 	/**
-	 * Sweden.
+	 * Sweden
 	 */
 	Swedish_Krona("SEK"), //
 
 	/**
-	 * Singapore.
+	 * Singapore
 	 */
 	Singapore_Dollar("SGD"), //
 
 	/**
-	 * Saint Helena.
+	 * Saint Helena
 	 */
 	Saint_Helena_Pound("SHP"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Slovenia. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
 	Tolar("SIT"), //
 
 	/**
-	 * Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the Euro.
+	 * Slovakia. Now replaced by the Euro (EUR): use only for historical prices that pre-date the introduction of the
+	 * Euro
 	 */
 	Slovak_Koruna("SKK"), //
 
 	/**
-	 * Sierra Leone (prices normally quoted as integers).
+	 * Sierra Leone (prices normally quoted as integers)
 	 */
 	Leone("SLL"), //
 
 	/**
-	 * Somalia (prices normally quoted as integers).
+	 * Somalia (prices normally quoted as integers)
 	 */
 	Somali_Shilling("SOS"), //
 
 	/**
-	 * Suriname.
+	 * Suriname
 	 */
 	Surinam_Dollar("SRD"), //
 
 	/**
-	 * DEPRECATED, replaced by SRD.
+	 * DEPRECATED, replaced by SRD
 	 */
 	Suriname_Guilder("SRG"), //
 
 	/**
-	 * S&#227;o Tome and Principe (prices normally quoted as integers).
+	 * S&#227;o Tome and Principe (prices normally quoted as integers)
 	 */
 	Dobra("STD"), //
 
 	/**
-	 * El Salvador.
+	 * El Salvador
 	 */
 	El_Salvador_Colon("SVC"), //
 
 	/**
-	 * Syrian Arab Republic (prices normally quoted as integers).
+	 * Syrian Arab Republic (prices normally quoted as integers)
 	 */
 	Syrian_Pound("SYP"), //
 
 	/**
-	 * Swaziland.
+	 * Swaziland
 	 */
 	Lilangeni("SZL"), //
 
 	/**
-	 * Thailand.
+	 * Thailand
 	 */
 	Baht("THB"), //
 
 	/**
-	 * Tajikistan.
+	 * Tajikistan
 	 */
 	Somoni("TJS"), //
 
 	/**
-	 * Deprecated, replaced by TMT (prices normally quoted as integers).
+	 * Deprecated, replaced by TMT (prices normally quoted as integers)
 	 */
-	Manat("TMM"), //
+	Turkmenistan_Manat("TMM"), //
 
 	/**
-	 * Turkmenistan.
+	 * Turkmenistan
 	 */
-	Manat_("TMT"), //
+	Turkmenistan_New_Manat("TMT"), //
 
 	/**
-	 * Tunisia (prices normally quoted with 3 decimal places).
+	 * Tunisia (prices normally quoted with 3 decimal places)
 	 */
 	Tunisian_Dinar("TND"), //
 
 	/**
-	 * Tonga.
+	 * Tonga
 	 */
 	Pa_anga("TOP"), //
 
 	/**
-	 * NO LONGER VALID, Timor-Leste now uses the US Dollar.
+	 * Deprecated. Timor-Leste now uses the US Dollar
 	 */
 	Timor_Escudo("TPE"), //
 
 	/**
-	 * Deprecated, replaced by TRY (prices normally quoted as integers).
+	 * Deprecated, replaced by TRY (prices normally quoted as integers)
 	 */
 	Turkish_Lira_old("TRL"), //
 
 	/**
-	 * Turkey, from 1 January 2005.
+	 * Turkey, from 1 January 2005
 	 */
-	Turkish_Lira_new("TRY"), //
+	Turkish_Lira("TRY"), //
 
 	/**
-	 * Trinidad and Tobago.
+	 * Trinidad and Tobago
 	 */
 	Trinidad_and_Tobago_Dollar("TTD"), //
 
 	/**
-	 * Taiwan (Province of China).
+	 * Taiwan (Province of China)
 	 */
 	New_Taiwan_Dollar("TWD"), //
 
 	/**
-	 * Tanzania (United Republic of) (prices normally quoted as integers).
+	 * Tanzania (United Republic of) (prices normally quoted as integers)
 	 */
 	Tanzanian_Shilling("TZS"), //
 
 	/**
-	 * Ukraine.
+	 * Ukraine
 	 */
 	Hryvnia("UAH"), //
 
 	/**
-	 * Uganda (prices normally quoted as integers).
+	 * Uganda (prices normally quoted as integers)
 	 */
 	Uganda_Shilling("UGX"), //
 
 	/**
-	 * United States, American Samoa, British Indian Ocean Territory, Ecuador, Guam, Marshall Is, Micronesia (Federated
-	 * States of), Northern Mariana Is, Palau, Puerto Rico, Timor-Leste, Turks and Caicos Is, US Minor Outlying Is,
-	 * Virgin Is (British), Virgin Is (US).
+	 * United States, American Samoa, Bonaire, Sint Eustatius and Saba, British Indian Ocean Territory, Ecuador, El
+	 * Salvador, Guam, Haiti, Marshall Is, Micronesia (Federated States of), Northern Mariana Is, Palau, Panama, Puerto
+	 * Rico, Timor-Leste, Turks and Caicos Is, US Minor Outlying Is, Virgin Is (British), Virgin Is (US)
 	 */
 	US_Dollar("USD"), //
 
 	/**
-	 * Uruguay.
+	 * Uruguay
 	 */
 	Peso_Uruguayo("UYU"), //
 
 	/**
-	 * Uzbekistan (prices normally quoted as integers).
+	 * Uzbekistan (prices normally quoted as integers)
 	 */
 	Uzbekistan_Sum("UZS"), //
 
 	/**
-	 * Deprecated, replaced by VEF.
+	 * Deprecated, replaced by VEF
 	 */
 	Bolivar("VEB"), //
 
 	/**
-	 * Venezuela.
+	 * Venezuela
 	 */
 	Bolivar_fuerte("VEF"), //
 
 	/**
-	 * Viet Nam (prices normally quoted as integers).
+	 * Viet Nam (prices normally quoted as integers)
 	 */
 	Dong("VND"), //
 
 	/**
-	 * Vanuatu (prices normally quoted as integers).
+	 * Vanuatu (prices normally quoted as integers)
 	 */
 	Vatu("VUV"), //
 
 	/**
-	 * Samoa.
+	 * Samoa
 	 */
 	Tala("WST"), //
 
 	/**
-	 * Cameroon, Central African Republic, Chad, Congo, Equatorial Guinea, Gabon (prices normally quoted as integers).
+	 * Cameroon, Central African Republic, Chad, Congo, Equatorial Guinea, Gabon (prices normally quoted as integers)
 	 */
 	CFA_Franc_BEAC("XAF"), //
 
 	/**
 	 * Anguilla, Antigua and Barbuda, Dominica, Grenada, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent
-	 * and the Grenadines.
+	 * and the Grenadines
 	 */
 	East_Caribbean_Dollar("XCD"), //
 
 	/**
 	 * Benin, Burkina Faso, C&#244;te D&#8217;Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted
-	 * as integers).
+	 * as integers)
 	 */
 	CFA_Franc_BCEAO("XOF"), //
 
 	/**
-	 * French Polynesia, New Caledonia, Wallis and Futuna (prices normally quoted as integers).
+	 * French Polynesia, New Caledonia, Wallis and Futuna (prices normally quoted as integers)
 	 */
 	CFP_Franc("XPF"), //
 
 	/**
-	 * Yemen (prices normally quoted as integers).
+	 * Yemen (prices normally quoted as integers)
 	 */
 	Yemeni_Rial("YER"), //
 
 	/**
-	 * DEPRECATED, replaced by CSD.
+	 * DEPRECATED, replaced by CSD
 	 */
 	Yugoslavian_Dinar("YUM"), //
 
 	/**
-	 * South Africa.
+	 * South Africa, Namibia, Lesotho
 	 */
 	Rand("ZAR"), //
 
 	/**
-	 * Deprecated, replaced with ZMW (prices normally quoted as integers).
+	 * Zambia. Deprecated, replaced with ZMW (prices normally quoted as integers)
 	 */
 	Kwacha_("ZMK"), //
 
 	/**
-	 * Zambia.
+	 * Zambia
 	 */
 	Zambian_Kwacha("ZMW"), //
 
 	/**
-	 * Deprecated, replaced with ZWL (prices normally quoted as integers).
+	 * Deprecated, replaced with ZWL (prices normally quoted as integers)
 	 */
 	Zimbabwe_Dollar("ZWD"), //
 
 	/**
-	 * Zimbabwe.
+	 * Zimbabwe
 	 */
 	Zimbabwe_Dollar_("ZWL");
 

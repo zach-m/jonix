@@ -48,7 +48,7 @@ public class ConferenceName implements OnixElement, Serializable
 	public LanguageCodes language;
 
 	/**
-	 * (type: XHTML)
+	 * (type: dt.NonEmptyString)
 	 */
 	public String value;
 
@@ -62,6 +62,6 @@ public class ConferenceName implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
 
-		value = JPU.getChildXHTML(element, true);
+		value = JPU.getContentAsString(element);
 	}
 }

@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum QuantityUnits
 {
 	/**
-	 * The quantity refers to a unit implied by the quantity type.
+	 * The quantity refers to a unit implied by the quantity type
 	 */
 	Units("00"), //
 

@@ -33,7 +33,7 @@ package com.tectonica.jonix.codelist;
 public enum UnitOfPricings
 {
 	/**
-	 * Default.
+	 * Default
 	 */
 	Per_copy_of_whole_product("00"), //
 

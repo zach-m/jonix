@@ -36,67 +36,67 @@ import java.util.Map;
 public enum DateFormats
 {
 	/**
-	 * Year month day (default).
+	 * Year month day (default)
 	 */
 	YYYYMMDD("00"), //
 
 	/**
-	 * Year and month.
+	 * Year and month
 	 */
 	YYYYMM("01"), //
 
 	/**
-	 * Year and week number.
+	 * Year and week number
 	 */
 	YYYYWW("02"), //
 
 	/**
-	 * Year and quarter (Q = 1, 2, 3, 4).
+	 * Year and quarter (Q = 1, 2, 3, 4, with 1 = Jan to Mar)
 	 */
 	YYYYQ("03"), //
 
 	/**
-	 * Year and season (S = 1, 2, 3, 4, with 1 = &#8220;Spring&#8221;).
+	 * Year and season (S = 1, 2, 3, 4, with 1 = &#8216;Spring&#8217;)
 	 */
 	YYYYS("04"), //
 
 	/**
-	 * Year.
+	 * Year
 	 */
 	YYYY("05"), //
 
 	/**
-	 * Spread of exact dates.
+	 * Spread of exact dates
 	 */
 	YYYYMMDDYYYYMMDD("06"), //
 
 	/**
-	 * Spread of months.
+	 * Spread of months
 	 */
 	YYYYMMYYYYMM("07"), //
 
 	/**
-	 * Spread of week numbers.
+	 * Spread of week numbers
 	 */
 	YYYYWWYYYYWW("08"), //
 
 	/**
-	 * Spread of quarters.
+	 * Spread of quarters
 	 */
 	YYYYQYYYYQ("09"), //
 
 	/**
-	 * Spread of seasons.
+	 * Spread of seasons
 	 */
 	YYYYSYYYYS("10"), //
 
 	/**
-	 * Spread of years.
+	 * Spread of years
 	 */
 	YYYYYYYY("11"), //
 
 	/**
-	 * For complex, approximate or uncertain dates.
+	 * For complex, approximate or uncertain dates
 	 */
 	Text_string("12"), //
 
@@ -104,7 +104,7 @@ public enum DateFormats
 	 * Exact time. Use ONLY when exact times with hour/minute precision are relevant. By default, time is local.
 	 * Alternatively, the time may be suffixed with an optional &#8216;Z&#8217; for UTC times, or with &#8216;+&#8217;
 	 * or &#8216;-&#8217; and an hhmm timezone offset from UTC. Times without a timezone are &#8216;rolling&#8217; local
-	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time.
+	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time
 	 */
 	YYYYMMDDThhmm("13"), //
 
@@ -112,27 +112,27 @@ public enum DateFormats
 	 * Exact time. Use ONLY when exact times with second precision are relevant. By default, time is local.
 	 * Alternatively, the time may be suffixed with an optional &#8216;Z&#8217; for UTC times, or with &#8216;+&#8217;
 	 * or &#8216;-&#8217; and an hhmm timezone offset from UTC. Times without a timezone are &#8216;rolling&#8217; local
-	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time.
+	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time
 	 */
 	YYYYMMDDThhmmss("14"), //
 
 	/**
-	 * Year month day (Hijri calendar).
+	 * Year month day (Hijri calendar)
 	 */
 	YYYYMMDD_H("20"), //
 
 	/**
-	 * Year and month (Hijri calendar).
+	 * Year and month (Hijri calendar)
 	 */
 	YYYYMM_H("21"), //
 
 	/**
-	 * Year (Hijri calendar).
+	 * Year (Hijri calendar)
 	 */
 	YYYY_H("25"), //
 
 	/**
-	 * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script.
+	 * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script
 	 */
 	Text_string_H("32");
 

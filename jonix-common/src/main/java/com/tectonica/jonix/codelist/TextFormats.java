@@ -36,24 +36,24 @@ import java.util.Map;
 public enum TextFormats
 {
 	/**
-	 * DEPRECATED: use code 06 or 07 as appropriate.
+	 * DEPRECATED: use code 06 or 07 as appropriate
 	 */
 	ASCII_text("00"), //
 
 	SGML("01"), //
 
 	/**
-	 * Other than XHTML.
+	 * Other than XHTML
 	 */
 	HTML("02"), //
 
 	/**
-	 * Other than XHTML.
+	 * Other than XHTML
 	 */
 	XML("03"), //
 
 	/**
-	 * DEPRECATED: was formerly assigned both to PDF and to XHTML.
+	 * DEPRECATED: was formerly assigned both to PDF and to XHTML
 	 */
 	PDF("04"), //
 
@@ -61,19 +61,19 @@ public enum TextFormats
 
 	/**
 	 * Default: text in the encoding declared at the head of the message or in the XML default (UTF-8 or UTF-16) if
-	 * there is no explicit declaration.
+	 * there is no explicit declaration
 	 */
 	Default_text_format("06"), //
 
 	/**
 	 * Plain text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
 	 * used to represent ampersand and less-than characters in text; and with the character set limited to the ASCII
-	 * range, i.e. valid UTF-8 characters whose character number lies between 32 (space) and 126 (tilde).
+	 * range, i.e. valid UTF-8 characters whose character number lies between 32 (space) and 126 (tilde)
 	 */
 	Basic_ASCII_text("07"), //
 
 	/**
-	 * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute.
+	 * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute
 	 */
 	PDF_("08"), //
 
@@ -82,12 +82,12 @@ public enum TextFormats
 	Microsoft_Word_binary_format_DOC("10"), //
 
 	/**
-	 * Office Open XML file format / OOXML / DOCX.
+	 * Office Open XML file format / OOXML / DOCX
 	 */
 	ECMA_376_WordprocessingML("11"), //
 
 	/**
-	 * ISO Open Document Format.
+	 * ISO Open Document Format
 	 */
 	ISO_26300_ODF("12"), //
 
@@ -95,12 +95,12 @@ public enum TextFormats
 
 	/**
 	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
-	 * (IDPF) [File extension .epub].
+	 * (IDPF) [File extension .epub]
 	 */
 	EPUB("14"), //
 
 	/**
-	 * XML Paper Specification.
+	 * XML Paper Specification
 	 */
 	XPS("15");
 

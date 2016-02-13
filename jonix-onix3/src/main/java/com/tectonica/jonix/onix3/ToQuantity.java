@@ -45,7 +45,7 @@ public class ToQuantity implements OnixElement, Serializable
 	public String sourcename;
 
 	/**
-	 * (type: dt.StrictPositiveDecimal)
+	 * (type: dt.PositiveDecimal)
 	 */
 	public Double value;
 

@@ -27,7 +27,7 @@ public enum Primitive
 {
 	String("String", "xs:string", "xs:token", "xs:NMTOKEN"), //
 	AnyURI("String", "xs:anyURI"), //
-	Int("Integer", "xs:int"), //
+	Int("Integer", "xs:int", "xs:positiveInteger", "xs:nonNegativeInteger"), //
 	Decimal("Double", "xs:decimal");
 
 	public final String javaType;

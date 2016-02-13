@@ -46,72 +46,72 @@ public enum ImageAudioVideoFileFormats
 	RealAudio_28_8("06"), //
 
 	/**
-	 * MPEG-1/2 Audio Layer III file (.mp3).
+	 * MPEG-1/2 Audio Layer III file (.mp3)
 	 */
 	MP3("07"), //
 
 	/**
-	 * MPEG-4 container format (.mp4, .m4a).
+	 * MPEG-4 container format (.mp4, .m4a)
 	 */
 	MPEG_4("08"), //
 
 	/**
-	 * Portable Network Graphics bitmapped image format (.png).
+	 * Portable Network Graphics bitmapped image format (.png)
 	 */
 	PNG("09"), //
 
 	/**
-	 * Windows Media Audio format (.wma).
+	 * Windows Media Audio format (.wma)
 	 */
 	WMA("10"), //
 
 	/**
-	 * Advanced Audio Codec format (.aac).
+	 * Advanced Audio Codec format (.aac)
 	 */
 	AAC("11"), //
 
 	/**
-	 * Waveform audio file (.wav).
+	 * Waveform audio file (.wav)
 	 */
 	WAV("12"), //
 
 	/**
-	 * Audio Interchange File Format (.aiff).
+	 * Audio Interchange File Format (.aiff)
 	 */
 	AIFF("13"), //
 
 	/**
-	 * Windows Media Video format (.wmv).
+	 * Windows Media Video format (.wmv)
 	 */
 	WMV("14"), //
 
 	/**
-	 * Ogg container format (.ogg).
+	 * Ogg container format (.ogg)
 	 */
 	OGG("15"), //
 
 	/**
-	 * Audio Video Interleaved container format (.avi).
+	 * Audio Video Interleaved container format (.avi)
 	 */
 	AVI("16"), //
 
 	/**
-	 * Quicktime container format (.mov).
+	 * Quicktime container format (.mov)
 	 */
 	MOV("17"), //
 
 	/**
-	 * Flash container format (includes .flv, .swf, .f4v etc).
+	 * Flash container format (includes .flv, .swf, .f4v etc)
 	 */
 	Flash("18"), //
 
 	/**
-	 * 3GP container format (.3gp, 3g2).
+	 * 3GP container format (.3gp, 3g2)
 	 */
 	_3GP("19"), //
 
 	/**
-	 * WebM container format (includes .webm and .mkv).
+	 * WebM container format (includes .webm and .mkv)
 	 */
 	WebM("20");
 

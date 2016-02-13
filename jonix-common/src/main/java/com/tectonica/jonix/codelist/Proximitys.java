@@ -38,21 +38,21 @@ public enum Proximitys
 
 	/**
 	 * The supplier&#8217;s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a
-	 * quoted figure of 100 could in fact be anything between 91 and 111).
+	 * quoted figure of 100 could in fact be anything between 91 and 111)
 	 */
 	Exactly("03"), //
 
 	/**
 	 * Generally interpreted as within 25% of the true figure (ie a quoted figure of 100 could in fact be anything
 	 * between 80 and 133). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity
-	 * of the figure.
+	 * of the figure
 	 */
 	Approximately("04"), //
 
 	/**
 	 * Generally interpreted as within a factor of two of the true figure (ie a quoted figure of 100 could in fact be
 	 * anything between 50 and 200). The supplier may introduce a deliberate approximation to reduce the commercial
-	 * sensitivity of the figure.
+	 * sensitivity of the figure
 	 */
 	About("05"), //
 

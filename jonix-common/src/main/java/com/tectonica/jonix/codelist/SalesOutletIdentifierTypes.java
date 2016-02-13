@@ -32,17 +32,20 @@ package com.tectonica.jonix.codelist;
  */
 public enum SalesOutletIdentifierTypes
 {
+	/**
+	 * Proprietary list of retail and other end-user sales outlet IDs
+	 */
 	Proprietary("01"), //
 
 	/**
-	 * DEPRECATED &#8211; use code 03.
+	 * DEPRECATED &#8211; use code 03
 	 */
 	BIC_sales_outlet_ID_code("02"), //
 
 	/**
-	 * From List 139.
+	 * Use with ONIX retail and other end-user sales outlet IDs from List 139
 	 */
-	ONIX_sales_outlet_ID_code("03");
+	ONIX_retail_sales_outlet_ID_code("03");
 
 	public final String value;
 

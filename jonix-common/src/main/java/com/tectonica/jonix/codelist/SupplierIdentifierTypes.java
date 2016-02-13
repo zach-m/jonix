@@ -38,7 +38,7 @@ public enum SupplierIdentifierTypes
 	Proprietary("01"), //
 
 	/**
-	 * DEPRECATED &#8211; use 01.
+	 * DEPRECATED &#8211; use 01
 	 */
 	Proprietary_("02"), //
 
@@ -47,22 +47,22 @@ public enum SupplierIdentifierTypes
 	German_ISBN_Agency_publisher_identifier("05"), //
 
 	/**
-	 * GS1 global location number (formerly EAN location number).
+	 * GS1 global location number (formerly EAN location number)
 	 */
 	GLN("06"), //
 
 	/**
-	 * Book trade Standard Address Number &#8211; US, UK etc.
+	 * Book trade Standard Address Number &#8211; US, UK etc
 	 */
 	SAN("07"), //
 
 	/**
-	 * Flemish supplier code.
+	 * Flemish supplier code
 	 */
 	Distributeurscode_Boekenbank("12"), //
 
 	/**
-	 * Flemish publisher code.
+	 * Flemish publisher code
 	 */
 	Fondscode_Boekenbank("13"), //
 
@@ -72,7 +72,7 @@ public enum SupplierIdentifierTypes
 	 * Generally these consist of a two-letter country code followed by the 8&#8211;12 digits of the national VAT ID.
 	 * Some countries include one or two letters within their VAT ID. See
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
-	 * Spaces, dashes etc should be omitted.
+	 * Spaces, dashes etc should be omitted
 	 */
 	VAT_Identity_Number("23");
 

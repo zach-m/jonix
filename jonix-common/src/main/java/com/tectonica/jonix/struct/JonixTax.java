@@ -41,7 +41,7 @@ public class JonixTax implements Serializable
 	public Double taxRatePercent;
 
 	/**
-	 * (type: dt.PositiveDecimal)
+	 * (type: dt.StrictPositiveDecimal)
 	 */
 	public Double taxableAmount;
 

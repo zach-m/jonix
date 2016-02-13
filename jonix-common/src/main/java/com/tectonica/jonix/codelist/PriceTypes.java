@@ -36,39 +36,39 @@ import java.util.Map;
 public enum PriceTypes
 {
 	/**
-	 * RRP excluding any sales tax or value-added tax.
+	 * RRP excluding any sales tax or value-added tax
 	 */
 	RRP_excluding_tax("01"), //
 
 	/**
-	 * RRP including sales or value-added tax if applicable.
+	 * RRP including sales or value-added tax if applicable
 	 */
 	RRP_including_tax("02"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products: not used in USA.
+	 * In countries where retail price maintenance applies by law to certain products: not used in USA
 	 */
 	Fixed_retail_price_excluding_tax("03"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products: not used in USA.
+	 * In countries where retail price maintenance applies by law to certain products: not used in USA
 	 */
 	Fixed_retail_price_including_tax("04"), //
 
 	/**
-	 * Unit price charged by supplier to reseller excluding any sales tax or value-added tax: goods for retail sale.
+	 * Unit price charged by supplier to reseller excluding any sales tax or value-added tax: goods for retail sale
 	 */
 	Supplier_s_net_price_excluding_tax("05"), //
 
 	/**
 	 * Unit price charged by supplier to reseller / rental outlet, excluding any sales tax or value-added tax: goods for
-	 * rental (used for video and DVD).
+	 * rental (used for video and DVD)
 	 */
 	Supplier_s_net_price_excluding_tax_rental_goods("06"), //
 
 	/**
 	 * Unit price charged by supplier to reseller including any sales tax or value-added tax if applicable: goods for
-	 * retail sale.
+	 * retail sale
 	 */
 	Supplier_s_net_price_including_tax("07"), //
 
@@ -76,7 +76,7 @@ public enum PriceTypes
 	 * Unit price charged by supplier to a specified class of reseller excluding any sales tax or value-added tax: goods
 	 * for retail sale (this value is for use only in countries, eg Finland, where trade practice requires two different
 	 * net prices to be listed for different classes of resellers, and where national guidelines specify how the code
-	 * should be used).
+	 * should be used)
 	 */
 	Supplier_s_alternative_net_price_excluding_tax("08"), //
 
@@ -84,7 +84,7 @@ public enum PriceTypes
 	 * Unit price charged by supplier to a specified class of reseller including any sales tax or value-added tax: goods
 	 * for retail sale (this value is for use only in countries, eg Finland, where trade practice requires two different
 	 * net prices to be listed for different classes of resellers, and where national guidelines specify how the code
-	 * should be used).
+	 * should be used)
 	 */
 	Supplier_s_alternative_net_price_including_tax("09"), //
 
@@ -93,64 +93,64 @@ public enum PriceTypes
 	 * terms and conditions are different from normal trade sales, when for example products that are normally sold on a
 	 * sale-or-return basis are sold on firm-sale terms, where a particular product is tailored for a specific retail
 	 * outlet (often termed a &#8216;premium&#8217;&#160;product), or where other specific conditions or qualiifications
-	 * apply. Further details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;.
+	 * apply. Further details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
 	 */
 	Special_sale_RRP_excluding_tax("11"), //
 
 	/**
-	 * Special sale RRP including sales or value-added tax if applicable.
+	 * Special sale RRP including sales or value-added tax if applicable
 	 */
 	Special_sale_RRP_including_tax("12"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products: not used in USA.
+	 * In countries where retail price maintenance applies by law to certain products: not used in USA
 	 */
 	Special_sale_fixed_retail_price_excluding_tax("13"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products: not used in USA.
+	 * In countries where retail price maintenance applies by law to certain products: not used in USA
 	 */
 	Special_sale_fixed_retail_price_including_tax("14"), //
 
 	/**
-	 * Unit price charged by supplier to reseller for special sale excluding any sales tax or value-added tax.
+	 * Unit price charged by supplier to reseller for special sale excluding any sales tax or value-added tax
 	 */
 	Supplier_s_net_price_for_special_sale_excluding_tax("15"), //
 
 	/**
-	 * Unit price charged by supplier to reseller for special sale including any sales tax or value-added tax.
+	 * Unit price charged by supplier to reseller for special sale including any sales tax or value-added tax
 	 */
 	Supplier_s_net_price_for_special_sale_including_tax("17"), //
 
 	/**
 	 * Pre-publication RRP excluding any sales tax or value-added tax. Use where RRP for pre-orders is different from
-	 * post-publication RRP.
+	 * post-publication RRP
 	 */
 	Pre_publication_RRP_excluding_tax("21"), //
 
 	/**
 	 * Pre-publication RRP including sales or value-added tax if applicable. Use where RRP for pre-orders is different
-	 * from post-publication RRP.
+	 * from post-publication RRP
 	 */
 	Pre_publication_RRP_including_tax("22"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products: not used in USA.
+	 * In countries where retail price maintenance applies by law to certain products: not used in USA
 	 */
 	Pre_publication_fixed_retail_price_excluding_tax("23"), //
 
 	/**
-	 * In countries where retail price maintenance applies by law to certain products: not used in USA.
+	 * In countries where retail price maintenance applies by law to certain products: not used in USA
 	 */
 	Pre_publication_fixed_retail_price_including_tax("24"), //
 
 	/**
-	 * Unit price charged by supplier to reseller pre-publication excluding any sales tax or value-added tax.
+	 * Unit price charged by supplier to reseller pre-publication excluding any sales tax or value-added tax
 	 */
 	Supplier_s_pre_publication_net_price_excluding_tax("25"), //
 
 	/**
-	 * Unit price charged by supplier to reseller pre-publication including any sales tax or value-added tax.
+	 * Unit price charged by supplier to reseller pre-publication including any sales tax or value-added tax
 	 */
 	Supplier_s_pre_publication_net_price_including_tax("27"), //
 
@@ -158,39 +158,39 @@ public enum PriceTypes
 	 * In the US, books are sometimes supplied on &#8216;freight-pass-through&#8217; terms, where a price that is
 	 * different from the RRP is used as the basis for calculating the supplier&#8217;s charge to a reseller. To make it
 	 * clear when such terms are being invoked, code 31 is used instead of code 01 to indicate the RRP. Code 32 is used
-	 * for the &#8216;billing price&#8217;.
+	 * for the &#8216;billing price&#8217;
 	 */
 	Freight_pass_through_RRP_excluding_tax("31"), //
 
 	/**
 	 * When freight-pass-through terms apply, the price on which the supplier&#8217;s charge to a reseller is
-	 * calculated, ie the price to which trade discount terms are applied. See also code 31.
+	 * calculated, ie the price to which trade discount terms are applied. See also code 31
 	 */
 	Freight_pass_through_billing_price_excluding_tax("32"), //
 
 	/**
 	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the
 	 * importer or local sales agent, not the foreign publisher. In France, &#8216;prix catalogue &#233;diteur
-	 * &#233;tranger&#8217;. &lt;p&gt;NOTE: Introduced in Onix3
+	 * &#233;tranger&#8217; &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Importer_s_Fixed_retail_price_excluding_tax("33"), //
 
 	/**
 	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the
 	 * importer or local sales agent, not the foreign publisher. In France, &#8216;prix catalogue &#233;diteur
-	 * &#233;tranger&#8217;. &lt;p&gt;NOTE: Introduced in Onix3
+	 * &#233;tranger&#8217; &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Importer_s_Fixed_retail_price_including_tax("34"), //
 
 	/**
 	 * For a product supplied on agency terms, the retail price set by the publisher, excluding any sales tax or
-	 * value-added tax.
+	 * value-added tax
 	 */
 	Publishers_retail_price_excluding_tax("41"), //
 
 	/**
 	 * For a product supplied on agency terms, the retail price set by the publisher, including sales or value-added tax
-	 * if applicable.
+	 * if applicable
 	 */
 	Publishers_retail_price_including_tax("42");
 

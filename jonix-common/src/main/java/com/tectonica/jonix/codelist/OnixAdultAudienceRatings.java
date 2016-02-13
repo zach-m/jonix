@@ -38,38 +38,38 @@ public enum OnixAdultAudienceRatings
 	Unrated("00"), //
 
 	/**
-	 * The publisher states that the product is suitable for any adult audience.
+	 * The publisher states that the product is suitable for any adult audience
 	 */
 	Any_adult_audience("01"), //
 
 	/**
-	 * The publisher warns the content may offend parts of the adult audience (for any reason).
+	 * The publisher warns the content may offend parts of the adult audience (for any reason)
 	 */
 	Content_warning("02"), //
 
 	/**
-	 * The publisher warns the product includes content of an explicit sexual nature.
+	 * The publisher warns the product includes content of an explicit sexual nature
 	 */
 	Content_warning_sex("03"), //
 
 	/**
-	 * The publisher warns the product includes content of a violent nature.
+	 * The publisher warns the product includes content of an extreme violent nature
 	 */
 	Content_warning_violence("04"), //
 
 	/**
-	 * The publisher warns the product includes content involving misuse of drugs.
+	 * The publisher warns the product includes content involving severe misuse of drugs
 	 */
 	Content_warning_drug_taking("05"), //
 
 	/**
-	 * The publisher warns the product includes extreme / offensive / explicit language.
+	 * The publisher warns the product includes extreme / offensive / explicit language
 	 */
 	Content_warning_language("06"), //
 
 	/**
 	 * The publisher warns the product includes content involving intolerance of particular groups (eg religious,
-	 * ethnic, racial, social).
+	 * ethnic, racial, social)
 	 */
 	Content_warning_intolerance("07");
 

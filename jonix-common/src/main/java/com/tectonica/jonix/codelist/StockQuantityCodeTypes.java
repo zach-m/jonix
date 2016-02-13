@@ -35,7 +35,7 @@ public enum StockQuantityCodeTypes
 	Proprietary("01"), //
 
 	/**
-	 * Code scheme defined by the Australian Publishers Association.
+	 * Code scheme defined by the Australian Publishers Association
 	 */
 	APA_stock_quantity_code("02");
 

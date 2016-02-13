@@ -34,25 +34,25 @@ public enum SupplyDateRoles
 {
 	/**
 	 * If there is an embargo on retail sales before a certain date, the date from which the embargo is lifted and
-	 * retail sales are permitted.
+	 * retail sales are permitted
 	 */
 	Embargo_date("02"), //
 
 	/**
 	 * The date on which physical stock is expected to be available to be shipped to retailers, or a digital product is
 	 * expected to be released by the publisher or digital asset distributor to retailers or their retail platform
-	 * providers.
+	 * providers
 	 */
 	Expected_availability_date("08"), //
 
 	/**
-	 * Last date when returns will be accepted, generally for a product which is being remaindered or put out of print.
+	 * Last date when returns will be accepted, generally for a product which is being remaindered or put out of print
 	 */
 	Last_date_for_returns("18"), //
 
 	/**
 	 * Latest date on which an order may be placed for guaranteed delivery prior to the publication date. May or may not
-	 * be linked to a special reservation or pre-publication price.
+	 * be linked to a special reservation or pre-publication price
 	 */
 	Reservation_order_deadline("25");
 

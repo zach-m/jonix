@@ -33,37 +33,37 @@ package com.tectonica.jonix.codelist;
 public enum ThesisTypes
 {
 	/**
-	 * Professorial dissertation (thesis for postdoctoral lecturing qualification).
+	 * Professorial dissertation (thesis for postdoctoral lecturing qualification)
 	 */
 	Habilitationsschrift("01"), //
 
 	/**
-	 * Doctoral thesis.
+	 * Doctoral thesis
 	 */
 	Dissertationsschrift("02"), //
 
 	/**
-	 * State examination thesis.
+	 * State examination thesis
 	 */
 	Staatsexamensarbeit("03"), //
 
 	/**
-	 * Magisters degree thesis.
+	 * Magisters degree thesis
 	 */
 	Magisterarbeit("04"), //
 
 	/**
-	 * Diploma degree thesis.
+	 * Diploma degree thesis
 	 */
 	Diplomarbeit("05"), //
 
 	/**
-	 * Bachelors degree thesis.
+	 * Bachelors degree thesis
 	 */
 	Bachelorarbeit("06"), //
 
 	/**
-	 * Masters degree thesis.
+	 * Masters degree thesis
 	 */
 	Masterarbeit("07");
 

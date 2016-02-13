@@ -35,38 +35,38 @@ public enum PrizeOrAwardAchievements
 	Winner("01"), //
 
 	/**
-	 * Named as being in second place.
+	 * Named as being in second place
 	 */
 	Runner_up("02"), //
 
 	/**
 	 * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically
 	 * as winner or runner-up. Possible terminology used by a particular prize includes &#8216;specially
-	 * commended&#8217; or &#8216;honored&#8217;.
+	 * commended&#8217; or &#8216;honored&#8217;
 	 */
 	Commended("03"), //
 
 	/**
 	 * Title named by the judging process to be one of the final list of candidates, such as a &#8216;short-list&#8217;
-	 * from which the winner is selected, or a title named as &#8216;finalist&#8217;.
+	 * from which the winner is selected, or a title named as &#8216;finalist&#8217;
 	 */
 	Short_listed("04"), //
 
 	/**
 	 * Title named by the judging process to be one of the preliminary list of candidates, such as a
 	 * &#8216;long-list&#8217; from which first a shorter list or set of finalists is selected, and then the winner is
-	 * announced.
+	 * announced
 	 */
 	Long_listed("05"), //
 
 	/**
-	 * Or co-winner.
+	 * Or co-winner
 	 */
 	Joint_winner("06"), //
 
 	/**
-	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honour
-	 * for which no &#8220;short-list&#8221; or &#8220;long list&#8221; exists.
+	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honor
+	 * for which no &#8216;short-list&#8217; or &#8216;long list&#8217; exists
 	 */
 	Nominated("07");
 

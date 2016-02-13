@@ -33,32 +33,32 @@ package com.tectonica.jonix.codelist;
 public enum TransliterationSchemes
 {
 	/**
-	 * Transliteration of Cyrillic characters &#8211; Slavic languages.
+	 * Transliteration of Cyrillic characters &#8211; Slavic languages
 	 */
 	Finnish_standard_SFS_4900("SFS4900"), //
 
 	/**
-	 * Transliteration and transcription of Greek characters.
+	 * Transliteration and transcription of Greek characters
 	 */
 	Finnish_standard_SFS_5807("SFS5807"), //
 
 	/**
-	 * Transliteration of Arabic characters.
+	 * Transliteration of Arabic characters
 	 */
 	Finnish_standard_SFS_5755("SFS5755"), //
 
 	/**
-	 * Transliteration of Hebrew characters.
+	 * Transliteration of Hebrew characters
 	 */
 	Finnish_standard_SFS_5824("SFS3602"), //
 
 	/**
-	 * Documentation &#8211; Romanization of Japanese (kana script).
+	 * Documentation &#8211; Romanization of Japanese (kana script)
 	 */
 	ISO_3602("ISO3602"), //
 
 	/**
-	 * Information and documentation &#8211; Romanization of Chinese.
+	 * Information and documentation &#8211; Romanization of Chinese
 	 */
 	ISO_7098("ISO7098");
 

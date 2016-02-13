@@ -33,31 +33,31 @@ package com.tectonica.jonix.codelist;
 public enum TextItemIdentifierTypes
 {
 	/**
-	 * For example, a publisher&#8217;s own identifier.
+	 * For example, a publisher&#8217;s own identifier
 	 */
 	Proprietary("01"), //
 
 	/**
-	 * Formerly known as the EAN-13 (unhyphenated).
+	 * Formerly known as the EAN-13 (unhyphenated)
 	 */
 	GTIN_13("03"), //
 
 	DOI("06"), //
 
 	/**
-	 * Publisher item identifier.
+	 * Publisher item identifier
 	 */
 	PII("09"), //
 
 	/**
-	 * For serial items only.
+	 * For serial items only
 	 */
 	SICI("10"), //
 
 	ISTC("11"), //
 
 	/**
-	 * (Unhyphenated).
+	 * (Unhyphenated)
 	 */
 	ISBN_13("15");
 

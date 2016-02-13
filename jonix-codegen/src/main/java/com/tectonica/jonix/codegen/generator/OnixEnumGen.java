@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.codegen.generator;
 
-import java.io.File;
 import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Set;
@@ -39,7 +38,7 @@ public class OnixEnumGen
 	{
 		packageName = basePackage + "." + subfolder;
 		folderName = baseFolder + "/" + subfolder;
-		new File(folderName).mkdirs();
+		GenUtil.prepareOutputFolder(folderName);
 	}
 
 	public void generate(OnixSimpleType enumType)

@@ -36,12 +36,12 @@ import java.util.Map;
 public enum SupplierRoles
 {
 	/**
-	 * Default.
+	 * Default
 	 */
 	Unspecified("00"), //
 
 	/**
-	 * Publisher as supplier to retail trade outlets.
+	 * Publisher as supplier to retail trade outlets
 	 */
 	Publisher_to_retailers("01"), //
 
@@ -50,46 +50,46 @@ public enum SupplierRoles
 	Publisher_s_non_exclusive_distributor_to_retailers("03"), //
 
 	/**
-	 * Wholesaler supplying retail trade outlets.
+	 * Wholesaler supplying retail trade outlets
 	 */
 	Wholesaler("04"), //
 
 	/**
 	 * DEPRECATED &#8211; use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to
-	 * specify a sales agent.
+	 * specify a sales agent
 	 */
 	Sales_agent("05"), //
 
 	/**
 	 * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as
-	 * appropriate, where possible.
+	 * appropriate, where possible
 	 */
 	Publisher_s_distributor_to_retailers("06"), //
 
 	/**
-	 * Where a POD product is supplied to retailers and/or consumers direct from a POD source.
+	 * Where a POD product is supplied to retailers and/or consumers direct from a POD source
 	 */
 	POD_supplier("07"), //
 
 	Retailer("08"), //
 
 	/**
-	 * Publisher as supplier direct to consumers and/or institutional customers.
+	 * Publisher as supplier direct to consumers and/or institutional customers
 	 */
 	Publisher_to_end_customers("09"), //
 
 	/**
-	 * Intermediary as exclusive distributor direct to consumers and/or institutional customers.
+	 * Intermediary as exclusive distributor direct to consumers and/or institutional customers
 	 */
 	Exclusive_distributor_to_end_customers("10"), //
 
 	/**
-	 * Intermediary as non-exclusive distributor direct to consumers and/or institutional customers.
+	 * Intermediary as non-exclusive distributor direct to consumers and/or institutional customers
 	 */
 	Non_exclusive_distributor_to_end_customers("11"), //
 
 	/**
-	 * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible.
+	 * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
 	 */
 	Distributor_to_end_customers("12");
 

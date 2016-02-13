@@ -36,47 +36,47 @@ import java.util.Map;
 public enum SeriesIdentifierTypes
 {
 	/**
-	 * For example, publisher&#8217;s own series ID.
+	 * For example, publisher&#8217;s own series ID
 	 */
 	Proprietary("01"), //
 
 	/**
-	 * International Standard Serial Number, unhyphenated, 8 digits.
+	 * International Standard Serial Number, unhyphenated, 8 digits
 	 */
 	ISSN("02"), //
 
 	/**
-	 * Maintained by the Deutsche Nationalbibliothek.
+	 * Maintained by the Deutsche Nationalbibliothek
 	 */
 	German_National_Bibliography_series_ID("03"), //
 
 	/**
-	 * Maintained by VLB.
+	 * Maintained by VLB
 	 */
 	German_Books_in_Print_series_ID("04"), //
 
 	/**
-	 * Maintained by Electre Information, France.
+	 * Maintained by Electre Information, France
 	 */
 	Electre_series_ID("05"), //
 
 	/**
-	 * Digital Object Identifier (variable length and character set).
+	 * Digital Object Identifier (variable length and character set)
 	 */
 	DOI("06"), //
 
 	/**
-	 * Use only where the collection (series or set) is available as a single product.
+	 * Use only where the collection (series or set) is available as a single product
 	 */
 	ISBN_13("15"), //
 
 	/**
-	 * Uniform Resource Name.
+	 * Uniform Resource Name
 	 */
 	URN("22"), //
 
 	/**
-	 * French National Bibliography series ID, maintained by the Biblioth&#232;que Nationale de France.
+	 * French National Bibliography series ID, maintained by the Biblioth&#232;que Nationale de France
 	 */
 	Identifiant_BNF_des_publications_en_s_rie("29");
 
