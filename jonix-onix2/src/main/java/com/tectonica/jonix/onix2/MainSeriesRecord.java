@@ -50,6 +50,10 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 	public static final String refname = "MainSeriesRecord";
 	public static final String shortname = "mainseriesrecord";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -66,6 +70,10 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -136,6 +144,10 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public SubordinateEntries subordinateEntries;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public MainSeriesRecord()
 	{}

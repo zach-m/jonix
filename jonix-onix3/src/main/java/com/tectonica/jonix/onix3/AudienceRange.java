@@ -40,6 +40,10 @@ public class AudienceRange implements OnixDataComposite, Serializable
 	public static final String refname = "AudienceRange";
 	public static final String shortname = "audiencerange";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -48,6 +52,10 @@ public class AudienceRange implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -63,6 +71,10 @@ public class AudienceRange implements OnixDataComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<AudienceRangeValue> audienceRangeValues;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public AudienceRange()
 	{}

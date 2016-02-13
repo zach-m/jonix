@@ -39,6 +39,10 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	public static final String refname = "ReligiousText";
 	public static final String shortname = "religioustext";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -47,6 +51,10 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is optional)
@@ -62,6 +70,10 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	 * (this list is required to contain at least one item)
 	 */
 	public List<ReligiousTextFeature> religiousTextFeatures;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ReligiousText()
 	{}

@@ -45,6 +45,10 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	public static final String refname = "NotForSale";
 	public static final String shortname = "notforsale";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -61,6 +65,10 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -91,6 +99,10 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public PublisherName publisherName;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public NotForSale()
 	{}

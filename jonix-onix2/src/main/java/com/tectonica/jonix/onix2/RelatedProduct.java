@@ -54,6 +54,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -70,6 +74,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -180,6 +188,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<Publisher> publishers;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public RelatedProduct()
 	{}

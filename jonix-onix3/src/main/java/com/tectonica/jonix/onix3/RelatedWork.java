@@ -40,6 +40,10 @@ public class RelatedWork implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedWork";
 	public static final String shortname = "relatedwork";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -48,6 +52,10 @@ public class RelatedWork implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -58,6 +66,10 @@ public class RelatedWork implements OnixSuperComposite, Serializable
 	 * (this list is required to contain at least one item)
 	 */
 	public List<WorkIdentifier> workIdentifiers;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public RelatedWork()
 	{}

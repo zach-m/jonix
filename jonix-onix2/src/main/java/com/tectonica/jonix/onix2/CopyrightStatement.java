@@ -41,6 +41,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	public static final String refname = "CopyrightStatement";
 	public static final String shortname = "copyrightstatement";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -58,6 +62,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (this list is required to contain at least one item)
 	 */
@@ -67,6 +75,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	 * (this list is required to contain at least one item)
 	 */
 	public List<CopyrightOwner> copyrightOwners;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public CopyrightStatement()
 	{}

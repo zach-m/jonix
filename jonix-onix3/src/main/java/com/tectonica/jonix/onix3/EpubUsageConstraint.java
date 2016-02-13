@@ -38,6 +38,10 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable
 	public static final String refname = "EpubUsageConstraint";
 	public static final String shortname = "epubusageconstraint";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -46,6 +50,10 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -61,6 +69,10 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<EpubUsageLimit> epubUsageLimits;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public EpubUsageConstraint()
 	{}

@@ -37,6 +37,10 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 	public static final String refname = "ReturnsConditions";
 	public static final String shortname = "returnsconditions";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -45,6 +49,10 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -60,6 +68,10 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 	 * (this field is required)
 	 */
 	public ReturnsCode returnsCode;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ReturnsConditions()
 	{}

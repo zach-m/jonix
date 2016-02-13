@@ -42,6 +42,10 @@ public class SupportingResource implements OnixSuperComposite, Serializable
 	public static final String refname = "SupportingResource";
 	public static final String shortname = "supportingresource";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -50,6 +54,10 @@ public class SupportingResource implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -75,6 +83,10 @@ public class SupportingResource implements OnixSuperComposite, Serializable
 	 * (this list is required to contain at least one item)
 	 */
 	public List<ResourceVersion> resourceVersions;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public SupportingResource()
 	{}

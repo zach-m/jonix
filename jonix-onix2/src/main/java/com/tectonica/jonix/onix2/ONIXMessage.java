@@ -41,6 +41,10 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 	public static final String shortname = "ONIXmessage";
 	public static final String release = "2.1";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -57,6 +61,10 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is optional)
@@ -77,6 +85,10 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<SubSeriesRecord> subSeriesRecords;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ONIXMessage()
 	{}

@@ -41,6 +41,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesRestriction";
 	public static final String shortname = "salesrestriction";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -58,6 +62,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (this field is required)
 	 */
@@ -72,6 +80,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public SalesRestrictionDetail salesRestrictionDetail;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public SalesRestriction()
 	{}

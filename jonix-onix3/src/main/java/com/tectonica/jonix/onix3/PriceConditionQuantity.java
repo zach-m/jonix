@@ -38,6 +38,10 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 	public static final String refname = "PriceConditionQuantity";
 	public static final String shortname = "priceconditionquantity";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -46,6 +50,10 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -61,6 +69,10 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 	 * (this field is required)
 	 */
 	public QuantityUnit quantityUnit;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public PriceConditionQuantity()
 	{}

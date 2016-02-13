@@ -40,6 +40,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "MarketPublishingDetail";
 	public static final String shortname = "marketpublishingdetail";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -48,6 +52,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list may be empty)
@@ -103,6 +111,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<BookClubAdoption> bookClubAdoptions;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public MarketPublishingDetail()
 	{}

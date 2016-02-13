@@ -40,6 +40,10 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	public static final String refname = "AlternativeName";
 	public static final String shortname = "alternativename";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -48,6 +52,10 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -118,6 +126,10 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public CorporateNameInverted corporateNameInverted;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public AlternativeName()
 	{}

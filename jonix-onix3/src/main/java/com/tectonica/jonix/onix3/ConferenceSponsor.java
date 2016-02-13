@@ -39,6 +39,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	public static final String refname = "ConferenceSponsor";
 	public static final String shortname = "conferencesponsor";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -47,6 +51,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -62,6 +70,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public CorporateName corporateName;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ConferenceSponsor()
 	{}

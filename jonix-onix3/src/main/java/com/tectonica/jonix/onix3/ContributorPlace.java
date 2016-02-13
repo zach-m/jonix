@@ -41,6 +41,10 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 	public static final String refname = "ContributorPlace";
 	public static final String shortname = "contributorplace";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -49,6 +53,10 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -69,6 +77,10 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<LocationName> locationNames;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ContributorPlace()
 	{}

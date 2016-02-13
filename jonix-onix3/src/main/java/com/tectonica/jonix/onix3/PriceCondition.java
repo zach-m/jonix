@@ -42,6 +42,10 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 	public static final String refname = "PriceCondition";
 	public static final String shortname = "pricecondition";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -50,6 +54,10 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -65,6 +73,10 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<ProductIdentifier> productIdentifiers;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public PriceCondition()
 	{}

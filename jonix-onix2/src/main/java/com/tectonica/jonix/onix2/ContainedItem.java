@@ -51,6 +51,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	public static final String refname = "ContainedItem";
 	public static final String shortname = "containeditem";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -67,6 +71,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -132,6 +140,10 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public ItemQuantity itemQuantity;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ContainedItem()
 	{}

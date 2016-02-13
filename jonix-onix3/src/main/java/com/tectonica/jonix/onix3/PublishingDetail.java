@@ -42,6 +42,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "PublishingDetail";
 	public static final String shortname = "publishingdetail";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -50,6 +54,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -115,6 +123,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<SalesRestriction> salesRestrictions;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public PublishingDetail()
 	{}

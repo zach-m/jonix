@@ -36,6 +36,10 @@ public class ProductSupply implements OnixSuperComposite, Serializable
 	public static final String refname = "ProductSupply";
 	public static final String shortname = "productsupply";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -44,6 +48,10 @@ public class ProductSupply implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list may be empty)
@@ -59,6 +67,10 @@ public class ProductSupply implements OnixSuperComposite, Serializable
 	 * (this list is required to contain at least one item)
 	 */
 	public List<SupplyDetail> supplyDetails;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ProductSupply()
 	{}

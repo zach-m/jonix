@@ -49,6 +49,10 @@ public class Bible implements OnixDataComposite, Serializable
 	public static final String refname = "Bible";
 	public static final String shortname = "bible";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -65,6 +69,10 @@ public class Bible implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -100,6 +108,10 @@ public class Bible implements OnixDataComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<BibleTextFeature> bibleTextFeatures;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public Bible()
 	{}

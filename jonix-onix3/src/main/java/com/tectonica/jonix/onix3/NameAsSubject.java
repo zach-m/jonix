@@ -40,6 +40,10 @@ public class NameAsSubject implements OnixSuperComposite, Serializable
 	public static final String refname = "NameAsSubject";
 	public static final String shortname = "nameassubject";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -48,6 +52,10 @@ public class NameAsSubject implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is optional)
@@ -118,6 +126,10 @@ public class NameAsSubject implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public CorporateNameInverted corporateNameInverted;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public NameAsSubject()
 	{}

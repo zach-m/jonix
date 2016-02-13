@@ -43,6 +43,10 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable
 	public static final String refname = "PersonAsSubject";
 	public static final String shortname = "personassubject";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -59,6 +63,10 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -119,6 +127,10 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<PersonNameIdentifier> personNameIdentifiers;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public PersonAsSubject()
 	{}

@@ -39,6 +39,10 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesOutlet";
 	public static final String shortname = "salesoutlet";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -47,6 +51,10 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -57,6 +65,10 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public SalesOutletName salesOutletName;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public SalesOutlet()
 	{}

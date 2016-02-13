@@ -41,6 +41,10 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 	public static final String refname = "ProductFormFeature";
 	public static final String shortname = "productformfeature";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -58,6 +62,10 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (this field is required)
 	 */
@@ -72,6 +80,10 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 	 * (this field is optional)
 	 */
 	public ProductFormFeatureDescription productFormFeatureDescription;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ProductFormFeature()
 	{}

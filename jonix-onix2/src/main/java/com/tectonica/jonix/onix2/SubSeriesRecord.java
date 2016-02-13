@@ -50,6 +50,10 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	public static final String refname = "SubSeriesRecord";
 	public static final String shortname = "subseriesrecord";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -66,6 +70,10 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -156,6 +164,10 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public SubordinateEntries subordinateEntries;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public SubSeriesRecord()
 	{}

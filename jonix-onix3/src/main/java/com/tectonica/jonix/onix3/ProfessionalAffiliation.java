@@ -38,6 +38,10 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 	public static final String refname = "ProfessionalAffiliation";
 	public static final String shortname = "professionalaffiliation";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -46,6 +50,10 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -56,6 +64,10 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 	 * (this field is optional)
 	 */
 	public Affiliation affiliation;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ProfessionalAffiliation()
 	{}

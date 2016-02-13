@@ -40,6 +40,10 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 	public static final String refname = "PublisherRepresentative";
 	public static final String shortname = "publisherrepresentative";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -48,6 +52,10 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -83,6 +91,10 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<Website> websites;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public PublisherRepresentative()
 	{}

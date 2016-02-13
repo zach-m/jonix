@@ -37,6 +37,10 @@ public class ConferenceSponsorIdentifier implements OnixDataComposite, Serializa
 	public static final String refname = "ConferenceSponsorIdentifier";
 	public static final String shortname = "conferencesponsoridentifier";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -45,6 +49,10 @@ public class ConferenceSponsorIdentifier implements OnixDataComposite, Serializa
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -60,6 +68,10 @@ public class ConferenceSponsorIdentifier implements OnixDataComposite, Serializa
 	 * (this field is required)
 	 */
 	public IDValue idValue;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ConferenceSponsorIdentifier()
 	{}

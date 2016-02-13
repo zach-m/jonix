@@ -41,6 +41,10 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 	public static final String refname = "StockQuantityCoded";
 	public static final String shortname = "stockquantitycoded";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -58,6 +62,10 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (this field is required)
 	 */
@@ -72,6 +80,10 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 	 * (this field is required)
 	 */
 	public StockQuantityCode stockQuantityCode;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public StockQuantityCoded()
 	{}

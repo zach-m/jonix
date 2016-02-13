@@ -45,6 +45,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	public static final String refname = "MarketRepresentation";
 	public static final String shortname = "marketrepresentation";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -61,6 +65,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -126,6 +134,10 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<MarketDate> marketDates;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public MarketRepresentation()
 	{}

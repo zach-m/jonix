@@ -48,6 +48,10 @@ public class Contributor implements OnixSuperComposite, Serializable
 	public static final String refname = "Contributor";
 	public static final String shortname = "contributor";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -64,6 +68,10 @@ public class Contributor implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is optional)
@@ -199,6 +207,10 @@ public class Contributor implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<RegionCode> regionCodes;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public Contributor()
 	{}

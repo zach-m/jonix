@@ -37,6 +37,10 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 	public static final String refname = "CollectionSequence";
 	public static final String shortname = "collectionsequence";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -45,6 +49,10 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -60,6 +68,10 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 	 * (this field is required)
 	 */
 	public CollectionSequenceNumber collectionSequenceNumber;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public CollectionSequence()
 	{}

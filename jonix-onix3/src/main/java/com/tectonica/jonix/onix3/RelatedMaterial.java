@@ -36,6 +36,10 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedMaterial";
 	public static final String shortname = "relatedmaterial";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -44,6 +48,10 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list may be empty)
@@ -54,6 +62,10 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<RelatedProduct> relatedProducts;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public RelatedMaterial()
 	{}

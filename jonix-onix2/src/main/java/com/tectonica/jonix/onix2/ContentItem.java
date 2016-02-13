@@ -49,6 +49,10 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	public static final String refname = "ContentItem";
 	public static final String shortname = "contentitem";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -65,6 +69,10 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is optional)
@@ -145,6 +153,10 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<MediaFile> mediaFiles;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ContentItem()
 	{}

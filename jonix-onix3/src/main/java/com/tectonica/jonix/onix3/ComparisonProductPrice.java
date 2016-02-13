@@ -41,6 +41,10 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 	public static final String refname = "ComparisonProductPrice";
 	public static final String shortname = "comparisonproductprice";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -49,6 +53,10 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -69,6 +77,10 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public CurrencyCode currencyCode;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ComparisonProductPrice()
 	{}

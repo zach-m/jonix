@@ -63,6 +63,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "DescriptiveDetail";
 	public static final String shortname = "descriptivedetail";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -71,6 +75,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -301,6 +309,10 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<Complexity> complexitys;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public DescriptiveDetail()
 	{}

@@ -39,6 +39,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	public static final String refname = "ConferenceSponsor";
 	public static final String shortname = "conferencesponsor";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -56,6 +60,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (this field is required)
 	 */
@@ -70,6 +78,10 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	 * (this field is optional)
 	 */
 	public CorporateName corporateName;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public ConferenceSponsor()
 	{}

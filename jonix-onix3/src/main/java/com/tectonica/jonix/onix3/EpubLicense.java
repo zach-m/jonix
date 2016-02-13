@@ -39,6 +39,10 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 	public static final String refname = "EpubLicense";
 	public static final String shortname = "epublicense";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -47,6 +51,10 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -57,6 +65,10 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<EpubLicenseExpression> epubLicenseExpressions;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public EpubLicense()
 	{}

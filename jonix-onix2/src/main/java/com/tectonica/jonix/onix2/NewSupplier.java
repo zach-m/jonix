@@ -43,6 +43,10 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	public static final String refname = "NewSupplier";
 	public static final String shortname = "newsupplier";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -59,6 +63,10 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list may be empty)
@@ -94,6 +102,10 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<EmailAddress> emailAddresss;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public NewSupplier()
 	{}

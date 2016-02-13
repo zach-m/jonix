@@ -41,6 +41,10 @@ public class MainSubject implements OnixDataComposite, Serializable
 	public static final String refname = "MainSubject";
 	public static final String shortname = "mainsubject";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -57,6 +61,10 @@ public class MainSubject implements OnixDataComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is required)
@@ -77,6 +85,10 @@ public class MainSubject implements OnixDataComposite, Serializable
 	 * (this field is optional)
 	 */
 	public SubjectHeadingText subjectHeadingText;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public MainSubject()
 	{}

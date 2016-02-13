@@ -98,6 +98,9 @@ public class OnixClassGen
 
 		declareConstsAndAttributes(p, composite);
 
+		p.println();
+		printCaptionComment(p, "MEMBERS");
+		
 		// declare members
 		for (OnixCompositeMember member : composite.members)
 		{
@@ -109,6 +112,9 @@ public class OnixClassGen
 			p.printf("   public %s %s;\n", fi.type, fi.name, fi.comment);
 		}
 
+		p.println();
+		printCaptionComment(p, "SERVICES");
+
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", composite.name);
@@ -119,7 +125,7 @@ public class OnixClassGen
 		p.printf("   public %s(org.w3c.dom.Element element)\n", composite.name);
 		p.printf("   {\n");
 
-		extractAttributes(composite, p);
+		setInitializers(composite, p);
 
 		p.println();
 		p.printf("      JPU.forElementsOf(element, new JPU.ElementListener()\n");
@@ -337,6 +343,9 @@ public class OnixClassGen
 
 		declareConstsAndAttributes(p, element);
 
+		p.println();
+		printCaptionComment(p, "VALUE MEMBER");
+		
 		// declare value
 		final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 		p.println();
@@ -351,6 +360,9 @@ public class OnixClassGen
 		else
 			p.printf("   public java.util.Set<%s> value;\n", ti.javaType);
 
+		p.println();
+		printCaptionComment(p, "SERVICES");
+		
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", element.name);
@@ -361,7 +373,7 @@ public class OnixClassGen
 		p.printf("   public %s(org.w3c.dom.Element element)\n", element.name);
 		p.printf("   {\n");
 
-		extractAttributes(element, p);
+		setInitializers(element, p);
 
 		p.println();
 		if (ti.isXHTML)
@@ -405,6 +417,9 @@ public class OnixClassGen
 
 		declareConstsAndAttributes(p, clz);
 
+		p.println();
+		printCaptionComment(p, "CONSTRUCTORS");
+
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", clz.name);
@@ -415,7 +430,7 @@ public class OnixClassGen
 		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
 		p.printf("   {\n");
 
-		extractAttributes(clz, p);
+		setInitializers(clz, p);
 
 		p.printf("   }\n");
 
@@ -428,6 +443,7 @@ public class OnixClassGen
 			p.printf("   public static final String %s = \"%s\";\n", c.name, c.value);
 
 		p.println();
+		printCaptionComment(p, "ATTRIBUTES");
 		for (OnixAttribute a : clz.attributes)
 		{
 			final TypeInfo ti = GenUtil.typeInfoOf(a);
@@ -442,7 +458,7 @@ public class OnixClassGen
 		}
 	}
 
-	private void extractAttributes(OnixClass clz, PrintStream p)
+	private void setInitializers(OnixClass clz, PrintStream p)
 	{
 		for (OnixAttribute a : clz.attributes)
 		{
@@ -453,5 +469,12 @@ public class OnixClassGen
 			else
 				p.printf("      %s = %s.byValue(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
 		}
+	}
+
+	private void printCaptionComment(PrintStream p, String caption)
+	{
+		p.println("   /////////////////////////////////////////////////////////////////////////////////");
+		p.println("   // " + caption);
+		p.println("   /////////////////////////////////////////////////////////////////////////////////");
 	}
 }

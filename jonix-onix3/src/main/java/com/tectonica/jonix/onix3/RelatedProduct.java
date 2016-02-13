@@ -42,6 +42,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -50,6 +54,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -70,6 +78,10 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<ProductFormDetail> productFormDetails;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public RelatedProduct()
 	{}

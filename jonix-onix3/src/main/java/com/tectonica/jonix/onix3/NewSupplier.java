@@ -39,6 +39,10 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	public static final String refname = "NewSupplier";
 	public static final String shortname = "newsupplier";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -47,6 +51,10 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this list is required to contain at least one item)
@@ -72,6 +80,10 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<EmailAddress> emailAddresss;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public NewSupplier()
 	{}

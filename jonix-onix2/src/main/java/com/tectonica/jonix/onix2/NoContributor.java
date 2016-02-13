@@ -39,6 +39,10 @@ public class NoContributor implements OnixFlag, Serializable
 	public static final String refname = "NoContributor";
 	public static final String shortname = "n339";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	public TextFormats textformat;
 
 	public TextCaseFlags textcase;
@@ -55,6 +59,10 @@ public class NoContributor implements OnixFlag, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTORS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public NoContributor()
 	{}

@@ -38,6 +38,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	public static final String refname = "CopyrightStatement";
 	public static final String shortname = "copyrightstatement";
 
+	// ///////////////////////////////////////////////////////////////////////////////
+	// ATTRIBUTES
+	// ///////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * (type: dt.DateOrDateTime)
 	 */
@@ -46,6 +50,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	public RecordSourceTypes sourcetype;
 
 	public String sourcename;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (this field is optional)
@@ -61,6 +69,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	 * (this list may be empty)
 	 */
 	public List<CopyrightOwner> copyrightOwners;
+
+	// ///////////////////////////////////////////////////////////////////////////////
+	// SERVICES
+	// ///////////////////////////////////////////////////////////////////////////////
 
 	public CopyrightStatement()
 	{}
