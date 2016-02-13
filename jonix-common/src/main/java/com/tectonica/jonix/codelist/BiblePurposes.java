@@ -38,125 +38,127 @@ public enum BiblePurposes
 	/**
 	 * A Bible (or selected Biblical text) designed for presentation from a religious organization
 	 */
-	Award("AW"), //
+	Award("AW", "Award"), //
 
 	/**
 	 * A Bible (or selected Biblical text) designed to be a gift to commemorate a child&#8217;s birth
 	 */
-	Baby("BB"), //
+	Baby("BB", "Baby"), //
 
 	/**
 	 * A special gift Bible (or selected Biblical text) designed for the bride on her wedding day. Usually white
 	 */
-	Bride("BR"), //
+	Bride("BR", "Bride"), //
 
 	/**
 	 * A Bible (or selected Biblical text) designed to be used in the confirmation reading or as a gift to a confirmand
 	 */
-	Confirmation("CF"), //
+	Confirmation("CF", "Confirmation"), //
 
 	/**
 	 * A text Bible (or selected Biblical text) designed in presentation and readability for a child
 	 */
-	Children_s("CH"), //
+	Children_s("CH", "Children’s"), //
 
 	/**
 	 * A small Bible (or selected Biblical text) with a trim height of five inches or less
 	 */
-	Compact("CM"), //
+	Compact("CM", "Compact"), //
 
 	/**
 	 * A Bible (or selected Biblical text) which includes text conveying cross-references to related scripture passages
 	 */
-	Cross_reference("CR"), //
+	Cross_reference("CR", "Cross-reference"), //
 
 	/**
 	 * A Bible (or selected Biblical text) laid out to provide readings for each day of the year
 	 */
-	Daily_readings("DR"), //
+	Daily_readings("DR", "Daily readings"), //
 
 	/**
 	 * A Bible (or selected Biblical text) containing devotional content together with the scripture
 	 */
-	Devotional("DV"), //
+	Devotional("DV", "Devotional"), //
 
 	/**
 	 * A Bible (or selected Biblical text) containing family record pages and/or additional study material for family
 	 * devotion
 	 */
-	Family("FM"), //
+	Family("FM", "Family"), //
 
 	/**
 	 * A standard Bible (or selected Biblical text) of any version with no distinguishing characteristics beyond the
 	 * canonical text
 	 */
-	General_Text("GT"), //
+	General_Text("GT", "General/Text"), //
 
 	/**
 	 * A Bible (or selected Biblical text) designed for gift or presentation, often including a presentation page
 	 */
-	Gift("GF"), //
+	Gift("GF", "Gift"), //
 
 	/**
 	 * A large Bible (or selected Biblical text) with large print designed for use in reading scriptures in public
 	 * worship from either the pulpit or lectern
 	 */
-	Lectern_Pulpit("LP"), //
+	Lectern_Pulpit("LP", "Lectern/Pulpit"), //
 
 	/**
 	 * A Bible (or selected Biblical text) especially designed with helps and study guides oriented to the adult male
 	 */
-	Men_s("MN"), //
+	Men_s("MN", "Men’s"), //
 
 	/**
 	 * A Bible (or selected Biblical text) designed for use in primary school
 	 */
-	Primary_school("PS"), //
+	Primary_school("PS", "Primary school"), //
 
 	/**
 	 * Usually inexpensive but sturdy, a Bible (or selected Biblical text) designed for use in church pews
 	 */
-	Pew("PW"), //
+	Pew("PW", "Pew"), //
 
 	/**
 	 * A Bible (or selected Biblical text) including texts in Greek and/or Hebrew and designed for scholarly study
 	 */
-	Scholarly("SC"), //
+	Scholarly("SC", "Scholarly"), //
 
-	Slimline("SL"), //
+	Slimline("SL", "Slimline"), //
 
 	/**
 	 * A Bible (or selected Biblical text) with study articles and helps especially for use in the classroom
 	 */
-	Student("ST"), //
+	Student("ST", "Student"), //
 
 	/**
 	 * A Bible (or selected Biblical text) with many extra features, e.g. book introductions, dictionary, concordance,
 	 * references, maps, etc., to help readers better understand the scripture
 	 */
-	Study("SU"), //
+	Study("SU", "Study"), //
 
 	/**
 	 * A special gift Bible (or selected Biblical text) designed as a gift to the couple on their wedding day
 	 */
-	Wedding_gift("WG"), //
+	Wedding_gift("WG", "Wedding gift"), //
 
 	/**
 	 * A devotional or study Bible (or selected Biblical text) with helps targeted at the adult woman
 	 */
-	Women_s("WM"), //
+	Women_s("WM", "Women’s"), //
 
 	/**
 	 * A Bible (or selected Biblical text) containing special study and devotional helps designed specifically for the
 	 * needs of teenagers
 	 */
-	Youth("YT");
+	Youth("YT", "Youth");
 
 	public final String value;
+	public final String label;
 
-	private BiblePurposes(String value)
+	private BiblePurposes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, BiblePurposes> map;

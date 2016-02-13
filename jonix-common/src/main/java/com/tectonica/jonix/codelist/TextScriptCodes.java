@@ -38,484 +38,487 @@ public enum TextScriptCodes
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Afaka("Afak"), //
+	Afaka("Afak", "Afaka"), //
 
-	Arabic("Arab"), //
+	Arabic("Arab", "Arabic"), //
 
-	Imperial_Aramaic("Armi"), //
+	Imperial_Aramaic("Armi", "Imperial Aramaic"), //
 
-	Armenian("Armn"), //
+	Armenian("Armn", "Armenian"), //
 
-	Avestan("Avst"), //
+	Avestan("Avst", "Avestan"), //
 
-	Balinese("Bali"), //
+	Balinese("Bali", "Balinese"), //
 
-	Bamun("Bamu"), //
-
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Bassa_Vah("Bass"), //
-
-	Batak("Batk"), //
-
-	Bengali("Beng"), //
+	Bamun("Bamu", "Bamun"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Blissymbols("Blis"), //
+	Bassa_Vah("Bass", "Bassa Vah"), //
 
-	Bopomofo("Bopo"), //
+	Batak("Batk", "Batak"), //
 
-	Brahmi("Brah"), //
-
-	Braille("Brai"), //
-
-	Buginese("Bugi"), //
-
-	Buhid("Buhd"), //
+	Bengali("Beng", "Bengali"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Chakma("Cakm"), //
+	Blissymbols("Blis", "Blissymbols"), //
 
-	Unified_Canadian_Aboriginal_Syllabics("Cans"), //
+	Bopomofo("Bopo", "Bopomofo"), //
 
-	Carian("Cari"), //
+	Brahmi("Brah", "Brahmi"), //
 
-	Cham("Cham"), //
+	Braille("Brai", "Braille"), //
 
-	Cherokee("Cher"), //
+	Buginese("Bugi", "Buginese"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Cirth("Cirt"), //
-
-	Coptic("Copt"), //
-
-	Cypriot("Cprt"), //
-
-	Cyrillic("Cyrl"), //
+	Buhid("Buhd", "Buhid"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Cyrillic_Old_Church_Slavonic_variant("Cyrs"), //
+	Chakma("Cakm", "Chakma"), //
 
-	Devanagari_Nagari("Deva"), //
+	Unified_Canadian_Aboriginal_Syllabics("Cans", "Unified Canadian Aboriginal Syllabics"), //
 
-	Deseret_Mormon("Dsrt"), //
+	Carian("Cari", "Carian"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Duployan_shorthand_Duployan_stenography("Dupl"), //
+	Cham("Cham", "Cham"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Egyptian_demotic("Egyd"), //
+	Cherokee("Cher", "Cherokee"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Egyptian_hieratic("Egyh"), //
+	Cirth("Cirt", "Cirth"), //
 
-	Egyptian_hieroglyphs("Egyp"), //
+	Coptic("Copt", "Coptic"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Elbasan("Elba"), //
+	Cypriot("Cprt", "Cypriot"), //
 
-	Ethiopic_Ge_ez("Ethi"), //
+	Cyrillic("Cyrl", "Cyrillic"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Khutsuri_Asomtavruli_and_Khutsuri("Geok"), //
+	Cyrillic_Old_Church_Slavonic_variant("Cyrs", "Cyrillic (Old Church Slavonic variant)"), //
 
-	Georgian_Mkhedruli("Geor"), //
+	Devanagari_Nagari("Deva", "Devanagari (Nagari)"), //
 
-	Glagolitic("Glag"), //
-
-	Gothic("Goth"), //
+	Deseret_Mormon("Dsrt", "Deseret (Mormon)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Grantha("Gran"), //
-
-	Greek("Grek"), //
-
-	Gujarati("Gujr"), //
-
-	Gurmukhi("Guru"), //
-
-	Hangul_Hang_l_Hangeul("Hang"), //
-
-	Han_Hanzi_Kanji_Hanja("Hani"), //
-
-	Hanunoo_Hanun_o("Hano"), //
-
-	Han_Simplified_variant("Hans"), //
-
-	Han_Traditional_variant("Hant"), //
-
-	Hebrew("Hebr"), //
-
-	Hiragana("Hira"), //
+	Duployan_shorthand_Duployan_stenography("Dupl", "Duployan shorthand, Duployan stenography"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Pahawh_Hmong("Hmng"), //
-
-	Japanese_syllabaries_alias_for_Hiragana_Katakana("Hrkt"), //
+	Egyptian_demotic("Egyd", "Egyptian demotic"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Old_Hungarian("Hung"), //
+	Egyptian_hieratic("Egyh", "Egyptian hieratic"), //
+
+	Egyptian_hieroglyphs("Egyp", "Egyptian hieroglyphs"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Indus_Harappan("Inds"), //
+	Elbasan("Elba", "Elbasan"), //
 
-	Old_Italic_Etruscan_Oscan_etc_("Ital"), //
-
-	Javanese("Java"), //
-
-	Japanese_syllabaries_alias_for_Han_Hiragana_Katakana("Jpan"), //
+	Ethiopic_Ge_ez("Ethi", "Ethiopic (Ge‘ez)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Jurchen("Jurc"), //
+	Khutsuri_Asomtavruli_and_Khutsuri("Geok", "Khutsuri (Asomtavruli and Khutsuri)"), //
 
-	Kayah_Li("Kali"), //
+	Georgian_Mkhedruli("Geor", "Georgian (Mkhedruli)"), //
 
-	Katakana("Kana"), //
+	Glagolitic("Glag", "Glagolitic"), //
 
-	Kharoshthi("Khar"), //
-
-	Khmer("Khmr"), //
-
-	Khojki("Khoj"), //
-
-	Kannada("Knda"), //
-
-	Korean_alias_for_Hangul_Han("Kore"), //
+	Gothic("Goth", "Gothic"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Kpelle("Kpel"), //
+	Grantha("Gran", "Grantha"), //
 
-	Kaithi("Kthi"), //
+	Greek("Grek", "Greek"), //
 
-	Lanna_Tai_Tham("Lana"), //
+	Gujarati("Gujr", "Gujarati"), //
 
-	Lao("Laoo"), //
+	Gurmukhi("Guru", "Gurmukhi"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Latin_Fraktur_variant("Latf"), //
+	Hangul_Hang_l_Hangeul("Hang", "Hangul (Hangŭl, Hangeul)"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Latin_Gaelic_variant("Latg"), //
+	Han_Hanzi_Kanji_Hanja("Hani", "Han (Hanzi, Kanji, Hanja)"), //
 
-	Latin("Latn"), //
+	Hanunoo_Hanun_o("Hano", "Hanunoo (Hanunóo)"), //
 
-	Lepcha_R_ng("Lepc"), //
+	Han_Simplified_variant("Hans", "Han (Simplified variant)"), //
 
-	Limbu("Limb"), //
+	Han_Traditional_variant("Hant", "Han (Traditional variant)"), //
+
+	Hebrew("Hebr", "Hebrew"), //
+
+	Hiragana("Hira", "Hiragana"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Linear_A("Lina"), //
+	Pahawh_Hmong("Hmng", "Pahawh Hmong"), //
 
-	Linear_B("Linb"), //
-
-	Lisu_Fraser("Lisu"), //
+	Japanese_syllabaries_alias_for_Hiragana_Katakana("Hrkt", "Japanese syllabaries (alias for Hiragana + Katakana)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Loma("Loma"), //
-
-	Lycian("Lyci"), //
-
-	Lydian("Lydi"), //
-
-	Mandaic_Mandaean("Mand"), //
+	Old_Hungarian("Hung", "Old Hungarian"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Manichaean("Mani"), //
+	Indus_Harappan("Inds", "Indus (Harappan)"), //
+
+	Old_Italic_Etruscan_Oscan_etc_("Ital", "Old Italic (Etruscan, Oscan, etc.)"), //
+
+	Javanese("Java", "Javanese"), //
+
+	Japanese_syllabaries_alias_for_Han_Hiragana_Katakana("Jpan",
+			"Japanese syllabaries (alias for Han + Hiragana + Katakana)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Mayan_hieroglyphs("Maya"), //
+	Jurchen("Jurc", "Jurchen"), //
+
+	Kayah_Li("Kali", "Kayah Li"), //
+
+	Katakana("Kana", "Katakana"), //
+
+	Kharoshthi("Khar", "Kharoshthi"), //
+
+	Khmer("Khmr", "Khmer"), //
+
+	Khojki("Khoj", "Khojki"), //
+
+	Kannada("Knda", "Kannada"), //
+
+	Korean_alias_for_Hangul_Han("Kore", "Korean (alias for Hangul + Han)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Mende("Mend"), //
+	Kpelle("Kpel", "Kpelle"), //
+
+	Kaithi("Kthi", "Kaithi"), //
+
+	Lanna_Tai_Tham("Lana", "Lanna, Tai Tham"), //
+
+	Lao("Laoo", "Lao"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Meroitic_Cursive("Merc"), //
+	Latin_Fraktur_variant("Latf", "Latin (Fraktur variant)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Meroitic_Hieroglyphs("Mero"), //
+	Latin_Gaelic_variant("Latg", "Latin (Gaelic variant)"), //
 
-	Malayalam("Mlym"), //
+	Latin("Latn", "Latin"), //
 
-	Mongolian("Mong"), //
+	Lepcha_R_ng("Lepc", "Lepcha (Róng)"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Moon_Moon_code_Moon_script_Moon_type("Moon"), //
+	Limbu("Limb", "Limbu"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Mro_Mru("Mroo"), //
+	Linear_A("Lina", "Linear A"), //
 
-	Meitei_Mayek_Meithei_Meetei("Mtei"), //
+	Linear_B("Linb", "Linear B"), //
 
-	Myanmar_Burmese("Mymr"), //
-
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Old_North_Arabian_Ancient_North_Arabian("Narb"), //
+	Lisu_Fraser("Lisu", "Lisu (Fraser)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Nabatean("Nbat"), //
+	Loma("Loma", "Loma"), //
+
+	Lycian("Lyci", "Lycian"), //
+
+	Lydian("Lydi", "Lydian"), //
+
+	Mandaic_Mandaean("Mand", "Mandaic, Mandaean"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Nakhi_Geba_Na_Khi_Gg_baw_Naxi_Geba("Nkgb"), //
-
-	N_Ko("Nkoo"), //
+	Manichaean("Mani", "Manichaean"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	N_shu("Nshu"), //
-
-	Ogham("Ogam"), //
-
-	Ol_Chiki_Ol_Cemet_Ol_Santali("Olck"), //
-
-	Old_Turkic_Orkhon_Runic("Orkh"), //
-
-	Oriya("Orya"), //
-
-	Osmanya("Osma"), //
+	Mayan_hieroglyphs("Maya", "Mayan hieroglyphs"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Palmyrene("Palm"), //
+	Mende("Mend", "Mende"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Old_Permic("Perm"), //
-
-	Phags_pa("Phag"), //
-
-	Inscriptional_Pahlavi("Phli"), //
+	Meroitic_Cursive("Merc", "Meroitic Cursive"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Psalter_Pahlavi("Phlp"), //
+	Meroitic_Hieroglyphs("Mero", "Meroitic Hieroglyphs"), //
+
+	Malayalam("Mlym", "Malayalam"), //
+
+	Mongolian("Mong", "Mongolian"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Book_Pahlavi("Phlv"), //
-
-	Phoenician("Phnx"), //
+	Moon_Moon_code_Moon_script_Moon_type("Moon", "Moon (Moon code, Moon script, Moon type)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Miao_Pollard("Plrd"), //
+	Mro_Mru("Mroo", "Mro, Mru"), //
 
-	Inscriptional_Parthian("Prti"), //
+	Meitei_Mayek_Meithei_Meetei("Mtei", "Meitei Mayek (Meithei, Meetei)"), //
 
-	Reserved_for_private_use_start("Qaaa"), //
-
-	Reserved_for_private_use_end("Qabx"), //
-
-	Rejang_Redjang_Kaganga("Rjng"), //
+	Myanmar_Burmese("Mymr", "Myanmar (Burmese)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Rongorongo("Roro"), //
-
-	Runic("Runr"), //
-
-	Samaritan("Samr"), //
+	Old_North_Arabian_Ancient_North_Arabian("Narb", "Old North Arabian (Ancient North Arabian)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Sarati("Sara"), //
-
-	Old_South_Arabian("Sarb"), //
-
-	Saurashtra("Saur"), //
+	Nabatean("Nbat", "Nabatean"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	SignWriting("Sgnw"), //
+	Nakhi_Geba_Na_Khi_Gg_baw_Naxi_Geba("Nkgb", "Nakhi Geba (’Na-’Khi ²Ggŏ-¹baw, Naxi Geba)"), //
 
-	Shavian_Shaw("Shaw"), //
-
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Sharada_rad_("Shrd"), //
+	N_Ko("Nkoo", "N’Ko"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Khudawadi_Sindhi("Sind"), //
+	N_shu("Nshu", "Nüshu"), //
 
-	Sinhala("Sinh"), //
+	Ogham("Ogam", "Ogham"), //
 
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Sora_Sompeng("Sora"), //
+	Ol_Chiki_Ol_Cemet_Ol_Santali("Olck", "Ol Chiki (Ol Cemet’, Ol, Santali)"), //
 
-	Sundanese("Sund"), //
+	Old_Turkic_Orkhon_Runic("Orkh", "Old Turkic, Orkhon Runic"), //
 
-	Syloti_Nagri("Sylo"), //
+	Oriya("Orya", "Oriya"), //
 
-	Syriac("Syrc"), //
-
-	Syriac_Estrangelo_variant("Syre"), //
-
-	Syriac_Western_variant("Syrj"), //
-
-	Syriac_Eastern_variant("Syrn"), //
-
-	Tagbanwa("Tagb"), //
+	Osmanya("Osma", "Osmanya"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Takri_kr_kr_("Takr"), //
-
-	Tai_Le("Tale"), //
-
-	New_Tai_Lue("Talu"), //
-
-	Tamil("Taml"), //
+	Palmyrene("Palm", "Palmyrene"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Tangut("Tang"), //
+	Old_Permic("Perm", "Old Permic"), //
 
-	Tai_Viet("Tavt"), //
+	Phags_pa("Phag", "Phags-pa"), //
 
-	Telugu("Telu"), //
-
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Tengwar("Teng"), //
-
-	Tifinagh_Berber("Tfng"), //
-
-	Tagalog_Baybayin_Alibata("Tglg"), //
-
-	Thaana("Thaa"), //
-
-	Thai("Thai"), //
-
-	Tibetan("Tibt"), //
-
-	Tiruta("Tirh"), //
-
-	Ugaritic("Ugar"), //
-
-	Vai("Vaii"), //
+	Inscriptional_Pahlavi("Phli", "Inscriptional Pahlavi"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Visible_Speech("Visp"), //
+	Psalter_Pahlavi("Phlp", "Psalter Pahlavi"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Warang_Citi_Varang_Kshiti("Wara"), //
+	Book_Pahlavi("Phlv", "Book Pahlavi"), //
+
+	Phoenician("Phnx", "Phoenician"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Woleai("Wole"), //
+	Miao_Pollard("Plrd", "Miao (Pollard)"), //
 
-	Old_Persian("Xpeo"), //
+	Inscriptional_Parthian("Prti", "Inscriptional Parthian"), //
 
-	Cuneiform_Sumero_Akkadian("Xsux"), //
+	Reserved_for_private_use_start("Qaaa", "Reserved for private use (start)"), //
 
-	Yi("Yiii"), //
+	Reserved_for_private_use_end("Qabx", "Reserved for private use (end)"), //
 
-	Code_for_inherited_script("Zinh"), //
-
-	/**
-	 * Script is not supported by Unicode
-	 */
-	Mathematical_notation("Zmth"), //
+	Rejang_Redjang_Kaganga("Rjng", "Rejang (Redjang, Kaganga)"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Symbols("Zsym"), //
+	Rongorongo("Roro", "Rongorongo"), //
+
+	Runic("Runr", "Runic"), //
+
+	Samaritan("Samr", "Samaritan"), //
 
 	/**
 	 * Script is not supported by Unicode
 	 */
-	Code_for_unwritten_documents("Zxxx"), //
+	Sarati("Sara", "Sarati"), //
 
-	Code_for_undetermined_script("Zyyy"), //
+	Old_South_Arabian("Sarb", "Old South Arabian"), //
 
-	Code_for_uncoded_script("Zzzz");
+	Saurashtra("Saur", "Saurashtra"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	SignWriting("Sgnw", "SignWriting"), //
+
+	Shavian_Shaw("Shaw", "Shavian (Shaw)"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Sharada_rad_("Shrd", "Sharada, Śāradā"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Khudawadi_Sindhi("Sind", "Khudawadi, Sindhi"), //
+
+	Sinhala("Sinh", "Sinhala"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Sora_Sompeng("Sora", "Sora Sompeng"), //
+
+	Sundanese("Sund", "Sundanese"), //
+
+	Syloti_Nagri("Sylo", "Syloti Nagri"), //
+
+	Syriac("Syrc", "Syriac"), //
+
+	Syriac_Estrangelo_variant("Syre", "Syriac (Estrangelo variant)"), //
+
+	Syriac_Western_variant("Syrj", "Syriac (Western variant)"), //
+
+	Syriac_Eastern_variant("Syrn", "Syriac (Eastern variant)"), //
+
+	Tagbanwa("Tagb", "Tagbanwa"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Takri_kr_kr_("Takr", "Takri, Ṭākrī, Ṭāṅkrī"), //
+
+	Tai_Le("Tale", "Tai Le"), //
+
+	New_Tai_Lue("Talu", "New Tai Lue"), //
+
+	Tamil("Taml", "Tamil"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Tangut("Tang", "Tangut"), //
+
+	Tai_Viet("Tavt", "Tai Viet"), //
+
+	Telugu("Telu", "Telugu"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Tengwar("Teng", "Tengwar"), //
+
+	Tifinagh_Berber("Tfng", "Tifinagh (Berber)"), //
+
+	Tagalog_Baybayin_Alibata("Tglg", "Tagalog (Baybayin, Alibata)"), //
+
+	Thaana("Thaa", "Thaana"), //
+
+	Thai("Thai", "Thai"), //
+
+	Tibetan("Tibt", "Tibetan"), //
+
+	Tiruta("Tirh", "Tiruta"), //
+
+	Ugaritic("Ugar", "Ugaritic"), //
+
+	Vai("Vaii", "Vai"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Visible_Speech("Visp", "Visible Speech"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Warang_Citi_Varang_Kshiti("Wara", "Warang Citi (Varang Kshiti)"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Woleai("Wole", "Woleai"), //
+
+	Old_Persian("Xpeo", "Old Persian"), //
+
+	Cuneiform_Sumero_Akkadian("Xsux", "Cuneiform, Sumero-Akkadian"), //
+
+	Yi("Yiii", "Yi"), //
+
+	Code_for_inherited_script("Zinh", "Code for inherited script"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Mathematical_notation("Zmth", "Mathematical notation"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Symbols("Zsym", "Symbols"), //
+
+	/**
+	 * Script is not supported by Unicode
+	 */
+	Code_for_unwritten_documents("Zxxx", "Code for unwritten documents"), //
+
+	Code_for_undetermined_script("Zyyy", "Code for undetermined script"), //
+
+	Code_for_uncoded_script("Zzzz", "Code for uncoded script");
 
 	public final String value;
+	public final String label;
 
-	private TextScriptCodes(String value)
+	private TextScriptCodes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, TextScriptCodes> map;

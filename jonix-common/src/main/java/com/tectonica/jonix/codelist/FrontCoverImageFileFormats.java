@@ -32,17 +32,19 @@ package com.tectonica.jonix.codelist;
  */
 public enum FrontCoverImageFileFormats
 {
-	GIF("02"), //
+	GIF("02", "GIF"), //
 
-	JPEG("03"), //
+	JPEG("03", "JPEG"), //
 
-	TIF("05");
+	TIF("05", "TIF");
 
 	public final String value;
+	public final String label;
 
-	private FrontCoverImageFileFormats(String value)
+	private FrontCoverImageFileFormats(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static FrontCoverImageFileFormats byValue(String value)

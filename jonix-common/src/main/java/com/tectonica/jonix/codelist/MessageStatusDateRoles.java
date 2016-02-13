@@ -35,19 +35,21 @@ public enum MessageStatusDateRoles
 	/**
 	 * Expected or actual date of processing and ingestion of data to recipient&#8217;s system
 	 */
-	Ingest_date("01"), //
+	Ingest_date("01", "Ingest date"), //
 
 	/**
 	 * Expected or actual date for data to be available from the recipient&#8217;s system to downstream supply chain
 	 * partners (or where the recipient is a retailer, to consumers)
 	 */
-	Export_date("02");
+	Export_date("02", "Export date");
 
 	public final String value;
+	public final String label;
 
-	private MessageStatusDateRoles(String value)
+	private MessageStatusDateRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static MessageStatusDateRoles byValue(String value)

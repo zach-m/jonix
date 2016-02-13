@@ -32,15 +32,17 @@ package com.tectonica.jonix.codelist;
  */
 public enum MessageRecordStatusDetails
 {
-	Unknown_error("000"), //
+	Unknown_error("000", "Unknown error"), //
 
-	Unknown_warning("001");
+	Unknown_warning("001", "Unknown warning");
 
 	public final String value;
+	public final String label;
 
-	private MessageRecordStatusDetails(String value)
+	private MessageRecordStatusDetails(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static MessageRecordStatusDetails byValue(String value)

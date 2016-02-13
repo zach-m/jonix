@@ -35,20 +35,22 @@ public enum LicenseExpressionTypes
 	/**
 	 * Document (eg Word file, PDF or web page) Intended for the lay reader
 	 */
-	Human_readable("01"), //
+	Human_readable("01", "Human readable"), //
 
 	/**
 	 * Document (eg Word file, PDF or web page) Intended for the legal specialist reader
 	 */
-	Professional_readable("02"), //
+	Professional_readable("02", "Professional readable"), //
 
-	ONIX_PL("10");
+	ONIX_PL("10", "ONIX-PL");
 
 	public final String value;
+	public final String label;
 
-	private LicenseExpressionTypes(String value)
+	private LicenseExpressionTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static LicenseExpressionTypes byValue(String value)

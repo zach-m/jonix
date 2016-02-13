@@ -32,18 +32,20 @@ package com.tectonica.jonix.codelist;
  */
 public enum StatusDetailCodeTypes
 {
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * Status detail code is taken from List 225
 	 */
-	ONIX_Status_detail_code("02");
+	ONIX_Status_detail_code("02", "ONIX Status detail code");
 
 	public final String value;
+	public final String label;
 
-	private StatusDetailCodeTypes(String value)
+	private StatusDetailCodeTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static StatusDetailCodeTypes byValue(String value)

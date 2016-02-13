@@ -38,77 +38,79 @@ public enum TextFormats
 	/**
 	 * DEPRECATED: use code 06 or 07 as appropriate
 	 */
-	ASCII_text("00"), //
+	ASCII_text("00", "ASCII text"), //
 
-	SGML("01"), //
-
-	/**
-	 * Other than XHTML
-	 */
-	HTML("02"), //
+	SGML("01", "SGML"), //
 
 	/**
 	 * Other than XHTML
 	 */
-	XML("03"), //
+	HTML("02", "HTML"), //
+
+	/**
+	 * Other than XHTML
+	 */
+	XML("03", "XML"), //
 
 	/**
 	 * DEPRECATED: was formerly assigned both to PDF and to XHTML
 	 */
-	PDF("04"), //
+	PDF("04", "PDF"), //
 
-	XHTML("05"), //
+	XHTML("05", "XHTML"), //
 
 	/**
 	 * Default: text in the encoding declared at the head of the message or in the XML default (UTF-8 or UTF-16) if
 	 * there is no explicit declaration
 	 */
-	Default_text_format("06"), //
+	Default_text_format("06", "Default text format"), //
 
 	/**
 	 * Plain text containing no tags of any kind, except for the tags &amp;amp; and &amp;lt; that XML insists must be
 	 * used to represent ampersand and less-than characters in text; and with the character set limited to the ASCII
 	 * range, i.e. valid UTF-8 characters whose character number lies between 32 (space) and 126 (tilde)
 	 */
-	Basic_ASCII_text("07"), //
+	Basic_ASCII_text("07", "Basic ASCII text"), //
 
 	/**
 	 * Replaces 04 for the &lt;TextFormat&gt; element, but cannot of course be used as a textformat attribute
 	 */
-	PDF_("08"), //
+	PDF_("08", "PDF"), //
 
-	Microsoft_rich_text_format_RTF("09"), //
+	Microsoft_rich_text_format_RTF("09", "Microsoft rich text format (RTF)"), //
 
-	Microsoft_Word_binary_format_DOC("10"), //
+	Microsoft_Word_binary_format_DOC("10", "Microsoft Word binary format (DOC)"), //
 
 	/**
 	 * Office Open XML file format / OOXML / DOCX
 	 */
-	ECMA_376_WordprocessingML("11"), //
+	ECMA_376_WordprocessingML("11", "ECMA 376 WordprocessingML"), //
 
 	/**
 	 * ISO Open Document Format
 	 */
-	ISO_26300_ODF("12"), //
+	ISO_26300_ODF("12", "ISO 26300 ODF"), //
 
-	Corel_Wordperfect_binary_format_DOC("13"), //
+	Corel_Wordperfect_binary_format_DOC("13", "Corel Wordperfect binary format (DOC)"), //
 
 	/**
 	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
 	 * (IDPF) [File extension .epub]
 	 */
-	EPUB("14"), //
+	EPUB("14", "EPUB"), //
 
 	/**
 	 * XML Paper Specification
 	 */
-	XPS("15");
+	XPS("15", "XPS");
 
 	public final String value;
+	public final String label;
 
-	private TextFormats(String value)
+	private TextFormats(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, TextFormats> map;

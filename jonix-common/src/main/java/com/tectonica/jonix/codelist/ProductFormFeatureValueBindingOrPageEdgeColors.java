@@ -35,60 +35,62 @@ import java.util.Map;
  */
 public enum ProductFormFeatureValueBindingOrPageEdgeColors
 {
-	Black("BLK"), //
+	Black("BLK", "Black"), //
 
-	Blue("BLU"), //
+	Blue("BLU", "Blue"), //
 
-	Brown("BRN"), //
+	Brown("BRN", "Brown"), //
 
-	Burgundy_maroon("BUR"), //
+	Burgundy_maroon("BUR", "Burgundy/maroon"), //
 
-	Cream("CRE"), //
+	Cream("CRE", "Cream"), //
 
-	Four_color("FCO"), //
+	Four_color("FCO", "Four-color"), //
 
-	Four_color_and_spot_color("FCS"), //
+	Four_color_and_spot_color("FCS", "Four-color and spot-color"), //
 
-	Gold("GLD"), //
+	Gold("GLD", "Gold"), //
 
-	Green("GRN"), //
+	Green("GRN", "Green"), //
 
-	Grey("GRY"), //
+	Grey("GRY", "Grey"), //
 
 	/**
 	 * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
 	 */
-	Multicolor("MUL"), //
+	Multicolor("MUL", "Multicolor"), //
 
-	Navy_Dark_blue("NAV"), //
+	Navy_Dark_blue("NAV", "Navy/Dark blue"), //
 
-	Orange("ORG"), //
+	Orange("ORG", "Orange"), //
 
-	Pink("PNK"), //
+	Pink("PNK", "Pink"), //
 
-	Purple("PUR"), //
+	Purple("PUR", "Purple"), //
 
-	Red("RED"), //
+	Red("RED", "Red"), //
 
-	Sky_Pale_blue("SKY"), //
+	Sky_Pale_blue("SKY", "Sky/Pale blue"), //
 
-	Silver("SLV"), //
+	Silver("SLV", "Silver"), //
 
-	Tan_Light_brown("TAN"), //
+	Tan_Light_brown("TAN", "Tan/Light brown"), //
 
-	Teal_Turquoise_green("TEA"), //
+	Teal_Turquoise_green("TEA", "Teal/Turquoise green"), //
 
-	White("WHI"), //
+	White("WHI", "White"), //
 
-	Yellow("YEL"), //
+	Yellow("YEL", "Yellow"), //
 
-	Other("ZZZ");
+	Other("ZZZ", "Other");
 
 	public final String value;
+	public final String label;
 
-	private ProductFormFeatureValueBindingOrPageEdgeColors(String value)
+	private ProductFormFeatureValueBindingOrPageEdgeColors(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map;

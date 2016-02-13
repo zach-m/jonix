@@ -35,23 +35,25 @@ public enum SalesOutletIdentifierTypes
 	/**
 	 * Proprietary list of retail and other end-user sales outlet IDs
 	 */
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * DEPRECATED &#8211; use code 03
 	 */
-	BIC_sales_outlet_ID_code("02"), //
+	BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code"), //
 
 	/**
 	 * Use with ONIX retail and other end-user sales outlet IDs from List 139
 	 */
-	ONIX_retail_sales_outlet_ID_code("03");
+	ONIX_retail_sales_outlet_ID_code("03", "ONIX retail sales outlet ID code");
 
 	public final String value;
+	public final String label;
 
-	private SalesOutletIdentifierTypes(String value)
+	private SalesOutletIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static SalesOutletIdentifierTypes byValue(String value)

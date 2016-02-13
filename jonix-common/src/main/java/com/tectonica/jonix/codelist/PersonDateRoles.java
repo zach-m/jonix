@@ -32,15 +32,17 @@ package com.tectonica.jonix.codelist;
  */
 public enum PersonDateRoles
 {
-	Date_of_birth("007"), //
+	Date_of_birth("007", "Date of birth"), //
 
-	Date_of_death("008");
+	Date_of_death("008", "Date of death");
 
 	public final String value;
+	public final String label;
 
-	private PersonDateRoles(String value)
+	private PersonDateRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PersonDateRoles byValue(String value)

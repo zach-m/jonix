@@ -35,38 +35,40 @@ public enum ProductContactRoles
 	/**
 	 * Eg for requests for supply of mutable digital files for conversion to other formats
 	 */
-	Accessibility_request_contact("01"), //
+	Accessibility_request_contact("01", "Accessibility request contact"), //
 
 	/**
 	 * Eg for requests relating to interviews, author events
 	 */
-	Promotional_contact("02"), //
+	Promotional_contact("02", "Promotional contact"), //
 
 	/**
 	 * Eg for co-op advertising
 	 */
-	Advertising_contact("03"), //
+	Advertising_contact("03", "Advertising contact"), //
 
 	/**
 	 * Eg for requests for review copies
 	 */
-	Review_copy_contact("04"), //
+	Review_copy_contact("04", "Review copy contact"), //
 
 	/**
 	 * Eg for requests for approval or evaluation copies (particularly within education)
 	 */
-	Evaluation_copy_contact("05"), //
+	Evaluation_copy_contact("05", "Evaluation copy contact"), //
 
 	/**
 	 * Eg for requests to reproduce or repurpose parts of the publication
 	 */
-	Permissions_contact("06");
+	Permissions_contact("06", "Permissions contact");
 
 	public final String value;
+	public final String label;
 
-	private ProductContactRoles(String value)
+	private ProductContactRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ProductContactRoles byValue(String value)

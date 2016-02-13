@@ -35,30 +35,32 @@ public enum TextCaseFlags
 	/**
 	 * Default
 	 */
-	Undefined("00"), //
+	Undefined("00", "Undefined"), //
 
 	/**
 	 * Initial capitals on first word and subsequently on proper names only, eg &#8216;The conquest of Mexico&#8217;
 	 */
-	Sentence_case("01"), //
+	Sentence_case("01", "Sentence case"), //
 
 	/**
 	 * Initial capitals on first word and subsequently on all significant words (nouns, pronouns, adjectives, verbs,
 	 * adverbs, subordinate conjunctions) thereafter. Unless they appear as the first word, articles, prepositions and
 	 * coordinating conjunctions remain lower case, eg &#8216;The Conquest of Mexico&#8217;
 	 */
-	Title_case("02"), //
+	Title_case("02", "Title case"), //
 
 	/**
 	 * For example, &#8216;THE CONQUEST OF MEXICO&#8217;
 	 */
-	All_capitals("03");
+	All_capitals("03", "All capitals");
 
 	public final String value;
+	public final String label;
 
-	private TextCaseFlags(String value)
+	private TextCaseFlags(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static TextCaseFlags byValue(String value)

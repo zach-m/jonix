@@ -38,67 +38,67 @@ public enum DateFormats
 	/**
 	 * Year month day (default)
 	 */
-	YYYYMMDD("00"), //
+	YYYYMMDD("00", "YYYYMMDD"), //
 
 	/**
 	 * Year and month
 	 */
-	YYYYMM("01"), //
+	YYYYMM("01", "YYYYMM"), //
 
 	/**
 	 * Year and week number
 	 */
-	YYYYWW("02"), //
+	YYYYWW("02", "YYYYWW"), //
 
 	/**
 	 * Year and quarter (Q = 1, 2, 3, 4, with 1 = Jan to Mar)
 	 */
-	YYYYQ("03"), //
+	YYYYQ("03", "YYYYQ"), //
 
 	/**
 	 * Year and season (S = 1, 2, 3, 4, with 1 = &#8216;Spring&#8217;)
 	 */
-	YYYYS("04"), //
+	YYYYS("04", "YYYYS"), //
 
 	/**
 	 * Year
 	 */
-	YYYY("05"), //
+	YYYY("05", "YYYY"), //
 
 	/**
 	 * Spread of exact dates
 	 */
-	YYYYMMDDYYYYMMDD("06"), //
+	YYYYMMDDYYYYMMDD("06", "YYYYMMDDYYYYMMDD"), //
 
 	/**
 	 * Spread of months
 	 */
-	YYYYMMYYYYMM("07"), //
+	YYYYMMYYYYMM("07", "YYYYMMYYYYMM"), //
 
 	/**
 	 * Spread of week numbers
 	 */
-	YYYYWWYYYYWW("08"), //
+	YYYYWWYYYYWW("08", "YYYYWWYYYYWW"), //
 
 	/**
 	 * Spread of quarters
 	 */
-	YYYYQYYYYQ("09"), //
+	YYYYQYYYYQ("09", "YYYYQYYYYQ"), //
 
 	/**
 	 * Spread of seasons
 	 */
-	YYYYSYYYYS("10"), //
+	YYYYSYYYYS("10", "YYYYSYYYYS"), //
 
 	/**
 	 * Spread of years
 	 */
-	YYYYYYYY("11"), //
+	YYYYYYYY("11", "YYYYYYYY"), //
 
 	/**
 	 * For complex, approximate or uncertain dates
 	 */
-	Text_string("12"), //
+	Text_string("12", "Text string"), //
 
 	/**
 	 * Exact time. Use ONLY when exact times with hour/minute precision are relevant. By default, time is local.
@@ -106,7 +106,7 @@ public enum DateFormats
 	 * or &#8216;-&#8217; and an hhmm timezone offset from UTC. Times without a timezone are &#8216;rolling&#8217; local
 	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time
 	 */
-	YYYYMMDDThhmm("13"), //
+	YYYYMMDDThhmm("13", "YYYYMMDDThhmm"), //
 
 	/**
 	 * Exact time. Use ONLY when exact times with second precision are relevant. By default, time is local.
@@ -114,33 +114,35 @@ public enum DateFormats
 	 * or &#8216;-&#8217; and an hhmm timezone offset from UTC. Times without a timezone are &#8216;rolling&#8217; local
 	 * times, times qualified with a timezone (using Z, + or -) specify a particular instant in time
 	 */
-	YYYYMMDDThhmmss("14"), //
+	YYYYMMDDThhmmss("14", "YYYYMMDDThhmmss"), //
 
 	/**
 	 * Year month day (Hijri calendar)
 	 */
-	YYYYMMDD_H("20"), //
+	YYYYMMDD_H("20", "YYYYMMDD (H)"), //
 
 	/**
 	 * Year and month (Hijri calendar)
 	 */
-	YYYYMM_H("21"), //
+	YYYYMM_H("21", "YYYYMM (H)"), //
 
 	/**
 	 * Year (Hijri calendar)
 	 */
-	YYYY_H("25"), //
+	YYYY_H("25", "YYYY (H)"), //
 
 	/**
 	 * For complex, approximate or uncertain dates (Hijri calendar), text would usually be in Arabic script
 	 */
-	Text_string_H("32");
+	Text_string_H("32", "Text string (H)");
 
 	public final String value;
+	public final String label;
 
-	private DateFormats(String value)
+	private DateFormats(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, DateFormats> map;

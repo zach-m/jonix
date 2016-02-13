@@ -38,53 +38,55 @@ public enum Velocitys
 	/**
 	 * Typically measured over most recent 1 month period
 	 */
-	Mean_daily_sale("01"), //
+	Mean_daily_sale("01", "Mean daily sale"), //
 
 	/**
 	 * Typically measured over most recent 1 month period
 	 */
-	Maximum_daily_sale("02"), //
+	Maximum_daily_sale("02", "Maximum daily sale"), //
 
 	/**
 	 * Typically measured over most recent 1 month period
 	 */
-	Minimum_daily_sale("03"), //
+	Minimum_daily_sale("03", "Minimum daily sale"), //
 
 	/**
 	 * Typically measured over most recent rolling 12 week period
 	 */
-	Mean_weekly_sale("04"), //
+	Mean_weekly_sale("04", "Mean weekly sale"), //
 
 	/**
 	 * Typically measured over most recent rolling 12 week period
 	 */
-	Maximum_weekly_sale("05"), //
+	Maximum_weekly_sale("05", "Maximum weekly sale"), //
 
 	/**
 	 * Typically measured over most recent rolling 12 week period
 	 */
-	Minimum_weekly_sale("06"), //
+	Minimum_weekly_sale("06", "Minimum weekly sale"), //
 
 	/**
 	 * Typically measured over most recent rolling 6 month period
 	 */
-	Mean_monthly_sale("07"), //
+	Mean_monthly_sale("07", "Mean monthly sale"), //
 
 	/**
 	 * Typically measured over the most recent rolling 6 month period
 	 */
-	Maximum_monthly_sale("08"), //
+	Maximum_monthly_sale("08", "Maximum monthly sale"), //
 
 	/**
 	 * Typically measured over the most recent rolling 6 month period
 	 */
-	Minimum_monthly_sale("09");
+	Minimum_monthly_sale("09", "Minimum monthly sale");
 
 	public final String value;
+	public final String label;
 
-	private Velocitys(String value)
+	private Velocitys(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, Velocitys> map;

@@ -32,23 +32,25 @@ package com.tectonica.jonix.codelist;
  */
 public enum TextLinkTypes
 {
-	URL("01"), //
+	URL("01", "URL"), //
 
-	DOI("02"), //
+	DOI("02", "DOI"), //
 
-	PURL("03"), //
+	PURL("03", "PURL"), //
 
-	URN("04"), //
+	URN("04", "URN"), //
 
-	FTP_address("05"), //
+	FTP_address("05", "FTP address"), //
 
-	filename("06");
+	filename("06", "filename");
 
 	public final String value;
+	public final String label;
 
-	private TextLinkTypes(String value)
+	private TextLinkTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static TextLinkTypes byValue(String value)

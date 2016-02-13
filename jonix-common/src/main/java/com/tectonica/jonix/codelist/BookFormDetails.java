@@ -35,43 +35,45 @@ public enum BookFormDetails
 	/**
 	 * DEPRECATED
 	 */
-	A_format_paperback("01"), //
+	A_format_paperback("01", "A-format paperback"), //
 
 	/**
 	 * &#8216;B&#8217; format paperback: UK 198 x 129 mm &#8211; DEPRECATED
 	 */
-	B_format_paperback("02"), //
+	B_format_paperback("02", "B-format paperback"), //
 
 	/**
 	 * &#8216;C&#8217; format paperback: UK 216 x 135 mm &#8211; DEPRECATED
 	 */
-	C_format_paperback("03"), //
+	C_format_paperback("03", "C-format paperback"), //
 
 	/**
 	 * DEPRECATED
 	 */
-	Paper_over_boards("04"), //
+	Paper_over_boards("04", "Paper over boards"), //
 
 	/**
 	 * DEPRECATED
 	 */
-	Cloth("05"), //
+	Cloth("05", "Cloth"), //
 
 	/**
 	 * DEPRECATED
 	 */
-	With_dust_jacket("06"), //
+	With_dust_jacket("06", "With dust jacket"), //
 
 	/**
 	 * DEPRECATED
 	 */
-	Reinforced_binding("07");
+	Reinforced_binding("07", "Reinforced binding");
 
 	public final String value;
+	public final String label;
 
-	private BookFormDetails(String value)
+	private BookFormDetails(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static BookFormDetails byValue(String value)

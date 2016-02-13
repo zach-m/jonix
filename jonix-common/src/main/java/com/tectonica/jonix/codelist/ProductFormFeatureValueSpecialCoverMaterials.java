@@ -38,95 +38,97 @@ public enum ProductFormFeatureValueSpecialCoverMaterials
 	/**
 	 * Pigskin
 	 */
-	Berkshire_leather("01"), //
+	Berkshire_leather("01", "Berkshire leather"), //
 
-	Calfskin("02"), //
+	Calfskin("02", "Calfskin"), //
 
 	/**
 	 * Calf split or sheep split
 	 */
-	French_Morocco("03"), //
+	French_Morocco("03", "French Morocco"), //
 
 	/**
 	 * Goatskin
 	 */
-	Morocco("04"), //
+	Morocco("04", "Morocco"), //
 
-	Bonded_buffalo_grain("05"), //
+	Bonded_buffalo_grain("05", "Bonded buffalo grain"), //
 
-	Bonded_calf_grain("06"), //
+	Bonded_calf_grain("06", "Bonded calf grain"), //
 
-	Bonded_Cordova("07"), //
+	Bonded_Cordova("07", "Bonded Cordova"), //
 
-	Bonded_eelskin("08"), //
+	Bonded_eelskin("08", "Bonded eelskin"), //
 
-	Bonded_Ostraleg("09"), //
+	Bonded_Ostraleg("09", "Bonded Ostraleg"), //
 
-	Bonded_ostrich("10"), //
+	Bonded_ostrich("10", "Bonded ostrich"), //
 
-	Bonded_reptile_grain("11"), //
+	Bonded_reptile_grain("11", "Bonded reptile grain"), //
 
-	Bonded_leather("12"), //
+	Bonded_leather("12", "Bonded leather"), //
 
-	Cowhide("13"), //
+	Cowhide("13", "Cowhide"), //
 
-	Eelskin("14"), //
+	Eelskin("14", "Eelskin"), //
 
-	Kivar("15"), //
+	Kivar("15", "Kivar"), //
 
 	/**
 	 * An imitation leather binding material
 	 */
-	Leatherflex("16"), //
+	Leatherflex("16", "Leatherflex"), //
 
-	Moleskin("17"), //
+	Moleskin("17", "Moleskin"), //
 
-	Softhide_leather("18"), //
+	Softhide_leather("18", "Softhide leather"), //
 
-	Metal("19"), //
+	Metal("19", "Metal"), //
 
 	/**
 	 * German &#8216;Samt&#8217;
 	 */
-	Velvet("20"), //
+	Velvet("20", "Velvet"), //
 
 	/**
 	 * Spanish &#8216;n&#225;car&#8217;
 	 */
-	Mother_of_pearl("21"), //
+	Mother_of_pearl("21", "Mother-of-pearl"), //
 
-	Papyrus("22"), //
+	Papyrus("22", "Papyrus"), //
 
 	/**
 	 * An imitation cloth binding material
 	 */
-	G_ltex("23"), //
+	G_ltex("23", "Géltex"), //
 
 	/**
 	 * An imitation leather binding material
 	 */
-	Guaflex("24"), //
+	Guaflex("24", "Guaflex"), //
 
 	/**
 	 * An imitation made of any non-leather material &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Imitation_leather("25"), //
+	Imitation_leather("25", "Imitation leather"), //
 
 	/**
 	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Pigskin("26"), //
+	Pigskin("26", "Pigskin"), //
 
 	/**
 	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Goatskin("27");
+	Goatskin("27", "Goatskin");
 
 	public final String value;
+	public final String label;
 
-	private ProductFormFeatureValueSpecialCoverMaterials(String value)
+	private ProductFormFeatureValueSpecialCoverMaterials(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ProductFormFeatureValueSpecialCoverMaterials> map;

@@ -35,36 +35,36 @@ import java.util.Map;
  */
 public enum SupplierIdentifierTypes
 {
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * DEPRECATED &#8211; use 01
 	 */
-	Proprietary_("02"), //
+	Proprietary_("02", "Proprietary"), //
 
-	B_rsenverein_Verkehrsnummer("04"), //
+	B_rsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"), //
 
-	German_ISBN_Agency_publisher_identifier("05"), //
+	German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"), //
 
 	/**
 	 * GS1 global location number (formerly EAN location number)
 	 */
-	GLN("06"), //
+	GLN("06", "GLN"), //
 
 	/**
 	 * Book trade Standard Address Number &#8211; US, UK etc
 	 */
-	SAN("07"), //
+	SAN("07", "SAN"), //
 
 	/**
 	 * Flemish supplier code
 	 */
-	Distributeurscode_Boekenbank("12"), //
+	Distributeurscode_Boekenbank("12", "Distributeurscode Boekenbank"), //
 
 	/**
 	 * Flemish publisher code
 	 */
-	Fondscode_Boekenbank("13"), //
+	Fondscode_Boekenbank("13", "Fondscode Boekenbank"), //
 
 	/**
 	 * Identifier for a business organization for VAT purposes, eg within the EU&#8217;s VIES system. See
@@ -74,13 +74,15 @@ public enum SupplierIdentifierTypes
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
 	 * Spaces, dashes etc should be omitted
 	 */
-	VAT_Identity_Number("23");
+	VAT_Identity_Number("23", "VAT Identity Number");
 
 	public final String value;
+	public final String label;
 
-	private SupplierIdentifierTypes(String value)
+	private SupplierIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, SupplierIdentifierTypes> map;

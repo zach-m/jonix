@@ -35,13 +35,15 @@ public enum ReligiousTextFeatureTypes
 	/**
 	 * A church season or activity for which a religious text is intended
 	 */
-	Church_season_or_activity("01");
+	Church_season_or_activity("01", "Church season or activity");
 
 	public final String value;
+	public final String label;
 
-	private ReligiousTextFeatureTypes(String value)
+	private ReligiousTextFeatureTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ReligiousTextFeatureTypes byValue(String value)

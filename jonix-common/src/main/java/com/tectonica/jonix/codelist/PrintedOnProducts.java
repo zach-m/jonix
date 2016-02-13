@@ -35,18 +35,20 @@ public enum PrintedOnProducts
 	/**
 	 * Price not printed on product
 	 */
-	No("01"), //
+	No("01", "No"), //
 
 	/**
 	 * Price printed on product
 	 */
-	Yes("02");
+	Yes("02", "Yes");
 
 	public final String value;
+	public final String label;
 
-	private PrintedOnProducts(String value)
+	private PrintedOnProducts(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PrintedOnProducts byValue(String value)

@@ -38,48 +38,50 @@ public enum ContentAudiences
 	/**
 	 * Any audience
 	 */
-	Unrestricted("00"), //
+	Unrestricted("00", "Unrestricted"), //
 
 	/**
 	 * Distribution by agreement between the parties to the ONIX exchange (this value is provided to cover applications
 	 * where ONIX content includes material which is not for general distribution)
 	 */
-	Restricted("01"), //
+	Restricted("01", "Restricted"), //
 
 	/**
 	 * Distributors, bookstores, publisher&#8217;s own staff etc
 	 */
-	Booktrade("02"), //
+	Booktrade("02", "Booktrade"), //
 
-	End_customers("03"), //
+	End_customers("03", "End-customers"), //
 
-	Librarians("04"), //
+	Librarians("04", "Librarians"), //
 
-	Teachers("05"), //
+	Teachers("05", "Teachers"), //
 
-	Students("06"), //
+	Students("06", "Students"), //
 
 	/**
 	 * Press or other media
 	 */
-	Press("07"), //
+	Press("07", "Press"), //
 
 	/**
 	 * Where a specially formatted description is required for this audience
 	 */
-	Shopping_comparison_service("08"), //
+	Shopping_comparison_service("08", "Shopping comparison service"), //
 
 	/**
 	 * Text not intended for display, but may be used (in addition to any less restricted text) for indexing and search
 	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Search_engine_index("09");
+	Search_engine_index("09", "Search engine index");
 
 	public final String value;
+	public final String label;
 
-	private ContentAudiences(String value)
+	private ContentAudiences(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ContentAudiences> map;

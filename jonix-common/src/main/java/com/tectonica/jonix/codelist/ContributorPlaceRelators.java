@@ -35,30 +35,32 @@ import java.util.Map;
  */
 public enum ContributorPlaceRelators
 {
-	Born_in("01"), //
+	Born_in("01", "Born in"), //
 
-	Died_in("02"), //
+	Died_in("02", "Died in"), //
 
-	Formerly_resided_in("03"), //
+	Formerly_resided_in("03", "Formerly resided in"), //
 
-	Currently_resides_in("04"), //
+	Currently_resides_in("04", "Currently resides in"), //
 
-	Educated_in("05"), //
+	Educated_in("05", "Educated in"), //
 
-	Worked_in("06"), //
+	Worked_in("06", "Worked in"), //
 
-	Flourished_in("07"), //
+	Flourished_in("07", "Flourished in"), //
 
 	/**
 	 * Or nationality. For use with country codes only
 	 */
-	Citizen_of("08");
+	Citizen_of("08", "Citizen of");
 
 	public final String value;
+	public final String label;
 
-	private ContributorPlaceRelators(String value)
+	private ContributorPlaceRelators(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ContributorPlaceRelators> map;

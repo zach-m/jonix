@@ -32,18 +32,20 @@ package com.tectonica.jonix.codelist;
  */
 public enum AudienceRestrictionFlags
 {
-	Restrictions_apply_see_note("R"), //
+	Restrictions_apply_see_note("R", "Restrictions apply, see note"), //
 
 	/**
 	 * Indexed for the German market &#8211; in Deutschland indiziert
 	 */
-	Indiziert("X");
+	Indiziert("X", "Indiziert");
 
 	public final String value;
+	public final String label;
 
-	private AudienceRestrictionFlags(String value)
+	private AudienceRestrictionFlags(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static AudienceRestrictionFlags byValue(String value)

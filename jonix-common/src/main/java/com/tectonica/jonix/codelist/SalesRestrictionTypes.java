@@ -39,86 +39,88 @@ public enum SalesRestrictionTypes
 	 * Restriction must be described in &lt;SalesRestrictionDetail&gt; (ONIX 2.1) or &lt;SalesRestrictionNote&gt; (ONIX
 	 * 3.0)
 	 */
-	Unspecified_see_text("00"), //
+	Unspecified_see_text("00", "Unspecified – see text"), //
 
 	/**
 	 * For sale only through designated retailer. Retailer must be identified or named in an instance of the
 	 * &lt;SalesOutlet&gt; composite. Use only when it is not possible to assign the more explicit code 04 or 05
 	 */
-	Retailer_exclusive_own_brand("01"), //
+	Retailer_exclusive_own_brand("01", "Retailer exclusive / own brand"), //
 
 	/**
 	 * For editions sold only though office supplies wholesalers. Retailer(s) and/or distributor(s) may be identified or
 	 * named in an instance of the &lt;SalesOutlet&gt; composite
 	 */
-	Office_supplies_edition("02"), //
+	Office_supplies_edition("02", "Office supplies edition"), //
 
 	/**
 	 * For an ISBN that is assigned for a publisher&#8217;s internal purposes
 	 */
-	Internal_publisher_use_only_do_not_list("03"), //
+	Internal_publisher_use_only_do_not_list("03", "Internal publisher use only: do not list"), //
 
 	/**
 	 * For sale only through designated retailer, though not under retailer&#8217;s own brand/imprint. Retailer must be
 	 * identified or named in an instance of the &lt;SalesOutlet&gt; composite
 	 */
-	Retailer_exclusive("04"), //
+	Retailer_exclusive("04", "Retailer exclusive"), //
 
 	/**
 	 * For sale only through designated retailer under retailer&#8217;s own brand/imprint. Retailer must be identified
 	 * or named in an instance of the &lt;SalesOutlet&gt; composite
 	 */
-	Retailer_own_brand("05"), //
+	Retailer_own_brand("05", "Retailer own brand"), //
 
 	/**
 	 * For sale to libraries only; not for sale through retail trade
 	 */
-	Library_edition("06"), //
+	Library_edition("06", "Library edition"), //
 
 	/**
 	 * For sale directly to schools only; not for sale through retail trade
 	 */
-	Schools_only_edition("07"), //
+	Schools_only_edition("07", "Schools only edition"), //
 
 	/**
 	 * Indexed for the German market &#8211; in Deutschland indiziert
 	 */
-	Indiziert("08"), //
+	Indiziert("08", "Indiziert"), //
 
 	/**
 	 * Expected to apply in particular to digital products for consumer sale where the publisher does not permit the
 	 * product to be supplied to libraries who provide an ebook loan service
 	 */
-	Not_for_sale_to_libraries("09"), //
+	Not_for_sale_to_libraries("09", "Not for sale to libraries"), //
 
 	/**
 	 * For editions sold only through newsstands/newsagents
 	 */
-	News_outlet_edition("10"), //
+	News_outlet_edition("10", "News outlet edition"), //
 
 	/**
 	 * Not for sale through designated retailer. Retailer must be identified or named in an instance of the
 	 * &lt;SalesOutlet&gt; composite
 	 */
-	Retailer_exception("11"), //
+	Retailer_exception("11", "Retailer exception"), //
 
 	/**
 	 * Not for sale to organisations or services offering consumers subscription access to a library of books
 	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Not_for_sale_to_subscription_services("12"), //
+	Not_for_sale_to_subscription_services("12", "Not for sale to subscription services"), //
 
 	/**
 	 * Restricted to organisations or services offering consumers subscription access to a library of books
 	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Subscription_services_only("13");
+	Subscription_services_only("13", "Subscription services only");
 
 	public final String value;
+	public final String label;
 
-	private SalesRestrictionTypes(String value)
+	private SalesRestrictionTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, SalesRestrictionTypes> map;

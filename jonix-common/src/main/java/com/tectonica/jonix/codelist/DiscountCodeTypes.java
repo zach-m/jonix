@@ -35,42 +35,44 @@ public enum DiscountCodeTypes
 	/**
 	 * UK publisher&#8217;s or distributor&#8217;s discount group code in a format specified by BIC to ensure uniqueness
 	 */
-	BIC_discount_group_code("01"), //
+	BIC_discount_group_code("01", "BIC discount group code"), //
 
 	/**
 	 * A publisher&#8217;s or supplier&#8217;s own code which identifies a trade discount category, the actual discount
 	 * being set by trading partner agreement (applies to goods supplied on standard trade discounting terms)
 	 */
-	Proprietary_discount_code("02"), //
+	Proprietary_discount_code("02", "Proprietary discount code"), //
 
 	/**
 	 * Terms code used in the Netherlands book trade
 	 */
-	Boeksoort("03"), //
+	Boeksoort("03", "Boeksoort"), //
 
 	/**
 	 * Terms code used in German ONIX applications
 	 */
-	German_terms_code("04"), //
+	German_terms_code("04", "German terms code"), //
 
 	/**
 	 * A publisher&#8217;s or supplier&#8217;s own code which identifies a commission rate category, the actual
 	 * commission rate being set by trading partner agreement (applies to goods supplied on agency terms)
 	 */
-	Proprietary_commission_code("05"), //
+	Proprietary_commission_code("05", "Proprietary commission code"), //
 
 	/**
 	 * UK publisher&#8217;s or distributor&#8217;s commission group code in format specified by BIC to ensure
 	 * uniqueness. Format is identical to BIC discount group code, but indicates a commission rather than a discount
 	 * (applies to goods supplied on agency terms)
 	 */
-	BIC_commission_group_code("06");
+	BIC_commission_group_code("06", "BIC commission group code");
 
 	public final String value;
+	public final String label;
 
-	private DiscountCodeTypes(String value)
+	private DiscountCodeTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static DiscountCodeTypes byValue(String value)

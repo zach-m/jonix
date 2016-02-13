@@ -38,68 +38,70 @@ public enum PositionOnProducts
 	/**
 	 * Position unknown or unspecified
 	 */
-	Unknown_unspecified("00"), //
+	Unknown_unspecified("00", "Unknown / unspecified"), //
 
 	/**
 	 * The back cover of a book
 	 */
-	Cover_4("01"), //
+	Cover_4("01", "Cover 4"), //
 
 	/**
 	 * The inside back cover of a book
 	 */
-	Cover_3("02"), //
+	Cover_3("02", "Cover 3"), //
 
 	/**
 	 * The inside front cover of a book
 	 */
-	Cover_2("03"), //
+	Cover_2("03", "Cover 2"), //
 
 	/**
 	 * The front cover of a book
 	 */
-	Cover_1("04"), //
+	Cover_1("04", "Cover 1"), //
 
 	/**
 	 * The spine of a book
 	 */
-	On_spine("05"), //
+	On_spine("05", "On spine"), //
 
 	/**
 	 * Used only for boxed products
 	 */
-	On_box("06"), //
+	On_box("06", "On box"), //
 
 	/**
 	 * Used only for products fitted with hanging tags
 	 */
-	On_tag("07"), //
+	On_tag("07", "On tag"), //
 
 	/**
 	 * Not be used for books unless they are contained within outer packaging
 	 */
-	On_bottom("08"), //
+	On_bottom("08", "On bottom"), //
 
 	/**
 	 * Not be used for books unless they are contained within outer packaging
 	 */
-	On_back("09"), //
+	On_back("09", "On back"), //
 
 	/**
 	 * Used only for products packaged in outer sleeves
 	 */
-	On_outer_sleeve_back("10"), //
+	On_outer_sleeve_back("10", "On outer sleeve / back"), //
 
 	/**
 	 * Used only for products packaged in shrink-wrap or other removable wrapping
 	 */
-	On_removable_wrapping("11");
+	On_removable_wrapping("11", "On removable wrapping");
 
 	public final String value;
+	public final String label;
 
-	private PositionOnProducts(String value)
+	private PositionOnProducts(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, PositionOnProducts> map;

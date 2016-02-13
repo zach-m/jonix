@@ -38,30 +38,32 @@ public enum MeasureUnits
 	/**
 	 * Millimeters are the preferred metric unit of length
 	 */
-	Centimeters("cm"), //
+	Centimeters("cm", "Centimeters"), //
 
-	Grams("gr"), //
+	Grams("gr", "Grams"), //
 
-	Inches_US("in"), //
+	Inches_US("in", "Inches (US)"), //
 
 	/**
 	 * Grams are the preferred metric unit of weight
 	 */
-	Kilograms("kg"), //
+	Kilograms("kg", "Kilograms"), //
 
-	Pounds_US("lb"), //
+	Pounds_US("lb", "Pounds (US)"), //
 
-	Millimeters("mm"), //
+	Millimeters("mm", "Millimeters"), //
 
-	Ounces_US("oz"), //
+	Ounces_US("oz", "Ounces (US)"), //
 
-	Pixels("px");
+	Pixels("px", "Pixels");
 
 	public final String value;
+	public final String label;
 
-	private MeasureUnits(String value)
+	private MeasureUnits(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, MeasureUnits> map;

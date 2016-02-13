@@ -35,25 +35,27 @@ public enum TaxTypes
 	/**
 	 * Value-added tax (TVA, IVA, MwSt etc)
 	 */
-	VAT("01"), //
+	VAT("01", "VAT"), //
 
 	/**
 	 * General sales tax
 	 */
-	GST("02"), //
+	GST("02", "GST"), //
 
 	/**
 	 * &#8216;Green&#8217; or eco-tax, levied to encourage responsible production or disposal, used only where this is
 	 * identified separately from value-added or sales taxes (eg French &#233;co-participation tax) &lt;p&gt;NOTE:
 	 * Introduced in Onix3
 	 */
-	ECO("03");
+	ECO("03", "ECO");
 
 	public final String value;
+	public final String label;
 
-	private TaxTypes(String value)
+	private TaxTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static TaxTypes byValue(String value)

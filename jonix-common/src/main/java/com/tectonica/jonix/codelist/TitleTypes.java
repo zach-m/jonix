@@ -35,7 +35,7 @@ import java.util.Map;
  */
 public enum TitleTypes
 {
-	Undefined("00"), //
+	Undefined("00", "Undefined"), //
 
 	/**
 	 * The full text of the distinctive title of the item, without abbreviation or abridgement. For books, where the
@@ -45,76 +45,79 @@ public enum TitleTypes
 	 * titles, with suitable punctuation, as in &#8216;Pride and prejudice / Sense and sensibility / Northanger
 	 * Abbey&#8217;
 	 */
-	Distinctive_title_book("01"), //
+	Distinctive_title_book("01",
+			"Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)"), //
 
 	/**
 	 * Serials only
 	 */
-	ISSN_key_title_of_serial("02"), //
+	ISSN_key_title_of_serial("02", "ISSN key title of serial"), //
 
 	/**
 	 * Where the subject of the ONIX record is a translated item
 	 */
-	Title_in_original_language("03"), //
+	Title_in_original_language("03", "Title in original language"), //
 
 	/**
 	 * For serials: an acronym or initialism of Title Type 01, eg &#8216;JAMA&#8217;, &#8216;JACM&#8217;
 	 */
-	Title_acronym_or_initialism("04"), //
+	Title_acronym_or_initialism("04", "Title acronym or initialism"), //
 
 	/**
 	 * An abbreviated form of Title Type 01
 	 */
-	Abbreviated_title("05"), //
+	Abbreviated_title("05", "Abbreviated title"), //
 
 	/**
 	 * A translation of Title Type 01 into another language
 	 */
-	Title_in_other_language("06"), //
+	Title_in_other_language("06", "Title in other language"), //
 
 	/**
 	 * Serials only: when a journal issue is explicitly devoted to a specified topic
 	 */
-	Thematic_title_of_journal_issue("07"), //
+	Thematic_title_of_journal_issue("07", "Thematic title of journal issue"), //
 
 	/**
 	 * Books or serials: when an item was previously published under another title
 	 */
-	Former_title("08"), //
+	Former_title("08", "Former title"), //
 
 	/**
 	 * For books: the title carried in a book distributor&#8217;s title file: frequently incomplete, and may include
 	 * elements not properly part of the title
 	 */
-	Distributor_s_title("10"), //
+	Distributor_s_title("10", "Distributor’s title"), //
 
 	/**
 	 * An alternative title that appears on the cover of a book
 	 */
-	Alternative_title_on_cover("11"), //
+	Alternative_title_on_cover("11", "Alternative title on cover"), //
 
 	/**
 	 * An alternative title that appears on the back of a book
 	 */
-	Alternative_title_on_back("12"), //
+	Alternative_title_on_back("12", "Alternative title on back"), //
 
 	/**
 	 * An expanded form of the title, eg the title of a school text book with grade and type and other details added to
 	 * make the title meaningful, where otherwise it would comprise only the curriculum subject. This title type is
 	 * required for submissions to the Spanish ISBN Agency
 	 */
-	Expanded_title("13"), //
+	Expanded_title("13", "Expanded title"), //
 
 	/**
 	 * An alternative title that the book is widely known by, whether it appears on the book or not
 	 */
-	Alternative_title("14");
+	Alternative_title("14", "Alternative title");
 
 	public final String value;
+	public final String label;
 
-	private TitleTypes(String value)
+	private TitleTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, TitleTypes> map;

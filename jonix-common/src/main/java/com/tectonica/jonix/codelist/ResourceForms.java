@@ -38,7 +38,7 @@ public enum ResourceForms
 	 * Until Date specified in &lt;ContentDate&gt;). The ONIX recipient may embed the URL in a consumer facing-website
 	 * (eg as the src attribute in an &lt;img&gt; link), and need not host an independent copy of the resource
 	 */
-	Linkable_resource("01"), //
+	Linkable_resource("01", "Linkable resource"), //
 
 	/**
 	 * A file that may be downloaded on demand for third-party use. The ONIX sender will host a copy of the resource
@@ -47,19 +47,21 @@ public enum ResourceForms
 	 * consumer-facing website. Special attention should be paid to the &#8216;Last Updated&#8217; &lt;ContentDate&gt;
 	 * to ensure the independent copy of the resource is kept up to date
 	 */
-	Downloadable_file("02"), //
+	Downloadable_file("02", "Downloadable file"), //
 
 	/**
 	 * An application which is supplied in a form which can be embedded into a third-party webpage. As type 02, except
 	 * the resource contains active content such as JavaScript, Flash, etc
 	 */
-	Embeddable_application("03");
+	Embeddable_application("03", "Embeddable application");
 
 	public final String value;
+	public final String label;
 
-	private ResourceForms(String value)
+	private ResourceForms(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ResourceForms byValue(String value)

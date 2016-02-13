@@ -35,23 +35,25 @@ public enum RightsTypes
 	/**
 	 * Text or image copyright (normally indicated by the &#169; symbol)
 	 */
-	Copyright("C"), //
+	Copyright("C", "Copyright"), //
 
 	/**
 	 * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol)
 	 */
-	Phonogram_right("P"), //
+	Phonogram_right("P", "Phonogram right"), //
 
 	/**
 	 * Sui generis database right
 	 */
-	Database_right("D");
+	Database_right("D", "Database right");
 
 	public final String value;
+	public final String label;
 
-	private RightsTypes(String value)
+	private RightsTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static RightsTypes byValue(String value)

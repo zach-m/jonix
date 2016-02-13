@@ -38,103 +38,105 @@ public enum NorthAmericanSchoolOrCollegeGrades
 	/**
 	 * Age typically 0-4 years
 	 */
-	Preschool("P"), //
+	Preschool("P", "Preschool"), //
 
 	/**
 	 * Age typically 5 years
 	 */
-	Kindergarten("K"), //
+	Kindergarten("K", "Kindergarten"), //
 
 	/**
 	 * Age typically 6 years
 	 */
-	First_Grade("1"), //
+	First_Grade("1", "First Grade"), //
 
 	/**
 	 * Age typically 7 years
 	 */
-	Second_Grade("2"), //
+	Second_Grade("2", "Second Grade"), //
 
 	/**
 	 * Age typically 8 years
 	 */
-	Third_Grade("3"), //
+	Third_Grade("3", "Third Grade"), //
 
 	/**
 	 * Age typically 9 years
 	 */
-	Fourth_Grade("4"), //
+	Fourth_Grade("4", "Fourth Grade"), //
 
 	/**
 	 * Age typically 10 years
 	 */
-	Fifth_Grade("5"), //
+	Fifth_Grade("5", "Fifth Grade"), //
 
 	/**
 	 * Age typically 11 years
 	 */
-	Sixth_Grade("6"), //
+	Sixth_Grade("6", "Sixth Grade"), //
 
 	/**
 	 * Age typically 12 years
 	 */
-	Seventh_Grade("7"), //
+	Seventh_Grade("7", "Seventh Grade"), //
 
 	/**
 	 * Age typically 13 years
 	 */
-	Eighth_Grade("8"), //
+	Eighth_Grade("8", "Eighth Grade"), //
 
 	/**
 	 * High School Freshman &#8211; age typically 14 years
 	 */
-	Ninth_Grade("9"), //
+	Ninth_Grade("9", "Ninth Grade"), //
 
 	/**
 	 * High School Sophomore &#8211; age typically 15 years
 	 */
-	Tenth_Grade("10"), //
+	Tenth_Grade("10", "Tenth Grade"), //
 
 	/**
 	 * High School Junior &#8211; age typically 16 years
 	 */
-	Eleventh_Grade("11"), //
+	Eleventh_Grade("11", "Eleventh Grade"), //
 
 	/**
 	 * High School Senior &#8211; age typically 17 years
 	 */
-	Twelfth_Grade("12"), //
+	Twelfth_Grade("12", "Twelfth Grade"), //
 
 	/**
 	 * Age typically 18 years
 	 */
-	College_Freshman("13"), //
+	College_Freshman("13", "College Freshman"), //
 
 	/**
 	 * Age typically 19 years
 	 */
-	College_Sophomore("14"), //
+	College_Sophomore("14", "College Sophomore"), //
 
 	/**
 	 * Age typically 20 years
 	 */
-	College_Junior("15"), //
+	College_Junior("15", "College Junior"), //
 
 	/**
 	 * Age typically 21 years
 	 */
-	College_Senior("16"), //
+	College_Senior("16", "College Senior"), //
 
 	/**
 	 * Age typically 22+ years
 	 */
-	College_Graduate_Student("17");
+	College_Graduate_Student("17", "College Graduate Student");
 
 	public final String value;
+	public final String label;
 
-	private NorthAmericanSchoolOrCollegeGrades(String value)
+	private NorthAmericanSchoolOrCollegeGrades(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, NorthAmericanSchoolOrCollegeGrades> map;

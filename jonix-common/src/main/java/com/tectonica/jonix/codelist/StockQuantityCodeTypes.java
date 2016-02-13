@@ -32,18 +32,20 @@ package com.tectonica.jonix.codelist;
  */
 public enum StockQuantityCodeTypes
 {
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * Code scheme defined by the Australian Publishers Association
 	 */
-	APA_stock_quantity_code("02");
+	APA_stock_quantity_code("02", "APA stock quantity code");
 
 	public final String value;
+	public final String label;
 
-	private StockQuantityCodeTypes(String value)
+	private StockQuantityCodeTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static StockQuantityCodeTypes byValue(String value)

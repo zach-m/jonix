@@ -32,20 +32,22 @@ package com.tectonica.jonix.codelist;
  */
 public enum UsageStatuss
 {
-	Permitted_unlimited("01"), //
+	Permitted_unlimited("01", "Permitted unlimited"), //
 
 	/**
 	 * Limit should be specified in &lt;EpubUsageLimit&gt;
 	 */
-	Permitted_subject_to_limit("02"), //
+	Permitted_subject_to_limit("02", "Permitted subject to limit"), //
 
-	Prohibited("03");
+	Prohibited("03", "Prohibited");
 
 	public final String value;
+	public final String label;
 
-	private UsageStatuss(String value)
+	private UsageStatuss(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static UsageStatuss byValue(String value)

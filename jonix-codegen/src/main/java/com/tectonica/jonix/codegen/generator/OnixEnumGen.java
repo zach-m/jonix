@@ -113,16 +113,18 @@ public class OnixEnumGen
 				p.printf("    * %s\n", XML.escape(ev.description));
 				p.printf("    */\n");
 			}
-			p.printf("   %s(\"%s\")", token, ev.value);
+			p.printf("   %s(\"%s\", \"%s\")", token, ev.value, ev.name);
 		}
 		p.print(";\n");
 
 		p.println();
 		p.printf("   public final String value;\n");
+		p.printf("   public final String label;\n");
 		p.println();
-		p.printf("   private %s(String value)\n", enumType.enumName);
+		p.printf("   private %s(String value, String label)\n", enumType.enumName);
 		p.printf("   {\n");
 		p.printf("      this.value = value;\n");
+		p.printf("      this.label = label;\n");
 		p.printf("   }\n");
 
 		if (enumType.enumValues.size() < MIN_FOR_MAP)

@@ -36,19 +36,21 @@ public enum MarketDateRoles
 	 * The nominal date of publication in this market. If there is a strict embargo on retail sales before the expected
 	 * date, it should be specified separately as an embargo date
 	 */
-	Publication_date("01"), //
+	Publication_date("01", "Publication date"), //
 
 	/**
 	 * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is
 	 * lifted and retail sales are permitted
 	 */
-	Embargo_date("02");
+	Embargo_date("02", "Embargo date");
 
 	public final String value;
+	public final String label;
 
-	private MarketDateRoles(String value)
+	private MarketDateRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static MarketDateRoles byValue(String value)

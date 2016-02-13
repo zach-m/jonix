@@ -38,93 +38,95 @@ public enum AudienceRangeQualifiers
 	/**
 	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77
 	 */
-	US_school_grade_range("11"), //
+	US_school_grade_range("11", "US school grade range"), //
 
 	/**
 	 * Values are defined by BIC for England and Wales, Scotland and N Ireland
 	 */
-	UK_school_grade("12"), //
+	UK_school_grade("12", "UK school grade"), //
 
 	/**
 	 * Values in &lt;AudienceRangeValue&gt; must be integers
 	 */
-	Reading_speed_words_per_minute("15"), //
+	Reading_speed_words_per_minute("15", "Reading speed, words per minute"), //
 
 	/**
 	 * For use up to 36 months only: values in &lt;AudienceRangeValue&gt; must be integers
 	 */
-	Interest_age_months("16"), //
+	Interest_age_months("16", "Interest age, months"), //
 
 	/**
 	 * Values in &lt;AudienceRangeValue&gt; must be integers
 	 */
-	Interest_age_years("17"), //
+	Interest_age_years("17", "Interest age, years"), //
 
 	/**
 	 * Values in &lt;AudienceRangeValue&gt; must be integers
 	 */
-	Reading_age_years("18"), //
+	Reading_age_years("18", "Reading age, years"), //
 
 	/**
 	 * Spain: combined grade and region code, maintained by the Ministerio de Educaci&#243;n
 	 */
-	Spanish_school_grade("19"), //
+	Spanish_school_grade("19", "Spanish school grade"), //
 
 	/**
 	 * Norwegian educational level for primary and secondary education
 	 */
-	Skoletrinn("20"), //
+	Skoletrinn("20", "Skoletrinn"), //
 
 	/**
 	 * Swedish educational qualifier (code)
 	 */
-	Niv_("21"), //
+	Niv_("21", "Nivå"), //
 
-	Italian_school_grade("22"), //
-
-	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29
-	 */
-	Schulform("23"), //
+	Italian_school_grade("22", "Italian school grade"), //
 
 	/**
 	 * DEPRECATED &#8211; assigned in error: see List 29
 	 */
-	Bundesland("24"), //
+	Schulform("23", "Schulform"), //
 
 	/**
 	 * DEPRECATED &#8211; assigned in error: see List 29
 	 */
-	Ausbildungsberuf("25"), //
+	Bundesland("24", "Bundesland"), //
+
+	/**
+	 * DEPRECATED &#8211; assigned in error: see List 29
+	 */
+	Ausbildungsberuf("25", "Ausbildungsberuf"), //
 
 	/**
 	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77
 	 */
-	Canadian_school_grade_range("26"), //
+	Canadian_school_grade_range("26", "Canadian school grade range"), //
 
-	Finnish_school_grade_range("27"), //
+	Finnish_school_grade_range("27", "Finnish school grade range"), //
 
 	/**
 	 * Lukion kurssi
 	 */
-	Finnish_Upper_secondary_school_course("28"), //
+	Finnish_Upper_secondary_school_course("28", "Finnish Upper secondary school course"), //
 
 	/**
 	 * Values are P, K, 1&#8211;17 (including college-level audiences), see List 227
 	 */
-	Chinese_School_Grade_range("29"), //
+	Chinese_School_Grade_range("29", "Chinese School Grade range"), //
 
 	/**
 	 * French educational level classification scolomfr-voc-022, used for example on WizWiz.fr. See
 	 * http://www.lom-fr.fr/scolomfr/vocabulaires/consultation-des-vocabulaires.html
 	 */
-	Nomenclature_niveaux("30");
+	Nomenclature_niveaux("30", "Nomenclature niveaux");
 
 	public final String value;
+	public final String label;
 
-	private AudienceRangeQualifiers(String value)
+	private AudienceRangeQualifiers(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, AudienceRangeQualifiers> map;

@@ -35,38 +35,40 @@ public enum TransliterationSchemes
 	/**
 	 * Transliteration of Cyrillic characters &#8211; Slavic languages
 	 */
-	Finnish_standard_SFS_4900("SFS4900"), //
+	Finnish_standard_SFS_4900("SFS4900", "Finnish standard SFS 4900"), //
 
 	/**
 	 * Transliteration and transcription of Greek characters
 	 */
-	Finnish_standard_SFS_5807("SFS5807"), //
+	Finnish_standard_SFS_5807("SFS5807", "Finnish standard SFS 5807"), //
 
 	/**
 	 * Transliteration of Arabic characters
 	 */
-	Finnish_standard_SFS_5755("SFS5755"), //
+	Finnish_standard_SFS_5755("SFS5755", "Finnish standard SFS 5755"), //
 
 	/**
 	 * Transliteration of Hebrew characters
 	 */
-	Finnish_standard_SFS_5824("SFS3602"), //
+	Finnish_standard_SFS_5824("SFS3602", "Finnish standard SFS 5824"), //
 
 	/**
 	 * Documentation &#8211; Romanization of Japanese (kana script)
 	 */
-	ISO_3602("ISO3602"), //
+	ISO_3602("ISO3602", "ISO 3602"), //
 
 	/**
 	 * Information and documentation &#8211; Romanization of Chinese
 	 */
-	ISO_7098("ISO7098");
+	ISO_7098("ISO7098", "ISO 7098");
 
 	public final String value;
+	public final String label;
 
-	private TransliterationSchemes(String value)
+	private TransliterationSchemes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static TransliterationSchemes byValue(String value)

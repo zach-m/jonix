@@ -35,18 +35,20 @@ public enum IllustratedNotIllustrateds
 	/**
 	 * Not illustrated
 	 */
-	No("01"), //
+	No("01", "No"), //
 
 	/**
 	 * Illustrated
 	 */
-	Yes("02");
+	Yes("02", "Yes");
 
 	public final String value;
+	public final String label;
 
-	private IllustratedNotIllustrateds(String value)
+	private IllustratedNotIllustrateds(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static IllustratedNotIllustrateds byValue(String value)

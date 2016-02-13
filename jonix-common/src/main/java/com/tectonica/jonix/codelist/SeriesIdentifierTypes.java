@@ -38,53 +38,55 @@ public enum SeriesIdentifierTypes
 	/**
 	 * For example, publisher&#8217;s own series ID
 	 */
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * International Standard Serial Number, unhyphenated, 8 digits
 	 */
-	ISSN("02"), //
+	ISSN("02", "ISSN"), //
 
 	/**
 	 * Maintained by the Deutsche Nationalbibliothek
 	 */
-	German_National_Bibliography_series_ID("03"), //
+	German_National_Bibliography_series_ID("03", "German National Bibliography series ID"), //
 
 	/**
 	 * Maintained by VLB
 	 */
-	German_Books_in_Print_series_ID("04"), //
+	German_Books_in_Print_series_ID("04", "German Books in Print series ID"), //
 
 	/**
 	 * Maintained by Electre Information, France
 	 */
-	Electre_series_ID("05"), //
+	Electre_series_ID("05", "Electre series ID"), //
 
 	/**
 	 * Digital Object Identifier (variable length and character set)
 	 */
-	DOI("06"), //
+	DOI("06", "DOI"), //
 
 	/**
 	 * Use only where the collection (series or set) is available as a single product
 	 */
-	ISBN_13("15"), //
+	ISBN_13("15", "ISBN-13"), //
 
 	/**
 	 * Uniform Resource Name
 	 */
-	URN("22"), //
+	URN("22", "URN"), //
 
 	/**
 	 * French National Bibliography series ID, maintained by the Biblioth&#232;que Nationale de France
 	 */
-	Identifiant_BNF_des_publications_en_s_rie("29");
+	Identifiant_BNF_des_publications_en_s_rie("29", "Identifiant BNF des publications en série");
 
 	public final String value;
+	public final String label;
 
-	private SeriesIdentifierTypes(String value)
+	private SeriesIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, SeriesIdentifierTypes> map;

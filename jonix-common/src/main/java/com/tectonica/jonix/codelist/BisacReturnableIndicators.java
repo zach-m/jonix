@@ -32,22 +32,24 @@ package com.tectonica.jonix.codelist;
  */
 public enum BisacReturnableIndicators
 {
-	No_not_returnable("N"), //
+	No_not_returnable("N", "No, not returnable"), //
 
-	Yes_returnable_full_copies_only("Y"), //
+	Yes_returnable_full_copies_only("Y", "Yes, returnable, full copies only"), //
 
-	Yes_returnable_stripped_cover("S"), //
+	Yes_returnable_stripped_cover("S", "Yes, returnable, stripped cover"), //
 
 	/**
 	 * Contact publisher for requirements and/or authorization
 	 */
-	Conditional("C");
+	Conditional("C", "Conditional");
 
 	public final String value;
+	public final String label;
 
-	private BisacReturnableIndicators(String value)
+	private BisacReturnableIndicators(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static BisacReturnableIndicators byValue(String value)

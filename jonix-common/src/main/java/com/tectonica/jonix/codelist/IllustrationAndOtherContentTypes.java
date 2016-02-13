@@ -38,108 +38,110 @@ public enum IllustrationAndOtherContentTypes
 	/**
 	 * See description in the &lt;IllustrationTypeDescription&gt; element
 	 */
-	Unspecified_see_description("00"), //
+	Unspecified_see_description("00", "Unspecified, see description"), //
 
-	Illustrations_black_and_white("01"), //
+	Illustrations_black_and_white("01", "Illustrations, black and white"), //
 
-	Illustrations_color("02"), //
+	Illustrations_color("02", "Illustrations, color"), //
 
 	/**
 	 * Including black and white photographs
 	 */
-	Halftones_black_and_white("03"), //
+	Halftones_black_and_white("03", "Halftones, black and white"), //
 
 	/**
 	 * Including color photographs
 	 */
-	Halftones_color("04"), //
+	Halftones_color("04", "Halftones, color"), //
 
-	Line_drawings_black_and_white("05"), //
+	Line_drawings_black_and_white("05", "Line drawings, black and white"), //
 
-	Line_drawings_color("06"), //
+	Line_drawings_color("06", "Line drawings, color"), //
 
-	Tables_black_and_white("07"), //
+	Tables_black_and_white("07", "Tables, black and white"), //
 
-	Tables_color("08"), //
+	Tables_color("08", "Tables, color"), //
 
-	Illustrations_unspecified("09"), //
+	Illustrations_unspecified("09", "Illustrations, unspecified"), //
 
 	/**
 	 * Including photographs
 	 */
-	Halftones_unspecified("10"), //
+	Halftones_unspecified("10", "Halftones, unspecified"), //
 
-	Tables_unspecified("11"), //
+	Tables_unspecified("11", "Tables, unspecified"), //
 
-	Line_drawings_unspecified("12"), //
+	Line_drawings_unspecified("12", "Line drawings, unspecified"), //
 
-	Halftones_duotone("13"), //
+	Halftones_duotone("13", "Halftones, duotone"), //
 
-	Maps("14"), //
+	Maps("14", "Maps"), //
 
-	Frontispiece("15"), //
+	Frontispiece("15", "Frontispiece"), //
 
-	Diagrams("16"), //
+	Diagrams("16", "Diagrams"), //
 
-	Figures("17"), //
+	Figures("17", "Figures"), //
 
-	Charts("18"), //
+	Charts("18", "Charts"), //
 
 	/**
 	 * Recorded music extracts or examples, or complete recorded work(s), accompanying textual or other content
 	 */
-	Recorded_music_items("19"), //
+	Recorded_music_items("19", "Recorded music items"), //
 
 	/**
 	 * Printed music extracts or examples, or complete music score(s), accompanying textual or other content
 	 */
-	Printed_music_items("20"), //
+	Printed_music_items("20", "Printed music items"), //
 
 	/**
 	 * To be used in the mathematical sense of a diagram that represents numerical values plotted against an origin and
 	 * axes, cf codes 16 and 18
 	 */
-	Graphs("21"), //
+	Graphs("21", "Graphs"), //
 
 	/**
 	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
 	 */
-	Plates_unspecified("22"), //
+	Plates_unspecified("22", "Plates, unspecified"), //
 
 	/**
 	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
 	 */
-	Plates_black_and_white("23"), //
+	Plates_black_and_white("23", "Plates, black and white"), //
 
 	/**
 	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
 	 */
-	Plates_color("24"), //
+	Plates_color("24", "Plates, color"), //
 
-	Index("25"), //
+	Index("25", "Index"), //
 
-	Bibliography("26"), //
+	Bibliography("26", "Bibliography"), //
 
 	/**
 	 * Larger-scale inset maps of places or features of interest included in a map product
 	 */
-	Inset_maps("27"), //
+	Inset_maps("27", "Inset maps"), //
 
 	/**
 	 * GPS grids included in a map product
 	 */
-	GPS_grids("28"), //
+	GPS_grids("28", "GPS grids"), //
 
 	/**
 	 * null &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Glossary("29");
+	Glossary("29", "Glossary");
 
 	public final String value;
+	public final String label;
 
-	private IllustrationAndOtherContentTypes(String value)
+	private IllustrationAndOtherContentTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, IllustrationAndOtherContentTypes> map;

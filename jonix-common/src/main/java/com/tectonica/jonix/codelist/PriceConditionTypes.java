@@ -38,55 +38,57 @@ public enum PriceConditionTypes
 	/**
 	 * Allows positive indication that there are no conditions (the default if &lt;PriceCondition&gt; is omitted)
 	 */
-	No_conditions("00"), //
+	No_conditions("00", "No conditions"), //
 
 	/**
 	 * Purchase at this price includes specified updates
 	 */
-	Includes_updates("01"), //
+	Includes_updates("01", "Includes updates"), //
 
 	/**
 	 * Purchase at this price requires commitment to purchase specified updates, not included in price
 	 */
-	Must_also_purchase_updates("02"), //
+	Must_also_purchase_updates("02", "Must also purchase updates"), //
 
 	/**
 	 * Updates may be purchased separately, no minimum commitment required
 	 */
-	Updates_available("03"), //
+	Updates_available("03", "Updates available"), //
 
 	/**
 	 * Purchase at this price requires prior purchase of other product
 	 */
-	Linked_prior_purchase_price("05"), //
+	Linked_prior_purchase_price("05", "Linked prior purchase price"), //
 
 	/**
 	 * Purchase at this price requires simultaneous purchase of other product
 	 */
-	Linked_price("06"), //
+	Linked_price("06", "Linked price"), //
 
 	/**
 	 * The duration of the rental to which the price applies
 	 */
-	Rental_duration("10"), //
+	Rental_duration("10", "Rental duration"), //
 
 	/**
 	 * Purchase at this price requires prior rental of the product. &lt;PriceConditionQuantity&gt; gives minimum prior
 	 * rental period, and &lt;ProductIdentifier&gt; may be used if rental uses a different product identifier
 	 */
-	Rental_to_purchase("11"), //
+	Rental_to_purchase("11", "Rental to purchase"), //
 
 	/**
 	 * Upgrade to longer rental duration. &lt;PriceConditionQuantity&gt; gives minimum prior rental duration. Separate
 	 * price condition with rental duration (code 10) specifies the new combined rental duration
 	 */
-	Rental_extension("12");
+	Rental_extension("12", "Rental extension");
 
 	public final String value;
+	public final String label;
 
-	private PriceConditionTypes(String value)
+	private PriceConditionTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, PriceConditionTypes> map;

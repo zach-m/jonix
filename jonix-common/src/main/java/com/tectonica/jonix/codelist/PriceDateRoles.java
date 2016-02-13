@@ -35,24 +35,26 @@ public enum PriceDateRoles
 	/**
 	 * Date on which a price becomes effective
 	 */
-	From_date("14"), //
+	From_date("14", "From date"), //
 
 	/**
 	 * Date on which a price ceases to be effective
 	 */
-	Until_date("15"), //
+	Until_date("15", "Until date"), //
 
 	/**
 	 * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
 	 * 06
 	 */
-	From_until_date("24");
+	From_until_date("24", "From… until date");
 
 	public final String value;
+	public final String label;
 
-	private PriceDateRoles(String value)
+	private PriceDateRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PriceDateRoles byValue(String value)

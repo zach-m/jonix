@@ -38,526 +38,528 @@ public enum CountryCodes
 	/**
 	 * All unspecified countries
 	 */
-	Rest_Of_World("ROW"), //
+	Rest_Of_World("ROW", "Rest Of World"), //
 
-	Andorra("AD"), //
+	Andorra("AD", "Andorra"), //
 
-	United_Arab_Emirates("AE"), //
+	United_Arab_Emirates("AE", "United Arab Emirates"), //
 
-	Afghanistan("AF"), //
+	Afghanistan("AF", "Afghanistan"), //
 
-	Antigua_and_Barbuda("AG"), //
+	Antigua_and_Barbuda("AG", "Antigua and Barbuda"), //
 
-	Anguilla("AI"), //
+	Anguilla("AI", "Anguilla"), //
 
-	Albania("AL"), //
+	Albania("AL", "Albania"), //
 
-	Armenia("AM"), //
+	Armenia("AM", "Armenia"), //
 
 	/**
 	 * Deprecated &#8211; use BQ, CW or SX as appropriate
 	 */
-	Netherlands_Antilles("AN"), //
+	Netherlands_Antilles("AN", "Netherlands Antilles"), //
 
-	Angola("AO"), //
+	Angola("AO", "Angola"), //
 
-	Antarctica("AQ"), //
+	Antarctica("AQ", "Antarctica"), //
 
-	Argentina("AR"), //
+	Argentina("AR", "Argentina"), //
 
-	American_Samoa("AS"), //
+	American_Samoa("AS", "American Samoa"), //
 
-	Austria("AT"), //
+	Austria("AT", "Austria"), //
 
-	Australia("AU"), //
+	Australia("AU", "Australia"), //
 
-	Aruba("AW"), //
+	Aruba("AW", "Aruba"), //
 
-	_land_Islands("AX"), //
+	_land_Islands("AX", "Åland Islands"), //
 
-	Azerbaijan("AZ"), //
+	Azerbaijan("AZ", "Azerbaijan"), //
 
-	Bosnia_and_Herzegovina("BA"), //
+	Bosnia_and_Herzegovina("BA", "Bosnia and Herzegovina"), //
 
-	Barbados("BB"), //
+	Barbados("BB", "Barbados"), //
 
-	Bangladesh("BD"), //
+	Bangladesh("BD", "Bangladesh"), //
 
-	Belgium("BE"), //
+	Belgium("BE", "Belgium"), //
 
-	Burkina_Faso("BF"), //
+	Burkina_Faso("BF", "Burkina Faso"), //
 
-	Bulgaria("BG"), //
+	Bulgaria("BG", "Bulgaria"), //
 
-	Bahrain("BH"), //
+	Bahrain("BH", "Bahrain"), //
 
-	Burundi("BI"), //
+	Burundi("BI", "Burundi"), //
 
-	Benin("BJ"), //
+	Benin("BJ", "Benin"), //
 
-	Saint_Barth_lemy("BL"), //
+	Saint_Barth_lemy("BL", "Saint Barthélemy"), //
 
-	Bermuda("BM"), //
+	Bermuda("BM", "Bermuda"), //
 
-	Brunei_Darussalam("BN"), //
+	Brunei_Darussalam("BN", "Brunei Darussalam"), //
 
-	Bolivia_Plurinational_State_of("BO"), //
+	Bolivia_Plurinational_State_of("BO", "Bolivia, Plurinational State of"), //
 
-	Bonaire_Sint_Eustatius_and_Saba("BQ"), //
+	Bonaire_Sint_Eustatius_and_Saba("BQ", "Bonaire, Sint Eustatius and Saba"), //
 
-	Brazil("BR"), //
+	Brazil("BR", "Brazil"), //
 
-	Bahamas("BS"), //
+	Bahamas("BS", "Bahamas"), //
 
-	Bhutan("BT"), //
+	Bhutan("BT", "Bhutan"), //
 
-	Bouvet_Island("BV"), //
+	Bouvet_Island("BV", "Bouvet Island"), //
 
-	Botswana("BW"), //
+	Botswana("BW", "Botswana"), //
 
-	Belarus("BY"), //
+	Belarus("BY", "Belarus"), //
 
-	Belize("BZ"), //
+	Belize("BZ", "Belize"), //
 
-	Canada("CA"), //
+	Canada("CA", "Canada"), //
 
-	Cocos_Keeling("CC"), //
+	Cocos_Keeling("CC", "Cocos (Keeling) Islands"), //
 
-	Congo_Democratic_Republic_of_the("CD"), //
+	Congo_Democratic_Republic_of_the("CD", "Congo, Democratic Republic of the"), //
 
-	Central_African_Republic("CF"), //
+	Central_African_Republic("CF", "Central African Republic"), //
 
-	Congo("CG"), //
+	Congo("CG", "Congo"), //
 
-	Switzerland("CH"), //
+	Switzerland("CH", "Switzerland"), //
 
-	Cote_d_Ivoire("CI"), //
+	Cote_d_Ivoire("CI", "Cote d’Ivoire"), //
 
-	Cook_Islands("CK"), //
+	Cook_Islands("CK", "Cook Islands"), //
 
-	Chile("CL"), //
+	Chile("CL", "Chile"), //
 
-	Cameroon("CM"), //
+	Cameroon("CM", "Cameroon"), //
 
-	China("CN"), //
+	China("CN", "China"), //
 
-	Colombia("CO"), //
+	Colombia("CO", "Colombia"), //
 
-	Costa_Rica("CR"), //
+	Costa_Rica("CR", "Costa Rica"), //
 
 	/**
 	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia
 	 */
-	Serbia_and_Montenegro("CS"), //
+	Serbia_and_Montenegro("CS", "Serbia and Montenegro"), //
 
-	Cuba("CU"), //
+	Cuba("CU", "Cuba"), //
 
-	Cabo_Verde("CV"), //
+	Cabo_Verde("CV", "Cabo Verde"), //
 
-	Cura_ao("CW"), //
+	Cura_ao("CW", "Curaçao"), //
 
-	Christmas_Island("CX"), //
+	Christmas_Island("CX", "Christmas Island"), //
 
-	Cyprus("CY"), //
+	Cyprus("CY", "Cyprus"), //
 
-	Czech_Republic("CZ"), //
+	Czech_Republic("CZ", "Czech Republic"), //
 
-	Germany("DE"), //
+	Germany("DE", "Germany"), //
 
-	Djibouti("DJ"), //
+	Djibouti("DJ", "Djibouti"), //
 
-	Denmark("DK"), //
+	Denmark("DK", "Denmark"), //
 
-	Dominica("DM"), //
+	Dominica("DM", "Dominica"), //
 
-	Dominican_Republic("DO"), //
+	Dominican_Republic("DO", "Dominican Republic"), //
 
-	Algeria("DZ"), //
+	Algeria("DZ", "Algeria"), //
 
-	Ecuador("EC"), //
+	Ecuador("EC", "Ecuador"), //
 
-	Estonia("EE"), //
+	Estonia("EE", "Estonia"), //
 
-	Egypt("EG"), //
+	Egypt("EG", "Egypt"), //
 
-	Western_Sahara("EH"), //
+	Western_Sahara("EH", "Western Sahara"), //
 
-	Eritrea("ER"), //
+	Eritrea("ER", "Eritrea"), //
 
-	Spain("ES"), //
+	Spain("ES", "Spain"), //
 
-	Ethiopia("ET"), //
+	Ethiopia("ET", "Ethiopia"), //
 
-	Finland("FI"), //
+	Finland("FI", "Finland"), //
 
-	Fiji("FJ"), //
+	Fiji("FJ", "Fiji"), //
 
-	Falkland_Islands_Malvinas("FK"), //
+	Falkland_Islands_Malvinas("FK", "Falkland Islands (Malvinas)"), //
 
-	Micronesia_Federated_States_of("FM"), //
+	Micronesia_Federated_States_of("FM", "Micronesia, Federated States of"), //
 
-	Faroe_Islands("FO"), //
+	Faroe_Islands("FO", "Faroe Islands"), //
 
-	France("FR"), //
+	France("FR", "France"), //
 
-	Gabon("GA"), //
+	Gabon("GA", "Gabon"), //
 
-	United_Kingdom("GB"), //
+	United_Kingdom("GB", "United Kingdom"), //
 
-	Grenada("GD"), //
+	Grenada("GD", "Grenada"), //
 
-	Georgia("GE"), //
+	Georgia("GE", "Georgia"), //
 
-	French_Guiana("GF"), //
+	French_Guiana("GF", "French Guiana"), //
 
-	Guernsey("GG"), //
+	Guernsey("GG", "Guernsey"), //
 
-	Ghana("GH"), //
+	Ghana("GH", "Ghana"), //
 
-	Gibraltar("GI"), //
+	Gibraltar("GI", "Gibraltar"), //
 
-	Greenland("GL"), //
+	Greenland("GL", "Greenland"), //
 
-	Gambia("GM"), //
+	Gambia("GM", "Gambia"), //
 
-	Guinea("GN"), //
+	Guinea("GN", "Guinea"), //
 
-	Guadeloupe("GP"), //
+	Guadeloupe("GP", "Guadeloupe"), //
 
-	Equatorial_Guinea("GQ"), //
+	Equatorial_Guinea("GQ", "Equatorial Guinea"), //
 
-	Greece("GR"), //
+	Greece("GR", "Greece"), //
 
-	South_Georgia_and_the_South_Sandwich_Islands("GS"), //
+	South_Georgia_and_the_South_Sandwich_Islands("GS", "South Georgia and the South Sandwich Islands"), //
 
-	Guatemala("GT"), //
+	Guatemala("GT", "Guatemala"), //
 
-	Guam("GU"), //
+	Guam("GU", "Guam"), //
 
-	Guinea_Bissau("GW"), //
+	Guinea_Bissau("GW", "Guinea-Bissau"), //
 
-	Guyana("GY"), //
+	Guyana("GY", "Guyana"), //
 
-	Hong_Kong("HK"), //
+	Hong_Kong("HK", "Hong Kong"), //
 
-	Heard_Island_and_McDonald_Islands("HM"), //
+	Heard_Island_and_McDonald_Islands("HM", "Heard Island and McDonald Islands"), //
 
-	Honduras("HN"), //
+	Honduras("HN", "Honduras"), //
 
-	Croatia("HR"), //
+	Croatia("HR", "Croatia"), //
 
-	Haiti("HT"), //
+	Haiti("HT", "Haiti"), //
 
-	Hungary("HU"), //
+	Hungary("HU", "Hungary"), //
 
-	Indonesia("ID"), //
+	Indonesia("ID", "Indonesia"), //
 
-	Ireland("IE"), //
+	Ireland("IE", "Ireland"), //
 
-	Israel("IL"), //
+	Israel("IL", "Israel"), //
 
-	Isle_of_Man("IM"), //
+	Isle_of_Man("IM", "Isle of Man"), //
 
-	India("IN"), //
+	India("IN", "India"), //
 
-	British_Indian_Ocean_Territory("IO"), //
+	British_Indian_Ocean_Territory("IO", "British Indian Ocean Territory"), //
 
-	Iraq("IQ"), //
+	Iraq("IQ", "Iraq"), //
 
-	Iran_Islamic_Republic_of("IR"), //
+	Iran_Islamic_Republic_of("IR", "Iran, Islamic Republic of"), //
 
-	Iceland("IS"), //
+	Iceland("IS", "Iceland"), //
 
-	Italy("IT"), //
+	Italy("IT", "Italy"), //
 
-	Jersey("JE"), //
+	Jersey("JE", "Jersey"), //
 
-	Jamaica("JM"), //
+	Jamaica("JM", "Jamaica"), //
 
-	Jordan("JO"), //
+	Jordan("JO", "Jordan"), //
 
-	Japan("JP"), //
+	Japan("JP", "Japan"), //
 
-	Kenya("KE"), //
+	Kenya("KE", "Kenya"), //
 
-	Kyrgyzstan("KG"), //
+	Kyrgyzstan("KG", "Kyrgyzstan"), //
 
-	Cambodia("KH"), //
+	Cambodia("KH", "Cambodia"), //
 
-	Kiribati("KI"), //
+	Kiribati("KI", "Kiribati"), //
 
-	Comoros("KM"), //
+	Comoros("KM", "Comoros"), //
 
-	Saint_Kitts_and_Nevis("KN"), //
+	Saint_Kitts_and_Nevis("KN", "Saint Kitts and Nevis"), //
 
-	Korea_Democratic_People_s_Republic_of("KP"), //
+	Korea_Democratic_People_s_Republic_of("KP", "Korea, Democratic People’s Republic of"), //
 
-	Korea_Republic_of("KR"), //
+	Korea_Republic_of("KR", "Korea, Republic of"), //
 
-	Kuwait("KW"), //
+	Kuwait("KW", "Kuwait"), //
 
-	Cayman_Islands("KY"), //
+	Cayman_Islands("KY", "Cayman Islands"), //
 
-	Kazakhstan("KZ"), //
+	Kazakhstan("KZ", "Kazakhstan"), //
 
-	Lao_People_s_Democratic_Republic("LA"), //
+	Lao_People_s_Democratic_Republic("LA", "Lao People’s Democratic Republic"), //
 
-	Lebanon("LB"), //
+	Lebanon("LB", "Lebanon"), //
 
-	Saint_Lucia("LC"), //
+	Saint_Lucia("LC", "Saint Lucia"), //
 
-	Liechtenstein("LI"), //
+	Liechtenstein("LI", "Liechtenstein"), //
 
-	Sri_Lanka("LK"), //
+	Sri_Lanka("LK", "Sri Lanka"), //
 
-	Liberia("LR"), //
+	Liberia("LR", "Liberia"), //
 
-	Lesotho("LS"), //
+	Lesotho("LS", "Lesotho"), //
 
-	Lithuania("LT"), //
+	Lithuania("LT", "Lithuania"), //
 
-	Luxembourg("LU"), //
+	Luxembourg("LU", "Luxembourg"), //
 
-	Latvia("LV"), //
+	Latvia("LV", "Latvia"), //
 
-	Libya("LY"), //
+	Libya("LY", "Libya"), //
 
-	Morocco("MA"), //
+	Morocco("MA", "Morocco"), //
 
-	Monaco("MC"), //
+	Monaco("MC", "Monaco"), //
 
-	Moldova_Repubic_of("MD"), //
+	Moldova_Repubic_of("MD", "Moldova, Repubic of"), //
 
-	Montenegro("ME"), //
+	Montenegro("ME", "Montenegro"), //
 
-	Saint_Martin_French_part("MF"), //
+	Saint_Martin_French_part("MF", "Saint Martin (French part)"), //
 
-	Madagascar("MG"), //
+	Madagascar("MG", "Madagascar"), //
 
-	Marshall_Islands("MH"), //
+	Marshall_Islands("MH", "Marshall Islands"), //
 
-	Macedonia_the_former_Yugoslav_Republic_of("MK"), //
+	Macedonia_the_former_Yugoslav_Republic_of("MK", "Macedonia, the former Yugoslav Republic of"), //
 
-	Mali("ML"), //
+	Mali("ML", "Mali"), //
 
-	Myanmar("MM"), //
+	Myanmar("MM", "Myanmar"), //
 
-	Mongolia("MN"), //
+	Mongolia("MN", "Mongolia"), //
 
-	Macao("MO"), //
+	Macao("MO", "Macao"), //
 
-	Northern_Mariana_Islands("MP"), //
+	Northern_Mariana_Islands("MP", "Northern Mariana Islands"), //
 
-	Martinique("MQ"), //
+	Martinique("MQ", "Martinique"), //
 
-	Mauritania("MR"), //
+	Mauritania("MR", "Mauritania"), //
 
-	Montserrat("MS"), //
+	Montserrat("MS", "Montserrat"), //
 
-	Malta("MT"), //
+	Malta("MT", "Malta"), //
 
-	Mauritius("MU"), //
+	Mauritius("MU", "Mauritius"), //
 
-	Maldives("MV"), //
+	Maldives("MV", "Maldives"), //
 
-	Malawi("MW"), //
+	Malawi("MW", "Malawi"), //
 
-	Mexico("MX"), //
+	Mexico("MX", "Mexico"), //
 
-	Malaysia("MY"), //
+	Malaysia("MY", "Malaysia"), //
 
-	Mozambique("MZ"), //
+	Mozambique("MZ", "Mozambique"), //
 
-	Namibia("NA"), //
+	Namibia("NA", "Namibia"), //
 
-	New_Caledonia("NC"), //
+	New_Caledonia("NC", "New Caledonia"), //
 
-	Niger("NE"), //
+	Niger("NE", "Niger"), //
 
-	Norfolk_Island("NF"), //
+	Norfolk_Island("NF", "Norfolk Island"), //
 
-	Nigeria("NG"), //
+	Nigeria("NG", "Nigeria"), //
 
-	Nicaragua("NI"), //
+	Nicaragua("NI", "Nicaragua"), //
 
-	Netherlands("NL"), //
+	Netherlands("NL", "Netherlands"), //
 
-	Norway("NO"), //
+	Norway("NO", "Norway"), //
 
-	Nepal("NP"), //
+	Nepal("NP", "Nepal"), //
 
-	Nauru("NR"), //
+	Nauru("NR", "Nauru"), //
 
-	Niue("NU"), //
+	Niue("NU", "Niue"), //
 
-	New_Zealand("NZ"), //
+	New_Zealand("NZ", "New Zealand"), //
 
-	Oman("OM"), //
+	Oman("OM", "Oman"), //
 
-	Panama("PA"), //
+	Panama("PA", "Panama"), //
 
-	Peru("PE"), //
+	Peru("PE", "Peru"), //
 
-	French_Polynesia("PF"), //
+	French_Polynesia("PF", "French Polynesia"), //
 
-	Papua_New_Guinea("PG"), //
+	Papua_New_Guinea("PG", "Papua New Guinea"), //
 
-	Philippines("PH"), //
+	Philippines("PH", "Philippines"), //
 
-	Pakistan("PK"), //
+	Pakistan("PK", "Pakistan"), //
 
-	Poland("PL"), //
+	Poland("PL", "Poland"), //
 
-	Saint_Pierre_and_Miquelon("PM"), //
+	Saint_Pierre_and_Miquelon("PM", "Saint Pierre and Miquelon"), //
 
-	Pitcairn("PN"), //
+	Pitcairn("PN", "Pitcairn"), //
 
-	Puerto_Rico("PR"), //
+	Puerto_Rico("PR", "Puerto Rico"), //
 
-	Palestine_State_of("PS"), //
+	Palestine_State_of("PS", "Palestine, State of"), //
 
-	Portugal("PT"), //
+	Portugal("PT", "Portugal"), //
 
-	Palau("PW"), //
+	Palau("PW", "Palau"), //
 
-	Paraguay("PY"), //
+	Paraguay("PY", "Paraguay"), //
 
-	Qatar("QA"), //
+	Qatar("QA", "Qatar"), //
 
-	R_union("RE"), //
+	R_union("RE", "Réunion"), //
 
-	Romania("RO"), //
+	Romania("RO", "Romania"), //
 
-	Serbia("RS"), //
+	Serbia("RS", "Serbia"), //
 
-	Russian_Federation("RU"), //
+	Russian_Federation("RU", "Russian Federation"), //
 
-	Rwanda("RW"), //
+	Rwanda("RW", "Rwanda"), //
 
-	Saudi_Arabia("SA"), //
+	Saudi_Arabia("SA", "Saudi Arabia"), //
 
-	Solomon_Islands("SB"), //
+	Solomon_Islands("SB", "Solomon Islands"), //
 
-	Seychelles("SC"), //
+	Seychelles("SC", "Seychelles"), //
 
-	Sudan("SD"), //
+	Sudan("SD", "Sudan"), //
 
-	Sweden("SE"), //
+	Sweden("SE", "Sweden"), //
 
-	Singapore("SG"), //
+	Singapore("SG", "Singapore"), //
 
-	Saint_Helena_Ascension_and_Tristan_da_Cunha("SH"), //
+	Saint_Helena_Ascension_and_Tristan_da_Cunha("SH", "Saint Helena, Ascension and Tristan da Cunha"), //
 
-	Slovenia("SI"), //
+	Slovenia("SI", "Slovenia"), //
 
-	Svalbard_and_Jan_Mayen("SJ"), //
+	Svalbard_and_Jan_Mayen("SJ", "Svalbard and Jan Mayen"), //
 
-	Slovakia("SK"), //
+	Slovakia("SK", "Slovakia"), //
 
-	Sierra_Leone("SL"), //
+	Sierra_Leone("SL", "Sierra Leone"), //
 
-	San_Marino("SM"), //
+	San_Marino("SM", "San Marino"), //
 
-	Senegal("SN"), //
+	Senegal("SN", "Senegal"), //
 
-	Somalia("SO"), //
+	Somalia("SO", "Somalia"), //
 
-	Suriname("SR"), //
+	Suriname("SR", "Suriname"), //
 
-	South_Sudan("SS"), //
+	South_Sudan("SS", "South Sudan"), //
 
-	Sao_Tome_and_Principe("ST"), //
+	Sao_Tome_and_Principe("ST", "Sao Tome and Principe"), //
 
-	El_Salvador("SV"), //
+	El_Salvador("SV", "El Salvador"), //
 
-	Sint_Maarten_Dutch_part("SX"), //
+	Sint_Maarten_Dutch_part("SX", "Sint Maarten (Dutch part)"), //
 
-	Syrian_Arab_Republic("SY"), //
+	Syrian_Arab_Republic("SY", "Syrian Arab Republic"), //
 
-	Swaziland("SZ"), //
+	Swaziland("SZ", "Swaziland"), //
 
-	Turks_and_Caicos_Islands("TC"), //
+	Turks_and_Caicos_Islands("TC", "Turks and Caicos Islands"), //
 
-	Chad("TD"), //
+	Chad("TD", "Chad"), //
 
-	French_Southern_Territories("TF"), //
+	French_Southern_Territories("TF", "French Southern Territories"), //
 
-	Togo("TG"), //
+	Togo("TG", "Togo"), //
 
-	Thailand("TH"), //
+	Thailand("TH", "Thailand"), //
 
-	Tajikistan("TJ"), //
+	Tajikistan("TJ", "Tajikistan"), //
 
-	Tokelau("TK"), //
+	Tokelau("TK", "Tokelau"), //
 
-	Timor_Leste("TL"), //
+	Timor_Leste("TL", "Timor-Leste"), //
 
-	Turkmenistan("TM"), //
+	Turkmenistan("TM", "Turkmenistan"), //
 
-	Tunisia("TN"), //
+	Tunisia("TN", "Tunisia"), //
 
-	Tonga("TO"), //
+	Tonga("TO", "Tonga"), //
 
-	Turkey("TR"), //
+	Turkey("TR", "Turkey"), //
 
-	Trinidad_and_Tobago("TT"), //
+	Trinidad_and_Tobago("TT", "Trinidad and Tobago"), //
 
-	Tuvalu("TV"), //
+	Tuvalu("TV", "Tuvalu"), //
 
-	Taiwan_Province_of_China("TW"), //
+	Taiwan_Province_of_China("TW", "Taiwan, Province of China"), //
 
-	Tanzania_United_Republic_of("TZ"), //
+	Tanzania_United_Republic_of("TZ", "Tanzania, United Republic of"), //
 
-	Ukraine("UA"), //
+	Ukraine("UA", "Ukraine"), //
 
-	Uganda("UG"), //
+	Uganda("UG", "Uganda"), //
 
-	United_States_Minor_Outlying_Islands("UM"), //
+	United_States_Minor_Outlying_Islands("UM", "United States Minor Outlying Islands"), //
 
-	United_States("US"), //
+	United_States("US", "United States"), //
 
-	Uruguay("UY"), //
+	Uruguay("UY", "Uruguay"), //
 
-	Uzbekistan("UZ"), //
+	Uzbekistan("UZ", "Uzbekistan"), //
 
-	Holy_See_Vatican_City_State("VA"), //
+	Holy_See_Vatican_City_State("VA", "Holy See (Vatican City State)"), //
 
-	Saint_Vincent_and_the_Grenadines("VC"), //
+	Saint_Vincent_and_the_Grenadines("VC", "Saint Vincent and the Grenadines"), //
 
-	Venezuela_Bolivarian_Republic_of("VE"), //
+	Venezuela_Bolivarian_Republic_of("VE", "Venezuela, Bolivarian Republic of"), //
 
-	Virgin_Islands_British("VG"), //
+	Virgin_Islands_British("VG", "Virgin Islands, British"), //
 
-	Virgin_Islands_US("VI"), //
+	Virgin_Islands_US("VI", "Virgin Islands, US"), //
 
-	Viet_Nam("VN"), //
+	Viet_Nam("VN", "Viet Nam"), //
 
-	Vanuatu("VU"), //
+	Vanuatu("VU", "Vanuatu"), //
 
-	Wallis_and_Futuna("WF"), //
+	Wallis_and_Futuna("WF", "Wallis and Futuna"), //
 
-	Samoa("WS"), //
+	Samoa("WS", "Samoa"), //
 
-	Yemen("YE"), //
+	Yemen("YE", "Yemen"), //
 
-	Mayotte("YT"), //
+	Mayotte("YT", "Mayotte"), //
 
 	/**
 	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia
 	 */
-	Yugoslavia("YU"), //
+	Yugoslavia("YU", "Yugoslavia"), //
 
-	South_Africa("ZA"), //
+	South_Africa("ZA", "South Africa"), //
 
-	Zambia("ZM"), //
+	Zambia("ZM", "Zambia"), //
 
-	Zimbabwe("ZW");
+	Zimbabwe("ZW", "Zimbabwe");
 
 	public final String value;
+	public final String label;
 
-	private CountryCodes(String value)
+	private CountryCodes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, CountryCodes> map;

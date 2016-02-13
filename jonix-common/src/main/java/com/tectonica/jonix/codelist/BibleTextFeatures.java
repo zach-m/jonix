@@ -35,13 +35,15 @@ public enum BibleTextFeatures
 	/**
 	 * Words spoken by Christ are printed in red
 	 */
-	Red_letter("RL");
+	Red_letter("RL", "Red letter");
 
 	public final String value;
+	public final String label;
 
-	private BibleTextFeatures(String value)
+	private BibleTextFeatures(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static BibleTextFeatures byValue(String value)

@@ -35,17 +35,19 @@ public enum DefaultLinearUnits
 	/**
 	 * Millimeters are the preferred metric unit of length
 	 */
-	Centimeters("cm"), //
+	Centimeters("cm", "Centimeters"), //
 
-	Inches_US("in"), //
+	Inches_US("in", "Inches (US)"), //
 
-	Millimeters("mm");
+	Millimeters("mm", "Millimeters");
 
 	public final String value;
+	public final String label;
 
-	private DefaultLinearUnits(String value)
+	private DefaultLinearUnits(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static DefaultLinearUnits byValue(String value)

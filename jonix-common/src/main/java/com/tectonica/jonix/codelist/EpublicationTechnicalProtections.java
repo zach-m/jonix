@@ -35,38 +35,40 @@ public enum EpublicationTechnicalProtections
 	/**
 	 * Has no technical protection
 	 */
-	None("00"), //
+	None("00", "None"), //
 
 	/**
 	 * Has DRM protection
 	 */
-	DRM("01"), //
+	DRM("01", "DRM"), //
 
 	/**
 	 * Has digital watermarking
 	 */
-	Digital_watermarking("02"), //
+	Digital_watermarking("02", "Digital watermarking"), //
 
 	/**
 	 * Has DRM protection applied by the Adobe CS4 Content Server Package or by the Adobe ADEPT hosted service
 	 */
-	Adobe_DRM("03"), //
+	Adobe_DRM("03", "Adobe DRM"), //
 
 	/**
 	 * FairPlay&#8217; DRM protection applied via Apple proprietary online store
 	 */
-	Apple_DRM("04"), //
+	Apple_DRM("04", "Apple DRM"), //
 
 	/**
 	 * Has OMA v2 DRM protection applied, as used to protect some mobile phone content
 	 */
-	OMA_DRM("05");
+	OMA_DRM("05", "OMA DRM");
 
 	public final String value;
+	public final String label;
 
-	private EpublicationTechnicalProtections(String value)
+	private EpublicationTechnicalProtections(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static EpublicationTechnicalProtections byValue(String value)

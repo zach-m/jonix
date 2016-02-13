@@ -35,473 +35,473 @@ import java.util.Map;
  */
 public enum ProductForms
 {
-	Undefined("00"), //
+	Undefined("00", "Undefined"), //
 
 	/**
 	 * Audio recording &#8211; detail unspecified
 	 */
-	Audio("AA"), //
+	Audio("AA", "Audio"), //
 
 	/**
 	 * Audio cassette (analogue)
 	 */
-	Audio_cassette("AB"), //
+	Audio_cassette("AB", "Audio cassette"), //
 
 	/**
 	 * Audio compact disc, in any recording format: use for &#8216;red book&#8217; (conventional audio CD) and SACD, and
 	 * use coding in Product Form Detail to specify the format, if required
 	 */
-	CD_Audio("AC"), //
+	CD_Audio("AC", "CD-Audio"), //
 
 	/**
 	 * Digital audio tape cassette
 	 */
-	DAT("AD"), //
+	DAT("AD", "DAT"), //
 
 	/**
 	 * Audio disc (excluding CD-Audio)
 	 */
-	Audio_disc("AE"), //
+	Audio_disc("AE", "Audio disc"), //
 
 	/**
 	 * Audio tape (analogue open reel tape)
 	 */
-	Audio_tape("AF"), //
+	Audio_tape("AF", "Audio tape"), //
 
 	/**
 	 * Sony MiniDisc format
 	 */
-	MiniDisc("AG"), //
+	MiniDisc("AG", "MiniDisc"), //
 
 	/**
 	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for &#8216;blue book&#8217;
 	 * and &#8216;yellow/red book&#8217; two-session discs
 	 */
-	CD_Extra("AH"), //
+	CD_Extra("AH", "CD-Extra"), //
 
-	DVD_Audio("AI"), //
+	DVD_Audio("AI", "DVD Audio"), //
 
 	/**
 	 * Audio recording downloadable online
 	 */
-	Downloadable_audio_file("AJ"), //
+	Downloadable_audio_file("AJ", "Downloadable audio file"), //
 
 	/**
 	 * For example, Playaway audiobook and player: use coding in Product Form Detail to specify the recording format, if
 	 * required
 	 */
-	Pre_recorded_digital_audio_player("AK"), //
+	Pre_recorded_digital_audio_player("AK", "Pre-recorded digital audio player"), //
 
 	/**
 	 * For example, Audiofy audiobook chip
 	 */
-	Pre_recorded_SD_card("AL"), //
+	Pre_recorded_SD_card("AL", "Pre-recorded SD card"), //
 
 	/**
 	 * Other audio format not specified by AB to AL
 	 */
-	Other_audio_format("AZ"), //
+	Other_audio_format("AZ", "Other audio format"), //
 
 	/**
 	 * Book &#8211; detail unspecified
 	 */
-	Book("BA"), //
+	Book("BA", "Book"), //
 
 	/**
 	 * Hardback or cased book
 	 */
-	Hardback("BB"), //
+	Hardback("BB", "Hardback"), //
 
 	/**
 	 * Paperback or other softback book
 	 */
-	Paperback_softback("BC"), //
+	Paperback_softback("BC", "Paperback / softback"), //
 
 	/**
 	 * Loose-leaf book
 	 */
-	Loose_leaf("BD"), //
+	Loose_leaf("BD", "Loose-leaf"), //
 
 	/**
 	 * Spiral, comb or coil bound book
 	 */
-	Spiral_bound("BE"), //
+	Spiral_bound("BE", "Spiral bound"), //
 
 	/**
 	 * Pamphlet or brochure, stapled; German &#8216;geheftet&#8217;. Includes low-extent wire-stitched books bound
 	 * without a distinct spine (eg many comic books)
 	 */
-	Pamphlet("BF"), //
+	Pamphlet("BF", "Pamphlet"), //
 
-	Leather_fine_binding("BG"), //
+	Leather_fine_binding("BG", "Leather / fine binding"), //
 
 	/**
 	 * Child&#8217;s book with all pages printed on board
 	 */
-	Board_book("BH"), //
+	Board_book("BH", "Board book"), //
 
 	/**
 	 * Child&#8217;s book with all pages printed on textile
 	 */
-	Rag_book("BI"), //
+	Rag_book("BI", "Rag book"), //
 
 	/**
 	 * Child&#8217;s book printed on waterproof material
 	 */
-	Bath_book("BJ"), //
+	Bath_book("BJ", "Bath book"), //
 
 	/**
 	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code
 	 * &#8211; a &#8216;conventional&#8217; format code is always to be preferred; one or more Product Form Detail
 	 * codes, eg from the B2nn group, should be used whenever possible to provide additional description
 	 */
-	Novelty_book("BK"), //
+	Novelty_book("BK", "Novelty book"), //
 
 	/**
 	 * Slide bound book
 	 */
-	Slide_bound("BL"), //
+	Slide_bound("BL", "Slide bound"), //
 
 	/**
 	 * Extra-large format for teaching etc; this format and terminology may be specifically UK; required as a top-level
 	 * differentiator
 	 */
-	Big_book("BM"), //
+	Big_book("BM", "Big book"), //
 
 	/**
 	 * A part-work issued with its own ISBN and intended to be collected and bound into a complete book
 	 */
-	Part_work_fasc_culo("BN"), //
+	Part_work_fasc_culo("BN", "Part-work (fascículo)"), //
 
 	/**
 	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German
 	 * &#8216;Leporello&#8217;
 	 */
-	Fold_out_book_or_chart("BO"), //
+	Fold_out_book_or_chart("BO", "Fold-out book or chart"), //
 
 	/**
 	 * A children&#8217;s book whose cover and pages are made of foam
 	 */
-	Foam_book("BP"), //
+	Foam_book("BP", "Foam book"), //
 
 	/**
 	 * Other book format or binding not specified by BB to BP
 	 */
-	Other_book_format("BZ"), //
+	Other_book_format("BZ", "Other book format"), //
 
 	/**
 	 * Sheet map &#8211; detail unspecified
 	 */
-	Sheet_map("CA"), //
+	Sheet_map("CA", "Sheet map"), //
 
-	Sheet_map_folded("CB"), //
+	Sheet_map_folded("CB", "Sheet map, folded"), //
 
-	Sheet_map_flat("CC"), //
+	Sheet_map_flat("CC", "Sheet map, flat"), //
 
 	/**
 	 * See Code List 80 for &#8216;rolled in tube&#8217;
 	 */
-	Sheet_map_rolled("CD"), //
+	Sheet_map_rolled("CD", "Sheet map, rolled"), //
 
 	/**
 	 * Globe or planisphere
 	 */
-	Globe("CE"), //
+	Globe("CE", "Globe"), //
 
 	/**
 	 * Other cartographic format not specified by CB to CE
 	 */
-	Other_cartographic("CZ"), //
+	Other_cartographic("CZ", "Other cartographic"), //
 
 	/**
 	 * Digital or multimedia (detail unspecified)
 	 */
-	Digital("DA"), //
+	Digital("DA", "Digital"), //
 
-	CD_ROM("DB"), //
+	CD_ROM("DB", "CD-ROM"), //
 
 	/**
 	 * CD interactive, use for &#8216;green book&#8217; discs
 	 */
-	CD_I("DC"), //
+	CD_I("DC", "CD-I"), //
 
 	/**
 	 * DEPRECATED &#8211; use VI for DVD video, AI for DVD audio, DI for DVD-ROM
 	 */
-	DVD("DD"), //
+	DVD("DD", "DVD"), //
 
-	Game_cartridge("DE"), //
+	Game_cartridge("DE", "Game cartridge"), //
 
 	/**
 	 * AKA &#8216;floppy disc&#8217;
 	 */
-	Diskette("DF"), //
+	Diskette("DF", "Diskette"), //
 
 	/**
 	 * Electronic book text in proprietary or open standard format
 	 */
-	Electronic_book_text("DG"), //
+	Electronic_book_text("DG", "Electronic book text"), //
 
 	/**
 	 * An electronic database or other resource or service accessible through online networks
 	 */
-	Online_resource("DH"), //
+	Online_resource("DH", "Online resource"), //
 
-	DVD_ROM("DI"), //
+	DVD_ROM("DI", "DVD-ROM"), //
 
-	Secure_Digital_SD("DJ"), //
+	Secure_Digital_SD("DJ", "Secure Digital (SD) Memory Card"), //
 
-	Compact_Flash_Memory_Card("DK"), //
+	Compact_Flash_Memory_Card("DK", "Compact Flash Memory Card"), //
 
-	Memory_Stick_Memory_Card("DL"), //
+	Memory_Stick_Memory_Card("DL", "Memory Stick Memory Card"), //
 
-	USB_Flash_Drive("DM"), //
+	USB_Flash_Drive("DM", "USB Flash Drive"), //
 
 	/**
 	 * Double-sided disc, one side CD-Audio/CD-ROM, other side DVD-Audio/DVD-Video/DVD-ROM (at least one side must be
 	 * -ROM)
 	 */
-	Double_sided_CD_DVD("DN"), //
+	Double_sided_CD_DVD("DN", "Double-sided CD/DVD"), //
 
 	/**
 	 * Digital product license delivered through the retail supply chain as a physical &#8216;key&#8217;, typically a
 	 * card or booklet containing a code enabling the purchaser to download or activate the associated product
 	 */
-	Digital_product_license_key("DO"), //
+	Digital_product_license_key("DO", "Digital product license key"), //
 
 	/**
 	 * Other digital or multimedia not specified by DB to DN
 	 */
-	Other_digital("DZ"), //
+	Other_digital("DZ", "Other digital"), //
 
 	/**
 	 * Film or transparency &#8211; detail unspecified
 	 */
-	Film_or_transparency("FA"), //
+	Film_or_transparency("FA", "Film or transparency"), //
 
 	/**
 	 * Continuous film or filmstrip: DEPRECATED &#8211; use FE or FF
 	 */
-	Film("FB"), //
+	Film("FB", "Film"), //
 
 	/**
 	 * Photographic transparencies mounted for projection
 	 */
-	Slides("FC"), //
+	Slides("FC", "Slides"), //
 
 	/**
 	 * Transparencies for overhead projector
 	 */
-	OHP_transparencies("FD"), //
+	OHP_transparencies("FD", "OHP transparencies"), //
 
-	Filmstrip("FE"), //
+	Filmstrip("FE", "Filmstrip"), //
 
 	/**
 	 * Continuous movie film as opposed to filmstrip
 	 */
-	Film_("FF"), //
+	Film_("FF", "Film"), //
 
 	/**
 	 * Other film or transparency format not specified by FB to FF
 	 */
-	Other_film_or_transparency_format("FZ"), //
+	Other_film_or_transparency_format("FZ", "Other film or transparency format"), //
 
 	/**
 	 * Microform &#8211; detail unspecified
 	 */
-	Microform("MA"), //
+	Microform("MA", "Microform"), //
 
-	Microfiche("MB"), //
+	Microfiche("MB", "Microfiche"), //
 
 	/**
 	 * Roll microfilm
 	 */
-	Microfilm("MC"), //
+	Microfilm("MC", "Microfilm"), //
 
 	/**
 	 * Other microform not specified by MB or MC
 	 */
-	Other_microform("MZ"), //
+	Other_microform("MZ", "Other microform"), //
 
 	/**
 	 * Miscellaneous printed material &#8211; detail unspecified
 	 */
-	Miscellaneous_print("PA"), //
+	Miscellaneous_print("PA", "Miscellaneous print"), //
 
 	/**
 	 * May use product form detail codes P201 to P204 to specify binding
 	 */
-	Address_book("PB"), //
+	Address_book("PB", "Address book"), //
 
-	Calendar("PC"), //
+	Calendar("PC", "Calendar"), //
 
 	/**
 	 * Cards, flash cards (eg for teaching reading)
 	 */
-	Cards("PD"), //
+	Cards("PD", "Cards"), //
 
 	/**
 	 * Copymasters, photocopiable sheets
 	 */
-	Copymasters("PE"), //
+	Copymasters("PE", "Copymasters"), //
 
 	/**
 	 * May use product form detail codes P201 to P204 to specify binding
 	 */
-	Diary("PF"), //
+	Diary("PF", "Diary"), //
 
 	/**
 	 * Narrow strip-shaped printed sheet used mostly for education or children&#8217;s products (eg depicting alphabet,
 	 * number line, procession of illustrated characters etc). Usually intended for horizontal display
 	 */
-	Frieze("PG"), //
+	Frieze("PG", "Frieze"), //
 
 	/**
 	 * Parts for post-purchase assembly
 	 */
-	Kit("PH"), //
+	Kit("PH", "Kit"), //
 
-	Sheet_music("PI"), //
+	Sheet_music("PI", "Sheet music"), //
 
-	Postcard_book_or_pack("PJ"), //
+	Postcard_book_or_pack("PJ", "Postcard book or pack"), //
 
 	/**
 	 * Poster for retail sale &#8211; see also XF
 	 */
-	Poster("PK"), //
+	Poster("PK", "Poster"), //
 
 	/**
 	 * Record book (eg &#8216;birthday book&#8217;, &#8216;baby book&#8217;): may use product form detail codes P201 to
 	 * P204 to specify binding
 	 */
-	Record_book("PL"), //
+	Record_book("PL", "Record book"), //
 
 	/**
 	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat
 	 * &#8216;wallet&#8217; as packaging (List 80), but if this is not possible the product as a whole may be coded as a
 	 * &#8216;wallet&#8217;
 	 */
-	Wallet_or_folder("PM"), //
+	Wallet_or_folder("PM", "Wallet or folder"), //
 
-	Pictures_or_photographs("PN"), //
+	Pictures_or_photographs("PN", "Pictures or photographs"), //
 
-	Wallchart("PO"), //
+	Wallchart("PO", "Wallchart"), //
 
-	Stickers("PP"), //
+	Stickers("PP", "Stickers"), //
 
 	/**
 	 * A book-sized (as opposed to poster-sized) sheet, usually in color or high quality print
 	 */
-	Plate_l_mina("PQ"), //
+	Plate_l_mina("PQ", "Plate (lámina)"), //
 
 	/**
 	 * A book with all pages blank for the buyer&#8217;s own use: may use product form detail codes P201 to P204 to
 	 * specify binding
 	 */
-	Notebook_blank_book("PR"), //
+	Notebook_blank_book("PR", "Notebook / blank book"), //
 
 	/**
 	 * May use product form detail codes P201 to P204 to specify binding
 	 */
-	Organizer("PS"), //
+	Organizer("PS", "Organizer"), //
 
-	Bookmark("PT"), //
+	Bookmark("PT", "Bookmark"), //
 
 	/**
 	 * Other printed item not specified by PB to PT
 	 */
-	Other_printed_item("PZ"), //
+	Other_printed_item("PZ", "Other printed item"), //
 
 	/**
 	 * Video &#8211; detail unspecified
 	 */
-	Video("VA"), //
+	Video("VA", "Video"), //
 
 	/**
 	 * DEPRECATED &#8211; use new VJ
 	 */
-	Video_VHS_PAL("VB"), //
+	Video_VHS_PAL("VB", "Video, VHS, PAL"), //
 
 	/**
 	 * DEPRECATED &#8211; use new VJ
 	 */
-	Video_VHS_NTSC("VC"), //
+	Video_VHS_NTSC("VC", "Video, VHS, NTSC"), //
 
 	/**
 	 * DEPRECATED &#8211; use new VK
 	 */
-	Video_Betamax_PAL("VD"), //
+	Video_Betamax_PAL("VD", "Video, Betamax, PAL"), //
 
 	/**
 	 * DEPRECATED &#8211; use new VK
 	 */
-	Video_Betamax_NTSC("VE"), //
+	Video_Betamax_NTSC("VE", "Video, Betamax, NTSC"), //
 
 	/**
 	 * eg Laserdisc
 	 */
-	Videodisc("VF"), //
+	Videodisc("VF", "Videodisc"), //
 
 	/**
 	 * DEPRECATED &#8211; use new VJ
 	 */
-	Video_VHS_SECAM("VG"), //
+	Video_VHS_SECAM("VG", "Video, VHS, SECAM"), //
 
 	/**
 	 * DEPRECATED &#8211; use new VK
 	 */
-	Video_Betamax_SECAM("VH"), //
+	Video_Betamax_SECAM("VH", "Video, Betamax, SECAM"), //
 
 	/**
 	 * DVD video: specify TV standard in List 78
 	 */
-	DVD_video("VI"), //
+	DVD_video("VI", "DVD video"), //
 
 	/**
 	 * VHS videotape: specify TV standard in List 78
 	 */
-	VHS_video("VJ"), //
+	VHS_video("VJ", "VHS video"), //
 
 	/**
 	 * Betamax videotape: specify TV standard in List 78
 	 */
-	Betamax_video("VK"), //
+	Betamax_video("VK", "Betamax video"), //
 
 	/**
 	 * VideoCD
 	 */
-	VCD("VL"), //
+	VCD("VL", "VCD"), //
 
 	/**
 	 * Super VideoCD
 	 */
-	SVCD("VM"), //
+	SVCD("VM", "SVCD"), //
 
 	/**
 	 * High definition DVD disc, Toshiba HD DVD format
 	 */
-	HD_DVD("VN"), //
+	HD_DVD("VN", "HD DVD"), //
 
 	/**
 	 * High definition DVD disc, Sony Blu-ray format
 	 */
-	Blu_ray("VO"), //
+	Blu_ray("VO", "Blu-ray"), //
 
 	/**
 	 * Sony Universal Media disc
 	 */
-	UMD_Video("VP"), //
+	UMD_Video("VP", "UMD Video"), //
 
 	/**
 	 * Other video format not specified by VB to VP
 	 */
-	Other_video_format("VZ"), //
+	Other_video_format("VZ", "Other video format"), //
 
 	/**
 	 * A product consisting of two or more items in different media or different product forms, eg book and CD-ROM, book
 	 * and toy, hardback book and e-book, etc
 	 */
-	Mixed_media_product("WW"), //
+	Mixed_media_product("WW", "Mixed media product"), //
 
 	/**
 	 * A product containing multiple copies of one or more items packaged together for retail sale, consisting of either
@@ -512,120 +512,122 @@ public enum ProductForms
 	 * items (boxed, slip-cased or otherwise); items with several components of different physical forms (see WW); or
 	 * packs intended for trade distribution only, where the contents are retailed separately (see XC, XE, XL)
 	 */
-	Multiple_copy_pack("WX"), //
+	Multiple_copy_pack("WX", "Multiple copy pack"), //
 
 	/**
 	 * Trade-only material (unspecified)
 	 */
-	Trade_only_material("XA"), //
+	Trade_only_material("XA", "Trade-only material"), //
 
-	Dumpbin_empty("XB"), //
+	Dumpbin_empty("XB", "Dumpbin – empty"), //
 
 	/**
 	 * Dumpbin with contents
 	 */
-	Dumpbin_filled("XC"), //
+	Dumpbin_filled("XC", "Dumpbin – filled"), //
 
-	Counterpack_empty("XD"), //
+	Counterpack_empty("XD", "Counterpack – empty"), //
 
 	/**
 	 * Counterpack with contents
 	 */
-	Counterpack_filled("XE"), //
+	Counterpack_filled("XE", "Counterpack – filled"), //
 
 	/**
 	 * Promotional poster for display, not for sale &#8211; see also PK
 	 */
-	Poster_promotional("XF"), //
+	Poster_promotional("XF", "Poster, promotional"), //
 
-	Shelf_strip("XG"), //
+	Shelf_strip("XG", "Shelf strip"), //
 
 	/**
 	 * Promotional piece for shop window display
 	 */
-	Window_piece("XH"), //
+	Window_piece("XH", "Window piece"), //
 
-	Streamer("XI"), //
+	Streamer("XI", "Streamer"), //
 
-	Spinner("XJ"), //
+	Spinner("XJ", "Spinner"), //
 
 	/**
 	 * Large scale facsimile of book for promotional display
 	 */
-	Large_book_display("XK"), //
+	Large_book_display("XK", "Large book display"), //
 
 	/**
 	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
 	 * sale individually &#8211; see also WX. For products or product bundles supplied shrink-wrapped for retail sale,
 	 * use the Product Form code of the contents plus code 21 from List 80
 	 */
-	Shrink_wrapped_pack("XL"), //
+	Shrink_wrapped_pack("XL", "Shrink-wrapped pack"), //
 
 	/**
 	 * A quantity pack with its own product code, for trade supply only: the retail items it contains are intended for
 	 * sale individually &#8211; see also WX. For products or product bundles supplied boxed for retail sale, use the
 	 * Product Form code of the contents plus code 09 from List 80
 	 */
-	Boxed_pack("XM"), //
+	Boxed_pack("XM", "Boxed pack"), //
 
 	/**
 	 * Other point of sale material not specified by XB to XL
 	 */
-	Other_point_of_sale("XZ"), //
+	Other_point_of_sale("XZ", "Other point of sale"), //
 
 	/**
 	 * General merchandise &#8211; unspecified
 	 */
-	General_merchandise("ZA"), //
+	General_merchandise("ZA", "General merchandise"), //
 
-	Doll("ZB"), //
+	Doll("ZB", "Doll"), //
 
 	/**
 	 * Soft or plush toy
 	 */
-	Soft_toy("ZC"), //
+	Soft_toy("ZC", "Soft toy"), //
 
-	Toy("ZD"), //
+	Toy("ZD", "Toy"), //
 
 	/**
 	 * Board game, or other game (except computer game: see DE)
 	 */
-	Game("ZE"), //
+	Game("ZE", "Game"), //
 
-	T_shirt("ZF"), //
+	T_shirt("ZF", "T-shirt"), //
 
 	/**
 	 * Dedicated e-book reading device, typically with mono screen
 	 */
-	E_book_reader("ZG"), //
+	E_book_reader("ZG", "E-book reader"), //
 
 	/**
 	 * General purpose tablet computer, typically with color screen
 	 */
-	Tablet_computer("ZH"), //
+	Tablet_computer("ZH", "Tablet computer"), //
 
 	/**
 	 * Dedicated audiobook player device, typically including book-related features like bookmarking
 	 */
-	Audiobook_player("ZI"), //
+	Audiobook_player("ZI", "Audiobook player"), //
 
-	Jigsaw("ZJ"), //
+	Jigsaw("ZJ", "Jigsaw"), //
 
 	/**
 	 * Other apparel items not specified by ZB to ZJ, including promotional or branded scarves, caps, aprons etc
 	 */
-	Other_apparel("ZY"), //
+	Other_apparel("ZY", "Other apparel"), //
 
 	/**
 	 * Other merchandise not specified by ZB to ZY
 	 */
-	Other_merchandise("ZZ");
+	Other_merchandise("ZZ", "Other merchandise");
 
 	public final String value;
+	public final String label;
 
-	private ProductForms(String value)
+	private ProductForms(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ProductForms> map;

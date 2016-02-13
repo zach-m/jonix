@@ -37,14 +37,14 @@ public enum RecordStatuss
 	 * itself may have a &lt;RecordStatusNote&gt; or &lt;RecordStatusDetail&gt; to convey information, editorial queries
 	 * or warnings
 	 */
-	No_record_errors("00"), //
+	No_record_errors("00", "No record errors"), //
 
 	/**
 	 * Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a
 	 * &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors in associated media files
 	 * (and possibly supplementary editorial queries)
 	 */
-	No_record_errors_errors_in_collateral("01"), //
+	No_record_errors_errors_in_collateral("01", "No record errors – errors in collateral"), //
 
 	/**
 	 * Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a
@@ -52,26 +52,28 @@ public enum RecordStatuss
 	 * information, editorial queries or warnings). At least SOME of the data in the original Product record has been
 	 * ingested. There may also be errors in associated media files
 	 */
-	Record_with_errors("02"), //
+	Record_with_errors("02", "Record with errors"), //
 
 	/**
 	 * Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt;
 	 * or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial
 	 * queries or warnings). NONE of the data in the original Product record has been ingested
 	 */
-	Record_rejected("03"), //
+	Record_rejected("03", "Record rejected"), //
 
 	/**
 	 * Record status reported in an earlier Acknowledgement message, based on partial processing of ONIX message. The
 	 * record MUST NOT have a Product record in this Acknowledgement. Code not valid in &lt;RecordStatusDetail&gt;
 	 */
-	Reported_previously("09");
+	Reported_previously("09", "Reported previously");
 
 	public final String value;
+	public final String label;
 
-	private RecordStatuss(String value)
+	private RecordStatuss(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static RecordStatuss byValue(String value)

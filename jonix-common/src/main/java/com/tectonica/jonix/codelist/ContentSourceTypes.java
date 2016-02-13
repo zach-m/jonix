@@ -32,19 +32,21 @@ package com.tectonica.jonix.codelist;
  */
 public enum ContentSourceTypes
 {
-	Printed_media("01"), //
+	Printed_media("01", "Printed media"), //
 
-	Website("02"), //
+	Website("02", "Website"), //
 
-	Radio("03"), //
+	Radio("03", "Radio"), //
 
-	TV("04");
+	TV("04", "TV");
 
 	public final String value;
+	public final String label;
 
-	private ContentSourceTypes(String value)
+	private ContentSourceTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ContentSourceTypes byValue(String value)

@@ -38,69 +38,69 @@ public enum UnitOfUsages
 	/**
 	 * Maximum number of copies that may be made of a permitted extract
 	 */
-	Copies("01"), //
+	Copies("01", "Copies"), //
 
 	/**
 	 * Maximum number of characters in a permitted extract for a specified usage
 	 */
-	Characters("02"), //
+	Characters("02", "Characters"), //
 
 	/**
 	 * Maximum number of words in a permitted extract for a specified usage
 	 */
-	Words("03"), //
+	Words("03", "Words"), //
 
 	/**
 	 * Maximum number of pages in a permitted extract for a specified usage
 	 */
-	Pages("04"), //
+	Pages("04", "Pages"), //
 
 	/**
 	 * Maximum percentage of total content in a permitted extract for a specified usage
 	 */
-	Percentage("05"), //
+	Percentage("05", "Percentage"), //
 
 	/**
 	 * Maximum number of devices in &#8216;share group&#8217;
 	 */
-	Devices("06"), //
+	Devices("06", "Devices"), //
 
 	/**
 	 * Maximum number of concurrent users. NB where the number of concurrent users is specifically not limited, set the
 	 * number of concurrent users to zero
 	 */
-	Concurrent_users("07"), //
+	Concurrent_users("07", "Concurrent users"), //
 
 	/**
 	 * Maximum percentage of total content which may be used in a specified usage per time period; the time period being
 	 * specified as another EpubUsageQuantity
 	 */
-	Percentage_per_time_period("08"), //
+	Percentage_per_time_period("08", "Percentage per time period"), //
 
 	/**
 	 * Maximum time period in days
 	 */
-	Days("09"), //
+	Days("09", "Days"), //
 
 	/**
 	 * Maximum time period in weeks
 	 */
-	Weeks("13"), //
+	Weeks("13", "Weeks"), //
 
 	/**
 	 * Maximum time period in months
 	 */
-	Months("14"), //
+	Months("14", "Months"), //
 
 	/**
 	 * Maximum number of times a specified usage event may occur
 	 */
-	Times("10"), //
+	Times("10", "Times"), //
 
 	/**
 	 * Maximum resolution of printed or copy/pasted extracts &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Dots_per_inch("21"), //
+	Dots_per_inch("21", "Dots per inch"), //
 
 	/**
 	 * Page number where allowed usage begins. &lt;Quantity&gt; should contain an absolute page number, counting the
@@ -108,14 +108,14 @@ public enum UnitOfUsages
 	 * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
 	 * Preview &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Allowed_usage_start_page("11"), //
+	Allowed_usage_start_page("11", "Allowed usage start page"), //
 
 	/**
 	 * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
 	 * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
 	 * pagination). Use with Start page to specify pages allowed in a preview &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Allowed_usage_end_page("12"), //
+	Allowed_usage_end_page("12", "Allowed usage end page"), //
 
 	/**
 	 * Page number where allowed usage begins. &lt;Quantity&gt; should contain an absolute page number, counting the
@@ -123,20 +123,22 @@ public enum UnitOfUsages
 	 * pagination). Use with (max number of) Pages, Percentage of content, or End page to specify pages allowed in
 	 * Preview. &lt;p&gt;NOTE: Deprecated in Onix3
 	 */
-	Allowed_usage_start_page_("11"), //
+	Allowed_usage_start_page_("11", "Allowed usage start page"), //
 
 	/**
 	 * Page number at which allowed usage ends. &lt;Quantity&gt; should contain an absolute page number, counting the
 	 * cover as page 1. (This type of page numbering should not be used where the e-publication has no fixed
 	 * pagination). Use with Start page to specify pages allowed in a preview. &lt;p&gt;NOTE: Deprecated in Onix3
 	 */
-	Allowed_usage_end_page_("12");
+	Allowed_usage_end_page_("12", "Allowed usage end page");
 
 	public final String value;
+	public final String label;
 
-	private UnitOfUsages(String value)
+	private UnitOfUsages(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, UnitOfUsages> map;

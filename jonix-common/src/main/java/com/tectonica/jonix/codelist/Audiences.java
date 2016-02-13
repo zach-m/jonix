@@ -38,54 +38,56 @@ public enum Audiences
 	/**
 	 * For a non-specialist adult audience
 	 */
-	General_trade("01"), //
+	General_trade("01", "General/trade"), //
 
 	/**
 	 * For a juvenile audience, not specifically for any educational purpose
 	 */
-	Children_juvenile("02"), //
+	Children_juvenile("02", "Children/juvenile"), //
 
 	/**
 	 * For a teenage audience, not specifically for any educational purpose
 	 */
-	Young_adult("03"), //
+	Young_adult("03", "Young adult"), //
 
 	/**
 	 * Kindergarten, pre-school, primary/elementary or secondary/high school education
 	 */
-	Primary_and_secondary_elementary_and_high_school("04"), //
+	Primary_and_secondary_elementary_and_high_school("04", "Primary and secondary/elementary and high school"), //
 
 	/**
 	 * For universities and colleges of further and higher education
 	 */
-	College_higher_education("05"), //
+	College_higher_education("05", "College/higher education"), //
 
 	/**
 	 * For an expert adult audience, including academic research
 	 */
-	Professional_and_scholarly("06"), //
+	Professional_and_scholarly("06", "Professional and scholarly"), //
 
 	/**
 	 * Intended for use in teaching English as a second language
 	 */
-	ELT_ESL("07"), //
+	ELT_ESL("07", "ELT/ESL"), //
 
 	/**
 	 * For centres providing academic, vocational or recreational courses for adults
 	 */
-	Adult_education("08"), //
+	Adult_education("08", "Adult education"), //
 
 	/**
 	 * Intended for use in teaching second languages, for example teaching German to Spanish speakers. Prefer code 07
 	 * for products specific to teaching English &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Second_language_teaching("09");
+	Second_language_teaching("09", "Second language teaching");
 
 	public final String value;
+	public final String label;
 
-	private Audiences(String value)
+	private Audiences(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, Audiences> map;

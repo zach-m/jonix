@@ -35,37 +35,39 @@ public enum TextItemIdentifierTypes
 	/**
 	 * For example, a publisher&#8217;s own identifier
 	 */
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * Formerly known as the EAN-13 (unhyphenated)
 	 */
-	GTIN_13("03"), //
+	GTIN_13("03", "GTIN-13"), //
 
-	DOI("06"), //
+	DOI("06", "DOI"), //
 
 	/**
 	 * Publisher item identifier
 	 */
-	PII("09"), //
+	PII("09", "PII"), //
 
 	/**
 	 * For serial items only
 	 */
-	SICI("10"), //
+	SICI("10", "SICI"), //
 
-	ISTC("11"), //
+	ISTC("11", "ISTC"), //
 
 	/**
 	 * (Unhyphenated)
 	 */
-	ISBN_13("15");
+	ISBN_13("15", "ISBN-13");
 
 	public final String value;
+	public final String label;
 
-	private TextItemIdentifierTypes(String value)
+	private TextItemIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static TextItemIdentifierTypes byValue(String value)

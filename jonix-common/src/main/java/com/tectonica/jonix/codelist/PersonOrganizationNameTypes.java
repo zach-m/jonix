@@ -32,32 +32,34 @@ package com.tectonica.jonix.codelist;
  */
 public enum PersonOrganizationNameTypes
 {
-	Unspecified("00"), //
+	Unspecified("00", "Unspecified"), //
 
 	/**
 	 * May be used to give a well-known pseudonym, where the primary name is a &#8216;real&#8217; name
 	 */
-	Pseudonym("01"), //
+	Pseudonym("01", "Pseudonym"), //
 
-	Authority_controlled_name("02"), //
+	Authority_controlled_name("02", "Authority-controlled name"), //
 
-	Earlier_name("03"), //
+	Earlier_name("03", "Earlier name"), //
 
 	/**
 	 * May be used to identify a well-known real name, where the primary name is a pseudonym
 	 */
-	_Real_name("04"), //
+	_Real_name("04", "‘Real’ name"), //
 
 	/**
 	 * Use only within &lt;AlternativeName&gt;, when the primary name type is unspecified
 	 */
-	Transliterated_form_of_primary_name("05");
+	Transliterated_form_of_primary_name("05", "Transliterated form of primary name");
 
 	public final String value;
+	public final String label;
 
-	private PersonOrganizationNameTypes(String value)
+	private PersonOrganizationNameTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PersonOrganizationNameTypes byValue(String value)

@@ -35,33 +35,35 @@ public enum EpublicationVersionNumbers
 	/**
 	 * Use only with &lt;ProductFormDetail&gt; codes E101 or E102
 	 */
-	EPUB_2_0_1("101A"), //
+	EPUB_2_0_1("101A", "EPUB 2.0.1"), //
 
 	/**
 	 * Use only with &lt;ProductFormDetail&gt; code E101
 	 */
-	EPUB_3_0("101B"), //
+	EPUB_3_0("101B", "EPUB 3.0"), //
 
 	/**
 	 * Use only with &lt;ProductFormDetail&gt; code E101
 	 */
-	EPUB_3_0_1("101C"), //
+	EPUB_3_0_1("101C", "EPUB 3.0.1"), //
 
 	/**
 	 * Use only with &lt;ProductFormDetail&gt; codes E116 or E127
 	 */
-	Kindle_mobi_7("116A"), //
+	Kindle_mobi_7("116A", "Kindle mobi 7"), //
 
 	/**
 	 * Use only with &lt;ProductFormDetail&gt; code E116
 	 */
-	Kindle_KF8("116B");
+	Kindle_KF8("116B", "Kindle KF8");
 
 	public final String value;
+	public final String label;
 
-	private EpublicationVersionNumbers(String value)
+	private EpublicationVersionNumbers(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static EpublicationVersionNumbers byValue(String value)

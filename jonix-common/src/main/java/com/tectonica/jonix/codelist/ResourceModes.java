@@ -35,38 +35,40 @@ public enum ResourceModes
 	/**
 	 * An executable together with data on which it operates
 	 */
-	Application("01"), //
+	Application("01", "Application"), //
 
 	/**
 	 * A sound recording
 	 */
-	Audio("02"), //
+	Audio("02", "Audio"), //
 
 	/**
 	 * A still image
 	 */
-	Image("03"), //
+	Image("03", "Image"), //
 
 	/**
 	 * Readable text, with or without associated images etc
 	 */
-	Text("04"), //
+	Text("04", "Text"), //
 
 	/**
 	 * Moving images, with or without accompanying sound
 	 */
-	Video("05"), //
+	Video("05", "Video"), //
 
 	/**
 	 * A website or other supporting resource delivering content in a variety of modes
 	 */
-	Multi_mode("06");
+	Multi_mode("06", "Multi-mode");
 
 	public final String value;
+	public final String label;
 
-	private ResourceModes(String value)
+	private ResourceModes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ResourceModes byValue(String value)

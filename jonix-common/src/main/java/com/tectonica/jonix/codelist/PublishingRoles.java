@@ -35,7 +35,7 @@ import java.util.Map;
  */
 public enum PublishingRoles
 {
-	Publisher("01"), //
+	Publisher("01", "Publisher"), //
 
 	/**
 	 * Use where two or more publishers co-publish the exact same product, either under a single ISBN (in which case
@@ -43,44 +43,44 @@ public enum PublishingRoles
 	 * publisher and the publishers of OTHER ISBNs are co-publishers. Note this is different from publication of
 	 * &#8216;co-editions&#8217;
 	 */
-	Co_publisher("02"), //
+	Co_publisher("02", "Co-publisher"), //
 
-	Sponsor("03"), //
+	Sponsor("03", "Sponsor"), //
 
 	/**
 	 * Of a translated work
 	 */
-	Publisher_of_original_language_version("04"), //
+	Publisher_of_original_language_version("04", "Publisher of original-language version"), //
 
-	Host_distributor_of_electronic_content("05"), //
+	Host_distributor_of_electronic_content("05", "Host/distributor of electronic content"), //
 
-	Published_for_on_behalf_of("06"), //
+	Published_for_on_behalf_of("06", "Published for/on behalf of"), //
 
 	/**
 	 * Use also for &#8216;Published in cooperation with&#8217;
 	 */
-	Published_in_association_with("07"), //
+	Published_in_association_with("07", "Published in association with"), //
 
 	/**
 	 * DEPRECATED: use code 06
 	 */
-	Published_on_behalf_of("08"), //
+	Published_on_behalf_of("08", "Published on behalf of"), //
 
 	/**
 	 * When ownership of a product or title is transferred from one publisher to another
 	 */
-	New_or_acquiring_publisher("09"), //
+	New_or_acquiring_publisher("09", "New or acquiring publisher"), //
 
 	/**
 	 * The group to which a publisher (publishing role 01) belongs: use only if a publisher has been identified with
 	 * role code 01
 	 */
-	Publishing_group("10"), //
+	Publishing_group("10", "Publishing group"), //
 
 	/**
 	 * The publisher of the edition of which a product is a facsimile
 	 */
-	Publisher_of_facsimile_original("11"), //
+	Publisher_of_facsimile_original("11", "Publisher of facsimile original"), //
 
 	/**
 	 * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a &#8216;prebound
@@ -88,55 +88,57 @@ public enum PublishingRoles
 	 * library-quality hardcover binding by a supplier other than the original publisher.) Required when the
 	 * &lt;EditionType&gt; is coded PRB. The original publisher should be named as the &#8216;publisher&#8217;
 	 */
-	Repackager_of_prebound_edition("12"), //
+	Repackager_of_prebound_edition("12", "Repackager of prebound edition"), //
 
 	/**
 	 * When ownership of a product or title is transferred from one publisher to another (complement of code 09)
 	 */
-	Former_publisher("13"), //
+	Former_publisher("13", "Former publisher"), //
 
 	/**
 	 * Body funding publication fees, if different from the body funding the underlying research. For use with open
 	 * access publications
 	 */
-	Publication_funder("14"), //
+	Publication_funder("14", "Publication funder"), //
 
 	/**
 	 * Body funding the research on which publication is based, if different from the body funding the publication. For
 	 * use with open access publications
 	 */
-	Research_funder("15"), //
+	Research_funder("15", "Research funder"), //
 
 	/**
 	 * Body funding research and publication. For use with open access publications
 	 */
-	Funding_body("16"), //
+	Funding_body("16", "Funding body"), //
 
 	/**
 	 * Organisation responsible for printing a printed product. Supplied primarily to meet legal deposit requirements,
 	 * and may apply only to the first impression. The organisation may also be responsible for binding, when a separate
 	 * binder is not specified
 	 */
-	Printer("17"), //
+	Printer("17", "Printer"), //
 
 	/**
 	 * Organisation responsible for binding a printed product (where distinct from the printer). Supplied primarily to
 	 * meet legal deposit requirements, and may apply only to the first impression
 	 */
-	Binder("18"), //
+	Binder("18", "Binder"), //
 
 	/**
 	 * Organisation primarily responsible for physical manufacture of a product, when neither Printer nor Binder is
 	 * directly appropriate (for example, with disc or tape products, or digital products on a physical carrier)
 	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Manufacturer("19");
+	Manufacturer("19", "Manufacturer");
 
 	public final String value;
+	public final String label;
 
-	private PublishingRoles(String value)
+	private PublishingRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, PublishingRoles> map;

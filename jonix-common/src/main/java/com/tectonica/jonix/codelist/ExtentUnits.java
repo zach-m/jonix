@@ -38,15 +38,15 @@ public enum ExtentUnits
 	/**
 	 * Words of natural language text
 	 */
-	Words("02"), //
+	Words("02", "Words"), //
 
-	Pages("03"), //
+	Pages("03", "Pages"), //
 
-	Hours_integer_and_decimals("04"), //
+	Hours_integer_and_decimals("04", "Hours (integer and decimals)"), //
 
-	Minutes_integer_and_decimals("05"), //
+	Minutes_integer_and_decimals("05", "Minutes (integer and decimals)"), //
 
-	Seconds_integer_only("06"), //
+	Seconds_integer_only("06", "Seconds (integer only)"), //
 
 	/**
 	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3&#8211;6
@@ -54,34 +54,36 @@ public enum ExtentUnits
 	 * significantly more or less than this. Note that track breaks are not necessarily aligned with structural breaks
 	 * in the text (eg chapter breaks)
 	 */
-	Tracks("11"), //
+	Tracks("11", "Tracks"), //
 
 	/**
 	 * Fill with leading zeroes if any elements are missing
 	 */
-	Hours_HHH("14"), //
+	Hours_HHH("14", "Hours HHH"), //
 
 	/**
 	 * Fill with leading zeroes if any elements are missing
 	 */
-	Hours_and_minutes_HHHMM("15"), //
+	Hours_and_minutes_HHHMM("15", "Hours and minutes HHHMM"), //
 
 	/**
 	 * Fill with leading zeroes if any elements are missing
 	 */
-	Hours_minutes_seconds_HHHMMSS("16"), //
+	Hours_minutes_seconds_HHHMMSS("16", "Hours minutes seconds HHHMMSS"), //
 
-	Bytes("17"), //
+	Bytes("17", "Bytes"), //
 
-	Kbytes("18"), //
+	Kbytes("18", "Kbytes"), //
 
-	Mbytes("19");
+	Mbytes("19", "Mbytes");
 
 	public final String value;
+	public final String label;
 
-	private ExtentUnits(String value)
+	private ExtentUnits(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ExtentUnits> map;

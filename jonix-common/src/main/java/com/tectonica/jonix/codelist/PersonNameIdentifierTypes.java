@@ -32,36 +32,38 @@ package com.tectonica.jonix.codelist;
  */
 public enum PersonNameIdentifierTypes
 {
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * Personennamendatei &#8211; person name authority file used by Deutsche Nationalbibliothek and in other
 	 * German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
 	 */
-	PND("02"), //
+	PND("02", "PND"), //
 
 	/**
 	 * Library of Congress control number assigned to a Library of Congress Name Authority record
 	 */
-	LCCN("04"), //
+	LCCN("04", "LCCN"), //
 
 	/**
 	 * International Standard Name Identifier. See http://www.isni.org/
 	 */
-	ISNI("16"), //
+	ISNI("16", "ISNI"), //
 
 	/**
 	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
 	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
 	 */
-	GND("25");
+	GND("25", "GND");
 
 	public final String value;
+	public final String label;
 
-	private PersonNameIdentifierTypes(String value)
+	private PersonNameIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PersonNameIdentifierTypes byValue(String value)

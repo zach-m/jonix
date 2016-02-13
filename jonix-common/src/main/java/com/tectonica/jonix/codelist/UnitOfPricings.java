@@ -35,15 +35,17 @@ public enum UnitOfPricings
 	/**
 	 * Default
 	 */
-	Per_copy_of_whole_product("00"), //
+	Per_copy_of_whole_product("00", "Per copy of whole product"), //
 
-	Per_page_for_printed_loose_leaf_content_only("01");
+	Per_page_for_printed_loose_leaf_content_only("01", "Per page for printed loose-leaf content only");
 
 	public final String value;
+	public final String label;
 
-	private UnitOfPricings(String value)
+	private UnitOfPricings(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static UnitOfPricings byValue(String value)

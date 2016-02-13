@@ -32,22 +32,25 @@ package com.tectonica.jonix.codelist;
  */
 public enum RightsRegions
 {
-	World("000"), //
+	World("000", "World"), //
 
-	World_except_territories_specified_elsewhere_in_rights_statements("001"), //
+	World_except_territories_specified_elsewhere_in_rights_statements("001",
+			"World except territories specified elsewhere in rights statements"), //
 
-	UK_airports("002"), //
+	UK_airports("002", "UK airports"), //
 
 	/**
 	 * Use when an open market edition is published under its own ISBN
 	 */
-	UK_open_market_("003");
+	UK_open_market_("003", "UK ‘open market’");
 
 	public final String value;
+	public final String label;
 
-	private RightsRegions(String value)
+	private RightsRegions(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static RightsRegions byValue(String value)

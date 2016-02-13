@@ -35,49 +35,51 @@ import java.util.Map;
  */
 public enum OnixAdultAudienceRatings
 {
-	Unrated("00"), //
+	Unrated("00", "Unrated"), //
 
 	/**
 	 * The publisher states that the product is suitable for any adult audience
 	 */
-	Any_adult_audience("01"), //
+	Any_adult_audience("01", "Any adult audience"), //
 
 	/**
 	 * The publisher warns the content may offend parts of the adult audience (for any reason)
 	 */
-	Content_warning("02"), //
+	Content_warning("02", "Content warning"), //
 
 	/**
 	 * The publisher warns the product includes content of an explicit sexual nature
 	 */
-	Content_warning_sex("03"), //
+	Content_warning_sex("03", "Content warning (sex)"), //
 
 	/**
 	 * The publisher warns the product includes content of an extreme violent nature
 	 */
-	Content_warning_violence("04"), //
+	Content_warning_violence("04", "Content warning (violence)"), //
 
 	/**
 	 * The publisher warns the product includes content involving severe misuse of drugs
 	 */
-	Content_warning_drug_taking("05"), //
+	Content_warning_drug_taking("05", "Content warning (drug-taking)"), //
 
 	/**
 	 * The publisher warns the product includes extreme / offensive / explicit language
 	 */
-	Content_warning_language("06"), //
+	Content_warning_language("06", "Content warning (language)"), //
 
 	/**
 	 * The publisher warns the product includes content involving intolerance of particular groups (eg religious,
 	 * ethnic, racial, social)
 	 */
-	Content_warning_intolerance("07");
+	Content_warning_intolerance("07", "Content warning (intolerance)");
 
 	public final String value;
+	public final String label;
 
-	private OnixAdultAudienceRatings(String value)
+	private OnixAdultAudienceRatings(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, OnixAdultAudienceRatings> map;

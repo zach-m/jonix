@@ -32,17 +32,19 @@ package com.tectonica.jonix.codelist;
  */
 public enum AudienceRangePrecisions
 {
-	Exact("01"), //
+	Exact("01", "Exact"), //
 
-	From("03"), //
+	From("03", "From"), //
 
-	To("04");
+	To("04", "To");
 
 	public final String value;
+	public final String label;
 
-	private AudienceRangePrecisions(String value)
+	private AudienceRangePrecisions(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static AudienceRangePrecisions byValue(String value)

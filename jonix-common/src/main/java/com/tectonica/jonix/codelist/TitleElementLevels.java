@@ -35,43 +35,45 @@ public enum TitleElementLevels
 	/**
 	 * The title element refers to an individual product
 	 */
-	Product("01"), //
+	Product("01", "Product"), //
 
 	/**
 	 * The title element refers to the top level of a bibliographic collection
 	 */
-	Collection_level("02"), //
+	Collection_level("02", "Collection level"), //
 
 	/**
 	 * The title element refers to an intermediate level of a bibliographic collection that comprises two or more
 	 * &#8216;sub-collections&#8217;
 	 */
-	Subcollection("03"), //
+	Subcollection("03", "Subcollection"), //
 
 	/**
 	 * The title element refers to a content item within a product, eg a work included in a combined or
 	 * &#8216;omnibus&#8217; edition, or a chapter in a book
 	 */
-	Content_item("04"), //
+	Content_item("04", "Content item"), //
 
 	/**
 	 * The title element names a master brand where the use of the brand spans multiple collections and product forms,
 	 * and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
 	 * children&#8217;s character brand
 	 */
-	Master_brand("05"), //
+	Master_brand("05", "Master brand"), //
 
 	/**
 	 * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a
 	 * sub-collection (a third level of collective identity)
 	 */
-	Sub_subcollection("06");
+	Sub_subcollection("06", "Sub-subcollection");
 
 	public final String value;
+	public final String label;
 
-	private TitleElementLevels(String value)
+	private TitleElementLevels(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static TitleElementLevels byValue(String value)

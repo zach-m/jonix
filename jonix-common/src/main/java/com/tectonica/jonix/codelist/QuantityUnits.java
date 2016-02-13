@@ -35,21 +35,23 @@ public enum QuantityUnits
 	/**
 	 * The quantity refers to a unit implied by the quantity type
 	 */
-	Units("00"), //
+	Units("00", "Units"), //
 
-	Days("07"), //
+	Days("07", "Days"), //
 
-	Weeks("08"), //
+	Weeks("08", "Weeks"), //
 
-	Months("09"), //
+	Months("09", "Months"), //
 
-	Years("10");
+	Years("10", "Years");
 
 	public final String value;
+	public final String label;
 
-	private QuantityUnits(String value)
+	private QuantityUnits(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static QuantityUnits byValue(String value)

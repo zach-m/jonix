@@ -38,43 +38,43 @@ public enum ProductClassificationTypes
 	/**
 	 * World Customs Organization Harmonized Commodity Coding and Description System
 	 */
-	WCO_Harmonized_System("01"), //
+	WCO_Harmonized_System("01", "WCO Harmonized System"), //
 
 	/**
 	 * UN Standard Product and Service Classification
 	 */
-	UNSPSC("02"), //
+	UNSPSC("02", "UNSPSC"), //
 
 	/**
 	 * UK Revenue and Customs classifications, based on the Harmonized System
 	 */
-	HMRC("03"), //
+	HMRC("03", "HMRC"), //
 
 	/**
 	 * German export trade classification, based on the Harmonised System
 	 */
-	Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04"), //
+	Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"), //
 
 	/**
 	 * EU TARIC codes, an extended version of the Harmonized System
 	 */
-	TARIC("05"), //
+	TARIC("05", "TARIC"), //
 
 	/**
 	 * Centraal Boekhuis free classification field for publishers
 	 */
-	Fondsgroep("06"), //
+	Fondsgroep("06", "Fondsgroep"), //
 
 	/**
 	 * A product category (not a subject classification) assigned by the sender
 	 */
-	Sender_s_product_category("07"), //
+	Sender_s_product_category("07", "Sender’s product category"), //
 
 	/**
 	 * Product classification maintained by the Chinese General Administration of Press and Publication
 	 * (http://www.gapp.gov.cn)
 	 */
-	GAPP_Product_Class("08"), //
+	GAPP_Product_Class("08", "GAPP Product Class"), //
 
 	/**
 	 * Statistical Classification of Products by Activity in the European Economic Community, see
@@ -82,23 +82,25 @@ public enum ProductClassificationTypes
 	 * digits, with one or two periods. For example, printed children&#8217;s books are &#8216;58.11.13&#8217;, but the
 	 * periods are normally ommited in ONIX
 	 */
-	CPA("09"), //
+	CPA("09", "CPA"), //
 
 	/**
 	 * Mercosur/Mercosul Common Nomenclature, based on the Harmonised System
 	 */
-	NCM("10"), //
+	NCM("10", "NCM"), //
 
 	/**
 	 * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)
 	 */
-	Electre_genre("50");
+	Electre_genre("50", "Electre genre");
 
 	public final String value;
+	public final String label;
 
-	private ProductClassificationTypes(String value)
+	private ProductClassificationTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ProductClassificationTypes> map;

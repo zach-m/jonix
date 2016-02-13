@@ -38,155 +38,157 @@ public enum SupportingResourceFileFormats
 	/**
 	 * MPEG 1/2 Audio Layer III file
 	 */
-	MP3("A103"), //
+	MP3("A103", "MP3"), //
 
 	/**
 	 * Waveform Audio file
 	 */
-	WAV("A104"), //
+	WAV("A104", "WAV"), //
 
 	/**
 	 * Proprietary RealNetworks format
 	 */
-	Real_Audio("A105"), //
+	Real_Audio("A105", "Real Audio"), //
 
 	/**
 	 * Windows Media Audio format
 	 */
-	WMA("A106"), //
+	WMA("A106", "WMA"), //
 
 	/**
 	 * Advanced Audio Coding format
 	 */
-	AAC("A107"), //
+	AAC("A107", "AAC"), //
 
 	/**
 	 * Audio Interchange File format
 	 */
-	AIFF("A111"), //
+	AIFF("A111", "AIFF"), //
 
 	/**
 	 * Proprietary RealNetworks format. Includes Real Video packaged within a .rm RealMedia container
 	 */
-	Real_Video("D101"), //
+	Real_Video("D101", "Real Video"), //
 
 	/**
 	 * Quicktime container format (.mov)
 	 */
-	Quicktime("D102"), //
+	Quicktime("D102", "Quicktime"), //
 
 	/**
 	 * Audio Video Interleave format
 	 */
-	AVI("D103"), //
+	AVI("D103", "AVI"), //
 
 	/**
 	 * Windows Media Video format
 	 */
-	WMV("D104"), //
+	WMV("D104", "WMV"), //
 
 	/**
 	 * MPEG-4 container format (.mp4, .m4a)
 	 */
-	MPEG_4("D105"), //
+	MPEG_4("D105", "MPEG-4"), //
 
 	/**
 	 * Flash Video (.flv, .f4v)
 	 */
-	FLV("D106"), //
+	FLV("D106", "FLV"), //
 
 	/**
 	 * ShockWave (.swf)
 	 */
-	SWF("D107"), //
+	SWF("D107", "SWF"), //
 
 	/**
 	 * 3GPP container format (.3gp, .3g2)
 	 */
-	_3GP("D108"), //
+	_3GP("D108", "3GP"), //
 
 	/**
 	 * WebM container format (includes .mkv)
 	 */
-	WebM("D109"), //
+	WebM("D109", "WebM"), //
 
 	/**
 	 * Portable Document File format
 	 */
-	PDF("D401"), //
+	PDF("D401", "PDF"), //
 
 	/**
 	 * Graphic Interchange File format
 	 */
-	GIF("D501"), //
+	GIF("D501", "GIF"), //
 
 	/**
 	 * Joint Photographic Experts Group format
 	 */
-	JPEG("D502"), //
+	JPEG("D502", "JPEG"), //
 
 	/**
 	 * Portable Network Graphics format
 	 */
-	PNG("D503"), //
+	PNG("D503", "PNG"), //
 
 	/**
 	 * Tagged Image File format
 	 */
-	TIFF("D504"), //
+	TIFF("D504", "TIFF"), //
 
 	/**
 	 * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
 	 * (IDPF) [File extension .epub]
 	 */
-	EPUB("E101"), //
+	EPUB("E101", "EPUB"), //
 
 	/**
 	 * HyperText Mark-up Language [File extension .html, .htm]
 	 */
-	HTML("E105"), //
+	HTML("E105", "HTML"), //
 
 	/**
 	 * Portable Document Format (ISO 32000-1:2008) [File extension .pdf]
 	 */
-	PDF_("E107"), //
+	PDF_("E107", "PDF"), //
 
 	/**
 	 * Plain text (either ASCII or UTF-8/16 Unicode) &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	TXT("E112"), //
+	TXT("E112", "TXT"), //
 
 	/**
 	 * Extensible Hypertext Markup Language [File extension .xhtml, .xht, .xml, .html, .htm]
 	 */
-	XHTML("E113"), //
+	XHTML("E113", "XHTML"), //
 
 	/**
 	 * XML Paper Specification
 	 */
-	XPS("E115"), //
+	XPS("E115", "XPS"), //
 
 	/**
 	 * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw,
 	 * .mobi, .prc]
 	 */
-	Amazon_Kindle("E116"), //
+	Amazon_Kindle("E116", "Amazon Kindle"), //
 
 	/**
 	 * Founder Apabi&#8217;s proprietary basic e-book format
 	 */
-	CEB("E139"), //
+	CEB("E139", "CEB"), //
 
 	/**
 	 * Founder Apabi&#8217;s proprietary XML e-book format
 	 */
-	CEBX("E140");
+	CEBX("E140", "CEBX");
 
 	public final String value;
+	public final String label;
 
-	private SupportingResourceFileFormats(String value)
+	private SupportingResourceFileFormats(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, SupportingResourceFileFormats> map;

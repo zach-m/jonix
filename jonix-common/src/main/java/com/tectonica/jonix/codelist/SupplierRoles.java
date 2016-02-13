@@ -38,66 +38,68 @@ public enum SupplierRoles
 	/**
 	 * Default
 	 */
-	Unspecified("00"), //
+	Unspecified("00", "Unspecified"), //
 
 	/**
 	 * Publisher as supplier to retail trade outlets
 	 */
-	Publisher_to_retailers("01"), //
+	Publisher_to_retailers("01", "Publisher to retailers"), //
 
-	Publisher_s_exclusive_distributor_to_retailers("02"), //
+	Publisher_s_exclusive_distributor_to_retailers("02", "Publisher’s exclusive distributor to retailers"), //
 
-	Publisher_s_non_exclusive_distributor_to_retailers("03"), //
+	Publisher_s_non_exclusive_distributor_to_retailers("03", "Publisher’s non-exclusive distributor to retailers"), //
 
 	/**
 	 * Wholesaler supplying retail trade outlets
 	 */
-	Wholesaler("04"), //
+	Wholesaler("04", "Wholesaler"), //
 
 	/**
 	 * DEPRECATED &#8211; use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to
 	 * specify a sales agent
 	 */
-	Sales_agent("05"), //
+	Sales_agent("05", "Sales agent"), //
 
 	/**
 	 * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as
 	 * appropriate, where possible
 	 */
-	Publisher_s_distributor_to_retailers("06"), //
+	Publisher_s_distributor_to_retailers("06", "Publisher’s distributor to retailers"), //
 
 	/**
 	 * Where a POD product is supplied to retailers and/or consumers direct from a POD source
 	 */
-	POD_supplier("07"), //
+	POD_supplier("07", "POD supplier"), //
 
-	Retailer("08"), //
+	Retailer("08", "Retailer"), //
 
 	/**
 	 * Publisher as supplier direct to consumers and/or institutional customers
 	 */
-	Publisher_to_end_customers("09"), //
+	Publisher_to_end_customers("09", "Publisher to end-customers"), //
 
 	/**
 	 * Intermediary as exclusive distributor direct to consumers and/or institutional customers
 	 */
-	Exclusive_distributor_to_end_customers("10"), //
+	Exclusive_distributor_to_end_customers("10", "Exclusive distributor to end-customers"), //
 
 	/**
 	 * Intermediary as non-exclusive distributor direct to consumers and/or institutional customers
 	 */
-	Non_exclusive_distributor_to_end_customers("11"), //
+	Non_exclusive_distributor_to_end_customers("11", "Non-exclusive distributor to end-customers"), //
 
 	/**
 	 * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
 	 */
-	Distributor_to_end_customers("12");
+	Distributor_to_end_customers("12", "Distributor to end-customers");
 
 	public final String value;
+	public final String label;
 
-	private SupplierRoles(String value)
+	private SupplierRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, SupplierRoles> map;

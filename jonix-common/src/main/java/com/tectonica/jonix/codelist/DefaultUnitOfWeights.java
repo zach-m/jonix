@@ -32,17 +32,19 @@ package com.tectonica.jonix.codelist;
  */
 public enum DefaultUnitOfWeights
 {
-	Pounds_US("lb"), //
+	Pounds_US("lb", "Pounds (US)"), //
 
-	Grams("gr"), //
+	Grams("gr", "Grams"), //
 
-	Ounces_US("oz");
+	Ounces_US("oz", "Ounces (US)");
 
 	public final String value;
+	public final String label;
 
-	private DefaultUnitOfWeights(String value)
+	private DefaultUnitOfWeights(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static DefaultUnitOfWeights byValue(String value)

@@ -35,13 +35,15 @@ public enum SupplytoRegions
 	/**
 	 * When the same ISBN is used for open market and UK editions
 	 */
-	UK_open_market_("004");
+	UK_open_market_("004", "UK ‘open market’");
 
 	public final String value;
+	public final String label;
 
-	private SupplytoRegions(String value)
+	private SupplytoRegions(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static SupplytoRegions byValue(String value)

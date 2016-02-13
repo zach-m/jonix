@@ -35,38 +35,40 @@ public enum BibleReferenceLocations
 	/**
 	 * References are printed in a narrow column in the center of the page between two columns of text
 	 */
-	Center_column("CCL"), //
+	Center_column("CCL", "Center column"), //
 
 	/**
 	 * References are printed at the foot of the page
 	 */
-	Page_end("PGE"), //
+	Page_end("PGE", "Page end"), //
 
 	/**
 	 * References are printed in a column to the side of the scripture
 	 */
-	Side_column("SID"), //
+	Side_column("SID", "Side column"), //
 
 	/**
 	 * References are printed at the end of the applicable verse
 	 */
-	Verse_end("VER"), //
+	Verse_end("VER", "Verse end"), //
 
 	/**
 	 * The person creating the ONIX record does not know where the references are located
 	 */
-	Unknown("UNK"), //
+	Unknown("UNK", "Unknown"), //
 
 	/**
 	 * Other locations not otherwise identified
 	 */
-	Other("ZZZ");
+	Other("ZZZ", "Other");
 
 	public final String value;
+	public final String label;
 
-	private BibleReferenceLocations(String value)
+	private BibleReferenceLocations(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static BibleReferenceLocations byValue(String value)

@@ -32,7 +32,7 @@ package com.tectonica.jonix.codelist;
  */
 public enum WorkIdentifierTypes
 {
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * 10-character ISBN of manifestation of work, when this is the only work identifier available &#8211; now
@@ -41,33 +41,35 @@ public enum WorkIdentifierTypes
 	 * &#8211; and should never be used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 /
 	 * ISBN-13 of the manifestation of the work)
 	 */
-	ISBN_10("02"), //
+	ISBN_10("02", "ISBN-10"), //
 
 	/**
 	 * Digital Object Identifier (variable length and character set)
 	 */
-	DOI("06"), //
+	DOI("06", "DOI"), //
 
 	/**
 	 * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated)
 	 */
-	ISTC("11"), //
+	ISTC("11", "ISTC"), //
 
 	/**
 	 * 13-character ISBN of manifestation of work, when this is the only work identifier available
 	 */
-	ISBN_13("15"), //
+	ISBN_13("15", "ISBN-13"), //
 
 	/**
 	 * International Standard Recording Code
 	 */
-	ISRC("18");
+	ISRC("18", "ISRC");
 
 	public final String value;
+	public final String label;
 
-	private WorkIdentifierTypes(String value)
+	private WorkIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static WorkIdentifierTypes byValue(String value)

@@ -32,39 +32,41 @@ package com.tectonica.jonix.codelist;
  */
 public enum Proximitys
 {
-	Less_than("01"), //
+	Less_than("01", "Less than"), //
 
-	Not_more_than("02"), //
+	Not_more_than("02", "Not more than"), //
 
 	/**
 	 * The supplier&#8217;s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a
 	 * quoted figure of 100 could in fact be anything between 91 and 111)
 	 */
-	Exactly("03"), //
+	Exactly("03", "Exactly"), //
 
 	/**
 	 * Generally interpreted as within 25% of the true figure (ie a quoted figure of 100 could in fact be anything
 	 * between 80 and 133). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity
 	 * of the figure
 	 */
-	Approximately("04"), //
+	Approximately("04", "Approximately"), //
 
 	/**
 	 * Generally interpreted as within a factor of two of the true figure (ie a quoted figure of 100 could in fact be
 	 * anything between 50 and 200). The supplier may introduce a deliberate approximation to reduce the commercial
 	 * sensitivity of the figure
 	 */
-	About("05"), //
+	About("05", "About"), //
 
-	Not_less_than("06"), //
+	Not_less_than("06", "Not less than"), //
 
-	More_than("07");
+	More_than("07", "More than");
 
 	public final String value;
+	public final String label;
 
-	private Proximitys(String value)
+	private Proximitys(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static Proximitys byValue(String value)

@@ -38,82 +38,82 @@ public enum PublishingDateRoles
 	/**
 	 * Nominal date of publication
 	 */
-	Publication_date("01"), //
+	Publication_date("01", "Publication date"), //
 
 	/**
 	 * If there is an embargo on retail sales in this market before a certain date, the date from which the embargo is
 	 * lifted and retail sales are permitted
 	 */
-	Embargo_date("02"), //
+	Embargo_date("02", "Embargo date"), //
 
 	/**
 	 * Date when a new product may be announced to the general public
 	 */
-	Public_announcement_date("09"), //
+	Public_announcement_date("09", "Public announcement date"), //
 
 	/**
 	 * Date when a new product may be announced for trade only
 	 */
-	Trade_announcement_date("10"), //
+	Trade_announcement_date("10", "Trade announcement date"), //
 
 	/**
 	 * Date when the work incorporated in a product was first published
 	 */
-	Date_of_first_publication("11"), //
+	Date_of_first_publication("11", "Date of first publication"), //
 
 	/**
 	 * Date when a product was last reprinted
 	 */
-	Last_reprint_date("12"), //
+	Last_reprint_date("12", "Last reprint date"), //
 
 	/**
 	 * Date when a product was (or will be) declared out-of-print or deleted
 	 */
-	Out_of_print_deletion_date("13"), //
+	Out_of_print_deletion_date("13", "Out-of-print / deletion date"), //
 
 	/**
 	 * Date when a product was last reissued
 	 */
-	Last_reissue_date("16"), //
+	Last_reissue_date("16", "Last reissue date"), //
 
 	/**
 	 * Date of publication of a printed book which is the print counterpart to a digital edition
 	 */
-	Publication_date_of_print_counterpart("19"), //
+	Publication_date_of_print_counterpart("19", "Publication date of print counterpart"), //
 
 	/**
 	 * Year when the original language version of work incorporated in a product was first published (note, use only
 	 * when different from code 11)
 	 */
-	Date_of_first_publication_in_original_language("20"), //
+	Date_of_first_publication_in_original_language("20", "Date of first publication in original language"), //
 
 	/**
 	 * Date when a product will be reissued
 	 */
-	Forthcoming_reissue_date("21"), //
+	Forthcoming_reissue_date("21", "Forthcoming reissue date"), //
 
 	/**
 	 * Date when a product that has been temporary withdrawn from sale or recalled for any reason is expected to become
 	 * available again, eg after correction of quality or technical issues
 	 */
-	Expected_availability_date_after_temporary_withdrawal("22"), //
+	Expected_availability_date_after_temporary_withdrawal("22", "Expected availability date after temporary withdrawal"), //
 
 	/**
 	 * Date from which reviews of a product may be published eg in newspapers and magazines or online. Provided to the
 	 * book trade for information only: newspapers and magazines are not expected to be recipients of ONIX metadata
 	 */
-	Review_embargo_date("23"), //
+	Review_embargo_date("23", "Review embargo date"), //
 
 	/**
 	 * Latest date on which an order may be placed with the publisher for guaranteed delivery prior to the publication
 	 * date. May or may not be linked to a special reservation or pre-publication price
 	 */
-	Publisher_s_reservation_order_deadline("25"), //
+	Publisher_s_reservation_order_deadline("25", "Publisher’s reservation order deadline"), //
 
 	/**
 	 * Date when a product will be reprinted
 	 */
-	Forthcoming_reprint_date("26"), //
+	Forthcoming_reprint_date("26", "Forthcoming reprint date"), //
 
 	/**
 	 * Earliest date a retail &#8216;preorder&#8217; can be placed (where this is distinct from the public announcement
@@ -121,24 +121,26 @@ public enum PublishingDateRoles
 	 * consumer (this would be the public announcement date, or in the absence of a public announcement date, the
 	 * earliest date metadata is available to the retailer)
 	 */
-	Preorder_embargo_date("27"), //
+	Preorder_embargo_date("27", "Preorder embargo date"), //
 
 	/**
 	 * Date of acquisition of product by new publisher (use with publishing roles 09 and 13) &lt;p&gt;NOTE: Introduced
 	 * in Onix3
 	 */
-	Transfer_date("28"), //
+	Transfer_date("28", "Transfer date"), //
 
 	/**
 	 * For an audiovisual work (eg on DVD) &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Date_of_production("29");
+	Date_of_production("29", "Date of production");
 
 	public final String value;
+	public final String label;
 
-	private PublishingDateRoles(String value)
+	private PublishingDateRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, PublishingDateRoles> map;

@@ -35,46 +35,48 @@ import java.util.Map;
  */
 public enum EpublicationFormats
 {
-	HTML("01"), //
+	HTML("01", "HTML"), //
 
-	PDF("02"), //
+	PDF("02", "PDF"), //
 
 	/**
 	 * &#8216;.LIT&#8217; file format used by Microsoft Reader software
 	 */
-	Microsoft_Reader("03"), //
+	Microsoft_Reader("03", "Microsoft Reader"), //
 
-	RocketBook("04"), //
+	RocketBook("04", "RocketBook"), //
 
-	Rich_text_format_RTF("05"), //
+	Rich_text_format_RTF("05", "Rich text format (RTF)"), //
 
-	Open_Ebook_Publication_Structure_OEBPS("06"), //
+	Open_Ebook_Publication_Structure_OEBPS("06", "Open Ebook Publication Structure (OEBPS) format standard"), //
 
-	XML("07"), //
+	XML("07", "XML"), //
 
-	SGML("08"), //
+	SGML("08", "SGML"), //
 
 	/**
 	 * &#8216;.EXE&#8217; file format used when an epublication is delivered as a self-executing package of software and
 	 * content
 	 */
-	EXE("09"), //
+	EXE("09", "EXE"), //
 
 	/**
 	 * &#8216;.TXT&#8217; file format
 	 */
-	ASCII("10"), //
+	ASCII("10", "ASCII"), //
 
 	/**
 	 * Proprietary file format used for the MobiPocket reader software
 	 */
-	MobiPocket_format("11");
+	MobiPocket_format("11", "MobiPocket format");
 
 	public final String value;
+	public final String label;
 
-	private EpublicationFormats(String value)
+	private EpublicationFormats(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, EpublicationFormats> map;

@@ -38,64 +38,66 @@ public enum ReligiousTextFeatures
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Academic_year("01"), //
+	Academic_year("01", "Academic year"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Catechistic_year("02"), //
+	Catechistic_year("02", "Catechistic year"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Liturgical_year("03"), //
+	Liturgical_year("03", "Liturgical year"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Advent_and_Christmas("04"), //
+	Advent_and_Christmas("04", "Advent and Christmas"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Blessings("05"), //
+	Blessings("05", "Blessings"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Scholastic_cycles("06"), //
+	Scholastic_cycles("06", "Scholastic cycles"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Confirmation_and_Holy_Communion("07"), //
+	Confirmation_and_Holy_Communion("07", "Confirmation and Holy Communion"), //
 
 	/**
 	 * For example, summer camps and other youth recreational activities: use with code 01 in
 	 * &lt;ReligiousTextFeatureType&gt;
 	 */
-	Summer_activites("08"), //
+	Summer_activites("08", "Summer activites"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Easter("09"), //
+	Easter("09", "Easter"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Lent("10"), //
+	Lent("10", "Lent"), //
 
 	/**
 	 * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
 	 */
-	Marian_themes("11");
+	Marian_themes("11", "Marian themes");
 
 	public final String value;
+	public final String label;
 
-	private ReligiousTextFeatures(String value)
+	private ReligiousTextFeatures(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, ReligiousTextFeatures> map;

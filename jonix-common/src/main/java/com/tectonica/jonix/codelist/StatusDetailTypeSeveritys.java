@@ -36,43 +36,45 @@ public enum StatusDetailTypeSeveritys
 	 * Use ONLY if the message severity cannot be determined (eg with a legacy system unable to provide detailed error
 	 * codes)
 	 */
-	Unclassifiable("U"), //
+	Unclassifiable("U", "Unclassifiable"), //
 
 	/**
 	 * For information only, provided to encourage the ONIX data supplier to improve the quality of their data (eg
 	 * provision of a non-mandatory data element that is currently missing, better conformity with best practice, etc)
 	 */
-	Info("I"), //
+	Info("I", "Info"), //
 
 	/**
 	 * Request for clarification or further detail of the meaning of the data provided
 	 */
-	Query("Q"), //
+	Query("Q", "Query"), //
 
 	/**
 	 * The ONIX data has been accepted as provided, but there may be issues in the way it is supplied
 	 */
-	Warning("W"), //
+	Warning("W", "Warning"), //
 
 	/**
 	 * Some data in an ONIX data element or message structure caused an error due to not meeting the requirements of the
 	 * standard. The data in question has been rejected, but processing of the remaining elements in the record (or the
 	 * remain records in the message, if used within &lt;MessageStatusDetail&gt;) has continued
 	 */
-	Error("E"), //
+	Error("E", "Error"), //
 
 	/**
 	 * Some data in an ONIX data element or message structure caused an unrecoverable error due to not meeting the
 	 * requirements of the standard. The entire ONIX record has been rejected (or the entire message, if used within
 	 * &lt;MessageStatusDetail&gt;)
 	 */
-	Fatal_error("F");
+	Fatal_error("F", "Fatal error");
 
 	public final String value;
+	public final String label;
 
-	private StatusDetailTypeSeveritys(String value)
+	private StatusDetailTypeSeveritys(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static StatusDetailTypeSeveritys byValue(String value)

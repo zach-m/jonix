@@ -38,126 +38,129 @@ public enum AvailabilityStatuss
 	/**
 	 * Publication abandoned after having been announced
 	 */
-	Cancelled("AB"), //
+	Cancelled("AB", "Cancelled"), //
 
 	/**
 	 * Apply direct to publisher, item not available to trade
 	 */
-	Available_direct_from_publisher_only("AD"), //
+	Available_direct_from_publisher_only("AD", "Available direct from publisher only"), //
 
 	/**
 	 * Check with customer service
 	 */
-	Availability_uncertain("CS"), //
+	Availability_uncertain("CS", "Availability uncertain"), //
 
 	/**
 	 * Wholesaler or vendor only
 	 */
-	No_longer_stocked_by_us("EX"), //
+	No_longer_stocked_by_us("EX", "No longer stocked by us"), //
 
 	/**
 	 * In-print and in stock
 	 */
-	Available("IP"), //
+	Available("IP", "Available"), //
 
 	/**
 	 * May be accompanied by an estimated average time to supply
 	 */
-	Manufactured_on_demand("MD"), //
+	Manufactured_on_demand("MD", "Manufactured on demand"), //
 
 	/**
 	 * MUST be accompanied by an expected availability date
 	 */
-	Not_yet_published("NP"), //
+	Not_yet_published("NP", "Not yet published"), //
 
 	/**
 	 * Wholesaler or vendor only: MUST be accompanied by expected availability date
 	 */
-	Newly_catalogued_not_yet_in_stock("NY"), //
+	Newly_catalogued_not_yet_in_stock("NY", "Newly catalogued, not yet in stock"), //
 
 	/**
 	 * This format is out of print, but another format is available: should be accompanied by an identifier for the
 	 * alternative product
 	 */
-	Other_format_available("OF"), //
+	Other_format_available("OF", "Other format available"), //
 
 	/**
 	 * No current plan to reprint
 	 */
-	Out_of_stock_indefinitely("OI"), //
+	Out_of_stock_indefinitely("OI", "Out of stock indefinitely"), //
 
 	/**
 	 * Discontinued, deleted from catalogue
 	 */
-	Out_of_print("OP"), //
+	Out_of_print("OP", "Out of print"), //
 
 	/**
 	 * This edition is out of print, but a new edition has been or will soon be published: should be accompanied by an
 	 * identifier for the new edition
 	 */
-	Replaced_by_new_edition("OR"), //
+	Replaced_by_new_edition("OR", "Replaced by new edition"), //
 
 	/**
 	 * Publication has been announced, and subsequently postponed with no new date
 	 */
-	Publication_postponed_indefinitely("PP"), //
+	Publication_postponed_indefinitely("PP", "Publication postponed indefinitely"), //
 
 	/**
 	 * Supply of this item has been transferred to another publisher or distributor: should be accompanied by an
 	 * identifier for the new supplier
 	 */
-	Refer_to_another_supplier("RF"), //
+	Refer_to_another_supplier("RF", "Refer to another supplier"), //
 
-	Remaindered("RM"), //
+	Remaindered("RM", "Remaindered"), //
 
 	/**
 	 * MUST be accompanied by an expected availability date
 	 */
-	Reprinting("RP"), //
+	Reprinting("RP", "Reprinting"), //
 
 	/**
 	 * Use instead of RP as a last resort, only if it is really impossible to give an expected availability date
 	 */
-	Reprinting_undated("RU"), //
+	Reprinting_undated("RU", "Reprinting, undated"), //
 
 	/**
 	 * This item is not stocked but has to be specially ordered from a supplier (eg import item not stocked locally):
 	 * may be accompanied by an estimated average time to supply
 	 */
-	Special_order("TO"), //
+	Special_order("TO", "Special order"), //
 
 	/**
 	 * Wholesaler or vendor only
 	 */
-	Temporarily_out_of_stock_because_publisher_cannot_supply("TP"), //
+	Temporarily_out_of_stock_because_publisher_cannot_supply("TP",
+			"Temporarily out of stock because publisher cannot supply"), //
 
 	/**
 	 * MUST be accompanied by an expected availability date
 	 */
-	Temporarily_unavailable("TU"), //
+	Temporarily_unavailable("TU", "Temporarily unavailable"), //
 
 	/**
 	 * The item is out of stock but will be reissued under the same ISBN: MUST be accompanied by an expected
 	 * availability date and by the reissue date in the &lt;Reissue&gt; composite. See notes on the &lt;Reissue&gt;
 	 * composite for details on treatment of availability status during reissue
 	 */
-	Unavailable_awaiting_reissue("UR"), //
+	Unavailable_awaiting_reissue("UR", "Unavailable, awaiting reissue"), //
 
 	/**
 	 * MUST be accompanied by the remainder date
 	 */
-	Will_be_remaindered_as_of_date("WR"), //
+	Will_be_remaindered_as_of_date("WR", "Will be remaindered as of (date)"), //
 
 	/**
 	 * Typically, withdrawn indefinitely for legal reasons
 	 */
-	Withdrawn_from_sale("WS");
+	Withdrawn_from_sale("WS", "Withdrawn from sale");
 
 	public final String value;
+	public final String label;
 
-	private AvailabilityStatuss(String value)
+	private AvailabilityStatuss(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, AvailabilityStatuss> map;

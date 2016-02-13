@@ -35,91 +35,91 @@ import java.util.Map;
  */
 public enum NameCodeTypes
 {
-	Proprietary("01"), //
+	Proprietary("01", "Proprietary"), //
 
 	/**
 	 * DEPRECATED &#8211; use 01
 	 */
-	Proprietary_("02"), //
+	Proprietary_("02", "Proprietary"), //
 
 	/**
 	 * Deutsche Nationalbibliothek publisher identifier
 	 */
-	DNB_publisher_identifier("03"), //
+	DNB_publisher_identifier("03", "DNB publisher identifier"), //
 
-	B_rsenverein_Verkehrsnummer("04"), //
+	B_rsenverein_Verkehrsnummer("04", "Börsenverein Verkehrsnummer"), //
 
-	German_ISBN_Agency_publisher_identifier("05"), //
+	German_ISBN_Agency_publisher_identifier("05", "German ISBN Agency publisher identifier"), //
 
 	/**
 	 * GS1 global location number (formerly EAN location number)
 	 */
-	GLN("06"), //
+	GLN("06", "GLN"), //
 
 	/**
 	 * Book trade Standard Address Number &#8211; US, UK etc
 	 */
-	SAN("07"), //
+	SAN("07", "SAN"), //
 
 	/**
 	 * MARC code list for organizations &#8211; see http://www.loc.gov/marc/organizations/orgshome.html &lt;p&gt;NOTE:
 	 * Introduced in Onix3
 	 */
-	MARC_organization_code("08"), //
+	MARC_organization_code("08", "MARC organization code"), //
 
 	/**
 	 * Trading party identifier used in the Netherlands
 	 */
-	Centraal_Boekhuis_Relatie_ID("10"), //
+	Centraal_Boekhuis_Relatie_ID("10", "Centraal Boekhuis Relatie ID"), //
 
 	/**
 	 * Flemish publisher code
 	 */
-	Fondscode_Boekenbank("13"), //
+	Fondscode_Boekenbank("13", "Fondscode Boekenbank"), //
 
 	/**
 	 * Business Identity Code (Finland). See http://www.ytj.fi/ (in Finnish)
 	 */
-	Y_tunnus("15"), //
+	Y_tunnus("15", "Y-tunnus"), //
 
 	/**
 	 * International Standard Name Identifier. See http://www.isni.org/
 	 */
-	ISNI("16"), //
+	ISNI("16", "ISNI"), //
 
 	/**
 	 * Personennamendatei &#8211; person name authority file used by Deutsche Nationalbibliothek and in other
 	 * German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
 	 */
-	PND("17"), //
+	PND("17", "PND"), //
 
 	/**
 	 * A control number assigned to a Library of Congress Name Authority record
 	 */
-	LCCN("18"), //
+	LCCN("18", "LCCN"), //
 
 	/**
 	 * Publisher identifier administered by Japanese ISBN Agency
 	 */
-	Japanese_Publisher_identifier("19"), //
+	Japanese_Publisher_identifier("19", "Japanese Publisher identifier"), //
 
 	/**
 	 * Gemeinsame K&#246;rperschaftsdatei &#8211; Corporate Body Authority File in the German-speaking countries. See
 	 * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favour of the GND
 	 */
-	GKD("20"), //
+	GKD("20", "GKD"), //
 
 	/**
 	 * Open Researcher and Contributor ID. See http://www.orcid.org/
 	 */
-	ORCID("21"), //
+	ORCID("21", "ORCID"), //
 
 	/**
 	 * Publisher identifier maintained by the Chinese ISBN Agency (GAPP)
 	 */
-	GAPP_Publisher_Identifier("22"), //
+	GAPP_Publisher_Identifier("22", "GAPP Publisher Identifier"), //
 
 	/**
 	 * Identifier for a business organization for VAT purposes, eg within the EU&#8217;s VIES system. See
@@ -129,63 +129,65 @@ public enum NameCodeTypes
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
 	 * Spaces, dashes etc should be omitted
 	 */
-	VAT_Identity_Number("23"), //
+	VAT_Identity_Number("23", "VAT Identity Number"), //
 
 	/**
 	 * 4-digit business organization identifier controlled by the Japanese Publication Wholesalers Association
 	 */
-	JP_Distribution_Identifier("24"), //
+	JP_Distribution_Identifier("24", "JP Distribution Identifier"), //
 
 	/**
 	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
 	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
 	 */
-	GND("25"), //
+	GND("25", "GND"), //
 
 	/**
 	 * Dunn and Bradstreet Universal Numbering System, see http://www.dnb.co.uk/dandb-duns-number
 	 */
-	DUNS("26"), //
+	DUNS("26", "DUNS"), //
 
 	/**
 	 * Ringgold organizational identifier, see http://www.ringgold.com/pages/identify.html
 	 */
-	Ringgold_ID("27"), //
+	Ringgold_ID("27", "Ringgold ID"), //
 
 	/**
 	 * French Electre publisher identifier
 	 */
-	Identifiant_Editeur_Electre("28"), //
+	Identifiant_Editeur_Electre("28", "Identifiant Editeur Electre"), //
 
 	/**
 	 * DOI used in EIDR party registry, for example &#8216;10.5237/C9F6-F41F&#8217; (Sam Raimi). See http://eidr.org
 	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	EIDR_Party_DOI("29"), //
+	EIDR_Party_DOI("29", "EIDR Party DOI"), //
 
 	/**
 	 * French Electre imprint Identifier
 	 */
-	Identifiant_Marque_Electre("30"), //
+	Identifiant_Marque_Electre("30", "Identifiant Marque Electre"), //
 
 	/**
 	 * Virtual Internet Authority File. &lt;IDValue&gt; should be a number. The URI form of the identifier can be
 	 * created by prefixing the number with &#8216;https://viaf.org/viaf/&#8217;. See https://viaf.org &lt;p&gt;NOTE:
 	 * Introduced in Onix3
 	 */
-	VIAF_ID("31"), //
+	VIAF_ID("31", "VIAF ID"), //
 
 	/**
 	 * DOI used in CrossRef&#8217;s Fundref list of academic research funding bodies, for example
 	 * &#8216;10.13039/100004440&#8217; (Wellcome Trust). See http://www.crossref.org/fundref/fundref_registry.html
 	 */
-	FundRef_DOI("32");
+	FundRef_DOI("32", "FundRef DOI");
 
 	public final String value;
+	public final String label;
 
-	private NameCodeTypes(String value)
+	private NameCodeTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, NameCodeTypes> map;

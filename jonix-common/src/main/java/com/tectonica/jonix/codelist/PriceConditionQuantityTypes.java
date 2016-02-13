@@ -35,18 +35,20 @@ public enum PriceConditionQuantityTypes
 	/**
 	 * The price condition quantity represents a time period
 	 */
-	Time_period("01"), //
+	Time_period("01", "Time period"), //
 
 	/**
 	 * The price condition quantity is a number of updates
 	 */
-	Number_of_updates("02");
+	Number_of_updates("02", "Number of updates");
 
 	public final String value;
+	public final String label;
 
-	private PriceConditionQuantityTypes(String value)
+	private PriceConditionQuantityTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PriceConditionQuantityTypes byValue(String value)

@@ -35,13 +35,15 @@ public enum CurrencyZones
 	/**
 	 * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3
 	 */
-	Eurozone("EUR");
+	Eurozone("EUR", "Eurozone");
 
 	public final String value;
+	public final String label;
 
-	private CurrencyZones(String value)
+	private CurrencyZones(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static CurrencyZones byValue(String value)

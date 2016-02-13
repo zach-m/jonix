@@ -35,43 +35,45 @@ public enum ThesisTypes
 	/**
 	 * Professorial dissertation (thesis for postdoctoral lecturing qualification)
 	 */
-	Habilitationsschrift("01"), //
+	Habilitationsschrift("01", "Habilitationsschrift"), //
 
 	/**
 	 * Doctoral thesis
 	 */
-	Dissertationsschrift("02"), //
+	Dissertationsschrift("02", "Dissertationsschrift"), //
 
 	/**
 	 * State examination thesis
 	 */
-	Staatsexamensarbeit("03"), //
+	Staatsexamensarbeit("03", "Staatsexamensarbeit"), //
 
 	/**
 	 * Magisters degree thesis
 	 */
-	Magisterarbeit("04"), //
+	Magisterarbeit("04", "Magisterarbeit"), //
 
 	/**
 	 * Diploma degree thesis
 	 */
-	Diplomarbeit("05"), //
+	Diplomarbeit("05", "Diplomarbeit"), //
 
 	/**
 	 * Bachelors degree thesis
 	 */
-	Bachelorarbeit("06"), //
+	Bachelorarbeit("06", "Bachelorarbeit"), //
 
 	/**
 	 * Masters degree thesis
 	 */
-	Masterarbeit("07");
+	Masterarbeit("07", "Masterarbeit");
 
 	public final String value;
+	public final String label;
 
-	private ThesisTypes(String value)
+	private ThesisTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ThesisTypes byValue(String value)

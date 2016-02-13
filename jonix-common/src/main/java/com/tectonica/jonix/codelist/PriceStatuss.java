@@ -35,17 +35,19 @@ public enum PriceStatuss
 	/**
 	 * Default
 	 */
-	Unspecified("00"), //
+	Unspecified("00", "Unspecified"), //
 
-	Provisional("01"), //
+	Provisional("01", "Provisional"), //
 
-	Firm("02");
+	Firm("02", "Firm");
 
 	public final String value;
+	public final String label;
 
-	private PriceStatuss(String value)
+	private PriceStatuss(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PriceStatuss byValue(String value)

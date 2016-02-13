@@ -35,25 +35,27 @@ public enum CitedContentTypes
 	/**
 	 * The full text of a review in a third-party publication in any medium
 	 */
-	Review("01"), //
+	Review("01", "Review"), //
 
-	Bestseller_list("02"), //
+	Bestseller_list("02", "Bestseller list"), //
 
 	/**
 	 * Other than a review
 	 */
-	Media_mention("03"), //
+	Media_mention("03", "Media mention"), //
 
 	/**
 	 * (North America) Inclusion in a program such as &#8216;Chicago Reads&#8217;, &#8216;Seattle Reads&#8217;
 	 */
-	_One_locality_one_book_program("04");
+	_One_locality_one_book_program("04", "‘One locality, one book’ program");
 
 	public final String value;
+	public final String label;
 
-	private CitedContentTypes(String value)
+	private CitedContentTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static CitedContentTypes byValue(String value)

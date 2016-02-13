@@ -35,28 +35,30 @@ public enum DiscountTypes
 	/**
 	 * Discount applied to all units in a qualifying order
 	 */
-	Rising_discount("01"), //
+	Rising_discount("01", "Rising discount"), //
 
 	/**
 	 * Additional discount may be applied retrospectively, based on number of units ordered over a specific period
 	 */
-	Rising_discount_cumulative("02"), //
+	Rising_discount_cumulative("02", "Rising discount (cumulative)"), //
 
 	/**
 	 * Discount applied to marginal units in a qualifying order
 	 */
-	Progressive_discount("03"), //
+	Progressive_discount("03", "Progressive discount"), //
 
 	/**
 	 * Previous orders within a specific time period are counted when calculating a progressive discount
 	 */
-	Progressive_discount_cumulative("04");
+	Progressive_discount_cumulative("04", "Progressive discount (cumulative)");
 
 	public final String value;
+	public final String label;
 
-	private DiscountTypes(String value)
+	private DiscountTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static DiscountTypes byValue(String value)

@@ -35,53 +35,55 @@ import java.util.Map;
  */
 public enum LanguageRoles
 {
-	Language_of_text("01"), //
+	Language_of_text("01", "Language of text"), //
 
 	/**
 	 * Where the text in the original language is NOT part of the current product
 	 */
-	Original_language_of_a_translated_text("02"), //
+	Original_language_of_a_translated_text("02", "Original language of a translated text"), //
 
 	/**
 	 * Where different from language of text: used mainly for serials
 	 */
-	Language_of_abstracts("03"), //
+	Language_of_abstracts("03", "Language of abstracts"), //
 
 	/**
 	 * Language to which specified rights apply
 	 */
-	Rights_language("04"), //
+	Rights_language("04", "Rights language"), //
 
 	/**
 	 * Language to which specified rights do not apply
 	 */
-	Rights_excluded_language("05"), //
+	Rights_excluded_language("05", "Rights-excluded language"), //
 
 	/**
 	 * Where the text in the original language is part of a bilingual or multilingual edition
 	 */
-	Original_language_in_a_multilingual_edition("06"), //
+	Original_language_in_a_multilingual_edition("06", "Original language in a multilingual edition"), //
 
 	/**
 	 * Where the text in a translated language is part of a bilingual or multilingual edition
 	 */
-	Translated_language_in_a_multilingual_edition("07"), //
+	Translated_language_in_a_multilingual_edition("07", "Translated language in a multilingual edition"), //
 
 	/**
 	 * For example, on a DVD
 	 */
-	Language_of_audio_track("08"), //
+	Language_of_audio_track("08", "Language of audio track"), //
 
 	/**
 	 * For example, on a DVD
 	 */
-	Language_of_subtitles("09");
+	Language_of_subtitles("09", "Language of subtitles");
 
 	public final String value;
+	public final String label;
 
-	private LanguageRoles(String value)
+	private LanguageRoles(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, LanguageRoles> map;

@@ -32,13 +32,15 @@ package com.tectonica.jonix.codelist;
  */
 public enum PriceIdentifierTypes
 {
-	Proprietary("01");
+	Proprietary("01", "Proprietary");
 
 	public final String value;
+	public final String label;
 
-	private PriceIdentifierTypes(String value)
+	private PriceIdentifierTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static PriceIdentifierTypes byValue(String value)

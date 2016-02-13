@@ -38,36 +38,48 @@ public enum SalesRightsTypes
 	/**
 	 * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element
 	 */
-	Sales_rights_unknown_or_unstated_for_any_reason("00"), //
+	Sales_rights_unknown_or_unstated_for_any_reason("00", "Sales rights unknown or unstated for any reason"), //
 
-	For_sale_with_exclusive_rights_in_the_specified_countries_or_territories("01"), //
+	For_sale_with_exclusive_rights_in_the_specified_countries_or_territories("01",
+			"For sale with exclusive rights in the specified countries or territories"), //
 
-	For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories("02"), //
+	For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories("02",
+			"For sale with non-exclusive rights in the specified countries or territories"), //
 
-	Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified("03"), //
+	Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified("03",
+			"Not for sale in the specified countries or territories (reason unspecified)"), //
 
-	Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories("04"), //
+	Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories(
+			"04",
+			"Not for sale in the specified countries (but publisher holds exclusive rights in those countries or territories)"), //
 
-	Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories("05"), //
+	Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories(
+			"05",
+			"Not for sale in the specified countries (publisher holds non-exclusive rights in those countries or territories)"), //
 
 	Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories(
-			"06"), //
+			"06",
+			"Not for sale in the specified countries (because publisher does not hold rights in those countries or territories)"), //
 
 	/**
 	 * Only for use with ONIX 3. Deprecated
 	 */
-	For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("07"), //
+	For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("07",
+			"For sale with exclusive rights in the specified countries or territories (sales restriction applies)"), //
 
 	/**
 	 * Only for use with ONIX 3. Deprecated
 	 */
-	For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("08");
+	For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("08",
+			"For sale with non-exclusive rights in the specified countries or territories (sales restriction applies)");
 
 	public final String value;
+	public final String label;
 
-	private SalesRightsTypes(String value)
+	private SalesRightsTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, SalesRightsTypes> map;

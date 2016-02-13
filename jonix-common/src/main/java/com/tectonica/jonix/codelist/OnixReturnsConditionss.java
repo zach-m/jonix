@@ -35,20 +35,20 @@ public enum OnixReturnsConditionss
 	/**
 	 * Unspecified, contact supplier for details
 	 */
-	Unspecified("00"), //
+	Unspecified("00", "Unspecified"), //
 
 	/**
 	 * The retailer pays for goods only after they are sold by the retailer to an end consumer, and may return excess
 	 * unsold inventory to the supplier at any time. The goods remain the property of the supplier until they are paid
 	 * for, even while they are physically located at the retailer
 	 */
-	Consignment("01"), //
+	Consignment("01", "Consignment"), //
 
 	/**
 	 * The retailer is invoiced and pays immediately as in the sale or return model, but any excess unsold inventory
 	 * cannot be returned to the supplier
 	 */
-	Firm_sale("02"), //
+	Firm_sale("02", "Firm sale"), //
 
 	/**
 	 * Contact supplier for applicable returns authorization process. The retailer is invoiced immediately for the goods
@@ -56,20 +56,22 @@ public enum OnixReturnsConditionss
 	 * credit at a later date (some kind of returns authorisation process is normally required, and returns of stripped
 	 * covers or proof of destruction may be allowed instead)
 	 */
-	Sale_or_return("03"), //
+	Sale_or_return("03", "Sale or return"), //
 
 	/**
 	 * The retailer pays for goods only after they are sold by the retailer to an end consumer, but all inventory
 	 * remains physically located at the supplier (thus there can be no returns of unsold inventory). When ordered by
 	 * the retailer, the goods are delivered direct to the consumer
 	 */
-	Direct_fulfillment("04");
+	Direct_fulfillment("04", "Direct fulfillment");
 
 	public final String value;
+	public final String label;
 
-	private OnixReturnsConditionss(String value)
+	private OnixReturnsConditionss(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static OnixReturnsConditionss byValue(String value)

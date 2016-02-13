@@ -32,42 +32,44 @@ package com.tectonica.jonix.codelist;
  */
 public enum ProductCompositions
 {
-	Single_item_retail_product("00"), //
+	Single_item_retail_product("00", "Single-item retail product"), //
 
 	/**
 	 * Multiple-item product retailed as a whole
 	 */
-	Multiple_item_retail_product("10"), //
+	Multiple_item_retail_product("10", "Multiple-item retail product"), //
 
 	/**
 	 * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as
 	 * such
 	 */
-	Multiple_item_collection_retailed_as_separate_parts("11"), //
+	Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"), //
 
 	/**
 	 * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material
 	 */
-	Trade_only_product("20"), //
+	Trade_only_product("20", "Trade-only product"), //
 
 	/**
 	 * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled
 	 * counterpack
 	 */
-	Multiple_item_trade_pack("30"), //
+	Multiple_item_trade_pack("30", "Multiple-item trade pack"), //
 
 	/**
 	 * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as
 	 * separate items OR retailed as a single item. Use instead of Multiple item trade pack (code 30) only if the data
 	 * provider specifically wishes to make explicit that the pack may optionally be retailed as a whole
 	 */
-	Multiple_item_pack("31");
+	Multiple_item_pack("31", "Multiple-item pack");
 
 	public final String value;
+	public final String label;
 
-	private ProductCompositions(String value)
+	private ProductCompositions(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static ProductCompositions byValue(String value)

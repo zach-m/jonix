@@ -35,43 +35,45 @@ import java.util.Map;
  */
 public enum BarcodeIndicatorsList141
 {
-	Not_barcoded("00"), //
+	Not_barcoded("00", "Not barcoded"), //
 
-	Barcoded_scheme_unspecified("01"), //
+	Barcoded_scheme_unspecified("01", "Barcoded, scheme unspecified"), //
 
-	GTIN_13("02"), //
+	GTIN_13("02", "GTIN-13"), //
 
-	GTIN_13_5_US_dollar_price_encoded("03"), //
+	GTIN_13_5_US_dollar_price_encoded("03", "GTIN-13+5 (US dollar price encoded)"), //
 
-	GTIN_13_5_CAN_dollar_price_encoded("04"), //
+	GTIN_13_5_CAN_dollar_price_encoded("04", "GTIN-13+5 (CAN dollar price encoded)"), //
 
-	GTIN_13_5_no_price_encoded("05"), //
-
-	/**
-	 * AKA item/price
-	 */
-	UPC_12_item_specific("06"), //
+	GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"), //
 
 	/**
 	 * AKA item/price
 	 */
-	UPC_12_5_item_specific("07"), //
+	UPC_12_item_specific("06", "UPC-12 (item-specific)"), //
+
+	/**
+	 * AKA item/price
+	 */
+	UPC_12_5_item_specific("07", "UPC-12+5 (item-specific)"), //
 
 	/**
 	 * AKA price/item
 	 */
-	UPC_12_price_point("08"), //
+	UPC_12_price_point("08", "UPC-12 (price-point)"), //
 
 	/**
 	 * AKA price/item
 	 */
-	UPC_12_5_price_point("09");
+	UPC_12_5_price_point("09", "UPC-12+5 (price-point)");
 
 	public final String value;
+	public final String label;
 
-	private BarcodeIndicatorsList141(String value)
+	private BarcodeIndicatorsList141(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	private static Map<String, BarcodeIndicatorsList141> map;

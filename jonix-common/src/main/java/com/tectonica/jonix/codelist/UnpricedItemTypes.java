@@ -32,14 +32,14 @@ package com.tectonica.jonix.codelist;
  */
 public enum UnpricedItemTypes
 {
-	Free_of_charge("01"), //
+	Free_of_charge("01", "Free of charge"), //
 
-	Price_to_be_announced("02"), //
+	Price_to_be_announced("02", "Price to be announced"), //
 
 	/**
 	 * Not sold separately at retail
 	 */
-	Not_sold_separately("03"), //
+	Not_sold_separately("03", "Not sold separately"), //
 
 	/**
 	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered &#8216;in
@@ -47,23 +47,25 @@ public enum UnpricedItemTypes
 	 * one-to-one to a single trading partner; or for digital products offered on subscription or with pricing which is
 	 * too complex to specify in ONIX
 	 */
-	Contact_supplier("04"), //
+	Contact_supplier("04", "Contact supplier"), //
 
 	/**
 	 * When a collection that is not sold as a set nevertheless has its own ONIX record
 	 */
-	Not_sold_as_set("05"), //
+	Not_sold_as_set("05", "Not sold as set"), //
 
 	/**
 	 * Unpriced, but available via a pre-determined revenue share agreement &lt;p&gt;NOTE: Introduced in Onix3
 	 */
-	Revenue_share("06");
+	Revenue_share("06", "Revenue share");
 
 	public final String value;
+	public final String label;
 
-	private UnpricedItemTypes(String value)
+	private UnpricedItemTypes(String value, String label)
 	{
 		this.value = value;
+		this.label = label;
 	}
 
 	public static UnpricedItemTypes byValue(String value)
