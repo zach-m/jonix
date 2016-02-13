@@ -28,7 +28,10 @@ package com.tectonica.jonix.codelist;
  * <p>
  * Description: E-publication version number
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
+ * @see <a
+ *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist220">ONIX
+ *      Codelist 220 in Reference Guide</a>
  */
 public enum EpublicationVersionNumbers
 {

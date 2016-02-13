@@ -28,7 +28,10 @@ package com.tectonica.jonix.codelist;
  * <p>
  * Description: Currency zone
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
+ * @see <a
+ *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist172">ONIX
+ *      Codelist 172 in Reference Guide</a>
  */
 public enum CurrencyZones
 {

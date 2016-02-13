@@ -31,7 +31,10 @@ import java.util.Map;
  * <p>
  * Description: Product form feature value &#8211; binding or page edge color
  * 
- * @see <a href="http://www.editeur.org/14/code-lists">ONIX Codelists</a>
+ * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
+ * @see <a
+ *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist98">ONIX
+ *      Codelist 98 in Reference Guide</a>
  */
 public enum ProductFormFeatureValueBindingOrPageEdgeColors
 {
