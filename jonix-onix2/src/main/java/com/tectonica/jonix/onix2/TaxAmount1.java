@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Tax amount at tax rate 1</h1>
+ * <p>
+ * The amount of tax chargeable at the rate specified by &lt;TaxRateCode1&gt; and/or &lt;TaxRatePercent1&gt;. See notes
+ * on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TaxAmount1&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j156&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TaxAmount1&gt;1.86&lt;/TaxAmount1&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TaxAmount1 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TaxAmount1";
 	public static final String shortname = "j156";
 
@@ -65,6 +91,8 @@ public class TaxAmount1 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

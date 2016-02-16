@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supplier name</h1>
+ * <p>
+ * The name of a new supplier. Optional and non-repeating; required if no supplier identifier is sent in an occurrence
+ * of the &lt;NewSupplier&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplierName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j137&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j137&gt;Littlehampton Book Services&lt;/j137&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SupplierName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplierName";
 	public static final String shortname = "j137";
 
@@ -56,6 +90,8 @@ public class SupplierName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

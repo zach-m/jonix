@@ -31,9 +31,46 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Resource version feature note</h1>
+ * <p>
+ * If the &lt;ResourceVersionFeatureType&gt; requires free text rather than a code value, or if the code in
+ * &lt;FeatureValue&gt; does not adequately describe the feature, a short text note may be added. Optional, and
+ * repeatable when parallel notes are provided in multiple languages. The <i>language</i> attribute is optional for a
+ * single instance of &lt;FeatureNote&gt;, but must be included in each instance if &lt;FeatureNote&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;FeatureNote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x440&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class FeatureNote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "FeatureNote";
 	public static final String shortname = "x440";
 
@@ -59,6 +96,9 @@ public class FeatureNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

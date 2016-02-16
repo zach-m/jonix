@@ -116,8 +116,8 @@ public enum MarketPublishingStatuss
 	Not_available_in_this_market("12", "Not available in this market"), //
 
 	/**
-	 * The product is published in this market and active but, as a publishing decision, it is not sold separately
-	 * &#8211; only in an assembly or as part of a package
+	 * The product is published in this market and active but, as a publishing decision, it is not sold separately -
+	 * only in an assembly or as part of a package
 	 */
 	Active_but_not_sold_separately("13", "Active, but not sold separately"), //
 
@@ -136,8 +136,8 @@ public enum MarketPublishingStatuss
 
 	/**
 	 * Temporarily withdrawn from sale in this market, typically for quality or technical reasons. In ONIX 3.0, must be
-	 * accompanied by expected availability date coded &#8216;22&#8217; within the &lt;MarketPublishingDate&gt;
-	 * composite, except in exceptional circumstances where no date is known
+	 * accompanied by expected availability date coded '22' within the &lt;MarketPublishingDate&gt; composite, except in
+	 * exceptional circumstances where no date is known
 	 */
 	Temporarily_withdrawn_from_sale("16", "Temporarily withdrawn from sale");
 

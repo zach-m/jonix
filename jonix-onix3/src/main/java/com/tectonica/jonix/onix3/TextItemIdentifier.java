@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixTextItemIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Text item identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define an identifier of a text item in accordance with a specified
+ * scheme. The composite is optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextItemIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;textitemidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class TextItemIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextItemIdentifier";
 	public static final String shortname = "textitemidentifier";
 

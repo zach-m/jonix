@@ -30,9 +30,31 @@ import com.tectonica.jonix.struct.JonixPageRun;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Page run composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define a run of contiguous pages on which a text item appears. The
+ * composite is optional, but may be repeated where the text item covers two or more separate page runs.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PageRun&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;pagerun&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class PageRun implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PageRun";
 	public static final String shortname = "pagerun";
 

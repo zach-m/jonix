@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Replaced-by EAN-13 article number</h1>
+ * <p>
+ * The EAN-13 article number of a new product which replaces the current product. Optional and non-repeating.
+ * <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of handling related
+ * items, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReplacedByEAN13&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;h131&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;h131&gt;9788474339796&lt;/h131&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ReplacedByEAN13 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReplacedByEAN13";
 	public static final String shortname = "h131";
 
@@ -65,6 +92,8 @@ public class ReplacedByEAN13 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

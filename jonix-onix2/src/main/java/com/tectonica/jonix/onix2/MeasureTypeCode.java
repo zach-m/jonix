@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Measure type code</h1>
+ * <p>
+ * An ONIX code indicating the dimension which is specified by an occurrence of the measure composite. Mandatory in each
+ * occurrence of the &lt;Measure&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 48</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MeasureTypeCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;c093&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;c093&gt;01&lt;/c093&gt;&#160;&#160;&#160;&#160;Height</td>
+ * </tr>
+ * </table>
+ */
 public class MeasureTypeCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MeasureTypeCode";
 	public static final String shortname = "c093";
 

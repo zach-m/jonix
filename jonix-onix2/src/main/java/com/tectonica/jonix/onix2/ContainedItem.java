@@ -45,9 +45,35 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contained item composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe an item which is part of or contained within the current
+ * product. The composite may be used to specify the item(s) and item quantity/ies carried in a dumpbin, or included in
+ * (eg) a classroom pack, or simply to state the product forms contained within a mixed media product, without
+ * specifying their identifiers or quantity. The composite is used only when the product form coding for the product as
+ * a whole indicates that the product includes two or more different items, or multiple copies of the same item.
+ * </p>
+ * <p>
+ * Each instance of the &lt;ContainedItem&gt; composite must carry at least either a product identifier, or a product
+ * form code, or both. In other words, it is valid to send an instance of the composite with an identifier and no
+ * product form code, or with a product form code and no identifier.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContainedItem&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;containeditem&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ContainedItem implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContainedItem";
 	public static final String shortname = "containeditem";
 

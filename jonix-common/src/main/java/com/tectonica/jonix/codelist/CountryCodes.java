@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 91</b>
  * <p>
- * Description: Country code &#8211; ISO 3166-1
+ * Description: Country code - ISO 3166-1
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a
@@ -58,7 +58,7 @@ public enum CountryCodes
 	Armenia("AM", "Armenia"), //
 
 	/**
-	 * Deprecated &#8211; use BQ, CW or SX as appropriate
+	 * Deprecated - use BQ, CW or SX as appropriate
 	 */
 	Netherlands_Antilles("AN", "Netherlands Antilles"), //
 
@@ -149,7 +149,7 @@ public enum CountryCodes
 	Costa_Rica("CR", "Costa Rica"), //
 
 	/**
-	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia
+	 * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
 	 */
 	Serbia_and_Montenegro("CS", "Serbia and Montenegro"), //
 
@@ -546,7 +546,7 @@ public enum CountryCodes
 	Mayotte("YT", "Mayotte"), //
 
 	/**
-	 * DEPRECATED, replaced by ME &#8211; Montenegro and RS &#8211; Serbia
+	 * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
 	 */
 	Yugoslavia("YU", "Yugoslavia"), //
 

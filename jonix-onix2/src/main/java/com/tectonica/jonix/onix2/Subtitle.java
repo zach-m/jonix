@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Subtitle</h1>
+ * <p>
+ * The full text of a subtitle, if any. “Subtitle” means any added words which appear with the title given in an
+ * occurrence of the &lt;Title&gt; composite, and which amplify and explain the title, but which are not considered to
+ * be part of the title itself. Optional and non-repeating. The &lt;Subtitle&gt; element may carry any of the following
+ * ONIX attributes: textformat, language, transliteration, textcase.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Subtitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b029&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b029&gt;The Russian Revolution 1891&amp;ndash;1924&lt;/b029&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Subtitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Subtitle";
 	public static final String shortname = "b029";
 
@@ -65,6 +93,8 @@ public class Subtitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

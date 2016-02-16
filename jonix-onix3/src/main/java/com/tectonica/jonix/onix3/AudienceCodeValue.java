@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Audience code value</h1>
+ * <p>
+ * A code value taken from the scheme specified in &lt;AudienceCodeType&gt;. Mandatory in each occurrence of the
+ * &lt;Audience&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Determined by the scheme specified in &lt;AudienceCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AudienceCodeValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b206&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;AudienceCodeValue&gt;06&lt;/AudienceCodeValue&gt; (Professional and scholarly)</td>
+ * </tr>
+ * </table>
+ */
 public class AudienceCodeValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AudienceCodeValue";
 	public static final String shortname = "b206";
 
@@ -53,6 +83,8 @@ public class AudienceCodeValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

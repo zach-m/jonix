@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Shipment expected date</h1>
+ * <p>
+ * The date on which a stock shipment is expected. Mandatory in each occurrence of the &lt;OnOrderDetail&gt; composite,
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 8 numeric digits, YYYYMMDD</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ExpectedDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j302&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ExpectedDate&gt;20060227&lt;/ExpectedDate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ExpectedDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ExpectedDate";
 	public static final String shortname = "j302";
 
@@ -65,6 +91,8 @@ public class ExpectedDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

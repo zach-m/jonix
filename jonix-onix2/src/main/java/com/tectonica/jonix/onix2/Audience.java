@@ -35,9 +35,26 @@ import com.tectonica.jonix.struct.JonixAudience;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Audience composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe an audience to which the product is directed.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Audience&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;audience&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Audience implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Audience";
 	public static final String shortname = "audience";
 

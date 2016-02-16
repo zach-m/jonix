@@ -32,9 +32,31 @@ import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Professional affiliation composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify a contributor’s professional position and/or affiliation,
+ * allowing multiple positions and affiliations to be specified.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProfessionalAffiliation&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;professionalaffiliation&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProfessionalAffiliation";
 	public static final String shortname = "professionalaffiliation";
 

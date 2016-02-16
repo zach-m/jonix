@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Replaces EAN.UCC-13 article number</h1>
+ * <p>
+ * The EAN.UCC-13 article number of a former product which the current product replaces. Optional and non-repeating.
+ * <strong>Note, however, that the &lt;RelatedProduct&gt; composite in Group&nbsp;PR.23 provides a more general method
+ * of handling this type of link. This is now the preferred ONIX approach. The &lt;ReplacesISBN&gt; element is retained
+ * only for upwards compatibility.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReplacesEAN13&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b011&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b011&gt;9788474339796&lt;/b011&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ReplacesEAN13 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReplacesEAN13";
 	public static final String shortname = "b011";
 
@@ -65,6 +93,8 @@ public class ReplacesEAN13 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

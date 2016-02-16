@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Alternative-format ISBN</h1>
+ * <p>
+ * International Standard Book Number identifying an alternative format in which the product is available. Optional and
+ * non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a later page provides a more general method of
+ * handling related items, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 10 characters, all numeric except last character, which may be letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AlternativeFormatISBN&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;h132&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;h132&gt;8474339790&lt;/h132&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class AlternativeFormatISBN implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AlternativeFormatISBN";
 	public static final String shortname = "h132";
 
@@ -65,6 +92,8 @@ public class AlternativeFormatISBN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

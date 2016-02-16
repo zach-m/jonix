@@ -31,9 +31,47 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Conference thematic title</h1>
+ * <p>
+ * The thematic title of an individual conference in a series that has a conference series name in the
+ * &lt;ConferenceName&gt; element. Optional and non-repeating.
+ * </p>
+ * <p>
+ * Use of the <i>textformat</i> attribute and HTML or XHTML markup in this element is deprecated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields - but is strongly discouraged</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ConferenceTheme&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b342&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class ConferenceTheme implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ConferenceTheme";
 	public static final String shortname = "b342";
 
@@ -59,6 +97,9 @@ public class ConferenceTheme implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields - but is strongly discouraged
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

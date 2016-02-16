@@ -31,9 +31,32 @@ import com.tectonica.jonix.struct.JonixCollectionSequence;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Collection sequence composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which indicates some ordinal position of a product within a
+ * collection. Different ordinal positions may be specified using separate repeats of the composite – for example, a
+ * product may be published first while also being third in narrative order within a collection.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CollectionSequence&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;collectionsequence&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class CollectionSequence implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CollectionSequence";
 	public static final String shortname = "collectionsequence";
 

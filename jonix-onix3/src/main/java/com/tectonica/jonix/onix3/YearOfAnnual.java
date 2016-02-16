@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Year of annual</h1>
+ * <p>
+ * When the year of an annual is part of a title, this field should be used to carry the year (or, if required, a spread
+ * of years such as 2009–2010). Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Year or range of years, in the format YYYY or YYYY-YYYY</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;YearOfAnnual&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b020&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b020&gt;2009&lt;/b020&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class YearOfAnnual implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "YearOfAnnual";
 	public static final String shortname = "b020";
 
@@ -53,6 +83,8 @@ public class YearOfAnnual implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Year or range of years, in the format YYYY or YYYY-YYYY
+	 * <p>
 	 * (type: dt.YearOrYearRange)
 	 */
 	public String value;

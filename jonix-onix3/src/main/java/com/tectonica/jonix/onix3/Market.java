@@ -30,9 +30,32 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Market composite</h1>
+ * <p>
+ * A repeatable group of data elements which together give details of a geographical territory and any non-geographical
+ * sales restrictions that apply within it. Optional in terms of the schema definitions, but required in most ONIX
+ * applications.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Market&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;market&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Market implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Market";
 	public static final String shortname = "market";
 

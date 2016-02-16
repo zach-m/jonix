@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Download caption</h1>
+ * <p>
+ * Text of a caption associated with a download file, and intended to be displayed whenever the file content is used.
+ * Optional and non-repeating. The &lt;DownloadCaption&gt; element may be sent together with either or both of fields
+ * &lt;DownloadCredit&gt;, or &lt;DownloadCopyrightNotice&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for
+ * Books - Product Information Message - XML Message Specification, Section 7)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DownloadCaption&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f119&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class DownloadCaption implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DownloadCaption";
 	public static final String shortname = "f119";
 
@@ -65,6 +93,9 @@ public class DownloadCaption implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

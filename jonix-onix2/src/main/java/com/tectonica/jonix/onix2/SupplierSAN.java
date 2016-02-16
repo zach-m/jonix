@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>SAN</h1>
+ * <p>
+ * A book trade Standard Address Number identifying a supplier. Used in the US and UK. Optional, but each occurrence of
+ * the &lt;NewSupplier&gt; composite must carry either at least one supplier identifier, or a &lt;SupplierName&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character which may
+ * be a numeric digit or letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplierSAN&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j136&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SupplierSAN&gt;978847X&lt;/SupplierSAN&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SupplierSAN implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplierSAN";
 	public static final String shortname = "j136";
 
@@ -65,6 +92,9 @@ public class SupplierSAN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
+	 * which may be a numeric digit or letter X.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

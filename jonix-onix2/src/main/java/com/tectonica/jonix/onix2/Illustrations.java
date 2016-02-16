@@ -35,9 +35,27 @@ import com.tectonica.jonix.struct.JonixIllustrations;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Illustrations and other content composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify the number of illustrations or other content items of a
+ * stated type which the product carries. Use of the &lt;Illustrations&gt; composite is optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Illustrations&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;illustrations&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Illustrations implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Illustrations";
 	public static final String shortname = "illustrations";
 

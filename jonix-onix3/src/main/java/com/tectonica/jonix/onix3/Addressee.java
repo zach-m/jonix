@@ -33,9 +33,31 @@ import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Addressee composite</h1>
+ * <p>
+ * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and repeatable
+ * if there are several addressees.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Addressee&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;addressee&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Addressee implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Addressee";
 	public static final String shortname = "addressee";
 

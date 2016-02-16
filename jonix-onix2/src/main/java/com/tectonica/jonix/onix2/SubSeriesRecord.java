@@ -44,9 +44,10 @@ import com.tectonica.jonix.struct.JonixTitle;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
 public class SubSeriesRecord implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SubSeriesRecord";
 	public static final String shortname = "subseriesrecord";
 

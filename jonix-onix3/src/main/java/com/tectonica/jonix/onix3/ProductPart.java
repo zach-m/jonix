@@ -39,9 +39,41 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product part composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe an item which is part of or contained within a
+ * multiple-item product or a trade pack. The composite must be used with all multiple-item products to specify (for
+ * example) the item(s) and item quantities included in a multi-volume set, a filled dumpbin, or a classroom pack. In
+ * other cases, where parts are not individually identified, it is used to state the product form(s) and the quantity or
+ * quantities of each form contained within the product.
+ * </p>
+ * <p>
+ * Each instance of the &lt;ProductPart&gt; composite must carry a &lt;ProductForm&gt; code and a quantity, even if the
+ * quantity is ‘1’. If the composite refers to a number of copies of a single item, the quantity must be sent as
+ * &lt;NumberOfCopies&gt;, normally accompanied by a &lt;ProductIdentifier&gt;. If the composite refers to a number of
+ * <em>different</em> items of the same form, without identifying them individually, the quantity must be sent as
+ * &lt;NumberOfItemsOfThisForm&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductPart&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productpart&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ProductPart implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductPart";
 	public static final String shortname = "productpart";
 

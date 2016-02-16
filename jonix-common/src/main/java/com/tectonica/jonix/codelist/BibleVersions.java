@@ -39,7 +39,7 @@ import java.util.Map;
 public enum BibleVersions
 {
 	/**
-	 * Alberto Vaccari &#8211; Pontificio Istituto Biblico
+	 * Alberto Vaccari - Pontificio Istituto Biblico
 	 */
 	Alberto_Vaccari("ALV", "Alberto Vaccari"), //
 
@@ -73,8 +73,8 @@ public enum BibleVersions
 	Conferenza_Episcopale_Italiana("CEI", "Conferenza Episcopale Italiana"), //
 
 	/**
-	 * New translation of the C.E.I. first published in 2008 &#8211; the version most widely used by the Italian
-	 * Catholic Church
+	 * New translation of the C.E.I. first published in 2008 - the version most widely used by the Italian Catholic
+	 * Church
 	 */
 	Conferenza_Episcopale_Italiana_2008("CEN", "Conferenza Episcopale Italiana 2008"), //
 
@@ -85,8 +85,8 @@ public enum BibleVersions
 	Contemporary_English("CEV", "Contemporary English"), //
 
 	/**
-	 * 1968 Interfaith version promoted by the Italian Bible Society. Has a Catholic &#8216;imprimateur&#8217;, but its
-	 * ecumenical approach has Jewish, Protestant and Christian Orthodox approval
+	 * 1968 Interfaith version promoted by the Italian Bible Society. Has a Catholic 'imprimateur', but its ecumenical
+	 * approach has Jewish, Protestant and Christian Orthodox approval
 	 */
 	Concordata("CNC", "Concordata"), //
 
@@ -114,7 +114,7 @@ public enum BibleVersions
 	Einheits_bersetzung("EIN", "Einheitsübersetzung"), //
 
 	/**
-	 * An update of the Revised Standard Version that makes &#8216;modest&#8217; use of gender-free terminology
+	 * An update of the Revised Standard Version that makes 'modest' use of gender-free terminology
 	 */
 	English_Standard("ESV", "English Standard"), //
 
@@ -150,9 +150,9 @@ public enum BibleVersions
 	Geneva("GEN", "Geneva"), //
 
 	/**
-	 * A translation sponsored by the American Bible Society. The New Testament was first published (as
-	 * &#8216;Today&#8217;s English Version&#8217; TEV) in 1966. The Old Testament was completed in 1976, and the whole
-	 * was published as the &#8216;Good News Bible&#8217;
+	 * A translation sponsored by the American Bible Society. The New Testament was first published (as 'Today's English
+	 * Version' TEV) in 1966. The Old Testament was completed in 1976, and the whole was published as the 'Good News
+	 * Bible'
 	 */
 	Good_News("GNB", "Good News"), //
 
@@ -207,7 +207,7 @@ public enum BibleVersions
 
 	/**
 	 * A verbal translation led by William Prindele. Published in 1994, it was designed to modernize the language of the
-	 * King James Version based on Webster&#8217;s New International Dictionary, 2nd edition, unabridged
+	 * King James Version based on Webster's New International Dictionary, 2nd edition, unabridged
 	 */
 	_21st_Century_King_James("KJT", "21st Century King James"), //
 
@@ -292,7 +292,7 @@ public enum BibleVersions
 	Bibelen_2011("NBI", "Bibelen 2011"), //
 
 	/**
-	 * A translation inspired by the International Children&#8217;s version. First published by World Publishing in 1991
+	 * A translation inspired by the International Children's version. First published by World Publishing in 1991
 	 */
 	New_Century("NCV", "New Century"), //
 
@@ -331,7 +331,7 @@ public enum BibleVersions
 	New_King_James("NKJ", "New King James"), //
 
 	/**
-	 * Norwegian &#8216;nynorsk&#8217; Bible translation
+	 * Norwegian 'nynorsk' Bible translation
 	 */
 	Bibelen_nynorsk("NNK", "Bibelen, nynorsk"), //
 
@@ -352,7 +352,7 @@ public enum BibleVersions
 	Nueva_Traduccion_Vivienta("NTV", "Nueva Traduccion Vivienta"), //
 
 	/**
-	 * Nuovissima version &#8211; a Catholic-oriented translation in modern Italian, edited by a group including Carlo
+	 * Nuovissima version - a Catholic-oriented translation in modern Italian, edited by a group including Carlo
 	 * Martini, Gianfranco Ravasi and Ugo Vanni and first published (in 48 volumes, 1967-1980) by Edizioni San Paolo
 	 */
 	Novissima_Versione_della_Bibbia("NVB", "Novissima Versione della Bibbia"), //
@@ -403,13 +403,13 @@ public enum BibleVersions
 	Bibel_2000("SBB", "Bibel 2000"), //
 
 	/**
-	 * Norwegian &#8216;samisk&#8217; Bible translation
+	 * Norwegian 'samisk' Bible translation
 	 */
 	Bibelen_samisk("SMK", "Bibelen, samisk"), //
 
 	/**
 	 * A translation of the New Testament sponsored by the American Bible Society and first published in 1966. It was
-	 * incorporated into the &#8216;Good News Bible&#8217; (GNB) in 1976
+	 * incorporated into the 'Good News Bible' (GNB) in 1976
 	 */
 	Today_s_English("TEV", "Today’s English"), //
 

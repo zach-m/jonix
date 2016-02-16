@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Set part (“subset”) number</h1>
+ * <p>
+ * The distinctive enumeration of a “subset” of which the product is a member, used only when a set is itself divided
+ * into two levels, <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome. Optional and
+ * non-repeating. Note that this element is used for the first subdivision of a set which has two levels, regardless of
+ * the nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SetPartNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b024&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SetPartNumber&gt;Part II&lt;/SetPartNumber&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SetPartNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SetPartNumber";
 	public static final String shortname = "b024";
 
@@ -65,6 +93,8 @@ public class SetPartNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

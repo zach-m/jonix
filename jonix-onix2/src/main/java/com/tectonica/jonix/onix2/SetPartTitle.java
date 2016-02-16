@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Set part (“subset”) title</h1>
+ * <p>
+ * The title of a “subset” of which the product is a member, used only when a set is itself divided into two levels,
+ * <em>eg</em> A History of Western Europe, Part II: The Dark Ages, Volume I: After Rome. Use this field only for the
+ * section of the whole title which is shared by, and only by, the members of the subset. Optional and non-repeating.
+ * Note that this element is used for the first subdivision of a set which has two levels, regardless of the
+ * nomenclature (part, volume, <em>etc</em>) which the publisher uses at each level.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SetPartTitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b025&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b025&gt;The Dark Ages&lt;/b025&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SetPartTitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SetPartTitle";
 	public static final String shortname = "b025";
 
@@ -65,6 +94,8 @@ public class SetPartTitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

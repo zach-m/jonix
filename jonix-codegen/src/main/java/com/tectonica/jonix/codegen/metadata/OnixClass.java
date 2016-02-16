@@ -28,6 +28,7 @@ public abstract class OnixClass implements Comparable<OnixClass>
 	public String name;
 	public List<OnixConst> consts;
 	public List<OnixAttribute> attributes;
+	public OnixDoc onixDoc;
 
 	@Override
 	public int compareTo(OnixClass other)

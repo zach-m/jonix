@@ -50,7 +50,7 @@ public enum ContentAudiences
 	Restricted("01", "Restricted"), //
 
 	/**
-	 * Distributors, bookstores, publisher&#8217;s own staff etc
+	 * Distributors, bookstores, publisher's own staff etc
 	 */
 	Booktrade("02", "Booktrade"), //
 

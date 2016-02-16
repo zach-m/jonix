@@ -44,7 +44,7 @@ public enum ContributorRoles
 	By_author("A01", "By (author)"), //
 
 	/**
-	 * With or as told to: &#8216;ghost&#8217; author of a literary work
+	 * With or as told to: 'ghost' author of a literary work
 	 */
 	With("A02", "With"), //
 
@@ -85,8 +85,8 @@ public enum ContributorRoles
 	Designed_by("A11", "Designed by"), //
 
 	/**
-	 * Artist when named as the creator of artwork which illustrates a text, or the originator (sometimes
-	 * &#8216;penciller&#8217; for collaborative art) of the artwork of a graphic novel or comic book
+	 * Artist when named as the creator of artwork which illustrates a text, or the originator (sometimes 'penciller'
+	 * for collaborative art) of the artwork of a graphic novel or comic book
 	 */
 	Illustrated_by("A12", "Illustrated by"), //
 
@@ -220,9 +220,9 @@ public enum ContributorRoles
 
 	/**
 	 * Use for secondary creators when separate persons are named as having respectively drawn and
-	 * inked/colored/finished artwork, eg for a graphic novel or comic book. Use with A12 for &#8216;drawn by&#8217;.
-	 * Use A40 for &apos;finished by&apos;, but prefer more specific codes A46 to A48 instead of A40 unless the more
-	 * specific secondary roles are inappropriate, unclear or unavailable
+	 * inked/colored/finished artwork, eg for a graphic novel or comic book. Use with A12 for 'drawn by'. Use A40 for
+	 * &apos;finished by&apos;, but prefer more specific codes A46 to A48 instead of A40 unless the more specific
+	 * secondary roles are inappropriate, unclear or unavailable
 	 */
 	Inked_or_colored_by("A40", "Inked or colored by"), //
 
@@ -317,7 +317,7 @@ public enum ContributorRoles
 	Associate_editor("B19", "Associate editor"), //
 
 	/**
-	 * Use also for &#8216;advisory editor&#8217;, &#8216;series advisor&#8217;, &#8216;editorial consultant&#8217; etc
+	 * Use also for 'advisory editor', 'series advisor', 'editorial consultant' etc
 	 */
 	Consultant_editor("B20", "Consultant editor"), //
 
@@ -332,7 +332,7 @@ public enum ContributorRoles
 
 	/**
 	 * An editor who is responsible for establishing the text used in an edition of a literary work, where this is
-	 * recognised as a distinctive role (in Spain, &#8216;editor literario&#8217;)
+	 * recognised as a distinctive role (in Spain, 'editor literario')
 	 */
 	Literary_editor("B24", "Literary editor"), //
 
@@ -462,8 +462,8 @@ public enum ContributorRoles
 	Honored_dedicated_to("Z02", "Honored/dedicated to"), //
 
 	/**
-	 * For use ONLY with &#8216;et al&#8217; or &#8216;Various&#8217; within &lt;UnnamedPersons&gt;, where the roles of
-	 * the multiple contributors vary
+	 * For use ONLY with 'et al' or 'Various' within &lt;UnnamedPersons&gt;, where the roles of the multiple
+	 * contributors vary
 	 */
 	_Various_roles("Z98", "(Various roles)"), //
 

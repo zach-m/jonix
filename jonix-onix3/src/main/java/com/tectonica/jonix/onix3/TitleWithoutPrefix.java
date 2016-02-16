@@ -32,9 +32,44 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Title without prefix</h1>
+ * <p>
+ * The text of a title element without the title prefix; and excluding any subtitle. Optional and non-repeating; can
+ * only be used if one of the &lt;NoPrefix/&gt; or &lt;TitlePrefix&gt; elements is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitleWithoutPrefix&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b031&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript, textcase</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TitleWithoutPrefix textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt; (text
+ * is in sentence case)</td>
+ * </tr>
+ * </table>
+ */
 public class TitleWithoutPrefix implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitleWithoutPrefix";
 	public static final String shortname = "b031";
 
@@ -64,6 +99,8 @@ public class TitleWithoutPrefix implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

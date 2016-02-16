@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Collection sequence type</h1>
+ * <p>
+ * An ONIX code identifying the type of ordering used for the product’s sequence number within the collection. Mandatory
+ * and non-repeating within the &lt;CollectionSequence&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length text, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 197</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CollectionSequenceType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x479&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x479&gt;03&lt;/x479&gt; (Order of publication)</td>
+ * </tr>
+ * </table>
+ */
 public class CollectionSequenceType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CollectionSequenceType";
 	public static final String shortname = "x479";
 

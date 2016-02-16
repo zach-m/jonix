@@ -32,9 +32,32 @@ import com.tectonica.jonix.struct.JonixExtent;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Extent composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe an extent pertaining to the product. Optional, but in
+ * practice required for most products, <i>eg</i> to give the number of pages in a printed book or paginated e-book, or
+ * to give the running time of an audiobook.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Extent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;extent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Extent implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Extent";
 	public static final String shortname = "extent";
 

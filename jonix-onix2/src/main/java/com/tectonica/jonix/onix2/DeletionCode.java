@@ -34,9 +34,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Reason for deletion code</h1>
+ * <p>
+ * An ONIX code which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and may
+ * occur only when the &lt;NotificationType&gt; element carries the code value 05. Note that it refers to the reason why
+ * the record is being deleted, not the reason why a product has been “deleted” (in industries which use this
+ * terminology when a product is withdrawn).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 2</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DeletionCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;a198&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class DeletionCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DeletionCode";
 	public static final String shortname = "a198";
 

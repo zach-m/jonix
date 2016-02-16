@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person name part 3: prefix to key name</h1>
+ * <p>
+ * The third part of a structured name of a person who contributed to the creation of the product: a prefix which
+ * precedes the key name(s) but which is not to be treated as part of the key name, <em>eg</em> van in Ludwig van
+ * Beethoven. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PrefixToKey&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b247&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b247&gt;van&lt;/b247&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PrefixToKey implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PrefixToKey";
 	public static final String shortname = "b247";
 
@@ -65,6 +92,8 @@ public class PrefixToKey implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

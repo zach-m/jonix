@@ -30,9 +30,42 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>End date</h1>
+ * <p>
+ * The date until which a sales restriction is effective. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is missing</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EndDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b325&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EndDate dateformat=&quot;00&quot;&gt;20090930&lt;/EndDate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EndDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EndDate";
 	public static final String shortname = "b325";
 
@@ -56,6 +89,9 @@ public class EndDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * missing
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

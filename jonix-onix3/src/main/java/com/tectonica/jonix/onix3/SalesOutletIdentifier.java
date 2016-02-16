@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sales outlet identifier composite</h1>
+ * <p>
+ * A group of data elements which together represent a coded identification of a person or organization, used here to
+ * identify a sales outlet. Non-repeating in this context.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SalesOutletIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;salesoutletidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class SalesOutletIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SalesOutletIdentifier";
 	public static final String shortname = "salesoutletidentifier";
 

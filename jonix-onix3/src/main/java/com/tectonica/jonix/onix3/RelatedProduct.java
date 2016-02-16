@@ -36,9 +36,31 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Related product composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe a product which has a specified
+ * relationship to the product described in the ONIX record.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RelatedProduct&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;relatedproduct&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class RelatedProduct implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 

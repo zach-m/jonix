@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 176</b>
  * <p>
- * Description: Product form feature value &#8211; operating system
+ * Description: Product form feature value - operating system
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a
@@ -61,14 +61,14 @@ public enum ProductFormFeatureValueOperatingSystems
 	Linux("04", "Linux"), //
 
 	/**
-	 * [A proprietary operating system supplied by Apple on Macintosh computers up to 2002] DEPRECATED &#8211; use code
-	 * 13 for all Mac OS versions
+	 * [A proprietary operating system supplied by Apple on Macintosh computers up to 2002] DEPRECATED - use code 13 for
+	 * all Mac OS versions
 	 */
 	Mac_OS("05", "Mac OS"), //
 
 	/**
-	 * [A proprietary operating system supplied by Apple on Macintosh computers from 2001/2002] DEPRECATED &#8211; use
-	 * code 13 for all Mac OS versions
+	 * [A proprietary operating system supplied by Apple on Macintosh computers from 2001/2002] DEPRECATED - use code 13
+	 * for all Mac OS versions
 	 */
 	Mac_OS_X("06", "Mac OS X"), //
 

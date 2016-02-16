@@ -32,9 +32,35 @@ import com.tectonica.jonix.struct.JonixTerritory;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Territory composite</h1>
+ * <p>
+ * A group of data elements which together identify a territory in which the price stated in an occurrence of the
+ * &lt;Price&gt; composite is applicable. Optional and non-repeating.
+ * </p>
+ * <p>
+ * <strong>Additional guidance on the description of price territories in ONIX 3.0 will be found in a separate document
+ * <cite>ONIX for Books Product Information Message: How to Specify Markets and Suppliers in ONIX 3</cite>.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Territory&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;territory&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class Territory implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Territory";
 	public static final String shortname = "territory";
 

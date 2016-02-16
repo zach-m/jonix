@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price code type name</h1>
+ * <p>
+ * A name which identifies a proprietary price code type. Must be used when, and only when the code in the
+ * &lt;PriceCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a retailer’s price banding scheme. Optional
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceCodeTypeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x477&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x477&gt;Retailer Inc. Ebook Tier Number&lt;/x477&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PriceCodeTypeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceCodeTypeName";
 	public static final String shortname = "x477";
 
@@ -56,6 +91,8 @@ public class PriceCodeTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

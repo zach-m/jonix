@@ -45,10 +45,10 @@ public enum ResourceForms
 
 	/**
 	 * A file that may be downloaded on demand for third-party use. The ONIX sender will host a copy of the resource
-	 * until the specified Until Date, but only for the ONIX recipient&#8217;s direct use. The ONIX recipient should
-	 * download a copy of the resource, and must host an independent copy of the resource if it is used on a
-	 * consumer-facing website. Special attention should be paid to the &#8216;Last Updated&#8217; &lt;ContentDate&gt;
-	 * to ensure the independent copy of the resource is kept up to date
+	 * until the specified Until Date, but only for the ONIX recipient's direct use. The ONIX recipient should download
+	 * a copy of the resource, and must host an independent copy of the resource if it is used on a consumer-facing
+	 * website. Special attention should be paid to the 'Last Updated' &lt;ContentDate&gt; to ensure the independent
+	 * copy of the resource is kept up to date
 	 */
 	Downloadable_file("02", "Downloadable file"), //
 

@@ -39,9 +39,28 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Not for sale composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify a country or countries in which the product is not for
+ * sale, together with the ISBN and/or other product identifier and/or the name of the publisher of the same work in the
+ * specified country/ies.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NotForSale&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;notforsale&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NotForSale implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NotForSale";
 	public static final String shortname = "notforsale";
 

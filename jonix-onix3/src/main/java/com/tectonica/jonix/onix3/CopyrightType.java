@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RightsTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright statement type</h1>
+ * <p>
+ * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighbouring
+ * right. If omitted, the default is that the statement represents a copyright.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, one letter</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 219</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x512&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CopyrightType&gt;P&lt;/CopyrightType&gt; (&#8471; phonogram right)</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightType";
 	public static final String shortname = "x512";
 

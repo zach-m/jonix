@@ -34,9 +34,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Prize or award country</h1>
+ * <p>
+ * An ISO standard code identifying the country in which a prize or award is given. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes - List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PrizeCountry&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;g128&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;g128&gt;US&lt;/g128&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PrizeCountry implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PrizeCountry";
 	public static final String shortname = "g128";
 

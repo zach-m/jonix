@@ -32,9 +32,33 @@ import com.tectonica.jonix.struct.JonixMarketDate;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Market date composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify a date associated with the publishing status of the
+ * product in a specified market, <i>eg</i> ‘local publication date’. Optional, but a date of publication must be
+ * specified either here as a ‘local pubdate’ or in P.20. Other dates relating to the publication of the product in the
+ * specific market may be sent in further repeats of the composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MarketDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;marketdate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class MarketDate implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MarketDate";
 	public static final String shortname = "marketdate";
 

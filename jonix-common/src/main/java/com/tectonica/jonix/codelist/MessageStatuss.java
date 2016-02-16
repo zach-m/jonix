@@ -38,9 +38,9 @@ public enum MessageStatuss
 	/**
 	 * Message received but not yet parsed (Acknowledgement must contain neither &lt;MessageStatusDetail&gt; nor
 	 * &lt;RecordStatusSummary&gt;, and should include &lt;NoProduct/&gt;). There is no particular implication that the
-	 * acknowledgement message is valid &#8211; the status is based solely on receipt of a file and minimal parsing of
-	 * the original ONIX message header to ascertain &lt;MessageNumber&gt; etc.. The Acknowledgement message MAY give a
-	 * date when parsing is planned
+	 * acknowledgement message is valid - the status is based solely on receipt of a file and minimal parsing of the
+	 * original ONIX message header to ascertain &lt;MessageNumber&gt; etc.. The Acknowledgement message MAY give a date
+	 * when parsing is planned
 	 */
 	Message_received("00", "Message received"), //
 

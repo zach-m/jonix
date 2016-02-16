@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Title prefix</h1>
+ * <p>
+ * Text at the beginning of a title which is to be ignored for alphabetical sorting. Optional and non-repeating; can
+ * only be used if the &lt;TitleWithoutPrefix&gt; element is also present. These two elements may be used in combination
+ * in applications where it is necessary to distinguish an initial word or character string which is to be ignored for
+ * filing purposes, <em>eg</em> in library systems and in some bookshop databases. The &lt;TitlePrefix&gt; element may
+ * carry any of the following ONIX attributes: textformat, language, transliteration, textcase.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitlePrefix&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b030&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b030&gt;The&lt;/b030&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TitlePrefix implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitlePrefix";
 	public static final String shortname = "b030";
 
@@ -65,6 +94,8 @@ public class TitlePrefix implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

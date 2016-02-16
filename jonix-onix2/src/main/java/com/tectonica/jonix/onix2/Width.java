@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Overall width</h1>
+ * <p>
+ * The overall width of the product: in the case of a book, the cover or case width, in the units specified in the
+ * message header, &lt;DefaultLinearUnit&gt; field, defined in the <cite>ONIX for Books – Product Information Message –
+ * XML Message Specification</cite>. Optional and non-repeating. <strong>The &lt;Measure&gt; composite on a previous
+ * page provides a more general method of handling measurements, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point when required, suggested maximum length 6 characters
+ * including a decimal point.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Width&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;c097&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;Width&gt;5.5&lt;/Width&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Width implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Width";
 	public static final String shortname = "c097";
 
@@ -65,6 +94,9 @@ public class Width implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

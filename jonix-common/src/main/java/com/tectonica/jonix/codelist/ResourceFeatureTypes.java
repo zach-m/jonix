@@ -36,8 +36,8 @@ package com.tectonica.jonix.codelist;
 public enum ResourceFeatureTypes
 {
 	/**
-	 * Credit that must be displayed when a resource is used (eg &#8216;Photo Jerry Bauer&#8217; or &#8216;&#169; Magnum
-	 * Photo&#8217;). Credit text should be carried in &lt;FeatureNote&gt;
+	 * Credit that must be displayed when a resource is used (eg 'Photo Jerry Bauer' or '&#169; Magnum Photo'). Credit
+	 * text should be carried in &lt;FeatureNote&gt;
 	 */
 	Required_credit("01", "Required credit"), //
 
@@ -60,15 +60,15 @@ public enum ResourceFeatureTypes
 	Length_in_minutes("04", "Length in minutes"), //
 
 	/**
-	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from
-	 * List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
+	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
+	 * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
 	 * 16-digit ISNI
 	 */
 	ISNI_of_resource_contributor("05", "ISNI of resource contributor"), //
 
 	/**
-	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11&#8211;14 from
-	 * List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
+	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
+	 * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
 	 * proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt; &lt;p&gt;NOTE:
 	 * Introduced in Onix3
 	 */

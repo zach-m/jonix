@@ -31,9 +31,46 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Religious text feature description</h1>
+ * <p>
+ * Free text describing a feature that is not adequately defined by code values alone. Optional, and repeatable if
+ * parallel descriptive text is provided in multiple languages. The <i>language</i> attribute is optional for a single
+ * instance of &lt;ReligiousTextFeatureDescription&gt;, but must be included in each instance if
+ * &lt;ReligiousTextFeatureDescription&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML
+ * or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReligiousTextFeatureDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b360&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class ReligiousTextFeatureDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReligiousTextFeatureDescription";
 	public static final String shortname = "b360";
 
@@ -59,6 +96,9 @@ public class ReligiousTextFeatureDescription implements OnixElement, Serializabl
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

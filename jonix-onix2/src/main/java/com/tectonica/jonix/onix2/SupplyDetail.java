@@ -47,9 +47,27 @@ import com.tectonica.jonix.struct.JonixSupplierIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supplier and trade data composite</h1>
+ * <p>
+ * A repeatable group of data elements which together give details of a trade supply source and the product price and
+ * availability from that source.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplyDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;supplydetail&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SupplyDetail implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";
 

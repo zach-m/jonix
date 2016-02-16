@@ -46,9 +46,9 @@ public enum TaxTypes
 	GST("02", "GST"), //
 
 	/**
-	 * &#8216;Green&#8217; or eco-tax, levied to encourage responsible production or disposal, used only where this is
-	 * identified separately from value-added or sales taxes (eg French &#233;co-participation tax) &lt;p&gt;NOTE:
-	 * Introduced in Onix3
+	 * 'Green' or eco-tax, levied to encourage responsible production or disposal, used only where this is identified
+	 * separately from value-added or sales taxes (eg French &#233;co-participation tax) &lt;p&gt;NOTE: Introduced in
+	 * Onix3
 	 */
 	ECO("03", "ECO");
 

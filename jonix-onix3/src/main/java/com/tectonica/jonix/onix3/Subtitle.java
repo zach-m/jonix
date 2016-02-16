@@ -32,9 +32,44 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Subtitle</h1>
+ * <p>
+ * The text of a subtitle, if any. ‘Subtitle’ means any added words which appear with the title element given in an
+ * occurrence of the &lt;TitleElement&gt; composite, and which amplify and explain the title element, but which are not
+ * considered to be part of the title element itself. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Subtitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b029&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript, textcase</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b029 textcase=&quot;02&quot;&gt;The Russian Revolution 1891-1924&lt;/b029&gt; (text is in title case)</td>
+ * </tr>
+ * </table>
+ */
 public class Subtitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Subtitle";
 	public static final String shortname = "b029";
 
@@ -64,6 +99,8 @@ public class Subtitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

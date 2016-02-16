@@ -64,7 +64,7 @@ public enum UnitOfUsages
 	Percentage("05", "Percentage"), //
 
 	/**
-	 * Maximum number of devices in &#8216;share group&#8217;
+	 * Maximum number of devices in 'share group'
 	 */
 	Devices("06", "Devices"), //
 

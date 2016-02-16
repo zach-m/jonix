@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Media file date</h1>
+ * <p>
+ * The date when the image referenced by the &lt;MediaFileLink&gt; element was last changed. Optional and non-repeating.
+ * This element is intended to allow the receiver of an updated ONIX record to determine whether it is necessary to
+ * download a new copy of the file.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 8 numeric digits, YYYYMMDD</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MediaFileDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f373&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;f373&gt;20030504&lt;/f373&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MediaFileDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MediaFileDate";
 	public static final String shortname = "f373";
 
@@ -65,6 +92,8 @@ public class MediaFileDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Corporate body as subject</h1>
+ * <p>
+ * The name of a corporate body which is part of the subject of the content item. Optional, and repeatable if more than
+ * one corporate body is involved.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 200 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CorporateBodyAsSubject&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b071&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b071&gt;Vienna Philharmonic Orchestra&lt;/b071&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CorporateBodyAsSubject implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CorporateBodyAsSubject";
 	public static final String shortname = "b071";
 
@@ -65,6 +91,8 @@ public class CorporateBodyAsSubject implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 200 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

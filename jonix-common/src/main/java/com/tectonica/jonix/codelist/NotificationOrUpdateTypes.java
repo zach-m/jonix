@@ -56,8 +56,8 @@ public enum NotificationOrUpdateTypes
 	Notification_confirmed_on_publication("03", "Notification confirmed on publication"), //
 
 	/**
-	 * In ONIX 3.0 only, use when sending a &#8216;block update&#8217; record. In previous ONIX releases, ONIX updating
-	 * has generally been by complete record replacement using code 03, and code 04 is not used
+	 * In ONIX 3.0 only, use when sending a 'block update' record. In previous ONIX releases, ONIX updating has
+	 * generally been by complete record replacement using code 03, and code 04 is not used
 	 */
 	Update_partial("04", "Update (partial)"), //
 
@@ -81,18 +81,17 @@ public enum NotificationOrUpdateTypes
 	Notice_of_acquisition("09", "Notice of acquisition"), //
 
 	/**
-	 * ONIX Books 2.1 supply update &#8211; &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
+	 * ONIX Books 2.1 supply update - &lt;SupplyDetail&gt; only (not used in ONIX 3.0)
 	 */
 	Update_SupplyDetail_only("12", "Update – SupplyDetail only"), //
 
 	/**
-	 * ONIX Books 2.1 supply update &#8211; &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
+	 * ONIX Books 2.1 supply update - &lt;MarketRepresentation&gt; only (not used in ONIX 3.0)
 	 */
 	Update_MarketRepresentation_only("13", "Update – MarketRepresentation only"), //
 
 	/**
-	 * ONIX Books 2.1 supply update &#8211; both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX
-	 * 3.0)
+	 * ONIX Books 2.1 supply update - both &lt;SupplyDetail&gt; and &lt;MarketRepresentation&gt; (not used in ONIX 3.0)
 	 */
 	Update_SupplyDetail_and_MarketRepresentation("14", "Update – SupplyDetail and MarketRepresentation"), //
 

@@ -35,9 +35,27 @@ import com.tectonica.jonix.struct.JonixDiscountCoded;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Discount code composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define a discount code from a specified scheme, and allowing
+ * different discount code schemes to be supported without defining additional data elements. Optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DiscountCoded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;discountcoded&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DiscountCoded implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DiscountCoded";
 	public static final String shortname = "discountcoded";
 

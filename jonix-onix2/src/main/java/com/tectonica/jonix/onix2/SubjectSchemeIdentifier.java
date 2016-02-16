@@ -34,9 +34,50 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Subject scheme identifier</h1>
+ * <p>
+ * An ONIX code which identifies the subject scheme which is used in an occurrence of the &lt;Subject&gt; composite.
+ * Mandatory in each occurrence of the composite, and non-repeating.
+ * </p>
+ * <p>
+ * When the scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element
+ * to carry the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the
+ * text equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to
+ * carry the text of the subject heading.
+ * </p>
+ * <p>
+ * Scheme code 23 may be used for a publisher’s own subject category code, by agreement with trading partners to whom
+ * product information is sent. Scheme code 24, with a name in the &lt;SubjectSchemeName&gt; element, may be used to
+ * identify a proprietary scheme, <em>eg</em> one used by a bibliographic agency or wholesaler.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 27</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SubjectSchemeIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b067&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b067&gt;03&lt;/b067&gt;&#160;&#160;&#160;&#160;LC classification</td>
+ * </tr>
+ * </table>
+ */
 public class SubjectSchemeIdentifier implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SubjectSchemeIdentifier";
 	public static final String shortname = "b067";
 

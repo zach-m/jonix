@@ -31,9 +31,44 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person name</h1>
+ * <p>
+ * The name of a person, used here for a personal copyright owner. Optional and non-repeating. Each occurrence of the
+ * &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an identifier, or both a name
+ * and an identifier.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PersonName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b036&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PersonName&gt;James J. Johnson III&lt;/PersonName&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PersonName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PersonName";
 	public static final String shortname = "b036";
 
@@ -61,6 +96,8 @@ public class PersonName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

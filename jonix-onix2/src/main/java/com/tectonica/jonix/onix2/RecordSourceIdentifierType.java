@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Record source identifier type code</h1>
+ * <p>
+ * An ONIX code identifying the scheme from which the identifier in the &lt;RecordSourceIdentifier&gt; element is taken.
+ * Optional and non-repeating, but &lt;RecordSourceIdentifier&gt; must also be present if this field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RecordSourceIdentifierType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;a195&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;a195&gt;03&lt;/a195&gt;&#160;&#160;&#160;&#160;Deutsche Bibliothek publisher identifier</td>
+ * </tr>
+ * </table>
+ */
 public class RecordSourceIdentifierType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RecordSourceIdentifierType";
 	public static final String shortname = "a195";
 

@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contributor statement</h1>
+ * <p>
+ * Free text showing exactly how the authorship should be described in an online display, when a standard concatenation
+ * of individual contributor elements would not give a satisfactory presentation. When this field is sent, the receiving
+ * party is expected to use it to replace all names sent in the &lt;Contributor&gt; composite for display purposes only.
+ * It does not replace any biographical notes sent in the composite. The individual contributor elements must also be
+ * sent for indexing and retrieval.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 1000 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContributorStatement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b049&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b049&gt;Written and illustrated by Fred and Emily Jackson&lt;/b049&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ContributorStatement implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContributorStatement";
 	public static final String shortname = "b049";
 
@@ -65,6 +94,8 @@ public class ContributorStatement implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 1000 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

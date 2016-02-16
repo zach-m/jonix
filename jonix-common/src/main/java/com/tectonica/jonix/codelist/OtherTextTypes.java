@@ -92,7 +92,7 @@ public enum OtherTextTypes
 	Description_for_reader("12", "Description for reader"), //
 
 	/**
-	 * A note referring to all contributors to a product &#8211; NOT linked to a single contributor
+	 * A note referring to all contributors to a product - NOT linked to a single contributor
 	 */
 	Biographical_note("13", "Biographical note"), //
 
@@ -108,8 +108,8 @@ public enum OtherTextTypes
 
 	/**
 	 * Free text listing of other titles with which the product is in competition: although this text might not appear
-	 * in &#8216;public&#8217; ONIX records, it could be required where ONIX Is used as a communication format within a
-	 * group of publishing and distribution companies
+	 * in 'public' ONIX records, it could be required where ONIX Is used as a communication format within a group of
+	 * publishing and distribution companies
 	 */
 	Competing_titles("16", "Competing titles"), //
 
@@ -201,17 +201,15 @@ public enum OtherTextTypes
 	License("46", "License"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg &#8216;Open access &#8211; no
-	 * commercial use&#8217;), primarily for marketing purposes. Should always be accompanied by a link to the complete
-	 * license (see code 46)
+	 * Short summary statement of open access status and any related conditions (eg 'Open access - no commercial use'),
+	 * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see code 46)
 	 */
 	Open_access_statement("47", "Open access statement"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg &#8216;Digital
-	 * exclusive&#8217;). If a non-digital version is planned, an &lt;EndDate&gt; should be used to specify the date
-	 * when exclusivity will end. If a non-digital version is available, the statement should not be included
-	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 * Short summary statement that the product is available only in digital formats (eg 'Digital exclusive'). If a
+	 * non-digital version is planned, an &lt;EndDate&gt; should be used to specify the date when exclusivity will end.
+	 * If a non-digital version is available, the statement should not be included &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Digital_exclusivity_statement("48", "Digital exclusivity statement"), //
 
@@ -225,7 +223,7 @@ public enum OtherTextTypes
 	/**
 	 * A master brand name or title, where the use of the brand spans multiple sets, series and product forms, and
 	 * possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
-	 * children&#8217;s character brand. (This functionality is provided as a workaround in ONIX 2.1 only. ONIX 3.0 has
+	 * children's character brand. (This functionality is provided as a workaround in ONIX 2.1 only. ONIX 3.0 has
 	 * specific provision for master brands as title elements
 	 */
 	Master_brand_name("98", "Master brand name"), //

@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contributor sequence number within role</h1>
+ * <p>
+ * A number which specifies the sequence of contributor names within a specified role, for applications which require
+ * this form of numbering. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SequenceNumberWithinRole&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b340&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SequenceNumberWithinRole&gt;3&lt;/SequenceNumberWithinRole&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SequenceNumberWithinRole implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SequenceNumberWithinRole";
 	public static final String shortname = "b340";
 
@@ -65,6 +91,8 @@ public class SequenceNumberWithinRole implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

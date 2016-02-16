@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person name type</h1>
+ * <p>
+ * An ONIX code indicating the type of the person name sent in an occurrence of the &lt;Name&gt; composite. Mandatory in
+ * each occurrence of the composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 18</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PersonNameType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b250&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PersonNameType&gt;01&lt;/PersonNameType&gt;&#160;&#160;&#160;&#160;Pseudonym</td>
+ * </tr>
+ * </table>
+ */
 public class PersonNameType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PersonNameType";
 	public static final String shortname = "b250";
 

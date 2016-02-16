@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.UnitOfUsages;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Usage unit (digital products)</h1>
+ * <p>
+ * An ONIX code for a unit in which a permitted usage quantity is stated. Mandatory in each occurrence of the
+ * &lt;EpubUsageLimit&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 147</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubUsageUnit&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x321&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EpubUsageUnit&gt;07&lt;/EpubUsageUnit&gt; (Maximum number of concurrent users)</td>
+ * </tr>
+ * </table>
+ */
 public class EpubUsageUnit implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubUsageUnit";
 	public static final String shortname = "x321";
 

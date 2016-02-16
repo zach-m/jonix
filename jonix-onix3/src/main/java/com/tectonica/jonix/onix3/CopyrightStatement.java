@@ -32,9 +32,32 @@ import com.tectonica.jonix.codelist.RightsTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright statement composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together represent a copyright or neighbouring right
+ * statement for the product. Either the copyright year alone, or a structured rights statement listing year(s) and
+ * rights holder(s), may be sent as an instance of the composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightStatement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;copyrightstatement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightStatement implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightStatement";
 	public static final String shortname = "copyrightstatement";
 

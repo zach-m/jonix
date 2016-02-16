@@ -33,9 +33,28 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright owner composite</h1>
+ * <p>
+ * A repeatable group of data elements which together name a copyright owner. At least one occurrence is mandatory in
+ * each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of the &lt;CopyrightOwner&gt; composite
+ * must carry a single name (personal or corporate), or an identifier, or both.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightOwner&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;copyrightowner&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightOwner implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightOwner";
 	public static final String shortname = "copyrightowner";
 

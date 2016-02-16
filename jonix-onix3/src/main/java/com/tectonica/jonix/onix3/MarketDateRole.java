@@ -30,9 +30,48 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Market date role code</h1>
+ * <p>
+ * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 163</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MarketDateRole&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j408&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j408&gt;01&lt;/j408&gt; (Publication date)</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>A date such as a publication date should be interpreted as the 'publication' or first availability date within
+ * the market, and not as a 'global' publication date.</td>
+ * </tr>
+ * </table>
+ */
 public class MarketDateRole implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MarketDateRole";
 	public static final String shortname = "j408";
 

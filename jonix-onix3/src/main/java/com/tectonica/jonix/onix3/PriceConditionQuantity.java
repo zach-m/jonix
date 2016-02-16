@@ -32,9 +32,31 @@ import com.tectonica.jonix.struct.JonixPriceConditionQuantity;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price condition quantity composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together specify a price condition quantity, for example a
+ * minimum number of copies, or a period of time for which updates are supplied or must be purchased.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceConditionQuantity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;priceconditionquantity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class PriceConditionQuantity implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceConditionQuantity";
 	public static final String shortname = "priceconditionquantity";
 

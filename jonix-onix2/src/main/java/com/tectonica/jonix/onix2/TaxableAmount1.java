@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Amount of price taxable at tax rate 1</h1>
+ * <p>
+ * The amount of the unit price of the product, excluding tax, which is taxable at the rate specified by
+ * &lt;TaxRateCode1&gt; and/or &lt;TaxRatePercent1&gt;. This may be the whole of the unit price before tax, if the item
+ * carries tax at the same rate on the whole price; or part of the unit price in the case of a mixed tax rate product.
+ * See notes on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TaxableAmount1&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j155&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j155&gt;10.64&lt;/j155&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TaxableAmount1 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TaxableAmount1";
 	public static final String shortname = "j155";
 
@@ -65,6 +93,8 @@ public class TaxableAmount1 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

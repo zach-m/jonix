@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.UsageStatuss;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Usage status (digital products)</h1>
+ * <p>
+ * An ONIX code specifying the status of a usage of a digital product, <i>eg</i> permitted without limit, permitted with
+ * limit, prohibited. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 146</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubUsageStatus&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x319&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x319&gt;03&lt;/x318&gt; (Prohibited)</td>
+ * </tr>
+ * </table>
+ */
 public class EpubUsageStatus implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubUsageStatus";
 	public static final String shortname = "x319";
 

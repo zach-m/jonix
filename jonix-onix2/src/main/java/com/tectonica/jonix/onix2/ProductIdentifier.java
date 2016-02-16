@@ -35,9 +35,29 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define the identifier of a product in accordance with a specified
+ * scheme, and allowing other types of product identifier for a related product to be included without defining
+ * additional data elements. <strong>See notes on the &lt;ProductIdentifier&gt; composite in section&nbsp;PR.2 for
+ * details of the handling of ISBN-13.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productidentifier&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProductIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductIdentifier";
 	public static final String shortname = "productidentifier";
 

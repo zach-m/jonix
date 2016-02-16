@@ -33,9 +33,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>ISSN of series</h1>
+ * <p>
+ * International Standard Serial Number identifying a series of which the product forms part. ISSNs are the standard
+ * numbering scheme for journals, and most publishers’ book series are not eligible to be identified by an ISSN. ISSNs
+ * may be used, however, for established scholarly series such as Annual Reviews of… or Methods in… which are shelved in
+ * libraries as if they were journals. The field is optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt;
+ * composite on the next page provides a more general method of handling this and other series identifiers, and is to be
+ * preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SeriesISSN&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b016&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SeriesISSN&gt;13513737&lt;/SeriesISSN&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SeriesISSN implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SeriesISSN";
 	public static final String shortname = "b016";
 
@@ -65,6 +95,8 @@ public class SeriesISSN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -29,9 +29,38 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supplier fax number</h1>
+ * <p>
+ * A fax number of a supply source from which the product may be ordered by a trade customer. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;FaxNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j271&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j271&gt;+44 20 8843 8744&lt;/j271&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class FaxNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "FaxNumber";
 	public static final String shortname = "j271";
 
@@ -53,6 +82,8 @@ public class FaxNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

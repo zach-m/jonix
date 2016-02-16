@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Component type name</h1>
+ * <p>
+ * The generic name (if any) which is given in the product to the type of section which the content item represents,
+ * <em>eg</em> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in
+ * &lt;DistinctiveTitle&gt; or in a &lt;Title&gt; composite) or both must be present in any occurrence of the
+ * &lt;ContentItem&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length alphanumeric, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ComponentTypeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b288&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ComponentTypeName&gt;Chapter&lt;/ComponentTypeName&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ComponentTypeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ComponentTypeName";
 	public static final String shortname = "b288";
 
@@ -65,6 +93,8 @@ public class ComponentTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

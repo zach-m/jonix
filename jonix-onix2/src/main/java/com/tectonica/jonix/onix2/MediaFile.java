@@ -37,9 +37,28 @@ import com.tectonica.jonix.struct.JonixMediaFile;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Media file composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together identify and provide pointers to an image, audio or
+ * video file, used here to indicate that there is a new cover or jacket image for a reissue. <strong>Please see
+ * Group&nbsp;PR.16 for details.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MediaFile&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;mediafile&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MediaFile implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MediaFile";
 	public static final String shortname = "mediafile";
 

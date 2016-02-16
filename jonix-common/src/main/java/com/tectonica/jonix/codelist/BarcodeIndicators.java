@@ -83,92 +83,92 @@ public enum BarcodeIndicators
 	UPC12_5_price_point("09", "UPC12+5 (price-point)"), //
 
 	/**
-	 * &#8216;Cover 4&#8217; is defined as the back cover of a book
+	 * 'Cover 4' is defined as the back cover of a book
 	 */
 	EAN13_on_cover_4("10", "EAN13 on cover 4"), //
 
 	/**
-	 * &#8216;Cover 4&#8217; is defined as the back cover of a book
+	 * 'Cover 4' is defined as the back cover of a book
 	 */
 	EAN13_5_on_cover_4_US_dollar_price_encoded("11", "EAN13+5 on cover 4 (US dollar price encoded)"), //
 
 	/**
-	 * AKA item/price; &#8216;cover 4&#8217; is defined as the back cover of a book
+	 * AKA item/price; 'cover 4' is defined as the back cover of a book
 	 */
 	UPC12_item_specific_("12", "UPC12 (item-specific) on cover 4"), //
 
 	/**
-	 * AKA item/price; &#8216;cover 4&#8217; is defined as the back cover of a book
+	 * AKA item/price; 'cover 4' is defined as the back cover of a book
 	 */
 	UPC12_5_item_specific_("13", "UPC12+5 (item-specific) on cover 4"), //
 
 	/**
-	 * AKA price/item; &#8216;cover 4&#8217; is defined as the back cover of a book
+	 * AKA price/item; 'cover 4' is defined as the back cover of a book
 	 */
 	UPC12_price_point_("14", "UPC12 (price-point) on cover 4"), //
 
 	/**
-	 * AKA price/item; &#8216;cover 4&#8217; is defined as the back cover of a book
+	 * AKA price/item; 'cover 4' is defined as the back cover of a book
 	 */
 	UPC12_5_price_point_("15", "UPC12+5 (price-point) on cover 4"), //
 
 	/**
-	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book
+	 * 'Cover 3' is defined as the inside back cover of a book
 	 */
 	EAN13_on_cover_3("16", "EAN13 on cover 3"), //
 
 	/**
-	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book
+	 * 'Cover 3' is defined as the inside back cover of a book
 	 */
 	EAN13_5_on_cover_3_US_dollar_price_encoded("17", "EAN13+5 on cover 3 (US dollar price encoded)"), //
 
 	/**
-	 * AKA item/price; &#8216;cover 3&#8217; is defined as the inside back cover of a book
+	 * AKA item/price; 'cover 3' is defined as the inside back cover of a book
 	 */
 	UPC12_item_specific__("18", "UPC12 (item-specific) on cover 3"), //
 
 	/**
-	 * AKA item/price; &#8216;cover 3&#8217; is defined as the inside back cover of a book
+	 * AKA item/price; 'cover 3' is defined as the inside back cover of a book
 	 */
 	UPC12_5_item_specific__("19", "UPC12+5 (item-specific) on cover 3"), //
 
 	/**
-	 * AKA price/item; &#8216;cover 3&#8217; is defined as the inside back cover of a book
+	 * AKA price/item; 'cover 3' is defined as the inside back cover of a book
 	 */
 	UPC12_price_point__("20", "UPC12 (price-point) on cover 3"), //
 
 	/**
-	 * AKA price/item; &#8216;cover 3&#8217; is defined as the inside back cover of a book
+	 * AKA price/item; 'cover 3' is defined as the inside back cover of a book
 	 */
 	UPC12_5_price_point__("21", "UPC12+5 (price-point) on cover 3"), //
 
 	/**
-	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book
+	 * 'Cover 2' is defined as the inside front cover of a book
 	 */
 	EAN13_on_cover_2("22", "EAN13 on cover 2"), //
 
 	/**
-	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book
+	 * 'Cover 2' is defined as the inside front cover of a book
 	 */
 	EAN13_5_on_cover_2_US_dollar_price_encoded("23", "EAN13+5 on cover 2 (US dollar price encoded)"), //
 
 	/**
-	 * AKA item/price; &#8216;cover 2&#8217; is defined as the inside front cover of a book
+	 * AKA item/price; 'cover 2' is defined as the inside front cover of a book
 	 */
 	UPC12_item_specific___("24", "UPC12 (item-specific) on cover 2"), //
 
 	/**
-	 * AKA item/price; &#8216;cover 2&#8217; is defined as the inside front cover of a book
+	 * AKA item/price; 'cover 2' is defined as the inside front cover of a book
 	 */
 	UPC12_5_item_specific___("25", "UPC12+5 (item-specific) on cover 2"), //
 
 	/**
-	 * AKA price/item; &#8216;cover 2&#8217; is defined as the inside front cover of a book
+	 * AKA price/item; 'cover 2' is defined as the inside front cover of a book
 	 */
 	UPC12_price_point___("26", "UPC12 (price-point) on cover 2"), //
 
 	/**
-	 * AKA price/item; &#8216;cover 2&#8217; is defined as the inside front cover of a book
+	 * AKA price/item; 'cover 2' is defined as the inside front cover of a book
 	 */
 	UPC12_5_price_point___("27", "UPC12+5 (price-point) on cover 2"), //
 
@@ -328,17 +328,17 @@ public enum BarcodeIndicators
 	EAN13_5_no_price_encoded("58", "EAN13+5 (no price encoded)"), //
 
 	/**
-	 * &#8216;Cover 4&#8217; is defined as the back cover of a book
+	 * 'Cover 4' is defined as the back cover of a book
 	 */
 	EAN13_5_on_cover_4_no_price_encoded("59", "EAN13+5 on cover 4 (no price encoded)"), //
 
 	/**
-	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book
+	 * 'Cover 3' is defined as the inside back cover of a book
 	 */
 	EAN13_5_on_cover_3_no_price_encoded("60", "EAN13+5 on cover 3 (no price encoded)"), //
 
 	/**
-	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book
+	 * 'Cover 2' is defined as the inside front cover of a book
 	 */
 	EAN13_5_on_cover_2_no_price_encoded("61", "EAN13+5 on cover 2 (no price encoded)"), //
 
@@ -373,17 +373,17 @@ public enum BarcodeIndicators
 	EAN13_5_CAN_dollar_price_encoded("67", "EAN13+5 (CAN dollar price encoded)"), //
 
 	/**
-	 * &#8216;Cover 4&#8217; is defined as the back cover of a book
+	 * 'Cover 4' is defined as the back cover of a book
 	 */
 	EAN13_5_on_cover_4_CAN_dollar_price_encoded("68", "EAN13+5 on cover 4 (CAN dollar price encoded)"), //
 
 	/**
-	 * &#8216;Cover 3&#8217; is defined as the inside back cover of a book
+	 * 'Cover 3' is defined as the inside back cover of a book
 	 */
 	EAN13_5_on_cover_3_CAN_dollar_price_encoded("69", "EAN13+5 on cover 3 (CAN dollar price encoded)"), //
 
 	/**
-	 * &#8216;Cover 2&#8217; is defined as the inside front cover of a book
+	 * 'Cover 2' is defined as the inside front cover of a book
 	 */
 	EAN13_5_on_cover_2_CAN_dollar_price_encoded("70", "EAN13+5 on cover 2 (CAN dollar price encoded)"), //
 

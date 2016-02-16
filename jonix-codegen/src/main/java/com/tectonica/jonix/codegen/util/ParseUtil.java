@@ -44,9 +44,12 @@ public class ParseUtil
 	public static final String RES_CODELIST_2 = "/xsd/onix2/ONIX_BookProduct_CodeLists.xsd";
 	public static final String RES_REF_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_reference.xsd";
 	public static final String RES_SHORT_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_short.xsd";
+	public static final String RES_HTML_SPEC_2 = "/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html";
+
 	public static final String RES_CODELIST_3 = "/xsd/onix3/ONIX_BookProduct_CodeLists.xsd";
 	public static final String RES_REF_3 = "/xsd/onix3/ONIX_BookProduct_3.0_reference.xsd";
 	public static final String RES_SHORT_3 = "/xsd/onix3/ONIX_BookProduct_3.0_short.xsd";
+	public static final String RES_HTML_SPEC_3 = "/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html";
 
 	public static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList("RegionCode", "RightsCountry",
 			"RightsTerritory", "SupplyToCountry", "SupplyToTerritory", "SupplyToCountryExcluded", "Territory",
@@ -60,16 +63,16 @@ public class ParseUtil
 
 	public static final Set<String> SPACEABLE_SHORT_3 = new HashSet<>(Arrays.asList("x449", "x450", "x451", "x452"));
 
-	public static OnixMetadata parse(OnixVersion onixVersion, String mainXsd, String codelistXsd, Set<String> spaceables)
-			throws IOException, ParserConfigurationException, SAXException
+	public static OnixMetadata parse(OnixVersion onixVersion, boolean isShort, String mainXsd, String codelistXsd,
+			Set<String> spaceables, String specHtml) throws IOException, ParserConfigurationException, SAXException
 	{
 		Document codelistDoc = docOf(codelistXsd);
 		Document mainDoc = docOf(mainXsd);
 
-		final Parser parser = new Parser(onixVersion, spaceables);
+		final Parser parser = new Parser(onixVersion, isShort, spaceables);
 		parser.analyzeSchema(codelistDoc);
 		parser.analyzeSchema(mainDoc);
-		parser.postAnalysis();
+		parser.postAnalysis(specHtml);
 
 		System.out.println(">>> Successfully processed " + mainXsd);
 

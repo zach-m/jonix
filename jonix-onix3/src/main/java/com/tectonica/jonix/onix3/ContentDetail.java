@@ -30,9 +30,33 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>null</h1><h4 class="nobreak">Content detail composite</h4>
+ * <p>
+ * The content detail block comprises the single data element Group&nbsp;P.18. The block as a whole is non-repeating. It
+ * is not mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe
+ * individual chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send a
+ * table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContentDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;contentdetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class ContentDetail implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContentDetail";
 	public static final String shortname = "contentdetail";
 

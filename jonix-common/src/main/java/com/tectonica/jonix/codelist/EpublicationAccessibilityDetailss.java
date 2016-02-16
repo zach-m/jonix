@@ -43,9 +43,9 @@ public enum EpublicationAccessibilityDetailss
 	/**
 	 * No accessibility features offered by the reading system, device or reading software (including but not limited to
 	 * choice of text size or typeface, choice of text or background color, text-to-speech) are disabled, overridden or
-	 * otherwise unusable with the product EXCEPT &#8211; in ONIX 3 messages only &#8211; those specifically noted as
-	 * subject to restriction or prohibition in &lt;EpubUsageConstraint&gt;. Note that provision of any significant part
-	 * of the textual content as images (ie as pictures of text, rather than as text) inevitably prevents use of these
+	 * otherwise unusable with the product EXCEPT - in ONIX 3 messages only - those specifically noted as subject to
+	 * restriction or prohibition in &lt;EpubUsageConstraint&gt;. Note that provision of any significant part of the
+	 * textual content as images (ie as pictures of text, rather than as text) inevitably prevents use of these
 	 * accessibility options
 	 */
 	No_reading_system_accessibility_options_disabled_except("10",
@@ -163,8 +163,8 @@ public enum EpublicationAccessibilityDetailss
 	Compatibility_tested("97", "Compatibility tested"), //
 
 	/**
-	 * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at a &#8216;trusted
-	 * intermediary&#8217;, to whom detailed questions about accessibility for this product may be directed
+	 * &lt;ProductFormFeatureDescription&gt; carries the e-mail address for a contact at a 'trusted intermediary', to
+	 * whom detailed questions about accessibility for this product may be directed
 	 */
 	Trusted_Intermediary_contact("98", "Trusted Intermediary contact"), //
 

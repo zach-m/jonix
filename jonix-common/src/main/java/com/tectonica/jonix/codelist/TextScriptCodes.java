@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 121</b>
  * <p>
- * Description: Text script code &#8211; ISO 15924
+ * Description: Text script code - ISO 15924
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a

@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 76</b>
  * <p>
- * Description: Product form feature value &#8211; DVD region codes
+ * Description: Product form feature value - DVD region codes
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a
@@ -69,7 +69,7 @@ public enum ProductFormFeatureValueDvdRegions
 	DVD_region_5("5", "DVD region 5"), //
 
 	/**
-	 * People&#8217;s Republic of China (except Macau and Hong Kong)
+	 * People's Republic of China (except Macau and Hong Kong)
 	 */
 	DVD_region_6("6", "DVD region 6"), //
 

@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Bible text feature</h1>
+ * <p>
+ * An ONIX code specifying a feature of a Bible text not covered elsewhere, <i>eg</i> red letter. Optional and
+ * repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 97</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BibleTextFeature&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b357&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;BibleTextFeature&gt;RL&lt;/BibleTextFeature&gt; (Red letter)</td>
+ * </tr>
+ * </table>
+ */
 public class BibleTextFeature implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BibleTextFeature";
 	public static final String shortname = "b357";
 

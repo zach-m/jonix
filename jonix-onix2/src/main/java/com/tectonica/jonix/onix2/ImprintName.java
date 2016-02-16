@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Imprint or brand name</h1>
+ * <p>
+ * The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if there
+ * is no name code in an occurrence of the &lt;Imprint&gt; composite, and optional if a name code is included.
+ * Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ImprintName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b079&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b079&gt;Secker &amp;amp; Warburg&lt;/b079&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ImprintName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ImprintName";
 	public static final String shortname = "b079";
 
@@ -65,6 +92,8 @@ public class ImprintName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

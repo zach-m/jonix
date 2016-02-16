@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright year</h1>
+ * <p>
+ * The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
+ * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightYear&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b087&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b087 dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt; (2003-2008)</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightYear implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightYear";
 	public static final String shortname = "b087";
 
@@ -56,6 +90,9 @@ public class CopyrightYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * missing)
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright year</h1>
+ * <p>
+ * The copyright year as it appears in a copyright statement on the product. If several years are listed, use the most
+ * recent. Optional and non-repeating, and may not occur if the &lt;CopyrightStatement&gt; composite is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year only (YYYY)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightYear&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b087&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CopyrightYear&gt;1976&lt;/CopyrightYear&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightYear implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightYear";
 	public static final String shortname = "b087";
 
@@ -65,6 +91,8 @@ public class CopyrightYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year only (YYYY)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

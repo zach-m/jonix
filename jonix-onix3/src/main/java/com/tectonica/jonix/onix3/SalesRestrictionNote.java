@@ -31,9 +31,46 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sales restriction note</h1>
+ * <p>
+ * A free text field describing an ‘unspecified’ restriction, or giving more explanation of a coded restriction type.
+ * Optional, and repeatable if parallel notes are provided in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;SalesRestrictionNote&gt;, but must be included in each instance if
+ * &lt;SalesRestrictionNote&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SalesRestrictionNote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x453&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class SalesRestrictionNote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SalesRestrictionNote";
 	public static final String shortname = "x453";
 
@@ -59,6 +96,9 @@ public class SalesRestrictionNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

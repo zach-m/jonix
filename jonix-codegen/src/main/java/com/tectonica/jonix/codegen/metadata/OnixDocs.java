@@ -8,10 +8,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.tectonica.jonix.codegen.util.XML;
+
 @SuppressWarnings("serial")
 public class OnixDocs extends ArrayList<OnixDoc>
 {
-	public Set<String> allTags;
+	public final Set<String> allTags = new HashSet<>();;
 
 	public OnixDocs()
 	{
@@ -24,8 +26,6 @@ public class OnixDocs extends ArrayList<OnixDoc>
 
 		final Elements elems = doc.select("dt.referencename");
 		elems.remove(0);
-
-		allTags = new HashSet<>();
 
 		for (Element elem : elems)
 		{
@@ -76,12 +76,21 @@ public class OnixDocs extends ArrayList<OnixDoc>
 					}
 					else
 					{
-						String line = detail.text();
+						String line = detail.text().trim();
 						if (onixDocDetail.detailType == OnixDoc.DetailType.referencename
 								|| onixDocDetail.detailType == OnixDoc.DetailType.shorttag)
 						{
-							if (!line.startsWith("<"))
-								line = "<" + line + ">"; // for onix3, where the angle brackets are as style
+							// in onix3 documentation, the angle brackets are as implemented as style
+							String onixClassName = line.replaceAll("(<|>|/)", "");
+							line = "<" + onixClassName + ">";
+							if (onixDocDetail.detailType == OnixDoc.DetailType.referencename)
+							{
+								onixDoc.onixClassName = onixClassName;
+							}
+						}
+						else if (onixDocDetail.detailType == OnixDoc.DetailType.format)
+						{
+							onixDoc.format = XML.escape(line);
 						}
 						onixDocDetail.lines.add(line);
 					}
@@ -103,7 +112,7 @@ public class OnixDocs extends ArrayList<OnixDoc>
 		StringBuilder sb = new StringBuilder("<html><body>\n");
 		sb.append("<head><meta charset='UTF-8'></head>\n");
 		for (OnixDoc onixDoc : this)
-			sb.append(onixDoc.toHtmlTable()).append("\n");
+			sb.append(onixDoc.toHtml()).append("\n");
 		sb.append("</body></html>");
 		return sb.toString();
 	}

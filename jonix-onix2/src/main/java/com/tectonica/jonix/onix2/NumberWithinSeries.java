@@ -33,9 +33,34 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number within series</h1>
+ * <p>
+ * The distinctive enumeration of a product within a series. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NumberWithinSeries&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b019&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;NumberWithinSeries&gt;Volume 14&lt;/NumberWithinSeries&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NumberWithinSeries implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NumberWithinSeries";
 	public static final String shortname = "b019";
 
@@ -65,6 +90,8 @@ public class NumberWithinSeries implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -39,9 +39,28 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sales rights composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify territorial sales rights which a publisher chooses to
+ * exercise in a product. The &lt;SalesRights&gt; composite may occur once for each value of &lt;b089&gt;. See examples
+ * at the end of Group&nbsp;PR.21.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SalesRights&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;salesrights&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SalesRights implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";
 

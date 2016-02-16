@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Extent value in Roman numerals</h1>
+ * <p>
+ * The value of the extent expressed in Roman numerals. Optional, and non-repeating. Used only for page runs which are
+ * numbered in Roman.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Letters forming a valid Roman numeral</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ExtentValueRoman&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x421&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ExtentValueRoman&gt;xxiii&lt;/ExtentValueRoman&gt; (23)</td>
+ * </tr>
+ * </table>
+ */
 public class ExtentValueRoman implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ExtentValueRoman";
 	public static final String shortname = "x421";
 
@@ -53,6 +83,8 @@ public class ExtentValueRoman implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Letters forming a valid Roman numeral
+	 * <p>
 	 * (type: dt.RomanNumeralString)
 	 */
 	public String value;

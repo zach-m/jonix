@@ -47,8 +47,8 @@ public enum ProductContentTypes
 
 	/**
 	 * E-publication is enhanced with a significant number of actionable cross-references, hyperlinked notes and
-	 * annotations, or with other links between largely textual elements (eg quiz/test questions, &#8216;choose your own
-	 * ending&#8217; etc)
+	 * annotations, or with other links between largely textual elements (eg quiz/test questions, 'choose your own
+	 * ending' etc)
 	 */
 	Extensive_links_between_internal_content("15", "Extensive links between internal content"), //
 
@@ -59,8 +59,8 @@ public enum ProductContentTypes
 
 	/**
 	 * E-publication is enhanced with additional textual content such as interview, feature article, essay,
-	 * bibliography, quiz/test, other background material or text that is not included in a primary or
-	 * &#8216;unenhanced&#8217; version
+	 * bibliography, quiz/test, other background material or text that is not included in a primary or 'unenhanced'
+	 * version
 	 */
 	Additional_eye_readable_text_not_part_of_main_work("16", "Additional eye-readable text not part of main work"), //
 
@@ -82,13 +82,13 @@ public enum ProductContentTypes
 	Photographs("18", "Photographs"), //
 
 	/**
-	 * Including other &#8216;mechanical&#8217; (ie non-photographic) illustrations
+	 * Including other 'mechanical' (ie non-photographic) illustrations
 	 */
 	Figures_diagrams_charts_graphs("19", "Figures, diagrams, charts, graphs"), //
 
 	/**
 	 * E-publication is enhanced with additional images or graphical content such as supplementary photographs that are
-	 * not included in a primary or &#8216;unenhanced&#8217; version
+	 * not included in a primary or 'unenhanced' version
 	 */
 	Additional_images_graphics_not_part_of_main_work("20", "Additional images / graphics not part of main work"), //
 
@@ -105,7 +105,7 @@ public enum ProductContentTypes
 	Performance_spoken_word("02", "Performance – spoken word"), //
 
 	/**
-	 * eg an interview, not a &#8216;reading&#8217; or &#8216;performance&#8217;)
+	 * eg an interview, not a 'reading' or 'performance')
 	 */
 	Other_speech_content("13", "Other speech content"), //
 
@@ -126,7 +126,7 @@ public enum ProductContentTypes
 
 	/**
 	 * Product is enhanced with audio recording of full or partial reading, performance, dramatization, interview,
-	 * background documentary or other audio content not included in the primary or &#8216;unenhanced&#8217; version
+	 * background documentary or other audio content not included in the primary or 'unenhanced' version
 	 */
 	Additional_audio_content_not_part_of_main_work("22", "Additional audio content not part of main work"), //
 
@@ -136,8 +136,8 @@ public enum ProductContentTypes
 	Promotional_audio_for_other_book_product("23", "Promotional audio for other book product"), //
 
 	/**
-	 * Includes Film, video, animation etc. Use only when no more detailed specification is provided. Formerly
-	 * &#8216;Moving images&#8217;
+	 * Includes Film, video, animation etc. Use only when no more detailed specification is provided. Formerly 'Moving
+	 * images'
 	 */
 	Video("06", "Video"), //
 
@@ -170,7 +170,7 @@ public enum ProductContentTypes
 
 	/**
 	 * E-publication is enhanced with video recording of full or partial reading, performance, dramatization, interview,
-	 * background documentary or other content not included in the primary or &#8216;unenhanced&#8217; version
+	 * background documentary or other content not included in the primary or 'unenhanced' version
 	 */
 	Additional_video_content_not_part_of_main_work("30", "Additional video content not part of main work"), //
 
@@ -180,7 +180,7 @@ public enum ProductContentTypes
 	Promotional_video_for_other_book_product("31", "Promotional video for other book product"), //
 
 	/**
-	 * No multi-user functionality. Formerly just &#8216;Game&#8217;
+	 * No multi-user functionality. Formerly just 'Game'
 	 */
 	Game_Puzzle("05", "Game / Puzzle"), //
 
@@ -190,7 +190,7 @@ public enum ProductContentTypes
 	Contest("32", "Contest"), //
 
 	/**
-	 * Largely &#8216;content free&#8217;
+	 * Largely 'content free'
 	 */
 	Software("08", "Software"), //
 
@@ -212,8 +212,7 @@ public enum ProductContentTypes
 	Advertising_content("35", "Advertising content"), //
 
 	/**
-	 * &#8216;Back ads&#8217; &#8211; promotional pages for other books (that do not include sample content, cf codes
-	 * 17, 23)
+	 * 'Back ads' - promotional pages for other books (that do not include sample content, cf codes 17, 23)
 	 */
 	Advertising_first_party("37", "Advertising – first party"), //
 

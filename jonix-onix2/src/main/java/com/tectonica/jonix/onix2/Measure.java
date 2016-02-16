@@ -36,9 +36,27 @@ import com.tectonica.jonix.struct.JonixMeasure;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Measure composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together identify a measurement and the units in which it is
+ * expressed.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Measure&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;measure&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Measure implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Measure";
 	public static final String shortname = "measure";
 

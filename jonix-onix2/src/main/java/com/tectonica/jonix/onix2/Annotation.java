@@ -33,9 +33,42 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Annotation</h1>
+ * <p>
+ * A brief descriptive paragraph about the product, length strictly limited to 350 characters. Optional and
+ * non-repeating. <strong>The &lt;OtherText&gt; composite on the next page provides a more general method of handling
+ * annotations, and is to be preferred.</strong>
+ * </p>
+ * <p>
+ * The &lt;Annotation&gt; element may carry any of the following ONIX attributes: textformat, language, transliteration,
+ * textcase.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, maximum 350 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Annotation&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;d100&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;d100&gt;Set on the Greek island of Cephallonia during World War II, this is the story of a beautiful young
+ * woman and her two suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of
+ * the Italian garrison on the island.&lt;/d100&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Annotation implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Annotation";
 	public static final String shortname = "d100";
 
@@ -65,6 +98,8 @@ public class Annotation implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, maximum 350 characters
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

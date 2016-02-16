@@ -31,9 +31,43 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person name part 2: names before key names</h1>
+ * <p>
+ * The second part of a structured name of a person who contributed to the creation of the product: name(s) and/or
+ * initial(s) preceding a person’s key name(s), <i>eg</i> James J. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NamesBeforeKey&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b039&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b039&gt;James J.&lt;/b039&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NamesBeforeKey implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NamesBeforeKey";
 	public static final String shortname = "b039";
 
@@ -61,6 +95,8 @@ public class NamesBeforeKey implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

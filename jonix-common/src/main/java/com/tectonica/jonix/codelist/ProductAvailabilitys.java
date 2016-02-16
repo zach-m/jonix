@@ -45,25 +45,24 @@ public enum ProductAvailabilitys
 
 	/**
 	 * Not yet available (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt;
-	 * with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in exceptional circumstances where no date
-	 * is known)
+	 * with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0), except in exceptional circumstances where no date is known)
 	 */
 	Not_yet_available("10", "Not yet available"), //
 
 	/**
 	 * Not yet available, but will be a stock item when available (requires expected date, either as
-	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217;
-	 * (ONIX 3.0), except in exceptional circumstances where no date is known). Used particularly for imports which have
-	 * been published in the country of origin but have not yet arrived in the importing country
+	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0),
+	 * except in exceptional circumstances where no date is known). Used particularly for imports which have been
+	 * published in the country of origin but have not yet arrived in the importing country
 	 */
 	Awaiting_stock("11", "Awaiting stock"), //
 
 	/**
 	 * Not yet available, to be published as print-on-demand only (requires expected date, either as
-	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217;
-	 * (ONIX 3.0), except in exceptional circumstances where no date is known). May apply either to a POD successor to
-	 * an existing conventional edition, when the successor will be published under a different ISBN (normally because
-	 * different trade terms apply); or to a title that is being published as a POD original
+	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0),
+	 * except in exceptional circumstances where no date is known). May apply either to a POD successor to an existing
+	 * conventional edition, when the successor will be published under a different ISBN (normally because different
+	 * trade terms apply); or to a title that is being published as a POD original
 	 */
 	Not_yet_available_will_be_POD("12", "Not yet available, will be POD"), //
 
@@ -89,36 +88,36 @@ public enum ProductAvailabilitys
 
 	/**
 	 * Temporarily unavailable: temporarily unavailable from us (reason unspecified) (requires expected date, either as
-	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217;
-	 * (ONIX 3.0), except in exceptional circumstances where no date is known)
+	 * &lt;ExpectedShipDate&gt; (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0),
+	 * except in exceptional circumstances where no date is known)
 	 */
 	Temporarily_unavailable("30", "Temporarily unavailable"), //
 
 	/**
 	 * Stock item, temporarily out of stock (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1) or as
-	 * &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in exceptional
-	 * circumstances where no date is known)
+	 * &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0), except in exceptional circumstances where
+	 * no date is known)
 	 */
 	Out_of_stock("31", "Out of stock"), //
 
 	/**
 	 * Temporarily unavailable, reprinting (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1) or as
-	 * &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in exceptional
-	 * circumstances where no date is known)
+	 * &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0), except in exceptional circumstances where
+	 * no date is known)
 	 */
 	Reprinting("32", "Reprinting"), //
 
 	/**
 	 * Temporarily unavailable, awaiting reissue (requires expected date, either as &lt;ExpectedShipDate&gt; (ONIX 2.1)
-	 * or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in exceptional
-	 * circumstances where no date is known)
+	 * or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0), except in exceptional circumstances
+	 * where no date is known)
 	 */
 	Awaiting_reissue("33", "Awaiting reissue"), //
 
 	/**
 	 * May be for quality or technical reasons. Requires expected availability date, either as &lt;ExpectedShipDate&gt;
-	 * (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded &#8216;08&#8217; (ONIX 3.0), except in
-	 * exceptional circumstances where no date is known
+	 * (ONIX 2.1) or as &lt;SupplyDate&gt; with &lt;SupplyDateRole&gt; coded '08' (ONIX 3.0), except in exceptional
+	 * circumstances where no date is known
 	 */
 	Temporarily_withdrawn_from_sale("34", "Temporarily withdrawn from sale"), //
 
@@ -196,8 +195,8 @@ public enum ProductAvailabilitys
 
 	/**
 	 * Sender has not received any recent update for this product from the publisher/supplier (for use when the sender
-	 * is a data aggregator): the definition of &#8216;recent&#8217; must be specified by the aggregator, or by
-	 * agreement between parties to an exchange
+	 * is a data aggregator): the definition of 'recent' must be specified by the aggregator, or by agreement between
+	 * parties to an exchange
 	 */
 	No_recent_update_received("97", "No recent update received"), //
 

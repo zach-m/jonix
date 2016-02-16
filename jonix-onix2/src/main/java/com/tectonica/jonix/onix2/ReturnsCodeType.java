@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Returns conditions code type</h1>
+ * <p>
+ * An ONIX code identifying the scheme from which the returns conditions code in &lt;ReturnsCode&gt; is taken. Optional
+ * and non-repeating, but this field must be present if &lt;ReturnsCode&gt; is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 53</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReturnsCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j268&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ReturnsCodeType&gt;01&lt;/ReturnsCodeType&gt;&#160;&#160;&#160;&#160;French returns conditions code</td>
+ * </tr>
+ * </table>
+ */
 public class ReturnsCodeType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReturnsCodeType";
 	public static final String shortname = "j268";
 

@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.TextTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Text type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of text which is sent in the &lt;Text&gt; element. Mandatory in each
+ * occurrence of the &lt;TextContent&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 153</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x426&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TextType&gt;04&lt;/TextType&gt; (Table of contents)</td>
+ * </tr>
+ * </table>
+ */
 public class TextType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextType";
 	public static final String shortname = "x426";
 

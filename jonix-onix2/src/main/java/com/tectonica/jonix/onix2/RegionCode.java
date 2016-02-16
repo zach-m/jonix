@@ -33,9 +33,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Region code</h1>
+ * <p>
+ * An ONIX code identifying a region with which a contributor is particularly associated, when this is significant for
+ * the marketing of a product. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being separated
+ * by spaces. Suggested maximum length 8 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RegionCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b398&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b398&gt;CA-BC&lt;/b398&gt;&#160;&#160;&#160;&#160;British Columbia</td>
+ * </tr>
+ * </table>
+ */
 public class RegionCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RegionCode";
 	public static final String shortname = "b398";
 
@@ -65,6 +97,9 @@ public class RegionCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being
+	 * separated by spaces. Suggested maximum length 8 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public java.util.Set<String> value;

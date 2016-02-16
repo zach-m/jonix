@@ -33,9 +33,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Biographical note</h1>
+ * <p>
+ * A biographical note about a contributor to the product. (See the &lt;OtherText&gt; composite in Group&nbsp;PR.15 for
+ * a biographical note covering all contributors to a product in a single text.) Optional and non-repeating. May occur
+ * with a person name or with a corporate name. A biographical note in ONIX should always contain the name of the person
+ * or body concerned, and it should always be presented as a piece of continuous text consisting of full sentences. Some
+ * recipients of ONIX data feeds will not accept text which has embedded URLs. A contributor website link can be sent
+ * using the &lt;Website&gt; composite on the next page.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BiographicalNote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b044&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;BiographicalNote&gt;Umberto Eco, professor of semiotics at the University of Bologna, and author of
+ * &#8220;The Name Of The Rose&#8221; and &#8220;Foucault's Pendulum&#8221;, is one of the world's bestselling
+ * novelists.&lt;/BiographicalNote&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BiographicalNote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BiographicalNote";
 	public static final String shortname = "b044";
 
@@ -65,6 +97,8 @@ public class BiographicalNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

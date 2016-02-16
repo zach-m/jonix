@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>License expression type</h1>
+ * <p>
+ * An ONIX code identifying the nature or format of the license expression specified in the
+ * &lt;EpubLicenseExpressionLink&gt; element. Mandatory within the &lt;EpubLicenseExpression&gt; composite, and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length text, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 218</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubLicenseExpressionType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x508&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x508&gt;10&lt;/x508&gt; (ONIX-PL license expression)</td>
+ * </tr>
+ * </table>
+ */
 public class EpubLicenseExpressionType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubLicenseExpressionType";
 	public static final String shortname = "x508";
 

@@ -50,17 +50,17 @@ public enum UnnamedPersonss
 	Various_authors("04", "Various authors"), //
 
 	/**
-	 * Use with Contributor role code E07 &#8216;read by&#8217;, for audio books for the blind
+	 * Use with Contributor role code E07 'read by', for audio books for the blind
 	 */
 	Synthesized_voice_male("05", "Synthesized voice – male"), //
 
 	/**
-	 * Use with Contributor role code E07 &#8216;read by&#8217;, for audio books for the blind
+	 * Use with Contributor role code E07 'read by', for audio books for the blind
 	 */
 	Synthesized_voice_female("06", "Synthesized voice – female"), //
 
 	/**
-	 * Use with Contributor role code E07 &#8216;read by&#8217;, for audio books for the blind
+	 * Use with Contributor role code E07 'read by', for audio books for the blind
 	 */
 	Synthesized_voice_unspecified("07", "Synthesized voice – unspecified");
 

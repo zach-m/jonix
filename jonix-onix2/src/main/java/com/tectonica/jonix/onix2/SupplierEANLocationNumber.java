@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>EAN location number</h1>
+ * <p>
+ * An EAN-13 location number identifying a supplier. Now also known as an “EAN-UCC Global Location Number” or GLN.
+ * Optional and non-repeating, but each occurrence of the &lt;NewSupplier&gt; composite must carry either at least one
+ * supplier identifier, or a &lt;SupplierName&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, thirteen numeric digits, of which the last is a check digit.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplierEANLocationNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j135&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j135&gt;5012340098745&lt;/j135&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SupplierEANLocationNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplierEANLocationNumber";
 	public static final String shortname = "j135";
 
@@ -65,6 +92,8 @@ public class SupplierEANLocationNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

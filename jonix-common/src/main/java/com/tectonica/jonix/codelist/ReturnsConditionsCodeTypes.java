@@ -49,7 +49,7 @@ public enum ReturnsConditionsCodeTypes
 	BISAC_Returnable_Indicator_code("02", "BISAC Returnable Indicator code"), //
 
 	/**
-	 * NOT CURRENTLY USED &#8211; BIC has decided that it will not maintain a code list for this purpose, since returns
+	 * NOT CURRENTLY USED - BIC has decided that it will not maintain a code list for this purpose, since returns
 	 * conditions are usually at least partly based on the trading relationship
 	 */
 	UK_book_trade_returns_conditions_code("03", "UK book trade returns conditions code"), //

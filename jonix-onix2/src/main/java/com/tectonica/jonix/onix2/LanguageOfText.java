@@ -33,9 +33,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Language of text</h1>
+ * <p>
+ * A code indicating a language in which the text of the product is written: optional, and repeatable if the text is in
+ * two or more languages. <strong>The &lt;Language&gt; composite on the next page provides a more general method of
+ * handling language detail, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
+ * lower-case.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 639-2/B List 74</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;LanguageOfText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b059&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;LanguageOfText&gt;eng&lt;/LanguageOfText&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class LanguageOfText implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "LanguageOfText";
 	public static final String shortname = "b059";
 

@@ -48,8 +48,8 @@ import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 import com.tectonica.jonix.codegen.metadata.OnixStructMember.TransformationType;
 import com.tectonica.jonix.codegen.util.ListDiff;
-import com.tectonica.jonix.codegen.util.ParseUtil;
 import com.tectonica.jonix.codegen.util.ListDiff.CompareListener;
+import com.tectonica.jonix.codegen.util.ParseUtil;
 
 public class GenerateCode
 {
@@ -62,10 +62,10 @@ public class GenerateCode
 		if (!new File(basePath).exists())
 			throw new RuntimeException("couldn't find base folder for projects at " + basePath);
 
-		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
-				ParseUtil.SPACEABLE_REF_2);
-		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
-				ParseUtil.SPACEABLE_REF_3);
+		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2,
+				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
+		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3,
+				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
 
 		final List<OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
 		final Map<String, OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);

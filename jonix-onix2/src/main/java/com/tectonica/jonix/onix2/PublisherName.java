@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publisher name</h1>
+ * <p>
+ * The full name of the publisher of the equivalent product which is available in the country/ies specified in
+ * &lt;RightsCountry&gt;. Optional and non-repeating. Except where they are essential to the recognized form of the
+ * name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”, “GmbH”) should be omitted.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublisherName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b081&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PublisherName&gt;Reed International Books&lt;/PublisherName&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PublisherName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublisherName";
 	public static final String shortname = "b081";
 
@@ -65,6 +92,8 @@ public class PublisherName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

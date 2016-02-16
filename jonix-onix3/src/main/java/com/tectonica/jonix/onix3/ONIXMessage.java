@@ -30,9 +30,10 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
 public class ONIXMessage implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ONIXMessage";
 	public static final String shortname = "ONIXmessage";
 	public static final String release = "3.0";

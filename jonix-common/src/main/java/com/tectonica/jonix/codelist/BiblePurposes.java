@@ -44,7 +44,7 @@ public enum BiblePurposes
 	Award("AW", "Award"), //
 
 	/**
-	 * A Bible (or selected Biblical text) designed to be a gift to commemorate a child&#8217;s birth
+	 * A Bible (or selected Biblical text) designed to be a gift to commemorate a child's birth
 	 */
 	Baby("BB", "Baby"), //
 

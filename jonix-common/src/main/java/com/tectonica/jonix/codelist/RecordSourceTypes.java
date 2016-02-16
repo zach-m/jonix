@@ -43,8 +43,8 @@ public enum RecordSourceTypes
 	Publisher("01", "Publisher"), //
 
 	/**
-	 * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher&#8217;s
-	 * sales agent, as distinct from a wholesaler
+	 * Use to designate a distributor providing warehousing and fulfillment for a publisher or for a publisher's sales
+	 * agent, as distinct from a wholesaler
 	 */
 	Publisher_s_distributor("02", "Publisher’s distributor"), //
 
@@ -61,23 +61,22 @@ public enum RecordSourceTypes
 	Library_bookseller("05", "Library bookseller"), //
 
 	/**
-	 * Use for a publisher&#8217;s sales agent responsible for marketing the publisher&#8217;s products within a
-	 * territory, as opposed to a publisher&#8217;s distributor who fulfills orders but does not market
+	 * Use for a publisher's sales agent responsible for marketing the publisher's products within a territory, as
+	 * opposed to a publisher's distributor who fulfills orders but does not market
 	 */
 	Publisher_s_sales_agent("06", "Publisher’s sales agent"), //
 
 	/**
 	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
 	 * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
-	 * publisher&#8217;s ISBN prefix
+	 * publisher's ISBN prefix
 	 */
 	Publisher_s_conversion_service_provider("07", "Publisher’s conversion service provider"), //
 
 	/**
 	 * Downstream provider of e-publication format conversion service (who might also be a distributor or retailer of
 	 * the converted e-publication), supplying metadata on behalf of the publisher. The assigned ISBN is taken from the
-	 * service provider&#8217;s prefix (whether or not the service provider dedicates that prefix to a particular
-	 * publisher)
+	 * service provider's prefix (whether or not the service provider dedicates that prefix to a particular publisher)
 	 */
 	Conversion_service_provider("08", "Conversion service provider"), //
 

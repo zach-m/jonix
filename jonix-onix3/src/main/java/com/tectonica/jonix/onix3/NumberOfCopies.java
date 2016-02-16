@@ -29,9 +29,46 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number of copies (product part)</h1>
+ * <p>
+ * When product parts are listed as a specified number of copies of a single item, usually identified by a
+ * &lt;ProductIdentifier&gt;, &lt;NumberOfCopies&gt; must be used to specify the quantity, even if the number is ‘1’. It
+ * must be used when a multiple-item product or pack contains (a) a quantity of a single item; or (b) one of each of
+ * several different items (as in a multi-volume set); or (c) one or more of each of several different items (as in a
+ * dumpbin carrying copies of two different books, or a classroom pack containing a teacher’s text and twenty student
+ * texts). Consequently the element is mandatory, and non-repeating, in an occurrence of the &lt;ProductPart&gt;
+ * composite if &lt;NumberOfItemsOfThisForm&gt; is not present. It is normally accompanied by a
+ * &lt;ProductIdentifier&gt;; but in exceptional circumstances, if the sender’s system is unable to provide an
+ * identifier at this level, it may be sent with product form coding and without an ID.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, maximum four digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NumberOfCopies&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x323&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x323&gt;24&lt;/x323&gt; (24 copies of a single item in eg a classroom pack of textbooks)</td>
+ * </tr>
+ * </table>
+ */
 public class NumberOfCopies implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NumberOfCopies";
 	public static final String shortname = "x323";
 
@@ -53,6 +90,8 @@ public class NumberOfCopies implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, maximum four digits
+	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */
 	public Integer value;

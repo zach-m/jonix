@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Imprint or brand name</h1>
+ * <p>
+ * The name of an imprint or brand under which the product is issued, as it appears on the product. Mandatory if there
+ * is no imprint identifier in an occurrence of the &lt;Imprint&gt; composite, and optional if an imprint identifier is
+ * included. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ImprintName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b079&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt; (note '&amp;' is a reserved character in XML)</td>
+ * </tr>
+ * </table>
+ */
 public class ImprintName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ImprintName";
 	public static final String shortname = "b079";
 
@@ -56,6 +91,8 @@ public class ImprintName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

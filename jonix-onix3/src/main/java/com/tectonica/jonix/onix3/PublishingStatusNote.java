@@ -31,9 +31,46 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publishing status note</h1>
+ * <p>
+ * Free text that describes the status of a published product, when the code in &lt;PublishingStatus&gt; is
+ * insufficient. Optional, but when used, must be accompanied by the &lt;PublishingStatus&gt; element. Repeatable if
+ * parallel notes are provide in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;PublishingStatusNote&gt;, but must be included in each instance if &lt;PublishingStatusNote&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using XHTML, HTML
+ * or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublishingStatusNote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b395&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b395&gt;Lost contact with publisher&lt;/b395&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PublishingStatusNote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublishingStatusNote";
 	public static final String shortname = "b395";
 
@@ -59,6 +96,9 @@ public class PublishingStatusNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

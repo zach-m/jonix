@@ -33,9 +33,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>BIC discount group code    UK only</h1>
+ * <p>
+ * A BIC code indicating the supplier’s discount group to which the price carried in an occurrence of the &lt;Price&gt;
+ * composite belongs. This code does not identify an absolute rate of discount, but it allows a bookseller to derive the
+ * actual discount by reference to a look-up table provided separately by the supplier.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the supplier
+ * code) Positions 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions
+ * 6-8&#160;&#160;&#160;&#160;Discount group code, alphanumeric, assigned by the supplier. If less than three
+ * characters, the code is left justified and unused positions are sent as spaces.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BICDiscountGroupCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j150&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j150&gt;APUBL122&lt;/j150&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BICDiscountGroupCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BICDiscountGroupCode";
 	public static final String shortname = "j150";
 
@@ -65,6 +95,11 @@ public class BICDiscountGroupCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the
+	 * supplier code) Positions 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions
+	 * 6-8&#160;&#160;&#160;&#160;Discount group code, alphanumeric, assigned by the supplier. If less than three
+	 * characters, the code is left justified and unused positions are sent as spaces.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

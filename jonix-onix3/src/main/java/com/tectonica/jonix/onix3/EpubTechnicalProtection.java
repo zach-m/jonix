@@ -30,9 +30,48 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Digital product technical protection</h1>
+ * <p>
+ * An ONIX code specifying whether a digital product has DRM or other technical protection features. Optional and
+ * repeatable, if a product has two or more kinds of protection.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 144</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubTechnicalProtection&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x317&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x317&gt;03&lt;/x317&gt; (Has digital watermarking)</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>'Epub' ('e-publication') here and in other element names below refers to any digital product, and has no
+ * necessary link with the .epub file format maintained by the IDPF.</td>
+ * </tr>
+ * </table>
+ */
 public class EpubTechnicalProtection implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubTechnicalProtection";
 	public static final String shortname = "x317";
 

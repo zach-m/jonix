@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Record source name</h1>
+ * <p>
+ * The name of the party which issued the record, as free text. Optional and non-repeating, independently of the
+ * occurrence of any other field.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RecordSourceName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;a197&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;RecordSourceName&gt;Cambridge University Press&lt;/RecordSourceName&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class RecordSourceName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RecordSourceName";
 	public static final String shortname = "a197";
 
@@ -65,6 +91,8 @@ public class RecordSourceName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

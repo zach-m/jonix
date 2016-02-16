@@ -45,8 +45,7 @@ public enum TitleTypes
 	 * title alone is not distinctive, elements may be taken from a set or series title and part number etc to create a
 	 * distinctive title. Where the item is an omnibus edition containing two or more works by the same author, and
 	 * there is no separate combined title, a distinctive title may be constructed by concatenating the individual
-	 * titles, with suitable punctuation, as in &#8216;Pride and prejudice / Sense and sensibility / Northanger
-	 * Abbey&#8217;
+	 * titles, with suitable punctuation, as in 'Pride and prejudice / Sense and sensibility / Northanger Abbey'
 	 */
 	Distinctive_title_book("01",
 			"Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)"), //
@@ -62,7 +61,7 @@ public enum TitleTypes
 	Title_in_original_language("03", "Title in original language"), //
 
 	/**
-	 * For serials: an acronym or initialism of Title Type 01, eg &#8216;JAMA&#8217;, &#8216;JACM&#8217;
+	 * For serials: an acronym or initialism of Title Type 01, eg 'JAMA', 'JACM'
 	 */
 	Title_acronym_or_initialism("04", "Title acronym or initialism"), //
 
@@ -87,8 +86,8 @@ public enum TitleTypes
 	Former_title("08", "Former title"), //
 
 	/**
-	 * For books: the title carried in a book distributor&#8217;s title file: frequently incomplete, and may include
-	 * elements not properly part of the title
+	 * For books: the title carried in a book distributor's title file: frequently incomplete, and may include elements
+	 * not properly part of the title
 	 */
 	Distributor_s_title("10", "Distributor’s title"), //
 

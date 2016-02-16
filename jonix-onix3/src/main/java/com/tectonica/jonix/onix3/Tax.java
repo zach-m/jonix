@@ -32,9 +32,33 @@ import com.tectonica.jonix.struct.JonixTax;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Tax composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify tax applicable to a price. Optional. For items to which
+ * two different taxes or tax rates apply (<i>eg</i> mixed media products in the UK which are partly taxed at standard
+ * rate and partly at zero rate), the composite is repeated for each separate tax or tax rate. For UK VAT, it is
+ * recommended that all elements in the composite should be explicitly populated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Tax&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;tax&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Tax implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Tax";
 	public static final String shortname = "tax";
 

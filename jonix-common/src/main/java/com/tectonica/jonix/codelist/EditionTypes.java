@@ -66,8 +66,7 @@ public enum EditionTypes
 	Annotated_edition("ANN", "Annotated edition"), //
 
 	/**
-	 * Both languages should be specified in the &#8216;Language&#8217; group. Use MLL for an edition in more than two
-	 * languages
+	 * Both languages should be specified in the 'Language' group. Use MLL for an edition in more than two languages
 	 */
 	Bilingual_edition("BLL", "Bilingual edition"), //
 
@@ -77,8 +76,8 @@ public enum EditionTypes
 	Braille_edition("BRL", "Braille edition"), //
 
 	/**
-	 * An edition in which two or more works also published separately are combined in a single volume; AKA
-	 * &#8216;omnibus&#8217; edition
+	 * An edition in which two or more works also published separately are combined in a single volume; AKA 'omnibus'
+	 * edition
 	 */
 	Combined_volume("CMB", "Combined volume"), //
 
@@ -110,7 +109,7 @@ public enum EditionTypes
 	Enlarged_edition("ENL", "Enlarged edition"), //
 
 	/**
-	 * &#8216;Offensive&#8217; content has been removed
+	 * 'Offensive' content has been removed
 	 */
 	Expurgated_edition("EXP", "Expurgated edition"), //
 
@@ -130,7 +129,7 @@ public enum EditionTypes
 	Illustrated_edition("ILL", "Illustrated edition"), //
 
 	/**
-	 * Large print edition, print sizes 14 to 19 pt &#8211; see also ULP
+	 * Large print edition, print sizes 14 to 19 pt - see also ULP
 	 */
 	Large_type_large_print_edition("LTE", "Large type / large print edition"), //
 
@@ -146,7 +145,7 @@ public enum EditionTypes
 	Media_tie_in("MDT", "Media tie-in"), //
 
 	/**
-	 * All languages should be specified in the &#8216;Language&#8217; group. Use BLL for a bilingual edition
+	 * All languages should be specified in the 'Language' group. Use BLL for a bilingual edition
 	 */
 	Multilingual_edition("MLL", "Multilingual edition"), //
 
@@ -179,24 +178,23 @@ public enum EditionTypes
 	School_edition("SCH", "School edition"), //
 
 	/**
-	 * An edition that uses simplified language (Finnish &#8216;Selkokirja&#8217;)
+	 * An edition that uses simplified language (Finnish 'Selkokirja')
 	 */
 	Simplified_language_edition("SMP", "Simplified language edition"), //
 
 	/**
-	 * Use for anniversary, collectors&#8217;, de luxe, gift, limited (but prefer codes NUM or UNN as appropriate),
+	 * Use for anniversary, collectors', de luxe, gift, limited (but prefer codes NUM or UNN as appropriate),
 	 * autographed edition. Use &lt;EditionStatement&gt; to describe the exact nature of the special edition
 	 */
 	Special_edition("SPE", "Special edition"), //
 
 	/**
-	 * Where a text is available in both student and teacher&#8217;s editions
+	 * Where a text is available in both student and teacher's editions
 	 */
 	Student_edition("STU", "Student edition"), //
 
 	/**
-	 * Where a text is available in both student and teacher&#8217;s editions; use also for instructor&#8217;s or
-	 * leader&#8217;s editions
+	 * Where a text is available in both student and teacher's editions; use also for instructor's or leader's editions
 	 */
 	Teacher_s_edition("TCH", "Teacher’s edition"), //
 
@@ -207,19 +205,19 @@ public enum EditionTypes
 	Unabridged_edition("UBR", "Unabridged edition"), //
 
 	/**
-	 * For print sizes 20pt and above, and with typefaces designed for the visually impaired &#8211; see also LTE
+	 * For print sizes 20pt and above, and with typefaces designed for the visually impaired - see also LTE
 	 */
 	Ultra_large_print_edition("ULP", "Ultra large print edition"), //
 
 	/**
-	 * A limited edition in which each copy is not individually numbered &#8211; but where the actual number of copies
-	 * is strictly limited. Use &lt;EditionStatement&gt; to give details of the number of copies printed &lt;p&gt;NOTE:
+	 * A limited edition in which each copy is not individually numbered - but where the actual number of copies is
+	 * strictly limited. Use &lt;EditionStatement&gt; to give details of the number of copies printed &lt;p&gt;NOTE:
 	 * Introduced in Onix3
 	 */
 	Edition_with_unnumbered_copies("UNN", "Edition with unnumbered copies"), //
 
 	/**
-	 * Content previously considered &#8216;offensive&#8217; has been restored
+	 * Content previously considered 'offensive' has been restored
 	 */
 	Unexpurgated_edition("UXP", "Unexpurgated edition"), //
 

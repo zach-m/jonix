@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Bible contents</h1>
+ * <p>
+ * An ONIX code indicating the content of an edition of the Bible or selected Biblical text, for example New Testament,
+ * Apocrypha, Pentateuch. Mandatory in each occurrence of the &lt;Bible&gt; composite, and repeatable so that a list
+ * such as Old Testament and Apocrypha can be expressed.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 82</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BibleContents&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b352&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b352&gt;OT&lt;/b352&gt;&#160;&#160;&#160;&#160;Old Testament</td>
+ * </tr>
+ * </table>
+ */
 public class BibleContents implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BibleContents";
 	public static final String shortname = "b352";
 

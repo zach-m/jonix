@@ -36,9 +36,27 @@ import com.tectonica.jonix.struct.JonixPersonDate;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person date composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify a date associated with the person identified in an
+ * occurrence of the &lt;Contributor&gt; composite, <em>eg</em> birth or death.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PersonDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;persondate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PersonDate implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PersonDate";
 	public static final String shortname = "persondate";
 

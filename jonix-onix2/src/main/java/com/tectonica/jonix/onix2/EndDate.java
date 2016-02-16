@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Text valid until date</h1>
+ * <p>
+ * The date until which text sent in the &lt;Text&gt; element, or referenced in the &lt;TextLink&gt; element, is
+ * intended to be used, <em>eg</em> for date-limited promotions. Optional and non-repeating, but either both or neither
+ * of &lt;StartDate&gt; and &lt;EndDate&gt; must be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 8 numeric digits, YYYYMMDD</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EndDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b325&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EndDate&gt;20030704&lt;/EndDate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EndDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EndDate";
 	public static final String shortname = "b325";
 
@@ -65,6 +92,8 @@ public class EndDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

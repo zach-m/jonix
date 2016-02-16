@@ -84,16 +84,16 @@ public enum PriceTypeQualifiers
 	/**
 	 * Price valid for a specified period prior to publication. Orders placed prior to the end of the period are
 	 * guaranteed to be delivered to the retailer before the nominal publication date. The price may or may not be
-	 * different from the &#8216;normal&#8217; price, which carries no such delivery guarantee. Must be accompanied by a
+	 * different from the 'normal' price, which carries no such delivery guarantee. Must be accompanied by a
 	 * &lt;PriceEffectiveUntil&gt; date (or equivalent &lt;PriceDate&gt; composite in ONIX 3), and should also be
-	 * accompanied by a &#8216;normal&#8217; price
+	 * accompanied by a 'normal' price
 	 */
 	Reservation_order_price("07", "Reservation order price"), //
 
 	/**
-	 * Temporary &#8216;Special offer&#8217; price. Must be accompanied by &lt;PriceEffectiveFrom&gt; and
+	 * Temporary 'Special offer' price. Must be accompanied by &lt;PriceEffectiveFrom&gt; and
 	 * &lt;PriceEffectiveUntil&gt; dates (or equivalent &lt;PriceDate&gt; composites in ONIX 3), and may also be
-	 * accompanied by a &#8216;normal&#8217; price
+	 * accompanied by a 'normal' price
 	 */
 	Promotional_offer_price("08", "Promotional offer price"), //
 

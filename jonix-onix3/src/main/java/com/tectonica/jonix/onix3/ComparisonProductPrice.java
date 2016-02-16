@@ -35,9 +35,51 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Comparison product price composite</h1>
+ * <p>
+ * Optional and repeatable group of data elements that together define a price for a directly comparable product, to
+ * facilitate supply of price data to retailers who do not receive a full ONIX record for that comparable product. This
+ * is primarily intended for use within a &lt;Product&gt; record for a digital product, to provide a price for a
+ * comparable physical product.
+ * </p>
+ * <p>
+ * Those using this composite should be wary of the volatile nature of product prices: special note should be taken of
+ * the risk of stale data being stored in data recipients’ systems when prices for the comparison product are updated,
+ * as those updates to the comparison product may occur outside the context of the main product being described in the
+ * &lt;Product&gt; record. Because of this, ONIX suppliers are cautioned of the risk of contradictory data in separate
+ * data feeds. <em>This composite should not be supplied unless specifically requested by a particular recipient.</em>
+ * </p>
+ * <p>
+ * The inclusion of a comparison price in itself implies nothing about the availability or status of the comparable
+ * product. However, there may be legal requirements in particular territories relating to the use of comparison prices
+ * in promotion that users of this data must comply with.
+ * </p>
+ * <p>
+ * Note that the comparison product price composite does not include all the features of the &lt;Price&gt; composite:
+ * for example, &lt;PriceQualifier&gt; is not included. Thus data providers should ensure that any conditions attached
+ * to the comparison product price are such that it is directly comparable to the price of the main product being
+ * described.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ComparisonProductPrice&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;comparisonproductprice&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ComparisonProductPrice";
 	public static final String shortname = "comparisonproductprice";
 

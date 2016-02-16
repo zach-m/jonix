@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Set title</h1>
+ * <p>
+ * The full title of the set, without abbreviation or abridgement. Non-repeating. Either the &lt;TitleOfSet&gt; element
+ * or at least one occurrence of the &lt;Title&gt; composite must occur in each occurrence of the &lt;Set&gt; composite.
+ * The &lt;Title&gt; composite provides a more comprehensive representation of a set title, and allows alternative forms
+ * to be sent.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitleOfSet&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b023&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b023&gt;Lives of the Artists&lt;/b023&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TitleOfSet implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitleOfSet";
 	public static final String shortname = "b023";
 
@@ -65,6 +93,8 @@ public class TitleOfSet implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

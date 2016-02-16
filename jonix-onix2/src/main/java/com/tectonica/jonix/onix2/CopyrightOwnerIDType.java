@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright owner identifier type</h1>
+ * <p>
+ * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in
+ * each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightOwnerIDType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b392&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CopyrightOwnerIDType&gt;03&lt;/CopyrightOwnerIDType&gt;&#160;&#160;&#160;&#160;DNB Publisher ID</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightOwnerIDType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightOwnerIDType";
 	public static final String shortname = "b392";
 

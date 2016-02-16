@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Reissue date</h1>
+ * <p>
+ * The date on which the product will be reissued, or (after reissue) the date when it was last reissued. Mandatory in
+ * each occurrence of the &lt;Reissue&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReissueDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j365&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ReissueDate&gt;20030616&lt;/ReissueDate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ReissueDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReissueDate";
 	public static final String shortname = "j365";
 
@@ -65,6 +91,8 @@ public class ReissueDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -38,11 +38,11 @@ public enum WorkIdentifierTypes
 	Proprietary("01", "Proprietary"), //
 
 	/**
-	 * 10-character ISBN of manifestation of work, when this is the only work identifier available &#8211; now
-	 * DEPRECATED in ONIX for Books, except where providing historical information for compatibility with legacy
-	 * systems. It should only be used in relation to products published before 2007 &#8211; when ISBN-13 superseded it
-	 * &#8211; and should never be used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 /
-	 * ISBN-13 of the manifestation of the work)
+	 * 10-character ISBN of manifestation of work, when this is the only work identifier available - now DEPRECATED in
+	 * ONIX for Books, except where providing historical information for compatibility with legacy systems. It should
+	 * only be used in relation to products published before 2007 - when ISBN-13 superseded it - and should never be
+	 * used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13 of the
+	 * manifestation of the work)
 	 */
 	ISBN_10("02", "ISBN-10"), //
 

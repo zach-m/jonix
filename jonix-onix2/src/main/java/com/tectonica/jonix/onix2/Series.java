@@ -39,9 +39,26 @@ import com.tectonica.jonix.struct.JonixTitle;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Series composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe a series of which the product is part.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Series&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;series&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Series implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Series";
 	public static final String shortname = "series";
 

@@ -33,9 +33,34 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Conference number</h1>
+ * <p>
+ * The number of a conference to which the product is related, within a conference series. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ConferenceNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b053&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ConferenceNumber&gt;22&lt;/ConferenceNumber&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ConferenceNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ConferenceNumber";
 	public static final String shortname = "b053";
 
@@ -65,6 +90,8 @@ public class ConferenceNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 4 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

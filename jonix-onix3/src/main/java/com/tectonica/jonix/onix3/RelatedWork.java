@@ -34,9 +34,31 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Related work composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe a work which has a specified relationship
+ * to the product described in the ONIX record.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RelatedWork&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;relatedwork&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class RelatedWork implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RelatedWork";
 	public static final String shortname = "relatedwork";
 

@@ -84,14 +84,14 @@ public enum MeasureTypes
 	Unfolded_unrolled_sheet_width("11", "Unfolded/unrolled sheet width"), //
 
 	/**
-	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01
-	 * &#8216;Height&#8217; for the height or length of the tube
+	 * The diameter of the cross-section of a tube or cylinder, usually carrying a rolled sheet product. Use 01 'Height'
+	 * for the height or length of the tube
 	 */
 	Diameter_tube_or_cylinder("12", "Diameter (tube or cylinder)"), //
 
 	/**
 	 * The length of a side of the cross-section of a long triangular or square package, usually carrying a rolled sheet
-	 * product. Use 01 &#8216;Height&#8217; for the height or length of the package
+	 * product. Use 01 'Height' for the height or length of the package
 	 */
 	Rolled_sheet_package_side_measure("13", "Rolled sheet package side measure");
 

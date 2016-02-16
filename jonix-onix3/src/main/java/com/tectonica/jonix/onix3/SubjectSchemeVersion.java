@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Subject scheme version number</h1>
+ * <p>
+ * A number which identifies a version or edition of the subject scheme specified in the associated
+ * &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free form. Suggested maximum length 10 characters, for consistency with other version number elements</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SubjectSchemeVersion&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b068&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SubjectSchemeVersion&gt;2.1&lt;/SubjectSchemeVersion&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SubjectSchemeVersion implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SubjectSchemeVersion";
 	public static final String shortname = "b068";
 
@@ -53,6 +83,8 @@ public class SubjectSchemeVersion implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

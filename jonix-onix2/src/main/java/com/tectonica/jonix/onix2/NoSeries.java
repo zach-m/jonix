@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>“No series” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a product does not belong to a series. Intended to be used
+ * in an ONIX accreditation scheme to confirm that series information is being consistently supplied in publisher ONIX
+ * feeds. Optional and non-repeating. Must only be sent in a record that has no instances of the &lt;Series&gt;
+ * composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NoSeries&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;n338&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;NoSeries/&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NoSeries implements OnixFlag, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NoSeries";
 	public static final String shortname = "n338";
 

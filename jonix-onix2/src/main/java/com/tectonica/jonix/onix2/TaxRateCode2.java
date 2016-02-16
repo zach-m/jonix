@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Tax rate 2, coded</h1>
+ * <p>
+ * A code which specifies a value added tax rate applying to the amount of the price which is specified in
+ * &lt;TaxableAmount2&gt;. See notes on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, one letter.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 62</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TaxRateCode2&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j157&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j157&gt;Z&lt;/j157&gt;&#160;&#160;&#160;&#160;Zero-rated</td>
+ * </tr>
+ * </table>
+ */
 public class TaxRateCode2 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TaxRateCode2";
 	public static final String shortname = "j157";
 

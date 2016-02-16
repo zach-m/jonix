@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Tax rate percent</h1>
+ * <p>
+ * A tax rate expressed numerically as a percentage. Optional and non-repeating; but either &lt;TaxRatePercent&gt; or
+ * &lt;TaxAmount&gt; or both must be present in each occurrence of the &lt;Tax&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TaxRatePercent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x472&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TaxRatePercent&gt;17.5&lt;/TaxRatePercent&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TaxRatePercent implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TaxRatePercent";
 	public static final String shortname = "x472";
 
@@ -53,6 +83,8 @@ public class TaxRatePercent implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with an explicit decimal point where required
+	 * <p>
 	 * (type: dt.PercentDecimal)
 	 */
 	public Double value;

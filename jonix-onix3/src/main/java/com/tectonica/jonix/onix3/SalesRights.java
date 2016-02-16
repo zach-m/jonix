@@ -34,9 +34,34 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sales rights composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together identify territorial sales rights which a publisher
+ * chooses to exercise in a product. When specifying a territory in which the product is not for sale, the publisher and
+ * product ID for an edition which is available in the specified territory can optionally be included. (In previous
+ * releases, this functionality was provided in a &lt;NotForSale&gt; composite, which is now redundant and has been
+ * deleted.) See examples at the end of the sales rights composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SalesRights&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;salesrights&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class SalesRights implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";
 

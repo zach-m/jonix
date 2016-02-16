@@ -34,9 +34,27 @@ import com.tectonica.jonix.struct.JonixBatchBonus;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Batch bonus composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify a batch bonus, <em>ie</em> a quantity of free copies which
+ * are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BatchBonus&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;batchbonus&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BatchBonus implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BatchBonus";
 	public static final String shortname = "batchbonus";
 

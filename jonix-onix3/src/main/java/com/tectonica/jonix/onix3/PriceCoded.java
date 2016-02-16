@@ -31,9 +31,32 @@ import com.tectonica.jonix.struct.JonixPriceCoded;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price coded composite</h1>
+ * <p>
+ * An optional group of data elements to carry a price that is expressed as one of a discrete set of price points, tiers
+ * or bands, rather than actual currency amounts. Each occurrence of the &lt;Price&gt; composite must include either a
+ * &lt;PriceAmount&gt; or a &lt;PriceCoded&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceCoded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;pricecoded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class PriceCoded implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceCoded";
 	public static final String shortname = "pricecoded";
 

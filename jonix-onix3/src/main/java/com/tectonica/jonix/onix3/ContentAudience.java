@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Target audience</h1>
+ * <p>
+ * An ONIX code which identifies the audience for which the supporting resource is intended. Mandatory in each
+ * occurrence of the &lt;SupportingResource&gt; composite, and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 154</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContentAudience&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x427&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x427&gt;00&lt;/x427&gt; (Unrestricted [any audience])</td>
+ * </tr>
+ * </table>
+ */
 public class ContentAudience implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContentAudience";
 	public static final String shortname = "x427";
 

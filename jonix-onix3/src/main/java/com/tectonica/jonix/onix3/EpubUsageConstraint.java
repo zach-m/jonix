@@ -32,9 +32,32 @@ import com.tectonica.jonix.codelist.UsageTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Usage constraint composite (digital products)</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe a usage constraint on a digital product (or
+ * the absence of such a constraint), whether enforced by DRM technical protection, inherent in the platform used, or
+ * specified by license agreement.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubUsageConstraint&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;epubusageconstraint&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class EpubUsageConstraint implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubUsageConstraint";
 	public static final String shortname = "epubusageconstraint";
 

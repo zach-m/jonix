@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Translation-of title</h1>
+ * <p>
+ * Title of a work from which the product is translated, without abbreviation or abridgement. Optional and
+ * non-repeating. <strong>The &lt;Title&gt; composite on a later page provides a more general method of handling all
+ * forms of title, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TranslationOfTitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b032&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b032 language=&quot;ita&quot;&gt;L'Isola del Giorno Prima&lt;/b032&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TranslationOfTitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TranslationOfTitle";
 	public static final String shortname = "b032";
 
@@ -65,6 +92,8 @@ public class TranslationOfTitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

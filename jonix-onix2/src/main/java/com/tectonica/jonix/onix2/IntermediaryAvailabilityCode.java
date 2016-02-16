@@ -33,9 +33,42 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Intermediary availability code</h1>
+ * <p>
+ * An ONIX code indicating the availability of a product from an intermediary supplier. This element was added in
+ * preparation for an expected revision of availability status coding, but in the event will not now be generally used.
+ * The element is being used as an interim measure by the Australian ONIX group to carry local availability status, but
+ * will be replaced on completion of the revised code lists. The element will be withdrawn from the ONIX format in a
+ * future release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 63</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;IntermediaryAvailabilityCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j348&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class IntermediaryAvailabilityCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "IntermediaryAvailabilityCode";
 	public static final String shortname = "j348";
 
@@ -65,6 +98,8 @@ public class IntermediaryAvailabilityCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, two numeric digits
+	 * <p>
 	 * (type: List63)
 	 */
 	public String value;

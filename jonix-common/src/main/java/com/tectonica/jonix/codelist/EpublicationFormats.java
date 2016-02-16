@@ -43,7 +43,7 @@ public enum EpublicationFormats
 	PDF("02", "PDF"), //
 
 	/**
-	 * &#8216;.LIT&#8217; file format used by Microsoft Reader software
+	 * '.LIT' file format used by Microsoft Reader software
 	 */
 	Microsoft_Reader("03", "Microsoft Reader"), //
 
@@ -58,13 +58,12 @@ public enum EpublicationFormats
 	SGML("08", "SGML"), //
 
 	/**
-	 * &#8216;.EXE&#8217; file format used when an epublication is delivered as a self-executing package of software and
-	 * content
+	 * '.EXE' file format used when an epublication is delivered as a self-executing package of software and content
 	 */
 	EXE("09", "EXE"), //
 
 	/**
-	 * &#8216;.TXT&#8217; file format
+	 * '.TXT' file format
 	 */
 	ASCII("10", "ASCII"), //
 

@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person name part 7: qualifications and honors after names</h1>
+ * <p>
+ * The seventh part of a structured name of a person who contributed to the creation of the product: qualifications and
+ * honors following a person’s names, <em>eg</em> CBE FRS. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;LettersAfterNames&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b042&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b042&gt;MB FRCS&lt;/b042&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class LettersAfterNames implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "LettersAfterNames";
 	public static final String shortname = "b042";
 
@@ -65,6 +91,8 @@ public class LettersAfterNames implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

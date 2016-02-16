@@ -30,9 +30,42 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Country of publication</h1>
+ * <p>
+ * A code identifying the country where the product is published. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters. Note that ISO 3166-1 specifies that country codes shall be sent as upper case only</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CountryOfPublication&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b083&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b083&gt;US&lt;/b083&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CountryOfPublication implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CountryOfPublication";
 	public static final String shortname = "b083";
 

@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sender SAN</h1>
+ * <p>
+ * A US book trade Standard Address Number which identifies the sender of an ONIX message. Optional and non-repeating;
+ * but either the &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1 to MH.5 must
+ * be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character which may
+ * be a numeric digit or letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;FromSAN&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m173&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m173&gt;978847X&lt;/m173&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class FromSAN implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "FromSAN";
 	public static final String shortname = "m173";
 
@@ -65,6 +93,9 @@ public class FromSAN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
+	 * which may be a numeric digit or letter X.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -30,9 +30,50 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Date</h1>
+ * <p>
+ * The date specified in the &lt;PriceDateRole&gt; field. Mandatory in each occurrence of the &lt;PriceDate&gt;
+ * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing, then
+ * &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and &lt;DateFormat&gt;
+ * element are missing, the default format is YYYYMMDD.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Date&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b306&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;Date&gt;20100106&lt;/Date&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>Note that all dates are inclusive, so 'Date from' is the first date on which the price is effective, and 'Date
+ * until' is the last date on which it is effective.</td>
+ * </tr>
+ * </table>
+ */
 public class Date implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Date";
 	public static final String shortname = "b306";
 
@@ -56,6 +97,8 @@ public class Date implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

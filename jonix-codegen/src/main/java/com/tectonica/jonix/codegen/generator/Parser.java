@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.generator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -36,6 +37,7 @@ import com.tectonica.jonix.codegen.metadata.OnixClass;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixConst;
+import com.tectonica.jonix.codegen.metadata.OnixDoc;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixElementMember;
 import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
@@ -73,10 +75,10 @@ public class Parser
 	private final SchemaContext context;
 	private final OnixMetadata meta;
 
-	public Parser(OnixVersion onixVersion, Set<String> spaceables)
+	public Parser(OnixVersion onixVersion, boolean isShort, Set<String> spaceables)
 	{
 		context = new SchemaContext(onixVersion);
-		meta = new OnixMetadata(onixVersion);
+		meta = new OnixMetadata(onixVersion, isShort);
 		context.spaceables = spaceables;
 	}
 
@@ -652,7 +654,7 @@ public class Parser
 		}
 	}
 
-	public void postAnalysis()
+	public void postAnalysis(String specHtml)
 	{
 		// we're traversing all composites, looking for those that are data-composites, i.e. that contain ONLY elements
 		// and/or flags
@@ -708,6 +710,26 @@ public class Parser
 //			{
 //				meta.jonixIntfs.put(composite.name, composite);
 //			}
+		}
+
+		// attach documentation
+		if (!meta.isShort)
+		{
+			try
+			{
+				for (OnixDoc onixDoc : OnixDocsParser.parse(specHtml))
+				{
+					OnixClass onixClass = meta.classByName(onixDoc.onixClassName);
+					if (onixClass == null)
+						System.err.println("WARNING: no class for onixDoc: '" + onixDoc.onixClassName + "'");
+					else
+						onixClass.onixDoc = onixDoc;
+				}
+			}
+			catch (IOException e)
+			{
+				throw new RuntimeException(e);
+			}
 		}
 	}
 }

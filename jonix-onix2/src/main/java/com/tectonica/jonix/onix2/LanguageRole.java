@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Language role</h1>
+ * <p>
+ * An ONIX code indicating the “role” of a language in the context of the ONIX record. Mandatory in each occurrence of
+ * the &lt;Language&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 22</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;LanguageRole&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b253&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;LanguageRole&gt;01&lt;/LanguageRole&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class LanguageRole implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "LanguageRole";
 	public static final String shortname = "b253";
 

@@ -29,9 +29,49 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Record reference</h1>
+ * <p>
+ * For every product, you must choose a single record reference which will uniquely identify the Information record
+ * which you send out about that product, and which will remain as its permanent identifier every time you send an
+ * update. It doesn’t matter what reference you choose, provided that it is unique and permanent. This record reference
+ * doesn’t identify the <em>product</em> – even though you may choose to use the ISBN or another product identifier as a
+ * part or the whole of your record reference – it identifies <em>your information record about the product</em>, so
+ * that the person to whom you are sending an update can match it with what you have previously sent. A good way of
+ * generating references which are not part of a recognized product identification scheme but which can be guaranteed to
+ * be unique is to prefix a product identifier with a reversed Internet domain name which is registered to your
+ * organization (reversal prevents the record reference appearing to be a resolvable URL).
+ * </p>
+ * <p>
+ * This field is mandatory and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length, alphanumeric, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RecordReference&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;a001&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;a001&gt;com.xyzpublishers.onix.9780001234567&lt;/a001&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class RecordReference implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RecordReference";
 	public static final String shortname = "a001";
 
@@ -53,6 +93,8 @@ public class RecordReference implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

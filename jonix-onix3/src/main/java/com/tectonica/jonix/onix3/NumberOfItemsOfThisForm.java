@@ -29,9 +29,41 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number of items of a specified form (product part)</h1>
+ * <p>
+ * When product parts are listed as a specified number of <em>different</em> items in a specified form, without
+ * identifying the individual items, &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the
+ * number is ‘1’. Consequently the element is mandatory and non-repeating in an occurrence of the &lt;ProductPart&gt;
+ * composite if &lt;NumberOfCopies&gt; is not present; and it must not be used if &lt;ProductIdentifier&gt; is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, maximum four digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NumberOfItemsOfThisForm&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x322&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x322&gt;3&lt;/x322&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NumberOfItemsOfThisForm implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NumberOfItemsOfThisForm";
 	public static final String shortname = "x322";
 
@@ -53,6 +85,8 @@ public class NumberOfItemsOfThisForm implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, maximum four digits
+	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */
 	public Integer value;

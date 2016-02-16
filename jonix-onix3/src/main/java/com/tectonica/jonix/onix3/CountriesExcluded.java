@@ -30,9 +30,45 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Countries excluded</h1>
+ * <p>
+ * One or more ISO standard codes identifying countries excluded from the territory. Successive codes must be separated
+ * by spaces. Optional and non-repeating, and can only occur if the &lt;RegionsIncluded&gt; element is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more fixed-length codes, each with two upper case letters, successive codes being separated by spaces.
+ * Suggested maximum length 600 characters. Note that ISO 3166-1 specifies that country codes shall be sent as upper
+ * case only</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CountriesExcluded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x451&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CountriesExcluded&gt;US CA&lt;/CountriesExcluded&gt; (Excludes USA and Canada)</td>
+ * </tr>
+ * </table>
+ */
 public class CountriesExcluded implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CountriesExcluded";
 	public static final String shortname = "x451";
 

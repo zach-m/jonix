@@ -34,9 +34,45 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product availability</h1>
+ * <p>
+ * An ONIX code indicating the availability of a product from a supplier. This element has been added as a preferred
+ * successor to the &lt;AvailabilityCode&gt; element, and is intended to be used both by publishers (who should also
+ * include the new &lt;PublishingStatus&gt; element in PR.20) and by intermediary suppliers (who may also include
+ * &lt;PublishingStatus&gt; if they are in a position to do so. Each occurrence of the &lt;SupplyDetail&gt; composite
+ * must carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both. The element is non-repeating.
+ * Recommended practise is in future to use this new element, and, where possible and appropriate, to include the
+ * &lt;PublishingStatus&gt; element in PR.20. It is likely that the &lt;AvailabilityCode&gt; element will be
+ * “deprecated” in due course in a future release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 65</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductAvailability&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j396&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j396&gt;41&lt;/j396&gt;&#160;&#160;&#160;&#160;Replaced by new product</td>
+ * </tr>
+ * </table>
+ */
 public class ProductAvailability implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductAvailability";
 	public static final String shortname = "j396";
 

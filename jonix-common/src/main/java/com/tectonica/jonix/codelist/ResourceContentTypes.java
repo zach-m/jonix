@@ -90,7 +90,7 @@ public enum ResourceContentTypes
 	Sample_content("15", "Sample content"), //
 
 	/**
-	 * A &#8216;look inside&#8217; feature presented as a small embeddable application
+	 * A 'look inside' feature presented as a small embeddable application
 	 */
 	Widget("16", "Widget"), //
 
@@ -117,7 +117,7 @@ public enum ResourceContentTypes
 	Feature_article("21", "Feature article"), //
 
 	/**
-	 * Fictional character &#8216;interview&#8217;
+	 * Fictional character 'interview'
 	 */
 	Character_interview_("22", "Character ‘interview’"), //
 
@@ -133,8 +133,7 @@ public enum ResourceContentTypes
 	Table_of_contents("25", "Table of contents"), //
 
 	/**
-	 * A promotional video (or audio), similar to a movie trailer (sometimes referred to as a &#8216;book
-	 * trailer&#8217;)
+	 * A promotional video (or audio), similar to a movie trailer (sometimes referred to as a 'book trailer')
 	 */
 	Trailer("26", "Trailer"), //
 
@@ -152,7 +151,7 @@ public enum ResourceContentTypes
 	Full_content("28", "Full content"), //
 
 	/**
-	 * Includes cover, back cover, spine and &#8211; where appropriate &#8211; any flaps
+	 * Includes cover, back cover, spine and - where appropriate - any flaps
 	 */
 	Full_cover("29", "Full cover"), //
 
@@ -178,8 +177,8 @@ public enum ResourceContentTypes
 	Student_s_guide("33", "Student’s guide"), //
 
 	/**
-	 * For example a PDF or other digital representation of a publisher&#8217;s &#8216;new titles&#8217; or range
-	 * catalogue &lt;p&gt;NOTE: Introduced in Onix3
+	 * For example a PDF or other digital representation of a publisher's 'new titles' or range catalogue &lt;p&gt;NOTE:
+	 * Introduced in Onix3
 	 */
 	Publisher_s_catalogue("34", "Publisher’s catalogue"), //
 
@@ -190,7 +189,7 @@ public enum ResourceContentTypes
 	Online_advertisement_panel("35", "Online advertisement panel"), //
 
 	/**
-	 * German &#8216;B&#250;hnenbild&#8217; &lt;p&gt;NOTE: Introduced in Onix3
+	 * German 'B&#250;hnenbild' &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Online_advertisement_page("36", "Online advertisement page"), //
 

@@ -29,9 +29,40 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>“No prefix” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a title element does not include any prefix that is ignored
+ * for sorting purposes. Optional and non-repeating, and must only be used when &lt;TitleWithoutPrefix&gt; is used and
+ * no &lt;TitlePrefix&gt; element is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NoPrefix&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x501&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;NoPrefix/&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NoPrefix implements OnixFlag, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NoPrefix";
 	public static final String shortname = "x501";
 

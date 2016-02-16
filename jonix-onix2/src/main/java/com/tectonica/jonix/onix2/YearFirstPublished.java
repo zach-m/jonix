@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Year first published</h1>
+ * <p>
+ * The year when the work first appeared in any language or edition, if different from the copyright year. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year only (YYYY)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;YearFirstPublished&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b088&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;YearFirstPublished&gt;1845&lt;/YearFirstPublished&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class YearFirstPublished implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "YearFirstPublished";
 	public static final String shortname = "b088";
 
@@ -65,6 +91,8 @@ public class YearFirstPublished implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year only (YYYY)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

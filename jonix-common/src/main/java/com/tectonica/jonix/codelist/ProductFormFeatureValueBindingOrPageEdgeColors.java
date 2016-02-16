@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 98</b>
  * <p>
- * Description: Product form feature value &#8211; binding or page edge color
+ * Description: Product form feature value - binding or page edge color
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a

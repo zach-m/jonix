@@ -29,9 +29,41 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>“No edition” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a product does not carry any edition information. Intended
+ * to be used an ONIX accreditation scheme to confirm that edition information is being consistently supplied in
+ * publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no instances of any of the
+ * four preceding Edition elements.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NoEdition&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;n386&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;NoEdition/&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NoEdition implements OnixFlag, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NoEdition";
 	public static final String shortname = "n386";
 

@@ -33,9 +33,34 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Tax rate 1, percent</h1>
+ * <p>
+ * A tax rate expressed numerically as a percentage. See notes on &lt;TaxRateCode1&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point where required.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TaxRatePercent1&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j154&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j154&gt;17.5&lt;/j154&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TaxRatePercent1 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TaxRatePercent1";
 	public static final String shortname = "j154";
 
@@ -65,6 +90,8 @@ public class TaxRatePercent1 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -41,7 +41,7 @@ public enum SupplierIdentifierTypes
 	Proprietary("01", "Proprietary"), //
 
 	/**
-	 * DEPRECATED &#8211; use 01
+	 * DEPRECATED - use 01
 	 */
 	Proprietary_("02", "Proprietary"), //
 
@@ -55,7 +55,7 @@ public enum SupplierIdentifierTypes
 	GLN("06", "GLN"), //
 
 	/**
-	 * Book trade Standard Address Number &#8211; US, UK etc
+	 * Book trade Standard Address Number - US, UK etc
 	 */
 	SAN("07", "SAN"), //
 
@@ -70,10 +70,10 @@ public enum SupplierIdentifierTypes
 	Fondscode_Boekenbank("13", "Fondscode Boekenbank"), //
 
 	/**
-	 * Identifier for a business organization for VAT purposes, eg within the EU&#8217;s VIES system. See
+	 * Identifier for a business organization for VAT purposes, eg within the EU's VIES system. See
 	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country.
-	 * Generally these consist of a two-letter country code followed by the 8&#8211;12 digits of the national VAT ID.
-	 * Some countries include one or two letters within their VAT ID. See
+	 * Generally these consist of a two-letter country code followed by the 8-12 digits of the national VAT ID. Some
+	 * countries include one or two letters within their VAT ID. See
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
 	 * Spaces, dashes etc should be omitted
 	 */

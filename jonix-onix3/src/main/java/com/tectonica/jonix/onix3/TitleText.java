@@ -32,9 +32,49 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Title text</h1>
+ * <p>
+ * The text of a title element, excluding any subtitle. Optional and non-repeating, may only be used where
+ * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
+ * </p>
+ * <p>
+ * This element is intended to be used when the sending system cannot reliably provide prefixes that are ignored for
+ * sorting purposes in a separate data element. If the system <em>can</em> reliably separate prefixes, it should state
+ * whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using
+ * &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitleText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b203&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript, textcase</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b203&gt;Nicholas Nickleby&lt;/b203&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TitleText implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitleText";
 	public static final String shortname = "b203";
 
@@ -64,6 +104,8 @@ public class TitleText implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

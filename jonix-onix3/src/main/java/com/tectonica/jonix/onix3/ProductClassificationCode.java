@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product classification code</h1>
+ * <p>
+ * A classification code from the scheme specified in &lt;ProductClassificationType&gt;. Mandatory in each occurrence of
+ * the &lt;ProductClassification&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the identifier type specified in &lt;ProductClassificationType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductClassificationCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b275&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b275&gt;55101514&lt;/b275&gt; (Sheet music in UNSPSC classification scheme)</td>
+ * </tr>
+ * </table>
+ */
 public class ProductClassificationCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductClassificationCode";
 	public static final String shortname = "b275";
 
@@ -53,6 +83,8 @@ public class ProductClassificationCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

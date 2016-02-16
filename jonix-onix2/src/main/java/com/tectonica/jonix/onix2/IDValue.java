@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Identifier value</h1>
+ * <p>
+ * An identifier of the type specified in the &lt;AddresseeIDType&gt; element. Mandatory in any occurrence of the
+ * &lt;AddresseeIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the identifier type specified in &lt;AddresseeIDType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;IDValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b244&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class IDValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "IDValue";
 	public static final String shortname = "b244";
 
@@ -65,6 +91,8 @@ public class IDValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

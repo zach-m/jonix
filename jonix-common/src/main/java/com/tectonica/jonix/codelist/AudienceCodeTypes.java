@@ -77,8 +77,8 @@ public enum AudienceCodeTypes
 	ANELE_Tipo("08", "ANELE Tipo"), //
 
 	/**
-	 * Code list used to specify reading levels for children&#8217;s books, used in Flanders, and formerly in the
-	 * Netherlands &#8211; see also code 18
+	 * Code list used to specify reading levels for children's books, used in Flanders, and formerly in the Netherlands
+	 * - see also code 18
 	 */
 	AVI("09", "AVI"), //
 
@@ -118,8 +118,7 @@ public enum AudienceCodeTypes
 	Suomalainen_kouluasteluokitus("15", "Suomalainen kouluasteluokitus"), //
 
 	/**
-	 * UK Publishers Association, Children&#8217;s Book Group, coded indication of intended reader age, carried on book
-	 * covers
+	 * UK Publishers Association, Children's Book Group, coded indication of intended reader age, carried on book covers
 	 */
 	CBG_age_guidance("16", "CBG age guidance"), //
 
@@ -129,32 +128,30 @@ public enum AudienceCodeTypes
 	Nielsen_Book_audience_code("17", "Nielsen Book audience code"), //
 
 	/**
-	 * Code list used to specify reading levels for children&#8217;s books, used in the Netherlands &#8211; see also
-	 * code 09
+	 * Code list used to specify reading levels for children's books, used in the Netherlands - see also code 09
 	 */
 	AVI_revised("18", "AVI (revised)"), //
 
 	/**
 	 * Lexile measure (the Lexile measure in &lt;AudienceCodeValue&gt; may optionally be prefixed by the Lexile code).
-	 * Examples might be &#8216;880L&#8217;, &#8216;AD0L&#8217; or &#8216;HL600L&#8217;. Deprecated &#8211; use
-	 * &lt;Complexity&gt; instead
+	 * Examples might be '880L', 'AD0L' or 'HL600L'. Deprecated - use &lt;Complexity&gt; instead
 	 */
 	Lexile_measure("19", "Lexile measure"), //
 
 	/**
 	 * Fry readability metric based on number of sentences and syllables per 100 words. Expressed as a number from 1 to
-	 * 15 in &lt;AudienceCodeValue&gt;. Deprecated &#8211; use &lt;Complexity&gt; instead
+	 * 15 in &lt;AudienceCodeValue&gt;. Deprecated - use &lt;Complexity&gt; instead
 	 */
 	Fry_Readability_score("20", "Fry Readability score"), //
 
 	/**
-	 * Children&#8217;s audience code (&#23550;&#35937;&#35501;&#32773;), two-digit encoding of intended target
-	 * readership from 0&#8211;2 years up to High School level
+	 * Children's audience code (&#23550;&#35937;&#35501;&#32773;), two-digit encoding of intended target readership
+	 * from 0-2 years up to High School level
 	 */
 	Japanese_Children_s_audience_code("21", "Japanese Children’s audience code"), //
 
 	/**
-	 * Publisher&#8217;s rating indicating suitability for an particular adult audience, using a code from List 203
+	 * Publisher's rating indicating suitability for an particular adult audience, using a code from List 203
 	 */
 	ONIX_Adult_audience_rating("22", "ONIX Adult audience rating"), //
 
@@ -172,15 +169,13 @@ public enum AudienceCodeTypes
 
 	/**
 	 * UK Institute of Education Book Bands for Guided Reading scheme (see http://www.ioe.ac.uk/research/4664.html).
-	 * &lt;AudienceCodeValue&gt; is a color, eg &#8216;Pink A&#8217; or &#8216;Copper&#8217;. Deprecated &#8211; use
-	 * &lt;Complexity&gt; instead
+	 * &lt;AudienceCodeValue&gt; is a color, eg 'Pink A' or 'Copper'. Deprecated - use &lt;Complexity&gt; instead
 	 */
 	IoE_Book_Band("25", "IoE Book Band"), //
 
 	/**
 	 * Used for German videos/DVDs with educational or informative content; value for &lt;AudienceCodeValue&gt; must be
-	 * either &#8216;Infoprogramm gem&#228;&#223; &#167; 14 JuSchG&#8217; or &#8216;Lehrprogramm gem&#228;&#223; &#167;
-	 * 14 JuSchG&#8217;
+	 * either 'Infoprogramm gem&#228;&#223; &#167; 14 JuSchG' or 'Lehrprogramm gem&#228;&#223; &#167; 14 JuSchG'
 	 */
 	FSK_Lehr_Infoprogramm("26", "FSK Lehr-/Infoprogramm"), //
 

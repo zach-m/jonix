@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supplier own coding composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together allow a supplier to send coded data of a specified
+ * type, using its own coding schemes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplierOwnCoding&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;supplierowncoding&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class SupplierOwnCoding implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplierOwnCoding";
 	public static final String shortname = "supplierowncoding";
 

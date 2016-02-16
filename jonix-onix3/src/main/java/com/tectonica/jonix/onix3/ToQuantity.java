@@ -29,9 +29,41 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>To Quantity</h1>
+ * <p>
+ * A maximum order quantity eligible for a specified discount, used only in the case of ‘progressive’ discounts.
+ * Optional, but where used, must be preceded by a minimum qualifying order quantity (even if that minimum is 1). For
+ * the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt; composite that specifies
+ * the highest progressive discount), use zero.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length decimal number, here necessarily an integer</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ToQuantity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x514&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ToQuantity&gt;25&lt;/ToQuantity&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ToQuantity implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ToQuantity";
 	public static final String shortname = "x514";
 
@@ -53,6 +85,8 @@ public class ToQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length decimal number, here necessarily an integer
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double value;

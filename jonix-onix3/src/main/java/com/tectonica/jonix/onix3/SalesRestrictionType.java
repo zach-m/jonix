@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.SalesRestrictionTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sales restriction type code</h1>
+ * <p>
+ * An ONIX code which identifies a non-territorial sales restriction. Mandatory in each occurrence of the
+ * &lt;SalesRestriction&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 71</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SalesRestrictionType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b381&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b381&gt;07&lt;/b381&gt; (Schools-only edition)</td>
+ * </tr>
+ * </table>
+ */
 public class SalesRestrictionType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SalesRestrictionType";
 	public static final String shortname = "b381";
 

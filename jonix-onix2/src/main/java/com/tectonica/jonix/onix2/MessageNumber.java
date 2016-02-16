@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Message sequence number</h1>
+ * <p>
+ * A sequence number of the messages in a series sent between trading partners, to enable the receiver to check against
+ * gaps and duplicates. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer,</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MessageNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m180&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m180&gt;1234&lt;/m180&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MessageNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MessageNumber";
 	public static final String shortname = "m180";
 
@@ -65,6 +91,8 @@ public class MessageNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer,
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

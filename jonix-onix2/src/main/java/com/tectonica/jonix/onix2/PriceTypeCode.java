@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price type code</h1>
+ * <p>
+ * An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the &lt;Price&gt; composite.
+ * Optional, provided that a &lt;DefaultPriceTypeCode&gt; has been specified in the message header, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 58</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceTypeCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j148&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PriceTypeCode&gt;21&lt;/PriceTypeCode&gt;&#160;&#160;&#160;&#160;Pre-publication RRP excluding tax</td>
+ * </tr>
+ * </table>
+ */
 public class PriceTypeCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceTypeCode";
 	public static final String shortname = "j148";
 

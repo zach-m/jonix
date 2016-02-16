@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 96</b>
  * <p>
- * Description: Currency code &#8211; ISO 4217
+ * Description: Currency code - ISO 4217
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a
@@ -496,7 +496,7 @@ public enum CurrencyCodes
 	Comoro_Franc("KMF", "Comoro Franc"), //
 
 	/**
-	 * Korea (Democratic People&#8217;s Republic of) (prices normally quoted as integers)
+	 * Korea (Democratic People's Republic of) (prices normally quoted as integers)
 	 */
 	North_Korean_Won("KPW", "North Korean Won"), //
 
@@ -521,7 +521,7 @@ public enum CurrencyCodes
 	Tenge("KZT", "Tenge"), //
 
 	/**
-	 * Lao People&#8217;s Democratic Republic (prices normally quoted as integers)
+	 * Lao People's Democratic Republic (prices normally quoted as integers)
 	 */
 	Kip("LAK", "Kip"), //
 
@@ -578,7 +578,7 @@ public enum CurrencyCodes
 	Moldovan_Leu("MDL", "Moldovan Leu"), //
 
 	/**
-	 * Madagascar (prices normally quoted with 0 or 1 decimal place &#8211; 1 iraimbilanja = Ar0.2)
+	 * Madagascar (prices normally quoted with 0 or 1 decimal place - 1 iraimbilanja = Ar0.2)
 	 */
 	Malagasy_Ariary("MGA", "Malagasy Ariary"), //
 
@@ -608,7 +608,7 @@ public enum CurrencyCodes
 	Pataca("MOP", "Pataca"), //
 
 	/**
-	 * Mauritania (0 or 1 &#8211; 1 khoums = UM0.2)
+	 * Mauritania (0 or 1 - 1 khoums = UM0.2)
 	 */
 	Ouguiya("MRO", "Ouguiya"), //
 
@@ -980,8 +980,8 @@ public enum CurrencyCodes
 	East_Caribbean_Dollar("XCD", "East Caribbean Dollar"), //
 
 	/**
-	 * Benin, Burkina Faso, C&#244;te D&#8217;Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted
-	 * as integers)
+	 * Benin, Burkina Faso, C&#244;te D'Ivoire, Guinea-Bissau, Mali, Niger, Senegal, Togo (prices normally quoted as
+	 * integers)
 	 */
 	CFA_Franc_BCEAO("XOF", "CFA Franc BCEAO"), //
 

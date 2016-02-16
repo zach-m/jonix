@@ -35,9 +35,28 @@ import com.tectonica.jonix.struct.JonixTitle;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Title composite</h1>
+ * <p>
+ * A repeatable group of data elements which together give the text of a title of a content item and specify its type,
+ * used here to give alternate forms of title for a content item. <strong>Please see Group&nbsp;PR.7 for
+ * details.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Title&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;title&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Title implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Title";
 	public static final String shortname = "title";
 

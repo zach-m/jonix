@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Identifier type name</h1>
+ * <p>
+ * A name which identifies a proprietary identifier type when, and only when, the code in the &lt;AddresseeIDType&gt;
+ * element indicates a proprietary scheme. Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length ASCII text, suggested maximum 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;IDTypeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b233&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class IDTypeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "IDTypeName";
 	public static final String shortname = "b233";
 
@@ -65,6 +94,8 @@ public class IDTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

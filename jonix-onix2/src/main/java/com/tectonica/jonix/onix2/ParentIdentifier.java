@@ -35,9 +35,10 @@ import com.tectonica.jonix.struct.JonixParentIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
 public class ParentIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ParentIdentifier";
 	public static final String shortname = "parentidentifier";
 

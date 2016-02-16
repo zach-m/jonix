@@ -119,10 +119,10 @@ public enum PublishingDateRoles
 	Forthcoming_reprint_date("26", "Forthcoming reprint date"), //
 
 	/**
-	 * Earliest date a retail &#8216;preorder&#8217; can be placed (where this is distinct from the public announcement
-	 * date). In the absence of a preorder embargo, advance orders can be placed as soon as metadata is available to the
-	 * consumer (this would be the public announcement date, or in the absence of a public announcement date, the
-	 * earliest date metadata is available to the retailer)
+	 * Earliest date a retail 'preorder' can be placed (where this is distinct from the public announcement date). In
+	 * the absence of a preorder embargo, advance orders can be placed as soon as metadata is available to the consumer
+	 * (this would be the public announcement date, or in the absence of a public announcement date, the earliest date
+	 * metadata is available to the retailer)
 	 */
 	Preorder_embargo_date("27", "Preorder embargo date"), //
 

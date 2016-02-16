@@ -35,9 +35,29 @@ import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Addressee identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of the addressee within a specified namespace, used
+ * here to allow different party identifiers to be included without defining additional data elements. In particular the
+ * composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
+ * composite is optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AddresseeIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;addresseeidentifier&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class AddresseeIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AddresseeIdentifier";
 	public static final String shortname = "addresseeidentifier";
 

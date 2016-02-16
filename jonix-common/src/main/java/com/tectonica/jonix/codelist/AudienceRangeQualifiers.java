@@ -86,17 +86,17 @@ public enum AudienceRangeQualifiers
 	Italian_school_grade("22", "Italian school grade"), //
 
 	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29
+	 * DEPRECATED - assigned in error: see List 29
 	 */
 	Schulform("23", "Schulform"), //
 
 	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29
+	 * DEPRECATED - assigned in error: see List 29
 	 */
 	Bundesland("24", "Bundesland"), //
 
 	/**
-	 * DEPRECATED &#8211; assigned in error: see List 29
+	 * DEPRECATED - assigned in error: see List 29
 	 */
 	Ausbildungsberuf("25", "Ausbildungsberuf"), //
 
@@ -113,7 +113,7 @@ public enum AudienceRangeQualifiers
 	Finnish_Upper_secondary_school_course("28", "Finnish Upper secondary school course"), //
 
 	/**
-	 * Values are P, K, 1&#8211;17 (including college-level audiences), see List 227
+	 * Values are P, K, 1-17 (including college-level audiences), see List 227
 	 */
 	Chinese_School_Grade_range("29", "Chinese School Grade range"), //
 

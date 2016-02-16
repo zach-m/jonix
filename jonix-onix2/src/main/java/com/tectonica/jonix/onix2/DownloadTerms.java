@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Download terms</h1>
+ * <p>
+ * Text of any terms and conditions associated with a download file. Optional and non-repeating. This field may be sent
+ * alone, or with the &lt;TextWithDownload&gt; element, or with any combination of the &lt;DownloadCaption&gt;,
+ * &lt;DownloadCredit&gt;, and &lt;DownloadCopyrightNotice&gt; elements.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for
+ * Books - Product Information Message - XML Message Specification, Section 7)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DownloadTerms&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f122&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class DownloadTerms implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DownloadTerms";
 	public static final String shortname = "f122";
 
@@ -65,6 +93,9 @@ public class DownloadTerms implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

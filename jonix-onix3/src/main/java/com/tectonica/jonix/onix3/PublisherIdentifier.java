@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixPublisherIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publisher identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of a publisher name. Optional and repeatable, but
+ * mandatory if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublisherIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;publisheridentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class PublisherIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublisherIdentifier";
 	public static final String shortname = "publisheridentifier";
 

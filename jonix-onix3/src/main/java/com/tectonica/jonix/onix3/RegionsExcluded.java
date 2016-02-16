@@ -30,9 +30,45 @@ import com.tectonica.jonix.codelist.Regions;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Regions excluded</h1>
+ * <p>
+ * One or more ONIX codes identifying regions excluded from the territory. Successive codes must be separated by spaces.
+ * Optional and non-repeating, and can only occur if the &lt;CountriesIncluded&gt; element is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters with or without a hyphen, successive
+ * codes being separated by spaces. Suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RegionsExcluded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x452&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x452&gt;GB-EWS&lt;/x452&gt; (Excludes England, Wales and Scotland - and therefore includes Northern Ireland)</td>
+ * </tr>
+ * </table>
+ */
 public class RegionsExcluded implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RegionsExcluded";
 	public static final String shortname = "x452";
 

@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Conference acronym</h1>
+ * <p>
+ * An acronym used as a short form of the name of a conference or conference series given in the &lt;ConferenceName&gt;
+ * element. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ConferenceAcronym&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b341&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ConferenceAcronym&gt;ICCC 2009&lt;/ConferenceAcronym&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ConferenceAcronym implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ConferenceAcronym";
 	public static final String shortname = "b341";
 
@@ -53,6 +83,8 @@ public class ConferenceAcronym implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

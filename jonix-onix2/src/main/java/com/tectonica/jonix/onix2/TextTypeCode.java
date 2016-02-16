@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Other text type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of text which is sent in the &lt;Text&gt; element, or referenced in the
+ * &lt;TextLink&gt; element. Mandatory in each occurrence of the &lt;OtherText&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two characters (initially allocated as 01, 02 etc)</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 33</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextTypeCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;d102&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;d102&gt;33&lt;/d102&gt;&#160;&#160;&#160;&#160;Introduction text</td>
+ * </tr>
+ * </table>
+ */
 public class TextTypeCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextTypeCode";
 	public static final String shortname = "d102";
 

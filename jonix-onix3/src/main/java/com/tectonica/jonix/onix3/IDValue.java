@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Identifier value</h1>
+ * <p>
+ * An identifier of the type specified in the &lt;PriceIDType&gt; element. Mandatory in each occurrence of the
+ * &lt;PriceIdentifier&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the identifier type specified in &lt;PriceIDType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;IDValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b244&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b244&gt;f47ac10b-58cc-4372-a567-0e02b2c3d479&lt;/b244&gt; (from a scheme using a UUID)</td>
+ * </tr>
+ * </table>
+ */
 public class IDValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "IDValue";
 	public static final String shortname = "b244";
 
@@ -53,6 +83,8 @@ public class IDValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

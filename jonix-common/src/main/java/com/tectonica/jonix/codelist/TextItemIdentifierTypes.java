@@ -36,7 +36,7 @@ package com.tectonica.jonix.codelist;
 public enum TextItemIdentifierTypes
 {
 	/**
-	 * For example, a publisher&#8217;s own identifier
+	 * For example, a publisher's own identifier
 	 */
 	Proprietary("01", "Proprietary"), //
 

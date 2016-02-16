@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Currency code</h1>
+ * <p>
+ * An ISO standard code identifying the currency in which a price is given in &lt;PriceAmount&gt;, unless it is the
+ * default currency for the exchange. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 4217 currency codes - List 96</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CurrencyCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j152&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j152&gt;NLG&lt;/j152&gt;&#160;&#160;&#160;&#160;Netherlands Guilder</td>
+ * </tr>
+ * </table>
+ */
 public class CurrencyCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CurrencyCode";
 	public static final String shortname = "j152";
 

@@ -29,9 +29,42 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Collection sequence number</h1>
+ * <p>
+ * A number which specifies the ordinal position of the product in a collection. The ordinal position may be a simple
+ * number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level if the collection has a multi-level structure (<i>ie</i>
+ * there are both collection and sub-collection title elements). Mandatory and non-repeating within the
+ * &lt;CollectionSequence&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length string of one or more integers, each successive integer being separated by a period character,
+ * suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CollectionSequenceNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x481&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CollectionSequenceNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CollectionSequenceNumber";
 	public static final String shortname = "x481";
 
@@ -53,6 +86,9 @@ public class CollectionSequenceNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length string of one or more integers, each successive integer being separated by a period
+	 * character, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.MultiLevelNumber)
 	 */
 	public String value;

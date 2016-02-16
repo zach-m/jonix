@@ -31,9 +31,45 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Book club adoption</h1>
+ * <p>
+ * Free text describing the adoption of the product as a book club selection. Optional, and repeatable if parallel text
+ * is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;BookClubAdoption&gt;, but must be included in each instance if &lt;BookClubAdoption&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BookClubAdoption&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;k169&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;k169&gt;Book-Of-The-Month Club selection for May 2000&lt;/k169&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BookClubAdoption implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BookClubAdoption";
 	public static final String shortname = "k169";
 
@@ -59,6 +95,9 @@ public class BookClubAdoption implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

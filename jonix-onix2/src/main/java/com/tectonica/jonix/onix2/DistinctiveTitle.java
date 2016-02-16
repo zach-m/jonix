@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Component title</h1>
+ * <p>
+ * The distinctive title of a content item. Optional and non-repeating; but either this field (or a title in a
+ * &lt;Title&gt;composite) or a &lt;ComponentTypeName&gt; must be present in any occurrence of the &lt;ContentItem&gt;
+ * composite. <strong>The &lt;Title&gt; composite provides a more general method of handling all forms of title, and is
+ * to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length alphanumeric, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DistinctiveTitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b028&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;DistinctiveTitle&gt;Introducing XML&lt;/DistinctiveTitle&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DistinctiveTitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DistinctiveTitle";
 	public static final String shortname = "b028";
 
@@ -65,6 +93,8 @@ public class DistinctiveTitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

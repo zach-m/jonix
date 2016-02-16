@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Replaces ISBN-10</h1>
+ * <p>
+ * 10-character International Standard Book Number of a former product which the current product replaces. Optional and
+ * non-repeating. <strong>Note, however, that the &lt;RelatedProduct&gt; composite in Group&nbsp;PR.23 provides a more
+ * general method of handling this type of link. This is now the preferred ONIX approach. The &lt;ReplacesISBN&gt;
+ * element is retained only for upwards compatibility. This element is on no account to be used to carry a 13-digit
+ * ISBN.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 10 characters, all numeric except last character, which may be letter X.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReplacesISBN&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b010&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b010&gt;8474339790&lt;/b010&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ReplacesISBN implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReplacesISBN";
 	public static final String shortname = "b010";
 
@@ -65,6 +94,8 @@ public class ReplacesISBN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

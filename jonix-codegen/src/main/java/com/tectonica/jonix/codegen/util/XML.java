@@ -6,7 +6,7 @@ public class XML
 	{
 		if (s == null)
 			return null;
-		
+
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < s.length(); i++)
 		{
@@ -28,6 +28,16 @@ public class XML
 			case '\'':
 				sb.append("&apos;");
 				break;
+			case '\u2013': // replace Unicode dash with ascii
+				sb.append("-");
+				break;
+			case '\u2018': // replace Unicode apostrophes with ascii
+			case '\u2019':
+			case '\u02BC':
+			case '\u275C':
+				sb.append("'");
+				break;
+
 			default:
 				if (c > 0x7e)
 					sb.append("&#" + ((int) c) + ";");

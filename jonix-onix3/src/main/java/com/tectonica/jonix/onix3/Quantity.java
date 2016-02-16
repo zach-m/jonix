@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Quantity</h1>
+ * <p>
+ * A minimum order quantity required to qualify for a specified discount. Optional, and non-repeating. Where omitted,
+ * the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying order quantity is 1).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length decimal number, here necessarily an integer</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Quantity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x320&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;Quantity&gt;12&lt;/Quantity&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Quantity implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Quantity";
 	public static final String shortname = "x320";
 
@@ -53,6 +83,8 @@ public class Quantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length decimal number, here necessarily an integer
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double value;

@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.ResourceContentTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Resource content type code</h1>
+ * <p>
+ * An ONIX code indicating the type of content carried in a supporting resource. Mandatory in each occurrence of the
+ * &lt;SupportingResource&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 158</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ResourceContentType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x436&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ResourceContentType&gt;01&lt;/ResourceContentType&gt; (Front cover)</td>
+ * </tr>
+ * </table>
+ */
 public class ResourceContentType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ResourceContentType";
 	public static final String shortname = "x436";
 

@@ -57,8 +57,8 @@ public enum TradeCategorys
 	Sonderausgabe("03", "Sonderausgabe"), //
 
 	/**
-	 * In countries where recognised as a distinct trade category, eg France &#8216;livre de poche&#8217;, Germany
-	 * &#8216;Taschenbuch&#8217;, Italy &#8216;tascabile&#8217;, Spain &#8216;libro de bolsillo&#8217;
+	 * In countries where recognised as a distinct trade category, eg France 'livre de poche', Germany 'Taschenbuch',
+	 * Italy 'tascabile', Spain 'libro de bolsillo'
 	 */
 	Pocket_paperback("04", "Pocket paperback"), //
 
@@ -116,8 +116,8 @@ public enum TradeCategorys
 	US_textbook("13", "US textbook"), //
 
 	/**
-	 * &#8216;Short&#8217; e-book (sometimes also called a &#8216;single&#8217;), typically containing a single short
-	 * story, an essay or piece of long-form journalism
+	 * 'Short' e-book (sometimes also called a 'single'), typically containing a single short story, an essay or piece
+	 * of long-form journalism
 	 */
 	E_book_short("14", "E-book short");
 

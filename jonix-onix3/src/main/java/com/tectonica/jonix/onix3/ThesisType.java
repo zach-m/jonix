@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.ThesisTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Thesis type code</h1>
+ * <p>
+ * An ONIX code identifying a thesis type, when the ONIX record describes an item which was originally presented as an
+ * academic thesis or dissertation. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 72</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ThesisType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b368&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b368&gt;01&lt;/b368&gt; (Habilitationsschrift, post-doctoral dissertation)</td>
+ * </tr>
+ * </table>
+ */
 public class ThesisType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ThesisType";
 	public static final String shortname = "b368";
 

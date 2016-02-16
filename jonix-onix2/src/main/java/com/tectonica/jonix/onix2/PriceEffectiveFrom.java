@@ -33,9 +33,34 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price effective from</h1>
+ * <p>
+ * The date from which a price becomes effective. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceEffectiveFrom&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j161&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PriceEffectiveFrom&gt;20000616&lt;/PriceEffectiveFrom&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PriceEffectiveFrom implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceEffectiveFrom";
 	public static final String shortname = "j161";
 
@@ -65,6 +90,8 @@ public class PriceEffectiveFrom implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -49,7 +49,7 @@ public enum ProductRelations
 	Includes("01", "Includes"), //
 
 	/**
-	 * &lt;Product&gt; is part of &lt;RelatedProduct&gt;: use for &#8216;also available as part of&#8217;
+	 * &lt;Product&gt; is part of &lt;RelatedProduct&gt;: use for 'also available as part of'
 	 */
 	Is_part_of("02", "Is part of"), //
 
@@ -64,8 +64,8 @@ public enum ProductRelations
 	Replaced_by("05", "Replaced by"), //
 
 	/**
-	 * &lt;Product&gt; is available in an alternative format as &lt;RelatedProduct&gt; &#8211; indicates an alternative
-	 * format of the same content which is or may be available
+	 * &lt;Product&gt; is available in an alternative format as &lt;RelatedProduct&gt; - indicates an alternative format
+	 * of the same content which is or may be available
 	 */
 	Alternative_format("06", "Alternative format"), //
 
@@ -86,8 +86,8 @@ public enum ProductRelations
 	Is_remaindered_as("09", "Is remaindered as"), //
 
 	/**
-	 * &lt;Product&gt; was originally sold as &lt;RelatedProduct&gt;, indicating the publisher&#8217;s original
-	 * identifier for a title which is offered as a remainder under a different identifier (reciprocal of code 09)
+	 * &lt;Product&gt; was originally sold as &lt;RelatedProduct&gt;, indicating the publisher's original identifier for
+	 * a title which is offered as a remainder under a different identifier (reciprocal of code 09)
 	 */
 	Is_remainder_of("10", "Is remainder of"), //
 
@@ -97,8 +97,8 @@ public enum ProductRelations
 	Is_other_language_version_of("11", "Is other-language version of"), //
 
 	/**
-	 * &lt;Product&gt; has a publisher&#8217;s suggested alternative &lt;RelatedProduct&gt;, which does not, however,
-	 * carry the same content (cf 05 and 06)
+	 * &lt;Product&gt; has a publisher's suggested alternative &lt;RelatedProduct&gt;, which does not, however, carry
+	 * the same content (cf 05 and 06)
 	 */
 	Publisher_s_suggested_alternative("12", "Publisher’s suggested alternative"), //
 
@@ -108,15 +108,15 @@ public enum ProductRelations
 	Epublication_based_on_print_product("13", "Epublication based on (print product)"), //
 
 	/**
-	 * &lt;Product&gt; is an epublication &#8216;rendered&#8217; as &lt;RelatedProduct&gt;: use in ONIX 2.1 only when
-	 * the &lt;Product&gt; record describes a package of electronic content which is available in multiple
-	 * &#8216;renderings&#8217; (coded 000 in &lt;EpubTypeCode&gt;): NOT USED in ONIX 3.0
+	 * &lt;Product&gt; is an epublication 'rendered' as &lt;RelatedProduct&gt;: use in ONIX 2.1 only when the
+	 * &lt;Product&gt; record describes a package of electronic content which is available in multiple 'renderings'
+	 * (coded 000 in &lt;EpubTypeCode&gt;): NOT USED in ONIX 3.0
 	 */
 	Epublication_is_distributed_as("14", "Epublication is distributed as"), //
 
 	/**
-	 * &lt;Product&gt; is a &#8216;rendering&#8217; of an epublication &lt;RelatedProduct&gt;: use in ONIX 2.1 only when
-	 * the &lt;Product&gt; record describes a specific rendering of an epublication content package, to identify the
+	 * &lt;Product&gt; is a 'rendering' of an epublication &lt;RelatedProduct&gt;: use in ONIX 2.1 only when the
+	 * &lt;Product&gt; record describes a specific rendering of an epublication content package, to identify the
 	 * package: NOT USED in ONIX 3.0
 	 */
 	Epublication_is_a_rendering_of("15", "Epublication is a rendering of"), //
@@ -135,8 +135,8 @@ public enum ProductRelations
 
 	/**
 	 * &lt;Product&gt; is a special edition of &lt;RelatedProduct&gt;. Used for a special edition (German:
-	 * Sonderausgabe) with different cover, binding etc &#8211; more than &#8216;alternative format&#8217; &#8211; which
-	 * may be available in limited quantity and for a limited time
+	 * Sonderausgabe) with different cover, binding etc - more than 'alternative format' - which may be available in
+	 * limited quantity and for a limited time
 	 */
 	Is_special_edition_of("18", "Is special edition of"), //
 
@@ -146,9 +146,9 @@ public enum ProductRelations
 	Has_special_edition("19", "Has special edition"), //
 
 	/**
-	 * &lt;Product&gt; is a prebound edition of &lt;RelatedProduct&gt; (in the US, a prebound edition is &#8216;a book
-	 * that was previously bound and has been rebound with a library quality hardcover binding. In almost all commercial
-	 * cases, the book in question began as a paperback.&#8217;)
+	 * &lt;Product&gt; is a prebound edition of &lt;RelatedProduct&gt; (in the US, a prebound edition is 'a book that
+	 * was previously bound and has been rebound with a library quality hardcover binding. In almost all commercial
+	 * cases, the book in question began as a paperback.')
 	 */
 	Is_prebound_edition_of("20", "Is prebound edition of"), //
 
@@ -163,8 +163,8 @@ public enum ProductRelations
 	Product_by_same_author("22", "Product by same author"), //
 
 	/**
-	 * &lt;RelatedProduct&gt; is another product that is suggested as similar to &lt;Product&gt; (&#8216;if you liked
-	 * &lt;Product&gt;, you may also like &lt;RelatedProduct&gt;&#8217;)
+	 * &lt;RelatedProduct&gt; is another product that is suggested as similar to &lt;Product&gt; ('if you liked
+	 * &lt;Product&gt;, you may also like &lt;RelatedProduct&gt;')
 	 */
 	Similar_product("23", "Similar product"), //
 
@@ -190,10 +190,10 @@ public enum ProductRelations
 	Electronic_version_available_as("27", "Electronic version available as"), //
 
 	/**
-	 * &lt;RelatedProduct&gt; is an &#8216;enhanced&#8217; version of &lt;Product&gt;, with additional content.
-	 * Typically used to link an enhanced e-book to its original &#8216;unenhanced&#8217; equivalent, but not
-	 * specifically limited to linking e-books &#8211; for example, may be used to link illustrated and non-illustrated
-	 * print books. &lt;Product&gt; and &lt;RelatedProduct&gt; should share the same &lt;ProductForm&gt;
+	 * &lt;RelatedProduct&gt; is an 'enhanced' version of &lt;Product&gt;, with additional content. Typically used to
+	 * link an enhanced e-book to its original 'unenhanced' equivalent, but not specifically limited to linking e-books
+	 * - for example, may be used to link illustrated and non-illustrated print books. &lt;Product&gt; and
+	 * &lt;RelatedProduct&gt; should share the same &lt;ProductForm&gt;
 	 */
 	Enhanced_version_available_as("28", "Enhanced version available as"), //
 
@@ -219,7 +219,7 @@ public enum ProductRelations
 	/**
 	 * &lt;RelatedProduct&gt; is an equivalent product, often intended for another (geographical) market. Indicates an
 	 * alternative that carries essentially the same content, though slightly adapted for local circumstances (as
-	 * opposed to a translation &#8211; use code 11)
+	 * opposed to a translation - use code 11)
 	 */
 	Has_equivalent_intended_for_a_different_market("32", "Has equivalent intended for a different market"), //
 

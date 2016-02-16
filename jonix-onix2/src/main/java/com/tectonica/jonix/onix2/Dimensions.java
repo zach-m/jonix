@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Dimensions statement</h1>
+ * <p>
+ * Where a legacy system has no structured data for product dimensions, but has a free text statement, this field allows
+ * such a statement to be sent. However, this practise is deprecated: structured information is always greatly to be
+ * preferred. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Dimensions&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;c258&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class Dimensions implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Dimensions";
 	public static final String shortname = "c258";
 
@@ -65,6 +92,8 @@ public class Dimensions implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

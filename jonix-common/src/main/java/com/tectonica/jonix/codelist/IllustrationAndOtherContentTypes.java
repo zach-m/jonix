@@ -105,17 +105,17 @@ public enum IllustrationAndOtherContentTypes
 	Graphs("21", "Graphs"), //
 
 	/**
-	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
+	 * 'Plates' means illustrations that are on separate pages bound into the body of a book
 	 */
 	Plates_unspecified("22", "Plates, unspecified"), //
 
 	/**
-	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
+	 * 'Plates' means illustrations that are on separate pages bound into the body of a book
 	 */
 	Plates_black_and_white("23", "Plates, black and white"), //
 
 	/**
-	 * &#8216;Plates&#8217; means illustrations that are on separate pages bound into the body of a book
+	 * 'Plates' means illustrations that are on separate pages bound into the body of a book
 	 */
 	Plates_color("24", "Plates, color"), //
 

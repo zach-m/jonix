@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Corporate name</h1>
+ * <p>
+ * The name of a corporate body, used here for a corporate copyright owner. Optional and non-repeating. Each occurrence
+ * of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an identifier, or both a
+ * name and an identifier.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CorporateName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b047&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CorporateName&gt;Johnson &amp;amp; Johnson Inc&lt;/CorporateName&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CorporateName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CorporateName";
 	public static final String shortname = "b047";
 
@@ -65,6 +92,8 @@ public class CorporateName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

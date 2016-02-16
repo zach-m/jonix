@@ -30,9 +30,47 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publishing date role code</h1>
+ * <p>
+ * An ONIX code indicating the significance of the date, <i>eg</i> pubdate, announcement date, latest reprint date.
+ * Mandatory in each occurrence of the &lt;PublishingDate&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 163</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublishingDateRole&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x448&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x448&gt;01&lt;/x448&gt; (Publication date)</td>
+ * </tr>
+ * <tr>
+ * <td>Notes</td>
+ * <td>Note a date such as a publication date should be interpreted as the 'global' publication date.</td>
+ * </tr>
+ * </table>
+ */
 public class PublishingDateRole implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublishingDateRole";
 	public static final String shortname = "x448";
 

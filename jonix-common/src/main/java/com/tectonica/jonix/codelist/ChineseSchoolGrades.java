@@ -44,7 +44,7 @@ public enum ChineseSchoolGrades
 	Preschool("P", "Preschool"), //
 
 	/**
-	 * Typical age 3&#8211;5
+	 * Typical age 3-5
 	 */
 	Kindergarten("K", "Kindergarten"), //
 

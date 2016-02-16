@@ -52,9 +52,9 @@ public enum EuToySafetyDirectiveHazardWarnings
 	Carries_minimum_age_warning("02", "Carries minimum age warning"), //
 
 	/**
-	 * Carries logo, and must be accompanied by the default warning &#8216;Not suitable for children under 36
-	 * months&#8217; (or its approved equivalent in a language other than English, as appropriate), unless specific
-	 * wording is provided in &lt;ProductFormFeatureDescription&gt;. If specific alternative wording is carried in
+	 * Carries logo, and must be accompanied by the default warning 'Not suitable for children under 36 months' (or its
+	 * approved equivalent in a language other than English, as appropriate), unless specific wording is provided in
+	 * &lt;ProductFormFeatureDescription&gt;. If specific alternative wording is carried in
 	 * &lt;ProductFormFeatureDescription&gt;, this must be used in place of the default text
 	 */
 	Carries_EU_Toy_Safety_Directive_Unsuitable_for_children_ages_0_3_warning_logo("03",
@@ -68,7 +68,7 @@ public enum EuToySafetyDirectiveHazardWarnings
 	/**
 	 * Exact text (not in itself a warning) must be included in &lt;ProductFormFeatureDescription&gt;. May be used
 	 * either without any warning, or as text additional to a warning. Note that if no warnings apply, code 00 can
-	 * provide positive indication of this. Example use: &#8216;Suitable for all ages&#8217;
+	 * provide positive indication of this. Example use: 'Suitable for all ages'
 	 */
 	Carries_other_text_associated_with_toy_safety("05", "Carries other text associated with toy safety"), //
 

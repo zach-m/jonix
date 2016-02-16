@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Extent value</h1>
+ * <p>
+ * The numeric value of the extent specified in &lt;ExtentType&gt;. Mandatory in each occurrence of the &lt;Extent&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Numeric, with decimal point where required, as specified in field PR.12.4</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ExtentValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b219&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b219&gt;2.5&lt;/b219&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ExtentValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ExtentValue";
 	public static final String shortname = "b219";
 
@@ -65,6 +91,8 @@ public class ExtentValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Numeric, with decimal point where required, as specified in field PR.12.4
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

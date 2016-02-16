@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Author of other text</h1>
+ * <p>
+ * The name of the author of text sent in the &lt;Text&gt; element, or referenced in the &lt;TextLink&gt; element,
+ * <em>eg</em> if it is a review or promotional quote.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextAuthor&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;d107&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TextAuthor&gt;Martin Amis&lt;/TextAuthor&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TextAuthor implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextAuthor";
 	public static final String shortname = "d107";
 
@@ -65,6 +91,8 @@ public class TextAuthor implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

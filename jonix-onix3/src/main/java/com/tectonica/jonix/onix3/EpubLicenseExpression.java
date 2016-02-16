@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Digital product license expression</h1>
+ * <p>
+ * An optional and repeatable composite that carries details of a link to an expression of the license terms, which may
+ * be in human-readable or machine-readable form. Repeatable when there is more than one expression of the license.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubLicenseExpression&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;epublicenseexpression&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class EpubLicenseExpression implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubLicenseExpression";
 	public static final String shortname = "epublicenseexpression";
 

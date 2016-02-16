@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Date format</h1>
+ * <p>
+ * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and non-repeating. When
+ * omitted, the format is assumed to be YYYYMMDD.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 55</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DateFormat&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j260&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;DateFormat&gt;05&lt;/DateFormat&gt;&#160;&#160;&#160;&#160;YYYY</td>
+ * </tr>
+ * </table>
+ */
 public class DateFormat implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DateFormat";
 	public static final String shortname = "j260";
 

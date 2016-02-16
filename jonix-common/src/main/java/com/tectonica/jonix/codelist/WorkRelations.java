@@ -42,8 +42,8 @@ public enum WorkRelations
 
 	/**
 	 * Product X is or includes a manifestation of a work derived (directly) from related work Y in one or more of the
-	 * ways specified in ISTC rules. This relation type is intended to enable products with a common
-	 * &#8216;parent&#8217; work to be linked without specifying the precise nature of their derivation
+	 * ways specified in ISTC rules. This relation type is intended to enable products with a common 'parent' work to be
+	 * linked without specifying the precise nature of their derivation
 	 */
 	Derived_from("02", "Derived from"), //
 

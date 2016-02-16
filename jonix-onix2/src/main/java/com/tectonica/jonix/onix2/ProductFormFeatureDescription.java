@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form feature description</h1>
+ * <p>
+ * If the code in &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may
+ * be added. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormFeatureDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b336&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b336&gt;11pt Helvetia&lt;/b336&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormFeatureDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormFeatureDescription";
 	public static final String shortname = "b336";
 
@@ -65,6 +91,8 @@ public class ProductFormFeatureDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

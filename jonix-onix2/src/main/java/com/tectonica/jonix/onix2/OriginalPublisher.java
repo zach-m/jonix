@@ -33,9 +33,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publisher of original-language version</h1>
+ * <p>
+ * The name of the publisher of the original-language version of a translated work. Except where they are essential to
+ * the recognized form of the name, it is recommended that suffixes denoting incorporation (“Co”, “Inc”, “Ltd”, “SA”,
+ * “GmbH”) should be omitted. Optional and non-repeating.
+ * </p>
+ * <p>
+ * <strong>The &lt;Publisher&gt; composite on preceding pages provides a more general method of handling publisher
+ * identities, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OriginalPublisher&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b240&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;OriginalPublisher&gt;Springer Verlag&lt;/OriginalPublisher&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OriginalPublisher implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OriginalPublisher";
 	public static final String shortname = "b240";
 
@@ -65,6 +96,8 @@ public class OriginalPublisher implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

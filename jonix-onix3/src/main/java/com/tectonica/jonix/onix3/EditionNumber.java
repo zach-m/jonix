@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Edition number</h1>
+ * <p>
+ * The number of a numbered edition. Optional and non-repeating. Normally sent only for the second and subsequent
+ * editions of a work, but by agreement between parties to an ONIX exchange a first edition may be explicitly numbered.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EditionNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b057&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b057&gt;3&lt;/b057&gt; (Third edition)</td>
+ * </tr>
+ * </table>
+ */
 public class EditionNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EditionNumber";
 	public static final String shortname = "b057";
 
@@ -53,6 +83,8 @@ public class EditionNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */
 	public Integer value;

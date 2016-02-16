@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Currency zone</h1>
+ * <p>
+ * An ONIX code identifying a currency zone in which the price stated in an occurrence of the &lt;Price&gt; composite is
+ * applicable. Optional and non-repeating. Deprecated – use Country or Region codes instead.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 172</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CurrencyZone&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x475&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x475&gt;EUR&lt;/x475&gt; (Eurozone)</td>
+ * </tr>
+ * </table>
+ */
 public class CurrencyZone implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CurrencyZone";
 	public static final String shortname = "x475";
 

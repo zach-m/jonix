@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Returns conditions code</h1>
+ * <p>
+ * A returns conditions code from the scheme specified in &lt;ReturnsCodeType&gt;. Optional and non-repeating, but this
+ * field must be present if &lt;ReturnsCodeType&gt; is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use, see List 66
+ * </td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReturnsCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j269&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class ReturnsCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReturnsCode";
 	public static final String shortname = "j269";
 
@@ -65,6 +92,9 @@ public class ReturnsCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use, see
+	 * List 66
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

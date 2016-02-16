@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Audience code type</h1>
+ * <p>
+ * An ONIX code which identifies the scheme from which the code in &lt;AudienceCodeValue&gt; is taken. Mandatory in each
+ * occurrence of the &lt;Audience&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 29</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AudienceCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b204&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b204&gt;02&lt;/b204&gt;&#160;&#160;&#160;&#160;Proprietary</td>
+ * </tr>
+ * </table>
+ */
 public class AudienceCodeType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AudienceCodeType";
 	public static final String shortname = "b204";
 

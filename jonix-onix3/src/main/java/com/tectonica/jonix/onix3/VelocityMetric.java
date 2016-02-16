@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.Velocitys;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Velocity metric</h1>
+ * <p>
+ * An ONIX code that specifies how the rate of stock depletion is measured. Mandatory within the &lt;Velocity&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 216</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;VelocityMetric&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x504&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x504&gt;02&lt;/x504&gt; (Mean daily sale)</td>
+ * </tr>
+ * </table>
+ */
 public class VelocityMetric implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "VelocityMetric";
 	public static final String shortname = "x504";
 

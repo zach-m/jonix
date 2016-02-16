@@ -45,10 +45,9 @@ public enum UnpricedItemTypes
 	Not_sold_separately("03", "Not sold separately"), //
 
 	/**
-	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered &#8216;in
-	 * person&#8217; from a sales representative; when an ONIX file is &#8216;broadcast&#8217; rather than sent
-	 * one-to-one to a single trading partner; or for digital products offered on subscription or with pricing which is
-	 * too complex to specify in ONIX
+	 * May be used for books that do not carry a recommended retail price; when goods can only be ordered 'in person'
+	 * from a sales representative; when an ONIX file is 'broadcast' rather than sent one-to-one to a single trading
+	 * partner; or for digital products offered on subscription or with pricing which is too complex to specify in ONIX
 	 */
 	Contact_supplier("04", "Contact supplier"), //
 

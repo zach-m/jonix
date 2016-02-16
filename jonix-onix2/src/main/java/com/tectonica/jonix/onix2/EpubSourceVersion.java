@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Epublication source file format version number</h1>
+ * <p>
+ * A version number which applies to an epublication source file format. Optional and non-repeating, and can occur only
+ * if the &lt;EpubSource&gt; field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 10 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubSourceVersion&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b279&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EpubSourceVersion&gt;2.1&lt;/EpubSourceVersion&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EpubSourceVersion implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubSourceVersion";
 	public static final String shortname = "b279";
 
@@ -65,6 +91,8 @@ public class EpubSourceVersion implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 10 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

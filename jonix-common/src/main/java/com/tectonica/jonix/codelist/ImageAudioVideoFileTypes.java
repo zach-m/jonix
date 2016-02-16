@@ -39,15 +39,15 @@ import java.util.Map;
 public enum ImageAudioVideoFileTypes
 {
 	/**
-	 * Link to a location where the whole product may be found &#8211; used for epublications
+	 * Link to a location where the whole product may be found - used for epublications
 	 */
 	Whole_product("01", "Whole product"), //
 
 	Application_software_demo("02", "Application: software demo"), //
 
 	/**
-	 * Includes cover, back cover, spine and &#8211; where appropriate &#8211; any flaps. Quality unspecified: if
-	 * sending both a standard quality and a high quality image, use 03 for standard quality and 05 for high quality
+	 * Includes cover, back cover, spine and - where appropriate - any flaps. Quality unspecified: if sending both a
+	 * standard quality and a high quality image, use 03 for standard quality and 05 for high quality
 	 */
 	Image_whole_cover("03", "Image: whole cover"), //
 
@@ -72,7 +72,7 @@ public enum ImageAudioVideoFileTypes
 	Image_contributor_s("08", "Image: contributor(s)"), //
 
 	/**
-	 * Use for an image, other than a logo, that is part of the &#8216;branding&#8217; of a series
+	 * Use for an image, other than a logo, that is part of the 'branding' of a series
 	 */
 	Image_for_series("10", "Image: for series"), //
 
@@ -148,7 +148,7 @@ public enum ImageAudioVideoFileTypes
 	Audio_other_commentary_discussion("47", "Audio: other commentary / discussion"), //
 
 	/**
-	 * Use for &#8216;look inside&#8217; facility or &#8216;widget&#8217;
+	 * Use for 'look inside' facility or 'widget'
 	 */
 	Application_sample_content("51", "Application: sample content"), //
 

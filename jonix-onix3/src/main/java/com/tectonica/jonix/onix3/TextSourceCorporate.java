@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Corporate source of text</h1>
+ * <p>
+ * The name of a company or corporate body responsible for the text sent in the &lt;Text&gt; element. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextSourceCorporate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b374&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TextSourceCorporate&gt;Random House Group&lt;/TextSourceCorporate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TextSourceCorporate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextSourceCorporate";
 	public static final String shortname = "b374";
 
@@ -56,6 +90,8 @@ public class TextSourceCorporate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

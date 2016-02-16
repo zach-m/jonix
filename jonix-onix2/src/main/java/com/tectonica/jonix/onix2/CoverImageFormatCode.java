@@ -34,9 +34,45 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Front cover image file format code</h1>
+ * <p>
+ * An ONIX code which specifies the image file format used for the front cover image. JPEG, GIF and TIF are supported.
+ * The data element group consisting of &lt;CoverImageFormatCode&gt;, &lt;CoverImageLinkTypeCode&gt;, and
+ * &lt;CoverImageLink&gt; is optional and non-repeating, but if any one of the three elements is present, all three must
+ * be present.
+ * </p>
+ * <p>
+ * <strong>The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images, and
+ * is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 36</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CoverImageFormatCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f111&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CoverImageFormatCode&gt;03&lt;/CoverImageFormatCode&gt;&#160;&#160;&#160;&#160;JPEG</td>
+ * </tr>
+ * </table>
+ */
 public class CoverImageFormatCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CoverImageFormatCode";
 	public static final String shortname = "f111";
 

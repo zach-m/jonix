@@ -30,9 +30,45 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Stock quantity code type name</h1>
+ * <p>
+ * A name that identifies a proprietary stock quantity coding scheme (<i>ie</i> a scheme which is not a standard and for
+ * which there is no individual ID type code). Must be used when, and only when the code in the
+ * &lt;StockQuantityCodeType&gt; element indicates a proprietary scheme, <i>eg</i> a wholesaler’s own code. Optional,
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;StockQuantityCodeTypeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j296&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j296&gt;IngramSQ&lt;/j296&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class StockQuantityCodeTypeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "StockQuantityCodeTypeName";
 	public static final String shortname = "j296";
 
@@ -56,6 +92,8 @@ public class StockQuantityCodeTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

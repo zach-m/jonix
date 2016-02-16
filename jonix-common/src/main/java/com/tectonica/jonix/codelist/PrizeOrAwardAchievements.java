@@ -44,21 +44,20 @@ public enum PrizeOrAwardAchievements
 
 	/**
 	 * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically
-	 * as winner or runner-up. Possible terminology used by a particular prize includes &#8216;specially
-	 * commended&#8217; or &#8216;honored&#8217;
+	 * as winner or runner-up. Possible terminology used by a particular prize includes 'specially commended' or
+	 * 'honored'
 	 */
 	Commended("03", "Commended"), //
 
 	/**
-	 * Title named by the judging process to be one of the final list of candidates, such as a &#8216;short-list&#8217;
-	 * from which the winner is selected, or a title named as &#8216;finalist&#8217;
+	 * Title named by the judging process to be one of the final list of candidates, such as a 'short-list' from which
+	 * the winner is selected, or a title named as 'finalist'
 	 */
 	Short_listed("04", "Short-listed"), //
 
 	/**
-	 * Title named by the judging process to be one of the preliminary list of candidates, such as a
-	 * &#8216;long-list&#8217; from which first a shorter list or set of finalists is selected, and then the winner is
-	 * announced
+	 * Title named by the judging process to be one of the preliminary list of candidates, such as a 'long-list' from
+	 * which first a shorter list or set of finalists is selected, and then the winner is announced
 	 */
 	Long_listed("05", "Long-listed"), //
 
@@ -69,7 +68,7 @@ public enum PrizeOrAwardAchievements
 
 	/**
 	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honor
-	 * for which no &#8216;short-list&#8217; or &#8216;long list&#8217; exists
+	 * for which no 'short-list' or 'long list' exists
 	 */
 	Nominated("07", "Nominated");
 

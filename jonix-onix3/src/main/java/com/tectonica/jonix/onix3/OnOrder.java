@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Quantity in shipment</h1>
+ * <p>
+ * The quantity of stock on order in a particular shipment. Mandatory in each occurrence of the &lt;OnOrderDetail&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 7 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OnOrder&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j351&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j351&gt;600&lt;/j351&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OnOrder implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OnOrder";
 	public static final String shortname = "j351";
 
@@ -53,6 +83,8 @@ public class OnOrder implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 * <p>
 	 * (type: dt.PositiveInteger)
 	 */
 	public Integer value;

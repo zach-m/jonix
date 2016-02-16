@@ -40,8 +40,8 @@ public enum Proximitys
 	Not_more_than("02", "Not more than"), //
 
 	/**
-	 * The supplier&#8217;s true figure, or at least a best estimate expected to be within 10% of the true figure (ie a
-	 * quoted figure of 100 could in fact be anything between 91 and 111)
+	 * The supplier's true figure, or at least a best estimate expected to be within 10% of the true figure (ie a quoted
+	 * figure of 100 could in fact be anything between 91 and 111)
 	 */
 	Exactly("03", "Exactly"), //
 

@@ -176,12 +176,12 @@ public enum SupportingResourceFileFormats
 	Amazon_Kindle("E116", "Amazon Kindle"), //
 
 	/**
-	 * Founder Apabi&#8217;s proprietary basic e-book format
+	 * Founder Apabi's proprietary basic e-book format
 	 */
 	CEB("E139", "CEB"), //
 
 	/**
-	 * Founder Apabi&#8217;s proprietary XML e-book format
+	 * Founder Apabi's proprietary XML e-book format
 	 */
 	CEBX("E140", "CEBX");
 

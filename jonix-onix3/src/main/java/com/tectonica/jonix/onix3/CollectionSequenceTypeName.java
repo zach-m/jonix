@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Collection sequence type name</h1>
+ * <p>
+ * A name which describes a proprietary order used for the product’s sequence number within the collection. Must be
+ * included when, and only when, the code in the &lt;CollectionSequenceType&gt; field indicates a proprietary scheme.
+ * Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CollectionSequenceTypeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x480&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x480&gt;Order of TV series transmission&lt;/x480&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CollectionSequenceTypeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CollectionSequenceTypeName";
 	public static final String shortname = "x480";
 
@@ -56,6 +91,8 @@ public class CollectionSequenceTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

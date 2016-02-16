@@ -31,9 +31,38 @@ import com.tectonica.jonix.struct.JonixPriceIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price identifier composite</h1>
+ * <p>
+ * An optional and repeatable group of elements that provide an identifier for a particular price. For products that may
+ * be available at potentially many different prices, to different groups of purchasers or under different terms and
+ * conditions, this identifier may then be used in subsequent revenue reporting to specify which price the product was
+ * traded at.
+ * </p>
+ * <p>
+ * Note that the price identifier will always be proprietary and must be unique across multiple pricing options for one
+ * product, but need not be unique across all products, nor need it be the same across all products offered at the same
+ * price point or under the same terms.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;priceidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class PriceIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceIdentifier";
 	public static final String shortname = "priceidentifier";
 

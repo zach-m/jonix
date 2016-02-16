@@ -263,7 +263,7 @@ public enum Regions
 	UK_airports("GB-APS", "UK airports"), //
 
 	/**
-	 * DEPRECATED, replaced by country codes GG &#8211; Guernsey, and JE &#8211; Jersey
+	 * DEPRECATED, replaced by country codes GG - Guernsey, and JE - Jersey
 	 */
 	Channel_Islands("GB-CHA", "Channel Islands"), //
 
@@ -275,7 +275,7 @@ public enum Regions
 	England_Wales_Scotland("GB-EWS", "England, Wales, Scotland"), //
 
 	/**
-	 * DEPRECATED, replaced by country code IM &#8211; Isle of Man
+	 * DEPRECATED, replaced by country code IM - Isle of Man
 	 */
 	Isle_of_Man("GB-IOM", "Isle of Man"), //
 
@@ -790,11 +790,11 @@ public enum Regions
 
 	/**
 	 * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
-	 * writing, this is a synonym for &#8216;AT BE CY EE FI FR DE ES GR IE IT LT LU LV MT NL PT SI SK&#8217; (the
-	 * official Eurozone 19), plus &#8216;AD MC SM VA ME&#8217; and Kosovo (other Euro-using countries in continental
-	 * Europe). Note some other territories using the Euro, but outside continental Europe are excluded from this list,
-	 * and may need to be specified separately. ONLY valid in ONIX 3, and ONLY within P.26. Use of an explicit list of
-	 * countries instead of ECZ is strongly encouraged
+	 * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR IE IT LT LU LV MT NL PT SI SK' (the official Eurozone
+	 * 19), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some other
+	 * territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
+	 * specified separately. ONLY valid in ONIX 3, and ONLY within P.26. Use of an explicit list of countries instead of
+	 * ECZ is strongly encouraged
 	 */
 	Eurozone("ECZ", "Eurozone"), //
 

@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form description (product part)</h1>
+ * <p>
+ * If product form codes do not adequately describe the contained item, a short text description may be added. Optional
+ * and repeatable. The <i>language</i> attribute is optional for a single instance of &lt;ProductFormDescription&gt;,
+ * but must be included in each instance if &lt;ProductFormDescription&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b014&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b014&gt;Birdsong recordings illustrating the accompanying text&lt;/b014&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormDescription";
 	public static final String shortname = "b014";
 
@@ -56,6 +91,8 @@ public class ProductFormDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

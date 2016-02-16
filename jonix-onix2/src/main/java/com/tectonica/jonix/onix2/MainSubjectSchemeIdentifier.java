@@ -34,9 +34,45 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Main subject scheme identifier</h1>
+ * <p>
+ * An ONIX code which identifies a subject scheme which is designated for use in a &lt;MainSubject&gt; composite.
+ * Mandatory in each occurrence of the composite, and non-repeating.
+ * </p>
+ * <p>
+ * When the scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element
+ * to carry the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the
+ * text equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to
+ * carry the text of the subject heading.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 26</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MainSubjectSchemeIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b191&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b191&gt;25&lt;/b191&gt;&#160;&#160;&#160;&#160;Latin American Tabla de materias ISBN</td>
+ * </tr>
+ * </table>
+ */
 public class MainSubjectSchemeIdentifier implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MainSubjectSchemeIdentifier";
 	public static final String shortname = "b191";
 

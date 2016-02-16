@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Corporate source of other text</h1>
+ * <p>
+ * The name of a company or corporate body responsible for the text sent in the &lt;Text&gt; element, or referenced in
+ * the &lt;TextLink&gt; element, <em>eg</em> if it is part of a Reading Group Guide. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextSourceCorporate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b374&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b374&gt;Random House&lt;/b374&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TextSourceCorporate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextSourceCorporate";
 	public static final String shortname = "b374";
 
@@ -65,6 +91,8 @@ public class TextSourceCorporate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

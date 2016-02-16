@@ -30,9 +30,50 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>City or town of publication</h1>
+ * <p>
+ * The name of a city or town associated with the imprint or publisher. Optional, and repeatable if parallel names for a
+ * single location appear on the title page in multiple languages, or if the imprint carries two or more cities of
+ * publication.
+ * </p>
+ * <p>
+ * A place of publication is normally given in the form in which it appears on the title page. If the place name appears
+ * in more than one language, &lt;CityOfPublication&gt; may be repeated. The <i>language</i> attribute is optional with
+ * a single instance of &lt;CityOfPublication&gt;, but must be included in each instance if &lt;CityOfPublication&gt; is
+ * repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CityOfPublication&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b209&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;CityOfPublication&gt;New York&lt;/CityOfPublication&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CityOfPublication implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CityOfPublication";
 	public static final String shortname = "b209";
 
@@ -56,6 +97,8 @@ public class CityOfPublication implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

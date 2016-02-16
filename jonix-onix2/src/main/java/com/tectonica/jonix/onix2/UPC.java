@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>UPC</h1>
+ * <p>
+ * Universal Product Code, the cross-industry product numbering and bar-coding system administered in the USA by the
+ * Uniform Code Council. Optional and non-repeating. In the US book trade, required for mass-market editions sold in
+ * supermarkets and other non-book-trade outlets. <strong>The &lt;ProductIdentifier&gt; composite on a later page
+ * provides a more general method of handling this and other product codes, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
+ * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;UPC&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b006&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b006&gt;071001005998&lt;/b006&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class UPC implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "UPC";
 	public static final String shortname = "b006";
 
@@ -65,6 +94,9 @@ public class UPC implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
+	 * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

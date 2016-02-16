@@ -41,7 +41,7 @@ public enum ProductFormsList150
 	Undefined("00", "Undefined"), //
 
 	/**
-	 * Audio recording &#8211; detail unspecified
+	 * Audio recording - detail unspecified
 	 */
 	Audio("AA", "Audio"), //
 
@@ -51,8 +51,8 @@ public enum ProductFormsList150
 	Audio_cassette("AB", "Audio cassette"), //
 
 	/**
-	 * Audio compact disc, in any recording format: use for &#8216;red book&#8217; (conventional audio CD) and SACD, and
-	 * use coding in Product Form Detail to specify the format, if required
+	 * Audio compact disc, in any recording format: use for 'red book' (conventional audio CD) and SACD, and use coding
+	 * in Product Form Detail to specify the format, if required
 	 */
 	CD_Audio("AC", "CD-Audio"), //
 
@@ -77,8 +77,8 @@ public enum ProductFormsList150
 	MiniDisc("AG", "MiniDisc"), //
 
 	/**
-	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for &#8216;blue book&#8217;
-	 * and &#8216;yellow/red book&#8217; two-session discs
+	 * Audio compact disc with part CD-ROM content, also termed CD-Plus or Enhanced-CD: use for 'blue book' and
+	 * 'yellow/red book' two-session discs
 	 */
 	CD_Extra("AH", "CD-Extra"), //
 
@@ -106,7 +106,7 @@ public enum ProductFormsList150
 	Other_audio_format("AZ", "Other audio format"), //
 
 	/**
-	 * Book &#8211; detail unspecified
+	 * Book - detail unspecified
 	 */
 	Book("BA", "Book"), //
 
@@ -131,32 +131,32 @@ public enum ProductFormsList150
 	Spiral_bound("BE", "Spiral bound"), //
 
 	/**
-	 * Pamphlet or brochure, stapled; German &#8216;geheftet&#8217;. Includes low-extent wire-stitched books bound
-	 * without a distinct spine (eg many comic books)
+	 * Pamphlet or brochure, stapled; German 'geheftet'. Includes low-extent wire-stitched books bound without a
+	 * distinct spine (eg many comic books)
 	 */
 	Pamphlet("BF", "Pamphlet"), //
 
 	Leather_fine_binding("BG", "Leather / fine binding"), //
 
 	/**
-	 * Child&#8217;s book with all pages printed on board
+	 * Child's book with all pages printed on board
 	 */
 	Board_book("BH", "Board book"), //
 
 	/**
-	 * Child&#8217;s book with all pages printed on textile
+	 * Child's book with all pages printed on textile
 	 */
 	Rag_book("BI", "Rag book"), //
 
 	/**
-	 * Child&#8217;s book printed on waterproof material
+	 * Child's book printed on waterproof material
 	 */
 	Bath_book("BJ", "Bath book"), //
 
 	/**
 	 * A book whose novelty consists wholly or partly in a format which cannot be described by any other available code
-	 * &#8211; a &#8216;conventional&#8217; format code is always to be preferred; one or more Product Form Detail
-	 * codes, eg from the B2nn group, should be used whenever possible to provide additional description
+	 * - a 'conventional' format code is always to be preferred; one or more Product Form Detail codes, eg from the B2nn
+	 * group, should be used whenever possible to provide additional description
 	 */
 	Novelty_book("BK", "Novelty book"), //
 
@@ -177,13 +177,12 @@ public enum ProductFormsList150
 	Part_work_fasc_culo("BN", "Part-work (fascículo)"), //
 
 	/**
-	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German
-	 * &#8216;Leporello&#8217;
+	 * Concertina-folded book or chart, designed to fold to pocket or regular page size: use for German 'Leporello'
 	 */
 	Fold_out_book_or_chart("BO", "Fold-out book or chart"), //
 
 	/**
-	 * A children&#8217;s book whose cover and pages are made of foam
+	 * A children's book whose cover and pages are made of foam
 	 */
 	Foam_book("BP", "Foam book"), //
 
@@ -193,7 +192,7 @@ public enum ProductFormsList150
 	Other_book_format("BZ", "Other book format"), //
 
 	/**
-	 * Sheet map &#8211; detail unspecified
+	 * Sheet map - detail unspecified
 	 */
 	Sheet_map("CA", "Sheet map"), //
 
@@ -202,7 +201,7 @@ public enum ProductFormsList150
 	Sheet_map_flat("CC", "Sheet map, flat"), //
 
 	/**
-	 * See Code List 80 for &#8216;rolled in tube&#8217;
+	 * See Code List 80 for 'rolled in tube'
 	 */
 	Sheet_map_rolled("CD", "Sheet map, rolled"), //
 
@@ -224,14 +223,14 @@ public enum ProductFormsList150
 	CD_ROM("DB", "CD-ROM"), //
 
 	/**
-	 * CD interactive: use for &#8216;green book&#8217; discs
+	 * CD interactive: use for 'green book' discs
 	 */
 	CD_I("DC", "CD-I"), //
 
 	Game_cartridge("DE", "Game cartridge"), //
 
 	/**
-	 * AKA &#8216;floppy disc&#8217;
+	 * AKA 'floppy disc'
 	 */
 	Diskette("DF", "Diskette"), //
 
@@ -276,7 +275,7 @@ public enum ProductFormsList150
 	Digital_download("ED", "Digital download"), //
 
 	/**
-	 * Film or transparency &#8211; detail unspecified
+	 * Film or transparency - detail unspecified
 	 */
 	Film_or_transparency("FA", "Film or transparency"), //
 
@@ -308,8 +307,8 @@ public enum ProductFormsList150
 	Digital_product_license("LA", "Digital product license"), //
 
 	/**
-	 * Digital product license delivered through the retail supply chain as a physical &#8216;key&#8217;, typically a
-	 * card or booklet containing a code enabling the purchaser to download the associated product
+	 * Digital product license delivered through the retail supply chain as a physical 'key', typically a card or
+	 * booklet containing a code enabling the purchaser to download the associated product
 	 */
 	Digital_product_license_key("LB", "Digital product license key"), //
 
@@ -320,7 +319,7 @@ public enum ProductFormsList150
 	Digital_product_license_code("LC", "Digital product license code"), //
 
 	/**
-	 * Microform &#8211; detail unspecified
+	 * Microform - detail unspecified
 	 */
 	Microform("MA", "Microform"), //
 
@@ -337,7 +336,7 @@ public enum ProductFormsList150
 	Other_microform("MZ", "Other microform"), //
 
 	/**
-	 * Miscellaneous printed material &#8211; detail unspecified
+	 * Miscellaneous printed material - detail unspecified
 	 */
 	Miscellaneous_print("PA", "Miscellaneous print"), //
 
@@ -364,8 +363,8 @@ public enum ProductFormsList150
 	Diary("PF", "Diary"), //
 
 	/**
-	 * Narrow strip-shaped printed sheet used mostly for education or children&#8217;s products (eg depicting alphabet,
-	 * number line, procession of illustrated characters etc). Usually intended for horizontal display
+	 * Narrow strip-shaped printed sheet used mostly for education or children's products (eg depicting alphabet, number
+	 * line, procession of illustrated characters etc). Usually intended for horizontal display
 	 */
 	Frieze("PG", "Frieze"), //
 
@@ -379,20 +378,19 @@ public enum ProductFormsList150
 	Postcard_book_or_pack("PJ", "Postcard book or pack"), //
 
 	/**
-	 * Poster for retail sale &#8211; see also XF
+	 * Poster for retail sale - see also XF
 	 */
 	Poster("PK", "Poster"), //
 
 	/**
-	 * Record book (eg &#8216;birthday book&#8217;, &#8216;baby book&#8217;): binding unspecified; may use product form
-	 * detail codes P201 to P204 to specify binding
+	 * Record book (eg 'birthday book', 'baby book'): binding unspecified; may use product form detail codes P201 to
+	 * P204 to specify binding
 	 */
 	Record_book("PL", "Record book"), //
 
 	/**
-	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat
-	 * &#8216;wallet&#8217; as packaging (List 80), but if this is not possible the product as a whole may be coded as a
-	 * &#8216;wallet&#8217;
+	 * Wallet or folder (containing loose sheets etc): it is preferable to code the contents and treat 'wallet' as
+	 * packaging (List 80), but if this is not possible the product as a whole may be coded as a 'wallet'
 	 */
 	Wallet_or_folder("PM", "Wallet or folder"), //
 
@@ -408,8 +406,8 @@ public enum ProductFormsList150
 	Plate_l_mina("PQ", "Plate (lámina)"), //
 
 	/**
-	 * A book with all pages blank for the buyer&#8217;s own use; may use product form detail codes P201 to P204 to
-	 * specify binding
+	 * A book with all pages blank for the buyer's own use; may use product form detail codes P201 to P204 to specify
+	 * binding
 	 */
 	Notebook_blank_book("PR", "Notebook / blank book"), //
 
@@ -459,7 +457,7 @@ public enum ProductFormsList150
 	Multiple_item_retail_product_part_s("SF", "Multiple-item retail product, part(s) enclosed"), //
 
 	/**
-	 * Video &#8211; detail unspecified
+	 * Video - detail unspecified
 	 */
 	Video("VA", "Video"), //
 
@@ -538,7 +536,7 @@ public enum ProductFormsList150
 	Counterpack_filled("XE", "Counterpack – filled"), //
 
 	/**
-	 * Promotional poster for display, not for sale &#8211; see also PK
+	 * Promotional poster for display, not for sale - see also PK
 	 */
 	Poster_promotional("XF", "Poster, promotional"), //
 
@@ -578,7 +576,7 @@ public enum ProductFormsList150
 	Other_point_of_sale("XZ", "Other point of sale"), //
 
 	/**
-	 * General merchandise &#8211; unspecified
+	 * General merchandise - unspecified
 	 */
 	General_merchandise("ZA", "General merchandise"), //
 

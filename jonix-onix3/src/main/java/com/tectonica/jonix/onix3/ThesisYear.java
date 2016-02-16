@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Year of thesis</h1>
+ * <p>
+ * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
+ * &lt;ThesisType&gt; must also be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ThesisYear&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b370&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>dateformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ThesisYear&gt;2002&lt;/ThesisYear&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ThesisYear implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ThesisYear";
 	public static final String shortname = "b370";
 
@@ -56,6 +90,8 @@ public class ThesisYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

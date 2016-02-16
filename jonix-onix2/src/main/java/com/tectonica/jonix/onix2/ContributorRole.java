@@ -34,9 +34,43 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contributor role</h1>
+ * <p>
+ * An ONIX code indicating the role played by a person or corporate body in the creation of the product. Mandatory in
+ * each occurrence of a &lt;Contributor&gt; composite, and may be repeated if the same person or corporate body has more
+ * than one role in relation to the product. Note, however, that if the &lt;SequenceNumberWithinRole&gt; element is used
+ * to establish individual sequences of contributor names by role, the &lt;ContributorRole&gt; element must not be
+ * repeated. There must instead be separate occurrences of the &lt;Contributor&gt; composite if the same person has two
+ * or more roles.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, one letter and two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 17</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContributorRole&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b035&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ContributorRole&gt;A01&lt;/ContributorRole&gt;&#160;&#160;&#160;&#160;Author</td>
+ * </tr>
+ * </table>
+ */
 public class ContributorRole implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContributorRole";
 	public static final String shortname = "b035";
 

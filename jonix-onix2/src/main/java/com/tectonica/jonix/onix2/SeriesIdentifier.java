@@ -35,9 +35,28 @@ import com.tectonica.jonix.struct.JonixSeriesIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Series identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define an identifier of a series or subseries. The composite is
+ * optional, and may only repeat if two or more identifiers of different types are sent. It is not permissible to have
+ * two identifiers of the same type.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SeriesIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;seriesidentifier&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SeriesIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SeriesIdentifier";
 	public static final String shortname = "seriesidentifier";
 

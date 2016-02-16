@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>On sale date</h1>
+ * <p>
+ * The date when a new product can be placed on sale by retailers in the market served by the supplier. Optional and
+ * non-repeating. <strong>If the &lt;OnSaleDate&gt; element is used, it means that there is an embargo on sales to
+ * consumers before the stated date. Otherwise, sales to consumers are permitted as soon as stocks reach
+ * retailers.</strong> In the UK, publishers who are following the PA/BA Launch Dates Code of Practice should use this
+ * element for the Launch Date.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OnSaleDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j143&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;OnSaleDate&gt;20000616&lt;/OnSaleDate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OnSaleDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OnSaleDate";
 	public static final String shortname = "j143";
 
@@ -65,6 +94,8 @@ public class OnSaleDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

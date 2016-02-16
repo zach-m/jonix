@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.UnitOfPricings;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Unit of pricing</h1>
+ * <p>
+ * An ONIX code indicating the unit of product which is the basis for the price carried in an occurrence of the
+ * &lt;Price&gt; composite. Optional and non-repeating. Where the price applies to a copy of the whole product, this
+ * field is normally omitted.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 60</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PricePer&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j239&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PricePer&gt;01&lt;/PricePer&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PricePer implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PricePer";
 	public static final String shortname = "j239";
 

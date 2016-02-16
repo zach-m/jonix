@@ -36,9 +36,27 @@ import com.tectonica.jonix.struct.JonixOtherText;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Other text composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify, and either include or provide pointers to, text related
+ * to a content item. <strong>Please see Group&nbsp;PR.15 for details.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OtherText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;othertext&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OtherText implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OtherText";
 	public static final String shortname = "othertext";
 

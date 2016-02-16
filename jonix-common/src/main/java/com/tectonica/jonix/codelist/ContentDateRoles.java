@@ -79,7 +79,7 @@ public enum ContentDateRoles
 
 	/**
 	 * Date until which a supporting resource is available for download. Note that this date does not imply it must be
-	 * removed from display to the intended audience on this date &#8211; for this, use Until date (code 15)
+	 * removed from display to the intended audience on this date - for this, use Until date (code 15)
 	 */
 	Available_until("28", "Available until");
 

@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Name code type</h1>
+ * <p>
+ * An ONIX code which identifies the scheme from which the value in the &lt;NameCodeValue&gt; element is taken. Optional
+ * and non-repeating, but mandatory if the &lt;Publisher&gt; composite does not carry a &lt;PublisherName&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 44</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NameCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b241&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b241&gt;03&lt;/b241&gt;&#160;&#160;&#160;&#160;Deutsche Bibliothek publisher identifier</td>
+ * </tr>
+ * </table>
+ */
 public class NameCodeType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NameCodeType";
 	public static final String shortname = "b241";
 

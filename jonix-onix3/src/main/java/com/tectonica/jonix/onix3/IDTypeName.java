@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Identifier type name</h1>
+ * <p>
+ * A name which identifies a proprietary identifier scheme (<i>ie</i> a scheme which is not a standard and for which
+ * there is no individual ID type code). Must be included when, and only when, the code in the &lt;PriceIDType&gt;
+ * element indicates a proprietary scheme, <i>eg</i> a publisher’s own identifier scheme. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;IDTypeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b233&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;IDTypeName&gt;PRHG PUUID&lt;/IDTypeName&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class IDTypeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "IDTypeName";
 	public static final String shortname = "b233";
 
@@ -56,6 +91,8 @@ public class IDTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

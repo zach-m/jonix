@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Unpriced item type</h1>
+ * <p>
+ * An ONIX code which specifies a reason why a price amount is not sent. <strong>If code value 02 is used to send
+ * advance information without giving a price, the price must be confirmed as soon as possible.</strong> Optional and
+ * non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a price.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 57</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;UnpricedItemType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j192&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;&#160;&#160;&#160;&#160;Free of charge</td>
+ * </tr>
+ * </table>
+ */
 public class UnpricedItemType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "UnpricedItemType";
 	public static final String shortname = "j192";
 

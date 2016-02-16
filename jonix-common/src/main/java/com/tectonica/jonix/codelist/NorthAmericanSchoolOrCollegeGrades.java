@@ -89,22 +89,22 @@ public enum NorthAmericanSchoolOrCollegeGrades
 	Eighth_Grade("8", "Eighth Grade"), //
 
 	/**
-	 * High School Freshman &#8211; age typically 14 years
+	 * High School Freshman - age typically 14 years
 	 */
 	Ninth_Grade("9", "Ninth Grade"), //
 
 	/**
-	 * High School Sophomore &#8211; age typically 15 years
+	 * High School Sophomore - age typically 15 years
 	 */
 	Tenth_Grade("10", "Tenth Grade"), //
 
 	/**
-	 * High School Junior &#8211; age typically 16 years
+	 * High School Junior - age typically 16 years
 	 */
 	Eleventh_Grade("11", "Eleventh Grade"), //
 
 	/**
-	 * High School Senior &#8211; age typically 17 years
+	 * High School Senior - age typically 17 years
 	 */
 	Twelfth_Grade("12", "Twelfth Grade"), //
 

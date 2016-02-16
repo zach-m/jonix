@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Audience range precision (2)</h1>
+ * <p>
+ * An ONIX code specifying the “precision” of the value in &lt;AudienceRangeValue&gt; element which follows. Optional
+ * and non-repeating. This second occurrence of the two elements &lt;AudienceRangePrecision&gt; and
+ * &lt;AudienceRangeValue&gt; is required only when a “From … to …” range is specified.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 31 The only value which is valid in this element is 04 (&#8220;To&#8221;)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AudienceRangePrecision&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b075&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b075&gt;04&lt;/b075&gt;&#160;&#160;&#160;&#160;To</td>
+ * </tr>
+ * </table>
+ */
 public class AudienceRangePrecision implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AudienceRangePrecision";
 	public static final String shortname = "b075";
 

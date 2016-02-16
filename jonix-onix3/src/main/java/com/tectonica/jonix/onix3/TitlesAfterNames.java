@@ -31,9 +31,43 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person name part 8: titles after names</h1>
+ * <p>
+ * The eighth part of a structured name of a person who contributed to the creation of the product: titles following a
+ * person’s names, <i>eg</i> ‘Duke of Edinburgh’. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitlesAfterNames&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b043&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TitlesAfterNames&gt;Duke of Edinburgh&lt;/TitlesAfterNames&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TitlesAfterNames implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitlesAfterNames";
 	public static final String shortname = "b043";
 
@@ -61,6 +95,8 @@ public class TitlesAfterNames implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

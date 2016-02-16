@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Bible text organization</h1>
+ * <p>
+ * An ONIX code indicating the way in which the content of a Bible or selected Biblical text is organized, for example
+ * Chronological, Chain reference. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 86</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BibleTextOrganization&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b355&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b355&gt;CHA&lt;/b355&gt;&#160;&#160;&#160;&#160;Chain reference</td>
+ * </tr>
+ * </table>
+ */
 public class BibleTextOrganization implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BibleTextOrganization";
 	public static final String shortname = "b355";
 

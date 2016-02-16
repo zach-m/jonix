@@ -34,9 +34,42 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Front cover image file link type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of link which is given in &lt;CoverImageLink&gt;.
+ * </p>
+ * <p>
+ * The &lt;MediaFile&gt; composite on the next page provides a more general method of handling cover images, and is to
+ * be preferred.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 37</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CoverImageLinkTypeCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f112&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;f112&gt;05&lt;/f112&gt;&#160;&#160;&#160;&#160;FTP address</td>
+ * </tr>
+ * </table>
+ */
 public class CoverImageLinkTypeCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CoverImageLinkTypeCode";
 	public static final String shortname = "f112";
 

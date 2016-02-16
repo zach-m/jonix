@@ -29,9 +29,41 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>“No product” indicator</h1>
+ * <p>
+ * An empty element that provides a positive indication that a message does not carry any Product records. Intended to
+ * be used only in empty ‘delta’ update messages to provide confirmation that there have been no updates since the
+ * previous message. Optional and non-repeating, but must be used in an ONIX message that contains no &lt;Product&gt;
+ * composites.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NoProduct&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x507&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x507/&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NoProduct implements OnixFlag, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NoProduct";
 	public static final String shortname = "x507";
 

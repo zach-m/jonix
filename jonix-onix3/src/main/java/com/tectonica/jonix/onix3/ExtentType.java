@@ -30,9 +30,45 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Extent type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of extent carried in the composite, <i>eg</i> running time for an audio or
+ * video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating. From Issue 9 of the
+ * code lists, an extended set of values for &lt;ExtentType&gt; has been defined to allow more accurate description of
+ * pagination.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 23</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ExtentType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b218&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ExtentType&gt;09&lt;/ExtentType&gt; (Duration [running time])</td>
+ * </tr>
+ * </table>
+ */
 public class ExtentType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ExtentType";
 	public static final String shortname = "b218";
 

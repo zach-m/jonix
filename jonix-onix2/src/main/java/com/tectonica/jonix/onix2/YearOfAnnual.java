@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Year of annual</h1>
+ * <p>
+ * The nominal year of an annual publication. May be entered as either a single year YYYY or a span of two consecutive
+ * years YYYY-YYYY. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;YearOfAnnual&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b020&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;YearOfAnnual&gt;1999&lt;/YearOfAnnual&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class YearOfAnnual implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "YearOfAnnual";
 	public static final String shortname = "b020";
 
@@ -65,6 +91,8 @@ public class YearOfAnnual implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

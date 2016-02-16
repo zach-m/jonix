@@ -78,9 +78,10 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
 public class Product implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Product";
 	public static final String shortname = "product";
 

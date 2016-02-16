@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixEpubUsageLimit;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Usage limit composite (digital products)</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together specify a quantitative limit on a particular type of
+ * usage of a digital product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubUsageLimit&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;epubusagelimit&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class EpubUsageLimit implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubUsageLimit";
 	public static final String shortname = "epubusagelimit";
 

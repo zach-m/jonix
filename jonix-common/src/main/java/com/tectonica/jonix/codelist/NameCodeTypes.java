@@ -41,7 +41,7 @@ public enum NameCodeTypes
 	Proprietary("01", "Proprietary"), //
 
 	/**
-	 * DEPRECATED &#8211; use 01
+	 * DEPRECATED - use 01
 	 */
 	Proprietary_("02", "Proprietary"), //
 
@@ -60,12 +60,12 @@ public enum NameCodeTypes
 	GLN("06", "GLN"), //
 
 	/**
-	 * Book trade Standard Address Number &#8211; US, UK etc
+	 * Book trade Standard Address Number - US, UK etc
 	 */
 	SAN("07", "SAN"), //
 
 	/**
-	 * MARC code list for organizations &#8211; see http://www.loc.gov/marc/organizations/orgshome.html &lt;p&gt;NOTE:
+	 * MARC code list for organizations - see http://www.loc.gov/marc/organizations/orgshome.html &lt;p&gt;NOTE:
 	 * Introduced in Onix3
 	 */
 	MARC_organization_code("08", "MARC organization code"), //
@@ -91,8 +91,8 @@ public enum NameCodeTypes
 	ISNI("16", "ISNI"), //
 
 	/**
-	 * Personennamendatei &#8211; person name authority file used by Deutsche Nationalbibliothek and in other
-	 * German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
+	 * Personennamendatei - person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
+	 * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
 	 */
 	PND("17", "PND"), //
@@ -108,7 +108,7 @@ public enum NameCodeTypes
 	Japanese_Publisher_identifier("19", "Japanese Publisher identifier"), //
 
 	/**
-	 * Gemeinsame K&#246;rperschaftsdatei &#8211; Corporate Body Authority File in the German-speaking countries. See
+	 * Gemeinsame K&#246;rperschaftsdatei - Corporate Body Authority File in the German-speaking countries. See
 	 * http://www.d-nb.de/standardisierung/normdateien/gkd.htm (German) or
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/gkd.htm (English). DEPRECATED in favour of the GND
 	 */
@@ -125,10 +125,10 @@ public enum NameCodeTypes
 	GAPP_Publisher_Identifier("22", "GAPP Publisher Identifier"), //
 
 	/**
-	 * Identifier for a business organization for VAT purposes, eg within the EU&#8217;s VIES system. See
+	 * Identifier for a business organization for VAT purposes, eg within the EU's VIES system. See
 	 * http://ec.europa.eu/taxation_customs/vies/faqvies.do for EU VAT ID formats, which vary from country to country.
-	 * Generally these consist of a two-letter country code followed by the 8&#8211;12 digits of the national VAT ID.
-	 * Some countries include one or two letters within their VAT ID. See
+	 * Generally these consist of a two-letter country code followed by the 8-12 digits of the national VAT ID. Some
+	 * countries include one or two letters within their VAT ID. See
 	 * http://en.wikipedia.org/wiki/VAT_identification_number for non-EU countries that maintain similar identifiers.
 	 * Spaces, dashes etc should be omitted
 	 */
@@ -140,7 +140,7 @@ public enum NameCodeTypes
 	JP_Distribution_Identifier("24", "JP Distribution Identifier"), //
 
 	/**
-	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
+	 * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
 	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
 	 */
 	GND("25", "GND"), //
@@ -161,8 +161,8 @@ public enum NameCodeTypes
 	Identifiant_Editeur_Electre("28", "Identifiant Editeur Electre"), //
 
 	/**
-	 * DOI used in EIDR party registry, for example &#8216;10.5237/C9F6-F41F&#8217; (Sam Raimi). See http://eidr.org
-	 * &lt;p&gt;NOTE: Introduced in Onix3
+	 * DOI used in EIDR party registry, for example '10.5237/C9F6-F41F' (Sam Raimi). See http://eidr.org &lt;p&gt;NOTE:
+	 * Introduced in Onix3
 	 */
 	EIDR_Party_DOI("29", "EIDR Party DOI"), //
 
@@ -173,14 +173,14 @@ public enum NameCodeTypes
 
 	/**
 	 * Virtual Internet Authority File. &lt;IDValue&gt; should be a number. The URI form of the identifier can be
-	 * created by prefixing the number with &#8216;https://viaf.org/viaf/&#8217;. See https://viaf.org &lt;p&gt;NOTE:
-	 * Introduced in Onix3
+	 * created by prefixing the number with 'https://viaf.org/viaf/'. See https://viaf.org &lt;p&gt;NOTE: Introduced in
+	 * Onix3
 	 */
 	VIAF_ID("31", "VIAF ID"), //
 
 	/**
-	 * DOI used in CrossRef&#8217;s Fundref list of academic research funding bodies, for example
-	 * &#8216;10.13039/100004440&#8217; (Wellcome Trust). See http://www.crossref.org/fundref/fundref_registry.html
+	 * DOI used in CrossRef's Fundref list of academic research funding bodies, for example '10.13039/100004440'
+	 * (Wellcome Trust). See http://www.crossref.org/fundref/fundref_registry.html
 	 */
 	FundRef_DOI("32", "FundRef DOI");
 

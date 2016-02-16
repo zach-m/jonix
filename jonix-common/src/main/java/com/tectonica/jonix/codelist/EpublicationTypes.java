@@ -64,9 +64,9 @@ public enum EpublicationTypes
 	PDF_Merchant("003", "PDF-Merchant"), //
 
 	/**
-	 * An epublication delivered in an enhanced PDF format, using Adobe&#8217;s proprietary EBX DRM, capable of being
-	 * read in the Adobe Ebook Reader software, on any platform which can support this software, which was formerly
-	 * known as Glassbook
+	 * An epublication delivered in an enhanced PDF format, using Adobe's proprietary EBX DRM, capable of being read in
+	 * the Adobe Ebook Reader software, on any platform which can support this software, which was formerly known as
+	 * Glassbook
 	 */
 	Adobe_Ebook_Reader("004", "Adobe Ebook Reader"), //
 
@@ -109,14 +109,13 @@ public enum EpublicationTypes
 
 	/**
 	 * An epublication delivered in a proprietary format capable of being read in reading software which is specific to
-	 * the Softbook hardware platform. Also capable of being read on the Softbook&#8217;s successor, the Gemstar REB
-	 * 1200
+	 * the Softbook hardware platform. Also capable of being read on the Softbook's successor, the Gemstar REB 1200
 	 */
 	Softbook("011", "Softbook"), //
 
 	/**
 	 * An epublication delivered in a proprietary .RB format, capable of being read in reading software which is
-	 * specific to the RocketBook hardware platform. Also capable of being read on the RocketBook&#8217;s successor, the
+	 * specific to the RocketBook hardware platform. Also capable of being read on the RocketBook's successor, the
 	 * Gemstar REB 1100
 	 */
 	RocketBook("012", "RocketBook"), //
@@ -136,8 +135,8 @@ public enum EpublicationTypes
 	Gemstar_REB_1200("014", "Gemstar REB 1200"), //
 
 	/**
-	 * An epublication delivered in Franklin&#8217;s proprietary HTML-based format, capable of being read in reading
-	 * software which is specific to the Franklin eBookman platform
+	 * An epublication delivered in Franklin's proprietary HTML-based format, capable of being read in reading software
+	 * which is specific to the Franklin eBookman platform
 	 */
 	Franklin_eBookman("015", "Franklin eBookman"), //
 
@@ -180,15 +179,15 @@ public enum EpublicationTypes
 	/**
 	 * An epublication delivered in a proprietary format, capable of being read in the MobiPocket software on PalmOS,
 	 * WindowsCE /Pocket PC, Franklin eBookman, and EPOC32 handheld devices, available through the MobiPocket service.
-	 * Includes Amazon Kindle formats up to and including version 7 &#8211; but prefer code 031 for version 7, and
-	 * always use 031 for KF8
+	 * Includes Amazon Kindle formats up to and including version 7 - but prefer code 031 for version 7, and always use
+	 * 031 for KF8
 	 */
 	MobiPocket("022", "MobiPocket"), //
 
 	/**
 	 * An epublication delivered in the standard distribution format specified in the Open Ebook Publication Structure
 	 * (OEBPS) format and capable of being read in any OEBPS-compliant reading system. Includes EPUB format up to and
-	 * including version 2 &#8211; but prefer code 029 for EPUB 2, and always use 029 for EPUB 3
+	 * including version 2 - but prefer code 029 for EPUB 2, and always use 029 for EPUB 3
 	 */
 	Open_Ebook("023", "Open Ebook"), //
 
@@ -219,10 +218,10 @@ public enum EpublicationTypes
 
 	/**
 	 * An epublication delivered using the Open Publication Structure / OPS Container Format standard of the
-	 * International Digital Publishing Forum (IDPF). [This value was originally defined as &#8216;Adobe Digital
-	 * Editions&#8217;, which is not an epublication format but a reader which supports PDF or EPUB (IDPF) formats.
-	 * Since PDF is already covered by code 002, it was agreed, and announced to the ONIX listserv in September 2009,
-	 * that code 029 should be refined to represent EPUB format]
+	 * International Digital Publishing Forum (IDPF). [This value was originally defined as 'Adobe Digital Editions',
+	 * which is not an epublication format but a reader which supports PDF or EPUB (IDPF) formats. Since PDF is already
+	 * covered by code 002, it was agreed, and announced to the ONIX listserv in September 2009, that code 029 should be
+	 * refined to represent EPUB format]
 	 */
 	EPUB("029", "EPUB"), //
 
@@ -241,7 +240,7 @@ public enum EpublicationTypes
 
 	/**
 	 * An epublication in a proprietary format combining text and video content and available to be used online or as a
-	 * downloadable application for a mobile device &#8211; see www.vook.com
+	 * downloadable application for a mobile device - see www.vook.com
 	 */
 	Vook("033", "Vook"), //
 
@@ -299,7 +298,7 @@ public enum EpublicationTypes
 	XPS("043", "XPS"), //
 
 	/**
-	 * Apple&#8217;s iBook format (a proprietary extension of EPUB), can only be read on Apple iOS devices
+	 * Apple's iBook format (a proprietary extension of EPUB), can only be read on Apple iOS devices
 	 */
 	iBook("044", "iBook"), //
 

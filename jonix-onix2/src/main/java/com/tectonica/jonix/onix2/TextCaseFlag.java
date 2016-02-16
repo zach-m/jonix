@@ -33,9 +33,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Text case flag</h1>
+ * <p>
+ * An ONIX code indicating the case in which the text elements in an occurrence of the &lt;Title&gt; composite are sent.
+ * The default is “unspecified”. Optional and non-repeating. <strong>Text case can now be indicated by an XML attribute
+ * on any text element, and this method is preferred. See <cite>ONIX for Books – Product Information Message – XML
+ * Message Specification</cite>, Section 4.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 14</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextCaseFlag&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b027&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b027&gt;01&lt;/b027&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TextCaseFlag implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextCaseFlag";
 	public static final String shortname = "b027";
 

@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 99</b>
  * <p>
- * Description: Product form feature value &#8211; special cover material
+ * Description: Product form feature value - special cover material
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
  * @see <a
@@ -89,12 +89,12 @@ public enum ProductFormFeatureValueSpecialCoverMaterials
 	Metal("19", "Metal"), //
 
 	/**
-	 * German &#8216;Samt&#8217;
+	 * German 'Samt'
 	 */
 	Velvet("20", "Velvet"), //
 
 	/**
-	 * Spanish &#8216;n&#225;car&#8217;
+	 * Spanish 'n&#225;car'
 	 */
 	Mother_of_pearl("21", "Mother-of-pearl"), //
 

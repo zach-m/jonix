@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Bible reference location</h1>
+ * <p>
+ * An ONIX code indicating where references are located as part of the content of a Bible or selected Biblical text, for
+ * example ‘Center column’. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 87</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BibleReferenceLocation&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b356&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b356&gt;CCL&lt;/b356&gt; (Center column)</td>
+ * </tr>
+ * </table>
+ */
 public class BibleReferenceLocation implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BibleReferenceLocation";
 	public static final String shortname = "b356";
 

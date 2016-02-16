@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Set item title</h1>
+ * <p>
+ * The title which the product carries as an item within a set, <em>eg</em> <cite>After Rome in A History of Western
+ * Europe, Part II: The Dark Ages, Volume I: After Rome</cite>. This will invariably duplicate at least part of the
+ * product title in Group&nbsp;PR.7, but by entering it in this group it is possible to assure a correctly structured
+ * entry for the set. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SetItemTitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b281&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SetItemTitle&gt;After Rome&lt;/SetItemTitle&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SetItemTitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SetItemTitle";
 	public static final String shortname = "b281";
 
@@ -65,6 +93,8 @@ public class SetItemTitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

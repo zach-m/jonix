@@ -35,9 +35,30 @@ import com.tectonica.jonix.struct.JonixSenderIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sender identifier composite</h1>
+ * <p>
+ * A group of data elements which together define the identifier of the sender within a specified namespace, used here
+ * to allow different party identifiers to be included without defining additional data elements. In particular the
+ * composite allows a proprietary identifier to be used by mutual agreement between parties to an exchange. The
+ * composite is optional and repeatable; but either the &lt;FromCompany&gt; element or a sender identifier using one or
+ * more elements from MH.1 to MH.5 must be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SenderIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;senderidentifier&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SenderIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SenderIdentifier";
 	public static final String shortname = "senderidentifier";
 

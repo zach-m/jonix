@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Title type code</h1>
+ * <p>
+ * An ONIX code indicating the type of a title. Mandatory in each occurrence of the &lt;Title&gt; composite, and
+ * non-repeating. Additional types of title can now be defined by adding code values without requiring a new ONIX
+ * release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 15</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitleType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b202&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TitleType&gt;01&lt;/TitleType&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TitleType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitleType";
 	public static final String shortname = "b202";
 

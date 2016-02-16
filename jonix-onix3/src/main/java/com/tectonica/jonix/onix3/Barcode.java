@@ -32,9 +32,32 @@ import com.tectonica.jonix.struct.JonixBarcode;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Barcode composite</h1>
+ * <p>
+ * A group of data elements which together specify a barcode type and its position on a product. Optional: expected to
+ * be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
+ * absence of this composite does <em>not</em> mean that a product is not bar-coded.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Barcode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;barcode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Barcode implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Barcode";
 	public static final String shortname = "barcode";
 

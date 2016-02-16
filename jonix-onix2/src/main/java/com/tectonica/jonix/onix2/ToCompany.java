@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Addressee company name</h1>
+ * <p>
+ * The name of the addressee organization, which should always be stated in a standard form agreed with the addressee.
+ * Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length ASCII text, suggested maximum 30 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ToCompany&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m178&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m178&gt;Book Data&lt;/m178&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ToCompany implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ToCompany";
 	public static final String shortname = "m178";
 
@@ -65,6 +94,8 @@ public class ToCompany implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length ASCII text, suggested maximum 30 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

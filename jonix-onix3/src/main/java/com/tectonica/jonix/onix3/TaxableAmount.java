@@ -29,9 +29,40 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Amount of price taxable</h1>
+ * <p>
+ * The amount of the unit price of the product, excluding tax, which is taxable at the rate specified in an occurrence
+ * of the &lt;Tax&gt; composite. Optional and non-repeating; but required if tax is charged on part of the price.
+ * Omission of this element implies that tax is charged on the full amount of the price.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with explicit decimal point when required, suggested maximum length 12 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TaxableAmount&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x473&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x473&gt;10.64&lt;/x473&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TaxableAmount implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TaxableAmount";
 	public static final String shortname = "x473";
 
@@ -53,6 +84,9 @@ public class TaxableAmount implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 * <p>
 	 * (type: dt.StrictPositiveDecimal)
 	 */
 	public Double value;

@@ -52,7 +52,7 @@ public enum ExtentUnits
 	Seconds_integer_only("06", "Seconds (integer only)"), //
 
 	/**
-	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3&#8211;6
+	 * Of an audiobook on CD (or a similarly divided selection of audio files). Conventionally, each track is 3-6
 	 * minutes of running time, and track counts are misleading and inappropriate if the average track duration is
 	 * significantly more or less than this. Note that track breaks are not necessarily aligned with structural breaks
 	 * in the text (eg chapter breaks)

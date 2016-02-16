@@ -30,9 +30,46 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price type description</h1>
+ * <p>
+ * Free text which further describes the price type. Optional, and repeatable if parallel descriptions are provided in
+ * multiple languages. The <i>language</i> attribute is optional for a single instance of &lt;PriceTypeDescription&gt;,
+ * but must be included in each instance if &lt;PriceTypeDescription&gt; is repeated in multiple languages. In the
+ * Netherlands and elsewhere, when the &lt;PriceQualifier&gt; code identifies a ‘voucher price’, the
+ * &lt;PriceTypeDescription&gt; should give the ‘EAN action number’ that identifies the offer.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceTypeDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j262&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j262&gt;When purchased as part of a three-item set with&#8230;&lt;/j262&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PriceTypeDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceTypeDescription";
 	public static final String shortname = "j262";
 
@@ -56,6 +93,8 @@ public class PriceTypeDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

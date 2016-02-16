@@ -46,8 +46,8 @@ public enum WebsiteRoles
 	Publisher_s_corporate_website("01", "Publisher’s corporate website"), //
 
 	/**
-	 * A publisher&#8217;s informative and/or promotional webpage relating to a specified work (book, journal, online
-	 * resource or other publication type)
+	 * A publisher's informative and/or promotional webpage relating to a specified work (book, journal, online resource
+	 * or other publication type)
 	 */
 	Publisher_s_website_for_a_specified_work("02", "Publisher’s website for a specified work"), //
 
@@ -73,7 +73,7 @@ public enum WebsiteRoles
 	Contributor_s_own_website("06", "Contributor’s own website"), //
 
 	/**
-	 * A publisher&#8217;s webpage devoted to a specific author or other contributor
+	 * A publisher's webpage devoted to a specific author or other contributor
 	 */
 	Publisher_s_website_relating_to_specified_contributor("07", "Publisher’s website relating to specified contributor"), //
 
@@ -112,7 +112,7 @@ public enum WebsiteRoles
 			"Contributor’s own website for group or series of works"), //
 
 	/**
-	 * A publisher&#8217;s webpage devoted to a group or series of works
+	 * A publisher's webpage devoted to a group or series of works
 	 */
 	Publisher_s_website_relating_to_group_or_series_of_works("14",
 			"Publisher’s website relating to group or series of works"), //
@@ -131,12 +131,12 @@ public enum WebsiteRoles
 			"Third-party website relating to group or series of works (eg a fan site)"), //
 
 	/**
-	 * Use instead of code 01 to specify a publisher&#8217;s website for trade users
+	 * Use instead of code 01 to specify a publisher's website for trade users
 	 */
 	Publisher_s_B2B_website("17", "Publisher’s B2B website"), //
 
 	/**
-	 * Use instead of code 01 to specify a publisher&#8217;s website for end customers (consumers)
+	 * Use instead of code 01 to specify a publisher's website for end customers (consumers)
 	 */
 	Publisher_s_B2C_website("18", "Publisher’s B2C website"), //
 
@@ -189,22 +189,22 @@ public enum WebsiteRoles
 	Supplier_s_B2C_website("35", "Supplier’s B2C website"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a specified work
+	 * A distributor or supplier's webpage describing a specified work
 	 */
 	Supplier_s_website_for_a_specified_work("36", "Supplier’s website for a specified work"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at trade customers
+	 * A distributor or supplier's webpage describing a specified work, and aimed at trade customers
 	 */
 	Supplier_s_B2B_website_for_a_specified_work("37", "Supplier’s B2B website for a specified work"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a specified work, and aimed at consumers
+	 * A distributor or supplier's webpage describing a specified work, and aimed at consumers
 	 */
 	Supplier_s_B2C_website_for_a_specified_work("38", "Supplier’s B2C website for a specified work"), //
 
 	/**
-	 * A distributor or supplier&#8217;s webpage describing a group or series of works
+	 * A distributor or supplier's webpage describing a group or series of works
 	 */
 	Supplier_s_website_for_a_group_or_series_of_works("39", "Supplier’s website for a group or series of works"), //
 

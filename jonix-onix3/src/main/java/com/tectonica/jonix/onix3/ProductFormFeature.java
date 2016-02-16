@@ -33,9 +33,33 @@ import com.tectonica.jonix.struct.JonixProductFormFeature;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form feature composite (product part)</h1>
+ * <p>
+ * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
+ * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional, and not normally expected to be
+ * used in the description of a product part. The composite is included here so that it can if necessary be used in the
+ * US to carry consumer protection data related to a product part.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormFeature&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productformfeature&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormFeature implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormFeature";
 	public static final String shortname = "productformfeature";
 

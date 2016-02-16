@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Audience restriction flag</h1>
+ * <p>
+ * Used with &lt;AudienceRestrictionNote&gt; where within a particular market there is an additional restriction on
+ * sale, imposed either by the publisher (<em>eg</em> an answer book to be sold only to bona fide teachers) or by
+ * another agency (<em>eg</em> “indexing” in the German market). Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Provisional: fixed-length, single letter</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 56</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AudienceRestrictionFlag&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j146&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;AudienceRestrictionFlag&gt;R&lt;/AudienceRestrictionFlag&gt;&#160;&#160;&#160;&#160;Restrictions apply</td>
+ * </tr>
+ * </table>
+ */
 public class AudienceRestrictionFlag implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AudienceRestrictionFlag";
 	public static final String shortname = "j146";
 

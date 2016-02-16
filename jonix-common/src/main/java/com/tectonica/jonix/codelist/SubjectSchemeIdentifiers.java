@@ -124,7 +124,7 @@ public enum SubjectSchemeIdentifiers
 	Keywords("20", "Keywords"), //
 
 	/**
-	 * See http://www.bic.org.uk/8/Children&#8217;s-Books-Marketing-Classifications/
+	 * See http://www.bic.org.uk/8/Children's-Books-Marketing-Classifications/
 	 */
 	BIC_children_s_book_marketing_category("21", "BIC children’s book marketing category"), //
 
@@ -153,7 +153,7 @@ public enum SubjectSchemeIdentifiers
 	Warengruppen_Systematik_des_deutschen_Buchhandels("26", "Warengruppen-Systematik des deutschen Buchhandels"), //
 
 	/**
-	 * Schlagwortnormdatei &#8211; Subject Headings Authority File in the German-speaking countries. See
+	 * Schlagwortnormdatei - Subject Headings Authority File in the German-speaking countries. See
 	 * http://www.d-nb.de/standardisierung/normdateien/swd.htm (in German) and
 	 * http://www.d-nb.de/eng/standardisierung/normdateien/swd.htm (English). DEPRECATED in favour of the GND
 	 */
@@ -242,14 +242,14 @@ public enum SubjectSchemeIdentifiers
 	ANELE_Materias("42", "ANELE Materias"), //
 
 	/**
-	 * Codes for Norwegian &#8216;utdanningsprogram&#8217; used in secondary education. See: http://www.udir.no/.
-	 * (Formerly labelled &#8216;Skolefag&#8217;)
+	 * Codes for Norwegian 'utdanningsprogram' used in secondary education. See: http://www.udir.no/. (Formerly labelled
+	 * 'Skolefag')
 	 */
 	Utdanningsprogram("43", "Utdanningsprogram"), //
 
 	/**
-	 * Codes for Norwegian &#8216;programomr&#229;de&#8217; used in secondary education. See http://www.udir.no/.
-	 * (Formerly labelled &#8216;Videreg&#229;ende&#8217; or &#8216;Programfag&#8217;)
+	 * Codes for Norwegian 'programomr&#229;de' used in secondary education. See http://www.udir.no/. (Formerly labelled
+	 * 'Videreg&#229;ende' or 'Programfag')
 	 */
 	Programomr_de("44", "Programområde"), //
 
@@ -347,7 +347,7 @@ public enum SubjectSchemeIdentifiers
 
 	/**
 	 * R&#233;pertoire de vedettes-mati&#232;re (Biblioth&#232;que et Archives Canada et Biblioth&#232;que de
-	 * l&#8217;Universit&#233; Laval) (French)
+	 * l'Universit&#233; Laval) (French)
 	 */
 	RVM("63", "RVM"), //
 
@@ -426,7 +426,7 @@ public enum SubjectSchemeIdentifiers
 	Suomalainen_oppiaineluokitus("77", "Suomalainen oppiaineluokitus"), //
 
 	/**
-	 * See &#8216;http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html&#8217; (in Japanese)
+	 * See 'http://www.asahi-net.or.jp/~ax2s-kmtn/ref/ccode.html' (in Japanese)
 	 */
 	Japanese_book_trade_C_Code("78", "Japanese book trade C-Code"), //
 
@@ -456,7 +456,7 @@ public enum SubjectSchemeIdentifiers
 
 	/**
 	 * Location defined by postal code. Format is two-letter country code (from List 91), space, postal code. Note some
-	 * postal codes themselves contain spaces, eg &#8216;GB N7 9DP&#8217; or &#8216;US 10125&#8217;
+	 * postal codes themselves contain spaces, eg 'GB N7 9DP' or 'US 10125'
 	 */
 	Postal_code("85", "Postal code"), //
 
@@ -491,14 +491,14 @@ public enum SubjectSchemeIdentifiers
 	Season_and_Event_Indicator("90", "Season and Event Indicator"), //
 
 	/**
-	 * Gemeinsame Normdatei &#8211; Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
+	 * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
 	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference to the
 	 * older codes
 	 */
 	GND("91", "GND"), //
 
 	/**
-	 * UK Standard Library Categories, the successor to BIC&#8217;s E4L classification scheme
+	 * UK Standard Library Categories, the successor to BIC's E4L classification scheme
 	 */
 	BIC_UKSLC("92", "BIC UKSLC"), //
 
@@ -553,7 +553,7 @@ public enum SubjectSchemeIdentifiers
 	ISIC("A7", "ISIC"), //
 
 	/**
-	 * Library of Congress Children&#8217;s Subject Headings: LCSHAC supplementary headings for Children&#8217;s books
+	 * Library of Congress Children's Subject Headings: LCSHAC supplementary headings for Children's books
 	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	LC_Children_s_Subject_Headings("A8", "LC Children’s Subject Headings"), //
@@ -565,7 +565,7 @@ public enum SubjectSchemeIdentifiers
 
 	/**
 	 * EuroVoc multilingual thesaurus. &lt;SubjectCode&gt; should be a EuroVoc concept dc:identifier (for example, 2777,
-	 * &#8216;refrigerated products&#8217;). See http://eurovoc.europa.eu &lt;p&gt;NOTE: Introduced in Onix3
+	 * 'refrigerated products'). See http://eurovoc.europa.eu &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	EuroVoc("B0", "EuroVoc"), //
 

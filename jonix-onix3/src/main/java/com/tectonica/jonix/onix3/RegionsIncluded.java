@@ -30,9 +30,53 @@ import com.tectonica.jonix.codelist.Regions;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Regions included</h1>
+ * <p>
+ * One or more ONIX codes identifying regions included in the territory. A region is an area which is not a country, but
+ * which is precisely defined in geographical terms, <i>eg</i> World, Northern Ireland, Australian Capital Territory.
+ * Successive codes must be separated by spaces. Optional and non-repeating, but <em>either</em>
+ * &lt;CountriesIncluded&gt; <em>or</em> &lt;RegionsIncluded&gt; is mandatory in each occurrence of the
+ * &lt;Territory&gt; composite. Note that US States have region codes, while US overseas territories have distinct ISO
+ * Country Codes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters with or without a hyphen, successive
+ * codes being separated by spaces. Suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RegionsIncluded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x450&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x450&gt;WORLD&lt;/x450&gt; (Whole world)</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>&lt;x450&gt;US-CA&lt;/x450&gt; (California)</td>
+ * </tr>
+ * </table>
+ */
 public class RegionsIncluded implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RegionsIncluded";
 	public static final String shortname = "x450";
 

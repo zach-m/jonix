@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Expected availability date (ship date)</h1>
+ * <p>
+ * If the product is not currently available, the date on which shipping from the supplier to retailers is expected to
+ * begin or resume. Optional and non-repeating; required with certain code values in the &lt;AvailabilityCode&gt;
+ * element. The format is as specified in the &lt;DateFormat&gt; field. The default format is YYYYMMDD, <em>ie</em> an
+ * exact year-month-day.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ExpectedShipDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j142&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j142&gt;200006&lt;/j142&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ExpectedShipDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ExpectedShipDate";
 	public static final String shortname = "j142";
 
@@ -65,6 +93,8 @@ public class ExpectedShipDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

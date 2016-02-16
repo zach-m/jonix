@@ -48,9 +48,34 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Related product composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe a product which has a specified relationship to the
+ * product which is described in the ONIX record. Although for reasons of upwards compatibility the composite includes
+ * individual fields for ISBN and EAN-13 number, use of the nested &lt;ProductIdentifier&gt; composite is to be
+ * preferred, since it allows any recognized identifier scheme (<em>eg</em> DOI) to be used.
+ * </p>
+ * <p>
+ * The minimum required content of an occurrence of the &lt;RelatedProduct&gt; composite is a &lt;RelationCode&gt; and
+ * either a product identifier or a &lt;ProductForm&gt; value. In other words, it is valid to list related products by
+ * relationship and identifier only, or by relationship and form only.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RelatedProduct&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;relatedproduct&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class RelatedProduct implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 

@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Order time</h1>
+ * <p>
+ * The expected average number of days from receipt of order to despatch (for items “manufactured on demand” or “only to
+ * order”). Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, one or two digits only</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OrderTime&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j144&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;OrderTime&gt;7&lt;/OrderTime&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OrderTime implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OrderTime";
 	public static final String shortname = "j144";
 
@@ -65,6 +91,8 @@ public class OrderTime implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, one or two digits only
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

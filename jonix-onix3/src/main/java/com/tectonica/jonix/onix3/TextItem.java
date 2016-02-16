@@ -34,9 +34,32 @@ import com.tectonica.jonix.struct.JonixTextItemIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Text item composite</h1>
+ * <p>
+ * A group of data elements which are specific to text content. The composite must occur once and only once in a
+ * &lt;ContentItem&gt; composite which describes a text content item. (Similar composites may be defined for other
+ * media, and the occurrence of one of them will be mandatory in any &lt;ContentItem&gt; composite.)
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextItem&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;textitem&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * </table>
+ */
 public class TextItem implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextItem";
 	public static final String shortname = "textitem";
 

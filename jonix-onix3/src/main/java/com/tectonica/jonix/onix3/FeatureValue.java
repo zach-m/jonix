@@ -29,9 +29,49 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Resource version feature value</h1>
+ * <p>
+ * A controlled value that describes a resource version feature. Presence or absence of this element depends on the
+ * &lt;ResourceVersionFeatureType&gt;, since some features may not require an accompanying value, while others may
+ * require free text in &lt;FeatureNote&gt;, and others may have both a value and free text. Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may not be
+ * taken from a code list</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>For file format, use List 178</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;FeatureValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x439&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;FeatureValue&gt;250&lt;/FeatureValue&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class FeatureValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "FeatureValue";
 	public static final String shortname = "x439";
 
@@ -53,6 +93,9 @@ public class FeatureValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may
+	 * not be taken from a code list
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

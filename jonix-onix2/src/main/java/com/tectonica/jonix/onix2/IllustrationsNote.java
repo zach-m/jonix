@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Illustrations and other contents note</h1>
+ * <p>
+ * For books or other text media only, this data element carries text stating the number and type of illustrations. The
+ * text may also include other content items, <em>eg</em> maps, bibliography, tables, index <em>etc</em>. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, suggested maximum length 200 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;IllustrationsNote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b062&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;IllustrationsNote&gt;500 illustrations, 210 in full color&lt;/IllustrationsNote&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class IllustrationsNote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "IllustrationsNote";
 	public static final String shortname = "b062";
 
@@ -65,6 +92,8 @@ public class IllustrationsNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, suggested maximum length 200 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

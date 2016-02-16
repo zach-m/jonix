@@ -41,12 +41,12 @@ public enum BookFormDetails
 	A_format_paperback("01", "A-format paperback"), //
 
 	/**
-	 * &#8216;B&#8217; format paperback: UK 198 x 129 mm &#8211; DEPRECATED
+	 * 'B' format paperback: UK 198 x 129 mm - DEPRECATED
 	 */
 	B_format_paperback("02", "B-format paperback"), //
 
 	/**
-	 * &#8216;C&#8217; format paperback: UK 216 x 135 mm &#8211; DEPRECATED
+	 * 'C' format paperback: UK 216 x 135 mm - DEPRECATED
 	 */
 	C_format_paperback("03", "C-format paperback"), //
 

@@ -31,9 +31,44 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Corporate contributor name, inverted</h1>
+ * <p>
+ * The name of a corporate body which contributed to the creation of the product, presented in inverted order, with the
+ * element used for alphabetical sorting placed first. Optional and non-repeating: see Group&nbsp;P.7 introductory text
+ * for valid options.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CorporateNameInverted&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x443&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>collationkey, language, textscript</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x443&gt;Countryside Commission, The&lt;/x443&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CorporateNameInverted implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CorporateNameInverted";
 	public static final String shortname = "x443";
 
@@ -61,6 +96,8 @@ public class CorporateNameInverted implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

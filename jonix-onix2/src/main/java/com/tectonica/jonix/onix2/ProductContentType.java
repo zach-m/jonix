@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product content type code</h1>
+ * <p>
+ * An ONIX code which indicates certain types of content which are closely related to but not strictly an attribute of
+ * product form, <em>eg</em> audiobook. Optional and repeatable. The element is intended to be used with products where
+ * content is delivered in the form of a digital or analogue recording. It is not expected to be used for books.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 81</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductContentType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b385&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ProductContentType&gt;01&lt;/ProductContentType&gt;&#160;&#160;&#160;&#160;Audiobook</td>
+ * </tr>
+ * </table>
+ */
 public class ProductContentType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductContentType";
 	public static final String shortname = "b385";
 

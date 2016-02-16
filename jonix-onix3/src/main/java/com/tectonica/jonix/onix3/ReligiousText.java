@@ -33,9 +33,35 @@ import com.tectonica.jonix.struct.JonixReligiousTextFeature;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Religious text composite</h1>
+ * <p>
+ * An optional, non-repeating, group of data elements which together describe features of the content of an edition of a
+ * religious text, and intended to meet the special needs of religious publishers and booksellers. The
+ * &lt;ReligiousText&gt; composite may carry <em>either</em> a &lt;Bible&gt; composite <em>or</em> a
+ * &lt;ReligiousTextIdentifier&gt; element accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt;
+ * composite. This approach is adopted to enable other devotional texts to be included if need arises without requiring
+ * a new ONIX release.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReligiousText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;religioustext&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class ReligiousText implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReligiousText";
 	public static final String shortname = "religioustext";
 

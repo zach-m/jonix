@@ -34,9 +34,43 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supply-to country excluded</h1>
+ * <p>
+ * One or more ISO standard codes identifying a country which is excluded from a territory specified in
+ * &lt;SupplyToTerritory&gt;. Successive codes may be separated by spaces. Thus, a single occurrence of the element can
+ * carry an unlimited number of country codes. For upwards compatibility, the element remains repeatable, so that
+ * multiple countries can be listed as multiple occurrences of the whole element. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more fixed-length codes, each with two upper case letters, successive codes being separated by spaces.
+ * Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper
+ * case only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes - List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplyToCountryExcluded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j140&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SupplyToCountryExcluded&gt;US CA&lt;/SupplyToCountryExcluded&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SupplyToCountryExcluded implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplyToCountryExcluded";
 	public static final String shortname = "j140";
 

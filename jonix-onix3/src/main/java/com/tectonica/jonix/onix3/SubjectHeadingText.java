@@ -30,9 +30,46 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Subject heading text</h1>
+ * <p>
+ * The text of a subject heading taken from the scheme specified in the &lt;SubjectSchemeIdentifier&gt; element, or of
+ * free language keywords if the scheme is specified as ‘keywords’; or the text equivalent to the &lt;SubjectCode&gt;
+ * value, if both code and text are sent. Either &lt;SubjectCode&gt; or &lt;SubjectHeadingText&gt; or both must be
+ * present in each occurrence of the &lt;Subject&gt; composite. Optional, and repeatable if the text is sent in multiple
+ * languages.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 250 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SubjectHeadingText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b070&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b070&gt;Labor and industrial relations&lt;/b070&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SubjectHeadingText implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SubjectHeadingText";
 	public static final String shortname = "b070";
 
@@ -56,6 +93,8 @@ public class SubjectHeadingText implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 250 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

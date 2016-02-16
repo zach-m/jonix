@@ -36,7 +36,7 @@ package com.tectonica.jonix.codelist;
 public enum TransliterationSchemes
 {
 	/**
-	 * Transliteration of Cyrillic characters &#8211; Slavic languages
+	 * Transliteration of Cyrillic characters - Slavic languages
 	 */
 	Finnish_standard_SFS_4900("SFS4900", "Finnish standard SFS 4900"), //
 
@@ -56,12 +56,12 @@ public enum TransliterationSchemes
 	Finnish_standard_SFS_5824("SFS3602", "Finnish standard SFS 5824"), //
 
 	/**
-	 * Documentation &#8211; Romanization of Japanese (kana script)
+	 * Documentation - Romanization of Japanese (kana script)
 	 */
 	ISO_3602("ISO3602", "ISO 3602"), //
 
 	/**
-	 * Information and documentation &#8211; Romanization of Chinese
+	 * Information and documentation - Romanization of Chinese
 	 */
 	ISO_7098("ISO7098", "ISO 7098");
 

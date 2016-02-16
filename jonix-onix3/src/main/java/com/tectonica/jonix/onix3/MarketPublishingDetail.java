@@ -34,9 +34,31 @@ import com.tectonica.jonix.struct.JonixMarketDate;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Market publishing detail composite</h1>
+ * <p>
+ * A group of data elements which together give details of the publishing status of a product within a specified market.
+ * Optional and non-repeating within an occurrence of the &lt;ProductSupply&gt; block.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MarketPublishingDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;marketpublishingdetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MarketPublishingDetail";
 	public static final String shortname = "marketpublishingdetail";
 

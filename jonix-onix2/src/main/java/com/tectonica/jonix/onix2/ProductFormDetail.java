@@ -34,9 +34,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form detail</h1>
+ * <p>
+ * An ONIX code which provides added detail of the medium and/or format of the product. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, four characters: one letter followed by three numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 78</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b333&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ProductFormDetail&gt;B206&lt;/ProductFormDetail&gt;&#160;&#160;&#160;&#160;Pop-up book</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormDetail implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormDetail";
 	public static final String shortname = "b333";
 

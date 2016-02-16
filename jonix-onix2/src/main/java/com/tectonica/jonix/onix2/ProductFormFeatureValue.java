@@ -33,9 +33,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form feature value</h1>
+ * <p>
+ * A controlled value that describes a product form feature. Presence or absence of this element depends on the
+ * &lt;ProductFormFeatureType&gt;, since some product form features (<em>eg</em> thumb index) do not require an
+ * accompanying value, while others (<em>eg</em> text font) require free text in &lt;ProductFormFeatureDescription&gt;.
+ * Non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormFeatureValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b335&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ProductFormFeatureValue&gt;BLK&lt;/ProductFormFeatureValue&gt;&#160;&#160;&#160;&#160;Black (binding color)</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormFeatureValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormFeatureValue";
 	public static final String shortname = "b335";
 
@@ -65,6 +97,8 @@ public class ProductFormFeatureValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -28,6 +28,7 @@ import com.tectonica.jonix.codegen.metadata.OnixClass;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixConst;
+import com.tectonica.jonix.codegen.metadata.OnixDoc;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
@@ -92,7 +93,8 @@ public class OnixClassGen
 		p.printf("import %s.struct.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
-		p.printf("@SuppressWarnings(\"serial\")\n");
+
+		printOnixDoc(p, composite.onixDoc);
 		p.printf("public class %s implements %s, Serializable\n", composite.name, markerInterfaceName);
 		p.printf("{\n");
 
@@ -100,7 +102,7 @@ public class OnixClassGen
 
 		p.println();
 		printCaptionComment(p, "MEMBERS");
-		
+
 		// declare members
 		for (OnixCompositeMember member : composite.members)
 		{
@@ -337,7 +339,8 @@ public class OnixClassGen
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
-		p.printf("@SuppressWarnings(\"serial\")\n");
+
+		printOnixDoc(p, element.onixDoc);
 		p.printf("public class %s implements OnixElement, Serializable\n", element.name);
 		p.printf("{\n");
 
@@ -345,13 +348,15 @@ public class OnixClassGen
 
 		p.println();
 		printCaptionComment(p, "VALUE MEMBER");
-		
+
 		// declare value
 		final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 		p.println();
 		if (ti.comment != null)
 		{
 			p.printf("   /**\n");
+			if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty())
+				p.printf("    * Format: %s<p>\n", element.onixDoc.format);
 			p.printf("    * %s\n", ti.comment);
 			p.printf("    */\n");
 		}
@@ -362,7 +367,7 @@ public class OnixClassGen
 
 		p.println();
 		printCaptionComment(p, "SERVICES");
-		
+
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", element.name);
@@ -400,7 +405,7 @@ public class OnixClassGen
 		p.println("}");
 	}
 
-	private void writeFlagClass(OnixFlagDef clz, PrintStream p)
+	private void writeFlagClass(OnixFlagDef flag, PrintStream p)
 	{
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
@@ -411,34 +416,47 @@ public class OnixClassGen
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
-		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements OnixFlag, Serializable\n", clz.name);
+
+		printOnixDoc(p, flag.onixDoc);
+		p.printf("public class %s implements OnixFlag, Serializable\n", flag.name);
 		p.printf("{\n");
 
-		declareConstsAndAttributes(p, clz);
+		declareConstsAndAttributes(p, flag);
 
 		p.println();
 		printCaptionComment(p, "CONSTRUCTORS");
 
 		// default-constructor
 		p.println();
-		p.printf("   public %s()\n", clz.name);
+		p.printf("   public %s()\n", flag.name);
 		p.printf("   {}\n");
 
 		// constructor
 		p.println();
-		p.printf("   public %s(org.w3c.dom.Element element)\n", clz.name);
+		p.printf("   public %s(org.w3c.dom.Element element)\n", flag.name);
 		p.printf("   {\n");
 
-		setInitializers(clz, p);
+		setInitializers(flag, p);
 
 		p.printf("   }\n");
 
 		p.println("}");
 	}
 
+	private void printOnixDoc(PrintStream p, OnixDoc onixDoc)
+	{
+		if (onixDoc != null)
+		{
+			p.printf("/**\n");
+			p.printf(" * %s\n", onixDoc.toHtml());
+			p.printf(" */\n");
+		}
+	}
+
 	private void declareConstsAndAttributes(PrintStream p, OnixClass clz)
 	{
+		p.printf("   private static final long serialVersionUID = 1L;\n\n");
+		
 		for (OnixConst c : clz.consts)
 			p.printf("   public static final String %s = \"%s\";\n", c.name, c.value);
 

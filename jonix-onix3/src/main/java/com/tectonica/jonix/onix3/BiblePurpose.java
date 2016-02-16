@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Bible purpose</h1>
+ * <p>
+ * An ONIX code indicating the purpose for which a Bible or selected Biblical text is intended, for example ‘Family’,
+ * ‘Lectern/pulpit’. Optional and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 85</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BiblePurpose&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b354&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;BiblePurpose&gt;LP&lt;/BiblePurpose&gt; (Lectern/pulpit)</td>
+ * </tr>
+ * </table>
+ */
 public class BiblePurpose implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BiblePurpose";
 	public static final String shortname = "b354";
 

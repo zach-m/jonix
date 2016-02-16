@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price code</h1>
+ * <p>
+ * A price code from the scheme specified in the &lt;PriceCodeType&gt; element. Mandatory in each occurrence of the
+ * &lt;PriceCoded&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the scheme specified in &lt;PriceCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PriceCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x468&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PriceCode&gt;07a&lt;/PriceCode&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PriceCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PriceCode";
 	public static final String shortname = "x468";
 
@@ -53,6 +83,8 @@ public class PriceCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the scheme specified in &lt;PriceCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

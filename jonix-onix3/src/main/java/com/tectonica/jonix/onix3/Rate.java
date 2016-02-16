@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Velocity rate</h1>
+ * <p>
+ * The stock depletion rate (as a number of copies, rounded to the nearest integer), measured according to the metric in
+ * &lt;VelocityMetric&gt;.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length integer, suggested maximum length 7 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Rate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x505&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;Rate&gt;315&lt;/Rate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Rate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Rate";
 	public static final String shortname = "x505";
 
@@ -53,6 +83,8 @@ public class Rate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length integer, suggested maximum length 7 digits
+	 * <p>
 	 * (type: dt.Integer)
 	 */
 	public Integer value;

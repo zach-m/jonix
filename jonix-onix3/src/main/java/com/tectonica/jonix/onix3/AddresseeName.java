@@ -29,9 +29,40 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Addressee name</h1>
+ * <p>
+ * The name of the addressee organization, which should always be stated in a standard form agreed with the addressee.
+ * Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
+ * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AddresseeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x300&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x300&gt;BiblioAggregator Ltd&lt;/x300&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class AddresseeName implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AddresseeName";
 	public static final String shortname = "x300";
 
@@ -53,6 +84,8 @@ public class AddresseeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

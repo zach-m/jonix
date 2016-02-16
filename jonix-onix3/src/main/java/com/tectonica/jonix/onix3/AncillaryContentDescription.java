@@ -31,9 +31,47 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Illustration or other content type description</h1>
+ * <p>
+ * Text describing the type of illustration or other content to which an occurrence of the composite refers, when a code
+ * is insufficient. Optional, and repeatable if parallel descriptive text is provided in multiple languages. Required
+ * when &lt;AncillaryContentType&gt; carries the value 00. The <i>language</i> attribute is optional for a single
+ * instance of &lt;AncillaryContentDescription&gt;, but must be included in each instance if
+ * &lt;AncillaryContentDescription&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AncillaryContentDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x424&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x424 language=&quot;eng&quot;&gt;Full color stickers&lt;/x424&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class AncillaryContentDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AncillaryContentDescription";
 	public static final String shortname = "x424";
 
@@ -59,6 +97,9 @@ public class AncillaryContentDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

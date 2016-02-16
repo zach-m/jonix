@@ -31,9 +31,33 @@ import com.tectonica.jonix.struct.JonixStockQuantityCoded;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Stock quantity coded composite</h1>
+ * <p>
+ * A group of data elements which together specify coded stock level without stating the exact quantity of stock. Either
+ * &lt;StockQuantityCoded&gt; or &lt;OnHand&gt; is mandatory in each occurrence of the &lt;Stock&gt; composite, even if
+ * the quantity on hand is zero. Repeatable, so that it is possible to provide quantities on hand, quantities on order
+ * <i>etc</i> separately.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;StockQuantityCoded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;stockquantitycoded&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class StockQuantityCoded implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "StockQuantityCoded";
 	public static final String shortname = "stockquantitycoded";
 

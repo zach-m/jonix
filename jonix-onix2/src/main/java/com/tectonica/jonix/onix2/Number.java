@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number of illustrations</h1>
+ * <p>
+ * The number of illustrations or other content items of the type specified in &lt;IllustrationType&gt;. Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 6 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Number&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b257&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;Number&gt;12&lt;/Number&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Number implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Number";
 	public static final String shortname = "b257";
 
@@ -65,6 +91,8 @@ public class Number implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 6 digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

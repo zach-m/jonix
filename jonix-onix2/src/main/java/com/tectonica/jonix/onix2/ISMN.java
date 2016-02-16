@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>ISMN</h1>
+ * <p>
+ * International Standard Music Number, the recognized standard identifier for printed music. Optional and
+ * non-repeating. <strong>The &lt;ProductIdentifier&gt; composite on a later page provides a more general method of
+ * handling this and other product codes, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, letter M followed by nine numeric digits, the last of which is a check character calculated
+ * according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ISMN&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b008&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ISMN&gt;M345246805&lt;/ISMN&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ISMN implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ISMN";
 	public static final String shortname = "b008";
 
@@ -65,6 +93,9 @@ public class ISMN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character calculated
+	 * according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

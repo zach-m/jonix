@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Edition statement</h1>
+ * <p>
+ * A short free-text description of a version or edition. Optional and non-repeating. When used, the
+ * &lt;EditionStatement&gt; must carry a complete description of the nature of the edition, <em>ie</em> it should not be
+ * treated as merely supplementary to an &lt;EditionTypeCode&gt; or an &lt;EditionNumber&gt;. The
+ * &lt;EditionStatement&gt; should be strictly limited to describing features of the content of the edition, and should
+ * not include aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX record.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EditionStatement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b058&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b058&gt;3rd edition, revised with an introduction and notes&lt;/b058&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EditionStatement implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EditionStatement";
 	public static final String shortname = "b058";
 
@@ -65,6 +94,8 @@ public class EditionStatement implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

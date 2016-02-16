@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supplier code value</h1>
+ * <p>
+ * A supplier-defined code of the type specified in the &lt;SupplierCodeType&gt; element. Mandatory in each occurrence
+ * of the &lt;SupplierOwnCoding&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplierCodeValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x459&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x459&gt;B&lt;/x459&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SupplierCodeValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplierCodeValue";
 	public static final String shortname = "x459";
 
@@ -53,6 +83,8 @@ public class SupplierCodeValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

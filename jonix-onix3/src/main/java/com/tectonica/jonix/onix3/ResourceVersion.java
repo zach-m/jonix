@@ -36,9 +36,32 @@ import com.tectonica.jonix.struct.JonixResourceVersionFeature;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Resource version composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe a version of a supporting resource, for example a
+ * particular format of a cover image. At least one instance is mandatory in each occurrence of the
+ * &lt;SupportingResource&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ResourceVersion&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;resourceversion&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ResourceVersion implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ResourceVersion";
 	public static final String shortname = "resourceversion";
 

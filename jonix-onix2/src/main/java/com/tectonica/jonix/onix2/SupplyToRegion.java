@@ -34,9 +34,42 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supply-to region</h1>
+ * <p>
+ * An ONIX code for a region to which the supplier is able to supply. A full code list is yet to be defined. A
+ * provisional coding, for UK use only, is given for Open Market supply. <strong>This element will not be further
+ * developed, and is superseded by &lt;SupplyToTerritory&gt; above. It is retained for purposes of upwards compatibility
+ * only. Note that Open Market distribution rights should be specified, like any others, by listing countries and
+ * territories.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 52</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplyToRegion&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j139&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SupplyToRegion&gt;004&lt;/SupplyToRegion&gt;&#160;&#160;&#160;&#160;UK 'open market'</td>
+ * </tr>
+ * </table>
+ */
 public class SupplyToRegion implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplyToRegion";
 	public static final String shortname = "j139";
 

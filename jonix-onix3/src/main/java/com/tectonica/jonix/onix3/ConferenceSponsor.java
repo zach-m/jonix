@@ -33,9 +33,32 @@ import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Conference sponsor composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together identify a sponsor of a conference. <em>Either</em>
+ * an identifier, <em>or</em> one or other of &lt;PersonName&gt; or &lt;CorporateName&gt;, <em>or</em> both an
+ * identifier and a name, must be present in each occurrence of the composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ConferenceSponsor&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;conferencesponsor&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ConferenceSponsor implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ConferenceSponsor";
 	public static final String shortname = "conferencesponsor";
 

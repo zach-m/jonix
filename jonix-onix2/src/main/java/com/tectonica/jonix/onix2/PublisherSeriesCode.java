@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publisher’s series code</h1>
+ * <p>
+ * A code or mnemonic assigned by the publisher to designate a series (and therefore not guaranteed to be unique).
+ * Optional and non-repeating. <strong>The &lt;SeriesIdentifier&gt; composite on the next page provides a more general
+ * method of handling this and other series identifiers, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 20 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublisherSeriesCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b017&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PublisherSeriesCode&gt;ANNBP&lt;/PublisherSeriesCode&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PublisherSeriesCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublisherSeriesCode";
 	public static final String shortname = "b017";
 
@@ -65,6 +92,8 @@ public class PublisherSeriesCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

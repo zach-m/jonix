@@ -36,9 +36,32 @@ import com.tectonica.jonix.struct.JonixResourceFeature;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supporting resource composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together specify a supporting resource, used here to indicate
+ * that there is a new cover or jacket image, or other supporting resource, for a forthcoming reissue. Deprecated in
+ * this context.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupportingResource&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;supportingresource&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class SupportingResource implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupportingResource";
 	public static final String shortname = "supportingresource";
 

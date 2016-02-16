@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Edition version number</h1>
+ * <p>
+ * The number of a numbered revision within an edition number. To be used only where a publisher uses such two-level
+ * numbering to indicate revisions which do not constitute a new edition under a new ISBN or other distinctive product
+ * identifier. Optional and non-repeating. If this field is used, an &lt;EditionNumber&gt; must also be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free form, suggested maximum length 20 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EditionVersionNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b217&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EditionVersionNumber&gt;2&lt;/EditionVersionNumber&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EditionVersionNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EditionVersionNumber";
 	public static final String shortname = "b217";
 
@@ -65,6 +92,8 @@ public class EditionVersionNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Free form, suggested maximum length 20 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

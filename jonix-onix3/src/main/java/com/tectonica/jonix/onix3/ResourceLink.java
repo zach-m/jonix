@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Resource link</h1>
+ * <p>
+ * A URI which provides a link to a supporting resource. Mandatory in each occurrence of the &lt;ResourceVersion&gt;
+ * composite, and repeatable if the resource can be linked in more than one way, <i>eg</i> by URL or DOI.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ResourceLink&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x435&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x435&gt;http://www.zzzzzzzz.com/resource.jpg&lt;/x435&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ResourceLink implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ResourceLink";
 	public static final String shortname = "x435";
 
@@ -53,6 +83,8 @@ public class ResourceLink implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 * <p>
 	 * (type: dt.NonEmptyURI)
 	 */
 	public String value;

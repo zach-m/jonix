@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publisher’s product number</h1>
+ * <p>
+ * A product code assigned by the publisher of a product, not taken from a recognized standard numbering scheme.
+ * Optional and non-repeating. To be used only when the product does not have a number from a recognized industry
+ * standard scheme (<em>eg</em> ISBN or ISMN), but may occur together with an EAN-13 number. <strong>The
+ * &lt;ProductIdentifier&gt; composite on a later page provides a more general method of handling this and other product
+ * codes, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 35 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublisherProductNo&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b007&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class PublisherProductNo implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublisherProductNo";
 	public static final String shortname = "b007";
 
@@ -65,6 +94,8 @@ public class PublisherProductNo implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 35 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

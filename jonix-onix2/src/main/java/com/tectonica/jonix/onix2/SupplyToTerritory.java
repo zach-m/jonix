@@ -34,9 +34,47 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supply-to territory</h1>
+ * <p>
+ * One or more ONIX codes identifying a territory which is not a country, but which is precisely defined in geographical
+ * terms, <em>eg</em> World, Northern Ireland, Australian Capital Territory. Successive codes may be separated by
+ * spaces. Thus the element can carry an unlimited number of territory codes, for territories for which the supplier has
+ * distribution rights. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more variable-length codes, each consisting of upper case letters with or without a hyphen, successive
+ * codes being separated by spaces. Suggested maximum length 100 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 49 Where possible and appropriate, country subdivision codes are derived from the UN LOCODE scheme based on
+ * ISO 3166.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplyToTerritory&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j397&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j397&gt;WORLD&lt;/j397&gt;&#160;&#160;&#160;&#160;Whole world</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt;&#160;&#160;&#160;&#160;UK excluding Northern Ireland</td>
+ * </tr>
+ * </table>
+ */
 public class SupplyToTerritory implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplyToTerritory";
 	public static final String shortname = "j397";
 

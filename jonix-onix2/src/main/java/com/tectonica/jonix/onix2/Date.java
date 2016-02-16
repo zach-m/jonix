@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Date</h1>
+ * <p>
+ * The date specified in the &lt;MarketDateRole&gt; field. Mandatory in each occurrence of the &lt;MarketDate&gt;
+ * composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Date&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b306&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b306&gt;20010106&lt;/b306&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Date implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Date";
 	public static final String shortname = "b306";
 
@@ -65,6 +91,8 @@ public class Date implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

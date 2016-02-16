@@ -39,9 +39,31 @@ import com.tectonica.jonix.struct.JonixSupplyDate;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supply detail composite</h1>
+ * <p>
+ * A group of data elements which together give details of a supply source, and price and availability from that source.
+ * Mandatory in each occurrence of the &lt;ProductSupply&gt; block and repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SupplyDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;supplydetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class SupplyDetail implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";
 

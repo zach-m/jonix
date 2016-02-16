@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sender EAN number</h1>
+ * <p>
+ * An EAN location number which identifies the sender of an ONIX message. Optional and non-repeating; but either the
+ * &lt;FromCompany&gt; element or a sender identifier using one or more elements from MH.1 to MH.5 must be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, thirteen numeric digits, of which the last is a check digit.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;FromEANNumber&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m172&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;FromEANNumber&gt;5401234098123&lt;/FromEANNumber&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class FromEANNumber implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "FromEANNumber";
 	public static final String shortname = "m172";
 
@@ -65,6 +91,8 @@ public class FromEANNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

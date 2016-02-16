@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Language code</h1>
+ * <p>
+ * An ISO code indicating a language. Mandatory in each occurrence of the &lt;Language&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
+ * lower-case</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 639-2/B List 74</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;LanguageCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b252&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b252&gt;eng&lt;/b252&gt; (English)</td>
+ * </tr>
+ * </table>
+ */
 public class LanguageCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "LanguageCode";
 	public static final String shortname = "b252";
 

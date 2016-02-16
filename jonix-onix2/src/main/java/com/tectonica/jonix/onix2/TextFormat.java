@@ -33,9 +33,42 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Other text format</h1>
+ * <p>
+ * An ONIX code which identifies the format of text which is sent in the &lt;Text&gt; element, or referenced in the
+ * &lt;TextLink&gt; element. Optional and non-repeating. <strong>It is now possible to use a “textformat” attribute in
+ * the &lt;Text&gt; element for this purpose, and this is the recommended practise when the text is sent in the ONIX
+ * record. The &lt;TextFormat&gt; element may still be used when the text is held outside the ONIX record, and
+ * referenced by the &lt;TextLink&gt; element.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 34</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextFormat&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;d103&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;d103&gt;02&lt;/d103&gt;&#160;&#160;&#160;&#160;HTML</td>
+ * </tr>
+ * </table>
+ */
 public class TextFormat implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextFormat";
 	public static final String shortname = "d103";
 

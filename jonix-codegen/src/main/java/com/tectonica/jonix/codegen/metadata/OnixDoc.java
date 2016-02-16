@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tectonica.jonix.codegen.util.XML;
 
@@ -55,6 +56,12 @@ public class OnixDoc
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////
 
+	@JsonIgnore
+	public String onixClassName;
+
+	@JsonIgnore
+	public String format;
+
 	// ONIX2: [new211, new212, deprecated, element, new210, new213, new214, composite]
 	// ONIX3: [deprecated, element, new302, composite, new301]
 	public Set<String> tags;
@@ -65,12 +72,13 @@ public class OnixDoc
 
 	public List<OnixDoc.Detail> details;
 
-	public String toHtmlTable()
+	public String toHtml()
 	{
-		StringBuilder sb = new StringBuilder("<table><tbody>");
-		sb.append("<h1>").append(XML.escape(title)).append("</h1>\n");
-		sb.append("<h2>").append(tags.toString()).append("</h2>\n");
-		sb.append(descriptionHtml).append("\n");
+		StringBuilder sb = new StringBuilder();
+		sb.append("<h1>").append(title).append("</h1>");
+//		sb.append("<h2>").append(tags.toString()).append("</h2>");
+		sb.append(descriptionHtml);
+		sb.append("<table border='1' cellpadding='3'>");
 		for (OnixDoc.Detail detail : details)
 		{
 			if (detail.lines.size() == 0)
@@ -79,6 +87,9 @@ public class OnixDoc
 			boolean first = true;
 			for (String line : detail.lines)
 			{
+				if (line.isEmpty())
+					continue;
+				
 				sb.append("<tr>");
 
 				// first column
@@ -98,7 +109,7 @@ public class OnixDoc
 				sb.append("</tr>");
 			}
 		}
-		sb.append("</tbody></table>");
+		sb.append("</table>");
 		return sb.toString();
 	}
 }

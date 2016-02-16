@@ -33,9 +33,34 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Conference date</h1>
+ * <p>
+ * The date of a conference to which the product is related. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year (YYYY) or month and year (YYYYMM).</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ConferenceDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b054&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ConferenceDate&gt;1998&lt;/ConferenceDate&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ConferenceDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ConferenceDate";
 	public static final String shortname = "b054";
 
@@ -65,6 +90,8 @@ public class ConferenceDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year (YYYY) or month and year (YYYYMM).
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

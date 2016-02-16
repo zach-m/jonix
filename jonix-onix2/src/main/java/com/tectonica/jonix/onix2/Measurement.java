@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Measurement</h1>
+ * <p>
+ * The number which represents the dimension specified in &lt;MeasureTypeCode&gt; in the measure units specified in
+ * &lt;MeasureUnitCode&gt;. Mandatory in each occurrence of the &lt;Measure&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with an explicit decimal point when required, suggested maximum length 6 characters
+ * including a decimal point.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Measurement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;c094&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;Measurement&gt;8.25&lt;/Measurement&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Measurement implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Measurement";
 	public static final String shortname = "c094";
 
@@ -65,6 +92,9 @@ public class Measurement implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

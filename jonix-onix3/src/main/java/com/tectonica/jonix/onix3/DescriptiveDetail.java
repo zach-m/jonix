@@ -57,9 +57,33 @@ import com.tectonica.jonix.struct.JonixProductFormFeature;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>null</h1><h4 class="nobreak">Descriptive detail composite</h4>
+ * <p>
+ * The descriptive detail block covers data element Groups P.3 to P.13, all of which are essentially part of the factual
+ * description of the form and content of a product. The block as a whole is non-repeating. It is mandatory in any
+ * &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update
+ * notice which carries only those blocks in which changes have occurred.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DescriptiveDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;descriptivedetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class DescriptiveDetail implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DescriptiveDetail";
 	public static final String shortname = "descriptivedetail";
 

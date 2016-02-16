@@ -34,9 +34,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Default unit of weight</h1>
+ * <p>
+ * A code indicating the default unit which is assumed for weights listed in the message, unless otherwise specified in
+ * the product record. <strong>This element is deprecated <!-- provided for use at Level 1 -->. For most
+ * implementations, explicit coding of units with each occurrence of a weight is to be preferred.</strong> Optional and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 95</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DefaultWeightUnit&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m188&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m188&gt;oz&lt;/m188&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DefaultWeightUnit implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DefaultWeightUnit";
 	public static final String shortname = "m188";
 

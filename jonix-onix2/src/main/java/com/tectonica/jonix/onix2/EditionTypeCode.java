@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Edition type code</h1>
+ * <p>
+ * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
+ * characteristics of two or more types (<em>eg</em> revised and annotated).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three upper-case letters</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 21</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EditionTypeCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b056&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EditionTypeCode&gt;ILL&lt;/EditionTypeCode&gt;&#160;&#160;&#160;&#160;Illustrated</td>
+ * </tr>
+ * </table>
+ */
 public class EditionTypeCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EditionTypeCode";
 	public static final String shortname = "b056";
 

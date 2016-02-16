@@ -82,8 +82,8 @@ public enum ProductClassificationTypes
 	/**
 	 * Statistical Classification of Products by Activity in the European Economic Community, see
 	 * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=CPA_2008. Up to six
-	 * digits, with one or two periods. For example, printed children&#8217;s books are &#8216;58.11.13&#8217;, but the
-	 * periods are normally ommited in ONIX
+	 * digits, with one or two periods. For example, printed children's books are '58.11.13', but the periods are
+	 * normally ommited in ONIX
 	 */
 	CPA("09", "CPA"), //
 

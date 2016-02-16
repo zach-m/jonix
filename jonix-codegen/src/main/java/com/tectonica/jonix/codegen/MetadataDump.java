@@ -20,7 +20,6 @@
 package com.tectonica.jonix.codegen;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -54,10 +53,10 @@ public class MetadataDump
 
 	private static void parse2() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
-				ParseUtil.SPACEABLE_REF_2);
-		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver2_1_03, ParseUtil.RES_SHORT_2,
-				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_SHORT_2);
+		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2,
+				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
+		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2,
+				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_SHORT_2, ParseUtil.RES_HTML_SPEC_2);
 
 		saveMetadata(ref2, "/onix2/reference");
 		saveMetadata(short2, "/onix2/short");
@@ -65,10 +64,10 @@ public class MetadataDump
 
 	private static void parse3() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
-				ParseUtil.SPACEABLE_REF_3);
-		final OnixMetadata short3 = ParseUtil.parse(OnixVersion.Ver3_0_02, ParseUtil.RES_SHORT_3,
-				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_SHORT_3);
+		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3,
+				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
+		final OnixMetadata short3 = ParseUtil.parse(OnixVersion.Ver3_0_02, true, ParseUtil.RES_SHORT_3,
+				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_SHORT_3, ParseUtil.RES_HTML_SPEC_3);
 
 		saveMetadata(ref3, "/onix3/reference");
 		saveMetadata(short3, "/onix3/short");
@@ -85,47 +84,42 @@ public class MetadataDump
 //		saveAsJson(metadata.onixElements.values(), folder + "/elements.txt");
 //		saveAsJson(metadata.onixFlags.values(), folder + "/flags.txt");
 //		saveAsJson(metadata.onixEnums.values(), folder + "/enums.txt");
-		saveAsJson(metadata.onixTypes.values(), folder + "/types.txt");
+		saveAsJson(folder + "/types.txt", metadata.onixTypes.values());
 
 		new File(folder + "/composites").mkdirs();
 		for (OnixCompositeDef composite : metadata.onixComposites.values())
 		{
 //			occ.sortInternally();
-			saveAsJson(composite, folder + "/composites/" + composite.name + ".txt");
+			saveAsJson(folder + "/composites/" + composite.name + ".txt", composite);
 		}
 
 		new File(folder + "/elements").mkdirs();
 		for (OnixElementDef element : metadata.onixElements.values())
 		{
 //			ovc.sortInternally();
-			saveAsJson(element, folder + "/elements/" + element.name + ".txt");
+			saveAsJson(folder + "/elements/" + element.name + ".txt", element);
 		}
 
 		new File(folder + "/flags").mkdirs();
 		for (OnixFlagDef flag : metadata.onixFlags.values())
 		{
 //			ofc.sortInternally();
-			saveAsJson(flag, folder + "/flags/" + flag.name + ".txt");
+			saveAsJson(folder + "/flags/" + flag.name + ".txt", flag);
 		}
 
 		new File(folder + "/enums").mkdirs();
 		for (OnixSimpleType ost : metadata.onixEnums.values())
-			saveAsJson(ost, folder + "/enums/" + ost.name + ".txt");
+			saveAsJson(folder + "/enums/" + ost.name + ".txt", ost);
 
 		new File(folder + "/structs").mkdirs();
 		for (OnixStruct os : metadata.jonixStructs.values())
-			saveAsJson(os, folder + "/structs/" + os.containingComposite.name + ".txt");
+			saveAsJson(folder + "/structs/" + os.containingComposite.name + ".txt", os);
 
 		System.out.println("saved results to " + folder);
 	}
 
-	private static String saveAsJson(final Object obj, final String fileName) throws IOException
+	private static void saveAsJson(final String fileName, final Object obj) throws IOException
 	{
-		final String json = JSON.toJson(obj);
-		try (FileWriter fw = new FileWriter(fileName))
-		{
-			fw.write(json);
-		}
-		return json;
+		JSON.saveAsJson(new File(fileName), obj);
 	}
 }

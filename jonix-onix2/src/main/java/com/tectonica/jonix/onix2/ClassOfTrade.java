@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Class of trade    USA only</h1>
+ * <p>
+ * Text indicating the class of trade to which the price carried in an occurrence of the &lt;Price&gt; composite is
+ * applicable, <em>eg</em> Institutional, General trade, Wholesale distributor, which may be represented by a suitable
+ * code or abbreviation agreed between trading partners. This element should be used only in the absence of a “Default
+ * class of trade” &lt;m193&gt; in the message header, or when the class of trade is other than the default.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Text, suggested maximum length 50 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ClassOfTrade&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j149&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ClassOfTrade&gt;gen&lt;/ClassOfTrade&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ClassOfTrade implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ClassOfTrade";
 	public static final String shortname = "j149";
 
@@ -65,6 +93,8 @@ public class ClassOfTrade implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

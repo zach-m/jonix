@@ -44,7 +44,7 @@ public enum PublishingRoles
 	 * Use where two or more publishers co-publish the exact same product, either under a single ISBN (in which case
 	 * both publishers are co-publishers), or under different ISBNs (in which case the publisher of THIS ISBN is the
 	 * publisher and the publishers of OTHER ISBNs are co-publishers. Note this is different from publication of
-	 * &#8216;co-editions&#8217;
+	 * 'co-editions'
 	 */
 	Co_publisher("02", "Co-publisher"), //
 
@@ -60,7 +60,7 @@ public enum PublishingRoles
 	Published_for_on_behalf_of("06", "Published for/on behalf of"), //
 
 	/**
-	 * Use also for &#8216;Published in cooperation with&#8217;
+	 * Use also for 'Published in cooperation with'
 	 */
 	Published_in_association_with("07", "Published in association with"), //
 
@@ -86,10 +86,10 @@ public enum PublishingRoles
 	Publisher_of_facsimile_original("11", "Publisher of facsimile original"), //
 
 	/**
-	 * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a &#8216;prebound
-	 * edition&#8217; is a book that was previously bound, normally as a paperback, and has been rebound with a
-	 * library-quality hardcover binding by a supplier other than the original publisher.) Required when the
-	 * &lt;EditionType&gt; is coded PRB. The original publisher should be named as the &#8216;publisher&#8217;
+	 * The repackager of a prebound edition that has been assigned its own identifier. (In the US, a 'prebound edition'
+	 * is a book that was previously bound, normally as a paperback, and has been rebound with a library-quality
+	 * hardcover binding by a supplier other than the original publisher.) Required when the &lt;EditionType&gt; is
+	 * coded PRB. The original publisher should be named as the 'publisher'
 	 */
 	Repackager_of_prebound_edition("12", "Repackager of prebound edition"), //
 

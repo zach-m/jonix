@@ -31,9 +31,47 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Market publishing status note</h1>
+ * <p>
+ * Free text that describes the status of a product in a specified market, when the code in
+ * &lt;MarketPublishingStatus&gt; is insufficient. Optional, but when used, must be accompanied by the
+ * &lt;MarketPublishingStatus&gt; element. Repeatable if parallel text is provided in multiple languages. The
+ * <i>language</i> attribute is optional for a single instance of &lt;MarketPublishingStatusNote&gt;, but must be
+ * included in each instance if &lt;MarketPublishingStatusNote&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using XHTML, HTML
+ * or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MarketPublishingStatusNote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x406&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x406&gt;Agent has lost contact with publisher&lt;/x406&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MarketPublishingStatusNote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MarketPublishingStatusNote";
 	public static final String shortname = "x406";
 
@@ -59,6 +97,9 @@ public class MarketPublishingStatusNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

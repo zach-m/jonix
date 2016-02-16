@@ -39,12 +39,12 @@ import java.util.Map;
 public enum ComplexitySchemeIdentifiers
 {
 	/**
-	 * For example AD or HL. DEPRECATED in ONIX 3 &#8211; use code 06 instead
+	 * For example AD or HL. DEPRECATED in ONIX 3 - use code 06 instead
 	 */
 	Lexile_code("01", "Lexile code"), //
 
 	/**
-	 * For example 880L. DEPRECATED in ONIX 3 &#8211; use code 06 instead
+	 * For example 880L. DEPRECATED in ONIX 3 - use code 06 instead
 	 */
 	Lexile_number("02", "Lexile number"), //
 
@@ -56,20 +56,20 @@ public enum ComplexitySchemeIdentifiers
 
 	/**
 	 * UK Institute of Education Book Bands for Guided Reading scheme (see http://www.ioe.ac.uk/research/4664.html).
-	 * &lt;ComplexityCode&gt; is a color, eg &#8216;Pink A&#8217; or &#8216;Copper&#8217;
+	 * &lt;ComplexityCode&gt; is a color, eg 'Pink A' or 'Copper'
 	 */
 	IoE_Book_Band("04", "IoE Book Band"), //
 
 	/**
-	 * &lt;ComplexityCode&gt; is a code from &#8216;A&#8217; to Z+&#8217;. See
+	 * &lt;ComplexityCode&gt; is a code from 'A' to Z+'. See
 	 * http://www.fountasandpinnellleveledbooks.com/aboutLeveledTexts.aspx
 	 */
 	Fountas_Pinnell_Text_Level_Gradient("05", "Fountas & Pinnell Text Level Gradient"), //
 
 	/**
 	 * The Lexile measure in &lt;ComplexityCode&gt; combines the Lexile number (for example 620L or 880L) and optionally
-	 * the Lexile code (for example AD or HL). Examples might be &#8216;880L&#8217;, &#8216;AD0L&#8217; or
-	 * &#8216;HL600L&#8217;. See https://lexile.com/about-lexile/lexile-overview/
+	 * the Lexile code (for example AD or HL). Examples might be '880L', 'AD0L' or 'HL600L'. See
+	 * https://lexile.com/about-lexile/lexile-overview/
 	 */
 	Lexile_measure("06", "Lexile measure"), //
 

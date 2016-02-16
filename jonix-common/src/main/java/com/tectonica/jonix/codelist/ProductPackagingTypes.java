@@ -55,7 +55,7 @@ public enum ProductPackagingTypes
 	Clamshell("02", "Clamshell"), //
 
 	/**
-	 * Typical DVD-style packaging, sometimes known as an &#8216;Amaray&#8217; case
+	 * Typical DVD-style packaging, sometimes known as an 'Amaray' case
 	 */
 	Keep_case("03", "Keep case"), //
 
@@ -72,18 +72,17 @@ public enum ProductPackagingTypes
 
 	/**
 	 * Individual item, items or set in card box with separate or hinged lid: not to be confused with the commonly-used
-	 * &#8216;boxed set&#8217;
+	 * 'boxed set'
 	 */
 	In_box("09", "In box"), //
 
 	/**
-	 * Slip-case for single item only: German &#8216;Schuber&#8217;
+	 * Slip-case for single item only: German 'Schuber'
 	 */
 	Slip_cased("10", "Slip-cased"), //
 
 	/**
-	 * Slip-case for multi-volume set: German &#8216;Kassette&#8217;; also commonly referred to as &#8216;boxed
-	 * set&#8217;
+	 * Slip-case for multi-volume set: German 'Kassette'; also commonly referred to as 'boxed set'
 	 */
 	Slip_cased_set("11", "Slip-cased set"), //
 

@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Message creation date/time</h1>
+ * <p>
+ * The date on which the message is sent. Optionally, the time may be added, using the 24-hour clock. Mandatory and
+ * non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SentDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m182&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m182&gt;200005220230&lt;/m182&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SentDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SentDate";
 	public static final String shortname = "m182";
 
@@ -65,6 +91,8 @@ public class SentDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

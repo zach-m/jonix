@@ -35,9 +35,28 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Copyright statement composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together represent a structured copyright statement for the
+ * product. Either a structured copyright statement or statements, or a copyright year in the separate
+ * &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CopyrightStatement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;copyrightstatement&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CopyrightStatement implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CopyrightStatement";
 	public static final String shortname = "copyrightstatement";
 

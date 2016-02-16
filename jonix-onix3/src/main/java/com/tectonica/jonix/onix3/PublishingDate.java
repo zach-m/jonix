@@ -32,9 +32,33 @@ import com.tectonica.jonix.struct.JonixPublishingDate;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publishing date composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify a date associated with the publishing of the product.
+ * Optional, but a date of publication <em>must</em> be specified <em>either</em> here (as a ‘global’ pubdate)
+ * <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates related to the publishing of a product can be sent
+ * in further repeats.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublishingDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;publishingdate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class PublishingDate implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublishingDate";
 	public static final String shortname = "publishingdate";
 

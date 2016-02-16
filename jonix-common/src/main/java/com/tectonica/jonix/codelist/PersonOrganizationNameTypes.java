@@ -38,7 +38,7 @@ public enum PersonOrganizationNameTypes
 	Unspecified("00", "Unspecified"), //
 
 	/**
-	 * May be used to give a well-known pseudonym, where the primary name is a &#8216;real&#8217; name
+	 * May be used to give a well-known pseudonym, where the primary name is a 'real' name
 	 */
 	Pseudonym("01", "Pseudonym"), //
 

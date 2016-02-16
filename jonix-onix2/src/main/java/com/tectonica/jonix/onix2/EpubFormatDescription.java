@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Epublication format description</h1>
+ * <p>
+ * A free text description of an epublication format. Optional and non-repeating, and can occur only if the
+ * &lt;EpubType&gt; field is present, but it does not require the presence of the &lt;EpubFormat&gt; field.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum 200 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubFormatDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b216&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b216&gt;Screen optimized PDF, with low-res figures&lt;/b216&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EpubFormatDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubFormatDescription";
 	public static final String shortname = "b216";
 
@@ -65,6 +91,8 @@ public class EpubFormatDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

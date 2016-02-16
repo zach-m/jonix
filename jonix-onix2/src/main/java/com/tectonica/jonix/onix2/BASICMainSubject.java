@@ -33,9 +33,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>BISAC main subject category</h1>
+ * <p>
+ * A BISAC subject category code which identifies the main subject of the product. Optional and non-repeating.
+ * Additional BISAC subject category codes may be sent using the &lt;Subject&gt; composite.
+ * <em>Note that the data element reference name was assigned during a period when the BISAC name had been changed to “BASIC”. The name has now officially reverted to “BISAC”, but the ONIX data element name cannot be changed for reasons of upwards compatibility.</em>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three upper-case letters and six numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>BISAC Subject Heading Codes. Please contact info@bisg.org for details, or check the BISG website at
+ * http://www.bisg.org/publications.html</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BASICMainSubject&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b064&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;BASICMainSubject&gt;ARC007000&lt;/BASICMainSubject&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BASICMainSubject implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BASICMainSubject";
 	public static final String shortname = "b064";
 
@@ -65,6 +97,8 @@ public class BASICMainSubject implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, three upper-case letters and six numeric digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

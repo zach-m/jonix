@@ -36,9 +36,26 @@ import com.tectonica.jonix.struct.JonixReligiousTextFeature;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Religious text feature composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify and describe a feature of a religious text.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReligiousTextFeature&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;religioustextfeature&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ReligiousTextFeature implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReligiousTextFeature";
 	public static final String shortname = "religioustextfeature";
 

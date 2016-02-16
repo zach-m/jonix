@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Stock quantity code type</h1>
+ * <p>
+ * An ONIX code identifying the scheme from which the value in the &lt;StockQuantityCode&gt; element is taken. Mandatory
+ * in each occurrence of the &lt;StockQuantityCoded&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;StockQuantityCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 70</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j293&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;StockQuantityCodeType&gt;02&lt;/StockQuantityCodeType&gt;&#160;&#160;&#160;&#160;APA stock quantity code</td>
+ * </tr>
+ * </table>
+ */
 public class StockQuantityCodeType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "StockQuantityCodeType";
 	public static final String shortname = "j293";
 

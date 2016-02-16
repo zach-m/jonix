@@ -36,9 +36,26 @@ import com.tectonica.jonix.struct.JonixPrize;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Prize or award composite</h1>
+ * <p>
+ * A repeatable group of data elements which together describe a prize or award won by the product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Prize&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;prize&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Prize implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Prize";
 	public static final String shortname = "prize";
 

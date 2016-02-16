@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Last date for returns</h1>
+ * <p>
+ * The last date for returns, when the supplier has placed a time limit on returns from retailers. Typically this occurs
+ * when the publisher has made the product out-of-print. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as year, month, day (YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;LastDateForReturns&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j387&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j387&gt;20040616&lt;/j387&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class LastDateForReturns implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "LastDateForReturns";
 	public static final String shortname = "j387";
 
@@ -65,6 +91,8 @@ public class LastDateForReturns implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

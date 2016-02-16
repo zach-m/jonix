@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Map scale</h1>
+ * <p>
+ * The scale of a map, expressed as a ratio 1:nnnnn; only the number nnnnn is carried in the data element, without
+ * spaces or punctuation. Optional, and repeatable if the product comprises maps with two or more different scales.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length integer, suggested maximum length 6 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MapScale&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b063&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;MapScale&gt;50000&lt;/MapScale&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MapScale implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MapScale";
 	public static final String shortname = "b063";
 
@@ -65,6 +91,8 @@ public class MapScale implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

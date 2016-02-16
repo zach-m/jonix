@@ -34,9 +34,31 @@ import com.tectonica.jonix.struct.JonixAgentIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publisher representative composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify a publisher representative in a specified market.
+ * Optional, and repeated only if the publisher has two or more representatives.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublisherRepresentative&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;publisherrepresentative&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class PublisherRepresentative implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublisherRepresentative";
 	public static final String shortname = "publisherrepresentative";
 

@@ -33,9 +33,34 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number of pages, Arabic</h1>
+ * <p>
+ * The number of pages numbered in Arabic numerals. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length numeric, suggested maximum length 6 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PagesArabic&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b255&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b255&gt;442&lt;/b255&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PagesArabic implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PagesArabic";
 	public static final String shortname = "b255";
 
@@ -65,6 +90,8 @@ public class PagesArabic implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length numeric, suggested maximum length 6 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Reason for deletion</h1>
+ * <p>
+ * Free text which indicates the reason why an ONIX record is being deleted. Optional and non-repeating; and may occur
+ * only when the &lt;NotificationType&gt; element carries the code value 05. Note that it refers to the reason why the
+ * record is being deleted, not the reason why a product has been “deleted” (in industries which use this terminology
+ * when a product is withdrawn).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DeletionText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;a199&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;a199&gt;Issued in error&lt;/a199&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DeletionText implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DeletionText";
 	public static final String shortname = "a199";
 
@@ -65,6 +93,8 @@ public class DeletionText implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

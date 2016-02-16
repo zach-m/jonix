@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price printed on product</h1>
+ * <p>
+ * An ONIX code indicating whether the price in a &lt;Price&gt; composite is printed on the product. Optional and
+ * non-repeating. Omission of this element must <em>not</em> be interpreted as indicating that the price is not printed
+ * on the product.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 174</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PrintedOnProduct&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x301&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x301&gt;02&lt;/x301&gt; (Price is printed on product)</td>
+ * </tr>
+ * </table>
+ */
 public class PrintedOnProduct implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PrintedOnProduct";
 	public static final String shortname = "x301";
 

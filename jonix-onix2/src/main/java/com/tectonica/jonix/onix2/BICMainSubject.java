@@ -33,9 +33,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>BIC main subject category</h1>
+ * <p>
+ * A BIC subject category code which identifies the main subject of the product. Optional and non-repeating. Additional
+ * BIC subject category codes may be sent using the &lt;Subject&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>BIC Subject Category Codes. Available for downloading from http://www.bic.org.uk/</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BICMainSubject&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b065&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b065&gt;WDMG1&lt;/b065&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BICMainSubject implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BICMainSubject";
 	public static final String shortname = "b065";
 
@@ -65,6 +95,8 @@ public class BICMainSubject implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

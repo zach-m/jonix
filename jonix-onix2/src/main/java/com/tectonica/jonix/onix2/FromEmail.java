@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sender contact email address</h1>
+ * <p>
+ * A text field giving the email address for a contact person in the sender organization who is responsible for the
+ * content of the message. Optional and non-repeating.
+ * </p>
+ * <p class="new214">
+ * The text is not limited to ASCII characters.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length ASCII text, suggested maximum 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;FromEmail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m283&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m283&gt;jackie.brown@bigpublisher.co.uk&lt;/m283&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class FromEmail implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "FromEmail";
 	public static final String shortname = "m283";
 
@@ -65,6 +94,8 @@ public class FromEmail implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length ASCII text, suggested maximum 100 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

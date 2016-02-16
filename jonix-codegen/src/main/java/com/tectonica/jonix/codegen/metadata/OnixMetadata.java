@@ -27,10 +27,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 
-@JsonPropertyOrder({ "onixVersion", "composites", "elements", "flgs", "types", "enums", "structs", "intfs" })
+@JsonPropertyOrder({ "onixVersion", "isShort", "composites", "elements", "flgs", "types", "enums", "structs", "intfs" })
 public class OnixMetadata
 {
 	public final OnixVersion onixVersion;
+	public final boolean isShort;
 
 	@JsonIgnore
 	public Map<String, OnixCompositeDef> onixComposites = new HashMap<>();
@@ -44,6 +45,7 @@ public class OnixMetadata
 	public Map<String, OnixSimpleType> onixEnums = new HashMap<>();
 	@JsonIgnore
 	public Map<String, OnixStruct> jonixStructs = new HashMap<>();
+
 //	@JsonIgnore
 //	public Map<String, OnixCompositeDef> jonixIntfs = new HashMap<>();
 
@@ -51,9 +53,10 @@ public class OnixMetadata
 	@JsonIgnore
 	public Map<String, OnixStruct> unifiedStructs = null;
 
-	public OnixMetadata(OnixVersion onixVersion)
+	public OnixMetadata(OnixVersion onixVersion, boolean isShort)
 	{
 		this.onixVersion = onixVersion;
+		this.isShort = isShort;
 	}
 
 	// convenience getters

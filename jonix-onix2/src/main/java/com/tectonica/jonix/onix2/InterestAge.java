@@ -33,9 +33,42 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Interest age(s)</h1>
+ * <p>
+ * A text element specifying a target interest age of range of ages. which should be entered strictly according to the
+ * conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt; composite on the next page
+ * provides a more general method of handling interest age and other ranges, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, maximum 15 characters.</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>from n1 to n2&#160;&#160;&#160;&#160;Age range from n1 to n2 from n&#160;&#160;&#160;&#160;From age n upwards to
+ * n&#160;&#160;&#160;&#160;Up to age n n&#160;&#160;&#160;&#160;Age n only where n is an integer representing age in
+ * years</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;InterestAge&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b190&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;InterestAge&gt;from 9 to 12&lt;/InterestAge&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class InterestAge implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "InterestAge";
 	public static final String shortname = "b190";
 
@@ -65,6 +98,8 @@ public class InterestAge implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, maximum 15 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

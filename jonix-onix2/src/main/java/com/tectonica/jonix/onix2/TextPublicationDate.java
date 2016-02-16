@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publication date of other text</h1>
+ * <p>
+ * The date on which text sent in the &lt;Text&gt; element, or referenced in the &lt;TextLink&gt; element, was
+ * published. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TextPublicationDate&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;d109&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;d109&gt;20000504&lt;/d109&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TextPublicationDate implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TextPublicationDate";
 	public static final String shortname = "d109";
 
@@ -65,6 +91,8 @@ public class TextPublicationDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

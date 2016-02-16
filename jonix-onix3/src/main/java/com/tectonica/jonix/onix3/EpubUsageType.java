@@ -30,9 +30,43 @@ import com.tectonica.jonix.codelist.UsageTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Usage type (digital products)</h1>
+ * <p>
+ * An ONIX code specifying a usage of a digital product. Mandatory in each occurrence of the &lt;EpubUsageConstraint&gt;
+ * composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 145</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubUsageType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x318&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;x318&gt;05&lt;/x318&gt; (Text-to-speech)</td>
+ * </tr>
+ * </table>
+ */
 public class EpubUsageType implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubUsageType";
 	public static final String shortname = "x318";
 

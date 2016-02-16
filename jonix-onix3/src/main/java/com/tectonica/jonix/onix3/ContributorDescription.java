@@ -31,9 +31,48 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contributor description</h1>
+ * <p>
+ * Brief text describing a contributor to the product, at the publisher’s discretion. Optional, and repeatable to
+ * provide parallel descriptions in multiple languages. The <i>language</i> attribute is optional for a single instance
+ * of &lt;ContributorDescription&gt;, but must be included in each instance if &lt;ContributorDescription&gt; is
+ * repeated. It may be used with either a person or corporate name, to draw attention to any aspect of a contributor’s
+ * background which supports the promotion of the book.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContributorDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b048&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ContributorDescription&gt;Skipper of the winning crew in the Americas Cup,
+ * 1998&lt;/ContributorDescription&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ContributorDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContributorDescription";
 	public static final String shortname = "b048";
 
@@ -59,6 +98,9 @@ public class ContributorDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

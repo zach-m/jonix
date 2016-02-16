@@ -38,9 +38,28 @@ import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Name composite</h1>
+ * <p>
+ * A repeatable group of data elements which together represent a personal name, and specify its type. The &lt;Name&gt;
+ * composite may be used to send alternate names for the same person, <em>eg</em> to handle such cases as Ian Rankin
+ * writing as Jack Harvey.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Name&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;name&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Name implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Name";
 	public static final String shortname = "name";
 

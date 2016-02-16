@@ -34,9 +34,32 @@ import com.tectonica.jonix.struct.JonixAudienceRange;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Audience range composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe an audience or readership range for which a
+ * product is intended. The composite can carry a single value <em>from</em>, <em>to</em>, or <em>exact</em>, or a pair
+ * of values with an explicit <em>from</em> and <em>to</em>. See examples below.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AudienceRange&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;audiencerange&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class AudienceRange implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AudienceRange";
 	public static final String shortname = "audiencerange";
 

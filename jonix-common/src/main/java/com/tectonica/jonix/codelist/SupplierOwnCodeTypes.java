@@ -42,13 +42,13 @@ public enum SupplierOwnCodeTypes
 	Supplier_s_sales_classification("01", "Supplier’s sales classification"), //
 
 	/**
-	 * A supplier&#8217;s coding of the eligibility of a product for a bonus scheme on overall sales
+	 * A supplier's coding of the eligibility of a product for a bonus scheme on overall sales
 	 */
 	Supplier_s_bonus_eligibility("02", "Supplier’s bonus eligibility"), //
 
 	/**
 	 * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
-	 * when the publisher is not the &#8216;supplier&#8217;
+	 * when the publisher is not the 'supplier'
 	 */
 	Publisher_s_sales_classification("03", "Publisher’s sales classification"), //
 

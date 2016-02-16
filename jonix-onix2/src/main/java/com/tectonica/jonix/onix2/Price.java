@@ -45,9 +45,28 @@ import com.tectonica.jonix.struct.JonixDiscountCoded;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Price composite</h1>
+ * <p>
+ * A optional and repeatable group of data elements which together specify a unit price, used here to indicate a price
+ * that will apply when the product is reissued. <strong>Please see above, within Group&nbsp;PR.24, for
+ * details.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Price&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;price&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Price implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Price";
 	public static final String shortname = "price";
 

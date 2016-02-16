@@ -33,9 +33,31 @@ import com.tectonica.jonix.struct.JonixSenderIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Sender composite</h1>
+ * <p>
+ * A group of data elements which together specify the sender of an ONIX for Books message. Mandatory in any ONIX for
+ * Books message, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Sender&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;sender&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * </table>
+ */
 public class Sender implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Sender";
 	public static final String shortname = "sender";
 

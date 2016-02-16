@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>DOI</h1>
+ * <p>
+ * Digital Object Identifier. The international identifier for intellectual property in the digital environment. See <a
+ * href="http://www.doi.org/" target="_blank">http://www.doi.org/</a> Optional and non-repeating. <strong>The
+ * &lt;ProductIdentifier&gt; composite below provides a more general method of handling this and other product codes,
+ * and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DOI&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b009&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;DOI&gt;10.1006/jmbi.1998.2354&lt;/DOI&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DOI implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DOI";
 	public static final String shortname = "b009";
 
@@ -65,6 +93,8 @@ public class DOI implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

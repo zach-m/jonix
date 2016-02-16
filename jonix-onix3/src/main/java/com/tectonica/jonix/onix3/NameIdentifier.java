@@ -31,9 +31,32 @@ import com.tectonica.jonix.struct.JonixNameIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Name identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify a name identifier, used here to carry an identifier for a
+ * person or organization name given in an occurrence of the &lt;Contributor&gt; composite. Optional: see Group&nbsp;P.7
+ * introductory text for valid options.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NameIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;nameidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class NameIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NameIdentifier";
 	public static final String shortname = "nameidentifier";
 

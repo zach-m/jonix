@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Year of thesis</h1>
+ * <p>
+ * The year in which a thesis was presented. Optional and non-repeating, but if this element is present,
+ * &lt;ThesisType&gt; must also be present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, four numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ThesisYear&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b370&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b370&gt;2002&lt;/b370&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ThesisYear implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ThesisYear";
 	public static final String shortname = "b370";
 
@@ -65,6 +91,8 @@ public class ThesisYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, four numeric digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -58,8 +58,8 @@ public enum SupplierRoles
 	Wholesaler("04", "Wholesaler"), //
 
 	/**
-	 * DEPRECATED &#8211; use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to
-	 * specify a sales agent
+	 * DEPRECATED - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to specify
+	 * a sales agent
 	 */
 	Sales_agent("05", "Sales agent"), //
 

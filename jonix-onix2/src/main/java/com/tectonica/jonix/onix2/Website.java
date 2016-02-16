@@ -35,9 +35,27 @@ import com.tectonica.jonix.struct.JonixWebsite;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Website composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together identify and provide pointers to a website which is
+ * related to the agent or local publisher identified in an occurrence of the &lt;MarketRepresentation&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Website&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;website&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Website implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Website";
 	public static final String shortname = "website";
 

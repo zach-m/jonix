@@ -31,9 +31,32 @@ import com.tectonica.jonix.struct.JonixProductContactIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product contact identifier composite</h1>
+ * <p>
+ * A group of data elements which together define an identifier of the product contact. The composite is optional, and
+ * repeatable if more than one identifier of different types is sent; but <em>either</em> a &lt;ProductContactName&gt;
+ * <em>or</em> a &lt;ProductContactIdentifier&gt; <em>must</em> be included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductContactIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productcontactidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ProductContactIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductContactIdentifier";
 	public static final String shortname = "productcontactidentifier";
 

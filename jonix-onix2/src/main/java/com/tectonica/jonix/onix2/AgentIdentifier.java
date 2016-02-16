@@ -35,9 +35,29 @@ import com.tectonica.jonix.struct.JonixAgentIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Agent identifier composite</h1>
+ * <p>
+ * A group of data elements together defining the identifier of an agent or local publisher in accordance with a
+ * specified scheme. Optional, but each occurrence of the &lt;MarketRepresentation&gt; composite must carry either at
+ * least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are sent using
+ * different schemes.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AgentIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;agentidentifier&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class AgentIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AgentIdentifier";
 	public static final String shortname = "agentidentifier";
 

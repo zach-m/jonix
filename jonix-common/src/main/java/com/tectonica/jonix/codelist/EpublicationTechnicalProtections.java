@@ -56,7 +56,7 @@ public enum EpublicationTechnicalProtections
 	Adobe_DRM("03", "Adobe DRM"), //
 
 	/**
-	 * FairPlay&#8217; DRM protection applied via Apple proprietary online store
+	 * FairPlay' DRM protection applied via Apple proprietary online store
 	 */
 	Apple_DRM("04", "Apple DRM"), //
 

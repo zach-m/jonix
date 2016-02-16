@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Other alternative product EAN-13</h1>
+ * <p>
+ * EAN-13 article number identifying another product which is available and which the publisher suggests as an
+ * alternative. This element is used when the suggested alternative is neither a direct successor (new edition) nor the
+ * same product in an alternative format. Optional and non-repeating. <strong>The &lt;RelatedProduct&gt; composite on a
+ * later page provides a more general method of handling related items, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AlternativeProductEAN13&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;h164&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;h164&gt;9788474339796&lt;/h164&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class AlternativeProductEAN13 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AlternativeProductEAN13";
 	public static final String shortname = "h164";
 
@@ -65,6 +93,8 @@ public class AlternativeProductEAN13 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

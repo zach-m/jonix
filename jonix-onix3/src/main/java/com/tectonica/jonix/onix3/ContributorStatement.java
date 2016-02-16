@@ -31,9 +31,50 @@ import com.tectonica.jonix.codelist.TextFormats;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contributor statement</h1>
+ * <p>
+ * Free text showing how the authorship should be described in an online display, when a standard concatenation of
+ * individual contributor elements would not give a satisfactory presentation. Optional, and repeatable if parallel text
+ * is provided in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;ContributorStatement&gt;, but must be included in each instance if &lt;ContributorStatement&gt; is repeated. When
+ * the &lt;ContributorStatement&gt; field is sent, the receiver should use it to replace all name detail sent in the
+ * &lt;Contributor&gt; composite <em>for display purposes only</em>. It does not replace the &lt;BiographicalNote&gt;
+ * element. The individual name detail must also be sent in the &lt;Contributor&gt; composite for indexing and
+ * retrieval.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see Using
+ * XHTML, HTML or XML with ONIX text fields</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ContributorStatement&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b049&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language, textformat</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b049&gt;Written and illustrated by Fred and Emily Jackson&lt;/b049&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ContributorStatement implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ContributorStatement";
 	public static final String shortname = "b049";
 
@@ -59,6 +100,9 @@ public class ContributorStatement implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

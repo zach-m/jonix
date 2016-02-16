@@ -34,9 +34,45 @@ import com.tectonica.jonix.struct.JonixNameIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Alternative name composite</h1>
+ * <p>
+ * A repeatable group of data elements which together represent an alternative name of a contributor, and specify its
+ * type. The &lt;AlternativeName&gt; composite is optional. It may be used to send a pseudonym as well as a real name,
+ * where both names are on the product, <i>eg</i> to handle such cases as ‘Ian Rankin writing as Jack Harvey’; or to
+ * send an authority-controlled form of a name; or to identify the real name of the contributor where the book is
+ * written under a pseudonym (and the real identity need not be kept private). Note that in all cases, the primary name
+ * is that used on the product, and the alternative name merely provides additional information.
+ * </p>
+ * <p>
+ * Each instance of the composite must contain the &lt;NameType&gt; element with <em>either</em>:
+ * </p>
+ * <ul>
+ * <li>one or more of the forms of representation of a person name, with or without an occurrence of the
+ * &lt;NameIdentifier&gt; composite; <em>or</em></li>
+ * <li>one or both of the forms of representation of a corporate name, with or without an occurrence of the
+ * &lt;NameIdentifier&gt; composite; <em>or</em></li>
+ * <li>an occurrence of the &lt;NameIdentifier&gt; composite without any accompanying name element(s).</li>
+ * </ul>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AlternativeName&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;alternativename&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class AlternativeName implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AlternativeName";
 	public static final String shortname = "alternativename";
 

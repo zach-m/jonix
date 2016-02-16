@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
@@ -73,6 +74,18 @@ public class JSON
 		try
 		{
 			return publicFieldsAndGettersMapper.writeValueAsString(o);
+		}
+		catch (IOException e)
+		{
+			throw new RuntimeException(e);
+		}
+	}
+
+	public static void saveAsJson(File f, Object o)
+	{
+		try
+		{
+			publicFieldsAndGettersMapper.writeValue(f, o);
 		}
 		catch (IOException e)
 		{

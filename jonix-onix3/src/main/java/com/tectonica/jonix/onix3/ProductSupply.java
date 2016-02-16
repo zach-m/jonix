@@ -30,9 +30,34 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>null</h1><h4 class="nobreak">Product supply composite</h4>
+ * <p>
+ * The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status of the
+ * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
+ * describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
+ * &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update notice which carries only those
+ * blocks in which changes have occurred.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductSupply&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productsupply&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ProductSupply implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductSupply";
 	public static final String shortname = "productsupply";
 

@@ -33,9 +33,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Agent role</h1>
+ * <p>
+ * An ONIX code identifying the role of an agent in relation to the product in the specified market, <em>eg</em>
+ * Exclusive sales agent, Local publisher, <em>etc</em>. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 69</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AgentRole&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j402&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;AgentRole&gt;07&lt;/AgentRole&gt;&#160;&#160;&#160;&#160;Local publisher</td>
+ * </tr>
+ * </table>
+ */
 public class AgentRole implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AgentRole";
 	public static final String shortname = "j402";
 
@@ -65,6 +95,8 @@ public class AgentRole implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, two numeric digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Minimum order quantity</h1>
+ * <p>
+ * The minimum number of copies which must be ordered to obtain the price carried in an occurrence of the &lt;Price&gt;
+ * composite. Optional and non-repeating. If the field is present, the price is a quantity price. If the field is
+ * omitted, the price applies to a single unit.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MinimumOrderQuantity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j263&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;MinimumOrderQuantity&gt;50&lt;/MinimumOrderQuantity&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MinimumOrderQuantity implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MinimumOrderQuantity";
 	public static final String shortname = "j263";
 
@@ -65,6 +92,8 @@ public class MinimumOrderQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

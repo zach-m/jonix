@@ -31,9 +31,38 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define an identifier for a comparison product in accordance with a
+ * specified scheme. At least one &lt;ProductIdentifier&gt; composite is mandatory within an occurrence of
+ * &lt;ComparisonProductPrice&gt;, to identify the product to which the comparison price applies.
+ * </p>
+ * <p>
+ * It is strongly advised that the relationship between the comparison product and the product described in the
+ * &lt;Product&gt; record is defined in a &lt;RelatedProduct&gt; composite in P.23 – typically this might be
+ * &lt;ProductRelationCode&gt; 06 (related product is alternative format with same content as product) and may in many
+ * circumstances also be 13 (product is e-publication based on related product).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ProductIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductIdentifier";
 	public static final String shortname = "productidentifier";
 

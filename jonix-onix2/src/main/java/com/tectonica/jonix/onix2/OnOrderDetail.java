@@ -34,9 +34,27 @@ import com.tectonica.jonix.struct.JonixOnOrderDetail;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>On order detail composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify details of a stock shipment currently awaited, normally
+ * from overseas. Optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OnOrderDetail&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;onorderdetail&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OnOrderDetail implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OnOrderDetail";
 	public static final String shortname = "onorderdetail";
 

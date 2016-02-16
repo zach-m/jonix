@@ -30,9 +30,46 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form feature description</h1>
+ * <p>
+ * If the &lt;ProductFormFeatureType&gt; requires free text rather than a code value, or if the code in
+ * &lt;ProductFormFeatureValue&gt; does not adequately describe the feature, a short text description may be added.
+ * Optional, and repeatable to provide parallel descriptive text in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;ProductFormFeatureDescription&gt;, but must be included in each instance if
+ * &lt;ProductFormFeatureDescription&gt; is repeated to provide parallel text in multiple languages.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormFeatureDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b336&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b336&gt;11pt Helvetica&lt;/b336&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormFeatureDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormFeatureDescription";
 	public static final String shortname = "b336";
 
@@ -56,6 +93,8 @@ public class ProductFormFeatureDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

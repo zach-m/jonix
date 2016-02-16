@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Default currency</h1>
+ * <p>
+ * An ISO standard code indicating the currency which is assumed for prices listed in the message, unless explicitly
+ * stated otherwise in a &lt;Price&gt; composite in the product record. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three letters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 96</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DefaultCurrencyCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m186&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m186&gt;USD&lt;/m186&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DefaultCurrencyCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DefaultCurrencyCode";
 	public static final String shortname = "m186";
 

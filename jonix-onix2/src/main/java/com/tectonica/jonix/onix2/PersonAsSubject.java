@@ -37,9 +37,27 @@ import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Person as subject composite</h1>
+ * <p>
+ * A repeatable group of data elements which together identify a person as a subject of a content item. <strong>Please
+ * see Group&nbsp;PR.13 for details.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PersonAsSubject&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;personassubject&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PersonAsSubject implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PersonAsSubject";
 	public static final String shortname = "personassubject";
 

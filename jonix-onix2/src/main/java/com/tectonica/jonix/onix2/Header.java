@@ -42,9 +42,30 @@ import com.tectonica.jonix.struct.JonixSenderIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Header composite</h1>
+ * <p>
+ * A group of data elements which together constitute a message header. The elements may alternatively be sent without
+ * being grouped into a composite, but the composite approach is recommended since it makes it easier to maintain a
+ * standard header “package” to drop into any new ONIX Product Information Message. <strong>Note that the Sender and
+ * Addressee Identifier composites can only be used within the Header composite, and future extensions to the Header
+ * will be defined only within the composite.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Header&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;header&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Header implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Header";
 	public static final String shortname = "header";
 

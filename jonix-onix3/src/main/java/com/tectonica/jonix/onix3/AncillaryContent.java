@@ -33,9 +33,31 @@ import com.tectonica.jonix.struct.JonixAncillaryContent;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Ancillary content composite</h1>
+ * <p>
+ * A repeatable group of data elements which together specify the number of illustrations or other content items of a
+ * stated type which the product carries. Use of the &lt;AncillaryContent&gt; composite is optional.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;AncillaryContent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;ancillarycontent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class AncillaryContent implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "AncillaryContent";
 	public static final String shortname = "ancillarycontent";
 

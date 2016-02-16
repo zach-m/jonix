@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Name code value</h1>
+ * <p>
+ * A code value taken from the scheme specified in &lt;NameCodeType&gt;. Mandatory if and only if &lt;NameCodeType&gt;
+ * is present, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Determined by the scheme specified in &lt;NameCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NameCodeValue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b243&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&#160;</td>
+ * </tr>
+ * </table>
+ */
 public class NameCodeValue implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NameCodeValue";
 	public static final String shortname = "b243";
 
@@ -65,6 +91,8 @@ public class NameCodeValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Determined by the scheme specified in &lt;NameCodeType&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

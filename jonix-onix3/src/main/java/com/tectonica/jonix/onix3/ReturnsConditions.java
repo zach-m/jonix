@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixReturnsConditions;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Returns conditions composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together allow returns conditions to be specified in coded
+ * form.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReturnsConditions&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;returnsconditions&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class ReturnsConditions implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReturnsConditions";
 	public static final String shortname = "returnsconditions";
 

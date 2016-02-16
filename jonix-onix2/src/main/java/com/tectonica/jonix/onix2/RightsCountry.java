@@ -34,9 +34,44 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Rights country</h1>
+ * <p>
+ * One or more ISO standard codes identifying a country. Successive codes may be separated by spaces. Thus, a single
+ * occurrence of the element can carry an unlimited number of country codes, for countries for which details of another
+ * publisher’s product are given. For upwards compatibility, the element remains repeatable, so that multiple countries
+ * can also be listed as multiple occurrences of the whole element. At least one occurrence of &lt;RightsCountry&gt; or
+ * &lt;RightsTerritory&gt; is mandatory in each occurrence of the&lt;NotForSale&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>One or more fixed-length codes, each with two upper case letters, successive codes being separated by spaces.
+ * Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper
+ * case only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes - List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;RightsCountry&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b090&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;RightsCountry&gt;US CA&lt;/RightsCountry&gt;&#160;&#160;&#160;&#160;USA and Canada</td>
+ * </tr>
+ * </table>
+ */
 public class RightsCountry implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "RightsCountry";
 	public static final String shortname = "b090";
 

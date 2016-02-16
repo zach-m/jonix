@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Title text without prefix</h1>
+ * <p>
+ * Full text of a title, without abbreviation or abridgement, and without the title prefix; and excluding the subtitle,
+ * if any. Optional and non-repeating; can only be used if the &lt;TitlePrefix&gt; element is also present. The
+ * &lt;TitleWithoutPrefix&gt; element may carry any of the following ONIX attributes: textformat, language,
+ * transliteration, textcase.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;TitleWithoutPrefix&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b031&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;TitleWithoutPrefix textcase=&quot;01&quot;&gt;shameful life of Salvador Dali&lt;/TitleWithoutPrefix&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class TitleWithoutPrefix implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "TitleWithoutPrefix";
 	public static final String shortname = "b031";
 
@@ -65,6 +93,8 @@ public class TitleWithoutPrefix implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

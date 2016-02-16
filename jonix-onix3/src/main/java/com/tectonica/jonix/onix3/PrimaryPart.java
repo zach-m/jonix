@@ -29,9 +29,40 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>‘Primary part’ indicator</h1>
+ * <p>
+ * An empty element that allows a sender to identify a product part as the ‘primary’ part of a multiple-item product.
+ * For example, in a ‘book and toy’ or ‘book and DVD’ product, the book may be regarded as the primary part. Optional
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PrimaryPart&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x457&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PrimaryPart/&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PrimaryPart implements OnixFlag, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PrimaryPart";
 	public static final String shortname = "x457";
 

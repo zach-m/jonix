@@ -57,19 +57,19 @@ public enum SalesRestrictionTypes
 	Office_supplies_edition("02", "Office supplies edition"), //
 
 	/**
-	 * For an ISBN that is assigned for a publisher&#8217;s internal purposes
+	 * For an ISBN that is assigned for a publisher's internal purposes
 	 */
 	Internal_publisher_use_only_do_not_list("03", "Internal publisher use only: do not list"), //
 
 	/**
-	 * For sale only through designated retailer, though not under retailer&#8217;s own brand/imprint. Retailer must be
+	 * For sale only through designated retailer, though not under retailer's own brand/imprint. Retailer must be
 	 * identified or named in an instance of the &lt;SalesOutlet&gt; composite
 	 */
 	Retailer_exclusive("04", "Retailer exclusive"), //
 
 	/**
-	 * For sale only through designated retailer under retailer&#8217;s own brand/imprint. Retailer must be identified
-	 * or named in an instance of the &lt;SalesOutlet&gt; composite
+	 * For sale only through designated retailer under retailer's own brand/imprint. Retailer must be identified or
+	 * named in an instance of the &lt;SalesOutlet&gt; composite
 	 */
 	Retailer_own_brand("05", "Retailer own brand"), //
 
@@ -84,7 +84,7 @@ public enum SalesRestrictionTypes
 	Schools_only_edition("07", "Schools only edition"), //
 
 	/**
-	 * Indexed for the German market &#8211; in Deutschland indiziert
+	 * Indexed for the German market - in Deutschland indiziert
 	 */
 	Indiziert("08", "Indiziert"), //
 

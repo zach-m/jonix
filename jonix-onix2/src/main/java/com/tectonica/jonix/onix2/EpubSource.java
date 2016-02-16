@@ -34,9 +34,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Epublication source file format code</h1>
+ * <p>
+ * An ONIX code identifying the source file format of an epublication when shipped by a publisher to an intermediary for
+ * conversion to one or more forms of deliverable. Optional and non-repeating, and can occur only if the
+ * &lt;EpubType&gt; field is present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 2 numeric digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 11</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EpubSource&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b278&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;EpubSource&gt;02&lt;/EpubSource&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EpubSource implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EpubSource";
 	public static final String shortname = "b278";
 

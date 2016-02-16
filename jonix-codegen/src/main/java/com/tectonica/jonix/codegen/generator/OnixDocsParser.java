@@ -7,25 +7,31 @@ import java.io.PrintStream;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.xml.sax.SAXException;
 
 import com.tectonica.jonix.codegen.metadata.OnixDocs;
 
 public class OnixDocsParser
 {
-	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
+	public static OnixDocs parse(String specHtml) throws IOException
 	{
-		parse("/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html", "C:\\Users\\zach\\Desktop\\Onix2.html");
-		parse("/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html", "C:\\Users\\zach\\Desktop\\Onix3.html");
+		return new OnixDocs(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
 	}
 
-	private static void parse(final String specHtml, String targetHtml) throws IOException, FileNotFoundException
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
+	{
+		parseAndSave("/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html", "C:\\Users\\zach\\Desktop\\Onix2.html");
+		parseAndSave("/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html", "C:\\Users\\zach\\Desktop\\Onix3.html");
+	}
+
+	private static void parseAndSave(final String specHtml, String targetHtml) throws IOException, FileNotFoundException
 	{
 		System.out.println("Parsing " + specHtml + " into " + targetHtml);
-		final Document doc = Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://");
+		OnixDocs onixDocs = parse(specHtml);
 
-		OnixDocs onixDocs = new OnixDocs(doc);
+//		JSON.saveAsJson(new File(targetHtml + ".json"), onixDocs);
 
 		try (final PrintStream out = new PrintStream(targetHtml, "UTF-8"))
 		{

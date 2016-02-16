@@ -29,9 +29,41 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Main subject flag</h1>
+ * <p>
+ * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the main subject
+ * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i> there may be
+ * two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
+ * &lt;MainSubject/&gt; flag. Optional and non-repeating in each occurrence of the &lt;Subject&gt; composite.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>XML empty element</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MainSubject&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x425&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;MainSubject/&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MainSubject implements OnixFlag, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MainSubject";
 	public static final String shortname = "x425";
 

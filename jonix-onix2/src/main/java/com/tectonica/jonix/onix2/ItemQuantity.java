@@ -33,9 +33,38 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Contained item quantity</h1>
+ * <p>
+ * For filled dumpbins and counter packs, and for retail packs containing a number of copies of the same item, the
+ * number of copies of the specified item contained in the pack. &lt;ItemQuantity&gt; is used to state a quantity of
+ * identical items, when a pack contains either a quantity of a single item, or a quantity of each of two or more
+ * different items (<em>eg</em> a dumpbin carrying copies of two different books, or a classroom pack containing a
+ * teacher’s text and twenty student texts). Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, maximum four digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ItemQuantity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b015&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ItemQuantity&gt;24&lt;/ItemQuantity&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ItemQuantity implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ItemQuantity";
 	public static final String shortname = "b015";
 
@@ -65,6 +94,8 @@ public class ItemQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, maximum four digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

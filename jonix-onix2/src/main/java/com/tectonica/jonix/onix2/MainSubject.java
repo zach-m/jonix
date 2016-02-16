@@ -35,9 +35,27 @@ import com.tectonica.jonix.struct.JonixMainSubject;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Main subject composite</h1>
+ * <p>
+ * An optional and repeatable group of data elements which together describe a main subject classification or subject
+ * heading which is taken from a recognized scheme other than BISAC or BIC.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MainSubject&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;mainsubject&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class MainSubject implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MainSubject";
 	public static final String shortname = "mainsubject";
 

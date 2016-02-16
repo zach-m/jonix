@@ -33,9 +33,40 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Original language of a translated work</h1>
+ * <p>
+ * A code indicating the language from which the text of the product was translated. Optional and non-repeating.
+ * <strong>The &lt;Language&gt; composite on the next page provides a more general method of handling language detail,
+ * and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three lower-case letters.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 639-2/B List 74</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;OriginalLanguage&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b060&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b060&gt;spa&lt;/b060&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class OriginalLanguage implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "OriginalLanguage";
 	public static final String shortname = "b060";
 

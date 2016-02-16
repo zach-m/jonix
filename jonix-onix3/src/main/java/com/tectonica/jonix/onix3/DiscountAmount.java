@@ -29,9 +29,41 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Discount amount</h1>
+ * <p>
+ * A discount expressed as an absolute amount per copy. Optional and non-repeating; but either &lt;DiscountPercent&gt;
+ * or &lt;DiscountAmount&gt; or both must be present in each occurrence of the &lt;Discount&gt; composite. Note that
+ * when both are present, they represent two different expressions of the same discount – the discounts are not
+ * cumulative.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length real number, with explicit decimal point when required, suggested maximum length 12 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DiscountAmount&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x469&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DiscountAmount implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DiscountAmount";
 	public static final String shortname = "x469";
 
@@ -53,6 +85,9 @@ public class DiscountAmount implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double value;

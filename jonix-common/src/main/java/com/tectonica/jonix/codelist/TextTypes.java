@@ -100,7 +100,7 @@ public enum TextTypes
 	Feature("11", "Feature"), //
 
 	/**
-	 * A note referring to all contributors to a product &#8211; NOT linked to a single contributor
+	 * A note referring to all contributors to a product - NOT linked to a single contributor
 	 */
 	Biographical_note("12", "Biographical note"), //
 
@@ -139,17 +139,17 @@ public enum TextTypes
 	Version_history("19", "Version history"), //
 
 	/**
-	 * Short summary statement of open access status and any related conditions (eg &#8216;Open access &#8211; no
-	 * commercial use&#8217;), primarily for marketing purposes. Should always be accompanied by a link to the complete
-	 * license (see &lt;EpubLicense&gt; or code 99 in List 158)
+	 * Short summary statement of open access status and any related conditions (eg 'Open access - no commercial use'),
+	 * primarily for marketing purposes. Should always be accompanied by a link to the complete license (see
+	 * &lt;EpubLicense&gt; or code 99 in List 158)
 	 */
 	Open_access_statement("20", "Open access statement"), //
 
 	/**
-	 * Short summary statement that the product is available only in digital formats (eg &#8216;Digital
-	 * exclusive&#8217;). If a non-digital version is planned, &lt;ContentDate&gt; should be used to specify the date
-	 * when exclusivity will end (use content date role code 15). If a non-digital version is available, the statement
-	 * should not be included &lt;p&gt;NOTE: Introduced in Onix3
+	 * Short summary statement that the product is available only in digital formats (eg 'Digital exclusive'). If a
+	 * non-digital version is planned, &lt;ContentDate&gt; should be used to specify the date when exclusivity will end
+	 * (use content date role code 15). If a non-digital version is available, the statement should not be included
+	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Digital_exclusivity_statement("21", "Digital exclusivity statement"), //
 

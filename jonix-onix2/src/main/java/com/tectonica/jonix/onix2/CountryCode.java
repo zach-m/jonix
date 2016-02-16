@@ -34,9 +34,41 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Country code</h1>
+ * <p>
+ * A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This allows a supplier to list
+ * different prices for specific countries by repeating the &lt;Price&gt; composite rather than having to repeat the
+ * whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price applies to multiple
+ * countries.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two letters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 3166-1 two-letter country codes - List 91</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;CountryCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b251&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b251&gt;GB&lt;/b251&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class CountryCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "CountryCode";
 	public static final String shortname = "b251";
 

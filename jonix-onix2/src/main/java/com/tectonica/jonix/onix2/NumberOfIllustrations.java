@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number of illustrations</h1>
+ * <p>
+ * The total number of illustrations in a book or other printed product. The more informative free text field
+ * &lt;IllustrationsNote&gt; or the &lt;Illustrations&gt; composite are preferred, but where the sender of the product
+ * information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element may be used. Optional
+ * and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length integer, suggested maximum length 6 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NumberOfIllustrations&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b125&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b125&gt;64&lt;/b125&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NumberOfIllustrations implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NumberOfIllustrations";
 	public static final String shortname = "b125";
 
@@ -65,6 +93,8 @@ public class NumberOfIllustrations implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

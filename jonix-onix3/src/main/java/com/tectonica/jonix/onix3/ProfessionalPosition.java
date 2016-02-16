@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Professional position</h1>
+ * <p>
+ * A professional position held by a contributor to the product at the time of its creation. Optional, and repeatable to
+ * provide parallel text in multiple languages. The <i>language</i> attribute is optional for a single instance of
+ * &lt;ProfessionalPosition&gt;, but must be included in each instance if &lt;ProfessionalPosition&gt; is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 100 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProfessionalPosition&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b045&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b045&gt;Humboldt Professor of Oceanography&lt;/b045&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProfessionalPosition implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProfessionalPosition";
 	public static final String shortname = "b045";
 
@@ -56,6 +91,8 @@ public class ProfessionalPosition implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

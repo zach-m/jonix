@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>EAN.UCC-13 article number</h1>
+ * <p>
+ * EAN.UCC-13 number of the related product. Optional and non-repeating. <strong>The &lt;ProductIdentifier&gt; composite
+ * provides a more general method of handling identifiers, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, 13 numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;EAN13&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b005&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b005&gt;9788474339796&lt;/b005&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class EAN13 implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "EAN13";
 	public static final String shortname = "b005";
 
@@ -65,6 +91,8 @@ public class EAN13 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

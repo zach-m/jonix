@@ -30,9 +30,55 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Reissue composite</h1>
+ * <p>
+ * An optional and non-repeating group of data elements which together specify that a product is to be reissued within
+ * the market to which the &lt;SupplyDetail&gt; composite applies.
+ * </p>
+ * <p>
+ * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
+ * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
+ * &lt;MarketDate&gt;, and new collateral material alongside old collateral in <a
+ * href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
+ * appropriate end and start dates using &lt;ContentDate&gt;.
+ * </p>
+ * <p>
+ * The &lt;Reissue&gt; composite was (prior to deprecation) used only when the publisher intended to re-launch the
+ * product under the same ISBN. There are two possible cases:
+ * </p>
+ * <ol>
+ * <li>When the product is unavailable during the period immediately before reissue. In this case,
+ * &lt;ProductAvailability&gt; should carry the value 33 for ‘unavailable, awaiting reissue’, and the ONIX record can be
+ * updated to describe the reissued product as soon as details can be made available;</li>
+ * <li>When the product is still available during the period up to the reissue date. In this case, the ONIX record
+ * should continue to describe the existing product and the &lt;ProductAvailability&gt; value should continue to record
+ * the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record should be
+ * updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining unchanged.</li>
+ * </ol>
+ * <p>
+ * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying only
+ * the &lt;ReissueDate&gt; element, which will then indicate ‘date last reissued’.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Reissue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;reissue&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class Reissue implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Reissue";
 	public static final String shortname = "reissue";
 

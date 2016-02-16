@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Image resolution</h1>
+ * <p>
+ * The resolution of an image file which is linked by the &lt;MediaFileLink&gt; element, expressed as dots or pixels per
+ * inch. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 6 digits</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ImageResolution&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f259&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ImageResolution&gt;600&lt;/ImageResolution&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ImageResolution implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ImageResolution";
 	public static final String shortname = "f259";
 
@@ -65,6 +91,8 @@ public class ImageResolution implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 6 digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

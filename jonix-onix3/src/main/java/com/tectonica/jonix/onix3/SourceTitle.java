@@ -30,9 +30,46 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Source title</h1>
+ * <p>
+ * The title, name or short description of a publication, broadcast, website or other source of cited content. Optional,
+ * and repeatable; required unless the cited content refers to a bestseller list, and &lt;ListName&gt; is present.
+ * &lt;SourceTitle&gt; may be repeated to provide the title in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;SourceTitle&gt;, but must be included in each instance if &lt;SourceTitle&gt;
+ * is repeated.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 300 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;SourceTitle&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x428&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * <tr>
+ * <td>Attributes</td>
+ * <td>language</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;SourceTitle&gt;New York Times&lt;/SourceTitle&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class SourceTitle implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "SourceTitle";
 	public static final String shortname = "x428";
 
@@ -56,6 +93,8 @@ public class SourceTitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String value;

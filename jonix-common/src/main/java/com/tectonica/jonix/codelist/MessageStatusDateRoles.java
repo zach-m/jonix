@@ -36,13 +36,13 @@ package com.tectonica.jonix.codelist;
 public enum MessageStatusDateRoles
 {
 	/**
-	 * Expected or actual date of processing and ingestion of data to recipient&#8217;s system
+	 * Expected or actual date of processing and ingestion of data to recipient's system
 	 */
 	Ingest_date("01", "Ingest date"), //
 
 	/**
-	 * Expected or actual date for data to be available from the recipient&#8217;s system to downstream supply chain
-	 * partners (or where the recipient is a retailer, to consumers)
+	 * Expected or actual date for data to be available from the recipient's system to downstream supply chain partners
+	 * (or where the recipient is a retailer, to consumers)
 	 */
 	Export_date("02", "Export date");
 

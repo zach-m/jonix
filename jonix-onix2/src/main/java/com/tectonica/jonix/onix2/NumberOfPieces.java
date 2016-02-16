@@ -33,9 +33,37 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Number of pieces</h1>
+ * <p>
+ * If the product is homogeneous (<em>ie</em> all items or pieces which constitute the product have the same form), the
+ * number of items or pieces may be included here. If the product consists of a number of items or pieces of different
+ * forms (<em>eg</em> books and audio cassettes), the &lt;ContainedItem&gt; composite should be used – see below. This
+ * field is optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum length 4 digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;NumberOfPieces&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b210&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;NumberOfPieces&gt;3&lt;/NumberOfPieces&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class NumberOfPieces implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "NumberOfPieces";
 	public static final String shortname = "b210";
 
@@ -65,6 +93,8 @@ public class NumberOfPieces implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

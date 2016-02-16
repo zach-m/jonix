@@ -34,9 +34,39 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Image/audio/video file type code</h1>
+ * <p>
+ * An ONIX code which identifies the type of image/audio/video file which is linked by the &lt;MediaFileLink&gt;
+ * element. Mandatory in each occurrence of the &lt;MediaFile&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two characters (initially allocated as 01, 02 etc)</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 38</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;MediaFileTypeCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;f114&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;MediaFileTypeCode&gt;17&lt;/MediaFileTypeCode&gt;&#160;&#160;&#160;&#160;Publisher's logo</td>
+ * </tr>
+ * </table>
+ */
 public class MediaFileTypeCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "MediaFileTypeCode";
 	public static final String shortname = "f114";
 

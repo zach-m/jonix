@@ -31,9 +31,32 @@ import com.tectonica.jonix.struct.JonixWorkIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Work identifier composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define an identifier of a work in accordance with a specified
+ * scheme. Mandatory in each occurrence of the &lt;RelatedWork&gt; composite. Repeatable only if two or more identifiers
+ * for the same work are sent using different identifier schemes (<i>eg</i> ISTC and DOI).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;WorkIdentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;workidentifier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class WorkIdentifier implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "WorkIdentifier";
 	public static final String shortname = "workidentifier";
 

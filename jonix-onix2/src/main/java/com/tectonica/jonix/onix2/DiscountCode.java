@@ -33,9 +33,35 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Discount code value</h1>
+ * <p>
+ * A discount code from the scheme specified in the &lt;DiscountCodeType&gt; element. Mandatory in each occurrence of
+ * the &lt;DiscountCoded&gt; composite, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>According to the scheme specified in &lt;DiscountCodeType&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DiscountCode&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j364&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;j364&gt;12345678&lt;/j364&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DiscountCode implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DiscountCode";
 	public static final String shortname = "j364";
 
@@ -65,6 +91,8 @@ public class DiscountCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

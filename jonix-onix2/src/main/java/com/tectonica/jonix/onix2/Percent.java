@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Percentage</h1>
+ * <p>
+ * The percentage of the unit value of the product that is assignable to a designated product classification. Optional
+ * and non-repeating. Used when a mixed product (<em>eg</em> book and CD) belongs partly to two or more product
+ * classifications.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Real decimal number in the range 0 to 100</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Percent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b337&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b337&gt;66.67&lt;/b337&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class Percent implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Percent";
 	public static final String shortname = "b337";
 
@@ -65,6 +92,8 @@ public class Percent implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Real decimal number in the range 0 to 100
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

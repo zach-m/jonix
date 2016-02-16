@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Discount percentage</h1>
+ * <p>
+ * The supplier’s discount percentage applicable to the price carried in an occurrence of the &lt;Price&gt; composite.
+ * Optional and non-repeating. Use only when an ONIX message is sent within the context of a specific trading
+ * relationship.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length numeric, including decimal point if required, suggested maximum length 6 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DiscountPercent&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;j267&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;DiscountPercent&gt;37.5&lt;/DiscountPercent&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DiscountPercent implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DiscountPercent";
 	public static final String shortname = "j267";
 
@@ -65,6 +92,8 @@ public class DiscountPercent implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

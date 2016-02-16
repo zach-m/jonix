@@ -92,11 +92,11 @@ public enum PriceTypes
 	Supplier_s_alternative_net_price_including_tax("09", "Supplier’s alternative net price including tax"), //
 
 	/**
-	 * Special sale RRP excluding any sales tax or value-added tax. Note &#8216;special sales&#8217; are sales where
-	 * terms and conditions are different from normal trade sales, when for example products that are normally sold on a
+	 * Special sale RRP excluding any sales tax or value-added tax. Note 'special sales' are sales where terms and
+	 * conditions are different from normal trade sales, when for example products that are normally sold on a
 	 * sale-or-return basis are sold on firm-sale terms, where a particular product is tailored for a specific retail
-	 * outlet (often termed a &#8216;premium&#8217;&#160;product), or where other specific conditions or qualiifications
-	 * apply. Further details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
+	 * outlet (often termed a 'premium'&#160;product), or where other specific conditions or qualiifications apply.
+	 * Further details of the modified terms and conditions should be given in &lt;PriceTypeDescription&gt;
 	 */
 	Special_sale_RRP_excluding_tax("11", "Special sale RRP excluding tax"), //
 
@@ -158,30 +158,30 @@ public enum PriceTypes
 	Supplier_s_pre_publication_net_price_including_tax("27", "Supplier’s pre-publication net price including tax"), //
 
 	/**
-	 * In the US, books are sometimes supplied on &#8216;freight-pass-through&#8217; terms, where a price that is
-	 * different from the RRP is used as the basis for calculating the supplier&#8217;s charge to a reseller. To make it
-	 * clear when such terms are being invoked, code 31 is used instead of code 01 to indicate the RRP. Code 32 is used
-	 * for the &#8216;billing price&#8217;
+	 * In the US, books are sometimes supplied on 'freight-pass-through' terms, where a price that is different from the
+	 * RRP is used as the basis for calculating the supplier's charge to a reseller. To make it clear when such terms
+	 * are being invoked, code 31 is used instead of code 01 to indicate the RRP. Code 32 is used for the 'billing
+	 * price'
 	 */
 	Freight_pass_through_RRP_excluding_tax("31", "Freight-pass-through RRP excluding tax"), //
 
 	/**
-	 * When freight-pass-through terms apply, the price on which the supplier&#8217;s charge to a reseller is
-	 * calculated, ie the price to which trade discount terms are applied. See also code 31
+	 * When freight-pass-through terms apply, the price on which the supplier's charge to a reseller is calculated, ie
+	 * the price to which trade discount terms are applied. See also code 31
 	 */
 	Freight_pass_through_billing_price_excluding_tax("32", "Freight-pass-through billing price excluding tax"), //
 
 	/**
 	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the
-	 * importer or local sales agent, not the foreign publisher. In France, &#8216;prix catalogue &#233;diteur
-	 * &#233;tranger&#8217; &lt;p&gt;NOTE: Introduced in Onix3
+	 * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
+	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Importer_s_Fixed_retail_price_excluding_tax("33", "Importer’s Fixed retail price excluding tax"), //
 
 	/**
 	 * In countries where retail price maintenance applies by law to certain products, but the price is set by the
-	 * importer or local sales agent, not the foreign publisher. In France, &#8216;prix catalogue &#233;diteur
-	 * &#233;tranger&#8217; &lt;p&gt;NOTE: Introduced in Onix3
+	 * importer or local sales agent, not the foreign publisher. In France, 'prix catalogue &#233;diteur &#233;tranger'
+	 * &lt;p&gt;NOTE: Introduced in Onix3
 	 */
 	Importer_s_Fixed_retail_price_including_tax("34", "Importer’s Fixed retail price including tax"), //
 

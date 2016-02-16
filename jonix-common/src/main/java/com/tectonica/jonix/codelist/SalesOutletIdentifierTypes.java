@@ -41,7 +41,7 @@ public enum SalesOutletIdentifierTypes
 	Proprietary("01", "Proprietary"), //
 
 	/**
-	 * DEPRECATED &#8211; use code 03
+	 * DEPRECATED - use code 03
 	 */
 	BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code"), //
 

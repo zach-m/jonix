@@ -39,7 +39,7 @@ import java.util.Map;
 public enum SeriesIdentifierTypes
 {
 	/**
-	 * For example, publisher&#8217;s own series ID
+	 * For example, publisher's own series ID
 	 */
 	Proprietary("01", "Proprietary"), //
 

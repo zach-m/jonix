@@ -29,9 +29,39 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Position on list</h1>
+ * <p>
+ * The position that a product has reached on a bestseller list specified in &lt;ListName&gt;. Optional and
+ * non-repeating. The &lt;ListName&gt; element must also be present if &lt;PositionOnList&gt; is included.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length integer, suggested maximum 3 characters</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PositionOnList&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;x433&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PositionOnList&gt;1&lt;/PositionOnList&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class PositionOnList implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PositionOnList";
 	public static final String shortname = "x433";
 
@@ -53,6 +83,8 @@ public class PositionOnList implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length integer, suggested maximum 3 characters
+	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */
 	public Integer value;

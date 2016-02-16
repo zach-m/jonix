@@ -39,9 +39,32 @@ import com.tectonica.jonix.struct.JonixBible;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Bible composite</h1>
+ * <p>
+ * A group of data elements which together describe features of an edition of the Bible or of a selected Biblical text.
+ * Mandatory in each occurrence of the &lt;ReligiousText&gt; composite that does <em>not</em> include a
+ * &lt;ReligiousTextIdentifier&gt; element, and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Bible&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;bible&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * </table>
+ */
 public class Bible implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Bible";
 	public static final String shortname = "bible";
 

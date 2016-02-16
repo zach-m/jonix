@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product form description</h1>
+ * <p>
+ * If product form codes do not adequately describe the product, a short text description may be added. The text may
+ * include the number and type of pieces contained in a multiple product, and/or a more detailed specification of the
+ * product form. The field is optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 200 characters.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductFormDescription&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b014&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b014&gt;3 volumes with 2 audiocassettes&lt;/b014&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProductFormDescription implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductFormDescription";
 	public static final String shortname = "b014";
 
@@ -65,6 +92,8 @@ public class ProductFormDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

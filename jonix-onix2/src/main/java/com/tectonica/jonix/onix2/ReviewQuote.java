@@ -33,9 +33,43 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Review quote (complete)</h1>
+ * <p>
+ * A free text excerpt from a review. Optional and repeatable. At the end of the text of the quote, the authorship,
+ * source title, and date (if known) should always be included.
+ * </p>
+ * <p>
+ * <strong>The &lt;OtherText&gt; composite on preceding pages provides a more general method of handling review quotes,
+ * and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for
+ * Books - Product Information Message - XML Message Specification, Section 7)</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ReviewQuote&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;e110&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;ReviewQuote&gt;Norman Schur is without doubt the outstanding authority on the similarities and differences
+ * between British and American English. BRITISH ENGLISH, A TO ZED attests not only to his expertise, but also to his
+ * undiminished powers to inform, amuse and entertain. - Laurence Urdang, Editor, VERBATIM, The Language Quarterly,
+ * Spring 1992&lt;/ReviewQuote&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ReviewQuote implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ReviewQuote";
 	public static final String shortname = "e110";
 
@@ -65,6 +99,9 @@ public class ReviewQuote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String value;

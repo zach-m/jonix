@@ -39,7 +39,7 @@ import java.util.Map;
 public enum ProductFormDetails
 {
 	/**
-	 * CD &#8216;red book&#8217; format
+	 * CD 'red book' format
 	 */
 	CD_standard_audio_format("A101", "CD standard audio format"), //
 
@@ -137,15 +137,15 @@ public enum ProductFormDetails
 	Standalone_audio("A301", "Standalone audio"), //
 
 	/**
-	 * Audio intended exclusively for use alongside a printed copy of the book. Most often a children&#8217;s product.
-	 * Normally contains instructions such as &#8216;turn the page now&#8217; and other references to the printed item,
-	 * and is usually sold packaged together with a printed copy
+	 * Audio intended exclusively for use alongside a printed copy of the book. Most often a children's product.
+	 * Normally contains instructions such as 'turn the page now' and other references to the printed item, and is
+	 * usually sold packaged together with a printed copy
 	 */
 	Readalong_audio("A302", "Readalong audio"), //
 
 	/**
-	 * Audio intended for musical accompaniment, eg &#8216;Music minus one&#8217;, etc, often used for music learning.
-	 * Includes singalong backing audio for musical learning or for Karaoke-style entertainment
+	 * Audio intended for musical accompaniment, eg 'Music minus one', etc, often used for music learning. Includes
+	 * singalong backing audio for musical learning or for Karaoke-style entertainment
 	 */
 	Playalong_audio("A303", "Playalong audio"), //
 
@@ -193,15 +193,14 @@ public enum ProductFormDetails
 
 	/**
 	 * In North America, a category of paperback characterized partly by page size and partly by target market and terms
-	 * of trade. AKA &#8216;quality paperback&#8217;, and including textbooks. Most paperback books sold in North
-	 * America except &#8216;mass-market&#8217; (B101) and &#8216;tall rack&#8217; (B107) are correctly described with
-	 * this code. Use with Product Form code BC
+	 * of trade. AKA 'quality paperback', and including textbooks. Most paperback books sold in North America except
+	 * 'mass-market' (B101) and 'tall rack' (B107) are correctly described with this code. Use with Product Form code BC
 	 */
 	Trade_paperback_US("B102", "Trade paperback (US)"), //
 
 	/**
-	 * In North America, a category of paperback characterized by page size and generally used for children&#8217;s
-	 * books; use with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3
+	 * In North America, a category of paperback characterized by page size and generally used for children's books; use
+	 * with Product Form code BC. Note: was wrongly shown as B102 (duplicate entry) in Issue 3
 	 */
 	Digest_format_paperback("B103", "Digest format paperback"), //
 
@@ -219,8 +218,7 @@ public enum ProductFormDetails
 
 	/**
 	 * In UK, a category of paperback characterized partly by size (usually in traditional hardback dimensions), and
-	 * often used for paperback originals; use with Product Form code BC (replaces &#8216;C-format&#8217; from former
-	 * List 8)
+	 * often used for paperback originals; use with Product Form code BC (replaces 'C-format' from former List 8)
 	 */
 	Trade_paperback_UK("B106", "Trade paperback (UK)"), //
 
@@ -281,8 +279,8 @@ public enum ProductFormDetails
 	Mook_Bookazine("B117", "Mook / Bookazine"), //
 
 	/**
-	 * Also called &#8216;Flipback&#8217;. A softback book in a specially compact proprietary format with pages printed
-	 * in landscape on very thin paper and bound along the long (top) edge &#8211; see www.dwarsligger.com
+	 * Also called 'Flipback'. A softback book in a specially compact proprietary format with pages printed in landscape
+	 * on very thin paper and bound along the long (top) edge - see www.dwarsligger.com
 	 */
 	Dwarsligger("B118", "Dwarsligger"), //
 
@@ -356,7 +354,7 @@ public enum ProductFormDetails
 	Lift_the_flap_book("B202", "Lift-the-flap book"), //
 
 	/**
-	 * DEPRECATED because of ambiguity &#8211; use B210, B214 or B215 as appropriate
+	 * DEPRECATED because of ambiguity - use B210, B214 or B215 as appropriate
 	 */
 	Fuzzy_book("B203", "Fuzzy book"), //
 
@@ -382,14 +380,14 @@ public enum ProductFormDetails
 	Touch_and_feel_book("B210", "Touch-and-feel book"), //
 
 	/**
-	 * DEPRECATED &#8211; use B212 or B213 as appropriate
+	 * DEPRECATED - use B212 or B213 as appropriate
 	 */
 	Toy_die_cut_book("B211", "Toy / die-cut book"), //
 
 	/**
 	 * A book which is cut into a distinctive non-rectilinear shape and/or in which holes or shapes have been cut
-	 * internally. (&#8216;Die-cut&#8217; is used here as a convenient shorthand, and does not imply strict limitation
-	 * to a particular production process)
+	 * internally. ('Die-cut' is used here as a convenient shorthand, and does not imply strict limitation to a
+	 * particular production process)
 	 */
 	Die_cut_book("B212", "Die-cut book"), //
 
@@ -410,13 +408,13 @@ public enum ProductFormDetails
 	Fuzzy_felt_book("B215", "Fuzzy-felt book"), //
 
 	/**
-	 * Children&#8217;s picture book: use with applicable Product Form code
+	 * Children's picture book: use with applicable Product Form code
 	 */
 	Picture_book("B221", "Picture book"), //
 
 	/**
-	 * (aka &#8216;Star&#8217; book). Tax treatment of products may differ from that of products with similar codes such
-	 * as Book as toy or Pop-up book)
+	 * (aka 'Star' book). Tax treatment of products may differ from that of products with similar codes such as Book as
+	 * toy or Pop-up book)
 	 */
 	_Carousel_book("B222", "‘Carousel’ book"), //
 
@@ -436,12 +434,12 @@ public enum ProductFormDetails
 	Loose_leaf_sheets_only("B303", "Loose leaf – sheets only"), //
 
 	/**
-	 * AKA stitched; for &#8216;saddle-sewn&#8217;, see code B310
+	 * AKA stitched; for 'saddle-sewn', see code B310
 	 */
 	Sewn("B304", "Sewn"), //
 
 	/**
-	 * Including &#8216;perfect bound&#8217;, &#8216;glued&#8217;
+	 * Including 'perfect bound', 'glued'
 	 */
 	Unsewn_adhesive_bound("B305", "Unsewn / adhesive bound"), //
 
@@ -456,17 +454,17 @@ public enum ProductFormDetails
 	Reinforced_binding("B307", "Reinforced binding"), //
 
 	/**
-	 * Must be accompanied by a code specifiying a material, eg &#8216;half-bound real leather&#8217;
+	 * Must be accompanied by a code specifiying a material, eg 'half-bound real leather'
 	 */
 	Half_bound("B308", "Half bound"), //
 
 	/**
-	 * Must be accompanied by a code specifiying a material, eg &#8216;quarter bound real leather&#8217;
+	 * Must be accompanied by a code specifiying a material, eg 'quarter bound real leather'
 	 */
 	Quarter_bound("B309", "Quarter bound"), //
 
 	/**
-	 * AKA &#8216;saddle-stitched&#8217; or &#8216;wire-stitched&#8217;
+	 * AKA 'saddle-stitched' or 'wire-stitched'
 	 */
 	Saddle_sewn("B310", "Saddle-sewn"), //
 
@@ -518,29 +516,29 @@ public enum ProductFormDetails
 	Vellum("B406", "Vellum"), //
 
 	/**
-	 * DEPRECATED &#8211; use new B412 or B413 as appropriate
+	 * DEPRECATED - use new B412 or B413 as appropriate
 	 */
 	Plastic("B407", "Plastic"), //
 
 	/**
-	 * DEPRECATED &#8211; use new B412 or B414 as appropriate
+	 * DEPRECATED - use new B412 or B414 as appropriate
 	 */
 	Vinyl("B408", "Vinyl"), //
 
 	/**
-	 * Cloth, not necessarily over boards &#8211; cf B401
+	 * Cloth, not necessarily over boards - cf B401
 	 */
 	Cloth("B409", "Cloth"), //
 
 	/**
-	 * Spanish &#8216;simil-tela&#8217;
+	 * Spanish 'simil-tela'
 	 */
 	Imitation_cloth("B410", "Imitation cloth"), //
 
 	Velvet("B411", "Velvet"), //
 
 	/**
-	 * AKA &#8216;flexibound&#8217;: use with Product Form code BC
+	 * AKA 'flexibound': use with Product Form code BC
 	 */
 	Flexible_plastic_vinyl_cover("B412", "Flexible plastic/vinyl cover"), //
 
@@ -549,8 +547,8 @@ public enum ProductFormDetails
 	Vinyl_covered("B414", "Vinyl-covered"), //
 
 	/**
-	 * Book, laminating material unspecified: use L101 for &#8216;whole product laminated&#8217;, eg a laminated sheet
-	 * map or wallchart
+	 * Book, laminating material unspecified: use L101 for 'whole product laminated', eg a laminated sheet map or
+	 * wallchart
 	 */
 	Laminated_cover("B415", "Laminated cover"), //
 
@@ -624,8 +622,7 @@ public enum ProductFormDetails
 
 	/**
 	 * A book in which half the content is printed upside-down, to be read the other way round. Also known as a
-	 * &#8216;flip-book&#8217;, &#8216;back-to-back&#8217;, (fr.) &#8216;t&#234;te-b&#234;che&#8217; (usually an omnibus
-	 * of two works)
+	 * 'flip-book', 'back-to-back', (fr.) 't&#234;te-b&#234;che' (usually an omnibus of two works)
 	 */
 	Turn_around_book("B601", "Turn-around book"), //
 
@@ -798,7 +795,7 @@ public enum ProductFormDetails
 
 	/**
 	 * E-publication requires a network connection to access some resources (eg an enhanced e-book where video clips are
-	 * not stored within the e-publication &#8216;package&#8217; itself, but are delivered via an internet connection)
+	 * not stored within the e-publication 'package' itself, but are delivered via an internet connection)
 	 */
 	Requires_network_connection("E203", "Requires network connection"), //
 

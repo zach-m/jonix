@@ -34,9 +34,31 @@ import com.tectonica.jonix.struct.JonixSupplierIdentifier;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Supplier composite</h1>
+ * <p>
+ * A group of data elements which together define a supplier. Mandatory in each occurrence of the &lt;SupplyDetail&gt;
+ * composite, and not repeatable.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Supplier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;supplier&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>1</td>
+ * </tr>
+ * </table>
+ */
 public class Supplier implements OnixSuperComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Supplier";
 	public static final String shortname = "supplier";
 

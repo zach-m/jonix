@@ -30,9 +30,45 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Default language of text</h1>
+ * <p>
+ * An ISO standard code indicating the default language which is assumed for the text of products listed in the message,
+ * unless explicitly stated otherwise by sending a ‘language of text’ element in the product record. This default will
+ * be assumed for all product records which do not specify a language in Group&nbsp;P.10. Optional and non-repeating.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
+ * lower-case</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>ISO 639-2/B List 74</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;DefaultLanguageOfText&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;m184&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;m184&gt;eng&lt;/m184&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class DefaultLanguageOfText implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "DefaultLanguageOfText";
 	public static final String shortname = "m184";
 

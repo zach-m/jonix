@@ -30,9 +30,44 @@ import com.tectonica.jonix.codelist.UnnamedPersonss;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Unnamed person(s)</h1>
+ * <p>
+ * An ONIX code allowing a positive indication to be given when authorship is unknown or anonymous, or when as a matter
+ * of editorial policy only a limited number of contributors are named. Optional and non-repeating: see Group&nbsp;P.7
+ * introductory text for valid options.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two digits</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 19</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;UnnamedPersons&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b249&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;1</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;b249&gt;02&lt;/b249&gt; (Anonymous)</td>
+ * </tr>
+ * </table>
+ */
 public class UnnamedPersons implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "UnnamedPersons";
 	public static final String shortname = "b249";
 

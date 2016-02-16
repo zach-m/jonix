@@ -32,9 +32,32 @@ import com.tectonica.jonix.struct.JonixVelocity;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Velocity composite</h1>
+ * <p>
+ * An optional group of data elements which together specify the rate of stock depletion – or equally, a rate of
+ * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric (<i>eg</i>
+ * specifying both a minimum and maximum daily sale).
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Velocity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;velocity&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Velocity implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Velocity";
 	public static final String shortname = "velocity";
 

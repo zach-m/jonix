@@ -33,9 +33,46 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>US school grades</h1>
+ * <p>
+ * A text element specifying a US school Grade or range of Grades, which should be entered strictly according to the
+ * conventions defined below. Optional and non-repeating. <strong>The &lt;AudienceRange&gt; composite on the next page
+ * provides a more general method of handling grade and other ranges, and is to be preferred.</strong>
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Variable length text, maximum 15 characters.</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>from n1 to n2&#160;&#160;&#160;&#160;Grade range from n1 to n2 from n&#160;&#160;&#160;&#160;From Grade n upwards
+ * to n&#160;&#160;&#160;&#160;Up to Grade n n&#160;&#160;&#160;&#160;Grade n only where n is a grade number or one of
+ * the words Pre-school or Kindergarten, which may be abbreviated to letters P or K</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;USSchoolGrade&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b189&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;USSchoolGrade&gt;from 6 to 8&lt;/USSchoolGrade&gt;</td>
+ * </tr>
+ * <tr>
+ * <td></td>
+ * <td>&lt;b189&gt;P&lt;/b189&gt;&#160;&#160;&#160;&#160;Pre-school</td>
+ * </tr>
+ * </table>
+ */
 public class USSchoolGrade implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "USSchoolGrade";
 	public static final String shortname = "b189";
 
@@ -65,6 +102,8 @@ public class USSchoolGrade implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Variable length text, maximum 15 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

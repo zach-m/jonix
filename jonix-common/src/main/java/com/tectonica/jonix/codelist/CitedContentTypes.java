@@ -48,7 +48,7 @@ public enum CitedContentTypes
 	Media_mention("03", "Media mention"), //
 
 	/**
-	 * (North America) Inclusion in a program such as &#8216;Chicago Reads&#8217;, &#8216;Seattle Reads&#8217;
+	 * (North America) Inclusion in a program such as 'Chicago Reads', 'Seattle Reads'
 	 */
 	_One_locality_one_book_program("04", "‘One locality, one book’ program");
 

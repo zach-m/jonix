@@ -59,14 +59,13 @@ public enum UsageTypes
 	Share("04", "Share"), //
 
 	/**
-	 * &#8216;Read aloud&#8217; with text to speech functionality
+	 * 'Read aloud' with text to speech functionality
 	 */
 	Text_to_speech("05", "Text to speech"), //
 
 	/**
-	 * Lendable to other device owner or account holder, eg &#8216;Lend-to-a-friend&#8217;, library lending. The
-	 * &#8216;primary&#8217; copy becomes unusable while the secondary copy is &#8216;on loan&#8217; unless a number of
-	 * concurrent borrowers is also specified)
+	 * Lendable to other device owner or account holder, eg 'Lend-to-a-friend', library lending. The 'primary' copy
+	 * becomes unusable while the secondary copy is 'on loan' unless a number of concurrent borrowers is also specified)
 	 */
 	Lend("06", "Lend"), //
 

@@ -35,9 +35,28 @@ import com.tectonica.jonix.struct.JonixProductClassification;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Product classification composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define a product classification (NOT to be confused with a subject
+ * classification). The intended use is to enable national or international trade classifications (aka commodity codes)
+ * to be carried in an ONIX record.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;ProductClassification&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;productclassification&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class ProductClassification implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "ProductClassification";
 	public static final String shortname = "productclassification";
 

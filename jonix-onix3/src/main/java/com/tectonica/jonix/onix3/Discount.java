@@ -31,9 +31,31 @@ import com.tectonica.jonix.struct.JonixDiscount;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Discount composite</h1>
+ * <p>
+ * A repeatable group of data elements which together define a discount either as a percentage or as an absolute amount.
+ * Optional. Used only when an ONIX message is sent within the context of a specific trading relationship.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;Discount&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;discount&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Cardinality</td>
+ * <td>0&#8230;n</td>
+ * </tr>
+ * </table>
+ */
 public class Discount implements OnixDataComposite, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "Discount";
 	public static final String shortname = "discount";
 

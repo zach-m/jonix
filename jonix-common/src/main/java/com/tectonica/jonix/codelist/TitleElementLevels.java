@@ -47,20 +47,20 @@ public enum TitleElementLevels
 
 	/**
 	 * The title element refers to an intermediate level of a bibliographic collection that comprises two or more
-	 * &#8216;sub-collections&#8217;
+	 * 'sub-collections'
 	 */
 	Subcollection("03", "Subcollection"), //
 
 	/**
-	 * The title element refers to a content item within a product, eg a work included in a combined or
-	 * &#8216;omnibus&#8217; edition, or a chapter in a book
+	 * The title element refers to a content item within a product, eg a work included in a combined or 'omnibus'
+	 * edition, or a chapter in a book
 	 */
 	Content_item("04", "Content item"), //
 
 	/**
 	 * The title element names a master brand where the use of the brand spans multiple collections and product forms,
 	 * and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
-	 * children&#8217;s character brand
+	 * children's character brand
 	 */
 	Master_brand("05", "Master brand"), //
 

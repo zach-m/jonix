@@ -33,9 +33,36 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>BIC subject category version number</h1>
+ * <p>
+ * A number identifying the version of the BIC subject category scheme used in &lt;BICMainSubject&gt;. Optional and
+ * non-repeating, and may only occur when &lt;BICMainSubject&gt; is also present.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for consistency with
+ * other version number elements.</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;BICVersion&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b066&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;BICVersion&gt;1&lt;/BICVersion&gt;</td>
+ * </tr>
+ * </table>
+ */
 public class BICVersion implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "BICVersion";
 	public static final String shortname = "b066";
 
@@ -65,6 +92,9 @@ public class BICVersion implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
+	 * consistency with other version number elements.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String value;

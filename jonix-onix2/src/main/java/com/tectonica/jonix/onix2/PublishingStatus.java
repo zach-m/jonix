@@ -34,9 +34,47 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
 
-@SuppressWarnings("serial")
+/**
+ * <h1>Publishing status</h1>
+ * <p>
+ * An ONIX code which identifies the status of a published product. Optional and non-repeating, <strong>but it is very
+ * strongly recommended that this element should be included in all ONIX Books Product records, and it is possible that
+ * it may be made mandatory in a future release, or that it will be treated as mandatory in national ONIX accreditation
+ * schemes.</strong>
+ * </p>
+ * <p>
+ * Where the element is sent by a sender who is not the publisher, based on information that has been previously
+ * supplied by the publisher, it is strongly recommended that the element should carry a datestamp attribute to indicate
+ * its likely reliability. See <cite>ONIX for Books – Product Information Message – XML Message Specification</cite>,
+ * Section 4, for details of the datestamp attribute.
+ * </p>
+ * <table border='1' cellpadding='3'>
+ * <tr>
+ * <td>Format</td>
+ * <td>Fixed-length, two numeric digits.</td>
+ * </tr>
+ * <tr>
+ * <td>Codelist</td>
+ * <td>List 64</td>
+ * </tr>
+ * <tr>
+ * <td>Reference name</td>
+ * <td>&lt;PublishingStatus&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Short tag</td>
+ * <td>&lt;b394&gt;</td>
+ * </tr>
+ * <tr>
+ * <td>Example</td>
+ * <td>&lt;PublishingStatus&gt;02&lt;/PublishingStatus&gt;&#160;&#160;&#160;&#160;Forthcoming</td>
+ * </tr>
+ * </table>
+ */
 public class PublishingStatus implements OnixElement, Serializable
 {
+	private static final long serialVersionUID = 1L;
+
 	public static final String refname = "PublishingStatus";
 	public static final String shortname = "b394";
 
