@@ -144,6 +144,9 @@ public class MarketDate implements OnixDataComposite, Serializable
 		return (dateFormat == null) ? null : dateFormat.value;
 	}
 
+	/**
+	 * Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+	 */
 	public String getDateValue()
 	{
 		return (date == null) ? null : date.value;

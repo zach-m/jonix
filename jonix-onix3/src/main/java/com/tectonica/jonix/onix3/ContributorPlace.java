@@ -146,6 +146,9 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 		return (regionCode == null) ? null : regionCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getLocationNameValues()
 	{
 		if (locationNames != null)

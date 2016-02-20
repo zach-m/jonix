@@ -126,6 +126,9 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public Integer getOnOrderValue()
 	{
 		return (onOrder == null) ? null : onOrder.value;
@@ -136,6 +139,10 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 		return (proximity == null) ? null : proximity.value;
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * missing
+	 */
 	public String getExpectedDateValue()
 	{
 		return (expectedDate == null) ? null : expectedDate.value;

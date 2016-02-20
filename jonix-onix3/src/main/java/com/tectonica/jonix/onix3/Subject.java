@@ -152,21 +152,33 @@ public class Subject implements OnixDataComposite, Serializable
 		return (subjectSchemeIdentifier == null) ? null : subjectSchemeIdentifier.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getSubjectSchemeNameValue()
 	{
 		return (subjectSchemeName == null) ? null : subjectSchemeName.value;
 	}
 
+	/**
+	 * Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements
+	 */
 	public String getSubjectSchemeVersionValue()
 	{
 		return (subjectSchemeVersion == null) ? null : subjectSchemeVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getSubjectCodeValue()
 	{
 		return (subjectCode == null) ? null : subjectCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 250 characters
+	 */
 	public List<String> getSubjectHeadingTextValues()
 	{
 		if (subjectHeadingTexts != null)

@@ -133,6 +133,9 @@ public class PublishingDate implements OnixDataComposite, Serializable
 		return (dateFormat == null) ? null : dateFormat.value;
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+	 */
 	public String getDateValue()
 	{
 		return (date == null) ? null : date.value;

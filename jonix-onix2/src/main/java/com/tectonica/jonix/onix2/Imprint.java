@@ -138,6 +138,9 @@ public class Imprint implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getImprintNameValue()
 	{
 		return (imprintName == null) ? null : imprintName.value;
@@ -148,11 +151,17 @@ public class Imprint implements OnixDataComposite, Serializable
 		return (nameCodeType == null) ? null : nameCodeType.value;
 	}
 
+	/**
+	 * Format: Free text, suggested maximum length 50 characters
+	 */
 	public String getNameCodeTypeNameValue()
 	{
 		return (nameCodeTypeName == null) ? null : nameCodeTypeName.value;
 	}
 
+	/**
+	 * Format: Determined by the scheme specified in &lt;NameCodeType&gt;
+	 */
 	public String getNameCodeValueValue()
 	{
 		return (nameCodeValue == null) ? null : nameCodeValue.value;

@@ -139,21 +139,34 @@ public class Discount implements OnixDataComposite, Serializable
 		return (discountType == null) ? null : discountType.value;
 	}
 
+	/**
+	 * Format: Variable-length decimal number, here necessarily an integer
+	 */
 	public Double getQuantityValue()
 	{
 		return (quantity == null) ? null : quantity.value;
 	}
 
+	/**
+	 * Format: Variable-length decimal number, here necessarily an integer
+	 */
 	public Double getToQuantityValue()
 	{
 		return (toQuantity == null) ? null : toQuantity.value;
 	}
 
+	/**
+	 * Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 */
 	public Double getDiscountPercentValue()
 	{
 		return (discountPercent == null) ? null : discountPercent.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public Double getDiscountAmountValue()
 	{
 		return (discountAmount == null) ? null : discountAmount.value;

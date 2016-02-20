@@ -131,11 +131,17 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 		return (productFormFeatureType == null) ? null : productFormFeatureType.value;
 	}
 
+	/**
+	 * Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
+	 */
 	public String getProductFormFeatureValueValue()
 	{
 		return (productFormFeatureValue == null) ? null : productFormFeatureValue.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters
+	 */
 	public List<String> getProductFormFeatureDescriptionValues()
 	{
 		if (productFormFeatureDescriptions != null)

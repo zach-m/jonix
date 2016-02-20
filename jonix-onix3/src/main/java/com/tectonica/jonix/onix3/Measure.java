@@ -126,6 +126,10 @@ public class Measure implements OnixDataComposite, Serializable
 		return (measureType == null) ? null : measureType.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point
+	 */
 	public Double getMeasurementValue()
 	{
 		return (measurement == null) ? null : measurement.value;

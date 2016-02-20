@@ -154,6 +154,11 @@ public class AudienceRange implements OnixDataComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length string, suggested maximum 10 characters. (This element was previously defined as a
+	 * variable-length integer, but its definition is extended in ONIX 2.1 to enable certain non-numeric values to be
+	 * carried. For values that BISAC has defined for US school grades and pre-school levels, see List 77.)
+	 */
 	public List<String> getAudienceRangeValueValues()
 	{
 		if (audienceRangeValues != null)

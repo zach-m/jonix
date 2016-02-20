@@ -116,6 +116,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getSalesOutletNameValue()
 	{
 		return (salesOutletName == null) ? null : salesOutletName.value;

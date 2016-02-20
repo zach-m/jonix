@@ -137,6 +137,9 @@ public class Extent implements OnixDataComposite, Serializable
 		return (extentType == null) ? null : extentType.value;
 	}
 
+	/**
+	 * Format: Numeric, with decimal point where required, as specified in field PR.12.4
+	 */
 	public String getExtentValueValue()
 	{
 		return (extentValue == null) ? null : extentValue.value;

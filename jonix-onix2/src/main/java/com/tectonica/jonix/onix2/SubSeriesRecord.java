@@ -230,6 +230,9 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+	 */
 	public String getRecordReferenceValue()
 	{
 		return (recordReference == null) ? null : recordReference.value;
@@ -245,6 +248,9 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 		return (deletionCode == null) ? null : deletionCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getDeletionTextValue()
 	{
 		return (deletionText == null) ? null : deletionText.value;
@@ -260,16 +266,26 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
 	}
 
+	/**
+	 * Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 */
 	public String getRecordSourceIdentifierValue()
 	{
 		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getRecordSourceNameValue()
 	{
 		return (recordSourceName == null) ? null : recordSourceName.value;
 	}
 
+	/**
+	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * maximum length 100 characters
+	 */
 	public String getLevelSequenceNumberValue()
 	{
 		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
@@ -280,6 +296,9 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 		return (seriesPartName == null) ? null : seriesPartName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getNumberWithinSeriesValue()
 	{
 		return (numberWithinSeries == null) ? null : numberWithinSeries.value;

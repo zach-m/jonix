@@ -114,6 +114,9 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getProfessionalPositionValues()
 	{
 		if (professionalPositions != null)
@@ -126,6 +129,9 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getAffiliationValue()
 	{
 		return (affiliation == null) ? null : affiliation.value;

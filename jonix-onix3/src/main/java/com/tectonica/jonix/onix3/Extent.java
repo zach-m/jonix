@@ -134,11 +134,17 @@ public class Extent implements OnixDataComposite, Serializable
 		return (extentType == null) ? null : extentType.value;
 	}
 
+	/**
+	 * Format: Numeric, with decimal point where required, as appropriate for the units specified in &lt;ExtentUnit&gt;
+	 */
 	public Double getExtentValueValue()
 	{
 		return (extentValue == null) ? null : extentValue.value;
 	}
 
+	/**
+	 * Format: Letters forming a valid Roman numeral
+	 */
 	public String getExtentValueRomanValue()
 	{
 		return (extentValueRoman == null) ? null : extentValueRoman.value;

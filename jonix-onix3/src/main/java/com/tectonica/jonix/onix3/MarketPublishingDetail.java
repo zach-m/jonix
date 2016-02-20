@@ -187,6 +187,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getMarketPublishingStatusNoteValues()
 	{
 		if (marketPublishingStatusNotes != null)
@@ -199,6 +203,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 1,000 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getPromotionCampaignValues()
 	{
 		if (promotionCampaigns != null)
@@ -211,11 +219,19 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public String getPromotionContactValue()
 	{
 		return (promotionContact == null) ? null : promotionContact.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getInitialPrintRunValues()
 	{
 		if (initialPrintRuns != null)
@@ -228,6 +244,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getReprintDetailValues()
 	{
 		if (reprintDetails != null)
@@ -240,6 +260,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getCopiesSoldValues()
 	{
 		if (copiesSolds != null)
@@ -252,6 +276,10 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getBookClubAdoptionValues()
 	{
 		if (bookClubAdoptions != null)

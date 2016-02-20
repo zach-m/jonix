@@ -129,16 +129,25 @@ public class Sender implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 50 characters
+	 */
 	public String getSenderNameValue()
 	{
 		return (senderName == null) ? null : senderName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getContactNameValue()
 	{
 		return (contactName == null) ? null : contactName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getEmailAddressValue()
 	{
 		return (emailAddress == null) ? null : emailAddress.value;

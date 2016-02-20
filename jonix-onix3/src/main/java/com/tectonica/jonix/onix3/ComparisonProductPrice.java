@@ -156,6 +156,10 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 		return (priceType == null) ? null : priceType.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public Double getPriceAmountValue()
 	{
 		return (priceAmount == null) ? null : priceAmount.value;

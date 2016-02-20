@@ -129,11 +129,17 @@ public class DiscountCoded implements OnixDataComposite, Serializable
 		return (discountCodeType == null) ? null : discountCodeType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getDiscountCodeTypeNameValue()
 	{
 		return (discountCodeTypeName == null) ? null : discountCodeTypeName.value;
 	}
 
+	/**
+	 * Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+	 */
 	public String getDiscountCodeValue()
 	{
 		return (discountCode == null) ? null : discountCode.value;

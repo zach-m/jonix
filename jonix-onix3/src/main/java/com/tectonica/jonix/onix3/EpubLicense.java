@@ -115,6 +115,9 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getEpubLicenseNameValues()
 	{
 		if (epubLicenseNames != null)

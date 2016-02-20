@@ -136,6 +136,9 @@ public class TextItem implements OnixSuperComposite, Serializable
 		return (textItemType == null) ? null : textItemType.value;
 	}
 
+	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits
+	 */
 	public Integer getNumberOfPagesValue()
 	{
 		return (numberOfPages == null) ? null : numberOfPages.value;

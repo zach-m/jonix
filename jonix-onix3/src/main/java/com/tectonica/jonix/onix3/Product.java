@@ -216,6 +216,9 @@ public class Product implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 100 characters
+	 */
 	public String getRecordReferenceValue()
 	{
 		return (recordReference == null) ? null : recordReference.value;
@@ -226,6 +229,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return (notificationType == null) ? null : notificationType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getDeletionTextValues()
 	{
 		if (deletionTexts != null)
@@ -243,6 +249,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return (recordSourceType == null) ? null : recordSourceType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getRecordSourceNameValue()
 	{
 		return (recordSourceName == null) ? null : recordSourceName.value;

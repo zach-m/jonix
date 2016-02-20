@@ -231,31 +231,50 @@ public class ContentItem implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * maximum length 100 characters
+	 */
 	public String getLevelSequenceNumberValue()
 	{
 		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getComponentTypeNameValue()
 	{
 		return (componentTypeName == null) ? null : componentTypeName.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getComponentNumberValue()
 	{
 		return (componentNumber == null) ? null : componentNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 */
 	public String getDistinctiveTitleValue()
 	{
 		return (distinctiveTitle == null) ? null : distinctiveTitle.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 1000 characters
+	 */
 	public String getContributorStatementValue()
 	{
 		return (contributorStatement == null) ? null : contributorStatement.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters.
+	 */
 	public List<String> getCorporateBodyAsSubjectValues()
 	{
 		if (corporateBodyAsSubjects != null)
@@ -268,6 +287,9 @@ public class ContentItem implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 100 characters.
+	 */
 	public List<String> getPlaceAsSubjectValues()
 	{
 		if (placeAsSubjects != null)

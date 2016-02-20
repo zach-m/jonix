@@ -139,6 +139,9 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 		return (resourceForm == null) ? null : resourceForm.value;
 	}
 
+	/**
+	 * Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 */
 	public List<String> getResourceLinkValues()
 	{
 		if (resourceLinks != null)

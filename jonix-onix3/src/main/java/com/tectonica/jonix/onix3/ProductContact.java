@@ -144,16 +144,25 @@ public class ProductContact implements OnixSuperComposite, Serializable
 		return (productContactRole == null) ? null : productContactRole.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 50 characters
+	 */
 	public String getProductContactNameValue()
 	{
 		return (productContactName == null) ? null : productContactName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getContactNameValue()
 	{
 		return (contactName == null) ? null : contactName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getEmailAddressValue()
 	{
 		return (emailAddress == null) ? null : emailAddress.value;

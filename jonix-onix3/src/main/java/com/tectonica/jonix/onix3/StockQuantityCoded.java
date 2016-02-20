@@ -128,11 +128,17 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 		return (stockQuantityCodeType == null) ? null : stockQuantityCodeType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getStockQuantityCodeTypeNameValue()
 	{
 		return (stockQuantityCodeTypeName == null) ? null : stockQuantityCodeTypeName.value;
 	}
 
+	/**
+	 * Format: According to the scheme specified in &lt;StockQuantityCodeType&gt;
+	 */
 	public String getStockQuantityCodeValue()
 	{
 		return (stockQuantityCode == null) ? null : stockQuantityCode.value;

@@ -357,21 +357,34 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
+	 * which may be a numeric digit or letter X.
+	 */
 	public String getSupplierSANValue()
 	{
 		return (supplierSAN == null) ? null : supplierSAN.value;
 	}
 
+	/**
+	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 */
 	public String getSupplierEANLocationNumberValue()
 	{
 		return (supplierEANLocationNumber == null) ? null : supplierEANLocationNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getSupplierNameValue()
 	{
 		return (supplierName == null) ? null : supplierName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getTelephoneNumberValues()
 	{
 		if (telephoneNumbers != null)
@@ -384,6 +397,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getFaxNumberValues()
 	{
 		if (faxNumbers != null)
@@ -396,6 +412,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getEmailAddressValues()
 	{
 		if (emailAddresss != null)
@@ -454,6 +473,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getSupplyRestrictionDetailValue()
 	{
 		return (supplyRestrictionDetail == null) ? null : supplyRestrictionDetail.value;
@@ -464,11 +486,18 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return (returnsCodeType == null) ? null : returnsCodeType.value;
 	}
 
+	/**
+	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use, see
+	 * List 66
+	 */
 	public String getReturnsCodeValue()
 	{
 		return (returnsCode == null) ? null : returnsCode.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getLastDateForReturnsValue()
 	{
 		return (lastDateForReturns == null) ? null : lastDateForReturns.value;
@@ -484,6 +513,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return (productAvailability == null) ? null : productAvailability.value;
 	}
 
+	/**
+	 * Format: Fixed-length, two numeric digits
+	 */
 	public String getIntermediaryAvailabilityCodeValue()
 	{
 		return (intermediaryAvailabilityCode == null) ? null : intermediaryAvailabilityCode.value;
@@ -494,21 +526,33 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return (dateFormat == null) ? null : dateFormat.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
+	 */
 	public String getExpectedShipDateValue()
 	{
 		return (expectedShipDate == null) ? null : expectedShipDate.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getOnSaleDateValue()
 	{
 		return (onSaleDate == null) ? null : onSaleDate.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, one or two digits only
+	 */
 	public String getOrderTimeValue()
 	{
 		return (orderTime == null) ? null : orderTime.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length four digits
+	 */
 	public String getPackQuantityValue()
 	{
 		return (packQuantity == null) ? null : packQuantity.value;
@@ -519,11 +563,18 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return (audienceRestrictionFlag == null) ? null : audienceRestrictionFlag.value;
 	}
 
+	/**
+	 * Format: Variable-length text, maximum 300 characters
+	 */
 	public String getAudienceRestrictionNoteValue()
 	{
 		return (audienceRestrictionNote == null) ? null : audienceRestrictionNote.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public String getPriceAmountValue()
 	{
 		return (priceAmount == null) ? null : priceAmount.value;

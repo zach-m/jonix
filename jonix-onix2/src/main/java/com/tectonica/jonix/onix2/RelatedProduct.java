@@ -290,11 +290,17 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 		return (relationCode == null) ? null : relationCode.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getISBNValue()
 	{
 		return (isbn == null) ? null : isbn.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getEAN13Value()
 	{
 		return (ean13 == null) ? null : ean13.value;
@@ -334,11 +340,17 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 		return (productPackaging == null) ? null : productPackaging.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 */
 	public String getProductFormDescriptionValue()
 	{
 		return (productFormDescription == null) ? null : productFormDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 */
 	public String getNumberOfPiecesValue()
 	{
 		return (numberOfPieces == null) ? null : numberOfPieces.value;
@@ -366,11 +378,17 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 		return (epubType == null) ? null : epubType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 10 characters
+	 */
 	public String getEpubTypeVersionValue()
 	{
 		return (epubTypeVersion == null) ? null : epubTypeVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubTypeDescriptionValue()
 	{
 		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
@@ -381,16 +399,25 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 		return (epubFormat == null) ? null : epubFormat.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 10 characters
+	 */
 	public String getEpubFormatVersionValue()
 	{
 		return (epubFormatVersion == null) ? null : epubFormatVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubFormatDescriptionValue()
 	{
 		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubTypeNoteValue()
 	{
 		return (epubTypeNote == null) ? null : epubTypeNote.value;

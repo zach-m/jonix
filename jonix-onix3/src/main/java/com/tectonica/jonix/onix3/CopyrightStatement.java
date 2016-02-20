@@ -127,6 +127,10 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 		return (copyrightType == null) ? null : copyrightType.value;
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * missing)
+	 */
 	public List<String> getCopyrightYearValues()
 	{
 		if (copyrightYears != null)

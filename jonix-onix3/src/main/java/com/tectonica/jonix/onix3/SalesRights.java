@@ -145,6 +145,9 @@ public class SalesRights implements OnixSuperComposite, Serializable
 		return (salesRightsType == null) ? null : salesRightsType.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters
+	 */
 	public String getPublisherNameValue()
 	{
 		return (publisherName == null) ? null : publisherName.value;

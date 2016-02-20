@@ -124,11 +124,17 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getProfessionalPositionValue()
 	{
 		return (professionalPosition == null) ? null : professionalPosition.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getAffiliationValue()
 	{
 		return (affiliation == null) ? null : affiliation.value;

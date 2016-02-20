@@ -196,11 +196,17 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		return (productAvailability == null) ? null : productAvailability.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, one or two digits only
+	 */
 	public Integer getOrderTimeValue()
 	{
 		return (orderTime == null) ? null : orderTime.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length four digits
+	 */
 	public Integer getPackQuantityValue()
 	{
 		return (packQuantity == null) ? null : packQuantity.value;

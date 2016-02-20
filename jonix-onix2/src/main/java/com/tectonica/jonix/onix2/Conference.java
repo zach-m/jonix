@@ -173,36 +173,57 @@ public class Conference implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, two numeric digits
+	 */
 	public String getConferenceRoleValue()
 	{
 		return (conferenceRole == null) ? null : conferenceRole.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 */
 	public String getConferenceNameValue()
 	{
 		return (conferenceName == null) ? null : conferenceName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getConferenceAcronymValue()
 	{
 		return (conferenceAcronym == null) ? null : conferenceAcronym.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 characters
+	 */
 	public String getConferenceNumberValue()
 	{
 		return (conferenceNumber == null) ? null : conferenceNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getConferenceThemeValue()
 	{
 		return (conferenceTheme == null) ? null : conferenceTheme.value;
 	}
 
+	/**
+	 * Format: Date as year (YYYY) or month and year (YYYYMM).
+	 */
 	public String getConferenceDateValue()
 	{
 		return (conferenceDate == null) ? null : conferenceDate.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getConferencePlaceValue()
 	{
 		return (conferencePlace == null) ? null : conferencePlace.value;

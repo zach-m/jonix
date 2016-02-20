@@ -144,21 +144,38 @@ public class Header implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable length integer
+	 */
 	public Integer getMessageNumberValue()
 	{
 		return (messageNumber == null) ? null : messageNumber.value;
 	}
 
+	/**
+	 * Format: Variable length integer
+	 */
 	public Integer getMessageRepeatValue()
 	{
 		return (messageRepeat == null) ? null : messageRepeat.value;
 	}
 
+	/**
+	 * Format: Permitted formats, where 'T' and 'Z' represent themselves (ie the letters T and Z), and where the symbol
+	 * '&#177;' represents either '+' or '-' to indicate a timezone offset from UTC. YYYYMMDD Date only YYYYMMDDThhmm
+	 * Date and time (local time of sender) YYYYMMDDThhmmZ Universal time (UTC) &#8224; YYYYMMDDThhmm&#177;hhmm With
+	 * time zone offset from UTC &#8224; YYYYMMDDThhmmss Date and time (with seconds) YYYYMMDDThhmmssZ Universal time
+	 * (with seconds) YYYYMMDDThhmmss&#177;hhmm With time zone offset from UTC (with seconds) &#8224; indicates the
+	 * preferred formats
+	 */
 	public String getSentDateTimeValue()
 	{
 		return (sentDateTime == null) ? null : sentDateTime.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 500 characters
+	 */
 	public List<String> getMessageNoteValues()
 	{
 		if (messageNotes != null)

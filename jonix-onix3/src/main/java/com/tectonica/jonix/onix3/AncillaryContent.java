@@ -129,6 +129,10 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 		return (ancillaryContentType == null) ? null : ancillaryContentType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getAncillaryContentDescriptionValues()
 	{
 		if (ancillaryContentDescriptions != null)
@@ -141,6 +145,9 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 6 digits
+	 */
 	public Integer getNumberValue()
 	{
 		return (number == null) ? null : number.value;

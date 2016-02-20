@@ -126,11 +126,17 @@ public class PriceCoded implements OnixDataComposite, Serializable
 		return (priceCodeType == null) ? null : priceCodeType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getPriceCodeTypeNameValue()
 	{
 		return (priceCodeTypeName == null) ? null : priceCodeTypeName.value;
 	}
 
+	/**
+	 * Format: According to the scheme specified in &lt;PriceCodeType&gt;
+	 */
 	public String getPriceCodeValue()
 	{
 		return (priceCode == null) ? null : priceCode.value;

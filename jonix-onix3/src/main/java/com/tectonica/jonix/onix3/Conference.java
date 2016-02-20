@@ -161,36 +161,60 @@ public class Conference implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, two digits
+	 */
 	public String getConferenceRoleValue()
 	{
 		return (conferenceRole == null) ? null : conferenceRole.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getConferenceNameValue()
 	{
 		return (conferenceName == null) ? null : conferenceName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getConferenceAcronymValue()
 	{
 		return (conferenceAcronym == null) ? null : conferenceAcronym.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 */
 	public Integer getConferenceNumberValue()
 	{
 		return (conferenceNumber == null) ? null : conferenceNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields - but is strongly discouraged
+	 */
 	public String getConferenceThemeValue()
 	{
 		return (conferenceTheme == null) ? null : conferenceTheme.value;
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * missing. Note that the dateformat attribute allows exact dates to be supplied if necessary, including the cases
+	 * where a conference spreads over a range of dates or the date can only be supplied as a text string
+	 */
 	public String getConferenceDateValue()
 	{
 		return (conferenceDate == null) ? null : conferenceDate.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getConferencePlaceValue()
 	{
 		return (conferencePlace == null) ? null : conferencePlace.value;

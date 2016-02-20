@@ -138,6 +138,10 @@ public class Measure implements OnixDataComposite, Serializable
 		return (measureTypeCode == null) ? null : measureTypeCode.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 */
 	public String getMeasurementValue()
 	{
 		return (measurement == null) ? null : measurement.value;

@@ -166,6 +166,9 @@ public class Title implements OnixDataComposite, Serializable
 		return (titleType == null) ? null : titleType.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum 3 digits
+	 */
 	public String getAbbreviatedLengthValue()
 	{
 		return (abbreviatedLength == null) ? null : abbreviatedLength.value;
@@ -176,21 +179,33 @@ public class Title implements OnixDataComposite, Serializable
 		return (textCaseFlag == null) ? null : textCaseFlag.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getTitleTextValue()
 	{
 		return (titleText == null) ? null : titleText.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getTitlePrefixValue()
 	{
 		return (titlePrefix == null) ? null : titlePrefix.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTitleWithoutPrefixValue()
 	{
 		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getSubtitleValue()
 	{
 		return (subtitle == null) ? null : subtitle.value;

@@ -127,11 +127,19 @@ public class ResourceFeature implements OnixDataComposite, Serializable
 		return (resourceFeatureType == null) ? null : resourceFeatureType.value;
 	}
 
+	/**
+	 * Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may
+	 * not be taken from a code list
+	 */
 	public String getFeatureValueValue()
 	{
 		return (featureValue == null) ? null : featureValue.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getFeatureNoteValues()
 	{
 		if (featureNotes != null)

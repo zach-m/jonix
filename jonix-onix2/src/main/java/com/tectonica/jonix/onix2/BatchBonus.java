@@ -124,11 +124,17 @@ public class BatchBonus implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 */
 	public String getBatchQuantityValue()
 	{
 		return (batchQuantity == null) ? null : batchQuantity.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 */
 	public String getFreeQuantityValue()
 	{
 		return (freeQuantity == null) ? null : freeQuantity.value;

@@ -146,11 +146,17 @@ public class Prize implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPrizeNameValue()
 	{
 		return (prizeName == null) ? null : prizeName.value;
 	}
 
+	/**
+	 * Format: Four digits, YYYY
+	 */
 	public String getPrizeYearValue()
 	{
 		return (prizeYear == null) ? null : prizeYear.value;
@@ -166,6 +172,10 @@ public class Prize implements OnixDataComposite, Serializable
 		return (prizeCode == null) ? null : prizeCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getPrizeJuryValue()
 	{
 		return (prizeJury == null) ? null : prizeJury.value;

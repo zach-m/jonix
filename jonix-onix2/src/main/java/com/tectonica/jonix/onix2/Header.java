@@ -268,66 +268,107 @@ public class Header implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 */
 	public String getFromEANNumberValue()
 	{
 		return (fromEANNumber == null) ? null : fromEANNumber.value;
 	}
 
+	/**
+	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
+	 * which may be a numeric digit or letter X.
+	 */
 	public String getFromSANValue()
 	{
 		return (fromSAN == null) ? null : fromSAN.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 30 characters
+	 */
 	public String getFromCompanyValue()
 	{
 		return (fromCompany == null) ? null : fromCompany.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 300 characters
+	 */
 	public String getFromPersonValue()
 	{
 		return (fromPerson == null) ? null : fromPerson.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 100 characters
+	 */
 	public String getFromEmailValue()
 	{
 		return (fromEmail == null) ? null : fromEmail.value;
 	}
 
+	/**
+	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 */
 	public String getToEANNumberValue()
 	{
 		return (toEANNumber == null) ? null : toEANNumber.value;
 	}
 
+	/**
+	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
+	 * which may be a numeric digit or letter X.
+	 */
 	public String getToSANValue()
 	{
 		return (toSAN == null) ? null : toSAN.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 30 characters
+	 */
 	public String getToCompanyValue()
 	{
 		return (toCompany == null) ? null : toCompany.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 300 characters
+	 */
 	public String getToPersonValue()
 	{
 		return (toPerson == null) ? null : toPerson.value;
 	}
 
+	/**
+	 * Format: Variable-length integer,
+	 */
 	public String getMessageNumberValue()
 	{
 		return (messageNumber == null) ? null : messageNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length integer
+	 */
 	public String getMessageRepeatValue()
 	{
 		return (messageRepeat == null) ? null : messageRepeat.value;
 	}
 
+	/**
+	 * Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
+	 */
 	public String getSentDateValue()
 	{
 		return (sentDate == null) ? null : sentDate.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 500 characters
+	 */
 	public String getMessageNoteValue()
 	{
 		return (messageNote == null) ? null : messageNote.value;
@@ -358,6 +399,9 @@ public class Header implements OnixSuperComposite, Serializable
 		return (defaultWeightUnit == null) ? null : defaultWeightUnit.value;
 	}
 
+	/**
+	 * Format: Variable length ASCII text, suggested maximum length 50 characters
+	 */
 	public String getDefaultClassOfTradeValue()
 	{
 		return (defaultClassOfTrade == null) ? null : defaultClassOfTrade.value;

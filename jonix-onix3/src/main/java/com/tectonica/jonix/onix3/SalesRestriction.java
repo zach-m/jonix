@@ -140,6 +140,10 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 		return (salesRestrictionType == null) ? null : salesRestrictionType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getSalesRestrictionNoteValues()
 	{
 		if (salesRestrictionNotes != null)
@@ -152,11 +156,19 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * missing
+	 */
 	public String getStartDateValue()
 	{
 		return (startDate == null) ? null : startDate.value;
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * missing
+	 */
 	public String getEndDateValue()
 	{
 		return (endDate == null) ? null : endDate.value;

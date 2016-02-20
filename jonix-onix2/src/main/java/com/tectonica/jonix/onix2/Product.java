@@ -1203,6 +1203,9 @@ public class Product implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+	 */
 	public String getRecordReferenceValue()
 	{
 		return (recordReference == null) ? null : recordReference.value;
@@ -1218,6 +1221,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return (deletionCode == null) ? null : deletionCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getDeletionTextValue()
 	{
 		return (deletionText == null) ? null : deletionText.value;
@@ -1233,41 +1239,67 @@ public class Product implements OnixSuperComposite, Serializable
 		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
 	}
 
+	/**
+	 * Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 */
 	public String getRecordSourceIdentifierValue()
 	{
 		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getRecordSourceNameValue()
 	{
 		return (recordSourceName == null) ? null : recordSourceName.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getISBNValue()
 	{
 		return (isbn == null) ? null : isbn.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getEAN13Value()
 	{
 		return (ean13 == null) ? null : ean13.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
+	 * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html
+	 */
 	public String getUPCValue()
 	{
 		return (upc == null) ? null : upc.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 35 characters.
+	 */
 	public String getPublisherProductNoValue()
 	{
 		return (publisherProductNo == null) ? null : publisherProductNo.value;
 	}
 
+	/**
+	 * Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character calculated
+	 * according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
+	 */
 	public String getISMNValue()
 	{
 		return (ismn == null) ? null : ismn.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters.
+	 */
 	public String getDOIValue()
 	{
 		return (doi == null) ? null : doi.value;
@@ -1285,11 +1317,17 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getReplacesISBNValue()
 	{
 		return (replacesISBN == null) ? null : replacesISBN.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getReplacesEAN13Value()
 	{
 		return (replacesEAN13 == null) ? null : replacesEAN13.value;
@@ -1329,11 +1367,17 @@ public class Product implements OnixSuperComposite, Serializable
 		return (productPackaging == null) ? null : productPackaging.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 */
 	public String getProductFormDescriptionValue()
 	{
 		return (productFormDescription == null) ? null : productFormDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 */
 	public String getNumberOfPiecesValue()
 	{
 		return (numberOfPieces == null) ? null : numberOfPieces.value;
@@ -1361,11 +1405,17 @@ public class Product implements OnixSuperComposite, Serializable
 		return (epubType == null) ? null : epubType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 10 characters
+	 */
 	public String getEpubTypeVersionValue()
 	{
 		return (epubTypeVersion == null) ? null : epubTypeVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubTypeDescriptionValue()
 	{
 		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
@@ -1376,11 +1426,17 @@ public class Product implements OnixSuperComposite, Serializable
 		return (epubFormat == null) ? null : epubFormat.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 10 characters
+	 */
 	public String getEpubFormatVersionValue()
 	{
 		return (epubFormatVersion == null) ? null : epubFormatVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubFormatDescriptionValue()
 	{
 		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
@@ -1391,16 +1447,25 @@ public class Product implements OnixSuperComposite, Serializable
 		return (epubSource == null) ? null : epubSource.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 10 characters
+	 */
 	public String getEpubSourceVersionValue()
 	{
 		return (epubSourceVersion == null) ? null : epubSourceVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubSourceDescriptionValue()
 	{
 		return (epubSourceDescription == null) ? null : epubSourceDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters
+	 */
 	public String getEpubTypeNoteValue()
 	{
 		return (epubTypeNote == null) ? null : epubTypeNote.value;
@@ -1416,31 +1481,49 @@ public class Product implements OnixSuperComposite, Serializable
 		return (textCaseFlag == null) ? null : textCaseFlag.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 */
 	public String getDistinctiveTitleValue()
 	{
 		return (distinctiveTitle == null) ? null : distinctiveTitle.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getTitlePrefixValue()
 	{
 		return (titlePrefix == null) ? null : titlePrefix.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTitleWithoutPrefixValue()
 	{
 		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getSubtitleValue()
 	{
 		return (subtitle == null) ? null : subtitle.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTranslationOfTitleValue()
 	{
 		return (translationOfTitle == null) ? null : translationOfTitle.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public List<String> getFormerTitleValues()
 	{
 		if (formerTitles != null)
@@ -1458,16 +1541,25 @@ public class Product implements OnixSuperComposite, Serializable
 		return (thesisType == null) ? null : thesisType.value;
 	}
 
+	/**
+	 * Format: Free text, suggested maximum length 300 characters
+	 */
 	public String getThesisPresentedToValue()
 	{
 		return (thesisPresentedTo == null) ? null : thesisPresentedTo.value;
 	}
 
+	/**
+	 * Format: Fixed-length, four numeric digits
+	 */
 	public String getThesisYearValue()
 	{
 		return (thesisYear == null) ? null : thesisYear.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 1000 characters
+	 */
 	public String getContributorStatementValue()
 	{
 		return (contributorStatement == null) ? null : contributorStatement.value;
@@ -1478,31 +1570,49 @@ public class Product implements OnixSuperComposite, Serializable
 		return (noContributor != null);
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getConferenceDescriptionValue()
 	{
 		return (conferenceDescription == null) ? null : conferenceDescription.value;
 	}
 
+	/**
+	 * Format: Fixed-length, two numeric digits
+	 */
 	public String getConferenceRoleValue()
 	{
 		return (conferenceRole == null) ? null : conferenceRole.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 */
 	public String getConferenceNameValue()
 	{
 		return (conferenceName == null) ? null : conferenceName.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 characters
+	 */
 	public String getConferenceNumberValue()
 	{
 		return (conferenceNumber == null) ? null : conferenceNumber.value;
 	}
 
+	/**
+	 * Format: Date as year (YYYY) or month and year (YYYYMM).
+	 */
 	public String getConferenceDateValue()
 	{
 		return (conferenceDate == null) ? null : conferenceDate.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getConferencePlaceValue()
 	{
 		return (conferencePlace == null) ? null : conferencePlace.value;
@@ -1520,16 +1630,25 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 */
 	public String getEditionNumberValue()
 	{
 		return (editionNumber == null) ? null : editionNumber.value;
 	}
 
+	/**
+	 * Format: Free form, suggested maximum length 20 characters.
+	 */
 	public String getEditionVersionNumberValue()
 	{
 		return (editionVersionNumber == null) ? null : editionVersionNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 */
 	public String getEditionStatementValue()
 	{
 		return (editionStatement == null) ? null : editionStatement.value;
@@ -1557,31 +1676,49 @@ public class Product implements OnixSuperComposite, Serializable
 		return (originalLanguage == null) ? null : originalLanguage.value;
 	}
 
+	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 */
 	public String getNumberOfPagesValue()
 	{
 		return (numberOfPages == null) ? null : numberOfPages.value;
 	}
 
+	/**
+	 * Format: Variable length alphabetic, suggested maximum length 10 characters.
+	 */
 	public String getPagesRomanValue()
 	{
 		return (pagesRoman == null) ? null : pagesRoman.value;
 	}
 
+	/**
+	 * Format: Variable length numeric, suggested maximum length 6 characters.
+	 */
 	public String getPagesArabicValue()
 	{
 		return (pagesArabic == null) ? null : pagesArabic.value;
 	}
 
+	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 */
 	public String getNumberOfIllustrationsValue()
 	{
 		return (numberOfIllustrations == null) ? null : numberOfIllustrations.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 200 characters.
+	 */
 	public String getIllustrationsNoteValue()
 	{
 		return (illustrationsNote == null) ? null : illustrationsNote.value;
 	}
 
+	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 */
 	public List<String> getMapScaleValues()
 	{
 		if (mapScales != null)
@@ -1594,26 +1731,43 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Fixed-length, three upper-case letters and six numeric digits.
+	 */
 	public String getBASICMainSubjectValue()
 	{
 		return (basicMainSubject == null) ? null : basicMainSubject.value;
 	}
 
+	/**
+	 * Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
+	 * Suggested maximum length 10 characters, for consistency with other version number elements.
+	 */
 	public String getBASICVersionValue()
 	{
 		return (basicVersion == null) ? null : basicVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
+	 */
 	public String getBICMainSubjectValue()
 	{
 		return (bicMainSubject == null) ? null : bicMainSubject.value;
 	}
 
+	/**
+	 * Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
+	 * consistency with other version number elements.
+	 */
 	public String getBICVersionValue()
 	{
 		return (bicVersion == null) ? null : bicVersion.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 200 characters.
+	 */
 	public List<String> getCorporateBodyAsSubjectValues()
 	{
 		if (corporateBodyAsSubjects != null)
@@ -1626,6 +1780,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 100 characters.
+	 */
 	public List<String> getPlaceAsSubjectValues()
 	{
 		if (placeAsSubjects != null)
@@ -1650,31 +1807,51 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable length text, maximum 15 characters.
+	 */
 	public String getUSSchoolGradeValue()
 	{
 		return (usSchoolGrade == null) ? null : usSchoolGrade.value;
 	}
 
+	/**
+	 * Format: Variable length text, maximum 15 characters.
+	 */
 	public String getInterestAgeValue()
 	{
 		return (interestAge == null) ? null : interestAge.value;
 	}
 
+	/**
+	 * Format: Free text, suggested maximum length 1000 characters.
+	 */
 	public String getAudienceDescriptionValue()
 	{
 		return (audienceDescription == null) ? null : audienceDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length text, maximum 350 characters
+	 */
 	public String getAnnotationValue()
 	{
 		return (annotation == null) ? null : annotation.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX for
+	 * Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getMainDescriptionValue()
 	{
 		return (mainDescription == null) ? null : mainDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public List<String> getReviewQuoteValues()
 	{
 		if (reviewQuotes != null)
@@ -1697,26 +1874,41 @@ public class Product implements OnixSuperComposite, Serializable
 		return (coverImageLinkTypeCode == null) ? null : coverImageLinkTypeCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getCoverImageLinkValue()
 	{
 		return (coverImageLink == null) ? null : coverImageLink.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters
+	 */
 	public String getPrizesDescriptionValue()
 	{
 		return (prizesDescription == null) ? null : prizesDescription.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getImprintNameValue()
 	{
 		return (imprintName == null) ? null : imprintName.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getPublisherNameValue()
 	{
 		return (publisherName == null) ? null : publisherName.value;
 	}
 
+	/**
+	 * Format: Free text, suggested maximum length 50 characters.
+	 */
 	public List<String> getCityOfPublicationValues()
 	{
 		if (cityOfPublications != null)
@@ -1734,6 +1926,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return (countryOfPublication == null) ? null : countryOfPublication.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public List<String> getCopublisherNameValues()
 	{
 		if (copublisherNames != null)
@@ -1746,6 +1941,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public List<String> getSponsorNameValues()
 	{
 		if (sponsorNames != null)
@@ -1758,6 +1956,9 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getOriginalPublisherValue()
 	{
 		return (originalPublisher == null) ? null : originalPublisher.value;
@@ -1768,111 +1969,181 @@ public class Product implements OnixSuperComposite, Serializable
 		return (publishingStatus == null) ? null : publishingStatus.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters.
+	 */
 	public String getPublishingStatusNoteValue()
 	{
 		return (publishingStatusNote == null) ? null : publishingStatusNote.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getAnnouncementDateValue()
 	{
 		return (announcementDate == null) ? null : announcementDate.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getTradeAnnouncementDateValue()
 	{
 		return (tradeAnnouncementDate == null) ? null : tradeAnnouncementDate.value;
 	}
 
+	/**
+	 * Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
+	 */
 	public String getPublicationDateValue()
 	{
 		return (publicationDate == null) ? null : publicationDate.value;
 	}
 
+	/**
+	 * Format: Date as year only (YYYY)
+	 */
 	public String getCopyrightYearValue()
 	{
 		return (copyrightYear == null) ? null : copyrightYear.value;
 	}
 
+	/**
+	 * Format: Date as year only (YYYY)
+	 */
 	public String getYearFirstPublishedValue()
 	{
 		return (yearFirstPublished == null) ? null : yearFirstPublished.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 */
 	public String getHeightValue()
 	{
 		return (height == null) ? null : height.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 */
 	public String getWidthValue()
 	{
 		return (width == null) ? null : width.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 */
 	public String getThicknessValue()
 	{
 		return (thickness == null) ? null : thickness.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point.
+	 */
 	public String getWeightValue()
 	{
 		return (weight == null) ? null : weight.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getDimensionsValue()
 	{
 		return (dimensions == null) ? null : dimensions.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getReplacedByISBNValue()
 	{
 		return (replacedByISBN == null) ? null : replacedByISBN.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getReplacedByEAN13Value()
 	{
 		return (replacedByEAN13 == null) ? null : replacedByEAN13.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getAlternativeFormatISBNValue()
 	{
 		return (alternativeFormatISBN == null) ? null : alternativeFormatISBN.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getAlternativeFormatEAN13Value()
 	{
 		return (alternativeFormatEAN13 == null) ? null : alternativeFormatEAN13.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getAlternativeProductISBNValue()
 	{
 		return (alternativeProductISBN == null) ? null : alternativeProductISBN.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getAlternativeProductEAN13Value()
 	{
 		return (alternativeProductEAN13 == null) ? null : alternativeProductEAN13.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getOutOfPrintDateValue()
 	{
 		return (outOfPrintDate == null) ? null : outOfPrintDate.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 1,000 characters
+	 */
 	public String getPromotionCampaignValue()
 	{
 		return (promotionCampaign == null) ? null : promotionCampaign.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getPromotionContactValue()
 	{
 		return (promotionContact == null) ? null : promotionContact.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getInitialPrintRunValue()
 	{
 		return (initialPrintRun == null) ? null : initialPrintRun.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public List<String> getReprintDetailValues()
 	{
 		if (reprintDetails != null)
@@ -1885,11 +2156,17 @@ public class Product implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getCopiesSoldValue()
 	{
 		return (copiesSold == null) ? null : copiesSold.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getBookClubAdoptionValue()
 	{
 		return (bookClubAdoption == null) ? null : bookClubAdoption.value;

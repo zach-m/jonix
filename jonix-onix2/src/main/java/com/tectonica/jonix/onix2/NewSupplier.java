@@ -164,21 +164,34 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
+	 * which may be a numeric digit or letter X.
+	 */
 	public String getSupplierSANValue()
 	{
 		return (supplierSAN == null) ? null : supplierSAN.value;
 	}
 
+	/**
+	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 */
 	public String getSupplierEANLocationNumberValue()
 	{
 		return (supplierEANLocationNumber == null) ? null : supplierEANLocationNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getSupplierNameValue()
 	{
 		return (supplierName == null) ? null : supplierName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getTelephoneNumberValues()
 	{
 		if (telephoneNumbers != null)
@@ -191,6 +204,9 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getFaxNumberValues()
 	{
 		if (faxNumbers != null)
@@ -203,6 +219,9 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getEmailAddressValues()
 	{
 		if (emailAddresss != null)

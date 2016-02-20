@@ -220,11 +220,17 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getISBNValue()
 	{
 		return (isbn == null) ? null : isbn.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getEAN13Value()
 	{
 		return (ean13 == null) ? null : ean13.value;
@@ -264,11 +270,17 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 		return (productPackaging == null) ? null : productPackaging.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 */
 	public String getProductFormDescriptionValue()
 	{
 		return (productFormDescription == null) ? null : productFormDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 */
 	public String getNumberOfPiecesValue()
 	{
 		return (numberOfPieces == null) ? null : numberOfPieces.value;
@@ -291,6 +303,9 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length integer, maximum four digits
+	 */
 	public String getItemQuantityValue()
 	{
 		return (itemQuantity == null) ? null : itemQuantity.value;

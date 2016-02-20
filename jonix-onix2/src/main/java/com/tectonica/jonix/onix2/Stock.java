@@ -159,21 +159,33 @@ public class Stock implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Free text, suggested maximum length 100 characters
+	 */
 	public String getLocationNameValue()
 	{
 		return (locationName == null) ? null : locationName.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public String getOnHandValue()
 	{
 		return (onHand == null) ? null : onHand.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public String getOnOrderValue()
 	{
 		return (onOrder == null) ? null : onOrder.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public String getCBOValue()
 	{
 		return (cbo == null) ? null : cbo.value;

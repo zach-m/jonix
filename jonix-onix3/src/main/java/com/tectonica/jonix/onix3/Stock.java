@@ -165,11 +165,17 @@ public class Stock implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getLocationNameValue()
 	{
 		return (locationName == null) ? null : locationName.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public Integer getOnHandValue()
 	{
 		return (onHand == null) ? null : onHand.value;
@@ -180,11 +186,17 @@ public class Stock implements OnixSuperComposite, Serializable
 		return (proximity == null) ? null : proximity.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public Integer getOnOrderValue()
 	{
 		return (onOrder == null) ? null : onOrder.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public Integer getCBOValue()
 	{
 		return (cbo == null) ? null : cbo.value;

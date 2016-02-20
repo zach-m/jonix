@@ -184,41 +184,66 @@ public class Set implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X
+	 */
 	public String getISBNOfSetValue()
 	{
 		return (isbnOfSet == null) ? null : isbnOfSet.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits
+	 */
 	public String getEAN13OfSetValue()
 	{
 		return (ean13OfSet == null) ? null : ean13OfSet.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTitleOfSetValue()
 	{
 		return (titleOfSet == null) ? null : titleOfSet.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getSetPartNumberValue()
 	{
 		return (setPartNumber == null) ? null : setPartNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getSetPartTitleValue()
 	{
 		return (setPartTitle == null) ? null : setPartTitle.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getItemNumberWithinSetValue()
 	{
 		return (itemNumberWithinSet == null) ? null : itemNumberWithinSet.value;
 	}
 
+	/**
+	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * maximum length 100 characters
+	 */
 	public String getLevelSequenceNumberValue()
 	{
 		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getSetItemTitleValue()
 	{
 		return (setItemTitle == null) ? null : setItemTitle.value;

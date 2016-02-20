@@ -197,51 +197,81 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPersonNameValue()
 	{
 		return (personName == null) ? null : personName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPersonNameInvertedValue()
 	{
 		return (personNameInverted == null) ? null : personNameInverted.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getTitlesBeforeNamesValue()
 	{
 		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getNamesBeforeKeyValue()
 	{
 		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPrefixToKeyValue()
 	{
 		return (prefixToKey == null) ? null : prefixToKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getKeyNamesValue()
 	{
 		return (keyNames == null) ? null : keyNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getNamesAfterKeyValue()
 	{
 		return (namesAfterKey == null) ? null : namesAfterKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getSuffixToKeyValue()
 	{
 		return (suffixToKey == null) ? null : suffixToKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getLettersAfterNamesValue()
 	{
 		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getTitlesAfterNamesValue()
 	{
 		return (titlesAfterNames == null) ? null : titlesAfterNames.value;

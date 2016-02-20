@@ -321,6 +321,9 @@ public class Price implements OnixSuperComposite, Serializable
 		return (priceQualifier == null) ? null : priceQualifier.value;
 	}
 
+	/**
+	 * Format: Text, suggested maximum length 200 characters
+	 */
 	public String getPriceTypeDescriptionValue()
 	{
 		return (priceTypeDescription == null) ? null : priceTypeDescription.value;
@@ -331,21 +334,36 @@ public class Price implements OnixSuperComposite, Serializable
 		return (pricePer == null) ? null : pricePer.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 */
 	public String getMinimumOrderQuantityValue()
 	{
 		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
 	}
 
+	/**
+	 * Format: Text, suggested maximum length 50 characters
+	 */
 	public String getClassOfTradeValue()
 	{
 		return (classOfTrade == null) ? null : classOfTrade.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the
+	 * supplier code) Positions 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions
+	 * 6-8&#160;&#160;&#160;&#160;Discount group code, alphanumeric, assigned by the supplier. If less than three
+	 * characters, the code is left justified and unused positions are sent as spaces.
+	 */
 	public String getBICDiscountGroupCodeValue()
 	{
 		return (bicDiscountGroupCode == null) ? null : bicDiscountGroupCode.value;
 	}
 
+	/**
+	 * Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 */
 	public String getDiscountPercentValue()
 	{
 		return (discountPercent == null) ? null : discountPercent.value;
@@ -356,6 +374,10 @@ public class Price implements OnixSuperComposite, Serializable
 		return (priceStatus == null) ? null : priceStatus.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public String getPriceAmountValue()
 	{
 		return (priceAmount == null) ? null : priceAmount.value;
@@ -398,16 +420,25 @@ public class Price implements OnixSuperComposite, Serializable
 		return (taxRateCode1 == null) ? null : taxRateCode1.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 */
 	public String getTaxRatePercent1Value()
 	{
 		return (taxRatePercent1 == null) ? null : taxRatePercent1.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 */
 	public String getTaxableAmount1Value()
 	{
 		return (taxableAmount1 == null) ? null : taxableAmount1.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 */
 	public String getTaxAmount1Value()
 	{
 		return (taxAmount1 == null) ? null : taxAmount1.value;
@@ -418,26 +449,41 @@ public class Price implements OnixSuperComposite, Serializable
 		return (taxRateCode2 == null) ? null : taxRateCode2.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 */
 	public String getTaxRatePercent2Value()
 	{
 		return (taxRatePercent2 == null) ? null : taxRatePercent2.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 */
 	public String getTaxableAmount2Value()
 	{
 		return (taxableAmount2 == null) ? null : taxableAmount2.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required.
+	 */
 	public String getTaxAmount2Value()
 	{
 		return (taxAmount2 == null) ? null : taxAmount2.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getPriceEffectiveFromValue()
 	{
 		return (priceEffectiveFrom == null) ? null : priceEffectiveFrom.value;
 	}
 
+	/**
+	 * Format: Date as year, month, day (YYYYMMDD)
+	 */
 	public String getPriceEffectiveUntilValue()
 	{
 		return (priceEffectiveUntil == null) ? null : priceEffectiveUntil.value;

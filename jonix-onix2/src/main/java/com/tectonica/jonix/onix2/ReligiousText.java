@@ -137,6 +137,9 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, two numeric digits
+	 */
 	public String getReligiousTextIDValue()
 	{
 		return (religiousTextID == null) ? null : religiousTextID.value;

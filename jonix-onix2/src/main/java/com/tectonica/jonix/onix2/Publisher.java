@@ -161,6 +161,9 @@ public class Publisher implements OnixSuperComposite, Serializable
 		return (publishingRole == null) ? null : publishingRole.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getPublisherNameValue()
 	{
 		return (publisherName == null) ? null : publisherName.value;
@@ -171,11 +174,17 @@ public class Publisher implements OnixSuperComposite, Serializable
 		return (nameCodeType == null) ? null : nameCodeType.value;
 	}
 
+	/**
+	 * Format: Free text, suggested maximum length 50 characters
+	 */
 	public String getNameCodeTypeNameValue()
 	{
 		return (nameCodeTypeName == null) ? null : nameCodeTypeName.value;
 	}
 
+	/**
+	 * Format: Determined by the scheme specified in &lt;NameCodeType&gt;
+	 */
 	public String getNameCodeValueValue()
 	{
 		return (nameCodeValue == null) ? null : nameCodeValue.value;

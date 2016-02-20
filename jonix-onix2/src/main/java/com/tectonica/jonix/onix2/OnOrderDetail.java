@@ -124,11 +124,17 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 */
 	public String getOnOrderValue()
 	{
 		return (onOrder == null) ? null : onOrder.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 */
 	public String getExpectedDateValue()
 	{
 		return (expectedDate == null) ? null : expectedDate.value;

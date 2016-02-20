@@ -112,11 +112,17 @@ public class PageRun implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getFirstPageNumberValue()
 	{
 		return (firstPageNumber == null) ? null : firstPageNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getLastPageNumberValue()
 	{
 		return (lastPageNumber == null) ? null : lastPageNumber.value;

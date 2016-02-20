@@ -210,6 +210,9 @@ public class ProductPart implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public List<String> getProductFormDescriptionValues()
 	{
 		if (productFormDescriptions != null)
@@ -234,11 +237,17 @@ public class ProductPart implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length integer, maximum four digits
+	 */
 	public Integer getNumberOfItemsOfThisFormValue()
 	{
 		return (numberOfItemsOfThisForm == null) ? null : numberOfItemsOfThisForm.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, maximum four digits
+	 */
 	public Integer getNumberOfCopiesValue()
 	{
 		return (numberOfCopies == null) ? null : numberOfCopies.value;

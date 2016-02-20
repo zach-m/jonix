@@ -197,6 +197,9 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public List<String> getCityOfPublicationValues()
 	{
 		if (cityOfPublications != null)
@@ -219,6 +222,10 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 		return (publishingStatus == null) ? null : publishingStatus.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getPublishingStatusNoteValues()
 	{
 		if (publishingStatusNotes != null)
@@ -231,6 +238,9 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Integer, suggested maximum three digits
+	 */
 	public Integer getLatestReprintNumberValue()
 	{
 		return (latestReprintNumber == null) ? null : latestReprintNumber.value;

@@ -164,6 +164,17 @@ public class OnixClassGen
 			final OnixElementDef element = ref.onixElements.get(m.className);
 			if (element != null)
 			{
+				p.println();
+				boolean isEnum = element.valueMember.simpleType.isEnum();
+				if (!isEnum) // no need to provide format information on enums, they are parsed by the system
+				{
+					if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty())
+					{
+						p.printf("   /**\n");
+						p.printf("   * Format: %s\n", element.onixDoc.format);
+						p.printf("   */\n");
+					}
+				}
 				final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 				final String field = GenUtil.fieldOf(m.className);
 				String javaType = ti.javaType;
@@ -172,7 +183,6 @@ public class OnixClassGen
 				if (m.cardinality.singular)
 				{
 					final String caption = element.isSpaceable ? "Set" : "Value";
-					p.println();
 					p.printf("   public %s get%s%s()\n", javaType, m.className, caption);
 					p.printf("   {\n");
 					p.printf("      return (%s == null) ? null : %s.value;\n", field, field);
@@ -181,7 +191,6 @@ public class OnixClassGen
 				else
 				{
 					final String caption = element.isSpaceable ? "Sets" : "Values";
-					p.println();
 					p.printf("   public List<%s> get%s%s()\n", javaType, m.className, caption);
 					p.printf("   {\n");
 					p.printf("      if (%ss != null) \n", field);
@@ -356,9 +365,9 @@ public class OnixClassGen
 		{
 			p.printf("   /**\n");
 			if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty())
-				p.printf("    * Format: %s<p>\n", element.onixDoc.format);
-			p.printf("    * %s\n", ti.comment);
-			p.printf("    */\n");
+				p.printf("   * Format: %s<p>\n", element.onixDoc.format);
+			p.printf("   * %s\n", ti.comment);
+			p.printf("   */\n");
 		}
 		if (!element.isSpaceable)
 			p.printf("   public %s value;\n", ti.javaType);
@@ -456,7 +465,7 @@ public class OnixClassGen
 	private void declareConstsAndAttributes(PrintStream p, OnixClass clz)
 	{
 		p.printf("   private static final long serialVersionUID = 1L;\n\n");
-		
+
 		for (OnixConst c : clz.consts)
 			p.printf("   public static final String %s = \"%s\";\n", c.name, c.value);
 

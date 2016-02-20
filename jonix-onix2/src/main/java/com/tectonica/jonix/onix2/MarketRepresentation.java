@@ -206,11 +206,17 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getAgentNameValue()
 	{
 		return (agentName == null) ? null : agentName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getTelephoneNumberValues()
 	{
 		if (telephoneNumbers != null)
@@ -223,6 +229,9 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getFaxNumberValues()
 	{
 		if (faxNumbers != null)
@@ -235,6 +244,9 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getEmailAddressValues()
 	{
 		if (emailAddresss != null)
@@ -247,31 +259,54 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Fixed-length, two numeric digits.
+	 */
 	public String getAgentRoleValue()
 	{
 		return (agentRole == null) ? null : agentRole.value;
 	}
 
+	/**
+	 * Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
+	 * spaces. Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
+	 * as upper case only.]
+	 */
 	public java.util.Set<String> getMarketCountrySet()
 	{
 		return (marketCountry == null) ? null : marketCountry.value;
 	}
 
+	/**
+	 * Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
+	 * successive codes being separated by spaces. Suggested maximum length 100 characters.
+	 */
 	public java.util.Set<String> getMarketTerritorySet()
 	{
 		return (marketTerritory == null) ? null : marketTerritory.value;
 	}
 
+	/**
+	 * Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
+	 * spaces. Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
+	 * as upper case only.]
+	 */
 	public java.util.Set<String> getMarketCountryExcludedSet()
 	{
 		return (marketCountryExcluded == null) ? null : marketCountryExcluded.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getMarketRestrictionDetailValue()
 	{
 		return (marketRestrictionDetail == null) ? null : marketRestrictionDetail.value;
 	}
 
+	/**
+	 * Format: Fixed-length, two numeric digits.
+	 */
 	public String getMarketPublishingStatusValue()
 	{
 		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;

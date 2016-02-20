@@ -136,6 +136,9 @@ public class Publisher implements OnixSuperComposite, Serializable
 		return (publishingRole == null) ? null : publishingRole.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters
+	 */
 	public String getPublisherNameValue()
 	{
 		return (publisherName == null) ? null : publisherName.value;

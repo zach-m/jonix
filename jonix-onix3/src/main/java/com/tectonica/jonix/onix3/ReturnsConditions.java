@@ -125,11 +125,17 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 		return (returnsCodeType == null) ? null : returnsCodeType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getReturnsCodeTypeNameValue()
 	{
 		return (returnsCodeTypeName == null) ? null : returnsCodeTypeName.value;
 	}
 
+	/**
+	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
+	 */
 	public String getReturnsCodeValue()
 	{
 		return (returnsCode == null) ? null : returnsCode.value;

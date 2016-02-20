@@ -201,6 +201,9 @@ public class MediaFile implements OnixDataComposite, Serializable
 		return (mediaFileFormatCode == null) ? null : mediaFileFormatCode.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 6 digits
+	 */
 	public String getImageResolutionValue()
 	{
 		return (imageResolution == null) ? null : imageResolution.value;
@@ -211,36 +214,62 @@ public class MediaFile implements OnixDataComposite, Serializable
 		return (mediaFileLinkTypeCode == null) ? null : mediaFileLinkTypeCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getMediaFileLinkValue()
 	{
 		return (mediaFileLink == null) ? null : mediaFileLink.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getTextWithDownloadValue()
 	{
 		return (textWithDownload == null) ? null : textWithDownload.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getDownloadCaptionValue()
 	{
 		return (downloadCaption == null) ? null : downloadCaption.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getDownloadCreditValue()
 	{
 		return (downloadCredit == null) ? null : downloadCredit.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getDownloadCopyrightNoticeValue()
 	{
 		return (downloadCopyrightNotice == null) ? null : downloadCopyrightNotice.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getDownloadTermsValue()
 	{
 		return (downloadTerms == null) ? null : downloadTerms.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 */
 	public String getMediaFileDateValue()
 	{
 		return (mediaFileDate == null) ? null : mediaFileDate.value;

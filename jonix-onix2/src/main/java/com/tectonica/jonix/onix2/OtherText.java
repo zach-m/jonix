@@ -199,6 +199,10 @@ public class OtherText implements OnixDataComposite, Serializable
 		return (textFormat == null) ? null : textFormat.value;
 	}
 
+	/**
+	 * Format: Variable length text (XHTML is enabled in this element - see ONIX for Books - Product Information Message
+	 * - XML Message Specification, Section 7)
+	 */
 	public String getTextValue()
 	{
 		return (text == null) ? null : text.value;
@@ -209,36 +213,57 @@ public class OtherText implements OnixDataComposite, Serializable
 		return (textLinkType == null) ? null : textLinkType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTextLinkValue()
 	{
 		return (textLink == null) ? null : textLink.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTextAuthorValue()
 	{
 		return (textAuthor == null) ? null : textAuthor.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getTextSourceCorporateValue()
 	{
 		return (textSourceCorporate == null) ? null : textSourceCorporate.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getTextSourceTitleValue()
 	{
 		return (textSourceTitle == null) ? null : textSourceTitle.value;
 	}
 
+	/**
+	 * Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
+	 */
 	public String getTextPublicationDateValue()
 	{
 		return (textPublicationDate == null) ? null : textPublicationDate.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 */
 	public String getStartDateValue()
 	{
 		return (startDate == null) ? null : startDate.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 */
 	public String getEndDateValue()
 	{
 		return (endDate == null) ? null : endDate.value;

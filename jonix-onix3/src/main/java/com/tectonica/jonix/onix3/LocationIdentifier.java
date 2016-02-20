@@ -126,11 +126,17 @@ public class LocationIdentifier implements OnixDataComposite, Serializable
 		return (locationIDType == null) ? null : locationIDType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getIDTypeNameValue()
 	{
 		return (idTypeName == null) ? null : idTypeName.value;
 	}
 
+	/**
+	 * Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 */
 	public String getIDValueValue()
 	{
 		return (idValue == null) ? null : idValue.value;

@@ -185,7 +185,7 @@ public class Onix2Essentials implements JonixEssentials
 		case AudienceAgeRange:
 			Integer[] ageRange = getAudienceAgeRange();
 			return Arrays.asList(new String[] { ageRange[0] == null ? null : ageRange[0].toString(),
-				ageRange[1] == null ? null : ageRange[1].toString() });
+					ageRange[1] == null ? null : ageRange[1].toString() });
 
 		case RetailPriceIncTax:
 		case RetailPriceExcTax:
@@ -217,12 +217,15 @@ public class Onix2Essentials implements JonixEssentials
 
 	public List<Measure> findMeasures(List<Measure> measures, MeasureTypes... measureTypeCodes)
 	{
-		Set<MeasureTypes> measureTypeCodesSet = JonixUtil.setOf(measureTypeCodes);
 		List<Measure> matches = new ArrayList<>();
-		for (Measure x : measures)
+		if (measures != null)
 		{
-			if (measureTypeCodes == null || measureTypeCodesSet.contains(x.getMeasureTypeCodeValue()))
-				matches.add(x);
+			Set<MeasureTypes> measureTypeCodesSet = JonixUtil.setOf(measureTypeCodes);
+			for (Measure x : measures)
+			{
+				if (measureTypeCodes == null || measureTypeCodesSet.contains(x.getMeasureTypeCodeValue()))
+					matches.add(x);
+			}
 		}
 		return matches;
 	}

@@ -137,6 +137,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 		return (salesRestrictionType == null) ? null : salesRestrictionType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getSalesRestrictionDetailValue()
 	{
 		return (salesRestrictionDetail == null) ? null : salesRestrictionDetail.value;

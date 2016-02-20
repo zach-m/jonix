@@ -127,6 +127,9 @@ public class Velocity implements OnixDataComposite, Serializable
 		return (velocityMetric == null) ? null : velocityMetric.value;
 	}
 
+	/**
+	 * Format: Variable length integer, suggested maximum length 7 digits
+	 */
 	public Integer getRateValue()
 	{
 		return (rate == null) ? null : rate.value;

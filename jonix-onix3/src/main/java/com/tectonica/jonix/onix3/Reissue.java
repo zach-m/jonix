@@ -150,11 +150,19 @@ public class Reissue implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * missing
+	 */
 	public String getReissueDateValue()
 	{
 		return (reissueDate == null) ? null : reissueDate.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public String getReissueDescriptionValue()
 	{
 		return (reissueDescription == null) ? null : reissueDescription.value;

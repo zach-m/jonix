@@ -182,16 +182,26 @@ public class ContentItem implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * maximum length 100 characters
+	 */
 	public String getLevelSequenceNumberValue()
 	{
 		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getComponentTypeNameValue()
 	{
 		return (componentTypeName == null) ? null : componentTypeName.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getComponentNumberValue()
 	{
 		return (componentNumber == null) ? null : componentNumber.value;

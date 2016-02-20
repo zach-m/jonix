@@ -291,6 +291,9 @@ public class Contributor implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 */
 	public Integer getSequenceNumberValue()
 	{
 		return (sequenceNumber == null) ? null : sequenceNumber.value;
@@ -337,66 +340,107 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return (nameType == null) ? null : nameType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPersonNameValue()
 	{
 		return (personName == null) ? null : personName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPersonNameInvertedValue()
 	{
 		return (personNameInverted == null) ? null : personNameInverted.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getTitlesBeforeNamesValue()
 	{
 		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getNamesBeforeKeyValue()
 	{
 		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPrefixToKeyValue()
 	{
 		return (prefixToKey == null) ? null : prefixToKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getKeyNamesValue()
 	{
 		return (keyNames == null) ? null : keyNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getNamesAfterKeyValue()
 	{
 		return (namesAfterKey == null) ? null : namesAfterKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getSuffixToKeyValue()
 	{
 		return (suffixToKey == null) ? null : suffixToKey.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getLettersAfterNamesValue()
 	{
 		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getTitlesAfterNamesValue()
 	{
 		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getCorporateNameValue()
 	{
 		return (corporateName == null) ? null : corporateName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getCorporateNameInvertedValue()
 	{
 		return (corporateNameInverted == null) ? null : corporateNameInverted.value;
 	}
 
+	/**
+	 * Format: Variable-length text, no suggested maximum length (since there is no suggested length for the text in a
+	 * &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
+	 * element - see Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getBiographicalNoteValues()
 	{
 		if (biographicalNotes != null)
@@ -409,6 +453,10 @@ public class Contributor implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getContributorDescriptionValues()
 	{
 		if (contributorDescriptions != null)

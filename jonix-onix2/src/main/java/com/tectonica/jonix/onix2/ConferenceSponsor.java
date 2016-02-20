@@ -130,11 +130,17 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getPersonNameValue()
 	{
 		return (personName == null) ? null : personName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public String getCorporateNameValue()
 	{
 		return (corporateName == null) ? null : corporateName.value;

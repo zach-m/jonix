@@ -175,6 +175,9 @@ public class TitleElement implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 */
 	public Integer getSequenceNumberValue()
 	{
 		return (sequenceNumber == null) ? null : sequenceNumber.value;
@@ -185,16 +188,25 @@ public class TitleElement implements OnixDataComposite, Serializable
 		return (titleElementLevel == null) ? null : titleElementLevel.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 20 characters
+	 */
 	public String getPartNumberValue()
 	{
 		return (partNumber == null) ? null : partNumber.value;
 	}
 
+	/**
+	 * Format: Year or range of years, in the format YYYY or YYYY-YYYY
+	 */
 	public String getYearOfAnnualValue()
 	{
 		return (yearOfAnnual == null) ? null : yearOfAnnual.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 20 characters
+	 */
 	public String getTitlePrefixValue()
 	{
 		return (titlePrefix == null) ? null : titlePrefix.value;
@@ -205,16 +217,25 @@ public class TitleElement implements OnixDataComposite, Serializable
 		return (noPrefix != null);
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getTitleWithoutPrefixValue()
 	{
 		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getTitleTextValue()
 	{
 		return (titleText == null) ? null : titleText.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 300 characters
+	 */
 	public String getSubtitleValue()
 	{
 		return (subtitle == null) ? null : subtitle.value;

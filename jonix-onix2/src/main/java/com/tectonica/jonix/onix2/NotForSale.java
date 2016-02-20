@@ -175,16 +175,25 @@ public class NotForSale implements OnixSuperComposite, Serializable
 		return (rightsTerritory == null) ? null : rightsTerritory.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 */
 	public String getISBNValue()
 	{
 		return (isbn == null) ? null : isbn.value;
 	}
 
+	/**
+	 * Format: Fixed-length, 13 numeric digits.
+	 */
 	public String getEAN13Value()
 	{
 		return (ean13 == null) ? null : ean13.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters.
+	 */
 	public String getPublisherNameValue()
 	{
 		return (publisherName == null) ? null : publisherName.value;

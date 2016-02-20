@@ -271,6 +271,9 @@ public class Price implements OnixSuperComposite, Serializable
 		return (priceQualifier == null) ? null : priceQualifier.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 200 characters
+	 */
 	public List<String> getPriceTypeDescriptionValues()
 	{
 		if (priceTypeDescriptions != null)
@@ -288,6 +291,9 @@ public class Price implements OnixSuperComposite, Serializable
 		return (pricePer == null) ? null : pricePer.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 */
 	public Integer getMinimumOrderQuantityValue()
 	{
 		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
@@ -298,6 +304,10 @@ public class Price implements OnixSuperComposite, Serializable
 		return (priceStatus == null) ? null : priceStatus.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public Double getPriceAmountValue()
 	{
 		return (priceAmount == null) ? null : priceAmount.value;

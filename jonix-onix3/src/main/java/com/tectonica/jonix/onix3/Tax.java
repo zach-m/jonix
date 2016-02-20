@@ -147,16 +147,27 @@ public class Tax implements OnixDataComposite, Serializable
 		return (taxRateCode == null) ? null : taxRateCode.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with an explicit decimal point where required
+	 */
 	public Double getTaxRatePercentValue()
 	{
 		return (taxRatePercent == null) ? null : taxRatePercent.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public Double getTaxableAmountValue()
 	{
 		return (taxableAmount == null) ? null : taxableAmount.value;
 	}
 
+	/**
+	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 */
 	public Double getTaxAmountValue()
 	{
 		return (taxAmount == null) ? null : taxAmount.value;

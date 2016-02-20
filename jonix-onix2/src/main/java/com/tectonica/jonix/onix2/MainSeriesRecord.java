@@ -202,6 +202,9 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+	 */
 	public String getRecordReferenceValue()
 	{
 		return (recordReference == null) ? null : recordReference.value;
@@ -217,6 +220,9 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 		return (deletionCode == null) ? null : deletionCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getDeletionTextValue()
 	{
 		return (deletionText == null) ? null : deletionText.value;
@@ -232,11 +238,17 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable
 		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
 	}
 
+	/**
+	 * Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 */
 	public String getRecordSourceIdentifierValue()
 	{
 		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getRecordSourceNameValue()
 	{
 		return (recordSourceName == null) ? null : recordSourceName.value;

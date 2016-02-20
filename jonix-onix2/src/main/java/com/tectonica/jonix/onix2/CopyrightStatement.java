@@ -126,6 +126,9 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Date as year only (YYYY)
+	 */
 	public List<String> getCopyrightYearValues()
 	{
 		if (copyrightYears != null)

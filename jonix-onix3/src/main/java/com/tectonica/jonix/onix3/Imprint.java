@@ -115,6 +115,9 @@ public class Imprint implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 100 characters
+	 */
 	public String getImprintNameValue()
 	{
 		return (imprintName == null) ? null : imprintName.value;

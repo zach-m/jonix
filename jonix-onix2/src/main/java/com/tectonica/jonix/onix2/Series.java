@@ -170,26 +170,41 @@ public class Series implements OnixSuperComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
+	 */
 	public String getSeriesISSNValue()
 	{
 		return (seriesISSN == null) ? null : seriesISSN.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getPublisherSeriesCodeValue()
 	{
 		return (publisherSeriesCode == null) ? null : publisherSeriesCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getTitleOfSeriesValue()
 	{
 		return (titleOfSeries == null) ? null : titleOfSeries.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public String getNumberWithinSeriesValue()
 	{
 		return (numberWithinSeries == null) ? null : numberWithinSeries.value;
 	}
 
+	/**
+	 * Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
+	 */
 	public String getYearOfAnnualValue()
 	{
 		return (yearOfAnnual == null) ? null : yearOfAnnual.value;

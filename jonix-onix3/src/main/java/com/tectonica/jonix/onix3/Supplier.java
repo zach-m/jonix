@@ -156,11 +156,17 @@ public class Supplier implements OnixSuperComposite, Serializable
 		return (supplierRole == null) ? null : supplierRole.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public String getSupplierNameValue()
 	{
 		return (supplierName == null) ? null : supplierName.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getTelephoneNumberValues()
 	{
 		if (telephoneNumbers != null)
@@ -173,6 +179,9 @@ public class Supplier implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 20 characters
+	 */
 	public List<String> getFaxNumberValues()
 	{
 		if (faxNumbers != null)
@@ -185,6 +194,9 @@ public class Supplier implements OnixSuperComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getEmailAddressValues()
 	{
 		if (emailAddresss != null)

@@ -139,11 +139,17 @@ public class ProductClassification implements OnixDataComposite, Serializable
 		return (productClassificationType == null) ? null : productClassificationType.value;
 	}
 
+	/**
+	 * Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+	 */
 	public String getProductClassificationCodeValue()
 	{
 		return (productClassificationCode == null) ? null : productClassificationCode.value;
 	}
 
+	/**
+	 * Format: Real decimal number in the range 0 to 100
+	 */
 	public String getPercentValue()
 	{
 		return (percent == null) ? null : percent.value;

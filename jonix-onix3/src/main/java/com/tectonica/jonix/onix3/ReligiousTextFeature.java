@@ -136,6 +136,10 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 		return (religiousTextFeatureCode == null) ? null : religiousTextFeatureCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getReligiousTextFeatureDescriptionValues()
 	{
 		if (religiousTextFeatureDescriptions != null)

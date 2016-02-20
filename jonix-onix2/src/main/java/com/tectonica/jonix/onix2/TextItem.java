@@ -162,16 +162,25 @@ public class TextItem implements OnixSuperComposite, Serializable
 		return (textItemType == null) ? null : textItemType.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getFirstPageNumberValue()
 	{
 		return (firstPageNumber == null) ? null : firstPageNumber.value;
 	}
 
+	/**
+	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 */
 	public String getLastPageNumberValue()
 	{
 		return (lastPageNumber == null) ? null : lastPageNumber.value;
 	}
 
+	/**
+	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 */
 	public String getNumberOfPagesValue()
 	{
 		return (numberOfPages == null) ? null : numberOfPages.value;

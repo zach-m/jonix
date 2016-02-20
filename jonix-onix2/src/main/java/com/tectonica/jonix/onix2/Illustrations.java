@@ -138,11 +138,17 @@ public class Illustrations implements OnixDataComposite, Serializable
 		return (illustrationType == null) ? null : illustrationType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 */
 	public String getIllustrationTypeDescriptionValue()
 	{
 		return (illustrationTypeDescription == null) ? null : illustrationTypeDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length integer, suggested maximum length 6 digits.
+	 */
 	public String getNumberValue()
 	{
 		return (number == null) ? null : number.value;

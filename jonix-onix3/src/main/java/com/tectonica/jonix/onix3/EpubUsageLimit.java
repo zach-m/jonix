@@ -113,6 +113,9 @@ public class EpubUsageLimit implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length decimal number, here necessarily an integer
+	 */
 	public Double getQuantityValue()
 	{
 		return (quantity == null) ? null : quantity.value;

@@ -130,6 +130,9 @@ public class Complexity implements OnixDataComposite, Serializable
 		return (complexitySchemeIdentifier == null) ? null : complexitySchemeIdentifier.value;
 	}
 
+	/**
+	 * Format: Variable-length, alphanumeric, suggested maximum length 20 characters.
+	 */
 	public String getComplexityCodeValue()
 	{
 		return (complexityCode == null) ? null : complexityCode.value;

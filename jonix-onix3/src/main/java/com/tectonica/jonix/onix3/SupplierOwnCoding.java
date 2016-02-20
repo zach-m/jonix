@@ -125,11 +125,17 @@ public class SupplierOwnCoding implements OnixDataComposite, Serializable
 		return (supplierCodeType == null) ? null : supplierCodeType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getSupplierCodeTypeNameValue()
 	{
 		return (supplierCodeTypeName == null) ? null : supplierCodeTypeName.value;
 	}
 
+	/**
+	 * Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
+	 */
 	public String getSupplierCodeValueValue()
 	{
 		return (supplierCodeValue == null) ? null : supplierCodeValue.value;

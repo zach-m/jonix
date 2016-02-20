@@ -143,6 +143,9 @@ public class Prize implements OnixDataComposite, Serializable
 		});
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getPrizeNameValues()
 	{
 		if (prizeNames != null)
@@ -155,6 +158,9 @@ public class Prize implements OnixDataComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Four digits, YYYY
+	 */
 	public String getPrizeYearValue()
 	{
 		return (prizeYear == null) ? null : prizeYear.value;
@@ -170,6 +176,9 @@ public class Prize implements OnixDataComposite, Serializable
 		return (prizeCode == null) ? null : prizeCode.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 100 characters
+	 */
 	public List<String> getPrizeStatementValues()
 	{
 		if (prizeStatements != null)
@@ -182,6 +191,10 @@ public class Prize implements OnixDataComposite, Serializable
 		return null;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 */
 	public List<String> getPrizeJuryValues()
 	{
 		if (prizeJurys != null)

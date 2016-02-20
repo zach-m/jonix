@@ -128,11 +128,18 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 		return (collectionSequenceType == null) ? null : collectionSequenceType.value;
 	}
 
+	/**
+	 * Format: Variable length text, suggested maximum length 50 characters
+	 */
 	public String getCollectionSequenceTypeNameValue()
 	{
 		return (collectionSequenceTypeName == null) ? null : collectionSequenceTypeName.value;
 	}
 
+	/**
+	 * Format: Variable-length string of one or more integers, each successive integer being separated by a period
+	 * character, suggested maximum length 100 characters
+	 */
 	public String getCollectionSequenceNumberValue()
 	{
 		return (collectionSequenceNumber == null) ? null : collectionSequenceNumber.value;

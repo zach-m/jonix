@@ -124,11 +124,17 @@ public class Audience implements OnixDataComposite, Serializable
 		return (audienceCodeType == null) ? null : audienceCodeType.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 50 characters
+	 */
 	public String getAudienceCodeTypeNameValue()
 	{
 		return (audienceCodeTypeName == null) ? null : audienceCodeTypeName.value;
 	}
 
+	/**
+	 * Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
+	 */
 	public String getAudienceCodeValueValue()
 	{
 		return (audienceCodeValue == null) ? null : audienceCodeValue.value;

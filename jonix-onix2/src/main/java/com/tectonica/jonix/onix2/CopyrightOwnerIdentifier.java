@@ -137,11 +137,17 @@ public class CopyrightOwnerIdentifier implements OnixDataComposite, Serializable
 		return (copyrightOwnerIDType == null) ? null : copyrightOwnerIDType.value;
 	}
 
+	/**
+	 * Format: Variable-length ASCII text, suggested maximum 50 characters
+	 */
 	public String getIDTypeNameValue()
 	{
 		return (idTypeName == null) ? null : idTypeName.value;
 	}
 
+	/**
+	 * Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 */
 	public String getIDValueValue()
 	{
 		return (idValue == null) ? null : idValue.value;

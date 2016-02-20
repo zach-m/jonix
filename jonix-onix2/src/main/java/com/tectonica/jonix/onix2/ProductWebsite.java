@@ -138,11 +138,18 @@ public class ProductWebsite implements OnixDataComposite, Serializable
 		return (websiteRole == null) ? null : websiteRole.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 */
 	public String getProductWebsiteDescriptionValue()
 	{
 		return (productWebsiteDescription == null) ? null : productWebsiteDescription.value;
 	}
 
+	/**
+	 * Format: Variable-length text, suggested maximum length 300 characters
+	 */
 	public String getProductWebsiteLinkValue()
 	{
 		return (productWebsiteLink == null) ? null : productWebsiteLink.value;
