@@ -159,7 +159,7 @@ public class JonixUtil
 	}
 
 	public static String contributorDisplayName(String personName, String personNameKey, String personNameBeforeKey,
-			String corporateName)
+			String personNameInverted, String corporateName)
 	{
 		if (personName != null)
 			return personName;
@@ -173,6 +173,9 @@ public class JonixUtil
 
 		if (personNameBeforeKey != null)
 			return personNameBeforeKey;
+
+		if (personNameInverted != null)
+			return personNameInverted;
 
 		return corporateName;
 	}

@@ -353,8 +353,9 @@ public class Onix2Essentials implements JonixEssentials
 
 		for (Contributor c : findContributors(requestedRoles))
 		{
-			String displayName = JonixUtil.contributorDisplayName(c.getPersonNameValue(), c.getKeyNamesValue(),
-					c.getNamesBeforeKeyValue(), c.getCorporateNameValue());
+			String displayName = JonixUtil.contributorDisplayName(c.getPersonNameValue(),
+					c.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getPersonNameInvertedValue(),
+					c.getCorporateNameValue());
 			result.add(displayName);
 		}
 

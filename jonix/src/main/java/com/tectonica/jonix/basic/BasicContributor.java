@@ -48,6 +48,7 @@ public class BasicContributor implements Serializable
 	public final String personName;
 	public final String personNameKey;
 	public final String personNameBeforeKey;
+	public final String personNameInverted;
 	public final String corporateName;
 	public final String biographicalNote;
 
@@ -57,9 +58,10 @@ public class BasicContributor implements Serializable
 		personName = c.getPersonNameValue();
 		personNameKey = c.getKeyNamesValue();
 		personNameBeforeKey = c.getNamesBeforeKeyValue();
+		personNameInverted = c.getPersonNameInvertedValue();
 		corporateName = c.getCorporateNameValue();
 		biographicalNote = c.getBiographicalNoteValue();
-		displayName = JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, corporateName);
+		displayName = JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, personNameInverted, corporateName);
 	}
 
 	public BasicContributor(com.tectonica.jonix.onix3.Contributor c)
@@ -68,9 +70,10 @@ public class BasicContributor implements Serializable
 		personName = c.getPersonNameValue();
 		personNameKey = c.getKeyNamesValue();
 		personNameBeforeKey = c.getNamesBeforeKeyValue();
+		personNameInverted = c.getPersonNameInvertedValue();
 		corporateName = c.getCorporateNameValue();
 		biographicalNote = pickBiographicalNote(c);
-		displayName = JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, corporateName);
+		displayName = JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, personNameInverted, corporateName);
 	}
 
 	private String pickBiographicalNote(Contributor contributor)
