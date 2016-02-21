@@ -160,6 +160,12 @@ public class Onix2Essentials implements JonixEssentials
 				if (candidatePublisher != null)
 					return candidatePublisher.getPublisherNameValue();
 			}
+			return null;
+
+		case UsdRetailPriceIncTax:
+		case UsdRetailPriceExcTax:
+			boolean includingTax = (fieldType == TextFields.UsdRetailPriceIncTax);
+			return getRetailPrice(CurrencyCodes.US_Dollar, includingTax);
 		}
 
 		return null;
@@ -186,11 +192,6 @@ public class Onix2Essentials implements JonixEssentials
 			Integer[] ageRange = getAudienceAgeRange();
 			return Arrays.asList(new String[] { ageRange[0] == null ? null : ageRange[0].toString(),
 					ageRange[1] == null ? null : ageRange[1].toString() });
-
-		case RetailPriceIncTax:
-		case RetailPriceExcTax:
-			boolean includingTax = (fieldType == ListFields.RetailPriceIncTax);
-			return getRetailPrice(includingTax);
 
 		case Measurements:
 			List<String> wht = new ArrayList<>();
@@ -230,7 +231,7 @@ public class Onix2Essentials implements JonixEssentials
 		return matches;
 	}
 
-	private List<String> getRetailPrice(boolean includingTax)
+	private String getRetailPrice(CurrencyCodes currency, boolean includingTax)
 	{
 		if (product.supplyDetails != null)
 		{
@@ -240,18 +241,14 @@ public class Onix2Essentials implements JonixEssentials
 				for (Price price : supplyDetail.prices)
 				{
 					PriceTypes type = price.getPriceTypeCodeValue();
-					boolean found = (includingTax && type == PriceTypes.RRP_including_tax)
+					boolean correctType = (includingTax && type == PriceTypes.RRP_including_tax)
 							|| (!includingTax && type == PriceTypes.RRP_excluding_tax);
-					if (found)
-					{
-						String amount = price.getPriceAmountValue();
-						CurrencyCodes currency = price.getCurrencyCodeValue();
-						return Arrays.asList(amount, (currency == null) ? null : currency.value);
-					}
+					if (correctType && (price.getCurrencyCodeValue() == currency))
+						return price.getPriceAmountValue();
 				}
 			}
 		}
-		return Collections.emptyList();
+		return null;
 	}
 
 	public String getProductIdentifier(ProductIdentifierTypes idType)
@@ -353,9 +350,8 @@ public class Onix2Essentials implements JonixEssentials
 
 		for (Contributor c : findContributors(requestedRoles))
 		{
-			String displayName = JonixUtil.contributorDisplayName(c.getPersonNameValue(),
-					c.getKeyNamesValue(), c.getNamesBeforeKeyValue(), c.getPersonNameInvertedValue(),
-					c.getCorporateNameValue());
+			String displayName = JonixUtil.contributorDisplayName(c.getPersonNameValue(), c.getKeyNamesValue(),
+					c.getNamesBeforeKeyValue(), c.getPersonNameInvertedValue(), c.getCorporateNameValue());
 			result.add(displayName);
 		}
 

@@ -26,6 +26,8 @@ public interface JonixEssentials
 		ShippingWeightLB,
 		FontSize,
 		Publisher, 
+		UsdRetailPriceIncTax,
+		UsdRetailPriceExcTax,
 		//PublicationDate, Dewey, Keywords
 
 		// TBD: prices and descriptions
@@ -37,8 +39,6 @@ public interface JonixEssentials
 		Authors, //
 		Editors, //
 		AudienceAgeRange,
-		RetailPriceIncTax,
-		RetailPriceExcTax,
 		Measurements,
 //		BISACs, //
 //		BICs
