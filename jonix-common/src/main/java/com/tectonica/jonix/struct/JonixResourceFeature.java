@@ -32,16 +32,22 @@ import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 public class JonixResourceFeature implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ResourceFeatureTypes resourceFeatureType;
 
 	/**
+	 * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
+	 * may not be taken from a code list
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String featureValue;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public List<String> featureNotes;

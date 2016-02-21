@@ -31,6 +31,8 @@ import com.tectonica.jonix.codelist.UnitOfUsages;
 public class JonixEpubUsageLimit implements Serializable
 {
 	/**
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double quantity;

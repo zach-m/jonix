@@ -358,8 +358,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
-	 * which may be a numeric digit or letter X.
+	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
+	 * character which may be a numeric digit or letter X.
 	 */
 	public String getSupplierSANValue()
 	{
@@ -367,7 +367,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
 	 */
 	public String getSupplierEANLocationNumberValue()
 	{
@@ -375,7 +375,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getSupplierNameValue()
 	{
@@ -383,7 +383,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getTelephoneNumberValues()
 	{
@@ -398,7 +398,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getFaxNumberValues()
 	{
@@ -413,7 +413,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getEmailAddressValues()
 	{
@@ -474,7 +474,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getSupplyRestrictionDetailValue()
 	{
@@ -487,8 +487,8 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use, see
-	 * List 66
+	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use,
+	 * see List 66
 	 */
 	public String getReturnsCodeValue()
 	{
@@ -496,7 +496,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getLastDateForReturnsValue()
 	{
@@ -514,7 +514,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two numeric digits
+	 * Raw Format: Fixed-length, two numeric digits
 	 */
 	public String getIntermediaryAvailabilityCodeValue()
 	{
@@ -527,7 +527,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
+	 * Raw Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
 	 */
 	public String getExpectedShipDateValue()
 	{
@@ -535,7 +535,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getOnSaleDateValue()
 	{
@@ -543,7 +543,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, one or two digits only
+	 * Raw Format: Variable-length integer, one or two digits only
 	 */
 	public String getOrderTimeValue()
 	{
@@ -551,7 +551,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length four digits
+	 * Raw Format: Variable-length integer, suggested maximum length four digits
 	 */
 	public String getPackQuantityValue()
 	{
@@ -564,7 +564,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, maximum 300 characters
+	 * Raw Format: Variable-length text, maximum 300 characters
 	 */
 	public String getAudienceRestrictionNoteValue()
 	{
@@ -572,7 +572,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 */
 	public String getPriceAmountValue()

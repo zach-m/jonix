@@ -128,7 +128,7 @@ public class SupplierIdentifier implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getIDTypeNameValue()
 	{
@@ -136,7 +136,7 @@ public class SupplierIdentifier implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
 	 */
 	public String getIDValueValue()
 	{

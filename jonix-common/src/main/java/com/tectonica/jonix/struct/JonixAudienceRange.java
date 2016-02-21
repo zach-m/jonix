@@ -37,6 +37,10 @@ public class JonixAudienceRange implements Serializable
 	public AudienceRangeQualifiers audienceRangeQualifier;
 
 	/**
+	 * Raw Format: Variable-length string, suggested maximum 10 characters. (This element was originally defined as a
+	 * variable-length integer, but its definition was extended in ONIX 2.1 to enable non-numeric values to be carried.
+	 * For values that BISAC has defined for US school grades and pre-school levels, see List 77)
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public List<String> audienceRangeValues;

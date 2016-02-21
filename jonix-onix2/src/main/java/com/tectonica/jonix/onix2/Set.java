@@ -185,7 +185,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X
 	 */
 	public String getISBNOfSetValue()
 	{
@@ -193,7 +193,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits
+	 * Raw Format: Fixed-length, 13 numeric digits
 	 */
 	public String getEAN13OfSetValue()
 	{
@@ -201,7 +201,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTitleOfSetValue()
 	{
@@ -209,7 +209,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getSetPartNumberValue()
 	{
@@ -217,7 +217,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getSetPartTitleValue()
 	{
@@ -225,7 +225,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getItemNumberWithinSetValue()
 	{
@@ -233,7 +233,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
 	 * maximum length 100 characters
 	 */
 	public String getLevelSequenceNumberValue()
@@ -242,7 +242,7 @@ public class Set implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getSetItemTitleValue()
 	{

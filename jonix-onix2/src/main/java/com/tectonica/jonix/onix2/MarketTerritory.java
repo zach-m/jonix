@@ -104,7 +104,7 @@ public class MarketTerritory implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
+	 * Raw Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
 	 * successive codes being separated by spaces. Suggested maximum length 100 characters.
 	 * <p>
 	 * (type: NonEmptyString)

@@ -90,7 +90,7 @@ public class PagesArabic implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length numeric, suggested maximum length 6 characters.
+	 * Raw Format: Variable length numeric, suggested maximum length 6 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

@@ -91,7 +91,7 @@ public class ThesisYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, four numeric digits
+	 * Raw Format: Fixed-length, four numeric digits
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

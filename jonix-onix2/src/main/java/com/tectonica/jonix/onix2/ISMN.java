@@ -93,8 +93,8 @@ public class ISMN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character calculated
-	 * according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
+	 * Raw Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character
+	 * calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

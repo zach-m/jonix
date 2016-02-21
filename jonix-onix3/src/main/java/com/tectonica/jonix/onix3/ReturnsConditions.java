@@ -126,7 +126,7 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getReturnsCodeTypeNameValue()
 	{
@@ -134,7 +134,7 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
 	 */
 	public String getReturnsCodeValue()
 	{

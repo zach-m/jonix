@@ -82,7 +82,7 @@ public class PrizeYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Four digits, YYYY
+	 * Raw Format: Four digits, YYYY
 	 * <p>
 	 * (type: dt.Year)
 	 */

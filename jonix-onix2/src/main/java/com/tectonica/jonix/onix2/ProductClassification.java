@@ -140,7 +140,7 @@ public class ProductClassification implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
 	 */
 	public String getProductClassificationCodeValue()
 	{
@@ -148,7 +148,7 @@ public class ProductClassification implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Real decimal number in the range 0 to 100
+	 * Raw Format: Real decimal number in the range 0 to 100
 	 */
 	public String getPercentValue()
 	{

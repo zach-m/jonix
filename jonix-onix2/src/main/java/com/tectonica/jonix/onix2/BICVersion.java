@@ -92,7 +92,7 @@ public class BICVersion implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
+	 * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
 	 * consistency with other version number elements.
 	 * <p>
 	 * (type: NonEmptyString)

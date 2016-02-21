@@ -140,7 +140,7 @@ public class Discount implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length decimal number, here necessarily an integer
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
 	 */
 	public Double getQuantityValue()
 	{
@@ -148,7 +148,7 @@ public class Discount implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length decimal number, here necessarily an integer
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
 	 */
 	public Double getToQuantityValue()
 	{
@@ -156,7 +156,7 @@ public class Discount implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
 	 */
 	public Double getDiscountPercentValue()
 	{
@@ -164,7 +164,7 @@ public class Discount implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 */
 	public Double getDiscountAmountValue()

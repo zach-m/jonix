@@ -176,7 +176,7 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getISBNValue()
 	{
@@ -184,7 +184,7 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getEAN13Value()
 	{
@@ -192,7 +192,7 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public String getPublisherNameValue()
 	{

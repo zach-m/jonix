@@ -92,7 +92,7 @@ public class PublisherName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters
+	 * Raw Format: Variable length text, suggested maximum length 100 characters
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

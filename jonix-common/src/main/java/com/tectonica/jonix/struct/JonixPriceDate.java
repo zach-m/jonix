@@ -32,13 +32,15 @@ import com.tectonica.jonix.codelist.PriceDateRoles;
 public class JonixPriceDate implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public PriceDateRoles priceDateRole;
 
 	public DateFormats dateFormat;
 
 	/**
+	 * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String date;

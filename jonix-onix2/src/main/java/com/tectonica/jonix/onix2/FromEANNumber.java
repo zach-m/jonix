@@ -91,7 +91,7 @@ public class FromEANNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

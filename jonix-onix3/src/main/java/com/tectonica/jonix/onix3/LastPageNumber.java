@@ -84,7 +84,7 @@ public class LastPageNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

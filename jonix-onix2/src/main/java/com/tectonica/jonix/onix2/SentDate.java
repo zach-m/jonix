@@ -91,7 +91,7 @@ public class SentDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
+	 * Raw Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

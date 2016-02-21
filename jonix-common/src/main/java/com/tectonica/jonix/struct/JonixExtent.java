@@ -32,13 +32,16 @@ import com.tectonica.jonix.codelist.ExtentUnits;
 public class JonixExtent implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ExtentTypes extentType;
 
 	public ExtentUnits extentUnit;
 
 	/**
+	 * Raw Format: Numeric, with decimal point where required, as appropriate for the units specified in
+	 * &lt;ExtentUnit&gt;
+	 * <p>
 	 * (type: dt.StrictPositiveDecimal)
 	 */
 	public Double extentValue;

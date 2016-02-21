@@ -166,7 +166,7 @@ public class Stock implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getLocationNameValue()
 	{
@@ -174,7 +174,7 @@ public class Stock implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
 	 */
 	public Integer getOnHandValue()
 	{
@@ -187,7 +187,7 @@ public class Stock implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
 	 */
 	public Integer getOnOrderValue()
 	{
@@ -195,7 +195,7 @@ public class Stock implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
 	 */
 	public Integer getCBOValue()
 	{

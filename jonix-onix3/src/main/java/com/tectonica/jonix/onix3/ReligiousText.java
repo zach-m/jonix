@@ -127,7 +127,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two digits
+	 * Raw Format: Fixed-length, two digits
 	 */
 	public String getReligiousTextIdentifierValue()
 	{

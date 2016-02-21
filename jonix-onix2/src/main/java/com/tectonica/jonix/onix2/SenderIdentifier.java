@@ -141,7 +141,7 @@ public class SenderIdentifier implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 50 characters
 	 */
 	public String getIDTypeNameValue()
 	{
@@ -149,7 +149,7 @@ public class SenderIdentifier implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
 	 */
 	public String getIDValueValue()
 	{

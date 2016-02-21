@@ -100,7 +100,7 @@ public class RecordReference implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

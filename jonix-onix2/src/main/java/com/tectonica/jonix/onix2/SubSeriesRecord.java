@@ -231,7 +231,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
 	 */
 	public String getRecordReferenceValue()
 	{
@@ -249,7 +249,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getDeletionTextValue()
 	{
@@ -267,7 +267,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
 	 */
 	public String getRecordSourceIdentifierValue()
 	{
@@ -275,7 +275,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getRecordSourceNameValue()
 	{
@@ -283,7 +283,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
 	 * maximum length 100 characters
 	 */
 	public String getLevelSequenceNumberValue()
@@ -297,7 +297,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getNumberWithinSeriesValue()
 	{

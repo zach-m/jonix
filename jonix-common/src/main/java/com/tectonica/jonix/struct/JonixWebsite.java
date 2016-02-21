@@ -32,11 +32,16 @@ import com.tectonica.jonix.codelist.WebsiteRoles;
 public class JonixWebsite implements Serializable
 {
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Using XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public List<String> websiteDescriptions;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: dt.NonEmptyURI)
 	 */
 	public String websiteLink;

@@ -92,8 +92,8 @@ public class ReturnsCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use, see
-	 * List 66
+	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use,
+	 * see List 66
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

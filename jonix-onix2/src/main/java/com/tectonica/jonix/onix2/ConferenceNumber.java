@@ -90,7 +90,7 @@ public class ConferenceNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 characters
+	 * Raw Format: Variable-length integer, suggested maximum length 4 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

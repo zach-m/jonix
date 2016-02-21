@@ -84,7 +84,7 @@ public class MinimumOrderQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

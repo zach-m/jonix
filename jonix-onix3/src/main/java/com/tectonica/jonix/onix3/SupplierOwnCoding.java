@@ -126,7 +126,7 @@ public class SupplierOwnCoding implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getSupplierCodeTypeNameValue()
 	{
@@ -134,7 +134,7 @@ public class SupplierOwnCoding implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
+	 * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
 	 */
 	public String getSupplierCodeValueValue()
 	{

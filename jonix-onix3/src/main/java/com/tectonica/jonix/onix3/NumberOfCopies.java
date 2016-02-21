@@ -90,7 +90,7 @@ public class NumberOfCopies implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, maximum four digits
+	 * Raw Format: Variable-length integer, maximum four digits
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

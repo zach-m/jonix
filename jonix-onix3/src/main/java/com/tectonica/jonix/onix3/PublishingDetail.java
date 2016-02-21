@@ -198,7 +198,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public List<String> getCityOfPublicationValues()
 	{
@@ -223,7 +223,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
+	 * Raw Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
 	 * XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getPublishingStatusNoteValues()
@@ -239,7 +239,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Integer, suggested maximum three digits
+	 * Raw Format: Integer, suggested maximum three digits
 	 */
 	public Integer getLatestReprintNumberValue()
 	{

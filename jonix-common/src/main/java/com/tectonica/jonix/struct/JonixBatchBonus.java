@@ -29,11 +29,15 @@ import java.io.Serializable;
 public class JonixBatchBonus implements Serializable
 {
 	/**
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
+	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */
 	public Integer batchQuantity;
 
 	/**
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
+	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */
 	public Integer freeQuantity;

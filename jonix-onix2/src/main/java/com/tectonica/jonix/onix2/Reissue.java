@@ -156,7 +156,7 @@ public class Reissue implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getReissueDateValue()
 	{
@@ -164,7 +164,7 @@ public class Reissue implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free text, suggested maximum length 500 characters
+	 * Raw Format: Free text, suggested maximum length 500 characters
 	 */
 	public String getReissueDescriptionValue()
 	{

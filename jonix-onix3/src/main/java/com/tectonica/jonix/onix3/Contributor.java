@@ -292,7 +292,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
 	 */
 	public Integer getSequenceNumberValue()
 	{
@@ -341,7 +341,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPersonNameValue()
 	{
@@ -349,7 +349,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPersonNameInvertedValue()
 	{
@@ -357,7 +357,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTitlesBeforeNamesValue()
 	{
@@ -365,7 +365,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getNamesBeforeKeyValue()
 	{
@@ -373,7 +373,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPrefixToKeyValue()
 	{
@@ -381,7 +381,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getKeyNamesValue()
 	{
@@ -389,7 +389,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getNamesAfterKeyValue()
 	{
@@ -397,7 +397,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getSuffixToKeyValue()
 	{
@@ -405,7 +405,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getLettersAfterNamesValue()
 	{
@@ -413,7 +413,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTitlesAfterNamesValue()
 	{
@@ -421,7 +421,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getCorporateNameValue()
 	{
@@ -429,7 +429,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getCorporateNameInvertedValue()
 	{
@@ -437,8 +437,8 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, no suggested maximum length (since there is no suggested length for the text in a
-	 * &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
+	 * Raw Format: Variable-length text, no suggested maximum length (since there is no suggested length for the text in
+	 * a &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
 	 * element - see Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getBiographicalNoteValues()
@@ -454,7 +454,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getContributorDescriptionValues()

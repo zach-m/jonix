@@ -135,7 +135,8 @@ public class Extent implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Numeric, with decimal point where required, as appropriate for the units specified in &lt;ExtentUnit&gt;
+	 * Raw Format: Numeric, with decimal point where required, as appropriate for the units specified in
+	 * &lt;ExtentUnit&gt;
 	 */
 	public Double getExtentValueValue()
 	{
@@ -143,7 +144,7 @@ public class Extent implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Letters forming a valid Roman numeral
+	 * Raw Format: Letters forming a valid Roman numeral
 	 */
 	public String getExtentValueRomanValue()
 	{

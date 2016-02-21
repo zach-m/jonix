@@ -91,7 +91,7 @@ public class ThesisPresentedTo implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free text, suggested maximum length 300 characters
+	 * Raw Format: Free text, suggested maximum length 300 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

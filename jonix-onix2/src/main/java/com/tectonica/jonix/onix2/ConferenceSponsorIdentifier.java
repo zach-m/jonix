@@ -137,7 +137,7 @@ public class ConferenceSponsorIdentifier implements OnixDataComposite, Serializa
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 50 characters
 	 */
 	public String getIDTypeNameValue()
 	{
@@ -145,7 +145,7 @@ public class ConferenceSponsorIdentifier implements OnixDataComposite, Serializa
 	}
 
 	/**
-	 * Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
 	 */
 	public String getIDValueValue()
 	{

@@ -139,7 +139,7 @@ public class Illustrations implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
 	 */
 	public String getIllustrationTypeDescriptionValue()
 	{
@@ -147,7 +147,7 @@ public class Illustrations implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 6 digits.
+	 * Raw Format: Variable-length integer, suggested maximum length 6 digits.
 	 */
 	public String getNumberValue()
 	{

@@ -83,7 +83,7 @@ public class SequenceNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

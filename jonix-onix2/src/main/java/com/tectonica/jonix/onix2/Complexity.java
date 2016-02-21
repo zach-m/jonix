@@ -131,7 +131,7 @@ public class Complexity implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length, alphanumeric, suggested maximum length 20 characters.
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters.
 	 */
 	public String getComplexityCodeValue()
 	{

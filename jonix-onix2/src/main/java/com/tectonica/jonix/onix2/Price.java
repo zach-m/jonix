@@ -322,7 +322,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Text, suggested maximum length 200 characters
+	 * Raw Format: Text, suggested maximum length 200 characters
 	 */
 	public String getPriceTypeDescriptionValue()
 	{
@@ -335,7 +335,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 */
 	public String getMinimumOrderQuantityValue()
 	{
@@ -343,7 +343,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Text, suggested maximum length 50 characters
+	 * Raw Format: Text, suggested maximum length 50 characters
 	 */
 	public String getClassOfTradeValue()
 	{
@@ -351,7 +351,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the
+	 * Raw Format: Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the
 	 * supplier code) Positions 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions
 	 * 6-8&#160;&#160;&#160;&#160;Discount group code, alphanumeric, assigned by the supplier. If less than three
 	 * characters, the code is left justified and unused positions are sent as spaces.
@@ -362,7 +362,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
 	 */
 	public String getDiscountPercentValue()
 	{
@@ -375,7 +375,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 */
 	public String getPriceAmountValue()
@@ -421,7 +421,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 */
 	public String getTaxRatePercent1Value()
 	{
@@ -429,7 +429,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 */
 	public String getTaxableAmount1Value()
 	{
@@ -437,7 +437,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 */
 	public String getTaxAmount1Value()
 	{
@@ -450,7 +450,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 */
 	public String getTaxRatePercent2Value()
 	{
@@ -458,7 +458,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 */
 	public String getTaxableAmount2Value()
 	{
@@ -466,7 +466,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 */
 	public String getTaxAmount2Value()
 	{
@@ -474,7 +474,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getPriceEffectiveFromValue()
 	{
@@ -482,7 +482,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getPriceEffectiveUntilValue()
 	{

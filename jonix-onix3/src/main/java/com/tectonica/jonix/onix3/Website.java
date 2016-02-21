@@ -128,7 +128,7 @@ public class Website implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getWebsiteDescriptionValues()
@@ -144,7 +144,7 @@ public class Website implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getWebsiteLinkValue()
 	{

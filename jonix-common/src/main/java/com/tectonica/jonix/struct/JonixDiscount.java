@@ -33,21 +33,30 @@ public class JonixDiscount implements Serializable
 	public DiscountTypes discountType;
 
 	/**
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double quantity;
 
 	/**
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double toQuantity;
 
 	/**
+	 * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 * <p>
 	 * (type: dt.PercentDecimal)
 	 */
 	public Double discountPercent;
 
 	/**
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * characters
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double discountAmount;

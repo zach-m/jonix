@@ -220,7 +220,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPersonNameValue()
 	{
@@ -228,7 +228,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPersonNameInvertedValue()
 	{
@@ -236,7 +236,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTitlesBeforeNamesValue()
 	{
@@ -244,7 +244,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getNamesBeforeKeyValue()
 	{
@@ -252,7 +252,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPrefixToKeyValue()
 	{
@@ -260,7 +260,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getKeyNamesValue()
 	{
@@ -268,7 +268,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getNamesAfterKeyValue()
 	{
@@ -276,7 +276,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getSuffixToKeyValue()
 	{
@@ -284,7 +284,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getLettersAfterNamesValue()
 	{
@@ -292,7 +292,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTitlesAfterNamesValue()
 	{
@@ -300,7 +300,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getCorporateNameValue()
 	{
@@ -308,7 +308,7 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getCorporateNameInvertedValue()
 	{

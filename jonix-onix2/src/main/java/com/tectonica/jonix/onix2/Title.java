@@ -167,7 +167,7 @@ public class Title implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum 3 digits
+	 * Raw Format: Variable-length integer, suggested maximum 3 digits
 	 */
 	public String getAbbreviatedLengthValue()
 	{
@@ -180,7 +180,7 @@ public class Title implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getTitleTextValue()
 	{
@@ -188,7 +188,7 @@ public class Title implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getTitlePrefixValue()
 	{
@@ -196,7 +196,7 @@ public class Title implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTitleWithoutPrefixValue()
 	{
@@ -204,7 +204,7 @@ public class Title implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getSubtitleValue()
 	{

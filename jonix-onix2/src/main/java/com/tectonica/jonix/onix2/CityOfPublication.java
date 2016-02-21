@@ -96,7 +96,7 @@ public class CityOfPublication implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free text, suggested maximum length 50 characters.
+	 * Raw Format: Free text, suggested maximum length 50 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

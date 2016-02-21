@@ -86,7 +86,7 @@ public class CollectionSequenceNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length string of one or more integers, each successive integer being separated by a period
+	 * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
 	 * character, suggested maximum length 100 characters
 	 * <p>
 	 * (type: dt.MultiLevelNumber)

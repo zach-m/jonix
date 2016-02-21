@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.PriceCodeTypes;
 public class JonixPriceCoded implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public PriceCodeTypes priceCodeType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String priceCodeTypeName;
 
 	/**
+	 * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String priceCode;

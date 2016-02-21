@@ -189,7 +189,7 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public List<String> getSourceTitleValues()
 	{
@@ -204,7 +204,7 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getListNameValues()
 	{
@@ -219,7 +219,7 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum 3 characters
+	 * Raw Format: Variable-length integer, suggested maximum 3 characters
 	 */
 	public Integer getPositionOnListValue()
 	{
@@ -227,7 +227,7 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getCitationNoteValues()
@@ -243,7 +243,7 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 * Raw Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
 	 */
 	public List<String> getResourceLinkValues()
 	{

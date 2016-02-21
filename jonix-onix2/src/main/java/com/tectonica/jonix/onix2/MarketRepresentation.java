@@ -207,7 +207,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getAgentNameValue()
 	{
@@ -215,7 +215,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getTelephoneNumberValues()
 	{
@@ -230,7 +230,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getFaxNumberValues()
 	{
@@ -245,7 +245,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getEmailAddressValues()
 	{
@@ -260,7 +260,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two numeric digits.
+	 * Raw Format: Fixed-length, two numeric digits.
 	 */
 	public String getAgentRoleValue()
 	{
@@ -268,7 +268,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
+	 * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
 	 * spaces. Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
 	 * as upper case only.]
 	 */
@@ -278,7 +278,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
+	 * Raw Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
 	 * successive codes being separated by spaces. Suggested maximum length 100 characters.
 	 */
 	public java.util.Set<String> getMarketTerritorySet()
@@ -287,7 +287,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
+	 * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
 	 * spaces. Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
 	 * as upper case only.]
 	 */
@@ -297,7 +297,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getMarketRestrictionDetailValue()
 	{
@@ -305,7 +305,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two numeric digits.
+	 * Raw Format: Fixed-length, two numeric digits.
 	 */
 	public String getMarketPublishingStatusValue()
 	{

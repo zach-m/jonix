@@ -33,16 +33,23 @@ public class JonixMainSubject implements Serializable
 	public MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier;
 
 	/**
+	 * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
+	 * elements.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String subjectSchemeVersion;
 
 	/**
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String subjectCode;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String subjectHeadingText;

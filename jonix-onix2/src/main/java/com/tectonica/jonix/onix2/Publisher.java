@@ -162,7 +162,7 @@ public class Publisher implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public String getPublisherNameValue()
 	{
@@ -175,7 +175,7 @@ public class Publisher implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free text, suggested maximum length 50 characters
+	 * Raw Format: Free text, suggested maximum length 50 characters
 	 */
 	public String getNameCodeTypeNameValue()
 	{
@@ -183,7 +183,7 @@ public class Publisher implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Determined by the scheme specified in &lt;NameCodeType&gt;
+	 * Raw Format: Determined by the scheme specified in &lt;NameCodeType&gt;
 	 */
 	public String getNameCodeValueValue()
 	{

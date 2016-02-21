@@ -97,8 +97,8 @@ public class RegionCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being
-	 * separated by spaces. Suggested maximum length 8 characters.
+	 * Raw Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes
+	 * being separated by spaces. Suggested maximum length 8 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

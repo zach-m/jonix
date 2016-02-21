@@ -97,7 +97,7 @@ public class LevelSequenceNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
 	 * maximum length 100 characters
 	 * <p>
 	 * (type: NonEmptyString)

@@ -98,7 +98,7 @@ public class InterestAge implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length text, maximum 15 characters.
+	 * Raw Format: Variable length text, maximum 15 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

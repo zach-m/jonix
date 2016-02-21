@@ -32,16 +32,20 @@ import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 public class JonixProductFormFeature implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ProductFormFeatureTypes productFormFeatureType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public List<String> productFormFeatureDescriptions;
 
 	/**
+	 * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String productFormFeatureValue;

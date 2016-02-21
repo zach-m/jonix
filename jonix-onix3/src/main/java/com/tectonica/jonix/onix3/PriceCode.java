@@ -83,7 +83,7 @@ public class PriceCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the scheme specified in &lt;PriceCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt;
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

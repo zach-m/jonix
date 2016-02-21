@@ -92,7 +92,7 @@ public class PriceTypeDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Text, suggested maximum length 200 characters
+	 * Raw Format: Text, suggested maximum length 200 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

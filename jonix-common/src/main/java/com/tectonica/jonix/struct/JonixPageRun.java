@@ -29,11 +29,15 @@ import java.io.Serializable;
 public class JonixPageRun implements Serializable
 {
 	/**
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String firstPageNumber;
 
 	/**
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String lastPageNumber;

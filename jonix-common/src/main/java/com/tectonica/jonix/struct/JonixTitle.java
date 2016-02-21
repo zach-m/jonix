@@ -32,11 +32,13 @@ import com.tectonica.jonix.codelist.TitleTypes;
 public class JonixTitle implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public TitleTypes titleType;
 
 	/**
+	 * Raw Format: Variable-length integer, suggested maximum 3 digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String abbreviatedLength;
@@ -44,21 +46,29 @@ public class JonixTitle implements Serializable
 	public TextCaseFlags textCaseFlag;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String titleText;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String titlePrefix;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String titleWithoutPrefix;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String subtitle;

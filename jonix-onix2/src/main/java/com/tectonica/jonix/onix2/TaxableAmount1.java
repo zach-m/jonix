@@ -93,7 +93,7 @@ public class TaxableAmount1 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required.
+	 * Raw Format: Variable length real number, with an explicit decimal point where required.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

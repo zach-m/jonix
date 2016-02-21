@@ -165,8 +165,8 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
-	 * which may be a numeric digit or letter X.
+	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
+	 * character which may be a numeric digit or letter X.
 	 */
 	public String getSupplierSANValue()
 	{
@@ -174,7 +174,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
 	 */
 	public String getSupplierEANLocationNumberValue()
 	{
@@ -182,7 +182,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getSupplierNameValue()
 	{
@@ -190,7 +190,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getTelephoneNumberValues()
 	{
@@ -205,7 +205,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getFaxNumberValues()
 	{
@@ -220,7 +220,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getEmailAddressValues()
 	{

@@ -102,7 +102,7 @@ public class PublicationDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
+	 * Raw Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

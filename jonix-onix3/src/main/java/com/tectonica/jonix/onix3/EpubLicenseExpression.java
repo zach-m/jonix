@@ -128,7 +128,7 @@ public class EpubLicenseExpression implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getEpubLicenseExpressionTypeNameValue()
 	{
@@ -136,7 +136,7 @@ public class EpubLicenseExpression implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getEpubLicenseExpressionLinkValue()
 	{

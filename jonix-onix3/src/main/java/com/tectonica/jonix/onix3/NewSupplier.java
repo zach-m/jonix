@@ -138,7 +138,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getSupplierNameValue()
 	{
@@ -146,7 +146,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getTelephoneNumberValues()
 	{
@@ -161,7 +161,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public List<String> getFaxNumberValues()
 	{
@@ -176,7 +176,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getEmailAddressValues()
 	{

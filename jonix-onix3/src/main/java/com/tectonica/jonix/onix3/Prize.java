@@ -144,7 +144,7 @@ public class Prize implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getPrizeNameValues()
 	{
@@ -159,7 +159,7 @@ public class Prize implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Four digits, YYYY
+	 * Raw Format: Four digits, YYYY
 	 */
 	public String getPrizeYearValue()
 	{
@@ -177,7 +177,7 @@ public class Prize implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getPrizeStatementValues()
 	{
@@ -192,7 +192,7 @@ public class Prize implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getPrizeJuryValues()

@@ -93,7 +93,7 @@ public class ReissueDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 * <p>
 	 * (type: XHTML)

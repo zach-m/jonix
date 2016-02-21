@@ -93,7 +93,7 @@ public class TitleOfSeries implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

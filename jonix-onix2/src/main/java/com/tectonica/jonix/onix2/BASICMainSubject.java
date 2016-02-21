@@ -97,7 +97,7 @@ public class BASICMainSubject implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, three upper-case letters and six numeric digits.
+	 * Raw Format: Fixed-length, three upper-case letters and six numeric digits.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

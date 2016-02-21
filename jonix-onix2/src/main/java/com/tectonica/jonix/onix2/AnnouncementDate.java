@@ -91,7 +91,7 @@ public class AnnouncementDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

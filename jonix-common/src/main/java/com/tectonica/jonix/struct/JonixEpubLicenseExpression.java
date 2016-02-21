@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 public class JonixEpubLicenseExpression implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public LicenseExpressionTypes epubLicenseExpressionType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String epubLicenseExpressionTypeName;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: dt.NonEmptyURI)
 	 */
 	public String epubLicenseExpressionLink;

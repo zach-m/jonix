@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 public class JonixSeriesIdentifier implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public SeriesIdentifierTypes seriesIDType;
 
 	/**
+	 * Raw Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String idTypeName;
 
 	/**
+	 * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String idValue;

@@ -93,7 +93,7 @@ public class TitleText implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

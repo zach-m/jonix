@@ -84,7 +84,7 @@ public class AddresseeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum 50 characters
+	 * Raw Format: Variable-length text, suggested maximum 50 characters
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

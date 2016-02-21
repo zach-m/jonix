@@ -94,7 +94,7 @@ public class FromEmail implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 100 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 100 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

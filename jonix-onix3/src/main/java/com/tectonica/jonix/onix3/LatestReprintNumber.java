@@ -83,7 +83,7 @@ public class LatestReprintNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Integer, suggested maximum three digits
+	 * Raw Format: Integer, suggested maximum three digits
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

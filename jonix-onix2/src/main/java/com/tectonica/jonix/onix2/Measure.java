@@ -139,7 +139,7 @@ public class Measure implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
 	 * characters including a decimal point.
 	 */
 	public String getMeasurementValue()

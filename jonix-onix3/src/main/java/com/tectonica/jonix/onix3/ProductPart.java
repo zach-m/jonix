@@ -211,7 +211,7 @@ public class ProductPart implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public List<String> getProductFormDescriptionValues()
 	{
@@ -238,7 +238,7 @@ public class ProductPart implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, maximum four digits
+	 * Raw Format: Variable-length integer, maximum four digits
 	 */
 	public Integer getNumberOfItemsOfThisFormValue()
 	{
@@ -246,7 +246,7 @@ public class ProductPart implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, maximum four digits
+	 * Raw Format: Variable-length integer, maximum four digits
 	 */
 	public Integer getNumberOfCopiesValue()
 	{

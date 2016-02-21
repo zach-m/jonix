@@ -269,7 +269,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
 	 */
 	public String getFromEANNumberValue()
 	{
@@ -277,8 +277,8 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
-	 * which may be a numeric digit or letter X.
+	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
+	 * character which may be a numeric digit or letter X.
 	 */
 	public String getFromSANValue()
 	{
@@ -286,7 +286,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 30 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 30 characters
 	 */
 	public String getFromCompanyValue()
 	{
@@ -294,7 +294,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 300 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
 	 */
 	public String getFromPersonValue()
 	{
@@ -302,7 +302,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 100 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 100 characters
 	 */
 	public String getFromEmailValue()
 	{
@@ -310,7 +310,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
 	 */
 	public String getToEANNumberValue()
 	{
@@ -318,8 +318,8 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
-	 * which may be a numeric digit or letter X.
+	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
+	 * character which may be a numeric digit or letter X.
 	 */
 	public String getToSANValue()
 	{
@@ -327,7 +327,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 30 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 30 characters
 	 */
 	public String getToCompanyValue()
 	{
@@ -335,7 +335,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 300 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
 	 */
 	public String getToPersonValue()
 	{
@@ -343,7 +343,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer,
+	 * Raw Format: Variable-length integer,
 	 */
 	public String getMessageNumberValue()
 	{
@@ -351,7 +351,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer
+	 * Raw Format: Variable-length integer
 	 */
 	public String getMessageRepeatValue()
 	{
@@ -359,7 +359,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
+	 * Raw Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
 	 */
 	public String getSentDateValue()
 	{
@@ -367,7 +367,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 500 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 500 characters
 	 */
 	public String getMessageNoteValue()
 	{
@@ -400,7 +400,7 @@ public class Header implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length ASCII text, suggested maximum length 50 characters
+	 * Raw Format: Variable length ASCII text, suggested maximum length 50 characters
 	 */
 	public String getDefaultClassOfTradeValue()
 	{

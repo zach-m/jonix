@@ -91,7 +91,7 @@ public class CopyrightYear implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Date as year only (YYYY)
+	 * Raw Format: Date as year only (YYYY)
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

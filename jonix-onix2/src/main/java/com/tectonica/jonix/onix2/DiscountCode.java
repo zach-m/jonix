@@ -91,7 +91,7 @@ public class DiscountCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

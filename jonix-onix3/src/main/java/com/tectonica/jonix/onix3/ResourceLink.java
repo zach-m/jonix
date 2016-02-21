@@ -83,7 +83,7 @@ public class ResourceLink implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 * Raw Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
 	 * <p>
 	 * (type: dt.NonEmptyURI)
 	 */

@@ -91,7 +91,8 @@ public class SubjectSchemeVersion implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements.
+	 * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
+	 * elements.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

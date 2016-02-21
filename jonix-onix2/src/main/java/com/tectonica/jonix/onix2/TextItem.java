@@ -163,7 +163,7 @@ public class TextItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
 	 */
 	public String getFirstPageNumberValue()
 	{
@@ -171,7 +171,7 @@ public class TextItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
 	 */
 	public String getLastPageNumberValue()
 	{
@@ -179,7 +179,7 @@ public class TextItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
 	 */
 	public String getNumberOfPagesValue()
 	{

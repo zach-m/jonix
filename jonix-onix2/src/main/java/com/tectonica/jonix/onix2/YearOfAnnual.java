@@ -91,7 +91,7 @@ public class YearOfAnnual implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
+	 * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

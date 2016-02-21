@@ -120,8 +120,8 @@ public class BiographicalNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, no suggested maximum length (since there is no suggested length for the text in a
-	 * &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
+	 * Raw Format: Variable-length text, no suggested maximum length (since there is no suggested length for the text in
+	 * a &lt;TextContent&gt; composite, where a biographical note can alternatively be sent). XHTML is enabled in this
 	 * element - see Using XHTML, HTML or XML with ONIX text fields
 	 * <p>
 	 * (type: XHTML)

@@ -98,7 +98,7 @@ public class MarketCountryExcluded implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
+	 * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
 	 * spaces. Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
 	 * as upper case only.]
 	 * <p>

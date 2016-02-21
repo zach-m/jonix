@@ -92,7 +92,7 @@ public class PackQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length four digits
+	 * Raw Format: Variable-length integer, suggested maximum length four digits
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

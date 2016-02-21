@@ -139,7 +139,7 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
+	 * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
 	 */
 	public String getProductFormFeatureValueValue()
 	{
@@ -147,7 +147,7 @@ public class ProductFormFeature implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
 	 */
 	public String getProductFormFeatureDescriptionValue()
 	{

@@ -92,7 +92,7 @@ public class Percent implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Real decimal number in the range 0 to 100
+	 * Raw Format: Real decimal number in the range 0 to 100
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

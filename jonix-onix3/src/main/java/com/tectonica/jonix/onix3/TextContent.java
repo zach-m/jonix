@@ -169,7 +169,7 @@ public class TextContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+	 * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
 	 * fields
 	 */
 	public List<String> getTextValues()
@@ -185,7 +185,7 @@ public class TextContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public List<String> getTextAuthorValues()
 	{
@@ -200,7 +200,7 @@ public class TextContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getTextSourceCorporateValue()
 	{
@@ -208,7 +208,7 @@ public class TextContent implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public List<String> getSourceTitleValues()
 	{

@@ -99,7 +99,7 @@ public class ReviewQuote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
 	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 * <p>
 	 * (type: XHTML)

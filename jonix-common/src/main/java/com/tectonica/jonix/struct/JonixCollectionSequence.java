@@ -31,16 +31,21 @@ import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 public class JonixCollectionSequence implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public CollectionSequenceTypes collectionSequenceType;
 
 	/**
+	 * Raw Format: Variable length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String collectionSequenceTypeName;
 
 	/**
+	 * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
+	 * character, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.MultiLevelNumber)
 	 */
 	public String collectionSequenceNumber;

@@ -93,8 +93,8 @@ public class FeatureValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may
-	 * not be taken from a code list
+	 * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
+	 * may not be taken from a code list
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

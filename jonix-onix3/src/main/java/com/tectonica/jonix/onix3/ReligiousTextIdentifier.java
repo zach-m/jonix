@@ -87,7 +87,7 @@ public class ReligiousTextIdentifier implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, two digits
+	 * Raw Format: Fixed-length, two digits
 	 * <p>
 	 * (type: List88)
 	 */

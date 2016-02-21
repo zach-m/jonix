@@ -97,7 +97,7 @@ public class BiographicalNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters
 	 * <p>
 	 * (type: XHTML)
 	 */

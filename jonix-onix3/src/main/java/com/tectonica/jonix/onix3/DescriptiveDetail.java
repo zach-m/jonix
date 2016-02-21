@@ -479,7 +479,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public List<String> getProductFormDescriptionValues()
 	{
@@ -533,7 +533,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 8 digits
+	 * Raw Format: Variable length integer, suggested maximum length 8 digits
 	 */
 	public List<Integer> getMapScaleValues()
 	{
@@ -558,7 +558,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getThesisPresentedToValue()
 	{
@@ -566,7 +566,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * missing
 	 */
 	public String getThesisYearValue()
 	{
@@ -574,8 +575,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * Raw Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
+	 * see Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getContributorStatementValues()
 	{
@@ -607,7 +608,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 */
 	public Integer getEditionNumberValue()
 	{
@@ -615,7 +616,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 20 characters
+	 * Raw Format: Variable length text, suggested maximum length 20 characters
 	 */
 	public String getEditionVersionNumberValue()
 	{
@@ -623,7 +624,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getEditionStatementValues()
@@ -649,7 +650,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 6 digits
+	 * Raw Format: Variable length integer, suggested maximum length 6 digits
 	 */
 	public Integer getNumberOfIllustrationsValue()
 	{
@@ -657,7 +658,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getIllustrationsNoteValues()
@@ -685,8 +686,8 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * Raw Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
+	 * see Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getAudienceDescriptionValues()
 	{

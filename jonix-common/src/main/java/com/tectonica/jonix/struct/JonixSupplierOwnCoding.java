@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 public class JonixSupplierOwnCoding implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public SupplierOwnCodeTypes supplierCodeType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String supplierCodeTypeName;
 
 	/**
+	 * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String supplierCodeValue;

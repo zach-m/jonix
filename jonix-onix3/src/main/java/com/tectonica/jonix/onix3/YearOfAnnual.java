@@ -83,7 +83,7 @@ public class YearOfAnnual implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Year or range of years, in the format YYYY or YYYY-YYYY
+	 * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY
 	 * <p>
 	 * (type: dt.YearOrYearRange)
 	 */

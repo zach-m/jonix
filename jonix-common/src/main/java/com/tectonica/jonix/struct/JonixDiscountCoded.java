@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.DiscountCodeTypes;
 public class JonixDiscountCoded implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public DiscountCodeTypes discountCodeType;
 
 	/**
+	 * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String discountCode;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String discountCodeTypeName;

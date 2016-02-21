@@ -113,7 +113,7 @@ public class Text implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+	 * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
 	 * fields
 	 * <p>
 	 * (type: XHTML)

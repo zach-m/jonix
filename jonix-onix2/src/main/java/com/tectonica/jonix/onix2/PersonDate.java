@@ -144,7 +144,7 @@ public class PersonDate implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+	 * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
 	 */
 	public String getDateValue()
 	{

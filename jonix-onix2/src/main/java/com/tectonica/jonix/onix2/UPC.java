@@ -94,7 +94,7 @@ public class UPC implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
+	 * Raw Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
 	 * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html
 	 * <p>
 	 * (type: NonEmptyString)

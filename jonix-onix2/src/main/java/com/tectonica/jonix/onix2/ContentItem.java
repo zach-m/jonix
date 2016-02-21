@@ -232,7 +232,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
+	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
 	 * maximum length 100 characters
 	 */
 	public String getLevelSequenceNumberValue()
@@ -241,7 +241,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
 	 */
 	public String getComponentTypeNameValue()
 	{
@@ -249,7 +249,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
 	 */
 	public String getComponentNumberValue()
 	{
@@ -257,7 +257,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 300 characters
 	 */
 	public String getDistinctiveTitleValue()
 	{
@@ -265,7 +265,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1000 characters
+	 * Raw Format: Variable-length text, suggested maximum length 1000 characters
 	 */
 	public String getContributorStatementValue()
 	{
@@ -273,7 +273,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum 200 characters.
 	 */
 	public List<String> getCorporateBodyAsSubjectValues()
 	{
@@ -288,7 +288,7 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 100 characters.
+	 * Raw Format: Variable-length text, suggested maximum 100 characters.
 	 */
 	public List<String> getPlaceAsSubjectValues()
 	{

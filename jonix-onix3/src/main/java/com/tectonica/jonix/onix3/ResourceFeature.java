@@ -128,8 +128,8 @@ public class ResourceFeature implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may
-	 * not be taken from a code list
+	 * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
+	 * may not be taken from a code list
 	 */
 	public String getFeatureValueValue()
 	{
@@ -137,7 +137,7 @@ public class ResourceFeature implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getFeatureNoteValues()

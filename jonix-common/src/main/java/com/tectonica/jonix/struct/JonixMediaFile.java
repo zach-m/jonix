@@ -33,13 +33,15 @@ import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 public class JonixMediaFile implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ImageAudioVideoFileTypes mediaFileTypeCode;
 
 	public ImageAudioVideoFileFormats mediaFileFormatCode;
 
 	/**
+	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String imageResolution;
@@ -47,36 +49,55 @@ public class JonixMediaFile implements Serializable
 	public ImageAudioVideoFileLinkTypes mediaFileLinkTypeCode;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String mediaFileLink;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element -
+	 * see ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String textWithDownload;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String downloadCaption;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String downloadCredit;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String downloadCopyrightNotice;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String downloadTerms;
 
 	/**
+	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String mediaFileDate;

@@ -95,8 +95,8 @@ public class PromotionCampaign implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1,000 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters. XHTML is enabled in this element -
+	 * see Using XHTML, HTML or XML with ONIX text fields
 	 * <p>
 	 * (type: XHTML)
 	 */

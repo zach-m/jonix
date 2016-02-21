@@ -91,7 +91,7 @@ public class AudienceRestrictionNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, maximum 300 characters
+	 * Raw Format: Variable-length text, maximum 300 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

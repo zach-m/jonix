@@ -84,7 +84,7 @@ public class TaxAmount implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 * <p>
 	 * (type: dt.PositiveDecimal)

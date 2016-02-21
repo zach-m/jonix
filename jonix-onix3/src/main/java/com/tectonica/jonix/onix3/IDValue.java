@@ -83,7 +83,7 @@ public class IDValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

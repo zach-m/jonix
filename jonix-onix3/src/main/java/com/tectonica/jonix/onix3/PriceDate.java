@@ -131,7 +131,7 @@ public class PriceDate implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+	 * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
 	 */
 	public String getDateValue()
 	{

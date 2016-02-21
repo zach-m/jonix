@@ -94,7 +94,7 @@ public class ToPerson implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 300 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

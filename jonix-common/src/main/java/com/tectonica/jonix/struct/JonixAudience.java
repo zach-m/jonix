@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.AudienceCodeTypes;
 public class JonixAudience implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public AudienceCodeTypes audienceCodeType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String audienceCodeTypeName;
 
 	/**
+	 * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String audienceCodeValue;

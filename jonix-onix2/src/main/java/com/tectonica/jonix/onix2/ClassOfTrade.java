@@ -93,7 +93,7 @@ public class ClassOfTrade implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Text, suggested maximum length 50 characters
+	 * Raw Format: Text, suggested maximum length 50 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

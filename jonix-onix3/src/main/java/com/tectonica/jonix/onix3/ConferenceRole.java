@@ -87,7 +87,7 @@ public class ConferenceRole implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, two digits
+	 * Raw Format: Fixed-length, two digits
 	 * <p>
 	 * (type: List20)
 	 */

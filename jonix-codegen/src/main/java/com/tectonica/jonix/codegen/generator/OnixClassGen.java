@@ -171,7 +171,7 @@ public class OnixClassGen
 					if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty())
 					{
 						p.printf("   /**\n");
-						p.printf("   * Format: %s\n", element.onixDoc.format);
+						p.printf("   * Raw Format: %s\n", element.onixDoc.format);
 						p.printf("   */\n");
 					}
 				}
@@ -365,7 +365,7 @@ public class OnixClassGen
 		{
 			p.printf("   /**\n");
 			if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty())
-				p.printf("   * Format: %s<p>\n", element.onixDoc.format);
+				p.printf("   * Raw Format: %s<p>\n", element.onixDoc.format);
 			p.printf("   * %s\n", ti.comment);
 			p.printf("   */\n");
 		}

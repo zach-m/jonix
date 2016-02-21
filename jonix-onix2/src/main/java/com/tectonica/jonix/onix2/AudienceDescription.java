@@ -90,7 +90,7 @@ public class AudienceDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free text, suggested maximum length 1000 characters.
+	 * Raw Format: Free text, suggested maximum length 1000 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

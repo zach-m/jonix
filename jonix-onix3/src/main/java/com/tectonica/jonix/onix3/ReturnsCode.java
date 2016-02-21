@@ -87,7 +87,7 @@ public class ReturnsCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

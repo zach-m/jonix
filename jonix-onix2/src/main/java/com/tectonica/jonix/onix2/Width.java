@@ -94,7 +94,7 @@ public class Width implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
 	 * characters including a decimal point.
 	 * <p>
 	 * (type: NonEmptyString)

@@ -141,7 +141,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getSalesRestrictionNoteValues()
@@ -157,7 +157,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
 	 * missing
 	 */
 	public String getStartDateValue()
@@ -166,7 +166,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
 	 * missing
 	 */
 	public String getEndDateValue()

@@ -94,7 +94,7 @@ public class ItemQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, maximum four digits
+	 * Raw Format: Variable-length integer, maximum four digits
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

@@ -93,7 +93,7 @@ public class MessageNote implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 500 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 500 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

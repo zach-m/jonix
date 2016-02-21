@@ -83,7 +83,7 @@ public class OrderTime implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, one or two digits only
+	 * Raw Format: Variable-length integer, one or two digits only
 	 * <p>
 	 * (type: dt.PositiveInteger)
 	 */

@@ -140,7 +140,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 * Raw Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
 	 */
 	public List<String> getResourceLinkValues()
 	{

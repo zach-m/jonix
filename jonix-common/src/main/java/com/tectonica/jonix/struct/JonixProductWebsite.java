@@ -33,11 +33,16 @@ public class JonixProductWebsite implements Serializable
 	public WebsiteRoles websiteRole;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public String productWebsiteDescription;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String productWebsiteLink;

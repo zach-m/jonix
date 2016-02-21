@@ -130,7 +130,7 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getAncillaryContentDescriptionValues()
@@ -146,7 +146,7 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 6 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
 	 */
 	public Integer getNumberValue()
 	{

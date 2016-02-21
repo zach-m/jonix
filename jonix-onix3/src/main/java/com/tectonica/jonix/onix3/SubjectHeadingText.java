@@ -93,7 +93,7 @@ public class SubjectHeadingText implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 250 characters
+	 * Raw Format: Variable-length text, suggested maximum length 250 characters
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

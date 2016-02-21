@@ -148,7 +148,7 @@ public class Tax implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point where required
+	 * Raw Format: Variable length real number, with an explicit decimal point where required
 	 */
 	public Double getTaxRatePercentValue()
 	{
@@ -156,7 +156,7 @@ public class Tax implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 */
 	public Double getTaxableAmountValue()
@@ -165,7 +165,7 @@ public class Tax implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 */
 	public Double getTaxAmountValue()

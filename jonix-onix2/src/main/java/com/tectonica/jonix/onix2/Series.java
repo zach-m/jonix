@@ -171,7 +171,7 @@ public class Series implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
+	 * Raw Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
 	 */
 	public String getSeriesISSNValue()
 	{
@@ -179,7 +179,7 @@ public class Series implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getPublisherSeriesCodeValue()
 	{
@@ -187,7 +187,7 @@ public class Series implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTitleOfSeriesValue()
 	{
@@ -195,7 +195,7 @@ public class Series implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getNumberWithinSeriesValue()
 	{
@@ -203,7 +203,7 @@ public class Series implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
+	 * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
 	 */
 	public String getYearOfAnnualValue()
 	{

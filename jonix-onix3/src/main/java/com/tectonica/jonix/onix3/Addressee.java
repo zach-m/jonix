@@ -130,7 +130,7 @@ public class Addressee implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 50 characters
+	 * Raw Format: Variable-length text, suggested maximum 50 characters
 	 */
 	public String getAddresseeNameValue()
 	{
@@ -138,7 +138,7 @@ public class Addressee implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getContactNameValue()
 	{
@@ -146,7 +146,7 @@ public class Addressee implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getEmailAddressValue()
 	{

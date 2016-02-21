@@ -202,7 +202,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 6 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
 	 */
 	public String getImageResolutionValue()
 	{
@@ -215,7 +215,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getMediaFileLinkValue()
 	{
@@ -223,8 +223,8 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element -
+	 * see ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public String getTextWithDownloadValue()
 	{
@@ -232,7 +232,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
 	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public String getDownloadCaptionValue()
@@ -241,7 +241,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
 	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public String getDownloadCreditValue()
@@ -250,7 +250,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
 	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public String getDownloadCopyrightNoticeValue()
@@ -259,7 +259,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
 	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public String getDownloadTermsValue()
@@ -268,7 +268,7 @@ public class MediaFile implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
 	 */
 	public String getMediaFileDateValue()
 	{

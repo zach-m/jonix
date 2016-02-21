@@ -85,7 +85,7 @@ public class ToQuantity implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length decimal number, here necessarily an integer
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
 	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */

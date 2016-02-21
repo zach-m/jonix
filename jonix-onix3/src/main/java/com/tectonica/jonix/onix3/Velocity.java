@@ -128,7 +128,7 @@ public class Velocity implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 7 digits
+	 * Raw Format: Variable length integer, suggested maximum length 7 digits
 	 */
 	public Integer getRateValue()
 	{

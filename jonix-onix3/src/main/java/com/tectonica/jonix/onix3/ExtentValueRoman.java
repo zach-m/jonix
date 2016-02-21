@@ -83,7 +83,7 @@ public class ExtentValueRoman implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Letters forming a valid Roman numeral
+	 * Raw Format: Letters forming a valid Roman numeral
 	 * <p>
 	 * (type: dt.RomanNumeralString)
 	 */

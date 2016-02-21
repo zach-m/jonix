@@ -92,7 +92,7 @@ public class EditionVersionNumber implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free form, suggested maximum length 20 characters.
+	 * Raw Format: Free form, suggested maximum length 20 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

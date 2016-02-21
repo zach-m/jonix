@@ -33,7 +33,7 @@ import com.tectonica.jonix.codelist.LanguageRoles;
 public class JonixLanguage implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public LanguageRoles languageRole;
 

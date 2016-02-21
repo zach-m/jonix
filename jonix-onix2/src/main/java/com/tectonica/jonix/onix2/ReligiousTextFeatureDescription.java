@@ -90,7 +90,7 @@ public class ReligiousTextFeatureDescription implements OnixElement, Serializabl
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum 100 characters
+	 * Raw Format: Variable-length text, suggested maximum 100 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

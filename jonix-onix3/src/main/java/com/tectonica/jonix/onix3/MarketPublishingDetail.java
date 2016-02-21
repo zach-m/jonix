@@ -188,7 +188,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
+	 * Raw Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
 	 * XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getMarketPublishingStatusNoteValues()
@@ -204,8 +204,8 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1,000 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters. XHTML is enabled in this element -
+	 * see Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getPromotionCampaignValues()
 	{
@@ -220,7 +220,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public String getPromotionContactValue()
@@ -229,7 +229,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getInitialPrintRunValues()
@@ -245,7 +245,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getReprintDetailValues()
@@ -261,7 +261,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getCopiesSoldValues()
@@ -277,7 +277,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getBookClubAdoptionValues()

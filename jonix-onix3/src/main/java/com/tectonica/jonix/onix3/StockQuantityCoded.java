@@ -129,7 +129,7 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getStockQuantityCodeTypeNameValue()
 	{
@@ -137,7 +137,7 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the scheme specified in &lt;StockQuantityCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;StockQuantityCodeType&gt;
 	 */
 	public String getStockQuantityCodeValue()
 	{

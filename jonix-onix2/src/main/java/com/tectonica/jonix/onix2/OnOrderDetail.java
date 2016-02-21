@@ -125,7 +125,7 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
 	 */
 	public String getOnOrderValue()
 	{
@@ -133,7 +133,7 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
 	 */
 	public String getExpectedDateValue()
 	{

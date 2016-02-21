@@ -94,7 +94,7 @@ public class PublisherProductNo implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 35 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 35 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

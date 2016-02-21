@@ -126,8 +126,8 @@ public class TitleDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * Raw Format: Variable length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
+	 * see Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public String getTitleStatementValue()
 	{

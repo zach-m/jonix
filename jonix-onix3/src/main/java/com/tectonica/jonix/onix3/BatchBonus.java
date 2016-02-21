@@ -113,7 +113,7 @@ public class BatchBonus implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 */
 	public Integer getBatchQuantityValue()
 	{
@@ -121,7 +121,7 @@ public class BatchBonus implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 */
 	public Integer getFreeQuantityValue()
 	{

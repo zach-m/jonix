@@ -91,7 +91,7 @@ public class ImageResolution implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 6 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

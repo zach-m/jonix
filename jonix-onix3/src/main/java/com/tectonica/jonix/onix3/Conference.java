@@ -162,7 +162,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two digits
+	 * Raw Format: Fixed-length, two digits
 	 */
 	public String getConferenceRoleValue()
 	{
@@ -170,7 +170,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getConferenceNameValue()
 	{
@@ -178,7 +178,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getConferenceAcronymValue()
 	{
@@ -186,7 +186,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 */
 	public Integer getConferenceNumberValue()
 	{
@@ -194,7 +194,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields - but is strongly discouraged
 	 */
 	public String getConferenceThemeValue()
@@ -203,7 +203,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
 	 * missing. Note that the dateformat attribute allows exact dates to be supplied if necessary, including the cases
 	 * where a conference spreads over a range of dates or the date can only be supplied as a text string
 	 */
@@ -213,7 +213,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getConferencePlaceValue()
 	{

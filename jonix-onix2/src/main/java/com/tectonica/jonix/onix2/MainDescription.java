@@ -109,8 +109,8 @@ public class MainDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX for
-	 * Books - Product Information Message - XML Message Specification, Section 7)
+	 * Raw Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX
+	 * for Books - Product Information Message - XML Message Specification, Section 7)
 	 * <p>
 	 * (type: XHTML)
 	 */

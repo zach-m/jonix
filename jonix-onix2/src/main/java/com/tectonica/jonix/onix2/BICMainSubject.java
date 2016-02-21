@@ -95,7 +95,7 @@ public class BICMainSubject implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

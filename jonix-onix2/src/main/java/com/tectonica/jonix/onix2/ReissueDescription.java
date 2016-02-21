@@ -90,7 +90,7 @@ public class ReissueDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free text, suggested maximum length 500 characters
+	 * Raw Format: Free text, suggested maximum length 500 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

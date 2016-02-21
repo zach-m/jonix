@@ -97,7 +97,7 @@ public class ConferenceTheme implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
 	 * Using XHTML, HTML or XML with ONIX text fields - but is strongly discouraged
 	 * <p>
 	 * (type: XHTML)

@@ -125,7 +125,7 @@ public class Audience implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getAudienceCodeTypeNameValue()
 	{
@@ -133,7 +133,7 @@ public class Audience implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
+	 * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
 	 */
 	public String getAudienceCodeValueValue()
 	{

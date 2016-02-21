@@ -129,7 +129,7 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 50 characters
+	 * Raw Format: Variable length text, suggested maximum length 50 characters
 	 */
 	public String getCollectionSequenceTypeNameValue()
 	{
@@ -137,7 +137,7 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length string of one or more integers, each successive integer being separated by a period
+	 * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
 	 * character, suggested maximum length 100 characters
 	 */
 	public String getCollectionSequenceNumberValue()

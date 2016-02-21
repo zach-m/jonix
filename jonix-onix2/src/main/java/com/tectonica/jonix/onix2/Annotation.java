@@ -98,7 +98,7 @@ public class Annotation implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, maximum 350 characters
+	 * Raw Format: Variable-length text, maximum 350 characters
 	 * <p>
 	 * (type: XHTML)
 	 */

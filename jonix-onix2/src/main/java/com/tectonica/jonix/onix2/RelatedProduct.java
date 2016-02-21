@@ -291,7 +291,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getISBNValue()
 	{
@@ -299,7 +299,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getEAN13Value()
 	{
@@ -341,7 +341,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
 	 */
 	public String getProductFormDescriptionValue()
 	{
@@ -349,7 +349,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
 	 */
 	public String getNumberOfPiecesValue()
 	{
@@ -379,7 +379,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 10 characters
+	 * Raw Format: Variable-length text, suggested maximum 10 characters
 	 */
 	public String getEpubTypeVersionValue()
 	{
@@ -387,7 +387,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubTypeDescriptionValue()
 	{
@@ -400,7 +400,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 10 characters
+	 * Raw Format: Variable-length text, suggested maximum 10 characters
 	 */
 	public String getEpubFormatVersionValue()
 	{
@@ -408,7 +408,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubFormatDescriptionValue()
 	{
@@ -416,7 +416,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubTypeNoteValue()
 	{

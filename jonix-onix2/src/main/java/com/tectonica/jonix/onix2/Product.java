@@ -1204,7 +1204,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
 	 */
 	public String getRecordReferenceValue()
 	{
@@ -1222,7 +1222,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getDeletionTextValue()
 	{
@@ -1240,7 +1240,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
 	 */
 	public String getRecordSourceIdentifierValue()
 	{
@@ -1248,7 +1248,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getRecordSourceNameValue()
 	{
@@ -1256,7 +1256,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getISBNValue()
 	{
@@ -1264,7 +1264,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getEAN13Value()
 	{
@@ -1272,7 +1272,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
+	 * Raw Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
 	 * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html
 	 */
 	public String getUPCValue()
@@ -1281,7 +1281,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 35 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 35 characters.
 	 */
 	public String getPublisherProductNoValue()
 	{
@@ -1289,8 +1289,8 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character calculated
-	 * according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
+	 * Raw Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character
+	 * calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
 	 */
 	public String getISMNValue()
 	{
@@ -1298,7 +1298,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters.
 	 */
 	public String getDOIValue()
 	{
@@ -1318,7 +1318,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getReplacesISBNValue()
 	{
@@ -1326,7 +1326,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getReplacesEAN13Value()
 	{
@@ -1368,7 +1368,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
 	 */
 	public String getProductFormDescriptionValue()
 	{
@@ -1376,7 +1376,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
 	 */
 	public String getNumberOfPiecesValue()
 	{
@@ -1406,7 +1406,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 10 characters
+	 * Raw Format: Variable-length text, suggested maximum 10 characters
 	 */
 	public String getEpubTypeVersionValue()
 	{
@@ -1414,7 +1414,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubTypeDescriptionValue()
 	{
@@ -1427,7 +1427,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 10 characters
+	 * Raw Format: Variable-length text, suggested maximum 10 characters
 	 */
 	public String getEpubFormatVersionValue()
 	{
@@ -1435,7 +1435,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubFormatDescriptionValue()
 	{
@@ -1448,7 +1448,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 10 characters
+	 * Raw Format: Variable-length text, suggested maximum 10 characters
 	 */
 	public String getEpubSourceVersionValue()
 	{
@@ -1456,7 +1456,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubSourceDescriptionValue()
 	{
@@ -1464,7 +1464,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 */
 	public String getEpubTypeNoteValue()
 	{
@@ -1482,7 +1482,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 300 characters
 	 */
 	public String getDistinctiveTitleValue()
 	{
@@ -1490,7 +1490,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getTitlePrefixValue()
 	{
@@ -1498,7 +1498,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTitleWithoutPrefixValue()
 	{
@@ -1506,7 +1506,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getSubtitleValue()
 	{
@@ -1514,7 +1514,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTranslationOfTitleValue()
 	{
@@ -1522,7 +1522,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public List<String> getFormerTitleValues()
 	{
@@ -1542,7 +1542,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free text, suggested maximum length 300 characters
+	 * Raw Format: Free text, suggested maximum length 300 characters
 	 */
 	public String getThesisPresentedToValue()
 	{
@@ -1550,7 +1550,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, four numeric digits
+	 * Raw Format: Fixed-length, four numeric digits
 	 */
 	public String getThesisYearValue()
 	{
@@ -1558,7 +1558,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1000 characters
+	 * Raw Format: Variable-length text, suggested maximum length 1000 characters
 	 */
 	public String getContributorStatementValue()
 	{
@@ -1571,7 +1571,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getConferenceDescriptionValue()
 	{
@@ -1579,7 +1579,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two numeric digits
+	 * Raw Format: Fixed-length, two numeric digits
 	 */
 	public String getConferenceRoleValue()
 	{
@@ -1587,7 +1587,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
 	 */
 	public String getConferenceNameValue()
 	{
@@ -1595,7 +1595,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 characters
+	 * Raw Format: Variable-length integer, suggested maximum length 4 characters
 	 */
 	public String getConferenceNumberValue()
 	{
@@ -1603,7 +1603,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year (YYYY) or month and year (YYYYMM).
+	 * Raw Format: Date as year (YYYY) or month and year (YYYYMM).
 	 */
 	public String getConferenceDateValue()
 	{
@@ -1611,7 +1611,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getConferencePlaceValue()
 	{
@@ -1631,7 +1631,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
 	 */
 	public String getEditionNumberValue()
 	{
@@ -1639,7 +1639,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free form, suggested maximum length 20 characters.
+	 * Raw Format: Free form, suggested maximum length 20 characters.
 	 */
 	public String getEditionVersionNumberValue()
 	{
@@ -1647,7 +1647,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
 	 */
 	public String getEditionStatementValue()
 	{
@@ -1677,7 +1677,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
 	 */
 	public String getNumberOfPagesValue()
 	{
@@ -1685,7 +1685,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length alphabetic, suggested maximum length 10 characters.
+	 * Raw Format: Variable length alphabetic, suggested maximum length 10 characters.
 	 */
 	public String getPagesRomanValue()
 	{
@@ -1693,7 +1693,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length numeric, suggested maximum length 6 characters.
+	 * Raw Format: Variable length numeric, suggested maximum length 6 characters.
 	 */
 	public String getPagesArabicValue()
 	{
@@ -1701,7 +1701,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
 	 */
 	public String getNumberOfIllustrationsValue()
 	{
@@ -1709,7 +1709,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 200 characters.
+	 * Raw Format: Variable length text, suggested maximum length 200 characters.
 	 */
 	public String getIllustrationsNoteValue()
 	{
@@ -1717,7 +1717,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 6 digits.
+	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
 	 */
 	public List<String> getMapScaleValues()
 	{
@@ -1732,7 +1732,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, three upper-case letters and six numeric digits.
+	 * Raw Format: Fixed-length, three upper-case letters and six numeric digits.
 	 */
 	public String getBASICMainSubjectValue()
 	{
@@ -1740,7 +1740,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
+	 * Raw Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
 	 * Suggested maximum length 10 characters, for consistency with other version number elements.
 	 */
 	public String getBASICVersionValue()
@@ -1749,7 +1749,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
 	 */
 	public String getBICMainSubjectValue()
 	{
@@ -1757,7 +1757,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
+	 * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
 	 * consistency with other version number elements.
 	 */
 	public String getBICVersionValue()
@@ -1766,7 +1766,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum 200 characters.
 	 */
 	public List<String> getCorporateBodyAsSubjectValues()
 	{
@@ -1781,7 +1781,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 100 characters.
+	 * Raw Format: Variable-length text, suggested maximum 100 characters.
 	 */
 	public List<String> getPlaceAsSubjectValues()
 	{
@@ -1808,7 +1808,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, maximum 15 characters.
+	 * Raw Format: Variable length text, maximum 15 characters.
 	 */
 	public String getUSSchoolGradeValue()
 	{
@@ -1816,7 +1816,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, maximum 15 characters.
+	 * Raw Format: Variable length text, maximum 15 characters.
 	 */
 	public String getInterestAgeValue()
 	{
@@ -1824,7 +1824,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free text, suggested maximum length 1000 characters.
+	 * Raw Format: Free text, suggested maximum length 1000 characters.
 	 */
 	public String getAudienceDescriptionValue()
 	{
@@ -1832,7 +1832,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, maximum 350 characters
+	 * Raw Format: Variable-length text, maximum 350 characters
 	 */
 	public String getAnnotationValue()
 	{
@@ -1840,8 +1840,8 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX for
-	 * Books - Product Information Message - XML Message Specification, Section 7)
+	 * Raw Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX
+	 * for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public String getMainDescriptionValue()
 	{
@@ -1849,7 +1849,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
 	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
 	 */
 	public List<String> getReviewQuoteValues()
@@ -1875,7 +1875,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getCoverImageLinkValue()
 	{
@@ -1883,7 +1883,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters
 	 */
 	public String getPrizesDescriptionValue()
 	{
@@ -1891,7 +1891,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public String getImprintNameValue()
 	{
@@ -1899,7 +1899,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public String getPublisherNameValue()
 	{
@@ -1907,7 +1907,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Free text, suggested maximum length 50 characters.
+	 * Raw Format: Free text, suggested maximum length 50 characters.
 	 */
 	public List<String> getCityOfPublicationValues()
 	{
@@ -1927,7 +1927,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public List<String> getCopublisherNameValues()
 	{
@@ -1942,7 +1942,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public List<String> getSponsorNameValues()
 	{
@@ -1957,7 +1957,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public String getOriginalPublisherValue()
 	{
@@ -1970,7 +1970,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters.
+	 * Raw Format: Variable-length text, suggested maximum 300 characters.
 	 */
 	public String getPublishingStatusNoteValue()
 	{
@@ -1978,7 +1978,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getAnnouncementDateValue()
 	{
@@ -1986,7 +1986,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getTradeAnnouncementDateValue()
 	{
@@ -1994,7 +1994,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
+	 * Raw Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
 	 */
 	public String getPublicationDateValue()
 	{
@@ -2002,7 +2002,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year only (YYYY)
+	 * Raw Format: Date as year only (YYYY)
 	 */
 	public String getCopyrightYearValue()
 	{
@@ -2010,7 +2010,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year only (YYYY)
+	 * Raw Format: Date as year only (YYYY)
 	 */
 	public String getYearFirstPublishedValue()
 	{
@@ -2018,7 +2018,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
 	 * characters including a decimal point.
 	 */
 	public String getHeightValue()
@@ -2027,7 +2027,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
 	 * characters including a decimal point.
 	 */
 	public String getWidthValue()
@@ -2036,7 +2036,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
 	 * characters including a decimal point.
 	 */
 	public String getThicknessValue()
@@ -2045,7 +2045,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
 	 * characters including a decimal point.
 	 */
 	public String getWeightValue()
@@ -2054,7 +2054,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text, suggested maximum length 100 characters.
+	 * Raw Format: Variable length text, suggested maximum length 100 characters.
 	 */
 	public String getDimensionsValue()
 	{
@@ -2062,7 +2062,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getReplacedByISBNValue()
 	{
@@ -2070,7 +2070,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getReplacedByEAN13Value()
 	{
@@ -2078,7 +2078,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getAlternativeFormatISBNValue()
 	{
@@ -2086,7 +2086,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getAlternativeFormatEAN13Value()
 	{
@@ -2094,7 +2094,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getAlternativeProductISBNValue()
 	{
@@ -2102,7 +2102,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getAlternativeProductEAN13Value()
 	{
@@ -2110,7 +2110,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD)
+	 * Raw Format: Date as year, month, day (YYYYMMDD)
 	 */
 	public String getOutOfPrintDateValue()
 	{
@@ -2118,7 +2118,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1,000 characters
+	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters
 	 */
 	public String getPromotionCampaignValue()
 	{
@@ -2126,7 +2126,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getPromotionContactValue()
 	{
@@ -2134,7 +2134,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getInitialPrintRunValue()
 	{
@@ -2142,7 +2142,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public List<String> getReprintDetailValues()
 	{
@@ -2157,7 +2157,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getCopiesSoldValue()
 	{
@@ -2165,7 +2165,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getBookClubAdoptionValue()
 	{

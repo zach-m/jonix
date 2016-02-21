@@ -90,7 +90,7 @@ public class LocationName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free text, suggested maximum length 100 characters
+	 * Raw Format: Free text, suggested maximum length 100 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

@@ -83,7 +83,7 @@ public class SupplierCodeValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
+	 * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

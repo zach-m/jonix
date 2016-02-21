@@ -82,7 +82,7 @@ public class CBO implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 7 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
 	 * <p>
 	 * (type: dt.PositiveInteger)
 	 */

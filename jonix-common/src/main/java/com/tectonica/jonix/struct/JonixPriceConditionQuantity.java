@@ -32,11 +32,13 @@ import com.tectonica.jonix.codelist.QuantityUnits;
 public class JonixPriceConditionQuantity implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public PriceConditionQuantityTypes priceConditionQuantityType;
 
 	/**
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * <p>
 	 * (type: dt.PositiveDecimal)
 	 */
 	public Double quantity;

@@ -176,7 +176,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
 	 */
 	public Integer getSequenceNumberValue()
 	{
@@ -189,7 +189,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 20 characters
+	 * Raw Format: Variable-length text, suggested maximum 20 characters
 	 */
 	public String getPartNumberValue()
 	{
@@ -197,7 +197,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Year or range of years, in the format YYYY or YYYY-YYYY
+	 * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY
 	 */
 	public String getYearOfAnnualValue()
 	{
@@ -205,7 +205,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 20 characters
+	 * Raw Format: Variable-length text, suggested maximum 20 characters
 	 */
 	public String getTitlePrefixValue()
 	{
@@ -218,7 +218,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getTitleWithoutPrefixValue()
 	{
@@ -226,7 +226,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getTitleTextValue()
 	{
@@ -234,7 +234,7 @@ public class TitleElement implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 300 characters
+	 * Raw Format: Variable-length text, suggested maximum 300 characters
 	 */
 	public String getSubtitleValue()
 	{

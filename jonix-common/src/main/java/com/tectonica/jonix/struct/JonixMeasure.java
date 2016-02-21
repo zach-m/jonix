@@ -32,13 +32,16 @@ import com.tectonica.jonix.codelist.MeasureUnits;
 public class JonixMeasure implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public MeasureTypes measureType;
 
 	public MeasureUnits measureUnitCode;
 
 	/**
+	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+	 * characters including a decimal point
+	 * <p>
 	 * (type: dt.StrictPositiveDecimal)
 	 */
 	public Double measurement;

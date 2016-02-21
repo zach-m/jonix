@@ -91,7 +91,7 @@ public class ExpectedDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

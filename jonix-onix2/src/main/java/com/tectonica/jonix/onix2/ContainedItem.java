@@ -221,7 +221,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 */
 	public String getISBNValue()
 	{
@@ -229,7 +229,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 */
 	public String getEAN13Value()
 	{
@@ -271,7 +271,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
 	 */
 	public String getProductFormDescriptionValue()
 	{
@@ -279,7 +279,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits.
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
 	 */
 	public String getNumberOfPiecesValue()
 	{
@@ -304,7 +304,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, maximum four digits
+	 * Raw Format: Variable-length integer, maximum four digits
 	 */
 	public String getItemQuantityValue()
 	{

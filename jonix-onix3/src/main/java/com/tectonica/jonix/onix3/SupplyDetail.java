@@ -197,7 +197,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, one or two digits only
+	 * Raw Format: Variable-length integer, one or two digits only
 	 */
 	public Integer getOrderTimeValue()
 	{
@@ -205,7 +205,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length four digits
+	 * Raw Format: Variable-length integer, suggested maximum length four digits
 	 */
 	public Integer getPackQuantityValue()
 	{

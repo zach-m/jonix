@@ -91,7 +91,7 @@ public class ExtentValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Numeric, with decimal point where required, as specified in field PR.12.4
+	 * Raw Format: Numeric, with decimal point where required, as specified in field PR.12.4
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

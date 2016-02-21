@@ -83,7 +83,7 @@ public class MessageRepeat implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length integer
+	 * Raw Format: Variable length integer
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

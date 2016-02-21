@@ -95,7 +95,7 @@ public class SeriesISSN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
+	 * Raw Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

@@ -91,7 +91,7 @@ public class ProductClassificationCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

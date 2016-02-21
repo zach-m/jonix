@@ -217,7 +217,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length, alphanumeric, suggested maximum length 100 characters
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 100 characters
 	 */
 	public String getRecordReferenceValue()
 	{
@@ -230,7 +230,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public List<String> getDeletionTextValues()
 	{
@@ -250,7 +250,7 @@ public class Product implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getRecordSourceNameValue()
 	{

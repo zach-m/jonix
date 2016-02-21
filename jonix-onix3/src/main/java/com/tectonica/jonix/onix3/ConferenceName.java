@@ -90,7 +90,7 @@ public class ConferenceName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

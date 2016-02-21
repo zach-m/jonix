@@ -91,7 +91,7 @@ public class EAN13 implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, 13 numeric digits.
+	 * Raw Format: Fixed-length, 13 numeric digits.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

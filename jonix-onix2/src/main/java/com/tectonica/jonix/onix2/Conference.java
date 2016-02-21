@@ -174,7 +174,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, two numeric digits
+	 * Raw Format: Fixed-length, two numeric digits
 	 */
 	public String getConferenceRoleValue()
 	{
@@ -182,7 +182,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters.
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
 	 */
 	public String getConferenceNameValue()
 	{
@@ -190,7 +190,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 */
 	public String getConferenceAcronymValue()
 	{
@@ -198,7 +198,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 characters
+	 * Raw Format: Variable-length integer, suggested maximum length 4 characters
 	 */
 	public String getConferenceNumberValue()
 	{
@@ -206,7 +206,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getConferenceThemeValue()
 	{
@@ -214,7 +214,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as year (YYYY) or month and year (YYYYMM).
+	 * Raw Format: Date as year (YYYY) or month and year (YYYYMM).
 	 */
 	public String getConferenceDateValue()
 	{
@@ -222,7 +222,7 @@ public class Conference implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getConferencePlaceValue()
 	{

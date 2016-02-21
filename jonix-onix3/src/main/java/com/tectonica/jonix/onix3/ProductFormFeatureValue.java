@@ -148,7 +148,7 @@ public class ProductFormFeatureValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
+	 * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
 	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */

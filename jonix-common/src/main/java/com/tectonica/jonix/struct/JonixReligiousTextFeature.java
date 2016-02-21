@@ -33,13 +33,16 @@ import com.tectonica.jonix.codelist.ReligiousTextFeatures;
 public class JonixReligiousTextFeature implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ReligiousTextFeatureTypes religiousTextFeatureType;
 
 	public ReligiousTextFeatures religiousTextFeatureCode;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
+	 * XHTML, HTML or XML with ONIX text fields
+	 * <p>
 	 * (type: XHTML)
 	 */
 	public List<String> religiousTextFeatureDescriptions;

@@ -138,7 +138,7 @@ public class Extent implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Numeric, with decimal point where required, as specified in field PR.12.4
+	 * Raw Format: Numeric, with decimal point where required, as specified in field PR.12.4
 	 */
 	public String getExtentValueValue()
 	{

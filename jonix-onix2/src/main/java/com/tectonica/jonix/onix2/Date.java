@@ -91,7 +91,7 @@ public class Date implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+	 * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

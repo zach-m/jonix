@@ -94,7 +94,7 @@ public class ToCompany implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 30 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 30 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

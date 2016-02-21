@@ -93,7 +93,7 @@ public class ExpectedShipDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
+	 * Raw Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.ProductClassificationTypes;
 public class JonixProductClassification implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ProductClassificationTypes productClassificationType;
 
 	/**
+	 * Raw Format: Real decimal number in the range 0 to 100
+	 * <p>
 	 * (type: dt.PercentDecimal)
 	 */
 	public Double percent;
 
 	/**
+	 * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String productClassificationCode;

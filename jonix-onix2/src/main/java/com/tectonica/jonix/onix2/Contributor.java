@@ -310,7 +310,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
 	 */
 	public String getSequenceNumberValue()
 	{
@@ -342,7 +342,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
 	 */
 	public String getSequenceNumberWithinRoleValue()
 	{
@@ -350,7 +350,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPersonNameValue()
 	{
@@ -358,7 +358,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPersonNameInvertedValue()
 	{
@@ -366,7 +366,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTitlesBeforeNamesValue()
 	{
@@ -374,7 +374,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getNamesBeforeKeyValue()
 	{
@@ -382,7 +382,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getPrefixToKeyValue()
 	{
@@ -390,7 +390,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getKeyNamesValue()
 	{
@@ -398,7 +398,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getNamesAfterKeyValue()
 	{
@@ -406,7 +406,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getSuffixToKeyValue()
 	{
@@ -414,7 +414,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getLettersAfterNamesValue()
 	{
@@ -422,7 +422,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTitlesAfterNamesValue()
 	{
@@ -430,7 +430,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getCorporateNameValue()
 	{
@@ -438,7 +438,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 500 characters
+	 * Raw Format: Variable-length text, suggested maximum length 500 characters
 	 */
 	public String getBiographicalNoteValue()
 	{
@@ -446,7 +446,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getProfessionalPositionValue()
 	{
@@ -454,7 +454,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getAffiliationValue()
 	{
@@ -462,7 +462,7 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getContributorDescriptionValue()
 	{
@@ -487,8 +487,8 @@ public class Contributor implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes being
-	 * separated by spaces. Suggested maximum length 8 characters.
+	 * Raw Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes
+	 * being separated by spaces. Suggested maximum length 8 characters.
 	 */
 	public List<java.util.Set<String>> getRegionCodeSets()
 	{

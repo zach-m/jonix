@@ -85,7 +85,8 @@ public class ExtentValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Numeric, with decimal point where required, as appropriate for the units specified in &lt;ExtentUnit&gt;
+	 * Raw Format: Numeric, with decimal point where required, as appropriate for the units specified in
+	 * &lt;ExtentUnit&gt;
 	 * <p>
 	 * (type: dt.StrictPositiveDecimal)
 	 */

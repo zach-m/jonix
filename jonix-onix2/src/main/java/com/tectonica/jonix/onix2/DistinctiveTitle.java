@@ -93,7 +93,7 @@ public class DistinctiveTitle implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 300 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

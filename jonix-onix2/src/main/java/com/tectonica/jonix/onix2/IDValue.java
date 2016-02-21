@@ -91,7 +91,7 @@ public class IDValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

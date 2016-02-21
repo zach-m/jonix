@@ -92,7 +92,7 @@ public class PagesRoman implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length alphabetic, suggested maximum length 10 characters.
+	 * Raw Format: Variable length alphabetic, suggested maximum length 10 characters.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

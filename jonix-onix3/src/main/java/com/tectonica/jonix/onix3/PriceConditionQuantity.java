@@ -128,7 +128,7 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length decimal number, here necessarily an integer
+	 * Raw Format: Variable-length decimal number, here necessarily an integer
 	 */
 	public Double getQuantityValue()
 	{

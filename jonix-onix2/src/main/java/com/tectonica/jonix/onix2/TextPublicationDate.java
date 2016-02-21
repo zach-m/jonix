@@ -91,7 +91,7 @@ public class TextPublicationDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
+	 * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

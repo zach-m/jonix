@@ -92,8 +92,8 @@ public class ToSAN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check character
-	 * which may be a numeric digit or letter X.
+	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
+	 * character which may be a numeric digit or letter X.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

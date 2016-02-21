@@ -145,7 +145,7 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum 100 characters
+	 * Raw Format: Variable-length text, suggested maximum 100 characters
 	 */
 	public String getReligiousTextFeatureDescriptionValue()
 	{

@@ -83,7 +83,7 @@ public class PositionOnList implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum 3 characters
+	 * Raw Format: Variable-length integer, suggested maximum 3 characters
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

@@ -32,11 +32,15 @@ import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 public class JonixSubject implements Serializable
 {
 	/**
+	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String subjectCode;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 250 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public List<String> subjectHeadingTexts;
@@ -44,11 +48,15 @@ public class JonixSubject implements Serializable
 	public SubjectSchemeIdentifiers subjectSchemeIdentifier;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String subjectSchemeName;
 
 	/**
+	 * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String subjectSchemeVersion;

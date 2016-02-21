@@ -92,7 +92,7 @@ public class BASICVersion implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
+	 * Raw Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
 	 * Suggested maximum length 10 characters, for consistency with other version number elements.
 	 * <p>
 	 * (type: NonEmptyString)

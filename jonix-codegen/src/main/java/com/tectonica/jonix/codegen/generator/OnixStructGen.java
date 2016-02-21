@@ -82,7 +82,7 @@ public class OnixStructGen
 			final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
 			final String keyField = GenUtil.fieldOf(keyMember.className);
 			p.printf("   /**\n");
-			p.printf("    * The key of this struct\n");
+			p.printf("    * the key of this struct (by which it can be looked up)\n");
 			if (keyTypeInfo.comment != null)
 				p.printf("    * <p>%s\n", keyTypeInfo.comment);
 			p.printf("    */\n");
@@ -95,9 +95,9 @@ public class OnixStructGen
 		for (OnixStructMember structMember : struct.members)
 		{
 			final OnixCompositeMember member = structMember.dataMember;
-			final String field;
+			String field;
 			String javaType;
-			final String comment;
+			String comment;
 			if (member.onixClass instanceof OnixElementDef)
 			{
 				final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
@@ -106,7 +106,17 @@ public class OnixStructGen
 				javaType = ti.javaType;
 				if (memberClass.isSpaceable)
 					javaType = "java.util.Set<" + javaType + ">";
+
 				comment = ti.comment;
+				boolean isEnum = memberClass.valueMember.simpleType.isEnum();
+				if (!isEnum) // no need to provide format information on enums, they are parsed by the system
+				{
+					if (memberClass.onixDoc != null && memberClass.onixDoc.format != null
+							&& !memberClass.onixDoc.format.isEmpty())
+					{
+						comment = "Raw Format: " + memberClass.onixDoc.format + " <p> " + comment;
+					}
+				}
 			}
 			else
 			// i.e. (member.onixClass instanceof OnixFlagDef)

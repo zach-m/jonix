@@ -94,7 +94,7 @@ public class IDTypeName implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * Raw Format: Variable-length ASCII text, suggested maximum 50 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

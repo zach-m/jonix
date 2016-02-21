@@ -91,7 +91,7 @@ public class ItemNumberWithinSet implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 20 characters
+	 * Raw Format: Variable-length text, suggested maximum length 20 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

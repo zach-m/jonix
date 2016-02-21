@@ -137,7 +137,7 @@ public class TextItem implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 6 digits
+	 * Raw Format: Variable length integer, suggested maximum length 6 digits
 	 */
 	public Integer getNumberOfPagesValue()
 	{

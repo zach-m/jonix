@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.NameCodeTypes;
 public class JonixNameIdentifier implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public NameCodeTypes nameIDType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String idTypeName;
 
 	/**
+	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String idValue;

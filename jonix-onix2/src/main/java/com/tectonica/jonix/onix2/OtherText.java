@@ -200,8 +200,8 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length text (XHTML is enabled in this element - see ONIX for Books - Product Information Message
-	 * - XML Message Specification, Section 7)
+	 * Raw Format: Variable length text (XHTML is enabled in this element - see ONIX for Books - Product Information
+	 * Message - XML Message Specification, Section 7)
 	 */
 	public String getTextValue()
 	{
@@ -214,7 +214,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTextLinkValue()
 	{
@@ -222,7 +222,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 300 characters
+	 * Raw Format: Variable-length text, suggested maximum length 300 characters
 	 */
 	public String getTextAuthorValue()
 	{
@@ -230,7 +230,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public String getTextSourceCorporateValue()
 	{
@@ -238,7 +238,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 100 characters
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters
 	 */
 	public String getTextSourceTitleValue()
 	{
@@ -246,7 +246,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
+	 * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
 	 */
 	public String getTextPublicationDateValue()
 	{
@@ -254,7 +254,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
 	 */
 	public String getStartDateValue()
 	{
@@ -262,7 +262,7 @@ public class OtherText implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
 	 */
 	public String getEndDateValue()
 	{

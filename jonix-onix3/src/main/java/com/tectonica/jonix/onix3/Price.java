@@ -272,7 +272,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 200 characters
+	 * Raw Format: Variable-length text, suggested maximum length 200 characters
 	 */
 	public List<String> getPriceTypeDescriptionValues()
 	{
@@ -292,7 +292,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length integer, suggested maximum length 4 digits
+	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
 	 */
 	public Integer getMinimumOrderQuantityValue()
 	{
@@ -305,7 +305,7 @@ public class Price implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
 	 * characters
 	 */
 	public Double getPriceAmountValue()

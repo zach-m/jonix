@@ -90,7 +90,7 @@ public class ConferenceDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Date as year (YYYY) or month and year (YYYYMM).
+	 * Raw Format: Date as year (YYYY) or month and year (YYYYMM).
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

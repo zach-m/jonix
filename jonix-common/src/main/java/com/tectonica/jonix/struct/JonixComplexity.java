@@ -31,6 +31,8 @@ import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
 public class JonixComplexity implements Serializable
 {
 	/**
+	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String complexityCode;

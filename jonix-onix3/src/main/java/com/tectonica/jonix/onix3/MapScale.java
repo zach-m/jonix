@@ -83,7 +83,7 @@ public class MapScale implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable length integer, suggested maximum length 8 digits
+	 * Raw Format: Variable length integer, suggested maximum length 8 digits
 	 * <p>
 	 * (type: dt.StrictPositiveInteger)
 	 */

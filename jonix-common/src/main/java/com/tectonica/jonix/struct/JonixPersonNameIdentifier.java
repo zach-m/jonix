@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 public class JonixPersonNameIdentifier implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public PersonNameIdentifierTypes personNameIDType;
 
 	/**
+	 * Raw Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String idTypeName;
 
 	/**
+	 * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String idValue;

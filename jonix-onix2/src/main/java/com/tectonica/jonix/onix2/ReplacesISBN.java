@@ -94,7 +94,7 @@ public class ReplacesISBN implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

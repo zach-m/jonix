@@ -128,7 +128,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
 	 * missing)
 	 */
 	public List<String> getCopyrightYearValues()

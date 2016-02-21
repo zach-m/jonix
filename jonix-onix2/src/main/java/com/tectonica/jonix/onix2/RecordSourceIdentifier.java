@@ -91,7 +91,7 @@ public class RecordSourceIdentifier implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

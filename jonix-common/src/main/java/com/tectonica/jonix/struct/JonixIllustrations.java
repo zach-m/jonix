@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 public class JonixIllustrations implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public IllustrationAndOtherContentTypes illustrationType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String illustrationTypeDescription;
 
 	/**
+	 * Raw Format: Variable-length integer, suggested maximum length 6 digits.
+	 * <p>
 	 * (type: NonEmptyString)
 	 */
 	public String number;

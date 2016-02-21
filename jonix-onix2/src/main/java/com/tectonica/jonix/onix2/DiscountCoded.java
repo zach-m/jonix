@@ -138,7 +138,7 @@ public class DiscountCoded implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: Free text, suggested maximum length 50 characters
+	 * Raw Format: Free text, suggested maximum length 50 characters
 	 */
 	public String getDiscountCodeTypeNameValue()
 	{
@@ -146,7 +146,7 @@ public class DiscountCoded implements OnixDataComposite, Serializable
 	}
 
 	/**
-	 * Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt;
 	 */
 	public String getDiscountCodeValue()
 	{

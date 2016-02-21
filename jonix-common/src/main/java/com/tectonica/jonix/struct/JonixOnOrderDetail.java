@@ -29,11 +29,16 @@ import java.io.Serializable;
 public class JonixOnOrderDetail implements Serializable
 {
 	/**
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+	 * missing
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String expectedDate;
 
 	/**
+	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
+	 * <p>
 	 * (type: dt.PositiveInteger)
 	 */
 	public Integer onOrder;

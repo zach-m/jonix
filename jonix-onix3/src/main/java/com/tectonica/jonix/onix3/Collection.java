@@ -159,7 +159,7 @@ public class Collection implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 50 characters
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
 	 */
 	public String getSourceNameValue()
 	{
@@ -167,8 +167,8 @@ public class Collection implements OnixSuperComposite, Serializable
 	}
 
 	/**
-	 * Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * Raw Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
+	 * see Using XHTML, HTML or XML with ONIX text fields
 	 */
 	public List<String> getContributorStatementValues()
 	{

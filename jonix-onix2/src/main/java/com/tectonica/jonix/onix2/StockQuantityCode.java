@@ -91,7 +91,7 @@ public class StockQuantityCode implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: According to the scheme specified in &lt;StockQuantityCodeType&gt;
+	 * Raw Format: According to the scheme specified in &lt;StockQuantityCodeType&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

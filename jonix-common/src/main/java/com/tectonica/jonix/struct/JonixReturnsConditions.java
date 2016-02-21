@@ -31,16 +31,20 @@ import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 public class JonixReturnsConditions implements Serializable
 {
 	/**
-	 * The key of this struct
+	 * the key of this struct (by which it can be looked up)
 	 */
 	public ReturnsConditionsCodeTypes returnsCodeType;
 
 	/**
+	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String returnsCodeTypeName;
 
 	/**
+	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
+	 * <p>
 	 * (type: dt.NonEmptyString)
 	 */
 	public String returnsCode;

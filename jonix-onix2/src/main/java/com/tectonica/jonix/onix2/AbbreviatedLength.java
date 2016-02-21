@@ -95,7 +95,7 @@ public class AbbreviatedLength implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length integer, suggested maximum 3 digits
+	 * Raw Format: Variable-length integer, suggested maximum 3 digits
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

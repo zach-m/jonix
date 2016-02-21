@@ -91,7 +91,7 @@ public class NameCodeValue implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Determined by the scheme specified in &lt;NameCodeType&gt;
+	 * Raw Format: Determined by the scheme specified in &lt;NameCodeType&gt;
 	 * <p>
 	 * (type: NonEmptyString)
 	 */

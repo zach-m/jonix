@@ -91,7 +91,7 @@ public class ConferenceDate implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
 	 * missing. Note that the dateformat attribute allows exact dates to be supplied if necessary, including the cases
 	 * where a conference spreads over a range of dates or the date can only be supplied as a text string
 	 * <p>

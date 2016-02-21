@@ -91,7 +91,7 @@ public class EpubTypeDescription implements OnixElement, Serializable
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Format: Variable-length text, suggested maximum 200 characters
+	 * Raw Format: Variable-length text, suggested maximum 200 characters
 	 * <p>
 	 * (type: NonEmptyString)
 	 */
