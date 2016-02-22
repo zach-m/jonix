@@ -23,9 +23,12 @@ import java.io.File;
 import java.io.PrintStream;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicColumn;
 import com.tectonica.jonix.basic.BasicHeader;
+import com.tectonica.jonix.basic.BasicHeader2;
+import com.tectonica.jonix.basic.BasicHeader3;
 import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.export.JonixJsonExporter;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.extract.JonixInMemExtractor;
@@ -93,25 +96,25 @@ public class Jonix
 		@Override
 		public BasicHeader createFrom(com.tectonica.jonix.onix2.Header header)
 		{
-			return new BasicHeader(header);
+			return new BasicHeader2(header);
 		}
 
 		@Override
 		public BasicHeader createFrom(com.tectonica.jonix.onix3.Header header)
 		{
-			return new BasicHeader(header);
+			return new BasicHeader3(header);
 		}
 
 		@Override
 		public BasicProduct createFrom(com.tectonica.jonix.onix2.Product product)
 		{
-			return new BasicProduct(product);
+			return new BasicProduct2(product);
 		}
 
 		@Override
 		public BasicProduct createFrom(com.tectonica.jonix.onix3.Product product)
 		{
-			return new BasicProduct(product);
+			return new BasicProduct3(product);
 		}
 
 		@Override

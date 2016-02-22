@@ -32,6 +32,8 @@ import org.w3c.dom.Element;
 
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.basic.BasicProduct2;
+import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.extract.JonixUnifiedExtractor;
 import com.tectonica.jonix.stream.JonixStreamer;
 import com.tectonica.xmlchunk.XmlChunker;
@@ -65,7 +67,7 @@ public class TestBasicProduct
 				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
 				{
 					final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
-					BasicProduct bp = new BasicProduct(product);
+					BasicProduct bp = new BasicProduct2(product);
 					System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
 					System.out.println(JonixJson.toJson(product));
 					System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
@@ -103,7 +105,7 @@ public class TestBasicProduct
 				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
 				{
 					final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
-					BasicProduct bp = new BasicProduct(product);
+					BasicProduct bp = new BasicProduct3(product);
 					System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
 					System.out.println(JonixJson.toJson(product));
 					System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");

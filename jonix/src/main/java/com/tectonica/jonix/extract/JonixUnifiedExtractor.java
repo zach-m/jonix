@@ -27,9 +27,9 @@ import com.tectonica.jonix.Jonix;
 import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.stream.JonixStreamer;
 import com.tectonica.jonix.stream.JonixFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
+import com.tectonica.jonix.stream.JonixStreamer;
 
 /**
  * Abstract base-class for extractors whose goal is to facilitate reading from both ONIX2 and ONIX3 sources, and
