@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist44">ONIX
  *      Codelist 44 in Reference Guide</a>
  */
-public enum NameCodeTypes
+public enum NameCodeTypes implements OnixCodelist
 {
 	Proprietary("01", "Proprietary"), //
 
@@ -184,13 +186,25 @@ public enum NameCodeTypes
 	 */
 	FundRef_DOI("32", "FundRef DOI");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private NameCodeTypes(String value, String label)
+	private NameCodeTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, NameCodeTypes> map;
@@ -201,15 +215,15 @@ public enum NameCodeTypes
 		{
 			map = new HashMap<>();
 			for (NameCodeTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static NameCodeTypes byValue(String value)
+	public static NameCodeTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

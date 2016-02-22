@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist98">ONIX
  *      Codelist 98 in Reference Guide</a>
  */
-public enum ProductFormFeatureValueBindingOrPageEdgeColors
+public enum ProductFormFeatureValueBindingOrPageEdgeColors implements OnixCodelist
 {
 	Black("BLK", "Black"), //
 
@@ -87,13 +89,25 @@ public enum ProductFormFeatureValueBindingOrPageEdgeColors
 
 	Other("ZZZ", "Other");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ProductFormFeatureValueBindingOrPageEdgeColors(String value, String label)
+	private ProductFormFeatureValueBindingOrPageEdgeColors(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map;
@@ -104,15 +118,15 @@ public enum ProductFormFeatureValueBindingOrPageEdgeColors
 		{
 			map = new HashMap<>();
 			for (ProductFormFeatureValueBindingOrPageEdgeColors e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ProductFormFeatureValueBindingOrPageEdgeColors byValue(String value)
+	public static ProductFormFeatureValueBindingOrPageEdgeColors byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist222">ONIX
  *      Codelist 222 in Reference Guide</a>
  */
-public enum MessageStatusDateRoles
+public enum MessageStatusDateRoles implements OnixCodelist
 {
 	/**
 	 * Expected or actual date of processing and ingestion of data to recipient's system
@@ -46,21 +48,33 @@ public enum MessageStatusDateRoles
 	 */
 	Export_date("02", "Export date");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private MessageStatusDateRoles(String value, String label)
+	private MessageStatusDateRoles(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static MessageStatusDateRoles byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static MessageStatusDateRoles byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (MessageStatusDateRoles e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

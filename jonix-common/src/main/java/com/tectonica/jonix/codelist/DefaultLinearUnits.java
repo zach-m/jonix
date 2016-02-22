@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist94">ONIX
  *      Codelist 94 in Reference Guide</a>
  */
-public enum DefaultLinearUnits
+public enum DefaultLinearUnits implements OnixCodelist
 {
 	/**
 	 * Millimeters are the preferred metric unit of length
@@ -44,21 +46,33 @@ public enum DefaultLinearUnits
 
 	Millimeters("mm", "Millimeters");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private DefaultLinearUnits(String value, String label)
+	private DefaultLinearUnits(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static DefaultLinearUnits byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static DefaultLinearUnits byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (DefaultLinearUnits e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

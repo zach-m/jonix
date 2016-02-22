@@ -102,11 +102,11 @@ public class CountriesIncluded implements OnixElement, Serializable
 	public CountriesIncluded(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
-			value.add(CountryCodes.byValue(split));
+			value.add(CountryCodes.byCode(split));
 	}
 }

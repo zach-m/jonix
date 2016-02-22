@@ -99,9 +99,9 @@ public class TitleType implements OnixElement, Serializable
 	public TitleType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = TitleTypes.byValue(JPU.getContentAsString(element));
+		value = TitleTypes.byCode(JPU.getContentAsString(element));
 	}
 }

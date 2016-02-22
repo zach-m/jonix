@@ -105,9 +105,9 @@ public class ProductForm implements OnixElement, Serializable
 	public ProductForm(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductFormsList150.byValue(JPU.getContentAsString(element));
+		value = ProductFormsList150.byCode(JPU.getContentAsString(element));
 	}
 }

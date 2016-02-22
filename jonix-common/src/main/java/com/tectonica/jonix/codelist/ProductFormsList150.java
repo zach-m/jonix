@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist150">ONIX
  *      Codelist 150 in Reference Guide</a>
  */
-public enum ProductFormsList150
+public enum ProductFormsList150 implements OnixCodelist
 {
 	Undefined("00", "Undefined"), //
 
@@ -623,13 +625,25 @@ public enum ProductFormsList150
 	 */
 	Other_merchandise("ZZ", "Other merchandise");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ProductFormsList150(String value, String label)
+	private ProductFormsList150(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ProductFormsList150> map;
@@ -640,15 +654,15 @@ public enum ProductFormsList150
 		{
 			map = new HashMap<>();
 			for (ProductFormsList150 e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ProductFormsList150 byValue(String value)
+	public static ProductFormsList150 byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

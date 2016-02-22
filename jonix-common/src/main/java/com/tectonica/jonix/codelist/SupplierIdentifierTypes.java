@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist92">ONIX
  *      Codelist 92 in Reference Guide</a>
  */
-public enum SupplierIdentifierTypes
+public enum SupplierIdentifierTypes implements OnixCodelist
 {
 	Proprietary("01", "Proprietary"), //
 
@@ -79,13 +81,25 @@ public enum SupplierIdentifierTypes
 	 */
 	VAT_Identity_Number("23", "VAT Identity Number");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private SupplierIdentifierTypes(String value, String label)
+	private SupplierIdentifierTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, SupplierIdentifierTypes> map;
@@ -96,15 +110,15 @@ public enum SupplierIdentifierTypes
 		{
 			map = new HashMap<>();
 			for (SupplierIdentifierTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static SupplierIdentifierTypes byValue(String value)
+	public static SupplierIdentifierTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

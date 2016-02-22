@@ -99,9 +99,9 @@ public class ProductContentType implements OnixElement, Serializable
 	public ProductContentType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductContentTypes.byValue(JPU.getContentAsString(element));
+		value = ProductContentTypes.byCode(JPU.getContentAsString(element));
 	}
 }

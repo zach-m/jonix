@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist6">ONIX
  *      Codelist 6 in Reference Guide</a>
  */
-public enum BarcodeIndicators
+public enum BarcodeIndicators implements OnixCodelist
 {
 	Not_barcoded("00", "Not barcoded"), //
 
@@ -413,13 +415,25 @@ public enum BarcodeIndicators
 	EAN13_5_on_outer_sleeve_back_CAN_dollar_price_encoded("75",
 			"EAN13+5 on outer sleeve/back (CAN dollar price encoded)");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private BarcodeIndicators(String value, String label)
+	private BarcodeIndicators(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, BarcodeIndicators> map;
@@ -430,15 +444,15 @@ public enum BarcodeIndicators
 		{
 			map = new HashMap<>();
 			for (BarcodeIndicators e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static BarcodeIndicators byValue(String value)
+	public static BarcodeIndicators byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

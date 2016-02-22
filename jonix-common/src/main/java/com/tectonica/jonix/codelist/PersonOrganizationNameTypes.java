@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist18">ONIX
  *      Codelist 18 in Reference Guide</a>
  */
-public enum PersonOrganizationNameTypes
+public enum PersonOrganizationNameTypes implements OnixCodelist
 {
 	Unspecified("00", "Unspecified"), //
 
@@ -56,21 +58,33 @@ public enum PersonOrganizationNameTypes
 	 */
 	Transliterated_form_of_primary_name("05", "Transliterated form of primary name");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private PersonOrganizationNameTypes(String value, String label)
+	private PersonOrganizationNameTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static PersonOrganizationNameTypes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static PersonOrganizationNameTypes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (PersonOrganizationNameTypes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

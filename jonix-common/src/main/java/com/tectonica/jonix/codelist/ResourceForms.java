@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist161">ONIX
  *      Codelist 161 in Reference Guide</a>
  */
-public enum ResourceForms
+public enum ResourceForms implements OnixCodelist
 {
 	/**
 	 * A resource that may be accessed by a hyperlink. The current host (eg the ONIX sender, who may be the publisher)
@@ -58,21 +60,33 @@ public enum ResourceForms
 	 */
 	Embeddable_application("03", "Embeddable application");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ResourceForms(String value, String label)
+	private ResourceForms(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static ResourceForms byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static ResourceForms byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (ResourceForms e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

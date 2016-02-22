@@ -107,9 +107,9 @@ public class ReissueDate implements OnixElement, Serializable
 	public ReissueDate(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
-		dateformat = DateFormats.byValue(JPU.getAttribute(element, "dateformat"));
+		dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
 		value = JPU.getContentAsString(element);
 	}

@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist184">ONIX
  *      Codelist 184 in Reference Guide</a>
  */
-public enum EuToySafetyDirectiveHazardWarnings
+public enum EuToySafetyDirectiveHazardWarnings implements OnixCodelist
 {
 	/**
 	 * Use to provide positive indication that no warnings are applicable
@@ -84,13 +86,25 @@ public enum EuToySafetyDirectiveHazardWarnings
 	 */
 	Declaration_of_Conformity_available("07", "Declaration of Conformity available");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private EuToySafetyDirectiveHazardWarnings(String value, String label)
+	private EuToySafetyDirectiveHazardWarnings(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, EuToySafetyDirectiveHazardWarnings> map;
@@ -101,15 +115,15 @@ public enum EuToySafetyDirectiveHazardWarnings
 		{
 			map = new HashMap<>();
 			for (EuToySafetyDirectiveHazardWarnings e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static EuToySafetyDirectiveHazardWarnings byValue(String value)
+	public static EuToySafetyDirectiveHazardWarnings byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

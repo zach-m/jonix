@@ -105,9 +105,9 @@ public class SubjectSchemeIdentifier implements OnixElement, Serializable
 	public SubjectSchemeIdentifier(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = SubjectSchemeIdentifiers.byValue(JPU.getContentAsString(element));
+		value = SubjectSchemeIdentifiers.byCode(JPU.getContentAsString(element));
 	}
 }

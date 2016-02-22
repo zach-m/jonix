@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist51">ONIX
  *      Codelist 51 in Reference Guide</a>
  */
-public enum ProductRelations
+public enum ProductRelations implements OnixCodelist
 {
 	/**
 	 * &lt;Product&gt; is related to &lt;RelatedProduct&gt; in a way that cannot be specified by another code value
@@ -246,13 +248,25 @@ public enum ProductRelations
 	 */
 	Sales_expectation("36", "Sales expectation");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ProductRelations(String value, String label)
+	private ProductRelations(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ProductRelations> map;
@@ -263,15 +277,15 @@ public enum ProductRelations
 		{
 			map = new HashMap<>();
 			for (ProductRelations e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ProductRelations byValue(String value)
+	public static ProductRelations byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

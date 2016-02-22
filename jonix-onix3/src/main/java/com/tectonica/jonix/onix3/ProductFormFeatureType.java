@@ -99,9 +99,9 @@ public class ProductFormFeatureType implements OnixElement, Serializable
 	public ProductFormFeatureType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductFormFeatureTypes.byValue(JPU.getContentAsString(element));
+		value = ProductFormFeatureTypes.byCode(JPU.getContentAsString(element));
 	}
 }

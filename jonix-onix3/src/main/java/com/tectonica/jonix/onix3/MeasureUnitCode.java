@@ -100,9 +100,9 @@ public class MeasureUnitCode implements OnixElement, Serializable
 	public MeasureUnitCode(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = MeasureUnits.byValue(JPU.getContentAsString(element));
+		value = MeasureUnits.byCode(JPU.getContentAsString(element));
 	}
 }

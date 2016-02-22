@@ -397,7 +397,7 @@ public class OnixClassGen
 			if (ti.isPrimitive)
 				p.printf("      value = JPU.getContentAs%s(element);\n", ti.javaType);
 			else
-				p.printf("      value = %s.byValue(JPU.getContentAsString(element));\n", ti.javaType);
+				p.printf("      value = %s.byCode(JPU.getContentAsString(element));\n", ti.javaType);
 		}
 		else
 		{
@@ -406,7 +406,7 @@ public class OnixClassGen
 			if (ti.isPrimitive)
 				p.printf("         value.add(%s.valueOf(split));\n", ti.javaType);
 			else
-				p.printf("         value.add(%s.byValue(split));\n", ti.javaType);
+				p.printf("         value.add(%s.byCode(split));\n", ti.javaType);
 		}
 
 		p.printf("   }\n");
@@ -494,7 +494,7 @@ public class OnixClassGen
 			if (enumType == null)
 				p.printf("      %s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
 			else
-				p.printf("      %s = %s.byValue(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
+				p.printf("      %s = %s.byCode(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
 		}
 	}
 

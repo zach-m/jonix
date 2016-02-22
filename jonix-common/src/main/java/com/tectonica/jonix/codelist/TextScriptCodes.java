@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist121">ONIX
  *      Codelist 121 in Reference Guide</a>
  */
-public enum TextScriptCodes
+public enum TextScriptCodes implements OnixCodelist
 {
 	/**
 	 * Script is not supported by Unicode
@@ -515,13 +517,25 @@ public enum TextScriptCodes
 
 	Code_for_uncoded_script("Zzzz", "Code for uncoded script");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private TextScriptCodes(String value, String label)
+	private TextScriptCodes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, TextScriptCodes> map;
@@ -532,15 +546,15 @@ public enum TextScriptCodes
 		{
 			map = new HashMap<>();
 			for (TextScriptCodes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static TextScriptCodes byValue(String value)
+	public static TextScriptCodes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

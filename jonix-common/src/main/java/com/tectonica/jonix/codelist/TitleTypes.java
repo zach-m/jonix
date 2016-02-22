@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist15">ONIX
  *      Codelist 15 in Reference Guide</a>
  */
-public enum TitleTypes
+public enum TitleTypes implements OnixCodelist
 {
 	Undefined("00", "Undefined"), //
 
@@ -113,13 +115,25 @@ public enum TitleTypes
 	 */
 	Alternative_title("14", "Alternative title");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private TitleTypes(String value, String label)
+	private TitleTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, TitleTypes> map;
@@ -130,15 +144,15 @@ public enum TitleTypes
 		{
 			map = new HashMap<>();
 			for (TitleTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static TitleTypes byValue(String value)
+	public static TitleTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

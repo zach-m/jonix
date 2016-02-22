@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist226">ONIX
  *      Codelist 226 in Reference Guide</a>
  */
-public enum RecordStatuss
+public enum RecordStatuss implements OnixCodelist
 {
 	/**
 	 * Entire record parsed and ingested without errors, record may have a Product record in the Acknowledgement which
@@ -70,21 +72,33 @@ public enum RecordStatuss
 	 */
 	Reported_previously("09", "Reported previously");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private RecordStatuss(String value, String label)
+	private RecordStatuss(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static RecordStatuss byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static RecordStatuss byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (RecordStatuss e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

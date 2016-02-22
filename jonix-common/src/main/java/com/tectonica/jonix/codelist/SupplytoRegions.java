@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,28 +35,40 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist52">ONIX
  *      Codelist 52 in Reference Guide</a>
  */
-public enum SupplytoRegions
+public enum SupplytoRegions implements OnixCodelist
 {
 	/**
 	 * When the same ISBN is used for open market and UK editions
 	 */
 	UK_open_market_("004", "UK ‘open market’");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private SupplytoRegions(String value, String label)
+	private SupplytoRegions(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static SupplytoRegions byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static SupplytoRegions byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (SupplytoRegions e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

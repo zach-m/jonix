@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist160">ONIX
  *      Codelist 160 in Reference Guide</a>
  */
-public enum ResourceFeatureTypes
+public enum ResourceFeatureTypes implements OnixCodelist
 {
 	/**
 	 * Credit that must be displayed when a resource is used (eg 'Photo Jerry Bauer' or '&#169; Magnum Photo'). Credit
@@ -74,21 +76,33 @@ public enum ResourceFeatureTypes
 	 */
 	Proprietary_ID_of_resource_contributor("06", "Proprietary ID of resource contributor");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ResourceFeatureTypes(String value, String label)
+	private ResourceFeatureTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static ResourceFeatureTypes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static ResourceFeatureTypes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (ResourceFeatureTypes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

@@ -115,12 +115,12 @@ public class Subtitle implements OnixElement, Serializable
 	public Subtitle(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 		collationkey = JPU.getAttribute(element, "collationkey");
-		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
-		textscript = TextScriptCodes.byValue(JPU.getAttribute(element, "textscript"));
-		textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
+		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+		textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
+		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 
 		value = JPU.getContentAsString(element);
 	}

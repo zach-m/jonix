@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist176">ONIX
  *      Codelist 176 in Reference Guide</a>
  */
-public enum ProductFormFeatureValueOperatingSystems
+public enum ProductFormFeatureValueOperatingSystems implements OnixCodelist
 {
 	/**
 	 * An Open Source mobile device operating system originally developed by Google and supported by the Open Handset
@@ -114,13 +116,25 @@ public enum ProductFormFeatureValueOperatingSystems
 	 */
 	Windows_Phone_7("14", "Windows Phone 7");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ProductFormFeatureValueOperatingSystems(String value, String label)
+	private ProductFormFeatureValueOperatingSystems(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ProductFormFeatureValueOperatingSystems> map;
@@ -131,15 +145,15 @@ public enum ProductFormFeatureValueOperatingSystems
 		{
 			map = new HashMap<>();
 			for (ProductFormFeatureValueOperatingSystems e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ProductFormFeatureValueOperatingSystems byValue(String value)
+	public static ProductFormFeatureValueOperatingSystems byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist67">ONIX
  *      Codelist 67 in Reference Guide</a>
  */
-public enum MarketDateRoles
+public enum MarketDateRoles implements OnixCodelist
 {
 	/**
 	 * The nominal date of publication in this market. If there is a strict embargo on retail sales before the expected
@@ -47,21 +49,33 @@ public enum MarketDateRoles
 	 */
 	Embargo_date("02", "Embargo date");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private MarketDateRoles(String value, String label)
+	private MarketDateRoles(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static MarketDateRoles byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static MarketDateRoles byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (MarketDateRoles e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

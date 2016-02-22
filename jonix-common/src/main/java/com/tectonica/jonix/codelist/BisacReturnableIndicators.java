@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist66">ONIX
  *      Codelist 66 in Reference Guide</a>
  */
-public enum BisacReturnableIndicators
+public enum BisacReturnableIndicators implements OnixCodelist
 {
 	No_not_returnable("N", "No, not returnable"), //
 
@@ -46,21 +48,33 @@ public enum BisacReturnableIndicators
 	 */
 	Conditional("C", "Conditional");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private BisacReturnableIndicators(String value, String label)
+	private BisacReturnableIndicators(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static BisacReturnableIndicators byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static BisacReturnableIndicators byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (BisacReturnableIndicators e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

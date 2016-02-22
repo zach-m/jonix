@@ -100,9 +100,9 @@ public class DateFormat implements OnixElement, Serializable
 	public DateFormat(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = DateFormats.byValue(JPU.getContentAsString(element));
+		value = DateFormats.byCode(JPU.getContentAsString(element));
 	}
 }

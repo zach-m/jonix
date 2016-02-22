@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist100">ONIX
  *      Codelist 100 in Reference Guide</a>
  */
-public enum DiscountCodeTypes
+public enum DiscountCodeTypes implements OnixCodelist
 {
 	/**
 	 * UK publisher's or distributor's discount group code in a format specified by BIC to ensure uniqueness
@@ -69,21 +71,33 @@ public enum DiscountCodeTypes
 	 */
 	BIC_commission_group_code("06", "BIC commission group code");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private DiscountCodeTypes(String value, String label)
+	private DiscountCodeTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static DiscountCodeTypes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static DiscountCodeTypes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (DiscountCodeTypes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

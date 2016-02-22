@@ -98,9 +98,9 @@ public class RecordSourceType implements OnixElement, Serializable
 	public RecordSourceType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = RecordSourceTypes.byValue(JPU.getContentAsString(element));
+		value = RecordSourceTypes.byCode(JPU.getContentAsString(element));
 	}
 }

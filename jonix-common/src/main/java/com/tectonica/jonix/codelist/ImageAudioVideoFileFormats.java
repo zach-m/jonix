@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist39">ONIX
  *      Codelist 39 in Reference Guide</a>
  */
-public enum ImageAudioVideoFileFormats
+public enum ImageAudioVideoFileFormats implements OnixCodelist
 {
 	GIF("02", "GIF"), //
 
@@ -118,13 +120,25 @@ public enum ImageAudioVideoFileFormats
 	 */
 	WebM("20", "WebM");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ImageAudioVideoFileFormats(String value, String label)
+	private ImageAudioVideoFileFormats(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ImageAudioVideoFileFormats> map;
@@ -135,15 +149,15 @@ public enum ImageAudioVideoFileFormats
 		{
 			map = new HashMap<>();
 			for (ImageAudioVideoFileFormats e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ImageAudioVideoFileFormats byValue(String value)
+	public static ImageAudioVideoFileFormats byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

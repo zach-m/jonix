@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
-public enum TradeCategorys
+public enum TradeCategorys implements OnixCodelist
 {
 	/**
 	 * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details
@@ -121,13 +123,25 @@ public enum TradeCategorys
 	 */
 	E_book_short("14", "E-book short");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private TradeCategorys(String value, String label)
+	private TradeCategorys(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, TradeCategorys> map;
@@ -138,15 +152,15 @@ public enum TradeCategorys
 		{
 			map = new HashMap<>();
 			for (TradeCategorys e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static TradeCategorys byValue(String value)
+	public static TradeCategorys byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

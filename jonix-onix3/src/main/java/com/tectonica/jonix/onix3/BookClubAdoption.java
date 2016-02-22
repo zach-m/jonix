@@ -112,10 +112,10 @@ public class BookClubAdoption implements OnixElement, Serializable
 	public BookClubAdoption(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
-		textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
+		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
 		value = JPU.getChildXHTML(element, true);
 	}

@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist179">ONIX
  *      Codelist 179 in Reference Guide</a>
  */
-public enum PriceCodeTypes
+public enum PriceCodeTypes implements OnixCodelist
 {
 	/**
 	 * A publisher or retailer's proprietary code list which identifies particular codes with particular price points,
@@ -53,21 +55,33 @@ public enum PriceCodeTypes
 	 */
 	Finnish_Miki_Book_price_code("03", "Finnish Miki Book price code");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private PriceCodeTypes(String value, String label)
+	private PriceCodeTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static PriceCodeTypes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static PriceCodeTypes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (PriceCodeTypes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

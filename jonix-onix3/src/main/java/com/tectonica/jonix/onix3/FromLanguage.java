@@ -102,9 +102,9 @@ public class FromLanguage implements OnixElement, Serializable
 	public FromLanguage(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = LanguageCodes.byValue(JPU.getContentAsString(element));
+		value = LanguageCodes.byCode(JPU.getContentAsString(element));
 	}
 }

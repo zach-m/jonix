@@ -99,9 +99,9 @@ public class DiscountCodeType implements OnixElement, Serializable
 	public DiscountCodeType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = DiscountCodeTypes.byValue(JPU.getContentAsString(element));
+		value = DiscountCodeTypes.byCode(JPU.getContentAsString(element));
 	}
 }

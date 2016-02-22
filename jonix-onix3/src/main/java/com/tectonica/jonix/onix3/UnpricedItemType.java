@@ -100,9 +100,9 @@ public class UnpricedItemType implements OnixElement, Serializable
 	public UnpricedItemType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = UnpricedItemTypes.byValue(JPU.getContentAsString(element));
+		value = UnpricedItemTypes.byCode(JPU.getContentAsString(element));
 	}
 }

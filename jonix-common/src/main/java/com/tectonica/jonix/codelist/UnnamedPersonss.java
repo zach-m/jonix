@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist19">ONIX
  *      Codelist 19 in Reference Guide</a>
  */
-public enum UnnamedPersonss
+public enum UnnamedPersonss implements OnixCodelist
 {
 	Unknown("01", "Unknown"), //
 
@@ -64,21 +66,33 @@ public enum UnnamedPersonss
 	 */
 	Synthesized_voice_unspecified("07", "Synthesized voice – unspecified");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private UnnamedPersonss(String value, String label)
+	private UnnamedPersonss(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static UnnamedPersonss byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static UnnamedPersonss byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (UnnamedPersonss e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

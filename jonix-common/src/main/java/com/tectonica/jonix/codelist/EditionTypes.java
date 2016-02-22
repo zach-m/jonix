@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
-public enum EditionTypes
+public enum EditionTypes implements OnixCodelist
 {
 	/**
 	 * Content has been shortened: use for abridged, shortened, concise, condensed
@@ -227,13 +229,25 @@ public enum EditionTypes
 	 */
 	Variorum_edition("VAR", "Variorum edition");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private EditionTypes(String value, String label)
+	private EditionTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, EditionTypes> map;
@@ -244,15 +258,15 @@ public enum EditionTypes
 		{
 			map = new HashMap<>();
 			for (EditionTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static EditionTypes byValue(String value)
+	public static EditionTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

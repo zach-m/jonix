@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist159">ONIX
  *      Codelist 159 in Reference Guide</a>
  */
-public enum ResourceModes
+public enum ResourceModes implements OnixCodelist
 {
 	/**
 	 * An executable together with data on which it operates
@@ -65,21 +67,33 @@ public enum ResourceModes
 	 */
 	Multi_mode("06", "Multi-mode");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ResourceModes(String value, String label)
+	private ResourceModes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static ResourceModes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static ResourceModes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (ResourceModes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

@@ -99,9 +99,9 @@ public class ReligiousTextFeatureCode implements OnixElement, Serializable
 	public ReligiousTextFeatureCode(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ReligiousTextFeatures.byValue(JPU.getContentAsString(element));
+		value = ReligiousTextFeatures.byCode(JPU.getContentAsString(element));
 	}
 }

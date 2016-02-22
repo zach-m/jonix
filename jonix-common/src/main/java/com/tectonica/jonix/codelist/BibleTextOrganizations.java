@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist86">ONIX
  *      Codelist 86 in Reference Guide</a>
  */
-public enum BibleTextOrganizations
+public enum BibleTextOrganizations implements OnixCodelist
 {
 	/**
 	 * A Bible with the text organized in the order in which events are believed to have happened
@@ -61,21 +63,33 @@ public enum BibleTextOrganizations
 	 */
 	Standard("STN", "Standard");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private BibleTextOrganizations(String value, String label)
+	private BibleTextOrganizations(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static BibleTextOrganizations byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static BibleTextOrganizations byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (BibleTextOrganizations e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

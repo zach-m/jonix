@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist224">ONIX
  *      Codelist 224 in Reference Guide</a>
  */
-public enum StatusDetailTypeSeveritys
+public enum StatusDetailTypeSeveritys implements OnixCodelist
 {
 	/**
 	 * Use ONLY if the message severity cannot be determined (eg with a legacy system unable to provide detailed error
@@ -71,21 +73,33 @@ public enum StatusDetailTypeSeveritys
 	 */
 	Fatal_error("F", "Fatal error");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private StatusDetailTypeSeveritys(String value, String label)
+	private StatusDetailTypeSeveritys(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static StatusDetailTypeSeveritys byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static StatusDetailTypeSeveritys byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (StatusDetailTypeSeveritys e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

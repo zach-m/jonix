@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist221">ONIX
  *      Codelist 221 in Reference Guide</a>
  */
-public enum MessageStatuss
+public enum MessageStatuss implements OnixCodelist
 {
 	/**
 	 * Message received but not yet parsed (Acknowledgement must contain neither &lt;MessageStatusDetail&gt; nor
@@ -62,21 +64,33 @@ public enum MessageStatuss
 	 */
 	Message_processed("03", "Message processed");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private MessageStatuss(String value, String label)
+	private MessageStatuss(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static MessageStatuss byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static MessageStatuss byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (MessageStatuss e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

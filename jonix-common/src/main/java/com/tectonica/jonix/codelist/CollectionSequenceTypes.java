@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist197">ONIX
  *      Codelist 197 in Reference Guide</a>
  */
-public enum CollectionSequenceTypes
+public enum CollectionSequenceTypes implements OnixCodelist
 {
 	/**
 	 * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;
@@ -62,21 +64,33 @@ public enum CollectionSequenceTypes
 	 */
 	Original_publication_order("05", "Original publication order");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private CollectionSequenceTypes(String value, String label)
+	private CollectionSequenceTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static CollectionSequenceTypes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static CollectionSequenceTypes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (CollectionSequenceTypes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

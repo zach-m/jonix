@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist73">ONIX
  *      Codelist 73 in Reference Guide</a>
  */
-public enum WebsiteRoles
+public enum WebsiteRoles implements OnixCodelist
 {
 	Unspecified_see_website_description("00", "Unspecified, see website description"), //
 
@@ -241,13 +243,25 @@ public enum WebsiteRoles
 	Publisher_s_or_third_party_website_for_permissions_requests("45",
 			"Publisher’s or third party website for permissions requests");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private WebsiteRoles(String value, String label)
+	private WebsiteRoles(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, WebsiteRoles> map;
@@ -258,15 +272,15 @@ public enum WebsiteRoles
 		{
 			map = new HashMap<>();
 			for (WebsiteRoles e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static WebsiteRoles byValue(String value)
+	public static WebsiteRoles byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

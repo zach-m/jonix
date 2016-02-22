@@ -107,14 +107,14 @@ public class BibleVersion implements OnixElement, Serializable
 
 	public BibleVersion(org.w3c.dom.Element element)
 	{
-		textformat = TextFormats.byValue(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byValue(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byValue(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byValue(JPU.getAttribute(element, "transliteration"));
+		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = BibleVersions.byValue(JPU.getContentAsString(element));
+		value = BibleVersions.byCode(JPU.getContentAsString(element));
 	}
 }

@@ -71,8 +71,10 @@ public class OnixEnumGen
 		p.printf("package %s;\n", packageName);
 
 		p.println();
+		p.println("import com.tectonica.jonix.OnixCodelist;");
 		if (enumType.enumValues.size() >= MIN_FOR_MAP)
 		{
+			p.println();
 			p.println("import java.util.Map;");
 			p.println("import java.util.HashMap;");
 		}
@@ -95,7 +97,7 @@ public class OnixEnumGen
 		p.printf(" * @see <a href=\"%s\">ONIX Codelist %s in Reference Guide</a>\n", link, codelistNum);
 		p.printf(" */\n");
 
-		p.println("public enum " + enumType.enumName);
+		p.println("public enum " + enumType.enumName + " implements OnixCodelist");
 		p.println("{");
 
 		Set<String> tokens = new HashSet<>();
@@ -121,24 +123,37 @@ public class OnixEnumGen
 		p.print(";\n");
 
 		p.println();
-		p.printf("   public final String value;\n");
-		p.printf("   public final String label;\n");
+		p.printf("   public final String code;\n");
+		p.printf("   public final String description;\n");
 		p.println();
-		p.printf("   private %s(String value, String label)\n", enumType.enumName);
+		p.printf("   private %s(String code, String description)\n", enumType.enumName);
 		p.printf("   {\n");
-		p.printf("      this.value = value;\n");
-		p.printf("      this.label = label;\n");
+		p.printf("      this.code = code;\n");
+		p.printf("      this.description = description;\n");
 		p.printf("   }\n");
+
+		p.println();
+		p.println("   @Override");
+		p.println("   public String getCode()");
+		p.println("   {");
+		p.println("      return code;");
+		p.println("   }");
+		p.println();
+		p.println("   @Override");
+		p.println("   public String getDescription()");
+		p.println("   {");
+		p.println("      return description;");
+		p.println("   }");
 
 		if (enumType.enumValues.size() < MIN_FOR_MAP)
 		{
 			p.println();
-			p.printf("   public static %s byValue(String value)\n", enumType.enumName);
+			p.printf("   public static %s byCode(String code)\n", enumType.enumName);
 			p.printf("   {\n");
-			p.printf("      if (value == null || value.isEmpty())\n");
+			p.printf("      if (code == null || code.isEmpty())\n");
 			p.printf("         return null;\n");
 			p.printf("      for (%s e : values())\n", enumType.enumName);
-			p.printf("         if (e.value.equals(value))\n");
+			p.printf("         if (e.code.equals(code))\n");
 			p.printf("            return e;\n");
 			p.printf("      return null;\n");
 			p.printf("   }\n");
@@ -154,16 +169,16 @@ public class OnixEnumGen
 			p.printf("      {\n");
 			p.printf("         map = new HashMap<>();\n");
 			p.printf("         for (%s e : values())\n", enumType.enumName);
-			p.printf("            map.put(e.value, e);\n");
+			p.printf("            map.put(e.code, e);\n");
 			p.printf("      }\n");
 			p.printf("      return map;\n");
 			p.printf("   }\n");
 			p.println();
-			p.printf("   public static %s byValue(String value)\n", enumType.enumName);
+			p.printf("   public static %s byCode(String code)\n", enumType.enumName);
 			p.printf("   {\n");
-			p.printf("      if (value == null || value.isEmpty())\n");
+			p.printf("      if (code == null || code.isEmpty())\n");
 			p.printf("         return null;\n");
-			p.printf("      return map().get(value);\n");
+			p.printf("      return map().get(code);\n");
 			p.printf("   }\n");
 		}
 

@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist13">ONIX
  *      Codelist 13 in Reference Guide</a>
  */
-public enum SeriesIdentifierTypes
+public enum SeriesIdentifierTypes implements OnixCodelist
 {
 	/**
 	 * For example, publisher's own series ID
@@ -83,13 +85,25 @@ public enum SeriesIdentifierTypes
 	 */
 	Identifiant_BNF_des_publications_en_s_rie("29", "Identifiant BNF des publications en série");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private SeriesIdentifierTypes(String value, String label)
+	private SeriesIdentifierTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, SeriesIdentifierTypes> map;
@@ -100,15 +114,15 @@ public enum SeriesIdentifierTypes
 		{
 			map = new HashMap<>();
 			for (SeriesIdentifierTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static SeriesIdentifierTypes byValue(String value)
+	public static SeriesIdentifierTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

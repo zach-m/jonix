@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist173">ONIX
  *      Codelist 173 in Reference Guide</a>
  */
-public enum PriceDateRoles
+public enum PriceDateRoles implements OnixCodelist
 {
 	/**
 	 * Date on which a price becomes effective
@@ -51,21 +53,33 @@ public enum PriceDateRoles
 	 */
 	From_until_date("24", "From… until date");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private PriceDateRoles(String value, String label)
+	private PriceDateRoles(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static PriceDateRoles byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static PriceDateRoles byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (PriceDateRoles e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

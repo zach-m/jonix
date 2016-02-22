@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist72">ONIX
  *      Codelist 72 in Reference Guide</a>
  */
-public enum ThesisTypes
+public enum ThesisTypes implements OnixCodelist
 {
 	/**
 	 * Professorial dissertation (thesis for postdoctoral lecturing qualification)
@@ -70,21 +72,33 @@ public enum ThesisTypes
 	 */
 	Masterarbeit("07", "Masterarbeit");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ThesisTypes(String value, String label)
+	private ThesisTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static ThesisTypes byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static ThesisTypes byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (ThesisTypes e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

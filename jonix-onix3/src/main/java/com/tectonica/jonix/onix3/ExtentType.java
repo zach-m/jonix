@@ -101,9 +101,9 @@ public class ExtentType implements OnixElement, Serializable
 	public ExtentType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ExtentTypes.byValue(JPU.getContentAsString(element));
+		value = ExtentTypes.byCode(JPU.getContentAsString(element));
 	}
 }

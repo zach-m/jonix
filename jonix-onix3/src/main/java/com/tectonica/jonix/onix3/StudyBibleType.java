@@ -100,9 +100,9 @@ public class StudyBibleType implements OnixElement, Serializable
 	public StudyBibleType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = StudyBibleTypes.byValue(JPU.getContentAsString(element));
+		value = StudyBibleTypes.byCode(JPU.getContentAsString(element));
 	}
 }

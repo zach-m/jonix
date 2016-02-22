@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist95">ONIX
  *      Codelist 95 in Reference Guide</a>
  */
-public enum DefaultUnitOfWeights
+public enum DefaultUnitOfWeights implements OnixCodelist
 {
 	Pounds_US("lb", "Pounds (US)"), //
 
@@ -41,21 +43,33 @@ public enum DefaultUnitOfWeights
 
 	Ounces_US("oz", "Ounces (US)");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private DefaultUnitOfWeights(String value, String label)
+	private DefaultUnitOfWeights(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static DefaultUnitOfWeights byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static DefaultUnitOfWeights byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (DefaultUnitOfWeights e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

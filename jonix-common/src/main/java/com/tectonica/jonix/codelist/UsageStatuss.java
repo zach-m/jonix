@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.codelist;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -33,7 +35,7 @@ package com.tectonica.jonix.codelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist146">ONIX
  *      Codelist 146 in Reference Guide</a>
  */
-public enum UsageStatuss
+public enum UsageStatuss implements OnixCodelist
 {
 	Permitted_unlimited("01", "Permitted unlimited"), //
 
@@ -44,21 +46,33 @@ public enum UsageStatuss
 
 	Prohibited("03", "Prohibited");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private UsageStatuss(String value, String label)
+	private UsageStatuss(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
 	}
 
-	public static UsageStatuss byValue(String value)
+	@Override
+	public String getCode()
 	{
-		if (value == null || value.isEmpty())
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public static UsageStatuss byCode(String code)
+	{
+		if (code == null || code.isEmpty())
 			return null;
 		for (UsageStatuss e : values())
-			if (e.value.equals(value))
+			if (e.code.equals(code))
 				return e;
 		return null;
 	}

@@ -100,9 +100,9 @@ public class PriceType implements OnixElement, Serializable
 	public PriceType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = PriceTypes.byValue(JPU.getContentAsString(element));
+		value = PriceTypes.byCode(JPU.getContentAsString(element));
 	}
 }

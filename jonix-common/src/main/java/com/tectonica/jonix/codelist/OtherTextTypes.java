@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist33">ONIX
  *      Codelist 33 in Reference Guide</a>
  */
-public enum OtherTextTypes
+public enum OtherTextTypes implements OnixCodelist
 {
 	Main_description("01", "Main description"), //
 
@@ -235,13 +237,25 @@ public enum OtherTextTypes
 	 */
 	Country_of_final_manufacture("99", "Country of final manufacture");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private OtherTextTypes(String value, String label)
+	private OtherTextTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, OtherTextTypes> map;
@@ -252,15 +266,15 @@ public enum OtherTextTypes
 		{
 			map = new HashMap<>();
 			for (OtherTextTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static OtherTextTypes byValue(String value)
+	public static OtherTextTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

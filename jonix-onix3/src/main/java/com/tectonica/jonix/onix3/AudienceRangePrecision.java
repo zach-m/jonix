@@ -100,9 +100,9 @@ public class AudienceRangePrecision implements OnixElement, Serializable
 	public AudienceRangePrecision(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = AudienceRangePrecisions.byValue(JPU.getContentAsString(element));
+		value = AudienceRangePrecisions.byCode(JPU.getContentAsString(element));
 	}
 }

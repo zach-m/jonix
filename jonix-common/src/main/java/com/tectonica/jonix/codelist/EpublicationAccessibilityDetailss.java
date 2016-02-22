@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
-public enum EpublicationAccessibilityDetailss
+public enum EpublicationAccessibilityDetailss implements OnixCodelist
 {
 	LIA_Compliance_Scheme("01", "LIA Compliance Scheme"), //
 
@@ -175,13 +177,25 @@ public enum EpublicationAccessibilityDetailss
 	Publisher_contact_for_further_accessibility_information("99",
 			"Publisher contact for further accessibility information");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private EpublicationAccessibilityDetailss(String value, String label)
+	private EpublicationAccessibilityDetailss(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, EpublicationAccessibilityDetailss> map;
@@ -192,15 +206,15 @@ public enum EpublicationAccessibilityDetailss
 		{
 			map = new HashMap<>();
 			for (EpublicationAccessibilityDetailss e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static EpublicationAccessibilityDetailss byValue(String value)
+	public static EpublicationAccessibilityDetailss byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

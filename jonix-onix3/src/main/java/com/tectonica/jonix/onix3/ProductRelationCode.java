@@ -100,9 +100,9 @@ public class ProductRelationCode implements OnixElement, Serializable
 	public ProductRelationCode(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductRelations.byValue(JPU.getContentAsString(element));
+		value = ProductRelations.byCode(JPU.getContentAsString(element));
 	}
 }

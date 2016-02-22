@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist84">ONIX
  *      Codelist 84 in Reference Guide</a>
  */
-public enum StudyBibleTypes
+public enum StudyBibleTypes implements OnixCodelist
 {
 	/**
 	 * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the
@@ -90,13 +92,25 @@ public enum StudyBibleTypes
 	 */
 	Spirit_Filled("SPR", "Spirit Filled");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private StudyBibleTypes(String value, String label)
+	private StudyBibleTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, StudyBibleTypes> map;
@@ -107,15 +121,15 @@ public enum StudyBibleTypes
 		{
 			map = new HashMap<>();
 			for (StudyBibleTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static StudyBibleTypes byValue(String value)
+	public static StudyBibleTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist143">ONIX
  *      Codelist 143 in Reference Guide</a>
  */
-public enum UsCpsiaHazardWarnings
+public enum UsCpsiaHazardWarnings implements OnixCodelist
 {
 	/**
 	 * Required on applicable products sold in the US
@@ -87,13 +89,25 @@ public enum UsCpsiaHazardWarnings
 	 */
 	WARNING_MAGNET_HAZARD_Product_contains_a("11", "WARNING: MAGNET HAZARD – Product contains (a) small magnet(s)");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private UsCpsiaHazardWarnings(String value, String label)
+	private UsCpsiaHazardWarnings(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, UsCpsiaHazardWarnings> map;
@@ -104,15 +118,15 @@ public enum UsCpsiaHazardWarnings
 		{
 			map = new HashMap<>();
 			for (UsCpsiaHazardWarnings e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static UsCpsiaHazardWarnings byValue(String value)
+	public static UsCpsiaHazardWarnings byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

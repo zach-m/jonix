@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist141">ONIX
  *      Codelist 141 in Reference Guide</a>
  */
-public enum BarcodeIndicatorsList141
+public enum BarcodeIndicatorsList141 implements OnixCodelist
 {
 	Not_barcoded("00", "Not barcoded"), //
 
@@ -70,13 +72,25 @@ public enum BarcodeIndicatorsList141
 	 */
 	UPC_12_5_price_point("09", "UPC-12+5 (price-point)");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private BarcodeIndicatorsList141(String value, String label)
+	private BarcodeIndicatorsList141(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, BarcodeIndicatorsList141> map;
@@ -87,15 +101,15 @@ public enum BarcodeIndicatorsList141
 		{
 			map = new HashMap<>();
 			for (BarcodeIndicatorsList141 e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static BarcodeIndicatorsList141 byValue(String value)
+	public static BarcodeIndicatorsList141 byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

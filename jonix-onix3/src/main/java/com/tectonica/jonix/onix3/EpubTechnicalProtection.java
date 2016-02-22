@@ -104,9 +104,9 @@ public class EpubTechnicalProtection implements OnixElement, Serializable
 	public EpubTechnicalProtection(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = EpublicationTechnicalProtections.byValue(JPU.getContentAsString(element));
+		value = EpublicationTechnicalProtections.byCode(JPU.getContentAsString(element));
 	}
 }

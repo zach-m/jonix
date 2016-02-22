@@ -99,9 +99,9 @@ public class StockQuantityCodeType implements OnixElement, Serializable
 	public StockQuantityCodeType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = StockQuantityCodeTypes.byValue(JPU.getContentAsString(element));
+		value = StockQuantityCodeTypes.byCode(JPU.getContentAsString(element));
 	}
 }

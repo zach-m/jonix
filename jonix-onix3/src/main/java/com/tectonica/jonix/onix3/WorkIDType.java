@@ -99,9 +99,9 @@ public class WorkIDType implements OnixElement, Serializable
 	public WorkIDType(org.w3c.dom.Element element)
 	{
 		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byValue(JPU.getAttribute(element, "sourcetype"));
+		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = WorkIdentifierTypes.byValue(JPU.getContentAsString(element));
+		value = WorkIdentifierTypes.byCode(JPU.getContentAsString(element));
 	}
 }

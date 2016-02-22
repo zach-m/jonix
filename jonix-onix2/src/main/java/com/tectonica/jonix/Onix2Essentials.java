@@ -83,14 +83,14 @@ public class Onix2Essentials implements JonixEssentials
 
 		case Language:
 			JonixLanguage languageTag = product.findLanguage(LanguageRoles.Language_of_text);
-			return (languageTag == null) ? null : languageTag.languageCode.label;
+			return (languageTag == null) ? null : languageTag.languageCode.description;
 
 		case Audience:
 			List<Audiences> audiences = product.getAudienceCodeValues();
 			if (audiences != null && !audiences.isEmpty())
 			{
 				// we pick the first audience, as in practice it's very rare to see more than one
-				return audiences.get(0).label;
+				return audiences.get(0).description;
 			}
 			return null;
 

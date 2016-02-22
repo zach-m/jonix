@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist154">ONIX
  *      Codelist 154 in Reference Guide</a>
  */
-public enum ContentAudiences
+public enum ContentAudiences implements OnixCodelist
 {
 	/**
 	 * Any audience
@@ -78,13 +80,25 @@ public enum ContentAudiences
 	 */
 	Search_engine_index("09", "Search engine index");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ContentAudiences(String value, String label)
+	private ContentAudiences(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ContentAudiences> map;
@@ -95,15 +109,15 @@ public enum ContentAudiences
 		{
 			map = new HashMap<>();
 			for (ContentAudiences e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ContentAudiences byValue(String value)
+	public static ContentAudiences byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist151">ONIX
  *      Codelist 151 in Reference Guide</a>
  */
-public enum ContributorPlaceRelators
+public enum ContributorPlaceRelators implements OnixCodelist
 {
 	Born_in("01", "Born in"), //
 
@@ -57,13 +59,25 @@ public enum ContributorPlaceRelators
 	 */
 	Citizen_of("08", "Citizen of");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ContributorPlaceRelators(String value, String label)
+	private ContributorPlaceRelators(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ContributorPlaceRelators> map;
@@ -74,15 +88,15 @@ public enum ContributorPlaceRelators
 		{
 			map = new HashMap<>();
 			for (ContributorPlaceRelators e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ContributorPlaceRelators byValue(String value)
+	public static ContributorPlaceRelators byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

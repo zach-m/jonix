@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist32">ONIX
  *      Codelist 32 in Reference Guide</a>
  */
-public enum ComplexitySchemeIdentifiers
+public enum ComplexitySchemeIdentifiers implements OnixCodelist
 {
 	/**
 	 * For example AD or HL. DEPRECATED in ONIX 3 - use code 06 instead
@@ -98,13 +100,25 @@ public enum ComplexitySchemeIdentifiers
 	 */
 	Reading_Recovery_Level("10", "Reading Recovery Level");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private ComplexitySchemeIdentifiers(String value, String label)
+	private ComplexitySchemeIdentifiers(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, ComplexitySchemeIdentifiers> map;
@@ -115,15 +129,15 @@ public enum ComplexitySchemeIdentifiers
 		{
 			map = new HashMap<>();
 			for (ComplexitySchemeIdentifiers e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static ComplexitySchemeIdentifiers byValue(String value)
+	public static ComplexitySchemeIdentifiers byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }

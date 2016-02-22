@@ -22,6 +22,8 @@ package com.tectonica.jonix.codelist;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tectonica.jonix.OnixCodelist;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
  */
@@ -36,7 +38,7 @@ import java.util.Map;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist46">ONIX
  *      Codelist 46 in Reference Guide</a>
  */
-public enum SalesRightsTypes
+public enum SalesRightsTypes implements OnixCodelist
 {
 	/**
 	 * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element
@@ -76,13 +78,25 @@ public enum SalesRightsTypes
 	For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies("08",
 			"For sale with non-exclusive rights in the specified countries or territories (sales restriction applies)");
 
-	public final String value;
-	public final String label;
+	public final String code;
+	public final String description;
 
-	private SalesRightsTypes(String value, String label)
+	private SalesRightsTypes(String code, String description)
 	{
-		this.value = value;
-		this.label = label;
+		this.code = code;
+		this.description = description;
+	}
+
+	@Override
+	public String getCode()
+	{
+		return code;
+	}
+
+	@Override
+	public String getDescription()
+	{
+		return description;
 	}
 
 	private static Map<String, SalesRightsTypes> map;
@@ -93,15 +107,15 @@ public enum SalesRightsTypes
 		{
 			map = new HashMap<>();
 			for (SalesRightsTypes e : values())
-				map.put(e.value, e);
+				map.put(e.code, e);
 		}
 		return map;
 	}
 
-	public static SalesRightsTypes byValue(String value)
+	public static SalesRightsTypes byCode(String code)
 	{
-		if (value == null || value.isEmpty())
+		if (code == null || code.isEmpty())
 			return null;
-		return map().get(value);
+		return map().get(code);
 	}
 }
