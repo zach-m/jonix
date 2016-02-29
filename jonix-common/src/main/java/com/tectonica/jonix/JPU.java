@@ -168,7 +168,7 @@ public class JPU
 		{
 			return convertStringToDouble(s);
 		}
-		catch (Exception e)
+		catch (NumberFormatException e)
 		{
 			s = s.trim();
 
