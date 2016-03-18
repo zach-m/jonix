@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 Zach Melamed
- * 
+ *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
  *
@@ -163,7 +163,7 @@ public class OnixEnumGen
 			p.println();
 			p.printf("   private static Map<String, %s> map;\n", enumType.enumName);
 			p.println();
-			p.printf("   private static Map<String, %s> map()\n", enumType.enumName);
+			p.printf("   private synchronized static Map<String, %s> map()\n", enumType.enumName);
 			p.printf("   {\n");
 			p.printf("      if (map == null)\n");
 			p.printf("      {\n");
