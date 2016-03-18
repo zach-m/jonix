@@ -264,17 +264,26 @@ public enum WebsiteRoles implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, WebsiteRoles> map;
+	private static volatile Map<String, WebsiteRoles> map;
 
 	private static Map<String, WebsiteRoles> map()
 	{
-		if (map == null)
+		Map<String, WebsiteRoles> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (WebsiteRoles e : values())
-				map.put(e.code, e);
+			synchronized (WebsiteRoles.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (WebsiteRoles e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static WebsiteRoles byCode(String code)

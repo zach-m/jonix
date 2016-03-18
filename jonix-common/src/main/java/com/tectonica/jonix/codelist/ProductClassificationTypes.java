@@ -120,17 +120,26 @@ public enum ProductClassificationTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductClassificationTypes> map;
+	private static volatile Map<String, ProductClassificationTypes> map;
 
 	private static Map<String, ProductClassificationTypes> map()
 	{
-		if (map == null)
+		Map<String, ProductClassificationTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductClassificationTypes e : values())
-				map.put(e.code, e);
+			synchronized (ProductClassificationTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductClassificationTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductClassificationTypes byCode(String code)

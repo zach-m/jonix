@@ -158,17 +158,26 @@ public enum PublishingRoles implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, PublishingRoles> map;
+	private static volatile Map<String, PublishingRoles> map;
 
 	private static Map<String, PublishingRoles> map()
 	{
-		if (map == null)
+		Map<String, PublishingRoles> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (PublishingRoles e : values())
-				map.put(e.code, e);
+			synchronized (PublishingRoles.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (PublishingRoles e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static PublishingRoles byCode(String code)

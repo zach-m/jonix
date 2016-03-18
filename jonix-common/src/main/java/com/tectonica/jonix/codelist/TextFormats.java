@@ -130,17 +130,26 @@ public enum TextFormats implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, TextFormats> map;
+	private static volatile Map<String, TextFormats> map;
 
 	private static Map<String, TextFormats> map()
 	{
-		if (map == null)
+		Map<String, TextFormats> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (TextFormats e : values())
-				map.put(e.code, e);
+			synchronized (TextFormats.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (TextFormats e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static TextFormats byCode(String code)

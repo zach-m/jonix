@@ -118,17 +118,26 @@ public enum MeasureTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, MeasureTypes> map;
+	private static volatile Map<String, MeasureTypes> map;
 
 	private static Map<String, MeasureTypes> map()
 	{
-		if (map == null)
+		Map<String, MeasureTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (MeasureTypes e : values())
-				map.put(e.code, e);
+			synchronized (MeasureTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (MeasureTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static MeasureTypes byCode(String code)

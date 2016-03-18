@@ -158,17 +158,26 @@ public enum UnitOfUsages implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, UnitOfUsages> map;
+	private static volatile Map<String, UnitOfUsages> map;
 
 	private static Map<String, UnitOfUsages> map()
 	{
-		if (map == null)
+		Map<String, UnitOfUsages> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (UnitOfUsages e : values())
-				map.put(e.code, e);
+			synchronized (UnitOfUsages.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (UnitOfUsages e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static UnitOfUsages byCode(String code)

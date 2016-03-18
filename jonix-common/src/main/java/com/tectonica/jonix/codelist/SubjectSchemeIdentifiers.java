@@ -598,17 +598,26 @@ public enum SubjectSchemeIdentifiers implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, SubjectSchemeIdentifiers> map;
+	private static volatile Map<String, SubjectSchemeIdentifiers> map;
 
 	private static Map<String, SubjectSchemeIdentifiers> map()
 	{
-		if (map == null)
+		Map<String, SubjectSchemeIdentifiers> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (SubjectSchemeIdentifiers e : values())
-				map.put(e.code, e);
+			synchronized (SubjectSchemeIdentifiers.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (SubjectSchemeIdentifiers e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static SubjectSchemeIdentifiers byCode(String code)

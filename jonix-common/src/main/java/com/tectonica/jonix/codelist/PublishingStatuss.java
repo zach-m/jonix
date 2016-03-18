@@ -166,17 +166,26 @@ public enum PublishingStatuss implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, PublishingStatuss> map;
+	private static volatile Map<String, PublishingStatuss> map;
 
 	private static Map<String, PublishingStatuss> map()
 	{
-		if (map == null)
+		Map<String, PublishingStatuss> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (PublishingStatuss e : values())
-				map.put(e.code, e);
+			synchronized (PublishingStatuss.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (PublishingStatuss e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static PublishingStatuss byCode(String code)

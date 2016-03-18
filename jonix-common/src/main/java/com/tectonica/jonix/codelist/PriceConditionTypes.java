@@ -108,17 +108,26 @@ public enum PriceConditionTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, PriceConditionTypes> map;
+	private static volatile Map<String, PriceConditionTypes> map;
 
 	private static Map<String, PriceConditionTypes> map()
 	{
-		if (map == null)
+		Map<String, PriceConditionTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (PriceConditionTypes e : values())
-				map.put(e.code, e);
+			synchronized (PriceConditionTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (PriceConditionTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static PriceConditionTypes byCode(String code)

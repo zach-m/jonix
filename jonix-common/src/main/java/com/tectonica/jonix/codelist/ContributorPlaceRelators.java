@@ -80,17 +80,26 @@ public enum ContributorPlaceRelators implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ContributorPlaceRelators> map;
+	private static volatile Map<String, ContributorPlaceRelators> map;
 
 	private static Map<String, ContributorPlaceRelators> map()
 	{
-		if (map == null)
+		Map<String, ContributorPlaceRelators> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ContributorPlaceRelators e : values())
-				map.put(e.code, e);
+			synchronized (ContributorPlaceRelators.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ContributorPlaceRelators e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ContributorPlaceRelators byCode(String code)

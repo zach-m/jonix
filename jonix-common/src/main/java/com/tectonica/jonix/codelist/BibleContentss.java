@@ -155,17 +155,26 @@ public enum BibleContentss implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, BibleContentss> map;
+	private static volatile Map<String, BibleContentss> map;
 
 	private static Map<String, BibleContentss> map()
 	{
-		if (map == null)
+		Map<String, BibleContentss> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (BibleContentss e : values())
-				map.put(e.code, e);
+			synchronized (BibleContentss.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (BibleContentss e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static BibleContentss byCode(String code)

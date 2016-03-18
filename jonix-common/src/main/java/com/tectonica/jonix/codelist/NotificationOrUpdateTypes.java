@@ -130,17 +130,26 @@ public enum NotificationOrUpdateTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, NotificationOrUpdateTypes> map;
+	private static volatile Map<String, NotificationOrUpdateTypes> map;
 
 	private static Map<String, NotificationOrUpdateTypes> map()
 	{
-		if (map == null)
+		Map<String, NotificationOrUpdateTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (NotificationOrUpdateTypes e : values())
-				map.put(e.code, e);
+			synchronized (NotificationOrUpdateTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (NotificationOrUpdateTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static NotificationOrUpdateTypes byCode(String code)

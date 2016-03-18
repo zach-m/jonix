@@ -95,17 +95,26 @@ public enum EpublicationFormats implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, EpublicationFormats> map;
+	private static volatile Map<String, EpublicationFormats> map;
 
 	private static Map<String, EpublicationFormats> map()
 	{
-		if (map == null)
+		Map<String, EpublicationFormats> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (EpublicationFormats e : values())
-				map.put(e.code, e);
+			synchronized (EpublicationFormats.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (EpublicationFormats e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static EpublicationFormats byCode(String code)

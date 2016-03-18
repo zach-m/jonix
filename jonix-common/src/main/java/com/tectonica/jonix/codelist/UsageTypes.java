@@ -103,17 +103,26 @@ public enum UsageTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, UsageTypes> map;
+	private static volatile Map<String, UsageTypes> map;
 
 	private static Map<String, UsageTypes> map()
 	{
-		if (map == null)
+		Map<String, UsageTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (UsageTypes e : values())
-				map.put(e.code, e);
+			synchronized (UsageTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (UsageTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static UsageTypes byCode(String code)

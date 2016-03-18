@@ -110,17 +110,26 @@ public enum ProductFormFeatureValueBindingOrPageEdgeColors implements OnixCodeli
 		return description;
 	}
 
-	private static Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map;
+	private static volatile Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map;
 
 	private static Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map()
 	{
-		if (map == null)
+		Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductFormFeatureValueBindingOrPageEdgeColors e : values())
-				map.put(e.code, e);
+			synchronized (ProductFormFeatureValueBindingOrPageEdgeColors.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductFormFeatureValueBindingOrPageEdgeColors e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductFormFeatureValueBindingOrPageEdgeColors byCode(String code)

@@ -248,17 +248,26 @@ public enum ProductContentTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductContentTypes> map;
+	private static volatile Map<String, ProductContentTypes> map;
 
 	private static Map<String, ProductContentTypes> map()
 	{
-		if (map == null)
+		Map<String, ProductContentTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductContentTypes e : values())
-				map.put(e.code, e);
+			synchronized (ProductContentTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductContentTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductContentTypes byCode(String code)

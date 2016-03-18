@@ -436,17 +436,26 @@ public enum BarcodeIndicators implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, BarcodeIndicators> map;
+	private static volatile Map<String, BarcodeIndicators> map;
 
 	private static Map<String, BarcodeIndicators> map()
 	{
-		if (map == null)
+		Map<String, BarcodeIndicators> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (BarcodeIndicators e : values())
-				map.put(e.code, e);
+			synchronized (BarcodeIndicators.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (BarcodeIndicators e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static BarcodeIndicators byCode(String code)

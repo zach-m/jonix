@@ -121,17 +121,26 @@ public enum PositionOnProducts implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, PositionOnProducts> map;
+	private static volatile Map<String, PositionOnProducts> map;
 
 	private static Map<String, PositionOnProducts> map()
 	{
-		if (map == null)
+		Map<String, PositionOnProducts> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (PositionOnProducts e : values())
-				map.put(e.code, e);
+			synchronized (PositionOnProducts.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (PositionOnProducts e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static PositionOnProducts byCode(String code)

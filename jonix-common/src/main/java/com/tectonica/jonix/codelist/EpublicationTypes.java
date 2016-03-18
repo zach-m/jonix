@@ -357,17 +357,26 @@ public enum EpublicationTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, EpublicationTypes> map;
+	private static volatile Map<String, EpublicationTypes> map;
 
 	private static Map<String, EpublicationTypes> map()
 	{
-		if (map == null)
+		Map<String, EpublicationTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (EpublicationTypes e : values())
-				map.put(e.code, e);
+			synchronized (EpublicationTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (EpublicationTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static EpublicationTypes byCode(String code)

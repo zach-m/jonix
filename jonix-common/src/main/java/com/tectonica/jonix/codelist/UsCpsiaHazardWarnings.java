@@ -110,17 +110,26 @@ public enum UsCpsiaHazardWarnings implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, UsCpsiaHazardWarnings> map;
+	private static volatile Map<String, UsCpsiaHazardWarnings> map;
 
 	private static Map<String, UsCpsiaHazardWarnings> map()
 	{
-		if (map == null)
+		Map<String, UsCpsiaHazardWarnings> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (UsCpsiaHazardWarnings e : values())
-				map.put(e.code, e);
+			synchronized (UsCpsiaHazardWarnings.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (UsCpsiaHazardWarnings e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static UsCpsiaHazardWarnings byCode(String code)

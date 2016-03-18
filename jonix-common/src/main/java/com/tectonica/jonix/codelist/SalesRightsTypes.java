@@ -99,17 +99,26 @@ public enum SalesRightsTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, SalesRightsTypes> map;
+	private static volatile Map<String, SalesRightsTypes> map;
 
 	private static Map<String, SalesRightsTypes> map()
 	{
-		if (map == null)
+		Map<String, SalesRightsTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (SalesRightsTypes e : values())
-				map.put(e.code, e);
+			synchronized (SalesRightsTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (SalesRightsTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static SalesRightsTypes byCode(String code)

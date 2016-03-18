@@ -162,17 +162,26 @@ public enum ExtentTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ExtentTypes> map;
+	private static volatile Map<String, ExtentTypes> map;
 
 	private static Map<String, ExtentTypes> map()
 	{
-		if (map == null)
+		Map<String, ExtentTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ExtentTypes e : values())
-				map.put(e.code, e);
+			synchronized (ExtentTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ExtentTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ExtentTypes byCode(String code)

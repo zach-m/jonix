@@ -160,17 +160,26 @@ public enum PublishingDateRoles implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, PublishingDateRoles> map;
+	private static volatile Map<String, PublishingDateRoles> map;
 
 	private static Map<String, PublishingDateRoles> map()
 	{
-		if (map == null)
+		Map<String, PublishingDateRoles> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (PublishingDateRoles e : values())
-				map.put(e.code, e);
+			synchronized (PublishingDateRoles.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (PublishingDateRoles e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static PublishingDateRoles byCode(String code)

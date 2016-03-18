@@ -83,17 +83,26 @@ public enum MeasureUnits implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, MeasureUnits> map;
+	private static volatile Map<String, MeasureUnits> map;
 
 	private static Map<String, MeasureUnits> map()
 	{
-		if (map == null)
+		Map<String, MeasureUnits> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (MeasureUnits e : values())
-				map.put(e.code, e);
+			synchronized (MeasureUnits.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (MeasureUnits e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static MeasureUnits byCode(String code)

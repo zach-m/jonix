@@ -119,17 +119,26 @@ public enum SupplierRoles implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, SupplierRoles> map;
+	private static volatile Map<String, SupplierRoles> map;
 
 	private static Map<String, SupplierRoles> map()
 	{
-		if (map == null)
+		Map<String, SupplierRoles> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (SupplierRoles e : values())
-				map.put(e.code, e);
+			synchronized (SupplierRoles.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (SupplierRoles e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static SupplierRoles byCode(String code)

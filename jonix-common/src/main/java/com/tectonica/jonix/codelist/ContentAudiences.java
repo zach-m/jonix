@@ -101,17 +101,26 @@ public enum ContentAudiences implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ContentAudiences> map;
+	private static volatile Map<String, ContentAudiences> map;
 
 	private static Map<String, ContentAudiences> map()
 	{
-		if (map == null)
+		Map<String, ContentAudiences> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ContentAudiences e : values())
-				map.put(e.code, e);
+			synchronized (ContentAudiences.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ContentAudiences e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ContentAudiences byCode(String code)

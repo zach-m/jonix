@@ -495,17 +495,26 @@ public enum ContributorRoles implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ContributorRoles> map;
+	private static volatile Map<String, ContributorRoles> map;
 
 	private static Map<String, ContributorRoles> map()
 	{
-		if (map == null)
+		Map<String, ContributorRoles> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ContributorRoles e : values())
-				map.put(e.code, e);
+			synchronized (ContributorRoles.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ContributorRoles e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ContributorRoles byCode(String code)

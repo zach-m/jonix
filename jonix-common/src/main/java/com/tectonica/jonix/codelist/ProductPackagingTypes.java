@@ -167,17 +167,26 @@ public enum ProductPackagingTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductPackagingTypes> map;
+	private static volatile Map<String, ProductPackagingTypes> map;
 
 	private static Map<String, ProductPackagingTypes> map()
 	{
-		if (map == null)
+		Map<String, ProductPackagingTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductPackagingTypes e : values())
-				map.put(e.code, e);
+			synchronized (ProductPackagingTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductPackagingTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductPackagingTypes byCode(String code)

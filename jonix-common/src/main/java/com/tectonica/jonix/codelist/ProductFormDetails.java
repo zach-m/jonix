@@ -1000,17 +1000,26 @@ public enum ProductFormDetails implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductFormDetails> map;
+	private static volatile Map<String, ProductFormDetails> map;
 
 	private static Map<String, ProductFormDetails> map()
 	{
-		if (map == null)
+		Map<String, ProductFormDetails> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductFormDetails e : values())
-				map.put(e.code, e);
+			synchronized (ProductFormDetails.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductFormDetails e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductFormDetails byCode(String code)

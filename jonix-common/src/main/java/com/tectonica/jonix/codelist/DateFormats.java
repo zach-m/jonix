@@ -162,17 +162,26 @@ public enum DateFormats implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, DateFormats> map;
+	private static volatile Map<String, DateFormats> map;
 
 	private static Map<String, DateFormats> map()
 	{
-		if (map == null)
+		Map<String, DateFormats> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (DateFormats e : values())
-				map.put(e.code, e);
+			synchronized (DateFormats.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (DateFormats e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static DateFormats byCode(String code)

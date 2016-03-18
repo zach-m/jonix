@@ -106,17 +106,26 @@ public enum Velocitys implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, Velocitys> map;
+	private static volatile Map<String, Velocitys> map;
 
 	private static Map<String, Velocitys> map()
 	{
-		if (map == null)
+		Map<String, Velocitys> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (Velocitys e : values())
-				map.put(e.code, e);
+			synchronized (Velocitys.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (Velocitys e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static Velocitys byCode(String code)

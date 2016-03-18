@@ -1218,17 +1218,26 @@ public enum ProductFormDetailsList175 implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductFormDetailsList175> map;
+	private static volatile Map<String, ProductFormDetailsList175> map;
 
 	private static Map<String, ProductFormDetailsList175> map()
 	{
-		if (map == null)
+		Map<String, ProductFormDetailsList175> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductFormDetailsList175 e : values())
-				map.put(e.code, e);
+			synchronized (ProductFormDetailsList175.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductFormDetailsList175 e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductFormDetailsList175 byCode(String code)

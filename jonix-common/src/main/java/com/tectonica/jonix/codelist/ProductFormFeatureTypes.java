@@ -235,17 +235,26 @@ public enum ProductFormFeatureTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductFormFeatureTypes> map;
+	private static volatile Map<String, ProductFormFeatureTypes> map;
 
 	private static Map<String, ProductFormFeatureTypes> map()
 	{
-		if (map == null)
+		Map<String, ProductFormFeatureTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductFormFeatureTypes e : values())
-				map.put(e.code, e);
+			synchronized (ProductFormFeatureTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductFormFeatureTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductFormFeatureTypes byCode(String code)

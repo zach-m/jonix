@@ -137,17 +137,26 @@ public enum ProductFormFeatureValueOperatingSystems implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductFormFeatureValueOperatingSystems> map;
+	private static volatile Map<String, ProductFormFeatureValueOperatingSystems> map;
 
 	private static Map<String, ProductFormFeatureValueOperatingSystems> map()
 	{
-		if (map == null)
+		Map<String, ProductFormFeatureValueOperatingSystems> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductFormFeatureValueOperatingSystems e : values())
-				map.put(e.code, e);
+			synchronized (ProductFormFeatureValueOperatingSystems.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductFormFeatureValueOperatingSystems e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductFormFeatureValueOperatingSystems byCode(String code)

@@ -113,17 +113,26 @@ public enum StudyBibleTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, StudyBibleTypes> map;
+	private static volatile Map<String, StudyBibleTypes> map;
 
 	private static Map<String, StudyBibleTypes> map()
 	{
-		if (map == null)
+		Map<String, StudyBibleTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (StudyBibleTypes e : values())
-				map.put(e.code, e);
+			synchronized (StudyBibleTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (StudyBibleTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static StudyBibleTypes byCode(String code)

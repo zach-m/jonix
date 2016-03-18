@@ -106,17 +106,26 @@ public enum SeriesIdentifierTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, SeriesIdentifierTypes> map;
+	private static volatile Map<String, SeriesIdentifierTypes> map;
 
 	private static Map<String, SeriesIdentifierTypes> map()
 	{
-		if (map == null)
+		Map<String, SeriesIdentifierTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (SeriesIdentifierTypes e : values())
-				map.put(e.code, e);
+			synchronized (SeriesIdentifierTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (SeriesIdentifierTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static SeriesIdentifierTypes byCode(String code)

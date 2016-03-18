@@ -144,17 +144,26 @@ public enum TradeCategorys implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, TradeCategorys> map;
+	private static volatile Map<String, TradeCategorys> map;
 
 	private static Map<String, TradeCategorys> map()
 	{
-		if (map == null)
+		Map<String, TradeCategorys> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (TradeCategorys e : values())
-				map.put(e.code, e);
+			synchronized (TradeCategorys.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (TradeCategorys e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static TradeCategorys byCode(String code)

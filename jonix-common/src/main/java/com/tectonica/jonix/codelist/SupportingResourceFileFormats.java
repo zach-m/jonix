@@ -208,17 +208,26 @@ public enum SupportingResourceFileFormats implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, SupportingResourceFileFormats> map;
+	private static volatile Map<String, SupportingResourceFileFormats> map;
 
 	private static Map<String, SupportingResourceFileFormats> map()
 	{
-		if (map == null)
+		Map<String, SupportingResourceFileFormats> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (SupportingResourceFileFormats e : values())
-				map.put(e.code, e);
+			synchronized (SupportingResourceFileFormats.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (SupportingResourceFileFormats e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static SupportingResourceFileFormats byCode(String code)

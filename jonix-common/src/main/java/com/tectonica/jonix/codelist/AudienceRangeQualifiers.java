@@ -146,17 +146,26 @@ public enum AudienceRangeQualifiers implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, AudienceRangeQualifiers> map;
+	private static volatile Map<String, AudienceRangeQualifiers> map;
 
 	private static Map<String, AudienceRangeQualifiers> map()
 	{
-		if (map == null)
+		Map<String, AudienceRangeQualifiers> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (AudienceRangeQualifiers e : values())
-				map.put(e.code, e);
+			synchronized (AudienceRangeQualifiers.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (AudienceRangeQualifiers e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static AudienceRangeQualifiers byCode(String code)

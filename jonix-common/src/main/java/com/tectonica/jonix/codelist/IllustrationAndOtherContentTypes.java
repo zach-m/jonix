@@ -161,17 +161,26 @@ public enum IllustrationAndOtherContentTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, IllustrationAndOtherContentTypes> map;
+	private static volatile Map<String, IllustrationAndOtherContentTypes> map;
 
 	private static Map<String, IllustrationAndOtherContentTypes> map()
 	{
-		if (map == null)
+		Map<String, IllustrationAndOtherContentTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (IllustrationAndOtherContentTypes e : values())
-				map.put(e.code, e);
+			synchronized (IllustrationAndOtherContentTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (IllustrationAndOtherContentTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static IllustrationAndOtherContentTypes byCode(String code)

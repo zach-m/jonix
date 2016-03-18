@@ -123,17 +123,26 @@ public enum ProductFormFeatureValueDvdRegions implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductFormFeatureValueDvdRegions> map;
+	private static volatile Map<String, ProductFormFeatureValueDvdRegions> map;
 
 	private static Map<String, ProductFormFeatureValueDvdRegions> map()
 	{
-		if (map == null)
+		Map<String, ProductFormFeatureValueDvdRegions> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductFormFeatureValueDvdRegions e : values())
-				map.put(e.code, e);
+			synchronized (ProductFormFeatureValueDvdRegions.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductFormFeatureValueDvdRegions e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductFormFeatureValueDvdRegions byCode(String code)

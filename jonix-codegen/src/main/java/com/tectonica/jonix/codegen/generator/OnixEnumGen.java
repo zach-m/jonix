@@ -161,17 +161,26 @@ public class OnixEnumGen
 		else
 		{
 			p.println();
-			p.printf("   private static Map<String, %s> map;\n", enumType.enumName);
+			p.printf("   private static volatile Map<String, %s> map;\n", enumType.enumName);
 			p.println();
-			p.printf("   private synchronized static Map<String, %s> map()\n", enumType.enumName);
+			p.printf("   private static Map<String, %s> map()\n", enumType.enumName);
 			p.printf("   {\n");
-			p.printf("      if (map == null)\n");
+			p.printf("      Map<String, %s> result = map;\n", enumType.enumName);
+			p.printf("      if (result == null)\n");
 			p.printf("      {\n");
-			p.printf("         map = new HashMap<>();\n");
-			p.printf("         for (%s e : values())\n", enumType.enumName);
-			p.printf("            map.put(e.code, e);\n");
+			p.printf("         synchronized(%s.class)\n", enumType.enumName);
+			p.printf("         {\n");
+			p.printf("            result = map;\n");
+			p.printf("            if (result == null)\n");
+			p.printf("            {\n");
+			p.printf("               result = new HashMap<>();\n");
+			p.printf("               for (%s e : values())\n", enumType.enumName);
+			p.printf("                  result.put(e.code, e);\n");
+			p.printf("               map = result;\n");
+			p.printf("            }\n");
+			p.printf("         }\n");
 			p.printf("      }\n");
-			p.printf("      return map;\n");
+			p.printf("      return result;\n");
 			p.printf("   }\n");
 			p.println();
 			p.printf("   public static %s byCode(String code)\n", enumType.enumName);

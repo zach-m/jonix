@@ -178,17 +178,26 @@ public enum ProductIdentifierTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductIdentifierTypes> map;
+	private static volatile Map<String, ProductIdentifierTypes> map;
 
 	private static Map<String, ProductIdentifierTypes> map()
 	{
-		if (map == null)
+		Map<String, ProductIdentifierTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductIdentifierTypes e : values())
-				map.put(e.code, e);
+			synchronized (ProductIdentifierTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductIdentifierTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductIdentifierTypes byCode(String code)

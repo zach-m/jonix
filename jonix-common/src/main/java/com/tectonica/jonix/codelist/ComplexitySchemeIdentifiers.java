@@ -121,17 +121,26 @@ public enum ComplexitySchemeIdentifiers implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ComplexitySchemeIdentifiers> map;
+	private static volatile Map<String, ComplexitySchemeIdentifiers> map;
 
 	private static Map<String, ComplexitySchemeIdentifiers> map()
 	{
-		if (map == null)
+		Map<String, ComplexitySchemeIdentifiers> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ComplexitySchemeIdentifiers e : values())
-				map.put(e.code, e);
+			synchronized (ComplexitySchemeIdentifiers.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ComplexitySchemeIdentifiers e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ComplexitySchemeIdentifiers byCode(String code)

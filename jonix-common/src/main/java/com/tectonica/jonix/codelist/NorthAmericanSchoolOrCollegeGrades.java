@@ -156,17 +156,26 @@ public enum NorthAmericanSchoolOrCollegeGrades implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, NorthAmericanSchoolOrCollegeGrades> map;
+	private static volatile Map<String, NorthAmericanSchoolOrCollegeGrades> map;
 
 	private static Map<String, NorthAmericanSchoolOrCollegeGrades> map()
 	{
-		if (map == null)
+		Map<String, NorthAmericanSchoolOrCollegeGrades> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (NorthAmericanSchoolOrCollegeGrades e : values())
-				map.put(e.code, e);
+			synchronized (NorthAmericanSchoolOrCollegeGrades.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (NorthAmericanSchoolOrCollegeGrades e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static NorthAmericanSchoolOrCollegeGrades byCode(String code)

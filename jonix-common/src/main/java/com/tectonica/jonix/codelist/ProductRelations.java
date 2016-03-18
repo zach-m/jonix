@@ -269,17 +269,26 @@ public enum ProductRelations implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductRelations> map;
+	private static volatile Map<String, ProductRelations> map;
 
 	private static Map<String, ProductRelations> map()
 	{
-		if (map == null)
+		Map<String, ProductRelations> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductRelations e : values())
-				map.put(e.code, e);
+			synchronized (ProductRelations.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductRelations e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductRelations byCode(String code)

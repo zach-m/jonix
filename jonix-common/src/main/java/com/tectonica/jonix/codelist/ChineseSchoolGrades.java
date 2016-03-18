@@ -156,17 +156,26 @@ public enum ChineseSchoolGrades implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ChineseSchoolGrades> map;
+	private static volatile Map<String, ChineseSchoolGrades> map;
 
 	private static Map<String, ChineseSchoolGrades> map()
 	{
-		if (map == null)
+		Map<String, ChineseSchoolGrades> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ChineseSchoolGrades e : values())
-				map.put(e.code, e);
+			synchronized (ChineseSchoolGrades.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ChineseSchoolGrades e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ChineseSchoolGrades byCode(String code)

@@ -258,17 +258,26 @@ public enum OtherTextTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, OtherTextTypes> map;
+	private static volatile Map<String, OtherTextTypes> map;
 
 	private static Map<String, OtherTextTypes> map()
 	{
-		if (map == null)
+		Map<String, OtherTextTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (OtherTextTypes e : values())
-				map.put(e.code, e);
+			synchronized (OtherTextTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (OtherTextTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static OtherTextTypes byCode(String code)

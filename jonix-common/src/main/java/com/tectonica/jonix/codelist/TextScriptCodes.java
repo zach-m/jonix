@@ -538,17 +538,26 @@ public enum TextScriptCodes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, TextScriptCodes> map;
+	private static volatile Map<String, TextScriptCodes> map;
 
 	private static Map<String, TextScriptCodes> map()
 	{
-		if (map == null)
+		Map<String, TextScriptCodes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (TextScriptCodes e : values())
-				map.put(e.code, e);
+			synchronized (TextScriptCodes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (TextScriptCodes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static TextScriptCodes byCode(String code)

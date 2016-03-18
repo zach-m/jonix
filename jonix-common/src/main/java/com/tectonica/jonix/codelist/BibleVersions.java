@@ -447,17 +447,26 @@ public enum BibleVersions implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, BibleVersions> map;
+	private static volatile Map<String, BibleVersions> map;
 
 	private static Map<String, BibleVersions> map()
 	{
-		if (map == null)
+		Map<String, BibleVersions> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (BibleVersions e : values())
-				map.put(e.code, e);
+			synchronized (BibleVersions.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (BibleVersions e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static BibleVersions byCode(String code)

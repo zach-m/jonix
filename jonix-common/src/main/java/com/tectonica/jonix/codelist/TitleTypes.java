@@ -136,17 +136,26 @@ public enum TitleTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, TitleTypes> map;
+	private static volatile Map<String, TitleTypes> map;
 
 	private static Map<String, TitleTypes> map()
 	{
-		if (map == null)
+		Map<String, TitleTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (TitleTypes e : values())
-				map.put(e.code, e);
+			synchronized (TitleTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (TitleTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static TitleTypes byCode(String code)

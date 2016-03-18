@@ -141,17 +141,26 @@ public enum TextItemTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, TextItemTypes> map;
+	private static volatile Map<String, TextItemTypes> map;
 
 	private static Map<String, TextItemTypes> map()
 	{
-		if (map == null)
+		Map<String, TextItemTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (TextItemTypes e : values())
-				map.put(e.code, e);
+			synchronized (TextItemTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (TextItemTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static TextItemTypes byCode(String code)

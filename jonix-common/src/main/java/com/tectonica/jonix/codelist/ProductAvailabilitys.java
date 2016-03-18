@@ -234,17 +234,26 @@ public enum ProductAvailabilitys implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductAvailabilitys> map;
+	private static volatile Map<String, ProductAvailabilitys> map;
 
 	private static Map<String, ProductAvailabilitys> map()
 	{
-		if (map == null)
+		Map<String, ProductAvailabilitys> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductAvailabilitys e : values())
-				map.put(e.code, e);
+			synchronized (ProductAvailabilitys.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductAvailabilitys e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductAvailabilitys byCode(String code)

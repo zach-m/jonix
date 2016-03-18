@@ -93,17 +93,26 @@ public enum BarcodeIndicatorsList141 implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, BarcodeIndicatorsList141> map;
+	private static volatile Map<String, BarcodeIndicatorsList141> map;
 
 	private static Map<String, BarcodeIndicatorsList141> map()
 	{
-		if (map == null)
+		Map<String, BarcodeIndicatorsList141> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (BarcodeIndicatorsList141 e : values())
-				map.put(e.code, e);
+			synchronized (BarcodeIndicatorsList141.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (BarcodeIndicatorsList141 e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static BarcodeIndicatorsList141 byCode(String code)

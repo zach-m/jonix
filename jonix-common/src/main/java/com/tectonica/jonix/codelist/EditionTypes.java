@@ -250,17 +250,26 @@ public enum EditionTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, EditionTypes> map;
+	private static volatile Map<String, EditionTypes> map;
 
 	private static Map<String, EditionTypes> map()
 	{
-		if (map == null)
+		Map<String, EditionTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (EditionTypes e : values())
-				map.put(e.code, e);
+			synchronized (EditionTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (EditionTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static EditionTypes byCode(String code)

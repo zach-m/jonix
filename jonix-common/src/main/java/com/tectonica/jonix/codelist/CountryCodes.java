@@ -579,17 +579,26 @@ public enum CountryCodes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, CountryCodes> map;
+	private static volatile Map<String, CountryCodes> map;
 
 	private static Map<String, CountryCodes> map()
 	{
-		if (map == null)
+		Map<String, CountryCodes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (CountryCodes e : values())
-				map.put(e.code, e);
+			synchronized (CountryCodes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (CountryCodes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static CountryCodes byCode(String code)

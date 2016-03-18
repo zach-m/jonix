@@ -219,17 +219,26 @@ public enum AudienceCodeTypes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, AudienceCodeTypes> map;
+	private static volatile Map<String, AudienceCodeTypes> map;
 
 	private static Map<String, AudienceCodeTypes> map()
 	{
-		if (map == null)
+		Map<String, AudienceCodeTypes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (AudienceCodeTypes e : values())
-				map.put(e.code, e);
+			synchronized (AudienceCodeTypes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (AudienceCodeTypes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static AudienceCodeTypes byCode(String code)

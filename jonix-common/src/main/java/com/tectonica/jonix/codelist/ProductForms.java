@@ -644,17 +644,26 @@ public enum ProductForms implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, ProductForms> map;
+	private static volatile Map<String, ProductForms> map;
 
 	private static Map<String, ProductForms> map()
 	{
-		if (map == null)
+		Map<String, ProductForms> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (ProductForms e : values())
-				map.put(e.code, e);
+			synchronized (ProductForms.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (ProductForms e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static ProductForms byCode(String code)

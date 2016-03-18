@@ -165,17 +165,26 @@ public enum PriceTypeQualifiers implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, PriceTypeQualifiers> map;
+	private static volatile Map<String, PriceTypeQualifiers> map;
 
 	private static Map<String, PriceTypeQualifiers> map()
 	{
-		if (map == null)
+		Map<String, PriceTypeQualifiers> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (PriceTypeQualifiers e : values())
-				map.put(e.code, e);
+			synchronized (PriceTypeQualifiers.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (PriceTypeQualifiers e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static PriceTypeQualifiers byCode(String code)

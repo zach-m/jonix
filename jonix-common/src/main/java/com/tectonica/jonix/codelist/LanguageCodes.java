@@ -1487,17 +1487,26 @@ public enum LanguageCodes implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, LanguageCodes> map;
+	private static volatile Map<String, LanguageCodes> map;
 
 	private static Map<String, LanguageCodes> map()
 	{
-		if (map == null)
+		Map<String, LanguageCodes> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (LanguageCodes e : values())
-				map.put(e.code, e);
+			synchronized (LanguageCodes.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (LanguageCodes e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static LanguageCodes byCode(String code)

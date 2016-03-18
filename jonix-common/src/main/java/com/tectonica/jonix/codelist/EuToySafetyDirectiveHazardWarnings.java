@@ -107,17 +107,26 @@ public enum EuToySafetyDirectiveHazardWarnings implements OnixCodelist
 		return description;
 	}
 
-	private static Map<String, EuToySafetyDirectiveHazardWarnings> map;
+	private static volatile Map<String, EuToySafetyDirectiveHazardWarnings> map;
 
 	private static Map<String, EuToySafetyDirectiveHazardWarnings> map()
 	{
-		if (map == null)
+		Map<String, EuToySafetyDirectiveHazardWarnings> result = map;
+		if (result == null)
 		{
-			map = new HashMap<>();
-			for (EuToySafetyDirectiveHazardWarnings e : values())
-				map.put(e.code, e);
+			synchronized (EuToySafetyDirectiveHazardWarnings.class)
+			{
+				result = map;
+				if (result == null)
+				{
+					result = new HashMap<>();
+					for (EuToySafetyDirectiveHazardWarnings e : values())
+						result.put(e.code, e);
+					map = result;
+				}
+			}
 		}
-		return map;
+		return result;
 	}
 
 	public static EuToySafetyDirectiveHazardWarnings byCode(String code)
