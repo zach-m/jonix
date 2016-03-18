@@ -145,7 +145,7 @@ public class JonixStreamer
 			}
 			catch (Exception e)
 			{
-				LOG.error("Couldn't read source " + source + ", encoding: " + encoding, e);
+				LOG.error("Couldn't process source " + source + ", encoding: " + encoding, e);
 				throw new RuntimeException(e);
 			}
 			extractor.onAfterSource(this);
