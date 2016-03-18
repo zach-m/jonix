@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 148 (Collection type)
+ */
+interface CodeList148
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 148</b>
  * <p>
  * Description: Collection type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist148">ONIX
  *      Codelist 148 in Reference Guide</a>
  */
-public enum CollectionTypes implements OnixCodelist
+public enum CollectionTypes implements OnixCodelist, CodeList148
 {
 	/**
 	 * Collection type is not determined

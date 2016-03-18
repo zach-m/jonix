@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 74 (Language code - based on ISO 639-2/B)
+ */
+interface CodeList74
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 74</b>
  * <p>
  * Description: Language code - based on ISO 639-2/B
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist74">ONIX
  *      Codelist 74 in Reference Guide</a>
  */
-public enum LanguageCodes implements OnixCodelist
+public enum LanguageCodes implements OnixCodelist, CodeList74
 {
 	Afar("aar", "Afar"), //
 

@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 138 (Transliteration scheme code)
+ */
+interface CodeList138
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 138</b>
  * <p>
  * Description: Transliteration scheme code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist138">ONIX
  *      Codelist 138 in Reference Guide</a>
  */
-public enum TransliterationSchemes implements OnixCodelist
+public enum TransliterationSchemes implements OnixCodelist, CodeList138
 {
 	/**
 	 * Transliteration of Cyrillic characters - Slavic languages

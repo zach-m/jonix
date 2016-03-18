@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 67 (Market date role)
+ */
+interface CodeList67
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 67</b>
  * <p>
  * Description: Market date role
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist67">ONIX
  *      Codelist 67 in Reference Guide</a>
  */
-public enum MarketDateRoles implements OnixCodelist
+public enum MarketDateRoles implements OnixCodelist, CodeList67
 {
 	/**
 	 * The nominal date of publication in this market. If there is a strict embargo on retail sales before the expected

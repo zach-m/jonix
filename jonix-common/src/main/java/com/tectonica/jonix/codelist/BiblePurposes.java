@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 85 (Bible purpose)
+ */
+interface CodeList85
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 85</b>
  * <p>
  * Description: Bible purpose
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist85">ONIX
  *      Codelist 85 in Reference Guide</a>
  */
-public enum BiblePurposes implements OnixCodelist
+public enum BiblePurposes implements OnixCodelist, CodeList85
 {
 	/**
 	 * A Bible (or selected Biblical text) designed for presentation from a religious organization

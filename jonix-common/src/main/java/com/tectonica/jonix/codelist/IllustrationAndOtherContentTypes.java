@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 25 (Illustration and other content type code)
+ */
+interface CodeList25
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 25</b>
  * <p>
  * Description: Illustration and other content type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist25">ONIX
  *      Codelist 25 in Reference Guide</a>
  */
-public enum IllustrationAndOtherContentTypes implements OnixCodelist
+public enum IllustrationAndOtherContentTypes implements OnixCodelist, CodeList25
 {
 	/**
 	 * See description in the &lt;IllustrationTypeDescription&gt; element

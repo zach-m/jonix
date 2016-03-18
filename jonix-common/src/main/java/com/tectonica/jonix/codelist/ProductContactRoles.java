@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 198 (Product contact role)
+ */
+interface CodeList198
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 198</b>
  * <p>
  * Description: Product contact role
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist198">ONIX
  *      Codelist 198 in Reference Guide</a>
  */
-public enum ProductContactRoles implements OnixCodelist
+public enum ProductContactRoles implements OnixCodelist, CodeList198
 {
 	/**
 	 * Eg for requests for supply of mutable digital files for conversion to other formats

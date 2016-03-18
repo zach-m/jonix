@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 62 (Tax rate, coded)
+ */
+interface CodeList62
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 62</b>
  * <p>
  * Description: Tax rate, coded
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist62">ONIX
  *      Codelist 62 in Reference Guide</a>
  */
-public enum TaxRateCodeds implements OnixCodelist
+public enum TaxRateCodeds implements OnixCodelist, CodeList62
 {
 	/**
 	 * Specifies that tax is applied at a higher rate than standard

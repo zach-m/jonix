@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 173 (Price date role)
+ */
+interface CodeList173
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 173</b>
  * <p>
  * Description: Price date role
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist173">ONIX
  *      Codelist 173 in Reference Guide</a>
  */
-public enum PriceDateRoles implements OnixCodelist
+public enum PriceDateRoles implements OnixCodelist, CodeList173
 {
 	/**
 	 * Date on which a price becomes effective

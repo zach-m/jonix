@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 16 (Work identifier type code)
+ */
+interface CodeList16
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 16</b>
  * <p>
  * Description: Work identifier type code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist16">ONIX
  *      Codelist 16 in Reference Guide</a>
  */
-public enum WorkIdentifierTypes implements OnixCodelist
+public enum WorkIdentifierTypes implements OnixCodelist, CodeList16
 {
 	Proprietary("01", "Proprietary"), //
 

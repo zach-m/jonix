@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 158 (Resource content type)
+ */
+interface CodeList158
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 158</b>
  * <p>
  * Description: Resource content type
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist158">ONIX
  *      Codelist 158 in Reference Guide</a>
  */
-public enum ResourceContentTypes implements OnixCodelist
+public enum ResourceContentTypes implements OnixCodelist, CodeList158
 {
 	/**
 	 * 2D

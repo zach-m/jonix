@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 89 (Religious text feature type)
+ */
+interface CodeList89
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 89</b>
  * <p>
  * Description: Religious text feature type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist89">ONIX
  *      Codelist 89 in Reference Guide</a>
  */
-public enum ReligiousTextFeatureTypes implements OnixCodelist
+public enum ReligiousTextFeatureTypes implements OnixCodelist, CodeList89
 {
 	/**
 	 * A church season or activity for which a religious text is intended

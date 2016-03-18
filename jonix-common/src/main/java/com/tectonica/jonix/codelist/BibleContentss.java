@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 82 (Bible contents)
+ */
+interface CodeList82
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 82</b>
  * <p>
  * Description: Bible contents
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist82">ONIX
  *      Codelist 82 in Reference Guide</a>
  */
-public enum BibleContentss implements OnixCodelist
+public enum BibleContentss implements OnixCodelist, CodeList82
 {
 	/**
 	 * The seven portions of the Apocrypha added to the Catholic canon at the Council of Trent in 1546: Tobit; Judith;

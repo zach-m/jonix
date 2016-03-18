@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 87 (Bible reference location)
+ */
+interface CodeList87
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 87</b>
  * <p>
  * Description: Bible reference location
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist87">ONIX
  *      Codelist 87 in Reference Guide</a>
  */
-public enum BibleReferenceLocations implements OnixCodelist
+public enum BibleReferenceLocations implements OnixCodelist, CodeList87
 {
 	/**
 	 * References are printed in a narrow column in the center of the page between two columns of text

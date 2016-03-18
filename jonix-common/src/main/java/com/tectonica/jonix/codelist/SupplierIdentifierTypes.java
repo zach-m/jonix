@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 92 (Supplier identifier type)
+ */
+interface CodeList92
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 92</b>
  * <p>
  * Description: Supplier identifier type
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist92">ONIX
  *      Codelist 92 in Reference Guide</a>
  */
-public enum SupplierIdentifierTypes implements OnixCodelist
+public enum SupplierIdentifierTypes implements OnixCodelist, CodeList92
 {
 	Proprietary("01", "Proprietary"), //
 

@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 169 (Quantity unit)
+ */
+interface CodeList169
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 169</b>
  * <p>
  * Description: Quantity unit
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist169">ONIX
  *      Codelist 169 in Reference Guide</a>
  */
-public enum QuantityUnits implements OnixCodelist
+public enum QuantityUnits implements OnixCodelist, CodeList169
 {
 	/**
 	 * The quantity refers to a unit implied by the quantity type

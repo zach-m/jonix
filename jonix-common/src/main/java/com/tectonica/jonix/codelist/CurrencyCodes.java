@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 96 (Currency code - ISO 4217)
+ */
+interface CodeList96
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 96</b>
  * <p>
  * Description: Currency code - ISO 4217
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist96">ONIX
  *      Codelist 96 in Reference Guide</a>
  */
-public enum CurrencyCodes implements OnixCodelist
+public enum CurrencyCodes implements OnixCodelist, CodeList96
 {
 	/**
 	 * United Arab Emirates

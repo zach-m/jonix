@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 226 (Record status &lt;p&gt;NOTE: Introduced in Onix3)
+ */
+interface CodeList226
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 226</b>
  * <p>
  * Description: Record status &lt;p&gt;NOTE: Introduced in Onix3
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist226">ONIX
  *      Codelist 226 in Reference Guide</a>
  */
-public enum RecordStatuss implements OnixCodelist
+public enum RecordStatuss implements OnixCodelist, CodeList226
 {
 	/**
 	 * Entire record parsed and ingested without errors, record may have a Product record in the Acknowledgement which

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 175 (Product form detail)
+ */
+interface CodeList175
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 175</b>
  * <p>
  * Description: Product form detail
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist175">ONIX
  *      Codelist 175 in Reference Guide</a>
  */
-public enum ProductFormDetailsList175 implements OnixCodelist
+public enum ProductFormDetailsList175 implements OnixCodelist, CodeList175
 {
 	/**
 	 * CD 'red book' format

@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 8 (Book form detail)
+ */
+interface CodeList8
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 8</b>
  * <p>
  * Description: Book form detail
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist8">ONIX
  *      Codelist 8 in Reference Guide</a>
  */
-public enum BookFormDetails implements OnixCodelist
+public enum BookFormDetails implements OnixCodelist, CodeList8
 {
 	/**
 	 * DEPRECATED

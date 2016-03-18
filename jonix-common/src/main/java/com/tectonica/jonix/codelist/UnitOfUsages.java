@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 147 (Unit of usage)
+ */
+interface CodeList147
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 147</b>
  * <p>
  * Description: Unit of usage
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist147">ONIX
  *      Codelist 147 in Reference Guide</a>
  */
-public enum UnitOfUsages implements OnixCodelist
+public enum UnitOfUsages implements OnixCodelist, CodeList147
 {
 	/**
 	 * Maximum number of copies that may be made of a permitted extract

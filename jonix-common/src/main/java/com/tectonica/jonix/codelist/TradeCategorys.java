@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 12 (Trade category code)
+ */
+interface CodeList12
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 12</b>
  * <p>
  * Description: Trade category code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist12">ONIX
  *      Codelist 12 in Reference Guide</a>
  */
-public enum TradeCategorys implements OnixCodelist
+public enum TradeCategorys implements OnixCodelist, CodeList12
 {
 	/**
 	 * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details

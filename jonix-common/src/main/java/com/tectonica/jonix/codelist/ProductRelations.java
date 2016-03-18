@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 51 (Product relation code)
+ */
+interface CodeList51
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 51</b>
  * <p>
  * Description: Product relation code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist51">ONIX
  *      Codelist 51 in Reference Guide</a>
  */
-public enum ProductRelations implements OnixCodelist
+public enum ProductRelations implements OnixCodelist, CodeList51
 {
 	/**
 	 * &lt;Product&gt; is related to &lt;RelatedProduct&gt; in a way that cannot be specified by another code value

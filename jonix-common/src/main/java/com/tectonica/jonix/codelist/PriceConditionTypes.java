@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 167 (Price condition type)
+ */
+interface CodeList167
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 167</b>
  * <p>
  * Description: Price condition type
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist167">ONIX
  *      Codelist 167 in Reference Guide</a>
  */
-public enum PriceConditionTypes implements OnixCodelist
+public enum PriceConditionTypes implements OnixCodelist, CodeList167
 {
 	/**
 	 * Allows positive indication that there are no conditions (the default if &lt;PriceCondition&gt; is omitted)

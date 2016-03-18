@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 219 (Rights type code)
+ */
+interface CodeList219
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 219</b>
  * <p>
  * Description: Rights type code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist219">ONIX
  *      Codelist 219 in Reference Guide</a>
  */
-public enum RightsTypes implements OnixCodelist
+public enum RightsTypes implements OnixCodelist, CodeList219
 {
 	/**
 	 * Text or image copyright (normally indicated by the &#169; symbol)

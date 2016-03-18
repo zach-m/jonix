@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 204 (ONIX Returns conditions code)
+ */
+interface CodeList204
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 204</b>
  * <p>
  * Description: ONIX Returns conditions code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist204">ONIX
  *      Codelist 204 in Reference Guide</a>
  */
-public enum OnixReturnsConditionss implements OnixCodelist
+public enum OnixReturnsConditionss implements OnixCodelist, CodeList204
 {
 	/**
 	 * Unspecified, contact supplier for details

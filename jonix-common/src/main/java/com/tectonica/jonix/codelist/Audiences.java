@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 28 (Audience code)
+ */
+interface CodeList28
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 28</b>
  * <p>
  * Description: Audience code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist28">ONIX
  *      Codelist 28 in Reference Guide</a>
  */
-public enum Audiences implements OnixCodelist
+public enum Audiences implements OnixCodelist, CodeList28
 {
 	/**
 	 * For a non-specialist adult audience

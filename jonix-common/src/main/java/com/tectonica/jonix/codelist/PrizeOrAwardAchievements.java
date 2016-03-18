@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 41 (Prize or award achievement code)
+ */
+interface CodeList41
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 41</b>
  * <p>
  * Description: Prize or award achievement code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist41">ONIX
  *      Codelist 41 in Reference Guide</a>
  */
-public enum PrizeOrAwardAchievements implements OnixCodelist
+public enum PrizeOrAwardAchievements implements OnixCodelist, CodeList41
 {
 	Winner("01", "Winner"), //
 

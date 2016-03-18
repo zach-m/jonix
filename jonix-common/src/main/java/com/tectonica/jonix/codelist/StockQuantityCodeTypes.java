@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 70 (Stock quantity code type)
+ */
+interface CodeList70
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 70</b>
  * <p>
  * Description: Stock quantity code type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist70">ONIX
  *      Codelist 70 in Reference Guide</a>
  */
-public enum StockQuantityCodeTypes implements OnixCodelist
+public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70
 {
 	Proprietary("01", "Proprietary"), //
 

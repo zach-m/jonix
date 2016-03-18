@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 99 (Product form feature value - special cover material)
+ */
+interface CodeList99
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 99</b>
  * <p>
  * Description: Product form feature value - special cover material
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist99">ONIX
  *      Codelist 99 in Reference Guide</a>
  */
-public enum ProductFormFeatureValueSpecialCoverMaterials implements OnixCodelist
+public enum ProductFormFeatureValueSpecialCoverMaterials implements OnixCodelist, CodeList99
 {
 	/**
 	 * Pigskin

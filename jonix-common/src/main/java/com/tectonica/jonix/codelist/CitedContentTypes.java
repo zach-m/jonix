@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 156 (Cited content type)
+ */
+interface CodeList156
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 156</b>
  * <p>
  * Description: Cited content type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist156">ONIX
  *      Codelist 156 in Reference Guide</a>
  */
-public enum CitedContentTypes implements OnixCodelist
+public enum CitedContentTypes implements OnixCodelist, CodeList156
 {
 	/**
 	 * The full text of a review in a third-party publication in any medium

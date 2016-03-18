@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 160 (Resource feature type)
+ */
+interface CodeList160
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 160</b>
  * <p>
  * Description: Resource feature type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist160">ONIX
  *      Codelist 160 in Reference Guide</a>
  */
-public enum ResourceFeatureTypes implements OnixCodelist
+public enum ResourceFeatureTypes implements OnixCodelist, CodeList160
 {
 	/**
 	 * Credit that must be displayed when a resource is used (eg 'Photo Jerry Bauer' or '&#169; Magnum Photo'). Credit

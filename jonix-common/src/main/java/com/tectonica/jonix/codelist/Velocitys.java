@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 216 (Velocity)
+ */
+interface CodeList216
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 216</b>
  * <p>
  * Description: Velocity
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist216">ONIX
  *      Codelist 216 in Reference Guide</a>
  */
-public enum Velocitys implements OnixCodelist
+public enum Velocitys implements OnixCodelist, CodeList216
 {
 	/**
 	 * Typically measured over most recent 1 month period

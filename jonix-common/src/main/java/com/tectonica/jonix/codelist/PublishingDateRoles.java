@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 163 (Publishing date role)
+ */
+interface CodeList163
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 163</b>
  * <p>
  * Description: Publishing date role
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist163">ONIX
  *      Codelist 163 in Reference Guide</a>
  */
-public enum PublishingDateRoles implements OnixCodelist
+public enum PublishingDateRoles implements OnixCodelist, CodeList163
 {
 	/**
 	 * Nominal date of publication

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 10 (Epublication type code)
+ */
+interface CodeList10
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 10</b>
  * <p>
  * Description: Epublication type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist10">ONIX
  *      Codelist 10 in Reference Guide</a>
  */
-public enum EpublicationTypes implements OnixCodelist
+public enum EpublicationTypes implements OnixCodelist, CodeList10
 {
 	/**
 	 * An epublication viewed as a unique package of content which may be converted into any of a number of different

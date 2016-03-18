@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 43 (Text item identifier type code)
+ */
+interface CodeList43
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 43</b>
  * <p>
  * Description: Text item identifier type code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist43">ONIX
  *      Codelist 43 in Reference Guide</a>
  */
-public enum TextItemIdentifierTypes implements OnixCodelist
+public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43
 {
 	/**
 	 * For example, a publisher's own identifier

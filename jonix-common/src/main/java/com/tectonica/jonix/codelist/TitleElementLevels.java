@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 149 (Title element level)
+ */
+interface CodeList149
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 149</b>
  * <p>
  * Description: Title element level
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist149">ONIX
  *      Codelist 149 in Reference Guide</a>
  */
-public enum TitleElementLevels implements OnixCodelist
+public enum TitleElementLevels implements OnixCodelist, CodeList149
 {
 	/**
 	 * The title element refers to an individual product

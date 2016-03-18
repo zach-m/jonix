@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 71 (Sales restriction type code)
+ */
+interface CodeList71
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 71</b>
  * <p>
  * Description: Sales restriction type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist71">ONIX
  *      Codelist 71 in Reference Guide</a>
  */
-public enum SalesRestrictionTypes implements OnixCodelist
+public enum SalesRestrictionTypes implements OnixCodelist, CodeList71
 {
 	/**
 	 * Restriction must be described in &lt;SalesRestrictionDetail&gt; (ONIX 2.1) or &lt;SalesRestrictionNote&gt; (ONIX

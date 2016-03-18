@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 161 (Resource form)
+ */
+interface CodeList161
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 161</b>
  * <p>
  * Description: Resource form
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist161">ONIX
  *      Codelist 161 in Reference Guide</a>
  */
-public enum ResourceForms implements OnixCodelist
+public enum ResourceForms implements OnixCodelist, CodeList161
 {
 	/**
 	 * A resource that may be accessed by a hyperlink. The current host (eg the ONIX sender, who may be the publisher)

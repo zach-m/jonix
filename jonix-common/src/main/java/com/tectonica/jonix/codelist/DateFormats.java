@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 55 (Date format)
+ */
+interface CodeList55
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 55</b>
  * <p>
  * Description: Date format
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist55">ONIX
  *      Codelist 55 in Reference Guide</a>
  */
-public enum DateFormats implements OnixCodelist
+public enum DateFormats implements OnixCodelist, CodeList55
 {
 	/**
 	 * Year month day (default)

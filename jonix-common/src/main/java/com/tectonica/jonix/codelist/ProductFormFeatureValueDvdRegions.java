@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 76 (Product form feature value - DVD region codes)
+ */
+interface CodeList76
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 76</b>
  * <p>
  * Description: Product form feature value - DVD region codes
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist76">ONIX
  *      Codelist 76 in Reference Guide</a>
  */
-public enum ProductFormFeatureValueDvdRegions implements OnixCodelist
+public enum ProductFormFeatureValueDvdRegions implements OnixCodelist, CodeList76
 {
 	/**
 	 * DVD or Blu-Ray

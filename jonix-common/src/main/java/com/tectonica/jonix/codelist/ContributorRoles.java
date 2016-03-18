@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 17 (Contributor role code)
+ */
+interface CodeList17
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 17</b>
  * <p>
  * Description: Contributor role code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist17">ONIX
  *      Codelist 17 in Reference Guide</a>
  */
-public enum ContributorRoles implements OnixCodelist
+public enum ContributorRoles implements OnixCodelist, CodeList17
 {
 	/**
 	 * Author of a textual work

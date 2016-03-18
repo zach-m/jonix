@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 159 (Resource mode)
+ */
+interface CodeList159
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 159</b>
  * <p>
  * Description: Resource mode
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist159">ONIX
  *      Codelist 159 in Reference Guide</a>
  */
-public enum ResourceModes implements OnixCodelist
+public enum ResourceModes implements OnixCodelist, CodeList159
 {
 	/**
 	 * An executable together with data on which it operates

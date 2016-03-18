@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 179 (Price code type)
+ */
+interface CodeList179
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 179</b>
  * <p>
  * Description: Price code type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist179">ONIX
  *      Codelist 179 in Reference Guide</a>
  */
-public enum PriceCodeTypes implements OnixCodelist
+public enum PriceCodeTypes implements OnixCodelist, CodeList179
 {
 	/**
 	 * A publisher or retailer's proprietary code list which identifies particular codes with particular price points,

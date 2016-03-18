@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 7 (Product form code)
+ */
+interface CodeList7
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 7</b>
  * <p>
  * Description: Product form code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist7">ONIX
  *      Codelist 7 in Reference Guide</a>
  */
-public enum ProductForms implements OnixCodelist
+public enum ProductForms implements OnixCodelist, CodeList7
 {
 	Undefined("00", "Undefined"), //
 

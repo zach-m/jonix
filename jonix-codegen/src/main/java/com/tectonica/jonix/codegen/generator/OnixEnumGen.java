@@ -53,11 +53,11 @@ public class OnixEnumGen
 		try
 		{
 			String fileName = folderName + "/" + enumType.enumName + ".java";
-
 			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
 			{
 				writeEnumClass(enumType, p);
 			}
+
 		}
 		catch (Exception e)
 		{
@@ -70,6 +70,9 @@ public class OnixEnumGen
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
 
+		String codelistNum = enumType.name.substring("List".length());
+		String codelistDescription = XML.escape(enumType.comment);
+
 		p.println();
 		p.println("import com.tectonica.jonix.OnixCodelist;");
 		if (enumType.enumValues.size() >= MIN_FOR_MAP)
@@ -81,13 +84,21 @@ public class OnixEnumGen
 
 		p.println();
 		p.println(Comments.AutoGen);
+
 		p.printf("/**\n");
-		String codelistNum = enumType.name.substring("List".length());
+		p.printf(" * marker interface to assist in IDE navigation to code-list %s (%s)\n", codelistNum,
+				codelistDescription);
+		p.printf(" */\n");
+		p.printf("interface CodeList%s\n", codelistNum);
+		p.printf("{}\n");
+
+		p.println();
+		p.printf("/**\n");
 		p.printf(" * <code>Enum</code> that corresponds to ONIX <b>Codelist %s</b>\n", codelistNum);
 		if (enumType.comment != null)
 		{
 			p.printf(" * <p>\n");
-			p.printf(" * Description: %s\n", XML.escape(enumType.comment));
+			p.printf(" * Description: %s\n", codelistDescription);
 		}
 		String linkGeneral = "http://www.editeur.org/14/code-lists";
 		String link = "http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist"
@@ -97,8 +108,8 @@ public class OnixEnumGen
 		p.printf(" * @see <a href=\"%s\">ONIX Codelist %s in Reference Guide</a>\n", link, codelistNum);
 		p.printf(" */\n");
 
-		p.println("public enum " + enumType.enumName + " implements OnixCodelist");
-		p.println("{");
+		p.printf("public enum " + enumType.enumName + " implements OnixCodelist, CodeList%s\n", codelistNum);
+		p.printf("{\n");
 
 		Set<String> tokens = new HashSet<>();
 		boolean first = true;

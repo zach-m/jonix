@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 53 (Returns conditions code type)
+ */
+interface CodeList53
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 53</b>
  * <p>
  * Description: Returns conditions code type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist53">ONIX
  *      Codelist 53 in Reference Guide</a>
  */
-public enum ReturnsConditionsCodeTypes implements OnixCodelist
+public enum ReturnsConditionsCodeTypes implements OnixCodelist, CodeList53
 {
 	Proprietary("00", "Proprietary"), //
 

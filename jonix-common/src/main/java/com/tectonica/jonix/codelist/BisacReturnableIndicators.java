@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 66 (BISAC returnable indicator)
+ */
+interface CodeList66
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 66</b>
  * <p>
  * Description: BISAC returnable indicator
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist66">ONIX
  *      Codelist 66 in Reference Guide</a>
  */
-public enum BisacReturnableIndicators implements OnixCodelist
+public enum BisacReturnableIndicators implements OnixCodelist, CodeList66
 {
 	No_not_returnable("N", "No, not returnable"), //
 

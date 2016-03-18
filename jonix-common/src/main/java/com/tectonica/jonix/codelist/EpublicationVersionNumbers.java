@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 220 (E-publication version number)
+ */
+interface CodeList220
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 220</b>
  * <p>
  * Description: E-publication version number
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist220">ONIX
  *      Codelist 220 in Reference Guide</a>
  */
-public enum EpublicationVersionNumbers implements OnixCodelist
+public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220
 {
 	/**
 	 * Use only with &lt;ProductFormDetail&gt; codes E101 or E102

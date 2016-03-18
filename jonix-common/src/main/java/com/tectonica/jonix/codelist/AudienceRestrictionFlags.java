@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 56 (Audience restriction flag)
+ */
+interface CodeList56
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 56</b>
  * <p>
  * Description: Audience restriction flag
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist56">ONIX
  *      Codelist 56 in Reference Guide</a>
  */
-public enum AudienceRestrictionFlags implements OnixCodelist
+public enum AudienceRestrictionFlags implements OnixCodelist, CodeList56
 {
 	Restrictions_apply_see_note("R", "Restrictions apply, see note"), //
 

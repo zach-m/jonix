@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 95 (Default unit of weight)
+ */
+interface CodeList95
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 95</b>
  * <p>
  * Description: Default unit of weight
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist95">ONIX
  *      Codelist 95 in Reference Guide</a>
  */
-public enum DefaultUnitOfWeights implements OnixCodelist
+public enum DefaultUnitOfWeights implements OnixCodelist, CodeList95
 {
 	Pounds_US("lb", "Pounds (US)"), //
 

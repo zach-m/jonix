@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 46 (Sales rights type code)
+ */
+interface CodeList46
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 46</b>
  * <p>
  * Description: Sales rights type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist46">ONIX
  *      Codelist 46 in Reference Guide</a>
  */
-public enum SalesRightsTypes implements OnixCodelist
+public enum SalesRightsTypes implements OnixCodelist, CodeList46
 {
 	/**
 	 * May only be used with the ONIX 3 &lt;ROWSalesRightsType&gt; element

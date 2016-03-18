@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 42 (Text item type code)
+ */
+interface CodeList42
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 42</b>
  * <p>
  * Description: Text item type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist42">ONIX
  *      Codelist 42 in Reference Guide</a>
  */
-public enum TextItemTypes implements OnixCodelist
+public enum TextItemTypes implements OnixCodelist, CodeList42
 {
 	/**
 	 * A complete work which is published as a content item in a product which carries two or more such works, eg when

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 21 (Edition type code)
+ */
+interface CodeList21
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 21</b>
  * <p>
  * Description: Edition type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist21">ONIX
  *      Codelist 21 in Reference Guide</a>
  */
-public enum EditionTypes implements OnixCodelist
+public enum EditionTypes implements OnixCodelist, CodeList21
 {
 	/**
 	 * Content has been shortened: use for abridged, shortened, concise, condensed

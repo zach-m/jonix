@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 59 (Price type qualifier)
+ */
+interface CodeList59
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 59</b>
  * <p>
  * Description: Price type qualifier
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist59">ONIX
  *      Codelist 59 in Reference Guide</a>
  */
-public enum PriceTypeQualifiers implements OnixCodelist
+public enum PriceTypeQualifiers implements OnixCodelist, CodeList59
 {
 	/**
 	 * Price applies to all customers that do not fall within any other group with a specified group-specific qualified

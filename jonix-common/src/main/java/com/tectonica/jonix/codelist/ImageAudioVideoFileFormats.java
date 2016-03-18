@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 39 (Image/audio/video file format code)
+ */
+interface CodeList39
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 39</b>
  * <p>
  * Description: Image/audio/video file format code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist39">ONIX
  *      Codelist 39 in Reference Guide</a>
  */
-public enum ImageAudioVideoFileFormats implements OnixCodelist
+public enum ImageAudioVideoFileFormats implements OnixCodelist, CodeList39
 {
 	GIF("02", "GIF"), //
 

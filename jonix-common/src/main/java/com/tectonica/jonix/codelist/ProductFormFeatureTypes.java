@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 79 (Product form feature type)
+ */
+interface CodeList79
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 79</b>
  * <p>
  * Description: Product form feature type
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist79">ONIX
  *      Codelist 79 in Reference Guide</a>
  */
-public enum ProductFormFeatureTypes implements OnixCodelist
+public enum ProductFormFeatureTypes implements OnixCodelist, CodeList79
 {
 	/**
 	 * For Product Form Feature values see code list 98

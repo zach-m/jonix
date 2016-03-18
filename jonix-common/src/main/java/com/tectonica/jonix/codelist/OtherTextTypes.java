@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 33 (Other text type code)
+ */
+interface CodeList33
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 33</b>
  * <p>
  * Description: Other text type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist33">ONIX
  *      Codelist 33 in Reference Guide</a>
  */
-public enum OtherTextTypes implements OnixCodelist
+public enum OtherTextTypes implements OnixCodelist, CodeList33
 {
 	Main_description("01", "Main description"), //
 

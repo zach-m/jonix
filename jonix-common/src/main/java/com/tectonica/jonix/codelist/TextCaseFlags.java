@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 14 (Text case flag)
+ */
+interface CodeList14
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 14</b>
  * <p>
  * Description: Text case flag
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist14">ONIX
  *      Codelist 14 in Reference Guide</a>
  */
-public enum TextCaseFlags implements OnixCodelist
+public enum TextCaseFlags implements OnixCodelist, CodeList14
 {
 	/**
 	 * Default

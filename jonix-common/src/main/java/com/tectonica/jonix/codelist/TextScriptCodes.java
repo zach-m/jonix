@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 121 (Text script code - ISO 15924)
+ */
+interface CodeList121
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 121</b>
  * <p>
  * Description: Text script code - ISO 15924
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist121">ONIX
  *      Codelist 121 in Reference Guide</a>
  */
-public enum TextScriptCodes implements OnixCodelist
+public enum TextScriptCodes implements OnixCodelist, CodeList121
 {
 	/**
 	 * Script is not supported by Unicode

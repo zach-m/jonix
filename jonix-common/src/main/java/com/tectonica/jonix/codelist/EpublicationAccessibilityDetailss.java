@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 196 (E-publication Accessibility Details)
+ */
+interface CodeList196
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 196</b>
  * <p>
  * Description: E-publication Accessibility Details
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist196">ONIX
  *      Codelist 196 in Reference Guide</a>
  */
-public enum EpublicationAccessibilityDetailss implements OnixCodelist
+public enum EpublicationAccessibilityDetailss implements OnixCodelist, CodeList196
 {
 	LIA_Compliance_Scheme("01", "LIA Compliance Scheme"), //
 

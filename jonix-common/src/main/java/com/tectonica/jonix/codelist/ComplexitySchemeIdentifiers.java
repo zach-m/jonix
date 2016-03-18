@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 32 (Complexity scheme identifier code)
+ */
+interface CodeList32
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 32</b>
  * <p>
  * Description: Complexity scheme identifier code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist32">ONIX
  *      Codelist 32 in Reference Guide</a>
  */
-public enum ComplexitySchemeIdentifiers implements OnixCodelist
+public enum ComplexitySchemeIdentifiers implements OnixCodelist, CodeList32
 {
 	/**
 	 * For example AD or HL. DEPRECATED in ONIX 3 - use code 06 instead

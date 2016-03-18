@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 184 (EU Toy Safety Directive hazard warning)
+ */
+interface CodeList184
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 184</b>
  * <p>
  * Description: EU Toy Safety Directive hazard warning
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist184">ONIX
  *      Codelist 184 in Reference Guide</a>
  */
-public enum EuToySafetyDirectiveHazardWarnings implements OnixCodelist
+public enum EuToySafetyDirectiveHazardWarnings implements OnixCodelist, CodeList184
 {
 	/**
 	 * Use to provide positive indication that no warnings are applicable

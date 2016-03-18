@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 58 (Price type code)
+ */
+interface CodeList58
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 58</b>
  * <p>
  * Description: Price type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist58">ONIX
  *      Codelist 58 in Reference Guide</a>
  */
-public enum PriceTypes implements OnixCodelist
+public enum PriceTypes implements OnixCodelist, CodeList58
 {
 	/**
 	 * RRP excluding any sales tax or value-added tax

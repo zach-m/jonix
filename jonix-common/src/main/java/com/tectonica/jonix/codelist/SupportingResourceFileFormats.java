@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 178 (Supporting resource file format)
+ */
+interface CodeList178
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 178</b>
  * <p>
  * Description: Supporting resource file format
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist178">ONIX
  *      Codelist 178 in Reference Guide</a>
  */
-public enum SupportingResourceFileFormats implements OnixCodelist
+public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178
 {
 	/**
 	 * MPEG 1/2 Audio Layer III file

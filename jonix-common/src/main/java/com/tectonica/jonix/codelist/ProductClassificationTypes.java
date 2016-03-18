@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 9 (Product classification type code)
+ */
+interface CodeList9
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 9</b>
  * <p>
  * Description: Product classification type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist9">ONIX
  *      Codelist 9 in Reference Guide</a>
  */
-public enum ProductClassificationTypes implements OnixCodelist
+public enum ProductClassificationTypes implements OnixCodelist, CodeList9
 {
 	/**
 	 * World Customs Organization Harmonized Commodity Coding and Description System

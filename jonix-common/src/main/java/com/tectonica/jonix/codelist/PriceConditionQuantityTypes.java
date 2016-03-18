@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 168 (Price condition quantity type)
+ */
+interface CodeList168
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 168</b>
  * <p>
  * Description: Price condition quantity type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist168">ONIX
  *      Codelist 168 in Reference Guide</a>
  */
-public enum PriceConditionQuantityTypes implements OnixCodelist
+public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168
 {
 	/**
 	 * The price condition quantity represents a time period

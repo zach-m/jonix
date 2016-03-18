@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 68 (Market publishing status)
+ */
+interface CodeList68
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 68</b>
  * <p>
  * Description: Market publishing status
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist68">ONIX
  *      Codelist 68 in Reference Guide</a>
  */
-public enum MarketPublishingStatuss implements OnixCodelist
+public enum MarketPublishingStatuss implements OnixCodelist, CodeList68
 {
 	/**
 	 * Status is not specified (as distinct from unknown): the default if the &lt;MarketPublishingStatus&gt; element is

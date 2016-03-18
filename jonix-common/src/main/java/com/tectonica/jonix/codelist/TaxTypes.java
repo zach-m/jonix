@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 171 (Tax type)
+ */
+interface CodeList171
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 171</b>
  * <p>
  * Description: Tax type
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist171">ONIX
  *      Codelist 171 in Reference Guide</a>
  */
-public enum TaxTypes implements OnixCodelist
+public enum TaxTypes implements OnixCodelist, CodeList171
 {
 	/**
 	 * Value-added tax (TVA, IVA, MwSt etc)

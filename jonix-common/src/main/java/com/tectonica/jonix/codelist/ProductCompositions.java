@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 2 (Product composition)
+ */
+interface CodeList2
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 2</b>
  * <p>
  * Description: Product composition
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist2">ONIX
  *      Codelist 2 in Reference Guide</a>
  */
-public enum ProductCompositions implements OnixCodelist
+public enum ProductCompositions implements OnixCodelist, CodeList2
 {
 	Single_item_retail_product("00", "Single-item retail product"), //
 

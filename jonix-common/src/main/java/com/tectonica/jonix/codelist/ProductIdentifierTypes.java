@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 5 (Product identifier type code)
+ */
+interface CodeList5
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 5</b>
  * <p>
  * Description: Product identifier type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist5">ONIX
  *      Codelist 5 in Reference Guide</a>
  */
-public enum ProductIdentifierTypes implements OnixCodelist
+public enum ProductIdentifierTypes implements OnixCodelist, CodeList5
 {
 	/**
 	 * For example, a publisher's or wholesaler's product number

@@ -26,6 +26,13 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 224 (Status detail type severity &lt;p&gt;NOTE: Introduced
+ * in Onix3)
+ */
+interface CodeList224
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 224</b>
  * <p>
  * Description: Status detail type severity &lt;p&gt;NOTE: Introduced in Onix3
@@ -35,7 +42,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist224">ONIX
  *      Codelist 224 in Reference Guide</a>
  */
-public enum StatusDetailTypeSeveritys implements OnixCodelist
+public enum StatusDetailTypeSeveritys implements OnixCodelist, CodeList224
 {
 	/**
 	 * Use ONLY if the message severity cannot be determined (eg with a legacy system unable to provide detailed error

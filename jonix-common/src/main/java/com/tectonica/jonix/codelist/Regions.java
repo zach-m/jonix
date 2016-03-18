@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 49 (Region code)
+ */
+interface CodeList49
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 49</b>
  * <p>
  * Description: Region code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist49">ONIX
  *      Codelist 49 in Reference Guide</a>
  */
-public enum Regions implements OnixCodelist
+public enum Regions implements OnixCodelist, CodeList49
 {
 	Australian_Capital_Territory("AU-CT", "Australian Capital Territory"), //
 

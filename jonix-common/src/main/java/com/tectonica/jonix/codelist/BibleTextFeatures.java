@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 97 (Bible text feature)
+ */
+interface CodeList97
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 97</b>
  * <p>
  * Description: Bible text feature
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist97">ONIX
  *      Codelist 97 in Reference Guide</a>
  */
-public enum BibleTextFeatures implements OnixCodelist
+public enum BibleTextFeatures implements OnixCodelist, CodeList97
 {
 	/**
 	 * Words spoken by Christ are printed in red

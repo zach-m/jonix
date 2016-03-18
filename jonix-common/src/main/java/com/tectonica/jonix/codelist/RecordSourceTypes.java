@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 3 (Record source type code)
+ */
+interface CodeList3
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 3</b>
  * <p>
  * Description: Record source type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist3">ONIX
  *      Codelist 3 in Reference Guide</a>
  */
-public enum RecordSourceTypes implements OnixCodelist
+public enum RecordSourceTypes implements OnixCodelist, CodeList3
 {
 	Unspecified("00", "Unspecified"), //
 

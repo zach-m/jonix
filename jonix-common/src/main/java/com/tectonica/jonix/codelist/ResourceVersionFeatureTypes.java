@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 162 (Resource version feature type)
+ */
+interface CodeList162
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 162</b>
  * <p>
  * Description: Resource version feature type
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist162">ONIX
  *      Codelist 162 in Reference Guide</a>
  */
-public enum ResourceVersionFeatureTypes implements OnixCodelist
+public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162
 {
 	/**
 	 * Resource Version Feature Value carries a code from List 178

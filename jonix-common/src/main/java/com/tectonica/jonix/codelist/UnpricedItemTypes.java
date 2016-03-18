@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 57 (Unpriced item type code)
+ */
+interface CodeList57
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 57</b>
  * <p>
  * Description: Unpriced item type code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist57">ONIX
  *      Codelist 57 in Reference Guide</a>
  */
-public enum UnpricedItemTypes implements OnixCodelist
+public enum UnpricedItemTypes implements OnixCodelist, CodeList57
 {
 	Free_of_charge("01", "Free of charge"), //
 

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 176 (Product form feature value - operating system)
+ */
+interface CodeList176
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 176</b>
  * <p>
  * Description: Product form feature value - operating system
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist176">ONIX
  *      Codelist 176 in Reference Guide</a>
  */
-public enum ProductFormFeatureValueOperatingSystems implements OnixCodelist
+public enum ProductFormFeatureValueOperatingSystems implements OnixCodelist, CodeList176
 {
 	/**
 	 * An Open Source mobile device operating system originally developed by Google and supported by the Open Handset

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 93 (Supplier role)
+ */
+interface CodeList93
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 93</b>
  * <p>
  * Description: Supplier role
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist93">ONIX
  *      Codelist 93 in Reference Guide</a>
  */
-public enum SupplierRoles implements OnixCodelist
+public enum SupplierRoles implements OnixCodelist, CodeList93
 {
 	/**
 	 * Default

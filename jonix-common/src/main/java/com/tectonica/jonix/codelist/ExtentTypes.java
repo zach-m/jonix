@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 23 (Extent type code)
+ */
+interface CodeList23
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 23</b>
  * <p>
  * Description: Extent type code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist23">ONIX
  *      Codelist 23 in Reference Guide</a>
  */
-public enum ExtentTypes implements OnixCodelist
+public enum ExtentTypes implements OnixCodelist, CodeList23
 {
 	/**
 	 * The highest-numbered page in a single numbered sequence of main content, usually the highest Arabic-numbered page

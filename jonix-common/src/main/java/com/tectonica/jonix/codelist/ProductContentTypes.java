@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 81 (Product content type)
+ */
+interface CodeList81
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 81</b>
  * <p>
  * Description: Product content type
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist81">ONIX
  *      Codelist 81 in Reference Guide</a>
  */
-public enum ProductContentTypes implements OnixCodelist
+public enum ProductContentTypes implements OnixCodelist, CodeList81
 {
 	/**
 	 * Readable text of the main work: this value is required, together with applicable &lt;ProductForm&gt; and

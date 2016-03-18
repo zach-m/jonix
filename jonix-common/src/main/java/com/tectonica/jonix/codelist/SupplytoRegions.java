@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 52 (Supply-to region code)
+ */
+interface CodeList52
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 52</b>
  * <p>
  * Description: Supply-to region code
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist52">ONIX
  *      Codelist 52 in Reference Guide</a>
  */
-public enum SupplytoRegions implements OnixCodelist
+public enum SupplytoRegions implements OnixCodelist, CodeList52
 {
 	/**
 	 * When the same ISBN is used for open market and UK editions

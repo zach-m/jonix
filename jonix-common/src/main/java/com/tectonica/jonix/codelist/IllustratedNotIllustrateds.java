@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 152 (Illustrated / not illustrated)
+ */
+interface CodeList152
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 152</b>
  * <p>
  * Description: Illustrated / not illustrated
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist152">ONIX
  *      Codelist 152 in Reference Guide</a>
  */
-public enum IllustratedNotIllustrateds implements OnixCodelist
+public enum IllustratedNotIllustrateds implements OnixCodelist, CodeList152
 {
 	/**
 	 * Not illustrated

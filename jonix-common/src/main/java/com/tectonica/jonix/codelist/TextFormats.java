@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 34 (Text format code)
+ */
+interface CodeList34
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 34</b>
  * <p>
  * Description: Text format code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist34">ONIX
  *      Codelist 34 in Reference Guide</a>
  */
-public enum TextFormats implements OnixCodelist
+public enum TextFormats implements OnixCodelist, CodeList34
 {
 	/**
 	 * DEPRECATED: use code 06 or 07 as appropriate

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 142 (Position on product)
+ */
+interface CodeList142
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 142</b>
  * <p>
  * Description: Position on product
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist142">ONIX
  *      Codelist 142 in Reference Guide</a>
  */
-public enum PositionOnProducts implements OnixCodelist
+public enum PositionOnProducts implements OnixCodelist, CodeList142
 {
 	/**
 	 * Position unknown or unspecified

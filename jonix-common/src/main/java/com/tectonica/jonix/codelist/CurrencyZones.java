@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 172 (Currency zone)
+ */
+interface CodeList172
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 172</b>
  * <p>
  * Description: Currency zone
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist172">ONIX
  *      Codelist 172 in Reference Guide</a>
  */
-public enum CurrencyZones implements OnixCodelist
+public enum CurrencyZones implements OnixCodelist, CodeList172
 {
 	/**
 	 * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3

@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 26 (Main subject scheme identifier code)
+ */
+interface CodeList26
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 26</b>
  * <p>
  * Description: Main subject scheme identifier code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist26">ONIX
  *      Codelist 26 in Reference Guide</a>
  */
-public enum MainSubjectSchemeIdentifiers implements OnixCodelist
+public enum MainSubjectSchemeIdentifiers implements OnixCodelist, CodeList26
 {
 	/**
 	 * Dewey Decimal Classification

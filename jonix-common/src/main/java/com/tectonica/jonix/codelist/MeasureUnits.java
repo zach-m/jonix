@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 50 (Measure unit code)
+ */
+interface CodeList50
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 50</b>
  * <p>
  * Description: Measure unit code
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist50">ONIX
  *      Codelist 50 in Reference Guide</a>
  */
-public enum MeasureUnits implements OnixCodelist
+public enum MeasureUnits implements OnixCodelist, CodeList50
 {
 	/**
 	 * Millimeters are the preferred metric unit of length

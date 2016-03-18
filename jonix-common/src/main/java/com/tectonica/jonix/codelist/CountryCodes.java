@@ -29,6 +29,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 91 (Country code - ISO 3166-1)
+ */
+interface CodeList91
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 91</b>
  * <p>
  * Description: Country code - ISO 3166-1
@@ -38,7 +44,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist91">ONIX
  *      Codelist 91 in Reference Guide</a>
  */
-public enum CountryCodes implements OnixCodelist
+public enum CountryCodes implements OnixCodelist, CodeList91
 {
 	/**
 	 * All unspecified countries

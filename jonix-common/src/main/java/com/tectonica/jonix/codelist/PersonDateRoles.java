@@ -26,6 +26,12 @@ import com.tectonica.jonix.OnixCodelist;
  */
 
 /**
+ * marker interface to assist in IDE navigation to code-list 75 (Person date role)
+ */
+interface CodeList75
+{}
+
+/**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 75</b>
  * <p>
  * Description: Person date role
@@ -35,7 +41,7 @@ import com.tectonica.jonix.OnixCodelist;
  *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist75">ONIX
  *      Codelist 75 in Reference Guide</a>
  */
-public enum PersonDateRoles implements OnixCodelist
+public enum PersonDateRoles implements OnixCodelist, CodeList75
 {
 	Date_of_birth("007", "Date of birth"), //
 
