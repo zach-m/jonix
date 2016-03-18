@@ -12,6 +12,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import net.sourceforge.isbnhyphenappender.ISBNHyphenAppender;
+
 public class JonixUtil
 {
 	private static final Pattern timestampPattern = Pattern.compile("[^0-9]([0-9]{4,14})(?=[_\\.])");
@@ -145,17 +147,32 @@ public class JonixUtil
 		return new HashSet<>(Arrays.asList(items));
 	}
 
+	private static ISBNHyphenAppender hyphener = new ISBNHyphenAppender();
+
 	public static String hyphenatedIsbn(String isbn)
 	{
 		if (isbn == null)
 			return null;
-		if (isbn.length() == 13)
-			return isbn.substring(0, 0 + 3) + "-" + isbn.substring(3, 3 + 1) + "-" + isbn.substring(4, 4 + 4) + "-"
-					+ isbn.substring(8, 8 + 4) + "-" + isbn.substring(12, 12 + 1);
-		if (isbn.length() == 10)
-			return isbn.substring(0, 0 + 1) + "-" + isbn.substring(1, 1 + 4) + "-" + isbn.substring(5, 5 + 4) + "-"
-					+ isbn.substring(9, 9 + 1);
-		return isbn;
+
+		try
+		{
+			return hyphener.appendHyphenToISBN(isbn);
+		}
+		catch (UnsupportedOperationException uoe)
+		{
+			// fall back to a simplistic hyphenation
+			// TODO: log warning?
+			if (isbn.length() == 13)
+				return isbn.substring(0, 0 + 3) + "-" + isbn.substring(3, 3 + 1) + "-" + isbn.substring(4, 4 + 4) + "-"
+						+ isbn.substring(8, 8 + 4) + "-" + isbn.substring(12, 12 + 1);
+
+			if (isbn.length() == 10)
+				return isbn.substring(0, 0 + 1) + "-" + isbn.substring(1, 1 + 4) + "-" + isbn.substring(5, 5 + 4) + "-"
+						+ isbn.substring(9, 9 + 1);
+
+			// fall back to the original..
+			return isbn;
+		}
 	}
 
 	public static String contributorDisplayName(String personName, String personNameKey, String personNameBeforeKey,
