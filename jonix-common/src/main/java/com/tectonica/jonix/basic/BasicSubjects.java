@@ -37,9 +37,9 @@ public abstract class BasicSubjects extends LazyMap<SubjectSchemeIdentifiers, Li
 	protected void addKV(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, BasicSubject subject,
 			boolean insertFirst)
 	{
-		List<BasicSubject> items = get(subject.subjectSchemeIdentifier);
+		List<BasicSubject> items = map.get(subject.subjectSchemeIdentifier);
 		if (items == null)
-			put(subject.subjectSchemeIdentifier, items = new ArrayList<BasicSubject>());
+			map.put(subject.subjectSchemeIdentifier, items = new ArrayList<BasicSubject>());
 		if (insertFirst)
 			items.add(0, subject);
 		else
