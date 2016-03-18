@@ -1,5 +1,7 @@
 package com.tectonica.jonix;
 
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,6 +9,10 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
@@ -21,11 +27,13 @@ import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.PublishingRoles;
+import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TitleTypes;
 import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Contributor;
 import com.tectonica.jonix.onix2.ContributorRole;
 import com.tectonica.jonix.onix2.Measure;
+import com.tectonica.jonix.onix2.OtherText;
 import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Publisher;
@@ -103,21 +111,21 @@ public class Onix2Essentials implements JonixEssentials
 			return null;
 
 		case Annotation:
-			JonixOtherText annotationTag = product.findOtherText(OtherTextTypes.Main_description);
+			JonixOtherText annotationTag = findOtherText(product, OtherTextTypes.Main_description);
 			if (annotationTag == null)
-				annotationTag = product.findOtherText(OtherTextTypes.Long_description);
+				annotationTag = findOtherText(product, OtherTextTypes.Long_description);
 			return (annotationTag == null) ? null : annotationTag.text;
 
 		case BackCover:
-			JonixOtherText backCoverTag = product.findOtherText(OtherTextTypes.Back_cover_copy);
+			JonixOtherText backCoverTag = findOtherText(product, OtherTextTypes.Back_cover_copy);
 			return (backCoverTag == null) ? null : backCoverTag.text;
 
 		case BiographicalNote:
-			JonixOtherText bioTag = product.findOtherText(OtherTextTypes.Biographical_note);
+			JonixOtherText bioTag = findOtherText(product, OtherTextTypes.Biographical_note);
 			return (bioTag == null) ? null : bioTag.text;
 
 		case Endorsement:
-			JonixOtherText endorsementTag = product.findOtherText(OtherTextTypes.Unpublished_endorsement);
+			JonixOtherText endorsementTag = findOtherText(product, OtherTextTypes.Unpublished_endorsement);
 			return (endorsementTag == null) ? null : endorsementTag.text;
 
 		case NumOfPages:
@@ -423,4 +431,73 @@ public class Onix2Essentials implements JonixEssentials
 		}
 		return ageRange;
 	}
+
+	public JonixOtherText findOtherText(Product product, OtherTextTypes textTypeCode)
+	{
+		if (product.otherTexts != null)
+		{
+			for (OtherText x : product.otherTexts)
+			{
+				if (x.getTextTypeCodeValue() == textTypeCode)
+				{
+					JonixOtherText jonixOtherText = x.asJonixOtherText();
+					if ((jonixOtherText.textFormat == null) && (x.text != null))
+					{
+						jonixOtherText.textFormat = x.text.textformat;
+						if ((jonixOtherText.textFormat == TextFormats.XHTML)
+								|| (jonixOtherText.textFormat == TextFormats.XML)
+								|| (jonixOtherText.textFormat == TextFormats.HTML))
+						{
+							try
+							{
+								jonixOtherText.text = unescape(jonixOtherText.text);
+							}
+							catch (XMLStreamException e)
+							{
+								// ignore
+							}
+						}
+					}
+					return jonixOtherText;
+				}
+			}
+		}
+		return null;
+	}
+
+	private static final XMLInputFactory inputFactory;
+
+	static
+	{
+		inputFactory = XMLInputFactory.newInstance();
+
+		// no need to validate, or even try to access, the remote DTD file
+		inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
+
+		// no need to validate internal entities - this is important because ONIX files are designed to contain HTML
+		// sections inside them. these sections may include entities (such as '&nbsp;') that aren't XML-compatible
+		inputFactory.setProperty(XMLInputFactory.IS_REPLACING_ENTITY_REFERENCES, false);
+	}
+
+	public static String unescape(String escaped) throws XMLStreamException
+	{
+		XMLStreamReader reader = inputFactory.createXMLStreamReader(new StringReader("<xml>" + escaped + "</xml>"));
+		StringWriter sw = new StringWriter(escaped.length());
+		while (reader.hasNext())
+		{
+			reader.next();
+			if (reader.hasText())
+				sw.append(reader.getText());
+		}
+		return sw.toString();
+	}
+
+//	public static void main(String[] args) throws XMLStreamException
+//	{
+//		String escaped = "&lt;p&gt;&lt;strong&gt;Lydia Brownback&lt;/strong&gt; (MAR, Westminster Theological Seminary) is the author of several books and a speaker at women&amp;rsquo;s conferences internationally. When time allows, Lydia blogs at lydiabrownback.com. She has served as director of editorial for Crossway&amp;rsquo;s Book Division; writer-in-residence for Reverend Alistair Begg; and broadcast media manager for Alliance of Confessing Evangelicals, where she produced&amp;nbsp;&lt;em&gt;The Bible Study Hour&lt;/em&gt;&amp;nbsp;radio program with James Montgomery Boice. Some of Lydia's books include the On-the-Go Devotional series as well as&amp;nbsp;&lt;em&gt;A Woman's Wisdom: How the Book of Proverbs Speaks to Everything&lt;/em&gt;.&lt;/p&gt;";
+//		String unescaped = unescape(escaped);
+//		System.out.println(unescaped);
+//		unescaped = unescape(unescaped);
+//		System.out.println(unescaped);
+//	}
 }
