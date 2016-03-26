@@ -35,6 +35,7 @@ import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 public abstract class BasicCollection implements Serializable
 {
 	public String mainTitle;
+	public String numberWithinSeries;
 	public List<JonixCollectionIdentifier> seriesIdentifiers;
 	public BasicTitles titles;
 	public BasicContributors contributors;

@@ -29,4 +29,21 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 public abstract class BasicCollections extends LazyList<BasicCollection>
-{}
+{
+	public BasicCollection getFirst()
+	{
+		return (size() > 0) ? get(0) : null;
+	}
+
+	public String getFirstNumberWithinSeries()
+	{
+		BasicCollection first = getFirst();
+		return (first == null) ? null : first.numberWithinSeries;
+	}
+
+	public String getFirstTitle()
+	{
+		BasicCollection first = getFirst();
+		return (first == null) ? null : first.mainTitle;
+	}
+}

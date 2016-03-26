@@ -41,6 +41,7 @@ public class BasicCollection2 extends BasicCollection
 	public BasicCollection2(final Series c)
 	{
 		mainTitle = c.getTitleOfSeriesValue();
+		numberWithinSeries = c.getNumberWithinSeriesValue();
 		seriesIdentifiers = new LazyList<JonixCollectionIdentifier>()
 		{
 			@Override

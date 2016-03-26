@@ -39,7 +39,12 @@ public class BasicCollection3 extends BasicCollection
 	public BasicCollection3(final Collection c)
 	{
 		titles = new BasicTitles3(c);
-		mainTitle = titles.get(0).titleText;
+		mainTitle = (titles != null) ? titles.get(0).titleText : null;
+		
+		// TODO: also look at Collection -> TitleDetail -> TitleElement -> PartNumber
+		numberWithinSeries = (c.collectionSequences != null) ? c.collectionSequences.get(0)
+				.getCollectionSequenceNumberValue() : null;
+
 		seriesIdentifiers = new LazyList<JonixCollectionIdentifier>()
 		{
 			@Override
