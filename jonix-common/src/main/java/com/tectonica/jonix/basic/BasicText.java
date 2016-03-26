@@ -20,6 +20,12 @@
 package com.tectonica.jonix.basic;
 
 import java.io.Serializable;
+import java.io.StringReader;
+import java.io.StringWriter;
+
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextTypes;
@@ -37,4 +43,47 @@ public abstract class BasicText implements Serializable
 	public TextTypes textType;
 	public TextFormats textFormat;
 	public String text;
+
+	public String getUnescapedText()
+	{
+		if ((textFormat == TextFormats.XHTML) || (textFormat == TextFormats.XML) || (textFormat == TextFormats.HTML))
+		{
+			try
+			{
+				return unescape(text);
+			}
+			catch (XMLStreamException e)
+			{
+				// ignore
+			}
+		}
+		return text;
+	}
+
+	private static final XMLInputFactory inputFactory;
+
+	static
+	{
+		inputFactory = XMLInputFactory.newInstance();
+
+		// no need to validate, or even try to access, the remote DTD file
+		inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
+
+		// no need to validate internal entities - this is important because ONIX files are designed to contain HTML
+		// sections inside them. these sections may include entities (such as '&nbsp;') that aren't XML-compatible
+		inputFactory.setProperty(XMLInputFactory.IS_REPLACING_ENTITY_REFERENCES, false);
+	}
+
+	private static String unescape(String escaped) throws XMLStreamException
+	{
+		XMLStreamReader reader = inputFactory.createXMLStreamReader(new StringReader("<xml>" + escaped + "</xml>"));
+		StringWriter sw = new StringWriter(escaped.length());
+		while (reader.hasNext())
+		{
+			reader.next();
+			if (reader.hasText())
+				sw.append(reader.getText());
+		}
+		return sw.toString();
+	}
 }

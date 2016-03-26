@@ -42,4 +42,10 @@ public abstract class BasicTexts extends LazyList<BasicText>
 		}
 		return null;
 	}
+
+	public String getUnescapedText(TextTypes requestedType)
+	{
+		BasicText found = findText(requestedType);
+		return (found == null) ? null : found.getUnescapedText();
+	}
 }

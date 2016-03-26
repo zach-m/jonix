@@ -19,9 +19,7 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicText;
 import com.tectonica.jonix.codelist.OtherTextTypes;
-import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextTypes;
 import com.tectonica.jonix.onix2.OtherText;
 
@@ -37,16 +35,13 @@ public class BasicText2 extends BasicText
 	public BasicText2(OtherText otherText)
 	{
 		textType = translate33to153(otherText.getTextTypeCodeValue());
-		TextFormats textFormatAux = otherText.getTextFormatValue();
-		String textAux = null;
+		textFormat = otherText.getTextFormatValue();
 		if (otherText.text != null)
 		{
-			textAux = otherText.text.value;
-			if (textFormatAux == null)
-				textFormatAux = otherText.text.textformat;
+			text = otherText.text.value;
+			if (textFormat == null)
+				textFormat = otherText.text.textformat;
 		}
-		text = textAux;
-		textFormat = textFormatAux;
 	}
 
 	/**

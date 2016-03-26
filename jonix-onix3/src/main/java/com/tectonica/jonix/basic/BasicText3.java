@@ -36,11 +36,18 @@ public class BasicText3 extends BasicText
 	public BasicText3(TextContent textContent)
 	{
 		textType = textContent.getTextTypeValue();
-		Text textObject = pickTextObject(textContent);
-		textFormat = textObject.textformat;
-		text = textObject.value;
+		Text textElement = pickTextObject(textContent);
+		if (textElement != null) // invalid ONIX
+		{
+			textFormat = textElement.textformat;
+			text = textElement.value;
+		}
 	}
 
+	/**
+	 * ONIX-3 requires at least one <Text> element, and allow more than one to provide translations in several
+	 * languages. This simplistic implementation simply prioritizes English.
+	 */
 	private Text pickTextObject(TextContent textContent)
 	{
 		if (textContent.texts != null)
@@ -50,7 +57,7 @@ public class BasicText3 extends BasicText
 				if (text.language == null || text.language == LanguageCodes.English)
 					return text;
 			}
-			return textContent.texts.get(0); // return whatever language we have
+			return textContent.texts.get(0); // return the first element, regardless of its language
 		}
 		return null;
 	}
