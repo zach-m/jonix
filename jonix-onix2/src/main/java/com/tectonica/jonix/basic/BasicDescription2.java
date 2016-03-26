@@ -20,8 +20,8 @@
 package com.tectonica.jonix.basic;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.basic.BasicDescription;
 import com.tectonica.jonix.codelist.ProductForms;
+import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Product;
 
 /**
@@ -33,40 +33,26 @@ public class BasicDescription2 extends BasicDescription
 {
 	private static final long serialVersionUID = 1L;
 
+	private transient final AudienceRange audienceRange;
+
 	public BasicDescription2(Product product)
 	{
 		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
 		editionNumber = JPU.convertStringToInteger(product.getEditionNumberValue());
 		ProductForms productFormValue = product.getProductFormValue();
-		productForm = (productFormValue == null) ? null : productFormValue.name();
+		productForm = (productFormValue == null) ? null : productFormValue.description;
 		numberOfPages = product.getNumberOfPagesValue();
 		languages = product.findLanguages(null); // TODO: lazy
 		audiences = product.findAudiences(null); // TODO: lazy
+		audienceCodes = product.getAudienceCodeValues();
+		audienceRange = (product.audienceRanges == null) ? null : product.audienceRanges.get(0);
 	}
 
-//	public BasicDescription2(com.tectonica.jonix.onix3.Product product)
-//	{
-//		com.tectonica.jonix.onix3.DescriptiveDetail dd = product.descriptiveDetail;
-//		if (dd != null)
-//		{
-//			List<EditionTypes> editionTypes = dd.getEditionTypeValues();
-//			editionType = (editionTypes == null) ? null : editionTypes.get(0);
-//			editionNumber = dd.getEditionNumberValue();
-//			ProductFormsList150 productFormValue = dd.getProductFormValue();
-//			productForm = (productFormValue == null) ? null : productFormValue.name();
-//			JonixExtent jNumberOfPages = dd.findExtent(ExtentTypes.Main_content_page_count);
-//			numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
-//			languages = dd.findLanguages(null);
-//			audiences = dd.findAudiences(null);
-//		}
-//		else
-//		{
-//			editionType = null;
-//			editionNumber = null;
-//			productForm = null;
-//			numberOfPages = null;
-//			languages = Collections.emptyList();
-//			audiences = Collections.emptyList();
-//		}
-//	}
+	@Override
+	public Integer[] getFirstAudienceAgeRange()
+	{
+		if (audienceRange != null)
+			return getAudienceAgeRange(audienceRange.asJonixAudienceRange());
+		return new Integer[] { null, null };
+	}
 }

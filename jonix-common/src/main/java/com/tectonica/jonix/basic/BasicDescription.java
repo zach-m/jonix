@@ -22,9 +22,13 @@ package com.tectonica.jonix.basic;
 import java.io.Serializable;
 import java.util.List;
 
+import com.tectonica.jonix.codelist.AudienceRangePrecisions;
+import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
+import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixAudienceRange;
 import com.tectonica.jonix.struct.JonixLanguage;
 
 /**
@@ -43,8 +47,21 @@ public abstract class BasicDescription implements Serializable
 	public String numberOfPages;
 	public List<JonixLanguage> languages;
 	public List<JonixAudience> audiences;
+	public List<Audiences> audienceCodes;
 
-	public JonixLanguage findLanguage(LanguageRoles requestedType)
+	/**
+	 * returns a 2-items array, containing the FROM and TO age-range values, or null if not indicated. This function
+	 * never returns null.
+	 */
+	public abstract Integer[] getFirstAudienceAgeRange();
+
+	public String findLanguage(LanguageRoles requestedType)
+	{
+		JonixLanguage jonixLanguage = findJonixLanguage(requestedType);
+		return (jonixLanguage == null) ? null : jonixLanguage.languageCode.description;
+	}
+
+	public JonixLanguage findJonixLanguage(LanguageRoles requestedType)
 	{
 		if (languages != null)
 		{
@@ -55,5 +72,49 @@ public abstract class BasicDescription implements Serializable
 			}
 		}
 		return null;
+	}
+
+	public String getAudienceDescription()
+	{
+		// we pick the first audience, as in practice it's very rare to see more than one
+		return (audienceCodes == null) ? null : audienceCodes.get(0).description;
+	}
+
+	protected Integer[] getAudienceAgeRange(JonixAudienceRange audienceRange)
+	{
+		Integer[] ageRange = new Integer[] { null, null };
+		AudienceRangeQualifiers qualifier = audienceRange.audienceRangeQualifier;
+		if (qualifier == AudienceRangeQualifiers.Interest_age_years)
+		{
+			List<AudienceRangePrecisions> precisions = audienceRange.audienceRangePrecisions;
+			List<String> values = audienceRange.audienceRangeValues;
+			if (precisions.size() != values.size())
+			{
+				// TODO: invalid ONIX
+			}
+			else
+			{
+				for (int i = 0; i < precisions.size(); i++)
+				{
+					Integer value = Integer.valueOf(values.get(i));
+					switch (precisions.get(i))
+					{
+					case From:
+						ageRange[0] = value;
+						break;
+
+					case To:
+						ageRange[1] = value;
+						break;
+
+					case Exact:
+						ageRange[0] = value;
+						ageRange[1] = value;
+						break;
+					}
+				}
+			}
+		}
+		return ageRange;
 	}
 }
