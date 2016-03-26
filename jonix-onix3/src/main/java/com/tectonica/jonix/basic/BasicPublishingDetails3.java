@@ -45,6 +45,8 @@ public class BasicPublishingDetails3 extends BasicPublishingDetails
 		{
 			JonixPublishingDate jPublicationDate = pd.findPublishingDate(PublishingDateRoles.Publication_date);
 			publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
+			JonixPublishingDate jOutOfPrintDate = pd.findPublishingDate(PublishingDateRoles.Out_of_print_deletion_date);
+			outOfPrintDate = (jOutOfPrintDate == null) ? null : jOutOfPrintDate.date;
 			countryOfPublication = pd.getCountryOfPublicationValue();
 			cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 		}

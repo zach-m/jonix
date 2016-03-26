@@ -36,6 +36,7 @@ public class BasicPublishingDetails2 extends BasicPublishingDetails
 	public BasicPublishingDetails2(Product product)
 	{
 		publicationDate = product.getPublicationDateValue();
+		outOfPrintDate = product.getOutOfPrintDateValue();
 		countryOfPublication = product.getCountryOfPublicationValue();
 		cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 	}
