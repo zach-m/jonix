@@ -32,6 +32,12 @@ import com.tectonica.jonix.codelist.TitleTypes;
 @SuppressWarnings("serial")
 public abstract class BasicTitles extends LazyList<BasicTitle>
 {
+	public String findTitleText(TitleTypes requestedType)
+	{
+		BasicTitle title = findTitle(requestedType);
+		return (title == null) ? null : title.titleText;
+	}
+
 	public BasicTitle findTitle(TitleTypes requestedType)
 	{
 		for (BasicTitle title : this)

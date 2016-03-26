@@ -21,7 +21,13 @@ public abstract class BasicInfo implements Serializable
 	public NotificationOrUpdateTypes notificationType;
 	public List<JonixProductIdentifier> productIds;
 
-	public JonixProductIdentifier findProductId(ProductIdentifierTypes requestedType)
+	public String findProductId(ProductIdentifierTypes requestedType)
+	{
+		JonixProductIdentifier jonixProductId = findJonixProductId(requestedType);
+		return (jonixProductId == null) ? null : jonixProductId.idValue;
+	}
+
+	public JonixProductIdentifier findJonixProductId(ProductIdentifierTypes requestedType)
 	{
 		if (productIds != null)
 		{

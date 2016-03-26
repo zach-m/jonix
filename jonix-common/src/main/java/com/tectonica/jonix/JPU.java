@@ -154,6 +154,21 @@ public class JPU
 		return (s == null) ? null : Integer.parseInt(s.trim());
 	}
 
+	/**
+	 * converts if possible, but returns null if the string isn't an integer
+	 */
+	public static Integer convertStringToIntegerSafe(String s)
+	{
+		try
+		{
+			return convertStringToInteger(s);
+		}
+		catch (NumberFormatException e)
+		{
+			return null;
+		}
+	}
+
 	public static Double convertStringToDouble(String s)
 	{
 		return (s == null) ? null : Double.parseDouble(s.trim());

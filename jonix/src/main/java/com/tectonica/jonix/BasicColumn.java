@@ -256,7 +256,7 @@ public abstract class BasicColumn implements JonixColumn<BasicProduct>
 
 	private static boolean extractProductId(BasicProduct product, String[] columnBuffer, ProductIdentifierTypes stdType)
 	{
-		JonixProductIdentifier prodId = product.info.findProductId(stdType);
+		JonixProductIdentifier prodId = product.info.findJonixProductId(stdType);
 		if (prodId != null)
 		{
 			columnBuffer[0] = prodId.idValue;
@@ -291,10 +291,10 @@ public abstract class BasicColumn implements JonixColumn<BasicProduct>
 
 	private static boolean extractLanguage(BasicProduct product, String[] columnBuffer, LanguageRoles stdType)
 	{
-		JonixLanguage language = product.description.findLanguage(stdType);
+		JonixLanguage language = product.description.findJonixLanguage(stdType);
 		if (language != null)
 		{
-			columnBuffer[0] = language.languageCode.name();
+			columnBuffer[0] = language.languageCode.description;
 			return true;
 		}
 		return false;
@@ -329,7 +329,7 @@ public abstract class BasicColumn implements JonixColumn<BasicProduct>
 
 	private static boolean extractContributors(BasicProduct product, String[] columnBuffer, ContributorRoles stdRole)
 	{
-		List<BasicContributor> contributors = product.contributors.findContributors(stdRole);
+		List<BasicContributor> contributors = product.contributors.findByRole(stdRole);
 		int pos = 0;
 		for (BasicContributor contributor : contributors)
 		{
