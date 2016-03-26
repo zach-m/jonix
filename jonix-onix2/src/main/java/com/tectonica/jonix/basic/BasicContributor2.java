@@ -21,7 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.util.HashSet;
 
-import com.tectonica.jonix.basic.BasicContributor;
 import com.tectonica.jonix.onix2.Contributor;
 
 /**
@@ -36,6 +35,7 @@ public class BasicContributor2 extends BasicContributor
 	public BasicContributor2(Contributor c)
 	{
 		contributorRoles = new HashSet<>(c.getContributorRoleValues());
+		sequenceNumber = c.getSequenceNumberValue();
 		personName = c.getPersonNameValue();
 		personNameKey = c.getKeyNamesValue();
 		personNameBeforeKey = c.getNamesBeforeKeyValue();

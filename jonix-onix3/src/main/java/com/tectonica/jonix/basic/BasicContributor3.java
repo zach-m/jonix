@@ -38,6 +38,8 @@ public class BasicContributor3 extends BasicContributor
 	public BasicContributor3(Contributor c)
 	{
 		contributorRoles = new HashSet<>(c.getContributorRoleValues());
+		Integer sequenceNumberValue = c.getSequenceNumberValue();
+		sequenceNumber = (sequenceNumberValue == null) ? null : sequenceNumberValue.toString();
 		personName = c.getPersonNameValue();
 		personNameKey = c.getKeyNamesValue();
 		personNameBeforeKey = c.getNamesBeforeKeyValue();

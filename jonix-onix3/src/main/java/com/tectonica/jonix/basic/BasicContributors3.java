@@ -38,6 +38,16 @@ public class BasicContributors3 extends BasicContributors
 
 	private transient final List<Contributor> contributors;
 
+	public BasicContributors3(Product product)
+	{
+		contributors = (product.descriptiveDetail != null) ? product.descriptiveDetail.contributors : null;
+	}
+
+	public BasicContributors3(com.tectonica.jonix.onix3.Collection collection)
+	{
+		contributors = collection.contributors;
+	}
+
 	@Override
 	protected List<BasicContributor> initialize()
 	{
@@ -47,16 +57,7 @@ public class BasicContributors3 extends BasicContributors
 			for (Contributor contributor : contributors)
 				list.add(new BasicContributor3(contributor));
 		}
+		sortBySequence(list);
 		return list;
-	}
-
-	public BasicContributors3(Product product)
-	{
-		contributors = (product.descriptiveDetail != null) ? product.descriptiveDetail.contributors : null;
-	}
-
-	public BasicContributors3(com.tectonica.jonix.onix3.Collection collection)
-	{
-		contributors = collection.contributors;
 	}
 }

@@ -36,6 +36,7 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 public abstract class BasicContributor implements Serializable
 {
 	public Set<ContributorRoles> contributorRoles;
+	public String sequenceNumber;
 	public String personName;
 	public String personNameKey;
 	public String personNameBeforeKey;
@@ -48,4 +49,27 @@ public abstract class BasicContributor implements Serializable
 		return JonixUtil.contributorDisplayName(personName, personNameKey, personNameBeforeKey, personNameInverted,
 				corporateName);
 	}
+
+	public String[] getNameParts()
+	{
+		if (personNameInverted != null)
+		{
+			String[] splits = personNameInverted.split(",");
+			String[] names = new String[splits.length];
+			for (int i = 0; i < splits.length; i++)
+				names[i] = splits[splits.length - 1 - i].trim();
+			return names;
+		}
+
+		if (personName != null)
+		{
+			String[] names = personName.split(" ");
+			for (int i = 0; i < names.length; i++)
+				names[i] = names[i].trim();
+			return names;
+		}
+
+		return new String[0];
+	}
+
 }

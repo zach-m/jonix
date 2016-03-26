@@ -20,6 +20,10 @@
 package com.tectonica.jonix.basic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 import com.tectonica.jonix.codelist.ContributorRoles;
@@ -33,14 +37,78 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 @SuppressWarnings("serial")
 public abstract class BasicContributors extends LazyList<BasicContributor>
 {
-	public List<BasicContributor> findContributors(ContributorRoles requestedType)
+	protected void sortBySequence(List<BasicContributor> contributors)
 	{
-		List<BasicContributor> matches = new ArrayList<BasicContributor>();
-		for (BasicContributor contributor : this)
+		// run a quick test to see if the list is at all sequenced. If it is, then this loop should really stop after
+		// one iteration. The only reason to run a loop (rather than examining the first item) is that we want to
+		// support a hybrid, ill-posed sequencing, where only SOME of the items are sequenced
+		boolean isSequenced = false;
+		for (BasicContributor contributor : contributors)
 		{
-			if (contributor.contributorRoles.contains(requestedType))
-				matches.add(contributor);
+			if (contributor.sequenceNumber != null)
+			{
+				isSequenced = true;
+				break;
+			}
 		}
-		return matches;
+
+		if (!isSequenced)
+			return;
+
+		Collections.sort(contributors, new Comparator<BasicContributor>()
+		{
+			@Override
+			public int compare(BasicContributor o1, BasicContributor o2)
+			{
+				return Integer.compare(toInt(o1.sequenceNumber), toInt(o2.sequenceNumber));
+			}
+
+			private int toInt(String s1)
+			{
+				try
+				{
+					return Integer.parseInt(s1);
+				}
+				catch (NumberFormatException nfe)
+				{
+					return Integer.MAX_VALUE; // i.e. un-sequenced or ill-sequenced items go to the end of the list
+				}
+			}
+		});
+	}
+
+	public List<BasicContributor> findByRole(ContributorRoles... requestedRoles)
+	{
+		List<BasicContributor> result = new ArrayList<>();
+
+		if (requestedRoles == null || requestedRoles.length == 0)
+		{
+			// if no filtering by role is required, we take all contributors and avoid unnecessary search
+			// copying is needed so that consequent sorting won't affect the original
+			result = new ArrayList<>(this);
+		}
+		else
+		{
+			// we perform a search according to the roles filter
+			HashSet<ContributorRoles> rolesSet = new HashSet<>(Arrays.asList(requestedRoles));
+			for (BasicContributor contributor : this)
+			{
+				for (ContributorRoles role : contributor.contributorRoles)
+				{
+					if (rolesSet.contains(role))
+						result.add(contributor);
+				}
+			}
+		}
+
+		return result;
+	}
+
+	public List<String> getDisplayNames(ContributorRoles... requestedRoles)
+	{
+		List<String> result = new ArrayList<>();
+		for (BasicContributor c : findByRole(requestedRoles))
+			result.add(c.getDisplayName());
+		return result;
 	}
 }

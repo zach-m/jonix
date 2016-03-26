@@ -58,6 +58,7 @@ public class BasicContributors2 extends BasicContributors
 			for (Contributor contributor : contributors)
 				list.add(new BasicContributor2(contributor));
 		}
+		sortBySequence(list);
 		return list;
 	}
 }
