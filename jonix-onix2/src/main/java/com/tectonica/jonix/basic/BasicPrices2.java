@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicPrice;
-import com.tectonica.jonix.basic.BasicPrices;
 import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.SupplyDetail;
 

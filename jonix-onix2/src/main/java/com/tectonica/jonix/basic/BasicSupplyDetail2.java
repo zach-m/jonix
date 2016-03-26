@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicSupplyDetail;
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.onix2.SupplyDetail;
 

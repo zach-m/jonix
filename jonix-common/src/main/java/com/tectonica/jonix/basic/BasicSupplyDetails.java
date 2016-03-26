@@ -19,11 +19,9 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-import com.tectonica.jonix.codelist.PriceTypes;
+import com.tectonica.jonix.codelist.CurrencyCodes;
 
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;SupplyDetail&gt; that may exist in an ONIX product
@@ -33,17 +31,10 @@ import com.tectonica.jonix.codelist.PriceTypes;
 @SuppressWarnings("serial")
 public abstract class BasicSupplyDetails extends LazyList<BasicSupplyDetail>
 {
-	public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes)
+	public String findFirstRetailPrice(CurrencyCodes currency, boolean includingTax)
 	{
-		List<BasicPrice> matches = new ArrayList<BasicPrice>();
-		for (BasicSupplyDetail supplyDetail : this)
-		{
-			for (BasicPrice price : supplyDetail.prices)
-			{
-				if (requestedTypes.contains(price.priceType))
-					matches.add(price);
-			}
-		}
-		return matches;
+		if (!isEmpty())
+			return get(0).prices.findRetailPrice(currency, includingTax);
+		return null;
 	}
 }
