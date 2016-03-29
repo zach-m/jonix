@@ -97,20 +97,23 @@ public abstract class BasicDescription implements Serializable
 				for (int i = 0; i < precisions.size(); i++)
 				{
 					Integer value = Integer.valueOf(values.get(i));
-					switch (precisions.get(i))
+					if (value != 0) // 0 has exact meaning as null, it's sometimes provided wrongly as such
 					{
-					case From:
-						ageRange[0] = value;
-						break;
+						switch (precisions.get(i))
+						{
+						case From:
+							ageRange[0] = value;
+							break;
 
-					case To:
-						ageRange[1] = value;
-						break;
+						case To:
+							ageRange[1] = value;
+							break;
 
-					case Exact:
-						ageRange[0] = value;
-						ageRange[1] = value;
-						break;
+						case Exact:
+							ageRange[0] = value;
+							ageRange[1] = value;
+							break;
+						}
 					}
 				}
 			}
