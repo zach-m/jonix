@@ -76,6 +76,8 @@ public abstract class BasicText implements Serializable
 
 	private static String unescape(String escaped) throws XMLStreamException
 	{
+		if (escaped == null)
+			return null;
 		XMLStreamReader reader = inputFactory.createXMLStreamReader(new StringReader("<xml>" + escaped + "</xml>"));
 		StringWriter sw = new StringWriter(escaped.length());
 		while (reader.hasNext())
