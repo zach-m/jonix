@@ -46,10 +46,22 @@ import com.tectonica.jonix.stream.JonixStreamer;
  */
 public abstract class JonixUnifiedExtractor<H, P> extends JonixFilesExtractor
 {
-	protected void onHeader(H header, JonixStreamer streamer)
-	{}
+	/**
+	 * fired when a {@code Header} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected boolean onHeader(H header, JonixStreamer streamer)
+	{
+		return true;
+	}
 
-	protected abstract void onProduct(P product, JonixStreamer streamer);
+	/**
+	 * fired when a {@code Product} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected abstract boolean onProduct(P product, JonixStreamer streamer);
 
 	// ///////////////////////////////////////////////////////////////////////////////
 
@@ -70,7 +82,7 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixFilesExtractor
 	}
 
 	@Override
-	protected void onHeaderElement(Element domHeader, JonixStreamer streamer)
+	protected boolean onHeaderElement(Element domHeader, JonixStreamer streamer)
 	{
 		final H unifiedHeader;
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
@@ -86,11 +98,11 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixFilesExtractor
 			unifiedHeader = unifier.createFrom(rawHeader3);
 			rawOnixHeader = rawHeader3;
 		}
-		onHeader(unifiedHeader, streamer);
+		return onHeader(unifiedHeader, streamer);
 	}
 
 	@Override
-	protected void onProductElement(Element domProduct, JonixStreamer streamer)
+	protected boolean onProductElement(Element domProduct, JonixStreamer streamer)
 	{
 		final P unifiedProduct;
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
@@ -106,7 +118,7 @@ public abstract class JonixUnifiedExtractor<H, P> extends JonixFilesExtractor
 			unifiedProduct = unifier.createFrom(rawProduct3);
 			rawOnixProduct = rawProduct3;
 		}
-		onProduct(unifiedProduct, streamer);
+		return onProduct(unifiedProduct, streamer);
 	}
 
 	@Override

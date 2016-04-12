@@ -37,8 +37,9 @@ public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixStreamer streamer)
+	protected boolean onProduct(P product, JonixStreamer streamer)
 	{
 		products.add(product);
+		return true;
 	}
 }

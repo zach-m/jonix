@@ -41,9 +41,19 @@ public abstract class JonixExtractor
 {
 	protected static final Logger LOG = LoggerFactory.getLogger(JonixExtractor.class);
 
-	protected abstract void onHeaderElement(Element header, JonixStreamer streamer);
+	/**
+	 * fired when a {@code Header} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected abstract boolean onHeaderElement(Element header, JonixStreamer streamer);
 
-	protected abstract void onProductElement(Element product, JonixStreamer streamer);
+	/**
+	 * fired when a {@code Product} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected abstract boolean onProductElement(Element product, JonixStreamer streamer);
 
 	// /////////////////////////////////////////////////////////////////////////////////////////
 

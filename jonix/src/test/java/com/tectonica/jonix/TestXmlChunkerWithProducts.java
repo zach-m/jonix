@@ -64,7 +64,7 @@ public class TestXmlChunkerWithProducts
 			private int count = 0;
 
 			@Override
-			public void onChunk(Element element)
+			public boolean onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
@@ -89,6 +89,7 @@ public class TestXmlChunkerWithProducts
 					if (title == null)
 						System.err.println(JonixJson.toJson(product));
 				}
+				return true;
 			}
 
 			@Override

@@ -113,18 +113,20 @@ public class JonixStreamer
 		}
 
 		@Override
-		public void onChunk(Element element)
+		public boolean onChunk(Element element)
 		{
 			final String nodeName = element.getNodeName();
+
 			if (nodeName.equalsIgnoreCase("Header"))
-			{
-				onHeaderElement(element);
-			}
-			else if (nodeName.equalsIgnoreCase("Product"))
+				return onHeaderElement(element);
+
+			if (nodeName.equalsIgnoreCase("Product"))
 			{
 				++productNo;
-				onProductElement(element);
+				return onProductElement(element);
 			}
+
+			return true; // TODO: throw exception ?
 		}
 	};
 
@@ -155,13 +157,23 @@ public class JonixStreamer
 	// /////////////////////////////////////////////////////////////////////////////////
 	// ACCESSOR FUNCTIONS FOR CUSTOM STREAMERS OUTSIDE THE PACKAGE
 
-	protected void onHeaderElement(Element element)
+	/**
+	 * fired when a {@code Header} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected boolean onHeaderElement(Element element)
 	{
-		extractor.onHeaderElement(element, this);
+		return extractor.onHeaderElement(element, this);
 	}
 
-	protected void onProductElement(Element element)
+	/**
+	 * fired when a {@code Product} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected boolean onProductElement(Element element)
 	{
-		extractor.onProductElement(element, this);
+		return extractor.onProductElement(element, this);
 	}
 }

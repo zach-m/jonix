@@ -63,9 +63,11 @@ public class JonixTabDelimitedExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixStreamer streamer)
+	protected boolean onProduct(P product, JonixStreamer streamer)
 	{
 		super.onProduct(product, streamer); // logs an info line
 		out.println(JonixTabulator.productAsTabDelimitedString(product, columns));
+		
+		return true;
 	}
 }

@@ -45,7 +45,7 @@ public class BasicText2 extends BasicText
 	}
 
 	/**
-	 * translation table from Onix2's Code-List-33 to Onix3's Code-List-153, based on <a href=
+	 * translation table from Onix2's Code-List-33 to Onix3's Code-List-153, based on page 8 in <a href=
 	 * "http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_10_Changes_for_3.0.pdf"
 	 * >this document from Editeur</a>
 	 */

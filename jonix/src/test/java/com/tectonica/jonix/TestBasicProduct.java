@@ -61,7 +61,7 @@ public class TestBasicProduct
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onChunk(Element element)
+			public boolean onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
@@ -73,6 +73,7 @@ public class TestBasicProduct
 					System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
 					System.out.println(JonixJson.toJson(bp));
 				}
+				return true;
 			}
 
 			@Override
@@ -99,7 +100,7 @@ public class TestBasicProduct
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onChunk(Element element)
+			public boolean onChunk(Element element)
 			{
 				final String nodeName = element.getNodeName();
 				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
@@ -111,6 +112,7 @@ public class TestBasicProduct
 					System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
 					System.out.println(jsonDirect = JonixJson.toJson(bp));
 				}
+				return true;
 			}
 
 			@Override
@@ -127,9 +129,10 @@ public class TestBasicProduct
 		JonixStreamer streamer = new JonixStreamer(new JonixUnifiedExtractor<BasicHeader, BasicProduct>(Jonix.BASIC_UNIFIER)
 		{
 			@Override
-			protected void onProduct(BasicProduct product, JonixStreamer streamer)
+			protected boolean onProduct(BasicProduct product, JonixStreamer streamer)
 			{
 				jsonViaReader = JonixJson.toJson(product);
+				return true;
 			}
 		});
 		streamer.read(getClass().getResourceAsStream(RESOURCE_NAME));

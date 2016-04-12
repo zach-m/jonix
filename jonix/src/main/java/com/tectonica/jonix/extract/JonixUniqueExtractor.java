@@ -101,7 +101,7 @@ public class JonixUniqueExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixStreamer streamer)
+	protected boolean onProduct(P product, JonixStreamer streamer)
 	{
 		String[] idData = JonixTabulator.newColumnBuffer(idColumn);
 
@@ -110,6 +110,8 @@ public class JonixUniqueExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 			uniqueProducts.add(new ProductInfo<H, P>(idData, lastFileTimestamp, product));
 			changed = true;
 		}
+
+		return true;
 	}
 
 	// ////////////////////////////////////////////////////////////////////////////////////////

@@ -91,9 +91,10 @@ public class TestSingle
 		JonixFilesStreamer streamer = new JonixFilesStreamer(new Onix3Extractor()
 		{
 			@Override
-			protected void onProduct(Product product, JonixStreamer streamer)
+			protected boolean onProduct(Product product, JonixStreamer streamer)
 			{
 				System.out.println(JonixJson.toJson(product));
+				return true;
 			}
 		});
 

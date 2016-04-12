@@ -47,13 +47,15 @@ public class TestXmlChunker
 		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
 		{
 			@Override
-			public void onChunk(Element element)
+			public boolean onChunk(Element element)
 			{
 				// turn the DOM element back to XML
 				String asXml = XmlChunker.elementToString(element, false);
 
 				System.out.println("\t" + asXml);
 				System.out.println("------------------------------------------------------------------------------");
+				
+				return true;
 			}
 
 			@Override

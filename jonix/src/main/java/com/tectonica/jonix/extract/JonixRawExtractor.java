@@ -27,35 +27,39 @@ import com.tectonica.jonix.stream.JonixOnixVersion;
 
 public abstract class JonixRawExtractor extends JonixFilesExtractor
 {
-	protected void onOnix2Header(com.tectonica.jonix.onix2.Header header, JonixStreamer streamer)
-	{}
+	protected boolean onOnix2Header(com.tectonica.jonix.onix2.Header header, JonixStreamer streamer)
+	{
+		return true;
+	}
 
-	protected abstract void onOnix2Product(com.tectonica.jonix.onix2.Product product, JonixStreamer streamer);
+	protected abstract boolean onOnix2Product(com.tectonica.jonix.onix2.Product product, JonixStreamer streamer);
 
-	protected void onOnix3Header(com.tectonica.jonix.onix3.Header header, JonixStreamer streamer)
-	{}
+	protected boolean onOnix3Header(com.tectonica.jonix.onix3.Header header, JonixStreamer streamer)
+	{
+		return true;
+	}
 
-	protected abstract void onOnix3Product(com.tectonica.jonix.onix3.Product product, JonixStreamer streamer);
+	protected abstract boolean onOnix3Product(com.tectonica.jonix.onix3.Product product, JonixStreamer streamer);
 
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	@Override
-	protected void onHeaderElement(Element domHeader, JonixStreamer streamer)
+	protected boolean onHeaderElement(Element domHeader, JonixStreamer streamer)
 	{
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
-			onOnix2Header(new com.tectonica.jonix.onix2.Header(domHeader), streamer);
-		else
-			// if (isOnix3)
-			onOnix3Header(new com.tectonica.jonix.onix3.Header(domHeader), streamer);
+			return onOnix2Header(new com.tectonica.jonix.onix2.Header(domHeader), streamer);
+
+		// if (isOnix3)
+		return onOnix3Header(new com.tectonica.jonix.onix3.Header(domHeader), streamer);
 	}
 
 	@Override
-	protected void onProductElement(Element domProduct, JonixStreamer streamer)
+	protected boolean onProductElement(Element domProduct, JonixStreamer streamer)
 	{
 		if (streamer.getSourceOnixVersion() == JonixOnixVersion.ONIX2)
-			onOnix2Product(new com.tectonica.jonix.onix2.Product(domProduct), streamer);
-		else
-			// if (isOnix3)
-			onOnix3Product(new com.tectonica.jonix.onix3.Product(domProduct), streamer);
+			return onOnix2Product(new com.tectonica.jonix.onix2.Product(domProduct), streamer);
+
+		// if (isOnix3)
+		return onOnix3Product(new com.tectonica.jonix.onix3.Product(domProduct), streamer);
 	}
 }

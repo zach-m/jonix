@@ -35,18 +35,20 @@ import com.tectonica.jonix.stream.JonixStreamer;
 public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
 {
 	@Override
-	protected void onHeader(H header, JonixStreamer streamer)
+	protected boolean onHeader(H header, JonixStreamer streamer)
 	{
 		LOG.info("-----------------------------------------------------------\n");
 		LOG.info(header.toString());
 		LOG.info("-----------------------------------------------------------\n");
+		return true;
 	}
 
 	@Override
-	protected void onProduct(P product, JonixStreamer streamer)
+	protected boolean onProduct(P product, JonixStreamer streamer)
 	{
 		// show a log message about the product being successfully parsed
 		LOG.info("retrieved product #{} - {}", streamer.getProductNo(), unifier.labelOf(product));
+		return true;
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////

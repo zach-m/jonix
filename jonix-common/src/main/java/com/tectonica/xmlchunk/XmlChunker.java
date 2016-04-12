@@ -131,9 +131,9 @@ public class XmlChunker
 		/**
 		 * Fired with an in-memory DOM representation of an XML sub-tree positioned at the target depth
 		 * 
-		 * @param element
+		 * @return whether or not to continue to the next chunk (i.e. false means break the parsing)
 		 */
-		public void onChunk(Element element);
+		public boolean onChunk(Element element);
 	}
 
 	/**
@@ -193,8 +193,10 @@ public class XmlChunker
 						domEvents.addAll(events);
 						domEvents.add(endDocumentEvent);
 						Element element = elementFromEvents(domEvents, reader);
-						listener.onChunk(element);
+						boolean resume = listener.onChunk(element);
 						events = null;
+						if (!resume)
+							break;
 					}
 					depth--;
 				}

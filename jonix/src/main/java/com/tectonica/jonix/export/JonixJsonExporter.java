@@ -49,11 +49,13 @@ public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
 	}
 
 	@Override
-	protected void onProduct(P product, JonixStreamer streamer)
+	protected boolean onProduct(P product, JonixStreamer streamer)
 	{
 		super.onProduct(product, streamer); // logs an info line
 
 		out.println(exportRawProduct ? JonixJson.toJson(rawOnixProduct) : JonixJson.toJson(product));
 		out.println("\n");
+		
+		return true;
 	}
 }

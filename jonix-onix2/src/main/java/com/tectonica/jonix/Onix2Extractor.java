@@ -48,22 +48,34 @@ import com.tectonica.jonix.stream.JonixStreamer;
  */
 public abstract class Onix2Extractor extends JonixFilesExtractor
 {
-	protected void onHeader(Header header, JonixStreamer streamer)
-	{}
+	/**
+	 * fired when a {@code Header} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected boolean onHeader(Header header, JonixStreamer streamer)
+	{
+		return true;
+	}
 
-	protected abstract void onProduct(Product product, JonixStreamer streamer);
+	/**
+	 * fired when a {@code Product} element is encountered in the ONIX file
+	 * 
+	 * @return whether or not to continue to the processing of the file
+	 */
+	protected abstract boolean onProduct(Product product, JonixStreamer streamer);
 
 	// ///////////////////////////////////////////////////////////////////////////////
 
 	@Override
-	protected void onHeaderElement(Element domHeader, JonixStreamer streamer)
+	protected boolean onHeaderElement(Element domHeader, JonixStreamer streamer)
 	{
-		onHeader(new Header(domHeader), streamer);
+		return onHeader(new Header(domHeader), streamer);
 	}
 
 	@Override
-	protected void onProductElement(Element domProduct, JonixStreamer streamer)
+	protected boolean onProductElement(Element domProduct, JonixStreamer streamer)
 	{
-		onProduct(new Product(domProduct), streamer);
+		return onProduct(new Product(domProduct), streamer);
 	}
 }
