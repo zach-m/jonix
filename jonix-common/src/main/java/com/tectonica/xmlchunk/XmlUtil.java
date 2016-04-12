@@ -19,8 +19,11 @@
 
 package com.tectonica.xmlchunk;
 
+import java.io.StringReader;
 import java.io.StringWriter;
 
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -63,5 +66,30 @@ public class XmlUtil
 				return content.substring(beginIndex, endIndex);
 		}
 		return content;
+	}
+
+	/**
+	 * Transforms an escaped XML into the original, "un-escaped" value (for example turn &amp;lt;Hello&amp;gt; into
+	 * &lt;Hello&gt;)
+	 * 
+	 * @param escaped
+	 *            the escaped XML string
+	 * @return the un-escaped XML string
+	 * @throws XMLStreamException
+	 */
+	public static String unescape(String escaped) throws XMLStreamException
+	{
+		if (escaped == null)
+			return null;
+		XMLStreamReader reader = XmlChunkerContext.inputFactory.createXMLStreamReader(new StringReader("<xml>"
+				+ escaped + "</xml>"));
+		StringWriter sw = new StringWriter(escaped.length());
+		while (reader.hasNext())
+		{
+			reader.next();
+			if (reader.hasText())
+				sw.append(reader.getText());
+		}
+		return sw.toString();
 	}
 }
