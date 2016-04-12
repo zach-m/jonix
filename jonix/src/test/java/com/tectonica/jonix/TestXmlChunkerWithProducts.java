@@ -55,7 +55,7 @@ public class TestXmlChunkerWithProducts
 	// ignored by default. the sample files are not checked in to SCM
 	public void readProductsAndExtractProperties() throws FileNotFoundException
 	{
-		final File file = new File("../onix_samples/ONIX2/SB_Ref.xml"); // SB_short.xml
+		final File file = new File("C:\\Users\\zach\\Dropbox\\Projects\\Jonix\\onix_samples\\ONIX2\\SB_Ref.xml");
 		if (!file.exists())
 			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
 

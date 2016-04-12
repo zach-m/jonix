@@ -21,17 +21,16 @@ package com.tectonica.jonix;
 
 import java.io.InputStream;
 
-import javax.xml.stream.events.StartElement;
+import javax.xml.stream.XMLStreamException;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.w3c.dom.Element;
 
-import com.tectonica.xmlchunk.XmlChunker;
+import com.tectonica.xmlchunk.XmlChunkerIterator;
 import com.tectonica.xmlchunk.XmlUtil;
 
-public class TestXmlChunker
+public class TestXmlChunkerIterator
 {
 	@Before
 	public void setUp() throws Exception
@@ -42,30 +41,15 @@ public class TestXmlChunker
 	{}
 
 	@Test
-	public void xmlReadParseAndThenWriteAsXml()
+	public void xmlReadParseAndThenWriteAsXml() throws XMLStreamException
 	{
-		InputStream stream = TestXmlChunker.class.getResourceAsStream("/single-book-onix2.xml");
-		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
+		InputStream stream = TestXmlChunkerIterator.class.getResourceAsStream("/single-book-onix2.xml");
+		XmlChunkerIterator iter = new XmlChunkerIterator(stream, "UTF-8", 2);
+		while (iter.hasNext())
 		{
-			@Override
-			public boolean onChunk(Element element)
-			{
-				// turn the DOM element back to XML
-				String asXml = XmlUtil.elementToString(element, false);
-
-				System.out.println("\t" + asXml);
-				System.out.println("------------------------------------------------------------------------------");
-				
-				return true;
-			}
-
-			@Override
-			public void onPreTargetStart(int depth, StartElement element)
-			{
-				final String localPart = element.getName().getLocalPart();
-				System.out.println("FOUND TAG: " + localPart + " @ " + depth);
-				System.out.println("------------------------------------------------------------------------------");
-			}
-		});
+			String asXml = XmlUtil.elementToString(iter.next(), false);
+			System.out.println("\t" + asXml);
+			System.out.println("------------------------------------------------------------------------------");
+		}
 	}
 }
