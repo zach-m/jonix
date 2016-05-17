@@ -102,10 +102,10 @@ public class JonixFilesStreamer extends JonixStreamer
 	}
 
 	/**
-	 * 
 	 * @param rootLocation
 	 *            may be a directory or a file
-	 * @param suffix
+	 * @param pattern
+	 *            pattern of files to be included, provided in 'glob' format
 	 */
 	public void readFolder(final String rootLocation, final String pattern)
 	{

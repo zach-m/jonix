@@ -20,7 +20,6 @@
 package com.tectonica.jonix.stream;
 
 import java.io.InputStream;
-import java.io.PrintStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +29,6 @@ import org.w3c.dom.Element;
  * An abstract base-class for an <b>extractor</b> - a listener for {@link JonixStreamer} processing the events it fires
  * as it parses an ONIX source. Subclasses are required to implement {@link #onHeaderElement(Element, JonixStreamer)}
  * and {@link #onProductElement(Element, JonixStreamer)}, but may also override the other protected methods.
- * <p>
- * Users of an extractor can specify where to send the log messages using {@link #setLogger(PrintStream)}.
  * <p>
  * NOTE: extractors may be reused over different streamers, if needed
  * 

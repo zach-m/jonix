@@ -37,9 +37,6 @@ public abstract class JonixFilesExtractor extends JonixExtractor
 
 	/**
 	 * return false here to skip this particular file
-	 * 
-	 * @param fileName
-	 * @return
 	 */
 	protected boolean onBeforeFile(String fileName, JonixStreamer streamer)
 	{

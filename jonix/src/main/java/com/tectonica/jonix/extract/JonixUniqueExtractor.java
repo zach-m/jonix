@@ -142,7 +142,6 @@ public class JonixUniqueExtractor<H, P> extends JonixUnifiedExtractor<H, P>
 	 * @param comparator
 	 *            a custom {@link Comparator} for ordering products with identical IDs. Among all such products, the one
 	 *            that compares to be the 'smallest' will be picked when the list is filtered
-	 * @return
 	 */
 	public List<ProductInfo<H, P>> getUniqueProducts(final Comparator<ProductInfo<H, P>> comparator)
 	{
