@@ -4,6 +4,7 @@
 Commercial-grade library for extracting data from [ONIX](http://www.editeur.org/83/Overview) sources.
 
 Version 3.0 has been released on June 26, 2015. It supports ONIX versions 2.1.03 and 3.0.02.
+Version 3.1-rc1 has been released on May 17, 2016.
 
 API documentation can be found [here](http://zach-m.github.io/jonix).
 
@@ -77,7 +78,7 @@ Use the following package if you need nothing but raw support in ONIX-2 sources:
 	<dependency>
 		<groupId>com.tectonica</groupId>
 		<artifactId>jonix-onix2</artifactId>
-		<version>3.0</version>
+		<version>3.1-rc1</version>
 	</dependency>
 
 Use the following package if you need nothing but raw support in ONIX-3 sources: 
@@ -85,7 +86,7 @@ Use the following package if you need nothing but raw support in ONIX-3 sources:
 	<dependency>
 		<groupId>com.tectonica</groupId>
 		<artifactId>jonix-onix3</artifactId>
-		<version>3.0</version>
+		<version>3.1-rc1</version>
 	</dependency>
 
 Use the following package if you need Jonix full support: 
@@ -93,7 +94,7 @@ Use the following package if you need Jonix full support:
 	<dependency>
 		<groupId>com.tectonica</groupId>
 		<artifactId>jonix</artifactId>
-		<version>3.0</version>
+		<version>3.1-rc1</version>
 	</dependency>
 
 # Examples

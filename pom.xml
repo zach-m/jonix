@@ -4,7 +4,7 @@
 
 	<groupId>com.tectonica</groupId>
 	<artifactId>jonix-parent</artifactId>
-	<version>3.1-SNAPSHOT</version>
+	<version>3.1-rc1</version>
 	<packaging>pom</packaging>
 
 	<name>Jonix - Parent</name>
@@ -74,7 +74,7 @@
 						<windowtitle>Jonix Framework ${project.version} APIs</windowtitle>
 						<encoding>UTF-8</encoding>
 						<aggregate>true</aggregate>
-						<excludePackageNames>com.tectonica.repackaged</excludePackageNames>
+						<excludePackageNames>com.tectonica.repackaged:net</excludePackageNames>
 					</configuration>
 				</plugin>
 
@@ -239,5 +239,25 @@
 				</plugins>
 			</build>
 		</profile>
+
+		<!-- the following is needed to suppress javadoc warnings with jdk8 -->
+		<profile>
+			<id>doclint-java8-disable</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
 	</profiles>
 </project>
