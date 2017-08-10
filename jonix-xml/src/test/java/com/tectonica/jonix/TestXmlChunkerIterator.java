@@ -24,11 +24,11 @@ import java.io.InputStream;
 import javax.xml.stream.XMLStreamException;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.tectonica.xmlchunk.XmlChunkerIterator;
-import com.tectonica.xmlchunk.XmlUtil;
 
 public class TestXmlChunkerIterator
 {
@@ -41,15 +41,16 @@ public class TestXmlChunkerIterator
 	{}
 
 	@Test
-	public void xmlReadParseAndThenWriteAsXml() throws XMLStreamException
+	public void xmlReadParseAndCountUsingIterator() throws XMLStreamException
 	{
-		InputStream stream = TestXmlChunkerIterator.class.getResourceAsStream("/single-book-onix2.xml");
+		InputStream stream = TestXmlChunkerIterator.class.getResourceAsStream("/tester.xml");
 		XmlChunkerIterator iter = new XmlChunkerIterator(stream, "UTF-8", 2);
+		long count = 0;
 		while (iter.hasNext())
 		{
-			String asXml = XmlUtil.elementToString(iter.next(), false);
-			System.out.println("\t" + asXml);
-			System.out.println("------------------------------------------------------------------------------");
+			count++;
+			iter.next();
 		}
+		Assert.assertEquals(count, 5L);
 	}
 }
