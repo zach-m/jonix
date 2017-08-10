@@ -16,6 +16,10 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.tectonica</groupId>
+			<artifactId>jonix-xml</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>

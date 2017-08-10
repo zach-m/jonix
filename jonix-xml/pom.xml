@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>jonix-xml</artifactId>
+
+	<parent>
+		<groupId>com.tectonica</groupId>
+		<artifactId>jonix-parent</artifactId>
+		<version>3.1-rc1</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<name>Jonix - XML</name>
+	<description>Utilities to handle infinitely large XML files</description>
+
+	<dependencies>
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	
+</project>
