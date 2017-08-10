@@ -40,6 +40,6 @@ public abstract class BasicTitle implements Serializable
 
 	protected String noBreaks(String s)
 	{
-		return (s == null || s.isEmpty()) ? s : s.replaceAll("\\t|\\n|\\r", " ");
+		return (s == null || s.isEmpty()) ? s : s.replaceAll("\\t|\\n|\\r", " ").trim();
 	}
 }
