@@ -1,7 +1,7 @@
 /*
  *   Copyright © 2015 Francisco Sariego Rodríguez
  *
- *   $Id: Group.java 53 2015-08-30 09:43:09Z frsarieg $
+ *   $Id: Group.java 54 2016-03-20 20:21:03Z frsarieg $
  *
  *   This file is part of ISBNHyphenAppender.
  *
@@ -26,11 +26,11 @@ package net.sourceforge.isbnhyphenappender;
  * Each group is based in the information on
  * https://www.isbn-international.org/export_rangemessage.xml
  * <p>
- * Updated to: {@code 1df47d34-8016-4c00-bfaa-4dec3e913c2b}
- * {@code (Wed, 4 Mar 2015 17:27:14 CET)}
+ * Updated to: {@code 3a9e9271-089c-4726-807e-332336cc4315}
+ * {@code (Tue, 8 Mar 2016 17:35:37 CET}
  * @see <a href="https://www.isbn-international.org/export_rangemessage.xml">https://www.isbn-international.org/export_rangemessage.xml</a>
  * @author Francisco Sariego Rodríguez
- * @version $Revision: 53 $ $Id: Group.java 53 2015-08-30 09:43:09Z frsarieg $
+ * @version $Revision: 54 $ $Id: Group.java 54 2016-03-20 20:21:03Z frsarieg $
  */
 public enum Group {
 
@@ -244,7 +244,8 @@ public enum Group {
      *    17000 - 17999
      *    18000 - 18999
      *    19000 - 19999
-     *      200 - 674
+     *      200 - 619
+     *     6200 - 6749
      *     6750 - 6999
      *    70000 - 74999
      *     7500 - 7999
@@ -263,7 +264,8 @@ public enum Group {
         {"17000", "17999"},
         {"18000", "18999"},
         {"19000", "19999"},
-        {"200", "674"},
+        {"200", "619"},
+        {"6200", "6749"},
         {"6750", "6999"},
         {"70000", "74999"},
         {"7500", "7999"},
@@ -331,16 +333,20 @@ public enum Group {
      *        0 - 0
      *       10 - 49
      *      500 - 799
-     *     8000 - 9199
-     *    92000 - 99999</pre>
+     *     8000 - 9099
+     *      910 - 919
+     *    92000 - 97499
+     *      975 - 999</pre>
      * Maximum length: 5
      */
     _978606(978606, new String[][]{
         {"0", "0"},
         {"10", "49"},
         {"500", "799"},
-        {"8000", "9199"},
-        {"92000", "99999"},}, 5),
+        {"8000", "9099"},
+        {"910", "919"},
+        {"92000", "97499"},
+        {"975", "999"},}, 5),
     /**
      * Group: 978-607 - Mexico.
      * <p>
@@ -677,7 +683,9 @@ public enum Group {
      *    60000 - 69999
      *     7000 - 8499
      *    85000 - 89999
-     *   900000 - 959999
+     *   900000 - 924999
+     *    92500 - 94499
+     *     9450 - 9599
      *       96 - 97
      *    98000 - 99999</pre>
      * Maximum length: 6
@@ -689,7 +697,9 @@ public enum Group {
         {"60000", "69999"},
         {"7000", "8499"},
         {"85000", "89999"},
-        {"900000", "959999"},
+        {"900000", "924999"},
+        {"92500", "94499"},
+        {"9450", "9599"},
         {"96", "97"},
         {"98000", "99999"},}, 6),
     /**
@@ -985,7 +995,8 @@ public enum Group {
      * <p>
      * Valid publisher ranges: <pre>
      *     0000 - 1999
-     *       20 - 40
+     *       20 - 38
+     *     3900 - 4099
      *    41000 - 43999
      *    44000 - 44999
      *     4500 - 4999
@@ -998,7 +1009,8 @@ public enum Group {
      */
     _978955(978955, new String[][]{
         {"0000", "1999"},
-        {"20", "40"},
+        {"20", "38"},
+        {"3900", "4099"},
         {"41000", "43999"},
         {"44000", "44999"},
         {"4500", "4999"},
@@ -1241,7 +1253,8 @@ public enum Group {
      *       00 - 00
      *     0100 - 0999
      *    10000 - 19999
-     *  2000000 - 2999999
+     *     2000 - 2499
+     *  2500000 - 2999999
      *      300 - 499
      *     5000 - 5999
      *       60 - 89
@@ -1254,7 +1267,8 @@ public enum Group {
         {"00", "00"},
         {"0100", "0999"},
         {"10000", "19999"},
-        {"2000000", "2999999"},
+        {"2000", "2499"},
+        {"2500000", "2999999"},
         {"300", "499"},
         {"5000", "5999"},
         {"60", "89"},
