@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 
-@JsonPropertyOrder({ "onixVersion", "isShort", "composites", "elements", "flgs", "types", "enums", "structs", "intfs" })
+@JsonPropertyOrder({ "onixVersion", "isShort", "composites", "elements", "flgs", "types", "enums", "structs" })
 public class OnixMetadata
 {
 	public final OnixVersion onixVersion;

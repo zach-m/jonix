@@ -32,11 +32,11 @@ import org.w3c.dom.Element;
  * <ul>
  * <li>May be infinitely large (can't be held in memory in its entirety)
  * <li>Has a repetitive structure, where sub-XML records of interest are all located at some constant depth/level
+ * <li>Sub-XML records are small enough to be read and parsed in memory
  * </ul>
  * <p>
- * The XML source will be broken into 'chunks', each representing one XML sub-tree positioned at the target depth
- * (assuming it is small enough to fit in memory). The chunk will be passed to the caller as an in-memory DOM
- * {@link Element}.
+ * The XML source will be broken into 'chunks', each representing one XML sub-tree positioned at the target depth. The
+ * chunk will be passed to the caller as an in-memory DOM {@link Element}.
  * <p>
  * For example, given the following XML:
  * 

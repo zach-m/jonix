@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.generator;
 
+import java.io.File;
 import java.io.PrintStream;
 
 import com.tectonica.jonix.codegen.generator.GenUtil.FieldInfo;
@@ -41,25 +42,25 @@ public class OnixClassGen
 	private static final String EQUALS = "equals"; // turn to "equalsIgnoreCase" to assume case-insensitive XML
 
 	private final String packageName;
-	private final String folderName;
+	private final File folder;
 
 	private final OnixMetadata ref;
 
 	public OnixClassGen(String basePackage, String baseFolder, String subfolder, OnixMetadata ref)
 	{
-		packageName = basePackage + "." + subfolder;
-		folderName = baseFolder + "/" + subfolder;
 		this.ref = ref;
-		GenUtil.prepareOutputFolder(folderName);
+		packageName = basePackage + "." + subfolder;
+		folder = new File(baseFolder, subfolder);
+		GenUtil.prepareOutputFolder(folder);
 	}
 
 	public void generate(OnixClass onixClass)
 	{
 		try
 		{
-			String fileName = folderName + "/" + onixClass.name + ".java";
+			File javaFile = new File(folder, onixClass.name + ".java");
 
-			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
+			try (PrintStream p = new PrintStream(javaFile, "UTF-8"))
 			{
 				if (onixClass instanceof OnixCompositeDef)
 					writeCompositeClass((OnixCompositeDef) onixClass, p);
@@ -489,12 +490,15 @@ public class OnixClassGen
 	{
 		for (OnixAttribute a : clz.attributes)
 		{
-			String enumType = a.getEnumName();
+			String enumName = a.getEnumName();
 
-			if (enumType == null)
+			if (enumName == null) {
+				// EXAMPLE: datestamp = JPU.getAttribute(element, "datestamp");
 				p.printf("      %s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
-			else
-				p.printf("      %s = %s.byCode(JPU.getAttribute(element, \"%s\"));\n", a.name, enumType, a.name);
+			} else {
+				// EXAMPLE: textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+				p.printf("      %s = %s.byCode(JPU.getAttribute(element, \"%s\"));\n", a.name, enumName, a.name);
+			}
 		}
 	}
 

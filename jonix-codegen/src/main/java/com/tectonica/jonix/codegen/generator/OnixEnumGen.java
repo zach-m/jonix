@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.generator;
 
+import java.io.File;
 import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,13 +33,13 @@ public class OnixEnumGen
 	private static final int MIN_FOR_MAP = 8;
 
 	private final String packageName;
-	private final String folderName;
+	private final File folder;
 
 	public OnixEnumGen(String basePackage, String baseFolder, String subfolder)
 	{
 		packageName = basePackage + "." + subfolder;
-		folderName = baseFolder + "/" + subfolder;
-		GenUtil.prepareOutputFolder(folderName);
+		folder = new File(baseFolder, subfolder);
+		GenUtil.prepareOutputFolder(folder);
 	}
 
 	public void generate(OnixSimpleType enumType)
@@ -52,8 +53,8 @@ public class OnixEnumGen
 
 		try
 		{
-			String fileName = folderName + "/" + enumType.enumName + ".java";
-			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
+			File javaFile = new File(folder, enumType.enumName + ".java");
+			try (PrintStream p = new PrintStream(javaFile, "UTF-8"))
 			{
 				writeEnumClass(enumType, p);
 			}

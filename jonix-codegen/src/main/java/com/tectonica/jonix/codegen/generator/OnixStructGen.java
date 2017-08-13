@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.generator;
 
+import java.io.File;
 import java.io.PrintStream;
 
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
@@ -32,13 +33,13 @@ public class OnixStructGen
 	private static final String COMMON_PACKAGE = "com.tectonica.jonix";
 
 	private final String packageName;
-	private final String folderName;
+	private final File folder;
 
 	public OnixStructGen(String basePackage, String baseFolder, String subfolder)
 	{
 		packageName = basePackage + "." + subfolder;
-		folderName = baseFolder + "/" + subfolder;
-		GenUtil.prepareOutputFolder(folderName);
+		folder = new File(baseFolder, subfolder);
+		GenUtil.prepareOutputFolder(folder);
 	}
 
 	public void generate(OnixStruct struct)
@@ -46,9 +47,9 @@ public class OnixStructGen
 		try
 		{
 			final String structName = "Jonix" + struct.containingComposite.name;
-			String fileName = folderName + "/" + structName + ".java";
+			File javaFile = new File(folder, structName + ".java");
 
-			try (PrintStream p = new PrintStream(fileName, "UTF-8"))
+			try (PrintStream p = new PrintStream(javaFile, "UTF-8"))
 			{
 				writeStruct(struct, structName, p);
 			}

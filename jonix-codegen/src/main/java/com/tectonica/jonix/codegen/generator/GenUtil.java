@@ -41,9 +41,8 @@ public class GenUtil
 	/**
 	 * makes sure a target folder exists and empty
 	 */
-	public static void prepareOutputFolder(String folderName)
+	public static void prepareOutputFolder(File dir)
 	{
-		File dir = new File(folderName);
 		dir.mkdirs();
 		for (File file : dir.listFiles())
 			file.delete();

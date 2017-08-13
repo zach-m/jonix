@@ -122,28 +122,29 @@ class XmlChunkerContext
 			{
 				if (depth == targetDepth)
 				{
-					List<XMLEvent> domEvents = new ArrayList<XMLEvent>();
-					domEvents.add(startDocumentEvent);
-					domEvents.addAll(events);
-					domEvents.add(endDocumentEvent);
-					retVal = elementFromEvents(domEvents, reader);
+					retVal = elementFromEvents();
 					events = null;
 				}
 				depth--;
 			}
-			
+
 			if (retVal != null)
 				return retVal;
 		}
 		return null;
 	}
 
-	private Element elementFromEvents(List<XMLEvent> domEvents, XMLEventReader reader) throws XMLStreamException
+	private Object elementFromEvents() throws XMLStreamException
 	{
+		List<XMLEvent> domEvents = new ArrayList<XMLEvent>();
+		domEvents.add(startDocumentEvent);
+		domEvents.addAll(events);
+		domEvents.add(endDocumentEvent);
+		
 		XmlChunkerReader xmlEventReader = new XmlChunkerReader(domEvents, reader);
-
+		
 		DOMResult dom = new DOMResult();
-
+		
 		try
 		{
 			Transformer transformer = transformerFactory.newTransformer();
