@@ -19,163 +19,143 @@
 
 package com.tectonica.jonix.codegen.generator;
 
-import java.io.File;
-import java.io.PrintStream;
-
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 
-public class OnixStructGen
-{
-	private static final String COMMON_PACKAGE = "com.tectonica.jonix";
+import java.io.File;
+import java.io.PrintStream;
 
-	private final String packageName;
-	private final File folder;
+public class OnixStructGen {
+    private static final String COMMON_PACKAGE = "com.tectonica.jonix";
 
-	public OnixStructGen(String basePackage, String baseFolder, String subfolder)
-	{
-		packageName = basePackage + "." + subfolder;
-		folder = new File(baseFolder, subfolder);
-		GenUtil.prepareOutputFolder(folder);
-	}
+    private final String packageName;
+    private final File folder;
 
-	public void generate(OnixStruct struct)
-	{
-		try
-		{
-			final String structName = "Jonix" + struct.containingComposite.name;
-			File javaFile = new File(folder, structName + ".java");
+    public OnixStructGen(String basePackage, String baseFolder, String subfolder) {
+        packageName = basePackage + "." + subfolder;
+        folder = new File(baseFolder, subfolder);
+        GenUtil.prepareOutputFolder(folder);
+    }
 
-			try (PrintStream p = new PrintStream(javaFile, "UTF-8"))
-			{
-				writeStruct(struct, structName, p);
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
+    public void generate(OnixStruct struct) {
+        try {
+            final String structName = "Jonix" + struct.containingComposite.name;
+            File javaFile = new File(folder, structName + ".java");
 
-	private void writeStruct(OnixStruct struct, String structName, PrintStream p)
-	{
-		String structMarkerInterface = "JonixStruct";
-		String structKeyQualifier = "";
-		
-		OnixCompositeMember keyMember = null;
-		OnixElementDef keyClass = null;
-		TypeInfo keyTypeInfo = null;
-		String keyField = null;
-		if (struct.isKeyed())
-		{
-			keyMember = struct.keyMember.dataMember;
-			keyClass = (OnixElementDef) keyMember.onixClass;
-			keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-			keyField = GenUtil.fieldOf(keyMember.className);
-			structMarkerInterface = "JonixKeyedStruct";
-			structKeyQualifier = "<"+ keyTypeInfo.javaType +">";
-		}
+            try (PrintStream p = new PrintStream(javaFile, "UTF-8")) {
+                writeStruct(struct, structName, p);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    private void writeStruct(OnixStruct struct, String structName, PrintStream p) {
+        String structMarkerInterface = "JonixStruct";
+        String structKeyQualifier = "";
 
-		p.println(Comments.Copyright);
-		p.printf("package %s;\n", packageName);
-		p.println();
-		p.println("import java.io.Serializable;");
-		p.println("import java.util.List;");
-		p.println();
+        OnixCompositeMember keyMember = null;
+        OnixElementDef keyClass = null;
+        TypeInfo keyTypeInfo = null;
+        String keyField = null;
+        if (struct.isKeyed()) {
+            keyMember = struct.keyMember.dataMember;
+            keyClass = (OnixElementDef) keyMember.onixClass;
+            keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+            keyField = GenUtil.fieldOf(keyMember.className);
+            structMarkerInterface = "JonixKeyedStruct";
+            structKeyQualifier = "<" + keyTypeInfo.javaType + ">";
+        }
 
-		p.printf("import %s.%s;\n", COMMON_PACKAGE, structMarkerInterface);
-		p.printf("import %s.codelist.*;\n", COMMON_PACKAGE);
-		p.println();
-		p.println(Comments.AutoGen);
-		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements %s%s, Serializable\n", structName, structMarkerInterface,
-				structKeyQualifier);
-		p.printf("{\n");
+        p.println(Comments.Copyright);
+        p.printf("package %s;\n", packageName);
+        p.println();
+        p.println("import java.io.Serializable;");
+        p.println("import java.util.List;");
+        p.println();
 
-		p.printf("   public static %s EMPTY = new %s();\n", structName, structName);
-		p.println();
+        p.printf("import %s.%s;\n", COMMON_PACKAGE, structMarkerInterface);
+        p.printf("import %s.codelist.*;\n", COMMON_PACKAGE);
+        p.println();
+        p.println(Comments.AutoGen);
+        p.printf("@SuppressWarnings(\"serial\")\n");
+        p.printf("public class %s implements %s%s, Serializable\n", structName, structMarkerInterface,
+            structKeyQualifier);
+        p.printf("{\n");
 
-		// declare key
-		if (struct.isKeyed())
-		{
-			p.printf("   /**\n");
-			p.printf("    * the key of this struct (by which it can be looked up)\n");
-			if (keyTypeInfo.comment != null)
-				p.printf("    * <p>%s\n", keyTypeInfo.comment);
-			p.printf("    */\n");
-			p.printf("   public %s %s;\n", keyTypeInfo.javaType, keyField);
-			p.println();
-		}
+        p.printf("   public static %s EMPTY = new %s();\n", structName, structName);
+        p.println();
 
-		// declare members
-		boolean firstField = true;
-		for (OnixStructMember structMember : struct.members)
-		{
-			final OnixCompositeMember member = structMember.dataMember;
-			String field;
-			String javaType;
-			String comment;
-			if (member.onixClass instanceof OnixElementDef)
-			{
-				final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
-				final TypeInfo ti = GenUtil.typeInfoOf(memberClass.valueMember.simpleType);
-				field = GenUtil.fieldOf(member.className);
-				javaType = ti.javaType;
-				if (memberClass.isSpaceable)
-					javaType = "java.util.Set<" + javaType + ">";
+        // declare key
+        if (struct.isKeyed()) {
+            p.printf("   /**\n");
+            p.printf("    * the key of this struct (by which it can be looked up)\n");
+            if (keyTypeInfo.comment != null) {
+                p.printf("    * <p>%s\n", keyTypeInfo.comment);
+            }
+            p.printf("    */\n");
+            p.printf("   public %s %s;\n", keyTypeInfo.javaType, keyField);
+            p.println();
+        }
 
-				comment = ti.comment;
-				boolean isEnum = memberClass.valueMember.simpleType.isEnum();
-				if (!isEnum) // no need to provide format information on enums, they are parsed by the system
-				{
-					if (memberClass.onixDoc != null && memberClass.onixDoc.format != null
-							&& !memberClass.onixDoc.format.isEmpty())
-					{
-						comment = "Raw Format: " + memberClass.onixDoc.format + " <p> " + comment;
-					}
-				}
-			}
-			else
-			// i.e. (member.onixClass instanceof OnixFlagDef)
-			{
-				field = "is" + member.className;
-				javaType = "boolean";
-				comment = "(optional flag)";
-			}
+        // declare members
+        boolean firstField = true;
+        for (OnixStructMember structMember : struct.members) {
+            final OnixCompositeMember member = structMember.dataMember;
+            String field;
+            String javaType;
+            String comment;
+            if (member.onixClass instanceof OnixElementDef) {
+                final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
+                final TypeInfo ti = GenUtil.typeInfoOf(memberClass.valueMember.simpleType);
+                field = GenUtil.fieldOf(member.className);
+                javaType = ti.javaType;
+                if (memberClass.isSpaceable) {
+                    javaType = "java.util.Set<" + javaType + ">";
+                }
 
-			if (!firstField)
-				p.println();
-			else
-				firstField = false;
-			if (comment != null)
-			{
-				p.printf("   /**\n");
-				p.printf("    * %s\n", comment);
-				p.printf("    */\n");
-			}
-			if (member.cardinality.singular)
-				p.printf("   public %s %s;\n", javaType, field);
-			else
-				p.printf("   public List<%s> %ss;\n", javaType, field);
-		}
+                comment = ti.comment;
+                boolean isEnum = memberClass.valueMember.simpleType.isEnum();
+                if (!isEnum) { // no need to provide format information on enums, they are parsed by the system
+                    if (memberClass.onixDoc != null && memberClass.onixDoc.format != null
+                        && !memberClass.onixDoc.format.isEmpty()) {
+                        comment = "Raw Format: " + memberClass.onixDoc.format + " <p> " + comment;
+                    }
+                }
+            } else {
+                // i.e. (member.onixClass instanceof OnixFlagDef)
+                field = "is" + member.className;
+                javaType = "boolean";
+                comment = "(optional flag)";
+            }
 
-		// default-constructor
-//		p.println();
-//		p.printf("   public %s()\n", structName);
-//		p.printf("   {}\n");
+            if (!firstField) {
+                p.println();
+            } else {
+                firstField = false;
+            }
+            if (comment != null) {
+                p.printf("   /**\n");
+                p.printf("    * %s\n", comment);
+                p.printf("    */\n");
+            }
+            if (member.cardinality.singular) {
+                p.printf("   public %s %s;\n", javaType, field);
+            } else {
+                p.printf("   public List<%s> %ss;\n", javaType, field);
+            }
+        }
 
-		// declare key
-		if (struct.isKeyed())
-		{
-			p.println();
-			p.printf("   @Override\n", keyTypeInfo.javaType, keyField);
-			p.printf("   public %s key() { return %s; }\n", keyTypeInfo.javaType, keyField);
-		}
+        // declare key
+        if (struct.isKeyed()) {
+            p.println();
+            p.printf("   @Override\n", keyTypeInfo.javaType, keyField);
+            p.printf("   public %s key() { return %s; }\n", keyTypeInfo.javaType, keyField);
+        }
 
-		p.println("}");
-	}
+        p.println("}");
+    }
 }

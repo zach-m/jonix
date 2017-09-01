@@ -19,60 +19,62 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
-public enum Cardinality
-{
-	Optional(true, true), //
-	Required(false, true), //
-	ZeroOrMore(true, false), //
-	OneOrMore(false, false);
+public enum Cardinality {
+    Optional(true, true), //
+    Required(false, true), //
+    ZeroOrMore(true, false), //
+    OneOrMore(false, false);
 
-	final public boolean omittable;
-	final public boolean singular;
+    public final boolean omittable;
+    public final boolean singular;
 
-	private Cardinality(boolean omittable, boolean singular)
-	{
-		this.omittable = omittable;
-		this.singular = singular;
-	}
+    private Cardinality(boolean omittable, boolean singular) {
+        this.omittable = omittable;
+        this.singular = singular;
+    }
 
-	private static Cardinality of(boolean omittable, boolean singular)
-	{
-		for (Cardinality cardinality : values())
-			if (cardinality.omittable == omittable && cardinality.singular == singular)
-				return cardinality;
+    private static Cardinality of(boolean omittable, boolean singular) {
+        for (Cardinality cardinality : values()) {
+            if (cardinality.omittable == omittable && cardinality.singular == singular) {
+                return cardinality;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	public static Cardinality of(String minOccurs, String maxOccurs)
-	{
-		if (minOccurs == null || minOccurs.isEmpty())
-			minOccurs = "1";
-		if (maxOccurs == null || maxOccurs.isEmpty())
-			maxOccurs = "1";
+    public static Cardinality of(String minOccurs, String maxOccurs) {
+        if (minOccurs == null || minOccurs.isEmpty()) {
+            minOccurs = "1";
+        }
+        if (maxOccurs == null || maxOccurs.isEmpty()) {
+            maxOccurs = "1";
+        }
 
-		final boolean omittable = "0".equals(minOccurs);
-		final boolean singular = "1".equals(maxOccurs);
-		final Cardinality cardinality = Cardinality.of(omittable, singular);
+        final boolean omittable = "0".equals(minOccurs);
+        final boolean singular = "1".equals(maxOccurs);
+        final Cardinality cardinality = Cardinality.of(omittable, singular);
 
-		if (cardinality == null)
-			throw new RuntimeException("Internal error where minOccurs=" + minOccurs + ", and maxOccurs=" + maxOccurs);
+        if (cardinality == null) {
+            throw new RuntimeException("Internal error where minOccurs=" + minOccurs + ", and maxOccurs=" + maxOccurs);
+        }
 
-		return cardinality;
-	}
+        return cardinality;
+    }
 
-	public Cardinality mergeWith(Cardinality other)
-	{
-		if (other == null)
-			return this;
+    public Cardinality mergeWith(Cardinality other) {
+        if (other == null) {
+            return this;
+        }
 
-		final boolean omittable = this.omittable || other.omittable;
-		final boolean singular = this.singular && other.singular;
-		final Cardinality cardinality = Cardinality.of(omittable, singular);
+        final boolean omittable = this.omittable || other.omittable;
+        final boolean singular = this.singular && other.singular;
+        final Cardinality cardinality = Cardinality.of(omittable, singular);
 
-		if (cardinality == null)
-			throw new RuntimeException("Internal error where omittable=" + omittable + ", and singular=" + singular);
+        if (cardinality == null) {
+            throw new RuntimeException("Internal error where omittable=" + omittable + ", and singular=" + singular);
+        }
 
-		return cardinality;
-	}
+        return cardinality;
+    }
 }

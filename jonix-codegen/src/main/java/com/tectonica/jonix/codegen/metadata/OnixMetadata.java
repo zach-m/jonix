@@ -19,100 +19,83 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 
-@JsonPropertyOrder({ "onixVersion", "isShort", "composites", "elements", "flgs", "types", "enums", "structs" })
-public class OnixMetadata
-{
-	public final OnixVersion onixVersion;
-	public final boolean isShort;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
-	@JsonIgnore
-	public Map<String, OnixCompositeDef> onixComposites = new HashMap<>();
-	@JsonIgnore
-	public Map<String, OnixElementDef> onixElements = new HashMap<>();
-	@JsonIgnore
-	public Map<String, OnixFlagDef> onixFlags = new HashMap<>();
-	@JsonIgnore
-	public Map<String, OnixSimpleType> onixTypes = new HashMap<>();
-	@JsonIgnore
-	public Map<String, OnixSimpleType> onixEnums = new HashMap<>();
-	@JsonIgnore
-	public Map<String, OnixStruct> jonixStructs = new HashMap<>();
+@JsonPropertyOrder( {"onixVersion", "isShort", "composites", "elements", "flags", "types", "enums", "structs"})
+public class OnixMetadata {
+    public final OnixVersion onixVersion;
+    public final boolean isShort;
 
-//	@JsonIgnore
-//	public Map<String, OnixCompositeDef> jonixIntfs = new HashMap<>();
+    @JsonIgnore
+    public Map<String, OnixCompositeDef> onixComposites = new HashMap<>();
+    @JsonIgnore
+    public Map<String, OnixElementDef> onixElements = new HashMap<>();
+    @JsonIgnore
+    public Map<String, OnixFlagDef> onixFlags = new HashMap<>();
+    @JsonIgnore
+    public Map<String, OnixSimpleType> onixTypes = new HashMap<>();
+    @JsonIgnore
+    public Map<String, OnixSimpleType> onixEnums = new HashMap<>();
+    @JsonIgnore
+    public Map<String, OnixStruct> jonixStructs = new HashMap<>();
 
-	// the following is to be filled during code-generation, not parsing
-	@JsonIgnore
-	public Map<String, OnixStruct> unifiedStructs = null;
+    // the following is to be filled during code-generation, not parsing
+    @JsonIgnore
+    public Map<String, OnixStruct> unifiedStructs = null;
 
-	public OnixMetadata(OnixVersion onixVersion, boolean isShort)
-	{
-		this.onixVersion = onixVersion;
-		this.isShort = isShort;
-	}
+    public OnixMetadata(OnixVersion onixVersion, boolean isShort) {
+        this.onixVersion = onixVersion;
+        this.isShort = isShort;
+    }
 
-	// convenience getters
+    // convenience getters
 
-	public Collection<OnixCompositeDef> getComposites()
-	{
-		return onixComposites.values();
-	}
+    public Collection<OnixCompositeDef> getComposites() {
+        return onixComposites.values();
+    }
 
-	public Collection<OnixElementDef> getElements()
-	{
-		return onixElements.values();
-	}
+    public Collection<OnixElementDef> getElements() {
+        return onixElements.values();
+    }
 
-	public Collection<OnixFlagDef> getFlags()
-	{
-		return onixFlags.values();
-	}
+    public Collection<OnixFlagDef> getFlags() {
+        return onixFlags.values();
+    }
 
-	public Collection<OnixSimpleType> getTypes()
-	{
-		return onixTypes.values();
-	}
+    public Collection<OnixSimpleType> getTypes() {
+        return onixTypes.values();
+    }
 
-	public Collection<OnixSimpleType> getEnums()
-	{
-		return onixEnums.values();
-	}
+    public Collection<OnixSimpleType> getEnums() {
+        return onixEnums.values();
+    }
 
-	public Collection<OnixStruct> getStructs()
-	{
-		return jonixStructs.values();
-	}
+    public Collection<OnixStruct> getStructs() {
+        return jonixStructs.values();
+    }
 
-//	public Collection<OnixCompositeDef> getIntfs()
-//	{
-//		return jonixIntfs.values();
-//	}
+    public OnixSimpleType typeByName(String name) {
+        OnixSimpleType type = onixTypes.get(name);
+        if (type == null) {
+            type = onixEnums.get(name);
+        }
+        return type;
+    }
 
-	public OnixSimpleType typeByName(String name)
-	{
-		OnixSimpleType type = onixTypes.get(name);
-		if (type == null)
-			type = onixEnums.get(name);
-		return type;
-	}
-
-	public OnixClass classByName(String name)
-	{
-		OnixClass onixClass = onixComposites.get(name);
-		if (onixClass == null)
-		{
-			onixClass = onixElements.get(name);
-			if (onixClass == null)
-				onixClass = onixFlags.get(name);
-		}
-		return onixClass;
-	}
+    public OnixClass classByName(String name) {
+        OnixClass onixClass = onixComposites.get(name);
+        if (onixClass == null) {
+            onixClass = onixElements.get(name);
+            if (onixClass == null) {
+                onixClass = onixFlags.get(name);
+            }
+        }
+        return onixClass;
+    }
 }

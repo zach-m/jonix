@@ -19,27 +19,25 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.Collections;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+@JsonPropertyOrder( {"name", "members", "consts", "attributes"})
+public class OnixCompositeDef extends OnixClass {
+    public List<OnixCompositeMember> members;
 
-@JsonPropertyOrder({ "name", "members", "consts", "attributes" })
-public class OnixCompositeDef extends OnixClass
-{
-	public List<OnixCompositeMember> members;
+    @Override
+    public void sortInternally() {
+        super.sortInternally();
+        if (members != null) {
+            Collections.sort(members);
+        }
+    }
 
-	@Override
-	public void sortInternally()
-	{
-		super.sortInternally();
-		if (members != null)
-			Collections.sort(members);
-	}
-
-	@Override
-	public String toString()
-	{
-		return name + ": members=" + members + ", attributes=" + attributes;
-	}
+    @Override
+    public String toString() {
+        return name + ": members=" + members + ", attributes=" + attributes;
+    }
 }

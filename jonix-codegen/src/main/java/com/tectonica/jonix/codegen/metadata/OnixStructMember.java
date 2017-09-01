@@ -23,49 +23,46 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 
-@JsonPropertyOrder({ "dataMember" })
-public class OnixStructMember implements Comparable<OnixStructMember>
-{
-	/**
-	 * either an Element-member or a Flag-member
-	 */
-	public OnixCompositeMember dataMember;
+@JsonPropertyOrder( {"dataMember"})
+public class OnixStructMember implements Comparable<OnixStructMember> {
+    /**
+     * either an Element-member or a Flag-member
+     */
+    public OnixCompositeMember dataMember;
 
-	public static enum TransformationType
-	{
-		SingularToMultiple, ChangeClassName, //
-		StringToInteger, StringToDouble;
-	}
+    public static enum TransformationType {
+        SingularToMultiple, ChangeClassName, //
+        StringToInteger, StringToDouble;
+    }
 
-	@JsonIgnore
-	public OnixVersion transformationNeededInVersion;
-	@JsonIgnore
-	public TransformationType transformationType;
-	@JsonIgnore
-	public String transformationHint;
+    @JsonIgnore
+    public OnixVersion transformationNeededInVersion;
+    @JsonIgnore
+    public TransformationType transformationType;
+    @JsonIgnore
+    public String transformationHint;
 
-	public OnixStructMember(OnixCompositeMember dataMember)
-	{
-		if (dataMember == null)
-			throw new NullPointerException("dataMember");
+    public OnixStructMember(OnixCompositeMember dataMember) {
+        if (dataMember == null) {
+            throw new NullPointerException("dataMember");
+        }
 
-		final boolean isDataMember = (dataMember.onixClass instanceof OnixElementDef)
-				|| (dataMember.onixClass instanceof OnixFlagDef);
-		if (!isDataMember)
-			throw new RuntimeException("passed member is neither an Element nor a Flag");
+        final boolean isDataMember = (dataMember.onixClass instanceof OnixElementDef)
+            || (dataMember.onixClass instanceof OnixFlagDef);
+        if (!isDataMember) {
+            throw new RuntimeException("passed member is neither an Element nor a Flag");
+        }
 
-		this.dataMember = dataMember;
-	}
+        this.dataMember = dataMember;
+    }
 
-	@Override
-	public int compareTo(OnixStructMember other)
-	{
-		return dataMember.compareTo(other.dataMember);
-	}
+    @Override
+    public int compareTo(OnixStructMember other) {
+        return dataMember.compareTo(other.dataMember);
+    }
 
-	@Override
-	public String toString()
-	{
-		return dataMember.toString();
-	}
+    @Override
+    public String toString() {
+        return dataMember.toString();
+    }
 }

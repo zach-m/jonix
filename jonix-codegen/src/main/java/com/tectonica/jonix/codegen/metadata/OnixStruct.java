@@ -19,73 +19,66 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+@JsonPropertyOrder( {"containingComposite", "keyed", "keyMember", "members"})
+public class OnixStruct implements Comparable<OnixStruct> {
+    public final OnixCompositeDef containingComposite;
 
-@JsonPropertyOrder({ "containingComposite", "keyed", "keyMember", "members" })
-public class OnixStruct implements Comparable<OnixStruct>
-{
-	public final OnixCompositeDef containingComposite;
-	
-	/**
-	 * key member refers to a mandatory enum field of the struct
-	 */
-	public OnixStructMember keyMember = null;
-	
-	public List<OnixStructMember> members = new ArrayList<>();
+    /**
+     * key member refers to a mandatory enum field of the struct
+     */
+    public OnixStructMember keyMember = null;
 
-	public OnixStruct(OnixCompositeDef containingComposite)
-	{
-		this.containingComposite = containingComposite;
-	}
+    public List<OnixStructMember> members = new ArrayList<>();
 
-	public boolean isKeyed()
-	{
-		return (keyMember != null);
-	}
+    public OnixStruct(OnixCompositeDef containingComposite) {
+        this.containingComposite = containingComposite;
+    }
 
-	public OnixSimpleType keyEnumType()
-	{
-		return (keyMember == null) ? null : ((OnixElementDef) keyMember.dataMember.onixClass).valueMember.simpleType;
-	}
+    public boolean isKeyed() {
+        return (keyMember != null);
+    }
 
-	public List<OnixStructMember> allMembers()
-	{
-		if (keyMember == null)
-			return members;
-		List<OnixStructMember> list = new ArrayList<>(members.size() + 1);
-		list.add(keyMember);
-		list.addAll(members);
-		return list;
-	}
+    public OnixSimpleType keyEnumType() {
+        return (keyMember == null) ? null : ((OnixElementDef) keyMember.dataMember.onixClass).valueMember.simpleType;
+    }
 
-	@Override
-	public String toString()
-	{
-		StringBuilder sb = new StringBuilder();
-		sb.append("struct " + containingComposite.name).append("\n");
-		if (keyMember != null)
-		{
-			OnixElementMember km = ((OnixElementDef) keyMember.dataMember.onixClass).valueMember;
-			sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
-		}
-		for (OnixStructMember member : members)
-		{
-			OnixElementMember vm = ((OnixElementDef) member.dataMember.onixClass).valueMember;
-			final OnixSimpleType simpleType = vm.simpleType;
-			String javaType = (simpleType.enumName != null) ? simpleType.enumName : simpleType.primitiveType.javaType;
-			if (!member.dataMember.cardinality.singular)
-				javaType = "List<" + javaType + ">";
-			sb.append("         - ").append(javaType).append("\n");
-		}
-		return sb.toString();
-	}
+    public List<OnixStructMember> allMembers() {
+        if (keyMember == null) {
+            return members;
+        }
+        List<OnixStructMember> list = new ArrayList<>(members.size() + 1);
+        list.add(keyMember);
+        list.addAll(members);
+        return list;
+    }
 
-	@Override
-	public int compareTo(OnixStruct other)
-	{
-		return containingComposite.name.compareTo(other.containingComposite.name);
-	}
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("struct " + containingComposite.name).append("\n");
+        if (keyMember != null) {
+            OnixElementMember km = ((OnixElementDef) keyMember.dataMember.onixClass).valueMember;
+            sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
+        }
+        for (OnixStructMember member : members) {
+            OnixElementMember vm = ((OnixElementDef) member.dataMember.onixClass).valueMember;
+            final OnixSimpleType simpleType = vm.simpleType;
+            String javaType = (simpleType.enumName != null) ? simpleType.enumName : simpleType.primitiveType.javaType;
+            if (!member.dataMember.cardinality.singular) {
+                javaType = "List<" + javaType + ">";
+            }
+            sb.append("         - ").append(javaType).append("\n");
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public int compareTo(OnixStruct other) {
+        return containingComposite.name.compareTo(other.containingComposite.name);
+    }
 }

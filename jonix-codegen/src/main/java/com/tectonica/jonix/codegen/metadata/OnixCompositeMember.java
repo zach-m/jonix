@@ -22,32 +22,28 @@ package com.tectonica.jonix.codegen.metadata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "className", "cardinality" })
-public class OnixCompositeMember implements Comparable<OnixCompositeMember>
-{
-	public String className;
-	public Cardinality cardinality;
+@JsonPropertyOrder( {"className", "cardinality"})
+public class OnixCompositeMember implements Comparable<OnixCompositeMember> {
+    public String className;
+    public Cardinality cardinality;
 
-	@JsonIgnore
-	public OnixClass onixClass; // added after parsing is over
+    @JsonIgnore
+    public OnixClass onixClass; // added after parsing is over
 
-	@Override
-	public int compareTo(OnixCompositeMember other)
-	{
-		return className.compareTo(other.className);
-	}
+    @Override
+    public int compareTo(OnixCompositeMember other) {
+        return className.compareTo(other.className);
+    }
 
-	@Override
-	public String toString()
-	{
-		return className + " [" + cardinality + "]";
-	}
+    @Override
+    public String toString() {
+        return className + " [" + cardinality + "]";
+    }
 
-	public static OnixCompositeMember create(String className, Cardinality cardinality)
-	{
-		OnixCompositeMember member = new OnixCompositeMember();
-		member.className = className;
-		member.cardinality = cardinality;
-		return member;
-	}
+    public static OnixCompositeMember create(String className, Cardinality cardinality) {
+        OnixCompositeMember member = new OnixCompositeMember();
+        member.className = className;
+        member.cardinality = cardinality;
+        return member;
+    }
 }

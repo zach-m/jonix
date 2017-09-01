@@ -25,61 +25,61 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class ListDiff
-{
-	public static interface CompareListener<T>
-	{
-		boolean onDiff(T itemL, T itemR);
-	}
+public class ListDiff {
+    public static interface CompareListener<T> {
+        boolean onDiff(T itemL, T itemR);
+    }
 
-	/**
-	 * compares two <strong>sorted</strong> lists
-	 */
-	public static <T extends Comparable<? super T>> boolean compare(List<T> listL, List<T> listR,
-			CompareListener<T> listener)
-	{
-		final Iterator<T> iterL = (listL == null) ? null : listL.iterator();
-		final Iterator<T> iterR = (listR == null) ? null : listR.iterator();
-		T itemL = null, itemR = null;
-		boolean iterLbehind = (listL != null), iterRbehind = (listR != null);
-		boolean doContinue = true;
-		while (doContinue)
-		{
-			if (iterLbehind)
-				itemL = iterL.hasNext() ? iterL.next() : null;
-			if (iterRbehind)
-				itemR = iterR.hasNext() ? iterR.next() : null;
+    /**
+     * compares two <strong>sorted</strong> lists
+     */
+    public static <T extends Comparable<? super T>> boolean compare(List<T> listL, List<T> listR,
+                                                                    CompareListener<T> listener) {
+        final Iterator<T> iterL = (listL == null) ? null : listL.iterator();
+        final Iterator<T> iterR = (listR == null) ? null : listR.iterator();
+        T itemL = null;
+        T itemR = null;
+        boolean iterLbehind = (listL != null);
+        boolean iterRbehind = (listR != null);
+        boolean doContinue = true;
+        while (doContinue) {
+            if (iterLbehind) {
+                itemL = iterL.hasNext() ? iterL.next() : null;
+            }
+            if (iterRbehind) {
+                itemR = iterR.hasNext() ? iterR.next() : null;
+            }
 
-			if (itemL == null && itemR == null)
-				break;
+            if (itemL == null && itemR == null) {
+                break;
+            }
 
-			iterLbehind = (itemL != null) && (itemR == null || (itemL.compareTo(itemR) <= 0));
-			iterRbehind = (itemR != null) && (itemL == null || (itemR.compareTo(itemL) <= 0));
+            iterLbehind = (itemL != null) && (itemR == null || (itemL.compareTo(itemR) <= 0));
+            iterRbehind = (itemR != null) && (itemL == null || (itemR.compareTo(itemL) <= 0));
 
-			if (iterLbehind && iterRbehind)
-				doContinue = listener.onDiff(itemL, itemR);
-			else if (iterLbehind)
-				doContinue = listener.onDiff(itemL, null);
-			else
-			{
-				if (!iterRbehind)
-					throw new RuntimeException("Internal error");
-				doContinue = listener.onDiff(null, itemR);
-			}
-		}
-		return doContinue;
-	}
+            if (iterLbehind && iterRbehind) {
+                doContinue = listener.onDiff(itemL, itemR);
+            } else if (iterLbehind) {
+                doContinue = listener.onDiff(itemL, null);
+            } else {
+                if (!iterRbehind) {
+                    throw new RuntimeException("Internal error");
+                }
+                doContinue = listener.onDiff(null, itemR);
+            }
+        }
+        return doContinue;
+    }
 
-	/**
-	 * compares two <strong>unsorted</strong> collections
-	 */
-	public static <T extends Comparable<? super T>> boolean sortAndCompare(Collection<T> listL, Collection<T> listR,
-			CompareListener<T> listener)
-	{
-		final List<T> sortedL = new ArrayList<>(listL);
-		final List<T> sortedR = new ArrayList<>(listR);
-		Collections.sort(sortedL);
-		Collections.sort(sortedR);
-		return compare(sortedL, sortedR, listener);
-	}
+    /**
+     * compares two <strong>unsorted</strong> collections
+     */
+    public static <T extends Comparable<? super T>> boolean sortAndCompare(Collection<T> listL, Collection<T> listR,
+                                                                           CompareListener<T> listener) {
+        final List<T> sortedL = new ArrayList<>(listL);
+        final List<T> sortedR = new ArrayList<>(listR);
+        Collections.sort(sortedL);
+        Collections.sort(sortedR);
+        return compare(sortedL, sortedR, listener);
+    }
 }

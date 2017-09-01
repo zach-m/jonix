@@ -19,10 +19,9 @@
 
 package com.tectonica.jonix.codegen.util;
 
-import java.io.StringWriter;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -30,137 +29,127 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.StringWriter;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+public class DOM {
+    public static Element firstElemChild(Node node) {
+        return firstElemChild(node, null);
+    }
 
-public class DOM
-{
-	public static Element firstElemChild(Node node)
-	{
-		return firstElemChild(node, null);
-	}
+    public static Element firstElemChild(Node node, String nodeName) {
+        final NodeList childNodes = node.getChildNodes();
+        for (int i = 0; i < childNodes.getLength(); i++) {
+            final Node item = childNodes.item(i);
+            if ((item.getNodeType() == Node.ELEMENT_NODE)
+                && (nodeName == null || nodeName.equals(item.getNodeName()))) {
+                return (Element) item;
+            }
+        }
+        return null;
+    }
 
-	public static Element firstElemChild(Node node, String nodeName)
-	{
-		final NodeList childNodes = node.getChildNodes();
-		for (int i = 0; i < childNodes.getLength(); i++)
-		{
-			final Node item = childNodes.item(i);
-			if ((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item.getNodeName())))
-				return (Element) item;
-		}
-		return null;
-	}
+    public static Element firstElemChild(Node node, String nodeName, String attrName, String attrValue) {
+        final NodeList childNodes = node.getChildNodes();
+        for (int i = 0; i < childNodes.getLength(); i++) {
+            final Node item = childNodes.item(i);
+            if ((item.getNodeType() == Node.ELEMENT_NODE)
+                && (nodeName == null || nodeName.equals(item.getNodeName()))) {
+                final Element elem = (Element) item;
+                if (elem.getAttribute(attrName).equals(attrValue)) {
+                    return elem;
+                }
+            }
+        }
+        return null;
+    }
 
-	public static Element firstElemChild(Node node, String nodeName, String attrName, String attrValue)
-	{
-		final NodeList childNodes = node.getChildNodes();
-		for (int i = 0; i < childNodes.getLength(); i++)
-		{
-			final Node item = childNodes.item(i);
-			if ((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item.getNodeName())))
-			{
-				final Element elem = (Element) item;
-				if (elem.getAttribute(attrName).equals(attrValue))
-					return elem;
-			}
-		}
-		return null;
-	}
+    public static Element nextElemChild(Node node) {
+        return nextElemChild(node, null);
+    }
 
-	public static Element nextElemChild(Node node)
-	{
-		return nextElemChild(node, null);
-	}
+    public static Element nextElemChild(Node node, String nodeName) {
+        Node item = node.getNextSibling();
+        while (item != null
+            && !((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item
+            .getNodeName())))) {
+            item = item.getNextSibling();
+        }
+        return (Element) item;
+    }
 
-	public static Element nextElemChild(Node node, String nodeName)
-	{
-		Node item = node.getNextSibling();
-		while (item != null
-				&& !((item.getNodeType() == Node.ELEMENT_NODE) && (nodeName == null || nodeName.equals(item
-						.getNodeName()))))
-			item = item.getNextSibling();
-		return (Element) item;
-	}
+    public static interface ElementListener {
+        void onElement(Element element);
+    }
 
-	public static interface ElementListener
-	{
-		void onElement(Element element);
-	}
+    public static void forElementsOf(Node node, ElementListener worker) {
+        forElementsOf(node, null, worker);
+    }
 
-	public static void forElementsOf(Node node, ElementListener worker)
-	{
-		forElementsOf(node, null, worker);
-	}
+    public static void forElementsOf(Node node, String nodeName, ElementListener worker) {
+        for (Element element = firstElemChild(node, nodeName); element != null; element = nextElemChild(element,
+            nodeName)) {
+            worker.onElement(element);
+        }
+    }
 
-	public static void forElementsOf(Node node, String nodeName, ElementListener worker)
-	{
-		for (Element element = firstElemChild(node, nodeName); element != null; element = nextElemChild(element,
-				nodeName))
-			worker.onElement(element);
-	}
+    public static String getChildText(Node node) {
+        if (node == null) {
+            return null;
+        }
 
-	public static String getChildText(Node node)
-	{
-		if (node == null)
-			return null;
+        StringBuffer str = new StringBuffer();
+        Node child = node.getFirstChild();
+        while (child != null) {
+            short type = child.getNodeType();
+            if (type == Node.TEXT_NODE) {
+                str.append(child.getNodeValue());
+            } else if (type == Node.CDATA_SECTION_NODE) {
+                str.append(getChildText(child));
+            }
+            child = child.getNextSibling();
+        }
 
-		StringBuffer str = new StringBuffer();
-		Node child = node.getFirstChild();
-		while (child != null)
-		{
-			short type = child.getNodeType();
-			if (type == Node.TEXT_NODE)
-				str.append(child.getNodeValue());
-			else if (type == Node.CDATA_SECTION_NODE)
-				str.append(getChildText(child));
-			child = child.getNextSibling();
-		}
+        return str.toString();
+    }
 
-		return str.toString();
-	}
+    public static String getChildXHTML(Node node, boolean strip) {
+        StringWriter sw = new StringWriter();
+        try {
+            Transformer t = TransformerFactory.newInstance().newTransformer();
+            t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            t.transform(new DOMSource(node), new StreamResult(sw));
+        } catch (TransformerException e) {
+            throw new RuntimeException(e);
+        }
+        final String content = sw.toString();
 
-	public static String getChildXHTML(Node node, boolean strip)
-	{
-		StringWriter sw = new StringWriter();
-		try
-		{
-			Transformer t = TransformerFactory.newInstance().newTransformer();
-			t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-			t.transform(new DOMSource(node), new StreamResult(sw));
-		}
-		catch (TransformerException e)
-		{
-			throw new RuntimeException(e);
-		}
-		final String content = sw.toString();
+        if (strip) {
+            final int beginIndex = content.indexOf(">") + 1;
+            final int endIndex = content.lastIndexOf("<");
+            if (endIndex > beginIndex) {
+                return content.substring(beginIndex, endIndex);
+            }
+        }
+        return content;
+    }
 
-		if (strip)
-		{
-			final int beginIndex = content.indexOf(">") + 1;
-			final int endIndex = content.lastIndexOf("<");
-			if (endIndex > beginIndex)
-				return content.substring(beginIndex, endIndex);
-		}
-		return content;
-	}
+    public static void ensureTagNames(final Element firstChild, final List<String> allowedTagNames) {
+        if (firstChild == null || allowedTagNames == null || allowedTagNames.size() == 0) {
+            return;
+        }
 
-	public static void ensureTagNames(final Element firstChild, final List<String> allowedTagNames)
-	{
-		if (firstChild == null || allowedTagNames == null || allowedTagNames.size() == 0)
-			return;
-
-		Set<String> allowedTagNamesSet = new HashSet<>(allowedTagNames);
-		Element child = firstChild;
-		do
-		{
-			final String nonContentType = child.getNodeName();
-			if (!allowedTagNamesSet.contains(nonContentType)) // TODO: account for case-insensitivity
-				throw new RuntimeException("we only expect one content node");
-		}
-		while ((child = DOM.nextElemChild(child)) != null);
-	}
+        Set<String> allowedTagNamesSet = new HashSet<>(allowedTagNames);
+        Element child = firstChild;
+        do {
+            final String nonContentType = child.getNodeName();
+            if (!allowedTagNamesSet.contains(nonContentType)) { // TODO: account for case-insensitivity
+                throw new RuntimeException("we only expect one content node");
+            }
+        }
+        while ((child = DOM.nextElemChild(child)) != null);
+    }
 
 }

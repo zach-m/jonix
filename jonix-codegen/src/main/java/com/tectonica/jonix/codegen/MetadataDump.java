@@ -19,13 +19,6 @@
 
 package com.tectonica.jonix.codegen;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
-
 import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
@@ -35,94 +28,96 @@ import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.util.JSON;
 import com.tectonica.jonix.codegen.util.ParseUtil;
+import org.xml.sax.SAXException;
 
-public class MetadataDump
-{
-	private static final File DUMP_FOLDER = new File("parsed");
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
 
-	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException
-	{
-		System.out.println("Parsing Onix2..");
-		parse2();
+public class MetadataDump {
+    private static final File DUMP_FOLDER = new File("parsed");
 
-		System.out.println("Parsing Onix3..");
-		parse3();
+    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
+        System.out.println("Parsing Onix2..");
+        parse2();
 
-		System.out.println("DONE");
-	}
+        System.out.println("Parsing Onix3..");
+        parse3();
 
-	private static void parse2() throws IOException, ParserConfigurationException, SAXException
-	{
-		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
-				ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
-		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2,
-				ParseUtil.SPACEABLE_SHORT_2, ParseUtil.RES_HTML_SPEC_2);
+        System.out.println("DONE");
+    }
 
-		File parent = new File(DUMP_FOLDER, "onix2");
-		saveMetadata(ref2, new File(parent, "reference"));
-		saveMetadata(short2, new File(parent, "short"));
-	}
+    private static void parse2() throws IOException, ParserConfigurationException, SAXException {
+        final OnixMetadata ref2 =
+            ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
+                ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
+        final OnixMetadata short2 =
+            ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2,
+                ParseUtil.SPACEABLE_SHORT_2, ParseUtil.RES_HTML_SPEC_2);
 
-	private static void parse3() throws IOException, ParserConfigurationException, SAXException
-	{
-		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
-				ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
-		final OnixMetadata short3 = ParseUtil.parse(OnixVersion.Ver3_0_02, true, ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3,
-				ParseUtil.SPACEABLE_SHORT_3, ParseUtil.RES_HTML_SPEC_3);
+        File parent = new File(DUMP_FOLDER, "onix2");
+        saveMetadata(ref2, new File(parent, "reference"));
+        saveMetadata(short2, new File(parent, "short"));
+    }
 
-		File parent = new File(DUMP_FOLDER, "onix3");
-		saveMetadata(ref3, new File(parent, "reference"));
-		saveMetadata(short3, new File(parent, "short"));
-	}
+    private static void parse3() throws IOException, ParserConfigurationException, SAXException {
+        final OnixMetadata ref3 =
+            ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
+                ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
+        final OnixMetadata short3 =
+            ParseUtil.parse(OnixVersion.Ver3_0_02, true, ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3,
+                ParseUtil.SPACEABLE_SHORT_3, ParseUtil.RES_HTML_SPEC_3);
 
-	// ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        File parent = new File(DUMP_FOLDER, "onix3");
+        saveMetadata(ref3, new File(parent, "reference"));
+        saveMetadata(short3, new File(parent, "short"));
+    }
 
-	public static void saveMetadata(OnixMetadata metadata, File dir) throws IOException
-	{
-		dir.mkdirs();
+    // ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		String folder = dir.getAbsolutePath();
+    public static void saveMetadata(OnixMetadata metadata, File dir) throws IOException {
+        dir.mkdirs();
 
-//		saveAsJson(metadata.onixComposites.values(), folder + "/composites.txt");
-//		saveAsJson(metadata.onixElements.values(), folder + "/elements.txt");
-//		saveAsJson(metadata.onixFlags.values(), folder + "/flags.txt");
-//		saveAsJson(metadata.onixEnums.values(), folder + "/enums.txt");
-		saveAsJson(folder + "/types.txt", metadata.onixTypes.values());
+        String folder = dir.getAbsolutePath();
 
-		new File(folder + "/composites").mkdirs();
-		for (OnixCompositeDef composite : metadata.onixComposites.values())
-		{
-//			occ.sortInternally();
-			saveAsJson(folder + "/composites/" + composite.name + ".txt", composite);
-		}
+        //saveAsJson(metadata.onixComposites.values(), folder + "/composites.txt");
+        //saveAsJson(metadata.onixElements.values(), folder + "/elements.txt");
+        //saveAsJson(metadata.onixFlags.values(), folder + "/flags.txt");
+        //saveAsJson(metadata.onixEnums.values(), folder + "/enums.txt");
+        saveAsJson(folder + "/types.txt", metadata.onixTypes.values());
 
-		new File(folder + "/elements").mkdirs();
-		for (OnixElementDef element : metadata.onixElements.values())
-		{
-//			ovc.sortInternally();
-			saveAsJson(folder + "/elements/" + element.name + ".txt", element);
-		}
+        new File(folder + "/composites").mkdirs();
+        for (OnixCompositeDef composite : metadata.onixComposites.values()) {
+            //occ.sortInternally();
+            saveAsJson(folder + "/composites/" + composite.name + ".txt", composite);
+        }
 
-		new File(folder + "/flags").mkdirs();
-		for (OnixFlagDef flag : metadata.onixFlags.values())
-		{
-//			ofc.sortInternally();
-			saveAsJson(folder + "/flags/" + flag.name + ".txt", flag);
-		}
+        new File(folder + "/elements").mkdirs();
+        for (OnixElementDef element : metadata.onixElements.values()) {
+            //ovc.sortInternally();
+            saveAsJson(folder + "/elements/" + element.name + ".txt", element);
+        }
 
-		new File(folder + "/enums").mkdirs();
-		for (OnixSimpleType ost : metadata.onixEnums.values())
-			saveAsJson(folder + "/enums/" + ost.name + ".txt", ost);
+        new File(folder + "/flags").mkdirs();
+        for (OnixFlagDef flag : metadata.onixFlags.values()) {
+            //ofc.sortInternally();
+            saveAsJson(folder + "/flags/" + flag.name + ".txt", flag);
+        }
 
-		new File(folder + "/structs").mkdirs();
-		for (OnixStruct os : metadata.jonixStructs.values())
-			saveAsJson(folder + "/structs/" + os.containingComposite.name + ".txt", os);
+        new File(folder + "/enums").mkdirs();
+        for (OnixSimpleType ost : metadata.onixEnums.values()) {
+            saveAsJson(folder + "/enums/" + ost.name + ".txt", ost);
+        }
 
-		System.out.println("saved results to " + folder);
-	}
+        new File(folder + "/structs").mkdirs();
+        for (OnixStruct os : metadata.jonixStructs.values()) {
+            saveAsJson(folder + "/structs/" + os.containingComposite.name + ".txt", os);
+        }
 
-	private static void saveAsJson(final String fileName, final Object obj) throws IOException
-	{
-		JSON.saveAsJson(new File(fileName), obj);
-	}
+        System.out.println("saved results to " + folder);
+    }
+
+    private static void saveAsJson(final String fileName, final Object obj) throws IOException {
+        JSON.saveAsJson(new File(fileName), obj);
+    }
 }

@@ -23,38 +23,37 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class OnixClass implements Comparable<OnixClass>
-{
-	public String name;
-	public List<OnixConst> consts;
-	public List<OnixAttribute> attributes;
-	public OnixDoc onixDoc;
+public abstract class OnixClass implements Comparable<OnixClass> {
+    public String name;
+    public List<OnixConst> consts;
+    public List<OnixAttribute> attributes;
+    public OnixDoc onixDoc;
 
-	@Override
-	public int compareTo(OnixClass other)
-	{
-		return name.compareTo(other.name);
-	}
+    @Override
+    public int compareTo(OnixClass other) {
+        return name.compareTo(other.name);
+    }
 
-	public void add(OnixConst onixConst)
-	{
-		if (consts == null)
-			consts = new ArrayList<>();
-		consts.add(onixConst);
-	}
+    public void add(OnixConst onixConst) {
+        if (consts == null) {
+            consts = new ArrayList<>();
+        }
+        consts.add(onixConst);
+    }
 
-	public void add(OnixAttribute onixAttribute)
-	{
-		if (attributes == null)
-			attributes = new ArrayList<>();
-		attributes.add(onixAttribute);
-	}
+    public void add(OnixAttribute onixAttribute) {
+        if (attributes == null) {
+            attributes = new ArrayList<>();
+        }
+        attributes.add(onixAttribute);
+    }
 
-	public void sortInternally()
-	{
-		if (attributes != null)
-			Collections.sort(attributes);
-		if (consts != null)
-			Collections.sort(consts);
-	}
+    public void sortInternally() {
+        if (attributes != null) {
+            Collections.sort(attributes);
+        }
+        if (consts != null) {
+            Collections.sort(consts);
+        }
+    }
 }

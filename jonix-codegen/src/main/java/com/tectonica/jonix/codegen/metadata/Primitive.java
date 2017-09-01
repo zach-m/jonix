@@ -23,27 +23,26 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public enum Primitive
-{
-	String("String", "xs:string", "xs:token", "xs:NMTOKEN"), //
-	AnyURI("String", "xs:anyURI"), //
-	Int("Integer", "xs:int", "xs:positiveInteger", "xs:nonNegativeInteger"), //
-	Decimal("Double", "xs:decimal");
+public enum Primitive {
+    String("String", "xs:string", "xs:token", "xs:NMTOKEN"), //
+    AnyURI("String", "xs:anyURI"), //
+    Int("Integer", "xs:int", "xs:positiveInteger", "xs:nonNegativeInteger"), //
+    Decimal("Double", "xs:decimal");
 
-	public final String javaType;
-	public final Set<String> xsdTokens;
+    public final String javaType;
+    public final Set<String> xsdTokens;
 
-	private Primitive(String javaType, String... xsdTokens)
-	{
-		this.javaType = javaType;
-		this.xsdTokens = new HashSet<String>(Arrays.asList(xsdTokens));
-	}
+    private Primitive(String javaType, String... xsdTokens) {
+        this.javaType = javaType;
+        this.xsdTokens = new HashSet<String>(Arrays.asList(xsdTokens));
+    }
 
-	public static Primitive fromXsdToken(String xsdToken)
-	{
-		for (Primitive primitive : values())
-			if (primitive.xsdTokens.contains(xsdToken))
-				return primitive;
-		return null;
-	}
+    public static Primitive fromXsdToken(String xsdToken) {
+        for (Primitive primitive : values()) {
+            if (primitive.xsdTokens.contains(xsdToken)) {
+                return primitive;
+            }
+        }
+        return null;
+    }
 }

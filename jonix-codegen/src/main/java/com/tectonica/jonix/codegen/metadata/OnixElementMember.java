@@ -22,44 +22,39 @@ package com.tectonica.jonix.codegen.metadata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "simpleTypeName", "dataType" })
-public class OnixElementMember implements Comparable<OnixElementMember>
-{
-	@JsonIgnore
-	public OnixSimpleType simpleType;
+@JsonPropertyOrder( {"simpleTypeName", "dataType"})
+public class OnixElementMember implements Comparable<OnixElementMember> {
+    @JsonIgnore
+    public OnixSimpleType simpleType;
 
-	public String getSimpleTypeName()
-	{
-		return simpleType.name;
-	}
+    public String getSimpleTypeName() {
+        return simpleType.name;
+    }
 
-	public Primitive getDataType()
-	{
-		return simpleType.primitiveType;
-	}
+    public Primitive getDataType() {
+        return simpleType.primitiveType;
+    }
 
-	@Override
-	public int compareTo(OnixElementMember other)
-	{
-		return simpleType.name.compareTo(other.simpleType.name);
-	}
+    @Override
+    public int compareTo(OnixElementMember other) {
+        return simpleType.name.compareTo(other.simpleType.name);
+    }
 
-	@Override
-	public String toString()
-	{
-		return simpleType.primitiveType + " (" + simpleType.name + ")";
-	}
+    @Override
+    public String toString() {
+        return simpleType.primitiveType + " (" + simpleType.name + ")";
+    }
 
-	private OnixElementMember()
-	{}
+    private OnixElementMember() {
+    }
 
-	public static OnixElementMember create(OnixSimpleType simpleType)
-	{
-		if (simpleType == null)
-			throw new NullPointerException("simpleType");
+    public static OnixElementMember create(OnixSimpleType simpleType) {
+        if (simpleType == null) {
+            throw new NullPointerException("simpleType");
+        }
 
-		OnixElementMember member = new OnixElementMember();
-		member.simpleType = simpleType;
-		return member;
-	}
+        OnixElementMember member = new OnixElementMember();
+        member.simpleType = simpleType;
+        return member;
+    }
 }

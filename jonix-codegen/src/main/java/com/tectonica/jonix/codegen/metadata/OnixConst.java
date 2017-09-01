@@ -21,29 +21,25 @@ package com.tectonica.jonix.codegen.metadata;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({ "name", "value" })
-public class OnixConst implements Comparable<OnixConst>
-{
-	public String name;
-	public String value;
+@JsonPropertyOrder( {"name", "value"})
+public class OnixConst implements Comparable<OnixConst> {
+    public String name;
+    public String value;
 
-	public static OnixConst create(String name, String value)
-	{
-		OnixConst oca = new OnixConst();
-		oca.name = name;
-		oca.value = value;
-		return oca;
-	}
+    public static OnixConst create(String name, String value) {
+        OnixConst oca = new OnixConst();
+        oca.name = name;
+        oca.value = value;
+        return oca;
+    }
 
-	@Override
-	public String toString()
-	{
-		return name + "=" + value;
-	}
+    @Override
+    public String toString() {
+        return name + "=" + value;
+    }
 
-	@Override
-	public int compareTo(OnixConst other)
-	{
-		return name.compareTo(other.name);
-	}
+    @Override
+    public int compareTo(OnixConst other) {
+        return name.compareTo(other.name);
+    }
 }
