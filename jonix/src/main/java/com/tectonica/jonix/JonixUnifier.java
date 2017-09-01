@@ -35,18 +35,17 @@ import com.tectonica.jonix.extract.JonixUnifiedExtractor;
  * Jonix provides a whole suite of unified classes representing the most 'basic' pieces of ONIX data. This suite is
  * extensible and customizable. A global unifier for this suite is {@link Jonix#BASIC_UNIFIER}.
  */
-public interface JonixUnifier<H, P>
-{
-	H createFrom(com.tectonica.jonix.onix2.Header header);
+public interface JonixUnifier<H, P> {
+    H createFrom(com.tectonica.jonix.onix2.Header header);
 
-	H createFrom(com.tectonica.jonix.onix3.Header header);
+    H createFrom(com.tectonica.jonix.onix3.Header header);
 
-	P createFrom(com.tectonica.jonix.onix2.Product product);
+    P createFrom(com.tectonica.jonix.onix2.Product product);
 
-	P createFrom(com.tectonica.jonix.onix3.Product product);
+    P createFrom(com.tectonica.jonix.onix3.Product product);
 
-	/**
-	 * returns a canonical name for the given product, used mostly for logging. It can be the product's ID, title, etc.
-	 */
-	String labelOf(P product);
+    /**
+     * returns a canonical name for the given product, used mostly for logging. It can be the product's ID, title, etc.
+     */
+    String labelOf(P product);
 }

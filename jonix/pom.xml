@@ -1,39 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>jonix</artifactId>
+    <artifactId>jonix</artifactId>
 
-	<parent>
-		<groupId>com.tectonica</groupId>
-		<artifactId>jonix-parent</artifactId>
-		<version>8.0-rc1</version>
-		<relativePath>..</relativePath>
-	</parent>
+    <parent>
+        <groupId>com.tectonica</groupId>
+        <artifactId>jonix-parent</artifactId>
+        <version>8.0-rc1</version>
+        <relativePath>..</relativePath>
+    </parent>
 
-	<name>Jonix</name>
-	<description>Commercial-grade library for extracting data from ONIX sources</description>
+    <name>Jonix</name>
+    <description>Commercial-grade library for extracting data from ONIX sources</description>
 
-	<dependencies>
-		<!-- Internal Projects -->
-		<dependency>
-			<groupId>com.tectonica</groupId>
-			<artifactId>jonix-onix2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.tectonica</groupId>
-			<artifactId>jonix-onix3</artifactId>
-		</dependency>
+    <dependencies>
+        <!-- Internal Projects -->
+        <dependency>
+            <groupId>com.tectonica</groupId>
+            <artifactId>jonix-onix2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.tectonica</groupId>
+            <artifactId>jonix-onix3</artifactId>
+        </dependency>
 
-		<!-- Testing -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jdk14</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

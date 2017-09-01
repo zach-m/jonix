@@ -35,27 +35,24 @@ import com.tectonica.jonix.stream.JonixStreamer;
  * <p>
  * Exporting the raw fields, however, is pretty much a XML-to-JSON functionality, suitable for data inspection
  * scenarios.
- * 
+ *
  * @author Zach Melamed
  */
-public class JonixJsonExporter<H, P> extends JonixExporter<H, P>
-{
-	private final boolean exportRawProduct;
+public class JonixJsonExporter<H, P> extends JonixExporter<H, P> {
+    private final boolean exportRawProduct;
 
-	public JonixJsonExporter(JonixUnifier<H, P> unifier, boolean exportRawProduct)
-	{
-		super(unifier);
-		this.exportRawProduct = exportRawProduct;
-	}
+    public JonixJsonExporter(JonixUnifier<H, P> unifier, boolean exportRawProduct) {
+        super(unifier);
+        this.exportRawProduct = exportRawProduct;
+    }
 
-	@Override
-	protected boolean onProduct(P product, JonixStreamer streamer)
-	{
-		super.onProduct(product, streamer); // logs an info line
+    @Override
+    protected boolean onProduct(P product, JonixStreamer streamer) {
+        super.onProduct(product, streamer); // logs an info line
 
-		out.println(exportRawProduct ? JonixJson.toJson(rawOnixProduct) : JonixJson.toJson(product));
-		out.println("\n");
-		
-		return true;
-	}
+        out.println(exportRawProduct ? JonixJson.toJson(rawOnixProduct) : JonixJson.toJson(product));
+        out.println("\n");
+
+        return true;
+    }
 }

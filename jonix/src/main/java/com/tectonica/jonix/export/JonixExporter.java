@@ -19,80 +19,71 @@
 
 package com.tectonica.jonix.export;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
-
 import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.extract.JonixUnifiedExtractor;
 import com.tectonica.jonix.stream.JonixStreamer;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+
 /**
  * A {@link JonixUnifiedExtractor} with additional 'out' member, intended as an output target for the extracted data.
- * 
+ *
  * @author Zach Melamed
  */
-public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P>
-{
-	@Override
-	protected boolean onHeader(H header, JonixStreamer streamer)
-	{
-		LOG.info("-----------------------------------------------------------\n");
-		LOG.info(header.toString());
-		LOG.info("-----------------------------------------------------------\n");
-		return true;
-	}
+public abstract class JonixExporter<H, P> extends JonixUnifiedExtractor<H, P> {
+    @Override
+    protected boolean onHeader(H header, JonixStreamer streamer) {
+        LOG.info("-----------------------------------------------------------\n");
+        LOG.info(header.toString());
+        LOG.info("-----------------------------------------------------------\n");
+        return true;
+    }
 
-	@Override
-	protected boolean onProduct(P product, JonixStreamer streamer)
-	{
-		// show a log message about the product being successfully parsed
-		LOG.info("retrieved product #{} - {}", streamer.getProductNo(), unifier.labelOf(product));
-		return true;
-	}
+    @Override
+    protected boolean onProduct(P product, JonixStreamer streamer) {
+        // show a log message about the product being successfully parsed
+        LOG.info("retrieved product #{} - {}", streamer.getProductNo(), unifier.labelOf(product));
+        return true;
+    }
 
-	// ///////////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////////
 
-	public JonixExporter(JonixUnifier<H, P> unifier)
-	{
-		super(unifier);
-	}
+    public JonixExporter(JonixUnifier<H, P> unifier) {
+        super(unifier);
+    }
 
-	protected PrintStream out = System.out;
+    protected PrintStream out = System.out;
 
-	public JonixExporter<H, P> setOut(String fileName)
-	{
-		return setOut(fileName, "UTF-8");
-	}
+    public JonixExporter<H, P> setOut(String fileName) {
+        return setOut(fileName, "UTF-8");
+    }
 
-	public JonixExporter<H, P> setOut(String fileName, String encoding)
-	{
-		try
-		{
-			return setOut(new PrintStream(fileName, encoding));
-		}
-		catch (FileNotFoundException | UnsupportedEncodingException e)
-		{
-			LOG.error("Couldn't setOut to '" + fileName + "', encoding: " + encoding, e);
-			throw new RuntimeException(e);
-		}
-	}
+    /**
+     * sets the output filename
+     */
+    public JonixExporter<H, P> setOut(String fileName, String encoding) {
+        try {
+            return setOut(new PrintStream(fileName, encoding));
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            LOG.error("Couldn't setOut to '" + fileName + "', encoding: " + encoding, e);
+            throw new RuntimeException(e);
+        }
+    }
 
-	public JonixExporter<H, P> setOut(PrintStream out)
-	{
-		this.out = (out == null) ? System.out : out;
-		return this;
-	}
+    public JonixExporter<H, P> setOut(PrintStream out) {
+        this.out = (out == null) ? System.out : out;
+        return this;
+    }
 
-	public PrintStream getOut()
-	{
-		return out;
-	}
+    public PrintStream getOut() {
+        return out;
+    }
 
-	@Override
-	protected void onAfterSource(JonixStreamer streamer)
-	{
-		super.onAfterSource(streamer);
-		out.flush();
-	}
+    @Override
+    protected void onAfterSource(JonixStreamer streamer) {
+        super.onAfterSource(streamer);
+        out.flush();
+    }
 }

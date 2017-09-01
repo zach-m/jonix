@@ -46,14 +46,13 @@ package com.tectonica.jonix;
  * <p>
  * In the output table, the actual number of columns that this JonixColumn would take equals to the number of
  * sub-columns times the repetitions.
- * 
+ *
  * @author Zach Melamed
  */
-public interface JonixColumn<P>
-{
-	int getRepetitions();
+public interface JonixColumn<P> {
+    int getRepetitions();
 
-	String[] getSubColumnNames();
+    String[] getSubColumnNames();
 
-	boolean extractFrom(P product, String[] columnBuffer);
+    boolean extractFrom(P product, String[] columnBuffer);
 }

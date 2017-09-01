@@ -19,40 +19,36 @@
 
 package com.tectonica.jonix;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
-
+import com.tectonica.jonix.stream.JonixFilesStreamer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.tectonica.jonix.stream.JonixFilesStreamer;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
-public class TestTabDelimited
-{
-	private JonixFilesStreamer streamer;
+public class TestTabDelimited {
+    private JonixFilesStreamer streamer;
 
-	@Before
-	public void setUp() throws Exception
-	{
-		PrintStream outFile = new PrintStream("Catalog.tsv");
-		streamer = Jonix.createBasicTabDelimitedStreamer(outFile);
-	}
+    @Before
+    public void setUp() throws Exception {
+        PrintStream outFile = new PrintStream("Catalog.tsv");
+        streamer = Jonix.createBasicTabDelimitedStreamer(outFile);
+    }
 
-	@After
-	public void tearDown() throws Exception
-	{}
+    @After
+    public void tearDown() throws Exception {
+    }
 
-	@Test
-	@Ignore
-	// ignored by default. the sample files are not checked in to SCM
-	public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException
-	{
-		String samplesFolder = "C:/Users/zach/Dropbox/Projects/Jonix/onix_samples";
-		streamer.readFolder(samplesFolder + "/ONIX3", "*.onix"); // ONIX3 files
-		streamer.readFolder(samplesFolder + "/ONIX2/BK", "*.xml"); // ONIX2 files
-		streamer.read(samplesFolder + "/ONIX2/SB_short.xml"); // short-references ONIX2 file
-		streamer.read(samplesFolder + "/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
-	}
+    @Test
+    @Ignore
+    // ignored by default. the sample files are not checked into SCM
+    public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException {
+        String samplesFolder = "C:/Users/zach/Dropbox/Projects/Jonix/onix_samples";
+        streamer.readFolder(samplesFolder + "/ONIX3", "*.onix"); // ONIX3 files
+        streamer.readFolder(samplesFolder + "/ONIX2/BK", "*.xml"); // ONIX2 files
+        streamer.read(samplesFolder + "/ONIX2/SB_short.xml"); // short-references ONIX2 file
+        streamer.read(samplesFolder + "/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
+    }
 }

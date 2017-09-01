@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix;
 
-import java.io.File;
-import java.io.PrintStream;
-import java.util.List;
-
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicHeader2;
 import com.tectonica.jonix.basic.BasicHeader3;
@@ -34,112 +30,109 @@ import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.extract.JonixInMemExtractor;
 import com.tectonica.jonix.stream.JonixFilesStreamer;
 
-public class Jonix
-{
-	private static void usage()
-	{
-		p("Usage:");
-		p("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
-		p("or:     java -jar jonix.jar OUTPUT INPUT");
-		p("");
-		p("Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:");
-		p("- any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)");
-		p("- the single file INPUT");
-		p("");
-	}
+import java.io.File;
+import java.io.PrintStream;
+import java.util.List;
 
-	public static void main(String[] args)
-	{
-		if (args.length < 1 || args.length > 3)
-		{
-			usage();
-			return;
-		}
+public class Jonix {
+    private static void usage() {
+        p("Usage:");
+        p("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
+        p("or:     java -jar jonix.jar OUTPUT INPUT");
+        p("");
+        p("Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:");
+        p("- any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)");
+        p("- the single file INPUT");
+        p("");
+    }
 
-		try
-		{
-			final String outputFile = args[0];
+    /**
+     * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:
+     * <ul>
+     * <li>any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)
+     * <li>the single file INPUT
+     * </ul>
+     *
+     * @param args OUTPUT INPUT or OUTPUT [DIRECTORY] [PATTERN]
+     */
+    public static void main(String[] args) {
+        if (args.length < 1 || args.length > 3) {
+            usage();
+            return;
+        }
 
-			final String input = (args.length < 2) ? "." : args[1];
-			final File inputFile = new File(input);
-			if (!inputFile.exists())
-			{
-				System.err.println("couldn't find " + input);
-				return;
-			}
+        try {
+            final String outputFile = args[0];
 
-			final String pattern;
-			if (!inputFile.isDirectory())
-				pattern = "*";
-			else
-				pattern = (args.length < 3) ? "*.xml" : args[2];
+            final String input = (args.length < 2) ? "." : args[1];
+            final File inputFile = new File(input);
+            if (!inputFile.exists()) {
+                System.err.println("couldn't find " + input);
+                return;
+            }
 
-			PrintStream out = new PrintStream(outputFile);
+            final String pattern;
+            if (!inputFile.isDirectory()) {
+                pattern = "*";
+            } else {
+                pattern = (args.length < 3) ? "*.xml" : args[2];
+            }
 
-			createBasicTabDelimitedStreamer(out).readFolder(input, pattern);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
+            PrintStream out = new PrintStream(outputFile);
 
-	private static void p(String s)
-	{
-		System.out.println(s);
-	}
+            createBasicTabDelimitedStreamer(out).readFolder(input, pattern);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	// /////////////////////////////////////////////////////////////////////////////////////////
+    private static void p(String s) {
+        System.out.println(s);
+    }
 
-	public static final JonixUnifier<BasicHeader, BasicProduct> BASIC_UNIFIER = new JonixUnifier<BasicHeader, BasicProduct>()
-	{
-		@Override
-		public BasicHeader createFrom(com.tectonica.jonix.onix2.Header header)
-		{
-			return new BasicHeader2(header);
-		}
+    // /////////////////////////////////////////////////////////////////////////////////////////
 
-		@Override
-		public BasicHeader createFrom(com.tectonica.jonix.onix3.Header header)
-		{
-			return new BasicHeader3(header);
-		}
+    public static final JonixUnifier<BasicHeader, BasicProduct> BASIC_UNIFIER =
+        new JonixUnifier<BasicHeader, BasicProduct>() {
+            @Override
+            public BasicHeader createFrom(com.tectonica.jonix.onix2.Header header) {
+                return new BasicHeader2(header);
+            }
 
-		@Override
-		public BasicProduct createFrom(com.tectonica.jonix.onix2.Product product)
-		{
-			return new BasicProduct2(product);
-		}
+            @Override
+            public BasicHeader createFrom(com.tectonica.jonix.onix3.Header header) {
+                return new BasicHeader3(header);
+            }
 
-		@Override
-		public BasicProduct createFrom(com.tectonica.jonix.onix3.Product product)
-		{
-			return new BasicProduct3(product);
-		}
+            @Override
+            public BasicProduct createFrom(com.tectonica.jonix.onix2.Product product) {
+                return new BasicProduct2(product);
+            }
 
-		@Override
-		public String labelOf(BasicProduct product)
-		{
-			return product.getLabel();
-		}
-	};
+            @Override
+            public BasicProduct createFrom(com.tectonica.jonix.onix3.Product product) {
+                return new BasicProduct3(product);
+            }
 
-	// /////////////////////////////////////////////////////////////////////////////////////////
+            @Override
+            public String labelOf(BasicProduct product) {
+                return product.getLabel();
+            }
+        };
 
-	public static JonixFilesStreamer createBasicTabDelimitedStreamer(PrintStream out)
-	{
-		return new JonixFilesStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER,
-				BasicColumn.ALL_COLUMNS).setOut(out));
-	}
+    // /////////////////////////////////////////////////////////////////////////////////////////
 
-	public static JonixFilesStreamer createJsonStreamer(PrintStream out, boolean exportRaw)
-	{
-		return new JonixFilesStreamer(
-				new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER, exportRaw).setOut(out));
-	}
+    public static JonixFilesStreamer createBasicTabDelimitedStreamer(PrintStream out) {
+        return new JonixFilesStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER,
+            BasicColumn.ALL_COLUMNS).setOut(out));
+    }
 
-	public static JonixFilesStreamer createBasicInMemStreamer(List<BasicProduct> collection)
-	{
-		return new JonixFilesStreamer(new JonixInMemExtractor<BasicHeader, BasicProduct>(BASIC_UNIFIER, collection));
-	}
+    public static JonixFilesStreamer createJsonStreamer(PrintStream out, boolean exportRaw) {
+        return new JonixFilesStreamer(
+            new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER, exportRaw).setOut(out));
+    }
+
+    public static JonixFilesStreamer createBasicInMemStreamer(List<BasicProduct> collection) {
+        return new JonixFilesStreamer(new JonixInMemExtractor<BasicHeader, BasicProduct>(BASIC_UNIFIER, collection));
+    }
 }

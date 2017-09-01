@@ -24,42 +24,39 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestJonixUtil
-{
-	@Before
-	public void setUp() throws Exception
-	{}
+public class TestJonixUtil {
+    @Before
+    public void setUp() throws Exception {
+    }
 
-	@After
-	public void tearDown() throws Exception
-	{}
+    @After
+    public void tearDown() throws Exception {
+    }
 
-	private int compare(String[] a, String[] b)
-	{
-		int c1 = JonixUtil.compareArray(a, b);
-		int c2 = JonixUtil.compareArray(b, a);
-		Assert.assertEquals(c1, -c2);
-//		String sign = (c1 < 0) ? " < " : ((c1 > 0) ? " > " : " = ");
-//		System.out.println(Arrays.toString(a) + sign + Arrays.toString(b));
-		return c1;
-	}
+    private int compare(String[] a, String[] b) {
+        int c1 = JonixUtil.compareArray(a, b);
+        int c2 = JonixUtil.compareArray(b, a);
+        Assert.assertEquals(c1, -c2);
+        //String sign = (c1 < 0) ? " < " : ((c1 > 0) ? " > " : " = ");
+        //System.out.println(Arrays.toString(a) + sign + Arrays.toString(b));
+        return c1;
+    }
 
-	@Test
-	public void testArrayCompare()
-	{
-		String[] a = new String[] { "a" };
-		String[] ab = new String[] { "a", "b" };
-		String[] ab2 = new String[] { "a", "b" };
-		String[] ac = new String[] { "a", "c" };
-		String[] a_b = new String[] { "a", null, "b" };
-		String[] a_c = new String[] { "a", null, "c" };
+    @Test
+    public void testArrayCompare() {
+        String[] a = new String[] {"a"};
+        String[] ab = new String[] {"a", "b"};
+        String[] ab2 = new String[] {"a", "b"};
+        String[] ac = new String[] {"a", "c"};
+        String[] a_b = new String[] {"a", null, "b"};
+        String[] a_c = new String[] {"a", null, "c"};
 
-		Assert.assertEquals(compare(ab, ac), -1);
-		Assert.assertEquals(compare(ab, ab), 0);
-		Assert.assertEquals(compare(ab, ab2), 0);
-		Assert.assertEquals(compare(a, ac), -1);
-		Assert.assertEquals(compare(null, a), -1);
-		Assert.assertEquals(compare(a_b, ab), -1);
-		Assert.assertEquals(compare(a_b, a_c), -1);
-	}
+        Assert.assertEquals(compare(ab, ac), -1);
+        Assert.assertEquals(compare(ab, ab), 0);
+        Assert.assertEquals(compare(ab, ab2), 0);
+        Assert.assertEquals(compare(a, ac), -1);
+        Assert.assertEquals(compare(null, a), -1);
+        Assert.assertEquals(compare(a_b, ab), -1);
+        Assert.assertEquals(compare(a_b, a_c), -1);
+    }
 }

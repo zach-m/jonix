@@ -19,88 +19,85 @@
 
 package com.tectonica.jonix;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Optional;
-
-import javax.xml.namespace.QName;
-import javax.xml.stream.events.Attribute;
-import javax.xml.stream.events.StartElement;
-
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
+import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.onix2.Product;
+import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
-import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.onix2.Product;
-import com.tectonica.jonix.struct.JonixProductIdentifier;
-import com.tectonica.jonix.struct.JonixTitle;
-import com.tectonica.xmlchunk.XmlChunker;
+import javax.xml.namespace.QName;
+import javax.xml.stream.events.Attribute;
+import javax.xml.stream.events.StartElement;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Optional;
 
-public class TestXmlChunkerWithProducts
-{
-	@Before
-	public void setUp() throws Exception
-	{}
+public class TestXmlChunkerWithProducts {
+    @Before
+    public void setUp() throws Exception {
+    }
 
-	@After
-	public void tearDown() throws Exception
-	{}
+    @After
+    public void tearDown() throws Exception {
+    }
 
-	@Test
-	@Ignore
-	// ignored by default. the sample files are not checked in to SCM
-	public void readProductsAndExtractProperties() throws FileNotFoundException
-	{
-		final File file = new File("C:\\Users\\zach\\Dropbox\\Projects\\Jonix\\onix_samples\\ONIX2\\SB_Ref.xml");
-		if (!file.exists())
-			throw new RuntimeException("couldn't found " + file.getAbsolutePath());
+    @Test
+    @Ignore
+    // ignored by default. the sample files are not checked in to SCM
+    public void readProductsAndExtractProperties() throws FileNotFoundException {
+        final File file = new File("C:\\Users\\zach\\Dropbox\\Projects\\Jonix\\onix_samples\\ONIX2\\SB_Ref.xml");
+        if (!file.exists()) {
+            throw new RuntimeException("couldn't found " + file.getAbsolutePath());
+        }
 
-		XmlChunker.parse(new FileInputStream(file), "UTF-8", 2, new XmlChunker.Listener()
-		{
-			private int count = 0;
+        XmlChunker.parse(new FileInputStream(file), "UTF-8", 2, new XmlChunker.Listener() {
+            private int count = 0;
 
-			@Override
-			public boolean onChunk(Element element)
-			{
-				final String nodeName = element.getNodeName();
-				if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname))
-				{
-					// parse a Product XML element into a corresponding Java structure
-					Product product = new Product(element);
+            @Override
+            public boolean onChunk(Element element) {
+                final String nodeName = element.getNodeName();
+                if (nodeName.equals(Product.refname) || nodeName.equals(Product.shortname)) {
+                    // parse a Product XML element into a corresponding Java structure
+                    Product product = new Product(element);
 
-					// get some basic properties of the book
-					Optional<JonixTitle> title = product.titles().findAsStruct(TitleTypes.Distinctive_title_book);
-					String titleValue = title.map(t -> t.titleText).orElse("N/A");
-					String isbnValue = product.productIdentifiers().findAsStruct(ProductIdentifierTypes.ISBN_13).map(i -> i.idValue).orElse("N/A");
-					String seriesPrefix = product.seriess().isEmpty() ? "" : product.seriess().get(0).titleOfSeries().value + " / ";
+                    // get some basic properties of the book
+                    Optional<JonixTitle> title = product.titles().findAsStruct(TitleTypes.Distinctive_title_book);
+                    String titleValue = title.map(t -> t.titleText).orElse("N/A");
+                    String isbnValue =
+                        product.productIdentifiers().findAsStruct(ProductIdentifierTypes.ISBN_13).map(i -> i.idValue)
+                            .orElse("N/A");
+                    String seriesPrefix =
+                        product.seriess().isEmpty() ? "" : product.seriess().get(0).titleOfSeries().value + " / ";
 
-					// print
-					++count;
-					System.out.println(String.format("#%04d: title='%s', isbn='%s'", count,
-							seriesPrefix + titleValue, isbnValue));
+                    // print
+                    ++count;
+                    System.out.println(String.format("#%04d: title='%s', isbn='%s'", count,
+                        seriesPrefix + titleValue, isbnValue));
 
-					// in rare cases where there is no title, we print the entire XML record (as JSON)
-					if (!title.isPresent())
-						System.err.println(JonixJson.toJson(product));
-				}
-				return true;
-			}
+                    // in rare cases where there is no title, we print the entire XML record (as JSON)
+                    if (!title.isPresent()) {
+                        System.err.println(JonixJson.toJson(product));
+                    }
+                }
+                return true;
+            }
 
-			@Override
-			public void onPreTargetStart(int depth, StartElement element)
-			{
-				final Attribute release = element.getAttributeByName(new QName("release"));
-				boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
-				if (!isOnix2)
-					throw new RuntimeException("this test is suitable for Onix2 only at this time");
-			}
-		});
+            @Override
+            public void onPreTargetStart(int depth, StartElement element) {
+                final Attribute release = element.getAttributeByName(new QName("release"));
+                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
+                if (!isOnix2) {
+                    throw new RuntimeException("this test is suitable for Onix2 only at this time");
+                }
+            }
+        });
 
-		System.err.println("** DONE");
-	}
+        System.err.println("** DONE");
+    }
 }

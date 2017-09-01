@@ -19,27 +19,28 @@
 
 package com.tectonica.jonix.extract;
 
-import java.util.Collection;
-
 import com.tectonica.jonix.JonixUnifier;
 import com.tectonica.jonix.stream.JonixStreamer;
 
-public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P>
-{
-	protected Collection<P> products;
+import java.util.Collection;
 
-	public JonixInMemExtractor(JonixUnifier<H, P> unifier, Collection<P> collection)
-	{
-		super(unifier);
-		if (collection == null)
-			throw new NullPointerException();
-		this.products = collection;
-	}
+public class JonixInMemExtractor<H, P> extends JonixUnifiedExtractor<H, P> {
+    protected Collection<P> products;
 
-	@Override
-	protected boolean onProduct(P product, JonixStreamer streamer)
-	{
-		products.add(product);
-		return true;
-	}
+    /**
+     * initializes an exporter which will read records into a collection
+     */
+    public JonixInMemExtractor(JonixUnifier<H, P> unifier, Collection<P> collection) {
+        super(unifier);
+        if (collection == null) {
+            throw new NullPointerException();
+        }
+        this.products = collection;
+    }
+
+    @Override
+    protected boolean onProduct(P product, JonixStreamer streamer) {
+        products.add(product);
+        return true;
+    }
 }

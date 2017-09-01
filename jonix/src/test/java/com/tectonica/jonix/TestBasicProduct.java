@@ -19,17 +19,6 @@
 
 package com.tectonica.jonix;
 
-import java.io.InputStream;
-
-import javax.xml.namespace.QName;
-import javax.xml.stream.events.Attribute;
-import javax.xml.stream.events.StartElement;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.w3c.dom.Element;
-
 import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.basic.BasicProduct2;
@@ -37,107 +26,105 @@ import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.extract.JonixUnifiedExtractor;
 import com.tectonica.jonix.stream.JonixStreamer;
 import com.tectonica.xmlchunk.XmlChunker;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.w3c.dom.Element;
 
-public class TestBasicProduct
-{
-	private static final String PRODUCT_REF = com.tectonica.jonix.onix2.Product.refname;
-	private static final String PRODUCT_SHORT = com.tectonica.jonix.onix2.Product.shortname;
+import javax.xml.namespace.QName;
+import javax.xml.stream.events.Attribute;
+import javax.xml.stream.events.StartElement;
+import java.io.InputStream;
 
-	@Before
-	public void setUp() throws Exception
-	{}
+public class TestBasicProduct {
+    private static final String PRODUCT_REF = com.tectonica.jonix.onix2.Product.refname;
+    private static final String PRODUCT_SHORT = com.tectonica.jonix.onix2.Product.shortname;
 
-	@After
-	public void tearDown() throws Exception
-	{
-		System.out.println("\n***********************************************************************************");
-	}
+    @Before
+    public void setUp() throws Exception {
+    }
 
-	@Test
-	public void readSingleProductOfOnix2()
-	{
-		InputStream stream = getClass().getResourceAsStream("/single-book-onix2.xml");
+    @After
+    public void tearDown() throws Exception {
+        System.out.println("\n***********************************************************************************");
+    }
 
-		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
-		{
-			@Override
-			public boolean onChunk(Element element)
-			{
-				final String nodeName = element.getNodeName();
-				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
-				{
-					final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
-					BasicProduct bp = new BasicProduct2(product);
-					System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
-					System.out.println(JonixJson.toJson(product));
-					System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
-					System.out.println(JonixJson.toJson(bp));
-				}
-				return true;
-			}
+    @Test
+    public void readSingleProductOfOnix2() {
+        InputStream stream = getClass().getResourceAsStream("/single-book-onix2.xml");
 
-			@Override
-			public void onPreTargetStart(int depth, StartElement element)
-			{
-				final Attribute release = element.getAttributeByName(new QName("release"));
-				boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
-				if (!isOnix2)
-					throw new RuntimeException("this test is suitable for Onix2 only at this time");
-			}
-		});
-	}
+        XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener() {
+            @Override
+            public boolean onChunk(Element element) {
+                final String nodeName = element.getNodeName();
+                if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT)) {
+                    final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
+                    BasicProduct bp = new BasicProduct2(product);
+                    System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
+                    System.out.println(JonixJson.toJson(product));
+                    System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
+                    System.out.println(JonixJson.toJson(bp));
+                }
+                return true;
+            }
 
-	private String jsonDirect = null;
-	private String jsonViaReader = null;
+            @Override
+            public void onPreTargetStart(int depth, StartElement element) {
+                final Attribute release = element.getAttributeByName(new QName("release"));
+                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
+                if (!isOnix2) {
+                    throw new RuntimeException("this test is suitable for Onix2 only at this time");
+                }
+            }
+        });
+    }
 
-	private static final String RESOURCE_NAME = "/single-book-onix3.xml";
+    private String jsonDirect = null;
+    private String jsonViaReader = null;
 
-	@Test
-	public void readSingleProductOfOnix3AlsoWithReader()
-	{
-		InputStream stream = getClass().getResourceAsStream(RESOURCE_NAME);
+    private static final String RESOURCE_NAME = "/single-book-onix3.xml";
 
-		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
-		{
-			@Override
-			public boolean onChunk(Element element)
-			{
-				final String nodeName = element.getNodeName();
-				if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT))
-				{
-					final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
-					BasicProduct bp = new BasicProduct3(product);
-					System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
-					System.out.println(JonixJson.toJson(product));
-					System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
-					System.out.println(jsonDirect = JonixJson.toJson(bp));
-				}
-				return true;
-			}
+    @Test
+    public void readSingleProductOfOnix3AlsoWithReader() {
+        InputStream stream = getClass().getResourceAsStream(RESOURCE_NAME);
 
-			@Override
-			public void onPreTargetStart(int depth, StartElement element)
-			{
-				final Attribute release = element.getAttributeByName(new QName("release"));
-				boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
-				if (isOnix2)
-					throw new RuntimeException("this test is suitable for Onix3 only at this time");
-			}
-		});
+        XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener() {
+            @Override
+            public boolean onChunk(Element element) {
+                final String nodeName = element.getNodeName();
+                if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT)) {
+                    final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
+                    BasicProduct bp = new BasicProduct3(product);
+                    System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
+                    System.out.println(JonixJson.toJson(product));
+                    System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
+                    System.out.println(jsonDirect = JonixJson.toJson(bp));
+                }
+                return true;
+            }
 
-		// read the same file, this time using a JonixReader
-		JonixStreamer streamer = new JonixStreamer(new JonixUnifiedExtractor<BasicHeader, BasicProduct>(Jonix.BASIC_UNIFIER)
-		{
-			@Override
-			protected boolean onProduct(BasicProduct product, JonixStreamer streamer)
-			{
-				jsonViaReader = JonixJson.toJson(product);
-				return true;
-			}
-		});
-		streamer.read(getClass().getResourceAsStream(RESOURCE_NAME));
+            @Override
+            public void onPreTargetStart(int depth, StartElement element) {
+                final Attribute release = element.getAttributeByName(new QName("release"));
+                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
+                if (isOnix2) {
+                    throw new RuntimeException("this test is suitable for Onix3 only at this time");
+                }
+            }
+        });
 
-		// compare the JSON received in both methods
-		org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);
-	}
+        // read the same file, this time using a JonixReader
+        JonixStreamer streamer =
+            new JonixStreamer(new JonixUnifiedExtractor<BasicHeader, BasicProduct>(Jonix.BASIC_UNIFIER) {
+                @Override
+                protected boolean onProduct(BasicProduct product, JonixStreamer streamer) {
+                    jsonViaReader = JonixJson.toJson(product);
+                    return true;
+                }
+            });
+        streamer.read(getClass().getResourceAsStream(RESOURCE_NAME));
+
+        // compare the JSON received in both methods
+        org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);
+    }
 }
