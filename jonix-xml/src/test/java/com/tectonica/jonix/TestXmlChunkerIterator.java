@@ -19,38 +19,33 @@
 
 package com.tectonica.jonix;
 
-import java.io.InputStream;
-
-import javax.xml.stream.XMLStreamException;
-
+import com.tectonica.xmlchunk.XmlChunkerIterator;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.tectonica.xmlchunk.XmlChunkerIterator;
+import javax.xml.stream.XMLStreamException;
+import java.io.InputStream;
 
-public class TestXmlChunkerIterator
-{
-	@Before
-	public void setUp() throws Exception
-	{}
+public class TestXmlChunkerIterator {
+    @Before
+    public void setUp() throws Exception {
+    }
 
-	@After
-	public void tearDown() throws Exception
-	{}
+    @After
+    public void tearDown() throws Exception {
+    }
 
-	@Test
-	public void xmlReadParseAndCountUsingIterator() throws XMLStreamException
-	{
-		InputStream stream = TestXmlChunkerIterator.class.getResourceAsStream("/tester.xml");
-		XmlChunkerIterator iter = new XmlChunkerIterator(stream, "UTF-8", 2);
-		long count = 0;
-		while (iter.hasNext())
-		{
-			count++;
-			iter.next();
-		}
-		Assert.assertEquals(count, 5L);
-	}
+    @Test
+    public void xmlReadParseAndCountUsingIterator() throws XMLStreamException {
+        InputStream stream = TestXmlChunkerIterator.class.getResourceAsStream("/tester.xml");
+        XmlChunkerIterator iter = new XmlChunkerIterator(stream, "UTF-8", 2);
+        long count = 0;
+        while (iter.hasNext()) {
+            count++;
+            iter.next();
+        }
+        Assert.assertEquals(count, 5L);
+    }
 }

@@ -19,10 +19,8 @@
 
 package com.tectonica.jonix;
 
-import java.io.InputStream;
-
-import javax.xml.stream.events.StartElement;
-
+import com.tectonica.xmlchunk.XmlChunker;
+import com.tectonica.xmlchunk.XmlUtil;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -30,85 +28,75 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
-import com.tectonica.xmlchunk.XmlChunker;
-import com.tectonica.xmlchunk.XmlUtil;
+import javax.xml.stream.events.StartElement;
+import java.io.InputStream;
 
-public class TestXmlChunker
-{
-	@Before
-	public void setUp() throws Exception
-	{}
+public class TestXmlChunker {
+    @Before
+    public void setUp() throws Exception {
+    }
 
-	@After
-	public void tearDown() throws Exception
-	{}
+    @After
+    public void tearDown() throws Exception {
+    }
 
-	private static class TagCounter implements XmlChunker.Listener
-	{
-		public long preCounter = 0L;
-		public long chunkCounter = 0L;
+    private static class TagCounter implements XmlChunker.Listener {
+        public long preCounter = 0L;
+        public long chunkCounter = 0L;
 
-		@Override
-		public boolean onChunk(Element element)
-		{
-			chunkCounter++;
-			return true;
-		}
+        @Override
+        public boolean onChunk(Element element) {
+            chunkCounter++;
+            return true;
+        }
 
-		@Override
-		public void onPreTargetStart(int depth, StartElement element)
-		{
-			preCounter++;
-		}
-	}
+        @Override
+        public void onPreTargetStart(int depth, StartElement element) {
+            preCounter++;
+        }
+    }
 
-	@Test
-	public void xmlReadParseAndCountAtLevel2()
-	{
-		InputStream stream = TestXmlChunker.class.getResourceAsStream("/tester.xml");
-		TagCounter tagCounter = new TagCounter();
-		XmlChunker.parse(stream, "UTF-8", 2, tagCounter);
-		Assert.assertEquals(tagCounter.preCounter, 1L);
-		Assert.assertEquals(tagCounter.chunkCounter, 5L);
-	}
+    @Test
+    public void xmlReadParseAndCountAtLevel2() {
+        InputStream stream = TestXmlChunker.class.getResourceAsStream("/tester.xml");
+        TagCounter tagCounter = new TagCounter();
+        XmlChunker.parse(stream, "UTF-8", 2, tagCounter);
+        Assert.assertEquals(tagCounter.preCounter, 1L);
+        Assert.assertEquals(tagCounter.chunkCounter, 5L);
+    }
 
-	@Test
-	public void xmlReadParseAndCountAtLevel3()
-	{
-		InputStream stream = TestXmlChunker.class.getResourceAsStream("/tester.xml");
-		TagCounter tagCounter = new TagCounter();
-		XmlChunker.parse(stream, "UTF-8", 3, tagCounter);
-		Assert.assertEquals(tagCounter.preCounter, 1L + 5L);
-		Assert.assertEquals(tagCounter.chunkCounter, 3L);
-	}
+    @Test
+    public void xmlReadParseAndCountAtLevel3() {
+        InputStream stream = TestXmlChunker.class.getResourceAsStream("/tester.xml");
+        TagCounter tagCounter = new TagCounter();
+        XmlChunker.parse(stream, "UTF-8", 3, tagCounter);
+        Assert.assertEquals(tagCounter.preCounter, 1L + 5L);
+        Assert.assertEquals(tagCounter.chunkCounter, 3L);
+    }
 
-	@Test
-	@Ignore
-	public void xmlReadParseAndThenWriteAsRegeneratedXml()
-	{
-		InputStream stream = TestXmlChunker.class.getResourceAsStream("/tester.xml");
+    @Test
+    @Ignore
+    public void xmlReadParseAndThenWriteAsRegeneratedXml() {
+        InputStream stream = TestXmlChunker.class.getResourceAsStream("/tester.xml");
 
-		XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener()
-		{
-			@Override
-			public boolean onChunk(Element element)
-			{
-				// turn the DOM element back to XML
-				String asXml = XmlUtil.elementToString(element, false);
+        XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener() {
+            @Override
+            public boolean onChunk(Element element) {
+                // turn the DOM element back to XML
+                String asXml = XmlUtil.elementToString(element, false);
 
-				System.out.println("\t" + asXml);
-				System.out.println("------------------------------------------------------------------------------");
+                System.out.println("\t" + asXml);
+                System.out.println("------------------------------------------------------------------------------");
 
-				return true;
-			}
+                return true;
+            }
 
-			@Override
-			public void onPreTargetStart(int depth, StartElement element)
-			{
-				final String localPart = element.getName().getLocalPart();
-				System.out.println("FOUND TAG: " + localPart + " @ " + depth);
-				System.out.println("------------------------------------------------------------------------------");
-			}
-		});
-	}
+            @Override
+            public void onPreTargetStart(int depth, StartElement element) {
+                final String localPart = element.getName().getLocalPart();
+                System.out.println("FOUND TAG: " + localPart + " @ " + depth);
+                System.out.println("------------------------------------------------------------------------------");
+            }
+        });
+    }
 }

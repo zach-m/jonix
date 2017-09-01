@@ -19,9 +19,7 @@
 
 package com.tectonica.xmlchunk;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+import org.w3c.dom.Element;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -32,128 +30,115 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.stax.StAXSource;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.w3c.dom.Element;
+class XmlChunkerContext {
+    static final XMLInputFactory inputFactory;
+    static final TransformerFactory transformerFactory;
+    static final XmlChunkerEndDocument endDocumentEvent = new XmlChunkerEndDocument();
 
-class XmlChunkerContext
-{
-	static final XMLInputFactory inputFactory;
-	static final TransformerFactory transformerFactory;
-	static final XmlChunkerEndDocument endDocumentEvent = new XmlChunkerEndDocument();
+    static {
+        inputFactory = XMLInputFactory.newInstance();
 
-	static
-	{
-		inputFactory = XMLInputFactory.newInstance();
+        // no need to validate, or even try to access, the remote DTD file
+        inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
 
-		// no need to validate, or even try to access, the remote DTD file
-		inputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, Boolean.FALSE);
+        // no need to validate internal entities - this is important because ONIX files are designed to contain HTML
+        // sections inside them. these sections may include entities (such as '&nbsp;') that aren't XML-compatible
+        inputFactory.setProperty(XMLInputFactory.IS_REPLACING_ENTITY_REFERENCES, false);
 
-		// no need to validate internal entities - this is important because ONIX files are designed to contain HTML
-		// sections inside them. these sections may include entities (such as '&nbsp;') that aren't XML-compatible
-		inputFactory.setProperty(XMLInputFactory.IS_REPLACING_ENTITY_REFERENCES, false);
+        // this is our Transformer of choice
+        System.setProperty("javax.xml.transform.TransformerFactory",
+            "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
+        transformerFactory = TransformerFactory.newInstance();
+    }
 
-		// this is our Transformer of choice
-		System.setProperty("javax.xml.transform.TransformerFactory",
-				"com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
-		transformerFactory = TransformerFactory.newInstance();
-	}
+    private int depth;
+    private List<XMLEvent> events;
+    private XMLEventReader reader;
+    private XMLEvent startDocumentEvent;
+    private int targetDepth;
 
-	private int depth;
-	private List<XMLEvent> events;
-	private XMLEventReader reader;
-	private XMLEvent startDocumentEvent;
-	private int targetDepth;
+    XmlChunkerContext(InputStream is, String encoding, int targetDepth) throws XMLStreamException {
+        depth = -1;
+        events = null;
+        reader = inputFactory.createXMLEventReader(is, encoding);
+        startDocumentEvent = null;
+        this.targetDepth = targetDepth;
+    }
 
-	XmlChunkerContext(InputStream is, String encoding, int targetDepth) throws XMLStreamException
-	{
-		depth = -1;
-		events = null;
-		reader = inputFactory.createXMLEventReader(is, encoding);
-		startDocumentEvent = null;
-		this.targetDepth = targetDepth;
-	}
+    int getDepth() {
+        return depth;
+    }
 
-	int getDepth()
-	{
-		return depth;
-	}
+    Element nextChunk() throws XMLStreamException {
+        Object next;
+        while ((next = nextObject()) != null) {
+            if (next instanceof Element) {
+                return (Element) next;
+            }
+        }
+        return null;
+    }
 
-	Element nextChunk() throws XMLStreamException
-	{
-		Object next;
-		while ((next = nextObject()) != null)
-		{
-			if (next instanceof Element)
-				return (Element) next;
-		}
-		return null;
-	}
+    Object nextObject() throws XMLStreamException {
+        while (reader.hasNext()) {
+            XMLEvent event = reader.nextEvent();
+            Object retVal = null;
 
-	Object nextObject() throws XMLStreamException
-	{
-		while (reader.hasNext())
-		{
-			XMLEvent event = reader.nextEvent();
-			Object retVal = null;
+            if (event.isStartDocument()) {
+                depth = 0;
+                startDocumentEvent = event;
+            } else if (depth < 0) {
+                continue;
+            }
 
-			if (event.isStartDocument())
-			{
-				depth = 0;
-				startDocumentEvent = event;
-			}
-			else if (depth < 0)
-			{
-				continue;
-			}
+            if (event.isStartElement()) {
+                depth++;
+                if (depth < targetDepth) {
+                    retVal = event.asStartElement();
+                } else if (depth == targetDepth) {
+                    events = new ArrayList<XMLEvent>();
+                }
+            }
 
-			if (event.isStartElement())
-			{
-				depth++;
-				if (depth < targetDepth)
-					retVal = event.asStartElement();
-				else if (depth == targetDepth)
-					events = new ArrayList<XMLEvent>();
-			}
+            if (events != null) {
+                events.add(event);
+            }
 
-			if (events != null)
-				events.add(event);
+            if (event.isEndElement()) {
+                if (depth == targetDepth) {
+                    retVal = elementFromEvents();
+                    events = null;
+                }
+                depth--;
+            }
 
-			if (event.isEndElement())
-			{
-				if (depth == targetDepth)
-				{
-					retVal = elementFromEvents();
-					events = null;
-				}
-				depth--;
-			}
+            if (retVal != null) {
+                return retVal;
+            }
+        }
+        return null;
+    }
 
-			if (retVal != null)
-				return retVal;
-		}
-		return null;
-	}
+    private Object elementFromEvents() throws XMLStreamException {
+        List<XMLEvent> domEvents = new ArrayList<XMLEvent>();
+        domEvents.add(startDocumentEvent);
+        domEvents.addAll(events);
+        domEvents.add(endDocumentEvent);
 
-	private Object elementFromEvents() throws XMLStreamException
-	{
-		List<XMLEvent> domEvents = new ArrayList<XMLEvent>();
-		domEvents.add(startDocumentEvent);
-		domEvents.addAll(events);
-		domEvents.add(endDocumentEvent);
-		
-		XmlChunkerReader xmlEventReader = new XmlChunkerReader(domEvents, reader);
-		
-		DOMResult dom = new DOMResult();
-		
-		try
-		{
-			Transformer transformer = transformerFactory.newTransformer();
-			transformer.transform(new StAXSource(xmlEventReader), dom);
-			return (Element) dom.getNode().getFirstChild();
-		}
-		catch (TransformerException e)
-		{
-			throw new RuntimeException(e);
-		}
-	}
+        XmlChunkerReader xmlEventReader = new XmlChunkerReader(domEvents, reader);
+
+        DOMResult dom = new DOMResult();
+
+        try {
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.transform(new StAXSource(xmlEventReader), dom);
+            return (Element) dom.getNode().getFirstChild();
+        } catch (TransformerException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

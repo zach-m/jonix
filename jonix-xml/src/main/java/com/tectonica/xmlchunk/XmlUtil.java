@@ -19,8 +19,7 @@
 
 package com.tectonica.xmlchunk;
 
-import java.io.StringReader;
-import java.io.StringWriter;
+import org.w3c.dom.Element;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
@@ -29,67 +28,58 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.StringReader;
+import java.io.StringWriter;
 
-import org.w3c.dom.Element;
+public class XmlUtil {
+    /**
+     * Transforms a DOM {@link Element} into an XML text
+     *
+     * @param elem  the element to transform into text
+     * @param strip if true, removes the containing tag of the XML node
+     * @return an XML text representation of the given element
+     */
+    public static String elementToString(Element elem, boolean strip) {
+        StringWriter sw = new StringWriter();
+        try {
+            Transformer t = XmlChunkerContext.transformerFactory.newTransformer();
+            t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            t.transform(new DOMSource(elem), new StreamResult(sw));
+        } catch (TransformerException e) {
+            throw new RuntimeException(e);
+        }
+        final String content = sw.toString();
 
-public class XmlUtil
-{
-	/**
-	 * Transforms a DOM {@link Element} into an XML text
-	 * 
-	 * @param elem
-	 *            the element to transform into text
-	 * @param strip
-	 *            if true, removes the containing tag of the XML node
-	 * @return an XML text representation of the given element
-	 */
-	public static String elementToString(Element elem, boolean strip)
-	{
-		StringWriter sw = new StringWriter();
-		try
-		{
-			Transformer t = XmlChunkerContext.transformerFactory.newTransformer();
-			t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-			t.transform(new DOMSource(elem), new StreamResult(sw));
-		}
-		catch (TransformerException e)
-		{
-			throw new RuntimeException(e);
-		}
-		final String content = sw.toString();
+        if (strip) {
+            final int beginIndex = content.indexOf(">") + 1;
+            final int endIndex = content.lastIndexOf("<");
+            if (endIndex > beginIndex) {
+                return content.substring(beginIndex, endIndex);
+            }
+        }
+        return content;
+    }
 
-		if (strip)
-		{
-			final int beginIndex = content.indexOf(">") + 1;
-			final int endIndex = content.lastIndexOf("<");
-			if (endIndex > beginIndex)
-				return content.substring(beginIndex, endIndex);
-		}
-		return content;
-	}
-
-	/**
-	 * Transforms an escaped XML into the original, "un-escaped" value (for example turn &amp;lt;Hello&amp;gt; into
-	 * &lt;Hello&gt;)
-	 * 
-	 * @param escaped
-	 *            the escaped XML string
-	 * @return the un-escaped XML string
-	 * @throws XMLStreamException
-	 */
-	public static String unescape(String escaped) throws XMLStreamException
-	{
-		if (escaped == null)
-			return null;
-		XMLStreamReader reader = XmlChunkerContext.inputFactory.createXMLStreamReader(new StringReader("<xml>"
-				+ escaped + "</xml>"));
-		StringWriter sw = new StringWriter(escaped.length());
-		while (reader.hasNext())
-		{
-			reader.next();
-			if (reader.hasText())
-				sw.append(reader.getText());
-		}
-		return sw.toString();
-	}
+    /**
+     * Transforms an escaped XML into the original, "un-escaped" value (for example turn &amp;lt;Hello&amp;gt; into
+     * &lt;Hello&gt;)
+     *
+     * @param escaped the escaped XML string
+     * @return the un-escaped XML string
+     */
+    public static String unescape(String escaped) throws XMLStreamException {
+        if (escaped == null) {
+            return null;
+        }
+        XMLStreamReader reader = XmlChunkerContext.inputFactory.createXMLStreamReader(new StringReader("<xml>"
+            + escaped + "</xml>"));
+        StringWriter sw = new StringWriter(escaped.length());
+        while (reader.hasNext()) {
+            reader.next();
+            if (reader.hasText()) {
+                sw.append(reader.getText());
+            }
+        }
+        return sw.toString();
+    }
 }
