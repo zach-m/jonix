@@ -107,13 +107,21 @@ public class ProductClassification
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname)) {
-                productClassificationType = new ProductClassificationType(e);
-            } else if (name.equals(ProductClassificationCode.refname) ||
-                name.equals(ProductClassificationCode.shortname)) {
-                productClassificationCode = new ProductClassificationCode(e);
-            } else if (name.equals(Percent.refname) || name.equals(Percent.shortname)) {
-                percent = new Percent(e);
+            switch (name) {
+                case ProductClassificationType.refname:
+                case ProductClassificationType.shortname:
+                    productClassificationType = new ProductClassificationType(e);
+                    break;
+                case ProductClassificationCode.refname:
+                case ProductClassificationCode.shortname:
+                    productClassificationCode = new ProductClassificationCode(e);
+                    break;
+                case Percent.refname:
+                case Percent.shortname:
+                    percent = new Percent(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

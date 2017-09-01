@@ -93,14 +93,25 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname)) {
-                resourceForm = new ResourceForm(e);
-            } else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname)) {
-                resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
-            } else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname)) {
-                resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
-            } else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname)) {
-                contentDates = JPU.addToList(contentDates, new ContentDate(e));
+            switch (name) {
+                case ResourceForm.refname:
+                case ResourceForm.shortname:
+                    resourceForm = new ResourceForm(e);
+                    break;
+                case ResourceVersionFeature.refname:
+                case ResourceVersionFeature.shortname:
+                    resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
+                    break;
+                case ResourceLink.refname:
+                case ResourceLink.shortname:
+                    resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+                    break;
+                case ContentDate.refname:
+                case ContentDate.shortname:
+                    contentDates = JPU.addToList(contentDates, new ContentDate(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -91,12 +91,21 @@ public class ProductContactIdentifier
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProductContactIDType.refname) || name.equals(ProductContactIDType.shortname)) {
-                productContactIDType = new ProductContactIDType(e);
-            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
-                idTypeName = new IDTypeName(e);
-            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
-                idValue = new IDValue(e);
+            switch (name) {
+                case ProductContactIDType.refname:
+                case ProductContactIDType.shortname:
+                    productContactIDType = new ProductContactIDType(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
+                    break;
+                case IDValue.refname:
+                case IDValue.shortname:
+                    idValue = new IDValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

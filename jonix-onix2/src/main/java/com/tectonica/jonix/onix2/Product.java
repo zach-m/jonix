@@ -139,311 +139,617 @@ public class Product implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname)) {
-                recordReference = new RecordReference(e);
-            } else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname)) {
-                notificationType = new NotificationType(e);
-            } else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname)) {
-                deletionCode = new DeletionCode(e);
-            } else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname)) {
-                deletionText = new DeletionText(e);
-            } else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname)) {
-                recordSourceType = new RecordSourceType(e);
-            } else if (name.equals(RecordSourceIdentifierType.refname) ||
-                name.equals(RecordSourceIdentifierType.shortname)) {
-                recordSourceIdentifierType = new RecordSourceIdentifierType(e);
-            } else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname)) {
-                recordSourceIdentifier = new RecordSourceIdentifier(e);
-            } else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname)) {
-                recordSourceName = new RecordSourceName(e);
-            } else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname)) {
-                isbn = new ISBN(e);
-            } else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname)) {
-                ean13 = new EAN13(e);
-            } else if (name.equals(UPC.refname) || name.equals(UPC.shortname)) {
-                upc = new UPC(e);
-            } else if (name.equals(PublisherProductNo.refname) || name.equals(PublisherProductNo.shortname)) {
-                publisherProductNo = new PublisherProductNo(e);
-            } else if (name.equals(ISMN.refname) || name.equals(ISMN.shortname)) {
-                ismn = new ISMN(e);
-            } else if (name.equals(DOI.refname) || name.equals(DOI.shortname)) {
-                doi = new DOI(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname)) {
-                barcodes = JPU.addToList(barcodes, new Barcode(e));
-            } else if (name.equals(ReplacesISBN.refname) || name.equals(ReplacesISBN.shortname)) {
-                replacesISBN = new ReplacesISBN(e);
-            } else if (name.equals(ReplacesEAN13.refname) || name.equals(ReplacesEAN13.shortname)) {
-                replacesEAN13 = new ReplacesEAN13(e);
-            } else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname)) {
-                productForm = new ProductForm(e);
-            } else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname)) {
-                productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-            } else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname)) {
-                productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-            } else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname)) {
-                bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
-            } else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname)) {
-                productPackaging = new ProductPackaging(e);
-            } else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname)) {
-                productFormDescription = new ProductFormDescription(e);
-            } else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname)) {
-                numberOfPieces = new NumberOfPieces(e);
-            } else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname)) {
-                tradeCategory = new TradeCategory(e);
-            } else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname)) {
-                productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-            } else if (name.equals(ContainedItem.refname) || name.equals(ContainedItem.shortname)) {
-                containedItems = JPU.addToList(containedItems, new ContainedItem(e));
-            } else if (name.equals(ProductClassification.refname) || name.equals(ProductClassification.shortname)) {
-                productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
-            } else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname)) {
-                epubType = new EpubType(e);
-            } else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname)) {
-                epubTypeVersion = new EpubTypeVersion(e);
-            } else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname)) {
-                epubTypeDescription = new EpubTypeDescription(e);
-            } else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname)) {
-                epubFormat = new EpubFormat(e);
-            } else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname)) {
-                epubFormatVersion = new EpubFormatVersion(e);
-            } else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname)) {
-                epubFormatDescription = new EpubFormatDescription(e);
-            } else if (name.equals(EpubSource.refname) || name.equals(EpubSource.shortname)) {
-                epubSource = new EpubSource(e);
-            } else if (name.equals(EpubSourceVersion.refname) || name.equals(EpubSourceVersion.shortname)) {
-                epubSourceVersion = new EpubSourceVersion(e);
-            } else if (name.equals(EpubSourceDescription.refname) || name.equals(EpubSourceDescription.shortname)) {
-                epubSourceDescription = new EpubSourceDescription(e);
-            } else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname)) {
-                epubTypeNote = new EpubTypeNote(e);
-            } else if (name.equals(Series.refname) || name.equals(Series.shortname)) {
-                seriess = JPU.addToList(seriess, new Series(e));
-            } else if (name.equals(NoSeries.refname) || name.equals(NoSeries.shortname)) {
-                noSeries = new NoSeries(e);
-            } else if (name.equals(Set.refname) || name.equals(Set.shortname)) {
-                sets = JPU.addToList(sets, new Set(e));
-            } else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname)) {
-                textCaseFlag = new TextCaseFlag(e);
-            } else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname)) {
-                distinctiveTitle = new DistinctiveTitle(e);
-            } else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname)) {
-                titlePrefix = new TitlePrefix(e);
-            } else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname)) {
-                titleWithoutPrefix = new TitleWithoutPrefix(e);
-            } else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname)) {
-                subtitle = new Subtitle(e);
-            } else if (name.equals(TranslationOfTitle.refname) || name.equals(TranslationOfTitle.shortname)) {
-                translationOfTitle = new TranslationOfTitle(e);
-            } else if (name.equals(FormerTitle.refname) || name.equals(FormerTitle.shortname)) {
-                formerTitles = JPU.addToList(formerTitles, new FormerTitle(e));
-            } else if (name.equals(Title.refname) || name.equals(Title.shortname)) {
-                titles = JPU.addToList(titles, new Title(e));
-            } else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname)) {
-                workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
-            } else if (name.equals(ThesisType.refname) || name.equals(ThesisType.shortname)) {
-                thesisType = new ThesisType(e);
-            } else if (name.equals(ThesisPresentedTo.refname) || name.equals(ThesisPresentedTo.shortname)) {
-                thesisPresentedTo = new ThesisPresentedTo(e);
-            } else if (name.equals(ThesisYear.refname) || name.equals(ThesisYear.shortname)) {
-                thesisYear = new ThesisYear(e);
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname)) {
-                contributorStatement = new ContributorStatement(e);
-            } else if (name.equals(NoContributor.refname) || name.equals(NoContributor.shortname)) {
-                noContributor = new NoContributor(e);
-            } else if (name.equals(ConferenceDescription.refname) || name.equals(ConferenceDescription.shortname)) {
-                conferenceDescription = new ConferenceDescription(e);
-            } else if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname)) {
-                conferenceRole = new ConferenceRole(e);
-            } else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname)) {
-                conferenceName = new ConferenceName(e);
-            } else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname)) {
-                conferenceNumber = new ConferenceNumber(e);
-            } else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname)) {
-                conferenceDate = new ConferenceDate(e);
-            } else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname)) {
-                conferencePlace = new ConferencePlace(e);
-            } else if (name.equals(Conference.refname) || name.equals(Conference.shortname)) {
-                conferences = JPU.addToList(conferences, new Conference(e));
-            } else if (name.equals(EditionTypeCode.refname) || name.equals(EditionTypeCode.shortname)) {
-                editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(e));
-            } else if (name.equals(EditionNumber.refname) || name.equals(EditionNumber.shortname)) {
-                editionNumber = new EditionNumber(e);
-            } else if (name.equals(EditionVersionNumber.refname) || name.equals(EditionVersionNumber.shortname)) {
-                editionVersionNumber = new EditionVersionNumber(e);
-            } else if (name.equals(EditionStatement.refname) || name.equals(EditionStatement.shortname)) {
-                editionStatement = new EditionStatement(e);
-            } else if (name.equals(NoEdition.refname) || name.equals(NoEdition.shortname)) {
-                noEdition = new NoEdition(e);
-            } else if (name.equals(ReligiousText.refname) || name.equals(ReligiousText.shortname)) {
-                religiousText = new ReligiousText(e);
-            } else if (name.equals(LanguageOfText.refname) || name.equals(LanguageOfText.shortname)) {
-                languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(e));
-            } else if (name.equals(OriginalLanguage.refname) || name.equals(OriginalLanguage.shortname)) {
-                originalLanguage = new OriginalLanguage(e);
-            } else if (name.equals(Language.refname) || name.equals(Language.shortname)) {
-                languages = JPU.addToList(languages, new Language(e));
-            } else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname)) {
-                numberOfPages = new NumberOfPages(e);
-            } else if (name.equals(PagesRoman.refname) || name.equals(PagesRoman.shortname)) {
-                pagesRoman = new PagesRoman(e);
-            } else if (name.equals(PagesArabic.refname) || name.equals(PagesArabic.shortname)) {
-                pagesArabic = new PagesArabic(e);
-            } else if (name.equals(Extent.refname) || name.equals(Extent.shortname)) {
-                extents = JPU.addToList(extents, new Extent(e));
-            } else if (name.equals(NumberOfIllustrations.refname) || name.equals(NumberOfIllustrations.shortname)) {
-                numberOfIllustrations = new NumberOfIllustrations(e);
-            } else if (name.equals(IllustrationsNote.refname) || name.equals(IllustrationsNote.shortname)) {
-                illustrationsNote = new IllustrationsNote(e);
-            } else if (name.equals(Illustrations.refname) || name.equals(Illustrations.shortname)) {
-                illustrationss = JPU.addToList(illustrationss, new Illustrations(e));
-            } else if (name.equals(MapScale.refname) || name.equals(MapScale.shortname)) {
-                mapScales = JPU.addToList(mapScales, new MapScale(e));
-            } else if (name.equals(BASICMainSubject.refname) || name.equals(BASICMainSubject.shortname)) {
-                basicMainSubject = new BASICMainSubject(e);
-            } else if (name.equals(BASICVersion.refname) || name.equals(BASICVersion.shortname)) {
-                basicVersion = new BASICVersion(e);
-            } else if (name.equals(BICMainSubject.refname) || name.equals(BICMainSubject.shortname)) {
-                bicMainSubject = new BICMainSubject(e);
-            } else if (name.equals(BICVersion.refname) || name.equals(BICVersion.shortname)) {
-                bicVersion = new BICVersion(e);
-            } else if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname)) {
-                mainSubjects = JPU.addToList(mainSubjects, new MainSubject(e));
-            } else if (name.equals(Subject.refname) || name.equals(Subject.shortname)) {
-                subjects = JPU.addToList(subjects, new Subject(e));
-            } else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname)) {
-                personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
-            } else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname)) {
-                corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
-            } else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname)) {
-                placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
-            } else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname)) {
-                audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
-            } else if (name.equals(Audience.refname) || name.equals(Audience.shortname)) {
-                audiences = JPU.addToList(audiences, new Audience(e));
-            } else if (name.equals(USSchoolGrade.refname) || name.equals(USSchoolGrade.shortname)) {
-                usSchoolGrade = new USSchoolGrade(e);
-            } else if (name.equals(InterestAge.refname) || name.equals(InterestAge.shortname)) {
-                interestAge = new InterestAge(e);
-            } else if (name.equals(AudienceRange.refname) || name.equals(AudienceRange.shortname)) {
-                audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
-            } else if (name.equals(AudienceDescription.refname) || name.equals(AudienceDescription.shortname)) {
-                audienceDescription = new AudienceDescription(e);
-            } else if (name.equals(Complexity.refname) || name.equals(Complexity.shortname)) {
-                complexitys = JPU.addToList(complexitys, new Complexity(e));
-            } else if (name.equals(Annotation.refname) || name.equals(Annotation.shortname)) {
-                annotation = new Annotation(e);
-            } else if (name.equals(MainDescription.refname) || name.equals(MainDescription.shortname)) {
-                mainDescription = new MainDescription(e);
-            } else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname)) {
-                otherTexts = JPU.addToList(otherTexts, new OtherText(e));
-            } else if (name.equals(ReviewQuote.refname) || name.equals(ReviewQuote.shortname)) {
-                reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(e));
-            } else if (name.equals(CoverImageFormatCode.refname) || name.equals(CoverImageFormatCode.shortname)) {
-                coverImageFormatCode = new CoverImageFormatCode(e);
-            } else if (name.equals(CoverImageLinkTypeCode.refname) || name.equals(CoverImageLinkTypeCode.shortname)) {
-                coverImageLinkTypeCode = new CoverImageLinkTypeCode(e);
-            } else if (name.equals(CoverImageLink.refname) || name.equals(CoverImageLink.shortname)) {
-                coverImageLink = new CoverImageLink(e);
-            } else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname)) {
-                mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
-            } else if (name.equals(ProductWebsite.refname) || name.equals(ProductWebsite.shortname)) {
-                productWebsites = JPU.addToList(productWebsites, new ProductWebsite(e));
-            } else if (name.equals(PrizesDescription.refname) || name.equals(PrizesDescription.shortname)) {
-                prizesDescription = new PrizesDescription(e);
-            } else if (name.equals(Prize.refname) || name.equals(Prize.shortname)) {
-                prizes = JPU.addToList(prizes, new Prize(e));
-            } else if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname)) {
-                contentItems = JPU.addToList(contentItems, new ContentItem(e));
-            } else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname)) {
-                imprintName = new ImprintName(e);
-            } else if (name.equals(Imprint.refname) || name.equals(Imprint.shortname)) {
-                imprints = JPU.addToList(imprints, new Imprint(e));
-            } else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname)) {
-                publisherName = new PublisherName(e);
-            } else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname)) {
-                publishers = JPU.addToList(publishers, new Publisher(e));
-            } else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname)) {
-                cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
-            } else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname)) {
-                countryOfPublication = new CountryOfPublication(e);
-            } else if (name.equals(CopublisherName.refname) || name.equals(CopublisherName.shortname)) {
-                copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(e));
-            } else if (name.equals(SponsorName.refname) || name.equals(SponsorName.shortname)) {
-                sponsorNames = JPU.addToList(sponsorNames, new SponsorName(e));
-            } else if (name.equals(OriginalPublisher.refname) || name.equals(OriginalPublisher.shortname)) {
-                originalPublisher = new OriginalPublisher(e);
-            } else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname)) {
-                publishingStatus = new PublishingStatus(e);
-            } else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname)) {
-                publishingStatusNote = new PublishingStatusNote(e);
-            } else if (name.equals(AnnouncementDate.refname) || name.equals(AnnouncementDate.shortname)) {
-                announcementDate = new AnnouncementDate(e);
-            } else if (name.equals(TradeAnnouncementDate.refname) || name.equals(TradeAnnouncementDate.shortname)) {
-                tradeAnnouncementDate = new TradeAnnouncementDate(e);
-            } else if (name.equals(PublicationDate.refname) || name.equals(PublicationDate.shortname)) {
-                publicationDate = new PublicationDate(e);
-            } else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname)) {
-                copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
-            } else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname)) {
-                copyrightYear = new CopyrightYear(e);
-            } else if (name.equals(YearFirstPublished.refname) || name.equals(YearFirstPublished.shortname)) {
-                yearFirstPublished = new YearFirstPublished(e);
-            } else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname)) {
-                salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
-            } else if (name.equals(NotForSale.refname) || name.equals(NotForSale.shortname)) {
-                notForSales = JPU.addToList(notForSales, new NotForSale(e));
-            } else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname)) {
-                salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
-            } else if (name.equals(Height.refname) || name.equals(Height.shortname)) {
-                height = new Height(e);
-            } else if (name.equals(Width.refname) || name.equals(Width.shortname)) {
-                width = new Width(e);
-            } else if (name.equals(Thickness.refname) || name.equals(Thickness.shortname)) {
-                thickness = new Thickness(e);
-            } else if (name.equals(Weight.refname) || name.equals(Weight.shortname)) {
-                weight = new Weight(e);
-            } else if (name.equals(Measure.refname) || name.equals(Measure.shortname)) {
-                measures = JPU.addToList(measures, new Measure(e));
-            } else if (name.equals(Dimensions.refname) || name.equals(Dimensions.shortname)) {
-                dimensions = new Dimensions(e);
-            } else if (name.equals(ReplacedByISBN.refname) || name.equals(ReplacedByISBN.shortname)) {
-                replacedByISBN = new ReplacedByISBN(e);
-            } else if (name.equals(ReplacedByEAN13.refname) || name.equals(ReplacedByEAN13.shortname)) {
-                replacedByEAN13 = new ReplacedByEAN13(e);
-            } else if (name.equals(AlternativeFormatISBN.refname) || name.equals(AlternativeFormatISBN.shortname)) {
-                alternativeFormatISBN = new AlternativeFormatISBN(e);
-            } else if (name.equals(AlternativeFormatEAN13.refname) || name.equals(AlternativeFormatEAN13.shortname)) {
-                alternativeFormatEAN13 = new AlternativeFormatEAN13(e);
-            } else if (name.equals(AlternativeProductISBN.refname) || name.equals(AlternativeProductISBN.shortname)) {
-                alternativeProductISBN = new AlternativeProductISBN(e);
-            } else if (name.equals(AlternativeProductEAN13.refname) || name.equals(AlternativeProductEAN13.shortname)) {
-                alternativeProductEAN13 = new AlternativeProductEAN13(e);
-            } else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname)) {
-                relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
-            } else if (name.equals(OutOfPrintDate.refname) || name.equals(OutOfPrintDate.shortname)) {
-                outOfPrintDate = new OutOfPrintDate(e);
-            } else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname)) {
-                supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
-            } else if (name.equals(MarketRepresentation.refname) || name.equals(MarketRepresentation.shortname)) {
-                marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(e));
-            } else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname)) {
-                promotionCampaign = new PromotionCampaign(e);
-            } else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname)) {
-                promotionContact = new PromotionContact(e);
-            } else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname)) {
-                initialPrintRun = new InitialPrintRun(e);
-            } else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname)) {
-                reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
-            } else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname)) {
-                copiesSold = new CopiesSold(e);
-            } else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname)) {
-                bookClubAdoption = new BookClubAdoption(e);
+            switch (name) {
+                case RecordReference.refname:
+                case RecordReference.shortname:
+                    recordReference = new RecordReference(e);
+                    break;
+                case NotificationType.refname:
+                case NotificationType.shortname:
+                    notificationType = new NotificationType(e);
+                    break;
+                case DeletionCode.refname:
+                case DeletionCode.shortname:
+                    deletionCode = new DeletionCode(e);
+                    break;
+                case DeletionText.refname:
+                case DeletionText.shortname:
+                    deletionText = new DeletionText(e);
+                    break;
+                case RecordSourceType.refname:
+                case RecordSourceType.shortname:
+                    recordSourceType = new RecordSourceType(e);
+                    break;
+                case RecordSourceIdentifierType.refname:
+                case RecordSourceIdentifierType.shortname:
+                    recordSourceIdentifierType = new RecordSourceIdentifierType(e);
+                    break;
+                case RecordSourceIdentifier.refname:
+                case RecordSourceIdentifier.shortname:
+                    recordSourceIdentifier = new RecordSourceIdentifier(e);
+                    break;
+                case RecordSourceName.refname:
+                case RecordSourceName.shortname:
+                    recordSourceName = new RecordSourceName(e);
+                    break;
+                case ISBN.refname:
+                case ISBN.shortname:
+                    isbn = new ISBN(e);
+                    break;
+                case EAN13.refname:
+                case EAN13.shortname:
+                    ean13 = new EAN13(e);
+                    break;
+                case UPC.refname:
+                case UPC.shortname:
+                    upc = new UPC(e);
+                    break;
+                case PublisherProductNo.refname:
+                case PublisherProductNo.shortname:
+                    publisherProductNo = new PublisherProductNo(e);
+                    break;
+                case ISMN.refname:
+                case ISMN.shortname:
+                    ismn = new ISMN(e);
+                    break;
+                case DOI.refname:
+                case DOI.shortname:
+                    doi = new DOI(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case Barcode.refname:
+                case Barcode.shortname:
+                    barcodes = JPU.addToList(barcodes, new Barcode(e));
+                    break;
+                case ReplacesISBN.refname:
+                case ReplacesISBN.shortname:
+                    replacesISBN = new ReplacesISBN(e);
+                    break;
+                case ReplacesEAN13.refname:
+                case ReplacesEAN13.shortname:
+                    replacesEAN13 = new ReplacesEAN13(e);
+                    break;
+                case ProductForm.refname:
+                case ProductForm.shortname:
+                    productForm = new ProductForm(e);
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case BookFormDetail.refname:
+                case BookFormDetail.shortname:
+                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+                    break;
+                case ProductPackaging.refname:
+                case ProductPackaging.shortname:
+                    productPackaging = new ProductPackaging(e);
+                    break;
+                case ProductFormDescription.refname:
+                case ProductFormDescription.shortname:
+                    productFormDescription = new ProductFormDescription(e);
+                    break;
+                case NumberOfPieces.refname:
+                case NumberOfPieces.shortname:
+                    numberOfPieces = new NumberOfPieces(e);
+                    break;
+                case TradeCategory.refname:
+                case TradeCategory.shortname:
+                    tradeCategory = new TradeCategory(e);
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+                    break;
+                case ContainedItem.refname:
+                case ContainedItem.shortname:
+                    containedItems = JPU.addToList(containedItems, new ContainedItem(e));
+                    break;
+                case ProductClassification.refname:
+                case ProductClassification.shortname:
+                    productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
+                    break;
+                case EpubType.refname:
+                case EpubType.shortname:
+                    epubType = new EpubType(e);
+                    break;
+                case EpubTypeVersion.refname:
+                case EpubTypeVersion.shortname:
+                    epubTypeVersion = new EpubTypeVersion(e);
+                    break;
+                case EpubTypeDescription.refname:
+                case EpubTypeDescription.shortname:
+                    epubTypeDescription = new EpubTypeDescription(e);
+                    break;
+                case EpubFormat.refname:
+                case EpubFormat.shortname:
+                    epubFormat = new EpubFormat(e);
+                    break;
+                case EpubFormatVersion.refname:
+                case EpubFormatVersion.shortname:
+                    epubFormatVersion = new EpubFormatVersion(e);
+                    break;
+                case EpubFormatDescription.refname:
+                case EpubFormatDescription.shortname:
+                    epubFormatDescription = new EpubFormatDescription(e);
+                    break;
+                case EpubSource.refname:
+                case EpubSource.shortname:
+                    epubSource = new EpubSource(e);
+                    break;
+                case EpubSourceVersion.refname:
+                case EpubSourceVersion.shortname:
+                    epubSourceVersion = new EpubSourceVersion(e);
+                    break;
+                case EpubSourceDescription.refname:
+                case EpubSourceDescription.shortname:
+                    epubSourceDescription = new EpubSourceDescription(e);
+                    break;
+                case EpubTypeNote.refname:
+                case EpubTypeNote.shortname:
+                    epubTypeNote = new EpubTypeNote(e);
+                    break;
+                case Series.refname:
+                case Series.shortname:
+                    seriess = JPU.addToList(seriess, new Series(e));
+                    break;
+                case NoSeries.refname:
+                case NoSeries.shortname:
+                    noSeries = new NoSeries(e);
+                    break;
+                case Set.refname:
+                case Set.shortname:
+                    sets = JPU.addToList(sets, new Set(e));
+                    break;
+                case TextCaseFlag.refname:
+                case TextCaseFlag.shortname:
+                    textCaseFlag = new TextCaseFlag(e);
+                    break;
+                case DistinctiveTitle.refname:
+                case DistinctiveTitle.shortname:
+                    distinctiveTitle = new DistinctiveTitle(e);
+                    break;
+                case TitlePrefix.refname:
+                case TitlePrefix.shortname:
+                    titlePrefix = new TitlePrefix(e);
+                    break;
+                case TitleWithoutPrefix.refname:
+                case TitleWithoutPrefix.shortname:
+                    titleWithoutPrefix = new TitleWithoutPrefix(e);
+                    break;
+                case Subtitle.refname:
+                case Subtitle.shortname:
+                    subtitle = new Subtitle(e);
+                    break;
+                case TranslationOfTitle.refname:
+                case TranslationOfTitle.shortname:
+                    translationOfTitle = new TranslationOfTitle(e);
+                    break;
+                case FormerTitle.refname:
+                case FormerTitle.shortname:
+                    formerTitles = JPU.addToList(formerTitles, new FormerTitle(e));
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
+                case WorkIdentifier.refname:
+                case WorkIdentifier.shortname:
+                    workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case ThesisType.refname:
+                case ThesisType.shortname:
+                    thesisType = new ThesisType(e);
+                    break;
+                case ThesisPresentedTo.refname:
+                case ThesisPresentedTo.shortname:
+                    thesisPresentedTo = new ThesisPresentedTo(e);
+                    break;
+                case ThesisYear.refname:
+                case ThesisYear.shortname:
+                    thesisYear = new ThesisYear(e);
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case ContributorStatement.refname:
+                case ContributorStatement.shortname:
+                    contributorStatement = new ContributorStatement(e);
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
+                    break;
+                case ConferenceDescription.refname:
+                case ConferenceDescription.shortname:
+                    conferenceDescription = new ConferenceDescription(e);
+                    break;
+                case ConferenceRole.refname:
+                case ConferenceRole.shortname:
+                    conferenceRole = new ConferenceRole(e);
+                    break;
+                case ConferenceName.refname:
+                case ConferenceName.shortname:
+                    conferenceName = new ConferenceName(e);
+                    break;
+                case ConferenceNumber.refname:
+                case ConferenceNumber.shortname:
+                    conferenceNumber = new ConferenceNumber(e);
+                    break;
+                case ConferenceDate.refname:
+                case ConferenceDate.shortname:
+                    conferenceDate = new ConferenceDate(e);
+                    break;
+                case ConferencePlace.refname:
+                case ConferencePlace.shortname:
+                    conferencePlace = new ConferencePlace(e);
+                    break;
+                case Conference.refname:
+                case Conference.shortname:
+                    conferences = JPU.addToList(conferences, new Conference(e));
+                    break;
+                case EditionTypeCode.refname:
+                case EditionTypeCode.shortname:
+                    editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(e));
+                    break;
+                case EditionNumber.refname:
+                case EditionNumber.shortname:
+                    editionNumber = new EditionNumber(e);
+                    break;
+                case EditionVersionNumber.refname:
+                case EditionVersionNumber.shortname:
+                    editionVersionNumber = new EditionVersionNumber(e);
+                    break;
+                case EditionStatement.refname:
+                case EditionStatement.shortname:
+                    editionStatement = new EditionStatement(e);
+                    break;
+                case NoEdition.refname:
+                case NoEdition.shortname:
+                    noEdition = new NoEdition(e);
+                    break;
+                case ReligiousText.refname:
+                case ReligiousText.shortname:
+                    religiousText = new ReligiousText(e);
+                    break;
+                case LanguageOfText.refname:
+                case LanguageOfText.shortname:
+                    languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(e));
+                    break;
+                case OriginalLanguage.refname:
+                case OriginalLanguage.shortname:
+                    originalLanguage = new OriginalLanguage(e);
+                    break;
+                case Language.refname:
+                case Language.shortname:
+                    languages = JPU.addToList(languages, new Language(e));
+                    break;
+                case NumberOfPages.refname:
+                case NumberOfPages.shortname:
+                    numberOfPages = new NumberOfPages(e);
+                    break;
+                case PagesRoman.refname:
+                case PagesRoman.shortname:
+                    pagesRoman = new PagesRoman(e);
+                    break;
+                case PagesArabic.refname:
+                case PagesArabic.shortname:
+                    pagesArabic = new PagesArabic(e);
+                    break;
+                case Extent.refname:
+                case Extent.shortname:
+                    extents = JPU.addToList(extents, new Extent(e));
+                    break;
+                case NumberOfIllustrations.refname:
+                case NumberOfIllustrations.shortname:
+                    numberOfIllustrations = new NumberOfIllustrations(e);
+                    break;
+                case IllustrationsNote.refname:
+                case IllustrationsNote.shortname:
+                    illustrationsNote = new IllustrationsNote(e);
+                    break;
+                case Illustrations.refname:
+                case Illustrations.shortname:
+                    illustrationss = JPU.addToList(illustrationss, new Illustrations(e));
+                    break;
+                case MapScale.refname:
+                case MapScale.shortname:
+                    mapScales = JPU.addToList(mapScales, new MapScale(e));
+                    break;
+                case BASICMainSubject.refname:
+                case BASICMainSubject.shortname:
+                    basicMainSubject = new BASICMainSubject(e);
+                    break;
+                case BASICVersion.refname:
+                case BASICVersion.shortname:
+                    basicVersion = new BASICVersion(e);
+                    break;
+                case BICMainSubject.refname:
+                case BICMainSubject.shortname:
+                    bicMainSubject = new BICMainSubject(e);
+                    break;
+                case BICVersion.refname:
+                case BICVersion.shortname:
+                    bicVersion = new BICVersion(e);
+                    break;
+                case MainSubject.refname:
+                case MainSubject.shortname:
+                    mainSubjects = JPU.addToList(mainSubjects, new MainSubject(e));
+                    break;
+                case Subject.refname:
+                case Subject.shortname:
+                    subjects = JPU.addToList(subjects, new Subject(e));
+                    break;
+                case PersonAsSubject.refname:
+                case PersonAsSubject.shortname:
+                    personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
+                    break;
+                case CorporateBodyAsSubject.refname:
+                case CorporateBodyAsSubject.shortname:
+                    corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
+                    break;
+                case PlaceAsSubject.refname:
+                case PlaceAsSubject.shortname:
+                    placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
+                    break;
+                case AudienceCode.refname:
+                case AudienceCode.shortname:
+                    audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
+                    break;
+                case Audience.refname:
+                case Audience.shortname:
+                    audiences = JPU.addToList(audiences, new Audience(e));
+                    break;
+                case USSchoolGrade.refname:
+                case USSchoolGrade.shortname:
+                    usSchoolGrade = new USSchoolGrade(e);
+                    break;
+                case InterestAge.refname:
+                case InterestAge.shortname:
+                    interestAge = new InterestAge(e);
+                    break;
+                case AudienceRange.refname:
+                case AudienceRange.shortname:
+                    audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
+                    break;
+                case AudienceDescription.refname:
+                case AudienceDescription.shortname:
+                    audienceDescription = new AudienceDescription(e);
+                    break;
+                case Complexity.refname:
+                case Complexity.shortname:
+                    complexitys = JPU.addToList(complexitys, new Complexity(e));
+                    break;
+                case Annotation.refname:
+                case Annotation.shortname:
+                    annotation = new Annotation(e);
+                    break;
+                case MainDescription.refname:
+                case MainDescription.shortname:
+                    mainDescription = new MainDescription(e);
+                    break;
+                case OtherText.refname:
+                case OtherText.shortname:
+                    otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+                    break;
+                case ReviewQuote.refname:
+                case ReviewQuote.shortname:
+                    reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(e));
+                    break;
+                case CoverImageFormatCode.refname:
+                case CoverImageFormatCode.shortname:
+                    coverImageFormatCode = new CoverImageFormatCode(e);
+                    break;
+                case CoverImageLinkTypeCode.refname:
+                case CoverImageLinkTypeCode.shortname:
+                    coverImageLinkTypeCode = new CoverImageLinkTypeCode(e);
+                    break;
+                case CoverImageLink.refname:
+                case CoverImageLink.shortname:
+                    coverImageLink = new CoverImageLink(e);
+                    break;
+                case MediaFile.refname:
+                case MediaFile.shortname:
+                    mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+                    break;
+                case ProductWebsite.refname:
+                case ProductWebsite.shortname:
+                    productWebsites = JPU.addToList(productWebsites, new ProductWebsite(e));
+                    break;
+                case PrizesDescription.refname:
+                case PrizesDescription.shortname:
+                    prizesDescription = new PrizesDescription(e);
+                    break;
+                case Prize.refname:
+                case Prize.shortname:
+                    prizes = JPU.addToList(prizes, new Prize(e));
+                    break;
+                case ContentItem.refname:
+                case ContentItem.shortname:
+                    contentItems = JPU.addToList(contentItems, new ContentItem(e));
+                    break;
+                case ImprintName.refname:
+                case ImprintName.shortname:
+                    imprintName = new ImprintName(e);
+                    break;
+                case Imprint.refname:
+                case Imprint.shortname:
+                    imprints = JPU.addToList(imprints, new Imprint(e));
+                    break;
+                case PublisherName.refname:
+                case PublisherName.shortname:
+                    publisherName = new PublisherName(e);
+                    break;
+                case Publisher.refname:
+                case Publisher.shortname:
+                    publishers = JPU.addToList(publishers, new Publisher(e));
+                    break;
+                case CityOfPublication.refname:
+                case CityOfPublication.shortname:
+                    cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
+                    break;
+                case CountryOfPublication.refname:
+                case CountryOfPublication.shortname:
+                    countryOfPublication = new CountryOfPublication(e);
+                    break;
+                case CopublisherName.refname:
+                case CopublisherName.shortname:
+                    copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(e));
+                    break;
+                case SponsorName.refname:
+                case SponsorName.shortname:
+                    sponsorNames = JPU.addToList(sponsorNames, new SponsorName(e));
+                    break;
+                case OriginalPublisher.refname:
+                case OriginalPublisher.shortname:
+                    originalPublisher = new OriginalPublisher(e);
+                    break;
+                case PublishingStatus.refname:
+                case PublishingStatus.shortname:
+                    publishingStatus = new PublishingStatus(e);
+                    break;
+                case PublishingStatusNote.refname:
+                case PublishingStatusNote.shortname:
+                    publishingStatusNote = new PublishingStatusNote(e);
+                    break;
+                case AnnouncementDate.refname:
+                case AnnouncementDate.shortname:
+                    announcementDate = new AnnouncementDate(e);
+                    break;
+                case TradeAnnouncementDate.refname:
+                case TradeAnnouncementDate.shortname:
+                    tradeAnnouncementDate = new TradeAnnouncementDate(e);
+                    break;
+                case PublicationDate.refname:
+                case PublicationDate.shortname:
+                    publicationDate = new PublicationDate(e);
+                    break;
+                case CopyrightStatement.refname:
+                case CopyrightStatement.shortname:
+                    copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
+                    break;
+                case CopyrightYear.refname:
+                case CopyrightYear.shortname:
+                    copyrightYear = new CopyrightYear(e);
+                    break;
+                case YearFirstPublished.refname:
+                case YearFirstPublished.shortname:
+                    yearFirstPublished = new YearFirstPublished(e);
+                    break;
+                case SalesRights.refname:
+                case SalesRights.shortname:
+                    salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
+                    break;
+                case NotForSale.refname:
+                case NotForSale.shortname:
+                    notForSales = JPU.addToList(notForSales, new NotForSale(e));
+                    break;
+                case SalesRestriction.refname:
+                case SalesRestriction.shortname:
+                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+                    break;
+                case Height.refname:
+                case Height.shortname:
+                    height = new Height(e);
+                    break;
+                case Width.refname:
+                case Width.shortname:
+                    width = new Width(e);
+                    break;
+                case Thickness.refname:
+                case Thickness.shortname:
+                    thickness = new Thickness(e);
+                    break;
+                case Weight.refname:
+                case Weight.shortname:
+                    weight = new Weight(e);
+                    break;
+                case Measure.refname:
+                case Measure.shortname:
+                    measures = JPU.addToList(measures, new Measure(e));
+                    break;
+                case Dimensions.refname:
+                case Dimensions.shortname:
+                    dimensions = new Dimensions(e);
+                    break;
+                case ReplacedByISBN.refname:
+                case ReplacedByISBN.shortname:
+                    replacedByISBN = new ReplacedByISBN(e);
+                    break;
+                case ReplacedByEAN13.refname:
+                case ReplacedByEAN13.shortname:
+                    replacedByEAN13 = new ReplacedByEAN13(e);
+                    break;
+                case AlternativeFormatISBN.refname:
+                case AlternativeFormatISBN.shortname:
+                    alternativeFormatISBN = new AlternativeFormatISBN(e);
+                    break;
+                case AlternativeFormatEAN13.refname:
+                case AlternativeFormatEAN13.shortname:
+                    alternativeFormatEAN13 = new AlternativeFormatEAN13(e);
+                    break;
+                case AlternativeProductISBN.refname:
+                case AlternativeProductISBN.shortname:
+                    alternativeProductISBN = new AlternativeProductISBN(e);
+                    break;
+                case AlternativeProductEAN13.refname:
+                case AlternativeProductEAN13.shortname:
+                    alternativeProductEAN13 = new AlternativeProductEAN13(e);
+                    break;
+                case RelatedProduct.refname:
+                case RelatedProduct.shortname:
+                    relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
+                    break;
+                case OutOfPrintDate.refname:
+                case OutOfPrintDate.shortname:
+                    outOfPrintDate = new OutOfPrintDate(e);
+                    break;
+                case SupplyDetail.refname:
+                case SupplyDetail.shortname:
+                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+                    break;
+                case MarketRepresentation.refname:
+                case MarketRepresentation.shortname:
+                    marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(e));
+                    break;
+                case PromotionCampaign.refname:
+                case PromotionCampaign.shortname:
+                    promotionCampaign = new PromotionCampaign(e);
+                    break;
+                case PromotionContact.refname:
+                case PromotionContact.shortname:
+                    promotionContact = new PromotionContact(e);
+                    break;
+                case InitialPrintRun.refname:
+                case InitialPrintRun.shortname:
+                    initialPrintRun = new InitialPrintRun(e);
+                    break;
+                case ReprintDetail.refname:
+                case ReprintDetail.shortname:
+                    reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
+                    break;
+                case CopiesSold.refname:
+                case CopiesSold.shortname:
+                    copiesSold = new CopiesSold(e);
+                    break;
+                case BookClubAdoption.refname:
+                case BookClubAdoption.shortname:
+                    bookClubAdoption = new BookClubAdoption(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

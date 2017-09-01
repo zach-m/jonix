@@ -121,50 +121,97 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(RelationCode.refname) || name.equals(RelationCode.shortname)) {
-                relationCode = new RelationCode(e);
-            } else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname)) {
-                isbn = new ISBN(e);
-            } else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname)) {
-                ean13 = new EAN13(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
-            } else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname)) {
-                productForm = new ProductForm(e);
-            } else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname)) {
-                productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-            } else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname)) {
-                productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-            } else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname)) {
-                bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
-            } else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname)) {
-                productPackaging = new ProductPackaging(e);
-            } else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname)) {
-                productFormDescription = new ProductFormDescription(e);
-            } else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname)) {
-                numberOfPieces = new NumberOfPieces(e);
-            } else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname)) {
-                tradeCategory = new TradeCategory(e);
-            } else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname)) {
-                productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-            } else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname)) {
-                epubType = new EpubType(e);
-            } else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname)) {
-                epubTypeVersion = new EpubTypeVersion(e);
-            } else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname)) {
-                epubTypeDescription = new EpubTypeDescription(e);
-            } else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname)) {
-                epubFormat = new EpubFormat(e);
-            } else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname)) {
-                epubFormatVersion = new EpubFormatVersion(e);
-            } else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname)) {
-                epubFormatDescription = new EpubFormatDescription(e);
-            } else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname)) {
-                epubTypeNote = new EpubTypeNote(e);
-            } else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname)) {
-                publishers = JPU.addToList(publishers, new Publisher(e));
+            switch (name) {
+                case RelationCode.refname:
+                case RelationCode.shortname:
+                    relationCode = new RelationCode(e);
+                    break;
+                case ISBN.refname:
+                case ISBN.shortname:
+                    isbn = new ISBN(e);
+                    break;
+                case EAN13.refname:
+                case EAN13.shortname:
+                    ean13 = new EAN13(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case ProductForm.refname:
+                case ProductForm.shortname:
+                    productForm = new ProductForm(e);
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case BookFormDetail.refname:
+                case BookFormDetail.shortname:
+                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+                    break;
+                case ProductPackaging.refname:
+                case ProductPackaging.shortname:
+                    productPackaging = new ProductPackaging(e);
+                    break;
+                case ProductFormDescription.refname:
+                case ProductFormDescription.shortname:
+                    productFormDescription = new ProductFormDescription(e);
+                    break;
+                case NumberOfPieces.refname:
+                case NumberOfPieces.shortname:
+                    numberOfPieces = new NumberOfPieces(e);
+                    break;
+                case TradeCategory.refname:
+                case TradeCategory.shortname:
+                    tradeCategory = new TradeCategory(e);
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+                    break;
+                case EpubType.refname:
+                case EpubType.shortname:
+                    epubType = new EpubType(e);
+                    break;
+                case EpubTypeVersion.refname:
+                case EpubTypeVersion.shortname:
+                    epubTypeVersion = new EpubTypeVersion(e);
+                    break;
+                case EpubTypeDescription.refname:
+                case EpubTypeDescription.shortname:
+                    epubTypeDescription = new EpubTypeDescription(e);
+                    break;
+                case EpubFormat.refname:
+                case EpubFormat.shortname:
+                    epubFormat = new EpubFormat(e);
+                    break;
+                case EpubFormatVersion.refname:
+                case EpubFormatVersion.shortname:
+                    epubFormatVersion = new EpubFormatVersion(e);
+                    break;
+                case EpubFormatDescription.refname:
+                case EpubFormatDescription.shortname:
+                    epubFormatDescription = new EpubFormatDescription(e);
+                    break;
+                case EpubTypeNote.refname:
+                case EpubTypeNote.shortname:
+                    epubTypeNote = new EpubTypeNote(e);
+                    break;
+                case Publisher.refname:
+                case Publisher.shortname:
+                    publishers = JPU.addToList(publishers, new Publisher(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

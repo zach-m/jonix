@@ -87,10 +87,17 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ComplexitySchemeIdentifier.refname) || name.equals(ComplexitySchemeIdentifier.shortname)) {
-                complexitySchemeIdentifier = new ComplexitySchemeIdentifier(e);
-            } else if (name.equals(ComplexityCode.refname) || name.equals(ComplexityCode.shortname)) {
-                complexityCode = new ComplexityCode(e);
+            switch (name) {
+                case ComplexitySchemeIdentifier.refname:
+                case ComplexitySchemeIdentifier.shortname:
+                    complexitySchemeIdentifier = new ComplexitySchemeIdentifier(e);
+                    break;
+                case ComplexityCode.refname:
+                case ComplexityCode.shortname:
+                    complexityCode = new ComplexityCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

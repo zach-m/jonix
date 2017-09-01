@@ -117,38 +117,73 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname)) {
-                levelSequenceNumber = new LevelSequenceNumber(e);
-            } else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname)) {
-                textItem = new TextItem(e);
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
-            } else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname)) {
-                componentTypeName = new ComponentTypeName(e);
-            } else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname)) {
-                componentNumber = new ComponentNumber(e);
-            } else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname)) {
-                distinctiveTitle = new DistinctiveTitle(e);
-            } else if (name.equals(Title.refname) || name.equals(Title.shortname)) {
-                titles = JPU.addToList(titles, new Title(e));
-            } else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname)) {
-                workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname)) {
-                contributorStatement = new ContributorStatement(e);
-            } else if (name.equals(Subject.refname) || name.equals(Subject.shortname)) {
-                subjects = JPU.addToList(subjects, new Subject(e));
-            } else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname)) {
-                personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
-            } else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname)) {
-                corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
-            } else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname)) {
-                placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
-            } else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname)) {
-                otherTexts = JPU.addToList(otherTexts, new OtherText(e));
-            } else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname)) {
-                mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+            switch (name) {
+                case LevelSequenceNumber.refname:
+                case LevelSequenceNumber.shortname:
+                    levelSequenceNumber = new LevelSequenceNumber(e);
+                    break;
+                case TextItem.refname:
+                case TextItem.shortname:
+                    textItem = new TextItem(e);
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case ComponentTypeName.refname:
+                case ComponentTypeName.shortname:
+                    componentTypeName = new ComponentTypeName(e);
+                    break;
+                case ComponentNumber.refname:
+                case ComponentNumber.shortname:
+                    componentNumber = new ComponentNumber(e);
+                    break;
+                case DistinctiveTitle.refname:
+                case DistinctiveTitle.shortname:
+                    distinctiveTitle = new DistinctiveTitle(e);
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
+                case WorkIdentifier.refname:
+                case WorkIdentifier.shortname:
+                    workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case ContributorStatement.refname:
+                case ContributorStatement.shortname:
+                    contributorStatement = new ContributorStatement(e);
+                    break;
+                case Subject.refname:
+                case Subject.shortname:
+                    subjects = JPU.addToList(subjects, new Subject(e));
+                    break;
+                case PersonAsSubject.refname:
+                case PersonAsSubject.shortname:
+                    personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
+                    break;
+                case CorporateBodyAsSubject.refname:
+                case CorporateBodyAsSubject.shortname:
+                    corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
+                    break;
+                case PlaceAsSubject.refname:
+                case PlaceAsSubject.shortname:
+                    placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
+                    break;
+                case OtherText.refname:
+                case OtherText.shortname:
+                    otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+                    break;
+                case MediaFile.refname:
+                case MediaFile.shortname:
+                    mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

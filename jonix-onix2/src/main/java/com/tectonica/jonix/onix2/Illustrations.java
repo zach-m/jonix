@@ -106,13 +106,21 @@ public class Illustrations
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(IllustrationType.refname) || name.equals(IllustrationType.shortname)) {
-                illustrationType = new IllustrationType(e);
-            } else if (name.equals(IllustrationTypeDescription.refname) ||
-                name.equals(IllustrationTypeDescription.shortname)) {
-                illustrationTypeDescription = new IllustrationTypeDescription(e);
-            } else if (name.equals(Number.refname) || name.equals(Number.shortname)) {
-                number = new Number(e);
+            switch (name) {
+                case IllustrationType.refname:
+                case IllustrationType.shortname:
+                    illustrationType = new IllustrationType(e);
+                    break;
+                case IllustrationTypeDescription.refname:
+                case IllustrationTypeDescription.shortname:
+                    illustrationTypeDescription = new IllustrationTypeDescription(e);
+                    break;
+                case Number.refname:
+                case Number.shortname:
+                    number = new Number(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

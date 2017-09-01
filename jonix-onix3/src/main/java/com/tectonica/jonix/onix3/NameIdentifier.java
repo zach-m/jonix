@@ -90,12 +90,21 @@ public class NameIdentifier implements OnixDataCompositeWithKey<JonixNameIdentif
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(NameIDType.refname) || name.equals(NameIDType.shortname)) {
-                nameIDType = new NameIDType(e);
-            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
-                idTypeName = new IDTypeName(e);
-            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
-                idValue = new IDValue(e);
+            switch (name) {
+                case NameIDType.refname:
+                case NameIDType.shortname:
+                    nameIDType = new NameIDType(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
+                    break;
+                case IDValue.refname:
+                case IDValue.shortname:
+                    idValue = new IDValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -91,14 +91,22 @@ public class AncillaryContent
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(AncillaryContentType.refname) || name.equals(AncillaryContentType.shortname)) {
-                ancillaryContentType = new AncillaryContentType(e);
-            } else if (name.equals(AncillaryContentDescription.refname) ||
-                name.equals(AncillaryContentDescription.shortname)) {
-                ancillaryContentDescriptions =
-                    JPU.addToList(ancillaryContentDescriptions, new AncillaryContentDescription(e));
-            } else if (name.equals(Number.refname) || name.equals(Number.shortname)) {
-                number = new Number(e);
+            switch (name) {
+                case AncillaryContentType.refname:
+                case AncillaryContentType.shortname:
+                    ancillaryContentType = new AncillaryContentType(e);
+                    break;
+                case AncillaryContentDescription.refname:
+                case AncillaryContentDescription.shortname:
+                    ancillaryContentDescriptions =
+                        JPU.addToList(ancillaryContentDescriptions, new AncillaryContentDescription(e));
+                    break;
+                case Number.refname:
+                case Number.shortname:
+                    number = new Number(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

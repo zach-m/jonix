@@ -92,13 +92,21 @@ public class StockQuantityCoded
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(StockQuantityCodeType.refname) || name.equals(StockQuantityCodeType.shortname)) {
-                stockQuantityCodeType = new StockQuantityCodeType(e);
-            } else if (name.equals(StockQuantityCodeTypeName.refname) ||
-                name.equals(StockQuantityCodeTypeName.shortname)) {
-                stockQuantityCodeTypeName = new StockQuantityCodeTypeName(e);
-            } else if (name.equals(StockQuantityCode.refname) || name.equals(StockQuantityCode.shortname)) {
-                stockQuantityCode = new StockQuantityCode(e);
+            switch (name) {
+                case StockQuantityCodeType.refname:
+                case StockQuantityCodeType.shortname:
+                    stockQuantityCodeType = new StockQuantityCodeType(e);
+                    break;
+                case StockQuantityCodeTypeName.refname:
+                case StockQuantityCodeTypeName.shortname:
+                    stockQuantityCodeTypeName = new StockQuantityCodeTypeName(e);
+                    break;
+                case StockQuantityCode.refname:
+                case StockQuantityCode.shortname:
+                    stockQuantityCode = new StockQuantityCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

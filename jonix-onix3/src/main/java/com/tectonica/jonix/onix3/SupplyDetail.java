@@ -96,30 +96,57 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Supplier.refname) || name.equals(Supplier.shortname)) {
-                supplier = new Supplier(e);
-            } else if (name.equals(SupplierOwnCoding.refname) || name.equals(SupplierOwnCoding.shortname)) {
-                supplierOwnCodings = JPU.addToList(supplierOwnCodings, new SupplierOwnCoding(e));
-            } else if (name.equals(ReturnsConditions.refname) || name.equals(ReturnsConditions.shortname)) {
-                returnsConditionss = JPU.addToList(returnsConditionss, new ReturnsConditions(e));
-            } else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname)) {
-                productAvailability = new ProductAvailability(e);
-            } else if (name.equals(SupplyDate.refname) || name.equals(SupplyDate.shortname)) {
-                supplyDates = JPU.addToList(supplyDates, new SupplyDate(e));
-            } else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname)) {
-                orderTime = new OrderTime(e);
-            } else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname)) {
-                newSupplier = new NewSupplier(e);
-            } else if (name.equals(Stock.refname) || name.equals(Stock.shortname)) {
-                stocks = JPU.addToList(stocks, new Stock(e));
-            } else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname)) {
-                packQuantity = new PackQuantity(e);
-            } else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname)) {
-                unpricedItemType = new UnpricedItemType(e);
-            } else if (name.equals(Price.refname) || name.equals(Price.shortname)) {
-                prices = JPU.addToList(prices, new Price(e));
-            } else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname)) {
-                reissue = new Reissue(e);
+            switch (name) {
+                case Supplier.refname:
+                case Supplier.shortname:
+                    supplier = new Supplier(e);
+                    break;
+                case SupplierOwnCoding.refname:
+                case SupplierOwnCoding.shortname:
+                    supplierOwnCodings = JPU.addToList(supplierOwnCodings, new SupplierOwnCoding(e));
+                    break;
+                case ReturnsConditions.refname:
+                case ReturnsConditions.shortname:
+                    returnsConditionss = JPU.addToList(returnsConditionss, new ReturnsConditions(e));
+                    break;
+                case ProductAvailability.refname:
+                case ProductAvailability.shortname:
+                    productAvailability = new ProductAvailability(e);
+                    break;
+                case SupplyDate.refname:
+                case SupplyDate.shortname:
+                    supplyDates = JPU.addToList(supplyDates, new SupplyDate(e));
+                    break;
+                case OrderTime.refname:
+                case OrderTime.shortname:
+                    orderTime = new OrderTime(e);
+                    break;
+                case NewSupplier.refname:
+                case NewSupplier.shortname:
+                    newSupplier = new NewSupplier(e);
+                    break;
+                case Stock.refname:
+                case Stock.shortname:
+                    stocks = JPU.addToList(stocks, new Stock(e));
+                    break;
+                case PackQuantity.refname:
+                case PackQuantity.shortname:
+                    packQuantity = new PackQuantity(e);
+                    break;
+                case UnpricedItemType.refname:
+                case UnpricedItemType.shortname:
+                    unpricedItemType = new UnpricedItemType(e);
+                    break;
+                case Price.refname:
+                case Price.shortname:
+                    prices = JPU.addToList(prices, new Price(e));
+                    break;
+                case Reissue.refname:
+                case Reissue.shortname:
+                    reissue = new Reissue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

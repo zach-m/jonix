@@ -91,12 +91,21 @@ public class AddresseeIdentifier
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(AddresseeIDType.refname) || name.equals(AddresseeIDType.shortname)) {
-                addresseeIDType = new AddresseeIDType(e);
-            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
-                idTypeName = new IDTypeName(e);
-            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
-                idValue = new IDValue(e);
+            switch (name) {
+                case AddresseeIDType.refname:
+                case AddresseeIDType.shortname:
+                    addresseeIDType = new AddresseeIDType(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
+                    break;
+                case IDValue.refname:
+                case IDValue.shortname:
+                    idValue = new IDValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

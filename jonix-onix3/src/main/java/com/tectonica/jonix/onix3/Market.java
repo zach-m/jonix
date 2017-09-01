@@ -89,10 +89,17 @@ public class Market implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Territory.refname) || name.equals(Territory.shortname)) {
-                territory = new Territory(e);
-            } else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname)) {
-                salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+            switch (name) {
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
+                    break;
+                case SalesRestriction.refname:
+                case SalesRestriction.shortname:
+                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

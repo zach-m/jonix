@@ -90,12 +90,21 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PriceCodeType.refname) || name.equals(PriceCodeType.shortname)) {
-                priceCodeType = new PriceCodeType(e);
-            } else if (name.equals(PriceCodeTypeName.refname) || name.equals(PriceCodeTypeName.shortname)) {
-                priceCodeTypeName = new PriceCodeTypeName(e);
-            } else if (name.equals(PriceCode.refname) || name.equals(PriceCode.shortname)) {
-                priceCode = new PriceCode(e);
+            switch (name) {
+                case PriceCodeType.refname:
+                case PriceCodeType.shortname:
+                    priceCodeType = new PriceCodeType(e);
+                    break;
+                case PriceCodeTypeName.refname:
+                case PriceCodeTypeName.shortname:
+                    priceCodeTypeName = new PriceCodeTypeName(e);
+                    break;
+                case PriceCode.refname:
+                case PriceCode.shortname:
+                    priceCode = new PriceCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -104,12 +104,21 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(AudienceCodeType.refname) || name.equals(AudienceCodeType.shortname)) {
-                audienceCodeType = new AudienceCodeType(e);
-            } else if (name.equals(AudienceCodeTypeName.refname) || name.equals(AudienceCodeTypeName.shortname)) {
-                audienceCodeTypeName = new AudienceCodeTypeName(e);
-            } else if (name.equals(AudienceCodeValue.refname) || name.equals(AudienceCodeValue.shortname)) {
-                audienceCodeValue = new AudienceCodeValue(e);
+            switch (name) {
+                case AudienceCodeType.refname:
+                case AudienceCodeType.shortname:
+                    audienceCodeType = new AudienceCodeType(e);
+                    break;
+                case AudienceCodeTypeName.refname:
+                case AudienceCodeTypeName.shortname:
+                    audienceCodeTypeName = new AudienceCodeTypeName(e);
+                    break;
+                case AudienceCodeValue.refname:
+                case AudienceCodeValue.shortname:
+                    audienceCodeValue = new AudienceCodeValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

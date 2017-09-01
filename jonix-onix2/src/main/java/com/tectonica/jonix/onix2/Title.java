@@ -105,20 +105,37 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TitleType.refname) || name.equals(TitleType.shortname)) {
-                titleType = new TitleType(e);
-            } else if (name.equals(AbbreviatedLength.refname) || name.equals(AbbreviatedLength.shortname)) {
-                abbreviatedLength = new AbbreviatedLength(e);
-            } else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname)) {
-                textCaseFlag = new TextCaseFlag(e);
-            } else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname)) {
-                titleText = new TitleText(e);
-            } else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname)) {
-                titlePrefix = new TitlePrefix(e);
-            } else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname)) {
-                titleWithoutPrefix = new TitleWithoutPrefix(e);
-            } else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname)) {
-                subtitle = new Subtitle(e);
+            switch (name) {
+                case TitleType.refname:
+                case TitleType.shortname:
+                    titleType = new TitleType(e);
+                    break;
+                case AbbreviatedLength.refname:
+                case AbbreviatedLength.shortname:
+                    abbreviatedLength = new AbbreviatedLength(e);
+                    break;
+                case TextCaseFlag.refname:
+                case TextCaseFlag.shortname:
+                    textCaseFlag = new TextCaseFlag(e);
+                    break;
+                case TitleText.refname:
+                case TitleText.shortname:
+                    titleText = new TitleText(e);
+                    break;
+                case TitlePrefix.refname:
+                case TitlePrefix.shortname:
+                    titlePrefix = new TitlePrefix(e);
+                    break;
+                case TitleWithoutPrefix.refname:
+                case TitleWithoutPrefix.shortname:
+                    titleWithoutPrefix = new TitleWithoutPrefix(e);
+                    break;
+                case Subtitle.refname:
+                case Subtitle.shortname:
+                    subtitle = new Subtitle(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

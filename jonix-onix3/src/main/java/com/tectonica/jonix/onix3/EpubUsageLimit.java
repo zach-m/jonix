@@ -88,10 +88,17 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Quantity.refname) || name.equals(Quantity.shortname)) {
-                quantity = new Quantity(e);
-            } else if (name.equals(EpubUsageUnit.refname) || name.equals(EpubUsageUnit.shortname)) {
-                epubUsageUnit = new EpubUsageUnit(e);
+            switch (name) {
+                case Quantity.refname:
+                case Quantity.shortname:
+                    quantity = new Quantity(e);
+                    break;
+                case EpubUsageUnit.refname:
+                case EpubUsageUnit.shortname:
+                    epubUsageUnit = new EpubUsageUnit(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

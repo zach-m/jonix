@@ -92,12 +92,21 @@ public class ResourceVersionFeature
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ResourceVersionFeatureType.refname) || name.equals(ResourceVersionFeatureType.shortname)) {
-                resourceVersionFeatureType = new ResourceVersionFeatureType(e);
-            } else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname)) {
-                featureValue = new FeatureValue(e);
-            } else if (name.equals(FeatureNote.refname) || name.equals(FeatureNote.shortname)) {
-                featureNotes = JPU.addToList(featureNotes, new FeatureNote(e));
+            switch (name) {
+                case ResourceVersionFeatureType.refname:
+                case ResourceVersionFeatureType.shortname:
+                    resourceVersionFeatureType = new ResourceVersionFeatureType(e);
+                    break;
+                case FeatureValue.refname:
+                case FeatureValue.shortname:
+                    featureValue = new FeatureValue(e);
+                    break;
+                case FeatureNote.refname:
+                case FeatureNote.shortname:
+                    featureNotes = JPU.addToList(featureNotes, new FeatureNote(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

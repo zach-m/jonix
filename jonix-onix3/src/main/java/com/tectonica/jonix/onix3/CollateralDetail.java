@@ -93,14 +93,25 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TextContent.refname) || name.equals(TextContent.shortname)) {
-                textContents = JPU.addToList(textContents, new TextContent(e));
-            } else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname)) {
-                citedContents = JPU.addToList(citedContents, new CitedContent(e));
-            } else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname)) {
-                supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
-            } else if (name.equals(Prize.refname) || name.equals(Prize.shortname)) {
-                prizes = JPU.addToList(prizes, new Prize(e));
+            switch (name) {
+                case TextContent.refname:
+                case TextContent.shortname:
+                    textContents = JPU.addToList(textContents, new TextContent(e));
+                    break;
+                case CitedContent.refname:
+                case CitedContent.shortname:
+                    citedContents = JPU.addToList(citedContents, new CitedContent(e));
+                    break;
+                case SupportingResource.refname:
+                case SupportingResource.shortname:
+                    supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
+                    break;
+                case Prize.refname:
+                case Prize.shortname:
+                    prizes = JPU.addToList(prizes, new Prize(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

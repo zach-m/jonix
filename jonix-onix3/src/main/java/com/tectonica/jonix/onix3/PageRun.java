@@ -88,10 +88,17 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname)) {
-                firstPageNumber = new FirstPageNumber(e);
-            } else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname)) {
-                lastPageNumber = new LastPageNumber(e);
+            switch (name) {
+                case FirstPageNumber.refname:
+                case FirstPageNumber.shortname:
+                    firstPageNumber = new FirstPageNumber(e);
+                    break;
+                case LastPageNumber.refname:
+                case LastPageNumber.shortname:
+                    lastPageNumber = new LastPageNumber(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

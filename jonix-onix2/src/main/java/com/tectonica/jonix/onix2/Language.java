@@ -104,12 +104,21 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname)) {
-                languageRole = new LanguageRole(e);
-            } else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname)) {
-                languageCode = new LanguageCode(e);
-            } else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname)) {
-                countryCode = new CountryCode(e);
+            switch (name) {
+                case LanguageRole.refname:
+                case LanguageRole.shortname:
+                    languageRole = new LanguageRole(e);
+                    break;
+                case LanguageCode.refname:
+                case LanguageCode.shortname:
+                    languageCode = new LanguageCode(e);
+                    break;
+                case CountryCode.refname:
+                case CountryCode.shortname:
+                    countryCode = new CountryCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

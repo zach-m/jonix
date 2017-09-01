@@ -110,60 +110,117 @@ public class Price implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PriceTypeCode.refname) || name.equals(PriceTypeCode.shortname)) {
-                priceTypeCode = new PriceTypeCode(e);
-            } else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname)) {
-                priceQualifier = new PriceQualifier(e);
-            } else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname)) {
-                priceTypeDescription = new PriceTypeDescription(e);
-            } else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname)) {
-                pricePer = new PricePer(e);
-            } else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname)) {
-                minimumOrderQuantity = new MinimumOrderQuantity(e);
-            } else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname)) {
-                batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
-            } else if (name.equals(ClassOfTrade.refname) || name.equals(ClassOfTrade.shortname)) {
-                classOfTrade = new ClassOfTrade(e);
-            } else if (name.equals(BICDiscountGroupCode.refname) || name.equals(BICDiscountGroupCode.shortname)) {
-                bicDiscountGroupCode = new BICDiscountGroupCode(e);
-            } else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname)) {
-                discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
-            } else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname)) {
-                discountPercent = new DiscountPercent(e);
-            } else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname)) {
-                priceStatus = new PriceStatus(e);
-            } else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname)) {
-                priceAmount = new PriceAmount(e);
-            } else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname)) {
-                currencyCode = new CurrencyCode(e);
-            } else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname)) {
-                countryCodes = JPU.addToList(countryCodes, new CountryCode(e));
-            } else if (name.equals(Territory.refname) || name.equals(Territory.shortname)) {
-                territory = new Territory(e);
-            } else if (name.equals(CountryExcluded.refname) || name.equals(CountryExcluded.shortname)) {
-                countryExcluded = new CountryExcluded(e);
-            } else if (name.equals(TerritoryExcluded.refname) || name.equals(TerritoryExcluded.shortname)) {
-                territoryExcluded = new TerritoryExcluded(e);
-            } else if (name.equals(TaxRateCode1.refname) || name.equals(TaxRateCode1.shortname)) {
-                taxRateCode1 = new TaxRateCode1(e);
-            } else if (name.equals(TaxRatePercent1.refname) || name.equals(TaxRatePercent1.shortname)) {
-                taxRatePercent1 = new TaxRatePercent1(e);
-            } else if (name.equals(TaxableAmount1.refname) || name.equals(TaxableAmount1.shortname)) {
-                taxableAmount1 = new TaxableAmount1(e);
-            } else if (name.equals(TaxAmount1.refname) || name.equals(TaxAmount1.shortname)) {
-                taxAmount1 = new TaxAmount1(e);
-            } else if (name.equals(TaxRateCode2.refname) || name.equals(TaxRateCode2.shortname)) {
-                taxRateCode2 = new TaxRateCode2(e);
-            } else if (name.equals(TaxRatePercent2.refname) || name.equals(TaxRatePercent2.shortname)) {
-                taxRatePercent2 = new TaxRatePercent2(e);
-            } else if (name.equals(TaxableAmount2.refname) || name.equals(TaxableAmount2.shortname)) {
-                taxableAmount2 = new TaxableAmount2(e);
-            } else if (name.equals(TaxAmount2.refname) || name.equals(TaxAmount2.shortname)) {
-                taxAmount2 = new TaxAmount2(e);
-            } else if (name.equals(PriceEffectiveFrom.refname) || name.equals(PriceEffectiveFrom.shortname)) {
-                priceEffectiveFrom = new PriceEffectiveFrom(e);
-            } else if (name.equals(PriceEffectiveUntil.refname) || name.equals(PriceEffectiveUntil.shortname)) {
-                priceEffectiveUntil = new PriceEffectiveUntil(e);
+            switch (name) {
+                case PriceTypeCode.refname:
+                case PriceTypeCode.shortname:
+                    priceTypeCode = new PriceTypeCode(e);
+                    break;
+                case PriceQualifier.refname:
+                case PriceQualifier.shortname:
+                    priceQualifier = new PriceQualifier(e);
+                    break;
+                case PriceTypeDescription.refname:
+                case PriceTypeDescription.shortname:
+                    priceTypeDescription = new PriceTypeDescription(e);
+                    break;
+                case PricePer.refname:
+                case PricePer.shortname:
+                    pricePer = new PricePer(e);
+                    break;
+                case MinimumOrderQuantity.refname:
+                case MinimumOrderQuantity.shortname:
+                    minimumOrderQuantity = new MinimumOrderQuantity(e);
+                    break;
+                case BatchBonus.refname:
+                case BatchBonus.shortname:
+                    batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
+                    break;
+                case ClassOfTrade.refname:
+                case ClassOfTrade.shortname:
+                    classOfTrade = new ClassOfTrade(e);
+                    break;
+                case BICDiscountGroupCode.refname:
+                case BICDiscountGroupCode.shortname:
+                    bicDiscountGroupCode = new BICDiscountGroupCode(e);
+                    break;
+                case DiscountCoded.refname:
+                case DiscountCoded.shortname:
+                    discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
+                    break;
+                case DiscountPercent.refname:
+                case DiscountPercent.shortname:
+                    discountPercent = new DiscountPercent(e);
+                    break;
+                case PriceStatus.refname:
+                case PriceStatus.shortname:
+                    priceStatus = new PriceStatus(e);
+                    break;
+                case PriceAmount.refname:
+                case PriceAmount.shortname:
+                    priceAmount = new PriceAmount(e);
+                    break;
+                case CurrencyCode.refname:
+                case CurrencyCode.shortname:
+                    currencyCode = new CurrencyCode(e);
+                    break;
+                case CountryCode.refname:
+                case CountryCode.shortname:
+                    countryCodes = JPU.addToList(countryCodes, new CountryCode(e));
+                    break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
+                    break;
+                case CountryExcluded.refname:
+                case CountryExcluded.shortname:
+                    countryExcluded = new CountryExcluded(e);
+                    break;
+                case TerritoryExcluded.refname:
+                case TerritoryExcluded.shortname:
+                    territoryExcluded = new TerritoryExcluded(e);
+                    break;
+                case TaxRateCode1.refname:
+                case TaxRateCode1.shortname:
+                    taxRateCode1 = new TaxRateCode1(e);
+                    break;
+                case TaxRatePercent1.refname:
+                case TaxRatePercent1.shortname:
+                    taxRatePercent1 = new TaxRatePercent1(e);
+                    break;
+                case TaxableAmount1.refname:
+                case TaxableAmount1.shortname:
+                    taxableAmount1 = new TaxableAmount1(e);
+                    break;
+                case TaxAmount1.refname:
+                case TaxAmount1.shortname:
+                    taxAmount1 = new TaxAmount1(e);
+                    break;
+                case TaxRateCode2.refname:
+                case TaxRateCode2.shortname:
+                    taxRateCode2 = new TaxRateCode2(e);
+                    break;
+                case TaxRatePercent2.refname:
+                case TaxRatePercent2.shortname:
+                    taxRatePercent2 = new TaxRatePercent2(e);
+                    break;
+                case TaxableAmount2.refname:
+                case TaxableAmount2.shortname:
+                    taxableAmount2 = new TaxableAmount2(e);
+                    break;
+                case TaxAmount2.refname:
+                case TaxAmount2.shortname:
+                    taxAmount2 = new TaxAmount2(e);
+                    break;
+                case PriceEffectiveFrom.refname:
+                case PriceEffectiveFrom.shortname:
+                    priceEffectiveFrom = new PriceEffectiveFrom(e);
+                    break;
+                case PriceEffectiveUntil.refname:
+                case PriceEffectiveUntil.shortname:
+                    priceEffectiveUntil = new PriceEffectiveUntil(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

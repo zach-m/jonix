@@ -94,20 +94,37 @@ public class Collection implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(CollectionType.refname) || name.equals(CollectionType.shortname)) {
-                collectionType = new CollectionType(e);
-            } else if (name.equals(SourceName.refname) || name.equals(SourceName.shortname)) {
-                sourceName = new SourceName(e);
-            } else if (name.equals(CollectionIdentifier.refname) || name.equals(CollectionIdentifier.shortname)) {
-                collectionIdentifiers = JPU.addToList(collectionIdentifiers, new CollectionIdentifier(e));
-            } else if (name.equals(CollectionSequence.refname) || name.equals(CollectionSequence.shortname)) {
-                collectionSequences = JPU.addToList(collectionSequences, new CollectionSequence(e));
-            } else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname)) {
-                titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname)) {
-                contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
+            switch (name) {
+                case CollectionType.refname:
+                case CollectionType.shortname:
+                    collectionType = new CollectionType(e);
+                    break;
+                case SourceName.refname:
+                case SourceName.shortname:
+                    sourceName = new SourceName(e);
+                    break;
+                case CollectionIdentifier.refname:
+                case CollectionIdentifier.shortname:
+                    collectionIdentifiers = JPU.addToList(collectionIdentifiers, new CollectionIdentifier(e));
+                    break;
+                case CollectionSequence.refname:
+                case CollectionSequence.shortname:
+                    collectionSequences = JPU.addToList(collectionSequences, new CollectionSequence(e));
+                    break;
+                case TitleDetail.refname:
+                case TitleDetail.shortname:
+                    titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case ContributorStatement.refname:
+                case ContributorStatement.shortname:
+                    contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

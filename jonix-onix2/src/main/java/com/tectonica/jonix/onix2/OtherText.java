@@ -105,28 +105,53 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TextTypeCode.refname) || name.equals(TextTypeCode.shortname)) {
-                textTypeCode = new TextTypeCode(e);
-            } else if (name.equals(TextFormat.refname) || name.equals(TextFormat.shortname)) {
-                textFormat = new TextFormat(e);
-            } else if (name.equals(Text.refname) || name.equals(Text.shortname)) {
-                text = new Text(e);
-            } else if (name.equals(TextLinkType.refname) || name.equals(TextLinkType.shortname)) {
-                textLinkType = new TextLinkType(e);
-            } else if (name.equals(TextLink.refname) || name.equals(TextLink.shortname)) {
-                textLink = new TextLink(e);
-            } else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname)) {
-                textAuthor = new TextAuthor(e);
-            } else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname)) {
-                textSourceCorporate = new TextSourceCorporate(e);
-            } else if (name.equals(TextSourceTitle.refname) || name.equals(TextSourceTitle.shortname)) {
-                textSourceTitle = new TextSourceTitle(e);
-            } else if (name.equals(TextPublicationDate.refname) || name.equals(TextPublicationDate.shortname)) {
-                textPublicationDate = new TextPublicationDate(e);
-            } else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname)) {
-                startDate = new StartDate(e);
-            } else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname)) {
-                endDate = new EndDate(e);
+            switch (name) {
+                case TextTypeCode.refname:
+                case TextTypeCode.shortname:
+                    textTypeCode = new TextTypeCode(e);
+                    break;
+                case TextFormat.refname:
+                case TextFormat.shortname:
+                    textFormat = new TextFormat(e);
+                    break;
+                case Text.refname:
+                case Text.shortname:
+                    text = new Text(e);
+                    break;
+                case TextLinkType.refname:
+                case TextLinkType.shortname:
+                    textLinkType = new TextLinkType(e);
+                    break;
+                case TextLink.refname:
+                case TextLink.shortname:
+                    textLink = new TextLink(e);
+                    break;
+                case TextAuthor.refname:
+                case TextAuthor.shortname:
+                    textAuthor = new TextAuthor(e);
+                    break;
+                case TextSourceCorporate.refname:
+                case TextSourceCorporate.shortname:
+                    textSourceCorporate = new TextSourceCorporate(e);
+                    break;
+                case TextSourceTitle.refname:
+                case TextSourceTitle.shortname:
+                    textSourceTitle = new TextSourceTitle(e);
+                    break;
+                case TextPublicationDate.refname:
+                case TextPublicationDate.shortname:
+                    textPublicationDate = new TextPublicationDate(e);
+                    break;
+                case StartDate.refname:
+                case StartDate.shortname:
+                    startDate = new StartDate(e);
+                    break;
+                case EndDate.refname:
+                case EndDate.shortname:
+                    endDate = new EndDate(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

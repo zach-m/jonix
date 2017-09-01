@@ -103,14 +103,25 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname)) {
-                imprintName = new ImprintName(e);
-            } else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname)) {
-                nameCodeType = new NameCodeType(e);
-            } else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname)) {
-                nameCodeTypeName = new NameCodeTypeName(e);
-            } else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname)) {
-                nameCodeValue = new NameCodeValue(e);
+            switch (name) {
+                case ImprintName.refname:
+                case ImprintName.shortname:
+                    imprintName = new ImprintName(e);
+                    break;
+                case NameCodeType.refname:
+                case NameCodeType.shortname:
+                    nameCodeType = new NameCodeType(e);
+                    break;
+                case NameCodeTypeName.refname:
+                case NameCodeTypeName.shortname:
+                    nameCodeTypeName = new NameCodeTypeName(e);
+                    break;
+                case NameCodeValue.refname:
+                case NameCodeValue.shortname:
+                    nameCodeValue = new NameCodeValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

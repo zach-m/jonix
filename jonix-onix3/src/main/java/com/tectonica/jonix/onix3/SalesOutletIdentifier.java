@@ -90,12 +90,21 @@ public class SalesOutletIdentifier
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SalesOutletIDType.refname) || name.equals(SalesOutletIDType.shortname)) {
-                salesOutletIDType = new SalesOutletIDType(e);
-            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
-                idTypeName = new IDTypeName(e);
-            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
-                idValue = new IDValue(e);
+            switch (name) {
+                case SalesOutletIDType.refname:
+                case SalesOutletIDType.shortname:
+                    salesOutletIDType = new SalesOutletIDType(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
+                    break;
+                case IDValue.refname:
+                case IDValue.shortname:
+                    idValue = new IDValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

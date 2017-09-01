@@ -90,12 +90,21 @@ public class SupplierOwnCoding
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SupplierCodeType.refname) || name.equals(SupplierCodeType.shortname)) {
-                supplierCodeType = new SupplierCodeType(e);
-            } else if (name.equals(SupplierCodeTypeName.refname) || name.equals(SupplierCodeTypeName.shortname)) {
-                supplierCodeTypeName = new SupplierCodeTypeName(e);
-            } else if (name.equals(SupplierCodeValue.refname) || name.equals(SupplierCodeValue.shortname)) {
-                supplierCodeValue = new SupplierCodeValue(e);
+            switch (name) {
+                case SupplierCodeType.refname:
+                case SupplierCodeType.shortname:
+                    supplierCodeType = new SupplierCodeType(e);
+                    break;
+                case SupplierCodeTypeName.refname:
+                case SupplierCodeTypeName.shortname:
+                    supplierCodeTypeName = new SupplierCodeTypeName(e);
+                    break;
+                case SupplierCodeValue.refname:
+                case SupplierCodeValue.shortname:
+                    supplierCodeValue = new SupplierCodeValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

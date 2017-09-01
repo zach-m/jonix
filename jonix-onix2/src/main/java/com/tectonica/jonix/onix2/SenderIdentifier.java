@@ -108,12 +108,21 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SenderIDType.refname) || name.equals(SenderIDType.shortname)) {
-                senderIDType = new SenderIDType(e);
-            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
-                idTypeName = new IDTypeName(e);
-            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
-                idValue = new IDValue(e);
+            switch (name) {
+                case SenderIDType.refname:
+                case SenderIDType.shortname:
+                    senderIDType = new SenderIDType(e);
+                    break;
+                case IDTypeName.refname:
+                case IDTypeName.shortname:
+                    idTypeName = new IDTypeName(e);
+                    break;
+                case IDValue.refname:
+                case IDValue.shortname:
+                    idValue = new IDValue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

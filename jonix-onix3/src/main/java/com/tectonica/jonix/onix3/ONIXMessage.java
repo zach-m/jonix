@@ -84,12 +84,21 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Header.refname) || name.equals(Header.shortname)) {
-                header = new Header(e);
-            } else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname)) {
-                noProduct = new NoProduct(e);
-            } else if (name.equals(Product.refname) || name.equals(Product.shortname)) {
-                products = JPU.addToList(products, new Product(e));
+            switch (name) {
+                case Header.refname:
+                case Header.shortname:
+                    header = new Header(e);
+                    break;
+                case NoProduct.refname:
+                case NoProduct.shortname:
+                    noProduct = new NoProduct(e);
+                    break;
+                case Product.refname:
+                case Product.shortname:
+                    products = JPU.addToList(products, new Product(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

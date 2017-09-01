@@ -107,26 +107,49 @@ public class Set implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ISBNOfSet.refname) || name.equals(ISBNOfSet.shortname)) {
-                isbnOfSet = new ISBNOfSet(e);
-            } else if (name.equals(EAN13OfSet.refname) || name.equals(EAN13OfSet.shortname)) {
-                ean13OfSet = new EAN13OfSet(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(TitleOfSet.refname) || name.equals(TitleOfSet.shortname)) {
-                titleOfSet = new TitleOfSet(e);
-            } else if (name.equals(Title.refname) || name.equals(Title.shortname)) {
-                titles = JPU.addToList(titles, new Title(e));
-            } else if (name.equals(SetPartNumber.refname) || name.equals(SetPartNumber.shortname)) {
-                setPartNumber = new SetPartNumber(e);
-            } else if (name.equals(SetPartTitle.refname) || name.equals(SetPartTitle.shortname)) {
-                setPartTitle = new SetPartTitle(e);
-            } else if (name.equals(ItemNumberWithinSet.refname) || name.equals(ItemNumberWithinSet.shortname)) {
-                itemNumberWithinSet = new ItemNumberWithinSet(e);
-            } else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname)) {
-                levelSequenceNumber = new LevelSequenceNumber(e);
-            } else if (name.equals(SetItemTitle.refname) || name.equals(SetItemTitle.shortname)) {
-                setItemTitle = new SetItemTitle(e);
+            switch (name) {
+                case ISBNOfSet.refname:
+                case ISBNOfSet.shortname:
+                    isbnOfSet = new ISBNOfSet(e);
+                    break;
+                case EAN13OfSet.refname:
+                case EAN13OfSet.shortname:
+                    ean13OfSet = new EAN13OfSet(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case TitleOfSet.refname:
+                case TitleOfSet.shortname:
+                    titleOfSet = new TitleOfSet(e);
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
+                case SetPartNumber.refname:
+                case SetPartNumber.shortname:
+                    setPartNumber = new SetPartNumber(e);
+                    break;
+                case SetPartTitle.refname:
+                case SetPartTitle.shortname:
+                    setPartTitle = new SetPartTitle(e);
+                    break;
+                case ItemNumberWithinSet.refname:
+                case ItemNumberWithinSet.shortname:
+                    itemNumberWithinSet = new ItemNumberWithinSet(e);
+                    break;
+                case LevelSequenceNumber.refname:
+                case LevelSequenceNumber.shortname:
+                    levelSequenceNumber = new LevelSequenceNumber(e);
+                    break;
+                case SetItemTitle.refname:
+                case SetItemTitle.shortname:
+                    setItemTitle = new SetItemTitle(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

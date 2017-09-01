@@ -89,12 +89,21 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(MeasureType.refname) || name.equals(MeasureType.shortname)) {
-                measureType = new MeasureType(e);
-            } else if (name.equals(Measurement.refname) || name.equals(Measurement.shortname)) {
-                measurement = new Measurement(e);
-            } else if (name.equals(MeasureUnitCode.refname) || name.equals(MeasureUnitCode.shortname)) {
-                measureUnitCode = new MeasureUnitCode(e);
+            switch (name) {
+                case MeasureType.refname:
+                case MeasureType.shortname:
+                    measureType = new MeasureType(e);
+                    break;
+                case Measurement.refname:
+                case Measurement.shortname:
+                    measurement = new Measurement(e);
+                    break;
+                case MeasureUnitCode.refname:
+                case MeasureUnitCode.shortname:
+                    measureUnitCode = new MeasureUnitCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

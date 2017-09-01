@@ -91,24 +91,45 @@ public class CitedContent implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname)) {
-                citedContentType = new CitedContentType(e);
-            } else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname)) {
-                contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
-            } else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname)) {
-                sourceType = new SourceType(e);
-            } else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname)) {
-                sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
-            } else if (name.equals(ListName.refname) || name.equals(ListName.shortname)) {
-                listNames = JPU.addToList(listNames, new ListName(e));
-            } else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname)) {
-                positionOnList = new PositionOnList(e);
-            } else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname)) {
-                citationNotes = JPU.addToList(citationNotes, new CitationNote(e));
-            } else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname)) {
-                resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
-            } else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname)) {
-                contentDates = JPU.addToList(contentDates, new ContentDate(e));
+            switch (name) {
+                case CitedContentType.refname:
+                case CitedContentType.shortname:
+                    citedContentType = new CitedContentType(e);
+                    break;
+                case ContentAudience.refname:
+                case ContentAudience.shortname:
+                    contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+                    break;
+                case SourceType.refname:
+                case SourceType.shortname:
+                    sourceType = new SourceType(e);
+                    break;
+                case SourceTitle.refname:
+                case SourceTitle.shortname:
+                    sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
+                    break;
+                case ListName.refname:
+                case ListName.shortname:
+                    listNames = JPU.addToList(listNames, new ListName(e));
+                    break;
+                case PositionOnList.refname:
+                case PositionOnList.shortname:
+                    positionOnList = new PositionOnList(e);
+                    break;
+                case CitationNote.refname:
+                case CitationNote.shortname:
+                    citationNotes = JPU.addToList(citationNotes, new CitationNote(e));
+                    break;
+                case ResourceLink.refname:
+                case ResourceLink.shortname:
+                    resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+                    break;
+                case ContentDate.refname:
+                case ContentDate.shortname:
+                    contentDates = JPU.addToList(contentDates, new ContentDate(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

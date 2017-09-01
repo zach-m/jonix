@@ -100,14 +100,25 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Header.refname) || name.equals(Header.shortname)) {
-                header = new Header(e);
-            } else if (name.equals(Product.refname) || name.equals(Product.shortname)) {
-                products = JPU.addToList(products, new Product(e));
-            } else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname)) {
-                mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(e));
-            } else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname)) {
-                subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(e));
+            switch (name) {
+                case Header.refname:
+                case Header.shortname:
+                    header = new Header(e);
+                    break;
+                case Product.refname:
+                case Product.shortname:
+                    products = JPU.addToList(products, new Product(e));
+                    break;
+                case MainSeriesRecord.refname:
+                case MainSeriesRecord.shortname:
+                    mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(e));
+                    break;
+                case SubSeriesRecord.refname:
+                case SubSeriesRecord.shortname:
+                    subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

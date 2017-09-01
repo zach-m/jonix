@@ -90,10 +90,17 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(WorkRelationCode.refname) || name.equals(WorkRelationCode.shortname)) {
-                workRelationCode = new WorkRelationCode(e);
-            } else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname)) {
-                workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+            switch (name) {
+                case WorkRelationCode.refname:
+                case WorkRelationCode.shortname:
+                    workRelationCode = new WorkRelationCode(e);
+                    break;
+                case WorkIdentifier.refname:
+                case WorkIdentifier.shortname:
+                    workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

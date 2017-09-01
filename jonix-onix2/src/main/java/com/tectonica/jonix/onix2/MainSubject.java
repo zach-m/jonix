@@ -104,15 +104,25 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(MainSubjectSchemeIdentifier.refname) ||
-                name.equals(MainSubjectSchemeIdentifier.shortname)) {
-                mainSubjectSchemeIdentifier = new MainSubjectSchemeIdentifier(e);
-            } else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname)) {
-                subjectSchemeVersion = new SubjectSchemeVersion(e);
-            } else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname)) {
-                subjectCode = new SubjectCode(e);
-            } else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname)) {
-                subjectHeadingText = new SubjectHeadingText(e);
+            switch (name) {
+                case MainSubjectSchemeIdentifier.refname:
+                case MainSubjectSchemeIdentifier.shortname:
+                    mainSubjectSchemeIdentifier = new MainSubjectSchemeIdentifier(e);
+                    break;
+                case SubjectSchemeVersion.refname:
+                case SubjectSchemeVersion.shortname:
+                    subjectSchemeVersion = new SubjectSchemeVersion(e);
+                    break;
+                case SubjectCode.refname:
+                case SubjectCode.shortname:
+                    subjectCode = new SubjectCode(e);
+                    break;
+                case SubjectHeadingText.refname:
+                case SubjectHeadingText.shortname:
+                    subjectHeadingText = new SubjectHeadingText(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

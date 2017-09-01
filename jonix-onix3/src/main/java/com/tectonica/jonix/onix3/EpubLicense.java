@@ -91,10 +91,17 @@ public class EpubLicense implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(EpubLicenseName.refname) || name.equals(EpubLicenseName.shortname)) {
-                epubLicenseNames = JPU.addToList(epubLicenseNames, new EpubLicenseName(e));
-            } else if (name.equals(EpubLicenseExpression.refname) || name.equals(EpubLicenseExpression.shortname)) {
-                epubLicenseExpressions = JPU.addToList(epubLicenseExpressions, new EpubLicenseExpression(e));
+            switch (name) {
+                case EpubLicenseName.refname:
+                case EpubLicenseName.shortname:
+                    epubLicenseNames = JPU.addToList(epubLicenseNames, new EpubLicenseName(e));
+                    break;
+                case EpubLicenseExpression.refname:
+                case EpubLicenseExpression.shortname:
+                    epubLicenseExpressions = JPU.addToList(epubLicenseExpressions, new EpubLicenseExpression(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

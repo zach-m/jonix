@@ -102,14 +102,25 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname)) {
-                priceType = new PriceType(e);
-            } else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname)) {
-                priceAmount = new PriceAmount(e);
-            } else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname)) {
-                currencyCode = new CurrencyCode(e);
+            switch (name) {
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case PriceType.refname:
+                case PriceType.shortname:
+                    priceType = new PriceType(e);
+                    break;
+                case PriceAmount.refname:
+                case PriceAmount.shortname:
+                    priceAmount = new PriceAmount(e);
+                    break;
+                case CurrencyCode.refname:
+                case CurrencyCode.shortname:
+                    currencyCode = new CurrencyCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

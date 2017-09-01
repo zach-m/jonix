@@ -105,12 +105,21 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname)) {
-                salesRestrictionType = new SalesRestrictionType(e);
-            } else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname)) {
-                salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
-            } else if (name.equals(SalesRestrictionDetail.refname) || name.equals(SalesRestrictionDetail.shortname)) {
-                salesRestrictionDetail = new SalesRestrictionDetail(e);
+            switch (name) {
+                case SalesRestrictionType.refname:
+                case SalesRestrictionType.shortname:
+                    salesRestrictionType = new SalesRestrictionType(e);
+                    break;
+                case SalesOutlet.refname:
+                case SalesOutlet.shortname:
+                    salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
+                    break;
+                case SalesRestrictionDetail.refname:
+                case SalesRestrictionDetail.shortname:
+                    salesRestrictionDetail = new SalesRestrictionDetail(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

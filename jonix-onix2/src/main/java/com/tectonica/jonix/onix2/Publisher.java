@@ -107,18 +107,33 @@ public class Publisher implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PublishingRole.refname) || name.equals(PublishingRole.shortname)) {
-                publishingRole = new PublishingRole(e);
-            } else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname)) {
-                publisherName = new PublisherName(e);
-            } else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname)) {
-                nameCodeType = new NameCodeType(e);
-            } else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname)) {
-                nameCodeTypeName = new NameCodeTypeName(e);
-            } else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname)) {
-                nameCodeValue = new NameCodeValue(e);
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
+            switch (name) {
+                case PublishingRole.refname:
+                case PublishingRole.shortname:
+                    publishingRole = new PublishingRole(e);
+                    break;
+                case PublisherName.refname:
+                case PublisherName.shortname:
+                    publisherName = new PublisherName(e);
+                    break;
+                case NameCodeType.refname:
+                case NameCodeType.shortname:
+                    nameCodeType = new NameCodeType(e);
+                    break;
+                case NameCodeTypeName.refname:
+                case NameCodeTypeName.shortname:
+                    nameCodeTypeName = new NameCodeTypeName(e);
+                    break;
+                case NameCodeValue.refname:
+                case NameCodeValue.shortname:
+                    nameCodeValue = new NameCodeValue(e);
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

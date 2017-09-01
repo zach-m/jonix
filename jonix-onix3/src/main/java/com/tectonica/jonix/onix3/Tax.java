@@ -90,16 +90,29 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TaxType.refname) || name.equals(TaxType.shortname)) {
-                taxType = new TaxType(e);
-            } else if (name.equals(TaxRateCode.refname) || name.equals(TaxRateCode.shortname)) {
-                taxRateCode = new TaxRateCode(e);
-            } else if (name.equals(TaxRatePercent.refname) || name.equals(TaxRatePercent.shortname)) {
-                taxRatePercent = new TaxRatePercent(e);
-            } else if (name.equals(TaxableAmount.refname) || name.equals(TaxableAmount.shortname)) {
-                taxableAmount = new TaxableAmount(e);
-            } else if (name.equals(TaxAmount.refname) || name.equals(TaxAmount.shortname)) {
-                taxAmount = new TaxAmount(e);
+            switch (name) {
+                case TaxType.refname:
+                case TaxType.shortname:
+                    taxType = new TaxType(e);
+                    break;
+                case TaxRateCode.refname:
+                case TaxRateCode.shortname:
+                    taxRateCode = new TaxRateCode(e);
+                    break;
+                case TaxRatePercent.refname:
+                case TaxRatePercent.shortname:
+                    taxRatePercent = new TaxRatePercent(e);
+                    break;
+                case TaxableAmount.refname:
+                case TaxableAmount.shortname:
+                    taxableAmount = new TaxableAmount(e);
+                    break;
+                case TaxAmount.refname:
+                case TaxAmount.shortname:
+                    taxAmount = new TaxAmount(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

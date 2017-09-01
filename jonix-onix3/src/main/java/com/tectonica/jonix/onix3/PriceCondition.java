@@ -91,12 +91,21 @@ public class PriceCondition implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname)) {
-                priceConditionType = new PriceConditionType(e);
-            } else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname)) {
-                priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(e));
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+            switch (name) {
+                case PriceConditionType.refname:
+                case PriceConditionType.shortname:
+                    priceConditionType = new PriceConditionType(e);
+                    break;
+                case PriceConditionQuantity.refname:
+                case PriceConditionQuantity.shortname:
+                    priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(e));
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

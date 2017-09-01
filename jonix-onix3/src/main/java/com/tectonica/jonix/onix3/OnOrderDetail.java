@@ -91,12 +91,21 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname)) {
-                onOrder = new OnOrder(e);
-            } else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname)) {
-                proximity = new Proximity(e);
-            } else if (name.equals(ExpectedDate.refname) || name.equals(ExpectedDate.shortname)) {
-                expectedDate = new ExpectedDate(e);
+            switch (name) {
+                case OnOrder.refname:
+                case OnOrder.shortname:
+                    onOrder = new OnOrder(e);
+                    break;
+                case Proximity.refname:
+                case Proximity.shortname:
+                    proximity = new Proximity(e);
+                    break;
+                case ExpectedDate.refname:
+                case ExpectedDate.shortname:
+                    expectedDate = new ExpectedDate(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

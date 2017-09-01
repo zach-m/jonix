@@ -90,12 +90,21 @@ public class PriceConditionQuantity
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PriceConditionQuantityType.refname) || name.equals(PriceConditionQuantityType.shortname)) {
-                priceConditionQuantityType = new PriceConditionQuantityType(e);
-            } else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname)) {
-                quantity = new Quantity(e);
-            } else if (name.equals(QuantityUnit.refname) || name.equals(QuantityUnit.shortname)) {
-                quantityUnit = new QuantityUnit(e);
+            switch (name) {
+                case PriceConditionQuantityType.refname:
+                case PriceConditionQuantityType.shortname:
+                    priceConditionQuantityType = new PriceConditionQuantityType(e);
+                    break;
+                case Quantity.refname:
+                case Quantity.shortname:
+                    quantity = new Quantity(e);
+                    break;
+                case QuantityUnit.refname:
+                case QuantityUnit.shortname:
+                    quantityUnit = new QuantityUnit(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

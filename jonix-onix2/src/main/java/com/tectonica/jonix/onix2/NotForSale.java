@@ -108,18 +108,33 @@ public class NotForSale implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname)) {
-                rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
-            } else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname)) {
-                rightsTerritory = new RightsTerritory(e);
-            } else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname)) {
-                isbn = new ISBN(e);
-            } else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname)) {
-                ean13 = new EAN13(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname)) {
-                publisherName = new PublisherName(e);
+            switch (name) {
+                case RightsCountry.refname:
+                case RightsCountry.shortname:
+                    rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
+                    break;
+                case RightsTerritory.refname:
+                case RightsTerritory.shortname:
+                    rightsTerritory = new RightsTerritory(e);
+                    break;
+                case ISBN.refname:
+                case ISBN.shortname:
+                    isbn = new ISBN(e);
+                    break;
+                case EAN13.refname:
+                case EAN13.shortname:
+                    ean13 = new EAN13(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case PublisherName.refname:
+                case PublisherName.shortname:
+                    publisherName = new PublisherName(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

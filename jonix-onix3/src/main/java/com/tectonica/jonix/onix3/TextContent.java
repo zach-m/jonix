@@ -91,20 +91,37 @@ public class TextContent implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TextType.refname) || name.equals(TextType.shortname)) {
-                textType = new TextType(e);
-            } else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname)) {
-                contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
-            } else if (name.equals(Text.refname) || name.equals(Text.shortname)) {
-                texts = JPU.addToList(texts, new Text(e));
-            } else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname)) {
-                textAuthors = JPU.addToList(textAuthors, new TextAuthor(e));
-            } else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname)) {
-                textSourceCorporate = new TextSourceCorporate(e);
-            } else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname)) {
-                sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
-            } else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname)) {
-                contentDates = JPU.addToList(contentDates, new ContentDate(e));
+            switch (name) {
+                case TextType.refname:
+                case TextType.shortname:
+                    textType = new TextType(e);
+                    break;
+                case ContentAudience.refname:
+                case ContentAudience.shortname:
+                    contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+                    break;
+                case Text.refname:
+                case Text.shortname:
+                    texts = JPU.addToList(texts, new Text(e));
+                    break;
+                case TextAuthor.refname:
+                case TextAuthor.shortname:
+                    textAuthors = JPU.addToList(textAuthors, new TextAuthor(e));
+                    break;
+                case TextSourceCorporate.refname:
+                case TextSourceCorporate.shortname:
+                    textSourceCorporate = new TextSourceCorporate(e);
+                    break;
+                case SourceTitle.refname:
+                case SourceTitle.shortname:
+                    sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
+                    break;
+                case ContentDate.refname:
+                case ContentDate.shortname:
+                    contentDates = JPU.addToList(contentDates, new ContentDate(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

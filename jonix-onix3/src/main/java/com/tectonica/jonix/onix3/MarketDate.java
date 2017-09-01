@@ -91,12 +91,21 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(MarketDateRole.refname) || name.equals(MarketDateRole.shortname)) {
-                marketDateRole = new MarketDateRole(e);
-            } else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname)) {
-                dateFormat = new DateFormat(e);
-            } else if (name.equals(Date.refname) || name.equals(Date.shortname)) {
-                date = new Date(e);
+            switch (name) {
+                case MarketDateRole.refname:
+                case MarketDateRole.shortname:
+                    marketDateRole = new MarketDateRole(e);
+                    break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
+                case Date.refname:
+                case Date.shortname:
+                    date = new Date(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

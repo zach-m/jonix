@@ -90,14 +90,25 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname)) {
-                countriesIncluded = new CountriesIncluded(e);
-            } else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname)) {
-                regionsIncluded = new RegionsIncluded(e);
-            } else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname)) {
-                countriesExcluded = new CountriesExcluded(e);
-            } else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname)) {
-                regionsExcluded = new RegionsExcluded(e);
+            switch (name) {
+                case CountriesIncluded.refname:
+                case CountriesIncluded.shortname:
+                    countriesIncluded = new CountriesIncluded(e);
+                    break;
+                case RegionsIncluded.refname:
+                case RegionsIncluded.shortname:
+                    regionsIncluded = new RegionsIncluded(e);
+                    break;
+                case CountriesExcluded.refname:
+                case CountriesExcluded.shortname:
+                    countriesExcluded = new CountriesExcluded(e);
+                    break;
+                case RegionsExcluded.refname:
+                case RegionsExcluded.shortname:
+                    regionsExcluded = new RegionsExcluded(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -89,10 +89,17 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname)) {
-                barcodeType = new BarcodeType(e);
-            } else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname)) {
-                positionOnProduct = new PositionOnProduct(e);
+            switch (name) {
+                case BarcodeType.refname:
+                case BarcodeType.shortname:
+                    barcodeType = new BarcodeType(e);
+                    break;
+                case PositionOnProduct.refname:
+                case PositionOnProduct.shortname:
+                    positionOnProduct = new PositionOnProduct(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

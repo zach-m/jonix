@@ -103,13 +103,21 @@ public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, S
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname)) {
-                websiteRole = new WebsiteRole(e);
-            } else if (name.equals(ProductWebsiteDescription.refname) ||
-                name.equals(ProductWebsiteDescription.shortname)) {
-                productWebsiteDescription = new ProductWebsiteDescription(e);
-            } else if (name.equals(ProductWebsiteLink.refname) || name.equals(ProductWebsiteLink.shortname)) {
-                productWebsiteLink = new ProductWebsiteLink(e);
+            switch (name) {
+                case WebsiteRole.refname:
+                case WebsiteRole.shortname:
+                    websiteRole = new WebsiteRole(e);
+                    break;
+                case ProductWebsiteDescription.refname:
+                case ProductWebsiteDescription.shortname:
+                    productWebsiteDescription = new ProductWebsiteDescription(e);
+                    break;
+                case ProductWebsiteLink.refname:
+                case ProductWebsiteLink.shortname:
+                    productWebsiteLink = new ProductWebsiteLink(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

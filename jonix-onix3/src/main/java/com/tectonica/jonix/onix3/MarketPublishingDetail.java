@@ -93,30 +93,54 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PublisherRepresentative.refname) || name.equals(PublisherRepresentative.shortname)) {
-                publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
-            } else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname)) {
-                productContacts = JPU.addToList(productContacts, new ProductContact(e));
-            } else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname)) {
-                marketPublishingStatus = new MarketPublishingStatus(e);
-            } else if (name.equals(MarketPublishingStatusNote.refname) ||
-                name.equals(MarketPublishingStatusNote.shortname)) {
-                marketPublishingStatusNotes =
-                    JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(e));
-            } else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname)) {
-                marketDates = JPU.addToList(marketDates, new MarketDate(e));
-            } else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname)) {
-                promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(e));
-            } else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname)) {
-                promotionContact = new PromotionContact(e);
-            } else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname)) {
-                initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(e));
-            } else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname)) {
-                reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
-            } else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname)) {
-                copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(e));
-            } else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname)) {
-                bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(e));
+            switch (name) {
+                case PublisherRepresentative.refname:
+                case PublisherRepresentative.shortname:
+                    publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
+                    break;
+                case ProductContact.refname:
+                case ProductContact.shortname:
+                    productContacts = JPU.addToList(productContacts, new ProductContact(e));
+                    break;
+                case MarketPublishingStatus.refname:
+                case MarketPublishingStatus.shortname:
+                    marketPublishingStatus = new MarketPublishingStatus(e);
+                    break;
+                case MarketPublishingStatusNote.refname:
+                case MarketPublishingStatusNote.shortname:
+                    marketPublishingStatusNotes =
+                        JPU.addToList(marketPublishingStatusNotes, new MarketPublishingStatusNote(e));
+                    break;
+                case MarketDate.refname:
+                case MarketDate.shortname:
+                    marketDates = JPU.addToList(marketDates, new MarketDate(e));
+                    break;
+                case PromotionCampaign.refname:
+                case PromotionCampaign.shortname:
+                    promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(e));
+                    break;
+                case PromotionContact.refname:
+                case PromotionContact.shortname:
+                    promotionContact = new PromotionContact(e);
+                    break;
+                case InitialPrintRun.refname:
+                case InitialPrintRun.shortname:
+                    initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(e));
+                    break;
+                case ReprintDetail.refname:
+                case ReprintDetail.shortname:
+                    reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
+                    break;
+                case CopiesSold.refname:
+                case CopiesSold.shortname:
+                    copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(e));
+                    break;
+                case BookClubAdoption.refname:
+                case BookClubAdoption.shortname:
+                    bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

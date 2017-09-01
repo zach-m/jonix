@@ -88,10 +88,17 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname)) {
-                batchQuantity = new BatchQuantity(e);
-            } else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname)) {
-                freeQuantity = new FreeQuantity(e);
+            switch (name) {
+                case BatchQuantity.refname:
+                case BatchQuantity.shortname:
+                    batchQuantity = new BatchQuantity(e);
+                    break;
+                case FreeQuantity.refname:
+                case FreeQuantity.shortname:
+                    freeQuantity = new FreeQuantity(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

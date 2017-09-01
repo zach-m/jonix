@@ -101,48 +101,93 @@ public class Price implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PriceIdentifier.refname) || name.equals(PriceIdentifier.shortname)) {
-                priceIdentifiers = JPU.addToList(priceIdentifiers, new PriceIdentifier(e));
-            } else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname)) {
-                priceType = new PriceType(e);
-            } else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname)) {
-                priceQualifier = new PriceQualifier(e);
-            } else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname)) {
-                priceTypeDescriptions = JPU.addToList(priceTypeDescriptions, new PriceTypeDescription(e));
-            } else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname)) {
-                pricePer = new PricePer(e);
-            } else if (name.equals(PriceCondition.refname) || name.equals(PriceCondition.shortname)) {
-                priceConditions = JPU.addToList(priceConditions, new PriceCondition(e));
-            } else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname)) {
-                minimumOrderQuantity = new MinimumOrderQuantity(e);
-            } else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname)) {
-                batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
-            } else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname)) {
-                discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
-            } else if (name.equals(Discount.refname) || name.equals(Discount.shortname)) {
-                discounts = JPU.addToList(discounts, new Discount(e));
-            } else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname)) {
-                priceStatus = new PriceStatus(e);
-            } else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname)) {
-                priceAmount = new PriceAmount(e);
-            } else if (name.equals(PriceCoded.refname) || name.equals(PriceCoded.shortname)) {
-                priceCoded = new PriceCoded(e);
-            } else if (name.equals(Tax.refname) || name.equals(Tax.shortname)) {
-                taxs = JPU.addToList(taxs, new Tax(e));
-            } else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname)) {
-                currencyCode = new CurrencyCode(e);
-            } else if (name.equals(Territory.refname) || name.equals(Territory.shortname)) {
-                territory = new Territory(e);
-            } else if (name.equals(CurrencyZone.refname) || name.equals(CurrencyZone.shortname)) {
-                currencyZone = new CurrencyZone(e);
-            } else if (name.equals(ComparisonProductPrice.refname) || name.equals(ComparisonProductPrice.shortname)) {
-                comparisonProductPrices = JPU.addToList(comparisonProductPrices, new ComparisonProductPrice(e));
-            } else if (name.equals(PriceDate.refname) || name.equals(PriceDate.shortname)) {
-                priceDates = JPU.addToList(priceDates, new PriceDate(e));
-            } else if (name.equals(PrintedOnProduct.refname) || name.equals(PrintedOnProduct.shortname)) {
-                printedOnProduct = new PrintedOnProduct(e);
-            } else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname)) {
-                positionOnProduct = new PositionOnProduct(e);
+            switch (name) {
+                case PriceIdentifier.refname:
+                case PriceIdentifier.shortname:
+                    priceIdentifiers = JPU.addToList(priceIdentifiers, new PriceIdentifier(e));
+                    break;
+                case PriceType.refname:
+                case PriceType.shortname:
+                    priceType = new PriceType(e);
+                    break;
+                case PriceQualifier.refname:
+                case PriceQualifier.shortname:
+                    priceQualifier = new PriceQualifier(e);
+                    break;
+                case PriceTypeDescription.refname:
+                case PriceTypeDescription.shortname:
+                    priceTypeDescriptions = JPU.addToList(priceTypeDescriptions, new PriceTypeDescription(e));
+                    break;
+                case PricePer.refname:
+                case PricePer.shortname:
+                    pricePer = new PricePer(e);
+                    break;
+                case PriceCondition.refname:
+                case PriceCondition.shortname:
+                    priceConditions = JPU.addToList(priceConditions, new PriceCondition(e));
+                    break;
+                case MinimumOrderQuantity.refname:
+                case MinimumOrderQuantity.shortname:
+                    minimumOrderQuantity = new MinimumOrderQuantity(e);
+                    break;
+                case BatchBonus.refname:
+                case BatchBonus.shortname:
+                    batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
+                    break;
+                case DiscountCoded.refname:
+                case DiscountCoded.shortname:
+                    discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
+                    break;
+                case Discount.refname:
+                case Discount.shortname:
+                    discounts = JPU.addToList(discounts, new Discount(e));
+                    break;
+                case PriceStatus.refname:
+                case PriceStatus.shortname:
+                    priceStatus = new PriceStatus(e);
+                    break;
+                case PriceAmount.refname:
+                case PriceAmount.shortname:
+                    priceAmount = new PriceAmount(e);
+                    break;
+                case PriceCoded.refname:
+                case PriceCoded.shortname:
+                    priceCoded = new PriceCoded(e);
+                    break;
+                case Tax.refname:
+                case Tax.shortname:
+                    taxs = JPU.addToList(taxs, new Tax(e));
+                    break;
+                case CurrencyCode.refname:
+                case CurrencyCode.shortname:
+                    currencyCode = new CurrencyCode(e);
+                    break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
+                    break;
+                case CurrencyZone.refname:
+                case CurrencyZone.shortname:
+                    currencyZone = new CurrencyZone(e);
+                    break;
+                case ComparisonProductPrice.refname:
+                case ComparisonProductPrice.shortname:
+                    comparisonProductPrices = JPU.addToList(comparisonProductPrices, new ComparisonProductPrice(e));
+                    break;
+                case PriceDate.refname:
+                case PriceDate.shortname:
+                    priceDates = JPU.addToList(priceDates, new PriceDate(e));
+                    break;
+                case PrintedOnProduct.refname:
+                case PrintedOnProduct.shortname:
+                    printedOnProduct = new PrintedOnProduct(e);
+                    break;
+                case PositionOnProduct.refname:
+                case PositionOnProduct.shortname:
+                    positionOnProduct = new PositionOnProduct(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

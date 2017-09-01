@@ -90,12 +90,21 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(EpubUsageType.refname) || name.equals(EpubUsageType.shortname)) {
-                epubUsageType = new EpubUsageType(e);
-            } else if (name.equals(EpubUsageStatus.refname) || name.equals(EpubUsageStatus.shortname)) {
-                epubUsageStatus = new EpubUsageStatus(e);
-            } else if (name.equals(EpubUsageLimit.refname) || name.equals(EpubUsageLimit.shortname)) {
-                epubUsageLimits = JPU.addToList(epubUsageLimits, new EpubUsageLimit(e));
+            switch (name) {
+                case EpubUsageType.refname:
+                case EpubUsageType.shortname:
+                    epubUsageType = new EpubUsageType(e);
+                    break;
+                case EpubUsageStatus.refname:
+                case EpubUsageStatus.shortname:
+                    epubUsageStatus = new EpubUsageStatus(e);
+                    break;
+                case EpubUsageLimit.refname:
+                case EpubUsageLimit.shortname:
+                    epubUsageLimits = JPU.addToList(epubUsageLimits, new EpubUsageLimit(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

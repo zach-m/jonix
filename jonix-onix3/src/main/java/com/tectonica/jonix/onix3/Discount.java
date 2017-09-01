@@ -88,16 +88,29 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(DiscountType.refname) || name.equals(DiscountType.shortname)) {
-                discountType = new DiscountType(e);
-            } else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname)) {
-                quantity = new Quantity(e);
-            } else if (name.equals(ToQuantity.refname) || name.equals(ToQuantity.shortname)) {
-                toQuantity = new ToQuantity(e);
-            } else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname)) {
-                discountPercent = new DiscountPercent(e);
-            } else if (name.equals(DiscountAmount.refname) || name.equals(DiscountAmount.shortname)) {
-                discountAmount = new DiscountAmount(e);
+            switch (name) {
+                case DiscountType.refname:
+                case DiscountType.shortname:
+                    discountType = new DiscountType(e);
+                    break;
+                case Quantity.refname:
+                case Quantity.shortname:
+                    quantity = new Quantity(e);
+                    break;
+                case ToQuantity.refname:
+                case ToQuantity.shortname:
+                    toQuantity = new ToQuantity(e);
+                    break;
+                case DiscountPercent.refname:
+                case DiscountPercent.shortname:
+                    discountPercent = new DiscountPercent(e);
+                    break;
+                case DiscountAmount.refname:
+                case DiscountAmount.shortname:
+                    discountAmount = new DiscountAmount(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

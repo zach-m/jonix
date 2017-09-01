@@ -105,12 +105,21 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(DiscountCodeType.refname) || name.equals(DiscountCodeType.shortname)) {
-                discountCodeType = new DiscountCodeType(e);
-            } else if (name.equals(DiscountCodeTypeName.refname) || name.equals(DiscountCodeTypeName.shortname)) {
-                discountCodeTypeName = new DiscountCodeTypeName(e);
-            } else if (name.equals(DiscountCode.refname) || name.equals(DiscountCode.shortname)) {
-                discountCode = new DiscountCode(e);
+            switch (name) {
+                case DiscountCodeType.refname:
+                case DiscountCodeType.shortname:
+                    discountCodeType = new DiscountCodeType(e);
+                    break;
+                case DiscountCodeTypeName.refname:
+                case DiscountCodeTypeName.shortname:
+                    discountCodeTypeName = new DiscountCodeTypeName(e);
+                    break;
+                case DiscountCode.refname:
+                case DiscountCode.shortname:
+                    discountCode = new DiscountCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

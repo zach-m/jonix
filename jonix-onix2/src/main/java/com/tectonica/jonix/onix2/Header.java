@@ -110,48 +110,93 @@ public class Header implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(FromEANNumber.refname) || name.equals(FromEANNumber.shortname)) {
-                fromEANNumber = new FromEANNumber(e);
-            } else if (name.equals(FromSAN.refname) || name.equals(FromSAN.shortname)) {
-                fromSAN = new FromSAN(e);
-            } else if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname)) {
-                senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
-            } else if (name.equals(FromCompany.refname) || name.equals(FromCompany.shortname)) {
-                fromCompany = new FromCompany(e);
-            } else if (name.equals(FromPerson.refname) || name.equals(FromPerson.shortname)) {
-                fromPerson = new FromPerson(e);
-            } else if (name.equals(FromEmail.refname) || name.equals(FromEmail.shortname)) {
-                fromEmail = new FromEmail(e);
-            } else if (name.equals(ToEANNumber.refname) || name.equals(ToEANNumber.shortname)) {
-                toEANNumber = new ToEANNumber(e);
-            } else if (name.equals(ToSAN.refname) || name.equals(ToSAN.shortname)) {
-                toSAN = new ToSAN(e);
-            } else if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname)) {
-                addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
-            } else if (name.equals(ToCompany.refname) || name.equals(ToCompany.shortname)) {
-                toCompany = new ToCompany(e);
-            } else if (name.equals(ToPerson.refname) || name.equals(ToPerson.shortname)) {
-                toPerson = new ToPerson(e);
-            } else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname)) {
-                messageNumber = new MessageNumber(e);
-            } else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname)) {
-                messageRepeat = new MessageRepeat(e);
-            } else if (name.equals(SentDate.refname) || name.equals(SentDate.shortname)) {
-                sentDate = new SentDate(e);
-            } else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname)) {
-                messageNote = new MessageNote(e);
-            } else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname)) {
-                defaultLanguageOfText = new DefaultLanguageOfText(e);
-            } else if (name.equals(DefaultPriceTypeCode.refname) || name.equals(DefaultPriceTypeCode.shortname)) {
-                defaultPriceTypeCode = new DefaultPriceTypeCode(e);
-            } else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname)) {
-                defaultCurrencyCode = new DefaultCurrencyCode(e);
-            } else if (name.equals(DefaultLinearUnit.refname) || name.equals(DefaultLinearUnit.shortname)) {
-                defaultLinearUnit = new DefaultLinearUnit(e);
-            } else if (name.equals(DefaultWeightUnit.refname) || name.equals(DefaultWeightUnit.shortname)) {
-                defaultWeightUnit = new DefaultWeightUnit(e);
-            } else if (name.equals(DefaultClassOfTrade.refname) || name.equals(DefaultClassOfTrade.shortname)) {
-                defaultClassOfTrade = new DefaultClassOfTrade(e);
+            switch (name) {
+                case FromEANNumber.refname:
+                case FromEANNumber.shortname:
+                    fromEANNumber = new FromEANNumber(e);
+                    break;
+                case FromSAN.refname:
+                case FromSAN.shortname:
+                    fromSAN = new FromSAN(e);
+                    break;
+                case SenderIdentifier.refname:
+                case SenderIdentifier.shortname:
+                    senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
+                    break;
+                case FromCompany.refname:
+                case FromCompany.shortname:
+                    fromCompany = new FromCompany(e);
+                    break;
+                case FromPerson.refname:
+                case FromPerson.shortname:
+                    fromPerson = new FromPerson(e);
+                    break;
+                case FromEmail.refname:
+                case FromEmail.shortname:
+                    fromEmail = new FromEmail(e);
+                    break;
+                case ToEANNumber.refname:
+                case ToEANNumber.shortname:
+                    toEANNumber = new ToEANNumber(e);
+                    break;
+                case ToSAN.refname:
+                case ToSAN.shortname:
+                    toSAN = new ToSAN(e);
+                    break;
+                case AddresseeIdentifier.refname:
+                case AddresseeIdentifier.shortname:
+                    addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
+                    break;
+                case ToCompany.refname:
+                case ToCompany.shortname:
+                    toCompany = new ToCompany(e);
+                    break;
+                case ToPerson.refname:
+                case ToPerson.shortname:
+                    toPerson = new ToPerson(e);
+                    break;
+                case MessageNumber.refname:
+                case MessageNumber.shortname:
+                    messageNumber = new MessageNumber(e);
+                    break;
+                case MessageRepeat.refname:
+                case MessageRepeat.shortname:
+                    messageRepeat = new MessageRepeat(e);
+                    break;
+                case SentDate.refname:
+                case SentDate.shortname:
+                    sentDate = new SentDate(e);
+                    break;
+                case MessageNote.refname:
+                case MessageNote.shortname:
+                    messageNote = new MessageNote(e);
+                    break;
+                case DefaultLanguageOfText.refname:
+                case DefaultLanguageOfText.shortname:
+                    defaultLanguageOfText = new DefaultLanguageOfText(e);
+                    break;
+                case DefaultPriceTypeCode.refname:
+                case DefaultPriceTypeCode.shortname:
+                    defaultPriceTypeCode = new DefaultPriceTypeCode(e);
+                    break;
+                case DefaultCurrencyCode.refname:
+                case DefaultCurrencyCode.shortname:
+                    defaultCurrencyCode = new DefaultCurrencyCode(e);
+                    break;
+                case DefaultLinearUnit.refname:
+                case DefaultLinearUnit.shortname:
+                    defaultLinearUnit = new DefaultLinearUnit(e);
+                    break;
+                case DefaultWeightUnit.refname:
+                case DefaultWeightUnit.shortname:
+                    defaultWeightUnit = new DefaultWeightUnit(e);
+                    break;
+                case DefaultClassOfTrade.refname:
+                case DefaultClassOfTrade.shortname:
+                    defaultClassOfTrade = new DefaultClassOfTrade(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

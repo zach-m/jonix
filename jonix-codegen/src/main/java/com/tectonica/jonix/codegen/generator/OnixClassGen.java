@@ -37,8 +37,6 @@ import java.io.File;
 import java.io.PrintStream;
 
 public class OnixClassGen {
-    private static final String EQUALS = "equals"; // turn to "equalsIgnoreCase" to assume case-insensitive XML
-
     private final String packageName;
     private final File folder;
 
@@ -157,26 +155,26 @@ public class OnixClassGen {
         p.println();
         p.printf("      JPU.forElementsOf(element, e -> {\n");
         p.printf("         final String name = e.getNodeName();\n");
-        boolean first = true;
+        p.printf("         switch (name) {\n");
         for (OnixCompositeMember m : composite.members) {
             final String className = m.className;
             String field = GenUtil.fieldOf(className);
             if (!m.cardinality.singular) {
                 field += "s";
             }
-            p.print("         ");
-            if (first) {
-                first = false;
-            } else {
-                p.print("else ");
-            }
-            p.printf("if (name.%s(%s.refname) || name.%s(%s.shortname))\n", EQUALS, className, EQUALS, className);
+            p.printf("            case %s.refname:\n", className);
+            p.printf("            case %s.shortname:\n", className);
             if (m.cardinality.singular) {
-                p.printf("            %s = new %s(e);\n", field, className);
+                p.printf("               %s = new %s(e);\n", field, className);
             } else {
-                p.printf("            %s = JPU.addToList(%s, new %s(e));\n", field, field, className);
+                p.printf("               %s = JPU.addToList(%s, new %s(e));\n", field, field, className);
             }
+            p.printf("               break;\n");
         }
+        p.printf("            default:\n");
+        p.printf("               break;\n");
+        p.printf("         }\n");
+
         p.printf("      });\n");
 
         p.printf("   }\n");

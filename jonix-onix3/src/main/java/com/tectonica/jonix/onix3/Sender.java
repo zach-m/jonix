@@ -89,14 +89,25 @@ public class Sender implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname)) {
-                senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
-            } else if (name.equals(SenderName.refname) || name.equals(SenderName.shortname)) {
-                senderName = new SenderName(e);
-            } else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname)) {
-                contactName = new ContactName(e);
-            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
-                emailAddress = new EmailAddress(e);
+            switch (name) {
+                case SenderIdentifier.refname:
+                case SenderIdentifier.shortname:
+                    senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
+                    break;
+                case SenderName.refname:
+                case SenderName.shortname:
+                    senderName = new SenderName(e);
+                    break;
+                case ContactName.refname:
+                case ContactName.shortname:
+                    contactName = new ContactName(e);
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddress = new EmailAddress(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

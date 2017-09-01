@@ -109,12 +109,21 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Bible.refname) || name.equals(Bible.shortname)) {
-                bible = new Bible(e);
-            } else if (name.equals(ReligiousTextID.refname) || name.equals(ReligiousTextID.shortname)) {
-                religiousTextID = new ReligiousTextID(e);
-            } else if (name.equals(ReligiousTextFeature.refname) || name.equals(ReligiousTextFeature.shortname)) {
-                religiousTextFeatures = JPU.addToList(religiousTextFeatures, new ReligiousTextFeature(e));
+            switch (name) {
+                case Bible.refname:
+                case Bible.shortname:
+                    bible = new Bible(e);
+                    break;
+                case ReligiousTextID.refname:
+                case ReligiousTextID.shortname:
+                    religiousTextID = new ReligiousTextID(e);
+                    break;
+                case ReligiousTextFeature.refname:
+                case ReligiousTextFeature.shortname:
+                    religiousTextFeatures = JPU.addToList(religiousTextFeatures, new ReligiousTextFeature(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

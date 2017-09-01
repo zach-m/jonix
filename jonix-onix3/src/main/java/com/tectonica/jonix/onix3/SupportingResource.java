@@ -94,16 +94,29 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ResourceContentType.refname) || name.equals(ResourceContentType.shortname)) {
-                resourceContentType = new ResourceContentType(e);
-            } else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname)) {
-                contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
-            } else if (name.equals(ResourceMode.refname) || name.equals(ResourceMode.shortname)) {
-                resourceMode = new ResourceMode(e);
-            } else if (name.equals(ResourceFeature.refname) || name.equals(ResourceFeature.shortname)) {
-                resourceFeatures = JPU.addToList(resourceFeatures, new ResourceFeature(e));
-            } else if (name.equals(ResourceVersion.refname) || name.equals(ResourceVersion.shortname)) {
-                resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
+            switch (name) {
+                case ResourceContentType.refname:
+                case ResourceContentType.shortname:
+                    resourceContentType = new ResourceContentType(e);
+                    break;
+                case ContentAudience.refname:
+                case ContentAudience.shortname:
+                    contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+                    break;
+                case ResourceMode.refname:
+                case ResourceMode.shortname:
+                    resourceMode = new ResourceMode(e);
+                    break;
+                case ResourceFeature.refname:
+                case ResourceFeature.shortname:
+                    resourceFeatures = JPU.addToList(resourceFeatures, new ResourceFeature(e));
+                    break;
+                case ResourceVersion.refname:
+                case ResourceVersion.shortname:
+                    resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

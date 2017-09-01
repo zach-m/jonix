@@ -88,12 +88,21 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TitleType.refname) || name.equals(TitleType.shortname)) {
-                titleType = new TitleType(e);
-            } else if (name.equals(TitleElement.refname) || name.equals(TitleElement.shortname)) {
-                titleElements = JPU.addToList(titleElements, new TitleElement(e));
-            } else if (name.equals(TitleStatement.refname) || name.equals(TitleStatement.shortname)) {
-                titleStatement = new TitleStatement(e);
+            switch (name) {
+                case TitleType.refname:
+                case TitleType.shortname:
+                    titleType = new TitleType(e);
+                    break;
+                case TitleElement.refname:
+                case TitleElement.shortname:
+                    titleElements = JPU.addToList(titleElements, new TitleElement(e));
+                    break;
+                case TitleStatement.refname:
+                case TitleStatement.shortname:
+                    titleStatement = new TitleStatement(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

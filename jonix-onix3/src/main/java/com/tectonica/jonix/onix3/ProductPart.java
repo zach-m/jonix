@@ -102,26 +102,49 @@ public class ProductPart implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PrimaryPart.refname) || name.equals(PrimaryPart.shortname)) {
-                primaryPart = new PrimaryPart(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname)) {
-                productForm = new ProductForm(e);
-            } else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname)) {
-                productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-            } else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname)) {
-                productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-            } else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname)) {
-                productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
-            } else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname)) {
-                productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-            } else if (name.equals(NumberOfItemsOfThisForm.refname) || name.equals(NumberOfItemsOfThisForm.shortname)) {
-                numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(e);
-            } else if (name.equals(NumberOfCopies.refname) || name.equals(NumberOfCopies.shortname)) {
-                numberOfCopies = new NumberOfCopies(e);
-            } else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname)) {
-                countryOfManufacture = new CountryOfManufacture(e);
+            switch (name) {
+                case PrimaryPart.refname:
+                case PrimaryPart.shortname:
+                    primaryPart = new PrimaryPart(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case ProductForm.refname:
+                case ProductForm.shortname:
+                    productForm = new ProductForm(e);
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case ProductFormDescription.refname:
+                case ProductFormDescription.shortname:
+                    productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+                    break;
+                case NumberOfItemsOfThisForm.refname:
+                case NumberOfItemsOfThisForm.shortname:
+                    numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(e);
+                    break;
+                case NumberOfCopies.refname:
+                case NumberOfCopies.shortname:
+                    numberOfCopies = new NumberOfCopies(e);
+                    break;
+                case CountryOfManufacture.refname:
+                case CountryOfManufacture.shortname:
+                    countryOfManufacture = new CountryOfManufacture(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

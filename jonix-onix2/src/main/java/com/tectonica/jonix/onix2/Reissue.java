@@ -117,14 +117,25 @@ public class Reissue implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname)) {
-                reissueDate = new ReissueDate(e);
-            } else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname)) {
-                reissueDescription = new ReissueDescription(e);
-            } else if (name.equals(Price.refname) || name.equals(Price.shortname)) {
-                prices = JPU.addToList(prices, new Price(e));
-            } else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname)) {
-                mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+            switch (name) {
+                case ReissueDate.refname:
+                case ReissueDate.shortname:
+                    reissueDate = new ReissueDate(e);
+                    break;
+                case ReissueDescription.refname:
+                case ReissueDescription.shortname:
+                    reissueDescription = new ReissueDescription(e);
+                    break;
+                case Price.refname:
+                case Price.shortname:
+                    prices = JPU.addToList(prices, new Price(e));
+                    break;
+                case MediaFile.refname:
+                case MediaFile.shortname:
+                    mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

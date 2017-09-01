@@ -113,74 +113,141 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname)) {
-                supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
-            } else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname)) {
-                supplierSAN = new SupplierSAN(e);
-            } else if (name.equals(SupplierEANLocationNumber.refname) ||
-                name.equals(SupplierEANLocationNumber.shortname)) {
-                supplierEANLocationNumber = new SupplierEANLocationNumber(e);
-            } else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname)) {
-                supplierName = new SupplierName(e);
-            } else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname)) {
-                telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
-            } else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname)) {
-                faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
-            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
-                emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
-            } else if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname)) {
-                supplierRole = new SupplierRole(e);
-            } else if (name.equals(SupplyToCountry.refname) || name.equals(SupplyToCountry.shortname)) {
-                supplyToCountrys = JPU.addToList(supplyToCountrys, new SupplyToCountry(e));
-            } else if (name.equals(SupplyToTerritory.refname) || name.equals(SupplyToTerritory.shortname)) {
-                supplyToTerritory = new SupplyToTerritory(e);
-            } else if (name.equals(SupplyToRegion.refname) || name.equals(SupplyToRegion.shortname)) {
-                supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(e));
-            } else if (name.equals(SupplyToCountryExcluded.refname) || name.equals(SupplyToCountryExcluded.shortname)) {
-                supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(e));
-            } else if (name.equals(SupplyRestrictionDetail.refname) || name.equals(SupplyRestrictionDetail.shortname)) {
-                supplyRestrictionDetail = new SupplyRestrictionDetail(e);
-            } else if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname)) {
-                returnsCodeType = new ReturnsCodeType(e);
-            } else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname)) {
-                returnsCode = new ReturnsCode(e);
-            } else if (name.equals(LastDateForReturns.refname) || name.equals(LastDateForReturns.shortname)) {
-                lastDateForReturns = new LastDateForReturns(e);
-            } else if (name.equals(AvailabilityCode.refname) || name.equals(AvailabilityCode.shortname)) {
-                availabilityCode = new AvailabilityCode(e);
-            } else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname)) {
-                productAvailability = new ProductAvailability(e);
-            } else if (name.equals(IntermediaryAvailabilityCode.refname) ||
-                name.equals(IntermediaryAvailabilityCode.shortname)) {
-                intermediaryAvailabilityCode = new IntermediaryAvailabilityCode(e);
-            } else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname)) {
-                newSupplier = new NewSupplier(e);
-            } else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname)) {
-                dateFormat = new DateFormat(e);
-            } else if (name.equals(ExpectedShipDate.refname) || name.equals(ExpectedShipDate.shortname)) {
-                expectedShipDate = new ExpectedShipDate(e);
-            } else if (name.equals(OnSaleDate.refname) || name.equals(OnSaleDate.shortname)) {
-                onSaleDate = new OnSaleDate(e);
-            } else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname)) {
-                orderTime = new OrderTime(e);
-            } else if (name.equals(Stock.refname) || name.equals(Stock.shortname)) {
-                stocks = JPU.addToList(stocks, new Stock(e));
-            } else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname)) {
-                packQuantity = new PackQuantity(e);
-            } else if (name.equals(AudienceRestrictionFlag.refname) || name.equals(AudienceRestrictionFlag.shortname)) {
-                audienceRestrictionFlag = new AudienceRestrictionFlag(e);
-            } else if (name.equals(AudienceRestrictionNote.refname) || name.equals(AudienceRestrictionNote.shortname)) {
-                audienceRestrictionNote = new AudienceRestrictionNote(e);
-            } else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname)) {
-                priceAmount = new PriceAmount(e);
-            } else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname)) {
-                unpricedItemType = new UnpricedItemType(e);
-            } else if (name.equals(Price.refname) || name.equals(Price.shortname)) {
-                prices = JPU.addToList(prices, new Price(e));
-            } else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname)) {
-                reissue = new Reissue(e);
+            switch (name) {
+                case SupplierIdentifier.refname:
+                case SupplierIdentifier.shortname:
+                    supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+                    break;
+                case SupplierSAN.refname:
+                case SupplierSAN.shortname:
+                    supplierSAN = new SupplierSAN(e);
+                    break;
+                case SupplierEANLocationNumber.refname:
+                case SupplierEANLocationNumber.shortname:
+                    supplierEANLocationNumber = new SupplierEANLocationNumber(e);
+                    break;
+                case SupplierName.refname:
+                case SupplierName.shortname:
+                    supplierName = new SupplierName(e);
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+                    break;
+                case FaxNumber.refname:
+                case FaxNumber.shortname:
+                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case SupplierRole.refname:
+                case SupplierRole.shortname:
+                    supplierRole = new SupplierRole(e);
+                    break;
+                case SupplyToCountry.refname:
+                case SupplyToCountry.shortname:
+                    supplyToCountrys = JPU.addToList(supplyToCountrys, new SupplyToCountry(e));
+                    break;
+                case SupplyToTerritory.refname:
+                case SupplyToTerritory.shortname:
+                    supplyToTerritory = new SupplyToTerritory(e);
+                    break;
+                case SupplyToRegion.refname:
+                case SupplyToRegion.shortname:
+                    supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(e));
+                    break;
+                case SupplyToCountryExcluded.refname:
+                case SupplyToCountryExcluded.shortname:
+                    supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(e));
+                    break;
+                case SupplyRestrictionDetail.refname:
+                case SupplyRestrictionDetail.shortname:
+                    supplyRestrictionDetail = new SupplyRestrictionDetail(e);
+                    break;
+                case ReturnsCodeType.refname:
+                case ReturnsCodeType.shortname:
+                    returnsCodeType = new ReturnsCodeType(e);
+                    break;
+                case ReturnsCode.refname:
+                case ReturnsCode.shortname:
+                    returnsCode = new ReturnsCode(e);
+                    break;
+                case LastDateForReturns.refname:
+                case LastDateForReturns.shortname:
+                    lastDateForReturns = new LastDateForReturns(e);
+                    break;
+                case AvailabilityCode.refname:
+                case AvailabilityCode.shortname:
+                    availabilityCode = new AvailabilityCode(e);
+                    break;
+                case ProductAvailability.refname:
+                case ProductAvailability.shortname:
+                    productAvailability = new ProductAvailability(e);
+                    break;
+                case IntermediaryAvailabilityCode.refname:
+                case IntermediaryAvailabilityCode.shortname:
+                    intermediaryAvailabilityCode = new IntermediaryAvailabilityCode(e);
+                    break;
+                case NewSupplier.refname:
+                case NewSupplier.shortname:
+                    newSupplier = new NewSupplier(e);
+                    break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
+                case ExpectedShipDate.refname:
+                case ExpectedShipDate.shortname:
+                    expectedShipDate = new ExpectedShipDate(e);
+                    break;
+                case OnSaleDate.refname:
+                case OnSaleDate.shortname:
+                    onSaleDate = new OnSaleDate(e);
+                    break;
+                case OrderTime.refname:
+                case OrderTime.shortname:
+                    orderTime = new OrderTime(e);
+                    break;
+                case Stock.refname:
+                case Stock.shortname:
+                    stocks = JPU.addToList(stocks, new Stock(e));
+                    break;
+                case PackQuantity.refname:
+                case PackQuantity.shortname:
+                    packQuantity = new PackQuantity(e);
+                    break;
+                case AudienceRestrictionFlag.refname:
+                case AudienceRestrictionFlag.shortname:
+                    audienceRestrictionFlag = new AudienceRestrictionFlag(e);
+                    break;
+                case AudienceRestrictionNote.refname:
+                case AudienceRestrictionNote.shortname:
+                    audienceRestrictionNote = new AudienceRestrictionNote(e);
+                    break;
+                case PriceAmount.refname:
+                case PriceAmount.shortname:
+                    priceAmount = new PriceAmount(e);
+                    break;
+                case UnpricedItemType.refname:
+                case UnpricedItemType.shortname:
+                    unpricedItemType = new UnpricedItemType(e);
+                    break;
+                case Price.refname:
+                case Price.shortname:
+                    prices = JPU.addToList(prices, new Price(e));
+                    break;
+                case Reissue.refname:
+                case Reissue.shortname:
+                    reissue = new Reissue(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

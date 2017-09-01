@@ -91,10 +91,17 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname)) {
-                salesOutletIdentifiers = JPU.addToList(salesOutletIdentifiers, new SalesOutletIdentifier(e));
-            } else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname)) {
-                salesOutletName = new SalesOutletName(e);
+            switch (name) {
+                case SalesOutletIdentifier.refname:
+                case SalesOutletIdentifier.shortname:
+                    salesOutletIdentifiers = JPU.addToList(salesOutletIdentifiers, new SalesOutletIdentifier(e));
+                    break;
+                case SalesOutletName.refname:
+                case SalesOutletName.shortname:
+                    salesOutletName = new SalesOutletName(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

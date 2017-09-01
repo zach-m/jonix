@@ -109,22 +109,41 @@ public class Series implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SeriesISSN.refname) || name.equals(SeriesISSN.shortname)) {
-                seriesISSN = new SeriesISSN(e);
-            } else if (name.equals(PublisherSeriesCode.refname) || name.equals(PublisherSeriesCode.shortname)) {
-                publisherSeriesCode = new PublisherSeriesCode(e);
-            } else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname)) {
-                seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
-            } else if (name.equals(TitleOfSeries.refname) || name.equals(TitleOfSeries.shortname)) {
-                titleOfSeries = new TitleOfSeries(e);
-            } else if (name.equals(Title.refname) || name.equals(Title.shortname)) {
-                titles = JPU.addToList(titles, new Title(e));
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname)) {
-                numberWithinSeries = new NumberWithinSeries(e);
-            } else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname)) {
-                yearOfAnnual = new YearOfAnnual(e);
+            switch (name) {
+                case SeriesISSN.refname:
+                case SeriesISSN.shortname:
+                    seriesISSN = new SeriesISSN(e);
+                    break;
+                case PublisherSeriesCode.refname:
+                case PublisherSeriesCode.shortname:
+                    publisherSeriesCode = new PublisherSeriesCode(e);
+                    break;
+                case SeriesIdentifier.refname:
+                case SeriesIdentifier.shortname:
+                    seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
+                    break;
+                case TitleOfSeries.refname:
+                case TitleOfSeries.shortname:
+                    titleOfSeries = new TitleOfSeries(e);
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case NumberWithinSeries.refname:
+                case NumberWithinSeries.shortname:
+                    numberWithinSeries = new NumberWithinSeries(e);
+                    break;
+                case YearOfAnnual.refname:
+                case YearOfAnnual.shortname:
+                    yearOfAnnual = new YearOfAnnual(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

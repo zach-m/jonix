@@ -104,12 +104,21 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ExtentType.refname) || name.equals(ExtentType.shortname)) {
-                extentType = new ExtentType(e);
-            } else if (name.equals(ExtentValue.refname) || name.equals(ExtentValue.shortname)) {
-                extentValue = new ExtentValue(e);
-            } else if (name.equals(ExtentUnit.refname) || name.equals(ExtentUnit.shortname)) {
-                extentUnit = new ExtentUnit(e);
+            switch (name) {
+                case ExtentType.refname:
+                case ExtentType.shortname:
+                    extentType = new ExtentType(e);
+                    break;
+                case ExtentValue.refname:
+                case ExtentValue.shortname:
+                    extentValue = new ExtentValue(e);
+                    break;
+                case ExtentUnit.refname:
+                case ExtentUnit.shortname:
+                    extentUnit = new ExtentUnit(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

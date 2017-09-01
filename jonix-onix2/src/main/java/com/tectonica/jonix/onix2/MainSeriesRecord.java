@@ -106,35 +106,65 @@ public class MainSeriesRecord implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname)) {
-                recordReference = new RecordReference(e);
-            } else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname)) {
-                notificationType = new NotificationType(e);
-            } else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname)) {
-                deletionCode = new DeletionCode(e);
-            } else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname)) {
-                deletionText = new DeletionText(e);
-            } else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname)) {
-                recordSourceType = new RecordSourceType(e);
-            } else if (name.equals(RecordSourceIdentifierType.refname) ||
-                name.equals(RecordSourceIdentifierType.shortname)) {
-                recordSourceIdentifierType = new RecordSourceIdentifierType(e);
-            } else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname)) {
-                recordSourceIdentifier = new RecordSourceIdentifier(e);
-            } else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname)) {
-                recordSourceName = new RecordSourceName(e);
-            } else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname)) {
-                seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
-            } else if (name.equals(Title.refname) || name.equals(Title.shortname)) {
-                titles = JPU.addToList(titles, new Title(e));
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname)) {
-                otherTexts = JPU.addToList(otherTexts, new OtherText(e));
-            } else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname)) {
-                publishers = JPU.addToList(publishers, new Publisher(e));
-            } else if (name.equals(SubordinateEntries.refname) || name.equals(SubordinateEntries.shortname)) {
-                subordinateEntries = new SubordinateEntries(e);
+            switch (name) {
+                case RecordReference.refname:
+                case RecordReference.shortname:
+                    recordReference = new RecordReference(e);
+                    break;
+                case NotificationType.refname:
+                case NotificationType.shortname:
+                    notificationType = new NotificationType(e);
+                    break;
+                case DeletionCode.refname:
+                case DeletionCode.shortname:
+                    deletionCode = new DeletionCode(e);
+                    break;
+                case DeletionText.refname:
+                case DeletionText.shortname:
+                    deletionText = new DeletionText(e);
+                    break;
+                case RecordSourceType.refname:
+                case RecordSourceType.shortname:
+                    recordSourceType = new RecordSourceType(e);
+                    break;
+                case RecordSourceIdentifierType.refname:
+                case RecordSourceIdentifierType.shortname:
+                    recordSourceIdentifierType = new RecordSourceIdentifierType(e);
+                    break;
+                case RecordSourceIdentifier.refname:
+                case RecordSourceIdentifier.shortname:
+                    recordSourceIdentifier = new RecordSourceIdentifier(e);
+                    break;
+                case RecordSourceName.refname:
+                case RecordSourceName.shortname:
+                    recordSourceName = new RecordSourceName(e);
+                    break;
+                case SeriesIdentifier.refname:
+                case SeriesIdentifier.shortname:
+                    seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
+                    break;
+                case Title.refname:
+                case Title.shortname:
+                    titles = JPU.addToList(titles, new Title(e));
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case OtherText.refname:
+                case OtherText.shortname:
+                    otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+                    break;
+                case Publisher.refname:
+                case Publisher.shortname:
+                    publishers = JPU.addToList(publishers, new Publisher(e));
+                    break;
+                case SubordinateEntries.refname:
+                case SubordinateEntries.shortname:
+                    subordinateEntries = new SubordinateEntries(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -107,24 +107,45 @@ public class Conference implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname)) {
-                conferenceRole = new ConferenceRole(e);
-            } else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname)) {
-                conferenceName = new ConferenceName(e);
-            } else if (name.equals(ConferenceAcronym.refname) || name.equals(ConferenceAcronym.shortname)) {
-                conferenceAcronym = new ConferenceAcronym(e);
-            } else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname)) {
-                conferenceNumber = new ConferenceNumber(e);
-            } else if (name.equals(ConferenceTheme.refname) || name.equals(ConferenceTheme.shortname)) {
-                conferenceTheme = new ConferenceTheme(e);
-            } else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname)) {
-                conferenceDate = new ConferenceDate(e);
-            } else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname)) {
-                conferencePlace = new ConferencePlace(e);
-            } else if (name.equals(ConferenceSponsor.refname) || name.equals(ConferenceSponsor.shortname)) {
-                conferenceSponsors = JPU.addToList(conferenceSponsors, new ConferenceSponsor(e));
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
+            switch (name) {
+                case ConferenceRole.refname:
+                case ConferenceRole.shortname:
+                    conferenceRole = new ConferenceRole(e);
+                    break;
+                case ConferenceName.refname:
+                case ConferenceName.shortname:
+                    conferenceName = new ConferenceName(e);
+                    break;
+                case ConferenceAcronym.refname:
+                case ConferenceAcronym.shortname:
+                    conferenceAcronym = new ConferenceAcronym(e);
+                    break;
+                case ConferenceNumber.refname:
+                case ConferenceNumber.shortname:
+                    conferenceNumber = new ConferenceNumber(e);
+                    break;
+                case ConferenceTheme.refname:
+                case ConferenceTheme.shortname:
+                    conferenceTheme = new ConferenceTheme(e);
+                    break;
+                case ConferenceDate.refname:
+                case ConferenceDate.shortname:
+                    conferenceDate = new ConferenceDate(e);
+                    break;
+                case ConferencePlace.refname:
+                case ConferencePlace.shortname:
+                    conferencePlace = new ConferencePlace(e);
+                    break;
+                case ConferenceSponsor.refname:
+                case ConferenceSponsor.shortname:
+                    conferenceSponsors = JPU.addToList(conferenceSponsors, new ConferenceSponsor(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

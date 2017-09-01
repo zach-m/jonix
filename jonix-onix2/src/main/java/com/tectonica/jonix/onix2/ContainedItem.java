@@ -118,32 +118,61 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ISBN.refname) || name.equals(ISBN.shortname)) {
-                isbn = new ISBN(e);
-            } else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname)) {
-                ean13 = new EAN13(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname)) {
-                productForm = new ProductForm(e);
-            } else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname)) {
-                productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-            } else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname)) {
-                productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-            } else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname)) {
-                bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
-            } else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname)) {
-                productPackaging = new ProductPackaging(e);
-            } else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname)) {
-                productFormDescription = new ProductFormDescription(e);
-            } else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname)) {
-                numberOfPieces = new NumberOfPieces(e);
-            } else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname)) {
-                tradeCategory = new TradeCategory(e);
-            } else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname)) {
-                productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-            } else if (name.equals(ItemQuantity.refname) || name.equals(ItemQuantity.shortname)) {
-                itemQuantity = new ItemQuantity(e);
+            switch (name) {
+                case ISBN.refname:
+                case ISBN.shortname:
+                    isbn = new ISBN(e);
+                    break;
+                case EAN13.refname:
+                case EAN13.shortname:
+                    ean13 = new EAN13(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case ProductForm.refname:
+                case ProductForm.shortname:
+                    productForm = new ProductForm(e);
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case BookFormDetail.refname:
+                case BookFormDetail.shortname:
+                    bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+                    break;
+                case ProductPackaging.refname:
+                case ProductPackaging.shortname:
+                    productPackaging = new ProductPackaging(e);
+                    break;
+                case ProductFormDescription.refname:
+                case ProductFormDescription.shortname:
+                    productFormDescription = new ProductFormDescription(e);
+                    break;
+                case NumberOfPieces.refname:
+                case NumberOfPieces.shortname:
+                    numberOfPieces = new NumberOfPieces(e);
+                    break;
+                case TradeCategory.refname:
+                case TradeCategory.shortname:
+                    tradeCategory = new TradeCategory(e);
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+                    break;
+                case ItemQuantity.refname:
+                case ItemQuantity.shortname:
+                    itemQuantity = new ItemQuantity(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

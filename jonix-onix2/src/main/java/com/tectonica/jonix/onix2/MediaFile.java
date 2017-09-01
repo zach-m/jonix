@@ -106,28 +106,53 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(MediaFileTypeCode.refname) || name.equals(MediaFileTypeCode.shortname)) {
-                mediaFileTypeCode = new MediaFileTypeCode(e);
-            } else if (name.equals(MediaFileFormatCode.refname) || name.equals(MediaFileFormatCode.shortname)) {
-                mediaFileFormatCode = new MediaFileFormatCode(e);
-            } else if (name.equals(ImageResolution.refname) || name.equals(ImageResolution.shortname)) {
-                imageResolution = new ImageResolution(e);
-            } else if (name.equals(MediaFileLinkTypeCode.refname) || name.equals(MediaFileLinkTypeCode.shortname)) {
-                mediaFileLinkTypeCode = new MediaFileLinkTypeCode(e);
-            } else if (name.equals(MediaFileLink.refname) || name.equals(MediaFileLink.shortname)) {
-                mediaFileLink = new MediaFileLink(e);
-            } else if (name.equals(TextWithDownload.refname) || name.equals(TextWithDownload.shortname)) {
-                textWithDownload = new TextWithDownload(e);
-            } else if (name.equals(DownloadCaption.refname) || name.equals(DownloadCaption.shortname)) {
-                downloadCaption = new DownloadCaption(e);
-            } else if (name.equals(DownloadCredit.refname) || name.equals(DownloadCredit.shortname)) {
-                downloadCredit = new DownloadCredit(e);
-            } else if (name.equals(DownloadCopyrightNotice.refname) || name.equals(DownloadCopyrightNotice.shortname)) {
-                downloadCopyrightNotice = new DownloadCopyrightNotice(e);
-            } else if (name.equals(DownloadTerms.refname) || name.equals(DownloadTerms.shortname)) {
-                downloadTerms = new DownloadTerms(e);
-            } else if (name.equals(MediaFileDate.refname) || name.equals(MediaFileDate.shortname)) {
-                mediaFileDate = new MediaFileDate(e);
+            switch (name) {
+                case MediaFileTypeCode.refname:
+                case MediaFileTypeCode.shortname:
+                    mediaFileTypeCode = new MediaFileTypeCode(e);
+                    break;
+                case MediaFileFormatCode.refname:
+                case MediaFileFormatCode.shortname:
+                    mediaFileFormatCode = new MediaFileFormatCode(e);
+                    break;
+                case ImageResolution.refname:
+                case ImageResolution.shortname:
+                    imageResolution = new ImageResolution(e);
+                    break;
+                case MediaFileLinkTypeCode.refname:
+                case MediaFileLinkTypeCode.shortname:
+                    mediaFileLinkTypeCode = new MediaFileLinkTypeCode(e);
+                    break;
+                case MediaFileLink.refname:
+                case MediaFileLink.shortname:
+                    mediaFileLink = new MediaFileLink(e);
+                    break;
+                case TextWithDownload.refname:
+                case TextWithDownload.shortname:
+                    textWithDownload = new TextWithDownload(e);
+                    break;
+                case DownloadCaption.refname:
+                case DownloadCaption.shortname:
+                    downloadCaption = new DownloadCaption(e);
+                    break;
+                case DownloadCredit.refname:
+                case DownloadCredit.shortname:
+                    downloadCredit = new DownloadCredit(e);
+                    break;
+                case DownloadCopyrightNotice.refname:
+                case DownloadCopyrightNotice.shortname:
+                    downloadCopyrightNotice = new DownloadCopyrightNotice(e);
+                    break;
+                case DownloadTerms.refname:
+                case DownloadTerms.shortname:
+                    downloadTerms = new DownloadTerms(e);
+                    break;
+                case MediaFileDate.refname:
+                case MediaFileDate.shortname:
+                    mediaFileDate = new MediaFileDate(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

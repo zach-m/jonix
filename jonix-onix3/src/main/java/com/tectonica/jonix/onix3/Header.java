@@ -84,24 +84,45 @@ public class Header implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Sender.refname) || name.equals(Sender.shortname)) {
-                sender = new Sender(e);
-            } else if (name.equals(Addressee.refname) || name.equals(Addressee.shortname)) {
-                addressees = JPU.addToList(addressees, new Addressee(e));
-            } else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname)) {
-                messageNumber = new MessageNumber(e);
-            } else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname)) {
-                messageRepeat = new MessageRepeat(e);
-            } else if (name.equals(SentDateTime.refname) || name.equals(SentDateTime.shortname)) {
-                sentDateTime = new SentDateTime(e);
-            } else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname)) {
-                messageNotes = JPU.addToList(messageNotes, new MessageNote(e));
-            } else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname)) {
-                defaultLanguageOfText = new DefaultLanguageOfText(e);
-            } else if (name.equals(DefaultPriceType.refname) || name.equals(DefaultPriceType.shortname)) {
-                defaultPriceType = new DefaultPriceType(e);
-            } else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname)) {
-                defaultCurrencyCode = new DefaultCurrencyCode(e);
+            switch (name) {
+                case Sender.refname:
+                case Sender.shortname:
+                    sender = new Sender(e);
+                    break;
+                case Addressee.refname:
+                case Addressee.shortname:
+                    addressees = JPU.addToList(addressees, new Addressee(e));
+                    break;
+                case MessageNumber.refname:
+                case MessageNumber.shortname:
+                    messageNumber = new MessageNumber(e);
+                    break;
+                case MessageRepeat.refname:
+                case MessageRepeat.shortname:
+                    messageRepeat = new MessageRepeat(e);
+                    break;
+                case SentDateTime.refname:
+                case SentDateTime.shortname:
+                    sentDateTime = new SentDateTime(e);
+                    break;
+                case MessageNote.refname:
+                case MessageNote.shortname:
+                    messageNotes = JPU.addToList(messageNotes, new MessageNote(e));
+                    break;
+                case DefaultLanguageOfText.refname:
+                case DefaultLanguageOfText.shortname:
+                    defaultLanguageOfText = new DefaultLanguageOfText(e);
+                    break;
+                case DefaultPriceType.refname:
+                case DefaultPriceType.shortname:
+                    defaultPriceType = new DefaultPriceType(e);
+                    break;
+                case DefaultCurrencyCode.refname:
+                case DefaultCurrencyCode.shortname:
+                    defaultCurrencyCode = new DefaultCurrencyCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

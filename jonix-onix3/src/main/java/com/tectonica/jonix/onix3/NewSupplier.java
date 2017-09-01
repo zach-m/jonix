@@ -92,16 +92,29 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname)) {
-                supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
-            } else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname)) {
-                supplierName = new SupplierName(e);
-            } else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname)) {
-                telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
-            } else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname)) {
-                faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
-            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
-                emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+            switch (name) {
+                case SupplierIdentifier.refname:
+                case SupplierIdentifier.shortname:
+                    supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+                    break;
+                case SupplierName.refname:
+                case SupplierName.shortname:
+                    supplierName = new SupplierName(e);
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+                    break;
+                case FaxNumber.refname:
+                case FaxNumber.shortname:
+                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

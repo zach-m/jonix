@@ -90,12 +90,21 @@ public class ContributorDate
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ContributorDateRole.refname) || name.equals(ContributorDateRole.shortname)) {
-                contributorDateRole = new ContributorDateRole(e);
-            } else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname)) {
-                dateFormat = new DateFormat(e);
-            } else if (name.equals(Date.refname) || name.equals(Date.shortname)) {
-                date = new Date(e);
+            switch (name) {
+                case ContributorDateRole.refname:
+                case ContributorDateRole.shortname:
+                    contributorDateRole = new ContributorDateRole(e);
+                    break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
+                case Date.refname:
+                case Date.shortname:
+                    date = new Date(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

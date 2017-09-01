@@ -95,32 +95,61 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Imprint.refname) || name.equals(Imprint.shortname)) {
-                imprints = JPU.addToList(imprints, new Imprint(e));
-            } else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname)) {
-                publishers = JPU.addToList(publishers, new Publisher(e));
-            } else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname)) {
-                cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
-            } else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname)) {
-                countryOfPublication = new CountryOfPublication(e);
-            } else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname)) {
-                productContacts = JPU.addToList(productContacts, new ProductContact(e));
-            } else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname)) {
-                publishingStatus = new PublishingStatus(e);
-            } else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname)) {
-                publishingStatusNotes = JPU.addToList(publishingStatusNotes, new PublishingStatusNote(e));
-            } else if (name.equals(PublishingDate.refname) || name.equals(PublishingDate.shortname)) {
-                publishingDates = JPU.addToList(publishingDates, new PublishingDate(e));
-            } else if (name.equals(LatestReprintNumber.refname) || name.equals(LatestReprintNumber.shortname)) {
-                latestReprintNumber = new LatestReprintNumber(e);
-            } else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname)) {
-                copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
-            } else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname)) {
-                salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
-            } else if (name.equals(ROWSalesRightsType.refname) || name.equals(ROWSalesRightsType.shortname)) {
-                rowSalesRightsType = new ROWSalesRightsType(e);
-            } else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname)) {
-                salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+            switch (name) {
+                case Imprint.refname:
+                case Imprint.shortname:
+                    imprints = JPU.addToList(imprints, new Imprint(e));
+                    break;
+                case Publisher.refname:
+                case Publisher.shortname:
+                    publishers = JPU.addToList(publishers, new Publisher(e));
+                    break;
+                case CityOfPublication.refname:
+                case CityOfPublication.shortname:
+                    cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
+                    break;
+                case CountryOfPublication.refname:
+                case CountryOfPublication.shortname:
+                    countryOfPublication = new CountryOfPublication(e);
+                    break;
+                case ProductContact.refname:
+                case ProductContact.shortname:
+                    productContacts = JPU.addToList(productContacts, new ProductContact(e));
+                    break;
+                case PublishingStatus.refname:
+                case PublishingStatus.shortname:
+                    publishingStatus = new PublishingStatus(e);
+                    break;
+                case PublishingStatusNote.refname:
+                case PublishingStatusNote.shortname:
+                    publishingStatusNotes = JPU.addToList(publishingStatusNotes, new PublishingStatusNote(e));
+                    break;
+                case PublishingDate.refname:
+                case PublishingDate.shortname:
+                    publishingDates = JPU.addToList(publishingDates, new PublishingDate(e));
+                    break;
+                case LatestReprintNumber.refname:
+                case LatestReprintNumber.shortname:
+                    latestReprintNumber = new LatestReprintNumber(e);
+                    break;
+                case CopyrightStatement.refname:
+                case CopyrightStatement.shortname:
+                    copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
+                    break;
+                case SalesRights.refname:
+                case SalesRights.shortname:
+                    salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
+                    break;
+                case ROWSalesRightsType.refname:
+                case ROWSalesRightsType.shortname:
+                    rowSalesRightsType = new ROWSalesRightsType(e);
+                    break;
+                case SalesRestriction.refname:
+                case SalesRestriction.shortname:
+                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

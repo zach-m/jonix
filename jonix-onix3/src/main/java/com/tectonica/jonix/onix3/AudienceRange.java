@@ -91,12 +91,21 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname)) {
-                audienceRangeQualifier = new AudienceRangeQualifier(e);
-            } else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname)) {
-                audienceRangePrecisions = JPU.addToList(audienceRangePrecisions, new AudienceRangePrecision(e));
-            } else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname)) {
-                audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(e));
+            switch (name) {
+                case AudienceRangeQualifier.refname:
+                case AudienceRangeQualifier.shortname:
+                    audienceRangeQualifier = new AudienceRangeQualifier(e);
+                    break;
+                case AudienceRangePrecision.refname:
+                case AudienceRangePrecision.shortname:
+                    audienceRangePrecisions = JPU.addToList(audienceRangePrecisions, new AudienceRangePrecision(e));
+                    break;
+                case AudienceRangeValue.refname:
+                case AudienceRangeValue.shortname:
+                    audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

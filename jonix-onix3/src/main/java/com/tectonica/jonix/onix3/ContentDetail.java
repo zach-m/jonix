@@ -91,8 +91,13 @@ public class ContentDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname)) {
-                contentItems = JPU.addToList(contentItems, new ContentItem(e));
+            switch (name) {
+                case ContentItem.refname:
+                case ContentItem.shortname:
+                    contentItems = JPU.addToList(contentItems, new ContentItem(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

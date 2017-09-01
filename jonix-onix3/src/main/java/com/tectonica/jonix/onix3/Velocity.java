@@ -89,12 +89,21 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname)) {
-                velocityMetric = new VelocityMetric(e);
-            } else if (name.equals(Rate.refname) || name.equals(Rate.shortname)) {
-                rate = new Rate(e);
-            } else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname)) {
-                proximity = new Proximity(e);
+            switch (name) {
+                case VelocityMetric.refname:
+                case VelocityMetric.shortname:
+                    velocityMetric = new VelocityMetric(e);
+                    break;
+                case Rate.refname:
+                case Rate.shortname:
+                    rate = new Rate(e);
+                    break;
+                case Proximity.refname:
+                case Proximity.shortname:
+                    proximity = new Proximity(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

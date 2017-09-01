@@ -90,10 +90,17 @@ public class Imprint implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ImprintIdentifier.refname) || name.equals(ImprintIdentifier.shortname)) {
-                imprintIdentifiers = JPU.addToList(imprintIdentifiers, new ImprintIdentifier(e));
-            } else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname)) {
-                imprintName = new ImprintName(e);
+            switch (name) {
+                case ImprintIdentifier.refname:
+                case ImprintIdentifier.shortname:
+                    imprintIdentifiers = JPU.addToList(imprintIdentifiers, new ImprintIdentifier(e));
+                    break;
+                case ImprintName.refname:
+                case ImprintName.shortname:
+                    imprintName = new ImprintName(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -93,14 +93,22 @@ public class ProductFormFeature
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname)) {
-                productFormFeatureType = new ProductFormFeatureType(e);
-            } else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname)) {
-                productFormFeatureValue = new ProductFormFeatureValue(e);
-            } else if (name.equals(ProductFormFeatureDescription.refname) ||
-                name.equals(ProductFormFeatureDescription.shortname)) {
-                productFormFeatureDescriptions =
-                    JPU.addToList(productFormFeatureDescriptions, new ProductFormFeatureDescription(e));
+            switch (name) {
+                case ProductFormFeatureType.refname:
+                case ProductFormFeatureType.shortname:
+                    productFormFeatureType = new ProductFormFeatureType(e);
+                    break;
+                case ProductFormFeatureValue.refname:
+                case ProductFormFeatureValue.shortname:
+                    productFormFeatureValue = new ProductFormFeatureValue(e);
+                    break;
+                case ProductFormFeatureDescription.refname:
+                case ProductFormFeatureDescription.shortname:
+                    productFormFeatureDescriptions =
+                        JPU.addToList(productFormFeatureDescriptions, new ProductFormFeatureDescription(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

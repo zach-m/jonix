@@ -90,16 +90,29 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname)) {
-                salesRestrictionType = new SalesRestrictionType(e);
-            } else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname)) {
-                salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
-            } else if (name.equals(SalesRestrictionNote.refname) || name.equals(SalesRestrictionNote.shortname)) {
-                salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(e));
-            } else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname)) {
-                startDate = new StartDate(e);
-            } else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname)) {
-                endDate = new EndDate(e);
+            switch (name) {
+                case SalesRestrictionType.refname:
+                case SalesRestrictionType.shortname:
+                    salesRestrictionType = new SalesRestrictionType(e);
+                    break;
+                case SalesOutlet.refname:
+                case SalesOutlet.shortname:
+                    salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
+                    break;
+                case SalesRestrictionNote.refname:
+                case SalesRestrictionNote.shortname:
+                    salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(e));
+                    break;
+                case StartDate.refname:
+                case StartDate.shortname:
+                    startDate = new StartDate(e);
+                    break;
+                case EndDate.refname:
+                case EndDate.shortname:
+                    endDate = new EndDate(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

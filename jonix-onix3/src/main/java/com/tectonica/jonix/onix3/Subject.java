@@ -88,18 +88,33 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname)) {
-                mainSubject = new MainSubject(e);
-            } else if (name.equals(SubjectSchemeIdentifier.refname) || name.equals(SubjectSchemeIdentifier.shortname)) {
-                subjectSchemeIdentifier = new SubjectSchemeIdentifier(e);
-            } else if (name.equals(SubjectSchemeName.refname) || name.equals(SubjectSchemeName.shortname)) {
-                subjectSchemeName = new SubjectSchemeName(e);
-            } else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname)) {
-                subjectSchemeVersion = new SubjectSchemeVersion(e);
-            } else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname)) {
-                subjectCode = new SubjectCode(e);
-            } else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname)) {
-                subjectHeadingTexts = JPU.addToList(subjectHeadingTexts, new SubjectHeadingText(e));
+            switch (name) {
+                case MainSubject.refname:
+                case MainSubject.shortname:
+                    mainSubject = new MainSubject(e);
+                    break;
+                case SubjectSchemeIdentifier.refname:
+                case SubjectSchemeIdentifier.shortname:
+                    subjectSchemeIdentifier = new SubjectSchemeIdentifier(e);
+                    break;
+                case SubjectSchemeName.refname:
+                case SubjectSchemeName.shortname:
+                    subjectSchemeName = new SubjectSchemeName(e);
+                    break;
+                case SubjectSchemeVersion.refname:
+                case SubjectSchemeVersion.shortname:
+                    subjectSchemeVersion = new SubjectSchemeVersion(e);
+                    break;
+                case SubjectCode.refname:
+                case SubjectCode.shortname:
+                    subjectCode = new SubjectCode(e);
+                    break;
+                case SubjectHeadingText.refname:
+                case SubjectHeadingText.shortname:
+                    subjectHeadingTexts = JPU.addToList(subjectHeadingTexts, new SubjectHeadingText(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

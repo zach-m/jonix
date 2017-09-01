@@ -91,12 +91,21 @@ public class PublishingDate
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PublishingDateRole.refname) || name.equals(PublishingDateRole.shortname)) {
-                publishingDateRole = new PublishingDateRole(e);
-            } else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname)) {
-                dateFormat = new DateFormat(e);
-            } else if (name.equals(Date.refname) || name.equals(Date.shortname)) {
-                date = new Date(e);
+            switch (name) {
+                case PublishingDateRole.refname:
+                case PublishingDateRole.shortname:
+                    publishingDateRole = new PublishingDateRole(e);
+                    break;
+                case DateFormat.refname:
+                case DateFormat.shortname:
+                    dateFormat = new DateFormat(e);
+                    break;
+                case Date.refname:
+                case Date.shortname:
+                    date = new Date(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

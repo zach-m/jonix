@@ -89,12 +89,21 @@ public class ReturnsConditions
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname)) {
-                returnsCodeType = new ReturnsCodeType(e);
-            } else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname)) {
-                returnsCodeTypeName = new ReturnsCodeTypeName(e);
-            } else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname)) {
-                returnsCode = new ReturnsCode(e);
+            switch (name) {
+                case ReturnsCodeType.refname:
+                case ReturnsCodeType.shortname:
+                    returnsCodeType = new ReturnsCodeType(e);
+                    break;
+                case ReturnsCodeTypeName.refname:
+                case ReturnsCodeTypeName.shortname:
+                    returnsCodeTypeName = new ReturnsCodeTypeName(e);
+                    break;
+                case ReturnsCode.refname:
+                case ReturnsCode.shortname:
+                    returnsCode = new ReturnsCode(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

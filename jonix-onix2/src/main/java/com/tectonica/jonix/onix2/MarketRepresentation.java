@@ -111,32 +111,61 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname)) {
-                agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
-            } else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname)) {
-                agentName = new AgentName(e);
-            } else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname)) {
-                telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
-            } else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname)) {
-                faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
-            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
-                emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
-            } else if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname)) {
-                agentRole = new AgentRole(e);
-            } else if (name.equals(MarketCountry.refname) || name.equals(MarketCountry.shortname)) {
-                marketCountry = new MarketCountry(e);
-            } else if (name.equals(MarketTerritory.refname) || name.equals(MarketTerritory.shortname)) {
-                marketTerritory = new MarketTerritory(e);
-            } else if (name.equals(MarketCountryExcluded.refname) || name.equals(MarketCountryExcluded.shortname)) {
-                marketCountryExcluded = new MarketCountryExcluded(e);
-            } else if (name.equals(MarketRestrictionDetail.refname) || name.equals(MarketRestrictionDetail.shortname)) {
-                marketRestrictionDetail = new MarketRestrictionDetail(e);
-            } else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname)) {
-                marketPublishingStatus = new MarketPublishingStatus(e);
-            } else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname)) {
-                marketDates = JPU.addToList(marketDates, new MarketDate(e));
+            switch (name) {
+                case AgentIdentifier.refname:
+                case AgentIdentifier.shortname:
+                    agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
+                    break;
+                case AgentName.refname:
+                case AgentName.shortname:
+                    agentName = new AgentName(e);
+                    break;
+                case TelephoneNumber.refname:
+                case TelephoneNumber.shortname:
+                    telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+                    break;
+                case FaxNumber.refname:
+                case FaxNumber.shortname:
+                    faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case AgentRole.refname:
+                case AgentRole.shortname:
+                    agentRole = new AgentRole(e);
+                    break;
+                case MarketCountry.refname:
+                case MarketCountry.shortname:
+                    marketCountry = new MarketCountry(e);
+                    break;
+                case MarketTerritory.refname:
+                case MarketTerritory.shortname:
+                    marketTerritory = new MarketTerritory(e);
+                    break;
+                case MarketCountryExcluded.refname:
+                case MarketCountryExcluded.shortname:
+                    marketCountryExcluded = new MarketCountryExcluded(e);
+                    break;
+                case MarketRestrictionDetail.refname:
+                case MarketRestrictionDetail.shortname:
+                    marketRestrictionDetail = new MarketRestrictionDetail(e);
+                    break;
+                case MarketPublishingStatus.refname:
+                case MarketPublishingStatus.shortname:
+                    marketPublishingStatus = new MarketPublishingStatus(e);
+                    break;
+                case MarketDate.refname:
+                case MarketDate.shortname:
+                    marketDates = JPU.addToList(marketDates, new MarketDate(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -89,10 +89,17 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname)) {
-                relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
-            } else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname)) {
-                relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
+            switch (name) {
+                case RelatedWork.refname:
+                case RelatedWork.shortname:
+                    relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+                    break;
+                case RelatedProduct.refname:
+                case RelatedProduct.shortname:
+                    relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

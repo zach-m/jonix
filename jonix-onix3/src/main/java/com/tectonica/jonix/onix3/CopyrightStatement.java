@@ -91,12 +91,21 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(CopyrightType.refname) || name.equals(CopyrightType.shortname)) {
-                copyrightType = new CopyrightType(e);
-            } else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname)) {
-                copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(e));
-            } else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname)) {
-                copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(e));
+            switch (name) {
+                case CopyrightType.refname:
+                case CopyrightType.shortname:
+                    copyrightType = new CopyrightType(e);
+                    break;
+                case CopyrightYear.refname:
+                case CopyrightYear.shortname:
+                    copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(e));
+                    break;
+                case CopyrightOwner.refname:
+                case CopyrightOwner.shortname:
+                    copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -94,20 +94,37 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(BibleContents.refname) || name.equals(BibleContents.shortname)) {
-                bibleContentss = JPU.addToList(bibleContentss, new BibleContents(e));
-            } else if (name.equals(BibleVersion.refname) || name.equals(BibleVersion.shortname)) {
-                bibleVersions = JPU.addToList(bibleVersions, new BibleVersion(e));
-            } else if (name.equals(StudyBibleType.refname) || name.equals(StudyBibleType.shortname)) {
-                studyBibleType = new StudyBibleType(e);
-            } else if (name.equals(BiblePurpose.refname) || name.equals(BiblePurpose.shortname)) {
-                biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(e));
-            } else if (name.equals(BibleTextOrganization.refname) || name.equals(BibleTextOrganization.shortname)) {
-                bibleTextOrganization = new BibleTextOrganization(e);
-            } else if (name.equals(BibleReferenceLocation.refname) || name.equals(BibleReferenceLocation.shortname)) {
-                bibleReferenceLocation = new BibleReferenceLocation(e);
-            } else if (name.equals(BibleTextFeature.refname) || name.equals(BibleTextFeature.shortname)) {
-                bibleTextFeatures = JPU.addToList(bibleTextFeatures, new BibleTextFeature(e));
+            switch (name) {
+                case BibleContents.refname:
+                case BibleContents.shortname:
+                    bibleContentss = JPU.addToList(bibleContentss, new BibleContents(e));
+                    break;
+                case BibleVersion.refname:
+                case BibleVersion.shortname:
+                    bibleVersions = JPU.addToList(bibleVersions, new BibleVersion(e));
+                    break;
+                case StudyBibleType.refname:
+                case StudyBibleType.shortname:
+                    studyBibleType = new StudyBibleType(e);
+                    break;
+                case BiblePurpose.refname:
+                case BiblePurpose.shortname:
+                    biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(e));
+                    break;
+                case BibleTextOrganization.refname:
+                case BibleTextOrganization.shortname:
+                    bibleTextOrganization = new BibleTextOrganization(e);
+                    break;
+                case BibleReferenceLocation.refname:
+                case BibleReferenceLocation.shortname:
+                    bibleReferenceLocation = new BibleReferenceLocation(e);
+                    break;
+                case BibleTextFeature.refname:
+                case BibleTextFeature.shortname:
+                    bibleTextFeatures = JPU.addToList(bibleTextFeatures, new BibleTextFeature(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

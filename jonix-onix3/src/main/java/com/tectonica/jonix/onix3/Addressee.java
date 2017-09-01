@@ -90,14 +90,25 @@ public class Addressee implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname)) {
-                addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
-            } else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname)) {
-                addresseeName = new AddresseeName(e);
-            } else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname)) {
-                contactName = new ContactName(e);
-            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
-                emailAddress = new EmailAddress(e);
+            switch (name) {
+                case AddresseeIdentifier.refname:
+                case AddresseeIdentifier.shortname:
+                    addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
+                    break;
+                case AddresseeName.refname:
+                case AddresseeName.shortname:
+                    addresseeName = new AddresseeName(e);
+                    break;
+                case ContactName.refname:
+                case ContactName.shortname:
+                    contactName = new ContactName(e);
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddress = new EmailAddress(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

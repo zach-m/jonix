@@ -104,16 +104,29 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname)) {
-                prizeName = new PrizeName(e);
-            } else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname)) {
-                prizeYear = new PrizeYear(e);
-            } else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname)) {
-                prizeCountry = new PrizeCountry(e);
-            } else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname)) {
-                prizeCode = new PrizeCode(e);
-            } else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname)) {
-                prizeJury = new PrizeJury(e);
+            switch (name) {
+                case PrizeName.refname:
+                case PrizeName.shortname:
+                    prizeName = new PrizeName(e);
+                    break;
+                case PrizeYear.refname:
+                case PrizeYear.shortname:
+                    prizeYear = new PrizeYear(e);
+                    break;
+                case PrizeCountry.refname:
+                case PrizeCountry.shortname:
+                    prizeCountry = new PrizeCountry(e);
+                    break;
+                case PrizeCode.refname:
+                case PrizeCode.shortname:
+                    prizeCode = new PrizeCode(e);
+                    break;
+                case PrizeJury.refname:
+                case PrizeJury.shortname:
+                    prizeJury = new PrizeJury(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

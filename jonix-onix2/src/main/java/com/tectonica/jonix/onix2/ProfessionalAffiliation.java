@@ -105,10 +105,17 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname)) {
-                professionalPosition = new ProfessionalPosition(e);
-            } else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname)) {
-                affiliation = new Affiliation(e);
+            switch (name) {
+                case ProfessionalPosition.refname:
+                case ProfessionalPosition.shortname:
+                    professionalPosition = new ProfessionalPosition(e);
+                    break;
+                case Affiliation.refname:
+                case Affiliation.shortname:
+                    affiliation = new Affiliation(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

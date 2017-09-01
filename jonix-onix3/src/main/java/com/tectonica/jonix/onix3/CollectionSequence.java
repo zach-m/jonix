@@ -91,14 +91,21 @@ public class CollectionSequence
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(CollectionSequenceType.refname) || name.equals(CollectionSequenceType.shortname)) {
-                collectionSequenceType = new CollectionSequenceType(e);
-            } else if (name.equals(CollectionSequenceTypeName.refname) ||
-                name.equals(CollectionSequenceTypeName.shortname)) {
-                collectionSequenceTypeName = new CollectionSequenceTypeName(e);
-            } else if (name.equals(CollectionSequenceNumber.refname) ||
-                name.equals(CollectionSequenceNumber.shortname)) {
-                collectionSequenceNumber = new CollectionSequenceNumber(e);
+            switch (name) {
+                case CollectionSequenceType.refname:
+                case CollectionSequenceType.shortname:
+                    collectionSequenceType = new CollectionSequenceType(e);
+                    break;
+                case CollectionSequenceTypeName.refname:
+                case CollectionSequenceTypeName.shortname:
+                    collectionSequenceTypeName = new CollectionSequenceTypeName(e);
+                    break;
+                case CollectionSequenceNumber.refname:
+                case CollectionSequenceNumber.shortname:
+                    collectionSequenceNumber = new CollectionSequenceNumber(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

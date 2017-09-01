@@ -116,98 +116,193 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProductComposition.refname) || name.equals(ProductComposition.shortname)) {
-                productComposition = new ProductComposition(e);
-            } else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname)) {
-                productForm = new ProductForm(e);
-            } else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname)) {
-                productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-            } else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname)) {
-                productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
-            } else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname)) {
-                productPackaging = new ProductPackaging(e);
-            } else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname)) {
-                productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
-            } else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname)) {
-                tradeCategory = new TradeCategory(e);
-            } else if (name.equals(PrimaryContentType.refname) || name.equals(PrimaryContentType.shortname)) {
-                primaryContentType = new PrimaryContentType(e);
-            } else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname)) {
-                productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
-            } else if (name.equals(Measure.refname) || name.equals(Measure.shortname)) {
-                measures = JPU.addToList(measures, new Measure(e));
-            } else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname)) {
-                countryOfManufacture = new CountryOfManufacture(e);
-            } else if (name.equals(EpubTechnicalProtection.refname) || name.equals(EpubTechnicalProtection.shortname)) {
-                epubTechnicalProtections = JPU.addToList(epubTechnicalProtections, new EpubTechnicalProtection(e));
-            } else if (name.equals(EpubUsageConstraint.refname) || name.equals(EpubUsageConstraint.shortname)) {
-                epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
-            } else if (name.equals(EpubLicense.refname) || name.equals(EpubLicense.shortname)) {
-                epubLicense = new EpubLicense(e);
-            } else if (name.equals(MapScale.refname) || name.equals(MapScale.shortname)) {
-                mapScales = JPU.addToList(mapScales, new MapScale(e));
-            } else if (name.equals(ProductClassification.refname) || name.equals(ProductClassification.shortname)) {
-                productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
-            } else if (name.equals(ProductPart.refname) || name.equals(ProductPart.shortname)) {
-                productParts = JPU.addToList(productParts, new ProductPart(e));
-            } else if (name.equals(Collection.refname) || name.equals(Collection.shortname)) {
-                collections = JPU.addToList(collections, new Collection(e));
-            } else if (name.equals(NoCollection.refname) || name.equals(NoCollection.shortname)) {
-                noCollection = new NoCollection(e);
-            } else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname)) {
-                titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
-            } else if (name.equals(ThesisType.refname) || name.equals(ThesisType.shortname)) {
-                thesisType = new ThesisType(e);
-            } else if (name.equals(ThesisPresentedTo.refname) || name.equals(ThesisPresentedTo.shortname)) {
-                thesisPresentedTo = new ThesisPresentedTo(e);
-            } else if (name.equals(ThesisYear.refname) || name.equals(ThesisYear.shortname)) {
-                thesisYear = new ThesisYear(e);
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname)) {
-                contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
-            } else if (name.equals(NoContributor.refname) || name.equals(NoContributor.shortname)) {
-                noContributor = new NoContributor(e);
-            } else if (name.equals(Conference.refname) || name.equals(Conference.shortname)) {
-                conferences = JPU.addToList(conferences, new Conference(e));
-            } else if (name.equals(EditionType.refname) || name.equals(EditionType.shortname)) {
-                editionTypes = JPU.addToList(editionTypes, new EditionType(e));
-            } else if (name.equals(EditionNumber.refname) || name.equals(EditionNumber.shortname)) {
-                editionNumber = new EditionNumber(e);
-            } else if (name.equals(EditionVersionNumber.refname) || name.equals(EditionVersionNumber.shortname)) {
-                editionVersionNumber = new EditionVersionNumber(e);
-            } else if (name.equals(EditionStatement.refname) || name.equals(EditionStatement.shortname)) {
-                editionStatements = JPU.addToList(editionStatements, new EditionStatement(e));
-            } else if (name.equals(NoEdition.refname) || name.equals(NoEdition.shortname)) {
-                noEdition = new NoEdition(e);
-            } else if (name.equals(ReligiousText.refname) || name.equals(ReligiousText.shortname)) {
-                religiousText = new ReligiousText(e);
-            } else if (name.equals(Language.refname) || name.equals(Language.shortname)) {
-                languages = JPU.addToList(languages, new Language(e));
-            } else if (name.equals(Extent.refname) || name.equals(Extent.shortname)) {
-                extents = JPU.addToList(extents, new Extent(e));
-            } else if (name.equals(Illustrated.refname) || name.equals(Illustrated.shortname)) {
-                illustrated = new Illustrated(e);
-            } else if (name.equals(NumberOfIllustrations.refname) || name.equals(NumberOfIllustrations.shortname)) {
-                numberOfIllustrations = new NumberOfIllustrations(e);
-            } else if (name.equals(IllustrationsNote.refname) || name.equals(IllustrationsNote.shortname)) {
-                illustrationsNotes = JPU.addToList(illustrationsNotes, new IllustrationsNote(e));
-            } else if (name.equals(AncillaryContent.refname) || name.equals(AncillaryContent.shortname)) {
-                ancillaryContents = JPU.addToList(ancillaryContents, new AncillaryContent(e));
-            } else if (name.equals(Subject.refname) || name.equals(Subject.shortname)) {
-                subjects = JPU.addToList(subjects, new Subject(e));
-            } else if (name.equals(NameAsSubject.refname) || name.equals(NameAsSubject.shortname)) {
-                nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
-            } else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname)) {
-                audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
-            } else if (name.equals(Audience.refname) || name.equals(Audience.shortname)) {
-                audiences = JPU.addToList(audiences, new Audience(e));
-            } else if (name.equals(AudienceRange.refname) || name.equals(AudienceRange.shortname)) {
-                audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
-            } else if (name.equals(AudienceDescription.refname) || name.equals(AudienceDescription.shortname)) {
-                audienceDescriptions = JPU.addToList(audienceDescriptions, new AudienceDescription(e));
-            } else if (name.equals(Complexity.refname) || name.equals(Complexity.shortname)) {
-                complexitys = JPU.addToList(complexitys, new Complexity(e));
+            switch (name) {
+                case ProductComposition.refname:
+                case ProductComposition.shortname:
+                    productComposition = new ProductComposition(e);
+                    break;
+                case ProductForm.refname:
+                case ProductForm.shortname:
+                    productForm = new ProductForm(e);
+                    break;
+                case ProductFormDetail.refname:
+                case ProductFormDetail.shortname:
+                    productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+                    break;
+                case ProductFormFeature.refname:
+                case ProductFormFeature.shortname:
+                    productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+                    break;
+                case ProductPackaging.refname:
+                case ProductPackaging.shortname:
+                    productPackaging = new ProductPackaging(e);
+                    break;
+                case ProductFormDescription.refname:
+                case ProductFormDescription.shortname:
+                    productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
+                    break;
+                case TradeCategory.refname:
+                case TradeCategory.shortname:
+                    tradeCategory = new TradeCategory(e);
+                    break;
+                case PrimaryContentType.refname:
+                case PrimaryContentType.shortname:
+                    primaryContentType = new PrimaryContentType(e);
+                    break;
+                case ProductContentType.refname:
+                case ProductContentType.shortname:
+                    productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+                    break;
+                case Measure.refname:
+                case Measure.shortname:
+                    measures = JPU.addToList(measures, new Measure(e));
+                    break;
+                case CountryOfManufacture.refname:
+                case CountryOfManufacture.shortname:
+                    countryOfManufacture = new CountryOfManufacture(e);
+                    break;
+                case EpubTechnicalProtection.refname:
+                case EpubTechnicalProtection.shortname:
+                    epubTechnicalProtections = JPU.addToList(epubTechnicalProtections, new EpubTechnicalProtection(e));
+                    break;
+                case EpubUsageConstraint.refname:
+                case EpubUsageConstraint.shortname:
+                    epubUsageConstraints = JPU.addToList(epubUsageConstraints, new EpubUsageConstraint(e));
+                    break;
+                case EpubLicense.refname:
+                case EpubLicense.shortname:
+                    epubLicense = new EpubLicense(e);
+                    break;
+                case MapScale.refname:
+                case MapScale.shortname:
+                    mapScales = JPU.addToList(mapScales, new MapScale(e));
+                    break;
+                case ProductClassification.refname:
+                case ProductClassification.shortname:
+                    productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
+                    break;
+                case ProductPart.refname:
+                case ProductPart.shortname:
+                    productParts = JPU.addToList(productParts, new ProductPart(e));
+                    break;
+                case Collection.refname:
+                case Collection.shortname:
+                    collections = JPU.addToList(collections, new Collection(e));
+                    break;
+                case NoCollection.refname:
+                case NoCollection.shortname:
+                    noCollection = new NoCollection(e);
+                    break;
+                case TitleDetail.refname:
+                case TitleDetail.shortname:
+                    titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
+                    break;
+                case ThesisType.refname:
+                case ThesisType.shortname:
+                    thesisType = new ThesisType(e);
+                    break;
+                case ThesisPresentedTo.refname:
+                case ThesisPresentedTo.shortname:
+                    thesisPresentedTo = new ThesisPresentedTo(e);
+                    break;
+                case ThesisYear.refname:
+                case ThesisYear.shortname:
+                    thesisYear = new ThesisYear(e);
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case ContributorStatement.refname:
+                case ContributorStatement.shortname:
+                    contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
+                    break;
+                case NoContributor.refname:
+                case NoContributor.shortname:
+                    noContributor = new NoContributor(e);
+                    break;
+                case Conference.refname:
+                case Conference.shortname:
+                    conferences = JPU.addToList(conferences, new Conference(e));
+                    break;
+                case EditionType.refname:
+                case EditionType.shortname:
+                    editionTypes = JPU.addToList(editionTypes, new EditionType(e));
+                    break;
+                case EditionNumber.refname:
+                case EditionNumber.shortname:
+                    editionNumber = new EditionNumber(e);
+                    break;
+                case EditionVersionNumber.refname:
+                case EditionVersionNumber.shortname:
+                    editionVersionNumber = new EditionVersionNumber(e);
+                    break;
+                case EditionStatement.refname:
+                case EditionStatement.shortname:
+                    editionStatements = JPU.addToList(editionStatements, new EditionStatement(e));
+                    break;
+                case NoEdition.refname:
+                case NoEdition.shortname:
+                    noEdition = new NoEdition(e);
+                    break;
+                case ReligiousText.refname:
+                case ReligiousText.shortname:
+                    religiousText = new ReligiousText(e);
+                    break;
+                case Language.refname:
+                case Language.shortname:
+                    languages = JPU.addToList(languages, new Language(e));
+                    break;
+                case Extent.refname:
+                case Extent.shortname:
+                    extents = JPU.addToList(extents, new Extent(e));
+                    break;
+                case Illustrated.refname:
+                case Illustrated.shortname:
+                    illustrated = new Illustrated(e);
+                    break;
+                case NumberOfIllustrations.refname:
+                case NumberOfIllustrations.shortname:
+                    numberOfIllustrations = new NumberOfIllustrations(e);
+                    break;
+                case IllustrationsNote.refname:
+                case IllustrationsNote.shortname:
+                    illustrationsNotes = JPU.addToList(illustrationsNotes, new IllustrationsNote(e));
+                    break;
+                case AncillaryContent.refname:
+                case AncillaryContent.shortname:
+                    ancillaryContents = JPU.addToList(ancillaryContents, new AncillaryContent(e));
+                    break;
+                case Subject.refname:
+                case Subject.shortname:
+                    subjects = JPU.addToList(subjects, new Subject(e));
+                    break;
+                case NameAsSubject.refname:
+                case NameAsSubject.shortname:
+                    nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
+                    break;
+                case AudienceCode.refname:
+                case AudienceCode.shortname:
+                    audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
+                    break;
+                case Audience.refname:
+                case Audience.shortname:
+                    audiences = JPU.addToList(audiences, new Audience(e));
+                    break;
+                case AudienceRange.refname:
+                case AudienceRange.shortname:
+                    audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
+                    break;
+                case AudienceDescription.refname:
+                case AudienceDescription.shortname:
+                    audienceDescriptions = JPU.addToList(audienceDescriptions, new AudienceDescription(e));
+                    break;
+                case Complexity.refname:
+                case Complexity.shortname:
+                    complexitys = JPU.addToList(complexitys, new Complexity(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

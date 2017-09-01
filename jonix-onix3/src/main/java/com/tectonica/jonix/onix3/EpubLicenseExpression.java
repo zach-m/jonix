@@ -90,14 +90,21 @@ public class EpubLicenseExpression
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(EpubLicenseExpressionType.refname) || name.equals(EpubLicenseExpressionType.shortname)) {
-                epubLicenseExpressionType = new EpubLicenseExpressionType(e);
-            } else if (name.equals(EpubLicenseExpressionTypeName.refname) ||
-                name.equals(EpubLicenseExpressionTypeName.shortname)) {
-                epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(e);
-            } else if (name.equals(EpubLicenseExpressionLink.refname) ||
-                name.equals(EpubLicenseExpressionLink.shortname)) {
-                epubLicenseExpressionLink = new EpubLicenseExpressionLink(e);
+            switch (name) {
+                case EpubLicenseExpressionType.refname:
+                case EpubLicenseExpressionType.shortname:
+                    epubLicenseExpressionType = new EpubLicenseExpressionType(e);
+                    break;
+                case EpubLicenseExpressionTypeName.refname:
+                case EpubLicenseExpressionTypeName.shortname:
+                    epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(e);
+                    break;
+                case EpubLicenseExpressionLink.refname:
+                case EpubLicenseExpressionLink.shortname:
+                    epubLicenseExpressionLink = new EpubLicenseExpressionLink(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -100,58 +100,113 @@ public class Contributor implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname)) {
-                sequenceNumber = new SequenceNumber(e);
-            } else if (name.equals(ContributorRole.refname) || name.equals(ContributorRole.shortname)) {
-                contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(e));
-            } else if (name.equals(FromLanguage.refname) || name.equals(FromLanguage.shortname)) {
-                fromLanguages = JPU.addToList(fromLanguages, new FromLanguage(e));
-            } else if (name.equals(ToLanguage.refname) || name.equals(ToLanguage.shortname)) {
-                toLanguages = JPU.addToList(toLanguages, new ToLanguage(e));
-            } else if (name.equals(NameType.refname) || name.equals(NameType.shortname)) {
-                nameType = new NameType(e);
-            } else if (name.equals(NameIdentifier.refname) || name.equals(NameIdentifier.shortname)) {
-                nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
-            } else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname)) {
-                personName = new PersonName(e);
-            } else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname)) {
-                personNameInverted = new PersonNameInverted(e);
-            } else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname)) {
-                titlesBeforeNames = new TitlesBeforeNames(e);
-            } else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname)) {
-                namesBeforeKey = new NamesBeforeKey(e);
-            } else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname)) {
-                prefixToKey = new PrefixToKey(e);
-            } else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname)) {
-                keyNames = new KeyNames(e);
-            } else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname)) {
-                namesAfterKey = new NamesAfterKey(e);
-            } else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname)) {
-                suffixToKey = new SuffixToKey(e);
-            } else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname)) {
-                lettersAfterNames = new LettersAfterNames(e);
-            } else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname)) {
-                titlesAfterNames = new TitlesAfterNames(e);
-            } else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname)) {
-                corporateName = new CorporateName(e);
-            } else if (name.equals(CorporateNameInverted.refname) || name.equals(CorporateNameInverted.shortname)) {
-                corporateNameInverted = new CorporateNameInverted(e);
-            } else if (name.equals(AlternativeName.refname) || name.equals(AlternativeName.shortname)) {
-                alternativeNames = JPU.addToList(alternativeNames, new AlternativeName(e));
-            } else if (name.equals(ContributorDate.refname) || name.equals(ContributorDate.shortname)) {
-                contributorDates = JPU.addToList(contributorDates, new ContributorDate(e));
-            } else if (name.equals(ProfessionalAffiliation.refname) || name.equals(ProfessionalAffiliation.shortname)) {
-                professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
-            } else if (name.equals(BiographicalNote.refname) || name.equals(BiographicalNote.shortname)) {
-                biographicalNotes = JPU.addToList(biographicalNotes, new BiographicalNote(e));
-            } else if (name.equals(Website.refname) || name.equals(Website.shortname)) {
-                websites = JPU.addToList(websites, new Website(e));
-            } else if (name.equals(ContributorDescription.refname) || name.equals(ContributorDescription.shortname)) {
-                contributorDescriptions = JPU.addToList(contributorDescriptions, new ContributorDescription(e));
-            } else if (name.equals(UnnamedPersons.refname) || name.equals(UnnamedPersons.shortname)) {
-                unnamedPersons = new UnnamedPersons(e);
-            } else if (name.equals(ContributorPlace.refname) || name.equals(ContributorPlace.shortname)) {
-                contributorPlaces = JPU.addToList(contributorPlaces, new ContributorPlace(e));
+            switch (name) {
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
+                    break;
+                case ContributorRole.refname:
+                case ContributorRole.shortname:
+                    contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(e));
+                    break;
+                case FromLanguage.refname:
+                case FromLanguage.shortname:
+                    fromLanguages = JPU.addToList(fromLanguages, new FromLanguage(e));
+                    break;
+                case ToLanguage.refname:
+                case ToLanguage.shortname:
+                    toLanguages = JPU.addToList(toLanguages, new ToLanguage(e));
+                    break;
+                case NameType.refname:
+                case NameType.shortname:
+                    nameType = new NameType(e);
+                    break;
+                case NameIdentifier.refname:
+                case NameIdentifier.shortname:
+                    nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
+                    break;
+                case PersonName.refname:
+                case PersonName.shortname:
+                    personName = new PersonName(e);
+                    break;
+                case PersonNameInverted.refname:
+                case PersonNameInverted.shortname:
+                    personNameInverted = new PersonNameInverted(e);
+                    break;
+                case TitlesBeforeNames.refname:
+                case TitlesBeforeNames.shortname:
+                    titlesBeforeNames = new TitlesBeforeNames(e);
+                    break;
+                case NamesBeforeKey.refname:
+                case NamesBeforeKey.shortname:
+                    namesBeforeKey = new NamesBeforeKey(e);
+                    break;
+                case PrefixToKey.refname:
+                case PrefixToKey.shortname:
+                    prefixToKey = new PrefixToKey(e);
+                    break;
+                case KeyNames.refname:
+                case KeyNames.shortname:
+                    keyNames = new KeyNames(e);
+                    break;
+                case NamesAfterKey.refname:
+                case NamesAfterKey.shortname:
+                    namesAfterKey = new NamesAfterKey(e);
+                    break;
+                case SuffixToKey.refname:
+                case SuffixToKey.shortname:
+                    suffixToKey = new SuffixToKey(e);
+                    break;
+                case LettersAfterNames.refname:
+                case LettersAfterNames.shortname:
+                    lettersAfterNames = new LettersAfterNames(e);
+                    break;
+                case TitlesAfterNames.refname:
+                case TitlesAfterNames.shortname:
+                    titlesAfterNames = new TitlesAfterNames(e);
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateName = new CorporateName(e);
+                    break;
+                case CorporateNameInverted.refname:
+                case CorporateNameInverted.shortname:
+                    corporateNameInverted = new CorporateNameInverted(e);
+                    break;
+                case AlternativeName.refname:
+                case AlternativeName.shortname:
+                    alternativeNames = JPU.addToList(alternativeNames, new AlternativeName(e));
+                    break;
+                case ContributorDate.refname:
+                case ContributorDate.shortname:
+                    contributorDates = JPU.addToList(contributorDates, new ContributorDate(e));
+                    break;
+                case ProfessionalAffiliation.refname:
+                case ProfessionalAffiliation.shortname:
+                    professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
+                    break;
+                case BiographicalNote.refname:
+                case BiographicalNote.shortname:
+                    biographicalNotes = JPU.addToList(biographicalNotes, new BiographicalNote(e));
+                    break;
+                case Website.refname:
+                case Website.shortname:
+                    websites = JPU.addToList(websites, new Website(e));
+                    break;
+                case ContributorDescription.refname:
+                case ContributorDescription.shortname:
+                    contributorDescriptions = JPU.addToList(contributorDescriptions, new ContributorDescription(e));
+                    break;
+                case UnnamedPersons.refname:
+                case UnnamedPersons.shortname:
+                    unnamedPersons = new UnnamedPersons(e);
+                    break;
+                case ContributorPlace.refname:
+                case ContributorPlace.shortname:
+                    contributorPlaces = JPU.addToList(contributorPlaces, new ContributorPlace(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

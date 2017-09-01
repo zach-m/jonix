@@ -107,14 +107,25 @@ public class SalesRights implements OnixDataCompositeUncommon, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname)) {
-                salesRightsType = new SalesRightsType(e);
-            } else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname)) {
-                rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
-            } else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname)) {
-                rightsTerritory = new RightsTerritory(e);
-            } else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname)) {
-                rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(e));
+            switch (name) {
+                case SalesRightsType.refname:
+                case SalesRightsType.shortname:
+                    salesRightsType = new SalesRightsType(e);
+                    break;
+                case RightsCountry.refname:
+                case RightsCountry.shortname:
+                    rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
+                    break;
+                case RightsTerritory.refname:
+                case RightsTerritory.shortname:
+                    rightsTerritory = new RightsTerritory(e);
+                    break;
+                case RightsRegion.refname:
+                case RightsRegion.shortname:
+                    rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

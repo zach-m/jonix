@@ -102,13 +102,21 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ConferenceSponsorIdentifier.refname) ||
-                name.equals(ConferenceSponsorIdentifier.shortname)) {
-                conferenceSponsorIdentifier = new ConferenceSponsorIdentifier(e);
-            } else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname)) {
-                personName = new PersonName(e);
-            } else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname)) {
-                corporateName = new CorporateName(e);
+            switch (name) {
+                case ConferenceSponsorIdentifier.refname:
+                case ConferenceSponsorIdentifier.shortname:
+                    conferenceSponsorIdentifier = new ConferenceSponsorIdentifier(e);
+                    break;
+                case PersonName.refname:
+                case PersonName.shortname:
+                    personName = new PersonName(e);
+                    break;
+                case CorporateName.refname:
+                case CorporateName.shortname:
+                    corporateName = new CorporateName(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

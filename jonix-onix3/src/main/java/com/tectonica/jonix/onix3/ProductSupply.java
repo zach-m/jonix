@@ -92,12 +92,21 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(Market.refname) || name.equals(Market.shortname)) {
-                markets = JPU.addToList(markets, new Market(e));
-            } else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname)) {
-                marketPublishingDetail = new MarketPublishingDetail(e);
-            } else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname)) {
-                supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+            switch (name) {
+                case Market.refname:
+                case Market.shortname:
+                    markets = JPU.addToList(markets, new Market(e));
+                    break;
+                case MarketPublishingDetail.refname:
+                case MarketPublishingDetail.shortname:
+                    marketPublishingDetail = new MarketPublishingDetail(e);
+                    break;
+                case SupplyDetail.refname:
+                case SupplyDetail.shortname:
+                    supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

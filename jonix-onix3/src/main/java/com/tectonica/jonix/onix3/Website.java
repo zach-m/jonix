@@ -89,12 +89,21 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname)) {
-                websiteRole = new WebsiteRole(e);
-            } else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname)) {
-                websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(e));
-            } else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname)) {
-                websiteLink = new WebsiteLink(e);
+            switch (name) {
+                case WebsiteRole.refname:
+                case WebsiteRole.shortname:
+                    websiteRole = new WebsiteRole(e);
+                    break;
+                case WebsiteDescription.refname:
+                case WebsiteDescription.shortname:
+                    websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(e));
+                    break;
+                case WebsiteLink.refname:
+                case WebsiteLink.shortname:
+                    websiteLink = new WebsiteLink(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

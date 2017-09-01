@@ -108,30 +108,57 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(PersonName.refname) || name.equals(PersonName.shortname)) {
-                personName = new PersonName(e);
-            } else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname)) {
-                personNameInverted = new PersonNameInverted(e);
-            } else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname)) {
-                titlesBeforeNames = new TitlesBeforeNames(e);
-            } else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname)) {
-                namesBeforeKey = new NamesBeforeKey(e);
-            } else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname)) {
-                prefixToKey = new PrefixToKey(e);
-            } else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname)) {
-                keyNames = new KeyNames(e);
-            } else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname)) {
-                namesAfterKey = new NamesAfterKey(e);
-            } else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname)) {
-                suffixToKey = new SuffixToKey(e);
-            } else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname)) {
-                lettersAfterNames = new LettersAfterNames(e);
-            } else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname)) {
-                titlesAfterNames = new TitlesAfterNames(e);
-            } else if (name.equals(Name.refname) || name.equals(Name.shortname)) {
-                names = JPU.addToList(names, new Name(e));
-            } else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname)) {
-                personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
+            switch (name) {
+                case PersonName.refname:
+                case PersonName.shortname:
+                    personName = new PersonName(e);
+                    break;
+                case PersonNameInverted.refname:
+                case PersonNameInverted.shortname:
+                    personNameInverted = new PersonNameInverted(e);
+                    break;
+                case TitlesBeforeNames.refname:
+                case TitlesBeforeNames.shortname:
+                    titlesBeforeNames = new TitlesBeforeNames(e);
+                    break;
+                case NamesBeforeKey.refname:
+                case NamesBeforeKey.shortname:
+                    namesBeforeKey = new NamesBeforeKey(e);
+                    break;
+                case PrefixToKey.refname:
+                case PrefixToKey.shortname:
+                    prefixToKey = new PrefixToKey(e);
+                    break;
+                case KeyNames.refname:
+                case KeyNames.shortname:
+                    keyNames = new KeyNames(e);
+                    break;
+                case NamesAfterKey.refname:
+                case NamesAfterKey.shortname:
+                    namesAfterKey = new NamesAfterKey(e);
+                    break;
+                case SuffixToKey.refname:
+                case SuffixToKey.shortname:
+                    suffixToKey = new SuffixToKey(e);
+                    break;
+                case LettersAfterNames.refname:
+                case LettersAfterNames.shortname:
+                    lettersAfterNames = new LettersAfterNames(e);
+                    break;
+                case TitlesAfterNames.refname:
+                case TitlesAfterNames.shortname:
+                    titlesAfterNames = new TitlesAfterNames(e);
+                    break;
+                case Name.refname:
+                case Name.shortname:
+                    names = JPU.addToList(names, new Name(e));
+                    break;
+                case PersonNameIdentifier.refname:
+                case PersonNameIdentifier.shortname:
+                    personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

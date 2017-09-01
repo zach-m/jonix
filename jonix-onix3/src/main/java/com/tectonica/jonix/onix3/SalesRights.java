@@ -95,16 +95,29 @@ public class SalesRights implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname)) {
-                salesRightsType = new SalesRightsType(e);
-            } else if (name.equals(Territory.refname) || name.equals(Territory.shortname)) {
-                territory = new Territory(e);
-            } else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname)) {
-                salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname)) {
-                publisherName = new PublisherName(e);
+            switch (name) {
+                case SalesRightsType.refname:
+                case SalesRightsType.shortname:
+                    salesRightsType = new SalesRightsType(e);
+                    break;
+                case Territory.refname:
+                case Territory.shortname:
+                    territory = new Territory(e);
+                    break;
+                case SalesRestriction.refname:
+                case SalesRestriction.shortname:
+                    salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case PublisherName.refname:
+                case PublisherName.shortname:
+                    publisherName = new PublisherName(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

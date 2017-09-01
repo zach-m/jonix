@@ -91,15 +91,22 @@ public class ReligiousTextFeature
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ReligiousTextFeatureType.refname) || name.equals(ReligiousTextFeatureType.shortname)) {
-                religiousTextFeatureType = new ReligiousTextFeatureType(e);
-            } else if (name.equals(ReligiousTextFeatureCode.refname) ||
-                name.equals(ReligiousTextFeatureCode.shortname)) {
-                religiousTextFeatureCode = new ReligiousTextFeatureCode(e);
-            } else if (name.equals(ReligiousTextFeatureDescription.refname) ||
-                name.equals(ReligiousTextFeatureDescription.shortname)) {
-                religiousTextFeatureDescriptions =
-                    JPU.addToList(religiousTextFeatureDescriptions, new ReligiousTextFeatureDescription(e));
+            switch (name) {
+                case ReligiousTextFeatureType.refname:
+                case ReligiousTextFeatureType.shortname:
+                    religiousTextFeatureType = new ReligiousTextFeatureType(e);
+                    break;
+                case ReligiousTextFeatureCode.refname:
+                case ReligiousTextFeatureCode.shortname:
+                    religiousTextFeatureCode = new ReligiousTextFeatureCode(e);
+                    break;
+                case ReligiousTextFeatureDescription.refname:
+                case ReligiousTextFeatureDescription.shortname:
+                    religiousTextFeatureDescriptions =
+                        JPU.addToList(religiousTextFeatureDescriptions, new ReligiousTextFeatureDescription(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

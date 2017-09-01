@@ -90,17 +90,30 @@ public class ProductContact implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname)) {
-                productContactRole = new ProductContactRole(e);
-            } else if (name.equals(ProductContactIdentifier.refname) ||
-                name.equals(ProductContactIdentifier.shortname)) {
-                productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(e));
-            } else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname)) {
-                productContactName = new ProductContactName(e);
-            } else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname)) {
-                contactName = new ContactName(e);
-            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
-                emailAddress = new EmailAddress(e);
+            switch (name) {
+                case ProductContactRole.refname:
+                case ProductContactRole.shortname:
+                    productContactRole = new ProductContactRole(e);
+                    break;
+                case ProductContactIdentifier.refname:
+                case ProductContactIdentifier.shortname:
+                    productContactIdentifiers =
+                        JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(e));
+                    break;
+                case ProductContactName.refname:
+                case ProductContactName.shortname:
+                    productContactName = new ProductContactName(e);
+                    break;
+                case ContactName.refname:
+                case ContactName.shortname:
+                    contactName = new ContactName(e);
+                    break;
+                case EmailAddress.refname:
+                case EmailAddress.shortname:
+                    emailAddress = new EmailAddress(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

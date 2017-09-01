@@ -91,30 +91,57 @@ public class ContentItem implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname)) {
-                levelSequenceNumber = new LevelSequenceNumber(e);
-            } else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname)) {
-                textItem = new TextItem(e);
-            } else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname)) {
-                componentTypeName = new ComponentTypeName(e);
-            } else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname)) {
-                componentNumber = new ComponentNumber(e);
-            } else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname)) {
-                titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
-            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
-                contributors = JPU.addToList(contributors, new Contributor(e));
-            } else if (name.equals(Subject.refname) || name.equals(Subject.shortname)) {
-                subjects = JPU.addToList(subjects, new Subject(e));
-            } else if (name.equals(NameAsSubject.refname) || name.equals(NameAsSubject.shortname)) {
-                nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
-            } else if (name.equals(TextContent.refname) || name.equals(TextContent.shortname)) {
-                textContents = JPU.addToList(textContents, new TextContent(e));
-            } else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname)) {
-                citedContents = JPU.addToList(citedContents, new CitedContent(e));
-            } else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname)) {
-                supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
-            } else if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname)) {
-                relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+            switch (name) {
+                case LevelSequenceNumber.refname:
+                case LevelSequenceNumber.shortname:
+                    levelSequenceNumber = new LevelSequenceNumber(e);
+                    break;
+                case TextItem.refname:
+                case TextItem.shortname:
+                    textItem = new TextItem(e);
+                    break;
+                case ComponentTypeName.refname:
+                case ComponentTypeName.shortname:
+                    componentTypeName = new ComponentTypeName(e);
+                    break;
+                case ComponentNumber.refname:
+                case ComponentNumber.shortname:
+                    componentNumber = new ComponentNumber(e);
+                    break;
+                case TitleDetail.refname:
+                case TitleDetail.shortname:
+                    titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
+                    break;
+                case Contributor.refname:
+                case Contributor.shortname:
+                    contributors = JPU.addToList(contributors, new Contributor(e));
+                    break;
+                case Subject.refname:
+                case Subject.shortname:
+                    subjects = JPU.addToList(subjects, new Subject(e));
+                    break;
+                case NameAsSubject.refname:
+                case NameAsSubject.shortname:
+                    nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
+                    break;
+                case TextContent.refname:
+                case TextContent.shortname:
+                    textContents = JPU.addToList(textContents, new TextContent(e));
+                    break;
+                case CitedContent.refname:
+                case CitedContent.shortname:
+                    citedContents = JPU.addToList(citedContents, new CitedContent(e));
+                    break;
+                case SupportingResource.refname:
+                case SupportingResource.shortname:
+                    supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
+                    break;
+                case RelatedWork.refname:
+                case RelatedWork.shortname:
+                    relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -105,20 +105,37 @@ public class Stock implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname)) {
-                locationIdentifier = new LocationIdentifier(e);
-            } else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname)) {
-                locationName = new LocationName(e);
-            } else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname)) {
-                stockQuantityCoded = new StockQuantityCoded(e);
-            } else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname)) {
-                onHand = new OnHand(e);
-            } else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname)) {
-                onOrder = new OnOrder(e);
-            } else if (name.equals(CBO.refname) || name.equals(CBO.shortname)) {
-                cbo = new CBO(e);
-            } else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname)) {
-                onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(e));
+            switch (name) {
+                case LocationIdentifier.refname:
+                case LocationIdentifier.shortname:
+                    locationIdentifier = new LocationIdentifier(e);
+                    break;
+                case LocationName.refname:
+                case LocationName.shortname:
+                    locationName = new LocationName(e);
+                    break;
+                case StockQuantityCoded.refname:
+                case StockQuantityCoded.shortname:
+                    stockQuantityCoded = new StockQuantityCoded(e);
+                    break;
+                case OnHand.refname:
+                case OnHand.shortname:
+                    onHand = new OnHand(e);
+                    break;
+                case OnOrder.refname:
+                case OnOrder.shortname:
+                    onOrder = new OnOrder(e);
+                    break;
+                case CBO.refname:
+                case CBO.shortname:
+                    cbo = new CBO(e);
+                    break;
+                case OnOrderDetail.refname:
+                case OnOrderDetail.shortname:
+                    onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

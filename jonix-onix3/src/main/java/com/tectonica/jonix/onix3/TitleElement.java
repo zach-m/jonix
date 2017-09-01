@@ -95,24 +95,45 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname)) {
-                sequenceNumber = new SequenceNumber(e);
-            } else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname)) {
-                titleElementLevel = new TitleElementLevel(e);
-            } else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname)) {
-                partNumber = new PartNumber(e);
-            } else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname)) {
-                yearOfAnnual = new YearOfAnnual(e);
-            } else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname)) {
-                titlePrefix = new TitlePrefix(e);
-            } else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname)) {
-                noPrefix = new NoPrefix(e);
-            } else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname)) {
-                titleWithoutPrefix = new TitleWithoutPrefix(e);
-            } else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname)) {
-                titleText = new TitleText(e);
-            } else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname)) {
-                subtitle = new Subtitle(e);
+            switch (name) {
+                case SequenceNumber.refname:
+                case SequenceNumber.shortname:
+                    sequenceNumber = new SequenceNumber(e);
+                    break;
+                case TitleElementLevel.refname:
+                case TitleElementLevel.shortname:
+                    titleElementLevel = new TitleElementLevel(e);
+                    break;
+                case PartNumber.refname:
+                case PartNumber.shortname:
+                    partNumber = new PartNumber(e);
+                    break;
+                case YearOfAnnual.refname:
+                case YearOfAnnual.shortname:
+                    yearOfAnnual = new YearOfAnnual(e);
+                    break;
+                case TitlePrefix.refname:
+                case TitlePrefix.shortname:
+                    titlePrefix = new TitlePrefix(e);
+                    break;
+                case NoPrefix.refname:
+                case NoPrefix.shortname:
+                    noPrefix = new NoPrefix(e);
+                    break;
+                case TitleWithoutPrefix.refname:
+                case TitleWithoutPrefix.shortname:
+                    titleWithoutPrefix = new TitleWithoutPrefix(e);
+                    break;
+                case TitleText.refname:
+                case TitleText.shortname:
+                    titleText = new TitleText(e);
+                    break;
+                case Subtitle.refname:
+                case Subtitle.shortname:
+                    subtitle = new Subtitle(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

@@ -89,14 +89,25 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ContributorPlaceRelator.refname) || name.equals(ContributorPlaceRelator.shortname)) {
-                contributorPlaceRelator = new ContributorPlaceRelator(e);
-            } else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname)) {
-                countryCode = new CountryCode(e);
-            } else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname)) {
-                regionCode = new RegionCode(e);
-            } else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname)) {
-                locationNames = JPU.addToList(locationNames, new LocationName(e));
+            switch (name) {
+                case ContributorPlaceRelator.refname:
+                case ContributorPlaceRelator.shortname:
+                    contributorPlaceRelator = new ContributorPlaceRelator(e);
+                    break;
+                case CountryCode.refname:
+                case CountryCode.shortname:
+                    countryCode = new CountryCode(e);
+                    break;
+                case RegionCode.refname:
+                case RegionCode.shortname:
+                    regionCode = new RegionCode(e);
+                    break;
+                case LocationName.refname:
+                case LocationName.shortname:
+                    locationNames = JPU.addToList(locationNames, new LocationName(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

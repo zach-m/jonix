@@ -91,12 +91,21 @@ public class ResourceFeature
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(ResourceFeatureType.refname) || name.equals(ResourceFeatureType.shortname)) {
-                resourceFeatureType = new ResourceFeatureType(e);
-            } else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname)) {
-                featureValue = new FeatureValue(e);
-            } else if (name.equals(FeatureNote.refname) || name.equals(FeatureNote.shortname)) {
-                featureNotes = JPU.addToList(featureNotes, new FeatureNote(e));
+            switch (name) {
+                case ResourceFeatureType.refname:
+                case ResourceFeatureType.shortname:
+                    resourceFeatureType = new ResourceFeatureType(e);
+                    break;
+                case FeatureValue.refname:
+                case FeatureValue.shortname:
+                    featureValue = new FeatureValue(e);
+                    break;
+                case FeatureNote.refname:
+                case FeatureNote.shortname:
+                    featureNotes = JPU.addToList(featureNotes, new FeatureNote(e));
+                    break;
+                default:
+                    break;
             }
         });
     }

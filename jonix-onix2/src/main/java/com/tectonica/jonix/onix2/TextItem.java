@@ -109,18 +109,33 @@ public class TextItem implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(TextItemType.refname) || name.equals(TextItemType.shortname)) {
-                textItemType = new TextItemType(e);
-            } else if (name.equals(TextItemIdentifier.refname) || name.equals(TextItemIdentifier.shortname)) {
-                textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(e));
-            } else if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname)) {
-                firstPageNumber = new FirstPageNumber(e);
-            } else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname)) {
-                lastPageNumber = new LastPageNumber(e);
-            } else if (name.equals(PageRun.refname) || name.equals(PageRun.shortname)) {
-                pageRuns = JPU.addToList(pageRuns, new PageRun(e));
-            } else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname)) {
-                numberOfPages = new NumberOfPages(e);
+            switch (name) {
+                case TextItemType.refname:
+                case TextItemType.shortname:
+                    textItemType = new TextItemType(e);
+                    break;
+                case TextItemIdentifier.refname:
+                case TextItemIdentifier.shortname:
+                    textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(e));
+                    break;
+                case FirstPageNumber.refname:
+                case FirstPageNumber.shortname:
+                    firstPageNumber = new FirstPageNumber(e);
+                    break;
+                case LastPageNumber.refname:
+                case LastPageNumber.shortname:
+                    lastPageNumber = new LastPageNumber(e);
+                    break;
+                case PageRun.refname:
+                case PageRun.shortname:
+                    pageRuns = JPU.addToList(pageRuns, new PageRun(e));
+                    break;
+                case NumberOfPages.refname:
+                case NumberOfPages.shortname:
+                    numberOfPages = new NumberOfPages(e);
+                    break;
+                default:
+                    break;
             }
         });
     }

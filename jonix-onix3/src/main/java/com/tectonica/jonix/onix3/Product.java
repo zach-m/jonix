@@ -105,34 +105,65 @@ public class Product implements OnixSuperComposite, Serializable {
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
-            if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname)) {
-                recordReference = new RecordReference(e);
-            } else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname)) {
-                notificationType = new NotificationType(e);
-            } else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname)) {
-                deletionTexts = JPU.addToList(deletionTexts, new DeletionText(e));
-            } else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname)) {
-                recordSourceType = new RecordSourceType(e);
-            } else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname)) {
-                recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(e));
-            } else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname)) {
-                recordSourceName = new RecordSourceName(e);
-            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
-                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-            } else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname)) {
-                barcodes = JPU.addToList(barcodes, new Barcode(e));
-            } else if (name.equals(DescriptiveDetail.refname) || name.equals(DescriptiveDetail.shortname)) {
-                descriptiveDetail = new DescriptiveDetail(e);
-            } else if (name.equals(CollateralDetail.refname) || name.equals(CollateralDetail.shortname)) {
-                collateralDetail = new CollateralDetail(e);
-            } else if (name.equals(ContentDetail.refname) || name.equals(ContentDetail.shortname)) {
-                contentDetail = new ContentDetail(e);
-            } else if (name.equals(PublishingDetail.refname) || name.equals(PublishingDetail.shortname)) {
-                publishingDetail = new PublishingDetail(e);
-            } else if (name.equals(RelatedMaterial.refname) || name.equals(RelatedMaterial.shortname)) {
-                relatedMaterial = new RelatedMaterial(e);
-            } else if (name.equals(ProductSupply.refname) || name.equals(ProductSupply.shortname)) {
-                productSupplys = JPU.addToList(productSupplys, new ProductSupply(e));
+            switch (name) {
+                case RecordReference.refname:
+                case RecordReference.shortname:
+                    recordReference = new RecordReference(e);
+                    break;
+                case NotificationType.refname:
+                case NotificationType.shortname:
+                    notificationType = new NotificationType(e);
+                    break;
+                case DeletionText.refname:
+                case DeletionText.shortname:
+                    deletionTexts = JPU.addToList(deletionTexts, new DeletionText(e));
+                    break;
+                case RecordSourceType.refname:
+                case RecordSourceType.shortname:
+                    recordSourceType = new RecordSourceType(e);
+                    break;
+                case RecordSourceIdentifier.refname:
+                case RecordSourceIdentifier.shortname:
+                    recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(e));
+                    break;
+                case RecordSourceName.refname:
+                case RecordSourceName.shortname:
+                    recordSourceName = new RecordSourceName(e);
+                    break;
+                case ProductIdentifier.refname:
+                case ProductIdentifier.shortname:
+                    productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+                    break;
+                case Barcode.refname:
+                case Barcode.shortname:
+                    barcodes = JPU.addToList(barcodes, new Barcode(e));
+                    break;
+                case DescriptiveDetail.refname:
+                case DescriptiveDetail.shortname:
+                    descriptiveDetail = new DescriptiveDetail(e);
+                    break;
+                case CollateralDetail.refname:
+                case CollateralDetail.shortname:
+                    collateralDetail = new CollateralDetail(e);
+                    break;
+                case ContentDetail.refname:
+                case ContentDetail.shortname:
+                    contentDetail = new ContentDetail(e);
+                    break;
+                case PublishingDetail.refname:
+                case PublishingDetail.shortname:
+                    publishingDetail = new PublishingDetail(e);
+                    break;
+                case RelatedMaterial.refname:
+                case RelatedMaterial.shortname:
+                    relatedMaterial = new RelatedMaterial(e);
+                    break;
+                case ProductSupply.refname:
+                case ProductSupply.shortname:
+                    productSupplys = JPU.addToList(productSupplys, new ProductSupply(e));
+                    break;
+                default:
+                    break;
             }
         });
     }
