@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,16 +63,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class MediaFileFormatCode implements OnixElement, Serializable
+public class MediaFileFormatCode implements OnixElement<ImageAudioVideoFileFormats>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "MediaFileFormatCode";
 	public static final String shortname = "f115";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -91,21 +91,36 @@ public class MediaFileFormatCode implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public ImageAudioVideoFileFormats value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public ImageAudioVideoFileFormats _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final MediaFileFormatCode EMPTY = new MediaFileFormatCode();
 
 	public MediaFileFormatCode()
-	{}
+	{
+		exists = false;
+	}
 
 	public MediaFileFormatCode(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -115,5 +130,11 @@ public class MediaFileFormatCode implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = ImageAudioVideoFileFormats.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

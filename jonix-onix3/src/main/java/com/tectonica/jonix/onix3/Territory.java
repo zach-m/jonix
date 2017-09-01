@@ -23,13 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.struct.JonixTerritory;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -57,16 +55,16 @@ import com.tectonica.jonix.struct.JonixTerritory;
  * </tr>
  * </table>
  */
-public class Territory implements OnixDataComposite, Serializable
+public class Territory implements OnixDataComposite<JonixTerritory>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Territory";
 	public static final String shortname = "territory";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -77,88 +75,115 @@ public class Territory implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public CountriesIncluded countriesIncluded;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RegionsIncluded regionsIncluded;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountriesExcluded countriesExcluded;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RegionsExcluded regionsExcluded;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Territory EMPTY = new Territory();
 
 	public Territory()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Territory(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname))
-					countriesIncluded = new CountriesIncluded(element);
-				else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname))
-					regionsIncluded = new RegionsIncluded(element);
-				else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname))
-					countriesExcluded = new CountriesExcluded(element);
-				else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname))
-					regionsExcluded = new RegionsExcluded(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname))
+				countriesIncluded = new CountriesIncluded(e);
+			else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname))
+				regionsIncluded = new RegionsIncluded(e);
+			else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname))
+				countriesExcluded = new CountriesExcluded(e);
+			else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname))
+				regionsExcluded = new RegionsExcluded(e);
 		});
 	}
 
-	public java.util.Set<CountryCodes> getCountriesIncludedSet()
+	@Override
+	public boolean exists()
 	{
-		return (countriesIncluded == null) ? null : countriesIncluded.value;
+		return exists;
 	}
 
-	public java.util.Set<Regions> getRegionsIncludedSet()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private CountriesIncluded countriesIncluded = CountriesIncluded.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public CountriesIncluded countriesIncluded()
 	{
-		return (regionsIncluded == null) ? null : regionsIncluded.value;
+		initialize();
+		return countriesIncluded;
 	}
 
-	public java.util.Set<CountryCodes> getCountriesExcludedSet()
+	private RegionsIncluded regionsIncluded = RegionsIncluded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RegionsIncluded regionsIncluded()
 	{
-		return (countriesExcluded == null) ? null : countriesExcluded.value;
+		initialize();
+		return regionsIncluded;
 	}
 
-	public java.util.Set<Regions> getRegionsExcludedSet()
+	private CountriesExcluded countriesExcluded = CountriesExcluded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountriesExcluded countriesExcluded()
 	{
-		return (regionsExcluded == null) ? null : regionsExcluded.value;
+		initialize();
+		return countriesExcluded;
 	}
 
-	public JonixTerritory asJonixTerritory()
+	private RegionsExcluded regionsExcluded = RegionsExcluded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RegionsExcluded regionsExcluded()
 	{
-		JonixTerritory x = new JonixTerritory();
-		x.countriesIncluded = getCountriesIncludedSet();
-		x.regionsIncluded = getRegionsIncludedSet();
-		x.countriesExcluded = getCountriesExcludedSet();
-		x.regionsExcluded = getRegionsExcludedSet();
-		return x;
+		initialize();
+		return regionsExcluded;
+	}
+
+	@Override
+	public JonixTerritory asStruct()
+	{
+		initialize();
+		JonixTerritory struct = new JonixTerritory();
+		struct.countriesIncluded = countriesIncluded.value;
+		struct.regionsIncluded = regionsIncluded.value;
+		struct.countriesExcluded = countriesExcluded.value;
+		struct.regionsExcluded = regionsExcluded.value;
+		return struct;
 	}
 }

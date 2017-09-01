@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -57,16 +57,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class ReligiousTextFeatureDescription implements OnixElement, Serializable
+public class ReligiousTextFeatureDescription implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ReligiousTextFeatureDescription";
 	public static final String shortname = "b360";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -85,9 +85,9 @@ public class ReligiousTextFeatureDescription implements OnixElement, Serializabl
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Variable-length text, suggested maximum 100 characters
@@ -96,15 +96,30 @@ public class ReligiousTextFeatureDescription implements OnixElement, Serializabl
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ReligiousTextFeatureDescription EMPTY = new ReligiousTextFeatureDescription();
 
 	public ReligiousTextFeatureDescription()
-	{}
+	{
+		exists = false;
+	}
 
 	public ReligiousTextFeatureDescription(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -114,5 +129,11 @@ public class ReligiousTextFeatureDescription implements OnixElement, Serializabl
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

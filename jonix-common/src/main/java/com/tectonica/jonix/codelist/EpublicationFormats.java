@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,93 +40,91 @@ interface CodeList11
  * Description: Epublication format code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist11">ONIX
- *      Codelist 11 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist11">ONIX Codelist 11 in Reference Guide</a>
  */
 public enum EpublicationFormats implements OnixCodelist, CodeList11
 {
-	HTML("01", "HTML"), //
+   HTML("01", "HTML"), //
 
-	PDF("02", "PDF"), //
+   PDF("02", "PDF"), //
 
-	/**
-	 * '.LIT' file format used by Microsoft Reader software
-	 */
-	Microsoft_Reader("03", "Microsoft Reader"), //
+   /**
+    * '.LIT' file format used by Microsoft Reader software
+    */
+   Microsoft_Reader("03", "Microsoft Reader"), //
 
-	RocketBook("04", "RocketBook"), //
+   RocketBook("04", "RocketBook"), //
 
-	Rich_text_format_RTF("05", "Rich text format (RTF)"), //
+   Rich_text_format_RTF("05", "Rich text format (RTF)"), //
 
-	Open_Ebook_Publication_Structure_OEBPS("06", "Open Ebook Publication Structure (OEBPS) format standard"), //
+   Open_Ebook_Publication_Structure_OEBPS("06", "Open Ebook Publication Structure (OEBPS) format standard"), //
 
-	XML("07", "XML"), //
+   XML("07", "XML"), //
 
-	SGML("08", "SGML"), //
+   SGML("08", "SGML"), //
 
-	/**
-	 * '.EXE' file format used when an epublication is delivered as a self-executing package of software and content
-	 */
-	EXE("09", "EXE"), //
+   /**
+    * '.EXE' file format used when an epublication is delivered as a self-executing package of software and content
+    */
+   EXE("09", "EXE"), //
 
-	/**
-	 * '.TXT' file format
-	 */
-	ASCII("10", "ASCII"), //
+   /**
+    * '.TXT' file format
+    */
+   ASCII("10", "ASCII"), //
 
-	/**
-	 * Proprietary file format used for the MobiPocket reader software
-	 */
-	MobiPocket_format("11", "MobiPocket format");
+   /**
+    * Proprietary file format used for the MobiPocket reader software
+    */
+   MobiPocket_format("11", "MobiPocket format");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private EpublicationFormats(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private EpublicationFormats(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, EpublicationFormats> map;
+   private static volatile Map<String, EpublicationFormats> map;
 
-	private static Map<String, EpublicationFormats> map()
-	{
-		Map<String, EpublicationFormats> result = map;
-		if (result == null)
-		{
-			synchronized (EpublicationFormats.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (EpublicationFormats e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, EpublicationFormats> map()
+   {
+      Map<String, EpublicationFormats> result = map;
+      if (result == null)
+      {
+         synchronized(EpublicationFormats.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (EpublicationFormats e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static EpublicationFormats byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static EpublicationFormats byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

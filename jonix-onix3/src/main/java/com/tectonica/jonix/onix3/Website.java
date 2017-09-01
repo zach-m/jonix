@@ -20,17 +20,15 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.WebsiteRoles;
 import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +52,16 @@ import com.tectonica.jonix.struct.JonixWebsite;
  * </tr>
  * </table>
  */
-public class Website implements OnixDataComposite, Serializable
+public class Website implements OnixDataComposite<JonixWebsite>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Website";
 	public static final String shortname = "website";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,89 +72,101 @@ public class Website implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public WebsiteRole websiteRole;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<WebsiteDescription> websiteDescriptions;
-
-	/**
-	 * (this field is required)
-	 */
-	public WebsiteLink websiteLink;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Website EMPTY = new Website();
 
 	public Website()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Website(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
-					websiteRole = new WebsiteRole(element);
-				else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname))
-					websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(element));
-				else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname))
-					websiteLink = new WebsiteLink(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
+				websiteRole = new WebsiteRole(e);
+			else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname))
+				websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(e));
+			else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname))
+				websiteLink = new WebsiteLink(e);
 		});
 	}
 
-	public WebsiteRoles getWebsiteRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (websiteRole == null) ? null : websiteRole.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is optional)
 	 */
-	public List<String> getWebsiteDescriptionValues()
+	public WebsiteRole websiteRole()
 	{
-		if (websiteDescriptions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (WebsiteDescription i : websiteDescriptions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return websiteRole;
 	}
+
+	private ListOfOnixElement<WebsiteDescription, String> websiteDescriptions = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this list may be empty)
 	 */
-	public String getWebsiteLinkValue()
+	public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions()
 	{
-		return (websiteLink == null) ? null : websiteLink.value;
+		initialize();
+		return websiteDescriptions;
 	}
 
-	public JonixWebsite asJonixWebsite()
+	private WebsiteLink websiteLink = WebsiteLink.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public WebsiteLink websiteLink()
 	{
-		JonixWebsite x = new JonixWebsite();
-		x.websiteDescriptions = getWebsiteDescriptionValues();
-		x.websiteLink = getWebsiteLinkValue();
-		x.websiteRole = getWebsiteRoleValue();
-		return x;
+		initialize();
+		return websiteLink;
+	}
+
+	@Override
+	public JonixWebsite asStruct()
+	{
+		initialize();
+		JonixWebsite struct = new JonixWebsite();
+		struct.websiteDescriptions = websiteDescriptions.values();
+		struct.websiteLink = websiteLink.value;
+		struct.websiteRole = websiteRole.value;
+		return struct;
 	}
 }

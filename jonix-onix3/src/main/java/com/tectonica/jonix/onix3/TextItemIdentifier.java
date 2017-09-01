@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.struct.JonixTextItemIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +52,17 @@ import com.tectonica.jonix.struct.JonixTextItemIdentifier;
  * </tr>
  * </table>
  */
-public class TextItemIdentifier implements OnixDataComposite, Serializable
+public class TextItemIdentifier
+		implements OnixDataCompositeWithKey<JonixTextItemIdentifier, TextItemIdentifierTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "TextItemIdentifier";
 	public static final String shortname = "textitemidentifier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -72,81 +73,107 @@ public class TextItemIdentifier implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public TextItemIDType textItemIDType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final TextItemIdentifier EMPTY = new TextItemIdentifier();
 
 	public TextItemIdentifier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public TextItemIdentifier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(TextItemIDType.refname) || name.equals(TextItemIDType.shortname))
-					textItemIDType = new TextItemIDType(element);
-				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					idTypeName = new IDTypeName(element);
-				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					idValue = new IDValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(TextItemIDType.refname) || name.equals(TextItemIDType.shortname))
+				textItemIDType = new TextItemIDType(e);
+			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
+				idTypeName = new IDTypeName(e);
+			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
+				idValue = new IDValue(e);
 		});
 	}
 
-	public TextItemIdentifierTypes getTextItemIDTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (textItemIDType == null) ? null : textItemIDType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private TextItemIDType textItemIDType = TextItemIDType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getIDTypeNameValue()
+	public TextItemIDType textItemIDType()
 	{
-		return (idTypeName == null) ? null : idTypeName.value;
+		initialize();
+		return textItemIDType;
 	}
+
+	private IDTypeName idTypeName = IDTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * (this field is optional)
 	 */
-	public String getIDValueValue()
+	public IDTypeName idTypeName()
 	{
-		return (idValue == null) ? null : idValue.value;
+		initialize();
+		return idTypeName;
 	}
 
-	public JonixTextItemIdentifier asJonixTextItemIdentifier()
+	private IDValue idValue = IDValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue()
 	{
-		JonixTextItemIdentifier x = new JonixTextItemIdentifier();
-		x.textItemIDType = getTextItemIDTypeValue();
-		x.idTypeName = getIDTypeNameValue();
-		x.idValue = getIDValueValue();
-		return x;
+		initialize();
+		return idValue;
+	}
+
+	@Override
+	public JonixTextItemIdentifier asStruct()
+	{
+		initialize();
+		JonixTextItemIdentifier struct = new JonixTextItemIdentifier();
+		struct.textItemIDType = textItemIDType.value;
+		struct.idTypeName = idTypeName.value;
+		struct.idValue = idValue.value;
+		return struct;
+	}
+
+	@Override
+	public TextItemIdentifierTypes structKey()
+	{
+		return textItemIDType().value;
 	}
 }

@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixBatchBonus;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -51,16 +51,16 @@ import com.tectonica.jonix.struct.JonixBatchBonus;
  * </tr>
  * </table>
  */
-public class BatchBonus implements OnixDataComposite, Serializable
+public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "BatchBonus";
 	public static final String shortname = "batchbonus";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -79,29 +79,35 @@ public class BatchBonus implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public BatchQuantity batchQuantity;
-
-	/**
-	 * (this field is required)
-	 */
-	public FreeQuantity freeQuantity;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final BatchBonus EMPTY = new BatchBonus();
 
 	public BatchBonus()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public BatchBonus(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -110,41 +116,54 @@ public class BatchBonus implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname))
-					batchQuantity = new BatchQuantity(element);
-				else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname))
-					freeQuantity = new FreeQuantity(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname))
+				batchQuantity = new BatchQuantity(e);
+			else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname))
+				freeQuantity = new FreeQuantity(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
-	 */
-	public String getBatchQuantityValue()
+	@Override
+	public boolean exists()
 	{
-		return (batchQuantity == null) ? null : batchQuantity.value;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private BatchQuantity batchQuantity = BatchQuantity.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
+	 * (this field is required)
 	 */
-	public String getFreeQuantityValue()
+	public BatchQuantity batchQuantity()
 	{
-		return (freeQuantity == null) ? null : freeQuantity.value;
+		initialize();
+		return batchQuantity;
 	}
 
-	public JonixBatchBonus asJonixBatchBonus()
+	private FreeQuantity freeQuantity = FreeQuantity.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public FreeQuantity freeQuantity()
 	{
-		JonixBatchBonus x = new JonixBatchBonus();
-		x.batchQuantity = JPU.convertStringToInteger(getBatchQuantityValue());
-		x.freeQuantity = JPU.convertStringToInteger(getFreeQuantityValue());
-		return x;
+		initialize();
+		return freeQuantity;
+	}
+
+	@Override
+	public JonixBatchBonus asStruct()
+	{
+		initialize();
+		JonixBatchBonus struct = new JonixBatchBonus();
+		struct.batchQuantity = JPU.convertStringToInteger(batchQuantity.value);
+		struct.freeQuantity = JPU.convertStringToInteger(freeQuantity.value);
+		return struct;
 	}
 }

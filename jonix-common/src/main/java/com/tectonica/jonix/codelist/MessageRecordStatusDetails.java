@@ -22,12 +22,12 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 225 (Message / Record status detail code &lt;p&gt;NOTE:
- * Introduced in Onix3)
+ * marker interface to assist in IDE navigation to code-list 225 (Message / Record status detail code
+&lt;p&gt;NOTE: Introduced in Onix3)
  */
 interface CodeList225
 {}
@@ -35,47 +35,46 @@ interface CodeList225
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 225</b>
  * <p>
- * Description: Message / Record status detail code &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: Message / Record status detail code
+&lt;p&gt;NOTE: Introduced in Onix3
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist225">ONIX
- *      Codelist 225 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist225">ONIX Codelist 225 in Reference Guide</a>
  */
 public enum MessageRecordStatusDetails implements OnixCodelist, CodeList225
 {
-	Unknown_error("000", "Unknown error"), //
+   Unknown_error("000", "Unknown error"), //
 
-	Unknown_warning("001", "Unknown warning");
+   Unknown_warning("001", "Unknown warning");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private MessageRecordStatusDetails(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private MessageRecordStatusDetails(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static MessageRecordStatusDetails byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (MessageRecordStatusDetails e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static MessageRecordStatusDetails byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (MessageRecordStatusDetails e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

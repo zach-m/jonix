@@ -20,18 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 public class Header implements OnixSuperComposite, Serializable
@@ -41,9 +39,9 @@ public class Header implements OnixSuperComposite, Serializable
 	public static final String refname = "Header";
 	public static final String shortname = "header";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -54,152 +52,168 @@ public class Header implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public Sender sender;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Addressee> addressees;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MessageNumber messageNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MessageRepeat messageRepeat;
-
-	/**
-	 * (this field is required)
-	 */
-	public SentDateTime sentDateTime;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MessageNote> messageNotes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultLanguageOfText defaultLanguageOfText;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultPriceType defaultPriceType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultCurrencyCode defaultCurrencyCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Header EMPTY = new Header();
 
 	public Header()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Header(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Sender.refname) || name.equals(Sender.shortname))
-					sender = new Sender(element);
-				else if (name.equals(Addressee.refname) || name.equals(Addressee.shortname))
-					addressees = JPU.addToList(addressees, new Addressee(element));
-				else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
-					messageNumber = new MessageNumber(element);
-				else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
-					messageRepeat = new MessageRepeat(element);
-				else if (name.equals(SentDateTime.refname) || name.equals(SentDateTime.shortname))
-					sentDateTime = new SentDateTime(element);
-				else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
-					messageNotes = JPU.addToList(messageNotes, new MessageNote(element));
-				else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
-					defaultLanguageOfText = new DefaultLanguageOfText(element);
-				else if (name.equals(DefaultPriceType.refname) || name.equals(DefaultPriceType.shortname))
-					defaultPriceType = new DefaultPriceType(element);
-				else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
-					defaultCurrencyCode = new DefaultCurrencyCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Sender.refname) || name.equals(Sender.shortname))
+				sender = new Sender(e);
+			else if (name.equals(Addressee.refname) || name.equals(Addressee.shortname))
+				addressees = JPU.addToList(addressees, new Addressee(e));
+			else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
+				messageNumber = new MessageNumber(e);
+			else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
+				messageRepeat = new MessageRepeat(e);
+			else if (name.equals(SentDateTime.refname) || name.equals(SentDateTime.shortname))
+				sentDateTime = new SentDateTime(e);
+			else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
+				messageNotes = JPU.addToList(messageNotes, new MessageNote(e));
+			else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
+				defaultLanguageOfText = new DefaultLanguageOfText(e);
+			else if (name.equals(DefaultPriceType.refname) || name.equals(DefaultPriceType.shortname))
+				defaultPriceType = new DefaultPriceType(e);
+			else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
+				defaultCurrencyCode = new DefaultCurrencyCode(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable length integer
-	 */
-	public Integer getMessageNumberValue()
+	@Override
+	public boolean exists()
 	{
-		return (messageNumber == null) ? null : messageNumber.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private Sender sender = Sender.EMPTY;
 
 	/**
-	 * Raw Format: Variable length integer
+	 * (this field is required)
 	 */
-	public Integer getMessageRepeatValue()
+	public Sender sender()
 	{
-		return (messageRepeat == null) ? null : messageRepeat.value;
+		initialize();
+		return sender;
 	}
+
+	private List<Addressee> addressees = Collections.emptyList();
 
 	/**
-	 * Raw Format: Permitted formats, where 'T' and 'Z' represent themselves (ie the letters T and Z), and where the
-	 * symbol '&#177;' represents either '+' or '-' to indicate a timezone offset from UTC. YYYYMMDD Date only
-	 * YYYYMMDDThhmm Date and time (local time of sender) YYYYMMDDThhmmZ Universal time (UTC) &#8224;
-	 * YYYYMMDDThhmm&#177;hhmm With time zone offset from UTC &#8224; YYYYMMDDThhmmss Date and time (with seconds)
-	 * YYYYMMDDThhmmssZ Universal time (with seconds) YYYYMMDDThhmmss&#177;hhmm With time zone offset from UTC (with
-	 * seconds) &#8224; indicates the preferred formats
+	 * (this list may be empty)
 	 */
-	public String getSentDateTimeValue()
+	public List<Addressee> addressees()
 	{
-		return (sentDateTime == null) ? null : sentDateTime.value;
+		initialize();
+		return addressees;
 	}
+
+	private MessageNumber messageNumber = MessageNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 500 characters
+	 * (this field is optional)
 	 */
-	public List<String> getMessageNoteValues()
+	public MessageNumber messageNumber()
 	{
-		if (messageNotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (MessageNote i : messageNotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return messageNumber;
 	}
 
-	public LanguageCodes getDefaultLanguageOfTextValue()
+	private MessageRepeat messageRepeat = MessageRepeat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageRepeat messageRepeat()
 	{
-		return (defaultLanguageOfText == null) ? null : defaultLanguageOfText.value;
+		initialize();
+		return messageRepeat;
 	}
 
-	public PriceTypes getDefaultPriceTypeValue()
+	private SentDateTime sentDateTime = SentDateTime.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public SentDateTime sentDateTime()
 	{
-		return (defaultPriceType == null) ? null : defaultPriceType.value;
+		initialize();
+		return sentDateTime;
 	}
 
-	public CurrencyCodes getDefaultCurrencyCodeValue()
+	private ListOfOnixElement<MessageNote, String> messageNotes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<MessageNote, String> messageNotes()
 	{
-		return (defaultCurrencyCode == null) ? null : defaultCurrencyCode.value;
+		initialize();
+		return messageNotes;
+	}
+
+	private DefaultLanguageOfText defaultLanguageOfText = DefaultLanguageOfText.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultLanguageOfText defaultLanguageOfText()
+	{
+		initialize();
+		return defaultLanguageOfText;
+	}
+
+	private DefaultPriceType defaultPriceType = DefaultPriceType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultPriceType defaultPriceType()
+	{
+		initialize();
+		return defaultPriceType;
+	}
+
+	private DefaultCurrencyCode defaultCurrencyCode = DefaultCurrencyCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultCurrencyCode defaultCurrencyCode()
+	{
+		initialize();
+		return defaultCurrencyCode;
 	}
 }

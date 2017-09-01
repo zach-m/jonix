@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,826 +40,855 @@ interface CodeList49
  * Description: Region code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist49">ONIX
- *      Codelist 49 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist49">ONIX Codelist 49 in Reference Guide</a>
  */
 public enum Regions implements OnixCodelist, CodeList49
 {
-	Australian_Capital_Territory("AU-CT", "Australian Capital Territory"), //
+   Australian_Capital_Territory("AU-CT", "Australian Capital Territory"), //
 
-	New_South_Wales("AU-NS", "New South Wales"), //
+   New_South_Wales("AU-NS", "New South Wales"), //
 
-	Northern_Territory("AU-NT", "Northern Territory"), //
+   Northern_Territory("AU-NT", "Northern Territory"), //
 
-	Queensland("AU-QL", "Queensland"), //
+   Queensland("AU-QL", "Queensland"), //
 
-	South_Australia("AU-SA", "South Australia"), //
+   South_Australia("AU-SA", "South Australia"), //
 
-	Tasmania("AU-TS", "Tasmania"), //
+   Tasmania("AU-TS", "Tasmania"), //
 
-	Victoria("AU-VI", "Victoria"), //
+   Victoria("AU-VI", "Victoria"), //
 
-	Western_Australia("AU-WA", "Western Australia"), //
+   Western_Australia("AU-WA", "Western Australia"), //
 
-	Alberta("CA-AB", "Alberta"), //
+   Alberta("CA-AB", "Alberta"), //
 
-	British_Columbia("CA-BC", "British Columbia"), //
+   British_Columbia("CA-BC", "British Columbia"), //
 
-	Manitoba("CA-MB", "Manitoba"), //
+   Manitoba("CA-MB", "Manitoba"), //
 
-	New_Brunswick("CA-NB", "New Brunswick"), //
+   New_Brunswick("CA-NB", "New Brunswick"), //
 
-	Newfoundland_and_Labrador("CA-NL", "Newfoundland and Labrador"), //
+   Newfoundland_and_Labrador("CA-NL", "Newfoundland and Labrador"), //
 
-	Nova_Scotia("CA-NS", "Nova Scotia"), //
+   Nova_Scotia("CA-NS", "Nova Scotia"), //
 
-	Northwest_Territories("CA-NT", "Northwest Territories"), //
+   Northwest_Territories("CA-NT", "Northwest Territories"), //
 
-	Nunavut("CA-NU", "Nunavut"), //
+   Nunavut("CA-NU", "Nunavut"), //
 
-	Ontario("CA-ON", "Ontario"), //
+   Ontario("CA-ON", "Ontario"), //
 
-	Prince_Edward_Island("CA-PE", "Prince Edward Island"), //
+   Prince_Edward_Island("CA-PE", "Prince Edward Island"), //
 
-	Quebec("CA-QC", "Quebec"), //
+   Quebec("CA-QC", "Quebec"), //
 
-	Saskatchewan("CA-SK", "Saskatchewan"), //
+   Saskatchewan("CA-SK", "Saskatchewan"), //
 
-	Yukon_Territory("CA-YT", "Yukon Territory"), //
+   Yukon_Territory("CA-YT", "Yukon Territory"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Beijing_Municipality("CN-11", "Beijing Municipality"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Beijing_Municipality("CN-11", "Beijing Municipality"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Tianjin_Municipality("CN-12", "Tianjin Municipality"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Tianjin_Municipality("CN-12", "Tianjin Municipality"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Hebei_Province("CN-13", "Hebei Province"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Hebei_Province("CN-13", "Hebei Province"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Shanxi_Province("CN-14", "Shanxi Province"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Shanxi_Province("CN-14", "Shanxi Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Inner_Mongolia_Autonomous_Region("CN-15", "Inner Mongolia Autonomous Region"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Liaoning_Province("CN-21", "Liaoning Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Jilin_Province("CN-22", "Jilin Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Heilongjiang_Province("CN-23", "Heilongjiang Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Shanghai_Municipality("CN-31", "Shanghai Municipality"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Jiangsu_Province("CN-32", "Jiangsu Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Zhejiang_Province("CN-33", "Zhejiang Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Anhui_Province("CN-34", "Anhui Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Fujian_Province("CN-35", "Fujian Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Jiangxi_Province("CN-36", "Jiangxi Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Shandong_Province("CN-37", "Shandong Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Henan_Province("CN-41", "Henan Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Hubei_Province("CN-42", "Hubei Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Hunan_Province("CN-43", "Hunan Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Guangdong_Province("CN-44", "Guangdong Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Guangxi_Zhuang_Autonomous_Region("CN-45", "Guangxi Zhuang Autonomous Region"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Hainan_Province("CN-46", "Hainan Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Chongqing_Municipality("CN-50", "Chongqing Municipality"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Sichuan_Province("CN-51", "Sichuan Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Guizhou_Province("CN-52", "Guizhou Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Yunnan_Province("CN-53", "Yunnan Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Tibet_Autonomous_Region("CN-54", "Tibet Autonomous Region"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Shaanxi_Province("CN-61", "Shaanxi Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Gansu_Province("CN-62", "Gansu Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Qinghai_Province("CN-63", "Qinghai Province"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Ningxia_Hui_Autonomous_Region("CN-64", "Ningxia Hui Autonomous Region"), //
+
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Xinjiang_Uyghur_Autonomous_Region("CN-65", "Xinjiang Uyghur Autonomous Region"), //
+
+   /**
+    * Prefer code TW (Taiwan, Province of China) from List 91
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Taiwan_Province("CN-71", "Taiwan Province"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Inner_Mongolia_Autonomous_Region("CN-15", "Inner Mongolia Autonomous Region"), //
+   /**
+    * Prefer code HK (Hong Kong) from List 91
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Hong_Kong_Special_Administrative_Region("CN-91", "Hong Kong Special Administrative Region"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Liaoning_Province("CN-21", "Liaoning Province"), //
+   /**
+    * Prefer code MO (Macao) from List 91
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Macau_Special_Administrative_Region("CN-92", "Macau Special Administrative Region"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Jilin_Province("CN-22", "Jilin Province"), //
+   Canary_Islands("ES-CN", "Canary Islands"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Heilongjiang_Province("CN-23", "Heilongjiang Province"), //
+   /**
+    * Airside outlets at UK international airports only
+    */
+   UK_airside("GB-AIR", "UK airside"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Shanghai_Municipality("CN-31", "Shanghai Municipality"), //
+   /**
+    * All UK airports, including both airside and other outlets
+    */
+   UK_airports("GB-APS", "UK airports"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Jiangsu_Province("CN-32", "Jiangsu Province"), //
+   /**
+    * DEPRECATED, replaced by country codes GG - Guernsey, and JE - Jersey
+    */
+   Channel_Islands("GB-CHA", "Channel Islands"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Zhejiang_Province("CN-33", "Zhejiang Province"), //
+   England("GB-ENG", "England"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Anhui_Province("CN-34", "Anhui Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Fujian_Province("CN-35", "Fujian Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Jiangxi_Province("CN-36", "Jiangxi Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Shandong_Province("CN-37", "Shandong Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Henan_Province("CN-41", "Henan Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Hubei_Province("CN-42", "Hubei Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Hunan_Province("CN-43", "Hunan Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Guangdong_Province("CN-44", "Guangdong Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Guangxi_Zhuang_Autonomous_Region("CN-45", "Guangxi Zhuang Autonomous Region"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Hainan_Province("CN-46", "Hainan Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Chongqing_Municipality("CN-50", "Chongqing Municipality"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Sichuan_Province("CN-51", "Sichuan Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Guizhou_Province("CN-52", "Guizhou Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Yunnan_Province("CN-53", "Yunnan Province"), //
-
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Tibet_Autonomous_Region("CN-54", "Tibet Autonomous Region"), //
+   /**
+    * UK excluding Northern Ireland
+    */
+   England_Wales_Scotland("GB-EWS", "England, Wales, Scotland"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Shaanxi_Province("CN-61", "Shaanxi Province"), //
+   /**
+    * DEPRECATED, replaced by country code IM - Isle of Man
+    */
+   Isle_of_Man("GB-IOM", "Isle of Man"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Gansu_Province("CN-62", "Gansu Province"), //
+   Northern_Ireland("GB-NIR", "Northern Ireland"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Qinghai_Province("CN-63", "Qinghai Province"), //
+   Scotland("GB-SCT", "Scotland"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Ningxia_Hui_Autonomous_Region("CN-64", "Ningxia Hui Autonomous Region"), //
+   Wales("GB-WLS", "Wales"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Xinjiang_Uyghur_Autonomous_Region("CN-65", "Xinjiang Uyghur Autonomous Region"), //
+   /**
+    * Airside outlets at Irish international airports only
+    */
+   Ireland_airside("IE-AIR", "Ireland airside"), //
 
-	/**
-	 * Prefer code TW (Taiwan, Province of China) from List 91 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Taiwan_Province("CN-71", "Taiwan Province"), //
+   Agrigento("IT-AG", "Agrigento"), //
 
-	/**
-	 * Prefer code HK (Hong Kong) from List 91 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Hong_Kong_Special_Administrative_Region("CN-91", "Hong Kong Special Administrative Region"), //
+   Alessandria("IT-AL", "Alessandria"), //
 
-	/**
-	 * Prefer code MO (Macao) from List 91 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Macau_Special_Administrative_Region("CN-92", "Macau Special Administrative Region"), //
+   Ancona("IT-AN", "Ancona"), //
 
-	Canary_Islands("ES-CN", "Canary Islands"), //
+   Aosta("IT-AO", "Aosta"), //
 
-	/**
-	 * Airside outlets at UK international airports only
-	 */
-	UK_airside("GB-AIR", "UK airside"), //
+   Arezzo("IT-AR", "Arezzo"), //
 
-	/**
-	 * All UK airports, including both airside and other outlets
-	 */
-	UK_airports("GB-APS", "UK airports"), //
+   Ascoli_Piceno("IT-AP", "Ascoli Piceno"), //
 
-	/**
-	 * DEPRECATED, replaced by country codes GG - Guernsey, and JE - Jersey
-	 */
-	Channel_Islands("GB-CHA", "Channel Islands"), //
+   Asti("IT-AT", "Asti"), //
 
-	England("GB-ENG", "England"), //
+   Avellino("IT-AV", "Avellino"), //
 
-	/**
-	 * UK excluding Northern Ireland
-	 */
-	England_Wales_Scotland("GB-EWS", "England, Wales, Scotland"), //
+   Bari("IT-BA", "Bari"), //
 
-	/**
-	 * DEPRECATED, replaced by country code IM - Isle of Man
-	 */
-	Isle_of_Man("GB-IOM", "Isle of Man"), //
+   Barletta_Andria_Trani("IT-BT", "Barletta-Andria-Trani"), //
 
-	Northern_Ireland("GB-NIR", "Northern Ireland"), //
+   Belluno("IT-BL", "Belluno"), //
 
-	Scotland("GB-SCT", "Scotland"), //
+   Benevento("IT-BN", "Benevento"), //
 
-	Wales("GB-WLS", "Wales"), //
+   Bergamo("IT-BG", "Bergamo"), //
 
-	/**
-	 * Airside outlets at Irish international airports only
-	 */
-	Ireland_airside("IE-AIR", "Ireland airside"), //
+   Biella("IT-BI", "Biella"), //
 
-	Agrigento("IT-AG", "Agrigento"), //
+   Bologna("IT-BO", "Bologna"), //
 
-	Alessandria("IT-AL", "Alessandria"), //
+   Bolzano("IT-BZ", "Bolzano"), //
 
-	Ancona("IT-AN", "Ancona"), //
+   Brescia("IT-BS", "Brescia"), //
 
-	Aosta("IT-AO", "Aosta"), //
+   Brindisi("IT-BR", "Brindisi"), //
 
-	Arezzo("IT-AR", "Arezzo"), //
+   Cagliari("IT-CA", "Cagliari"), //
 
-	Ascoli_Piceno("IT-AP", "Ascoli Piceno"), //
+   Caltanissetta("IT-CL", "Caltanissetta"), //
 
-	Asti("IT-AT", "Asti"), //
+   Campobasso("IT-CB", "Campobasso"), //
 
-	Avellino("IT-AV", "Avellino"), //
+   Carbonia_Iglesias("IT-CI", "Carbonia-Iglesias"), //
 
-	Bari("IT-BA", "Bari"), //
+   Caserta("IT-CE", "Caserta"), //
 
-	Barletta_Andria_Trani("IT-BT", "Barletta-Andria-Trani"), //
+   Catania("IT-CT", "Catania"), //
 
-	Belluno("IT-BL", "Belluno"), //
+   Catanzaro("IT-CZ", "Catanzaro"), //
 
-	Benevento("IT-BN", "Benevento"), //
+   Chieti("IT-CH", "Chieti"), //
 
-	Bergamo("IT-BG", "Bergamo"), //
+   Como("IT-CO", "Como"), //
 
-	Biella("IT-BI", "Biella"), //
+   Cosenza("IT-CS", "Cosenza"), //
 
-	Bologna("IT-BO", "Bologna"), //
+   Cremona("IT-CR", "Cremona"), //
 
-	Bolzano("IT-BZ", "Bolzano"), //
+   Crotone("IT-KR", "Crotone"), //
 
-	Brescia("IT-BS", "Brescia"), //
+   Cuneo("IT-CN", "Cuneo"), //
 
-	Brindisi("IT-BR", "Brindisi"), //
+   Enna("IT-EN", "Enna"), //
 
-	Cagliari("IT-CA", "Cagliari"), //
+   Fermo("IT-FM", "Fermo"), //
 
-	Caltanissetta("IT-CL", "Caltanissetta"), //
+   Ferrara("IT-FE", "Ferrara"), //
 
-	Campobasso("IT-CB", "Campobasso"), //
+   Firenze("IT-FI", "Firenze"), //
 
-	Carbonia_Iglesias("IT-CI", "Carbonia-Iglesias"), //
+   Foggia("IT-FG", "Foggia"), //
 
-	Caserta("IT-CE", "Caserta"), //
+   Forl_Cesena("IT-FC", "Forlì-Cesena"), //
 
-	Catania("IT-CT", "Catania"), //
+   Frosinone("IT-FR", "Frosinone"), //
 
-	Catanzaro("IT-CZ", "Catanzaro"), //
+   Genova("IT-GE", "Genova"), //
 
-	Chieti("IT-CH", "Chieti"), //
+   Gorizia("IT-GO", "Gorizia"), //
 
-	Como("IT-CO", "Como"), //
+   Grosseto("IT-GR", "Grosseto"), //
 
-	Cosenza("IT-CS", "Cosenza"), //
+   Imperia("IT-IM", "Imperia"), //
 
-	Cremona("IT-CR", "Cremona"), //
+   Isernia("IT-IS", "Isernia"), //
 
-	Crotone("IT-KR", "Crotone"), //
+   La_Spezia("IT-SP", "La Spezia"), //
 
-	Cuneo("IT-CN", "Cuneo"), //
+   L_Aquila("IT-AQ", "L’Aquila"), //
 
-	Enna("IT-EN", "Enna"), //
+   Latina("IT-LT", "Latina"), //
 
-	Fermo("IT-FM", "Fermo"), //
+   Lecce("IT-LE", "Lecce"), //
 
-	Ferrara("IT-FE", "Ferrara"), //
+   Lecco("IT-LC", "Lecco"), //
 
-	Firenze("IT-FI", "Firenze"), //
+   Livorno("IT-LI", "Livorno"), //
 
-	Foggia("IT-FG", "Foggia"), //
+   Lodi("IT-LO", "Lodi"), //
 
-	Forl_Cesena("IT-FC", "Forlì-Cesena"), //
+   Lucca("IT-LU", "Lucca"), //
 
-	Frosinone("IT-FR", "Frosinone"), //
+   Macerata("IT-MC", "Macerata"), //
 
-	Genova("IT-GE", "Genova"), //
+   Mantova("IT-MN", "Mantova"), //
 
-	Gorizia("IT-GO", "Gorizia"), //
+   Massa_Carrara("IT-MS", "Massa-Carrara"), //
 
-	Grosseto("IT-GR", "Grosseto"), //
+   Matera("IT-MT", "Matera"), //
 
-	Imperia("IT-IM", "Imperia"), //
+   Medio_Campidano("IT-VS", "Medio Campidano"), //
 
-	Isernia("IT-IS", "Isernia"), //
+   Messina("IT-ME", "Messina"), //
 
-	La_Spezia("IT-SP", "La Spezia"), //
+   Milano("IT-MI", "Milano"), //
 
-	L_Aquila("IT-AQ", "L’Aquila"), //
+   Modena("IT-MO", "Modena"), //
 
-	Latina("IT-LT", "Latina"), //
+   Monza_e_Brianza("IT-MB", "Monza e Brianza"), //
 
-	Lecce("IT-LE", "Lecce"), //
+   Napoli("IT-NA", "Napoli"), //
 
-	Lecco("IT-LC", "Lecco"), //
+   Novara("IT-NO", "Novara"), //
 
-	Livorno("IT-LI", "Livorno"), //
+   Nuoro("IT-NU", "Nuoro"), //
 
-	Lodi("IT-LO", "Lodi"), //
+   Ogliastra("IT-OG", "Ogliastra"), //
 
-	Lucca("IT-LU", "Lucca"), //
+   Olbia_Tempio("IT-OT", "Olbia-Tempio"), //
 
-	Macerata("IT-MC", "Macerata"), //
+   Oristano("IT-OR", "Oristano"), //
 
-	Mantova("IT-MN", "Mantova"), //
+   Padova("IT-PD", "Padova"), //
 
-	Massa_Carrara("IT-MS", "Massa-Carrara"), //
+   Palermo("IT-PA", "Palermo"), //
 
-	Matera("IT-MT", "Matera"), //
+   Parma("IT-PR", "Parma"), //
 
-	Medio_Campidano("IT-VS", "Medio Campidano"), //
+   Pavia("IT-PV", "Pavia"), //
 
-	Messina("IT-ME", "Messina"), //
+   Perugia("IT-PG", "Perugia"), //
 
-	Milano("IT-MI", "Milano"), //
+   Pesaro_e_Urbino("IT-PU", "Pesaro e Urbino"), //
 
-	Modena("IT-MO", "Modena"), //
+   Pescara("IT-PE", "Pescara"), //
 
-	Monza_e_Brianza("IT-MB", "Monza e Brianza"), //
+   Piacenza("IT-PC", "Piacenza"), //
 
-	Napoli("IT-NA", "Napoli"), //
+   Pisa("IT-PI", "Pisa"), //
 
-	Novara("IT-NO", "Novara"), //
+   Pistoia("IT-PT", "Pistoia"), //
 
-	Nuoro("IT-NU", "Nuoro"), //
+   Pordenone("IT-PN", "Pordenone"), //
 
-	Ogliastra("IT-OG", "Ogliastra"), //
+   Potenza("IT-PZ", "Potenza"), //
 
-	Olbia_Tempio("IT-OT", "Olbia-Tempio"), //
+   Prato("IT-PO", "Prato"), //
 
-	Oristano("IT-OR", "Oristano"), //
+   Ragusa("IT-RG", "Ragusa"), //
 
-	Padova("IT-PD", "Padova"), //
+   Ravenna("IT-RA", "Ravenna"), //
 
-	Palermo("IT-PA", "Palermo"), //
+   Reggio_Calabria("IT-RC", "Reggio Calabria"), //
 
-	Parma("IT-PR", "Parma"), //
+   Reggio_Emilia("IT-RE", "Reggio Emilia"), //
 
-	Pavia("IT-PV", "Pavia"), //
+   Rieti("IT-RI", "Rieti"), //
 
-	Perugia("IT-PG", "Perugia"), //
+   Rimini("IT-RN", "Rimini"), //
 
-	Pesaro_e_Urbino("IT-PU", "Pesaro e Urbino"), //
+   Roma("IT-RM", "Roma"), //
 
-	Pescara("IT-PE", "Pescara"), //
+   Rovigo("IT-RO", "Rovigo"), //
 
-	Piacenza("IT-PC", "Piacenza"), //
+   Salerno("IT-SA", "Salerno"), //
 
-	Pisa("IT-PI", "Pisa"), //
+   Sassari("IT-SS", "Sassari"), //
 
-	Pistoia("IT-PT", "Pistoia"), //
+   Savona("IT-SV", "Savona"), //
 
-	Pordenone("IT-PN", "Pordenone"), //
+   Siena("IT-SI", "Siena"), //
 
-	Potenza("IT-PZ", "Potenza"), //
+   Siracusa("IT-SR", "Siracusa"), //
 
-	Prato("IT-PO", "Prato"), //
+   Sondrio("IT-SO", "Sondrio"), //
 
-	Ragusa("IT-RG", "Ragusa"), //
+   Taranto("IT-TA", "Taranto"), //
 
-	Ravenna("IT-RA", "Ravenna"), //
+   Teramo("IT-TE", "Teramo"), //
 
-	Reggio_Calabria("IT-RC", "Reggio Calabria"), //
+   Terni("IT-TR", "Terni"), //
 
-	Reggio_Emilia("IT-RE", "Reggio Emilia"), //
+   Torino("IT-TO", "Torino"), //
 
-	Rieti("IT-RI", "Rieti"), //
+   Trapani("IT-TP", "Trapani"), //
 
-	Rimini("IT-RN", "Rimini"), //
+   Trento("IT-TN", "Trento"), //
 
-	Roma("IT-RM", "Roma"), //
+   Treviso("IT-TV", "Treviso"), //
 
-	Rovigo("IT-RO", "Rovigo"), //
+   Trieste("IT-TS", "Trieste"), //
 
-	Salerno("IT-SA", "Salerno"), //
+   Udine("IT-UD", "Udine"), //
 
-	Sassari("IT-SS", "Sassari"), //
+   Varese("IT-VA", "Varese"), //
 
-	Savona("IT-SV", "Savona"), //
+   Venezia("IT-VE", "Venezia"), //
 
-	Siena("IT-SI", "Siena"), //
+   Verbano_Cusio_Ossola("IT-VB", "Verbano-Cusio-Ossola"), //
 
-	Siracusa("IT-SR", "Siracusa"), //
+   Vercelli("IT-VC", "Vercelli"), //
 
-	Sondrio("IT-SO", "Sondrio"), //
+   Verona("IT-VR", "Verona"), //
 
-	Taranto("IT-TA", "Taranto"), //
+   Vibo_Valentia("IT-VV", "Vibo Valentia"), //
 
-	Teramo("IT-TE", "Teramo"), //
+   Vicenza("IT-VI", "Vicenza"), //
 
-	Terni("IT-TR", "Terni"), //
+   Viterbo("IT-VT", "Viterbo"), //
 
-	Torino("IT-TO", "Torino"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Kosovo_Metohija("RS-KM", "Kosovo-Metohija"), //
 
-	Trapani("IT-TP", "Trapani"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Vojvodina("RS-VO", "Vojvodina"), //
 
-	Trento("IT-TN", "Trento"), //
+   Republic_of_Adygeya("RU-AD", "Republic of Adygeya"), //
 
-	Treviso("IT-TV", "Treviso"), //
+   Republic_of_Altay("RU-AL", "Republic of Altay"), //
 
-	Trieste("IT-TS", "Trieste"), //
+   Republic_of_Bashkortostan("RU-BA", "Republic of Bashkortostan"), //
 
-	Udine("IT-UD", "Udine"), //
+   Republic_of_Buryatiya("RU-BU", "Republic of Buryatiya"), //
 
-	Varese("IT-VA", "Varese"), //
+   Chechenskaya_Republic("RU-CE", "Chechenskaya Republic"), //
 
-	Venezia("IT-VE", "Venezia"), //
+   Chuvashskaya_Republic("RU-CU", "Chuvashskaya Republic"), //
 
-	Verbano_Cusio_Ossola("IT-VB", "Verbano-Cusio-Ossola"), //
+   Republic_of_Dagestan("RU-DA", "Republic of Dagestan"), //
 
-	Vercelli("IT-VC", "Vercelli"), //
+   Republic_of_Ingushetiya("RU-IN", "Republic of Ingushetiya"), //
 
-	Verona("IT-VR", "Verona"), //
+   Kabardino_Balkarskaya_Republic("RU-KB", "Kabardino-Balkarskaya Republic"), //
 
-	Vibo_Valentia("IT-VV", "Vibo Valentia"), //
+   Republic_of_Kalmykiya("RU-KL", "Republic of Kalmykiya"), //
 
-	Vicenza("IT-VI", "Vicenza"), //
+   Karachayevo_Cherkesskaya_Republic("RU-KC", "Karachayevo-Cherkesskaya Republic"), //
 
-	Viterbo("IT-VT", "Viterbo"), //
+   Republic_of_Kareliya("RU-KR", "Republic of Kareliya"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Kosovo_Metohija("RS-KM", "Kosovo-Metohija"), //
+   Republic_of_Khakasiya("RU-KK", "Republic of Khakasiya"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Vojvodina("RS-VO", "Vojvodina"), //
+   Republic_of_Komi("RU-KO", "Republic of Komi"), //
 
-	Republic_of_Adygeya("RU-AD", "Republic of Adygeya"), //
+   Republic_of_Mariy_El("RU-ME", "Republic of Mariy El"), //
 
-	Republic_of_Altay("RU-AL", "Republic of Altay"), //
+   Republic_of_Mordoviya("RU-MO", "Republic of Mordoviya"), //
 
-	Republic_of_Bashkortostan("RU-BA", "Republic of Bashkortostan"), //
+   Republic_of_Sakha_Yakutiya("RU-SA", "Republic of Sakha (Yakutiya)"), //
 
-	Republic_of_Buryatiya("RU-BU", "Republic of Buryatiya"), //
+   Republic_of_Severnaya_Osetiya_Alaniya("RU-SE", "Republic of Severnaya Osetiya-Alaniya"), //
 
-	Chechenskaya_Republic("RU-CE", "Chechenskaya Republic"), //
+   Republic_of_Tatarstan("RU-TA", "Republic of Tatarstan"), //
 
-	Chuvashskaya_Republic("RU-CU", "Chuvashskaya Republic"), //
+   Republic_of_Tyva_Tuva("RU-TY", "Republic of Tyva (Tuva)"), //
 
-	Republic_of_Dagestan("RU-DA", "Republic of Dagestan"), //
+   Udmurtskaya_Republic("RU-UD", "Udmurtskaya Republic"), //
 
-	Republic_of_Ingushetiya("RU-IN", "Republic of Ingushetiya"), //
+   Altayskiy_Administrative_Territory("RU-ALT", "Altayskiy Administrative Territory"), //
 
-	Kabardino_Balkarskaya_Republic("RU-KB", "Kabardino-Balkarskaya Republic"), //
+   Kamchatskiy_Administrative_Territory("RU-KAM", "Kamchatskiy Administrative Territory"), //
 
-	Republic_of_Kalmykiya("RU-KL", "Republic of Kalmykiya"), //
+   Khabarovskiy_Administrative_Territory("RU-KHA", "Khabarovskiy Administrative Territory"), //
 
-	Karachayevo_Cherkesskaya_Republic("RU-KC", "Karachayevo-Cherkesskaya Republic"), //
+   Krasnodarskiy_Administrative_Territory("RU-KDA", "Krasnodarskiy Administrative Territory"), //
 
-	Republic_of_Kareliya("RU-KR", "Republic of Kareliya"), //
+   Krasnoyarskiy_Administrative_Territory("RU-KYA", "Krasnoyarskiy Administrative Territory"), //
 
-	Republic_of_Khakasiya("RU-KK", "Republic of Khakasiya"), //
+   Permskiy_Administrative_Territory("RU-PER", "Permskiy Administrative Territory"), //
 
-	Republic_of_Komi("RU-KO", "Republic of Komi"), //
+   Primorskiy_Administrative_Territory("RU-PRI", "Primorskiy Administrative Territory"), //
 
-	Republic_of_Mariy_El("RU-ME", "Republic of Mariy El"), //
+   Stavropol_skiy_Administrative_Territory("RU-STA", "Stavropol’skiy Administrative Territory"), //
 
-	Republic_of_Mordoviya("RU-MO", "Republic of Mordoviya"), //
+   Zabaykal_skiy_Administrative_Territory("RU-ZAB", "Zabaykal’skiy Administrative Territory"), //
 
-	Republic_of_Sakha_Yakutiya("RU-SA", "Republic of Sakha (Yakutiya)"), //
+   Amurskaya_Administrative_Region("RU-AMU", "Amurskaya Administrative Region"), //
 
-	Republic_of_Severnaya_Osetiya_Alaniya("RU-SE", "Republic of Severnaya Osetiya-Alaniya"), //
+   Arkhangel_skaya_Administrative_Region("RU-ARK", "Arkhangel’skaya Administrative Region"), //
 
-	Republic_of_Tatarstan("RU-TA", "Republic of Tatarstan"), //
+   Astrakhanskaya_Administrative_Region("RU-AST", "Astrakhanskaya Administrative Region"), //
 
-	Republic_of_Tyva_Tuva("RU-TY", "Republic of Tyva (Tuva)"), //
+   Belgorodskaya_Administrative_Region("RU-BEL", "Belgorodskaya Administrative Region"), //
 
-	Udmurtskaya_Republic("RU-UD", "Udmurtskaya Republic"), //
+   Bryanskaya_Administrative_Region("RU-BRY", "Bryanskaya Administrative Region"), //
 
-	Altayskiy_Administrative_Territory("RU-ALT", "Altayskiy Administrative Territory"), //
+   Chelyabinskaya_Administrative_Region("RU-CHE", "Chelyabinskaya Administrative Region"), //
 
-	Kamchatskiy_Administrative_Territory("RU-KAM", "Kamchatskiy Administrative Territory"), //
+   Irkutskaya_Administrative_Region("RU-IRK", "Irkutskaya Administrative Region"), //
 
-	Khabarovskiy_Administrative_Territory("RU-KHA", "Khabarovskiy Administrative Territory"), //
+   Ivanovskaya_Administrative_Region("RU-IVA", "Ivanovskaya Administrative Region"), //
 
-	Krasnodarskiy_Administrative_Territory("RU-KDA", "Krasnodarskiy Administrative Territory"), //
+   Kaliningradskaya_Administrative_Region("RU-KGD", "Kaliningradskaya Administrative Region"), //
 
-	Krasnoyarskiy_Administrative_Territory("RU-KYA", "Krasnoyarskiy Administrative Territory"), //
+   Kaluzhskaya_Administrative_Region("RU-KLU", "Kaluzhskaya Administrative Region"), //
 
-	Permskiy_Administrative_Territory("RU-PER", "Permskiy Administrative Territory"), //
+   Kemerovskaya_Administrative_Region("RU-KEM", "Kemerovskaya Administrative Region"), //
 
-	Primorskiy_Administrative_Territory("RU-PRI", "Primorskiy Administrative Territory"), //
+   Kirovskaya_Administrative_Region("RU-KIR", "Kirovskaya Administrative Region"), //
 
-	Stavropol_skiy_Administrative_Territory("RU-STA", "Stavropol’skiy Administrative Territory"), //
+   Kostromskaya_Administrative_Region("RU-KOS", "Kostromskaya Administrative Region"), //
 
-	Zabaykal_skiy_Administrative_Territory("RU-ZAB", "Zabaykal’skiy Administrative Territory"), //
+   Kurganskaya_Administrative_Region("RU-KGN", "Kurganskaya Administrative Region"), //
 
-	Amurskaya_Administrative_Region("RU-AMU", "Amurskaya Administrative Region"), //
+   Kurskaya_Administrative_Region("RU-KRS", "Kurskaya Administrative Region"), //
 
-	Arkhangel_skaya_Administrative_Region("RU-ARK", "Arkhangel’skaya Administrative Region"), //
+   Leningradskaya_Administrative_Region("RU-LEN", "Leningradskaya Administrative Region"), //
 
-	Astrakhanskaya_Administrative_Region("RU-AST", "Astrakhanskaya Administrative Region"), //
+   Lipetskaya_Administrative_Region("RU-LIP", "Lipetskaya Administrative Region"), //
 
-	Belgorodskaya_Administrative_Region("RU-BEL", "Belgorodskaya Administrative Region"), //
+   Magadanskaya_Administrative_Region("RU-MAG", "Magadanskaya Administrative Region"), //
 
-	Bryanskaya_Administrative_Region("RU-BRY", "Bryanskaya Administrative Region"), //
+   Moskovskaya_Administrative_Region("RU-MOS", "Moskovskaya Administrative Region"), //
 
-	Chelyabinskaya_Administrative_Region("RU-CHE", "Chelyabinskaya Administrative Region"), //
+   Murmanskaya_Administrative_Region("RU-MUR", "Murmanskaya Administrative Region"), //
 
-	Irkutskaya_Administrative_Region("RU-IRK", "Irkutskaya Administrative Region"), //
+   Nizhegorodskaya_Administrative_Region("RU-NIZ", "Nizhegorodskaya Administrative Region"), //
 
-	Ivanovskaya_Administrative_Region("RU-IVA", "Ivanovskaya Administrative Region"), //
+   Novgorodskaya_Administrative_Region("RU-NGR", "Novgorodskaya Administrative Region"), //
 
-	Kaliningradskaya_Administrative_Region("RU-KGD", "Kaliningradskaya Administrative Region"), //
+   Novosibirskaya_Administrative_Region("RU-NVS", "Novosibirskaya Administrative Region"), //
 
-	Kaluzhskaya_Administrative_Region("RU-KLU", "Kaluzhskaya Administrative Region"), //
+   Omskaya_Administrative_Region("RU-OMS", "Omskaya Administrative Region"), //
 
-	Kemerovskaya_Administrative_Region("RU-KEM", "Kemerovskaya Administrative Region"), //
+   Orenburgskaya_Administrative_Region("RU-ORE", "Orenburgskaya Administrative Region"), //
 
-	Kirovskaya_Administrative_Region("RU-KIR", "Kirovskaya Administrative Region"), //
+   Orlovskaya_Administrative_Region("RU-ORL", "Orlovskaya Administrative Region"), //
 
-	Kostromskaya_Administrative_Region("RU-KOS", "Kostromskaya Administrative Region"), //
+   Penzenskaya_Administrative_Region("RU-PNZ", "Penzenskaya Administrative Region"), //
 
-	Kurganskaya_Administrative_Region("RU-KGN", "Kurganskaya Administrative Region"), //
+   Pskovskaya_Administrative_Region("RU-PSK", "Pskovskaya Administrative Region"), //
 
-	Kurskaya_Administrative_Region("RU-KRS", "Kurskaya Administrative Region"), //
+   Rostovskaya_Administrative_Region("RU-ROS", "Rostovskaya Administrative Region"), //
 
-	Leningradskaya_Administrative_Region("RU-LEN", "Leningradskaya Administrative Region"), //
+   Ryazanskaya_Administrative_Region("RU-RYA", "Ryazanskaya Administrative Region"), //
 
-	Lipetskaya_Administrative_Region("RU-LIP", "Lipetskaya Administrative Region"), //
+   Sakhalinskaya_Administrative_Region("RU-SAK", "Sakhalinskaya Administrative Region"), //
 
-	Magadanskaya_Administrative_Region("RU-MAG", "Magadanskaya Administrative Region"), //
+   Samarskaya_Administrative_Region("RU-SAM", "Samarskaya Administrative Region"), //
 
-	Moskovskaya_Administrative_Region("RU-MOS", "Moskovskaya Administrative Region"), //
+   Saratovskaya_Administrative_Region("RU-SAR", "Saratovskaya Administrative Region"), //
 
-	Murmanskaya_Administrative_Region("RU-MUR", "Murmanskaya Administrative Region"), //
+   Smolenskaya_Administrative_Region("RU-SMO", "Smolenskaya Administrative Region"), //
 
-	Nizhegorodskaya_Administrative_Region("RU-NIZ", "Nizhegorodskaya Administrative Region"), //
+   Sverdlovskaya_Administrative_Region("RU-SVE", "Sverdlovskaya Administrative Region"), //
 
-	Novgorodskaya_Administrative_Region("RU-NGR", "Novgorodskaya Administrative Region"), //
+   Tambovskaya_Administrative_Region("RU-TAM", "Tambovskaya Administrative Region"), //
 
-	Novosibirskaya_Administrative_Region("RU-NVS", "Novosibirskaya Administrative Region"), //
+   Tomskaya_Administrative_Region("RU-TOM", "Tomskaya Administrative Region"), //
 
-	Omskaya_Administrative_Region("RU-OMS", "Omskaya Administrative Region"), //
+   Tul_skaya_Administrative_Region("RU-TUL", "Tul’skaya Administrative Region"), //
 
-	Orenburgskaya_Administrative_Region("RU-ORE", "Orenburgskaya Administrative Region"), //
+   Tverskaya_Administrative_Region("RU-TVE", "Tverskaya Administrative Region"), //
 
-	Orlovskaya_Administrative_Region("RU-ORL", "Orlovskaya Administrative Region"), //
+   Tyumenskaya_Administrative_Region("RU-TYU", "Tyumenskaya Administrative Region"), //
 
-	Penzenskaya_Administrative_Region("RU-PNZ", "Penzenskaya Administrative Region"), //
+   Ul_yanovskaya_Administrative_Region("RU-ULY", "Ul’yanovskaya Administrative Region"), //
 
-	Pskovskaya_Administrative_Region("RU-PSK", "Pskovskaya Administrative Region"), //
+   Vladimirskaya_Administrative_Region("RU-VLA", "Vladimirskaya Administrative Region"), //
 
-	Rostovskaya_Administrative_Region("RU-ROS", "Rostovskaya Administrative Region"), //
+   Volgogradskaya_Administrative_Region("RU-VGG", "Volgogradskaya Administrative Region"), //
 
-	Ryazanskaya_Administrative_Region("RU-RYA", "Ryazanskaya Administrative Region"), //
+   Vologodskaya_Administrative_Region("RU-VLG", "Vologodskaya Administrative Region"), //
 
-	Sakhalinskaya_Administrative_Region("RU-SAK", "Sakhalinskaya Administrative Region"), //
+   Voronezhskaya_Administrative_Region("RU-VOR", "Voronezhskaya Administrative Region"), //
 
-	Samarskaya_Administrative_Region("RU-SAM", "Samarskaya Administrative Region"), //
+   Yaroslavskaya_Administrative_Region("RU-YAR", "Yaroslavskaya Administrative Region"), //
 
-	Saratovskaya_Administrative_Region("RU-SAR", "Saratovskaya Administrative Region"), //
+   Moskva_City("RU-MOW", "Moskva City"), //
 
-	Smolenskaya_Administrative_Region("RU-SMO", "Smolenskaya Administrative Region"), //
+   Sankt_Peterburg_City("RU-SPE", "Sankt-Peterburg City"), //
 
-	Sverdlovskaya_Administrative_Region("RU-SVE", "Sverdlovskaya Administrative Region"), //
+   Yevreyskaya_Autonomous_Administrative_Region("RU-YEV", "Yevreyskaya Autonomous Administrative Region"), //
 
-	Tambovskaya_Administrative_Region("RU-TAM", "Tambovskaya Administrative Region"), //
+   Chukotskiy_Autonomous_District("RU-CHU", "Chukotskiy Autonomous District"), //
 
-	Tomskaya_Administrative_Region("RU-TOM", "Tomskaya Administrative Region"), //
+   Khanty_Mansiyskiy_Autonomous_District("RU-KHM", "Khanty-Mansiyskiy Autonomous District"), //
 
-	Tul_skaya_Administrative_Region("RU-TUL", "Tul’skaya Administrative Region"), //
+   Nenetskiy_Autonomous_District("RU-NEN", "Nenetskiy Autonomous District"), //
 
-	Tverskaya_Administrative_Region("RU-TVE", "Tverskaya Administrative Region"), //
+   Yamalo_Nenetskiy_Autonomous_District("RU-YAN", "Yamalo-Nenetskiy Autonomous District"), //
 
-	Tyumenskaya_Administrative_Region("RU-TYU", "Tyumenskaya Administrative Region"), //
+   Alaska("US-AK", "Alaska"), //
 
-	Ul_yanovskaya_Administrative_Region("RU-ULY", "Ul’yanovskaya Administrative Region"), //
+   Alabama("US-AL", "Alabama"), //
 
-	Vladimirskaya_Administrative_Region("RU-VLA", "Vladimirskaya Administrative Region"), //
+   Arkansas("US-AR", "Arkansas"), //
 
-	Volgogradskaya_Administrative_Region("RU-VGG", "Volgogradskaya Administrative Region"), //
+   Arizona("US-AZ", "Arizona"), //
 
-	Vologodskaya_Administrative_Region("RU-VLG", "Vologodskaya Administrative Region"), //
+   California("US-CA", "California"), //
 
-	Voronezhskaya_Administrative_Region("RU-VOR", "Voronezhskaya Administrative Region"), //
+   Colorado("US-CO", "Colorado"), //
 
-	Yaroslavskaya_Administrative_Region("RU-YAR", "Yaroslavskaya Administrative Region"), //
+   Connecticut("US-CT", "Connecticut"), //
 
-	Moskva_City("RU-MOW", "Moskva City"), //
+   District_of_Columbia("US-DC", "District of Columbia"), //
 
-	Sankt_Peterburg_City("RU-SPE", "Sankt-Peterburg City"), //
+   Delaware("US-DE", "Delaware"), //
 
-	Yevreyskaya_Autonomous_Administrative_Region("RU-YEV", "Yevreyskaya Autonomous Administrative Region"), //
+   Florida("US-FL", "Florida"), //
 
-	Chukotskiy_Autonomous_District("RU-CHU", "Chukotskiy Autonomous District"), //
+   Georgia("US-GA", "Georgia"), //
 
-	Khanty_Mansiyskiy_Autonomous_District("RU-KHM", "Khanty-Mansiyskiy Autonomous District"), //
+   Hawaii("US-HI", "Hawaii"), //
 
-	Nenetskiy_Autonomous_District("RU-NEN", "Nenetskiy Autonomous District"), //
+   Iowa("US-IA", "Iowa"), //
 
-	Yamalo_Nenetskiy_Autonomous_District("RU-YAN", "Yamalo-Nenetskiy Autonomous District"), //
+   Idaho("US-ID", "Idaho"), //
 
-	Alaska("US-AK", "Alaska"), //
+   Illinois("US-IL", "Illinois"), //
 
-	Alabama("US-AL", "Alabama"), //
+   Indiana("US-IN", "Indiana"), //
 
-	Arkansas("US-AR", "Arkansas"), //
+   Kansas("US-KS", "Kansas"), //
 
-	Arizona("US-AZ", "Arizona"), //
+   Kentucky("US-KY", "Kentucky"), //
 
-	California("US-CA", "California"), //
+   Louisiana("US-LA", "Louisiana"), //
 
-	Colorado("US-CO", "Colorado"), //
+   Massachusetts("US-MA", "Massachusetts"), //
 
-	Connecticut("US-CT", "Connecticut"), //
+   Maryland("US-MD", "Maryland"), //
 
-	District_of_Columbia("US-DC", "District of Columbia"), //
+   Maine("US-ME", "Maine"), //
 
-	Delaware("US-DE", "Delaware"), //
+   Michigan("US-MI", "Michigan"), //
 
-	Florida("US-FL", "Florida"), //
+   Minnesota("US-MN", "Minnesota"), //
 
-	Georgia("US-GA", "Georgia"), //
+   Missouri("US-MO", "Missouri"), //
 
-	Hawaii("US-HI", "Hawaii"), //
+   Mississippi("US-MS", "Mississippi"), //
 
-	Iowa("US-IA", "Iowa"), //
+   Montana("US-MT", "Montana"), //
 
-	Idaho("US-ID", "Idaho"), //
+   North_Carolina("US-NC", "North Carolina"), //
 
-	Illinois("US-IL", "Illinois"), //
+   North_Dakota("US-ND", "North Dakota"), //
 
-	Indiana("US-IN", "Indiana"), //
+   Nebraska("US-NE", "Nebraska"), //
 
-	Kansas("US-KS", "Kansas"), //
+   New_Hampshire("US-NH", "New Hampshire"), //
 
-	Kentucky("US-KY", "Kentucky"), //
+   New_Jersey("US-NJ", "New Jersey"), //
 
-	Louisiana("US-LA", "Louisiana"), //
+   New_Mexico("US-NM", "New Mexico"), //
 
-	Massachusetts("US-MA", "Massachusetts"), //
+   Nevada("US-NV", "Nevada"), //
 
-	Maryland("US-MD", "Maryland"), //
+   New_York("US-NY", "New York"), //
 
-	Maine("US-ME", "Maine"), //
+   Ohio("US-OH", "Ohio"), //
 
-	Michigan("US-MI", "Michigan"), //
+   Oklahoma("US-OK", "Oklahoma"), //
 
-	Minnesota("US-MN", "Minnesota"), //
+   Oregon("US-OR", "Oregon"), //
 
-	Missouri("US-MO", "Missouri"), //
+   Pennsylvania("US-PA", "Pennsylvania"), //
 
-	Mississippi("US-MS", "Mississippi"), //
+   Rhode_Island("US-RI", "Rhode Island"), //
 
-	Montana("US-MT", "Montana"), //
+   South_Carolina("US-SC", "South Carolina"), //
 
-	North_Carolina("US-NC", "North Carolina"), //
+   South_Dakota("US-SD", "South Dakota"), //
 
-	North_Dakota("US-ND", "North Dakota"), //
+   Tennessee("US-TN", "Tennessee"), //
 
-	Nebraska("US-NE", "Nebraska"), //
+   Texas("US-TX", "Texas"), //
 
-	New_Hampshire("US-NH", "New Hampshire"), //
+   Utah("US-UT", "Utah"), //
 
-	New_Jersey("US-NJ", "New Jersey"), //
+   Virginia("US-VA", "Virginia"), //
 
-	New_Mexico("US-NM", "New Mexico"), //
+   Vermont("US-VT", "Vermont"), //
 
-	Nevada("US-NV", "Nevada"), //
+   Washington("US-WA", "Washington"), //
 
-	New_York("US-NY", "New York"), //
+   Wisconsin("US-WI", "Wisconsin"), //
 
-	Ohio("US-OH", "Ohio"), //
+   West_Virginia("US-WV", "West Virginia"), //
 
-	Oklahoma("US-OK", "Oklahoma"), //
+   Wyoming("US-WY", "Wyoming"), //
 
-	Oregon("US-OR", "Oregon"), //
+   /**
+    * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR IE IT LT LU LV MT NL PT SI SK' (the official Eurozone 19), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some other territories using the Euro, but outside continental Europe are excluded from this list, and may need to be specified separately. ONLY valid in ONIX 3, and ONLY within P.26. Use of an explicit list of countries instead of ECZ is strongly encouraged
+    */
+   Eurozone("ECZ", "Eurozone"), //
 
-	Pennsylvania("US-PA", "Pennsylvania"), //
+   /**
+    * World except as otherwise specified. NOT USED in ONIX 3
+    */
+   Rest_of_world("ROW", "Rest of world"), //
 
-	Rhode_Island("US-RI", "Rhode Island"), //
+   World("WORLD", "World");
 
-	South_Carolina("US-SC", "South Carolina"), //
+   public final String code;
+   public final String description;
 
-	South_Dakota("US-SD", "South Dakota"), //
+   private Regions(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	Tennessee("US-TN", "Tennessee"), //
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	Texas("US-TX", "Texas"), //
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	Utah("US-UT", "Utah"), //
+   private static volatile Map<String, Regions> map;
 
-	Virginia("US-VA", "Virginia"), //
+   private static Map<String, Regions> map()
+   {
+      Map<String, Regions> result = map;
+      if (result == null)
+      {
+         synchronized(Regions.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (Regions e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	Vermont("US-VT", "Vermont"), //
-
-	Washington("US-WA", "Washington"), //
-
-	Wisconsin("US-WI", "Wisconsin"), //
-
-	West_Virginia("US-WV", "West Virginia"), //
-
-	Wyoming("US-WY", "Wyoming"), //
-
-	/**
-	 * Countries geographically within continental Europe which use the Euro as their sole currency. At the time of
-	 * writing, this is a synonym for 'AT BE CY EE FI FR DE ES GR IE IT LT LU LV MT NL PT SI SK' (the official Eurozone
-	 * 19), plus 'AD MC SM VA ME' and Kosovo (other Euro-using countries in continental Europe). Note some other
-	 * territories using the Euro, but outside continental Europe are excluded from this list, and may need to be
-	 * specified separately. ONLY valid in ONIX 3, and ONLY within P.26. Use of an explicit list of countries instead of
-	 * ECZ is strongly encouraged
-	 */
-	Eurozone("ECZ", "Eurozone"), //
-
-	/**
-	 * World except as otherwise specified. NOT USED in ONIX 3
-	 */
-	Rest_of_world("ROW", "Rest of world"), //
-
-	World("WORLD", "World");
-
-	public final String code;
-	public final String description;
-
-	private Regions(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
-
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
-
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
-
-	private static volatile Map<String, Regions> map;
-
-	private static Map<String, Regions> map()
-	{
-		Map<String, Regions> result = map;
-		if (result == null)
-		{
-			synchronized (Regions.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (Regions e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
-
-	public static Regions byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static Regions byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

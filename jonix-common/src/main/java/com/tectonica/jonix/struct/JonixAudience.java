@@ -20,32 +20,35 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.AudienceCodeTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixAudience implements Serializable
+public class JonixAudience implements JonixKeyedStruct<AudienceCodeTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public AudienceCodeTypes audienceCodeType;
+   public static JonixAudience EMPTY = new JonixAudience();
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String audienceCodeTypeName;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public AudienceCodeTypes audienceCodeType;
 
-	/**
-	 * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String audienceCodeValue;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+    */
+   public String audienceCodeTypeName;
+
+   /**
+    * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt; <p> (type: dt.NonEmptyString)
+    */
+   public String audienceCodeValue;
+
+   @Override
+   public AudienceCodeTypes key() { return audienceCodeType; }
 }

@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -64,16 +64,16 @@ import com.tectonica.jonix.codelist.UnnamedPersonss;
  * </tr>
  * </table>
  */
-public class UnnamedPersons implements OnixElement, Serializable
+public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "UnnamedPersons";
 	public static final String shortname = "b249";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -84,25 +84,46 @@ public class UnnamedPersons implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public UnnamedPersonss value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public UnnamedPersonss _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final UnnamedPersons EMPTY = new UnnamedPersons();
 
 	public UnnamedPersons()
-	{}
+	{
+		exists = false;
+	}
 
 	public UnnamedPersons(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = UnnamedPersonss.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

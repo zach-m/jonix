@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -58,16 +58,16 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * </table>
  */
-public class LatestReprintNumber implements OnixElement, Serializable
+public class LatestReprintNumber implements OnixElement<Integer>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "LatestReprintNumber";
 	public static final String shortname = "x446";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -78,9 +78,9 @@ public class LatestReprintNumber implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Integer, suggested maximum three digits
@@ -89,19 +89,40 @@ public class LatestReprintNumber implements OnixElement, Serializable
 	 */
 	public Integer value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public Integer _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final LatestReprintNumber EMPTY = new LatestReprintNumber();
 
 	public LatestReprintNumber()
-	{}
+	{
+		exists = false;
+	}
 
 	public LatestReprintNumber(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsInteger(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -65,16 +65,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class RightsRegion implements OnixElement, Serializable
+public class RightsRegion implements OnixElement<RightsRegions>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "RightsRegion";
 	public static final String shortname = "b091";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -93,21 +93,36 @@ public class RightsRegion implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public RightsRegions value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public RightsRegions _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final RightsRegion EMPTY = new RightsRegion();
 
 	public RightsRegion()
-	{}
+	{
+		exists = false;
+	}
 
 	public RightsRegion(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,5 +132,11 @@ public class RightsRegion implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = RightsRegions.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

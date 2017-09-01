@@ -22,11 +22,12 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 226 (Record status &lt;p&gt;NOTE: Introduced in Onix3)
+ * marker interface to assist in IDE navigation to code-list 226 (Record status
+&lt;p&gt;NOTE: Introduced in Onix3)
  */
 interface CodeList226
 {}
@@ -34,78 +35,67 @@ interface CodeList226
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 226</b>
  * <p>
- * Description: Record status &lt;p&gt;NOTE: Introduced in Onix3
+ * Description: Record status
+&lt;p&gt;NOTE: Introduced in Onix3
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist226">ONIX
- *      Codelist 226 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist226">ONIX Codelist 226 in Reference Guide</a>
  */
 public enum RecordStatuss implements OnixCodelist, CodeList226
 {
-	/**
-	 * Entire record parsed and ingested without errors, record may have a Product record in the Acknowledgement which
-	 * itself may have a &lt;RecordStatusNote&gt; or &lt;RecordStatusDetail&gt; to convey information, editorial queries
-	 * or warnings
-	 */
-	No_record_errors("00", "No record errors"), //
+   /**
+    * Entire record parsed and ingested without errors, record may have a Product record in the Acknowledgement which itself may have a &lt;RecordStatusNote&gt; or &lt;RecordStatusDetail&gt; to convey information, editorial queries or warnings
+    */
+   No_record_errors("00", "No record errors"), //
 
-	/**
-	 * Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a
-	 * &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors in associated media files
-	 * (and possibly supplementary editorial queries)
-	 */
-	No_record_errors_errors_in_collateral("01", "No record errors – errors in collateral"), //
+   /**
+    * Entire record parsed and ingested without errors, record MUST have a Product record in the Acknowledgement with a &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors in associated media files (and possibly supplementary editorial queries)
+    */
+   No_record_errors_errors_in_collateral("01", "No record errors – errors in collateral"), //
 
-	/**
-	 * Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a
-	 * &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary
-	 * information, editorial queries or warnings). At least SOME of the data in the original Product record has been
-	 * ingested. There may also be errors in associated media files
-	 */
-	Record_with_errors("02", "Record with errors"), //
+   /**
+    * Record parsed and ingested with errors, record MUST have a Product record in the Acknowledgement with a &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial queries or warnings). At least SOME of the data in the original Product record has been ingested. There may also be errors in associated media files
+    */
+   Record_with_errors("02", "Record with errors"), //
 
-	/**
-	 * Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt;
-	 * or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial
-	 * queries or warnings). NONE of the data in the original Product record has been ingested
-	 */
-	Record_rejected("03", "Record rejected"), //
+   /**
+    * Entire record rejected, record MUST have a Product record in the Acknowedgemet, with a &lt;RecordStatusNote&gt; or at least one &lt;RecordStatusDetail&gt; to convey errors (and possibly supplementary information, editorial queries or warnings). NONE of the data in the original Product record has been ingested
+    */
+   Record_rejected("03", "Record rejected"), //
 
-	/**
-	 * Record status reported in an earlier Acknowledgement message, based on partial processing of ONIX message. The
-	 * record MUST NOT have a Product record in this Acknowledgement. Code not valid in &lt;RecordStatusDetail&gt;
-	 */
-	Reported_previously("09", "Reported previously");
+   /**
+    * Record status reported in an earlier Acknowledgement message, based on partial processing of ONIX message. The record MUST NOT have a Product record in this Acknowledgement. Code not valid in &lt;RecordStatusDetail&gt;
+    */
+   Reported_previously("09", "Reported previously");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private RecordStatuss(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private RecordStatuss(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static RecordStatuss byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (RecordStatuss e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static RecordStatuss byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (RecordStatuss e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

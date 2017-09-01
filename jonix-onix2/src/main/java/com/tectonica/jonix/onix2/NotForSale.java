@@ -20,23 +20,22 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -64,9 +63,9 @@ public class NotForSale implements OnixSuperComposite, Serializable
 	public static final String refname = "NotForSale";
 	public static final String shortname = "notforsale";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -85,49 +84,35 @@ public class NotForSale implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<RightsCountry> rightsCountrys;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RightsTerritory rightsTerritory;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ISBN isbn;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EAN13 ean13;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherName publisherName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final NotForSale EMPTY = new NotForSale();
 
 	public NotForSale()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public NotForSale(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -136,94 +121,97 @@ public class NotForSale implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
-					rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(element));
-				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
-					rightsTerritory = new RightsTerritory(element);
-				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					isbn = new ISBN(element);
-				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					ean13 = new EAN13(element);
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					publisherName = new PublisherName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
+				rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
+			else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
+				rightsTerritory = new RightsTerritory(e);
+			else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
+				isbn = new ISBN(e);
+			else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
+				ean13 = new EAN13(e);
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
+				publisherName = new PublisherName(e);
 		});
 	}
 
-	public List<java.util.Set<CountryCodes>> getRightsCountrySets()
+	@Override
+	public boolean exists()
 	{
-		if (rightsCountrys != null)
-		{
-			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
-			for (RightsCountry i : rightsCountrys)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		return exists;
 	}
 
-	public java.util.Set<Regions> getRightsTerritorySet()
-	{
-		return (rightsTerritory == null) ? null : rightsTerritory.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this list is required to contain at least one item)
 	 */
-	public String getISBNValue()
+	public ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys()
 	{
-		return (isbn == null) ? null : isbn.value;
+		initialize();
+		return rightsCountrys;
 	}
+
+	private RightsTerritory rightsTerritory = RightsTerritory.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this field is optional)
 	 */
-	public String getEAN13Value()
+	public RightsTerritory rightsTerritory()
 	{
-		return (ean13 == null) ? null : ean13.value;
+		initialize();
+		return rightsTerritory;
 	}
+
+	private ISBN isbn = ISBN.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this field is optional)
 	 */
-	public String getPublisherNameValue()
+	public ISBN isbn()
 	{
-		return (publisherName == null) ? null : publisherName.value;
+		initialize();
+		return isbn;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private EAN13 ean13 = EAN13.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EAN13 ean13()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return ean13;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return productIdentifiers;
+	}
+
+	private PublisherName publisherName = PublisherName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName()
+	{
+		initialize();
+		return publisherName;
 	}
 }

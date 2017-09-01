@@ -20,29 +20,24 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
 import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.PriceStatuss;
-import com.tectonica.jonix.codelist.PriceTypeQualifiers;
-import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Regions;
-import com.tectonica.jonix.codelist.TaxRateCodeds;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.codelist.UnitOfPricings;
+import com.tectonica.jonix.struct.JonixBatchBonus;
 import com.tectonica.jonix.struct.JonixDiscountCoded;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -70,9 +65,9 @@ public class Price implements OnixSuperComposite, Serializable
 	public static final String refname = "Price";
 	public static final String shortname = "price";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -91,154 +86,35 @@ public class Price implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public PriceTypeCode priceTypeCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceQualifier priceQualifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceTypeDescription priceTypeDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PricePer pricePer;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MinimumOrderQuantity minimumOrderQuantity;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BatchBonus> batchBonuss;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ClassOfTrade classOfTrade;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BICDiscountGroupCode bicDiscountGroupCode;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<DiscountCoded> discountCodeds;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DiscountPercent discountPercent;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceStatus priceStatus;
-
-	/**
-	 * (this field is required)
-	 */
-	public PriceAmount priceAmount;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CurrencyCode currencyCode;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<CountryCode> countryCodes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Territory territory;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountryExcluded countryExcluded;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TerritoryExcluded territoryExcluded;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxRateCode1 taxRateCode1;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxRatePercent1 taxRatePercent1;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxableAmount1 taxableAmount1;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxAmount1 taxAmount1;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxRateCode2 taxRateCode2;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxRatePercent2 taxRatePercent2;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxableAmount2 taxableAmount2;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxAmount2 taxAmount2;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceEffectiveFrom priceEffectiveFrom;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceEffectiveUntil priceEffectiveUntil;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Price EMPTY = new Price();
 
 	public Price()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Price(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -247,273 +123,370 @@ public class Price implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PriceTypeCode.refname) || name.equals(PriceTypeCode.shortname))
-					priceTypeCode = new PriceTypeCode(element);
-				else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
-					priceQualifier = new PriceQualifier(element);
-				else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
-					priceTypeDescription = new PriceTypeDescription(element);
-				else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
-					pricePer = new PricePer(element);
-				else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
-					minimumOrderQuantity = new MinimumOrderQuantity(element);
-				else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
-					batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(element));
-				else if (name.equals(ClassOfTrade.refname) || name.equals(ClassOfTrade.shortname))
-					classOfTrade = new ClassOfTrade(element);
-				else if (name.equals(BICDiscountGroupCode.refname) || name.equals(BICDiscountGroupCode.shortname))
-					bicDiscountGroupCode = new BICDiscountGroupCode(element);
-				else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
-					discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(element));
-				else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
-					discountPercent = new DiscountPercent(element);
-				else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
-					priceStatus = new PriceStatus(element);
-				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					priceAmount = new PriceAmount(element);
-				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-					currencyCode = new CurrencyCode(element);
-				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					countryCodes = JPU.addToList(countryCodes, new CountryCode(element));
-				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					territory = new Territory(element);
-				else if (name.equals(CountryExcluded.refname) || name.equals(CountryExcluded.shortname))
-					countryExcluded = new CountryExcluded(element);
-				else if (name.equals(TerritoryExcluded.refname) || name.equals(TerritoryExcluded.shortname))
-					territoryExcluded = new TerritoryExcluded(element);
-				else if (name.equals(TaxRateCode1.refname) || name.equals(TaxRateCode1.shortname))
-					taxRateCode1 = new TaxRateCode1(element);
-				else if (name.equals(TaxRatePercent1.refname) || name.equals(TaxRatePercent1.shortname))
-					taxRatePercent1 = new TaxRatePercent1(element);
-				else if (name.equals(TaxableAmount1.refname) || name.equals(TaxableAmount1.shortname))
-					taxableAmount1 = new TaxableAmount1(element);
-				else if (name.equals(TaxAmount1.refname) || name.equals(TaxAmount1.shortname))
-					taxAmount1 = new TaxAmount1(element);
-				else if (name.equals(TaxRateCode2.refname) || name.equals(TaxRateCode2.shortname))
-					taxRateCode2 = new TaxRateCode2(element);
-				else if (name.equals(TaxRatePercent2.refname) || name.equals(TaxRatePercent2.shortname))
-					taxRatePercent2 = new TaxRatePercent2(element);
-				else if (name.equals(TaxableAmount2.refname) || name.equals(TaxableAmount2.shortname))
-					taxableAmount2 = new TaxableAmount2(element);
-				else if (name.equals(TaxAmount2.refname) || name.equals(TaxAmount2.shortname))
-					taxAmount2 = new TaxAmount2(element);
-				else if (name.equals(PriceEffectiveFrom.refname) || name.equals(PriceEffectiveFrom.shortname))
-					priceEffectiveFrom = new PriceEffectiveFrom(element);
-				else if (name.equals(PriceEffectiveUntil.refname) || name.equals(PriceEffectiveUntil.shortname))
-					priceEffectiveUntil = new PriceEffectiveUntil(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PriceTypeCode.refname) || name.equals(PriceTypeCode.shortname))
+				priceTypeCode = new PriceTypeCode(e);
+			else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
+				priceQualifier = new PriceQualifier(e);
+			else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
+				priceTypeDescription = new PriceTypeDescription(e);
+			else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
+				pricePer = new PricePer(e);
+			else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
+				minimumOrderQuantity = new MinimumOrderQuantity(e);
+			else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
+				batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
+			else if (name.equals(ClassOfTrade.refname) || name.equals(ClassOfTrade.shortname))
+				classOfTrade = new ClassOfTrade(e);
+			else if (name.equals(BICDiscountGroupCode.refname) || name.equals(BICDiscountGroupCode.shortname))
+				bicDiscountGroupCode = new BICDiscountGroupCode(e);
+			else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
+				discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
+			else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
+				discountPercent = new DiscountPercent(e);
+			else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
+				priceStatus = new PriceStatus(e);
+			else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
+				priceAmount = new PriceAmount(e);
+			else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
+				currencyCode = new CurrencyCode(e);
+			else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
+				countryCodes = JPU.addToList(countryCodes, new CountryCode(e));
+			else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
+				territory = new Territory(e);
+			else if (name.equals(CountryExcluded.refname) || name.equals(CountryExcluded.shortname))
+				countryExcluded = new CountryExcluded(e);
+			else if (name.equals(TerritoryExcluded.refname) || name.equals(TerritoryExcluded.shortname))
+				territoryExcluded = new TerritoryExcluded(e);
+			else if (name.equals(TaxRateCode1.refname) || name.equals(TaxRateCode1.shortname))
+				taxRateCode1 = new TaxRateCode1(e);
+			else if (name.equals(TaxRatePercent1.refname) || name.equals(TaxRatePercent1.shortname))
+				taxRatePercent1 = new TaxRatePercent1(e);
+			else if (name.equals(TaxableAmount1.refname) || name.equals(TaxableAmount1.shortname))
+				taxableAmount1 = new TaxableAmount1(e);
+			else if (name.equals(TaxAmount1.refname) || name.equals(TaxAmount1.shortname))
+				taxAmount1 = new TaxAmount1(e);
+			else if (name.equals(TaxRateCode2.refname) || name.equals(TaxRateCode2.shortname))
+				taxRateCode2 = new TaxRateCode2(e);
+			else if (name.equals(TaxRatePercent2.refname) || name.equals(TaxRatePercent2.shortname))
+				taxRatePercent2 = new TaxRatePercent2(e);
+			else if (name.equals(TaxableAmount2.refname) || name.equals(TaxableAmount2.shortname))
+				taxableAmount2 = new TaxableAmount2(e);
+			else if (name.equals(TaxAmount2.refname) || name.equals(TaxAmount2.shortname))
+				taxAmount2 = new TaxAmount2(e);
+			else if (name.equals(PriceEffectiveFrom.refname) || name.equals(PriceEffectiveFrom.shortname))
+				priceEffectiveFrom = new PriceEffectiveFrom(e);
+			else if (name.equals(PriceEffectiveUntil.refname) || name.equals(PriceEffectiveUntil.shortname))
+				priceEffectiveUntil = new PriceEffectiveUntil(e);
 		});
 	}
 
-	public PriceTypes getPriceTypeCodeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceTypeCode == null) ? null : priceTypeCode.value;
+		return exists;
 	}
 
-	public PriceTypeQualifiers getPriceQualifierValue()
-	{
-		return (priceQualifier == null) ? null : priceQualifier.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Text, suggested maximum length 200 characters
-	 */
-	public String getPriceTypeDescriptionValue()
-	{
-		return (priceTypeDescription == null) ? null : priceTypeDescription.value;
-	}
-
-	public UnitOfPricings getPricePerValue()
-	{
-		return (pricePer == null) ? null : pricePer.value;
-	}
+	private PriceTypeCode priceTypeCode = PriceTypeCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
+	 * (this field is optional)
 	 */
-	public String getMinimumOrderQuantityValue()
+	public PriceTypeCode priceTypeCode()
 	{
-		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
+		initialize();
+		return priceTypeCode;
 	}
+
+	private PriceQualifier priceQualifier = PriceQualifier.EMPTY;
 
 	/**
-	 * Raw Format: Text, suggested maximum length 50 characters
+	 * (this field is optional)
 	 */
-	public String getClassOfTradeValue()
+	public PriceQualifier priceQualifier()
 	{
-		return (classOfTrade == null) ? null : classOfTrade.value;
+		initialize();
+		return priceQualifier;
 	}
+
+	private PriceTypeDescription priceTypeDescription = PriceTypeDescription.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 8 characters Position 1&#160;&#160;&#160;&#160;A (identifying BIC as the source of the
-	 * supplier code) Positions 2-5&#160;&#160;&#160;&#160;Supplier code, alphabetical, assigned by BIC Positions
-	 * 6-8&#160;&#160;&#160;&#160;Discount group code, alphanumeric, assigned by the supplier. If less than three
-	 * characters, the code is left justified and unused positions are sent as spaces.
+	 * (this field is optional)
 	 */
-	public String getBICDiscountGroupCodeValue()
+	public PriceTypeDescription priceTypeDescription()
 	{
-		return (bicDiscountGroupCode == null) ? null : bicDiscountGroupCode.value;
+		initialize();
+		return priceTypeDescription;
 	}
+
+	private PricePer pricePer = PricePer.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 * (this field is optional)
 	 */
-	public String getDiscountPercentValue()
+	public PricePer pricePer()
 	{
-		return (discountPercent == null) ? null : discountPercent.value;
+		initialize();
+		return pricePer;
 	}
 
-	public PriceStatuss getPriceStatusValue()
-	{
-		return (priceStatus == null) ? null : priceStatus.value;
-	}
+	private MinimumOrderQuantity minimumOrderQuantity = MinimumOrderQuantity.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this field is optional)
 	 */
-	public String getPriceAmountValue()
+	public MinimumOrderQuantity minimumOrderQuantity()
 	{
-		return (priceAmount == null) ? null : priceAmount.value;
+		initialize();
+		return minimumOrderQuantity;
 	}
 
-	public CurrencyCodes getCurrencyCodeValue()
-	{
-		return (currencyCode == null) ? null : currencyCode.value;
-	}
-
-	public List<CountryCodes> getCountryCodeValues()
-	{
-		if (countryCodes != null)
-		{
-			List<CountryCodes> list = new ArrayList<>();
-			for (CountryCode i : countryCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public java.util.Set<Regions> getTerritorySet()
-	{
-		return (territory == null) ? null : territory.value;
-	}
-
-	public java.util.Set<CountryCodes> getCountryExcludedSet()
-	{
-		return (countryExcluded == null) ? null : countryExcluded.value;
-	}
-
-	public java.util.Set<Regions> getTerritoryExcludedSet()
-	{
-		return (territoryExcluded == null) ? null : territoryExcluded.value;
-	}
-
-	public TaxRateCodeds getTaxRateCode1Value()
-	{
-		return (taxRateCode1 == null) ? null : taxRateCode1.value;
-	}
+	private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required.
+	 * (this list may be empty)
 	 */
-	public String getTaxRatePercent1Value()
+	public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss()
 	{
-		return (taxRatePercent1 == null) ? null : taxRatePercent1.value;
+		initialize();
+		return batchBonuss;
 	}
+
+	private ClassOfTrade classOfTrade = ClassOfTrade.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required.
+	 * (this field is optional)
 	 */
-	public String getTaxableAmount1Value()
+	public ClassOfTrade classOfTrade()
 	{
-		return (taxableAmount1 == null) ? null : taxableAmount1.value;
+		initialize();
+		return classOfTrade;
 	}
+
+	private BICDiscountGroupCode bicDiscountGroupCode = BICDiscountGroupCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required.
+	 * (this field is optional)
 	 */
-	public String getTaxAmount1Value()
+	public BICDiscountGroupCode bicDiscountGroupCode()
 	{
-		return (taxAmount1 == null) ? null : taxAmount1.value;
+		initialize();
+		return bicDiscountGroupCode;
 	}
 
-	public TaxRateCodeds getTaxRateCode2Value()
-	{
-		return (taxRateCode2 == null) ? null : taxRateCode2.value;
-	}
+	private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required.
+	 * (this list may be empty)
 	 */
-	public String getTaxRatePercent2Value()
+	public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds()
 	{
-		return (taxRatePercent2 == null) ? null : taxRatePercent2.value;
+		initialize();
+		return discountCodeds;
 	}
+
+	private DiscountPercent discountPercent = DiscountPercent.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required.
+	 * (this field is optional)
 	 */
-	public String getTaxableAmount2Value()
+	public DiscountPercent discountPercent()
 	{
-		return (taxableAmount2 == null) ? null : taxableAmount2.value;
+		initialize();
+		return discountPercent;
 	}
+
+	private PriceStatus priceStatus = PriceStatus.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required.
+	 * (this field is optional)
 	 */
-	public String getTaxAmount2Value()
+	public PriceStatus priceStatus()
 	{
-		return (taxAmount2 == null) ? null : taxAmount2.value;
+		initialize();
+		return priceStatus;
 	}
+
+	private PriceAmount priceAmount = PriceAmount.EMPTY;
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this field is required)
 	 */
-	public String getPriceEffectiveFromValue()
+	public PriceAmount priceAmount()
 	{
-		return (priceEffectiveFrom == null) ? null : priceEffectiveFrom.value;
+		initialize();
+		return priceAmount;
 	}
+
+	private CurrencyCode currencyCode = CurrencyCode.EMPTY;
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this field is optional)
 	 */
-	public String getPriceEffectiveUntilValue()
+	public CurrencyCode currencyCode()
 	{
-		return (priceEffectiveUntil == null) ? null : priceEffectiveUntil.value;
+		initialize();
+		return currencyCode;
 	}
 
-	public JonixDiscountCoded findDiscountCoded(DiscountCodeTypes discountCodeType)
+	private ListOfOnixElement<CountryCode, CountryCodes> countryCodes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<CountryCode, CountryCodes> countryCodes()
 	{
-		if (discountCodeds != null)
-		{
-			for (DiscountCoded x : discountCodeds)
-			{
-				if (x.getDiscountCodeTypeValue() == discountCodeType)
-					return x.asJonixDiscountCoded();
-			}
-		}
-		return null;
+		initialize();
+		return countryCodes;
 	}
 
-	public List<JonixDiscountCoded> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
+	private Territory territory = Territory.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Territory territory()
 	{
-		if (discountCodeds != null)
-		{
-			List<JonixDiscountCoded> matches = new ArrayList<>();
-			for (DiscountCoded x : discountCodeds)
-			{
-				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
-					matches.add(x.asJonixDiscountCoded());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return territory;
+	}
+
+	private CountryExcluded countryExcluded = CountryExcluded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryExcluded countryExcluded()
+	{
+		initialize();
+		return countryExcluded;
+	}
+
+	private TerritoryExcluded territoryExcluded = TerritoryExcluded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TerritoryExcluded territoryExcluded()
+	{
+		initialize();
+		return territoryExcluded;
+	}
+
+	private TaxRateCode1 taxRateCode1 = TaxRateCode1.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRateCode1 taxRateCode1()
+	{
+		initialize();
+		return taxRateCode1;
+	}
+
+	private TaxRatePercent1 taxRatePercent1 = TaxRatePercent1.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRatePercent1 taxRatePercent1()
+	{
+		initialize();
+		return taxRatePercent1;
+	}
+
+	private TaxableAmount1 taxableAmount1 = TaxableAmount1.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxableAmount1 taxableAmount1()
+	{
+		initialize();
+		return taxableAmount1;
+	}
+
+	private TaxAmount1 taxAmount1 = TaxAmount1.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxAmount1 taxAmount1()
+	{
+		initialize();
+		return taxAmount1;
+	}
+
+	private TaxRateCode2 taxRateCode2 = TaxRateCode2.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRateCode2 taxRateCode2()
+	{
+		initialize();
+		return taxRateCode2;
+	}
+
+	private TaxRatePercent2 taxRatePercent2 = TaxRatePercent2.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxRatePercent2 taxRatePercent2()
+	{
+		initialize();
+		return taxRatePercent2;
+	}
+
+	private TaxableAmount2 taxableAmount2 = TaxableAmount2.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxableAmount2 taxableAmount2()
+	{
+		initialize();
+		return taxableAmount2;
+	}
+
+	private TaxAmount2 taxAmount2 = TaxAmount2.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxAmount2 taxAmount2()
+	{
+		initialize();
+		return taxAmount2;
+	}
+
+	private PriceEffectiveFrom priceEffectiveFrom = PriceEffectiveFrom.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceEffectiveFrom priceEffectiveFrom()
+	{
+		initialize();
+		return priceEffectiveFrom;
+	}
+
+	private PriceEffectiveUntil priceEffectiveUntil = PriceEffectiveUntil.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceEffectiveUntil priceEffectiveUntil()
+	{
+		initialize();
+		return priceEffectiveUntil;
 	}
 }

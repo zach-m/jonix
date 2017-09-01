@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,16 +63,16 @@ import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
  * </tr>
  * </table>
  */
-public class CollectionIDType implements OnixElement, Serializable
+public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "CollectionIDType";
 	public static final String shortname = "x344";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -83,25 +83,46 @@ public class CollectionIDType implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public SeriesIdentifierTypes value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public SeriesIdentifierTypes _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final CollectionIDType EMPTY = new CollectionIDType();
 
 	public CollectionIDType()
-	{}
+	{
+		exists = false;
+	}
 
 	public CollectionIDType(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

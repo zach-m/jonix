@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextItemTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,16 +63,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class TextItemType implements OnixElement, Serializable
+public class TextItemType implements OnixElement<TextItemTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "TextItemType";
 	public static final String shortname = "b290";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -91,21 +91,36 @@ public class TextItemType implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextItemTypes value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public TextItemTypes _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final TextItemType EMPTY = new TextItemType();
 
 	public TextItemType()
-	{}
+	{
+		exists = false;
+	}
 
 	public TextItemType(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -115,5 +130,11 @@ public class TextItemType implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = TextItemTypes.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

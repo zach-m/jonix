@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,16 +62,16 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * </table>
  */
-public class ProductFormDetail implements OnixElement, Serializable
+public class ProductFormDetail implements OnixElement<ProductFormDetailsList175>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProductFormDetail";
 	public static final String shortname = "b333";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -82,25 +82,46 @@ public class ProductFormDetail implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public ProductFormDetailsList175 value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public ProductFormDetailsList175 _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ProductFormDetail EMPTY = new ProductFormDetail();
 
 	public ProductFormDetail()
-	{}
+	{
+		exists = false;
+	}
 
 	public ProductFormDetail(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = ProductFormDetailsList175.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

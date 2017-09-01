@@ -20,18 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.MarketPublishingStatuss;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixMarketDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +63,9 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "MarketPublishingDetail";
 	public static final String shortname = "marketpublishingdetail";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,248 +76,198 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PublisherRepresentative> publisherRepresentatives;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductContact> productContacts;
-
-	/**
-	 * (this field is required)
-	 */
-	public MarketPublishingStatus marketPublishingStatus;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MarketPublishingStatusNote> marketPublishingStatusNotes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MarketDate> marketDates;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PromotionCampaign> promotionCampaigns;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PromotionContact promotionContact;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<InitialPrintRun> initialPrintRuns;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ReprintDetail> reprintDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CopiesSold> copiesSolds;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BookClubAdoption> bookClubAdoptions;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final MarketPublishingDetail EMPTY = new MarketPublishingDetail();
 
 	public MarketPublishingDetail()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public MarketPublishingDetail(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PublisherRepresentative.refname) || name.equals(PublisherRepresentative.shortname))
-					publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(
-							element));
-				else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
-					productContacts = JPU.addToList(productContacts, new ProductContact(element));
-				else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
-					marketPublishingStatus = new MarketPublishingStatus(element);
-				else if (name.equals(MarketPublishingStatusNote.refname)
-						|| name.equals(MarketPublishingStatusNote.shortname))
-					marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes,
-							new MarketPublishingStatusNote(element));
-				else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
-					marketDates = JPU.addToList(marketDates, new MarketDate(element));
-				else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))
-					promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(element));
-				else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname))
-					promotionContact = new PromotionContact(element);
-				else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname))
-					initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(element));
-				else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname))
-					reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(element));
-				else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname))
-					copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(element));
-				else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname))
-					bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PublisherRepresentative.refname) || name.equals(PublisherRepresentative.shortname))
+				publisherRepresentatives = JPU.addToList(publisherRepresentatives, new PublisherRepresentative(e));
+			else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
+				productContacts = JPU.addToList(productContacts, new ProductContact(e));
+			else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
+				marketPublishingStatus = new MarketPublishingStatus(e);
+			else if (name.equals(MarketPublishingStatusNote.refname)
+					|| name.equals(MarketPublishingStatusNote.shortname))
+				marketPublishingStatusNotes = JPU.addToList(marketPublishingStatusNotes,
+						new MarketPublishingStatusNote(e));
+			else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
+				marketDates = JPU.addToList(marketDates, new MarketDate(e));
+			else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))
+				promotionCampaigns = JPU.addToList(promotionCampaigns, new PromotionCampaign(e));
+			else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname))
+				promotionContact = new PromotionContact(e);
+			else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname))
+				initialPrintRuns = JPU.addToList(initialPrintRuns, new InitialPrintRun(e));
+			else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname))
+				reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
+			else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname))
+				copiesSolds = JPU.addToList(copiesSolds, new CopiesSold(e));
+			else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname))
+				bookClubAdoptions = JPU.addToList(bookClubAdoptions, new BookClubAdoption(e));
 		});
 	}
 
-	public MarketPublishingStatuss getMarketPublishingStatusValue()
+	@Override
+	public boolean exists()
 	{
-		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private List<PublisherRepresentative> publisherRepresentatives = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
-	 * XHTML, HTML or XML with ONIX text fields
+	 * (this list may be empty)
 	 */
-	public List<String> getMarketPublishingStatusNoteValues()
+	public List<PublisherRepresentative> publisherRepresentatives()
 	{
-		if (marketPublishingStatusNotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (MarketPublishingStatusNote i : marketPublishingStatusNotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return publisherRepresentatives;
 	}
+
+	private List<ProductContact> productContacts = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters. XHTML is enabled in this element -
-	 * see Using XHTML, HTML or XML with ONIX text fields
+	 * (this list may be empty)
 	 */
-	public List<String> getPromotionCampaignValues()
+	public List<ProductContact> productContacts()
 	{
-		if (promotionCampaigns != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PromotionCampaign i : promotionCampaigns)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return productContacts;
 	}
+
+	private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is required)
 	 */
-	public String getPromotionContactValue()
+	public MarketPublishingStatus marketPublishingStatus()
 	{
-		return (promotionContact == null) ? null : promotionContact.value;
+		initialize();
+		return marketPublishingStatus;
 	}
+
+	private ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes = ListOfOnixElement
+			.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this list may be empty)
 	 */
-	public List<String> getInitialPrintRunValues()
+	public ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes()
 	{
-		if (initialPrintRuns != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (InitialPrintRun i : initialPrintRuns)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return marketPublishingStatusNotes;
 	}
+
+	private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this list may be empty)
 	 */
-	public List<String> getReprintDetailValues()
+	public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates()
 	{
-		if (reprintDetails != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ReprintDetail i : reprintDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return marketDates;
 	}
+
+	private ListOfOnixElement<PromotionCampaign, String> promotionCampaigns = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this list may be empty)
 	 */
-	public List<String> getCopiesSoldValues()
+	public ListOfOnixElement<PromotionCampaign, String> promotionCampaigns()
 	{
-		if (copiesSolds != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CopiesSold i : copiesSolds)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return promotionCampaigns;
 	}
+
+	private PromotionContact promotionContact = PromotionContact.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is optional)
 	 */
-	public List<String> getBookClubAdoptionValues()
+	public PromotionContact promotionContact()
 	{
-		if (bookClubAdoptions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (BookClubAdoption i : bookClubAdoptions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return promotionContact;
 	}
 
-	public JonixMarketDate findMarketDate(PublishingDateRoles marketDateRole)
+	private ListOfOnixElement<InitialPrintRun, String> initialPrintRuns = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<InitialPrintRun, String> initialPrintRuns()
 	{
-		if (marketDates != null)
-		{
-			for (MarketDate x : marketDates)
-			{
-				if (x.getMarketDateRoleValue() == marketDateRole)
-					return x.asJonixMarketDate();
-			}
-		}
-		return null;
+		initialize();
+		return initialPrintRuns;
 	}
 
-	public List<JonixMarketDate> findMarketDates(java.util.Set<PublishingDateRoles> marketDateRoles)
+	private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ReprintDetail, String> reprintDetails()
 	{
-		if (marketDates != null)
-		{
-			List<JonixMarketDate> matches = new ArrayList<>();
-			for (MarketDate x : marketDates)
-			{
-				if (marketDateRoles == null || marketDateRoles.contains(x.getMarketDateRoleValue()))
-					matches.add(x.asJonixMarketDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return reprintDetails;
+	}
+
+	private ListOfOnixElement<CopiesSold, String> copiesSolds = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<CopiesSold, String> copiesSolds()
+	{
+		initialize();
+		return copiesSolds;
+	}
+
+	private ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions()
+	{
+		initialize();
+		return bookClubAdoptions;
 	}
 }

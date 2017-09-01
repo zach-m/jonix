@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,16 +63,16 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * </table>
  */
-public class ProductComposition implements OnixElement, Serializable
+public class ProductComposition implements OnixElement<ProductCompositions>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProductComposition";
 	public static final String shortname = "x314";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -83,25 +83,46 @@ public class ProductComposition implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public ProductCompositions value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public ProductCompositions _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ProductComposition EMPTY = new ProductComposition();
 
 	public ProductComposition()
-	{}
+	{
+		exists = false;
+	}
 
 	public ProductComposition(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = ProductCompositions.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

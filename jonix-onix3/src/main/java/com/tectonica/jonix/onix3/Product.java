@@ -20,24 +20,28 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+import com.tectonica.jonix.struct.JonixBarcode;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixRecordSourceIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1><h2>ONIX for Books Product record</h2>
+ * <h1>null</h1>
+ * <h2>ONIX for Books Product record</h2>
  * <p>
  * Every ONIX message must contain either one or more &lt;Product&gt; composites or a single &lt;NoProduct/&gt; empty
  * element.
@@ -77,9 +81,9 @@ public class Product implements OnixSuperComposite, Serializable
 	public static final String refname = "Product";
 	public static final String shortname = "product";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -90,227 +94,235 @@ public class Product implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public RecordReference recordReference;
-
-	/**
-	 * (this field is required)
-	 */
-	public NotificationType notificationType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<DeletionText> deletionTexts;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceType recordSourceType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RecordSourceIdentifier> recordSourceIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceName recordSourceName;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Barcode> barcodes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DescriptiveDetail descriptiveDetail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CollateralDetail collateralDetail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContentDetail contentDetail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublishingDetail publishingDetail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RelatedMaterial relatedMaterial;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductSupply> productSupplys;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Product EMPTY = new Product();
 
 	public Product()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Product(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
-					recordReference = new RecordReference(element);
-				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
-					notificationType = new NotificationType(element);
-				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
-					deletionTexts = JPU.addToList(deletionTexts, new DeletionText(element));
-				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
-					recordSourceType = new RecordSourceType(element);
-				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers,
-							new RecordSourceIdentifier(element));
-				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
-					recordSourceName = new RecordSourceName(element);
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
-					barcodes = JPU.addToList(barcodes, new Barcode(element));
-				else if (name.equals(DescriptiveDetail.refname) || name.equals(DescriptiveDetail.shortname))
-					descriptiveDetail = new DescriptiveDetail(element);
-				else if (name.equals(CollateralDetail.refname) || name.equals(CollateralDetail.shortname))
-					collateralDetail = new CollateralDetail(element);
-				else if (name.equals(ContentDetail.refname) || name.equals(ContentDetail.shortname))
-					contentDetail = new ContentDetail(element);
-				else if (name.equals(PublishingDetail.refname) || name.equals(PublishingDetail.shortname))
-					publishingDetail = new PublishingDetail(element);
-				else if (name.equals(RelatedMaterial.refname) || name.equals(RelatedMaterial.shortname))
-					relatedMaterial = new RelatedMaterial(element);
-				else if (name.equals(ProductSupply.refname) || name.equals(ProductSupply.shortname))
-					productSupplys = JPU.addToList(productSupplys, new ProductSupply(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
+				recordReference = new RecordReference(e);
+			else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
+				notificationType = new NotificationType(e);
+			else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
+				deletionTexts = JPU.addToList(deletionTexts, new DeletionText(e));
+			else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
+				recordSourceType = new RecordSourceType(e);
+			else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
+				recordSourceIdentifiers = JPU.addToList(recordSourceIdentifiers, new RecordSourceIdentifier(e));
+			else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
+				recordSourceName = new RecordSourceName(e);
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
+				barcodes = JPU.addToList(barcodes, new Barcode(e));
+			else if (name.equals(DescriptiveDetail.refname) || name.equals(DescriptiveDetail.shortname))
+				descriptiveDetail = new DescriptiveDetail(e);
+			else if (name.equals(CollateralDetail.refname) || name.equals(CollateralDetail.shortname))
+				collateralDetail = new CollateralDetail(e);
+			else if (name.equals(ContentDetail.refname) || name.equals(ContentDetail.shortname))
+				contentDetail = new ContentDetail(e);
+			else if (name.equals(PublishingDetail.refname) || name.equals(PublishingDetail.shortname))
+				publishingDetail = new PublishingDetail(e);
+			else if (name.equals(RelatedMaterial.refname) || name.equals(RelatedMaterial.shortname))
+				relatedMaterial = new RelatedMaterial(e);
+			else if (name.equals(ProductSupply.refname) || name.equals(ProductSupply.shortname))
+				productSupplys = JPU.addToList(productSupplys, new ProductSupply(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 100 characters
-	 */
-	public String getRecordReferenceValue()
+	@Override
+	public boolean exists()
 	{
-		return (recordReference == null) ? null : recordReference.value;
+		return exists;
 	}
 
-	public NotificationOrUpdateTypes getNotificationTypeValue()
-	{
-		return (notificationType == null) ? null : notificationType.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public List<String> getDeletionTextValues()
-	{
-		if (deletionTexts != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (DeletionText i : deletionTexts)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public RecordSourceTypes getRecordSourceTypeValue()
-	{
-		return (recordSourceType == null) ? null : recordSourceType.value;
-	}
+	private RecordReference recordReference = RecordReference.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getRecordSourceNameValue()
+	public RecordReference recordReference()
 	{
-		return (recordSourceName == null) ? null : recordSourceName.value;
+		initialize();
+		return recordReference;
 	}
 
-	public JonixRecordSourceIdentifier findRecordSourceIdentifier(NameCodeTypes recordSourceIDType)
+	private NotificationType notificationType = NotificationType.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public NotificationType notificationType()
 	{
-		if (recordSourceIdentifiers != null)
-		{
-			for (RecordSourceIdentifier x : recordSourceIdentifiers)
-			{
-				if (x.getRecordSourceIDTypeValue() == recordSourceIDType)
-					return x.asJonixRecordSourceIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return notificationType;
 	}
 
-	public List<JonixRecordSourceIdentifier> findRecordSourceIdentifiers(
-			java.util.Set<NameCodeTypes> recordSourceIDTypes)
+	private ListOfOnixElement<DeletionText, String> deletionTexts = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<DeletionText, String> deletionTexts()
 	{
-		if (recordSourceIdentifiers != null)
-		{
-			List<JonixRecordSourceIdentifier> matches = new ArrayList<>();
-			for (RecordSourceIdentifier x : recordSourceIdentifiers)
-			{
-				if (recordSourceIDTypes == null || recordSourceIDTypes.contains(x.getRecordSourceIDTypeValue()))
-					matches.add(x.asJonixRecordSourceIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return deletionTexts;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceType recordSourceType()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return recordSourceType;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameCodeTypes> recordSourceIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameCodeTypes> recordSourceIdentifiers()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return recordSourceIdentifiers;
+	}
+
+	private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceName recordSourceName()
+	{
+		initialize();
+		return recordSourceName;
+	}
+
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
+	{
+		initialize();
+		return productIdentifiers;
+	}
+
+	private ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes()
+	{
+		initialize();
+		return barcodes;
+	}
+
+	private DescriptiveDetail descriptiveDetail = DescriptiveDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DescriptiveDetail descriptiveDetail()
+	{
+		initialize();
+		return descriptiveDetail;
+	}
+
+	private CollateralDetail collateralDetail = CollateralDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CollateralDetail collateralDetail()
+	{
+		initialize();
+		return collateralDetail;
+	}
+
+	private ContentDetail contentDetail = ContentDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContentDetail contentDetail()
+	{
+		initialize();
+		return contentDetail;
+	}
+
+	private PublishingDetail publishingDetail = PublishingDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingDetail publishingDetail()
+	{
+		initialize();
+		return publishingDetail;
+	}
+
+	private RelatedMaterial relatedMaterial = RelatedMaterial.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RelatedMaterial relatedMaterial()
+	{
+		initialize();
+		return relatedMaterial;
+	}
+
+	private List<ProductSupply> productSupplys = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductSupply> productSupplys()
+	{
+		initialize();
+		return productSupplys;
 	}
 }

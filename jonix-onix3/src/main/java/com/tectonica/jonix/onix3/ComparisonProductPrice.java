@@ -20,19 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -83,9 +80,9 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 	public static final String refname = "ComparisonProductPrice";
 	public static final String shortname = "comparisonproductprice";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -96,105 +93,104 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceType priceType;
-
-	/**
-	 * (this field is required)
-	 */
-	public PriceAmount priceAmount;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CurrencyCode currencyCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ComparisonProductPrice EMPTY = new ComparisonProductPrice();
 
 	public ComparisonProductPrice()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ComparisonProductPrice(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
-					priceType = new PriceType(element);
-				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					priceAmount = new PriceAmount(element);
-				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-					currencyCode = new CurrencyCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
+				priceType = new PriceType(e);
+			else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
+				priceAmount = new PriceAmount(e);
+			else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
+				currencyCode = new CurrencyCode(e);
 		});
 	}
 
-	public PriceTypes getPriceTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceType == null) ? null : priceType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this list is required to contain at least one item)
 	 */
-	public Double getPriceAmountValue()
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		return (priceAmount == null) ? null : priceAmount.value;
+		initialize();
+		return productIdentifiers;
 	}
 
-	public CurrencyCodes getCurrencyCodeValue()
+	private PriceType priceType = PriceType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceType priceType()
 	{
-		return (currencyCode == null) ? null : currencyCode.value;
+		initialize();
+		return priceType;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private PriceAmount priceAmount = PriceAmount.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public PriceAmount priceAmount()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return priceAmount;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private CurrencyCode currencyCode = CurrencyCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyCode currencyCode()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return currencyCode;
 	}
 }

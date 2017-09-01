@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -64,16 +64,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class EpubSource implements OnixElement, Serializable
+public class EpubSource implements OnixElement<EpublicationFormats>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "EpubSource";
 	public static final String shortname = "b278";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -92,21 +92,36 @@ public class EpubSource implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public EpublicationFormats value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public EpublicationFormats _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final EpubSource EMPTY = new EpubSource();
 
 	public EpubSource()
-	{}
+	{
+		exists = false;
+	}
 
 	public EpubSource(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -116,5 +131,11 @@ public class EpubSource implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = EpublicationFormats.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

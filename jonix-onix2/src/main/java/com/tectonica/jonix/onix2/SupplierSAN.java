@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -59,16 +59,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class SupplierSAN implements OnixElement, Serializable
+public class SupplierSAN implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "SupplierSAN";
 	public static final String shortname = "j136";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -87,9 +87,9 @@ public class SupplierSAN implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
@@ -99,15 +99,30 @@ public class SupplierSAN implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final SupplierSAN EMPTY = new SupplierSAN();
 
 	public SupplierSAN()
-	{}
+	{
+		exists = false;
+	}
 
 	public SupplierSAN(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,5 +132,11 @@ public class SupplierSAN implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.CollectionSequenceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixCollectionSequence;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +53,17 @@ import com.tectonica.jonix.struct.JonixCollectionSequence;
  * </tr>
  * </table>
  */
-public class CollectionSequence implements OnixDataComposite, Serializable
+public class CollectionSequence
+		implements OnixDataCompositeWithKey<JonixCollectionSequence, CollectionSequenceTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "CollectionSequence";
 	public static final String shortname = "collectionsequence";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,84 +74,108 @@ public class CollectionSequence implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public CollectionSequenceType collectionSequenceType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CollectionSequenceTypeName collectionSequenceTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public CollectionSequenceNumber collectionSequenceNumber;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final CollectionSequence EMPTY = new CollectionSequence();
 
 	public CollectionSequence()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public CollectionSequence(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CollectionSequenceType.refname) || name.equals(CollectionSequenceType.shortname))
-					collectionSequenceType = new CollectionSequenceType(element);
-				else if (name.equals(CollectionSequenceTypeName.refname)
-						|| name.equals(CollectionSequenceTypeName.shortname))
-					collectionSequenceTypeName = new CollectionSequenceTypeName(element);
-				else if (name.equals(CollectionSequenceNumber.refname)
-						|| name.equals(CollectionSequenceNumber.shortname))
-					collectionSequenceNumber = new CollectionSequenceNumber(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CollectionSequenceType.refname) || name.equals(CollectionSequenceType.shortname))
+				collectionSequenceType = new CollectionSequenceType(e);
+			else if (name.equals(CollectionSequenceTypeName.refname)
+					|| name.equals(CollectionSequenceTypeName.shortname))
+				collectionSequenceTypeName = new CollectionSequenceTypeName(e);
+			else if (name.equals(CollectionSequenceNumber.refname) || name.equals(CollectionSequenceNumber.shortname))
+				collectionSequenceNumber = new CollectionSequenceNumber(e);
 		});
 	}
 
-	public CollectionSequenceTypes getCollectionSequenceTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (collectionSequenceType == null) ? null : collectionSequenceType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private CollectionSequenceType collectionSequenceType = CollectionSequenceType.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getCollectionSequenceTypeNameValue()
+	public CollectionSequenceType collectionSequenceType()
 	{
-		return (collectionSequenceTypeName == null) ? null : collectionSequenceTypeName.value;
+		initialize();
+		return collectionSequenceType;
 	}
+
+	private CollectionSequenceTypeName collectionSequenceTypeName = CollectionSequenceTypeName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
-	 * character, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getCollectionSequenceNumberValue()
+	public CollectionSequenceTypeName collectionSequenceTypeName()
 	{
-		return (collectionSequenceNumber == null) ? null : collectionSequenceNumber.value;
+		initialize();
+		return collectionSequenceTypeName;
 	}
 
-	public JonixCollectionSequence asJonixCollectionSequence()
+	private CollectionSequenceNumber collectionSequenceNumber = CollectionSequenceNumber.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public CollectionSequenceNumber collectionSequenceNumber()
 	{
-		JonixCollectionSequence x = new JonixCollectionSequence();
-		x.collectionSequenceType = getCollectionSequenceTypeValue();
-		x.collectionSequenceTypeName = getCollectionSequenceTypeNameValue();
-		x.collectionSequenceNumber = getCollectionSequenceNumberValue();
-		return x;
+		initialize();
+		return collectionSequenceNumber;
+	}
+
+	@Override
+	public JonixCollectionSequence asStruct()
+	{
+		initialize();
+		JonixCollectionSequence struct = new JonixCollectionSequence();
+		struct.collectionSequenceType = collectionSequenceType.value;
+		struct.collectionSequenceTypeName = collectionSequenceTypeName.value;
+		struct.collectionSequenceNumber = collectionSequenceNumber.value;
+		return struct;
+	}
+
+	@Override
+	public CollectionSequenceTypes structKey()
+	{
+		return collectionSequenceType().value;
 	}
 }

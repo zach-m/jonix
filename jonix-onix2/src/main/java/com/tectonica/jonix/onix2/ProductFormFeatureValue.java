@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -60,20 +60,21 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td>&lt;ProductFormFeatureValue&gt;BLK&lt;/ProductFormFeatureValue&gt;&#160;&#160;&#160;&#160;Black (binding color)</td>
+ * <td>&lt;ProductFormFeatureValue&gt;BLK&lt;/ProductFormFeatureValue&gt;&#160;&#160;&#160;&#160;Black (binding
+ * color)</td>
  * </tr>
  * </table>
  */
-public class ProductFormFeatureValue implements OnixElement, Serializable
+public class ProductFormFeatureValue implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProductFormFeatureValue";
 	public static final String shortname = "b335";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -92,9 +93,9 @@ public class ProductFormFeatureValue implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
@@ -103,15 +104,30 @@ public class ProductFormFeatureValue implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ProductFormFeatureValue EMPTY = new ProductFormFeatureValue();
 
 	public ProductFormFeatureValue()
-	{}
+	{
+		exists = false;
+	}
 
 	public ProductFormFeatureValue(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -121,5 +137,11 @@ public class ProductFormFeatureValue implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

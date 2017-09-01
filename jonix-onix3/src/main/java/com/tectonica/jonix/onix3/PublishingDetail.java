@@ -20,24 +20,24 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
-import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.struct.JonixPublishingDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1><h4 class="nobreak">Publishing detail composite</h4>
+ * <h1>null</h1>
+ * <h4 class="nobreak">Publishing detail composite</h4>
  * <p>
  * The publishing detail block covers data element Groups P.19 to P.21, carrying information on the publisher(s),
  * ‘global’ publishing status, and rights attaching to a product. The block as a whole is non-repeating. It is mandatory
@@ -66,9 +66,9 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "PublishingDetail";
 	public static final String shortname = "publishingdetail";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -79,203 +79,221 @@ public class PublishingDetail implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<Imprint> imprints;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Publisher> publishers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CityOfPublication> cityOfPublications;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountryOfPublication countryOfPublication;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductContact> productContacts;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublishingStatus publishingStatus;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PublishingStatusNote> publishingStatusNotes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PublishingDate> publishingDates;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LatestReprintNumber latestReprintNumber;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CopyrightStatement> copyrightStatements;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRights> salesRightss;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ROWSalesRightsType rowSalesRightsType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRestriction> salesRestrictions;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PublishingDetail EMPTY = new PublishingDetail();
 
 	public PublishingDetail()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PublishingDetail(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
-					imprints = JPU.addToList(imprints, new Imprint(element));
-				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					publishers = JPU.addToList(publishers, new Publisher(element));
-				else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
-					cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(element));
-				else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
-					countryOfPublication = new CountryOfPublication(element);
-				else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
-					productContacts = JPU.addToList(productContacts, new ProductContact(element));
-				else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
-					publishingStatus = new PublishingStatus(element);
-				else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
-					publishingStatusNotes = JPU.addToList(publishingStatusNotes, new PublishingStatusNote(element));
-				else if (name.equals(PublishingDate.refname) || name.equals(PublishingDate.shortname))
-					publishingDates = JPU.addToList(publishingDates, new PublishingDate(element));
-				else if (name.equals(LatestReprintNumber.refname) || name.equals(LatestReprintNumber.shortname))
-					latestReprintNumber = new LatestReprintNumber(element);
-				else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
-					copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(element));
-				else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
-					salesRightss = JPU.addToList(salesRightss, new SalesRights(element));
-				else if (name.equals(ROWSalesRightsType.refname) || name.equals(ROWSalesRightsType.shortname))
-					rowSalesRightsType = new ROWSalesRightsType(element);
-				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
+				imprints = JPU.addToList(imprints, new Imprint(e));
+			else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
+				publishers = JPU.addToList(publishers, new Publisher(e));
+			else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
+				cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
+			else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
+				countryOfPublication = new CountryOfPublication(e);
+			else if (name.equals(ProductContact.refname) || name.equals(ProductContact.shortname))
+				productContacts = JPU.addToList(productContacts, new ProductContact(e));
+			else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
+				publishingStatus = new PublishingStatus(e);
+			else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
+				publishingStatusNotes = JPU.addToList(publishingStatusNotes, new PublishingStatusNote(e));
+			else if (name.equals(PublishingDate.refname) || name.equals(PublishingDate.shortname))
+				publishingDates = JPU.addToList(publishingDates, new PublishingDate(e));
+			else if (name.equals(LatestReprintNumber.refname) || name.equals(LatestReprintNumber.shortname))
+				latestReprintNumber = new LatestReprintNumber(e);
+			else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
+				copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
+			else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
+				salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
+			else if (name.equals(ROWSalesRightsType.refname) || name.equals(ROWSalesRightsType.shortname))
+				rowSalesRightsType = new ROWSalesRightsType(e);
+			else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
+				salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
-	 */
-	public List<String> getCityOfPublicationValues()
+	@Override
+	public boolean exists()
 	{
-		if (cityOfPublications != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CityOfPublication i : cityOfPublications)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		return exists;
 	}
 
-	public CountryCodes getCountryOfPublicationValue()
-	{
-		return (countryOfPublication == null) ? null : countryOfPublication.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	public PublishingStatuss getPublishingStatusValue()
-	{
-		return (publishingStatus == null) ? null : publishingStatus.value;
-	}
+	private List<Imprint> imprints = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters. XHTML is enabled in this element - see Using
-	 * XHTML, HTML or XML with ONIX text fields
+	 * (this list is required to contain at least one item)
 	 */
-	public List<String> getPublishingStatusNoteValues()
+	public List<Imprint> imprints()
 	{
-		if (publishingStatusNotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PublishingStatusNote i : publishingStatusNotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return imprints;
 	}
+
+	private List<Publisher> publishers = Collections.emptyList();
 
 	/**
-	 * Raw Format: Integer, suggested maximum three digits
+	 * (this list may be empty)
 	 */
-	public Integer getLatestReprintNumberValue()
+	public List<Publisher> publishers()
 	{
-		return (latestReprintNumber == null) ? null : latestReprintNumber.value;
+		initialize();
+		return publishers;
 	}
 
-	public SalesRightsTypes getROWSalesRightsTypeValue()
+	private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<CityOfPublication, String> cityOfPublications()
 	{
-		return (rowSalesRightsType == null) ? null : rowSalesRightsType.value;
+		initialize();
+		return cityOfPublications;
 	}
 
-	public JonixPublishingDate findPublishingDate(PublishingDateRoles publishingDateRole)
+	private CountryOfPublication countryOfPublication = CountryOfPublication.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryOfPublication countryOfPublication()
 	{
-		if (publishingDates != null)
-		{
-			for (PublishingDate x : publishingDates)
-			{
-				if (x.getPublishingDateRoleValue() == publishingDateRole)
-					return x.asJonixPublishingDate();
-			}
-		}
-		return null;
+		initialize();
+		return countryOfPublication;
 	}
 
-	public List<JonixPublishingDate> findPublishingDates(java.util.Set<PublishingDateRoles> publishingDateRoles)
+	private List<ProductContact> productContacts = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ProductContact> productContacts()
 	{
-		if (publishingDates != null)
-		{
-			List<JonixPublishingDate> matches = new ArrayList<>();
-			for (PublishingDate x : publishingDates)
-			{
-				if (publishingDateRoles == null || publishingDateRoles.contains(x.getPublishingDateRoleValue()))
-					matches.add(x.asJonixPublishingDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return productContacts;
+	}
+
+	private PublishingStatus publishingStatus = PublishingStatus.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingStatus publishingStatus()
+	{
+		initialize();
+		return publishingStatus;
+	}
+
+	private ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes()
+	{
+		initialize();
+		return publishingStatusNotes;
+	}
+
+	private ListOfOnixDataCompositeWithKey<PublishingDate, JonixPublishingDate, PublishingDateRoles> publishingDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<PublishingDate, JonixPublishingDate, PublishingDateRoles> publishingDates()
+	{
+		initialize();
+		return publishingDates;
+	}
+
+	private LatestReprintNumber latestReprintNumber = LatestReprintNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LatestReprintNumber latestReprintNumber()
+	{
+		initialize();
+		return latestReprintNumber;
+	}
+
+	private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopyrightStatement> copyrightStatements()
+	{
+		initialize();
+		return copyrightStatements;
+	}
+
+	private List<SalesRights> salesRightss = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRights> salesRightss()
+	{
+		initialize();
+		return salesRightss;
+	}
+
+	private ROWSalesRightsType rowSalesRightsType = ROWSalesRightsType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ROWSalesRightsType rowSalesRightsType()
+	{
+		initialize();
+		return rowSalesRightsType;
+	}
+
+	private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions()
+	{
+		initialize();
+		return salesRestrictions;
 	}
 }

@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -67,16 +67,16 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * </table>
  */
-public class SentDateTime implements OnixElement, Serializable
+public class SentDateTime implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "SentDateTime";
 	public static final String shortname = "x307";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -87,9 +87,9 @@ public class SentDateTime implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Permitted formats, where 'T' and 'Z' represent themselves (ie the letters T and Z), and where the
@@ -103,19 +103,40 @@ public class SentDateTime implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final SentDateTime EMPTY = new SentDateTime();
 
 	public SentDateTime()
-	{}
+	{
+		exists = false;
+	}
 
 	public SentDateTime(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

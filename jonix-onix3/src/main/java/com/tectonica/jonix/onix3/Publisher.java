@@ -20,18 +20,18 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.PublishingRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPublisherIdentifier;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,9 +63,9 @@ public class Publisher implements OnixSuperComposite, Serializable
 	public static final String refname = "Publisher";
 	public static final String shortname = "publisher";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -76,99 +76,104 @@ public class Publisher implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PublishingRole publishingRole;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<PublisherIdentifier> publisherIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherName publisherName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Publisher EMPTY = new Publisher();
 
 	public Publisher()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Publisher(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PublishingRole.refname) || name.equals(PublishingRole.shortname))
-					publishingRole = new PublishingRole(element);
-				else if (name.equals(PublisherIdentifier.refname) || name.equals(PublisherIdentifier.shortname))
-					publisherIdentifiers = JPU.addToList(publisherIdentifiers, new PublisherIdentifier(element));
-				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					publisherName = new PublisherName(element);
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PublishingRole.refname) || name.equals(PublishingRole.shortname))
+				publishingRole = new PublishingRole(e);
+			else if (name.equals(PublisherIdentifier.refname) || name.equals(PublisherIdentifier.shortname))
+				publisherIdentifiers = JPU.addToList(publisherIdentifiers, new PublisherIdentifier(e));
+			else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
+				publisherName = new PublisherName(e);
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
 		});
 	}
 
-	public PublishingRoles getPublishingRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (publishingRole == null) ? null : publishingRole.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PublishingRole publishingRole = PublishingRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getPublisherNameValue()
+	public PublishingRole publishingRole()
 	{
-		return (publisherName == null) ? null : publisherName.value;
+		initialize();
+		return publishingRole;
 	}
 
-	public JonixPublisherIdentifier findPublisherIdentifier(NameCodeTypes publisherIDType)
+	private ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameCodeTypes> publisherIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameCodeTypes> publisherIdentifiers()
 	{
-		if (publisherIdentifiers != null)
-		{
-			for (PublisherIdentifier x : publisherIdentifiers)
-			{
-				if (x.getPublisherIDTypeValue() == publisherIDType)
-					return x.asJonixPublisherIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return publisherIdentifiers;
 	}
 
-	public List<JonixPublisherIdentifier> findPublisherIdentifiers(java.util.Set<NameCodeTypes> publisherIDTypes)
+	private PublisherName publisherName = PublisherName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName()
 	{
-		if (publisherIdentifiers != null)
-		{
-			List<JonixPublisherIdentifier> matches = new ArrayList<>();
-			for (PublisherIdentifier x : publisherIdentifiers)
-			{
-				if (publisherIDTypes == null || publisherIDTypes.contains(x.getPublisherIDTypeValue()))
-					matches.add(x.asJonixPublisherIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return publisherName;
+	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
+	{
+		initialize();
+		return websites;
 	}
 }

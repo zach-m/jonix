@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,68 +37,61 @@ interface CodeList215
  * Description: Proximity
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist215">ONIX
- *      Codelist 215 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist215">ONIX Codelist 215 in Reference Guide</a>
  */
 public enum Proximitys implements OnixCodelist, CodeList215
 {
-	Less_than("01", "Less than"), //
+   Less_than("01", "Less than"), //
 
-	Not_more_than("02", "Not more than"), //
+   Not_more_than("02", "Not more than"), //
 
-	/**
-	 * The supplier's true figure, or at least a best estimate expected to be within 10% of the true figure (ie a quoted
-	 * figure of 100 could in fact be anything between 91 and 111)
-	 */
-	Exactly("03", "Exactly"), //
+   /**
+    * The supplier's true figure, or at least a best estimate expected to be within 10% of the true figure (ie a quoted figure of 100 could in fact be anything between 91 and 111)
+    */
+   Exactly("03", "Exactly"), //
 
-	/**
-	 * Generally interpreted as within 25% of the true figure (ie a quoted figure of 100 could in fact be anything
-	 * between 80 and 133). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity
-	 * of the figure
-	 */
-	Approximately("04", "Approximately"), //
+   /**
+    * Generally interpreted as within 25% of the true figure (ie a quoted figure of 100 could in fact be anything between 80 and 133). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity of the figure
+    */
+   Approximately("04", "Approximately"), //
 
-	/**
-	 * Generally interpreted as within a factor of two of the true figure (ie a quoted figure of 100 could in fact be
-	 * anything between 50 and 200). The supplier may introduce a deliberate approximation to reduce the commercial
-	 * sensitivity of the figure
-	 */
-	About("05", "About"), //
+   /**
+    * Generally interpreted as within a factor of two of the true figure (ie a quoted figure of 100 could in fact be anything between 50 and 200). The supplier may introduce a deliberate approximation to reduce the commercial sensitivity of the figure
+    */
+   About("05", "About"), //
 
-	Not_less_than("06", "Not less than"), //
+   Not_less_than("06", "Not less than"), //
 
-	More_than("07", "More than");
+   More_than("07", "More than");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private Proximitys(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private Proximitys(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static Proximitys byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (Proximitys e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static Proximitys byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (Proximitys e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

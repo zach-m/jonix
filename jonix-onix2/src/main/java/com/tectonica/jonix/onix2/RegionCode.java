@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -64,16 +64,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class RegionCode implements OnixElement, Serializable
+public class RegionCode implements OnixElement<java.util.Set<String>>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "RegionCode";
 	public static final String shortname = "b398";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -92,9 +92,9 @@ public class RegionCode implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes
@@ -104,15 +104,30 @@ public class RegionCode implements OnixElement, Serializable
 	 */
 	public java.util.Set<String> value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public java.util.Set<String> _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final RegionCode EMPTY = new RegionCode();
 
 	public RegionCode()
-	{}
+	{
+		exists = false;
+	}
 
 	public RegionCode(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -124,5 +139,11 @@ public class RegionCode implements OnixElement, Serializable
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
 			value.add(String.valueOf(split));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

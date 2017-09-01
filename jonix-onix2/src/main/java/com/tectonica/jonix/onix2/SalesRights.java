@@ -20,23 +20,20 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeUncommon;
 import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.RightsRegions;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -57,16 +54,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class SalesRights implements OnixDataComposite, Serializable
+public class SalesRights implements OnixDataCompositeUncommon, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -85,39 +82,35 @@ public class SalesRights implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesRightsType salesRightsType;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<RightsCountry> rightsCountrys;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RightsTerritory rightsTerritory;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RightsRegion> rightsRegions;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SalesRights EMPTY = new SalesRights();
 
 	public SalesRights()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SalesRights(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -126,55 +119,70 @@ public class SalesRights implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
-					salesRightsType = new SalesRightsType(element);
-				else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
-					rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(element));
-				else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
-					rightsTerritory = new RightsTerritory(element);
-				else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname))
-					rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
+				salesRightsType = new SalesRightsType(e);
+			else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
+				rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
+			else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
+				rightsTerritory = new RightsTerritory(e);
+			else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname))
+				rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(e));
 		});
 	}
 
-	public SalesRightsTypes getSalesRightsTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (salesRightsType == null) ? null : salesRightsType.value;
+		return exists;
 	}
 
-	public List<java.util.Set<CountryCodes>> getRightsCountrySets()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SalesRightsType salesRightsType = SalesRightsType.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public SalesRightsType salesRightsType()
 	{
-		if (rightsCountrys != null)
-		{
-			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
-			for (RightsCountry i : rightsCountrys)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return salesRightsType;
 	}
 
-	public java.util.Set<Regions> getRightsTerritorySet()
+	private ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys()
 	{
-		return (rightsTerritory == null) ? null : rightsTerritory.value;
+		initialize();
+		return rightsCountrys;
 	}
 
-	public List<RightsRegions> getRightsRegionValues()
+	private RightsTerritory rightsTerritory = RightsTerritory.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RightsTerritory rightsTerritory()
 	{
-		if (rightsRegions != null)
-		{
-			List<RightsRegions> list = new ArrayList<>();
-			for (RightsRegion i : rightsRegions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return rightsTerritory;
+	}
+
+	private ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions()
+	{
+		initialize();
+		return rightsRegions;
 	}
 }

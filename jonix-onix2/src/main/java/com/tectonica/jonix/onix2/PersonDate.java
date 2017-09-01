@@ -22,8 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PersonDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPersonDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,16 @@ import com.tectonica.jonix.struct.JonixPersonDate;
  * </tr>
  * </table>
  */
-public class PersonDate implements OnixDataComposite, Serializable
+public class PersonDate implements OnixDataCompositeWithKey<JonixPersonDate, PersonDateRoles>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PersonDate";
 	public static final String shortname = "persondate";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,34 +80,35 @@ public class PersonDate implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PersonDateRole personDateRole;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DateFormat dateFormat;
-
-	/**
-	 * (this field is required)
-	 */
-	public Date date;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PersonDate EMPTY = new PersonDate();
 
 	public PersonDate()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PersonDate(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,46 +117,74 @@ public class PersonDate implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PersonDateRole.refname) || name.equals(PersonDateRole.shortname))
-					personDateRole = new PersonDateRole(element);
-				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					dateFormat = new DateFormat(element);
-				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					date = new Date(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PersonDateRole.refname) || name.equals(PersonDateRole.shortname))
+				personDateRole = new PersonDateRole(e);
+			else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
+				dateFormat = new DateFormat(e);
+			else if (name.equals(Date.refname) || name.equals(Date.shortname))
+				date = new Date(e);
 		});
 	}
 
-	public PersonDateRoles getPersonDateRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (personDateRole == null) ? null : personDateRole.value;
+		return exists;
 	}
 
-	public DateFormats getDateFormatValue()
-	{
-		return (dateFormat == null) ? null : dateFormat.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PersonDateRole personDateRole = PersonDateRole.EMPTY;
 
 	/**
-	 * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+	 * (this field is required)
 	 */
-	public String getDateValue()
+	public PersonDateRole personDateRole()
 	{
-		return (date == null) ? null : date.value;
+		initialize();
+		return personDateRole;
 	}
 
-	public JonixPersonDate asJonixPersonDate()
+	private DateFormat dateFormat = DateFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat()
 	{
-		JonixPersonDate x = new JonixPersonDate();
-		x.personDateRole = getPersonDateRoleValue();
-		x.dateFormat = getDateFormatValue();
-		x.date = getDateValue();
-		return x;
+		initialize();
+		return dateFormat;
+	}
+
+	private Date date = Date.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date()
+	{
+		initialize();
+		return date;
+	}
+
+	@Override
+	public JonixPersonDate asStruct()
+	{
+		initialize();
+		JonixPersonDate struct = new JonixPersonDate();
+		struct.personDateRole = personDateRole.value;
+		struct.dateFormat = dateFormat.value;
+		struct.date = date.value;
+		return struct;
+	}
+
+	@Override
+	public PersonDateRoles structKey()
+	{
+		return personDateRole().value;
 	}
 }

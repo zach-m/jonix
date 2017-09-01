@@ -23,13 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Velocitys;
 import com.tectonica.jonix.struct.JonixVelocity;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +52,16 @@ import com.tectonica.jonix.struct.JonixVelocity;
  * </tr>
  * </table>
  */
-public class Velocity implements OnixDataComposite, Serializable
+public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Velocity";
 	public static final String shortname = "velocity";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,78 +72,101 @@ public class Velocity implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public VelocityMetric velocityMetric;
-
-	/**
-	 * (this field is required)
-	 */
-	public Rate rate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Proximity proximity;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Velocity EMPTY = new Velocity();
 
 	public Velocity()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Velocity(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname))
-					velocityMetric = new VelocityMetric(element);
-				else if (name.equals(Rate.refname) || name.equals(Rate.shortname))
-					rate = new Rate(element);
-				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
-					proximity = new Proximity(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname))
+				velocityMetric = new VelocityMetric(e);
+			else if (name.equals(Rate.refname) || name.equals(Rate.shortname))
+				rate = new Rate(e);
+			else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
+				proximity = new Proximity(e);
 		});
 	}
 
-	public Velocitys getVelocityMetricValue()
+	@Override
+	public boolean exists()
 	{
-		return (velocityMetric == null) ? null : velocityMetric.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private VelocityMetric velocityMetric = VelocityMetric.EMPTY;
 
 	/**
-	 * Raw Format: Variable length integer, suggested maximum length 7 digits
+	 * (this field is required)
 	 */
-	public Integer getRateValue()
+	public VelocityMetric velocityMetric()
 	{
-		return (rate == null) ? null : rate.value;
+		initialize();
+		return velocityMetric;
 	}
 
-	public Proximitys getProximityValue()
+	private Rate rate = Rate.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Rate rate()
 	{
-		return (proximity == null) ? null : proximity.value;
+		initialize();
+		return rate;
 	}
 
-	public JonixVelocity asJonixVelocity()
+	private Proximity proximity = Proximity.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Proximity proximity()
 	{
-		JonixVelocity x = new JonixVelocity();
-		x.velocityMetric = getVelocityMetricValue();
-		x.rate = getRateValue();
-		x.proximity = getProximityValue();
-		return x;
+		initialize();
+		return proximity;
+	}
+
+	@Override
+	public JonixVelocity asStruct()
+	{
+		initialize();
+		JonixVelocity struct = new JonixVelocity();
+		struct.velocityMetric = velocityMetric.value;
+		struct.rate = rate.value;
+		struct.proximity = proximity.value;
+		return struct;
 	}
 }

@@ -20,29 +20,27 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.CurrencyZones;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
-import com.tectonica.jonix.codelist.PositionOnProducts;
 import com.tectonica.jonix.codelist.PriceDateRoles;
 import com.tectonica.jonix.codelist.PriceIdentifierTypes;
-import com.tectonica.jonix.codelist.PriceStatuss;
-import com.tectonica.jonix.codelist.PriceTypeQualifiers;
-import com.tectonica.jonix.codelist.PriceTypes;
-import com.tectonica.jonix.codelist.PrintedOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.UnitOfPricings;
+import com.tectonica.jonix.struct.JonixBatchBonus;
+import com.tectonica.jonix.struct.JonixDiscount;
 import com.tectonica.jonix.struct.JonixDiscountCoded;
 import com.tectonica.jonix.struct.JonixPriceDate;
 import com.tectonica.jonix.struct.JonixPriceIdentifier;
+import com.tectonica.jonix.struct.JonixTax;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -73,9 +71,9 @@ public class Price implements OnixSuperComposite, Serializable
 	public static final String refname = "Price";
 	public static final String shortname = "price";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -86,334 +84,327 @@ public class Price implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PriceIdentifier> priceIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceType priceType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceQualifier priceQualifier;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PriceTypeDescription> priceTypeDescriptions;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PricePer pricePer;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PriceCondition> priceConditions;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MinimumOrderQuantity minimumOrderQuantity;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BatchBonus> batchBonuss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<DiscountCoded> discountCodeds;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Discount> discounts;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceStatus priceStatus;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceAmount priceAmount;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceCoded priceCoded;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Tax> taxs;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CurrencyCode currencyCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Territory territory;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CurrencyZone currencyZone;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ComparisonProductPrice> comparisonProductPrices;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PriceDate> priceDates;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrintedOnProduct printedOnProduct;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PositionOnProduct positionOnProduct;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Price EMPTY = new Price();
 
 	public Price()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Price(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PriceIdentifier.refname) || name.equals(PriceIdentifier.shortname))
-					priceIdentifiers = JPU.addToList(priceIdentifiers, new PriceIdentifier(element));
-				else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
-					priceType = new PriceType(element);
-				else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
-					priceQualifier = new PriceQualifier(element);
-				else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
-					priceTypeDescriptions = JPU.addToList(priceTypeDescriptions, new PriceTypeDescription(element));
-				else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
-					pricePer = new PricePer(element);
-				else if (name.equals(PriceCondition.refname) || name.equals(PriceCondition.shortname))
-					priceConditions = JPU.addToList(priceConditions, new PriceCondition(element));
-				else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
-					minimumOrderQuantity = new MinimumOrderQuantity(element);
-				else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
-					batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(element));
-				else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
-					discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(element));
-				else if (name.equals(Discount.refname) || name.equals(Discount.shortname))
-					discounts = JPU.addToList(discounts, new Discount(element));
-				else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
-					priceStatus = new PriceStatus(element);
-				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					priceAmount = new PriceAmount(element);
-				else if (name.equals(PriceCoded.refname) || name.equals(PriceCoded.shortname))
-					priceCoded = new PriceCoded(element);
-				else if (name.equals(Tax.refname) || name.equals(Tax.shortname))
-					taxs = JPU.addToList(taxs, new Tax(element));
-				else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-					currencyCode = new CurrencyCode(element);
-				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					territory = new Territory(element);
-				else if (name.equals(CurrencyZone.refname) || name.equals(CurrencyZone.shortname))
-					currencyZone = new CurrencyZone(element);
-				else if (name.equals(ComparisonProductPrice.refname) || name.equals(ComparisonProductPrice.shortname))
-					comparisonProductPrices = JPU.addToList(comparisonProductPrices,
-							new ComparisonProductPrice(element));
-				else if (name.equals(PriceDate.refname) || name.equals(PriceDate.shortname))
-					priceDates = JPU.addToList(priceDates, new PriceDate(element));
-				else if (name.equals(PrintedOnProduct.refname) || name.equals(PrintedOnProduct.shortname))
-					printedOnProduct = new PrintedOnProduct(element);
-				else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
-					positionOnProduct = new PositionOnProduct(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PriceIdentifier.refname) || name.equals(PriceIdentifier.shortname))
+				priceIdentifiers = JPU.addToList(priceIdentifiers, new PriceIdentifier(e));
+			else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
+				priceType = new PriceType(e);
+			else if (name.equals(PriceQualifier.refname) || name.equals(PriceQualifier.shortname))
+				priceQualifier = new PriceQualifier(e);
+			else if (name.equals(PriceTypeDescription.refname) || name.equals(PriceTypeDescription.shortname))
+				priceTypeDescriptions = JPU.addToList(priceTypeDescriptions, new PriceTypeDescription(e));
+			else if (name.equals(PricePer.refname) || name.equals(PricePer.shortname))
+				pricePer = new PricePer(e);
+			else if (name.equals(PriceCondition.refname) || name.equals(PriceCondition.shortname))
+				priceConditions = JPU.addToList(priceConditions, new PriceCondition(e));
+			else if (name.equals(MinimumOrderQuantity.refname) || name.equals(MinimumOrderQuantity.shortname))
+				minimumOrderQuantity = new MinimumOrderQuantity(e);
+			else if (name.equals(BatchBonus.refname) || name.equals(BatchBonus.shortname))
+				batchBonuss = JPU.addToList(batchBonuss, new BatchBonus(e));
+			else if (name.equals(DiscountCoded.refname) || name.equals(DiscountCoded.shortname))
+				discountCodeds = JPU.addToList(discountCodeds, new DiscountCoded(e));
+			else if (name.equals(Discount.refname) || name.equals(Discount.shortname))
+				discounts = JPU.addToList(discounts, new Discount(e));
+			else if (name.equals(PriceStatus.refname) || name.equals(PriceStatus.shortname))
+				priceStatus = new PriceStatus(e);
+			else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
+				priceAmount = new PriceAmount(e);
+			else if (name.equals(PriceCoded.refname) || name.equals(PriceCoded.shortname))
+				priceCoded = new PriceCoded(e);
+			else if (name.equals(Tax.refname) || name.equals(Tax.shortname))
+				taxs = JPU.addToList(taxs, new Tax(e));
+			else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
+				currencyCode = new CurrencyCode(e);
+			else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
+				territory = new Territory(e);
+			else if (name.equals(CurrencyZone.refname) || name.equals(CurrencyZone.shortname))
+				currencyZone = new CurrencyZone(e);
+			else if (name.equals(ComparisonProductPrice.refname) || name.equals(ComparisonProductPrice.shortname))
+				comparisonProductPrices = JPU.addToList(comparisonProductPrices, new ComparisonProductPrice(e));
+			else if (name.equals(PriceDate.refname) || name.equals(PriceDate.shortname))
+				priceDates = JPU.addToList(priceDates, new PriceDate(e));
+			else if (name.equals(PrintedOnProduct.refname) || name.equals(PrintedOnProduct.shortname))
+				printedOnProduct = new PrintedOnProduct(e);
+			else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
+				positionOnProduct = new PositionOnProduct(e);
 		});
 	}
 
-	public PriceTypes getPriceTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceType == null) ? null : priceType.value;
+		return exists;
 	}
 
-	public PriceTypeQualifiers getPriceQualifierValue()
-	{
-		return (priceQualifier == null) ? null : priceQualifier.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
-	 */
-	public List<String> getPriceTypeDescriptionValues()
-	{
-		if (priceTypeDescriptions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PriceTypeDescription i : priceTypeDescriptions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public UnitOfPricings getPricePerValue()
-	{
-		return (pricePer == null) ? null : pricePer.value;
-	}
+	private ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier, PriceIdentifierTypes> priceIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
+	 * (this list may be empty)
 	 */
-	public Integer getMinimumOrderQuantityValue()
+	public ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier, PriceIdentifierTypes> priceIdentifiers()
 	{
-		return (minimumOrderQuantity == null) ? null : minimumOrderQuantity.value;
+		initialize();
+		return priceIdentifiers;
 	}
 
-	public PriceStatuss getPriceStatusValue()
-	{
-		return (priceStatus == null) ? null : priceStatus.value;
-	}
+	private PriceType priceType = PriceType.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this field is optional)
 	 */
-	public Double getPriceAmountValue()
+	public PriceType priceType()
 	{
-		return (priceAmount == null) ? null : priceAmount.value;
+		initialize();
+		return priceType;
 	}
 
-	public CurrencyCodes getCurrencyCodeValue()
+	private PriceQualifier priceQualifier = PriceQualifier.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceQualifier priceQualifier()
 	{
-		return (currencyCode == null) ? null : currencyCode.value;
+		initialize();
+		return priceQualifier;
 	}
 
-	public CurrencyZones getCurrencyZoneValue()
+	private ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions()
 	{
-		return (currencyZone == null) ? null : currencyZone.value;
+		initialize();
+		return priceTypeDescriptions;
 	}
 
-	public PrintedOnProducts getPrintedOnProductValue()
+	private PricePer pricePer = PricePer.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PricePer pricePer()
 	{
-		return (printedOnProduct == null) ? null : printedOnProduct.value;
+		initialize();
+		return pricePer;
 	}
 
-	public PositionOnProducts getPositionOnProductValue()
+	private List<PriceCondition> priceConditions = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PriceCondition> priceConditions()
 	{
-		return (positionOnProduct == null) ? null : positionOnProduct.value;
+		initialize();
+		return priceConditions;
 	}
 
-	public JonixPriceIdentifier findPriceIdentifier(PriceIdentifierTypes priceIDType)
+	private MinimumOrderQuantity minimumOrderQuantity = MinimumOrderQuantity.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MinimumOrderQuantity minimumOrderQuantity()
 	{
-		if (priceIdentifiers != null)
-		{
-			for (PriceIdentifier x : priceIdentifiers)
-			{
-				if (x.getPriceIDTypeValue() == priceIDType)
-					return x.asJonixPriceIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return minimumOrderQuantity;
 	}
 
-	public List<JonixPriceIdentifier> findPriceIdentifiers(java.util.Set<PriceIdentifierTypes> priceIDTypes)
+	private ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss()
 	{
-		if (priceIdentifiers != null)
-		{
-			List<JonixPriceIdentifier> matches = new ArrayList<>();
-			for (PriceIdentifier x : priceIdentifiers)
-			{
-				if (priceIDTypes == null || priceIDTypes.contains(x.getPriceIDTypeValue()))
-					matches.add(x.asJonixPriceIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return batchBonuss;
 	}
 
-	public JonixDiscountCoded findDiscountCoded(DiscountCodeTypes discountCodeType)
+	private ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds()
 	{
-		if (discountCodeds != null)
-		{
-			for (DiscountCoded x : discountCodeds)
-			{
-				if (x.getDiscountCodeTypeValue() == discountCodeType)
-					return x.asJonixDiscountCoded();
-			}
-		}
-		return null;
+		initialize();
+		return discountCodeds;
 	}
 
-	public List<JonixDiscountCoded> findDiscountCodeds(java.util.Set<DiscountCodeTypes> discountCodeTypes)
+	private ListOfOnixDataComposite<Discount, JonixDiscount> discounts = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Discount, JonixDiscount> discounts()
 	{
-		if (discountCodeds != null)
-		{
-			List<JonixDiscountCoded> matches = new ArrayList<>();
-			for (DiscountCoded x : discountCodeds)
-			{
-				if (discountCodeTypes == null || discountCodeTypes.contains(x.getDiscountCodeTypeValue()))
-					matches.add(x.asJonixDiscountCoded());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return discounts;
 	}
 
-	public JonixPriceDate findPriceDate(PriceDateRoles priceDateRole)
+	private PriceStatus priceStatus = PriceStatus.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceStatus priceStatus()
 	{
-		if (priceDates != null)
-		{
-			for (PriceDate x : priceDates)
-			{
-				if (x.getPriceDateRoleValue() == priceDateRole)
-					return x.asJonixPriceDate();
-			}
-		}
-		return null;
+		initialize();
+		return priceStatus;
 	}
 
-	public List<JonixPriceDate> findPriceDates(java.util.Set<PriceDateRoles> priceDateRoles)
+	private PriceAmount priceAmount = PriceAmount.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceAmount priceAmount()
 	{
-		if (priceDates != null)
-		{
-			List<JonixPriceDate> matches = new ArrayList<>();
-			for (PriceDate x : priceDates)
-			{
-				if (priceDateRoles == null || priceDateRoles.contains(x.getPriceDateRoleValue()))
-					matches.add(x.asJonixPriceDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return priceAmount;
+	}
+
+	private PriceCoded priceCoded = PriceCoded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceCoded priceCoded()
+	{
+		initialize();
+		return priceCoded;
+	}
+
+	private ListOfOnixDataComposite<Tax, JonixTax> taxs = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Tax, JonixTax> taxs()
+	{
+		initialize();
+		return taxs;
+	}
+
+	private CurrencyCode currencyCode = CurrencyCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyCode currencyCode()
+	{
+		initialize();
+		return currencyCode;
+	}
+
+	private Territory territory = Territory.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Territory territory()
+	{
+		initialize();
+		return territory;
+	}
+
+	private CurrencyZone currencyZone = CurrencyZone.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CurrencyZone currencyZone()
+	{
+		initialize();
+		return currencyZone;
+	}
+
+	private List<ComparisonProductPrice> comparisonProductPrices = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ComparisonProductPrice> comparisonProductPrices()
+	{
+		initialize();
+		return comparisonProductPrices;
+	}
+
+	private ListOfOnixDataCompositeWithKey<PriceDate, JonixPriceDate, PriceDateRoles> priceDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<PriceDate, JonixPriceDate, PriceDateRoles> priceDates()
+	{
+		initialize();
+		return priceDates;
+	}
+
+	private PrintedOnProduct printedOnProduct = PrintedOnProduct.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrintedOnProduct printedOnProduct()
+	{
+		initialize();
+		return printedOnProduct;
+	}
+
+	private PositionOnProduct positionOnProduct = PositionOnProduct.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PositionOnProduct positionOnProduct()
+	{
+		initialize();
+		return positionOnProduct;
 	}
 }

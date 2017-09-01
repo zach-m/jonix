@@ -22,27 +22,26 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.ContributorPlaceRelators;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.Regions;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixContributorPlace implements Serializable
+public class JonixContributorPlace implements JonixStruct, Serializable
 {
-	public ContributorPlaceRelators contributorPlaceRelator;
+   public static JonixContributorPlace EMPTY = new JonixContributorPlace();
 
-	public CountryCodes countryCode;
+   public ContributorPlaceRelators contributorPlaceRelator;
 
-	public Regions regionCode;
+   public CountryCodes countryCode;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public List<String> locationNames;
+   public Regions regionCode;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+    */
+   public List<String> locationNames;
 }

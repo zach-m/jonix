@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,47 +37,45 @@ interface CodeList56
  * Description: Audience restriction flag
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist56">ONIX
- *      Codelist 56 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist56">ONIX Codelist 56 in Reference Guide</a>
  */
 public enum AudienceRestrictionFlags implements OnixCodelist, CodeList56
 {
-	Restrictions_apply_see_note("R", "Restrictions apply, see note"), //
+   Restrictions_apply_see_note("R", "Restrictions apply, see note"), //
 
-	/**
-	 * Indexed for the German market - in Deutschland indiziert
-	 */
-	Indiziert("X", "Indiziert");
+   /**
+    * Indexed for the German market - in Deutschland indiziert
+    */
+   Indiziert("X", "Indiziert");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private AudienceRestrictionFlags(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private AudienceRestrictionFlags(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static AudienceRestrictionFlags byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (AudienceRestrictionFlags e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static AudienceRestrictionFlags byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (AudienceRestrictionFlags e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

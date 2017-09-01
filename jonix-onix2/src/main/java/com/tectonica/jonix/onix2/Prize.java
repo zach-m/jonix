@@ -20,12 +20,11 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -33,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPrize;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +51,16 @@ import com.tectonica.jonix.struct.JonixPrize;
  * </tr>
  * </table>
  */
-public class Prize implements OnixDataComposite, Serializable
+public class Prize implements OnixDataComposite<JonixPrize>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Prize";
 	public static final String shortname = "prize";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -80,44 +79,35 @@ public class Prize implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PrizeName prizeName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeYear prizeYear;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeCountry prizeCountry;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeCode prizeCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeJury prizeJury;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Prize EMPTY = new Prize();
 
 	public Prize()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Prize(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -126,69 +116,96 @@ public class Prize implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
-					prizeName = new PrizeName(element);
-				else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
-					prizeYear = new PrizeYear(element);
-				else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
-					prizeCountry = new PrizeCountry(element);
-				else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
-					prizeCode = new PrizeCode(element);
-				else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
-					prizeJury = new PrizeJury(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
+				prizeName = new PrizeName(e);
+			else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
+				prizeYear = new PrizeYear(e);
+			else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
+				prizeCountry = new PrizeCountry(e);
+			else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
+				prizeCode = new PrizeCode(e);
+			else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
+				prizeJury = new PrizeJury(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public String getPrizeNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (prizeName == null) ? null : prizeName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PrizeName prizeName = PrizeName.EMPTY;
 
 	/**
-	 * Raw Format: Four digits, YYYY
+	 * (this field is required)
 	 */
-	public String getPrizeYearValue()
+	public PrizeName prizeName()
 	{
-		return (prizeYear == null) ? null : prizeYear.value;
+		initialize();
+		return prizeName;
 	}
 
-	public CountryCodes getPrizeCountryValue()
-	{
-		return (prizeCountry == null) ? null : prizeCountry.value;
-	}
-
-	public PrizeOrAwardAchievements getPrizeCodeValue()
-	{
-		return (prizeCode == null) ? null : prizeCode.value;
-	}
+	private PrizeYear prizeYear = PrizeYear.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is optional)
 	 */
-	public String getPrizeJuryValue()
+	public PrizeYear prizeYear()
 	{
-		return (prizeJury == null) ? null : prizeJury.value;
+		initialize();
+		return prizeYear;
 	}
 
-	public JonixPrize asJonixPrize()
+	private PrizeCountry prizeCountry = PrizeCountry.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeCountry prizeCountry()
 	{
-		JonixPrize x = new JonixPrize();
-		x.prizeCode = getPrizeCodeValue();
-		x.prizeCountry = getPrizeCountryValue();
-		x.prizeJurys = java.util.Arrays.asList(getPrizeJuryValue());
-		x.prizeNames = java.util.Arrays.asList(getPrizeNameValue());
-		x.prizeYear = getPrizeYearValue();
-		return x;
+		initialize();
+		return prizeCountry;
+	}
+
+	private PrizeCode prizeCode = PrizeCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeCode prizeCode()
+	{
+		initialize();
+		return prizeCode;
+	}
+
+	private PrizeJury prizeJury = PrizeJury.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeJury prizeJury()
+	{
+		initialize();
+		return prizeJury;
+	}
+
+	@Override
+	public JonixPrize asStruct()
+	{
+		initialize();
+		JonixPrize struct = new JonixPrize();
+		struct.prizeCode = prizeCode.value;
+		struct.prizeCountry = prizeCountry.value;
+		struct.prizeJurys = Arrays.asList(prizeJury.value);
+		struct.prizeNames = Arrays.asList(prizeName.value);
+		struct.prizeYear = prizeYear.value;
+		return struct;
 	}
 }

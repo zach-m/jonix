@@ -20,10 +20,10 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -34,7 +34,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixSupplierIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +62,9 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 	public static final String refname = "NewSupplier";
 	public static final String shortname = "newsupplier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -83,54 +83,35 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplierIdentifier> supplierIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierSAN supplierSAN;
-
-	/**
-	 * (this field is required)
-	 */
-	public SupplierEANLocationNumber supplierEANLocationNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierName supplierName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TelephoneNumber> telephoneNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FaxNumber> faxNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EmailAddress> emailAddresss;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final NewSupplier EMPTY = new NewSupplier();
 
 	public NewSupplier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public NewSupplier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -139,126 +120,110 @@ public class NewSupplier implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
-					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
-				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
-					supplierSAN = new SupplierSAN(element);
-				else if (name.equals(SupplierEANLocationNumber.refname)
-						|| name.equals(SupplierEANLocationNumber.shortname))
-					supplierEANLocationNumber = new SupplierEANLocationNumber(element);
-				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
-					supplierName = new SupplierName(element);
-				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
-				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
+				supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+			else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
+				supplierSAN = new SupplierSAN(e);
+			else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
+				supplierEANLocationNumber = new SupplierEANLocationNumber(e);
+			else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
+				supplierName = new SupplierName(e);
+			else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
+				telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+			else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
+				faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
-	 * character which may be a numeric digit or letter X.
-	 */
-	public String getSupplierSANValue()
+	@Override
+	public boolean exists()
 	{
-		return (supplierSAN == null) ? null : supplierSAN.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * (this list may be empty)
 	 */
-	public String getSupplierEANLocationNumberValue()
+	public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers()
 	{
-		return (supplierEANLocationNumber == null) ? null : supplierEANLocationNumber.value;
+		initialize();
+		return supplierIdentifiers;
 	}
+
+	private SupplierSAN supplierSAN = SupplierSAN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getSupplierNameValue()
+	public SupplierSAN supplierSAN()
 	{
-		return (supplierName == null) ? null : supplierName.value;
+		initialize();
+		return supplierSAN;
 	}
+
+	private SupplierEANLocationNumber supplierEANLocationNumber = SupplierEANLocationNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is required)
 	 */
-	public List<String> getTelephoneNumberValues()
+	public SupplierEANLocationNumber supplierEANLocationNumber()
 	{
-		if (telephoneNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (TelephoneNumber i : telephoneNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return supplierEANLocationNumber;
 	}
+
+	private SupplierName supplierName = SupplierName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public List<String> getFaxNumberValues()
+	public SupplierName supplierName()
 	{
-		if (faxNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FaxNumber i : faxNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return supplierName;
 	}
+
+	private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getEmailAddressValues()
+	public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers()
 	{
-		if (emailAddresss != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (EmailAddress i : emailAddresss)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return telephoneNumbers;
 	}
 
-	public JonixSupplierIdentifier findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
+	private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<FaxNumber, String> faxNumbers()
 	{
-		if (supplierIdentifiers != null)
-		{
-			for (SupplierIdentifier x : supplierIdentifiers)
-			{
-				if (x.getSupplierIDTypeValue() == supplierIDType)
-					return x.asJonixSupplierIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return faxNumbers;
 	}
 
-	public List<JonixSupplierIdentifier> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
+	private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<EmailAddress, String> emailAddresss()
 	{
-		if (supplierIdentifiers != null)
-		{
-			List<JonixSupplierIdentifier> matches = new ArrayList<>();
-			for (SupplierIdentifier x : supplierIdentifiers)
-			{
-				if (supplierIDTypes == null || supplierIDTypes.contains(x.getSupplierIDTypeValue()))
-					matches.add(x.asJonixSupplierIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return emailAddresss;
 	}
 }

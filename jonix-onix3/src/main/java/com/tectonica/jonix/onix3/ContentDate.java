@@ -22,14 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.ContentDateRoles;
-import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixContentDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,16 @@ import com.tectonica.jonix.struct.JonixContentDate;
  * </tr>
  * </table>
  */
-public class ContentDate implements OnixDataComposite, Serializable
+public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, ContentDateRoles>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ContentDate";
 	public static final String shortname = "contentdate";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,78 +72,107 @@ public class ContentDate implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ContentDateRole contentDateRole;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DateFormat dateFormat;
-
-	/**
-	 * (this field is required)
-	 */
-	public Date date;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ContentDate EMPTY = new ContentDate();
 
 	public ContentDate()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ContentDate(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ContentDateRole.refname) || name.equals(ContentDateRole.shortname))
-					contentDateRole = new ContentDateRole(element);
-				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					dateFormat = new DateFormat(element);
-				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					date = new Date(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ContentDateRole.refname) || name.equals(ContentDateRole.shortname))
+				contentDateRole = new ContentDateRole(e);
+			else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
+				dateFormat = new DateFormat(e);
+			else if (name.equals(Date.refname) || name.equals(Date.shortname))
+				date = new Date(e);
 		});
 	}
 
-	public ContentDateRoles getContentDateRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (contentDateRole == null) ? null : contentDateRole.value;
+		return exists;
 	}
 
-	public DateFormats getDateFormatValue()
-	{
-		return (dateFormat == null) ? null : dateFormat.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ContentDateRole contentDateRole = ContentDateRole.EMPTY;
 
 	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+	 * (this field is required)
 	 */
-	public String getDateValue()
+	public ContentDateRole contentDateRole()
 	{
-		return (date == null) ? null : date.value;
+		initialize();
+		return contentDateRole;
 	}
 
-	public JonixContentDate asJonixContentDate()
+	private DateFormat dateFormat = DateFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat()
 	{
-		JonixContentDate x = new JonixContentDate();
-		x.contentDateRole = getContentDateRoleValue();
-		x.dateFormat = getDateFormatValue();
-		x.date = getDateValue();
-		return x;
+		initialize();
+		return dateFormat;
+	}
+
+	private Date date = Date.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date()
+	{
+		initialize();
+		return date;
+	}
+
+	@Override
+	public JonixContentDate asStruct()
+	{
+		initialize();
+		JonixContentDate struct = new JonixContentDate();
+		struct.contentDateRole = contentDateRole.value;
+		struct.dateFormat = dateFormat.value;
+		struct.date = date.value;
+		return struct;
+	}
+
+	@Override
+	public ContentDateRoles structKey()
+	{
+		return contentDateRole().value;
 	}
 }

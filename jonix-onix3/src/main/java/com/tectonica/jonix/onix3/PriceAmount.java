@@ -26,7 +26,7 @@ import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -38,7 +38,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>Variable length real number, with explicit decimal point when required, suggested maximum length 12 characters</td>
+ * <td>Variable length real number, with explicit decimal point when required, suggested maximum length 12
+ * characters</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -58,16 +59,16 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * </table>
  */
-public class PriceAmount implements OnixElement, Serializable
+public class PriceAmount implements OnixElement<Double>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PriceAmount";
 	public static final String shortname = "j151";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -78,9 +79,9 @@ public class PriceAmount implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
@@ -90,19 +91,40 @@ public class PriceAmount implements OnixElement, Serializable
 	 */
 	public Double value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public Double _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final PriceAmount EMPTY = new PriceAmount();
 
 	public PriceAmount()
-	{}
+	{
+		exists = false;
+	}
 
 	public PriceAmount(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsDouble(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

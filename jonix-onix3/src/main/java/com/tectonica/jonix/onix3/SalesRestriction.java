@@ -20,16 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -60,9 +60,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesRestriction";
 	public static final String shortname = "salesrestriction";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,104 +73,116 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesRestrictionType salesRestrictionType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesOutlet> salesOutlets;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRestrictionNote> salesRestrictionNotes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public StartDate startDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EndDate endDate;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SalesRestriction EMPTY = new SalesRestriction();
 
 	public SalesRestriction()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SalesRestriction(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
-					salesRestrictionType = new SalesRestrictionType(element);
-				else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
-					salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(element));
-				else if (name.equals(SalesRestrictionNote.refname) || name.equals(SalesRestrictionNote.shortname))
-					salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(element));
-				else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
-					startDate = new StartDate(element);
-				else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
-					endDate = new EndDate(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
+				salesRestrictionType = new SalesRestrictionType(e);
+			else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
+				salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
+			else if (name.equals(SalesRestrictionNote.refname) || name.equals(SalesRestrictionNote.shortname))
+				salesRestrictionNotes = JPU.addToList(salesRestrictionNotes, new SalesRestrictionNote(e));
+			else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
+				startDate = new StartDate(e);
+			else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
+				endDate = new EndDate(e);
 		});
 	}
 
-	public SalesRestrictionTypes getSalesRestrictionTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (salesRestrictionType == null) ? null : salesRestrictionType.value;
+		return exists;
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
-	 */
-	public List<String> getSalesRestrictionNoteValues()
-	{
-		if (salesRestrictionNotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (SalesRestrictionNote i : salesRestrictionNotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SalesRestrictionType salesRestrictionType = SalesRestrictionType.EMPTY;
 
 	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
-	 * missing
+	 * (this field is required)
 	 */
-	public String getStartDateValue()
+	public SalesRestrictionType salesRestrictionType()
 	{
-		return (startDate == null) ? null : startDate.value;
+		initialize();
+		return salesRestrictionType;
 	}
 
+	private List<SalesOutlet> salesOutlets = Collections.emptyList();
+
 	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
-	 * missing
+	 * (this list may be empty)
 	 */
-	public String getEndDateValue()
+	public List<SalesOutlet> salesOutlets()
 	{
-		return (endDate == null) ? null : endDate.value;
+		initialize();
+		return salesOutlets;
+	}
+
+	private ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes()
+	{
+		initialize();
+		return salesRestrictionNotes;
+	}
+
+	private StartDate startDate = StartDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StartDate startDate()
+	{
+		initialize();
+		return startDate;
+	}
+
+	private EndDate endDate = EndDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EndDate endDate()
+	{
+		initialize();
+		return endDate;
 	}
 }

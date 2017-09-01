@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,69 +37,67 @@ interface CodeList19
  * Description: Unnamed person(s)
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist19">ONIX
- *      Codelist 19 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist19">ONIX Codelist 19 in Reference Guide</a>
  */
 public enum UnnamedPersonss implements OnixCodelist, CodeList19
 {
-	Unknown("01", "Unknown"), //
+   Unknown("01", "Unknown"), //
 
-	Anonymous("02", "Anonymous"), //
+   Anonymous("02", "Anonymous"), //
 
-	/**
-	 * And others: additional contributors not listed
-	 */
-	et_al("03", "et al"), //
+   /**
+    * And others: additional contributors not listed
+    */
+   et_al("03", "et al"), //
 
-	/**
-	 * When the product is a pack of books by different authors
-	 */
-	Various_authors("04", "Various authors"), //
+   /**
+    * When the product is a pack of books by different authors
+    */
+   Various_authors("04", "Various authors"), //
 
-	/**
-	 * Use with Contributor role code E07 'read by', for audio books for the blind
-	 */
-	Synthesized_voice_male("05", "Synthesized voice – male"), //
+   /**
+    * Use with Contributor role code E07 'read by', for audio books for the blind
+    */
+   Synthesized_voice_male("05", "Synthesized voice – male"), //
 
-	/**
-	 * Use with Contributor role code E07 'read by', for audio books for the blind
-	 */
-	Synthesized_voice_female("06", "Synthesized voice – female"), //
+   /**
+    * Use with Contributor role code E07 'read by', for audio books for the blind
+    */
+   Synthesized_voice_female("06", "Synthesized voice – female"), //
 
-	/**
-	 * Use with Contributor role code E07 'read by', for audio books for the blind
-	 */
-	Synthesized_voice_unspecified("07", "Synthesized voice – unspecified");
+   /**
+    * Use with Contributor role code E07 'read by', for audio books for the blind
+    */
+   Synthesized_voice_unspecified("07", "Synthesized voice – unspecified");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private UnnamedPersonss(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private UnnamedPersonss(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static UnnamedPersonss byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (UnnamedPersonss e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static UnnamedPersonss byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (UnnamedPersonss e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

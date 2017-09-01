@@ -20,20 +20,18 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CitedContentTypes;
 import com.tectonica.jonix.codelist.ContentAudiences;
 import com.tectonica.jonix.codelist.ContentDateRoles;
-import com.tectonica.jonix.codelist.ContentSourceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixContentDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,9 +61,9 @@ public class CitedContent implements OnixSuperComposite, Serializable
 	public static final String refname = "CitedContent";
 	public static final String shortname = "citedcontent";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -76,212 +74,169 @@ public class CitedContent implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public CitedContentType citedContentType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ContentAudience> contentAudiences;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SourceType sourceType;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SourceTitle> sourceTitles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ListName> listNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PositionOnList positionOnList;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CitationNote> citationNotes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ResourceLink> resourceLinks;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ContentDate> contentDates;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final CitedContent EMPTY = new CitedContent();
 
 	public CitedContent()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public CitedContent(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname))
-					citedContentType = new CitedContentType(element);
-				else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
-					contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(element));
-				else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname))
-					sourceType = new SourceType(element);
-				else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
-					sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(element));
-				else if (name.equals(ListName.refname) || name.equals(ListName.shortname))
-					listNames = JPU.addToList(listNames, new ListName(element));
-				else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname))
-					positionOnList = new PositionOnList(element);
-				else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname))
-					citationNotes = JPU.addToList(citationNotes, new CitationNote(element));
-				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
-					resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(element));
-				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-					contentDates = JPU.addToList(contentDates, new ContentDate(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname))
+				citedContentType = new CitedContentType(e);
+			else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
+				contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+			else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname))
+				sourceType = new SourceType(e);
+			else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
+				sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
+			else if (name.equals(ListName.refname) || name.equals(ListName.shortname))
+				listNames = JPU.addToList(listNames, new ListName(e));
+			else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname))
+				positionOnList = new PositionOnList(e);
+			else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname))
+				citationNotes = JPU.addToList(citationNotes, new CitationNote(e));
+			else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
+				resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+			else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
+				contentDates = JPU.addToList(contentDates, new ContentDate(e));
 		});
 	}
 
-	public CitedContentTypes getCitedContentTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (citedContentType == null) ? null : citedContentType.value;
+		return exists;
 	}
 
-	public List<ContentAudiences> getContentAudienceValues()
-	{
-		if (contentAudiences != null)
-		{
-			List<ContentAudiences> list = new ArrayList<>();
-			for (ContentAudience i : contentAudiences)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	public ContentSourceTypes getSourceTypeValue()
-	{
-		return (sourceType == null) ? null : sourceType.value;
-	}
+	private CitedContentType citedContentType = CitedContentType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public List<String> getSourceTitleValues()
+	public CitedContentType citedContentType()
 	{
-		if (sourceTitles != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (SourceTitle i : sourceTitles)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return citedContentType;
 	}
+
+	private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getListNameValues()
+	public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences()
 	{
-		if (listNames != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ListName i : listNames)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return contentAudiences;
 	}
+
+	private SourceType sourceType = SourceType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum 3 characters
+	 * (this field is optional)
 	 */
-	public Integer getPositionOnListValue()
+	public SourceType sourceType()
 	{
-		return (positionOnList == null) ? null : positionOnList.value;
+		initialize();
+		return sourceType;
 	}
+
+	private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this list is required to contain at least one item)
 	 */
-	public List<String> getCitationNoteValues()
+	public ListOfOnixElement<SourceTitle, String> sourceTitles()
 	{
-		if (citationNotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CitationNote i : citationNotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return sourceTitles;
 	}
+
+	private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 * (this list may be empty)
 	 */
-	public List<String> getResourceLinkValues()
+	public ListOfOnixElement<ListName, String> listNames()
 	{
-		if (resourceLinks != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ResourceLink i : resourceLinks)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return listNames;
 	}
 
-	public JonixContentDate findContentDate(ContentDateRoles contentDateRole)
+	private PositionOnList positionOnList = PositionOnList.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PositionOnList positionOnList()
 	{
-		if (contentDates != null)
-		{
-			for (ContentDate x : contentDates)
-			{
-				if (x.getContentDateRoleValue() == contentDateRole)
-					return x.asJonixContentDate();
-			}
-		}
-		return null;
+		initialize();
+		return positionOnList;
 	}
 
-	public List<JonixContentDate> findContentDates(java.util.Set<ContentDateRoles> contentDateRoles)
+	private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<CitationNote, String> citationNotes()
 	{
-		if (contentDates != null)
-		{
-			List<JonixContentDate> matches = new ArrayList<>();
-			for (ContentDate x : contentDates)
-			{
-				if (contentDateRoles == null || contentDateRoles.contains(x.getContentDateRoleValue()))
-					matches.add(x.asJonixContentDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return citationNotes;
+	}
+
+	private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ResourceLink, String> resourceLinks()
+	{
+		initialize();
+		return resourceLinks;
+	}
+
+	private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates()
+	{
+		initialize();
+		return contentDates;
 	}
 }

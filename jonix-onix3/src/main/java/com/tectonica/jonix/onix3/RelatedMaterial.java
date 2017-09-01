@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,11 +28,12 @@ import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1><h4 class="nobreak">Related material composite</h4>
+ * <h1>null</h1>
+ * <h4 class="nobreak">Related material composite</h4>
  * <p>
  * The related material block covers data element Groups P.22 and P.23, providing links to related works and related
  * products. The block as a whole is optional and non-repeating.
@@ -58,9 +60,9 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedMaterial";
 	public static final String shortname = "relatedmaterial";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -71,44 +73,77 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RelatedWork> relatedWorks;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RelatedProduct> relatedProducts;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final RelatedMaterial EMPTY = new RelatedMaterial();
 
 	public RelatedMaterial()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public RelatedMaterial(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
-					relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(element));
-				else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
-					relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
+				relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+			else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
+				relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
 		});
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private List<RelatedWork> relatedWorks = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedWork> relatedWorks()
+	{
+		initialize();
+		return relatedWorks;
+	}
+
+	private List<RelatedProduct> relatedProducts = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedProduct> relatedProducts()
+	{
+		initialize();
+		return relatedProducts;
 	}
 }

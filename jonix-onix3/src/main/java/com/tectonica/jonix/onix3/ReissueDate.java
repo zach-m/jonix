@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -39,7 +39,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * <table border='1' cellpadding='3'>
  * <tr>
  * <td>Format</td>
- * <td>As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is missing</td>
+ * <td>As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+ * missing</td>
  * </tr>
  * <tr>
  * <td>Reference name</td>
@@ -63,16 +64,16 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * </table>
  */
-public class ReissueDate implements OnixElement, Serializable
+public class ReissueDate implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ReissueDate";
 	public static final String shortname = "j365";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -85,9 +86,9 @@ public class ReissueDate implements OnixElement, Serializable
 
 	public DateFormats dateformat;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
@@ -97,20 +98,41 @@ public class ReissueDate implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ReissueDate EMPTY = new ReissueDate();
 
 	public ReissueDate()
-	{}
+	{
+		exists = false;
+	}
 
 	public ReissueDate(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 		dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

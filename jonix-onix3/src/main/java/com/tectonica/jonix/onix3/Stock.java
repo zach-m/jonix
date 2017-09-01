@@ -20,18 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
+import com.tectonica.jonix.struct.JonixOnOrderDetail;
 import com.tectonica.jonix.struct.JonixStockQuantityCoded;
+import com.tectonica.jonix.struct.JonixVelocity;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +63,9 @@ public class Stock implements OnixSuperComposite, Serializable
 	public static final String refname = "Stock";
 	public static final String shortname = "stock";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,160 +76,169 @@ public class Stock implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public LocationIdentifier locationIdentifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LocationName locationName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<StockQuantityCoded> stockQuantityCodeds;
-
-	/**
-	 * (this field is required)
-	 */
-	public OnHand onHand;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Proximity proximity;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OnOrder onOrder;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CBO cbo;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<OnOrderDetail> onOrderDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Velocity> velocitys;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Stock EMPTY = new Stock();
 
 	public Stock()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Stock(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname))
-					locationIdentifier = new LocationIdentifier(element);
-				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
-					locationName = new LocationName(element);
-				else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname))
-					stockQuantityCodeds = JPU.addToList(stockQuantityCodeds, new StockQuantityCoded(element));
-				else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname))
-					onHand = new OnHand(element);
-				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
-					proximity = new Proximity(element);
-				else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
-					onOrder = new OnOrder(element);
-				else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
-					cbo = new CBO(element);
-				else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
-					onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(element));
-				else if (name.equals(Velocity.refname) || name.equals(Velocity.shortname))
-					velocitys = JPU.addToList(velocitys, new Velocity(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname))
+				locationIdentifier = new LocationIdentifier(e);
+			else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
+				locationName = new LocationName(e);
+			else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname))
+				stockQuantityCodeds = JPU.addToList(stockQuantityCodeds, new StockQuantityCoded(e));
+			else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname))
+				onHand = new OnHand(e);
+			else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
+				proximity = new Proximity(e);
+			else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
+				onOrder = new OnOrder(e);
+			else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
+				cbo = new CBO(e);
+			else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
+				onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(e));
+			else if (name.equals(Velocity.refname) || name.equals(Velocity.shortname))
+				velocitys = JPU.addToList(velocitys, new Velocity(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public String getLocationNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (locationName == null) ? null : locationName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private LocationIdentifier locationIdentifier = LocationIdentifier.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
+	 * (this field is optional)
 	 */
-	public Integer getOnHandValue()
+	public LocationIdentifier locationIdentifier()
 	{
-		return (onHand == null) ? null : onHand.value;
+		initialize();
+		return locationIdentifier;
 	}
 
-	public Proximitys getProximityValue()
-	{
-		return (proximity == null) ? null : proximity.value;
-	}
+	private LocationName locationName = LocationName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
+	 * (this field is optional)
 	 */
-	public Integer getOnOrderValue()
+	public LocationName locationName()
 	{
-		return (onOrder == null) ? null : onOrder.value;
+		initialize();
+		return locationName;
 	}
+
+	private ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes> stockQuantityCodeds = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
+	 * (this list may be empty)
 	 */
-	public Integer getCBOValue()
+	public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes> stockQuantityCodeds()
 	{
-		return (cbo == null) ? null : cbo.value;
+		initialize();
+		return stockQuantityCodeds;
 	}
 
-	public JonixStockQuantityCoded findStockQuantityCoded(StockQuantityCodeTypes stockQuantityCodeType)
+	private OnHand onHand = OnHand.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public OnHand onHand()
 	{
-		if (stockQuantityCodeds != null)
-		{
-			for (StockQuantityCoded x : stockQuantityCodeds)
-			{
-				if (x.getStockQuantityCodeTypeValue() == stockQuantityCodeType)
-					return x.asJonixStockQuantityCoded();
-			}
-		}
-		return null;
+		initialize();
+		return onHand;
 	}
 
-	public List<JonixStockQuantityCoded> findStockQuantityCodeds(
-			java.util.Set<StockQuantityCodeTypes> stockQuantityCodeTypes)
+	private Proximity proximity = Proximity.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Proximity proximity()
 	{
-		if (stockQuantityCodeds != null)
-		{
-			List<JonixStockQuantityCoded> matches = new ArrayList<>();
-			for (StockQuantityCoded x : stockQuantityCodeds)
-			{
-				if (stockQuantityCodeTypes == null
-						|| stockQuantityCodeTypes.contains(x.getStockQuantityCodeTypeValue()))
-					matches.add(x.asJonixStockQuantityCoded());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return proximity;
+	}
+
+	private OnOrder onOrder = OnOrder.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OnOrder onOrder()
+	{
+		initialize();
+		return onOrder;
+	}
+
+	private CBO cbo = CBO.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CBO cbo()
+	{
+		initialize();
+		return cbo;
+	}
+
+	private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails()
+	{
+		initialize();
+		return onOrderDetails;
+	}
+
+	private ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys()
+	{
+		initialize();
+		return velocitys;
 	}
 }

@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,144 +40,141 @@ interface CodeList30
  * Description: Audience range qualifier
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist30">ONIX
- *      Codelist 30 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist30">ONIX Codelist 30 in Reference Guide</a>
  */
 public enum AudienceRangeQualifiers implements OnixCodelist, CodeList30
 {
-	/**
-	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77
-	 */
-	US_school_grade_range("11", "US school grade range"), //
+   /**
+    * Values for &lt;AudienceRangeValue&gt; are specified in List 77
+    */
+   US_school_grade_range("11", "US school grade range"), //
 
-	/**
-	 * Values are defined by BIC for England and Wales, Scotland and N Ireland
-	 */
-	UK_school_grade("12", "UK school grade"), //
+   /**
+    * Values are defined by BIC for England and Wales, Scotland and N Ireland
+    */
+   UK_school_grade("12", "UK school grade"), //
 
-	/**
-	 * Values in &lt;AudienceRangeValue&gt; must be integers
-	 */
-	Reading_speed_words_per_minute("15", "Reading speed, words per minute"), //
+   /**
+    * Values in &lt;AudienceRangeValue&gt; must be integers
+    */
+   Reading_speed_words_per_minute("15", "Reading speed, words per minute"), //
 
-	/**
-	 * For use up to 36 months only: values in &lt;AudienceRangeValue&gt; must be integers
-	 */
-	Interest_age_months("16", "Interest age, months"), //
+   /**
+    * For use up to 36 months only: values in &lt;AudienceRangeValue&gt; must be integers
+    */
+   Interest_age_months("16", "Interest age, months"), //
 
-	/**
-	 * Values in &lt;AudienceRangeValue&gt; must be integers
-	 */
-	Interest_age_years("17", "Interest age, years"), //
+   /**
+    * Values in &lt;AudienceRangeValue&gt; must be integers
+    */
+   Interest_age_years("17", "Interest age, years"), //
 
-	/**
-	 * Values in &lt;AudienceRangeValue&gt; must be integers
-	 */
-	Reading_age_years("18", "Reading age, years"), //
+   /**
+    * Values in &lt;AudienceRangeValue&gt; must be integers
+    */
+   Reading_age_years("18", "Reading age, years"), //
 
-	/**
-	 * Spain: combined grade and region code, maintained by the Ministerio de Educaci&#243;n
-	 */
-	Spanish_school_grade("19", "Spanish school grade"), //
+   /**
+    * Spain: combined grade and region code, maintained by the Ministerio de Educaci&#243;n
+    */
+   Spanish_school_grade("19", "Spanish school grade"), //
 
-	/**
-	 * Norwegian educational level for primary and secondary education
-	 */
-	Skoletrinn("20", "Skoletrinn"), //
+   /**
+    * Norwegian educational level for primary and secondary education
+    */
+   Skoletrinn("20", "Skoletrinn"), //
 
-	/**
-	 * Swedish educational qualifier (code)
-	 */
-	Niv_("21", "Nivå"), //
+   /**
+    * Swedish educational qualifier (code)
+    */
+   Niv_("21", "Nivå"), //
 
-	Italian_school_grade("22", "Italian school grade"), //
+   Italian_school_grade("22", "Italian school grade"), //
 
-	/**
-	 * DEPRECATED - assigned in error: see List 29
-	 */
-	Schulform("23", "Schulform"), //
+   /**
+    * DEPRECATED - assigned in error: see List 29
+    */
+   Schulform("23", "Schulform"), //
 
-	/**
-	 * DEPRECATED - assigned in error: see List 29
-	 */
-	Bundesland("24", "Bundesland"), //
+   /**
+    * DEPRECATED - assigned in error: see List 29
+    */
+   Bundesland("24", "Bundesland"), //
 
-	/**
-	 * DEPRECATED - assigned in error: see List 29
-	 */
-	Ausbildungsberuf("25", "Ausbildungsberuf"), //
+   /**
+    * DEPRECATED - assigned in error: see List 29
+    */
+   Ausbildungsberuf("25", "Ausbildungsberuf"), //
 
-	/**
-	 * Values for &lt;AudienceRangeValue&gt; are specified in List 77
-	 */
-	Canadian_school_grade_range("26", "Canadian school grade range"), //
+   /**
+    * Values for &lt;AudienceRangeValue&gt; are specified in List 77
+    */
+   Canadian_school_grade_range("26", "Canadian school grade range"), //
 
-	Finnish_school_grade_range("27", "Finnish school grade range"), //
+   Finnish_school_grade_range("27", "Finnish school grade range"), //
 
-	/**
-	 * Lukion kurssi
-	 */
-	Finnish_Upper_secondary_school_course("28", "Finnish Upper secondary school course"), //
+   /**
+    * Lukion kurssi
+    */
+   Finnish_Upper_secondary_school_course("28", "Finnish Upper secondary school course"), //
 
-	/**
-	 * Values are P, K, 1-17 (including college-level audiences), see List 227
-	 */
-	Chinese_School_Grade_range("29", "Chinese School Grade range"), //
+   /**
+    * Values are P, K, 1-17 (including college-level audiences), see List 227
+    */
+   Chinese_School_Grade_range("29", "Chinese School Grade range"), //
 
-	/**
-	 * French educational level classification scolomfr-voc-022, used for example on WizWiz.fr. See
-	 * http://www.lom-fr.fr/scolomfr/vocabulaires/consultation-des-vocabulaires.html
-	 */
-	Nomenclature_niveaux("30", "Nomenclature niveaux");
+   /**
+    * French educational level classification scolomfr-voc-022, used for example on WizWiz.fr. See http://www.lom-fr.fr/scolomfr/vocabulaires/consultation-des-vocabulaires.html
+    */
+   Nomenclature_niveaux("30", "Nomenclature niveaux");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private AudienceRangeQualifiers(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private AudienceRangeQualifiers(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, AudienceRangeQualifiers> map;
+   private static volatile Map<String, AudienceRangeQualifiers> map;
 
-	private static Map<String, AudienceRangeQualifiers> map()
-	{
-		Map<String, AudienceRangeQualifiers> result = map;
-		if (result == null)
-		{
-			synchronized (AudienceRangeQualifiers.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (AudienceRangeQualifiers e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, AudienceRangeQualifiers> map()
+   {
+      Map<String, AudienceRangeQualifiers> result = map;
+      if (result == null)
+      {
+         synchronized(AudienceRangeQualifiers.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (AudienceRangeQualifiers e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static AudienceRangeQualifiers byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static AudienceRangeQualifiers byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

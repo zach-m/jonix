@@ -20,16 +20,15 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,16 @@ import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
  * </tr>
  * </table>
  */
-public class ProfessionalAffiliation implements OnixDataComposite, Serializable
+public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProfessionalAffiliation";
 	public static final String shortname = "professionalaffiliation";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,75 +72,87 @@ public class ProfessionalAffiliation implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ProfessionalPosition> professionalPositions;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Affiliation affiliation;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProfessionalAffiliation EMPTY = new ProfessionalAffiliation();
 
 	public ProfessionalAffiliation()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProfessionalAffiliation(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
-					professionalPositions = JPU.addToList(professionalPositions, new ProfessionalPosition(element));
-				else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
-					affiliation = new Affiliation(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
+				professionalPositions = JPU.addToList(professionalPositions, new ProfessionalPosition(e));
+			else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
+				affiliation = new Affiliation(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public List<String> getProfessionalPositionValues()
+	@Override
+	public boolean exists()
 	{
-		if (professionalPositions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ProfessionalPosition i : professionalPositions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixElement<ProfessionalPosition, String> professionalPositions = ListOfOnixElement.empty();
+
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getAffiliationValue()
+	public ListOfOnixElement<ProfessionalPosition, String> professionalPositions()
 	{
-		return (affiliation == null) ? null : affiliation.value;
+		initialize();
+		return professionalPositions;
 	}
 
-	public JonixProfessionalAffiliation asJonixProfessionalAffiliation()
+	private Affiliation affiliation = Affiliation.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Affiliation affiliation()
 	{
-		JonixProfessionalAffiliation x = new JonixProfessionalAffiliation();
-		x.affiliation = getAffiliationValue();
-		x.professionalPositions = getProfessionalPositionValues();
-		return x;
+		initialize();
+		return affiliation;
+	}
+
+	@Override
+	public JonixProfessionalAffiliation asStruct()
+	{
+		initialize();
+		JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
+		struct.affiliation = affiliation.value;
+		struct.professionalPositions = professionalPositions.values();
+		return struct;
 	}
 }

@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAudience;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -51,16 +51,16 @@ import com.tectonica.jonix.struct.JonixAudience;
  * </tr>
  * </table>
  */
-public class Audience implements OnixDataComposite, Serializable
+public class Audience implements OnixDataCompositeWithKey<JonixAudience, AudienceCodeTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Audience";
 	public static final String shortname = "audience";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -71,81 +71,107 @@ public class Audience implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public AudienceCodeType audienceCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AudienceCodeTypeName audienceCodeTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public AudienceCodeValue audienceCodeValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Audience EMPTY = new Audience();
 
 	public Audience()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Audience(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AudienceCodeType.refname) || name.equals(AudienceCodeType.shortname))
-					audienceCodeType = new AudienceCodeType(element);
-				else if (name.equals(AudienceCodeTypeName.refname) || name.equals(AudienceCodeTypeName.shortname))
-					audienceCodeTypeName = new AudienceCodeTypeName(element);
-				else if (name.equals(AudienceCodeValue.refname) || name.equals(AudienceCodeValue.shortname))
-					audienceCodeValue = new AudienceCodeValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AudienceCodeType.refname) || name.equals(AudienceCodeType.shortname))
+				audienceCodeType = new AudienceCodeType(e);
+			else if (name.equals(AudienceCodeTypeName.refname) || name.equals(AudienceCodeTypeName.shortname))
+				audienceCodeTypeName = new AudienceCodeTypeName(e);
+			else if (name.equals(AudienceCodeValue.refname) || name.equals(AudienceCodeValue.shortname))
+				audienceCodeValue = new AudienceCodeValue(e);
 		});
 	}
 
-	public AudienceCodeTypes getAudienceCodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (audienceCodeType == null) ? null : audienceCodeType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private AudienceCodeType audienceCodeType = AudienceCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getAudienceCodeTypeNameValue()
+	public AudienceCodeType audienceCodeType()
 	{
-		return (audienceCodeTypeName == null) ? null : audienceCodeTypeName.value;
+		initialize();
+		return audienceCodeType;
 	}
+
+	private AudienceCodeTypeName audienceCodeTypeName = AudienceCodeTypeName.EMPTY;
 
 	/**
-	 * Raw Format: Determined by the scheme specified in &lt;AudienceCodeType&gt;
+	 * (this field is optional)
 	 */
-	public String getAudienceCodeValueValue()
+	public AudienceCodeTypeName audienceCodeTypeName()
 	{
-		return (audienceCodeValue == null) ? null : audienceCodeValue.value;
+		initialize();
+		return audienceCodeTypeName;
 	}
 
-	public JonixAudience asJonixAudience()
+	private AudienceCodeValue audienceCodeValue = AudienceCodeValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public AudienceCodeValue audienceCodeValue()
 	{
-		JonixAudience x = new JonixAudience();
-		x.audienceCodeType = getAudienceCodeTypeValue();
-		x.audienceCodeTypeName = getAudienceCodeTypeNameValue();
-		x.audienceCodeValue = getAudienceCodeValueValue();
-		return x;
+		initialize();
+		return audienceCodeValue;
+	}
+
+	@Override
+	public JonixAudience asStruct()
+	{
+		initialize();
+		JonixAudience struct = new JonixAudience();
+		struct.audienceCodeType = audienceCodeType.value;
+		struct.audienceCodeTypeName = audienceCodeTypeName.value;
+		struct.audienceCodeValue = audienceCodeValue.value;
+		return struct;
+	}
+
+	@Override
+	public AudienceCodeTypes structKey()
+	{
+		return audienceCodeType().value;
 	}
 }

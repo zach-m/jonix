@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,71 +37,65 @@ interface CodeList2
  * Description: Product composition
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist2">ONIX
- *      Codelist 2 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist2">ONIX Codelist 2 in Reference Guide</a>
  */
 public enum ProductCompositions implements OnixCodelist, CodeList2
 {
-	Single_item_retail_product("00", "Single-item retail product"), //
+   Single_item_retail_product("00", "Single-item retail product"), //
 
-	/**
-	 * Multiple-item product retailed as a whole
-	 */
-	Multiple_item_retail_product("10", "Multiple-item retail product"), //
+   /**
+    * Multiple-item product retailed as a whole
+    */
+   Multiple_item_retail_product("10", "Multiple-item retail product"), //
 
-	/**
-	 * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as
-	 * such
-	 */
-	Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"), //
+   /**
+    * Used when an ONIX record is required for a collection-as-a-whole, even though it is not currently retailed as such
+    */
+   Multiple_item_collection_retailed_as_separate_parts("11", "Multiple-item collection, retailed as separate parts"), //
 
-	/**
-	 * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material
-	 */
-	Trade_only_product("20", "Trade-only product"), //
+   /**
+    * Product not for retail, and not carrying retail items, eg empty dumpbin, empty counterpack, promotional material
+    */
+   Trade_only_product("20", "Trade-only product"), //
 
-	/**
-	 * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled
-	 * counterpack
-	 */
-	Multiple_item_trade_pack("30", "Multiple-item trade pack"), //
+   /**
+    * Carrying multiple copies for retailing as separate items, eg shrink-wrapped trade pack, filled dumpbin, filled counterpack
+    */
+   Multiple_item_trade_pack("30", "Multiple-item trade pack"), //
 
-	/**
-	 * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as
-	 * separate items OR retailed as a single item. Use instead of Multiple item trade pack (code 30) only if the data
-	 * provider specifically wishes to make explicit that the pack may optionally be retailed as a whole
-	 */
-	Multiple_item_pack("31", "Multiple-item pack");
+   /**
+    * Carrying multiple copies, primarily for retailing as separate items. The pack may be split and retailed as separate items OR retailed as a single item. Use instead of Multiple item trade pack (code 30) only if the data provider specifically wishes to make explicit that the pack may optionally be retailed as a whole
+    */
+   Multiple_item_pack("31", "Multiple-item pack");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ProductCompositions(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ProductCompositions(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static ProductCompositions byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (ProductCompositions e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static ProductCompositions byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (ProductCompositions e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

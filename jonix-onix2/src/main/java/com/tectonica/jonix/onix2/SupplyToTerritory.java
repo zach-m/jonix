@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -67,20 +67,21 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * <tr>
  * <td></td>
- * <td>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt;&#160;&#160;&#160;&#160;UK excluding Northern Ireland</td>
+ * <td>&lt;SupplyToTerritory&gt;GB-EWS&lt;/SupplyToTerritory&gt;&#160;&#160;&#160;&#160;UK excluding Northern
+ * Ireland</td>
  * </tr>
  * </table>
  */
-public class SupplyToTerritory implements OnixElement, Serializable
+public class SupplyToTerritory implements OnixElement<java.util.Set<Regions>>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "SupplyToTerritory";
 	public static final String shortname = "j397";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -99,21 +100,36 @@ public class SupplyToTerritory implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public java.util.Set<Regions> value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public java.util.Set<Regions> _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final SupplyToTerritory EMPTY = new SupplyToTerritory();
 
 	public SupplyToTerritory()
-	{}
+	{
+		exists = false;
+	}
 
 	public SupplyToTerritory(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -125,5 +141,11 @@ public class SupplyToTerritory implements OnixElement, Serializable
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
 			value.add(Regions.byCode(split));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

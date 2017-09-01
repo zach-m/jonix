@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -59,16 +59,17 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
  * </tr>
  * </table>
  */
-public class ProductIdentifier implements OnixDataComposite, Serializable
+public class ProductIdentifier
+		implements OnixDataCompositeWithKey<JonixProductIdentifier, ProductIdentifierTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProductIdentifier";
 	public static final String shortname = "productidentifier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -79,81 +80,107 @@ public class ProductIdentifier implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductIDType productIDType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProductIdentifier EMPTY = new ProductIdentifier();
 
 	public ProductIdentifier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProductIdentifier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ProductIDType.refname) || name.equals(ProductIDType.shortname))
-					productIDType = new ProductIDType(element);
-				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					idTypeName = new IDTypeName(element);
-				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					idValue = new IDValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ProductIDType.refname) || name.equals(ProductIDType.shortname))
+				productIDType = new ProductIDType(e);
+			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
+				idTypeName = new IDTypeName(e);
+			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
+				idValue = new IDValue(e);
 		});
 	}
 
-	public ProductIdentifierTypes getProductIDTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (productIDType == null) ? null : productIDType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ProductIDType productIDType = ProductIDType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getIDTypeNameValue()
+	public ProductIDType productIDType()
 	{
-		return (idTypeName == null) ? null : idTypeName.value;
+		initialize();
+		return productIDType;
 	}
+
+	private IDTypeName idTypeName = IDTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * (this field is optional)
 	 */
-	public String getIDValueValue()
+	public IDTypeName idTypeName()
 	{
-		return (idValue == null) ? null : idValue.value;
+		initialize();
+		return idTypeName;
 	}
 
-	public JonixProductIdentifier asJonixProductIdentifier()
+	private IDValue idValue = IDValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue()
 	{
-		JonixProductIdentifier x = new JonixProductIdentifier();
-		x.productIDType = getProductIDTypeValue();
-		x.idTypeName = getIDTypeNameValue();
-		x.idValue = getIDValueValue();
-		return x;
+		initialize();
+		return idValue;
+	}
+
+	@Override
+	public JonixProductIdentifier asStruct()
+	{
+		initialize();
+		JonixProductIdentifier struct = new JonixProductIdentifier();
+		struct.productIDType = productIDType.value;
+		struct.idTypeName = idTypeName.value;
+		struct.idValue = idValue.value;
+		return struct;
+	}
+
+	@Override
+	public ProductIdentifierTypes structKey()
+	{
+		return productIDType().value;
 	}
 }

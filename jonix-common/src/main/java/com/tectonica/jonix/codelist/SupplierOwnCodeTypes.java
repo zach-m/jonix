@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,77 +37,70 @@ interface CodeList165
  * Description: Supplier own code type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist165">ONIX
- *      Codelist 165 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist165">ONIX Codelist 165 in Reference Guide</a>
  */
 public enum SupplierOwnCodeTypes implements OnixCodelist, CodeList165
 {
-	/**
-	 * A rating applied by a supplier (typically a wholesaler) to indicate its assessment of the expected or actual
-	 * sales performance of a product
-	 */
-	Supplier_s_sales_classification("01", "Supplier’s sales classification"), //
+   /**
+    * A rating applied by a supplier (typically a wholesaler) to indicate its assessment of the expected or actual sales performance of a product
+    */
+   Supplier_s_sales_classification("01", "Supplier’s sales classification"), //
 
-	/**
-	 * A supplier's coding of the eligibility of a product for a bonus scheme on overall sales
-	 */
-	Supplier_s_bonus_eligibility("02", "Supplier’s bonus eligibility"), //
+   /**
+    * A supplier's coding of the eligibility of a product for a bonus scheme on overall sales
+    */
+   Supplier_s_bonus_eligibility("02", "Supplier’s bonus eligibility"), //
 
-	/**
-	 * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only
-	 * when the publisher is not the 'supplier'
-	 */
-	Publisher_s_sales_classification("03", "Publisher’s sales classification"), //
+   /**
+    * A rating applied by the publisher to indicate a sales category (eg backlist/frontlist, core stock etc). Use only when the publisher is not the 'supplier'
+    */
+   Publisher_s_sales_classification("03", "Publisher’s sales classification"), //
 
-	/**
-	 * A classification applied by a supplier to a product sold on Agency terms, to indicate that retail price
-	 * restrictions are applicable
-	 */
-	Supplier_s_pricing_restriction_classification("04", "Supplier’s pricing restriction classification"), //
+   /**
+    * A classification applied by a supplier to a product sold on Agency terms, to indicate that retail price restrictions are applicable
+    */
+   Supplier_s_pricing_restriction_classification("04", "Supplier’s pricing restriction classification"), //
 
-	/**
-	 * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
-	 * to that the distributor or supplier estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or
-	 * GTIN-13 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Supplier_s_sales_expectation("05", "Supplier’s sales expectation"), //
+   /**
+    * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable to that the distributor or supplier estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Supplier_s_sales_expectation("05", "Supplier’s sales expectation"), //
 
-	/**
-	 * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable
-	 * to that the publisher estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
-	 * &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Publisher_s_sales_expectation("06", "Publisher’s sales expectation");
+   /**
+    * Code is the ISBN of another book that had sales (both in terms of copy numbers and customer profile) comparable to that the publisher estimates for the product. &lt;SupplierCodeValue&gt; must be an ISBN-13 or GTIN-13
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Publisher_s_sales_expectation("06", "Publisher’s sales expectation");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private SupplierOwnCodeTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private SupplierOwnCodeTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static SupplierOwnCodeTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (SupplierOwnCodeTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static SupplierOwnCodeTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (SupplierOwnCodeTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

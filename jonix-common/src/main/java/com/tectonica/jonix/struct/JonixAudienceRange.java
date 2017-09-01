@@ -22,26 +22,24 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.AudienceRangePrecisions;
-import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixAudienceRange implements Serializable
+public class JonixAudienceRange implements JonixStruct, Serializable
 {
-	public List<AudienceRangePrecisions> audienceRangePrecisions;
+   public static JonixAudienceRange EMPTY = new JonixAudienceRange();
 
-	public AudienceRangeQualifiers audienceRangeQualifier;
+   public List<AudienceRangePrecisions> audienceRangePrecisions;
 
-	/**
-	 * Raw Format: Variable-length string, suggested maximum 10 characters. (This element was originally defined as a
-	 * variable-length integer, but its definition was extended in ONIX 2.1 to enable non-numeric values to be carried.
-	 * For values that BISAC has defined for US school grades and pre-school levels, see List 77)
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public List<String> audienceRangeValues;
+   public AudienceRangeQualifiers audienceRangeQualifier;
+
+   /**
+    * Raw Format: Variable-length string, suggested maximum 10 characters. (This element was originally defined as a variable-length integer, but its definition was extended in ONIX 2.1 to enable non-numeric values to be carried. For values that BISAC has defined for US school grades and pre-school levels, see List 77) <p> (type: dt.NonEmptyString)
+    */
+   public List<String> audienceRangeValues;
 }

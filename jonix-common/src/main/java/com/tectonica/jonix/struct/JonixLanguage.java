@@ -20,24 +20,29 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.LanguageRoles;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixLanguage implements Serializable
+public class JonixLanguage implements JonixKeyedStruct<LanguageRoles>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public LanguageRoles languageRole;
+   public static JonixLanguage EMPTY = new JonixLanguage();
 
-	public CountryCodes countryCode;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public LanguageRoles languageRole;
 
-	public LanguageCodes languageCode;
+   public CountryCodes countryCode;
+
+   public LanguageCodes languageCode;
+
+   @Override
+   public LanguageRoles key() { return languageRole; }
 }

@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -31,7 +32,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 public class ONIXMessage implements OnixSuperComposite, Serializable
@@ -42,9 +43,9 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 	public static final String shortname = "ONIXmessage";
 	public static final String release = "2.1";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -63,39 +64,35 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public Header header;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Product> products;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MainSeriesRecord> mainSeriesRecords;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SubSeriesRecord> subSeriesRecords;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ONIXMessage EMPTY = new ONIXMessage();
 
 	public ONIXMessage()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ONIXMessage(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -104,21 +101,70 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Header.refname) || name.equals(Header.shortname))
-					header = new Header(element);
-				else if (name.equals(Product.refname) || name.equals(Product.shortname))
-					products = JPU.addToList(products, new Product(element));
-				else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname))
-					mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(element));
-				else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname))
-					subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Header.refname) || name.equals(Header.shortname))
+				header = new Header(e);
+			else if (name.equals(Product.refname) || name.equals(Product.shortname))
+				products = JPU.addToList(products, new Product(e));
+			else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname))
+				mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(e));
+			else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname))
+				subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(e));
 		});
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private Header header = Header.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Header header()
+	{
+		initialize();
+		return header;
+	}
+
+	private List<Product> products = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Product> products()
+	{
+		initialize();
+		return products;
+	}
+
+	private List<MainSeriesRecord> mainSeriesRecords = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MainSeriesRecord> mainSeriesRecords()
+	{
+		initialize();
+		return mainSeriesRecords;
+	}
+
+	private List<SubSeriesRecord> subSeriesRecords = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SubSeriesRecord> subSeriesRecords()
+	{
+		initialize();
+		return subSeriesRecords;
 	}
 }

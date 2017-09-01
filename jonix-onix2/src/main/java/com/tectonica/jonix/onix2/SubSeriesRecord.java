@@ -20,16 +20,14 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
-import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -41,7 +39,7 @@ import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 public class SubSeriesRecord implements OnixSuperComposite, Serializable
@@ -51,9 +49,9 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 	public static final String refname = "SubSeriesRecord";
 	public static final String shortname = "subseriesrecord";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -72,109 +70,35 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public RecordReference recordReference;
-
-	/**
-	 * (this field is required)
-	 */
-	public NotificationType notificationType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DeletionCode deletionCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DeletionText deletionText;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceType recordSourceType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceIdentifierType recordSourceIdentifierType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceIdentifier recordSourceIdentifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceName recordSourceName;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SeriesIdentifier> seriesIdentifiers;
-
-	/**
-	 * (this field is required)
-	 */
-	public ParentIdentifier parentIdentifier;
-
-	/**
-	 * (this field is required)
-	 */
-	public LevelSequenceNumber levelSequenceNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SeriesPartName seriesPartName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberWithinSeries numberWithinSeries;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<Title> titles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Contributor> contributors;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<OtherText> otherTexts;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Publisher> publishers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SubordinateEntries subordinateEntries;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SubSeriesRecord EMPTY = new SubSeriesRecord();
 
 	public SubSeriesRecord()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SubSeriesRecord(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -183,213 +107,256 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
-					recordReference = new RecordReference(element);
-				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
-					notificationType = new NotificationType(element);
-				else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
-					deletionCode = new DeletionCode(element);
-				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
-					deletionText = new DeletionText(element);
-				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
-					recordSourceType = new RecordSourceType(element);
-				else if (name.equals(RecordSourceIdentifierType.refname)
-						|| name.equals(RecordSourceIdentifierType.shortname))
-					recordSourceIdentifierType = new RecordSourceIdentifierType(element);
-				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					recordSourceIdentifier = new RecordSourceIdentifier(element);
-				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
-					recordSourceName = new RecordSourceName(element);
-				else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
-					seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(element));
-				else if (name.equals(ParentIdentifier.refname) || name.equals(ParentIdentifier.shortname))
-					parentIdentifier = new ParentIdentifier(element);
-				else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					levelSequenceNumber = new LevelSequenceNumber(element);
-				else if (name.equals(SeriesPartName.refname) || name.equals(SeriesPartName.shortname))
-					seriesPartName = new SeriesPartName(element);
-				else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
-					numberWithinSeries = new NumberWithinSeries(element);
-				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					titles = JPU.addToList(titles, new Title(element));
-				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					contributors = JPU.addToList(contributors, new Contributor(element));
-				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
-					otherTexts = JPU.addToList(otherTexts, new OtherText(element));
-				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					publishers = JPU.addToList(publishers, new Publisher(element));
-				else if (name.equals(SubordinateEntries.refname) || name.equals(SubordinateEntries.shortname))
-					subordinateEntries = new SubordinateEntries(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
+				recordReference = new RecordReference(e);
+			else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
+				notificationType = new NotificationType(e);
+			else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
+				deletionCode = new DeletionCode(e);
+			else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
+				deletionText = new DeletionText(e);
+			else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
+				recordSourceType = new RecordSourceType(e);
+			else if (name.equals(RecordSourceIdentifierType.refname)
+					|| name.equals(RecordSourceIdentifierType.shortname))
+				recordSourceIdentifierType = new RecordSourceIdentifierType(e);
+			else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
+				recordSourceIdentifier = new RecordSourceIdentifier(e);
+			else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
+				recordSourceName = new RecordSourceName(e);
+			else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
+				seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
+			else if (name.equals(ParentIdentifier.refname) || name.equals(ParentIdentifier.shortname))
+				parentIdentifier = new ParentIdentifier(e);
+			else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
+				levelSequenceNumber = new LevelSequenceNumber(e);
+			else if (name.equals(SeriesPartName.refname) || name.equals(SeriesPartName.shortname))
+				seriesPartName = new SeriesPartName(e);
+			else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
+				numberWithinSeries = new NumberWithinSeries(e);
+			else if (name.equals(Title.refname) || name.equals(Title.shortname))
+				titles = JPU.addToList(titles, new Title(e));
+			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
+				contributors = JPU.addToList(contributors, new Contributor(e));
+			else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
+				otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+			else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
+				publishers = JPU.addToList(publishers, new Publisher(e));
+			else if (name.equals(SubordinateEntries.refname) || name.equals(SubordinateEntries.shortname))
+				subordinateEntries = new SubordinateEntries(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
-	 */
-	public String getRecordReferenceValue()
+	@Override
+	public boolean exists()
 	{
-		return (recordReference == null) ? null : recordReference.value;
+		return exists;
 	}
 
-	public NotificationOrUpdateTypes getNotificationTypeValue()
-	{
-		return (notificationType == null) ? null : notificationType.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	public ProductCompositions getDeletionCodeValue()
-	{
-		return (deletionCode == null) ? null : deletionCode.value;
-	}
+	private RecordReference recordReference = RecordReference.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getDeletionTextValue()
+	public RecordReference recordReference()
 	{
-		return (deletionText == null) ? null : deletionText.value;
+		initialize();
+		return recordReference;
 	}
 
-	public RecordSourceTypes getRecordSourceTypeValue()
-	{
-		return (recordSourceType == null) ? null : recordSourceType.value;
-	}
-
-	public NameCodeTypes getRecordSourceIdentifierTypeValue()
-	{
-		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
-	}
+	private NotificationType notificationType = NotificationType.EMPTY;
 
 	/**
-	 * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 * (this field is required)
 	 */
-	public String getRecordSourceIdentifierValue()
+	public NotificationType notificationType()
 	{
-		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
+		initialize();
+		return notificationType;
 	}
+
+	private DeletionCode deletionCode = DeletionCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getRecordSourceNameValue()
+	public DeletionCode deletionCode()
 	{
-		return (recordSourceName == null) ? null : recordSourceName.value;
+		initialize();
+		return deletionCode;
 	}
+
+	private DeletionText deletionText = DeletionText.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
-	 * maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getLevelSequenceNumberValue()
+	public DeletionText deletionText()
 	{
-		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
+		initialize();
+		return deletionText;
 	}
 
-	public String getSeriesPartNameValue()
-	{
-		return (seriesPartName == null) ? null : seriesPartName.value;
-	}
+	private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public String getNumberWithinSeriesValue()
+	public RecordSourceType recordSourceType()
 	{
-		return (numberWithinSeries == null) ? null : numberWithinSeries.value;
+		initialize();
+		return recordSourceType;
 	}
 
-	public String getSubordinateEntriesValue()
+	private RecordSourceIdentifierType recordSourceIdentifierType = RecordSourceIdentifierType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceIdentifierType recordSourceIdentifierType()
 	{
-		return (subordinateEntries == null) ? null : subordinateEntries.value;
+		initialize();
+		return recordSourceIdentifierType;
 	}
 
-	public JonixSeriesIdentifier findSeriesIdentifier(SeriesIdentifierTypes seriesIDType)
+	private RecordSourceIdentifier recordSourceIdentifier = RecordSourceIdentifier.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceIdentifier recordSourceIdentifier()
 	{
-		if (seriesIdentifiers != null)
-		{
-			for (SeriesIdentifier x : seriesIdentifiers)
-			{
-				if (x.getSeriesIDTypeValue() == seriesIDType)
-					return x.asJonixSeriesIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return recordSourceIdentifier;
 	}
 
-	public List<JonixSeriesIdentifier> findSeriesIdentifiers(java.util.Set<SeriesIdentifierTypes> seriesIDTypes)
+	private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RecordSourceName recordSourceName()
 	{
-		if (seriesIdentifiers != null)
-		{
-			List<JonixSeriesIdentifier> matches = new ArrayList<>();
-			for (SeriesIdentifier x : seriesIdentifiers)
-			{
-				if (seriesIDTypes == null || seriesIDTypes.contains(x.getSeriesIDTypeValue()))
-					matches.add(x.asJonixSeriesIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return recordSourceName;
 	}
 
-	public JonixTitle findTitle(TitleTypes titleType)
+	private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers()
 	{
-		if (titles != null)
-		{
-			for (Title x : titles)
-			{
-				if (x.getTitleTypeValue() == titleType)
-					return x.asJonixTitle();
-			}
-		}
-		return null;
+		initialize();
+		return seriesIdentifiers;
 	}
 
-	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
+	private ParentIdentifier parentIdentifier = ParentIdentifier.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public ParentIdentifier parentIdentifier()
 	{
-		if (titles != null)
-		{
-			List<JonixTitle> matches = new ArrayList<>();
-			for (Title x : titles)
-			{
-				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asJonixTitle());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return parentIdentifier;
 	}
 
-	public JonixOtherText findOtherText(OtherTextTypes textTypeCode)
+	private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public LevelSequenceNumber levelSequenceNumber()
 	{
-		if (otherTexts != null)
-		{
-			for (OtherText x : otherTexts)
-			{
-				if (x.getTextTypeCodeValue() == textTypeCode)
-					return x.asJonixOtherText();
-			}
-		}
-		return null;
+		initialize();
+		return levelSequenceNumber;
 	}
 
-	public List<JonixOtherText> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	private SeriesPartName seriesPartName = SeriesPartName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SeriesPartName seriesPartName()
 	{
-		if (otherTexts != null)
-		{
-			List<JonixOtherText> matches = new ArrayList<>();
-			for (OtherText x : otherTexts)
-			{
-				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
-					matches.add(x.asJonixOtherText());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return seriesPartName;
+	}
+
+	private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberWithinSeries numberWithinSeries()
+	{
+		initialize();
+		return numberWithinSeries;
+	}
+
+	private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles()
+	{
+		initialize();
+		return titles;
+	}
+
+	private List<Contributor> contributors = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors()
+	{
+		initialize();
+		return contributors;
+	}
+
+	private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts()
+	{
+		initialize();
+		return otherTexts;
+	}
+
+	private List<Publisher> publishers = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Publisher> publishers()
+	{
+		initialize();
+		return publishers;
+	}
+
+	private SubordinateEntries subordinateEntries = SubordinateEntries.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubordinateEntries subordinateEntries()
+	{
+		initialize();
+		return subordinateEntries;
 	}
 }

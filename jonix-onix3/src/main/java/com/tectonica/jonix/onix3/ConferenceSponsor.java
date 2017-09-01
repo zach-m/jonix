@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixConferenceSponsorIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +61,9 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 	public static final String refname = "ConferenceSponsor";
 	public static final String shortname = "conferencesponsor";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,99 +74,92 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ConferenceSponsorIdentifier> conferenceSponsorIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PersonName personName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CorporateName corporateName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ConferenceSponsor EMPTY = new ConferenceSponsor();
 
 	public ConferenceSponsor()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ConferenceSponsor(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ConferenceSponsorIdentifier.refname)
-						|| name.equals(ConferenceSponsorIdentifier.shortname))
-					conferenceSponsorIdentifiers = JPU.addToList(conferenceSponsorIdentifiers,
-							new ConferenceSponsorIdentifier(element));
-				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					personName = new PersonName(element);
-				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					corporateName = new CorporateName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ConferenceSponsorIdentifier.refname) || name.equals(ConferenceSponsorIdentifier.shortname))
+				conferenceSponsorIdentifiers = JPU.addToList(conferenceSponsorIdentifiers,
+						new ConferenceSponsorIdentifier(e));
+			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
+				personName = new PersonName(e);
+			else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
+				corporateName = new CorporateName(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public String getPersonNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (personName == null) ? null : personName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameCodeTypes> conferenceSponsorIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getCorporateNameValue()
+	public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameCodeTypes> conferenceSponsorIdentifiers()
 	{
-		return (corporateName == null) ? null : corporateName.value;
+		initialize();
+		return conferenceSponsorIdentifiers;
 	}
 
-	public JonixConferenceSponsorIdentifier findConferenceSponsorIdentifier(NameCodeTypes conferenceSponsorIDType)
+	private PersonName personName = PersonName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonName personName()
 	{
-		if (conferenceSponsorIdentifiers != null)
-		{
-			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
-			{
-				if (x.getConferenceSponsorIDTypeValue() == conferenceSponsorIDType)
-					return x.asJonixConferenceSponsorIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return personName;
 	}
 
-	public List<JonixConferenceSponsorIdentifier> findConferenceSponsorIdentifiers(
-			java.util.Set<NameCodeTypes> conferenceSponsorIDTypes)
+	private CorporateName corporateName = CorporateName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateName corporateName()
 	{
-		if (conferenceSponsorIdentifiers != null)
-		{
-			List<JonixConferenceSponsorIdentifier> matches = new ArrayList<>();
-			for (ConferenceSponsorIdentifier x : conferenceSponsorIdentifiers)
-			{
-				if (conferenceSponsorIDTypes == null
-						|| conferenceSponsorIDTypes.contains(x.getConferenceSponsorIDTypeValue()))
-					matches.add(x.asJonixConferenceSponsorIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return corporateName;
 	}
 }

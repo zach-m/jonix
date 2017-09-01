@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,75 +37,73 @@ interface CodeList72
  * Description: Thesis type code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist72">ONIX
- *      Codelist 72 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist72">ONIX Codelist 72 in Reference Guide</a>
  */
 public enum ThesisTypes implements OnixCodelist, CodeList72
 {
-	/**
-	 * Professorial dissertation (thesis for postdoctoral lecturing qualification)
-	 */
-	Habilitationsschrift("01", "Habilitationsschrift"), //
+   /**
+    * Professorial dissertation (thesis for postdoctoral lecturing qualification)
+    */
+   Habilitationsschrift("01", "Habilitationsschrift"), //
 
-	/**
-	 * Doctoral thesis
-	 */
-	Dissertationsschrift("02", "Dissertationsschrift"), //
+   /**
+    * Doctoral thesis
+    */
+   Dissertationsschrift("02", "Dissertationsschrift"), //
 
-	/**
-	 * State examination thesis
-	 */
-	Staatsexamensarbeit("03", "Staatsexamensarbeit"), //
+   /**
+    * State examination thesis
+    */
+   Staatsexamensarbeit("03", "Staatsexamensarbeit"), //
 
-	/**
-	 * Magisters degree thesis
-	 */
-	Magisterarbeit("04", "Magisterarbeit"), //
+   /**
+    * Magisters degree thesis
+    */
+   Magisterarbeit("04", "Magisterarbeit"), //
 
-	/**
-	 * Diploma degree thesis
-	 */
-	Diplomarbeit("05", "Diplomarbeit"), //
+   /**
+    * Diploma degree thesis
+    */
+   Diplomarbeit("05", "Diplomarbeit"), //
 
-	/**
-	 * Bachelors degree thesis
-	 */
-	Bachelorarbeit("06", "Bachelorarbeit"), //
+   /**
+    * Bachelors degree thesis
+    */
+   Bachelorarbeit("06", "Bachelorarbeit"), //
 
-	/**
-	 * Masters degree thesis
-	 */
-	Masterarbeit("07", "Masterarbeit");
+   /**
+    * Masters degree thesis
+    */
+   Masterarbeit("07", "Masterarbeit");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ThesisTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ThesisTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static ThesisTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (ThesisTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static ThesisTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (ThesisTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

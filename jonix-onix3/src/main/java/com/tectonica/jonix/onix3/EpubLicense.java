@@ -20,17 +20,17 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -61,9 +61,9 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 	public static final String refname = "EpubLicense";
 	public static final String shortname = "epublicense";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,89 +74,78 @@ public class EpubLicense implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<EpubLicenseName> epubLicenseNames;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EpubLicenseExpression> epubLicenseExpressions;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final EpubLicense EMPTY = new EpubLicense();
 
 	public EpubLicense()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public EpubLicense(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(EpubLicenseName.refname) || name.equals(EpubLicenseName.shortname))
-					epubLicenseNames = JPU.addToList(epubLicenseNames, new EpubLicenseName(element));
-				else if (name.equals(EpubLicenseExpression.refname) || name.equals(EpubLicenseExpression.shortname))
-					epubLicenseExpressions = JPU.addToList(epubLicenseExpressions, new EpubLicenseExpression(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(EpubLicenseName.refname) || name.equals(EpubLicenseName.shortname))
+				epubLicenseNames = JPU.addToList(epubLicenseNames, new EpubLicenseName(e));
+			else if (name.equals(EpubLicenseExpression.refname) || name.equals(EpubLicenseExpression.shortname))
+				epubLicenseExpressions = JPU.addToList(epubLicenseExpressions, new EpubLicenseExpression(e));
 		});
 	}
 
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixElement<EpubLicenseName, String> epubLicenseNames = ListOfOnixElement.empty();
+
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public List<String> getEpubLicenseNameValues()
+	public ListOfOnixElement<EpubLicenseName, String> epubLicenseNames()
 	{
-		if (epubLicenseNames != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (EpubLicenseName i : epubLicenseNames)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return epubLicenseNames;
 	}
 
-	public JonixEpubLicenseExpression findEpubLicenseExpression(LicenseExpressionTypes epubLicenseExpressionType)
-	{
-		if (epubLicenseExpressions != null)
-		{
-			for (EpubLicenseExpression x : epubLicenseExpressions)
-			{
-				if (x.getEpubLicenseExpressionTypeValue() == epubLicenseExpressionType)
-					return x.asJonixEpubLicenseExpression();
-			}
-		}
-		return null;
-	}
+	private ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes> epubLicenseExpressions = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
-	public List<JonixEpubLicenseExpression> findEpubLicenseExpressions(
-			java.util.Set<LicenseExpressionTypes> epubLicenseExpressionTypes)
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<EpubLicenseExpression, JonixEpubLicenseExpression, LicenseExpressionTypes> epubLicenseExpressions()
 	{
-		if (epubLicenseExpressions != null)
-		{
-			List<JonixEpubLicenseExpression> matches = new ArrayList<>();
-			for (EpubLicenseExpression x : epubLicenseExpressions)
-			{
-				if (epubLicenseExpressionTypes == null
-						|| epubLicenseExpressionTypes.contains(x.getEpubLicenseExpressionTypeValue()))
-					matches.add(x.asJonixEpubLicenseExpression());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return epubLicenseExpressions;
 	}
 }

@@ -22,31 +22,33 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixProductFormFeature implements Serializable
+public class JonixProductFormFeature implements JonixKeyedStruct<ProductFormFeatureTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public ProductFormFeatureTypes productFormFeatureType;
+   public static JonixProductFormFeature EMPTY = new JonixProductFormFeature();
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public List<String> productFormFeatureDescriptions;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public ProductFormFeatureTypes productFormFeatureType;
 
-	/**
-	 * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt;
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String productFormFeatureValue;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 500 characters <p> (type: dt.NonEmptyString)
+    */
+   public List<String> productFormFeatureDescriptions;
+
+   /**
+    * Raw Format: Dependent on the scheme specified in &lt;ProductFormFeatureType&gt; <p> (type: dt.NonEmptyString)
+    */
+   public String productFormFeatureValue;
+
+   @Override
+   public ProductFormFeatureTypes key() { return productFormFeatureType; }
 }

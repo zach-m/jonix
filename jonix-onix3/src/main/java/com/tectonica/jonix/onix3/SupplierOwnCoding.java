@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +52,17 @@ import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
  * </tr>
  * </table>
  */
-public class SupplierOwnCoding implements OnixDataComposite, Serializable
+public class SupplierOwnCoding
+		implements OnixDataCompositeWithKey<JonixSupplierOwnCoding, SupplierOwnCodeTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "SupplierOwnCoding";
 	public static final String shortname = "supplierowncoding";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -72,81 +73,107 @@ public class SupplierOwnCoding implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SupplierCodeType supplierCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierCodeTypeName supplierCodeTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public SupplierCodeValue supplierCodeValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SupplierOwnCoding EMPTY = new SupplierOwnCoding();
 
 	public SupplierOwnCoding()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SupplierOwnCoding(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SupplierCodeType.refname) || name.equals(SupplierCodeType.shortname))
-					supplierCodeType = new SupplierCodeType(element);
-				else if (name.equals(SupplierCodeTypeName.refname) || name.equals(SupplierCodeTypeName.shortname))
-					supplierCodeTypeName = new SupplierCodeTypeName(element);
-				else if (name.equals(SupplierCodeValue.refname) || name.equals(SupplierCodeValue.shortname))
-					supplierCodeValue = new SupplierCodeValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SupplierCodeType.refname) || name.equals(SupplierCodeType.shortname))
+				supplierCodeType = new SupplierCodeType(e);
+			else if (name.equals(SupplierCodeTypeName.refname) || name.equals(SupplierCodeTypeName.shortname))
+				supplierCodeTypeName = new SupplierCodeTypeName(e);
+			else if (name.equals(SupplierCodeValue.refname) || name.equals(SupplierCodeValue.shortname))
+				supplierCodeValue = new SupplierCodeValue(e);
 		});
 	}
 
-	public SupplierOwnCodeTypes getSupplierCodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (supplierCodeType == null) ? null : supplierCodeType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SupplierCodeType supplierCodeType = SupplierCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getSupplierCodeTypeNameValue()
+	public SupplierCodeType supplierCodeType()
 	{
-		return (supplierCodeTypeName == null) ? null : supplierCodeTypeName.value;
+		initialize();
+		return supplierCodeType;
 	}
+
+	private SupplierCodeTypeName supplierCodeTypeName = SupplierCodeTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt;
+	 * (this field is optional)
 	 */
-	public String getSupplierCodeValueValue()
+	public SupplierCodeTypeName supplierCodeTypeName()
 	{
-		return (supplierCodeValue == null) ? null : supplierCodeValue.value;
+		initialize();
+		return supplierCodeTypeName;
 	}
 
-	public JonixSupplierOwnCoding asJonixSupplierOwnCoding()
+	private SupplierCodeValue supplierCodeValue = SupplierCodeValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public SupplierCodeValue supplierCodeValue()
 	{
-		JonixSupplierOwnCoding x = new JonixSupplierOwnCoding();
-		x.supplierCodeType = getSupplierCodeTypeValue();
-		x.supplierCodeTypeName = getSupplierCodeTypeNameValue();
-		x.supplierCodeValue = getSupplierCodeValueValue();
-		return x;
+		initialize();
+		return supplierCodeValue;
+	}
+
+	@Override
+	public JonixSupplierOwnCoding asStruct()
+	{
+		initialize();
+		JonixSupplierOwnCoding struct = new JonixSupplierOwnCoding();
+		struct.supplierCodeType = supplierCodeType.value;
+		struct.supplierCodeTypeName = supplierCodeTypeName.value;
+		struct.supplierCodeValue = supplierCodeValue.value;
+		return struct;
+	}
+
+	@Override
+	public SupplierOwnCodeTypes structKey()
+	{
+		return supplierCodeType().value;
 	}
 }

@@ -20,19 +20,19 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.SalesRestrictionTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -59,9 +59,9 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesRestriction";
 	public static final String shortname = "salesrestriction";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -80,34 +80,35 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesRestrictionType salesRestrictionType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesOutlet> salesOutlets;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SalesRestrictionDetail salesRestrictionDetail;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SalesRestriction EMPTY = new SalesRestriction();
 
 	public SalesRestriction()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SalesRestriction(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -116,32 +117,57 @@ public class SalesRestriction implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
-					salesRestrictionType = new SalesRestrictionType(element);
-				else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
-					salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(element));
-				else if (name.equals(SalesRestrictionDetail.refname) || name.equals(SalesRestrictionDetail.shortname))
-					salesRestrictionDetail = new SalesRestrictionDetail(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SalesRestrictionType.refname) || name.equals(SalesRestrictionType.shortname))
+				salesRestrictionType = new SalesRestrictionType(e);
+			else if (name.equals(SalesOutlet.refname) || name.equals(SalesOutlet.shortname))
+				salesOutlets = JPU.addToList(salesOutlets, new SalesOutlet(e));
+			else if (name.equals(SalesRestrictionDetail.refname) || name.equals(SalesRestrictionDetail.shortname))
+				salesRestrictionDetail = new SalesRestrictionDetail(e);
 		});
 	}
 
-	public SalesRestrictionTypes getSalesRestrictionTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (salesRestrictionType == null) ? null : salesRestrictionType.value;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SalesRestrictionType salesRestrictionType = SalesRestrictionType.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public String getSalesRestrictionDetailValue()
+	public SalesRestrictionType salesRestrictionType()
 	{
-		return (salesRestrictionDetail == null) ? null : salesRestrictionDetail.value;
+		initialize();
+		return salesRestrictionType;
+	}
+
+	private List<SalesOutlet> salesOutlets = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesOutlet> salesOutlets()
+	{
+		initialize();
+		return salesOutlets;
+	}
+
+	private SalesRestrictionDetail salesRestrictionDetail = SalesRestrictionDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SalesRestrictionDetail salesRestrictionDetail()
+	{
+		initialize();
+		return salesRestrictionDetail;
 	}
 }

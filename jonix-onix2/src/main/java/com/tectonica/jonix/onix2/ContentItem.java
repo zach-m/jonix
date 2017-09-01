@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -36,11 +39,13 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.struct.JonixMediaFile;
 import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixSubject;
 import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.jonix.struct.JonixWebsite;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -66,9 +71,9 @@ public class ContentItem implements OnixSuperComposite, Serializable
 	public static final String refname = "ContentItem";
 	public static final String shortname = "contentitem";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -87,99 +92,35 @@ public class ContentItem implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public LevelSequenceNumber levelSequenceNumber;
-
-	/**
-	 * (this field is required)
-	 */
-	public TextItem textItem;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	/**
-	 * (this field is required)
-	 */
-	public ComponentTypeName componentTypeName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ComponentNumber componentNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DistinctiveTitle distinctiveTitle;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Title> titles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<WorkIdentifier> workIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Contributor> contributors;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContributorStatement contributorStatement;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Subject> subjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PersonAsSubject> personAsSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CorporateBodyAsSubject> corporateBodyAsSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PlaceAsSubject> placeAsSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<OtherText> otherTexts;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MediaFile> mediaFiles;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ContentItem EMPTY = new ContentItem();
 
 	public ContentItem()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ContentItem(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -188,229 +129,230 @@ public class ContentItem implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					levelSequenceNumber = new LevelSequenceNumber(element);
-				else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname))
-					textItem = new TextItem(element);
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-				else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname))
-					componentTypeName = new ComponentTypeName(element);
-				else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname))
-					componentNumber = new ComponentNumber(element);
-				else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
-					distinctiveTitle = new DistinctiveTitle(element);
-				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					titles = JPU.addToList(titles, new Title(element));
-				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
-					workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(element));
-				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					contributors = JPU.addToList(contributors, new Contributor(element));
-				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
-					contributorStatement = new ContributorStatement(element);
-				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
-					subjects = JPU.addToList(subjects, new Subject(element));
-				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
-					personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(element));
-				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
-					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects,
-							new CorporateBodyAsSubject(element));
-				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
-					placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(element));
-				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
-					otherTexts = JPU.addToList(otherTexts, new OtherText(element));
-				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
-					mediaFiles = JPU.addToList(mediaFiles, new MediaFile(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
+				levelSequenceNumber = new LevelSequenceNumber(e);
+			else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname))
+				textItem = new TextItem(e);
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
+			else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname))
+				componentTypeName = new ComponentTypeName(e);
+			else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname))
+				componentNumber = new ComponentNumber(e);
+			else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
+				distinctiveTitle = new DistinctiveTitle(e);
+			else if (name.equals(Title.refname) || name.equals(Title.shortname))
+				titles = JPU.addToList(titles, new Title(e));
+			else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
+				workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
+				contributors = JPU.addToList(contributors, new Contributor(e));
+			else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
+				contributorStatement = new ContributorStatement(e);
+			else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
+				subjects = JPU.addToList(subjects, new Subject(e));
+			else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
+				personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
+			else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
+				corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
+			else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
+				placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
+			else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
+				otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+			else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
+				mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
-	 * maximum length 100 characters
-	 */
-	public String getLevelSequenceNumberValue()
+	@Override
+	public boolean exists()
 	{
-		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public String getComponentTypeNameValue()
+	public LevelSequenceNumber levelSequenceNumber()
 	{
-		return (componentTypeName == null) ? null : componentTypeName.value;
+		initialize();
+		return levelSequenceNumber;
 	}
+
+	private TextItem textItem = TextItem.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * (this field is required)
 	 */
-	public String getComponentNumberValue()
+	public TextItem textItem()
 	{
-		return (componentNumber == null) ? null : componentNumber.value;
+		initialize();
+		return textItem;
 	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 * (this list may be empty)
 	 */
-	public String getDistinctiveTitleValue()
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
 	{
-		return (distinctiveTitle == null) ? null : distinctiveTitle.value;
+		initialize();
+		return websites;
 	}
+
+	private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1000 characters
+	 * (this field is required)
 	 */
-	public String getContributorStatementValue()
+	public ComponentTypeName componentTypeName()
 	{
-		return (contributorStatement == null) ? null : contributorStatement.value;
+		initialize();
+		return componentTypeName;
 	}
+
+	private ComponentNumber componentNumber = ComponentNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters.
+	 * (this field is optional)
 	 */
-	public List<String> getCorporateBodyAsSubjectValues()
+	public ComponentNumber componentNumber()
 	{
-		if (corporateBodyAsSubjects != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CorporateBodyAsSubject i : corporateBodyAsSubjects)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return componentNumber;
 	}
+
+	private DistinctiveTitle distinctiveTitle = DistinctiveTitle.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 100 characters.
+	 * (this field is optional)
 	 */
-	public List<String> getPlaceAsSubjectValues()
+	public DistinctiveTitle distinctiveTitle()
 	{
-		if (placeAsSubjects != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PlaceAsSubject i : placeAsSubjects)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return distinctiveTitle;
 	}
 
-	public JonixTitle findTitle(TitleTypes titleType)
+	private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles()
 	{
-		if (titles != null)
-		{
-			for (Title x : titles)
-			{
-				if (x.getTitleTypeValue() == titleType)
-					return x.asJonixTitle();
-			}
-		}
-		return null;
+		initialize();
+		return titles;
 	}
 
-	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
+	private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers()
 	{
-		if (titles != null)
-		{
-			List<JonixTitle> matches = new ArrayList<>();
-			for (Title x : titles)
-			{
-				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asJonixTitle());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return workIdentifiers;
 	}
 
-	public JonixWorkIdentifier findWorkIdentifier(WorkIdentifierTypes workIDType)
+	private List<Contributor> contributors = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors()
 	{
-		if (workIdentifiers != null)
-		{
-			for (WorkIdentifier x : workIdentifiers)
-			{
-				if (x.getWorkIDTypeValue() == workIDType)
-					return x.asJonixWorkIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return contributors;
 	}
 
-	public List<JonixWorkIdentifier> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	private ContributorStatement contributorStatement = ContributorStatement.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContributorStatement contributorStatement()
 	{
-		if (workIdentifiers != null)
-		{
-			List<JonixWorkIdentifier> matches = new ArrayList<>();
-			for (WorkIdentifier x : workIdentifiers)
-			{
-				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
-					matches.add(x.asJonixWorkIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return contributorStatement;
 	}
 
-	public JonixOtherText findOtherText(OtherTextTypes textTypeCode)
+	private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Subject, JonixSubject> subjects()
 	{
-		if (otherTexts != null)
-		{
-			for (OtherText x : otherTexts)
-			{
-				if (x.getTextTypeCodeValue() == textTypeCode)
-					return x.asJonixOtherText();
-			}
-		}
-		return null;
+		initialize();
+		return subjects;
 	}
 
-	public List<JonixOtherText> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	private List<PersonAsSubject> personAsSubjects = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<PersonAsSubject> personAsSubjects()
 	{
-		if (otherTexts != null)
-		{
-			List<JonixOtherText> matches = new ArrayList<>();
-			for (OtherText x : otherTexts)
-			{
-				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
-					matches.add(x.asJonixOtherText());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return personAsSubjects;
 	}
 
-	public JonixMediaFile findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects()
 	{
-		if (mediaFiles != null)
-		{
-			for (MediaFile x : mediaFiles)
-			{
-				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
-					return x.asJonixMediaFile();
-			}
-		}
-		return null;
+		initialize();
+		return corporateBodyAsSubjects;
 	}
 
-	public List<JonixMediaFile> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects()
 	{
-		if (mediaFiles != null)
-		{
-			List<JonixMediaFile> matches = new ArrayList<>();
-			for (MediaFile x : mediaFiles)
-			{
-				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
-					matches.add(x.asJonixMediaFile());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return placeAsSubjects;
+	}
+
+	private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts()
+	{
+		initialize();
+		return otherTexts;
+	}
+
+	private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles()
+	{
+		initialize();
+		return mediaFiles;
 	}
 }

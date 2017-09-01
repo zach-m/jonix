@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
 import com.tectonica.jonix.struct.JonixResourceVersionFeature;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -55,16 +54,17 @@ import com.tectonica.jonix.struct.JonixResourceVersionFeature;
  * </tr>
  * </table>
  */
-public class ResourceVersionFeature implements OnixDataComposite, Serializable
+public class ResourceVersionFeature
+		implements OnixDataCompositeWithKey<JonixResourceVersionFeature, ResourceVersionFeatureTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ResourceVersionFeature";
 	public static final String shortname = "resourceversionfeature";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,91 +75,107 @@ public class ResourceVersionFeature implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ResourceVersionFeatureType resourceVersionFeatureType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public FeatureValue featureValue;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FeatureNote> featureNotes;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ResourceVersionFeature EMPTY = new ResourceVersionFeature();
 
 	public ResourceVersionFeature()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ResourceVersionFeature(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ResourceVersionFeatureType.refname)
-						|| name.equals(ResourceVersionFeatureType.shortname))
-					resourceVersionFeatureType = new ResourceVersionFeatureType(element);
-				else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname))
-					featureValue = new FeatureValue(element);
-				else if (name.equals(FeatureNote.refname) || name.equals(FeatureNote.shortname))
-					featureNotes = JPU.addToList(featureNotes, new FeatureNote(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ResourceVersionFeatureType.refname) || name.equals(ResourceVersionFeatureType.shortname))
+				resourceVersionFeatureType = new ResourceVersionFeatureType(e);
+			else if (name.equals(FeatureValue.refname) || name.equals(FeatureValue.shortname))
+				featureValue = new FeatureValue(e);
+			else if (name.equals(FeatureNote.refname) || name.equals(FeatureNote.shortname))
+				featureNotes = JPU.addToList(featureNotes, new FeatureNote(e));
 		});
 	}
 
-	public ResourceVersionFeatureTypes getResourceVersionFeatureTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (resourceVersionFeatureType == null) ? null : resourceVersionFeatureType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ResourceVersionFeatureType resourceVersionFeatureType = ResourceVersionFeatureType.EMPTY;
 
 	/**
-	 * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
-	 * may not be taken from a code list
+	 * (this field is required)
 	 */
-	public String getFeatureValueValue()
+	public ResourceVersionFeatureType resourceVersionFeatureType()
 	{
-		return (featureValue == null) ? null : featureValue.value;
+		initialize();
+		return resourceVersionFeatureType;
 	}
+
+	private FeatureValue featureValue = FeatureValue.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is optional)
 	 */
-	public List<String> getFeatureNoteValues()
+	public FeatureValue featureValue()
 	{
-		if (featureNotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FeatureNote i : featureNotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return featureValue;
 	}
 
-	public JonixResourceVersionFeature asJonixResourceVersionFeature()
+	private ListOfOnixElement<FeatureNote, String> featureNotes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<FeatureNote, String> featureNotes()
 	{
-		JonixResourceVersionFeature x = new JonixResourceVersionFeature();
-		x.resourceVersionFeatureType = getResourceVersionFeatureTypeValue();
-		x.featureValue = getFeatureValueValue();
-		x.featureNotes = getFeatureNoteValues();
-		return x;
+		initialize();
+		return featureNotes;
+	}
+
+	@Override
+	public JonixResourceVersionFeature asStruct()
+	{
+		initialize();
+		JonixResourceVersionFeature struct = new JonixResourceVersionFeature();
+		struct.resourceVersionFeatureType = resourceVersionFeatureType.value;
+		struct.featureValue = featureValue.value;
+		struct.featureNotes = featureNotes.values();
+		return struct;
+	}
+
+	@Override
+	public ResourceVersionFeatureTypes structKey()
+	{
+		return resourceVersionFeatureType().value;
 	}
 }

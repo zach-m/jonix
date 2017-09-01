@@ -22,28 +22,30 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
-import com.tectonica.jonix.codelist.ReligiousTextFeatures;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixReligiousTextFeature implements Serializable
+public class JonixReligiousTextFeature implements JonixKeyedStruct<ReligiousTextFeatureTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public ReligiousTextFeatureTypes religiousTextFeatureType;
+   public static JonixReligiousTextFeature EMPTY = new JonixReligiousTextFeature();
 
-	public ReligiousTextFeatures religiousTextFeatureCode;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public ReligiousTextFeatureTypes religiousTextFeatureType;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
-	 * XHTML, HTML or XML with ONIX text fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public List<String> religiousTextFeatureDescriptions;
+   public ReligiousTextFeatures religiousTextFeatureCode;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+    */
+   public List<String> religiousTextFeatureDescriptions;
+
+   @Override
+   public ReligiousTextFeatureTypes key() { return religiousTextFeatureType; }
 }

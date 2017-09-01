@@ -22,14 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.PersonOrganizationDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixContributorDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,17 @@ import com.tectonica.jonix.struct.JonixContributorDate;
  * </tr>
  * </table>
  */
-public class ContributorDate implements OnixDataComposite, Serializable
+public class ContributorDate
+		implements OnixDataCompositeWithKey<JonixContributorDate, PersonOrganizationDateRoles>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ContributorDate";
 	public static final String shortname = "contributordate";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,78 +73,107 @@ public class ContributorDate implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ContributorDateRole contributorDateRole;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DateFormat dateFormat;
-
-	/**
-	 * (this field is required)
-	 */
-	public Date date;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ContributorDate EMPTY = new ContributorDate();
 
 	public ContributorDate()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ContributorDate(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ContributorDateRole.refname) || name.equals(ContributorDateRole.shortname))
-					contributorDateRole = new ContributorDateRole(element);
-				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					dateFormat = new DateFormat(element);
-				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					date = new Date(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ContributorDateRole.refname) || name.equals(ContributorDateRole.shortname))
+				contributorDateRole = new ContributorDateRole(e);
+			else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
+				dateFormat = new DateFormat(e);
+			else if (name.equals(Date.refname) || name.equals(Date.shortname))
+				date = new Date(e);
 		});
 	}
 
-	public PersonOrganizationDateRoles getContributorDateRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (contributorDateRole == null) ? null : contributorDateRole.value;
+		return exists;
 	}
 
-	public DateFormats getDateFormatValue()
-	{
-		return (dateFormat == null) ? null : dateFormat.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ContributorDateRole contributorDateRole = ContributorDateRole.EMPTY;
 
 	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+	 * (this field is required)
 	 */
-	public String getDateValue()
+	public ContributorDateRole contributorDateRole()
 	{
-		return (date == null) ? null : date.value;
+		initialize();
+		return contributorDateRole;
 	}
 
-	public JonixContributorDate asJonixContributorDate()
+	private DateFormat dateFormat = DateFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat()
 	{
-		JonixContributorDate x = new JonixContributorDate();
-		x.contributorDateRole = getContributorDateRoleValue();
-		x.dateFormat = getDateFormatValue();
-		x.date = getDateValue();
-		return x;
+		initialize();
+		return dateFormat;
+	}
+
+	private Date date = Date.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date()
+	{
+		initialize();
+		return date;
+	}
+
+	@Override
+	public JonixContributorDate asStruct()
+	{
+		initialize();
+		JonixContributorDate struct = new JonixContributorDate();
+		struct.contributorDateRole = contributorDateRole.value;
+		struct.dateFormat = dateFormat.value;
+		struct.date = date.value;
+		return struct;
+	}
+
+	@Override
+	public PersonOrganizationDateRoles structKey()
+	{
+		return contributorDateRole().value;
 	}
 }

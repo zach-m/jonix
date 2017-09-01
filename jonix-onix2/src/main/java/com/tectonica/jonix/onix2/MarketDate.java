@@ -22,8 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixMarketDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +53,16 @@ import com.tectonica.jonix.struct.JonixMarketDate;
  * </tr>
  * </table>
  */
-public class MarketDate implements OnixDataComposite, Serializable
+public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, PublishingDateRoles>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "MarketDate";
 	public static final String shortname = "marketdate";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -82,34 +81,35 @@ public class MarketDate implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public MarketDateRole marketDateRole;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DateFormat dateFormat;
-
-	/**
-	 * (this field is required)
-	 */
-	public Date date;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final MarketDate EMPTY = new MarketDate();
 
 	public MarketDate()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public MarketDate(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -118,46 +118,74 @@ public class MarketDate implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(MarketDateRole.refname) || name.equals(MarketDateRole.shortname))
-					marketDateRole = new MarketDateRole(element);
-				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					dateFormat = new DateFormat(element);
-				else if (name.equals(Date.refname) || name.equals(Date.shortname))
-					date = new Date(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(MarketDateRole.refname) || name.equals(MarketDateRole.shortname))
+				marketDateRole = new MarketDateRole(e);
+			else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
+				dateFormat = new DateFormat(e);
+			else if (name.equals(Date.refname) || name.equals(Date.shortname))
+				date = new Date(e);
 		});
 	}
 
-	public PublishingDateRoles getMarketDateRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (marketDateRole == null) ? null : marketDateRole.value;
+		return exists;
 	}
 
-	public DateFormats getDateFormatValue()
-	{
-		return (dateFormat == null) ? null : dateFormat.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private MarketDateRole marketDateRole = MarketDateRole.EMPTY;
 
 	/**
-	 * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD
+	 * (this field is required)
 	 */
-	public String getDateValue()
+	public MarketDateRole marketDateRole()
 	{
-		return (date == null) ? null : date.value;
+		initialize();
+		return marketDateRole;
 	}
 
-	public JonixMarketDate asJonixMarketDate()
+	private DateFormat dateFormat = DateFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat()
 	{
-		JonixMarketDate x = new JonixMarketDate();
-		x.marketDateRole = getMarketDateRoleValue();
-		x.date = getDateValue();
-		x.dateFormat = getDateFormatValue();
-		return x;
+		initialize();
+		return dateFormat;
+	}
+
+	private Date date = Date.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Date date()
+	{
+		initialize();
+		return date;
+	}
+
+	@Override
+	public JonixMarketDate asStruct()
+	{
+		initialize();
+		JonixMarketDate struct = new JonixMarketDate();
+		struct.marketDateRole = marketDateRole.value;
+		struct.date = date.value;
+		struct.dateFormat = dateFormat.value;
+		return struct;
+	}
+
+	@Override
+	public PublishingDateRoles structKey()
+	{
+		return marketDateRole().value;
 	}
 }

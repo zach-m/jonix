@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,237 +40,225 @@ interface CodeList158
  * Description: Resource content type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist158">ONIX
- *      Codelist 158 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist158">ONIX Codelist 158 in Reference Guide</a>
  */
 public enum ResourceContentTypes implements OnixCodelist, CodeList158
 {
-	/**
-	 * 2D
-	 */
-	Front_cover("01", "Front cover"), //
+   /**
+    * 2D
+    */
+   Front_cover("01", "Front cover"), //
 
-	/**
-	 * 2D
-	 */
-	Back_cover("02", "Back cover"), //
+   /**
+    * 2D
+    */
+   Back_cover("02", "Back cover"), //
 
-	/**
-	 * Not limited to front or back, including 3D perspective
-	 */
-	Cover_pack("03", "Cover / pack"), //
+   /**
+    * Not limited to front or back, including 3D perspective
+    */
+   Cover_pack("03", "Cover / pack"), //
 
-	/**
-	 * Photograph or portrait of contributor(s)
-	 */
-	Contributor_picture("04", "Contributor picture"), //
+   /**
+    * Photograph or portrait of contributor(s)
+    */
+   Contributor_picture("04", "Contributor picture"), //
 
-	Series_image_artwork("05", "Series image / artwork"), //
+   Series_image_artwork("05", "Series image / artwork"), //
 
-	Series_logo("06", "Series logo"), //
+   Series_logo("06", "Series logo"), //
 
-	Product_image_artwork("07", "Product image / artwork"), //
+   Product_image_artwork("07", "Product image / artwork"), //
 
-	Product_logo("08", "Product logo"), //
+   Product_logo("08", "Product logo"), //
 
-	Publisher_logo("09", "Publisher logo"), //
+   Publisher_logo("09", "Publisher logo"), //
 
-	Imprint_logo("10", "Imprint logo"), //
+   Imprint_logo("10", "Imprint logo"), //
 
-	Contributor_interview("11", "Contributor interview"), //
+   Contributor_interview("11", "Contributor interview"), //
 
-	/**
-	 * Contributor presentation and/or commentary
-	 */
-	Contributor_presentation("12", "Contributor presentation"), //
+   /**
+    * Contributor presentation and/or commentary
+    */
+   Contributor_presentation("12", "Contributor presentation"), //
 
-	Contributor_reading("13", "Contributor reading"), //
+   Contributor_reading("13", "Contributor reading"), //
 
-	/**
-	 * Link to a schedule in iCalendar format
-	 */
-	Contributor_event_schedule("14", "Contributor event schedule"), //
+   /**
+    * Link to a schedule in iCalendar format
+    */
+   Contributor_event_schedule("14", "Contributor event schedule"), //
 
-	/**
-	 * For example: sample chapter text, page images, screenshots
-	 */
-	Sample_content("15", "Sample content"), //
+   /**
+    * For example: sample chapter text, page images, screenshots
+    */
+   Sample_content("15", "Sample content"), //
 
-	/**
-	 * A 'look inside' feature presented as a small embeddable application
-	 */
-	Widget("16", "Widget"), //
+   /**
+    * A 'look inside' feature presented as a small embeddable application
+    */
+   Widget("16", "Widget"), //
 
-	/**
-	 * Review text held in a separate downloadable file, not in the ONIX record. Equivalent of code 06 in List 153. Use
-	 * the &lt;TextContent&gt; composite for review quotes carried in the ONIX record. Use the &lt;CitedContent&gt;
-	 * composite for a third-party review which is referenced from the ONIX record. Use &lt;SupportingResource&gt; for
-	 * review text offered as a separate file resource for reproduction as part of promotional material for the product
-	 */
-	Review("17", "Review"), //
+   /**
+    * Review text held in a separate downloadable file, not in the ONIX record. Equivalent of code 06 in List 153. Use the &lt;TextContent&gt; composite for review quotes carried in the ONIX record. Use the &lt;CitedContent&gt; composite for a third-party review which is referenced from the ONIX record. Use &lt;SupportingResource&gt; for review text offered as a separate file resource for reproduction as part of promotional material for the product
+    */
+   Review("17", "Review"), //
 
-	Other_commentary_discussion("18", "Other commentary / discussion"), //
+   Other_commentary_discussion("18", "Other commentary / discussion"), //
 
-	Reading_group_guide("19", "Reading group guide"), //
+   Reading_group_guide("19", "Reading group guide"), //
 
-	/**
-	 * Incuding associated teacher / instructor resources
-	 */
-	Teacher_s_guide("20", "Teacher’s guide"), //
+   /**
+    * Incuding associated teacher / instructor resources
+    */
+   Teacher_s_guide("20", "Teacher’s guide"), //
 
-	/**
-	 * Feature article provided by publisher
-	 */
-	Feature_article("21", "Feature article"), //
+   /**
+    * Feature article provided by publisher
+    */
+   Feature_article("21", "Feature article"), //
 
-	/**
-	 * Fictional character 'interview'
-	 */
-	Character_interview_("22", "Character ‘interview’"), //
+   /**
+    * Fictional character 'interview'
+    */
+   Character_interview_("22", "Character ‘interview’"), //
 
-	Wallpaper_screensaver("23", "Wallpaper / screensaver"), //
+   Wallpaper_screensaver("23", "Wallpaper / screensaver"), //
 
-	Press_release("24", "Press release"), //
+   Press_release("24", "Press release"), //
 
-	/**
-	 * A table of contents held in a separate downloadable file, not in the ONIX record. Equivalent of code 04 in List
-	 * 153. Use the &lt;TextContent&gt; composite for a table of contents carried in the ONIX record. Use &lt;Supporting
-	 * Resource&gt; for text offered as a separate file resource
-	 */
-	Table_of_contents("25", "Table of contents"), //
+   /**
+    * A table of contents held in a separate downloadable file, not in the ONIX record. Equivalent of code 04 in List 153. Use the &lt;TextContent&gt; composite for a table of contents carried in the ONIX record. Use &lt;Supporting Resource&gt; for text offered as a separate file resource
+    */
+   Table_of_contents("25", "Table of contents"), //
 
-	/**
-	 * A promotional video (or audio), similar to a movie trailer (sometimes referred to as a 'book trailer')
-	 */
-	Trailer("26", "Trailer"), //
+   /**
+    * A promotional video (or audio), similar to a movie trailer (sometimes referred to as a 'book trailer')
+    */
+   Trailer("26", "Trailer"), //
 
-	/**
-	 * Intended ONLY for transitional use, where ONIX 2.1 records referencing existing thumbnail assets of unknown pixel
-	 * size are being re-expressed in ONIX 3.0. Use code 01 for all new cover assets, and where the pixel size of older
-	 * assets is known
-	 */
-	Cover_thumbnail("27", "Cover thumbnail"), //
+   /**
+    * Intended ONLY for transitional use, where ONIX 2.1 records referencing existing thumbnail assets of unknown pixel size are being re-expressed in ONIX 3.0. Use code 01 for all new cover assets, and where the pixel size of older assets is known
+    */
+   Cover_thumbnail("27", "Cover thumbnail"), //
 
-	/**
-	 * The full content of the product (or the product itself), supplied for example to support full-text search or
-	 * indexing
-	 */
-	Full_content("28", "Full content"), //
+   /**
+    * The full content of the product (or the product itself), supplied for example to support full-text search or indexing
+    */
+   Full_content("28", "Full content"), //
 
-	/**
-	 * Includes cover, back cover, spine and - where appropriate - any flaps
-	 */
-	Full_cover("29", "Full cover"), //
+   /**
+    * Includes cover, back cover, spine and - where appropriate - any flaps
+    */
+   Full_cover("29", "Full cover"), //
 
-	Master_brand_logo("30", "Master brand logo"), //
+   Master_brand_logo("30", "Master brand logo"), //
 
-	/**
-	 * Descriptive text in a separate downloadable file, not in the ONIX record. Equivalent of code 03 in List 153. Use
-	 * the &lt;TextContent&gt; composite for descriptions carried in the ONIX record. Use &lt;Supporting Resource&gt;
-	 * for text offered as a separate file resource for reproduction as part of promotional material for the product
-	 */
-	Description("31", "Description"), //
+   /**
+    * Descriptive text in a separate downloadable file, not in the ONIX record. Equivalent of code 03 in List 153. Use the &lt;TextContent&gt; composite for descriptions carried in the ONIX record. Use &lt;Supporting Resource&gt; for text offered as a separate file resource for reproduction as part of promotional material for the product
+    */
+   Description("31", "Description"), //
 
-	/**
-	 * Index text held in a separate downloadable file, not in the ONIX record. Equivalent of code 15 in List 153. Use
-	 * the &lt;TextContent&gt; composite for index text carried in the ONIX record. Use &lt;Supporting Resource&gt; for
-	 * an index offered as a separate file resource
-	 */
-	Index("32", "Index"), //
+   /**
+    * Index text held in a separate downloadable file, not in the ONIX record. Equivalent of code 15 in List 153. Use the &lt;TextContent&gt; composite for index text carried in the ONIX record. Use &lt;Supporting Resource&gt; for an index offered as a separate file resource
+    */
+   Index("32", "Index"), //
 
-	/**
-	 * Including associated student / learner resources &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Student_s_guide("33", "Student’s guide"), //
+   /**
+    * Including associated student / learner resources
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Student_s_guide("33", "Student’s guide"), //
 
-	/**
-	 * For example a PDF or other digital representation of a publisher's 'new titles' or range catalogue &lt;p&gt;NOTE:
-	 * Introduced in Onix3
-	 */
-	Publisher_s_catalogue("34", "Publisher’s catalogue"), //
+   /**
+    * For example a PDF or other digital representation of a publisher's 'new titles' or range catalogue
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Publisher_s_catalogue("34", "Publisher’s catalogue"), //
 
-	/**
-	 * For example a banner ad for the product. Pixel dimensions should typically be included in
-	 * &lt;ResourceVersionFeature&gt; &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Online_advertisement_panel("35", "Online advertisement panel"), //
+   /**
+    * For example a banner ad for the product. Pixel dimensions should typically be included in &lt;ResourceVersionFeature&gt;
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Online_advertisement_panel("35", "Online advertisement panel"), //
 
-	/**
-	 * German 'B&#250;hnenbild' &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Online_advertisement_page("36", "Online advertisement page"), //
+   /**
+    * German 'B&#250;hnenbild'
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Online_advertisement_page("36", "Online advertisement page"), //
 
-	/**
-	 * For example, posters, logos, banners, advertising templates for use in connection with a promotional event
-	 * &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Promotional_event_material("37", "Promotional event material"), //
+   /**
+    * For example, posters, logos, banners, advertising templates for use in connection with a promotional event
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Promotional_event_material("37", "Promotional event material"), //
 
-	/**
-	 * Availability of a digital review or digital proof copy, may be limited to authorised users or account holders
-	 * &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Digital_review_copy("38", "Digital review copy"), //
+   /**
+    * Availability of a digital review or digital proof copy, may be limited to authorised users or account holders
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Digital_review_copy("38", "Digital review copy"), //
 
-	/**
-	 * For example, video showing how to use the product &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Instructional_material("39", "Instructional material"), //
+   /**
+    * For example, video showing how to use the product
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Instructional_material("39", "Instructional material"), //
 
-	/**
-	 * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;.
-	 * This was a temporary workaround in ONIX 3.0, and use of &lt;EpubLicense&gt; is strongly preferred
-	 */
-	License("99", "License");
+   /**
+    * Link to a license covering permitted usage of the product content. Deprecated in favor of &lt;EpubLicense&gt;. This was a temporary workaround in ONIX 3.0, and use of &lt;EpubLicense&gt; is strongly preferred
+    */
+   License("99", "License");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ResourceContentTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ResourceContentTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, ResourceContentTypes> map;
+   private static volatile Map<String, ResourceContentTypes> map;
 
-	private static Map<String, ResourceContentTypes> map()
-	{
-		Map<String, ResourceContentTypes> result = map;
-		if (result == null)
-		{
-			synchronized (ResourceContentTypes.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (ResourceContentTypes e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, ResourceContentTypes> map()
+   {
+      Map<String, ResourceContentTypes> result = map;
+      if (result == null)
+      {
+         synchronized(ResourceContentTypes.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (ResourceContentTypes e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static ResourceContentTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static ResourceContentTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

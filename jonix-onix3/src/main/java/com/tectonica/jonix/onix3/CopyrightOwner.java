@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixCopyrightOwnerIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +61,9 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 	public static final String refname = "CopyrightOwner";
 	public static final String shortname = "copyrightowner";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,97 +74,91 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<CopyrightOwnerIdentifier> copyrightOwnerIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PersonName personName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CorporateName corporateName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final CopyrightOwner EMPTY = new CopyrightOwner();
 
 	public CopyrightOwner()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public CopyrightOwner(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
-					copyrightOwnerIdentifiers = JPU.addToList(copyrightOwnerIdentifiers, new CopyrightOwnerIdentifier(
-							element));
-				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					personName = new PersonName(element);
-				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					corporateName = new CorporateName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
+				copyrightOwnerIdentifiers = JPU.addToList(copyrightOwnerIdentifiers, new CopyrightOwnerIdentifier(e));
+			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
+				personName = new PersonName(e);
+			else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
+				corporateName = new CorporateName(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public String getPersonNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (personName == null) ? null : personName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameCodeTypes> copyrightOwnerIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getCorporateNameValue()
+	public ListOfOnixDataCompositeWithKey<CopyrightOwnerIdentifier, JonixCopyrightOwnerIdentifier, NameCodeTypes> copyrightOwnerIdentifiers()
 	{
-		return (corporateName == null) ? null : corporateName.value;
+		initialize();
+		return copyrightOwnerIdentifiers;
 	}
 
-	public JonixCopyrightOwnerIdentifier findCopyrightOwnerIdentifier(NameCodeTypes copyrightOwnerIDType)
+	private PersonName personName = PersonName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonName personName()
 	{
-		if (copyrightOwnerIdentifiers != null)
-		{
-			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
-			{
-				if (x.getCopyrightOwnerIDTypeValue() == copyrightOwnerIDType)
-					return x.asJonixCopyrightOwnerIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return personName;
 	}
 
-	public List<JonixCopyrightOwnerIdentifier> findCopyrightOwnerIdentifiers(
-			java.util.Set<NameCodeTypes> copyrightOwnerIDTypes)
+	private CorporateName corporateName = CorporateName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateName corporateName()
 	{
-		if (copyrightOwnerIdentifiers != null)
-		{
-			List<JonixCopyrightOwnerIdentifier> matches = new ArrayList<>();
-			for (CopyrightOwnerIdentifier x : copyrightOwnerIdentifiers)
-			{
-				if (copyrightOwnerIDTypes == null || copyrightOwnerIDTypes.contains(x.getCopyrightOwnerIDTypeValue()))
-					matches.add(x.asJonixCopyrightOwnerIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return corporateName;
 	}
 }

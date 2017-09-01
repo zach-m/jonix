@@ -20,56 +20,52 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.TextCaseFlags;
-import com.tectonica.jonix.codelist.TitleTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixTitle implements Serializable
+public class JonixTitle implements JonixKeyedStruct<TitleTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public TitleTypes titleType;
+   public static JonixTitle EMPTY = new JonixTitle();
 
-	/**
-	 * Raw Format: Variable-length integer, suggested maximum 3 digits
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String abbreviatedLength;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public TitleTypes titleType;
 
-	public TextCaseFlags textCaseFlag;
+   /**
+    * Raw Format: Variable-length integer, suggested maximum 3 digits <p> (type: NonEmptyString)
+    */
+   public String abbreviatedLength;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String titleText;
+   public TextCaseFlags textCaseFlag;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String titlePrefix;
+   /**
+    * Raw Format: Variable-length text, suggested maximum 300 characters <p> (type: NonEmptyString)
+    */
+   public String titleText;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String titleWithoutPrefix;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 20 characters <p> (type: NonEmptyString)
+    */
+   public String titlePrefix;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String subtitle;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
+    */
+   public String titleWithoutPrefix;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum 300 characters <p> (type: NonEmptyString)
+    */
+   public String subtitle;
+
+   @Override
+   public TitleTypes key() { return titleType; }
 }

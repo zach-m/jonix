@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,46 +37,44 @@ interface CodeList95
  * Description: Default unit of weight
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist95">ONIX
- *      Codelist 95 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist95">ONIX Codelist 95 in Reference Guide</a>
  */
 public enum DefaultUnitOfWeights implements OnixCodelist, CodeList95
 {
-	Pounds_US("lb", "Pounds (US)"), //
+   Pounds_US("lb", "Pounds (US)"), //
 
-	Grams("gr", "Grams"), //
+   Grams("gr", "Grams"), //
 
-	Ounces_US("oz", "Ounces (US)");
+   Ounces_US("oz", "Ounces (US)");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private DefaultUnitOfWeights(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private DefaultUnitOfWeights(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static DefaultUnitOfWeights byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (DefaultUnitOfWeights e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static DefaultUnitOfWeights byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (DefaultUnitOfWeights e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

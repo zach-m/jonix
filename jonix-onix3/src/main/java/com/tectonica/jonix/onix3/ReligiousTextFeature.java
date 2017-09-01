@@ -20,18 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
-import com.tectonica.jonix.codelist.ReligiousTextFeatures;
 import com.tectonica.jonix.struct.JonixReligiousTextFeature;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -55,16 +53,17 @@ import com.tectonica.jonix.struct.JonixReligiousTextFeature;
  * </tr>
  * </table>
  */
-public class ReligiousTextFeature implements OnixDataComposite, Serializable
+public class ReligiousTextFeature
+		implements OnixDataCompositeWithKey<JonixReligiousTextFeature, ReligiousTextFeatureTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ReligiousTextFeature";
 	public static final String shortname = "religioustextfeature";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,89 +74,110 @@ public class ReligiousTextFeature implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ReligiousTextFeatureType religiousTextFeatureType;
-
-	/**
-	 * (this field is required)
-	 */
-	public ReligiousTextFeatureCode religiousTextFeatureCode;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ReligiousTextFeatureDescription> religiousTextFeatureDescriptions;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ReligiousTextFeature EMPTY = new ReligiousTextFeature();
 
 	public ReligiousTextFeature()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ReligiousTextFeature(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ReligiousTextFeatureType.refname) || name.equals(ReligiousTextFeatureType.shortname))
-					religiousTextFeatureType = new ReligiousTextFeatureType(element);
-				else if (name.equals(ReligiousTextFeatureCode.refname)
-						|| name.equals(ReligiousTextFeatureCode.shortname))
-					religiousTextFeatureCode = new ReligiousTextFeatureCode(element);
-				else if (name.equals(ReligiousTextFeatureDescription.refname)
-						|| name.equals(ReligiousTextFeatureDescription.shortname))
-					religiousTextFeatureDescriptions = JPU.addToList(religiousTextFeatureDescriptions,
-							new ReligiousTextFeatureDescription(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ReligiousTextFeatureType.refname) || name.equals(ReligiousTextFeatureType.shortname))
+				religiousTextFeatureType = new ReligiousTextFeatureType(e);
+			else if (name.equals(ReligiousTextFeatureCode.refname) || name.equals(ReligiousTextFeatureCode.shortname))
+				religiousTextFeatureCode = new ReligiousTextFeatureCode(e);
+			else if (name.equals(ReligiousTextFeatureDescription.refname)
+					|| name.equals(ReligiousTextFeatureDescription.shortname))
+				religiousTextFeatureDescriptions = JPU.addToList(religiousTextFeatureDescriptions,
+						new ReligiousTextFeatureDescription(e));
 		});
 	}
 
-	public ReligiousTextFeatureTypes getReligiousTextFeatureTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (religiousTextFeatureType == null) ? null : religiousTextFeatureType.value;
+		return exists;
 	}
 
-	public ReligiousTextFeatures getReligiousTextFeatureCodeValue()
-	{
-		return (religiousTextFeatureCode == null) ? null : religiousTextFeatureCode.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ReligiousTextFeatureType religiousTextFeatureType = ReligiousTextFeatureType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
-	 * XHTML, HTML or XML with ONIX text fields
+	 * (this field is required)
 	 */
-	public List<String> getReligiousTextFeatureDescriptionValues()
+	public ReligiousTextFeatureType religiousTextFeatureType()
 	{
-		if (religiousTextFeatureDescriptions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ReligiousTextFeatureDescription i : religiousTextFeatureDescriptions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return religiousTextFeatureType;
 	}
 
-	public JonixReligiousTextFeature asJonixReligiousTextFeature()
+	private ReligiousTextFeatureCode religiousTextFeatureCode = ReligiousTextFeatureCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public ReligiousTextFeatureCode religiousTextFeatureCode()
 	{
-		JonixReligiousTextFeature x = new JonixReligiousTextFeature();
-		x.religiousTextFeatureType = getReligiousTextFeatureTypeValue();
-		x.religiousTextFeatureCode = getReligiousTextFeatureCodeValue();
-		x.religiousTextFeatureDescriptions = getReligiousTextFeatureDescriptionValues();
-		return x;
+		initialize();
+		return religiousTextFeatureCode;
+	}
+
+	private ListOfOnixElement<ReligiousTextFeatureDescription, String> religiousTextFeatureDescriptions = ListOfOnixElement
+			.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ReligiousTextFeatureDescription, String> religiousTextFeatureDescriptions()
+	{
+		initialize();
+		return religiousTextFeatureDescriptions;
+	}
+
+	@Override
+	public JonixReligiousTextFeature asStruct()
+	{
+		initialize();
+		JonixReligiousTextFeature struct = new JonixReligiousTextFeature();
+		struct.religiousTextFeatureType = religiousTextFeatureType.value;
+		struct.religiousTextFeatureCode = religiousTextFeatureCode.value;
+		struct.religiousTextFeatureDescriptions = religiousTextFeatureDescriptions.values();
+		return struct;
+	}
+
+	@Override
+	public ReligiousTextFeatureTypes structKey()
+	{
+		return religiousTextFeatureType().value;
 	}
 }

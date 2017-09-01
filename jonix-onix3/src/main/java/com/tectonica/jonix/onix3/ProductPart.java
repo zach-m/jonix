@@ -20,23 +20,21 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
-import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductFormFeature;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -77,9 +75,9 @@ public class ProductPart implements OnixSuperComposite, Serializable
 	public static final String refname = "ProductPart";
 	public static final String shortname = "productpart";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -90,229 +88,189 @@ public class ProductPart implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public PrimaryPart primaryPart;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this field is required)
-	 */
-	public ProductForm productForm;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormDetail> productFormDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormFeature> productFormFeatures;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormDescription> productFormDescriptions;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductContentType> productContentTypes;
-
-	/**
-	 * (this field is required)
-	 */
-	public NumberOfItemsOfThisForm numberOfItemsOfThisForm;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberOfCopies numberOfCopies;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountryOfManufacture countryOfManufacture;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProductPart EMPTY = new ProductPart();
 
 	public ProductPart()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProductPart(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PrimaryPart.refname) || name.equals(PrimaryPart.shortname))
-					primaryPart = new PrimaryPart(element);
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					productForm = new ProductForm(element);
-				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
-				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
-				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					productFormDescriptions = JPU.addToList(productFormDescriptions,
-							new ProductFormDescription(element));
-				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
-				else if (name.equals(NumberOfItemsOfThisForm.refname) || name.equals(NumberOfItemsOfThisForm.shortname))
-					numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(element);
-				else if (name.equals(NumberOfCopies.refname) || name.equals(NumberOfCopies.shortname))
-					numberOfCopies = new NumberOfCopies(element);
-				else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname))
-					countryOfManufacture = new CountryOfManufacture(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PrimaryPart.refname) || name.equals(PrimaryPart.shortname))
+				primaryPart = new PrimaryPart(e);
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
+				productForm = new ProductForm(e);
+			else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
+				productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+			else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
+				productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+			else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
+				productFormDescriptions = JPU.addToList(productFormDescriptions, new ProductFormDescription(e));
+			else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
+				productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+			else if (name.equals(NumberOfItemsOfThisForm.refname) || name.equals(NumberOfItemsOfThisForm.shortname))
+				numberOfItemsOfThisForm = new NumberOfItemsOfThisForm(e);
+			else if (name.equals(NumberOfCopies.refname) || name.equals(NumberOfCopies.shortname))
+				numberOfCopies = new NumberOfCopies(e);
+			else if (name.equals(CountryOfManufacture.refname) || name.equals(CountryOfManufacture.shortname))
+				countryOfManufacture = new CountryOfManufacture(e);
 		});
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PrimaryPart primaryPart = PrimaryPart.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrimaryPart primaryPart()
+	{
+		initialize();
+		return primaryPart;
 	}
 
 	public boolean isPrimaryPart()
 	{
-		return (primaryPart != null);
+		return (primaryPart().exists());
 	}
 
-	public ProductFormsList150 getProductFormValue()
-	{
-		return (productForm == null) ? null : productForm.value;
-	}
-
-	public List<ProductFormDetailsList175> getProductFormDetailValues()
-	{
-		if (productFormDetails != null)
-		{
-			List<ProductFormDetailsList175> list = new ArrayList<>();
-			for (ProductFormDetail i : productFormDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getProductFormDescriptionValues()
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		if (productFormDescriptions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ProductFormDescription i : productFormDescriptions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return productIdentifiers;
 	}
 
-	public List<ProductContentTypes> getProductContentTypeValues()
-	{
-		if (productContentTypes != null)
-		{
-			List<ProductContentTypes> list = new ArrayList<>();
-			for (ProductContentType i : productContentTypes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private ProductForm productForm = ProductForm.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, maximum four digits
+	 * (this field is required)
 	 */
-	public Integer getNumberOfItemsOfThisFormValue()
+	public ProductForm productForm()
 	{
-		return (numberOfItemsOfThisForm == null) ? null : numberOfItemsOfThisForm.value;
+		initialize();
+		return productForm;
 	}
+
+	private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails = ListOfOnixElement
+			.empty();
 
 	/**
-	 * Raw Format: Variable-length integer, maximum four digits
+	 * (this list may be empty)
 	 */
-	public Integer getNumberOfCopiesValue()
+	public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails()
 	{
-		return (numberOfCopies == null) ? null : numberOfCopies.value;
+		initialize();
+		return productFormDetails;
 	}
 
-	public CountryCodes getCountryOfManufactureValue()
+	private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures()
 	{
-		return (countryOfManufacture == null) ? null : countryOfManufacture.value;
+		initialize();
+		return productFormFeatures;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private ListOfOnixElement<ProductFormDescription, String> productFormDescriptions = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return productFormDescriptions;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return productContentTypes;
 	}
 
-	public JonixProductFormFeature findProductFormFeature(ProductFormFeatureTypes productFormFeatureType)
+	private NumberOfItemsOfThisForm numberOfItemsOfThisForm = NumberOfItemsOfThisForm.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public NumberOfItemsOfThisForm numberOfItemsOfThisForm()
 	{
-		if (productFormFeatures != null)
-		{
-			for (ProductFormFeature x : productFormFeatures)
-			{
-				if (x.getProductFormFeatureTypeValue() == productFormFeatureType)
-					return x.asJonixProductFormFeature();
-			}
-		}
-		return null;
+		initialize();
+		return numberOfItemsOfThisForm;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(
-			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	private NumberOfCopies numberOfCopies = NumberOfCopies.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfCopies numberOfCopies()
 	{
-		if (productFormFeatures != null)
-		{
-			List<JonixProductFormFeature> matches = new ArrayList<>();
-			for (ProductFormFeature x : productFormFeatures)
-			{
-				if (productFormFeatureTypes == null
-						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
-					matches.add(x.asJonixProductFormFeature());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return numberOfCopies;
+	}
+
+	private CountryOfManufacture countryOfManufacture = CountryOfManufacture.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryOfManufacture countryOfManufacture()
+	{
+		initialize();
+		return countryOfManufacture;
 	}
 }

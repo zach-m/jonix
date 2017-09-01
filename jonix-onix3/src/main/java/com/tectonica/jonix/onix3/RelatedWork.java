@@ -20,18 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
-import com.tectonica.jonix.codelist.WorkRelations;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +60,9 @@ public class RelatedWork implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedWork";
 	public static final String shortname = "relatedwork";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,77 +73,78 @@ public class RelatedWork implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public WorkRelationCode workRelationCode;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<WorkIdentifier> workIdentifiers;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final RelatedWork EMPTY = new RelatedWork();
 
 	public RelatedWork()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public RelatedWork(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(WorkRelationCode.refname) || name.equals(WorkRelationCode.shortname))
-					workRelationCode = new WorkRelationCode(element);
-				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
-					workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(WorkRelationCode.refname) || name.equals(WorkRelationCode.shortname))
+				workRelationCode = new WorkRelationCode(e);
+			else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
+				workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
 		});
 	}
 
-	public WorkRelations getWorkRelationCodeValue()
+	@Override
+	public boolean exists()
 	{
-		return (workRelationCode == null) ? null : workRelationCode.value;
+		return exists;
 	}
 
-	public JonixWorkIdentifier findWorkIdentifier(WorkIdentifierTypes workIDType)
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private WorkRelationCode workRelationCode = WorkRelationCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public WorkRelationCode workRelationCode()
 	{
-		if (workIdentifiers != null)
-		{
-			for (WorkIdentifier x : workIdentifiers)
-			{
-				if (x.getWorkIDTypeValue() == workIDType)
-					return x.asJonixWorkIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return workRelationCode;
 	}
 
-	public List<JonixWorkIdentifier> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers()
 	{
-		if (workIdentifiers != null)
-		{
-			List<JonixWorkIdentifier> matches = new ArrayList<>();
-			for (WorkIdentifier x : workIdentifiers)
-			{
-				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
-					matches.add(x.asJonixWorkIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return workIdentifiers;
 	}
 }

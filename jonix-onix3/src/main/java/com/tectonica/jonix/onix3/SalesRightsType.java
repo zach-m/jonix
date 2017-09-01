@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -60,21 +60,21 @@ import com.tectonica.jonix.codelist.SalesRightsTypes;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td>&lt;SalesRightsType&gt;02&lt;/SalesRightsType&gt; (For sale with non-exclusive rights in the specified territory)
- * </td>
+ * <td>&lt;SalesRightsType&gt;02&lt;/SalesRightsType&gt; (For sale with non-exclusive rights in the specified
+ * territory)</td>
  * </tr>
  * </table>
  */
-public class SalesRightsType implements OnixElement, Serializable
+public class SalesRightsType implements OnixElement<SalesRightsTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "SalesRightsType";
 	public static final String shortname = "b089";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -85,25 +85,46 @@ public class SalesRightsType implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public SalesRightsTypes value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public SalesRightsTypes _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final SalesRightsType EMPTY = new SalesRightsType();
 
 	public SalesRightsType()
-	{}
+	{
+		exists = false;
+	}
 
 	public SalesRightsType(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = SalesRightsTypes.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.ListOfOnixElement;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAncillaryContent;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +53,17 @@ import com.tectonica.jonix.struct.JonixAncillaryContent;
  * </tr>
  * </table>
  */
-public class AncillaryContent implements OnixDataComposite, Serializable
+public class AncillaryContent
+		implements OnixDataCompositeWithKey<JonixAncillaryContent, IllustrationAndOtherContentTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "AncillaryContent";
 	public static final String shortname = "ancillarycontent";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,91 +74,110 @@ public class AncillaryContent implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public AncillaryContentType ancillaryContentType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<AncillaryContentDescription> ancillaryContentDescriptions;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Number number;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final AncillaryContent EMPTY = new AncillaryContent();
 
 	public AncillaryContent()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public AncillaryContent(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AncillaryContentType.refname) || name.equals(AncillaryContentType.shortname))
-					ancillaryContentType = new AncillaryContentType(element);
-				else if (name.equals(AncillaryContentDescription.refname)
-						|| name.equals(AncillaryContentDescription.shortname))
-					ancillaryContentDescriptions = JPU.addToList(ancillaryContentDescriptions,
-							new AncillaryContentDescription(element));
-				else if (name.equals(Number.refname) || name.equals(Number.shortname))
-					number = new Number(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AncillaryContentType.refname) || name.equals(AncillaryContentType.shortname))
+				ancillaryContentType = new AncillaryContentType(e);
+			else if (name.equals(AncillaryContentDescription.refname)
+					|| name.equals(AncillaryContentDescription.shortname))
+				ancillaryContentDescriptions = JPU.addToList(ancillaryContentDescriptions,
+						new AncillaryContentDescription(e));
+			else if (name.equals(Number.refname) || name.equals(Number.shortname))
+				number = new Number(e);
 		});
 	}
 
-	public IllustrationAndOtherContentTypes getAncillaryContentTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (ancillaryContentType == null) ? null : ancillaryContentType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private AncillaryContentType ancillaryContentType = AncillaryContentType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is required)
 	 */
-	public List<String> getAncillaryContentDescriptionValues()
+	public AncillaryContentType ancillaryContentType()
 	{
-		if (ancillaryContentDescriptions != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (AncillaryContentDescription i : ancillaryContentDescriptions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return ancillaryContentType;
 	}
+
+	private ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions = ListOfOnixElement
+			.empty();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
+	 * (this list may be empty)
 	 */
-	public Integer getNumberValue()
+	public ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions()
 	{
-		return (number == null) ? null : number.value;
+		initialize();
+		return ancillaryContentDescriptions;
 	}
 
-	public JonixAncillaryContent asJonixAncillaryContent()
+	private Number number = Number.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Number number()
 	{
-		JonixAncillaryContent x = new JonixAncillaryContent();
-		x.ancillaryContentType = getAncillaryContentTypeValue();
-		x.ancillaryContentDescriptions = getAncillaryContentDescriptionValues();
-		x.number = getNumberValue();
-		return x;
+		initialize();
+		return number;
+	}
+
+	@Override
+	public JonixAncillaryContent asStruct()
+	{
+		initialize();
+		JonixAncillaryContent struct = new JonixAncillaryContent();
+		struct.ancillaryContentType = ancillaryContentType.value;
+		struct.ancillaryContentDescriptions = ancillaryContentDescriptions.values();
+		struct.number = number.value;
+		return struct;
+	}
+
+	@Override
+	public IllustrationAndOtherContentTypes structKey()
+	{
+		return ancillaryContentType().value;
 	}
 }

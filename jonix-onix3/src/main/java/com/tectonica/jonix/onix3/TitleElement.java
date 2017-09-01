@@ -24,11 +24,10 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TitleElementLevels;
 import com.tectonica.jonix.struct.JonixTitleElement;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -65,16 +64,16 @@ import com.tectonica.jonix.struct.JonixTitleElement;
  * </tr>
  * </table>
  */
-public class TitleElement implements OnixDataComposite, Serializable
+public class TitleElement implements OnixDataComposite<JonixTitleElement>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "TitleElement";
 	public static final String shortname = "titleelement";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -85,174 +84,190 @@ public class TitleElement implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public SequenceNumber sequenceNumber;
-
-	/**
-	 * (this field is required)
-	 */
-	public TitleElementLevel titleElementLevel;
-
-	/**
-	 * (this field is required)
-	 */
-	public PartNumber partNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public YearOfAnnual yearOfAnnual;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlePrefix titlePrefix;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NoPrefix noPrefix;
-
-	/**
-	 * (this field is required)
-	 */
-	public TitleWithoutPrefix titleWithoutPrefix;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitleText titleText;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Subtitle subtitle;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final TitleElement EMPTY = new TitleElement();
 
 	public TitleElement()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public TitleElement(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
-					sequenceNumber = new SequenceNumber(element);
-				else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname))
-					titleElementLevel = new TitleElementLevel(element);
-				else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname))
-					partNumber = new PartNumber(element);
-				else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
-					yearOfAnnual = new YearOfAnnual(element);
-				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-					titlePrefix = new TitlePrefix(element);
-				else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname))
-					noPrefix = new NoPrefix(element);
-				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-					titleWithoutPrefix = new TitleWithoutPrefix(element);
-				else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
-					titleText = new TitleText(element);
-				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-					subtitle = new Subtitle(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
+				sequenceNumber = new SequenceNumber(e);
+			else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname))
+				titleElementLevel = new TitleElementLevel(e);
+			else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname))
+				partNumber = new PartNumber(e);
+			else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
+				yearOfAnnual = new YearOfAnnual(e);
+			else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
+				titlePrefix = new TitlePrefix(e);
+			else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname))
+				noPrefix = new NoPrefix(e);
+			else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
+				titleWithoutPrefix = new TitleWithoutPrefix(e);
+			else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
+				titleText = new TitleText(e);
+			else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
+				subtitle = new Subtitle(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
-	 */
-	public Integer getSequenceNumberValue()
+	@Override
+	public boolean exists()
 	{
-		return (sequenceNumber == null) ? null : sequenceNumber.value;
+		return exists;
 	}
 
-	public TitleElementLevels getTitleElementLevelValue()
-	{
-		return (titleElementLevel == null) ? null : titleElementLevel.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 20 characters
+	 * (this field is optional)
 	 */
-	public String getPartNumberValue()
+	public SequenceNumber sequenceNumber()
 	{
-		return (partNumber == null) ? null : partNumber.value;
+		initialize();
+		return sequenceNumber;
 	}
 
-	/**
-	 * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY
-	 */
-	public String getYearOfAnnualValue()
-	{
-		return (yearOfAnnual == null) ? null : yearOfAnnual.value;
-	}
+	private TitleElementLevel titleElementLevel = TitleElementLevel.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 20 characters
+	 * (this field is required)
 	 */
-	public String getTitlePrefixValue()
+	public TitleElementLevel titleElementLevel()
 	{
-		return (titlePrefix == null) ? null : titlePrefix.value;
+		initialize();
+		return titleElementLevel;
+	}
+
+	private PartNumber partNumber = PartNumber.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public PartNumber partNumber()
+	{
+		initialize();
+		return partNumber;
+	}
+
+	private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public YearOfAnnual yearOfAnnual()
+	{
+		initialize();
+		return yearOfAnnual;
+	}
+
+	private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlePrefix titlePrefix()
+	{
+		initialize();
+		return titlePrefix;
+	}
+
+	private NoPrefix noPrefix = NoPrefix.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoPrefix noPrefix()
+	{
+		initialize();
+		return noPrefix;
 	}
 
 	public boolean isNoPrefix()
 	{
-		return (noPrefix != null);
+		return (noPrefix().exists());
 	}
+
+	private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this field is required)
 	 */
-	public String getTitleWithoutPrefixValue()
+	public TitleWithoutPrefix titleWithoutPrefix()
 	{
-		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
+		initialize();
+		return titleWithoutPrefix;
 	}
+
+	private TitleText titleText = TitleText.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getTitleTextValue()
+	public TitleText titleText()
 	{
-		return (titleText == null) ? null : titleText.value;
+		initialize();
+		return titleText;
 	}
+
+	private Subtitle subtitle = Subtitle.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getSubtitleValue()
+	public Subtitle subtitle()
 	{
-		return (subtitle == null) ? null : subtitle.value;
+		initialize();
+		return subtitle;
 	}
 
-	public JonixTitleElement asJonixTitleElement()
+	@Override
+	public JonixTitleElement asStruct()
 	{
-		JonixTitleElement x = new JonixTitleElement();
-		x.sequenceNumber = getSequenceNumberValue();
-		x.titleElementLevel = getTitleElementLevelValue();
-		x.partNumber = getPartNumberValue();
-		x.yearOfAnnual = getYearOfAnnualValue();
-		x.titlePrefix = getTitlePrefixValue();
-		x.isNoPrefix = isNoPrefix();
-		x.titleWithoutPrefix = getTitleWithoutPrefixValue();
-		x.titleText = getTitleTextValue();
-		x.subtitle = getSubtitleValue();
-		return x;
+		initialize();
+		JonixTitleElement struct = new JonixTitleElement();
+		struct.sequenceNumber = sequenceNumber.value;
+		struct.titleElementLevel = titleElementLevel.value;
+		struct.partNumber = partNumber.value;
+		struct.yearOfAnnual = yearOfAnnual.value;
+		struct.titlePrefix = titlePrefix.value;
+		struct.isNoPrefix = isNoPrefix();
+		struct.titleWithoutPrefix = titleWithoutPrefix.value;
+		struct.titleText = titleText.value;
+		struct.subtitle = subtitle.value;
+		return struct;
 	}
 }

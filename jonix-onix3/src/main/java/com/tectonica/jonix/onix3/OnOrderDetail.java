@@ -23,12 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.Proximitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixOnOrderDetail;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -58,16 +57,16 @@ import com.tectonica.jonix.struct.JonixOnOrderDetail;
  * </tr>
  * </table>
  */
-public class OnOrderDetail implements OnixDataComposite, Serializable
+public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "OnOrderDetail";
 	public static final String shortname = "onorderdetail";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -78,81 +77,100 @@ public class OnOrderDetail implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public OnOrder onOrder;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Proximity proximity;
-
-	/**
-	 * (this field is required)
-	 */
-	public ExpectedDate expectedDate;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final OnOrderDetail EMPTY = new OnOrderDetail();
 
 	public OnOrderDetail()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public OnOrderDetail(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
-					onOrder = new OnOrder(element);
-				else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
-					proximity = new Proximity(element);
-				else if (name.equals(ExpectedDate.refname) || name.equals(ExpectedDate.shortname))
-					expectedDate = new ExpectedDate(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
+				onOrder = new OnOrder(e);
+			else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
+				proximity = new Proximity(e);
+			else if (name.equals(ExpectedDate.refname) || name.equals(ExpectedDate.shortname))
+				expectedDate = new ExpectedDate(e);
 		});
 	}
 
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private OnOrder onOrder = OnOrder.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 7 digits
+	 * (this field is required)
 	 */
-	public Integer getOnOrderValue()
+	public OnOrder onOrder()
 	{
-		return (onOrder == null) ? null : onOrder.value;
+		initialize();
+		return onOrder;
 	}
 
-	public Proximitys getProximityValue()
-	{
-		return (proximity == null) ? null : proximity.value;
-	}
+	private Proximity proximity = Proximity.EMPTY;
 
 	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
-	 * missing
+	 * (this field is optional)
 	 */
-	public String getExpectedDateValue()
+	public Proximity proximity()
 	{
-		return (expectedDate == null) ? null : expectedDate.value;
+		initialize();
+		return proximity;
 	}
 
-	public JonixOnOrderDetail asJonixOnOrderDetail()
+	private ExpectedDate expectedDate = ExpectedDate.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public ExpectedDate expectedDate()
 	{
-		JonixOnOrderDetail x = new JonixOnOrderDetail();
-		x.expectedDate = getExpectedDateValue();
-		x.onOrder = getOnOrderValue();
-		return x;
+		initialize();
+		return expectedDate;
+	}
+
+	@Override
+	public JonixOnOrderDetail asStruct()
+	{
+		initialize();
+		JonixOnOrderDetail struct = new JonixOnOrderDetail();
+		struct.expectedDate = expectedDate.value;
+		struct.onOrder = onOrder.value;
+		return struct;
 	}
 }

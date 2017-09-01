@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,50 +37,48 @@ interface CodeList152
  * Description: Illustrated / not illustrated
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist152">ONIX
- *      Codelist 152 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist152">ONIX Codelist 152 in Reference Guide</a>
  */
 public enum IllustratedNotIllustrateds implements OnixCodelist, CodeList152
 {
-	/**
-	 * Not illustrated
-	 */
-	No("01", "No"), //
+   /**
+    * Not illustrated
+    */
+   No("01", "No"), //
 
-	/**
-	 * Illustrated
-	 */
-	Yes("02", "Yes");
+   /**
+    * Illustrated
+    */
+   Yes("02", "Yes");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private IllustratedNotIllustrateds(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private IllustratedNotIllustrateds(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static IllustratedNotIllustrateds byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (IllustratedNotIllustrateds e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static IllustratedNotIllustrateds byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (IllustratedNotIllustrateds e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

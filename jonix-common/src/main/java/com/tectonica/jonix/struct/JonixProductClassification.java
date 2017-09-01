@@ -20,32 +20,35 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.ProductClassificationTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixProductClassification implements Serializable
+public class JonixProductClassification implements JonixKeyedStruct<ProductClassificationTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public ProductClassificationTypes productClassificationType;
+   public static JonixProductClassification EMPTY = new JonixProductClassification();
 
-	/**
-	 * Raw Format: Real decimal number in the range 0 to 100
-	 * <p>
-	 * (type: dt.PercentDecimal)
-	 */
-	public Double percent;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public ProductClassificationTypes productClassificationType;
 
-	/**
-	 * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String productClassificationCode;
+   /**
+    * Raw Format: Real decimal number in the range 0 to 100 <p> (type: dt.PercentDecimal)
+    */
+   public Double percent;
+
+   /**
+    * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt; <p> (type: dt.NonEmptyString)
+    */
+   public String productClassificationCode;
+
+   @Override
+   public ProductClassificationTypes key() { return productClassificationType; }
 }

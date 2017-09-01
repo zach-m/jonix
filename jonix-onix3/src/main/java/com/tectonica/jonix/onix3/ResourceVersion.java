@@ -20,20 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.ResourceForms;
 import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
 import com.tectonica.jonix.struct.JonixContentDate;
 import com.tectonica.jonix.struct.JonixResourceVersionFeature;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -65,9 +64,9 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 	public static final String refname = "ResourceVersion";
 	public static final String shortname = "resourceversion";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -78,137 +77,105 @@ public class ResourceVersion implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ResourceForm resourceForm;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ResourceVersionFeature> resourceVersionFeatures;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ResourceLink> resourceLinks;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ContentDate> contentDates;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ResourceVersion EMPTY = new ResourceVersion();
 
 	public ResourceVersion()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ResourceVersion(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname))
-					resourceForm = new ResourceForm(element);
-				else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname))
-					resourceVersionFeatures = JPU.addToList(resourceVersionFeatures,
-							new ResourceVersionFeature(element));
-				else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
-					resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(element));
-				else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-					contentDates = JPU.addToList(contentDates, new ContentDate(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname))
+				resourceForm = new ResourceForm(e);
+			else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname))
+				resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
+			else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
+				resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+			else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
+				contentDates = JPU.addToList(contentDates, new ContentDate(e));
 		});
 	}
 
-	public ResourceForms getResourceFormValue()
+	@Override
+	public boolean exists()
 	{
-		return (resourceForm == null) ? null : resourceForm.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ResourceForm resourceForm = ResourceForm.EMPTY;
 
 	/**
-	 * Raw Format: Uniform Resource Identifier, expressed in full URI syntax in accordance with W3C standards
+	 * (this field is required)
 	 */
-	public List<String> getResourceLinkValues()
+	public ResourceForm resourceForm()
 	{
-		if (resourceLinks != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ResourceLink i : resourceLinks)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return resourceForm;
 	}
 
-	public JonixResourceVersionFeature findResourceVersionFeature(ResourceVersionFeatureTypes resourceVersionFeatureType)
+	private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures()
 	{
-		if (resourceVersionFeatures != null)
-		{
-			for (ResourceVersionFeature x : resourceVersionFeatures)
-			{
-				if (x.getResourceVersionFeatureTypeValue() == resourceVersionFeatureType)
-					return x.asJonixResourceVersionFeature();
-			}
-		}
-		return null;
+		initialize();
+		return resourceVersionFeatures;
 	}
 
-	public List<JonixResourceVersionFeature> findResourceVersionFeatures(
-			java.util.Set<ResourceVersionFeatureTypes> resourceVersionFeatureTypes)
+	private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<ResourceLink, String> resourceLinks()
 	{
-		if (resourceVersionFeatures != null)
-		{
-			List<JonixResourceVersionFeature> matches = new ArrayList<>();
-			for (ResourceVersionFeature x : resourceVersionFeatures)
-			{
-				if (resourceVersionFeatureTypes == null
-						|| resourceVersionFeatureTypes.contains(x.getResourceVersionFeatureTypeValue()))
-					matches.add(x.asJonixResourceVersionFeature());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return resourceLinks;
 	}
 
-	public JonixContentDate findContentDate(ContentDateRoles contentDateRole)
-	{
-		if (contentDates != null)
-		{
-			for (ContentDate x : contentDates)
-			{
-				if (x.getContentDateRoleValue() == contentDateRole)
-					return x.asJonixContentDate();
-			}
-		}
-		return null;
-	}
+	private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
-	public List<JonixContentDate> findContentDates(java.util.Set<ContentDateRoles> contentDateRoles)
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates()
 	{
-		if (contentDates != null)
-		{
-			List<JonixContentDate> matches = new ArrayList<>();
-			for (ContentDate x : contentDates)
-			{
-				if (contentDateRoles == null || contentDateRoles.contains(x.getContentDateRoleValue()))
-					matches.add(x.asJonixContentDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return contentDates;
 	}
 }

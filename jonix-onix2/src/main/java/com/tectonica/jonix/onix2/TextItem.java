@@ -20,22 +20,22 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
-import com.tectonica.jonix.codelist.TextItemTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixPageRun;
 import com.tectonica.jonix.struct.JonixTextItemIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,9 +63,9 @@ public class TextItem implements OnixSuperComposite, Serializable
 	public static final String refname = "TextItem";
 	public static final String shortname = "textitem";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -84,49 +84,35 @@ public class TextItem implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public TextItemType textItemType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TextItemIdentifier> textItemIdentifiers;
-
-	/**
-	 * (this field is required)
-	 */
-	public FirstPageNumber firstPageNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LastPageNumber lastPageNumber;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PageRun> pageRuns;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberOfPages numberOfPages;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final TextItem EMPTY = new TextItem();
 
 	public TextItem()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public TextItem(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -135,82 +121,97 @@ public class TextItem implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(TextItemType.refname) || name.equals(TextItemType.shortname))
-					textItemType = new TextItemType(element);
-				else if (name.equals(TextItemIdentifier.refname) || name.equals(TextItemIdentifier.shortname))
-					textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(element));
-				else if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
-					firstPageNumber = new FirstPageNumber(element);
-				else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
-					lastPageNumber = new LastPageNumber(element);
-				else if (name.equals(PageRun.refname) || name.equals(PageRun.shortname))
-					pageRuns = JPU.addToList(pageRuns, new PageRun(element));
-				else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
-					numberOfPages = new NumberOfPages(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(TextItemType.refname) || name.equals(TextItemType.shortname))
+				textItemType = new TextItemType(e);
+			else if (name.equals(TextItemIdentifier.refname) || name.equals(TextItemIdentifier.shortname))
+				textItemIdentifiers = JPU.addToList(textItemIdentifiers, new TextItemIdentifier(e));
+			else if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
+				firstPageNumber = new FirstPageNumber(e);
+			else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
+				lastPageNumber = new LastPageNumber(e);
+			else if (name.equals(PageRun.refname) || name.equals(PageRun.shortname))
+				pageRuns = JPU.addToList(pageRuns, new PageRun(e));
+			else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
+				numberOfPages = new NumberOfPages(e);
 		});
 	}
 
-	public TextItemTypes getTextItemTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (textItemType == null) ? null : textItemType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private TextItemType textItemType = TextItemType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * (this field is required)
 	 */
-	public String getFirstPageNumberValue()
+	public TextItemType textItemType()
 	{
-		return (firstPageNumber == null) ? null : firstPageNumber.value;
+		initialize();
+		return textItemType;
 	}
+
+	private ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * (this list may be empty)
 	 */
-	public String getLastPageNumberValue()
+	public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers()
 	{
-		return (lastPageNumber == null) ? null : lastPageNumber.value;
+		initialize();
+		return textItemIdentifiers;
 	}
+
+	private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
+	 * (this field is required)
 	 */
-	public String getNumberOfPagesValue()
+	public FirstPageNumber firstPageNumber()
 	{
-		return (numberOfPages == null) ? null : numberOfPages.value;
+		initialize();
+		return firstPageNumber;
 	}
 
-	public JonixTextItemIdentifier findTextItemIdentifier(TextItemIdentifierTypes textItemIDType)
+	private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LastPageNumber lastPageNumber()
 	{
-		if (textItemIdentifiers != null)
-		{
-			for (TextItemIdentifier x : textItemIdentifiers)
-			{
-				if (x.getTextItemIDTypeValue() == textItemIDType)
-					return x.asJonixTextItemIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return lastPageNumber;
 	}
 
-	public List<JonixTextItemIdentifier> findTextItemIdentifiers(java.util.Set<TextItemIdentifierTypes> textItemIDTypes)
+	private ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns()
 	{
-		if (textItemIdentifiers != null)
-		{
-			List<JonixTextItemIdentifier> matches = new ArrayList<>();
-			for (TextItemIdentifier x : textItemIdentifiers)
-			{
-				if (textItemIDTypes == null || textItemIDTypes.contains(x.getTextItemIDTypeValue()))
-					matches.add(x.asJonixTextItemIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return pageRuns;
+	}
+
+	private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPages numberOfPages()
+	{
+		initialize();
+		return numberOfPages;
 	}
 }

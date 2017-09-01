@@ -20,32 +20,30 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.BookFormDetails;
-import com.tectonica.jonix.codelist.EpublicationFormats;
-import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
-import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.ProductPackagingTypes;
-import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixProductFormFeature;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -79,9 +77,9 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -100,129 +98,35 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public RelationCode relationCode;
-
-	/**
-	 * (this field is required)
-	 */
-	public ISBN isbn;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EAN13 ean13;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductForm productForm;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormDetail> productFormDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormFeature> productFormFeatures;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BookFormDetail> bookFormDetails;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductPackaging productPackaging;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductFormDescription productFormDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberOfPieces numberOfPieces;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TradeCategory tradeCategory;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductContentType> productContentTypes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubType epubType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubTypeVersion epubTypeVersion;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubTypeDescription epubTypeDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubFormat epubFormat;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubFormatVersion epubFormatVersion;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubFormatDescription epubFormatDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubTypeNote epubTypeNote;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Publisher> publishers;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final RelatedProduct EMPTY = new RelatedProduct();
 
 	public RelatedProduct()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public RelatedProduct(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -231,253 +135,306 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(RelationCode.refname) || name.equals(RelationCode.shortname))
-					relationCode = new RelationCode(element);
-				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					isbn = new ISBN(element);
-				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					ean13 = new EAN13(element);
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					productForm = new ProductForm(element);
-				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
-				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
-				else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
-					bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(element));
-				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
-					productPackaging = new ProductPackaging(element);
-				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					productFormDescription = new ProductFormDescription(element);
-				else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
-					numberOfPieces = new NumberOfPieces(element);
-				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
-					tradeCategory = new TradeCategory(element);
-				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
-				else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname))
-					epubType = new EpubType(element);
-				else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname))
-					epubTypeVersion = new EpubTypeVersion(element);
-				else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname))
-					epubTypeDescription = new EpubTypeDescription(element);
-				else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname))
-					epubFormat = new EpubFormat(element);
-				else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname))
-					epubFormatVersion = new EpubFormatVersion(element);
-				else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname))
-					epubFormatDescription = new EpubFormatDescription(element);
-				else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname))
-					epubTypeNote = new EpubTypeNote(element);
-				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					publishers = JPU.addToList(publishers, new Publisher(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(RelationCode.refname) || name.equals(RelationCode.shortname))
+				relationCode = new RelationCode(e);
+			else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
+				isbn = new ISBN(e);
+			else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
+				ean13 = new EAN13(e);
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
+			else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
+				productForm = new ProductForm(e);
+			else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
+				productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+			else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
+				productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+			else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
+				bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+			else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
+				productPackaging = new ProductPackaging(e);
+			else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
+				productFormDescription = new ProductFormDescription(e);
+			else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
+				numberOfPieces = new NumberOfPieces(e);
+			else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
+				tradeCategory = new TradeCategory(e);
+			else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
+				productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+			else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname))
+				epubType = new EpubType(e);
+			else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname))
+				epubTypeVersion = new EpubTypeVersion(e);
+			else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname))
+				epubTypeDescription = new EpubTypeDescription(e);
+			else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname))
+				epubFormat = new EpubFormat(e);
+			else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname))
+				epubFormatVersion = new EpubFormatVersion(e);
+			else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname))
+				epubFormatDescription = new EpubFormatDescription(e);
+			else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname))
+				epubTypeNote = new EpubTypeNote(e);
+			else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
+				publishers = JPU.addToList(publishers, new Publisher(e));
 		});
 	}
 
-	public ProductRelations getRelationCodeValue()
+	@Override
+	public boolean exists()
 	{
-		return (relationCode == null) ? null : relationCode.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private RelationCode relationCode = RelationCode.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this field is required)
 	 */
-	public String getISBNValue()
+	public RelationCode relationCode()
 	{
-		return (isbn == null) ? null : isbn.value;
+		initialize();
+		return relationCode;
 	}
+
+	private ISBN isbn = ISBN.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this field is required)
 	 */
-	public String getEAN13Value()
+	public ISBN isbn()
 	{
-		return (ean13 == null) ? null : ean13.value;
+		initialize();
+		return isbn;
 	}
 
-	public ProductForms getProductFormValue()
-	{
-		return (productForm == null) ? null : productForm.value;
-	}
-
-	public List<ProductFormDetails> getProductFormDetailValues()
-	{
-		if (productFormDetails != null)
-		{
-			List<ProductFormDetails> list = new ArrayList<>();
-			for (ProductFormDetail i : productFormDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public List<BookFormDetails> getBookFormDetailValues()
-	{
-		if (bookFormDetails != null)
-		{
-			List<BookFormDetails> list = new ArrayList<>();
-			for (BookFormDetail i : bookFormDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public ProductPackagingTypes getProductPackagingValue()
-	{
-		return (productPackaging == null) ? null : productPackaging.value;
-	}
+	private EAN13 ean13 = EAN13.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
+	 * (this field is optional)
 	 */
-	public String getProductFormDescriptionValue()
+	public EAN13 ean13()
 	{
-		return (productFormDescription == null) ? null : productFormDescription.value;
+		initialize();
+		return ean13;
 	}
+
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
+	 * (this list may be empty)
 	 */
-	public String getNumberOfPiecesValue()
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		return (numberOfPieces == null) ? null : numberOfPieces.value;
+		initialize();
+		return productIdentifiers;
 	}
 
-	public TradeCategorys getTradeCategoryValue()
-	{
-		return (tradeCategory == null) ? null : tradeCategory.value;
-	}
-
-	public List<ProductContentTypes> getProductContentTypeValues()
-	{
-		if (productContentTypes != null)
-		{
-			List<ProductContentTypes> list = new ArrayList<>();
-			for (ProductContentType i : productContentTypes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public EpublicationTypes getEpubTypeValue()
-	{
-		return (epubType == null) ? null : epubType.value;
-	}
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 10 characters
+	 * (this list may be empty)
 	 */
-	public String getEpubTypeVersionValue()
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
 	{
-		return (epubTypeVersion == null) ? null : epubTypeVersion.value;
+		initialize();
+		return websites;
 	}
+
+	private ProductForm productForm = ProductForm.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
+	 * (this field is optional)
 	 */
-	public String getEpubTypeDescriptionValue()
+	public ProductForm productForm()
 	{
-		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
+		initialize();
+		return productForm;
 	}
 
-	public EpublicationFormats getEpubFormatValue()
-	{
-		return (epubFormat == null) ? null : epubFormat.value;
-	}
+	private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 10 characters
+	 * (this list may be empty)
 	 */
-	public String getEpubFormatVersionValue()
+	public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails()
 	{
-		return (epubFormatVersion == null) ? null : epubFormatVersion.value;
+		initialize();
+		return productFormDetails;
 	}
+
+	private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
+	 * (this list may be empty)
 	 */
-	public String getEpubFormatDescriptionValue()
+	public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures()
 	{
-		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
+		initialize();
+		return productFormFeatures;
 	}
+
+	private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
+	 * (this list may be empty)
 	 */
-	public String getEpubTypeNoteValue()
+	public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails()
 	{
-		return (epubTypeNote == null) ? null : epubTypeNote.value;
+		initialize();
+		return bookFormDetails;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private ProductPackaging productPackaging = ProductPackaging.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductPackaging productPackaging()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return productPackaging;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private ProductFormDescription productFormDescription = ProductFormDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormDescription productFormDescription()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return productFormDescription;
 	}
 
-	public JonixProductFormFeature findProductFormFeature(ProductFormFeatureTypes productFormFeatureType)
+	private NumberOfPieces numberOfPieces = NumberOfPieces.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPieces numberOfPieces()
 	{
-		if (productFormFeatures != null)
-		{
-			for (ProductFormFeature x : productFormFeatures)
-			{
-				if (x.getProductFormFeatureTypeValue() == productFormFeatureType)
-					return x.asJonixProductFormFeature();
-			}
-		}
-		return null;
+		initialize();
+		return numberOfPieces;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(
-			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	private TradeCategory tradeCategory = TradeCategory.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeCategory tradeCategory()
 	{
-		if (productFormFeatures != null)
-		{
-			List<JonixProductFormFeature> matches = new ArrayList<>();
-			for (ProductFormFeature x : productFormFeatures)
-			{
-				if (productFormFeatureTypes == null
-						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
-					matches.add(x.asJonixProductFormFeature());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return tradeCategory;
+	}
+
+	private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes()
+	{
+		initialize();
+		return productContentTypes;
+	}
+
+	private EpubType epubType = EpubType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubType epubType()
+	{
+		initialize();
+		return epubType;
+	}
+
+	private EpubTypeVersion epubTypeVersion = EpubTypeVersion.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeVersion epubTypeVersion()
+	{
+		initialize();
+		return epubTypeVersion;
+	}
+
+	private EpubTypeDescription epubTypeDescription = EpubTypeDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeDescription epubTypeDescription()
+	{
+		initialize();
+		return epubTypeDescription;
+	}
+
+	private EpubFormat epubFormat = EpubFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormat epubFormat()
+	{
+		initialize();
+		return epubFormat;
+	}
+
+	private EpubFormatVersion epubFormatVersion = EpubFormatVersion.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatVersion epubFormatVersion()
+	{
+		initialize();
+		return epubFormatVersion;
+	}
+
+	private EpubFormatDescription epubFormatDescription = EpubFormatDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatDescription epubFormatDescription()
+	{
+		initialize();
+		return epubFormatDescription;
+	}
+
+	private EpubTypeNote epubTypeNote = EpubTypeNote.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeNote epubTypeNote()
+	{
+		initialize();
+		return epubTypeNote;
+	}
+
+	private List<Publisher> publishers = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Publisher> publishers()
+	{
+		initialize();
+		return publishers;
 	}
 }

@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -61,9 +60,9 @@ public class Sender implements OnixSuperComposite, Serializable
 	public static final String refname = "Sender";
 	public static final String shortname = "sender";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,110 +73,104 @@ public class Sender implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SenderIdentifier> senderIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SenderName senderName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContactName contactName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EmailAddress emailAddress;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Sender EMPTY = new Sender();
 
 	public Sender()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Sender(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
-					senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(element));
-				else if (name.equals(SenderName.refname) || name.equals(SenderName.shortname))
-					senderName = new SenderName(element);
-				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-					contactName = new ContactName(element);
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddress = new EmailAddress(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
+				senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
+			else if (name.equals(SenderName.refname) || name.equals(SenderName.shortname))
+				senderName = new SenderName(e);
+			else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
+				contactName = new ContactName(e);
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddress = new EmailAddress(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 50 characters
-	 */
-	public String getSenderNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (senderName == null) ? null : senderName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getContactNameValue()
+	public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers()
 	{
-		return (contactName == null) ? null : contactName.value;
+		initialize();
+		return senderIdentifiers;
 	}
+
+	private SenderName senderName = SenderName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getEmailAddressValue()
+	public SenderName senderName()
 	{
-		return (emailAddress == null) ? null : emailAddress.value;
+		initialize();
+		return senderName;
 	}
 
-	public JonixSenderIdentifier findSenderIdentifier(NameCodeTypes senderIDType)
+	private ContactName contactName = ContactName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContactName contactName()
 	{
-		if (senderIdentifiers != null)
-		{
-			for (SenderIdentifier x : senderIdentifiers)
-			{
-				if (x.getSenderIDTypeValue() == senderIDType)
-					return x.asJonixSenderIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return contactName;
 	}
 
-	public List<JonixSenderIdentifier> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
+	private EmailAddress emailAddress = EmailAddress.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EmailAddress emailAddress()
 	{
-		if (senderIdentifiers != null)
-		{
-			List<JonixSenderIdentifier> matches = new ArrayList<>();
-			for (SenderIdentifier x : senderIdentifiers)
-			{
-				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))
-					matches.add(x.asJonixSenderIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return emailAddress;
 	}
 }

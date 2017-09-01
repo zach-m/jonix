@@ -20,32 +20,35 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.LicenseExpressionTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixEpubLicenseExpression implements Serializable
+public class JonixEpubLicenseExpression implements JonixKeyedStruct<LicenseExpressionTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public LicenseExpressionTypes epubLicenseExpressionType;
+   public static JonixEpubLicenseExpression EMPTY = new JonixEpubLicenseExpression();
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String epubLicenseExpressionTypeName;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public LicenseExpressionTypes epubLicenseExpressionType;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
-	 * <p>
-	 * (type: dt.NonEmptyURI)
-	 */
-	public String epubLicenseExpressionLink;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+    */
+   public String epubLicenseExpressionTypeName;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: dt.NonEmptyURI)
+    */
+   public String epubLicenseExpressionLink;
+
+   @Override
+   public LicenseExpressionTypes key() { return epubLicenseExpressionType; }
 }

@@ -22,16 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TextScriptCodes;
 import com.tectonica.jonix.struct.JonixLanguage;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -55,16 +52,16 @@ import com.tectonica.jonix.struct.JonixLanguage;
  * </tr>
  * </table>
  */
-public class Language implements OnixDataComposite, Serializable
+public class Language implements OnixDataCompositeWithKey<JonixLanguage, LanguageRoles>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Language";
 	public static final String shortname = "language";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,87 +72,120 @@ public class Language implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public LanguageRole languageRole;
-
-	/**
-	 * (this field is required)
-	 */
-	public LanguageCode languageCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountryCode countryCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ScriptCode scriptCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Language EMPTY = new Language();
 
 	public Language()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Language(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
-					languageRole = new LanguageRole(element);
-				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
-					languageCode = new LanguageCode(element);
-				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					countryCode = new CountryCode(element);
-				else if (name.equals(ScriptCode.refname) || name.equals(ScriptCode.shortname))
-					scriptCode = new ScriptCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
+				languageRole = new LanguageRole(e);
+			else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
+				languageCode = new LanguageCode(e);
+			else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
+				countryCode = new CountryCode(e);
+			else if (name.equals(ScriptCode.refname) || name.equals(ScriptCode.shortname))
+				scriptCode = new ScriptCode(e);
 		});
 	}
 
-	public LanguageRoles getLanguageRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (languageRole == null) ? null : languageRole.value;
+		return exists;
 	}
 
-	public LanguageCodes getLanguageCodeValue()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private LanguageRole languageRole = LanguageRole.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public LanguageRole languageRole()
 	{
-		return (languageCode == null) ? null : languageCode.value;
+		initialize();
+		return languageRole;
 	}
 
-	public CountryCodes getCountryCodeValue()
+	private LanguageCode languageCode = LanguageCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public LanguageCode languageCode()
 	{
-		return (countryCode == null) ? null : countryCode.value;
+		initialize();
+		return languageCode;
 	}
 
-	public TextScriptCodes getScriptCodeValue()
+	private CountryCode countryCode = CountryCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryCode countryCode()
 	{
-		return (scriptCode == null) ? null : scriptCode.value;
+		initialize();
+		return countryCode;
 	}
 
-	public JonixLanguage asJonixLanguage()
+	private ScriptCode scriptCode = ScriptCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ScriptCode scriptCode()
 	{
-		JonixLanguage x = new JonixLanguage();
-		x.languageRole = getLanguageRoleValue();
-		x.countryCode = getCountryCodeValue();
-		x.languageCode = getLanguageCodeValue();
-		return x;
+		initialize();
+		return scriptCode;
+	}
+
+	@Override
+	public JonixLanguage asStruct()
+	{
+		initialize();
+		JonixLanguage struct = new JonixLanguage();
+		struct.languageRole = languageRole.value;
+		struct.countryCode = countryCode.value;
+		struct.languageCode = languageCode.value;
+		return struct;
+	}
+
+	@Override
+	public LanguageRoles structKey()
+	{
+		return languageRole().value;
 	}
 }

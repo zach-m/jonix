@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -60,20 +60,21 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * </tr>
  * <tr>
  * <td>Example</td>
- * <td>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt; (note '&amp;' is a reserved character in XML)</td>
+ * <td>&lt;ImprintName&gt;Secker &amp;amp; Warburg&lt;/ImprintName&gt; (note '&amp;' is a reserved character in
+ * XML)</td>
  * </tr>
  * </table>
  */
-public class ImprintName implements OnixElement, Serializable
+public class ImprintName implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ImprintName";
 	public static final String shortname = "b079";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -86,9 +87,9 @@ public class ImprintName implements OnixElement, Serializable
 
 	public LanguageCodes language;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Variable length text, suggested maximum length 100 characters
@@ -97,20 +98,41 @@ public class ImprintName implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ImprintName EMPTY = new ImprintName();
 
 	public ImprintName()
-	{}
+	{
+		exists = false;
+	}
 
 	public ImprintName(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,121 +40,117 @@ interface CodeList76
  * Description: Product form feature value - DVD region codes
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist76">ONIX
- *      Codelist 76 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist76">ONIX Codelist 76 in Reference Guide</a>
  */
 public enum ProductFormFeatureValueDvdRegions implements OnixCodelist, CodeList76
 {
-	/**
-	 * DVD or Blu-Ray
-	 */
-	All_regions("0", "All regions"), //
+   /**
+    * DVD or Blu-Ray
+    */
+   All_regions("0", "All regions"), //
 
-	/**
-	 * US, US Territories, Canada
-	 */
-	DVD_region_1("1", "DVD region 1"), //
+   /**
+    * US, US Territories, Canada
+    */
+   DVD_region_1("1", "DVD region 1"), //
 
-	/**
-	 * Japan, Europe, South Africa and Middle East (including Egypt)
-	 */
-	DVD_region_2("2", "DVD region 2"), //
+   /**
+    * Japan, Europe, South Africa and Middle East (including Egypt)
+    */
+   DVD_region_2("2", "DVD region 2"), //
 
-	/**
-	 * Southeast Asia, Hong Kong, Macau, South Korea, and Taiwan
-	 */
-	DVD_region_3("3", "DVD region 3"), //
+   /**
+    * Southeast Asia, Hong Kong, Macau, South Korea, and Taiwan
+    */
+   DVD_region_3("3", "DVD region 3"), //
 
-	/**
-	 * Australia, New Zealand, Pacific Islands, Central America, Mexico, South America and the Caribbean
-	 */
-	DVD_region_4("4", "DVD region 4"), //
+   /**
+    * Australia, New Zealand, Pacific Islands, Central America, Mexico, South America and the Caribbean
+    */
+   DVD_region_4("4", "DVD region 4"), //
 
-	/**
-	 * Eastern Europe (former Soviet Union), Indian subcontinent, Africa, North Korea and Mongolia
-	 */
-	DVD_region_5("5", "DVD region 5"), //
+   /**
+    * Eastern Europe (former Soviet Union), Indian subcontinent, Africa, North Korea and Mongolia
+    */
+   DVD_region_5("5", "DVD region 5"), //
 
-	/**
-	 * People's Republic of China (except Macau and Hong Kong)
-	 */
-	DVD_region_6("6", "DVD region 6"), //
+   /**
+    * People's Republic of China (except Macau and Hong Kong)
+    */
+   DVD_region_6("6", "DVD region 6"), //
 
-	/**
-	 * Reserved for future use
-	 */
-	DVD_region_7("7", "DVD region 7"), //
+   /**
+    * Reserved for future use
+    */
+   DVD_region_7("7", "DVD region 7"), //
 
-	/**
-	 * International venues: aircraft, cruise ships etc
-	 */
-	DVD_region_8("8", "DVD region 8"), //
+   /**
+    * International venues: aircraft, cruise ships etc
+    */
+   DVD_region_8("8", "DVD region 8"), //
 
-	/**
-	 * North America, Central America, South America, Japan, Taiwan, North Korea, South Korea, Hong Kong, and Southeast
-	 * Asia
-	 */
-	Blu_Ray_region_A("A", "Blu-Ray region A"), //
+   /**
+    * North America, Central America, South America, Japan, Taiwan, North Korea, South Korea, Hong Kong, and Southeast Asia
+    */
+   Blu_Ray_region_A("A", "Blu-Ray region A"), //
 
-	/**
-	 * Most of Europe, Greenland, French territories, Middle East, Africa, Australia, and New Zealand, plus all of
-	 * Oceania
-	 */
-	Blu_Ray_region_B("B", "Blu-Ray region B"), //
+   /**
+    * Most of Europe, Greenland, French territories, Middle East, Africa, Australia, and New Zealand, plus all of Oceania
+    */
+   Blu_Ray_region_B("B", "Blu-Ray region B"), //
 
-	/**
-	 * India, Bangladesh, Nepal, Mainland China, Pakistan, Russia, Ukraine, Belarus, Central, and South Asia
-	 */
-	Blu_Ray_region_C("C", "Blu-Ray region C");
+   /**
+    * India, Bangladesh, Nepal, Mainland China, Pakistan, Russia, Ukraine, Belarus, Central, and South Asia
+    */
+   Blu_Ray_region_C("C", "Blu-Ray region C");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ProductFormFeatureValueDvdRegions(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ProductFormFeatureValueDvdRegions(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, ProductFormFeatureValueDvdRegions> map;
+   private static volatile Map<String, ProductFormFeatureValueDvdRegions> map;
 
-	private static Map<String, ProductFormFeatureValueDvdRegions> map()
-	{
-		Map<String, ProductFormFeatureValueDvdRegions> result = map;
-		if (result == null)
-		{
-			synchronized (ProductFormFeatureValueDvdRegions.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (ProductFormFeatureValueDvdRegions e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, ProductFormFeatureValueDvdRegions> map()
+   {
+      Map<String, ProductFormFeatureValueDvdRegions> result = map;
+      if (result == null)
+      {
+         synchronized(ProductFormFeatureValueDvdRegions.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (ProductFormFeatureValueDvdRegions e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static ProductFormFeatureValueDvdRegions byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static ProductFormFeatureValueDvdRegions byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

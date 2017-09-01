@@ -20,18 +20,21 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -58,9 +61,9 @@ public class Conference implements OnixSuperComposite, Serializable
 	public static final String refname = "Conference";
 	public static final String shortname = "conference";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -79,64 +82,35 @@ public class Conference implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceRole conferenceRole;
-
-	/**
-	 * (this field is required)
-	 */
-	public ConferenceName conferenceName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceAcronym conferenceAcronym;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceNumber conferenceNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceTheme conferenceTheme;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceDate conferenceDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferencePlace conferencePlace;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ConferenceSponsor> conferenceSponsors;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Conference EMPTY = new Conference();
 
 	public Conference()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Conference(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -145,87 +119,135 @@ public class Conference implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
-					conferenceRole = new ConferenceRole(element);
-				else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
-					conferenceName = new ConferenceName(element);
-				else if (name.equals(ConferenceAcronym.refname) || name.equals(ConferenceAcronym.shortname))
-					conferenceAcronym = new ConferenceAcronym(element);
-				else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
-					conferenceNumber = new ConferenceNumber(element);
-				else if (name.equals(ConferenceTheme.refname) || name.equals(ConferenceTheme.shortname))
-					conferenceTheme = new ConferenceTheme(element);
-				else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
-					conferenceDate = new ConferenceDate(element);
-				else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
-					conferencePlace = new ConferencePlace(element);
-				else if (name.equals(ConferenceSponsor.refname) || name.equals(ConferenceSponsor.shortname))
-					conferenceSponsors = JPU.addToList(conferenceSponsors, new ConferenceSponsor(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
+				conferenceRole = new ConferenceRole(e);
+			else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
+				conferenceName = new ConferenceName(e);
+			else if (name.equals(ConferenceAcronym.refname) || name.equals(ConferenceAcronym.shortname))
+				conferenceAcronym = new ConferenceAcronym(e);
+			else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
+				conferenceNumber = new ConferenceNumber(e);
+			else if (name.equals(ConferenceTheme.refname) || name.equals(ConferenceTheme.shortname))
+				conferenceTheme = new ConferenceTheme(e);
+			else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
+				conferenceDate = new ConferenceDate(e);
+			else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
+				conferencePlace = new ConferencePlace(e);
+			else if (name.equals(ConferenceSponsor.refname) || name.equals(ConferenceSponsor.shortname))
+				conferenceSponsors = JPU.addToList(conferenceSponsors, new ConferenceSponsor(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Fixed-length, two numeric digits
-	 */
-	public String getConferenceRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (conferenceRole == null) ? null : conferenceRole.value;
+		return exists;
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
-	 */
-	public String getConferenceNameValue()
-	{
-		return (conferenceName == null) ? null : conferenceName.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ConferenceRole conferenceRole = ConferenceRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public String getConferenceAcronymValue()
+	public ConferenceRole conferenceRole()
 	{
-		return (conferenceAcronym == null) ? null : conferenceAcronym.value;
+		initialize();
+		return conferenceRole;
 	}
 
-	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 characters
-	 */
-	public String getConferenceNumberValue()
-	{
-		return (conferenceNumber == null) ? null : conferenceNumber.value;
-	}
+	private ConferenceName conferenceName = ConferenceName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is required)
 	 */
-	public String getConferenceThemeValue()
+	public ConferenceName conferenceName()
 	{
-		return (conferenceTheme == null) ? null : conferenceTheme.value;
+		initialize();
+		return conferenceName;
 	}
 
-	/**
-	 * Raw Format: Date as year (YYYY) or month and year (YYYYMM).
-	 */
-	public String getConferenceDateValue()
-	{
-		return (conferenceDate == null) ? null : conferenceDate.value;
-	}
+	private ConferenceAcronym conferenceAcronym = ConferenceAcronym.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getConferencePlaceValue()
+	public ConferenceAcronym conferenceAcronym()
 	{
-		return (conferencePlace == null) ? null : conferencePlace.value;
+		initialize();
+		return conferenceAcronym;
+	}
+
+	private ConferenceNumber conferenceNumber = ConferenceNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceNumber conferenceNumber()
+	{
+		initialize();
+		return conferenceNumber;
+	}
+
+	private ConferenceTheme conferenceTheme = ConferenceTheme.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceTheme conferenceTheme()
+	{
+		initialize();
+		return conferenceTheme;
+	}
+
+	private ConferenceDate conferenceDate = ConferenceDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferenceDate conferenceDate()
+	{
+		initialize();
+		return conferenceDate;
+	}
+
+	private ConferencePlace conferencePlace = ConferencePlace.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ConferencePlace conferencePlace()
+	{
+		initialize();
+		return conferencePlace;
+	}
+
+	private List<ConferenceSponsor> conferenceSponsors = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ConferenceSponsor> conferenceSponsors()
+	{
+		initialize();
+		return conferenceSponsors;
+	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
+	{
+		initialize();
+		return websites;
 	}
 }

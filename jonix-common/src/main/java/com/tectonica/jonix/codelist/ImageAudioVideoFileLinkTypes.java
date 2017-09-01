@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,52 +37,50 @@ interface CodeList40
  * Description: Image/audio/video file link type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist40">ONIX
- *      Codelist 40 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist40">ONIX Codelist 40 in Reference Guide</a>
  */
 public enum ImageAudioVideoFileLinkTypes implements OnixCodelist, CodeList40
 {
-	URL("01", "URL"), //
+   URL("01", "URL"), //
 
-	DOI("02", "DOI"), //
+   DOI("02", "DOI"), //
 
-	PURL("03", "PURL"), //
+   PURL("03", "PURL"), //
 
-	URN("04", "URN"), //
+   URN("04", "URN"), //
 
-	FTP_address("05", "FTP address"), //
+   FTP_address("05", "FTP address"), //
 
-	filename("06", "filename");
+   filename("06", "filename");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ImageAudioVideoFileLinkTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ImageAudioVideoFileLinkTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static ImageAudioVideoFileLinkTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (ImageAudioVideoFileLinkTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static ImageAudioVideoFileLinkTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (ImageAudioVideoFileLinkTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

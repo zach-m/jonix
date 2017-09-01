@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,11 +28,12 @@ import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1><h4 class="nobreak">Product supply composite</h4>
+ * <h1>null</h1>
+ * <h4 class="nobreak">Product supply composite</h4>
  * <p>
  * The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status of the
  * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
@@ -61,9 +63,9 @@ public class ProductSupply implements OnixSuperComposite, Serializable
 	public static final String refname = "ProductSupply";
 	public static final String shortname = "productsupply";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,51 +76,90 @@ public class ProductSupply implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Market> markets;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MarketPublishingDetail marketPublishingDetail;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SupplyDetail> supplyDetails;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProductSupply EMPTY = new ProductSupply();
 
 	public ProductSupply()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProductSupply(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Market.refname) || name.equals(Market.shortname))
-					markets = JPU.addToList(markets, new Market(element));
-				else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname))
-					marketPublishingDetail = new MarketPublishingDetail(element);
-				else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
-					supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Market.refname) || name.equals(Market.shortname))
+				markets = JPU.addToList(markets, new Market(e));
+			else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname))
+				marketPublishingDetail = new MarketPublishingDetail(e);
+			else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
+				supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
 		});
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private List<Market> markets = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Market> markets()
+	{
+		initialize();
+		return markets;
+	}
+
+	private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketPublishingDetail marketPublishingDetail()
+	{
+		initialize();
+		return marketPublishingDetail;
+	}
+
+	private List<SupplyDetail> supplyDetails = Collections.emptyList();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<SupplyDetail> supplyDetails()
+	{
+		initialize();
+		return supplyDetails;
 	}
 }

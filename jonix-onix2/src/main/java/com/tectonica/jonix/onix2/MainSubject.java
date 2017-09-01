@@ -24,7 +24,6 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.MainSubjectSchemeIdentifiers;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -32,7 +31,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixMainSubject;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +51,16 @@ import com.tectonica.jonix.struct.JonixMainSubject;
  * </tr>
  * </table>
  */
-public class MainSubject implements OnixDataComposite, Serializable
+public class MainSubject implements OnixDataComposite<JonixMainSubject>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "MainSubject";
 	public static final String shortname = "mainsubject";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -80,39 +79,35 @@ public class MainSubject implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SubjectSchemeVersion subjectSchemeVersion;
-
-	/**
-	 * (this field is required)
-	 */
-	public SubjectCode subjectCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SubjectHeadingText subjectHeadingText;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final MainSubject EMPTY = new MainSubject();
 
 	public MainSubject()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public MainSubject(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -121,62 +116,82 @@ public class MainSubject implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(MainSubjectSchemeIdentifier.refname)
-						|| name.equals(MainSubjectSchemeIdentifier.shortname))
-					mainSubjectSchemeIdentifier = new MainSubjectSchemeIdentifier(element);
-				else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
-					subjectSchemeVersion = new SubjectSchemeVersion(element);
-				else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname))
-					subjectCode = new SubjectCode(element);
-				else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname))
-					subjectHeadingText = new SubjectHeadingText(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(MainSubjectSchemeIdentifier.refname) || name.equals(MainSubjectSchemeIdentifier.shortname))
+				mainSubjectSchemeIdentifier = new MainSubjectSchemeIdentifier(e);
+			else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
+				subjectSchemeVersion = new SubjectSchemeVersion(e);
+			else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname))
+				subjectCode = new SubjectCode(e);
+			else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname))
+				subjectHeadingText = new SubjectHeadingText(e);
 		});
 	}
 
-	public MainSubjectSchemeIdentifiers getMainSubjectSchemeIdentifierValue()
+	@Override
+	public boolean exists()
 	{
-		return (mainSubjectSchemeIdentifier == null) ? null : mainSubjectSchemeIdentifier.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier = MainSubjectSchemeIdentifier.EMPTY;
 
 	/**
-	 * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
-	 * elements.
+	 * (this field is required)
 	 */
-	public String getSubjectSchemeVersionValue()
+	public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier()
 	{
-		return (subjectSchemeVersion == null) ? null : subjectSchemeVersion.value;
+		initialize();
+		return mainSubjectSchemeIdentifier;
 	}
+
+	private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters.
+	 * (this field is optional)
 	 */
-	public String getSubjectCodeValue()
+	public SubjectSchemeVersion subjectSchemeVersion()
 	{
-		return (subjectCode == null) ? null : subjectCode.value;
+		initialize();
+		return subjectSchemeVersion;
 	}
+
+	private SubjectCode subjectCode = SubjectCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
+	 * (this field is required)
 	 */
-	public String getSubjectHeadingTextValue()
+	public SubjectCode subjectCode()
 	{
-		return (subjectHeadingText == null) ? null : subjectHeadingText.value;
+		initialize();
+		return subjectCode;
 	}
 
-	public JonixMainSubject asJonixMainSubject()
+	private SubjectHeadingText subjectHeadingText = SubjectHeadingText.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SubjectHeadingText subjectHeadingText()
 	{
-		JonixMainSubject x = new JonixMainSubject();
-		x.mainSubjectSchemeIdentifier = getMainSubjectSchemeIdentifierValue();
-		x.subjectSchemeVersion = getSubjectSchemeVersionValue();
-		x.subjectCode = getSubjectCodeValue();
-		x.subjectHeadingText = getSubjectHeadingTextValue();
-		return x;
+		initialize();
+		return subjectHeadingText;
+	}
+
+	@Override
+	public JonixMainSubject asStruct()
+	{
+		initialize();
+		JonixMainSubject struct = new JonixMainSubject();
+		struct.mainSubjectSchemeIdentifier = mainSubjectSchemeIdentifier.value;
+		struct.subjectSchemeVersion = subjectSchemeVersion.value;
+		struct.subjectCode = subjectCode.value;
+		struct.subjectHeadingText = subjectHeadingText.value;
+		return struct;
 	}
 }

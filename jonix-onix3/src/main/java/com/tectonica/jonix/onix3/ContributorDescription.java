@@ -28,7 +28,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -69,16 +69,16 @@ import com.tectonica.jonix.codelist.TextFormats;
  * </tr>
  * </table>
  */
-public class ContributorDescription implements OnixElement, Serializable
+public class ContributorDescription implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ContributorDescription";
 	public static final String shortname = "b048";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -93,9 +93,9 @@ public class ContributorDescription implements OnixElement, Serializable
 
 	public TextFormats textformat;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
@@ -105,15 +105,30 @@ public class ContributorDescription implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final ContributorDescription EMPTY = new ContributorDescription();
 
 	public ContributorDescription()
-	{}
+	{
+		exists = false;
+	}
 
 	public ContributorDescription(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
@@ -121,5 +136,11 @@ public class ContributorDescription implements OnixElement, Serializable
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
 		value = JPU.getChildXHTML(element, true);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

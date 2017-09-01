@@ -20,18 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.codelist.SupplierRoles;
 import com.tectonica.jonix.struct.JonixSupplierIdentifier;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +63,9 @@ public class Supplier implements OnixSuperComposite, Serializable
 	public static final String refname = "Supplier";
 	public static final String shortname = "supplier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,165 +76,143 @@ public class Supplier implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SupplierRole supplierRole;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SupplierIdentifier> supplierIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierName supplierName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TelephoneNumber> telephoneNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FaxNumber> faxNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EmailAddress> emailAddresss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Supplier EMPTY = new Supplier();
 
 	public Supplier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Supplier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
-					supplierRole = new SupplierRole(element);
-				else if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
-					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
-				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
-					supplierName = new SupplierName(element);
-				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
-				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
+				supplierRole = new SupplierRole(e);
+			else if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
+				supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+			else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
+				supplierName = new SupplierName(e);
+			else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
+				telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+			else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
+				faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
 		});
 	}
 
-	public SupplierRoles getSupplierRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (supplierRole == null) ? null : supplierRole.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SupplierRole supplierRole = SupplierRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getSupplierNameValue()
+	public SupplierRole supplierRole()
 	{
-		return (supplierName == null) ? null : supplierName.value;
+		initialize();
+		return supplierRole;
 	}
+
+	private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public List<String> getTelephoneNumberValues()
+	public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers()
 	{
-		if (telephoneNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (TelephoneNumber i : telephoneNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return supplierIdentifiers;
 	}
+
+	private SupplierName supplierName = SupplierName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public List<String> getFaxNumberValues()
+	public SupplierName supplierName()
 	{
-		if (faxNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FaxNumber i : faxNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return supplierName;
 	}
+
+	private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getEmailAddressValues()
+	public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers()
 	{
-		if (emailAddresss != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (EmailAddress i : emailAddresss)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return telephoneNumbers;
 	}
 
-	public JonixSupplierIdentifier findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
+	private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<FaxNumber, String> faxNumbers()
 	{
-		if (supplierIdentifiers != null)
-		{
-			for (SupplierIdentifier x : supplierIdentifiers)
-			{
-				if (x.getSupplierIDTypeValue() == supplierIDType)
-					return x.asJonixSupplierIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return faxNumbers;
 	}
 
-	public List<JonixSupplierIdentifier> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
+	private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<EmailAddress, String> emailAddresss()
 	{
-		if (supplierIdentifiers != null)
-		{
-			List<JonixSupplierIdentifier> matches = new ArrayList<>();
-			for (SupplierIdentifier x : supplierIdentifiers)
-			{
-				if (supplierIDTypes == null || supplierIDTypes.contains(x.getSupplierIDTypeValue()))
-					matches.add(x.asJonixSupplierIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return emailAddresss;
+	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
+	{
+		initialize();
+		return websites;
 	}
 }

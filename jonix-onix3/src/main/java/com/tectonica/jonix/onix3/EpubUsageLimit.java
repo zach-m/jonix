@@ -24,11 +24,10 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.UnitOfUsages;
 import com.tectonica.jonix.struct.JonixEpubUsageLimit;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +51,16 @@ import com.tectonica.jonix.struct.JonixEpubUsageLimit;
  * </tr>
  * </table>
  */
-public class EpubUsageLimit implements OnixDataComposite, Serializable
+public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "EpubUsageLimit";
 	public static final String shortname = "epubusagelimit";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -72,65 +71,87 @@ public class EpubUsageLimit implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public Quantity quantity;
-
-	/**
-	 * (this field is required)
-	 */
-	public EpubUsageUnit epubUsageUnit;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final EpubUsageLimit EMPTY = new EpubUsageLimit();
 
 	public EpubUsageLimit()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public EpubUsageLimit(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-					quantity = new Quantity(element);
-				else if (name.equals(EpubUsageUnit.refname) || name.equals(EpubUsageUnit.shortname))
-					epubUsageUnit = new EpubUsageUnit(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
+				quantity = new Quantity(e);
+			else if (name.equals(EpubUsageUnit.refname) || name.equals(EpubUsageUnit.shortname))
+				epubUsageUnit = new EpubUsageUnit(e);
 		});
 	}
 
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private Quantity quantity = Quantity.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * (this field is required)
 	 */
-	public Double getQuantityValue()
+	public Quantity quantity()
 	{
-		return (quantity == null) ? null : quantity.value;
+		initialize();
+		return quantity;
 	}
 
-	public UnitOfUsages getEpubUsageUnitValue()
+	private EpubUsageUnit epubUsageUnit = EpubUsageUnit.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public EpubUsageUnit epubUsageUnit()
 	{
-		return (epubUsageUnit == null) ? null : epubUsageUnit.value;
+		initialize();
+		return epubUsageUnit;
 	}
 
-	public JonixEpubUsageLimit asJonixEpubUsageLimit()
+	@Override
+	public JonixEpubUsageLimit asStruct()
 	{
-		JonixEpubUsageLimit x = new JonixEpubUsageLimit();
-		x.quantity = getQuantityValue();
-		x.epubUsageUnit = getEpubUsageUnitValue();
-		return x;
+		initialize();
+		JonixEpubUsageLimit struct = new JonixEpubUsageLimit();
+		struct.quantity = quantity.value;
+		struct.epubUsageUnit = epubUsageUnit.value;
+		return struct;
 	}
 }

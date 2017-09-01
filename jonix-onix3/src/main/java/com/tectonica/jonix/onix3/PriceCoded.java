@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.PriceCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPriceCoded;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +53,16 @@ import com.tectonica.jonix.struct.JonixPriceCoded;
  * </tr>
  * </table>
  */
-public class PriceCoded implements OnixDataComposite, Serializable
+public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, PriceCodeTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PriceCoded";
 	public static final String shortname = "pricecoded";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,81 +73,107 @@ public class PriceCoded implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PriceCodeType priceCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceCodeTypeName priceCodeTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public PriceCode priceCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PriceCoded EMPTY = new PriceCoded();
 
 	public PriceCoded()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PriceCoded(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PriceCodeType.refname) || name.equals(PriceCodeType.shortname))
-					priceCodeType = new PriceCodeType(element);
-				else if (name.equals(PriceCodeTypeName.refname) || name.equals(PriceCodeTypeName.shortname))
-					priceCodeTypeName = new PriceCodeTypeName(element);
-				else if (name.equals(PriceCode.refname) || name.equals(PriceCode.shortname))
-					priceCode = new PriceCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PriceCodeType.refname) || name.equals(PriceCodeType.shortname))
+				priceCodeType = new PriceCodeType(e);
+			else if (name.equals(PriceCodeTypeName.refname) || name.equals(PriceCodeTypeName.shortname))
+				priceCodeTypeName = new PriceCodeTypeName(e);
+			else if (name.equals(PriceCode.refname) || name.equals(PriceCode.shortname))
+				priceCode = new PriceCode(e);
 		});
 	}
 
-	public PriceCodeTypes getPriceCodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceCodeType == null) ? null : priceCodeType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PriceCodeType priceCodeType = PriceCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getPriceCodeTypeNameValue()
+	public PriceCodeType priceCodeType()
 	{
-		return (priceCodeTypeName == null) ? null : priceCodeTypeName.value;
+		initialize();
+		return priceCodeType;
 	}
+
+	private PriceCodeTypeName priceCodeTypeName = PriceCodeTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt;
+	 * (this field is optional)
 	 */
-	public String getPriceCodeValue()
+	public PriceCodeTypeName priceCodeTypeName()
 	{
-		return (priceCode == null) ? null : priceCode.value;
+		initialize();
+		return priceCodeTypeName;
 	}
 
-	public JonixPriceCoded asJonixPriceCoded()
+	private PriceCode priceCode = PriceCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public PriceCode priceCode()
 	{
-		JonixPriceCoded x = new JonixPriceCoded();
-		x.priceCodeType = getPriceCodeTypeValue();
-		x.priceCodeTypeName = getPriceCodeTypeNameValue();
-		x.priceCode = getPriceCodeValue();
-		return x;
+		initialize();
+		return priceCode;
+	}
+
+	@Override
+	public JonixPriceCoded asStruct()
+	{
+		initialize();
+		JonixPriceCoded struct = new JonixPriceCoded();
+		struct.priceCodeType = priceCodeType.value;
+		struct.priceCodeTypeName = priceCodeTypeName.value;
+		struct.priceCode = priceCode.value;
+		return struct;
+	}
+
+	@Override
+	public PriceCodeTypes structKey()
+	{
+		return priceCodeType().value;
 	}
 }

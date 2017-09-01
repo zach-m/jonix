@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,47 +37,45 @@ interface CodeList60
  * Description: Unit of pricing code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist60">ONIX
- *      Codelist 60 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist60">ONIX Codelist 60 in Reference Guide</a>
  */
 public enum UnitOfPricings implements OnixCodelist, CodeList60
 {
-	/**
-	 * Default
-	 */
-	Per_copy_of_whole_product("00", "Per copy of whole product"), //
+   /**
+    * Default
+    */
+   Per_copy_of_whole_product("00", "Per copy of whole product"), //
 
-	Per_page_for_printed_loose_leaf_content_only("01", "Per page for printed loose-leaf content only");
+   Per_page_for_printed_loose_leaf_content_only("01", "Per page for printed loose-leaf content only");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private UnitOfPricings(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private UnitOfPricings(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static UnitOfPricings byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (UnitOfPricings e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static UnitOfPricings byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (UnitOfPricings e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

@@ -20,18 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.AgentRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAgentIdentifier;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +63,9 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 	public static final String refname = "PublisherRepresentative";
 	public static final String shortname = "publisherrepresentative";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,165 +76,143 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public AgentRole agentRole;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<AgentIdentifier> agentIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AgentName agentName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TelephoneNumber> telephoneNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FaxNumber> faxNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EmailAddress> emailAddresss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PublisherRepresentative EMPTY = new PublisherRepresentative();
 
 	public PublisherRepresentative()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PublisherRepresentative(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
-					agentRole = new AgentRole(element);
-				else if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
-					agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(element));
-				else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
-					agentName = new AgentName(element);
-				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
-				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
+				agentRole = new AgentRole(e);
+			else if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
+				agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
+			else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
+				agentName = new AgentName(e);
+			else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
+				telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+			else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
+				faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
 		});
 	}
 
-	public AgentRoles getAgentRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (agentRole == null) ? null : agentRole.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private AgentRole agentRole = AgentRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getAgentNameValue()
+	public AgentRole agentRole()
 	{
-		return (agentName == null) ? null : agentName.value;
+		initialize();
+		return agentRole;
 	}
+
+	private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public List<String> getTelephoneNumberValues()
+	public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers()
 	{
-		if (telephoneNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (TelephoneNumber i : telephoneNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return agentIdentifiers;
 	}
+
+	private AgentName agentName = AgentName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public List<String> getFaxNumberValues()
+	public AgentName agentName()
 	{
-		if (faxNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FaxNumber i : faxNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return agentName;
 	}
+
+	private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getEmailAddressValues()
+	public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers()
 	{
-		if (emailAddresss != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (EmailAddress i : emailAddresss)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return telephoneNumbers;
 	}
 
-	public JonixAgentIdentifier findAgentIdentifier(SupplierIdentifierTypes agentIDType)
+	private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<FaxNumber, String> faxNumbers()
 	{
-		if (agentIdentifiers != null)
-		{
-			for (AgentIdentifier x : agentIdentifiers)
-			{
-				if (x.getAgentIDTypeValue() == agentIDType)
-					return x.asJonixAgentIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return faxNumbers;
 	}
 
-	public List<JonixAgentIdentifier> findAgentIdentifiers(java.util.Set<SupplierIdentifierTypes> agentIDTypes)
+	private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<EmailAddress, String> emailAddresss()
 	{
-		if (agentIdentifiers != null)
-		{
-			List<JonixAgentIdentifier> matches = new ArrayList<>();
-			for (AgentIdentifier x : agentIdentifiers)
-			{
-				if (agentIDTypes == null || agentIDTypes.contains(x.getAgentIDTypeValue()))
-					matches.add(x.asJonixAgentIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return emailAddresss;
+	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
+	{
+		initialize();
+		return websites;
 	}
 }

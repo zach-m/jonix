@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixTitle;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +53,16 @@ import com.tectonica.jonix.struct.JonixTitle;
  * </tr>
  * </table>
  */
-public class Title implements OnixDataComposite, Serializable
+public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Title";
 	public static final String shortname = "title";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,54 +81,35 @@ public class Title implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public TitleType titleType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AbbreviatedLength abbreviatedLength;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextCaseFlag textCaseFlag;
-
-	/**
-	 * (this field is required)
-	 */
-	public TitleText titleText;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlePrefix titlePrefix;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitleWithoutPrefix titleWithoutPrefix;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Subtitle subtitle;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Title EMPTY = new Title();
 
 	public Title()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Title(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -137,90 +118,130 @@ public class Title implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(TitleType.refname) || name.equals(TitleType.shortname))
-					titleType = new TitleType(element);
-				else if (name.equals(AbbreviatedLength.refname) || name.equals(AbbreviatedLength.shortname))
-					abbreviatedLength = new AbbreviatedLength(element);
-				else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
-					textCaseFlag = new TextCaseFlag(element);
-				else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
-					titleText = new TitleText(element);
-				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-					titlePrefix = new TitlePrefix(element);
-				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-					titleWithoutPrefix = new TitleWithoutPrefix(element);
-				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-					subtitle = new Subtitle(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(TitleType.refname) || name.equals(TitleType.shortname))
+				titleType = new TitleType(e);
+			else if (name.equals(AbbreviatedLength.refname) || name.equals(AbbreviatedLength.shortname))
+				abbreviatedLength = new AbbreviatedLength(e);
+			else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
+				textCaseFlag = new TextCaseFlag(e);
+			else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
+				titleText = new TitleText(e);
+			else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
+				titlePrefix = new TitlePrefix(e);
+			else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
+				titleWithoutPrefix = new TitleWithoutPrefix(e);
+			else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
+				subtitle = new Subtitle(e);
 		});
 	}
 
-	public TitleTypes getTitleTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (titleType == null) ? null : titleType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private TitleType titleType = TitleType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum 3 digits
+	 * (this field is required)
 	 */
-	public String getAbbreviatedLengthValue()
+	public TitleType titleType()
 	{
-		return (abbreviatedLength == null) ? null : abbreviatedLength.value;
+		initialize();
+		return titleType;
 	}
 
-	public TextCaseFlags getTextCaseFlagValue()
-	{
-		return (textCaseFlag == null) ? null : textCaseFlag.value;
-	}
+	private AbbreviatedLength abbreviatedLength = AbbreviatedLength.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getTitleTextValue()
+	public AbbreviatedLength abbreviatedLength()
 	{
-		return (titleText == null) ? null : titleText.value;
+		initialize();
+		return abbreviatedLength;
 	}
+
+	private TextCaseFlag textCaseFlag = TextCaseFlag.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public String getTitlePrefixValue()
+	public TextCaseFlag textCaseFlag()
 	{
-		return (titlePrefix == null) ? null : titlePrefix.value;
+		initialize();
+		return textCaseFlag;
 	}
+
+	private TitleText titleText = TitleText.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public String getTitleWithoutPrefixValue()
+	public TitleText titleText()
 	{
-		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
+		initialize();
+		return titleText;
 	}
+
+	private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getSubtitleValue()
+	public TitlePrefix titlePrefix()
 	{
-		return (subtitle == null) ? null : subtitle.value;
+		initialize();
+		return titlePrefix;
 	}
 
-	public JonixTitle asJonixTitle()
+	private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitleWithoutPrefix titleWithoutPrefix()
 	{
-		JonixTitle x = new JonixTitle();
-		x.titleType = getTitleTypeValue();
-		x.abbreviatedLength = getAbbreviatedLengthValue();
-		x.textCaseFlag = getTextCaseFlagValue();
-		x.titleText = getTitleTextValue();
-		x.titlePrefix = getTitlePrefixValue();
-		x.titleWithoutPrefix = getTitleWithoutPrefixValue();
-		x.subtitle = getSubtitleValue();
-		return x;
+		initialize();
+		return titleWithoutPrefix;
+	}
+
+	private Subtitle subtitle = Subtitle.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Subtitle subtitle()
+	{
+		initialize();
+		return subtitle;
+	}
+
+	@Override
+	public JonixTitle asStruct()
+	{
+		initialize();
+		JonixTitle struct = new JonixTitle();
+		struct.titleType = titleType.value;
+		struct.abbreviatedLength = abbreviatedLength.value;
+		struct.textCaseFlag = textCaseFlag.value;
+		struct.titleText = titleText.value;
+		struct.titlePrefix = titlePrefix.value;
+		struct.titleWithoutPrefix = titleWithoutPrefix.value;
+		struct.subtitle = subtitle.value;
+		return struct;
+	}
+
+	@Override
+	public TitleTypes structKey()
+	{
+		return titleType().value;
 	}
 }

@@ -20,22 +20,25 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.Regions;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixTerritory implements Serializable
+public class JonixTerritory implements JonixStruct, Serializable
 {
-	public java.util.Set<CountryCodes> countriesIncluded;
+   public static JonixTerritory EMPTY = new JonixTerritory();
 
-	public java.util.Set<Regions> regionsIncluded;
+   public java.util.Set<CountryCodes> countriesIncluded;
 
-	public java.util.Set<CountryCodes> countriesExcluded;
+   public java.util.Set<Regions> regionsIncluded;
 
-	public java.util.Set<Regions> regionsExcluded;
+   public java.util.Set<CountryCodes> countriesExcluded;
+
+   public java.util.Set<Regions> regionsExcluded;
 }

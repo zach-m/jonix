@@ -20,20 +20,19 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ProductFormDetailsList175;
-import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -64,9 +63,9 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 	public static final String refname = "RelatedProduct";
 	public static final String shortname = "relatedproduct";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -77,115 +76,105 @@ public class RelatedProduct implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ProductRelationCode> productRelationCodes;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductForm productForm;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormDetail> productFormDetails;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final RelatedProduct EMPTY = new RelatedProduct();
 
 	public RelatedProduct()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public RelatedProduct(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ProductRelationCode.refname) || name.equals(ProductRelationCode.shortname))
-					productRelationCodes = JPU.addToList(productRelationCodes, new ProductRelationCode(element));
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					productForm = new ProductForm(element);
-				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ProductRelationCode.refname) || name.equals(ProductRelationCode.shortname))
+				productRelationCodes = JPU.addToList(productRelationCodes, new ProductRelationCode(e));
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
+				productForm = new ProductForm(e);
+			else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
+				productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
 		});
 	}
 
-	public List<ProductRelations> getProductRelationCodeValues()
+	@Override
+	public boolean exists()
 	{
-		if (productRelationCodes != null)
-		{
-			List<ProductRelations> list = new ArrayList<>();
-			for (ProductRelationCode i : productRelationCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		return exists;
 	}
 
-	public ProductFormsList150 getProductFormValue()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes()
 	{
-		return (productForm == null) ? null : productForm.value;
+		initialize();
+		return productRelationCodes;
 	}
 
-	public List<ProductFormDetailsList175> getProductFormDetailValues()
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		if (productFormDetails != null)
-		{
-			List<ProductFormDetailsList175> list = new ArrayList<>();
-			for (ProductFormDetail i : productFormDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return productIdentifiers;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private ProductForm productForm = ProductForm.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductForm productForm()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return productForm;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails = ListOfOnixElement
+			.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return productFormDetails;
 	}
 }

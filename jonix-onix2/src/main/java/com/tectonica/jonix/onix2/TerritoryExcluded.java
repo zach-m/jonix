@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -66,16 +66,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class TerritoryExcluded implements OnixElement, Serializable
+public class TerritoryExcluded implements OnixElement<java.util.Set<Regions>>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "TerritoryExcluded";
 	public static final String shortname = "j308";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -94,21 +94,36 @@ public class TerritoryExcluded implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public java.util.Set<Regions> value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public java.util.Set<Regions> _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final TerritoryExcluded EMPTY = new TerritoryExcluded();
 
 	public TerritoryExcluded()
-	{}
+	{
+		exists = false;
+	}
 
 	public TerritoryExcluded(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -120,5 +135,11 @@ public class TerritoryExcluded implements OnixElement, Serializable
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
 			value.add(Regions.byCode(split));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

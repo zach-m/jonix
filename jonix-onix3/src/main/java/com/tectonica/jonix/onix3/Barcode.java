@@ -23,13 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.BarcodeIndicatorsList141;
-import com.tectonica.jonix.codelist.PositionOnProducts;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixBarcode;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +52,16 @@ import com.tectonica.jonix.struct.JonixBarcode;
  * </tr>
  * </table>
  */
-public class Barcode implements OnixDataComposite, Serializable
+public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Barcode";
 	public static final String shortname = "barcode";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,62 +72,87 @@ public class Barcode implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public BarcodeType barcodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PositionOnProduct positionOnProduct;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Barcode EMPTY = new Barcode();
 
 	public Barcode()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Barcode(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname))
-					barcodeType = new BarcodeType(element);
-				else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
-					positionOnProduct = new PositionOnProduct(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname))
+				barcodeType = new BarcodeType(e);
+			else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
+				positionOnProduct = new PositionOnProduct(e);
 		});
 	}
 
-	public BarcodeIndicatorsList141 getBarcodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (barcodeType == null) ? null : barcodeType.value;
+		return exists;
 	}
 
-	public PositionOnProducts getPositionOnProductValue()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private BarcodeType barcodeType = BarcodeType.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public BarcodeType barcodeType()
 	{
-		return (positionOnProduct == null) ? null : positionOnProduct.value;
+		initialize();
+		return barcodeType;
 	}
 
-	public JonixBarcode asJonixBarcode()
+	private PositionOnProduct positionOnProduct = PositionOnProduct.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PositionOnProduct positionOnProduct()
 	{
-		JonixBarcode x = new JonixBarcode();
-		x.barcodeType = getBarcodeTypeValue();
-		x.positionOnProduct = getPositionOnProductValue();
-		return x;
+		initialize();
+		return positionOnProduct;
+	}
+
+	@Override
+	public JonixBarcode asStruct()
+	{
+		initialize();
+		JonixBarcode struct = new JonixBarcode();
+		struct.barcodeType = barcodeType.value;
+		struct.positionOnProduct = positionOnProduct.value;
+		return struct;
 	}
 }

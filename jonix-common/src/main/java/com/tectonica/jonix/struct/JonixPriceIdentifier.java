@@ -20,32 +20,35 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.PriceIdentifierTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPriceIdentifier implements Serializable
+public class JonixPriceIdentifier implements JonixKeyedStruct<PriceIdentifierTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public PriceIdentifierTypes priceIDType;
+   public static JonixPriceIdentifier EMPTY = new JonixPriceIdentifier();
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String idTypeName;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public PriceIdentifierTypes priceIDType;
 
-	/**
-	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String idValue;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+    */
+   public String idTypeName;
+
+   /**
+    * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
+    */
+   public String idValue;
+
+   @Override
+   public PriceIdentifierTypes key() { return priceIDType; }
 }

@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,111 +40,107 @@ interface CodeList84
  * Description: Study Bible type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist84">ONIX
- *      Codelist 84 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist84">ONIX Codelist 84 in Reference Guide</a>
  */
 public enum StudyBibleTypes implements OnixCodelist, CodeList84
 {
-	/**
-	 * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the
-	 * books, notes and cross references. Originally published in 1993, NRSV
-	 */
-	Cambridge_Annotated("CAM", "Cambridge Annotated"), //
+   /**
+    * Contains the work of Howard Clark Kee including a summary of the development of the canon, introductions to the books, notes and cross references. Originally published in 1993, NRSV
+    */
+   Cambridge_Annotated("CAM", "Cambridge Annotated"), //
 
-	/**
-	 * A project of Tyndale House Publishers and Zondervan intended to help readers apply the Bible to daily living.
-	 * Living Bible, King James, New International, NASB
-	 */
-	Life_Application("LIF", "Life Application"), //
+   /**
+    * A project of Tyndale House Publishers and Zondervan intended to help readers apply the Bible to daily living. Living Bible, King James, New International, NASB
+    */
+   Life_Application("LIF", "Life Application"), //
 
-	/**
-	 * A King James version study Bible with notes by James Macarthur first published in 1997
-	 */
-	Macarthur("MAC", "Macarthur"), //
+   /**
+    * A King James version study Bible with notes by James Macarthur first published in 1997
+    */
+   Macarthur("MAC", "Macarthur"), //
 
-	/**
-	 * A study Bible originally published in the 1960s and based on the RSV / NRSV
-	 */
-	Oxford_Annotated("OXF", "Oxford Annotated"), //
+   /**
+    * A study Bible originally published in the 1960s and based on the RSV / NRSV
+    */
+   Oxford_Annotated("OXF", "Oxford Annotated"), //
 
-	/**
-	 * Norwegian study Bible, New Testament
-	 */
-	Studiebibel_Det_Nye_testamentet("NNT", "Studiebibel, Det Nye testamentet"), //
+   /**
+    * Norwegian study Bible, New Testament
+    */
+   Studiebibel_Det_Nye_testamentet("NNT", "Studiebibel, Det Nye testamentet"), //
 
-	/**
-	 * Published in 1991 and based on the New Revised Standard version
-	 */
-	New_Oxford_Annotated("NOX", "New Oxford Annotated"), //
+   /**
+    * Published in 1991 and based on the New Revised Standard version
+    */
+   New_Oxford_Annotated("NOX", "New Oxford Annotated"), //
 
-	/**
-	 * Norwegian study Bible
-	 */
-	Norsk_studiebibel("NSB", "Norsk studiebibel"), //
+   /**
+    * Norwegian study Bible
+    */
+   Norsk_studiebibel("NSB", "Norsk studiebibel"), //
 
-	/**
-	 * Based on the work of Charles C. Ryrie. King James, NI, NASB
-	 */
-	Ryrie("RYR", "Ryrie"), //
+   /**
+    * Based on the work of Charles C. Ryrie. King James, NI, NASB
+    */
+   Ryrie("RYR", "Ryrie"), //
 
-	/**
-	 * A study Bible based on the early 20th century work of C.I. Scofield. Based on the King James version
-	 */
-	Scofield("SCO", "Scofield"), //
+   /**
+    * A study Bible based on the early 20th century work of C.I. Scofield. Based on the King James version
+    */
+   Scofield("SCO", "Scofield"), //
 
-	/**
-	 * A transdenominational study Bible for persons from the Pentecostal/Charismatic traditions
-	 */
-	Spirit_Filled("SPR", "Spirit Filled");
+   /**
+    * A transdenominational study Bible for persons from the Pentecostal/Charismatic traditions
+    */
+   Spirit_Filled("SPR", "Spirit Filled");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private StudyBibleTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private StudyBibleTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, StudyBibleTypes> map;
+   private static volatile Map<String, StudyBibleTypes> map;
 
-	private static Map<String, StudyBibleTypes> map()
-	{
-		Map<String, StudyBibleTypes> result = map;
-		if (result == null)
-		{
-			synchronized (StudyBibleTypes.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (StudyBibleTypes e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, StudyBibleTypes> map()
+   {
+      Map<String, StudyBibleTypes> result = map;
+      if (result == null)
+      {
+         synchronized(StudyBibleTypes.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (StudyBibleTypes e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static StudyBibleTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static StudyBibleTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

@@ -22,33 +22,33 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.ResourceFeatureTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixResourceFeature implements Serializable
+public class JonixResourceFeature implements JonixKeyedStruct<ResourceFeatureTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public ResourceFeatureTypes resourceFeatureType;
+   public static JonixResourceFeature EMPTY = new JonixResourceFeature();
 
-	/**
-	 * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
-	 * may not be taken from a code list
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String featureValue;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public ResourceFeatureTypes resourceFeatureType;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public List<String> featureNotes;
+   /**
+    * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may not be taken from a code list <p> (type: dt.NonEmptyString)
+    */
+   public String featureValue;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+    */
+   public List<String> featureNotes;
+
+   @Override
+   public ResourceFeatureTypes key() { return resourceFeatureType; }
 }

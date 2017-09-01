@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -58,9 +58,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesOutlet";
 	public static final String shortname = "salesoutlet";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -79,29 +79,35 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesOutletIdentifier salesOutletIdentifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SalesOutletName salesOutletName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SalesOutlet EMPTY = new SalesOutlet();
 
 	public SalesOutlet()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SalesOutlet(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -110,25 +116,44 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname))
-					salesOutletIdentifier = new SalesOutletIdentifier(element);
-				else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname))
-					salesOutletName = new SalesOutletName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname))
+				salesOutletIdentifier = new SalesOutletIdentifier(e);
+			else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname))
+				salesOutletName = new SalesOutletName(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
-	 */
-	public String getSalesOutletNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (salesOutletName == null) ? null : salesOutletName.value;
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SalesOutletIdentifier salesOutletIdentifier = SalesOutletIdentifier.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public SalesOutletIdentifier salesOutletIdentifier()
+	{
+		initialize();
+		return salesOutletIdentifier;
+	}
+
+	private SalesOutletName salesOutletName = SalesOutletName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public SalesOutletName salesOutletName()
+	{
+		initialize();
+		return salesOutletName;
 	}
 }

@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,65 +37,60 @@ interface CodeList101
  * Description: Person name identifier type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist101">ONIX
- *      Codelist 101 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist101">ONIX Codelist 101 in Reference Guide</a>
  */
 public enum PersonNameIdentifierTypes implements OnixCodelist, CodeList101
 {
-	Proprietary("01", "Proprietary"), //
+   Proprietary("01", "Proprietary"), //
 
-	/**
-	 * Personennamendatei - person name authority file used by Deutsche Nationalbibliothek and in other German-speaking
-	 * countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or
-	 * http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
-	 */
-	PND("02", "PND"), //
+   /**
+    * Personennamendatei - person name authority file used by Deutsche Nationalbibliothek and in other German-speaking countries. See http://www.d-nb.de/standardisierung/normdateien/pnd.htm (German) or http://www.d-nb.de/eng/standardisierung/normdateien/pnd.htm (English). DEPRECATED in favour of the GND
+    */
+   PND("02", "PND"), //
 
-	/**
-	 * Library of Congress control number assigned to a Library of Congress Name Authority record
-	 */
-	LCCN("04", "LCCN"), //
+   /**
+    * Library of Congress control number assigned to a Library of Congress Name Authority record
+    */
+   LCCN("04", "LCCN"), //
 
-	/**
-	 * International Standard Name Identifier. See http://www.isni.org/
-	 */
-	ISNI("16", "ISNI"), //
+   /**
+    * International Standard Name Identifier. See http://www.isni.org/
+    */
+   ISNI("16", "ISNI"), //
 
-	/**
-	 * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd
-	 * (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
-	 */
-	GND("25", "GND");
+   /**
+    * Gemeinsame Normdatei - Joint Authority File in the German-speaking countries. See http://www.dnb.de/EN/gnd (English). Combines the PND, SWD and GKD into a single authority file, and should be used in preference
+    */
+   GND("25", "GND");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private PersonNameIdentifierTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private PersonNameIdentifierTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static PersonNameIdentifierTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (PersonNameIdentifierTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static PersonNameIdentifierTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (PersonNameIdentifierTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

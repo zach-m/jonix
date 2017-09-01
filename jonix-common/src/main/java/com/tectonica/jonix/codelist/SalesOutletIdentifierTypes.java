@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,55 +37,53 @@ interface CodeList102
  * Description: Sales outlet identifier type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist102">ONIX
- *      Codelist 102 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist102">ONIX Codelist 102 in Reference Guide</a>
  */
 public enum SalesOutletIdentifierTypes implements OnixCodelist, CodeList102
 {
-	/**
-	 * Proprietary list of retail and other end-user sales outlet IDs
-	 */
-	Proprietary("01", "Proprietary"), //
+   /**
+    * Proprietary list of retail and other end-user sales outlet IDs
+    */
+   Proprietary("01", "Proprietary"), //
 
-	/**
-	 * DEPRECATED - use code 03
-	 */
-	BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code"), //
+   /**
+    * DEPRECATED - use code 03
+    */
+   BIC_sales_outlet_ID_code("02", "BIC sales outlet ID code"), //
 
-	/**
-	 * Use with ONIX retail and other end-user sales outlet IDs from List 139
-	 */
-	ONIX_retail_sales_outlet_ID_code("03", "ONIX retail sales outlet ID code");
+   /**
+    * Use with ONIX retail and other end-user sales outlet IDs from List 139
+    */
+   ONIX_retail_sales_outlet_ID_code("03", "ONIX retail sales outlet ID code");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private SalesOutletIdentifierTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private SalesOutletIdentifierTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static SalesOutletIdentifierTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (SalesOutletIdentifierTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static SalesOutletIdentifierTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (SalesOutletIdentifierTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

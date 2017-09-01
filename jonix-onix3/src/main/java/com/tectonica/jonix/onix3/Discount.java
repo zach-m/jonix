@@ -23,12 +23,11 @@ import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.DiscountTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixDiscount;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +51,16 @@ import com.tectonica.jonix.struct.JonixDiscount;
  * </tr>
  * </table>
  */
-public class Discount implements OnixDataComposite, Serializable
+public class Discount implements OnixDataComposite<JonixDiscount>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Discount";
 	public static final String shortname = "discount";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -72,114 +71,129 @@ public class Discount implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public DiscountType discountType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Quantity quantity;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ToQuantity toQuantity;
-
-	/**
-	 * (this field is required)
-	 */
-	public DiscountPercent discountPercent;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DiscountAmount discountAmount;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Discount EMPTY = new Discount();
 
 	public Discount()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Discount(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(DiscountType.refname) || name.equals(DiscountType.shortname))
-					discountType = new DiscountType(element);
-				else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-					quantity = new Quantity(element);
-				else if (name.equals(ToQuantity.refname) || name.equals(ToQuantity.shortname))
-					toQuantity = new ToQuantity(element);
-				else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
-					discountPercent = new DiscountPercent(element);
-				else if (name.equals(DiscountAmount.refname) || name.equals(DiscountAmount.shortname))
-					discountAmount = new DiscountAmount(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(DiscountType.refname) || name.equals(DiscountType.shortname))
+				discountType = new DiscountType(e);
+			else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
+				quantity = new Quantity(e);
+			else if (name.equals(ToQuantity.refname) || name.equals(ToQuantity.shortname))
+				toQuantity = new ToQuantity(e);
+			else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
+				discountPercent = new DiscountPercent(e);
+			else if (name.equals(DiscountAmount.refname) || name.equals(DiscountAmount.shortname))
+				discountAmount = new DiscountAmount(e);
 		});
 	}
 
-	public DiscountTypes getDiscountTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (discountType == null) ? null : discountType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private DiscountType discountType = DiscountType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * (this field is optional)
 	 */
-	public Double getQuantityValue()
+	public DiscountType discountType()
 	{
-		return (quantity == null) ? null : quantity.value;
+		initialize();
+		return discountType;
 	}
+
+	private Quantity quantity = Quantity.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * (this field is optional)
 	 */
-	public Double getToQuantityValue()
+	public Quantity quantity()
 	{
-		return (toQuantity == null) ? null : toQuantity.value;
+		initialize();
+		return quantity;
 	}
+
+	private ToQuantity toQuantity = ToQuantity.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+	 * (this field is optional)
 	 */
-	public Double getDiscountPercentValue()
+	public ToQuantity toQuantity()
 	{
-		return (discountPercent == null) ? null : discountPercent.value;
+		initialize();
+		return toQuantity;
 	}
+
+	private DiscountPercent discountPercent = DiscountPercent.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this field is required)
 	 */
-	public Double getDiscountAmountValue()
+	public DiscountPercent discountPercent()
 	{
-		return (discountAmount == null) ? null : discountAmount.value;
+		initialize();
+		return discountPercent;
 	}
 
-	public JonixDiscount asJonixDiscount()
+	private DiscountAmount discountAmount = DiscountAmount.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DiscountAmount discountAmount()
 	{
-		JonixDiscount x = new JonixDiscount();
-		x.discountType = getDiscountTypeValue();
-		x.quantity = getQuantityValue();
-		x.toQuantity = getToQuantityValue();
-		x.discountPercent = getDiscountPercentValue();
-		x.discountAmount = getDiscountAmountValue();
-		return x;
+		initialize();
+		return discountAmount;
+	}
+
+	@Override
+	public JonixDiscount asStruct()
+	{
+		initialize();
+		JonixDiscount struct = new JonixDiscount();
+		struct.discountType = discountType.value;
+		struct.quantity = quantity.value;
+		struct.toQuantity = toQuantity.value;
+		struct.discountPercent = discountPercent.value;
+		struct.discountAmount = discountAmount.value;
+		return struct;
 	}
 }

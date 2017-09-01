@@ -22,39 +22,34 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPrize implements Serializable
+public class JonixPrize implements JonixStruct, Serializable
 {
-	public PrizeOrAwardAchievements prizeCode;
+   public static JonixPrize EMPTY = new JonixPrize();
 
-	public CountryCodes prizeCountry;
+   public PrizeOrAwardAchievements prizeCode;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public List<String> prizeJurys;
+   public CountryCodes prizeCountry;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public List<String> prizeNames;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+    */
+   public List<String> prizeJurys;
 
-	/**
-	 * Raw Format: Four digits, YYYY
-	 * <p>
-	 * (type: dt.Year)
-	 */
-	public String prizeYear;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+    */
+   public List<String> prizeNames;
+
+   /**
+    * Raw Format: Four digits, YYYY <p> (type: dt.Year)
+    */
+   public String prizeYear;
 }

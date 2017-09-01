@@ -28,11 +28,10 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.codelist.WebsiteRoles;
 import com.tectonica.jonix.struct.JonixProductWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +51,16 @@ import com.tectonica.jonix.struct.JonixProductWebsite;
  * </tr>
  * </table>
  */
-public class ProductWebsite implements OnixDataComposite, Serializable
+public class ProductWebsite implements OnixDataComposite<JonixProductWebsite>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProductWebsite";
 	public static final String shortname = "productwebsite";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -80,34 +79,35 @@ public class ProductWebsite implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public WebsiteRole websiteRole;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductWebsiteDescription productWebsiteDescription;
-
-	/**
-	 * (this field is required)
-	 */
-	public ProductWebsiteLink productWebsiteLink;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProductWebsite EMPTY = new ProductWebsite();
 
 	public ProductWebsite()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProductWebsite(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -116,51 +116,68 @@ public class ProductWebsite implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
-					websiteRole = new WebsiteRole(element);
-				else if (name.equals(ProductWebsiteDescription.refname)
-						|| name.equals(ProductWebsiteDescription.shortname))
-					productWebsiteDescription = new ProductWebsiteDescription(element);
-				else if (name.equals(ProductWebsiteLink.refname) || name.equals(ProductWebsiteLink.shortname))
-					productWebsiteLink = new ProductWebsiteLink(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
+				websiteRole = new WebsiteRole(e);
+			else if (name.equals(ProductWebsiteDescription.refname) || name.equals(ProductWebsiteDescription.shortname))
+				productWebsiteDescription = new ProductWebsiteDescription(e);
+			else if (name.equals(ProductWebsiteLink.refname) || name.equals(ProductWebsiteLink.shortname))
+				productWebsiteLink = new ProductWebsiteLink(e);
 		});
 	}
 
-	public WebsiteRoles getWebsiteRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (websiteRole == null) ? null : websiteRole.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is optional)
 	 */
-	public String getProductWebsiteDescriptionValue()
+	public WebsiteRole websiteRole()
 	{
-		return (productWebsiteDescription == null) ? null : productWebsiteDescription.value;
+		initialize();
+		return websiteRole;
 	}
+
+	private ProductWebsiteDescription productWebsiteDescription = ProductWebsiteDescription.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getProductWebsiteLinkValue()
+	public ProductWebsiteDescription productWebsiteDescription()
 	{
-		return (productWebsiteLink == null) ? null : productWebsiteLink.value;
+		initialize();
+		return productWebsiteDescription;
 	}
 
-	public JonixProductWebsite asJonixProductWebsite()
+	private ProductWebsiteLink productWebsiteLink = ProductWebsiteLink.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductWebsiteLink productWebsiteLink()
 	{
-		JonixProductWebsite x = new JonixProductWebsite();
-		x.websiteRole = getWebsiteRoleValue();
-		x.productWebsiteDescription = getProductWebsiteDescriptionValue();
-		x.productWebsiteLink = getProductWebsiteLinkValue();
-		return x;
+		initialize();
+		return productWebsiteLink;
+	}
+
+	@Override
+	public JonixProductWebsite asStruct()
+	{
+		initialize();
+		JonixProductWebsite struct = new JonixProductWebsite();
+		struct.websiteRole = websiteRole.value;
+		struct.productWebsiteDescription = productWebsiteDescription.value;
+		struct.productWebsiteLink = productWebsiteLink.value;
+		return struct;
 	}
 }

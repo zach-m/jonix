@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,7 +28,7 @@ import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -59,9 +60,9 @@ public class Market implements OnixSuperComposite, Serializable
 	public static final String refname = "Market";
 	public static final String shortname = "market";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -72,44 +73,77 @@ public class Market implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public Territory territory;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRestriction> salesRestrictions;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Market EMPTY = new Market();
 
 	public Market()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Market(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					territory = new Territory(element);
-				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Territory.refname) || name.equals(Territory.shortname))
+				territory = new Territory(e);
+			else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
+				salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
 		});
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private Territory territory = Territory.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Territory territory()
+	{
+		initialize();
+		return territory;
+	}
+
+	private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions()
+	{
+		initialize();
+		return salesRestrictions;
 	}
 }

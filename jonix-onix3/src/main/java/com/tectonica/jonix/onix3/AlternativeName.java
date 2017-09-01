@@ -20,18 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixNameIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -76,9 +74,9 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 	public static final String refname = "AlternativeName";
 	public static final String shortname = "alternativename";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -89,257 +87,234 @@ public class AlternativeName implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public NameType nameType;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<NameIdentifier> nameIdentifiers;
-
-	/**
-	 * (this field is required)
-	 */
-	public PersonName personName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PersonNameInverted personNameInverted;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesBeforeNames titlesBeforeNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NamesBeforeKey namesBeforeKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrefixToKey prefixToKey;
-
-	/**
-	 * (this field is required)
-	 */
-	public KeyNames keyNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NamesAfterKey namesAfterKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SuffixToKey suffixToKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LettersAfterNames lettersAfterNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesAfterNames titlesAfterNames;
-
-	/**
-	 * (this field is required)
-	 */
-	public CorporateName corporateName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CorporateNameInverted corporateNameInverted;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final AlternativeName EMPTY = new AlternativeName();
 
 	public AlternativeName()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public AlternativeName(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(NameType.refname) || name.equals(NameType.shortname))
-					nameType = new NameType(element);
-				else if (name.equals(NameIdentifier.refname) || name.equals(NameIdentifier.shortname))
-					nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(element));
-				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					personName = new PersonName(element);
-				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-					personNameInverted = new PersonNameInverted(element);
-				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-					titlesBeforeNames = new TitlesBeforeNames(element);
-				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-					namesBeforeKey = new NamesBeforeKey(element);
-				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-					prefixToKey = new PrefixToKey(element);
-				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-					keyNames = new KeyNames(element);
-				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-					namesAfterKey = new NamesAfterKey(element);
-				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-					suffixToKey = new SuffixToKey(element);
-				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-					lettersAfterNames = new LettersAfterNames(element);
-				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-					titlesAfterNames = new TitlesAfterNames(element);
-				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					corporateName = new CorporateName(element);
-				else if (name.equals(CorporateNameInverted.refname) || name.equals(CorporateNameInverted.shortname))
-					corporateNameInverted = new CorporateNameInverted(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(NameType.refname) || name.equals(NameType.shortname))
+				nameType = new NameType(e);
+			else if (name.equals(NameIdentifier.refname) || name.equals(NameIdentifier.shortname))
+				nameIdentifiers = JPU.addToList(nameIdentifiers, new NameIdentifier(e));
+			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
+				personName = new PersonName(e);
+			else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
+				personNameInverted = new PersonNameInverted(e);
+			else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
+				titlesBeforeNames = new TitlesBeforeNames(e);
+			else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
+				namesBeforeKey = new NamesBeforeKey(e);
+			else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
+				prefixToKey = new PrefixToKey(e);
+			else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
+				keyNames = new KeyNames(e);
+			else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
+				namesAfterKey = new NamesAfterKey(e);
+			else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
+				suffixToKey = new SuffixToKey(e);
+			else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
+				lettersAfterNames = new LettersAfterNames(e);
+			else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
+				titlesAfterNames = new TitlesAfterNames(e);
+			else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
+				corporateName = new CorporateName(e);
+			else if (name.equals(CorporateNameInverted.refname) || name.equals(CorporateNameInverted.shortname))
+				corporateNameInverted = new CorporateNameInverted(e);
 		});
 	}
 
-	public PersonOrganizationNameTypes getNameTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (nameType == null) ? null : nameType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private NameType nameType = NameType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getPersonNameValue()
+	public NameType nameType()
 	{
-		return (personName == null) ? null : personName.value;
+		initialize();
+		return nameType;
 	}
+
+	private ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getPersonNameInvertedValue()
+	public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers()
 	{
-		return (personNameInverted == null) ? null : personNameInverted.value;
+		initialize();
+		return nameIdentifiers;
 	}
+
+	private PersonName personName = PersonName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getTitlesBeforeNamesValue()
+	public PersonName personName()
 	{
-		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
+		initialize();
+		return personName;
 	}
+
+	private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getNamesBeforeKeyValue()
+	public PersonNameInverted personNameInverted()
 	{
-		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
+		initialize();
+		return personNameInverted;
 	}
+
+	private TitlesBeforeNames titlesBeforeNames = TitlesBeforeNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getPrefixToKeyValue()
+	public TitlesBeforeNames titlesBeforeNames()
 	{
-		return (prefixToKey == null) ? null : prefixToKey.value;
+		initialize();
+		return titlesBeforeNames;
 	}
+
+	private NamesBeforeKey namesBeforeKey = NamesBeforeKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getKeyNamesValue()
+	public NamesBeforeKey namesBeforeKey()
 	{
-		return (keyNames == null) ? null : keyNames.value;
+		initialize();
+		return namesBeforeKey;
 	}
+
+	private PrefixToKey prefixToKey = PrefixToKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getNamesAfterKeyValue()
+	public PrefixToKey prefixToKey()
 	{
-		return (namesAfterKey == null) ? null : namesAfterKey.value;
+		initialize();
+		return prefixToKey;
 	}
+
+	private KeyNames keyNames = KeyNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getSuffixToKeyValue()
+	public KeyNames keyNames()
 	{
-		return (suffixToKey == null) ? null : suffixToKey.value;
+		initialize();
+		return keyNames;
 	}
+
+	private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getLettersAfterNamesValue()
+	public NamesAfterKey namesAfterKey()
 	{
-		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
+		initialize();
+		return namesAfterKey;
 	}
+
+	private SuffixToKey suffixToKey = SuffixToKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getTitlesAfterNamesValue()
+	public SuffixToKey suffixToKey()
 	{
-		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
+		initialize();
+		return suffixToKey;
 	}
+
+	private LettersAfterNames lettersAfterNames = LettersAfterNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is optional)
 	 */
-	public String getCorporateNameValue()
+	public LettersAfterNames lettersAfterNames()
 	{
-		return (corporateName == null) ? null : corporateName.value;
+		initialize();
+		return lettersAfterNames;
 	}
+
+	private TitlesAfterNames titlesAfterNames = TitlesAfterNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is optional)
 	 */
-	public String getCorporateNameInvertedValue()
+	public TitlesAfterNames titlesAfterNames()
 	{
-		return (corporateNameInverted == null) ? null : corporateNameInverted.value;
+		initialize();
+		return titlesAfterNames;
 	}
 
-	public JonixNameIdentifier findNameIdentifier(NameCodeTypes nameIDType)
+	private CorporateName corporateName = CorporateName.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public CorporateName corporateName()
 	{
-		if (nameIdentifiers != null)
-		{
-			for (NameIdentifier x : nameIdentifiers)
-			{
-				if (x.getNameIDTypeValue() == nameIDType)
-					return x.asJonixNameIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return corporateName;
 	}
 
-	public List<JonixNameIdentifier> findNameIdentifiers(java.util.Set<NameCodeTypes> nameIDTypes)
+	private CorporateNameInverted corporateNameInverted = CorporateNameInverted.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateNameInverted corporateNameInverted()
 	{
-		if (nameIdentifiers != null)
-		{
-			List<JonixNameIdentifier> matches = new ArrayList<>();
-			for (NameIdentifier x : nameIdentifiers)
-			{
-				if (nameIDTypes == null || nameIDTypes.contains(x.getNameIDTypeValue()))
-					matches.add(x.asJonixNameIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return corporateNameInverted;
 	}
 }

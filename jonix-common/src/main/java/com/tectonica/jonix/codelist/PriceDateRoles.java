@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,56 +37,53 @@ interface CodeList173
  * Description: Price date role
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist173">ONIX
- *      Codelist 173 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist173">ONIX Codelist 173 in Reference Guide</a>
  */
 public enum PriceDateRoles implements OnixCodelist, CodeList173
 {
-	/**
-	 * Date on which a price becomes effective
-	 */
-	From_date("14", "From date"), //
+   /**
+    * Date on which a price becomes effective
+    */
+   From_date("14", "From date"), //
 
-	/**
-	 * Date on which a price ceases to be effective
-	 */
-	Until_date("15", "Until date"), //
+   /**
+    * Date on which a price ceases to be effective
+    */
+   Until_date("15", "Until date"), //
 
-	/**
-	 * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
-	 * 06
-	 */
-	From_until_date("24", "From… until date");
+   /**
+    * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat 06
+    */
+   From_until_date("24", "From… until date");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private PriceDateRoles(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private PriceDateRoles(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static PriceDateRoles byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (PriceDateRoles e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static PriceDateRoles byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (PriceDateRoles e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

@@ -20,27 +20,23 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.BibleContentss;
 import com.tectonica.jonix.codelist.BiblePurposes;
-import com.tectonica.jonix.codelist.BibleReferenceLocations;
 import com.tectonica.jonix.codelist.BibleTextFeatures;
-import com.tectonica.jonix.codelist.BibleTextOrganizations;
 import com.tectonica.jonix.codelist.BibleVersions;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.StudyBibleTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixBible;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -61,16 +57,16 @@ import com.tectonica.jonix.struct.JonixBible;
  * </tr>
  * </table>
  */
-public class Bible implements OnixDataComposite, Serializable
+public class Bible implements OnixDataComposite<JonixBible>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Bible";
 	public static final String shortname = "bible";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -89,54 +85,35 @@ public class Bible implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<BibleContents> bibleContentss;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<BibleVersion> bibleVersions;
-
-	/**
-	 * (this field is optional)
-	 */
-	public StudyBibleType studyBibleType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BiblePurpose> biblePurposes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BibleTextOrganization bibleTextOrganization;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BibleReferenceLocation bibleReferenceLocation;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BibleTextFeature> bibleTextFeatures;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Bible EMPTY = new Bible();
 
 	public Bible()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Bible(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -145,103 +122,124 @@ public class Bible implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(BibleContents.refname) || name.equals(BibleContents.shortname))
-					bibleContentss = JPU.addToList(bibleContentss, new BibleContents(element));
-				else if (name.equals(BibleVersion.refname) || name.equals(BibleVersion.shortname))
-					bibleVersions = JPU.addToList(bibleVersions, new BibleVersion(element));
-				else if (name.equals(StudyBibleType.refname) || name.equals(StudyBibleType.shortname))
-					studyBibleType = new StudyBibleType(element);
-				else if (name.equals(BiblePurpose.refname) || name.equals(BiblePurpose.shortname))
-					biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(element));
-				else if (name.equals(BibleTextOrganization.refname) || name.equals(BibleTextOrganization.shortname))
-					bibleTextOrganization = new BibleTextOrganization(element);
-				else if (name.equals(BibleReferenceLocation.refname) || name.equals(BibleReferenceLocation.shortname))
-					bibleReferenceLocation = new BibleReferenceLocation(element);
-				else if (name.equals(BibleTextFeature.refname) || name.equals(BibleTextFeature.shortname))
-					bibleTextFeatures = JPU.addToList(bibleTextFeatures, new BibleTextFeature(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(BibleContents.refname) || name.equals(BibleContents.shortname))
+				bibleContentss = JPU.addToList(bibleContentss, new BibleContents(e));
+			else if (name.equals(BibleVersion.refname) || name.equals(BibleVersion.shortname))
+				bibleVersions = JPU.addToList(bibleVersions, new BibleVersion(e));
+			else if (name.equals(StudyBibleType.refname) || name.equals(StudyBibleType.shortname))
+				studyBibleType = new StudyBibleType(e);
+			else if (name.equals(BiblePurpose.refname) || name.equals(BiblePurpose.shortname))
+				biblePurposes = JPU.addToList(biblePurposes, new BiblePurpose(e));
+			else if (name.equals(BibleTextOrganization.refname) || name.equals(BibleTextOrganization.shortname))
+				bibleTextOrganization = new BibleTextOrganization(e);
+			else if (name.equals(BibleReferenceLocation.refname) || name.equals(BibleReferenceLocation.shortname))
+				bibleReferenceLocation = new BibleReferenceLocation(e);
+			else if (name.equals(BibleTextFeature.refname) || name.equals(BibleTextFeature.shortname))
+				bibleTextFeatures = JPU.addToList(bibleTextFeatures, new BibleTextFeature(e));
 		});
 	}
 
-	public List<BibleContentss> getBibleContentsValues()
+	@Override
+	public boolean exists()
 	{
-		if (bibleContentss != null)
-		{
-			List<BibleContentss> list = new ArrayList<>();
-			for (BibleContents i : bibleContentss)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		return exists;
 	}
 
-	public List<BibleVersions> getBibleVersionValues()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixElement<BibleContents, BibleContentss> bibleContentss = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<BibleContents, BibleContentss> bibleContentss()
 	{
-		if (bibleVersions != null)
-		{
-			List<BibleVersions> list = new ArrayList<>();
-			for (BibleVersion i : bibleVersions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return bibleContentss;
 	}
 
-	public StudyBibleTypes getStudyBibleTypeValue()
+	private ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions()
 	{
-		return (studyBibleType == null) ? null : studyBibleType.value;
+		initialize();
+		return bibleVersions;
 	}
 
-	public List<BiblePurposes> getBiblePurposeValues()
+	private StudyBibleType studyBibleType = StudyBibleType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StudyBibleType studyBibleType()
 	{
-		if (biblePurposes != null)
-		{
-			List<BiblePurposes> list = new ArrayList<>();
-			for (BiblePurpose i : biblePurposes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return studyBibleType;
 	}
 
-	public BibleTextOrganizations getBibleTextOrganizationValue()
+	private ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes()
 	{
-		return (bibleTextOrganization == null) ? null : bibleTextOrganization.value;
+		initialize();
+		return biblePurposes;
 	}
 
-	public BibleReferenceLocations getBibleReferenceLocationValue()
+	private BibleTextOrganization bibleTextOrganization = BibleTextOrganization.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BibleTextOrganization bibleTextOrganization()
 	{
-		return (bibleReferenceLocation == null) ? null : bibleReferenceLocation.value;
+		initialize();
+		return bibleTextOrganization;
 	}
 
-	public List<BibleTextFeatures> getBibleTextFeatureValues()
+	private BibleReferenceLocation bibleReferenceLocation = BibleReferenceLocation.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BibleReferenceLocation bibleReferenceLocation()
 	{
-		if (bibleTextFeatures != null)
-		{
-			List<BibleTextFeatures> list = new ArrayList<>();
-			for (BibleTextFeature i : bibleTextFeatures)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return bibleReferenceLocation;
 	}
 
-	public JonixBible asJonixBible()
+	private ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures()
 	{
-		JonixBible x = new JonixBible();
-		x.bibleContentss = getBibleContentsValues();
-		x.biblePurposes = getBiblePurposeValues();
-		x.bibleReferenceLocation = getBibleReferenceLocationValue();
-		x.bibleTextFeatures = getBibleTextFeatureValues();
-		x.bibleTextOrganization = getBibleTextOrganizationValue();
-		x.bibleVersions = getBibleVersionValues();
-		x.studyBibleType = getStudyBibleTypeValue();
-		return x;
+		initialize();
+		return bibleTextFeatures;
+	}
+
+	@Override
+	public JonixBible asStruct()
+	{
+		initialize();
+		JonixBible struct = new JonixBible();
+		struct.bibleContentss = bibleContentss.values();
+		struct.biblePurposes = biblePurposes.values();
+		struct.bibleReferenceLocation = bibleReferenceLocation.value;
+		struct.bibleTextFeatures = bibleTextFeatures.values();
+		struct.bibleTextOrganization = bibleTextOrganization.value;
+		struct.bibleVersions = bibleVersions.values();
+		struct.studyBibleType = studyBibleType.value;
+		return struct;
 	}
 }

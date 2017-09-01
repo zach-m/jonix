@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.DiscountCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixDiscountCoded;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -56,16 +56,16 @@ import com.tectonica.jonix.struct.JonixDiscountCoded;
  * </tr>
  * </table>
  */
-public class DiscountCoded implements OnixDataComposite, Serializable
+public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCoded, DiscountCodeTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "DiscountCoded";
 	public static final String shortname = "discountcoded";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -76,81 +76,107 @@ public class DiscountCoded implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public DiscountCodeType discountCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DiscountCodeTypeName discountCodeTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public DiscountCode discountCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final DiscountCoded EMPTY = new DiscountCoded();
 
 	public DiscountCoded()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public DiscountCoded(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(DiscountCodeType.refname) || name.equals(DiscountCodeType.shortname))
-					discountCodeType = new DiscountCodeType(element);
-				else if (name.equals(DiscountCodeTypeName.refname) || name.equals(DiscountCodeTypeName.shortname))
-					discountCodeTypeName = new DiscountCodeTypeName(element);
-				else if (name.equals(DiscountCode.refname) || name.equals(DiscountCode.shortname))
-					discountCode = new DiscountCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(DiscountCodeType.refname) || name.equals(DiscountCodeType.shortname))
+				discountCodeType = new DiscountCodeType(e);
+			else if (name.equals(DiscountCodeTypeName.refname) || name.equals(DiscountCodeTypeName.shortname))
+				discountCodeTypeName = new DiscountCodeTypeName(e);
+			else if (name.equals(DiscountCode.refname) || name.equals(DiscountCode.shortname))
+				discountCode = new DiscountCode(e);
 		});
 	}
 
-	public DiscountCodeTypes getDiscountCodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (discountCodeType == null) ? null : discountCodeType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private DiscountCodeType discountCodeType = DiscountCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getDiscountCodeTypeNameValue()
+	public DiscountCodeType discountCodeType()
 	{
-		return (discountCodeTypeName == null) ? null : discountCodeTypeName.value;
+		initialize();
+		return discountCodeType;
 	}
+
+	private DiscountCodeTypeName discountCodeTypeName = DiscountCodeTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt;
+	 * (this field is optional)
 	 */
-	public String getDiscountCodeValue()
+	public DiscountCodeTypeName discountCodeTypeName()
 	{
-		return (discountCode == null) ? null : discountCode.value;
+		initialize();
+		return discountCodeTypeName;
 	}
 
-	public JonixDiscountCoded asJonixDiscountCoded()
+	private DiscountCode discountCode = DiscountCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public DiscountCode discountCode()
 	{
-		JonixDiscountCoded x = new JonixDiscountCoded();
-		x.discountCodeType = getDiscountCodeTypeValue();
-		x.discountCode = getDiscountCodeValue();
-		x.discountCodeTypeName = getDiscountCodeTypeNameValue();
-		return x;
+		initialize();
+		return discountCode;
+	}
+
+	@Override
+	public JonixDiscountCoded asStruct()
+	{
+		initialize();
+		JonixDiscountCoded struct = new JonixDiscountCoded();
+		struct.discountCodeType = discountCodeType.value;
+		struct.discountCode = discountCode.value;
+		struct.discountCodeTypeName = discountCodeTypeName.value;
+		return struct;
+	}
+
+	@Override
+	public DiscountCodeTypes structKey()
+	{
+		return discountCodeType().value;
 	}
 }

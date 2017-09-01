@@ -20,69 +20,59 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.TitleElementLevels;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixTitleElement implements Serializable
+public class JonixTitleElement implements JonixStruct, Serializable
 {
-	/**
-	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
-	 * <p>
-	 * (type: dt.StrictPositiveInteger)
-	 */
-	public Integer sequenceNumber;
+   public static JonixTitleElement EMPTY = new JonixTitleElement();
 
-	public TitleElementLevels titleElementLevel;
+   /**
+    * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits <p> (type: dt.StrictPositiveInteger)
+    */
+   public Integer sequenceNumber;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 20 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String partNumber;
+   public TitleElementLevels titleElementLevel;
 
-	/**
-	 * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY
-	 * <p>
-	 * (type: dt.YearOrYearRange)
-	 */
-	public String yearOfAnnual;
+   /**
+    * Raw Format: Variable-length text, suggested maximum 20 characters <p> (type: dt.NonEmptyString)
+    */
+   public String partNumber;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 20 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String titlePrefix;
+   /**
+    * Raw Format: Year or range of years, in the format YYYY or YYYY-YYYY <p> (type: dt.YearOrYearRange)
+    */
+   public String yearOfAnnual;
 
-	/**
-	 * (optional flag)
-	 */
-	public boolean isNoPrefix;
+   /**
+    * Raw Format: Variable-length text, suggested maximum 20 characters <p> (type: dt.NonEmptyString)
+    */
+   public String titlePrefix;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String titleWithoutPrefix;
+   /**
+    * (optional flag)
+    */
+   public boolean isNoPrefix;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String titleText;
+   /**
+    * Raw Format: Variable-length text, suggested maximum 300 characters <p> (type: dt.NonEmptyString)
+    */
+   public String titleWithoutPrefix;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String subtitle;
+   /**
+    * Raw Format: Variable-length text, suggested maximum 300 characters <p> (type: dt.NonEmptyString)
+    */
+   public String titleText;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum 300 characters <p> (type: dt.NonEmptyString)
+    */
+   public String subtitle;
 }

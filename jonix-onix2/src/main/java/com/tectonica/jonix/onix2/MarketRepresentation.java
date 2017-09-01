@@ -20,10 +20,11 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
@@ -34,9 +35,10 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixAgentIdentifier;
 import com.tectonica.jonix.struct.JonixMarketDate;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,9 +65,9 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 	public static final String refname = "MarketRepresentation";
 	public static final String shortname = "marketrepresentation";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -84,84 +86,35 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<AgentIdentifier> agentIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AgentName agentName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TelephoneNumber> telephoneNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FaxNumber> faxNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EmailAddress> emailAddresss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AgentRole agentRole;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MarketCountry marketCountry;
-
-	/**
-	 * (this field is required)
-	 */
-	public MarketTerritory marketTerritory;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MarketCountryExcluded marketCountryExcluded;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MarketRestrictionDetail marketRestrictionDetail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MarketPublishingStatus marketPublishingStatus;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MarketDate> marketDates;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final MarketRepresentation EMPTY = new MarketRepresentation();
 
 	public MarketRepresentation()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public MarketRepresentation(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -170,201 +123,189 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
-					agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(element));
-				else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
-					agentName = new AgentName(element);
-				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
-				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-				else if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
-					agentRole = new AgentRole(element);
-				else if (name.equals(MarketCountry.refname) || name.equals(MarketCountry.shortname))
-					marketCountry = new MarketCountry(element);
-				else if (name.equals(MarketTerritory.refname) || name.equals(MarketTerritory.shortname))
-					marketTerritory = new MarketTerritory(element);
-				else if (name.equals(MarketCountryExcluded.refname) || name.equals(MarketCountryExcluded.shortname))
-					marketCountryExcluded = new MarketCountryExcluded(element);
-				else if (name.equals(MarketRestrictionDetail.refname) || name.equals(MarketRestrictionDetail.shortname))
-					marketRestrictionDetail = new MarketRestrictionDetail(element);
-				else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
-					marketPublishingStatus = new MarketPublishingStatus(element);
-				else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
-					marketDates = JPU.addToList(marketDates, new MarketDate(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AgentIdentifier.refname) || name.equals(AgentIdentifier.shortname))
+				agentIdentifiers = JPU.addToList(agentIdentifiers, new AgentIdentifier(e));
+			else if (name.equals(AgentName.refname) || name.equals(AgentName.shortname))
+				agentName = new AgentName(e);
+			else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
+				telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+			else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
+				faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
+			else if (name.equals(AgentRole.refname) || name.equals(AgentRole.shortname))
+				agentRole = new AgentRole(e);
+			else if (name.equals(MarketCountry.refname) || name.equals(MarketCountry.shortname))
+				marketCountry = new MarketCountry(e);
+			else if (name.equals(MarketTerritory.refname) || name.equals(MarketTerritory.shortname))
+				marketTerritory = new MarketTerritory(e);
+			else if (name.equals(MarketCountryExcluded.refname) || name.equals(MarketCountryExcluded.shortname))
+				marketCountryExcluded = new MarketCountryExcluded(e);
+			else if (name.equals(MarketRestrictionDetail.refname) || name.equals(MarketRestrictionDetail.shortname))
+				marketRestrictionDetail = new MarketRestrictionDetail(e);
+			else if (name.equals(MarketPublishingStatus.refname) || name.equals(MarketPublishingStatus.shortname))
+				marketPublishingStatus = new MarketPublishingStatus(e);
+			else if (name.equals(MarketDate.refname) || name.equals(MarketDate.shortname))
+				marketDates = JPU.addToList(marketDates, new MarketDate(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public String getAgentNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (agentName == null) ? null : agentName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public List<String> getTelephoneNumberValues()
+	public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers()
 	{
-		if (telephoneNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (TelephoneNumber i : telephoneNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return agentIdentifiers;
 	}
+
+	private AgentName agentName = AgentName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public List<String> getFaxNumberValues()
+	public AgentName agentName()
 	{
-		if (faxNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FaxNumber i : faxNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return agentName;
 	}
+
+	private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getEmailAddressValues()
+	public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers()
 	{
-		if (emailAddresss != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (EmailAddress i : emailAddresss)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return telephoneNumbers;
 	}
+
+	private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Fixed-length, two numeric digits.
+	 * (this list may be empty)
 	 */
-	public String getAgentRoleValue()
+	public ListOfOnixElement<FaxNumber, String> faxNumbers()
 	{
-		return (agentRole == null) ? null : agentRole.value;
+		initialize();
+		return faxNumbers;
 	}
+
+	private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
-	 * spaces. Suggested maximum length 600 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
-	 * as upper case only.]
+	 * (this list may be empty)
 	 */
-	public java.util.Set<String> getMarketCountrySet()
+	public ListOfOnixElement<EmailAddress, String> emailAddresss()
 	{
-		return (marketCountry == null) ? null : marketCountry.value;
+		initialize();
+		return emailAddresss;
 	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: One or more variable-length codes, each consisting of upper case letters with or without a hyphen,
-	 * successive codes being separated by spaces. Suggested maximum length 100 characters.
+	 * (this list may be empty)
 	 */
-	public java.util.Set<String> getMarketTerritorySet()
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
 	{
-		return (marketTerritory == null) ? null : marketTerritory.value;
+		initialize();
+		return websites;
 	}
+
+	private AgentRole agentRole = AgentRole.EMPTY;
 
 	/**
-	 * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
-	 * spaces. Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that country codes shall be sent
-	 * as upper case only.]
+	 * (this field is optional)
 	 */
-	public java.util.Set<String> getMarketCountryExcludedSet()
+	public AgentRole agentRole()
 	{
-		return (marketCountryExcluded == null) ? null : marketCountryExcluded.value;
+		initialize();
+		return agentRole;
 	}
+
+	private MarketCountry marketCountry = MarketCountry.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getMarketRestrictionDetailValue()
+	public MarketCountry marketCountry()
 	{
-		return (marketRestrictionDetail == null) ? null : marketRestrictionDetail.value;
+		initialize();
+		return marketCountry;
 	}
+
+	private MarketTerritory marketTerritory = MarketTerritory.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, two numeric digits.
+	 * (this field is required)
 	 */
-	public String getMarketPublishingStatusValue()
+	public MarketTerritory marketTerritory()
 	{
-		return (marketPublishingStatus == null) ? null : marketPublishingStatus.value;
+		initialize();
+		return marketTerritory;
 	}
 
-	public JonixAgentIdentifier findAgentIdentifier(SupplierIdentifierTypes agentIDType)
+	private MarketCountryExcluded marketCountryExcluded = MarketCountryExcluded.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketCountryExcluded marketCountryExcluded()
 	{
-		if (agentIdentifiers != null)
-		{
-			for (AgentIdentifier x : agentIdentifiers)
-			{
-				if (x.getAgentIDTypeValue() == agentIDType)
-					return x.asJonixAgentIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return marketCountryExcluded;
 	}
 
-	public List<JonixAgentIdentifier> findAgentIdentifiers(java.util.Set<SupplierIdentifierTypes> agentIDTypes)
+	private MarketRestrictionDetail marketRestrictionDetail = MarketRestrictionDetail.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketRestrictionDetail marketRestrictionDetail()
 	{
-		if (agentIdentifiers != null)
-		{
-			List<JonixAgentIdentifier> matches = new ArrayList<>();
-			for (AgentIdentifier x : agentIdentifiers)
-			{
-				if (agentIDTypes == null || agentIDTypes.contains(x.getAgentIDTypeValue()))
-					matches.add(x.asJonixAgentIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return marketRestrictionDetail;
 	}
 
-	public JonixMarketDate findMarketDate(PublishingDateRoles marketDateRole)
+	private MarketPublishingStatus marketPublishingStatus = MarketPublishingStatus.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MarketPublishingStatus marketPublishingStatus()
 	{
-		if (marketDates != null)
-		{
-			for (MarketDate x : marketDates)
-			{
-				if (x.getMarketDateRoleValue() == marketDateRole)
-					return x.asJonixMarketDate();
-			}
-		}
-		return null;
+		initialize();
+		return marketPublishingStatus;
 	}
 
-	public List<JonixMarketDate> findMarketDates(java.util.Set<PublishingDateRoles> marketDateRoles)
+	private ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates()
 	{
-		if (marketDates != null)
-		{
-			List<JonixMarketDate> matches = new ArrayList<>();
-			for (MarketDate x : marketDates)
-			{
-				if (marketDateRoles == null || marketDateRoles.contains(x.getMarketDateRoleValue()))
-					matches.add(x.asJonixMarketDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return marketDates;
 	}
 }

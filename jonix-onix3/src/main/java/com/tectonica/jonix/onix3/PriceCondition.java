@@ -20,20 +20,18 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
-import com.tectonica.jonix.codelist.PriceConditionTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPriceConditionQuantity;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,9 +61,9 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 	public static final String refname = "PriceCondition";
 	public static final String shortname = "pricecondition";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -76,115 +74,92 @@ public class PriceCondition implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PriceConditionType priceConditionType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PriceConditionQuantity> priceConditionQuantitys;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PriceCondition EMPTY = new PriceCondition();
 
 	public PriceCondition()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PriceCondition(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname))
-					priceConditionType = new PriceConditionType(element);
-				else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname))
-					priceConditionQuantitys = JPU.addToList(priceConditionQuantitys,
-							new PriceConditionQuantity(element));
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname))
+				priceConditionType = new PriceConditionType(e);
+			else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname))
+				priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(e));
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
 		});
 	}
 
-	public PriceConditionTypes getPriceConditionTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceConditionType == null) ? null : priceConditionType.value;
+		return exists;
 	}
 
-	public JonixPriceConditionQuantity findPriceConditionQuantity(PriceConditionQuantityTypes priceConditionQuantityType)
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PriceConditionType priceConditionType = PriceConditionType.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public PriceConditionType priceConditionType()
 	{
-		if (priceConditionQuantitys != null)
-		{
-			for (PriceConditionQuantity x : priceConditionQuantitys)
-			{
-				if (x.getPriceConditionQuantityTypeValue() == priceConditionQuantityType)
-					return x.asJonixPriceConditionQuantity();
-			}
-		}
-		return null;
+		initialize();
+		return priceConditionType;
 	}
 
-	public List<JonixPriceConditionQuantity> findPriceConditionQuantitys(
-			java.util.Set<PriceConditionQuantityTypes> priceConditionQuantityTypes)
+	private ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes> priceConditionQuantitys = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes> priceConditionQuantitys()
 	{
-		if (priceConditionQuantitys != null)
-		{
-			List<JonixPriceConditionQuantity> matches = new ArrayList<>();
-			for (PriceConditionQuantity x : priceConditionQuantitys)
-			{
-				if (priceConditionQuantityTypes == null
-						|| priceConditionQuantityTypes.contains(x.getPriceConditionQuantityTypeValue()))
-					matches.add(x.asJonixPriceConditionQuantity());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return priceConditionQuantitys;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
-	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
-	}
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return productIdentifiers;
 	}
 }

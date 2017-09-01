@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,104 +40,98 @@ interface CodeList162
  * Description: Resource version feature type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist162">ONIX
- *      Codelist 162 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist162">ONIX Codelist 162 in Reference Guide</a>
  */
 public enum ResourceVersionFeatureTypes implements OnixCodelist, CodeList162
 {
-	/**
-	 * Resource Version Feature Value carries a code from List 178
-	 */
-	File_format("01", "File format"), //
+   /**
+    * Resource Version Feature Value carries a code from List 178
+    */
+   File_format("01", "File format"), //
 
-	/**
-	 * Resource Version Feature Value carries an integer
-	 */
-	Image_height_in_pixels("02", "Image height in pixels"), //
+   /**
+    * Resource Version Feature Value carries an integer
+    */
+   Image_height_in_pixels("02", "Image height in pixels"), //
 
-	/**
-	 * Resource Version Feature Value carries an integer
-	 */
-	Image_width_in_pixels("03", "Image width in pixels"), //
+   /**
+    * Resource Version Feature Value carries an integer
+    */
+   Image_width_in_pixels("03", "Image width in pixels"), //
 
-	/**
-	 * Resource Version Feature Value carries the filename of the supporting resource
-	 */
-	Filename("04", "Filename"), //
+   /**
+    * Resource Version Feature Value carries the filename of the supporting resource
+    */
+   Filename("04", "Filename"), //
 
-	/**
-	 * Resource Version Feature Value carries a decimal number only, suggested no more than 2 significant digits (eg
-	 * 1.7, not 1.7462)
-	 */
-	Approximate_download_file_size_in_megabytes("05", "Approximate download file size in megabytes"), //
+   /**
+    * Resource Version Feature Value carries a decimal number only, suggested no more than 2 significant digits (eg 1.7, not 1.7462)
+    */
+   Approximate_download_file_size_in_megabytes("05", "Approximate download file size in megabytes"), //
 
-	/**
-	 * MD5 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 128-bit digest value
-	 * (as 32 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been
-	 * retrieved
-	 */
-	MD5_hash_value("06", "MD5 hash value"), //
+   /**
+    * MD5 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 128-bit digest value (as 32 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been retrieved
+    */
+   MD5_hash_value("06", "MD5 hash value"), //
 
-	/**
-	 * Resource Version Feature Value carries a integer number only (eg 1831023)
-	 */
-	Exact_download_file_size_in_bytes("07", "Exact download file size in bytes"), //
+   /**
+    * Resource Version Feature Value carries a integer number only (eg 1831023)
+    */
+   Exact_download_file_size_in_bytes("07", "Exact download file size in bytes"), //
 
-	/**
-	 * SHA-256 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 256-bit digest
-	 * value (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it
-	 * has been retrieved &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	SHA_256_hash_value("08", "SHA-256 hash value");
+   /**
+    * SHA-256 hash value of the resource file. &lt;ResourceVersionFeatureValue&gt; should contain the 256-bit digest value (as 64 hexadecimal digits). Can be used as a cryptographic check on the integrity of a resource after it has been retrieved
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   SHA_256_hash_value("08", "SHA-256 hash value");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ResourceVersionFeatureTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ResourceVersionFeatureTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, ResourceVersionFeatureTypes> map;
+   private static volatile Map<String, ResourceVersionFeatureTypes> map;
 
-	private static Map<String, ResourceVersionFeatureTypes> map()
-	{
-		Map<String, ResourceVersionFeatureTypes> result = map;
-		if (result == null)
-		{
-			synchronized (ResourceVersionFeatureTypes.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (ResourceVersionFeatureTypes e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, ResourceVersionFeatureTypes> map()
+   {
+      Map<String, ResourceVersionFeatureTypes> result = map;
+      if (result == null)
+      {
+         synchronized(ResourceVersionFeatureTypes.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (ResourceVersionFeatureTypes e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static ResourceVersionFeatureTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static ResourceVersionFeatureTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

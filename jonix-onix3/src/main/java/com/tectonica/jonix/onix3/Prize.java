@@ -20,18 +20,15 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPrize;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +51,16 @@ import com.tectonica.jonix.struct.JonixPrize;
  * </tr>
  * </table>
  */
-public class Prize implements OnixDataComposite, Serializable
+public class Prize implements OnixDataComposite<JonixPrize>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Prize";
 	public static final String shortname = "prize";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,147 +71,142 @@ public class Prize implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<PrizeName> prizeNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeYear prizeYear;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeCountry prizeCountry;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeCode prizeCode;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PrizeStatement> prizeStatements;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PrizeJury> prizeJurys;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Prize EMPTY = new Prize();
 
 	public Prize()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Prize(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
-					prizeNames = JPU.addToList(prizeNames, new PrizeName(element));
-				else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
-					prizeYear = new PrizeYear(element);
-				else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
-					prizeCountry = new PrizeCountry(element);
-				else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
-					prizeCode = new PrizeCode(element);
-				else if (name.equals(PrizeStatement.refname) || name.equals(PrizeStatement.shortname))
-					prizeStatements = JPU.addToList(prizeStatements, new PrizeStatement(element));
-				else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
-					prizeJurys = JPU.addToList(prizeJurys, new PrizeJury(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
+				prizeNames = JPU.addToList(prizeNames, new PrizeName(e));
+			else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
+				prizeYear = new PrizeYear(e);
+			else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
+				prizeCountry = new PrizeCountry(e);
+			else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
+				prizeCode = new PrizeCode(e);
+			else if (name.equals(PrizeStatement.refname) || name.equals(PrizeStatement.shortname))
+				prizeStatements = JPU.addToList(prizeStatements, new PrizeStatement(e));
+			else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
+				prizeJurys = JPU.addToList(prizeJurys, new PrizeJury(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public List<String> getPrizeNameValues()
+	@Override
+	public boolean exists()
 	{
-		if (prizeNames != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PrizeName i : prizeNames)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixElement<PrizeName, String> prizeNames = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Four digits, YYYY
+	 * (this list is required to contain at least one item)
 	 */
-	public String getPrizeYearValue()
+	public ListOfOnixElement<PrizeName, String> prizeNames()
 	{
-		return (prizeYear == null) ? null : prizeYear.value;
+		initialize();
+		return prizeNames;
 	}
 
-	public CountryCodes getPrizeCountryValue()
-	{
-		return (prizeCountry == null) ? null : prizeCountry.value;
-	}
-
-	public PrizeOrAwardAchievements getPrizeCodeValue()
-	{
-		return (prizeCode == null) ? null : prizeCode.value;
-	}
+	private PrizeYear prizeYear = PrizeYear.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public List<String> getPrizeStatementValues()
+	public PrizeYear prizeYear()
 	{
-		if (prizeStatements != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PrizeStatement i : prizeStatements)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return prizeYear;
 	}
+
+	private PrizeCountry prizeCountry = PrizeCountry.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is optional)
 	 */
-	public List<String> getPrizeJuryValues()
+	public PrizeCountry prizeCountry()
 	{
-		if (prizeJurys != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PrizeJury i : prizeJurys)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return prizeCountry;
 	}
 
-	public JonixPrize asJonixPrize()
+	private PrizeCode prizeCode = PrizeCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PrizeCode prizeCode()
 	{
-		JonixPrize x = new JonixPrize();
-		x.prizeCode = getPrizeCodeValue();
-		x.prizeCountry = getPrizeCountryValue();
-		x.prizeJurys = getPrizeJuryValues();
-		x.prizeNames = getPrizeNameValues();
-		x.prizeYear = getPrizeYearValue();
-		return x;
+		initialize();
+		return prizeCode;
+	}
+
+	private ListOfOnixElement<PrizeStatement, String> prizeStatements = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<PrizeStatement, String> prizeStatements()
+	{
+		initialize();
+		return prizeStatements;
+	}
+
+	private ListOfOnixElement<PrizeJury, String> prizeJurys = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<PrizeJury, String> prizeJurys()
+	{
+		initialize();
+		return prizeJurys;
+	}
+
+	@Override
+	public JonixPrize asStruct()
+	{
+		initialize();
+		JonixPrize struct = new JonixPrize();
+		struct.prizeCode = prizeCode.value;
+		struct.prizeCountry = prizeCountry.value;
+		struct.prizeJurys = prizeJurys.values();
+		struct.prizeNames = prizeNames.values();
+		struct.prizeYear = prizeYear.value;
+		return struct;
 	}
 }

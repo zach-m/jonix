@@ -20,18 +20,18 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.SalesRightsTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -65,9 +65,9 @@ public class SalesRights implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesRights";
 	public static final String shortname = "salesrights";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -78,106 +78,117 @@ public class SalesRights implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesRightsType salesRightsType;
-
-	/**
-	 * (this field is required)
-	 */
-	public Territory territory;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRestriction> salesRestrictions;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherName publisherName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SalesRights EMPTY = new SalesRights();
 
 	public SalesRights()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SalesRights(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
-					salesRightsType = new SalesRightsType(element);
-				else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
-					territory = new Territory(element);
-				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					publisherName = new PublisherName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
+				salesRightsType = new SalesRightsType(e);
+			else if (name.equals(Territory.refname) || name.equals(Territory.shortname))
+				territory = new Territory(e);
+			else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
+				salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
+				publisherName = new PublisherName(e);
 		});
 	}
 
-	public SalesRightsTypes getSalesRightsTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (salesRightsType == null) ? null : salesRightsType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SalesRightsType salesRightsType = SalesRightsType.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getPublisherNameValue()
+	public SalesRightsType salesRightsType()
 	{
-		return (publisherName == null) ? null : publisherName.value;
+		initialize();
+		return salesRightsType;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private Territory territory = Territory.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Territory territory()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return territory;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return salesRestrictions;
+	}
+
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
+	{
+		initialize();
+		return productIdentifiers;
+	}
+
+	private PublisherName publisherName = PublisherName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublisherName publisherName()
+	{
+		initialize();
+		return publisherName;
 	}
 }

@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,1485 +40,1487 @@ interface CodeList74
  * Description: Language code - based on ISO 639-2/B
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist74">ONIX
- *      Codelist 74 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist74">ONIX Codelist 74 in Reference Guide</a>
  */
 public enum LanguageCodes implements OnixCodelist, CodeList74
 {
-	Afar("aar", "Afar"), //
+   Afar("aar", "Afar"), //
 
-	Abkhaz("abk", "Abkhaz"), //
+   Abkhaz("abk", "Abkhaz"), //
 
-	Achinese("ace", "Achinese"), //
+   Achinese("ace", "Achinese"), //
 
-	Acoli("ach", "Acoli"), //
+   Acoli("ach", "Acoli"), //
 
-	Adangme("ada", "Adangme"), //
+   Adangme("ada", "Adangme"), //
 
-	Adygei("ady", "Adygei"), //
+   Adygei("ady", "Adygei"), //
 
-	/**
-	 * Collective name
-	 */
-	Afro_Asiatic_languages("afa", "Afro-Asiatic languages"), //
+   /**
+    * Collective name
+    */
+   Afro_Asiatic_languages("afa", "Afro-Asiatic languages"), //
 
-	/**
-	 * Artificial language
-	 */
-	Afrihili("afh", "Afrihili"), //
+   /**
+    * Artificial language
+    */
+   Afrihili("afh", "Afrihili"), //
 
-	Afrikaans("afr", "Afrikaans"), //
+   Afrikaans("afr", "Afrikaans"), //
 
-	Ainu("ain", "Ainu"), //
+   Ainu("ain", "Ainu"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Akan("aka", "Akan"), //
+   /**
+    * Macrolanguage
+    */
+   Akan("aka", "Akan"), //
 
-	Akkadian("akk", "Akkadian"), //
+   Akkadian("akk", "Akkadian"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Albanian("alb", "Albanian"), //
+   /**
+    * Macrolanguage
+    */
+   Albanian("alb", "Albanian"), //
 
-	Aleut("ale", "Aleut"), //
+   Aleut("ale", "Aleut"), //
 
-	/**
-	 * Collective name
-	 */
-	Algonquian_languages("alg", "Algonquian languages"), //
+   /**
+    * Collective name
+    */
+   Algonquian_languages("alg", "Algonquian languages"), //
 
-	Southern_Altai("alt", "Southern Altai"), //
+   Southern_Altai("alt", "Southern Altai"), //
 
-	Amharic("amh", "Amharic"), //
+   Amharic("amh", "Amharic"), //
 
-	English_Old_ca_450_1100("ang", "English, Old (ca. 450-1100)"), //
+   English_Old_ca_450_1100("ang", "English, Old (ca. 450-1100)"), //
 
-	Angika("anp", "Angika"), //
+   Angika("anp", "Angika"), //
 
-	/**
-	 * Collective name
-	 */
-	Apache_languages("apa", "Apache languages"), //
+   /**
+    * Collective name
+    */
+   Apache_languages("apa", "Apache languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Arabic("ara", "Arabic"), //
+   /**
+    * Macrolanguage
+    */
+   Arabic("ara", "Arabic"), //
 
-	Official_Aramaic_Imperial_Aramaic_700_300_BCE("arc", "Official Aramaic; Imperial Aramaic (700-300 BCE)"), //
+   Official_Aramaic_Imperial_Aramaic_700_300_BCE("arc", "Official Aramaic; Imperial Aramaic (700-300 BCE)"), //
 
-	Aragonese("arg", "Aragonese"), //
+   Aragonese("arg", "Aragonese"), //
 
-	Armenian("arm", "Armenian"), //
+   Armenian("arm", "Armenian"), //
 
-	Mapudungun_Mapuche("arn", "Mapudungun; Mapuche"), //
+   Mapudungun_Mapuche("arn", "Mapudungun; Mapuche"), //
 
-	Arapaho("arp", "Arapaho"), //
+   Arapaho("arp", "Arapaho"), //
 
-	/**
-	 * Collective name
-	 */
-	Artificial_languages("art", "Artificial languages"), //
+   /**
+    * Collective name
+    */
+   Artificial_languages("art", "Artificial languages"), //
 
-	Arawak("arw", "Arawak"), //
+   Arawak("arw", "Arawak"), //
 
-	Assamese("asm", "Assamese"), //
+   Assamese("asm", "Assamese"), //
 
-	Asturian_Bable_Leonese_Asturleonese("ast", "Asturian; Bable; Leonese; Asturleonese"), //
+   Asturian_Bable_Leonese_Asturleonese("ast", "Asturian; Bable; Leonese; Asturleonese"), //
 
-	/**
-	 * Collective name
-	 */
-	Athapascan_languages("ath", "Athapascan languages"), //
+   /**
+    * Collective name
+    */
+   Athapascan_languages("ath", "Athapascan languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Australian_languages("aus", "Australian languages"), //
+   /**
+    * Collective name
+    */
+   Australian_languages("aus", "Australian languages"), //
 
-	Avaric("ava", "Avaric"), //
+   Avaric("ava", "Avaric"), //
 
-	Avestan("ave", "Avestan"), //
+   Avestan("ave", "Avestan"), //
 
-	Awadhi("awa", "Awadhi"), //
+   Awadhi("awa", "Awadhi"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Aymara("aym", "Aymara"), //
+   /**
+    * Macrolanguage
+    */
+   Aymara("aym", "Aymara"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Azerbaijani("aze", "Azerbaijani"), //
+   /**
+    * Macrolanguage
+    */
+   Azerbaijani("aze", "Azerbaijani"), //
 
-	/**
-	 * Collective name
-	 */
-	Banda_languages("bad", "Banda languages"), //
+   /**
+    * Collective name
+    */
+   Banda_languages("bad", "Banda languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Bamileke_languages("bai", "Bamileke languages"), //
+   /**
+    * Collective name
+    */
+   Bamileke_languages("bai", "Bamileke languages"), //
 
-	Bashkir("bak", "Bashkir"), //
+   Bashkir("bak", "Bashkir"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Baluchi("bal", "Baluchi"), //
+   /**
+    * Macrolanguage
+    */
+   Baluchi("bal", "Baluchi"), //
 
-	Bambara("bam", "Bambara"), //
+   Bambara("bam", "Bambara"), //
 
-	Balinese("ban", "Balinese"), //
+   Balinese("ban", "Balinese"), //
 
-	Basque("baq", "Basque"), //
+   Basque("baq", "Basque"), //
 
-	Basa("bas", "Basa"), //
+   Basa("bas", "Basa"), //
 
-	/**
-	 * Collective name
-	 */
-	Baltic_languages("bat", "Baltic languages"), //
+   /**
+    * Collective name
+    */
+   Baltic_languages("bat", "Baltic languages"), //
 
-	Beja_Bedawiyet("bej", "Beja; Bedawiyet"), //
+   Beja_Bedawiyet("bej", "Beja; Bedawiyet"), //
 
-	Belarusian("bel", "Belarusian"), //
+   Belarusian("bel", "Belarusian"), //
 
-	Bemba("bem", "Bemba"), //
+   Bemba("bem", "Bemba"), //
 
-	Bengali("ben", "Bengali"), //
+   Bengali("ben", "Bengali"), //
 
-	/**
-	 * Collective name
-	 */
-	Berber_languages("ber", "Berber languages"), //
+   /**
+    * Collective name
+    */
+   Berber_languages("ber", "Berber languages"), //
 
-	Bhojpuri("bho", "Bhojpuri"), //
+   Bhojpuri("bho", "Bhojpuri"), //
 
-	/**
-	 * Collective name
-	 */
-	Bihari_languages("bih", "Bihari languages"), //
+   /**
+    * Collective name
+    */
+   Bihari_languages("bih", "Bihari languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Bikol("bik", "Bikol"), //
+   /**
+    * Macrolanguage
+    */
+   Bikol("bik", "Bikol"), //
 
-	Bini_Edo("bin", "Bini; Edo"), //
+   Bini_Edo("bin", "Bini; Edo"), //
 
-	Bislama("bis", "Bislama"), //
+   Bislama("bis", "Bislama"), //
 
-	Siksika("bla", "Siksika"), //
+   Siksika("bla", "Siksika"), //
 
-	/**
-	 * Collective name
-	 */
-	Bantu_languages("bnt", "Bantu languages"), //
+   /**
+    * Collective name
+    */
+   Bantu_languages("bnt", "Bantu languages"), //
 
-	Bosnian("bos", "Bosnian"), //
+   Bosnian("bos", "Bosnian"), //
 
-	Braj("bra", "Braj"), //
+   Braj("bra", "Braj"), //
 
-	Breton("bre", "Breton"), //
+   Breton("bre", "Breton"), //
 
-	/**
-	 * Collective name
-	 */
-	Batak_languages("btk", "Batak languages"), //
+   /**
+    * Collective name
+    */
+   Batak_languages("btk", "Batak languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Buriat("bua", "Buriat"), //
+   /**
+    * Macrolanguage
+    */
+   Buriat("bua", "Buriat"), //
 
-	Buginese("bug", "Buginese"), //
+   Buginese("bug", "Buginese"), //
 
-	Bulgarian("bul", "Bulgarian"), //
+   Bulgarian("bul", "Bulgarian"), //
 
-	Burmese("bur", "Burmese"), //
+   Burmese("bur", "Burmese"), //
 
-	Blin_Bilin("byn", "Blin; Bilin"), //
+   Blin_Bilin("byn", "Blin; Bilin"), //
 
-	Caddo("cad", "Caddo"), //
+   Caddo("cad", "Caddo"), //
 
-	/**
-	 * Collective name
-	 */
-	Central_American_Indian_languages("cai", "Central American Indian languages"), //
+   /**
+    * Collective name
+    */
+   Central_American_Indian_languages("cai", "Central American Indian languages"), //
 
-	Galibi_Carib("car", "Galibi Carib"), //
+   Galibi_Carib("car", "Galibi Carib"), //
 
-	Catalan("cat", "Catalan"), //
+   Catalan("cat", "Catalan"), //
 
-	/**
-	 * Collective name
-	 */
-	Caucasian_languages("cau", "Caucasian languages"), //
+   /**
+    * Collective name
+    */
+   Caucasian_languages("cau", "Caucasian languages"), //
 
-	Cebuano("ceb", "Cebuano"), //
+   Cebuano("ceb", "Cebuano"), //
 
-	/**
-	 * Collective name
-	 */
-	Celtic_languages("cel", "Celtic languages"), //
+   /**
+    * Collective name
+    */
+   Celtic_languages("cel", "Celtic languages"), //
 
-	Chamorro("cha", "Chamorro"), //
+   Chamorro("cha", "Chamorro"), //
 
-	Chibcha("chb", "Chibcha"), //
+   Chibcha("chb", "Chibcha"), //
 
-	Chechen("che", "Chechen"), //
+   Chechen("che", "Chechen"), //
 
-	Chagatai("chg", "Chagatai"), //
+   Chagatai("chg", "Chagatai"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Chinese("chi", "Chinese"), //
+   /**
+    * Macrolanguage
+    */
+   Chinese("chi", "Chinese"), //
 
-	Chuukese_Truk("chk", "Chuukese (Truk)"), //
+   Chuukese_Truk("chk", "Chuukese (Truk)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Mari("chm", "Mari"), //
+   /**
+    * Macrolanguage
+    */
+   Mari("chm", "Mari"), //
 
-	Chinook_jargon("chn", "Chinook jargon"), //
+   Chinook_jargon("chn", "Chinook jargon"), //
 
-	Choctaw("cho", "Choctaw"), //
+   Choctaw("cho", "Choctaw"), //
 
-	Chipewyan_Dene_Suline("chp", "Chipewyan; Dene Suline"), //
+   Chipewyan_Dene_Suline("chp", "Chipewyan; Dene Suline"), //
 
-	Cherokee("chr", "Cherokee"), //
+   Cherokee("chr", "Cherokee"), //
 
-	Church_Slavic_Old_Slavonic_Church_Slavonic_Old_Bulgarian_Old_Church_Slavonic("chu",
-			"Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"), //
+   Church_Slavic_Old_Slavonic_Church_Slavonic_Old_Bulgarian_Old_Church_Slavonic("chu", "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"), //
 
-	Chuvash("chv", "Chuvash"), //
+   Chuvash("chv", "Chuvash"), //
 
-	Cheyenne("chy", "Cheyenne"), //
+   Cheyenne("chy", "Cheyenne"), //
 
-	/**
-	 * Collective name
-	 */
-	Chamic_languages("cmc", "Chamic languages"), //
+   /**
+    * Collective name
+    */
+   Chamic_languages("cmc", "Chamic languages"), //
 
-	Coptic("cop", "Coptic"), //
+   Coptic("cop", "Coptic"), //
 
-	Cornish("cor", "Cornish"), //
+   Cornish("cor", "Cornish"), //
 
-	Corsican("cos", "Corsican"), //
+   Corsican("cos", "Corsican"), //
 
-	/**
-	 * Collective name
-	 */
-	Creoles_and_pidgins_English_based("cpe", "Creoles and pidgins, English-based"), //
+   /**
+    * Collective name
+    */
+   Creoles_and_pidgins_English_based("cpe", "Creoles and pidgins, English-based"), //
 
-	/**
-	 * Collective name
-	 */
-	Creoles_and_pidgins_French_based("cpf", "Creoles and pidgins, French-based"), //
+   /**
+    * Collective name
+    */
+   Creoles_and_pidgins_French_based("cpf", "Creoles and pidgins, French-based"), //
 
-	/**
-	 * Collective name
-	 */
-	Creoles_and_pidgins_Portuguese_based("cpp", "Creoles and pidgins, Portuguese-based"), //
+   /**
+    * Collective name
+    */
+   Creoles_and_pidgins_Portuguese_based("cpp", "Creoles and pidgins, Portuguese-based"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Cree("cre", "Cree"), //
+   /**
+    * Macrolanguage
+    */
+   Cree("cre", "Cree"), //
 
-	Crimean_Turkish_Crimean_Tatar("crh", "Crimean Turkish; Crimean Tatar"), //
+   Crimean_Turkish_Crimean_Tatar("crh", "Crimean Turkish; Crimean Tatar"), //
 
-	/**
-	 * Collective name
-	 */
-	Creoles_and_pidgins("crp", "Creoles and pidgins"), //
+   /**
+    * Collective name
+    */
+   Creoles_and_pidgins("crp", "Creoles and pidgins"), //
 
-	Kashubian("csb", "Kashubian"), //
+   Kashubian("csb", "Kashubian"), //
 
-	/**
-	 * Collective name
-	 */
-	Cushitic_languages("cus", "Cushitic languages"), //
+   /**
+    * Collective name
+    */
+   Cushitic_languages("cus", "Cushitic languages"), //
 
-	Czech("cze", "Czech"), //
+   Czech("cze", "Czech"), //
 
-	Dakota("dak", "Dakota"), //
+   Dakota("dak", "Dakota"), //
 
-	Danish("dan", "Danish"), //
+   Danish("dan", "Danish"), //
 
-	Dargwa("dar", "Dargwa"), //
+   Dargwa("dar", "Dargwa"), //
 
-	/**
-	 * Collective name
-	 */
-	Land_Dayak_languages("day", "Land Dayak languages"), //
+   /**
+    * Collective name
+    */
+   Land_Dayak_languages("day", "Land Dayak languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Delaware("del", "Delaware"), //
+   /**
+    * Macrolanguage
+    */
+   Delaware("del", "Delaware"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Slave_Athapascan("den", "Slave (Athapascan)"), //
+   /**
+    * Macrolanguage
+    */
+   Slave_Athapascan("den", "Slave (Athapascan)"), //
 
-	Dogrib("dgr", "Dogrib"), //
+   Dogrib("dgr", "Dogrib"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Dinka("din", "Dinka"), //
+   /**
+    * Macrolanguage
+    */
+   Dinka("din", "Dinka"), //
 
-	Divehi_Dhivehi_Maldivian("div", "Divehi; Dhivehi; Maldivian"), //
+   Divehi_Dhivehi_Maldivian("div", "Divehi; Dhivehi; Maldivian"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Dogri("doi", "Dogri"), //
+   /**
+    * Macrolanguage
+    */
+   Dogri("doi", "Dogri"), //
 
-	/**
-	 * Collective name
-	 */
-	Dravidian_languages("dra", "Dravidian languages"), //
+   /**
+    * Collective name
+    */
+   Dravidian_languages("dra", "Dravidian languages"), //
 
-	Lower_Sorbian("dsb", "Lower Sorbian"), //
+   Lower_Sorbian("dsb", "Lower Sorbian"), //
 
-	Duala("dua", "Duala"), //
+   Duala("dua", "Duala"), //
 
-	Dutch_Middle_ca_1050_1350("dum", "Dutch, Middle (ca. 1050-1350)"), //
+   Dutch_Middle_ca_1050_1350("dum", "Dutch, Middle (ca. 1050-1350)"), //
 
-	Dutch_Flemish("dut", "Dutch; Flemish"), //
+   Dutch_Flemish("dut", "Dutch; Flemish"), //
 
-	Dyula("dyu", "Dyula"), //
+   Dyula("dyu", "Dyula"), //
 
-	Dzongkha("dzo", "Dzongkha"), //
+   Dzongkha("dzo", "Dzongkha"), //
 
-	Efik("efi", "Efik"), //
+   Efik("efi", "Efik"), //
 
-	Egyptian_Ancient("egy", "Egyptian (Ancient)"), //
+   Egyptian_Ancient("egy", "Egyptian (Ancient)"), //
 
-	Ekajuk("eka", "Ekajuk"), //
+   Ekajuk("eka", "Ekajuk"), //
 
-	Elamite("elx", "Elamite"), //
+   Elamite("elx", "Elamite"), //
 
-	English("eng", "English"), //
+   English("eng", "English"), //
 
-	English_Middle_1100_1500("enm", "English, Middle (1100-1500)"), //
+   English_Middle_1100_1500("enm", "English, Middle (1100-1500)"), //
 
-	/**
-	 * Artificial language
-	 */
-	Esperanto("epo", "Esperanto"), //
+   /**
+    * Artificial language
+    */
+   Esperanto("epo", "Esperanto"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Estonian("est", "Estonian"), //
+   /**
+    * Macrolanguage
+    */
+   Estonian("est", "Estonian"), //
 
-	Ewe("ewe", "Ewe"), //
+   Ewe("ewe", "Ewe"), //
 
-	Ewondo("ewo", "Ewondo"), //
+   Ewondo("ewo", "Ewondo"), //
 
-	Fang("fan", "Fang"), //
+   Fang("fan", "Fang"), //
 
-	Faroese("fao", "Faroese"), //
+   Faroese("fao", "Faroese"), //
 
-	Fanti("fat", "Fanti"), //
+   Fanti("fat", "Fanti"), //
 
-	Fijian("fij", "Fijian"), //
+   Fijian("fij", "Fijian"), //
 
-	Filipino_Pilipino("fil", "Filipino; Pilipino"), //
+   Filipino_Pilipino("fil", "Filipino; Pilipino"), //
 
-	Finnish("fin", "Finnish"), //
+   Finnish("fin", "Finnish"), //
 
-	/**
-	 * ONIX local code, equivalent to fit in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Me_nkieli_Tournedalen_Finnish("fit", "Meänkieli / Tournedalen Finnish"), //
+   /**
+    * ONIX local code, equivalent to fit in ISO 639-3
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Me_nkieli_Tournedalen_Finnish("fit", "Meänkieli / Tournedalen Finnish"), //
 
-	/**
-	 * Collective name
-	 */
-	Finno_Ugrian_languages("fiu", "Finno-Ugrian languages"), //
+   /**
+    * Collective name
+    */
+   Finno_Ugrian_languages("fiu", "Finno-Ugrian languages"), //
 
-	/**
-	 * ONIX local code, equivalent to fkv in ISO 639-3
-	 */
-	Kvensk("fkv", "Kvensk"), //
+   /**
+    * ONIX local code, equivalent to fkv in ISO 639-3
+    */
+   Kvensk("fkv", "Kvensk"), //
 
-	Fon("fon", "Fon"), //
+   Fon("fon", "Fon"), //
 
-	French("fre", "French"), //
+   French("fre", "French"), //
 
-	French_Middle_ca_1400_1600("frm", "French, Middle (ca. 1400-1600)"), //
+   French_Middle_ca_1400_1600("frm", "French, Middle (ca. 1400-1600)"), //
 
-	French_Old_ca_842_1400("fro", "French, Old (ca. 842-1400)"), //
+   French_Old_ca_842_1400("fro", "French, Old (ca. 842-1400)"), //
 
-	Northern_Frisian("frr", "Northern Frisian"), //
+   Northern_Frisian("frr", "Northern Frisian"), //
 
-	Eastern_Frisian("frs", "Eastern Frisian"), //
+   Eastern_Frisian("frs", "Eastern Frisian"), //
 
-	Western_Frisian("fry", "Western Frisian"), //
+   Western_Frisian("fry", "Western Frisian"), //
 
-	Fulah("ful", "Fulah"), //
+   Fulah("ful", "Fulah"), //
 
-	Friulian("fur", "Friulian"), //
+   Friulian("fur", "Friulian"), //
 
-	G_("gaa", "Gã"), //
+   G_("gaa", "Gã"), //
 
-	Gayo("gay", "Gayo"), //
+   Gayo("gay", "Gayo"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Gbaya("gba", "Gbaya"), //
+   /**
+    * Macrolanguage
+    */
+   Gbaya("gba", "Gbaya"), //
 
-	/**
-	 * Collective name
-	 */
-	Germanic_languages("gem", "Germanic languages"), //
+   /**
+    * Collective name
+    */
+   Germanic_languages("gem", "Germanic languages"), //
 
-	Georgian("geo", "Georgian"), //
+   Georgian("geo", "Georgian"), //
 
-	German("ger", "German"), //
+   German("ger", "German"), //
 
-	Ethiopic_Ge_ez("gez", "Ethiopic (Ge’ez)"), //
+   Ethiopic_Ge_ez("gez", "Ethiopic (Ge’ez)"), //
 
-	Gilbertese("gil", "Gilbertese"), //
+   Gilbertese("gil", "Gilbertese"), //
 
-	Scottish_Gaelic("gla", "Scottish Gaelic"), //
+   Scottish_Gaelic("gla", "Scottish Gaelic"), //
 
-	Irish("gle", "Irish"), //
+   Irish("gle", "Irish"), //
 
-	Galician("glg", "Galician"), //
+   Galician("glg", "Galician"), //
 
-	Manx("glv", "Manx"), //
+   Manx("glv", "Manx"), //
 
-	German_Middle_High_ca_1050_1500("gmh", "German, Middle High (ca. 1050-1500)"), //
+   German_Middle_High_ca_1050_1500("gmh", "German, Middle High (ca. 1050-1500)"), //
 
-	German_Old_High_ca_750_1050("goh", "German, Old High (ca. 750-1050)"), //
+   German_Old_High_ca_750_1050("goh", "German, Old High (ca. 750-1050)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Gondi("gon", "Gondi"), //
+   /**
+    * Macrolanguage
+    */
+   Gondi("gon", "Gondi"), //
 
-	Gorontalo("gor", "Gorontalo"), //
+   Gorontalo("gor", "Gorontalo"), //
 
-	Gothic("got", "Gothic"), //
+   Gothic("got", "Gothic"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Grebo("grb", "Grebo"), //
+   /**
+    * Macrolanguage
+    */
+   Grebo("grb", "Grebo"), //
 
-	Greek_Ancient_to_1453("grc", "Greek, Ancient (to 1453)"), //
+   Greek_Ancient_to_1453("grc", "Greek, Ancient (to 1453)"), //
 
-	Greek_Modern_1453_("gre", "Greek, Modern (1453-)"), //
+   Greek_Modern_1453_("gre", "Greek, Modern (1453-)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Guarani("grn", "Guarani"), //
+   /**
+    * Macrolanguage
+    */
+   Guarani("grn", "Guarani"), //
 
-	Swiss_German_Alemannic("gsw", "Swiss German; Alemannic"), //
+   Swiss_German_Alemannic("gsw", "Swiss German; Alemannic"), //
 
-	Gujarati("guj", "Gujarati"), //
+   Gujarati("guj", "Gujarati"), //
 
-	Gwich_in("gwi", "Gwich’in"), //
+   Gwich_in("gwi", "Gwich’in"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Haida("hai", "Haida"), //
+   /**
+    * Macrolanguage
+    */
+   Haida("hai", "Haida"), //
 
-	Haitian_French_Creole("hat", "Haitian French Creole"), //
+   Haitian_French_Creole("hat", "Haitian French Creole"), //
 
-	Hausa("hau", "Hausa"), //
+   Hausa("hau", "Hausa"), //
 
-	Hawaiian("haw", "Hawaiian"), //
+   Hawaiian("haw", "Hawaiian"), //
 
-	Hebrew("heb", "Hebrew"), //
+   Hebrew("heb", "Hebrew"), //
 
-	Herero("her", "Herero"), //
+   Herero("her", "Herero"), //
 
-	Hiligaynon("hil", "Hiligaynon"), //
+   Hiligaynon("hil", "Hiligaynon"), //
 
-	/**
-	 * Collective name
-	 */
-	Himachali_languages_Western_Pahari_languages("him", "Himachali languages; Western Pahari languages"), //
+   /**
+    * Collective name
+    */
+   Himachali_languages_Western_Pahari_languages("him", "Himachali languages; Western Pahari languages"), //
 
-	Hindi("hin", "Hindi"), //
+   Hindi("hin", "Hindi"), //
 
-	Hittite("hit", "Hittite"), //
+   Hittite("hit", "Hittite"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Hmong_Mong("hmn", "Hmong; Mong"), //
+   /**
+    * Macrolanguage
+    */
+   Hmong_Mong("hmn", "Hmong; Mong"), //
 
-	Hiri_Motu("hmo", "Hiri Motu"), //
+   Hiri_Motu("hmo", "Hiri Motu"), //
 
-	Croatian("hrv", "Croatian"), //
+   Croatian("hrv", "Croatian"), //
 
-	Upper_Sorbian("hsb", "Upper Sorbian"), //
+   Upper_Sorbian("hsb", "Upper Sorbian"), //
 
-	Hungarian("hun", "Hungarian"), //
+   Hungarian("hun", "Hungarian"), //
 
-	Hupa("hup", "Hupa"), //
+   Hupa("hup", "Hupa"), //
 
-	Iban("iba", "Iban"), //
+   Iban("iba", "Iban"), //
 
-	Igbo("ibo", "Igbo"), //
+   Igbo("ibo", "Igbo"), //
 
-	Icelandic("ice", "Icelandic"), //
+   Icelandic("ice", "Icelandic"), //
 
-	/**
-	 * Artificial language
-	 */
-	Ido("ido", "Ido"), //
+   /**
+    * Artificial language
+    */
+   Ido("ido", "Ido"), //
 
-	Sichuan_Yi_Nuosu("iii", "Sichuan Yi; Nuosu"), //
+   Sichuan_Yi_Nuosu("iii", "Sichuan Yi; Nuosu"), //
 
-	/**
-	 * Collective name
-	 */
-	Ijo_languages("ijo", "Ijo languages"), //
+   /**
+    * Collective name
+    */
+   Ijo_languages("ijo", "Ijo languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Inuktitut("iku", "Inuktitut"), //
+   /**
+    * Macrolanguage
+    */
+   Inuktitut("iku", "Inuktitut"), //
 
-	/**
-	 * Artificial language
-	 */
-	Interlingue_Occidental("ile", "Interlingue; Occidental"), //
+   /**
+    * Artificial language
+    */
+   Interlingue_Occidental("ile", "Interlingue; Occidental"), //
 
-	Iloko("ilo", "Iloko"), //
+   Iloko("ilo", "Iloko"), //
 
-	/**
-	 * Artificial language
-	 */
-	Interlingua_International_Auxiliary_Language_Association("ina",
-			"Interlingua (International Auxiliary Language Association)"), //
+   /**
+    * Artificial language
+    */
+   Interlingua_International_Auxiliary_Language_Association("ina", "Interlingua (International Auxiliary Language Association)"), //
 
-	/**
-	 * Collective name
-	 */
-	Indic_languages("inc", "Indic languages"), //
+   /**
+    * Collective name
+    */
+   Indic_languages("inc", "Indic languages"), //
 
-	Indonesian("ind", "Indonesian"), //
+   Indonesian("ind", "Indonesian"), //
 
-	/**
-	 * Collective name
-	 */
-	Indo_European_languages("ine", "Indo-European languages"), //
+   /**
+    * Collective name
+    */
+   Indo_European_languages("ine", "Indo-European languages"), //
 
-	Ingush("inh", "Ingush"), //
+   Ingush("inh", "Ingush"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Inupiaq("ipk", "Inupiaq"), //
+   /**
+    * Macrolanguage
+    */
+   Inupiaq("ipk", "Inupiaq"), //
 
-	/**
-	 * Collective name
-	 */
-	Iranian_languages("ira", "Iranian languages"), //
+   /**
+    * Collective name
+    */
+   Iranian_languages("ira", "Iranian languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Iroquoian_languages("iro", "Iroquoian languages"), //
+   /**
+    * Collective name
+    */
+   Iroquoian_languages("iro", "Iroquoian languages"), //
 
-	Italian("ita", "Italian"), //
+   Italian("ita", "Italian"), //
 
-	Javanese("jav", "Javanese"), //
+   Javanese("jav", "Javanese"), //
 
-	Lojban("jbo", "Lojban"), //
+   Lojban("jbo", "Lojban"), //
 
-	Japanese("jpn", "Japanese"), //
+   Japanese("jpn", "Japanese"), //
 
-	Judeo_Persian("jpr", "Judeo-Persian"), //
+   Judeo_Persian("jpr", "Judeo-Persian"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Judeo_Arabic("jrb", "Judeo-Arabic"), //
+   /**
+    * Macrolanguage
+    */
+   Judeo_Arabic("jrb", "Judeo-Arabic"), //
 
-	Kara_Kalpak("kaa", "Kara-Kalpak"), //
+   Kara_Kalpak("kaa", "Kara-Kalpak"), //
 
-	Kabyle("kab", "Kabyle"), //
+   Kabyle("kab", "Kabyle"), //
 
-	Kachin_Jingpho("kac", "Kachin; Jingpho"), //
+   Kachin_Jingpho("kac", "Kachin; Jingpho"), //
 
-	Kal_tdlisut_Greenlandic("kal", "Kalâtdlisut; Greenlandic"), //
+   Kal_tdlisut_Greenlandic("kal", "Kalâtdlisut; Greenlandic"), //
 
-	Kamba("kam", "Kamba"), //
+   Kamba("kam", "Kamba"), //
 
-	Kannada("kan", "Kannada"), //
+   Kannada("kan", "Kannada"), //
 
-	/**
-	 * Collective name
-	 */
-	Karen_languages("kar", "Karen languages"), //
+   /**
+    * Collective name
+    */
+   Karen_languages("kar", "Karen languages"), //
 
-	Kashmiri("kas", "Kashmiri"), //
+   Kashmiri("kas", "Kashmiri"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Kanuri("kau", "Kanuri"), //
+   /**
+    * Macrolanguage
+    */
+   Kanuri("kau", "Kanuri"), //
 
-	Kawi("kaw", "Kawi"), //
+   Kawi("kaw", "Kawi"), //
 
-	Kazakh("kaz", "Kazakh"), //
+   Kazakh("kaz", "Kazakh"), //
 
-	Kabardian_Circassian("kbd", "Kabardian (Circassian)"), //
+   Kabardian_Circassian("kbd", "Kabardian (Circassian)"), //
 
-	/**
-	 * ONIX local code, equivalent to kdr in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Karaim("kdr", "Karaim"), //
+   /**
+    * ONIX local code, equivalent to kdr in ISO 639-3
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Karaim("kdr", "Karaim"), //
 
-	Khasi("kha", "Khasi"), //
+   Khasi("kha", "Khasi"), //
 
-	/**
-	 * Collective name
-	 */
-	Khoisan_languages("khi", "Khoisan languages"), //
+   /**
+    * Collective name
+    */
+   Khoisan_languages("khi", "Khoisan languages"), //
 
-	Central_Khmer("khm", "Central Khmer"), //
+   Central_Khmer("khm", "Central Khmer"), //
 
-	Khotanese_Sakan("kho", "Khotanese; Sakan"), //
+   Khotanese_Sakan("kho", "Khotanese; Sakan"), //
 
-	Kikuyu_Gikuyu("kik", "Kikuyu; Gikuyu"), //
+   Kikuyu_Gikuyu("kik", "Kikuyu; Gikuyu"), //
 
-	Kinyarwanda("kin", "Kinyarwanda"), //
+   Kinyarwanda("kin", "Kinyarwanda"), //
 
-	Kirghiz_Kyrgyz("kir", "Kirghiz; Kyrgyz"), //
+   Kirghiz_Kyrgyz("kir", "Kirghiz; Kyrgyz"), //
 
-	Kimbundu("kmb", "Kimbundu"), //
+   Kimbundu("kmb", "Kimbundu"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Konkani("kok", "Konkani"), //
+   /**
+    * Macrolanguage
+    */
+   Konkani("kok", "Konkani"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Komi("kom", "Komi"), //
+   /**
+    * Macrolanguage
+    */
+   Komi("kom", "Komi"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Kongo("kon", "Kongo"), //
+   /**
+    * Macrolanguage
+    */
+   Kongo("kon", "Kongo"), //
 
-	Korean("kor", "Korean"), //
+   Korean("kor", "Korean"), //
 
-	Kusaiean_Caroline_Islands("kos", "Kusaiean (Caroline Islands)"), //
+   Kusaiean_Caroline_Islands("kos", "Kusaiean (Caroline Islands)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Kpelle("kpe", "Kpelle"), //
+   /**
+    * Macrolanguage
+    */
+   Kpelle("kpe", "Kpelle"), //
 
-	Karachay_Balkar("krc", "Karachay-Balkar"), //
+   Karachay_Balkar("krc", "Karachay-Balkar"), //
 
-	Karelian("krl", "Karelian"), //
+   Karelian("krl", "Karelian"), //
 
-	/**
-	 * Collective name
-	 */
-	Kru_languages("kro", "Kru languages"), //
+   /**
+    * Collective name
+    */
+   Kru_languages("kro", "Kru languages"), //
 
-	Kurukh("kru", "Kurukh"), //
+   Kurukh("kru", "Kurukh"), //
 
-	Kuanyama("kua", "Kuanyama"), //
+   Kuanyama("kua", "Kuanyama"), //
 
-	Kumyk("kum", "Kumyk"), //
+   Kumyk("kum", "Kumyk"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Kurdish("kur", "Kurdish"), //
+   /**
+    * Macrolanguage
+    */
+   Kurdish("kur", "Kurdish"), //
 
-	Kutenai("kut", "Kutenai"), //
+   Kutenai("kut", "Kutenai"), //
 
-	Ladino("lad", "Ladino"), //
+   Ladino("lad", "Ladino"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Lahnda("lah", "Lahnda"), //
+   /**
+    * Macrolanguage
+    */
+   Lahnda("lah", "Lahnda"), //
 
-	Lamba("lam", "Lamba"), //
+   Lamba("lam", "Lamba"), //
 
-	Lao("lao", "Lao"), //
+   Lao("lao", "Lao"), //
 
-	Latin("lat", "Latin"), //
+   Latin("lat", "Latin"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Latvian("lav", "Latvian"), //
+   /**
+    * Macrolanguage
+    */
+   Latvian("lav", "Latvian"), //
 
-	Lezgian("lez", "Lezgian"), //
+   Lezgian("lez", "Lezgian"), //
 
-	Limburgish("lim", "Limburgish"), //
+   Limburgish("lim", "Limburgish"), //
 
-	Lingala("lin", "Lingala"), //
+   Lingala("lin", "Lingala"), //
 
-	Lithuanian("lit", "Lithuanian"), //
+   Lithuanian("lit", "Lithuanian"), //
 
-	Mongo_Nkundu("lol", "Mongo-Nkundu"), //
+   Mongo_Nkundu("lol", "Mongo-Nkundu"), //
 
-	Lozi("loz", "Lozi"), //
+   Lozi("loz", "Lozi"), //
 
-	Luxembourgish_Letzeburgesch("ltz", "Luxembourgish; Letzeburgesch"), //
+   Luxembourgish_Letzeburgesch("ltz", "Luxembourgish; Letzeburgesch"), //
 
-	Luba_Lulua("lua", "Luba-Lulua"), //
+   Luba_Lulua("lua", "Luba-Lulua"), //
 
-	Luba_Katanga("lub", "Luba-Katanga"), //
+   Luba_Katanga("lub", "Luba-Katanga"), //
 
-	Ganda("lug", "Ganda"), //
+   Ganda("lug", "Ganda"), //
 
-	Luise_o("lui", "Luiseño"), //
+   Luise_o("lui", "Luiseño"), //
 
-	Lunda("lun", "Lunda"), //
+   Lunda("lun", "Lunda"), //
 
-	Luo_Kenya_and_Tanzania("luo", "Luo (Kenya and Tanzania)"), //
+   Luo_Kenya_and_Tanzania("luo", "Luo (Kenya and Tanzania)"), //
 
-	Lushai("lus", "Lushai"), //
+   Lushai("lus", "Lushai"), //
 
-	Macedonian("mac", "Macedonian"), //
+   Macedonian("mac", "Macedonian"), //
 
-	Madurese("mad", "Madurese"), //
+   Madurese("mad", "Madurese"), //
 
-	Magahi("mag", "Magahi"), //
+   Magahi("mag", "Magahi"), //
 
-	Marshallese("mah", "Marshallese"), //
+   Marshallese("mah", "Marshallese"), //
 
-	Maithili("mai", "Maithili"), //
+   Maithili("mai", "Maithili"), //
 
-	Makasar("mak", "Makasar"), //
+   Makasar("mak", "Makasar"), //
 
-	Malayalam("mal", "Malayalam"), //
+   Malayalam("mal", "Malayalam"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Mandingo("man", "Mandingo"), //
+   /**
+    * Macrolanguage
+    */
+   Mandingo("man", "Mandingo"), //
 
-	Maori("mao", "Maori"), //
+   Maori("mao", "Maori"), //
 
-	/**
-	 * Collective name
-	 */
-	Austronesian_languages("map", "Austronesian languages"), //
+   /**
+    * Collective name
+    */
+   Austronesian_languages("map", "Austronesian languages"), //
 
-	Marathi("mar", "Marathi"), //
+   Marathi("mar", "Marathi"), //
 
-	Masai("mas", "Masai"), //
+   Masai("mas", "Masai"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Malay("may", "Malay"), //
+   /**
+    * Macrolanguage
+    */
+   Malay("may", "Malay"), //
 
-	Moksha("mdf", "Moksha"), //
+   Moksha("mdf", "Moksha"), //
 
-	Mandar("mdr", "Mandar"), //
+   Mandar("mdr", "Mandar"), //
 
-	Mende("men", "Mende"), //
+   Mende("men", "Mende"), //
 
-	Irish_Middle_ca_1100_1550("mga", "Irish, Middle (ca. 1100-1550)"), //
+   Irish_Middle_ca_1100_1550("mga", "Irish, Middle (ca. 1100-1550)"), //
 
-	Mi_kmaq_Micmac("mic", "Mi’kmaq; Micmac"), //
+   Mi_kmaq_Micmac("mic", "Mi’kmaq; Micmac"), //
 
-	Minangkabau("min", "Minangkabau"), //
+   Minangkabau("min", "Minangkabau"), //
 
-	/**
-	 * Use where no suitable code is available
-	 */
-	Uncoded_languages("mis", "Uncoded languages"), //
+   /**
+    * Use where no suitable code is available
+    */
+   Uncoded_languages("mis", "Uncoded languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Mon_Khmer_languages("mkh", "Mon-Khmer languages"), //
+   /**
+    * Collective name
+    */
+   Mon_Khmer_languages("mkh", "Mon-Khmer languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Malagasy("mlg", "Malagasy"), //
+   /**
+    * Macrolanguage
+    */
+   Malagasy("mlg", "Malagasy"), //
 
-	Maltese("mlt", "Maltese"), //
+   Maltese("mlt", "Maltese"), //
 
-	Manchu("mnc", "Manchu"), //
+   Manchu("mnc", "Manchu"), //
 
-	Manipuri("mni", "Manipuri"), //
+   Manipuri("mni", "Manipuri"), //
 
-	/**
-	 * Collective name
-	 */
-	Manobo_languages("mno", "Manobo languages"), //
+   /**
+    * Collective name
+    */
+   Manobo_languages("mno", "Manobo languages"), //
 
-	Mohawk("moh", "Mohawk"), //
+   Mohawk("moh", "Mohawk"), //
 
-	/**
-	 * DEPRECATED - use rum
-	 */
-	Moldavian_Moldovan("mol", "Moldavian; Moldovan"), //
+   /**
+    * DEPRECATED - use rum
+    */
+   Moldavian_Moldovan("mol", "Moldavian; Moldovan"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Mongolian("mon", "Mongolian"), //
+   /**
+    * Macrolanguage
+    */
+   Mongolian("mon", "Mongolian"), //
 
-	Moor_Mossi("mos", "Mooré; Mossi"), //
+   Moor_Mossi("mos", "Mooré; Mossi"), //
 
-	Multiple_languages("mul", "Multiple languages"), //
+   Multiple_languages("mul", "Multiple languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Munda_languages("mun", "Munda languages"), //
+   /**
+    * Collective name
+    */
+   Munda_languages("mun", "Munda languages"), //
 
-	Creek("mus", "Creek"), //
+   Creek("mus", "Creek"), //
 
-	Mirandese("mwl", "Mirandese"), //
+   Mirandese("mwl", "Mirandese"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Marwari("mwr", "Marwari"), //
+   /**
+    * Macrolanguage
+    */
+   Marwari("mwr", "Marwari"), //
 
-	/**
-	 * Collective name
-	 */
-	Mayan_languages("myn", "Mayan languages"), //
+   /**
+    * Collective name
+    */
+   Mayan_languages("myn", "Mayan languages"), //
 
-	Erzya("myv", "Erzya"), //
+   Erzya("myv", "Erzya"), //
 
-	/**
-	 * Collective name
-	 */
-	Nahuatl_languages("nah", "Nahuatl languages"), //
+   /**
+    * Collective name
+    */
+   Nahuatl_languages("nah", "Nahuatl languages"), //
 
-	/**
-	 * Collective name
-	 */
-	North_American_Indian_languages("nai", "North American Indian languages"), //
+   /**
+    * Collective name
+    */
+   North_American_Indian_languages("nai", "North American Indian languages"), //
 
-	Neapolitan("nap", "Neapolitan"), //
+   Neapolitan("nap", "Neapolitan"), //
 
-	Nauruan("nau", "Nauruan"), //
+   Nauruan("nau", "Nauruan"), //
 
-	Navajo("nav", "Navajo"), //
+   Navajo("nav", "Navajo"), //
 
-	Ndebele_South("nbl", "Ndebele, South"), //
+   Ndebele_South("nbl", "Ndebele, South"), //
 
-	Ndebele_North("nde", "Ndebele, North"), //
+   Ndebele_North("nde", "Ndebele, North"), //
 
-	Ndonga("ndo", "Ndonga"), //
+   Ndonga("ndo", "Ndonga"), //
 
-	Low_German_Low_Saxon("nds", "Low German; Low Saxon"), //
+   Low_German_Low_Saxon("nds", "Low German; Low Saxon"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Nepali("nep", "Nepali"), //
+   /**
+    * Macrolanguage
+    */
+   Nepali("nep", "Nepali"), //
 
-	Newari_Nepal_Bhasa("new", "Newari; Nepal Bhasa"), //
+   Newari_Nepal_Bhasa("new", "Newari; Nepal Bhasa"), //
 
-	Nias("nia", "Nias"), //
+   Nias("nia", "Nias"), //
 
-	/**
-	 * Collective name
-	 */
-	Niger_Kordofanian_languages("nic", "Niger-Kordofanian languages"), //
+   /**
+    * Collective name
+    */
+   Niger_Kordofanian_languages("nic", "Niger-Kordofanian languages"), //
 
-	Niuean("niu", "Niuean"), //
+   Niuean("niu", "Niuean"), //
 
-	Norwegian_Nynorsk("nno", "Norwegian Nynorsk"), //
+   Norwegian_Nynorsk("nno", "Norwegian Nynorsk"), //
 
-	Norwegian_Bokm_l("nob", "Norwegian Bokmål"), //
+   Norwegian_Bokm_l("nob", "Norwegian Bokmål"), //
 
-	Nogai("nog", "Nogai"), //
+   Nogai("nog", "Nogai"), //
 
-	Old_Norse("non", "Old Norse"), //
+   Old_Norse("non", "Old Norse"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Norwegian("nor", "Norwegian"), //
+   /**
+    * Macrolanguage
+    */
+   Norwegian("nor", "Norwegian"), //
 
-	N_Ko("nqo", "N’Ko"), //
+   N_Ko("nqo", "N’Ko"), //
 
-	Pedi_Sepedi_Northern_Sotho("nso", "Pedi; Sepedi; Northern Sotho"), //
+   Pedi_Sepedi_Northern_Sotho("nso", "Pedi; Sepedi; Northern Sotho"), //
 
-	/**
-	 * Collective name
-	 */
-	Nubian_languages("nub", "Nubian languages"), //
+   /**
+    * Collective name
+    */
+   Nubian_languages("nub", "Nubian languages"), //
 
-	Classical_Newari_Old_Newari_Classical_Nepal_Bhasa("nwc", "Classical Newari; Old Newari; Classical Nepal Bhasa"), //
+   Classical_Newari_Old_Newari_Classical_Nepal_Bhasa("nwc", "Classical Newari; Old Newari; Classical Nepal Bhasa"), //
 
-	Chichewa_Chewa_Nyanja("nya", "Chichewa; Chewa; Nyanja"), //
+   Chichewa_Chewa_Nyanja("nya", "Chichewa; Chewa; Nyanja"), //
 
-	Nyamwezi("nym", "Nyamwezi"), //
+   Nyamwezi("nym", "Nyamwezi"), //
 
-	Nyankole("nyn", "Nyankole"), //
+   Nyankole("nyn", "Nyankole"), //
 
-	Nyoro("nyo", "Nyoro"), //
+   Nyoro("nyo", "Nyoro"), //
 
-	Nzima("nzi", "Nzima"), //
+   Nzima("nzi", "Nzima"), //
 
-	Occitan_post_1500("oci", "Occitan (post 1500)"), //
+   Occitan_post_1500("oci", "Occitan (post 1500)"), //
 
-	/**
-	 * ONIX local code, equivalent to odt in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Old_Dutch_Old_Low_Franconian_ca_400_1050("odt", "Old Dutch / Old Low Franconian (ca. 400–1050)"), //
+   /**
+    * ONIX local code, equivalent to odt in ISO 639-3
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Old_Dutch_Old_Low_Franconian_ca_400_1050("odt", "Old Dutch / Old Low Franconian (ca. 400–1050)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Ojibwa("oji", "Ojibwa"), //
+   /**
+    * Macrolanguage
+    */
+   Ojibwa("oji", "Ojibwa"), //
 
-	/**
-	 * ONIX local code, equivalent to omq in ISO 639-5. Collective name &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Oto_Manguean_languages("omq", "Oto-Manguean languages"), //
+   /**
+    * ONIX local code, equivalent to omq in ISO 639-5. Collective name
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Oto_Manguean_languages("omq", "Oto-Manguean languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Oriya("ori", "Oriya"), //
+   /**
+    * Macrolanguage
+    */
+   Oriya("ori", "Oriya"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Oromo("orm", "Oromo"), //
+   /**
+    * Macrolanguage
+    */
+   Oromo("orm", "Oromo"), //
 
-	Osage("osa", "Osage"), //
+   Osage("osa", "Osage"), //
 
-	Ossetian_Ossetic("oss", "Ossetian; Ossetic"), //
+   Ossetian_Ossetic("oss", "Ossetian; Ossetic"), //
 
-	Turkish_Ottoman("ota", "Turkish, Ottoman"), //
+   Turkish_Ottoman("ota", "Turkish, Ottoman"), //
 
-	/**
-	 * Collective name
-	 */
-	Otomian_languages("oto", "Otomian languages"), //
+   /**
+    * Collective name
+    */
+   Otomian_languages("oto", "Otomian languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Papuan_languages("paa", "Papuan languages"), //
+   /**
+    * Collective name
+    */
+   Papuan_languages("paa", "Papuan languages"), //
 
-	Pangasinan("pag", "Pangasinan"), //
+   Pangasinan("pag", "Pangasinan"), //
 
-	Pahlavi("pal", "Pahlavi"), //
+   Pahlavi("pal", "Pahlavi"), //
 
-	Pampanga_Kapampangan("pam", "Pampanga; Kapampangan"), //
+   Pampanga_Kapampangan("pam", "Pampanga; Kapampangan"), //
 
-	Panjabi("pan", "Panjabi"), //
+   Panjabi("pan", "Panjabi"), //
 
-	Papiamento("pap", "Papiamento"), //
+   Papiamento("pap", "Papiamento"), //
 
-	Palauan("pau", "Palauan"), //
+   Palauan("pau", "Palauan"), //
 
-	Old_Persian_ca_600_400_B_C_("peo", "Old Persian (ca. 600-400 B.C.)"), //
+   Old_Persian_ca_600_400_B_C_("peo", "Old Persian (ca. 600-400 B.C.)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Persian("per", "Persian"), //
+   /**
+    * Macrolanguage
+    */
+   Persian("per", "Persian"), //
 
-	/**
-	 * Collective name
-	 */
-	Philippine_languages("phi", "Philippine languages"), //
+   /**
+    * Collective name
+    */
+   Philippine_languages("phi", "Philippine languages"), //
 
-	Phoenician("phn", "Phoenician"), //
+   Phoenician("phn", "Phoenician"), //
 
-	Pali("pli", "Pali"), //
+   Pali("pli", "Pali"), //
 
-	Polish("pol", "Polish"), //
+   Polish("pol", "Polish"), //
 
-	Ponapeian("pon", "Ponapeian"), //
+   Ponapeian("pon", "Ponapeian"), //
 
-	Portuguese("por", "Portuguese"), //
+   Portuguese("por", "Portuguese"), //
 
-	/**
-	 * Collective name
-	 */
-	Prakrit_languages("pra", "Prakrit languages"), //
+   /**
+    * Collective name
+    */
+   Prakrit_languages("pra", "Prakrit languages"), //
 
-	Proven_al_Old_to_1500("pro", "Provençal, Old (to 1500); Occitan, Old (to 1500)"), //
+   Proven_al_Old_to_1500("pro", "Provençal, Old (to 1500); Occitan, Old (to 1500)"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Pushto_Pashto("pus", "Pushto; Pashto"), //
+   /**
+    * Macrolanguage
+    */
+   Pushto_Pashto("pus", "Pushto; Pashto"), //
 
-	/**
-	 * ONIX local code, distinct dialect of Occitan (not distinguished from oci by ISO 639-3)
-	 */
-	Aran_s("qar", "Aranés"), //
+   /**
+    * ONIX local code, distinct dialect of Occitan (not distinguished from oci by ISO 639-3)
+    */
+   Aran_s("qar", "Aranés"), //
 
-	/**
-	 * ONIX local code, distinct dialect of Catalan (not distinguished from cat by ISO 639-3)
-	 */
-	Valencian("qav", "Valencian"), //
+   /**
+    * ONIX local code, distinct dialect of Catalan (not distinguished from cat by ISO 639-3)
+    */
+   Valencian("qav", "Valencian"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Quechua("que", "Quechua"), //
+   /**
+    * Macrolanguage
+    */
+   Quechua("que", "Quechua"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Rajasthani("raj", "Rajasthani"), //
+   /**
+    * Macrolanguage
+    */
+   Rajasthani("raj", "Rajasthani"), //
 
-	Rapanui("rap", "Rapanui"), //
+   Rapanui("rap", "Rapanui"), //
 
-	Rarotongan_Cook_Islands_Maori("rar", "Rarotongan; Cook Islands Maori"), //
+   Rarotongan_Cook_Islands_Maori("rar", "Rarotongan; Cook Islands Maori"), //
 
-	/**
-	 * Collective name
-	 */
-	Romance_languages("roa", "Romance languages"), //
+   /**
+    * Collective name
+    */
+   Romance_languages("roa", "Romance languages"), //
 
-	Romansh("roh", "Romansh"), //
+   Romansh("roh", "Romansh"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Romany("rom", "Romany"), //
+   /**
+    * Macrolanguage
+    */
+   Romany("rom", "Romany"), //
 
-	Romanian("rum", "Romanian"), //
+   Romanian("rum", "Romanian"), //
 
-	Rundi("run", "Rundi"), //
+   Rundi("run", "Rundi"), //
 
-	Aromanian_Arumanian_Macedo_Romanian("rup", "Aromanian; Arumanian; Macedo-Romanian"), //
+   Aromanian_Arumanian_Macedo_Romanian("rup", "Aromanian; Arumanian; Macedo-Romanian"), //
 
-	Russian("rus", "Russian"), //
+   Russian("rus", "Russian"), //
 
-	Sandawe("sad", "Sandawe"), //
+   Sandawe("sad", "Sandawe"), //
 
-	Sango("sag", "Sango"), //
+   Sango("sag", "Sango"), //
 
-	Yakut("sah", "Yakut"), //
+   Yakut("sah", "Yakut"), //
 
-	/**
-	 * Collective name
-	 */
-	South_American_Indian_languages("sai", "South American Indian languages"), //
+   /**
+    * Collective name
+    */
+   South_American_Indian_languages("sai", "South American Indian languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Salishan_languages("sal", "Salishan languages"), //
+   /**
+    * Collective name
+    */
+   Salishan_languages("sal", "Salishan languages"), //
 
-	Samaritan_Aramaic("sam", "Samaritan Aramaic"), //
+   Samaritan_Aramaic("sam", "Samaritan Aramaic"), //
 
-	Sanskrit("san", "Sanskrit"), //
+   Sanskrit("san", "Sanskrit"), //
 
-	Sasak("sas", "Sasak"), //
+   Sasak("sas", "Sasak"), //
 
-	Santali("sat", "Santali"), //
+   Santali("sat", "Santali"), //
 
-	/**
-	 * DEPRECATED - use srp
-	 */
-	Serbian("scc", "Serbian"), //
+   /**
+    * DEPRECATED - use srp
+    */
+   Serbian("scc", "Serbian"), //
 
-	Sicilian("scn", "Sicilian"), //
+   Sicilian("scn", "Sicilian"), //
 
-	Scots_lallans("sco", "Scots (lallans)"), //
+   Scots_lallans("sco", "Scots (lallans)"), //
 
-	/**
-	 * DEPRECATED - use hrv
-	 */
-	Croatian_("scr", "Croatian"), //
+   /**
+    * DEPRECATED - use hrv
+    */
+   Croatian_("scr", "Croatian"), //
 
-	Selkup("sel", "Selkup"), //
+   Selkup("sel", "Selkup"), //
 
-	/**
-	 * Collective name
-	 */
-	Semitic_languages("sem", "Semitic languages"), //
+   /**
+    * Collective name
+    */
+   Semitic_languages("sem", "Semitic languages"), //
 
-	Irish_Old_to_1100("sga", "Irish, Old (to 1100)"), //
+   Irish_Old_to_1100("sga", "Irish, Old (to 1100)"), //
 
-	/**
-	 * Collective name
-	 */
-	Sign_languages("sgn", "Sign languages"), //
+   /**
+    * Collective name
+    */
+   Sign_languages("sgn", "Sign languages"), //
 
-	Shan("shn", "Shan"), //
+   Shan("shn", "Shan"), //
 
-	Sidamo("sid", "Sidamo"), //
+   Sidamo("sid", "Sidamo"), //
 
-	Sinhala_Sinhalese("sin", "Sinhala; Sinhalese"), //
+   Sinhala_Sinhalese("sin", "Sinhala; Sinhalese"), //
 
-	/**
-	 * Collective name
-	 */
-	Siouan_languages("sio", "Siouan languages"), //
+   /**
+    * Collective name
+    */
+   Siouan_languages("sio", "Siouan languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Sino_Tibetan_languages("sit", "Sino-Tibetan languages"), //
+   /**
+    * Collective name
+    */
+   Sino_Tibetan_languages("sit", "Sino-Tibetan languages"), //
 
-	/**
-	 * Collective name
-	 */
-	Slavic_languages("sla", "Slavic languages"), //
+   /**
+    * Collective name
+    */
+   Slavic_languages("sla", "Slavic languages"), //
 
-	Slovak("slo", "Slovak"), //
+   Slovak("slo", "Slovak"), //
 
-	Slovenian("slv", "Slovenian"), //
+   Slovenian("slv", "Slovenian"), //
 
-	Southern_Sami("sma", "Southern Sami"), //
+   Southern_Sami("sma", "Southern Sami"), //
 
-	Northern_Sami("sme", "Northern Sami"), //
+   Northern_Sami("sme", "Northern Sami"), //
 
-	/**
-	 * Collective name
-	 */
-	Sami_languages("smi", "Sami languages"), //
+   /**
+    * Collective name
+    */
+   Sami_languages("smi", "Sami languages"), //
 
-	Lule_Sami("smj", "Lule Sami"), //
+   Lule_Sami("smj", "Lule Sami"), //
 
-	Inari_Sami("smn", "Inari Sami"), //
+   Inari_Sami("smn", "Inari Sami"), //
 
-	Samoan("smo", "Samoan"), //
+   Samoan("smo", "Samoan"), //
 
-	Skolt_Sami("sms", "Skolt Sami"), //
+   Skolt_Sami("sms", "Skolt Sami"), //
 
-	Shona("sna", "Shona"), //
+   Shona("sna", "Shona"), //
 
-	Sindhi("snd", "Sindhi"), //
+   Sindhi("snd", "Sindhi"), //
 
-	Soninke("snk", "Soninke"), //
+   Soninke("snk", "Soninke"), //
 
-	Sogdian("sog", "Sogdian"), //
+   Sogdian("sog", "Sogdian"), //
 
-	Somali("som", "Somali"), //
+   Somali("som", "Somali"), //
 
-	/**
-	 * Collective name
-	 */
-	Songhai_languages("son", "Songhai languages"), //
+   /**
+    * Collective name
+    */
+   Songhai_languages("son", "Songhai languages"), //
 
-	Sotho_Sesotho("sot", "Sotho; Sesotho"), //
+   Sotho_Sesotho("sot", "Sotho; Sesotho"), //
 
-	Spanish("spa", "Spanish"), //
+   Spanish("spa", "Spanish"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Sardinian("srd", "Sardinian"), //
+   /**
+    * Macrolanguage
+    */
+   Sardinian("srd", "Sardinian"), //
 
-	Sranan_Tongo("srn", "Sranan Tongo"), //
+   Sranan_Tongo("srn", "Sranan Tongo"), //
 
-	Serbian_("srp", "Serbian"), //
+   Serbian_("srp", "Serbian"), //
 
-	Serer("srr", "Serer"), //
+   Serer("srr", "Serer"), //
 
-	/**
-	 * Collective name
-	 */
-	Nilo_Saharan_languages("ssa", "Nilo-Saharan languages"), //
+   /**
+    * Collective name
+    */
+   Nilo_Saharan_languages("ssa", "Nilo-Saharan languages"), //
 
-	Swazi_Swati("ssw", "Swazi; Swati"), //
+   Swazi_Swati("ssw", "Swazi; Swati"), //
 
-	Sukuma("suk", "Sukuma"), //
+   Sukuma("suk", "Sukuma"), //
 
-	Sundanese("sun", "Sundanese"), //
+   Sundanese("sun", "Sundanese"), //
 
-	Susu("sus", "Susu"), //
+   Susu("sus", "Susu"), //
 
-	Sumerian("sux", "Sumerian"), //
+   Sumerian("sux", "Sumerian"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Swahili("swa", "Swahili"), //
+   /**
+    * Macrolanguage
+    */
+   Swahili("swa", "Swahili"), //
 
-	Swedish("swe", "Swedish"), //
+   Swedish("swe", "Swedish"), //
 
-	Classical_Syriac("syc", "Classical Syriac"), //
+   Classical_Syriac("syc", "Classical Syriac"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Syriac("syr", "Syriac"), //
+   /**
+    * Macrolanguage
+    */
+   Syriac("syr", "Syriac"), //
 
-	Tahitian("tah", "Tahitian"), //
+   Tahitian("tah", "Tahitian"), //
 
-	/**
-	 * Collective name
-	 */
-	Tai_languages("tai", "Tai languages"), //
+   /**
+    * Collective name
+    */
+   Tai_languages("tai", "Tai languages"), //
 
-	Tamil("tam", "Tamil"), //
+   Tamil("tam", "Tamil"), //
 
-	Tatar("tat", "Tatar"), //
+   Tatar("tat", "Tatar"), //
 
-	Telugu("tel", "Telugu"), //
+   Telugu("tel", "Telugu"), //
 
-	Temne_Time("tem", "Temne; Time"), //
+   Temne_Time("tem", "Temne; Time"), //
 
-	Terena("ter", "Terena"), //
+   Terena("ter", "Terena"), //
 
-	Tetum("tet", "Tetum"), //
+   Tetum("tet", "Tetum"), //
 
-	Tajik("tgk", "Tajik"), //
+   Tajik("tgk", "Tajik"), //
 
-	Tagalog("tgl", "Tagalog"), //
+   Tagalog("tgl", "Tagalog"), //
 
-	Thai("tha", "Thai"), //
+   Thai("tha", "Thai"), //
 
-	Tibetan("tib", "Tibetan"), //
+   Tibetan("tib", "Tibetan"), //
 
-	Tigr_("tig", "Tigré"), //
+   Tigr_("tig", "Tigré"), //
 
-	Tigrinya("tir", "Tigrinya"), //
+   Tigrinya("tir", "Tigrinya"), //
 
-	Tiv("tiv", "Tiv"), //
+   Tiv("tiv", "Tiv"), //
 
-	Tokelauan("tkl", "Tokelauan"), //
+   Tokelauan("tkl", "Tokelauan"), //
 
-	/**
-	 * Artificial language
-	 */
-	Klingon_tlhIngan_Hol("tlh", "Klingon; tlhIngan-Hol"), //
+   /**
+    * Artificial language
+    */
+   Klingon_tlhIngan_Hol("tlh", "Klingon; tlhIngan-Hol"), //
 
-	Tlingit("tli", "Tlingit"), //
+   Tlingit("tli", "Tlingit"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Tamashek("tmh", "Tamashek"), //
+   /**
+    * Macrolanguage
+    */
+   Tamashek("tmh", "Tamashek"), //
 
-	Tonga_Nyasa("tog", "Tonga (Nyasa)"), //
+   Tonga_Nyasa("tog", "Tonga (Nyasa)"), //
 
-	Tongan("ton", "Tongan"), //
+   Tongan("ton", "Tongan"), //
 
-	Tok_Pisin("tpi", "Tok Pisin"), //
+   Tok_Pisin("tpi", "Tok Pisin"), //
 
-	Tsimshian("tsi", "Tsimshian"), //
+   Tsimshian("tsi", "Tsimshian"), //
 
-	/**
-	 * AKA Setswana
-	 */
-	Tswana("tsn", "Tswana"), //
+   /**
+    * AKA Setswana
+    */
+   Tswana("tsn", "Tswana"), //
 
-	Tsonga("tso", "Tsonga"), //
+   Tsonga("tso", "Tsonga"), //
 
-	Turkmen("tuk", "Turkmen"), //
+   Turkmen("tuk", "Turkmen"), //
 
-	Tumbuka("tum", "Tumbuka"), //
+   Tumbuka("tum", "Tumbuka"), //
 
-	/**
-	 * Collective name
-	 */
-	Tupi_languages("tup", "Tupi languages"), //
+   /**
+    * Collective name
+    */
+   Tupi_languages("tup", "Tupi languages"), //
 
-	Turkish("tur", "Turkish"), //
+   Turkish("tur", "Turkish"), //
 
-	Altaic_languages("tut", "Altaic languages"), //
+   Altaic_languages("tut", "Altaic languages"), //
 
-	Tuvaluan("tvl", "Tuvaluan"), //
+   Tuvaluan("tvl", "Tuvaluan"), //
 
-	Twi("twi", "Twi"), //
+   Twi("twi", "Twi"), //
 
-	Tuvinian("tyv", "Tuvinian"), //
+   Tuvinian("tyv", "Tuvinian"), //
 
-	/**
-	 * ONIX local code, equivalent to tzo in ISO 639-3 &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Tzotzil("tzo", "Tzotzil"), //
+   /**
+    * ONIX local code, equivalent to tzo in ISO 639-3
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Tzotzil("tzo", "Tzotzil"), //
 
-	Udmurt("udm", "Udmurt"), //
+   Udmurt("udm", "Udmurt"), //
 
-	Ugaritic("uga", "Ugaritic"), //
+   Ugaritic("uga", "Ugaritic"), //
 
-	Uighur_Uyghur("uig", "Uighur; Uyghur"), //
+   Uighur_Uyghur("uig", "Uighur; Uyghur"), //
 
-	Ukrainian("ukr", "Ukrainian"), //
+   Ukrainian("ukr", "Ukrainian"), //
 
-	Umbundu("umb", "Umbundu"), //
+   Umbundu("umb", "Umbundu"), //
 
-	Undetermined_language("und", "Undetermined language"), //
+   Undetermined_language("und", "Undetermined language"), //
 
-	Urdu("urd", "Urdu"), //
+   Urdu("urd", "Urdu"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Uzbek("uzb", "Uzbek"), //
+   /**
+    * Macrolanguage
+    */
+   Uzbek("uzb", "Uzbek"), //
 
-	Vai("vai", "Vai"), //
+   Vai("vai", "Vai"), //
 
-	Venda("ven", "Venda"), //
+   Venda("ven", "Venda"), //
 
-	Vietnamese("vie", "Vietnamese"), //
+   Vietnamese("vie", "Vietnamese"), //
 
-	/**
-	 * Artificial language
-	 */
-	Volap_k("vol", "Volapük"), //
+   /**
+    * Artificial language
+    */
+   Volap_k("vol", "Volapük"), //
 
-	Votic("vot", "Votic"), //
+   Votic("vot", "Votic"), //
 
-	/**
-	 * Collective name
-	 */
-	Wakashan_languages("wak", "Wakashan languages"), //
+   /**
+    * Collective name
+    */
+   Wakashan_languages("wak", "Wakashan languages"), //
 
-	Wolaitta_Wolaytta("wal", "Wolaitta; Wolaytta"), //
+   Wolaitta_Wolaytta("wal", "Wolaitta; Wolaytta"), //
 
-	Waray("war", "Waray"), //
+   Waray("war", "Waray"), //
 
-	Washo("was", "Washo"), //
+   Washo("was", "Washo"), //
 
-	Welsh("wel", "Welsh"), //
+   Welsh("wel", "Welsh"), //
 
-	/**
-	 * Collective name
-	 */
-	Sorbian_languages("wen", "Sorbian languages"), //
+   /**
+    * Collective name
+    */
+   Sorbian_languages("wen", "Sorbian languages"), //
 
-	Walloon("wln", "Walloon"), //
+   Walloon("wln", "Walloon"), //
 
-	Wolof("wol", "Wolof"), //
+   Wolof("wol", "Wolof"), //
 
-	Kalmyk("xal", "Kalmyk"), //
+   Kalmyk("xal", "Kalmyk"), //
 
-	Xhosa("xho", "Xhosa"), //
+   Xhosa("xho", "Xhosa"), //
 
-	Yao("yao", "Yao"), //
+   Yao("yao", "Yao"), //
 
-	Yapese("yap", "Yapese"), //
+   Yapese("yap", "Yapese"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Yiddish("yid", "Yiddish"), //
+   /**
+    * Macrolanguage
+    */
+   Yiddish("yid", "Yiddish"), //
 
-	Yoruba("yor", "Yoruba"), //
+   Yoruba("yor", "Yoruba"), //
 
-	/**
-	 * Collective name
-	 */
-	Yupik_languages("ypk", "Yupik languages"), //
+   /**
+    * Collective name
+    */
+   Yupik_languages("ypk", "Yupik languages"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Zapotec("zap", "Zapotec"), //
+   /**
+    * Macrolanguage
+    */
+   Zapotec("zap", "Zapotec"), //
 
-	/**
-	 * Artificial language
-	 */
-	Blissymbols_Blissymbolics_Bliss("zbl", "Blissymbols; Blissymbolics; Bliss"), //
+   /**
+    * Artificial language
+    */
+   Blissymbols_Blissymbolics_Bliss("zbl", "Blissymbols; Blissymbolics; Bliss"), //
 
-	Zenaga("zen", "Zenaga"), //
+   Zenaga("zen", "Zenaga"), //
 
-	/**
-	 * null &lt;p&gt;NOTE: Introduced in Onix3
-	 */
-	Standard_Moroccan_Tamazight("zgh", "Standard Moroccan Tamazight"), //
+   /**
+    * null
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Standard_Moroccan_Tamazight("zgh", "Standard Moroccan Tamazight"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Zhuang_Chuang("zha", "Zhuang; Chuang"), //
+   /**
+    * Macrolanguage
+    */
+   Zhuang_Chuang("zha", "Zhuang; Chuang"), //
 
-	/**
-	 * Collective name
-	 */
-	Zande_languages("znd", "Zande languages"), //
+   /**
+    * Collective name
+    */
+   Zande_languages("znd", "Zande languages"), //
 
-	Zulu("zul", "Zulu"), //
+   Zulu("zul", "Zulu"), //
 
-	Zuni("zun", "Zuni"), //
+   Zuni("zun", "Zuni"), //
 
-	No_linguistic_content("zxx", "No linguistic content"), //
+   No_linguistic_content("zxx", "No linguistic content"), //
 
-	/**
-	 * Macrolanguage
-	 */
-	Zaza_Dimili_Dimli_Kirdki_Kirmanjki_Zazaki("zza", "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki");
+   /**
+    * Macrolanguage
+    */
+   Zaza_Dimili_Dimli_Kirdki_Kirmanjki_Zazaki("zza", "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private LanguageCodes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private LanguageCodes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, LanguageCodes> map;
+   private static volatile Map<String, LanguageCodes> map;
 
-	private static Map<String, LanguageCodes> map()
-	{
-		Map<String, LanguageCodes> result = map;
-		if (result == null)
-		{
-			synchronized (LanguageCodes.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (LanguageCodes e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, LanguageCodes> map()
+   {
+      Map<String, LanguageCodes> result = map;
+      if (result == null)
+      {
+         synchronized(LanguageCodes.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (LanguageCodes e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static LanguageCodes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static LanguageCodes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

@@ -20,10 +20,13 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodes;
@@ -34,12 +37,13 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.codelist.UnnamedPersonss;
 import com.tectonica.jonix.struct.JonixPersonDate;
 import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
+import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -66,9 +70,9 @@ public class Contributor implements OnixSuperComposite, Serializable
 	public static final String refname = "Contributor";
 	public static final String shortname = "contributor";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -87,154 +91,35 @@ public class Contributor implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public SequenceNumber sequenceNumber;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ContributorRole> contributorRoles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<LanguageCode> languageCodes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SequenceNumberWithinRole sequenceNumberWithinRole;
-
-	/**
-	 * (this field is required)
-	 */
-	public PersonName personName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PersonNameInverted personNameInverted;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesBeforeNames titlesBeforeNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NamesBeforeKey namesBeforeKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrefixToKey prefixToKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public KeyNames keyNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NamesAfterKey namesAfterKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SuffixToKey suffixToKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LettersAfterNames lettersAfterNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesAfterNames titlesAfterNames;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Name> names;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PersonNameIdentifier> personNameIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PersonDate> personDates;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProfessionalAffiliation> professionalAffiliations;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CorporateName corporateName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BiographicalNote biographicalNote;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProfessionalPosition professionalPosition;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Affiliation affiliation;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContributorDescription contributorDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public UnnamedPersons unnamedPersons;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CountryCode> countryCodes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RegionCode> regionCodes;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Contributor EMPTY = new Contributor();
 
 	public Contributor()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Contributor(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -243,319 +128,372 @@ public class Contributor implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
-					sequenceNumber = new SequenceNumber(element);
-				else if (name.equals(ContributorRole.refname) || name.equals(ContributorRole.shortname))
-					contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(element));
-				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
-					languageCodes = JPU.addToList(languageCodes, new LanguageCode(element));
-				else if (name.equals(SequenceNumberWithinRole.refname)
-						|| name.equals(SequenceNumberWithinRole.shortname))
-					sequenceNumberWithinRole = new SequenceNumberWithinRole(element);
-				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					personName = new PersonName(element);
-				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-					personNameInverted = new PersonNameInverted(element);
-				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-					titlesBeforeNames = new TitlesBeforeNames(element);
-				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-					namesBeforeKey = new NamesBeforeKey(element);
-				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-					prefixToKey = new PrefixToKey(element);
-				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-					keyNames = new KeyNames(element);
-				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-					namesAfterKey = new NamesAfterKey(element);
-				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-					suffixToKey = new SuffixToKey(element);
-				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-					lettersAfterNames = new LettersAfterNames(element);
-				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-					titlesAfterNames = new TitlesAfterNames(element);
-				else if (name.equals(Name.refname) || name.equals(Name.shortname))
-					names = JPU.addToList(names, new Name(element));
-				else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
-					personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(element));
-				else if (name.equals(PersonDate.refname) || name.equals(PersonDate.shortname))
-					personDates = JPU.addToList(personDates, new PersonDate(element));
-				else if (name.equals(ProfessionalAffiliation.refname) || name.equals(ProfessionalAffiliation.shortname))
-					professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(
-							element));
-				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					corporateName = new CorporateName(element);
-				else if (name.equals(BiographicalNote.refname) || name.equals(BiographicalNote.shortname))
-					biographicalNote = new BiographicalNote(element);
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-				else if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
-					professionalPosition = new ProfessionalPosition(element);
-				else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
-					affiliation = new Affiliation(element);
-				else if (name.equals(ContributorDescription.refname) || name.equals(ContributorDescription.shortname))
-					contributorDescription = new ContributorDescription(element);
-				else if (name.equals(UnnamedPersons.refname) || name.equals(UnnamedPersons.shortname))
-					unnamedPersons = new UnnamedPersons(element);
-				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					countryCodes = JPU.addToList(countryCodes, new CountryCode(element));
-				else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname))
-					regionCodes = JPU.addToList(regionCodes, new RegionCode(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
+				sequenceNumber = new SequenceNumber(e);
+			else if (name.equals(ContributorRole.refname) || name.equals(ContributorRole.shortname))
+				contributorRoles = JPU.addToList(contributorRoles, new ContributorRole(e));
+			else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
+				languageCodes = JPU.addToList(languageCodes, new LanguageCode(e));
+			else if (name.equals(SequenceNumberWithinRole.refname) || name.equals(SequenceNumberWithinRole.shortname))
+				sequenceNumberWithinRole = new SequenceNumberWithinRole(e);
+			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
+				personName = new PersonName(e);
+			else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
+				personNameInverted = new PersonNameInverted(e);
+			else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
+				titlesBeforeNames = new TitlesBeforeNames(e);
+			else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
+				namesBeforeKey = new NamesBeforeKey(e);
+			else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
+				prefixToKey = new PrefixToKey(e);
+			else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
+				keyNames = new KeyNames(e);
+			else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
+				namesAfterKey = new NamesAfterKey(e);
+			else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
+				suffixToKey = new SuffixToKey(e);
+			else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
+				lettersAfterNames = new LettersAfterNames(e);
+			else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
+				titlesAfterNames = new TitlesAfterNames(e);
+			else if (name.equals(Name.refname) || name.equals(Name.shortname))
+				names = JPU.addToList(names, new Name(e));
+			else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
+				personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
+			else if (name.equals(PersonDate.refname) || name.equals(PersonDate.shortname))
+				personDates = JPU.addToList(personDates, new PersonDate(e));
+			else if (name.equals(ProfessionalAffiliation.refname) || name.equals(ProfessionalAffiliation.shortname))
+				professionalAffiliations = JPU.addToList(professionalAffiliations, new ProfessionalAffiliation(e));
+			else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
+				corporateName = new CorporateName(e);
+			else if (name.equals(BiographicalNote.refname) || name.equals(BiographicalNote.shortname))
+				biographicalNote = new BiographicalNote(e);
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
+			else if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
+				professionalPosition = new ProfessionalPosition(e);
+			else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
+				affiliation = new Affiliation(e);
+			else if (name.equals(ContributorDescription.refname) || name.equals(ContributorDescription.shortname))
+				contributorDescription = new ContributorDescription(e);
+			else if (name.equals(UnnamedPersons.refname) || name.equals(UnnamedPersons.shortname))
+				unnamedPersons = new UnnamedPersons(e);
+			else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
+				countryCodes = JPU.addToList(countryCodes, new CountryCode(e));
+			else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname))
+				regionCodes = JPU.addToList(regionCodes, new RegionCode(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
-	 */
-	public String getSequenceNumberValue()
+	@Override
+	public boolean exists()
 	{
-		return (sequenceNumber == null) ? null : sequenceNumber.value;
+		return exists;
 	}
 
-	public List<ContributorRoles> getContributorRoleValues()
-	{
-		if (contributorRoles != null)
-		{
-			List<ContributorRoles> list = new ArrayList<>();
-			for (ContributorRole i : contributorRoles)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	public List<LanguageCodes> getLanguageCodeValues()
-	{
-		if (languageCodes != null)
-		{
-			List<LanguageCodes> list = new ArrayList<>();
-			for (LanguageCode i : languageCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, 1, 2, 3 etc, suggested maximum length 3 digits
+	 * (this field is optional)
 	 */
-	public String getSequenceNumberWithinRoleValue()
+	public SequenceNumber sequenceNumber()
 	{
-		return (sequenceNumberWithinRole == null) ? null : sequenceNumberWithinRole.value;
+		initialize();
+		return sequenceNumber;
 	}
+
+	private ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getPersonNameValue()
+	public ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles()
 	{
-		return (personName == null) ? null : personName.value;
+		initialize();
+		return contributorRoles;
 	}
+
+	private ListOfOnixElement<LanguageCode, LanguageCodes> languageCodes = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public String getPersonNameInvertedValue()
+	public ListOfOnixElement<LanguageCode, LanguageCodes> languageCodes()
 	{
-		return (personNameInverted == null) ? null : personNameInverted.value;
+		initialize();
+		return languageCodes;
 	}
+
+	private SequenceNumberWithinRole sequenceNumberWithinRole = SequenceNumberWithinRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getTitlesBeforeNamesValue()
+	public SequenceNumberWithinRole sequenceNumberWithinRole()
 	{
-		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
+		initialize();
+		return sequenceNumberWithinRole;
 	}
+
+	private PersonName personName = PersonName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getNamesBeforeKeyValue()
+	public PersonName personName()
 	{
-		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
+		initialize();
+		return personName;
 	}
+
+	private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getPrefixToKeyValue()
+	public PersonNameInverted personNameInverted()
 	{
-		return (prefixToKey == null) ? null : prefixToKey.value;
+		initialize();
+		return personNameInverted;
 	}
+
+	private TitlesBeforeNames titlesBeforeNames = TitlesBeforeNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getKeyNamesValue()
+	public TitlesBeforeNames titlesBeforeNames()
 	{
-		return (keyNames == null) ? null : keyNames.value;
+		initialize();
+		return titlesBeforeNames;
 	}
+
+	private NamesBeforeKey namesBeforeKey = NamesBeforeKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getNamesAfterKeyValue()
+	public NamesBeforeKey namesBeforeKey()
 	{
-		return (namesAfterKey == null) ? null : namesAfterKey.value;
+		initialize();
+		return namesBeforeKey;
 	}
+
+	private PrefixToKey prefixToKey = PrefixToKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getSuffixToKeyValue()
+	public PrefixToKey prefixToKey()
 	{
-		return (suffixToKey == null) ? null : suffixToKey.value;
+		initialize();
+		return prefixToKey;
 	}
+
+	private KeyNames keyNames = KeyNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getLettersAfterNamesValue()
+	public KeyNames keyNames()
 	{
-		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
+		initialize();
+		return keyNames;
 	}
+
+	private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getTitlesAfterNamesValue()
+	public NamesAfterKey namesAfterKey()
 	{
-		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
+		initialize();
+		return namesAfterKey;
 	}
+
+	private SuffixToKey suffixToKey = SuffixToKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is optional)
 	 */
-	public String getCorporateNameValue()
+	public SuffixToKey suffixToKey()
 	{
-		return (corporateName == null) ? null : corporateName.value;
+		initialize();
+		return suffixToKey;
 	}
+
+	private LettersAfterNames lettersAfterNames = LettersAfterNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters
+	 * (this field is optional)
 	 */
-	public String getBiographicalNoteValue()
+	public LettersAfterNames lettersAfterNames()
 	{
-		return (biographicalNote == null) ? null : biographicalNote.value;
+		initialize();
+		return lettersAfterNames;
 	}
+
+	private TitlesAfterNames titlesAfterNames = TitlesAfterNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getProfessionalPositionValue()
+	public TitlesAfterNames titlesAfterNames()
 	{
-		return (professionalPosition == null) ? null : professionalPosition.value;
+		initialize();
+		return titlesAfterNames;
 	}
+
+	private List<Name> names = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public String getAffiliationValue()
+	public List<Name> names()
 	{
-		return (affiliation == null) ? null : affiliation.value;
+		initialize();
+		return names;
 	}
+
+	private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list may be empty)
 	 */
-	public String getContributorDescriptionValue()
+	public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers()
 	{
-		return (contributorDescription == null) ? null : contributorDescription.value;
+		initialize();
+		return personNameIdentifiers;
 	}
 
-	public UnnamedPersonss getUnnamedPersonsValue()
-	{
-		return (unnamedPersons == null) ? null : unnamedPersons.value;
-	}
-
-	public List<CountryCodes> getCountryCodeValues()
-	{
-		if (countryCodes != null)
-		{
-			List<CountryCodes> list = new ArrayList<>();
-			for (CountryCode i : countryCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length code, consisting of upper case letters with or without a hyphen, successive codes
-	 * being separated by spaces. Suggested maximum length 8 characters.
+	 * (this list may be empty)
 	 */
-	public List<java.util.Set<String>> getRegionCodeSets()
+	public ListOfOnixDataCompositeWithKey<PersonDate, JonixPersonDate, PersonDateRoles> personDates()
 	{
-		if (regionCodes != null)
-		{
-			List<java.util.Set<String>> list = new ArrayList<>();
-			for (RegionCode i : regionCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return personDates;
 	}
 
-	public JonixPersonNameIdentifier findPersonNameIdentifier(PersonNameIdentifierTypes personNameIDType)
+	private ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations = ListOfOnixDataComposite
+			.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations()
 	{
-		if (personNameIdentifiers != null)
-		{
-			for (PersonNameIdentifier x : personNameIdentifiers)
-			{
-				if (x.getPersonNameIDTypeValue() == personNameIDType)
-					return x.asJonixPersonNameIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return professionalAffiliations;
 	}
 
-	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(
-			java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	private CorporateName corporateName = CorporateName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateName corporateName()
 	{
-		if (personNameIdentifiers != null)
-		{
-			List<JonixPersonNameIdentifier> matches = new ArrayList<>();
-			for (PersonNameIdentifier x : personNameIdentifiers)
-			{
-				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
-					matches.add(x.asJonixPersonNameIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return corporateName;
 	}
 
-	public JonixPersonDate findPersonDate(PersonDateRoles personDateRole)
+	private BiographicalNote biographicalNote = BiographicalNote.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BiographicalNote biographicalNote()
 	{
-		if (personDates != null)
-		{
-			for (PersonDate x : personDates)
-			{
-				if (x.getPersonDateRoleValue() == personDateRole)
-					return x.asJonixPersonDate();
-			}
-		}
-		return null;
+		initialize();
+		return biographicalNote;
 	}
 
-	public List<JonixPersonDate> findPersonDates(java.util.Set<PersonDateRoles> personDateRoles)
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
 	{
-		if (personDates != null)
-		{
-			List<JonixPersonDate> matches = new ArrayList<>();
-			for (PersonDate x : personDates)
-			{
-				if (personDateRoles == null || personDateRoles.contains(x.getPersonDateRoleValue()))
-					matches.add(x.asJonixPersonDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return websites;
+	}
+
+	private ProfessionalPosition professionalPosition = ProfessionalPosition.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProfessionalPosition professionalPosition()
+	{
+		initialize();
+		return professionalPosition;
+	}
+
+	private Affiliation affiliation = Affiliation.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Affiliation affiliation()
+	{
+		initialize();
+		return affiliation;
+	}
+
+	private ContributorDescription contributorDescription = ContributorDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContributorDescription contributorDescription()
+	{
+		initialize();
+		return contributorDescription;
+	}
+
+	private UnnamedPersons unnamedPersons = UnnamedPersons.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public UnnamedPersons unnamedPersons()
+	{
+		initialize();
+		return unnamedPersons;
+	}
+
+	private ListOfOnixElement<CountryCode, CountryCodes> countryCodes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<CountryCode, CountryCodes> countryCodes()
+	{
+		initialize();
+		return countryCodes;
+	}
+
+	private ListOfOnixElement<RegionCode, java.util.Set<String>> regionCodes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<RegionCode, java.util.Set<String>> regionCodes()
+	{
+		initialize();
+		return regionCodes;
 	}
 }

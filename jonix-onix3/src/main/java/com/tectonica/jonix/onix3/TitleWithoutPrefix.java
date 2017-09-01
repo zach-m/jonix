@@ -29,7 +29,7 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextScriptCodes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -66,16 +66,16 @@ import com.tectonica.jonix.codelist.TextScriptCodes;
  * </tr>
  * </table>
  */
-public class TitleWithoutPrefix implements OnixElement, Serializable
+public class TitleWithoutPrefix implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "TitleWithoutPrefix";
 	public static final String shortname = "b031";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -94,9 +94,9 @@ public class TitleWithoutPrefix implements OnixElement, Serializable
 
 	public TextCaseFlags textcase;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Variable-length text, suggested maximum 300 characters
@@ -105,15 +105,30 @@ public class TitleWithoutPrefix implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final TitleWithoutPrefix EMPTY = new TitleWithoutPrefix();
 
 	public TitleWithoutPrefix()
-	{}
+	{
+		exists = false;
+	}
 
 	public TitleWithoutPrefix(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
@@ -123,5 +138,11 @@ public class TitleWithoutPrefix implements OnixElement, Serializable
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAgentIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +54,17 @@ import com.tectonica.jonix.struct.JonixAgentIdentifier;
  * </tr>
  * </table>
  */
-public class AgentIdentifier implements OnixDataComposite, Serializable
+public class AgentIdentifier
+		implements OnixDataCompositeWithKey<JonixAgentIdentifier, SupplierIdentifierTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "AgentIdentifier";
 	public static final String shortname = "agentidentifier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,81 +75,107 @@ public class AgentIdentifier implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public AgentIDType agentIDType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final AgentIdentifier EMPTY = new AgentIdentifier();
 
 	public AgentIdentifier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public AgentIdentifier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AgentIDType.refname) || name.equals(AgentIDType.shortname))
-					agentIDType = new AgentIDType(element);
-				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					idTypeName = new IDTypeName(element);
-				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					idValue = new IDValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AgentIDType.refname) || name.equals(AgentIDType.shortname))
+				agentIDType = new AgentIDType(e);
+			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
+				idTypeName = new IDTypeName(e);
+			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
+				idValue = new IDValue(e);
 		});
 	}
 
-	public SupplierIdentifierTypes getAgentIDTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (agentIDType == null) ? null : agentIDType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private AgentIDType agentIDType = AgentIDType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getIDTypeNameValue()
+	public AgentIDType agentIDType()
 	{
-		return (idTypeName == null) ? null : idTypeName.value;
+		initialize();
+		return agentIDType;
 	}
+
+	private IDTypeName idTypeName = IDTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * (this field is optional)
 	 */
-	public String getIDValueValue()
+	public IDTypeName idTypeName()
 	{
-		return (idValue == null) ? null : idValue.value;
+		initialize();
+		return idTypeName;
 	}
 
-	public JonixAgentIdentifier asJonixAgentIdentifier()
+	private IDValue idValue = IDValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue()
 	{
-		JonixAgentIdentifier x = new JonixAgentIdentifier();
-		x.agentIDType = getAgentIDTypeValue();
-		x.idTypeName = getIDTypeNameValue();
-		x.idValue = getIDValueValue();
-		return x;
+		initialize();
+		return idValue;
+	}
+
+	@Override
+	public JonixAgentIdentifier asStruct()
+	{
+		initialize();
+		JonixAgentIdentifier struct = new JonixAgentIdentifier();
+		struct.agentIDType = agentIDType.value;
+		struct.idTypeName = idTypeName.value;
+		struct.idValue = idValue.value;
+		return struct;
+	}
+
+	@Override
+	public SupplierIdentifierTypes structKey()
+	{
+		return agentIDType().value;
 	}
 }

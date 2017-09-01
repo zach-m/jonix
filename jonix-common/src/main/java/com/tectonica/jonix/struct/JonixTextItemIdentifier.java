@@ -20,32 +20,35 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixTextItemIdentifier implements Serializable
+public class JonixTextItemIdentifier implements JonixKeyedStruct<TextItemIdentifierTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public TextItemIdentifierTypes textItemIDType;
+   public static JonixTextItemIdentifier EMPTY = new JonixTextItemIdentifier();
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String idTypeName;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public TextItemIdentifierTypes textItemIDType;
 
-	/**
-	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String idValue;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+    */
+   public String idTypeName;
+
+   /**
+    * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
+    */
+   public String idValue;
+
+   @Override
+   public TextItemIdentifierTypes key() { return textItemIDType; }
 }

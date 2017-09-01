@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,70 +37,68 @@ interface CodeList159
  * Description: Resource mode
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist159">ONIX
- *      Codelist 159 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist159">ONIX Codelist 159 in Reference Guide</a>
  */
 public enum ResourceModes implements OnixCodelist, CodeList159
 {
-	/**
-	 * An executable together with data on which it operates
-	 */
-	Application("01", "Application"), //
+   /**
+    * An executable together with data on which it operates
+    */
+   Application("01", "Application"), //
 
-	/**
-	 * A sound recording
-	 */
-	Audio("02", "Audio"), //
+   /**
+    * A sound recording
+    */
+   Audio("02", "Audio"), //
 
-	/**
-	 * A still image
-	 */
-	Image("03", "Image"), //
+   /**
+    * A still image
+    */
+   Image("03", "Image"), //
 
-	/**
-	 * Readable text, with or without associated images etc
-	 */
-	Text("04", "Text"), //
+   /**
+    * Readable text, with or without associated images etc
+    */
+   Text("04", "Text"), //
 
-	/**
-	 * Moving images, with or without accompanying sound
-	 */
-	Video("05", "Video"), //
+   /**
+    * Moving images, with or without accompanying sound
+    */
+   Video("05", "Video"), //
 
-	/**
-	 * A website or other supporting resource delivering content in a variety of modes
-	 */
-	Multi_mode("06", "Multi-mode");
+   /**
+    * A website or other supporting resource delivering content in a variety of modes
+    */
+   Multi_mode("06", "Multi-mode");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ResourceModes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ResourceModes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static ResourceModes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (ResourceModes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static ResourceModes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (ResourceModes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

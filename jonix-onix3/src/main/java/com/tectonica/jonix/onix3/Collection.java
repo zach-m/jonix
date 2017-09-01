@@ -20,20 +20,21 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.CollectionSequenceTypes;
-import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
 import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.struct.JonixCollectionSequence;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -64,9 +65,9 @@ public class Collection implements OnixSuperComposite, Serializable
 	public static final String refname = "Collection";
 	public static final String shortname = "collection";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -77,167 +78,144 @@ public class Collection implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public CollectionType collectionType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SourceName sourceName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CollectionIdentifier> collectionIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CollectionSequence> collectionSequences;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TitleDetail> titleDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Contributor> contributors;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ContributorStatement> contributorStatements;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Collection EMPTY = new Collection();
 
 	public Collection()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Collection(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CollectionType.refname) || name.equals(CollectionType.shortname))
-					collectionType = new CollectionType(element);
-				else if (name.equals(SourceName.refname) || name.equals(SourceName.shortname))
-					sourceName = new SourceName(element);
-				else if (name.equals(CollectionIdentifier.refname) || name.equals(CollectionIdentifier.shortname))
-					collectionIdentifiers = JPU.addToList(collectionIdentifiers, new CollectionIdentifier(element));
-				else if (name.equals(CollectionSequence.refname) || name.equals(CollectionSequence.shortname))
-					collectionSequences = JPU.addToList(collectionSequences, new CollectionSequence(element));
-				else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
-					titleDetails = JPU.addToList(titleDetails, new TitleDetail(element));
-				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					contributors = JPU.addToList(contributors, new Contributor(element));
-				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
-					contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CollectionType.refname) || name.equals(CollectionType.shortname))
+				collectionType = new CollectionType(e);
+			else if (name.equals(SourceName.refname) || name.equals(SourceName.shortname))
+				sourceName = new SourceName(e);
+			else if (name.equals(CollectionIdentifier.refname) || name.equals(CollectionIdentifier.shortname))
+				collectionIdentifiers = JPU.addToList(collectionIdentifiers, new CollectionIdentifier(e));
+			else if (name.equals(CollectionSequence.refname) || name.equals(CollectionSequence.shortname))
+				collectionSequences = JPU.addToList(collectionSequences, new CollectionSequence(e));
+			else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
+				titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
+			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
+				contributors = JPU.addToList(contributors, new Contributor(e));
+			else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
+				contributorStatements = JPU.addToList(contributorStatements, new ContributorStatement(e));
 		});
 	}
 
-	public CollectionTypes getCollectionTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (collectionType == null) ? null : collectionType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private CollectionType collectionType = CollectionType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getSourceNameValue()
+	public CollectionType collectionType()
 	{
-		return (sourceName == null) ? null : sourceName.value;
+		initialize();
+		return collectionType;
 	}
+
+	private SourceName sourceName = SourceName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1000 characters. XHTML is enabled in this element -
-	 * see Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is optional)
 	 */
-	public List<String> getContributorStatementValues()
+	public SourceName sourceName()
 	{
-		if (contributorStatements != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ContributorStatement i : contributorStatements)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return sourceName;
 	}
 
-	public JonixCollectionIdentifier findCollectionIdentifier(SeriesIdentifierTypes collectionIDType)
+	private ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes> collectionIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes> collectionIdentifiers()
 	{
-		if (collectionIdentifiers != null)
-		{
-			for (CollectionIdentifier x : collectionIdentifiers)
-			{
-				if (x.getCollectionIDTypeValue() == collectionIDType)
-					return x.asJonixCollectionIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return collectionIdentifiers;
 	}
 
-	public List<JonixCollectionIdentifier> findCollectionIdentifiers(
-			java.util.Set<SeriesIdentifierTypes> collectionIDTypes)
+	private ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes> collectionSequences = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes> collectionSequences()
 	{
-		if (collectionIdentifiers != null)
-		{
-			List<JonixCollectionIdentifier> matches = new ArrayList<>();
-			for (CollectionIdentifier x : collectionIdentifiers)
-			{
-				if (collectionIDTypes == null || collectionIDTypes.contains(x.getCollectionIDTypeValue()))
-					matches.add(x.asJonixCollectionIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return collectionSequences;
 	}
 
-	public JonixCollectionSequence findCollectionSequence(CollectionSequenceTypes collectionSequenceType)
+	private List<TitleDetail> titleDetails = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<TitleDetail> titleDetails()
 	{
-		if (collectionSequences != null)
-		{
-			for (CollectionSequence x : collectionSequences)
-			{
-				if (x.getCollectionSequenceTypeValue() == collectionSequenceType)
-					return x.asJonixCollectionSequence();
-			}
-		}
-		return null;
+		initialize();
+		return titleDetails;
 	}
 
-	public List<JonixCollectionSequence> findCollectionSequences(
-			java.util.Set<CollectionSequenceTypes> collectionSequenceTypes)
+	private List<Contributor> contributors = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors()
 	{
-		if (collectionSequences != null)
-		{
-			List<JonixCollectionSequence> matches = new ArrayList<>();
-			for (CollectionSequence x : collectionSequences)
-			{
-				if (collectionSequenceTypes == null
-						|| collectionSequenceTypes.contains(x.getCollectionSequenceTypeValue()))
-					matches.add(x.asJonixCollectionSequence());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return contributors;
+	}
+
+	private ListOfOnixElement<ContributorStatement, String> contributorStatements = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ContributorStatement, String> contributorStatements()
+	{
+		initialize();
+		return contributorStatements;
 	}
 }

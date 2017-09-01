@@ -22,9 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.ImageAudioVideoFileFormats;
-import com.tectonica.jonix.codelist.ImageAudioVideoFileLinkTypes;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -34,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixMediaFile;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -55,16 +53,16 @@ import com.tectonica.jonix.struct.JonixMediaFile;
  * </tr>
  * </table>
  */
-public class MediaFile implements OnixDataComposite, Serializable
+public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, ImageAudioVideoFileTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "MediaFile";
 	public static final String shortname = "mediafile";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -83,74 +81,35 @@ public class MediaFile implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public MediaFileTypeCode mediaFileTypeCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MediaFileFormatCode mediaFileFormatCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ImageResolution imageResolution;
-
-	/**
-	 * (this field is required)
-	 */
-	public MediaFileLinkTypeCode mediaFileLinkTypeCode;
-
-	/**
-	 * (this field is required)
-	 */
-	public MediaFileLink mediaFileLink;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextWithDownload textWithDownload;
-
-	/**
-	 * (this field is required)
-	 */
-	public DownloadCaption downloadCaption;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DownloadCredit downloadCredit;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DownloadCopyrightNotice downloadCopyrightNotice;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DownloadTerms downloadTerms;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MediaFileDate mediaFileDate;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final MediaFile EMPTY = new MediaFile();
 
 	public MediaFile()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public MediaFile(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -159,136 +118,186 @@ public class MediaFile implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(MediaFileTypeCode.refname) || name.equals(MediaFileTypeCode.shortname))
-					mediaFileTypeCode = new MediaFileTypeCode(element);
-				else if (name.equals(MediaFileFormatCode.refname) || name.equals(MediaFileFormatCode.shortname))
-					mediaFileFormatCode = new MediaFileFormatCode(element);
-				else if (name.equals(ImageResolution.refname) || name.equals(ImageResolution.shortname))
-					imageResolution = new ImageResolution(element);
-				else if (name.equals(MediaFileLinkTypeCode.refname) || name.equals(MediaFileLinkTypeCode.shortname))
-					mediaFileLinkTypeCode = new MediaFileLinkTypeCode(element);
-				else if (name.equals(MediaFileLink.refname) || name.equals(MediaFileLink.shortname))
-					mediaFileLink = new MediaFileLink(element);
-				else if (name.equals(TextWithDownload.refname) || name.equals(TextWithDownload.shortname))
-					textWithDownload = new TextWithDownload(element);
-				else if (name.equals(DownloadCaption.refname) || name.equals(DownloadCaption.shortname))
-					downloadCaption = new DownloadCaption(element);
-				else if (name.equals(DownloadCredit.refname) || name.equals(DownloadCredit.shortname))
-					downloadCredit = new DownloadCredit(element);
-				else if (name.equals(DownloadCopyrightNotice.refname) || name.equals(DownloadCopyrightNotice.shortname))
-					downloadCopyrightNotice = new DownloadCopyrightNotice(element);
-				else if (name.equals(DownloadTerms.refname) || name.equals(DownloadTerms.shortname))
-					downloadTerms = new DownloadTerms(element);
-				else if (name.equals(MediaFileDate.refname) || name.equals(MediaFileDate.shortname))
-					mediaFileDate = new MediaFileDate(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(MediaFileTypeCode.refname) || name.equals(MediaFileTypeCode.shortname))
+				mediaFileTypeCode = new MediaFileTypeCode(e);
+			else if (name.equals(MediaFileFormatCode.refname) || name.equals(MediaFileFormatCode.shortname))
+				mediaFileFormatCode = new MediaFileFormatCode(e);
+			else if (name.equals(ImageResolution.refname) || name.equals(ImageResolution.shortname))
+				imageResolution = new ImageResolution(e);
+			else if (name.equals(MediaFileLinkTypeCode.refname) || name.equals(MediaFileLinkTypeCode.shortname))
+				mediaFileLinkTypeCode = new MediaFileLinkTypeCode(e);
+			else if (name.equals(MediaFileLink.refname) || name.equals(MediaFileLink.shortname))
+				mediaFileLink = new MediaFileLink(e);
+			else if (name.equals(TextWithDownload.refname) || name.equals(TextWithDownload.shortname))
+				textWithDownload = new TextWithDownload(e);
+			else if (name.equals(DownloadCaption.refname) || name.equals(DownloadCaption.shortname))
+				downloadCaption = new DownloadCaption(e);
+			else if (name.equals(DownloadCredit.refname) || name.equals(DownloadCredit.shortname))
+				downloadCredit = new DownloadCredit(e);
+			else if (name.equals(DownloadCopyrightNotice.refname) || name.equals(DownloadCopyrightNotice.shortname))
+				downloadCopyrightNotice = new DownloadCopyrightNotice(e);
+			else if (name.equals(DownloadTerms.refname) || name.equals(DownloadTerms.shortname))
+				downloadTerms = new DownloadTerms(e);
+			else if (name.equals(MediaFileDate.refname) || name.equals(MediaFileDate.shortname))
+				mediaFileDate = new MediaFileDate(e);
 		});
 	}
 
-	public ImageAudioVideoFileTypes getMediaFileTypeCodeValue()
+	@Override
+	public boolean exists()
 	{
-		return (mediaFileTypeCode == null) ? null : mediaFileTypeCode.value;
+		return exists;
 	}
 
-	public ImageAudioVideoFileFormats getMediaFileFormatCodeValue()
-	{
-		return (mediaFileFormatCode == null) ? null : mediaFileFormatCode.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
-	 */
-	public String getImageResolutionValue()
-	{
-		return (imageResolution == null) ? null : imageResolution.value;
-	}
-
-	public ImageAudioVideoFileLinkTypes getMediaFileLinkTypeCodeValue()
-	{
-		return (mediaFileLinkTypeCode == null) ? null : mediaFileLinkTypeCode.value;
-	}
+	private MediaFileTypeCode mediaFileTypeCode = MediaFileTypeCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public String getMediaFileLinkValue()
+	public MediaFileTypeCode mediaFileTypeCode()
 	{
-		return (mediaFileLink == null) ? null : mediaFileLink.value;
+		initialize();
+		return mediaFileTypeCode;
 	}
+
+	private MediaFileFormatCode mediaFileFormatCode = MediaFileFormatCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element -
-	 * see ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is optional)
 	 */
-	public String getTextWithDownloadValue()
+	public MediaFileFormatCode mediaFileFormatCode()
 	{
-		return (textWithDownload == null) ? null : textWithDownload.value;
+		initialize();
+		return mediaFileFormatCode;
 	}
+
+	private ImageResolution imageResolution = ImageResolution.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is optional)
 	 */
-	public String getDownloadCaptionValue()
+	public ImageResolution imageResolution()
 	{
-		return (downloadCaption == null) ? null : downloadCaption.value;
+		initialize();
+		return imageResolution;
 	}
+
+	private MediaFileLinkTypeCode mediaFileLinkTypeCode = MediaFileLinkTypeCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is required)
 	 */
-	public String getDownloadCreditValue()
+	public MediaFileLinkTypeCode mediaFileLinkTypeCode()
 	{
-		return (downloadCredit == null) ? null : downloadCredit.value;
+		initialize();
+		return mediaFileLinkTypeCode;
 	}
+
+	private MediaFileLink mediaFileLink = MediaFileLink.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is required)
 	 */
-	public String getDownloadCopyrightNoticeValue()
+	public MediaFileLink mediaFileLink()
 	{
-		return (downloadCopyrightNotice == null) ? null : downloadCopyrightNotice.value;
+		initialize();
+		return mediaFileLink;
 	}
+
+	private TextWithDownload textWithDownload = TextWithDownload.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this field is optional)
 	 */
-	public String getDownloadTermsValue()
+	public TextWithDownload textWithDownload()
 	{
-		return (downloadTerms == null) ? null : downloadTerms.value;
+		initialize();
+		return textWithDownload;
 	}
+
+	private DownloadCaption downloadCaption = DownloadCaption.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * (this field is required)
 	 */
-	public String getMediaFileDateValue()
+	public DownloadCaption downloadCaption()
 	{
-		return (mediaFileDate == null) ? null : mediaFileDate.value;
+		initialize();
+		return downloadCaption;
 	}
 
-	public JonixMediaFile asJonixMediaFile()
+	private DownloadCredit downloadCredit = DownloadCredit.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DownloadCredit downloadCredit()
 	{
-		JonixMediaFile x = new JonixMediaFile();
-		x.mediaFileTypeCode = getMediaFileTypeCodeValue();
-		x.mediaFileFormatCode = getMediaFileFormatCodeValue();
-		x.imageResolution = getImageResolutionValue();
-		x.mediaFileLinkTypeCode = getMediaFileLinkTypeCodeValue();
-		x.mediaFileLink = getMediaFileLinkValue();
-		x.textWithDownload = getTextWithDownloadValue();
-		x.downloadCaption = getDownloadCaptionValue();
-		x.downloadCredit = getDownloadCreditValue();
-		x.downloadCopyrightNotice = getDownloadCopyrightNoticeValue();
-		x.downloadTerms = getDownloadTermsValue();
-		x.mediaFileDate = getMediaFileDateValue();
-		return x;
+		initialize();
+		return downloadCredit;
+	}
+
+	private DownloadCopyrightNotice downloadCopyrightNotice = DownloadCopyrightNotice.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DownloadCopyrightNotice downloadCopyrightNotice()
+	{
+		initialize();
+		return downloadCopyrightNotice;
+	}
+
+	private DownloadTerms downloadTerms = DownloadTerms.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DownloadTerms downloadTerms()
+	{
+		initialize();
+		return downloadTerms;
+	}
+
+	private MediaFileDate mediaFileDate = MediaFileDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MediaFileDate mediaFileDate()
+	{
+		initialize();
+		return mediaFileDate;
+	}
+
+	@Override
+	public JonixMediaFile asStruct()
+	{
+		initialize();
+		JonixMediaFile struct = new JonixMediaFile();
+		struct.mediaFileTypeCode = mediaFileTypeCode.value;
+		struct.mediaFileFormatCode = mediaFileFormatCode.value;
+		struct.imageResolution = imageResolution.value;
+		struct.mediaFileLinkTypeCode = mediaFileLinkTypeCode.value;
+		struct.mediaFileLink = mediaFileLink.value;
+		struct.textWithDownload = textWithDownload.value;
+		struct.downloadCaption = downloadCaption.value;
+		struct.downloadCredit = downloadCredit.value;
+		struct.downloadCopyrightNotice = downloadCopyrightNotice.value;
+		struct.downloadTerms = downloadTerms.value;
+		struct.mediaFileDate = mediaFileDate.value;
+		return struct;
+	}
+
+	@Override
+	public ImageAudioVideoFileTypes structKey()
+	{
+		return mediaFileTypeCode().value;
 	}
 }

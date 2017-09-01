@@ -20,23 +20,22 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
 import com.tectonica.jonix.codelist.SupplyDateRoles;
-import com.tectonica.jonix.codelist.UnpricedItemTypes;
 import com.tectonica.jonix.struct.JonixReturnsConditions;
 import com.tectonica.jonix.struct.JonixSupplierOwnCoding;
 import com.tectonica.jonix.struct.JonixSupplyDate;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -67,9 +66,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -80,225 +79,210 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public Supplier supplier;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplierOwnCoding> supplierOwnCodings;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ReturnsConditions> returnsConditionss;
-
-	/**
-	 * (this field is required)
-	 */
-	public ProductAvailability productAvailability;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplyDate> supplyDates;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OrderTime orderTime;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NewSupplier newSupplier;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Stock> stocks;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PackQuantity packQuantity;
-
-	/**
-	 * (this field is optional)
-	 */
-	public UnpricedItemType unpricedItemType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Price> prices;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Reissue reissue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SupplyDetail EMPTY = new SupplyDetail();
 
 	public SupplyDetail()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SupplyDetail(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Supplier.refname) || name.equals(Supplier.shortname))
-					supplier = new Supplier(element);
-				else if (name.equals(SupplierOwnCoding.refname) || name.equals(SupplierOwnCoding.shortname))
-					supplierOwnCodings = JPU.addToList(supplierOwnCodings, new SupplierOwnCoding(element));
-				else if (name.equals(ReturnsConditions.refname) || name.equals(ReturnsConditions.shortname))
-					returnsConditionss = JPU.addToList(returnsConditionss, new ReturnsConditions(element));
-				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
-					productAvailability = new ProductAvailability(element);
-				else if (name.equals(SupplyDate.refname) || name.equals(SupplyDate.shortname))
-					supplyDates = JPU.addToList(supplyDates, new SupplyDate(element));
-				else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
-					orderTime = new OrderTime(element);
-				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
-					newSupplier = new NewSupplier(element);
-				else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
-					stocks = JPU.addToList(stocks, new Stock(element));
-				else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
-					packQuantity = new PackQuantity(element);
-				else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
-					unpricedItemType = new UnpricedItemType(element);
-				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					prices = JPU.addToList(prices, new Price(element));
-				else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
-					reissue = new Reissue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Supplier.refname) || name.equals(Supplier.shortname))
+				supplier = new Supplier(e);
+			else if (name.equals(SupplierOwnCoding.refname) || name.equals(SupplierOwnCoding.shortname))
+				supplierOwnCodings = JPU.addToList(supplierOwnCodings, new SupplierOwnCoding(e));
+			else if (name.equals(ReturnsConditions.refname) || name.equals(ReturnsConditions.shortname))
+				returnsConditionss = JPU.addToList(returnsConditionss, new ReturnsConditions(e));
+			else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
+				productAvailability = new ProductAvailability(e);
+			else if (name.equals(SupplyDate.refname) || name.equals(SupplyDate.shortname))
+				supplyDates = JPU.addToList(supplyDates, new SupplyDate(e));
+			else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
+				orderTime = new OrderTime(e);
+			else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
+				newSupplier = new NewSupplier(e);
+			else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
+				stocks = JPU.addToList(stocks, new Stock(e));
+			else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
+				packQuantity = new PackQuantity(e);
+			else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
+				unpricedItemType = new UnpricedItemType(e);
+			else if (name.equals(Price.refname) || name.equals(Price.shortname))
+				prices = JPU.addToList(prices, new Price(e));
+			else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
+				reissue = new Reissue(e);
 		});
 	}
 
-	public ProductAvailabilitys getProductAvailabilityValue()
+	@Override
+	public boolean exists()
 	{
-		return (productAvailability == null) ? null : productAvailability.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private Supplier supplier = Supplier.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, one or two digits only
+	 * (this field is required)
 	 */
-	public Integer getOrderTimeValue()
+	public Supplier supplier()
 	{
-		return (orderTime == null) ? null : orderTime.value;
+		initialize();
+		return supplier;
 	}
+
+	private ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes> supplierOwnCodings = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length four digits
+	 * (this list may be empty)
 	 */
-	public Integer getPackQuantityValue()
+	public ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes> supplierOwnCodings()
 	{
-		return (packQuantity == null) ? null : packQuantity.value;
+		initialize();
+		return supplierOwnCodings;
 	}
 
-	public UnpricedItemTypes getUnpricedItemTypeValue()
+	private ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes> returnsConditionss = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes> returnsConditionss()
 	{
-		return (unpricedItemType == null) ? null : unpricedItemType.value;
+		initialize();
+		return returnsConditionss;
 	}
 
-	public JonixSupplierOwnCoding findSupplierOwnCoding(SupplierOwnCodeTypes supplierCodeType)
+	private ProductAvailability productAvailability = ProductAvailability.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public ProductAvailability productAvailability()
 	{
-		if (supplierOwnCodings != null)
-		{
-			for (SupplierOwnCoding x : supplierOwnCodings)
-			{
-				if (x.getSupplierCodeTypeValue() == supplierCodeType)
-					return x.asJonixSupplierOwnCoding();
-			}
-		}
-		return null;
+		initialize();
+		return productAvailability;
 	}
 
-	public List<JonixSupplierOwnCoding> findSupplierOwnCodings(java.util.Set<SupplierOwnCodeTypes> supplierCodeTypes)
+	private ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates()
 	{
-		if (supplierOwnCodings != null)
-		{
-			List<JonixSupplierOwnCoding> matches = new ArrayList<>();
-			for (SupplierOwnCoding x : supplierOwnCodings)
-			{
-				if (supplierCodeTypes == null || supplierCodeTypes.contains(x.getSupplierCodeTypeValue()))
-					matches.add(x.asJonixSupplierOwnCoding());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return supplyDates;
 	}
 
-	public JonixReturnsConditions findReturnsConditions(ReturnsConditionsCodeTypes returnsCodeType)
+	private OrderTime orderTime = OrderTime.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OrderTime orderTime()
 	{
-		if (returnsConditionss != null)
-		{
-			for (ReturnsConditions x : returnsConditionss)
-			{
-				if (x.getReturnsCodeTypeValue() == returnsCodeType)
-					return x.asJonixReturnsConditions();
-			}
-		}
-		return null;
+		initialize();
+		return orderTime;
 	}
 
-	public List<JonixReturnsConditions> findReturnsConditionss(
-			java.util.Set<ReturnsConditionsCodeTypes> returnsCodeTypes)
+	private NewSupplier newSupplier = NewSupplier.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NewSupplier newSupplier()
 	{
-		if (returnsConditionss != null)
-		{
-			List<JonixReturnsConditions> matches = new ArrayList<>();
-			for (ReturnsConditions x : returnsConditionss)
-			{
-				if (returnsCodeTypes == null || returnsCodeTypes.contains(x.getReturnsCodeTypeValue()))
-					matches.add(x.asJonixReturnsConditions());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return newSupplier;
 	}
 
-	public JonixSupplyDate findSupplyDate(SupplyDateRoles supplyDateRole)
+	private List<Stock> stocks = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Stock> stocks()
 	{
-		if (supplyDates != null)
-		{
-			for (SupplyDate x : supplyDates)
-			{
-				if (x.getSupplyDateRoleValue() == supplyDateRole)
-					return x.asJonixSupplyDate();
-			}
-		}
-		return null;
+		initialize();
+		return stocks;
 	}
 
-	public List<JonixSupplyDate> findSupplyDates(java.util.Set<SupplyDateRoles> supplyDateRoles)
+	private PackQuantity packQuantity = PackQuantity.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PackQuantity packQuantity()
 	{
-		if (supplyDates != null)
-		{
-			List<JonixSupplyDate> matches = new ArrayList<>();
-			for (SupplyDate x : supplyDates)
-			{
-				if (supplyDateRoles == null || supplyDateRoles.contains(x.getSupplyDateRoleValue()))
-					matches.add(x.asJonixSupplyDate());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return packQuantity;
+	}
+
+	private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public UnpricedItemType unpricedItemType()
+	{
+		initialize();
+		return unpricedItemType;
+	}
+
+	private List<Price> prices = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices()
+	{
+		initialize();
+		return prices;
+	}
+
+	private Reissue reissue = Reissue.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Reissue reissue()
+	{
+		initialize();
+		return reissue;
 	}
 }

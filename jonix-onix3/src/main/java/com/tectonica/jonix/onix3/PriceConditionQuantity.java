@@ -22,14 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
-import com.tectonica.jonix.codelist.QuantityUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPriceConditionQuantity;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,17 @@ import com.tectonica.jonix.struct.JonixPriceConditionQuantity;
  * </tr>
  * </table>
  */
-public class PriceConditionQuantity implements OnixDataComposite, Serializable
+public class PriceConditionQuantity
+		implements OnixDataCompositeWithKey<JonixPriceConditionQuantity, PriceConditionQuantityTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PriceConditionQuantity";
 	public static final String shortname = "priceconditionquantity";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -73,79 +73,107 @@ public class PriceConditionQuantity implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PriceConditionQuantityType priceConditionQuantityType;
-
-	/**
-	 * (this field is required)
-	 */
-	public Quantity quantity;
-
-	/**
-	 * (this field is required)
-	 */
-	public QuantityUnit quantityUnit;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PriceConditionQuantity EMPTY = new PriceConditionQuantity();
 
 	public PriceConditionQuantity()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PriceConditionQuantity(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PriceConditionQuantityType.refname)
-						|| name.equals(PriceConditionQuantityType.shortname))
-					priceConditionQuantityType = new PriceConditionQuantityType(element);
-				else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-					quantity = new Quantity(element);
-				else if (name.equals(QuantityUnit.refname) || name.equals(QuantityUnit.shortname))
-					quantityUnit = new QuantityUnit(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PriceConditionQuantityType.refname) || name.equals(PriceConditionQuantityType.shortname))
+				priceConditionQuantityType = new PriceConditionQuantityType(e);
+			else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
+				quantity = new Quantity(e);
+			else if (name.equals(QuantityUnit.refname) || name.equals(QuantityUnit.shortname))
+				quantityUnit = new QuantityUnit(e);
 		});
 	}
 
-	public PriceConditionQuantityTypes getPriceConditionQuantityTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceConditionQuantityType == null) ? null : priceConditionQuantityType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PriceConditionQuantityType priceConditionQuantityType = PriceConditionQuantityType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length decimal number, here necessarily an integer
+	 * (this field is required)
 	 */
-	public Double getQuantityValue()
+	public PriceConditionQuantityType priceConditionQuantityType()
 	{
-		return (quantity == null) ? null : quantity.value;
+		initialize();
+		return priceConditionQuantityType;
 	}
 
-	public QuantityUnits getQuantityUnitValue()
+	private Quantity quantity = Quantity.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Quantity quantity()
 	{
-		return (quantityUnit == null) ? null : quantityUnit.value;
+		initialize();
+		return quantity;
 	}
 
-	public JonixPriceConditionQuantity asJonixPriceConditionQuantity()
+	private QuantityUnit quantityUnit = QuantityUnit.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public QuantityUnit quantityUnit()
 	{
-		JonixPriceConditionQuantity x = new JonixPriceConditionQuantity();
-		x.priceConditionQuantityType = getPriceConditionQuantityTypeValue();
-		x.quantity = getQuantityValue();
-		x.quantityUnit = getQuantityUnitValue();
-		return x;
+		initialize();
+		return quantityUnit;
+	}
+
+	@Override
+	public JonixPriceConditionQuantity asStruct()
+	{
+		initialize();
+		JonixPriceConditionQuantity struct = new JonixPriceConditionQuantity();
+		struct.priceConditionQuantityType = priceConditionQuantityType.value;
+		struct.quantity = quantity.value;
+		struct.quantityUnit = quantityUnit.value;
+		return struct;
+	}
+
+	@Override
+	public PriceConditionQuantityTypes structKey()
+	{
+		return priceConditionQuantityType().value;
 	}
 }

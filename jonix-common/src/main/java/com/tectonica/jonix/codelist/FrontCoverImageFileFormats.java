@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,46 +37,44 @@ interface CodeList36
  * Description: Front cover image file format code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist36">ONIX
- *      Codelist 36 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist36">ONIX Codelist 36 in Reference Guide</a>
  */
 public enum FrontCoverImageFileFormats implements OnixCodelist, CodeList36
 {
-	GIF("02", "GIF"), //
+   GIF("02", "GIF"), //
 
-	JPEG("03", "JPEG"), //
+   JPEG("03", "JPEG"), //
 
-	TIF("05", "TIF");
+   TIF("05", "TIF");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private FrontCoverImageFileFormats(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private FrontCoverImageFileFormats(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static FrontCoverImageFileFormats byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (FrontCoverImageFileFormats e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static FrontCoverImageFileFormats byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (FrontCoverImageFileFormats e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

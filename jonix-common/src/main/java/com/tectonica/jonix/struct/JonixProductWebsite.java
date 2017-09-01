@@ -20,30 +20,29 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.WebsiteRoles;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixProductWebsite implements Serializable
+public class JonixProductWebsite implements JonixStruct, Serializable
 {
-	public WebsiteRoles websiteRole;
+   public static JonixProductWebsite EMPTY = new JonixProductWebsite();
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String productWebsiteDescription;
+   public WebsiteRoles websiteRole;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String productWebsiteLink;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
+    */
+   public String productWebsiteDescription;
+
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
+    */
+   public String productWebsiteLink;
 }

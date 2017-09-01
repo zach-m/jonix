@@ -20,18 +20,21 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.BarcodeIndicatorsList141;
-import com.tectonica.jonix.codelist.PositionOnProducts;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixBarcode implements Serializable
+public class JonixBarcode implements JonixStruct, Serializable
 {
-	public BarcodeIndicatorsList141 barcodeType;
+   public static JonixBarcode EMPTY = new JonixBarcode();
 
-	public PositionOnProducts positionOnProduct;
+   public BarcodeIndicatorsList141 barcodeType;
+
+   public PositionOnProducts positionOnProduct;
 }

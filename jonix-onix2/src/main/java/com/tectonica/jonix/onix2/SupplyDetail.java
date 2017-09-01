@@ -20,31 +20,27 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.AudienceRestrictionFlags;
-import com.tectonica.jonix.codelist.AvailabilityStatuss;
 import com.tectonica.jonix.codelist.CountryCodes;
-import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.LanguageCodes;
-import com.tectonica.jonix.codelist.ProductAvailabilitys;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Regions;
-import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
-import com.tectonica.jonix.codelist.SupplierRoles;
 import com.tectonica.jonix.codelist.SupplytoRegions;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
-import com.tectonica.jonix.codelist.UnpricedItemTypes;
 import com.tectonica.jonix.struct.JonixSupplierIdentifier;
+import com.tectonica.jonix.struct.JonixWebsite;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -71,9 +67,9 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 	public static final String refname = "SupplyDetail";
 	public static final String shortname = "supplydetail";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -92,184 +88,35 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplierIdentifier> supplierIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierSAN supplierSAN;
-
-	/**
-	 * (this field is required)
-	 */
-	public SupplierEANLocationNumber supplierEANLocationNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierName supplierName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TelephoneNumber> telephoneNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FaxNumber> faxNumbers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EmailAddress> emailAddresss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplierRole supplierRole;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SupplyToCountry> supplyToCountrys;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplyToTerritory supplyToTerritory;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplyToRegion> supplyToRegions;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplyToCountryExcluded> supplyToCountryExcludeds;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SupplyRestrictionDetail supplyRestrictionDetail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReturnsCodeType returnsCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReturnsCode returnsCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LastDateForReturns lastDateForReturns;
-
-	/**
-	 * (this field is required)
-	 */
-	public AvailabilityCode availabilityCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductAvailability productAvailability;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IntermediaryAvailabilityCode intermediaryAvailabilityCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NewSupplier newSupplier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DateFormat dateFormat;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ExpectedShipDate expectedShipDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OnSaleDate onSaleDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OrderTime orderTime;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Stock> stocks;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PackQuantity packQuantity;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AudienceRestrictionFlag audienceRestrictionFlag;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AudienceRestrictionNote audienceRestrictionNote;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PriceAmount priceAmount;
-
-	/**
-	 * (this field is optional)
-	 */
-	public UnpricedItemType unpricedItemType;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Price> prices;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Reissue reissue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SupplyDetail EMPTY = new SupplyDetail();
 
 	public SupplyDetail()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SupplyDetail(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -278,338 +125,451 @@ public class SupplyDetail implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
-					supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(element));
-				else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
-					supplierSAN = new SupplierSAN(element);
-				else if (name.equals(SupplierEANLocationNumber.refname)
-						|| name.equals(SupplierEANLocationNumber.shortname))
-					supplierEANLocationNumber = new SupplierEANLocationNumber(element);
-				else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
-					supplierName = new SupplierName(element);
-				else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
-					telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(element));
-				else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
-					faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(element));
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-				else if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
-					supplierRole = new SupplierRole(element);
-				else if (name.equals(SupplyToCountry.refname) || name.equals(SupplyToCountry.shortname))
-					supplyToCountrys = JPU.addToList(supplyToCountrys, new SupplyToCountry(element));
-				else if (name.equals(SupplyToTerritory.refname) || name.equals(SupplyToTerritory.shortname))
-					supplyToTerritory = new SupplyToTerritory(element);
-				else if (name.equals(SupplyToRegion.refname) || name.equals(SupplyToRegion.shortname))
-					supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(element));
-				else if (name.equals(SupplyToCountryExcluded.refname) || name.equals(SupplyToCountryExcluded.shortname))
-					supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(
-							element));
-				else if (name.equals(SupplyRestrictionDetail.refname) || name.equals(SupplyRestrictionDetail.shortname))
-					supplyRestrictionDetail = new SupplyRestrictionDetail(element);
-				else if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
-					returnsCodeType = new ReturnsCodeType(element);
-				else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
-					returnsCode = new ReturnsCode(element);
-				else if (name.equals(LastDateForReturns.refname) || name.equals(LastDateForReturns.shortname))
-					lastDateForReturns = new LastDateForReturns(element);
-				else if (name.equals(AvailabilityCode.refname) || name.equals(AvailabilityCode.shortname))
-					availabilityCode = new AvailabilityCode(element);
-				else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
-					productAvailability = new ProductAvailability(element);
-				else if (name.equals(IntermediaryAvailabilityCode.refname)
-						|| name.equals(IntermediaryAvailabilityCode.shortname))
-					intermediaryAvailabilityCode = new IntermediaryAvailabilityCode(element);
-				else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
-					newSupplier = new NewSupplier(element);
-				else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-					dateFormat = new DateFormat(element);
-				else if (name.equals(ExpectedShipDate.refname) || name.equals(ExpectedShipDate.shortname))
-					expectedShipDate = new ExpectedShipDate(element);
-				else if (name.equals(OnSaleDate.refname) || name.equals(OnSaleDate.shortname))
-					onSaleDate = new OnSaleDate(element);
-				else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
-					orderTime = new OrderTime(element);
-				else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
-					stocks = JPU.addToList(stocks, new Stock(element));
-				else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
-					packQuantity = new PackQuantity(element);
-				else if (name.equals(AudienceRestrictionFlag.refname) || name.equals(AudienceRestrictionFlag.shortname))
-					audienceRestrictionFlag = new AudienceRestrictionFlag(element);
-				else if (name.equals(AudienceRestrictionNote.refname) || name.equals(AudienceRestrictionNote.shortname))
-					audienceRestrictionNote = new AudienceRestrictionNote(element);
-				else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-					priceAmount = new PriceAmount(element);
-				else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
-					unpricedItemType = new UnpricedItemType(element);
-				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					prices = JPU.addToList(prices, new Price(element));
-				else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
-					reissue = new Reissue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SupplierIdentifier.refname) || name.equals(SupplierIdentifier.shortname))
+				supplierIdentifiers = JPU.addToList(supplierIdentifiers, new SupplierIdentifier(e));
+			else if (name.equals(SupplierSAN.refname) || name.equals(SupplierSAN.shortname))
+				supplierSAN = new SupplierSAN(e);
+			else if (name.equals(SupplierEANLocationNumber.refname) || name.equals(SupplierEANLocationNumber.shortname))
+				supplierEANLocationNumber = new SupplierEANLocationNumber(e);
+			else if (name.equals(SupplierName.refname) || name.equals(SupplierName.shortname))
+				supplierName = new SupplierName(e);
+			else if (name.equals(TelephoneNumber.refname) || name.equals(TelephoneNumber.shortname))
+				telephoneNumbers = JPU.addToList(telephoneNumbers, new TelephoneNumber(e));
+			else if (name.equals(FaxNumber.refname) || name.equals(FaxNumber.shortname))
+				faxNumbers = JPU.addToList(faxNumbers, new FaxNumber(e));
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddresss = JPU.addToList(emailAddresss, new EmailAddress(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
+			else if (name.equals(SupplierRole.refname) || name.equals(SupplierRole.shortname))
+				supplierRole = new SupplierRole(e);
+			else if (name.equals(SupplyToCountry.refname) || name.equals(SupplyToCountry.shortname))
+				supplyToCountrys = JPU.addToList(supplyToCountrys, new SupplyToCountry(e));
+			else if (name.equals(SupplyToTerritory.refname) || name.equals(SupplyToTerritory.shortname))
+				supplyToTerritory = new SupplyToTerritory(e);
+			else if (name.equals(SupplyToRegion.refname) || name.equals(SupplyToRegion.shortname))
+				supplyToRegions = JPU.addToList(supplyToRegions, new SupplyToRegion(e));
+			else if (name.equals(SupplyToCountryExcluded.refname) || name.equals(SupplyToCountryExcluded.shortname))
+				supplyToCountryExcludeds = JPU.addToList(supplyToCountryExcludeds, new SupplyToCountryExcluded(e));
+			else if (name.equals(SupplyRestrictionDetail.refname) || name.equals(SupplyRestrictionDetail.shortname))
+				supplyRestrictionDetail = new SupplyRestrictionDetail(e);
+			else if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
+				returnsCodeType = new ReturnsCodeType(e);
+			else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
+				returnsCode = new ReturnsCode(e);
+			else if (name.equals(LastDateForReturns.refname) || name.equals(LastDateForReturns.shortname))
+				lastDateForReturns = new LastDateForReturns(e);
+			else if (name.equals(AvailabilityCode.refname) || name.equals(AvailabilityCode.shortname))
+				availabilityCode = new AvailabilityCode(e);
+			else if (name.equals(ProductAvailability.refname) || name.equals(ProductAvailability.shortname))
+				productAvailability = new ProductAvailability(e);
+			else if (name.equals(IntermediaryAvailabilityCode.refname)
+					|| name.equals(IntermediaryAvailabilityCode.shortname))
+				intermediaryAvailabilityCode = new IntermediaryAvailabilityCode(e);
+			else if (name.equals(NewSupplier.refname) || name.equals(NewSupplier.shortname))
+				newSupplier = new NewSupplier(e);
+			else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
+				dateFormat = new DateFormat(e);
+			else if (name.equals(ExpectedShipDate.refname) || name.equals(ExpectedShipDate.shortname))
+				expectedShipDate = new ExpectedShipDate(e);
+			else if (name.equals(OnSaleDate.refname) || name.equals(OnSaleDate.shortname))
+				onSaleDate = new OnSaleDate(e);
+			else if (name.equals(OrderTime.refname) || name.equals(OrderTime.shortname))
+				orderTime = new OrderTime(e);
+			else if (name.equals(Stock.refname) || name.equals(Stock.shortname))
+				stocks = JPU.addToList(stocks, new Stock(e));
+			else if (name.equals(PackQuantity.refname) || name.equals(PackQuantity.shortname))
+				packQuantity = new PackQuantity(e);
+			else if (name.equals(AudienceRestrictionFlag.refname) || name.equals(AudienceRestrictionFlag.shortname))
+				audienceRestrictionFlag = new AudienceRestrictionFlag(e);
+			else if (name.equals(AudienceRestrictionNote.refname) || name.equals(AudienceRestrictionNote.shortname))
+				audienceRestrictionNote = new AudienceRestrictionNote(e);
+			else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
+				priceAmount = new PriceAmount(e);
+			else if (name.equals(UnpricedItemType.refname) || name.equals(UnpricedItemType.shortname))
+				unpricedItemType = new UnpricedItemType(e);
+			else if (name.equals(Price.refname) || name.equals(Price.shortname))
+				prices = JPU.addToList(prices, new Price(e));
+			else if (name.equals(Reissue.refname) || name.equals(Reissue.shortname))
+				reissue = new Reissue(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
-	 * character which may be a numeric digit or letter X.
-	 */
-	public String getSupplierSANValue()
+	@Override
+	public boolean exists()
 	{
-		return (supplierSAN == null) ? null : supplierSAN.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * (this list may be empty)
 	 */
-	public String getSupplierEANLocationNumberValue()
+	public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers()
 	{
-		return (supplierEANLocationNumber == null) ? null : supplierEANLocationNumber.value;
+		initialize();
+		return supplierIdentifiers;
 	}
+
+	private SupplierSAN supplierSAN = SupplierSAN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getSupplierNameValue()
+	public SupplierSAN supplierSAN()
 	{
-		return (supplierName == null) ? null : supplierName.value;
+		initialize();
+		return supplierSAN;
 	}
+
+	private SupplierEANLocationNumber supplierEANLocationNumber = SupplierEANLocationNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is required)
 	 */
-	public List<String> getTelephoneNumberValues()
+	public SupplierEANLocationNumber supplierEANLocationNumber()
 	{
-		if (telephoneNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (TelephoneNumber i : telephoneNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return supplierEANLocationNumber;
 	}
+
+	private SupplierName supplierName = SupplierName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public List<String> getFaxNumberValues()
+	public SupplierName supplierName()
 	{
-		if (faxNumbers != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FaxNumber i : faxNumbers)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return supplierName;
 	}
+
+	private ListOfOnixElement<TelephoneNumber, String> telephoneNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getEmailAddressValues()
+	public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers()
 	{
-		if (emailAddresss != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (EmailAddress i : emailAddresss)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return telephoneNumbers;
 	}
 
-	public SupplierRoles getSupplierRoleValue()
-	{
-		return (supplierRole == null) ? null : supplierRole.value;
-	}
-
-	public List<java.util.Set<CountryCodes>> getSupplyToCountrySets()
-	{
-		if (supplyToCountrys != null)
-		{
-			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
-			for (SupplyToCountry i : supplyToCountrys)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public java.util.Set<Regions> getSupplyToTerritorySet()
-	{
-		return (supplyToTerritory == null) ? null : supplyToTerritory.value;
-	}
-
-	public List<SupplytoRegions> getSupplyToRegionValues()
-	{
-		if (supplyToRegions != null)
-		{
-			List<SupplytoRegions> list = new ArrayList<>();
-			for (SupplyToRegion i : supplyToRegions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public List<java.util.Set<CountryCodes>> getSupplyToCountryExcludedSets()
-	{
-		if (supplyToCountryExcludeds != null)
-		{
-			List<java.util.Set<CountryCodes>> list = new ArrayList<>();
-			for (SupplyToCountryExcluded i : supplyToCountryExcludeds)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private ListOfOnixElement<FaxNumber, String> faxNumbers = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this list may be empty)
 	 */
-	public String getSupplyRestrictionDetailValue()
+	public ListOfOnixElement<FaxNumber, String> faxNumbers()
 	{
-		return (supplyRestrictionDetail == null) ? null : supplyRestrictionDetail.value;
+		initialize();
+		return faxNumbers;
 	}
 
-	public ReturnsConditionsCodeTypes getReturnsCodeTypeValue()
-	{
-		return (returnsCodeType == null) ? null : returnsCodeType.value;
-	}
+	private ListOfOnixElement<EmailAddress, String> emailAddresss = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;: for values defined by BISAC for US use,
-	 * see List 66
+	 * (this list may be empty)
 	 */
-	public String getReturnsCodeValue()
+	public ListOfOnixElement<EmailAddress, String> emailAddresss()
 	{
-		return (returnsCode == null) ? null : returnsCode.value;
+		initialize();
+		return emailAddresss;
 	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this list may be empty)
 	 */
-	public String getLastDateForReturnsValue()
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
 	{
-		return (lastDateForReturns == null) ? null : lastDateForReturns.value;
+		initialize();
+		return websites;
 	}
 
-	public AvailabilityStatuss getAvailabilityCodeValue()
-	{
-		return (availabilityCode == null) ? null : availabilityCode.value;
-	}
-
-	public ProductAvailabilitys getProductAvailabilityValue()
-	{
-		return (productAvailability == null) ? null : productAvailability.value;
-	}
+	private SupplierRole supplierRole = SupplierRole.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, two numeric digits
+	 * (this field is optional)
 	 */
-	public String getIntermediaryAvailabilityCodeValue()
+	public SupplierRole supplierRole()
 	{
-		return (intermediaryAvailabilityCode == null) ? null : intermediaryAvailabilityCode.value;
+		initialize();
+		return supplierRole;
 	}
 
-	public DateFormats getDateFormatValue()
-	{
-		return (dateFormat == null) ? null : dateFormat.value;
-	}
+	private ListOfOnixElement<SupplyToCountry, java.util.Set<CountryCodes>> supplyToCountrys = ListOfOnixElement
+			.empty();
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD) or as specified in &lt;DateFormat&gt;
+	 * (this list is required to contain at least one item)
 	 */
-	public String getExpectedShipDateValue()
+	public ListOfOnixElement<SupplyToCountry, java.util.Set<CountryCodes>> supplyToCountrys()
 	{
-		return (expectedShipDate == null) ? null : expectedShipDate.value;
+		initialize();
+		return supplyToCountrys;
 	}
+
+	private SupplyToTerritory supplyToTerritory = SupplyToTerritory.EMPTY;
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this field is optional)
 	 */
-	public String getOnSaleDateValue()
+	public SupplyToTerritory supplyToTerritory()
 	{
-		return (onSaleDate == null) ? null : onSaleDate.value;
+		initialize();
+		return supplyToTerritory;
 	}
+
+	private ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length integer, one or two digits only
+	 * (this list may be empty)
 	 */
-	public String getOrderTimeValue()
+	public ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions()
 	{
-		return (orderTime == null) ? null : orderTime.value;
+		initialize();
+		return supplyToRegions;
 	}
+
+	private ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<CountryCodes>> supplyToCountryExcludeds = ListOfOnixElement
+			.empty();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length four digits
+	 * (this list may be empty)
 	 */
-	public String getPackQuantityValue()
+	public ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<CountryCodes>> supplyToCountryExcludeds()
 	{
-		return (packQuantity == null) ? null : packQuantity.value;
+		initialize();
+		return supplyToCountryExcludeds;
 	}
 
-	public AudienceRestrictionFlags getAudienceRestrictionFlagValue()
-	{
-		return (audienceRestrictionFlag == null) ? null : audienceRestrictionFlag.value;
-	}
+	private SupplyRestrictionDetail supplyRestrictionDetail = SupplyRestrictionDetail.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getAudienceRestrictionNoteValue()
+	public SupplyRestrictionDetail supplyRestrictionDetail()
 	{
-		return (audienceRestrictionNote == null) ? null : audienceRestrictionNote.value;
+		initialize();
+		return supplyRestrictionDetail;
 	}
+
+	private ReturnsCodeType returnsCodeType = ReturnsCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this field is optional)
 	 */
-	public String getPriceAmountValue()
+	public ReturnsCodeType returnsCodeType()
 	{
-		return (priceAmount == null) ? null : priceAmount.value;
+		initialize();
+		return returnsCodeType;
 	}
 
-	public UnpricedItemTypes getUnpricedItemTypeValue()
+	private ReturnsCode returnsCode = ReturnsCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReturnsCode returnsCode()
 	{
-		return (unpricedItemType == null) ? null : unpricedItemType.value;
+		initialize();
+		return returnsCode;
 	}
 
-	public JonixSupplierIdentifier findSupplierIdentifier(SupplierIdentifierTypes supplierIDType)
+	private LastDateForReturns lastDateForReturns = LastDateForReturns.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LastDateForReturns lastDateForReturns()
 	{
-		if (supplierIdentifiers != null)
-		{
-			for (SupplierIdentifier x : supplierIdentifiers)
-			{
-				if (x.getSupplierIDTypeValue() == supplierIDType)
-					return x.asJonixSupplierIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return lastDateForReturns;
 	}
 
-	public List<JonixSupplierIdentifier> findSupplierIdentifiers(java.util.Set<SupplierIdentifierTypes> supplierIDTypes)
+	private AvailabilityCode availabilityCode = AvailabilityCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public AvailabilityCode availabilityCode()
 	{
-		if (supplierIdentifiers != null)
-		{
-			List<JonixSupplierIdentifier> matches = new ArrayList<>();
-			for (SupplierIdentifier x : supplierIdentifiers)
-			{
-				if (supplierIDTypes == null || supplierIDTypes.contains(x.getSupplierIDTypeValue()))
-					matches.add(x.asJonixSupplierIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return availabilityCode;
+	}
+
+	private ProductAvailability productAvailability = ProductAvailability.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductAvailability productAvailability()
+	{
+		initialize();
+		return productAvailability;
+	}
+
+	private IntermediaryAvailabilityCode intermediaryAvailabilityCode = IntermediaryAvailabilityCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public IntermediaryAvailabilityCode intermediaryAvailabilityCode()
+	{
+		initialize();
+		return intermediaryAvailabilityCode;
+	}
+
+	private NewSupplier newSupplier = NewSupplier.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NewSupplier newSupplier()
+	{
+		initialize();
+		return newSupplier;
+	}
+
+	private DateFormat dateFormat = DateFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DateFormat dateFormat()
+	{
+		initialize();
+		return dateFormat;
+	}
+
+	private ExpectedShipDate expectedShipDate = ExpectedShipDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ExpectedShipDate expectedShipDate()
+	{
+		initialize();
+		return expectedShipDate;
+	}
+
+	private OnSaleDate onSaleDate = OnSaleDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OnSaleDate onSaleDate()
+	{
+		initialize();
+		return onSaleDate;
+	}
+
+	private OrderTime orderTime = OrderTime.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OrderTime orderTime()
+	{
+		initialize();
+		return orderTime;
+	}
+
+	private List<Stock> stocks = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Stock> stocks()
+	{
+		initialize();
+		return stocks;
+	}
+
+	private PackQuantity packQuantity = PackQuantity.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PackQuantity packQuantity()
+	{
+		initialize();
+		return packQuantity;
+	}
+
+	private AudienceRestrictionFlag audienceRestrictionFlag = AudienceRestrictionFlag.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceRestrictionFlag audienceRestrictionFlag()
+	{
+		initialize();
+		return audienceRestrictionFlag;
+	}
+
+	private AudienceRestrictionNote audienceRestrictionNote = AudienceRestrictionNote.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AudienceRestrictionNote audienceRestrictionNote()
+	{
+		initialize();
+		return audienceRestrictionNote;
+	}
+
+	private PriceAmount priceAmount = PriceAmount.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PriceAmount priceAmount()
+	{
+		initialize();
+		return priceAmount;
+	}
+
+	private UnpricedItemType unpricedItemType = UnpricedItemType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public UnpricedItemType unpricedItemType()
+	{
+		initialize();
+		return unpricedItemType;
+	}
+
+	private List<Price> prices = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices()
+	{
+		initialize();
+		return prices;
+	}
+
+	private Reissue reissue = Reissue.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Reissue reissue()
+	{
+		initialize();
+		return reissue;
 	}
 }

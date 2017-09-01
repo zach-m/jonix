@@ -24,12 +24,10 @@ import java.io.Serializable;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.TaxRateCodeds;
-import com.tectonica.jonix.codelist.TaxTypes;
 import com.tectonica.jonix.struct.JonixTax;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -55,16 +53,16 @@ import com.tectonica.jonix.struct.JonixTax;
  * </tr>
  * </table>
  */
-public class Tax implements OnixDataComposite, Serializable
+public class Tax implements OnixDataComposite<JonixTax>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Tax";
 	public static final String shortname = "tax";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,112 +73,129 @@ public class Tax implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public TaxType taxType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxRateCode taxRateCode;
-
-	/**
-	 * (this field is required)
-	 */
-	public TaxRatePercent taxRatePercent;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxableAmount taxableAmount;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TaxAmount taxAmount;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Tax EMPTY = new Tax();
 
 	public Tax()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Tax(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(TaxType.refname) || name.equals(TaxType.shortname))
-					taxType = new TaxType(element);
-				else if (name.equals(TaxRateCode.refname) || name.equals(TaxRateCode.shortname))
-					taxRateCode = new TaxRateCode(element);
-				else if (name.equals(TaxRatePercent.refname) || name.equals(TaxRatePercent.shortname))
-					taxRatePercent = new TaxRatePercent(element);
-				else if (name.equals(TaxableAmount.refname) || name.equals(TaxableAmount.shortname))
-					taxableAmount = new TaxableAmount(element);
-				else if (name.equals(TaxAmount.refname) || name.equals(TaxAmount.shortname))
-					taxAmount = new TaxAmount(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(TaxType.refname) || name.equals(TaxType.shortname))
+				taxType = new TaxType(e);
+			else if (name.equals(TaxRateCode.refname) || name.equals(TaxRateCode.shortname))
+				taxRateCode = new TaxRateCode(e);
+			else if (name.equals(TaxRatePercent.refname) || name.equals(TaxRatePercent.shortname))
+				taxRatePercent = new TaxRatePercent(e);
+			else if (name.equals(TaxableAmount.refname) || name.equals(TaxableAmount.shortname))
+				taxableAmount = new TaxableAmount(e);
+			else if (name.equals(TaxAmount.refname) || name.equals(TaxAmount.shortname))
+				taxAmount = new TaxAmount(e);
 		});
 	}
 
-	public TaxTypes getTaxTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (taxType == null) ? null : taxType.value;
+		return exists;
 	}
 
-	public TaxRateCodeds getTaxRateCodeValue()
-	{
-		return (taxRateCode == null) ? null : taxRateCode.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required
-	 */
-	public Double getTaxRatePercentValue()
-	{
-		return (taxRatePercent == null) ? null : taxRatePercent.value;
-	}
+	private TaxType taxType = TaxType.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this field is optional)
 	 */
-	public Double getTaxableAmountValue()
+	public TaxType taxType()
 	{
-		return (taxableAmount == null) ? null : taxableAmount.value;
+		initialize();
+		return taxType;
 	}
+
+	private TaxRateCode taxRateCode = TaxRateCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
+	 * (this field is optional)
 	 */
-	public Double getTaxAmountValue()
+	public TaxRateCode taxRateCode()
 	{
-		return (taxAmount == null) ? null : taxAmount.value;
+		initialize();
+		return taxRateCode;
 	}
 
-	public JonixTax asJonixTax()
+	private TaxRatePercent taxRatePercent = TaxRatePercent.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public TaxRatePercent taxRatePercent()
 	{
-		JonixTax x = new JonixTax();
-		x.taxType = getTaxTypeValue();
-		x.taxRateCode = getTaxRateCodeValue();
-		x.taxRatePercent = getTaxRatePercentValue();
-		x.taxableAmount = getTaxableAmountValue();
-		x.taxAmount = getTaxAmountValue();
-		return x;
+		initialize();
+		return taxRatePercent;
+	}
+
+	private TaxableAmount taxableAmount = TaxableAmount.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxableAmount taxableAmount()
+	{
+		initialize();
+		return taxableAmount;
+	}
+
+	private TaxAmount taxAmount = TaxAmount.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TaxAmount taxAmount()
+	{
+		initialize();
+		return taxAmount;
+	}
+
+	@Override
+	public JonixTax asStruct()
+	{
+		initialize();
+		JonixTax struct = new JonixTax();
+		struct.taxType = taxType.value;
+		struct.taxRateCode = taxRateCode.value;
+		struct.taxRatePercent = taxRatePercent.value;
+		struct.taxableAmount = taxableAmount.value;
+		struct.taxAmount = taxAmount.value;
+		return struct;
 	}
 }

@@ -20,13 +20,11 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
-import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
@@ -35,7 +33,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixAudienceRange;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -56,16 +54,16 @@ import com.tectonica.jonix.struct.JonixAudienceRange;
  * </tr>
  * </table>
  */
-public class AudienceRange implements OnixDataComposite, Serializable
+public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "AudienceRange";
 	public static final String shortname = "audiencerange";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -84,34 +82,35 @@ public class AudienceRange implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public AudienceRangeQualifier audienceRangeQualifier;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<AudienceRangePrecision> audienceRangePrecisions;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<AudienceRangeValue> audienceRangeValues;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final AudienceRange EMPTY = new AudienceRange();
 
 	public AudienceRange()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public AudienceRange(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -120,63 +119,69 @@ public class AudienceRange implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname))
-					audienceRangeQualifier = new AudienceRangeQualifier(element);
-				else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname))
-					audienceRangePrecisions = JPU.addToList(audienceRangePrecisions,
-							new AudienceRangePrecision(element));
-				else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname))
-					audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname))
+				audienceRangeQualifier = new AudienceRangeQualifier(e);
+			else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname))
+				audienceRangePrecisions = JPU.addToList(audienceRangePrecisions, new AudienceRangePrecision(e));
+			else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname))
+				audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(e));
 		});
 	}
 
-	public AudienceRangeQualifiers getAudienceRangeQualifierValue()
+	@Override
+	public boolean exists()
 	{
-		return (audienceRangeQualifier == null) ? null : audienceRangeQualifier.value;
+		return exists;
 	}
 
-	public List<AudienceRangePrecisions> getAudienceRangePrecisionValues()
-	{
-		if (audienceRangePrecisions != null)
-		{
-			List<AudienceRangePrecisions> list = new ArrayList<>();
-			for (AudienceRangePrecision i : audienceRangePrecisions)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private AudienceRangeQualifier audienceRangeQualifier = AudienceRangeQualifier.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length string, suggested maximum 10 characters. (This element was previously defined as a
-	 * variable-length integer, but its definition is extended in ONIX 2.1 to enable certain non-numeric values to be
-	 * carried. For values that BISAC has defined for US school grades and pre-school levels, see List 77.)
+	 * (this field is required)
 	 */
-	public List<String> getAudienceRangeValueValues()
+	public AudienceRangeQualifier audienceRangeQualifier()
 	{
-		if (audienceRangeValues != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (AudienceRangeValue i : audienceRangeValues)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return audienceRangeQualifier;
 	}
 
-	public JonixAudienceRange asJonixAudienceRange()
+	private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions = ListOfOnixElement
+			.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions()
 	{
-		JonixAudienceRange x = new JonixAudienceRange();
-		x.audienceRangePrecisions = getAudienceRangePrecisionValues();
-		x.audienceRangeQualifier = getAudienceRangeQualifierValue();
-		x.audienceRangeValues = getAudienceRangeValueValues();
-		return x;
+		initialize();
+		return audienceRangePrecisions;
+	}
+
+	private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues()
+	{
+		initialize();
+		return audienceRangeValues;
+	}
+
+	@Override
+	public JonixAudienceRange asStruct()
+	{
+		initialize();
+		JonixAudienceRange struct = new JonixAudienceRange();
+		struct.audienceRangePrecisions = audienceRangePrecisions.values();
+		struct.audienceRangeQualifier = audienceRangeQualifier.value;
+		struct.audienceRangeValues = audienceRangeValues.values();
+		return struct;
 	}
 }

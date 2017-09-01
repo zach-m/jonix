@@ -22,10 +22,9 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.MeasureTypes;
-import com.tectonica.jonix.codelist.MeasureUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -33,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixMeasure;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,16 @@ import com.tectonica.jonix.struct.JonixMeasure;
  * </tr>
  * </table>
  */
-public class Measure implements OnixDataComposite, Serializable
+public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Measure";
 	public static final String shortname = "measure";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,34 +80,35 @@ public class Measure implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public MeasureTypeCode measureTypeCode;
-
-	/**
-	 * (this field is required)
-	 */
-	public Measurement measurement;
-
-	/**
-	 * (this field is required)
-	 */
-	public MeasureUnitCode measureUnitCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Measure EMPTY = new Measure();
 
 	public Measure()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Measure(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,47 +117,74 @@ public class Measure implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(MeasureTypeCode.refname) || name.equals(MeasureTypeCode.shortname))
-					measureTypeCode = new MeasureTypeCode(element);
-				else if (name.equals(Measurement.refname) || name.equals(Measurement.shortname))
-					measurement = new Measurement(element);
-				else if (name.equals(MeasureUnitCode.refname) || name.equals(MeasureUnitCode.shortname))
-					measureUnitCode = new MeasureUnitCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(MeasureTypeCode.refname) || name.equals(MeasureTypeCode.shortname))
+				measureTypeCode = new MeasureTypeCode(e);
+			else if (name.equals(Measurement.refname) || name.equals(Measurement.shortname))
+				measurement = new Measurement(e);
+			else if (name.equals(MeasureUnitCode.refname) || name.equals(MeasureUnitCode.shortname))
+				measureUnitCode = new MeasureUnitCode(e);
 		});
 	}
 
-	public MeasureTypes getMeasureTypeCodeValue()
+	@Override
+	public boolean exists()
 	{
-		return (measureTypeCode == null) ? null : measureTypeCode.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private MeasureTypeCode measureTypeCode = MeasureTypeCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-	 * characters including a decimal point.
+	 * (this field is required)
 	 */
-	public String getMeasurementValue()
+	public MeasureTypeCode measureTypeCode()
 	{
-		return (measurement == null) ? null : measurement.value;
+		initialize();
+		return measureTypeCode;
 	}
 
-	public MeasureUnits getMeasureUnitCodeValue()
+	private Measurement measurement = Measurement.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Measurement measurement()
 	{
-		return (measureUnitCode == null) ? null : measureUnitCode.value;
+		initialize();
+		return measurement;
 	}
 
-	public JonixMeasure asJonixMeasure()
+	private MeasureUnitCode measureUnitCode = MeasureUnitCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public MeasureUnitCode measureUnitCode()
 	{
-		JonixMeasure x = new JonixMeasure();
-		x.measureType = getMeasureTypeCodeValue();
-		x.measureUnitCode = getMeasureUnitCodeValue();
-		x.measurement = JPU.convertStringToDouble(getMeasurementValue());
-		return x;
+		initialize();
+		return measureUnitCode;
+	}
+
+	@Override
+	public JonixMeasure asStruct()
+	{
+		initialize();
+		JonixMeasure struct = new JonixMeasure();
+		struct.measureType = measureTypeCode.value;
+		struct.measureUnitCode = measureUnitCode.value;
+		struct.measurement = JPU.convertStringToDouble(measurement.value);
+		return struct;
+	}
+
+	@Override
+	public MeasureTypes structKey()
+	{
+		return measureTypeCode().value;
 	}
 }

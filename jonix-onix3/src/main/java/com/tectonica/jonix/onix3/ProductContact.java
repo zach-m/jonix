@@ -20,18 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductContactIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +60,9 @@ public class ProductContact implements OnixSuperComposite, Serializable
 	public static final String refname = "ProductContact";
 	public static final String shortname = "productcontact";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,125 +73,117 @@ public class ProductContact implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductContactRole productContactRole;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ProductContactIdentifier> productContactIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductContactName productContactName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContactName contactName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EmailAddress emailAddress;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProductContact EMPTY = new ProductContact();
 
 	public ProductContact()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProductContact(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname))
-					productContactRole = new ProductContactRole(element);
-				else if (name.equals(ProductContactIdentifier.refname)
-						|| name.equals(ProductContactIdentifier.shortname))
-					productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(
-							element));
-				else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname))
-					productContactName = new ProductContactName(element);
-				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-					contactName = new ContactName(element);
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddress = new EmailAddress(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname))
+				productContactRole = new ProductContactRole(e);
+			else if (name.equals(ProductContactIdentifier.refname) || name.equals(ProductContactIdentifier.shortname))
+				productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(e));
+			else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname))
+				productContactName = new ProductContactName(e);
+			else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
+				contactName = new ContactName(e);
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddress = new EmailAddress(e);
 		});
 	}
 
-	public ProductContactRoles getProductContactRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (productContactRole == null) ? null : productContactRole.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ProductContactRole productContactRole = ProductContactRole.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 50 characters
+	 * (this field is required)
 	 */
-	public String getProductContactNameValue()
+	public ProductContactRole productContactRole()
 	{
-		return (productContactName == null) ? null : productContactName.value;
+		initialize();
+		return productContactRole;
 	}
+
+	private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes> productContactIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getContactNameValue()
+	public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes> productContactIdentifiers()
 	{
-		return (contactName == null) ? null : contactName.value;
+		initialize();
+		return productContactIdentifiers;
 	}
+
+	private ProductContactName productContactName = ProductContactName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getEmailAddressValue()
+	public ProductContactName productContactName()
 	{
-		return (emailAddress == null) ? null : emailAddress.value;
+		initialize();
+		return productContactName;
 	}
 
-	public JonixProductContactIdentifier findProductContactIdentifier(NameCodeTypes productContactIDType)
+	private ContactName contactName = ContactName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContactName contactName()
 	{
-		if (productContactIdentifiers != null)
-		{
-			for (ProductContactIdentifier x : productContactIdentifiers)
-			{
-				if (x.getProductContactIDTypeValue() == productContactIDType)
-					return x.asJonixProductContactIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return contactName;
 	}
 
-	public List<JonixProductContactIdentifier> findProductContactIdentifiers(
-			java.util.Set<NameCodeTypes> productContactIDTypes)
+	private EmailAddress emailAddress = EmailAddress.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EmailAddress emailAddress()
 	{
-		if (productContactIdentifiers != null)
-		{
-			List<JonixProductContactIdentifier> matches = new ArrayList<>();
-			for (ProductContactIdentifier x : productContactIdentifiers)
-			{
-				if (productContactIDTypes == null || productContactIDTypes.contains(x.getProductContactIDTypeValue()))
-					matches.add(x.asJonixProductContactIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return emailAddress;
 	}
 }

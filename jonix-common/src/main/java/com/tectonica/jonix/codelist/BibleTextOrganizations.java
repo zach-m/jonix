@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,66 +37,63 @@ interface CodeList86
  * Description: Bible text organization
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist86">ONIX
- *      Codelist 86 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist86">ONIX Codelist 86 in Reference Guide</a>
  */
 public enum BibleTextOrganizations implements OnixCodelist, CodeList86
 {
-	/**
-	 * A Bible with the text organized in the order in which events are believed to have happened
-	 */
-	Chronological("CHR", "Chronological"), //
+   /**
+    * A Bible with the text organized in the order in which events are believed to have happened
+    */
+   Chronological("CHR", "Chronological"), //
 
-	/**
-	 * A Bible which explores keywords or themes by referring text to preceding or following text
-	 */
-	Chain_reference("CHA", "Chain reference"), //
+   /**
+    * A Bible which explores keywords or themes by referring text to preceding or following text
+    */
+   Chain_reference("CHA", "Chain reference"), //
 
-	/**
-	 * A Bible or other text in which different versions are printed one line above the other, so that the variations
-	 * can easily be detected
-	 */
-	Interlinear("INT", "Interlinear"), //
+   /**
+    * A Bible or other text in which different versions are printed one line above the other, so that the variations can easily be detected
+    */
+   Interlinear("INT", "Interlinear"), //
 
-	/**
-	 * A Bible with two or more versions printed side by side
-	 */
-	Parallel("PAR", "Parallel"), //
+   /**
+    * A Bible with two or more versions printed side by side
+    */
+   Parallel("PAR", "Parallel"), //
 
-	/**
-	 * A Bible in which the text is presented in the traditional order
-	 */
-	Standard("STN", "Standard");
+   /**
+    * A Bible in which the text is presented in the traditional order
+    */
+   Standard("STN", "Standard");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private BibleTextOrganizations(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private BibleTextOrganizations(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static BibleTextOrganizations byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (BibleTextOrganizations e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static BibleTextOrganizations byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (BibleTextOrganizations e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

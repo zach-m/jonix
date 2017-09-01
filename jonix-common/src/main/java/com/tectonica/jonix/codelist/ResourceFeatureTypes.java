@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,79 +37,69 @@ interface CodeList160
  * Description: Resource feature type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist160">ONIX
- *      Codelist 160 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist160">ONIX Codelist 160 in Reference Guide</a>
  */
 public enum ResourceFeatureTypes implements OnixCodelist, CodeList160
 {
-	/**
-	 * Credit that must be displayed when a resource is used (eg 'Photo Jerry Bauer' or '&#169; Magnum Photo'). Credit
-	 * text should be carried in &lt;FeatureNote&gt;
-	 */
-	Required_credit("01", "Required credit"), //
+   /**
+    * Credit that must be displayed when a resource is used (eg 'Photo Jerry Bauer' or '&#169; Magnum Photo'). Credit text should be carried in &lt;FeatureNote&gt;
+    */
+   Required_credit("01", "Required credit"), //
 
-	/**
-	 * Explanatory caption that may accompany a resource (eg use to identify an author in a photograph). Caption text
-	 * should be carried in &lt;FeatureNote&gt;
-	 */
-	Caption("02", "Caption"), //
+   /**
+    * Explanatory caption that may accompany a resource (eg use to identify an author in a photograph). Caption text should be carried in &lt;FeatureNote&gt;
+    */
+   Caption("02", "Caption"), //
 
-	/**
-	 * Copyright holder of resource (indicative only, as the resource can be used without consultation). Copyright text
-	 * should be carried in &lt;FeatureNote&gt;
-	 */
-	Copyright_holder("03", "Copyright holder"), //
+   /**
+    * Copyright holder of resource (indicative only, as the resource can be used without consultation). Copyright text should be carried in &lt;FeatureNote&gt;
+    */
+   Copyright_holder("03", "Copyright holder"), //
 
-	/**
-	 * Approximate length in minutes of an audio or video resource. &lt;FeatureValue&gt; should contain the length of
-	 * time as an integer number of minutes
-	 */
-	Length_in_minutes("04", "Length in minutes"), //
+   /**
+    * Approximate length in minutes of an audio or video resource. &lt;FeatureValue&gt; should contain the length of time as an integer number of minutes
+    */
+   Length_in_minutes("04", "Length in minutes"), //
 
-	/**
-	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
-	 * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
-	 * 16-digit ISNI
-	 */
-	ISNI_of_resource_contributor("05", "ISNI of resource contributor"), //
+   /**
+    * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the 16-digit ISNI
+    */
+   ISNI_of_resource_contributor("05", "ISNI of resource contributor"), //
 
-	/**
-	 * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List
-	 * 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the
-	 * proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt; &lt;p&gt;NOTE:
-	 * Introduced in Onix3
-	 */
-	Proprietary_ID_of_resource_contributor("06", "Proprietary ID of resource contributor");
+   /**
+    * Use to link resource to a contributor unambiguously, for example with Resource Content types 04, 11-14 from List 158, particularly where the product has more than a single contributor. &lt;FeatureValue&gt; contains the proprietary ID, which must match a proprietary ID given in an instance of &lt;Contributor&gt;
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   Proprietary_ID_of_resource_contributor("06", "Proprietary ID of resource contributor");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private ResourceFeatureTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private ResourceFeatureTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static ResourceFeatureTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (ResourceFeatureTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static ResourceFeatureTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (ResourceFeatureTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

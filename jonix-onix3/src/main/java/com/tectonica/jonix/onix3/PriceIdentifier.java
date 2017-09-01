@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.PriceIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPriceIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -59,16 +59,17 @@ import com.tectonica.jonix.struct.JonixPriceIdentifier;
  * </tr>
  * </table>
  */
-public class PriceIdentifier implements OnixDataComposite, Serializable
+public class PriceIdentifier
+		implements OnixDataCompositeWithKey<JonixPriceIdentifier, PriceIdentifierTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PriceIdentifier";
 	public static final String shortname = "priceidentifier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -79,81 +80,107 @@ public class PriceIdentifier implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PriceIDType priceIDType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PriceIdentifier EMPTY = new PriceIdentifier();
 
 	public PriceIdentifier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PriceIdentifier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PriceIDType.refname) || name.equals(PriceIDType.shortname))
-					priceIDType = new PriceIDType(element);
-				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					idTypeName = new IDTypeName(element);
-				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					idValue = new IDValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PriceIDType.refname) || name.equals(PriceIDType.shortname))
+				priceIDType = new PriceIDType(e);
+			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
+				idTypeName = new IDTypeName(e);
+			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
+				idValue = new IDValue(e);
 		});
 	}
 
-	public PriceIdentifierTypes getPriceIDTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (priceIDType == null) ? null : priceIDType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PriceIDType priceIDType = PriceIDType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getIDTypeNameValue()
+	public PriceIDType priceIDType()
 	{
-		return (idTypeName == null) ? null : idTypeName.value;
+		initialize();
+		return priceIDType;
 	}
+
+	private IDTypeName idTypeName = IDTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt;
+	 * (this field is optional)
 	 */
-	public String getIDValueValue()
+	public IDTypeName idTypeName()
 	{
-		return (idValue == null) ? null : idValue.value;
+		initialize();
+		return idTypeName;
 	}
 
-	public JonixPriceIdentifier asJonixPriceIdentifier()
+	private IDValue idValue = IDValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue()
 	{
-		JonixPriceIdentifier x = new JonixPriceIdentifier();
-		x.priceIDType = getPriceIDTypeValue();
-		x.idTypeName = getIDTypeNameValue();
-		x.idValue = getIDValueValue();
-		return x;
+		initialize();
+		return idValue;
+	}
+
+	@Override
+	public JonixPriceIdentifier asStruct()
+	{
+		initialize();
+		JonixPriceIdentifier struct = new JonixPriceIdentifier();
+		struct.priceIDType = priceIDType.value;
+		struct.idTypeName = idTypeName.value;
+		struct.idValue = idValue.value;
+		return struct;
+	}
+
+	@Override
+	public PriceIdentifierTypes structKey()
+	{
+		return priceIDType().value;
 	}
 }

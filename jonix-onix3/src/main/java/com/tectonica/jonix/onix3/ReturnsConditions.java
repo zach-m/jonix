@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.struct.JonixReturnsConditions;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -52,16 +52,17 @@ import com.tectonica.jonix.struct.JonixReturnsConditions;
  * </tr>
  * </table>
  */
-public class ReturnsConditions implements OnixDataComposite, Serializable
+public class ReturnsConditions
+		implements OnixDataCompositeWithKey<JonixReturnsConditions, ReturnsConditionsCodeTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ReturnsConditions";
 	public static final String shortname = "returnsconditions";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -72,81 +73,107 @@ public class ReturnsConditions implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ReturnsCodeType returnsCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReturnsCodeTypeName returnsCodeTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public ReturnsCode returnsCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ReturnsConditions EMPTY = new ReturnsConditions();
 
 	public ReturnsConditions()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ReturnsConditions(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
-					returnsCodeType = new ReturnsCodeType(element);
-				else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname))
-					returnsCodeTypeName = new ReturnsCodeTypeName(element);
-				else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
-					returnsCode = new ReturnsCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
+				returnsCodeType = new ReturnsCodeType(e);
+			else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname))
+				returnsCodeTypeName = new ReturnsCodeTypeName(e);
+			else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
+				returnsCode = new ReturnsCode(e);
 		});
 	}
 
-	public ReturnsConditionsCodeTypes getReturnsCodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (returnsCodeType == null) ? null : returnsCodeType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ReturnsCodeType returnsCodeType = ReturnsCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getReturnsCodeTypeNameValue()
+	public ReturnsCodeType returnsCodeType()
 	{
-		return (returnsCodeTypeName == null) ? null : returnsCodeTypeName.value;
+		initialize();
+		return returnsCodeType;
 	}
+
+	private ReturnsCodeTypeName returnsCodeTypeName = ReturnsCodeTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt;
+	 * (this field is optional)
 	 */
-	public String getReturnsCodeValue()
+	public ReturnsCodeTypeName returnsCodeTypeName()
 	{
-		return (returnsCode == null) ? null : returnsCode.value;
+		initialize();
+		return returnsCodeTypeName;
 	}
 
-	public JonixReturnsConditions asJonixReturnsConditions()
+	private ReturnsCode returnsCode = ReturnsCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public ReturnsCode returnsCode()
 	{
-		JonixReturnsConditions x = new JonixReturnsConditions();
-		x.returnsCodeType = getReturnsCodeTypeValue();
-		x.returnsCodeTypeName = getReturnsCodeTypeNameValue();
-		x.returnsCode = getReturnsCodeValue();
-		return x;
+		initialize();
+		return returnsCode;
+	}
+
+	@Override
+	public JonixReturnsConditions asStruct()
+	{
+		initialize();
+		JonixReturnsConditions struct = new JonixReturnsConditions();
+		struct.returnsCodeType = returnsCodeType.value;
+		struct.returnsCodeTypeName = returnsCodeTypeName.value;
+		struct.returnsCode = returnsCode.value;
+		return struct;
+	}
+
+	@Override
+	public ReturnsConditionsCodeTypes structKey()
+	{
+		return returnsCodeType().value;
 	}
 }

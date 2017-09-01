@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,7 +28,7 @@ import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 public class ONIXMessage implements OnixSuperComposite, Serializable
@@ -38,9 +39,9 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 	public static final String shortname = "ONIXmessage";
 	public static final String release = "3.0";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -51,56 +52,95 @@ public class ONIXMessage implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public Header header;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NoProduct noProduct;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Product> products;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ONIXMessage EMPTY = new ONIXMessage();
 
 	public ONIXMessage()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ONIXMessage(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(Header.refname) || name.equals(Header.shortname))
-					header = new Header(element);
-				else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname))
-					noProduct = new NoProduct(element);
-				else if (name.equals(Product.refname) || name.equals(Product.shortname))
-					products = JPU.addToList(products, new Product(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(Header.refname) || name.equals(Header.shortname))
+				header = new Header(e);
+			else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname))
+				noProduct = new NoProduct(e);
+			else if (name.equals(Product.refname) || name.equals(Product.shortname))
+				products = JPU.addToList(products, new Product(e));
 		});
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private Header header = Header.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Header header()
+	{
+		initialize();
+		return header;
+	}
+
+	private NoProduct noProduct = NoProduct.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoProduct noProduct()
+	{
+		initialize();
+		return noProduct;
 	}
 
 	public boolean isNoProduct()
 	{
-		return (noProduct != null);
+		return (noProduct().exists());
+	}
+
+	private List<Product> products = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Product> products()
+	{
+		initialize();
+		return products;
 	}
 }

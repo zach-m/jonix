@@ -31,7 +31,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPageRun;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -51,16 +51,16 @@ import com.tectonica.jonix.struct.JonixPageRun;
  * </tr>
  * </table>
  */
-public class PageRun implements OnixDataComposite, Serializable
+public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PageRun";
 	public static final String shortname = "pagerun";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -79,29 +79,35 @@ public class PageRun implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public FirstPageNumber firstPageNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LastPageNumber lastPageNumber;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PageRun EMPTY = new PageRun();
 
 	public PageRun()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PageRun(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -110,41 +116,54 @@ public class PageRun implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
-					firstPageNumber = new FirstPageNumber(element);
-				else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
-					lastPageNumber = new LastPageNumber(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
+				firstPageNumber = new FirstPageNumber(e);
+			else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
+				lastPageNumber = new LastPageNumber(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
-	 */
-	public String getFirstPageNumberValue()
+	@Override
+	public boolean exists()
 	{
-		return (firstPageNumber == null) ? null : firstPageNumber.value;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
+	 * (this field is required)
 	 */
-	public String getLastPageNumberValue()
+	public FirstPageNumber firstPageNumber()
 	{
-		return (lastPageNumber == null) ? null : lastPageNumber.value;
+		initialize();
+		return firstPageNumber;
 	}
 
-	public JonixPageRun asJonixPageRun()
+	private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LastPageNumber lastPageNumber()
 	{
-		JonixPageRun x = new JonixPageRun();
-		x.firstPageNumber = getFirstPageNumberValue();
-		x.lastPageNumber = getLastPageNumberValue();
-		return x;
+		initialize();
+		return lastPageNumber;
+	}
+
+	@Override
+	public JonixPageRun asStruct()
+	{
+		initialize();
+		JonixPageRun struct = new JonixPageRun();
+		struct.firstPageNumber = firstPageNumber.value;
+		struct.lastPageNumber = lastPageNumber.value;
+		return struct;
 	}
 }

@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -67,16 +67,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class MarketCountry implements OnixElement, Serializable
+public class MarketCountry implements OnixElement<java.util.Set<String>>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "MarketCountry";
 	public static final String shortname = "j403";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -95,9 +95,9 @@ public class MarketCountry implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: One or more fixed-length codes, each with two upper case letters, successive codes being separated by
@@ -108,15 +108,30 @@ public class MarketCountry implements OnixElement, Serializable
 	 */
 	public java.util.Set<String> value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public java.util.Set<String> _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final MarketCountry EMPTY = new MarketCountry();
 
 	public MarketCountry()
-	{}
+	{
+		exists = false;
+	}
 
 	public MarketCountry(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -128,5 +143,11 @@ public class MarketCountry implements OnixElement, Serializable
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
 			value.add(String.valueOf(split));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

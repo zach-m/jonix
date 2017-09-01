@@ -20,14 +20,12 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
-import com.tectonica.jonix.codelist.PersonOrganizationNameTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -35,7 +33,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -63,9 +61,9 @@ public class Name implements OnixSuperComposite, Serializable
 	public static final String refname = "Name";
 	public static final String shortname = "name";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -84,79 +82,35 @@ public class Name implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PersonNameType personNameType;
-
-	/**
-	 * (this field is required)
-	 */
-	public PersonName personName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PersonNameInverted personNameInverted;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesBeforeNames titlesBeforeNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NamesBeforeKey namesBeforeKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrefixToKey prefixToKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public KeyNames keyNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NamesAfterKey namesAfterKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SuffixToKey suffixToKey;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LettersAfterNames lettersAfterNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesAfterNames titlesAfterNames;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PersonNameIdentifier> personNameIdentifiers;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Name EMPTY = new Name();
 
 	public Name()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Name(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -165,151 +119,175 @@ public class Name implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PersonNameType.refname) || name.equals(PersonNameType.shortname))
-					personNameType = new PersonNameType(element);
-				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					personName = new PersonName(element);
-				else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-					personNameInverted = new PersonNameInverted(element);
-				else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-					titlesBeforeNames = new TitlesBeforeNames(element);
-				else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-					namesBeforeKey = new NamesBeforeKey(element);
-				else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-					prefixToKey = new PrefixToKey(element);
-				else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-					keyNames = new KeyNames(element);
-				else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-					namesAfterKey = new NamesAfterKey(element);
-				else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-					suffixToKey = new SuffixToKey(element);
-				else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-					lettersAfterNames = new LettersAfterNames(element);
-				else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-					titlesAfterNames = new TitlesAfterNames(element);
-				else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
-					personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PersonNameType.refname) || name.equals(PersonNameType.shortname))
+				personNameType = new PersonNameType(e);
+			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
+				personName = new PersonName(e);
+			else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
+				personNameInverted = new PersonNameInverted(e);
+			else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
+				titlesBeforeNames = new TitlesBeforeNames(e);
+			else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
+				namesBeforeKey = new NamesBeforeKey(e);
+			else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
+				prefixToKey = new PrefixToKey(e);
+			else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
+				keyNames = new KeyNames(e);
+			else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
+				namesAfterKey = new NamesAfterKey(e);
+			else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
+				suffixToKey = new SuffixToKey(e);
+			else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
+				lettersAfterNames = new LettersAfterNames(e);
+			else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
+				titlesAfterNames = new TitlesAfterNames(e);
+			else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
+				personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
 		});
 	}
 
-	public PersonOrganizationNameTypes getPersonNameTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (personNameType == null) ? null : personNameType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PersonNameType personNameType = PersonNameType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getPersonNameValue()
+	public PersonNameType personNameType()
 	{
-		return (personName == null) ? null : personName.value;
+		initialize();
+		return personNameType;
 	}
+
+	private PersonName personName = PersonName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getPersonNameInvertedValue()
+	public PersonName personName()
 	{
-		return (personNameInverted == null) ? null : personNameInverted.value;
+		initialize();
+		return personName;
 	}
+
+	private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getTitlesBeforeNamesValue()
+	public PersonNameInverted personNameInverted()
 	{
-		return (titlesBeforeNames == null) ? null : titlesBeforeNames.value;
+		initialize();
+		return personNameInverted;
 	}
+
+	private TitlesBeforeNames titlesBeforeNames = TitlesBeforeNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getNamesBeforeKeyValue()
+	public TitlesBeforeNames titlesBeforeNames()
 	{
-		return (namesBeforeKey == null) ? null : namesBeforeKey.value;
+		initialize();
+		return titlesBeforeNames;
 	}
+
+	private NamesBeforeKey namesBeforeKey = NamesBeforeKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getPrefixToKeyValue()
+	public NamesBeforeKey namesBeforeKey()
 	{
-		return (prefixToKey == null) ? null : prefixToKey.value;
+		initialize();
+		return namesBeforeKey;
 	}
+
+	private PrefixToKey prefixToKey = PrefixToKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getKeyNamesValue()
+	public PrefixToKey prefixToKey()
 	{
-		return (keyNames == null) ? null : keyNames.value;
+		initialize();
+		return prefixToKey;
 	}
+
+	private KeyNames keyNames = KeyNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getNamesAfterKeyValue()
+	public KeyNames keyNames()
 	{
-		return (namesAfterKey == null) ? null : namesAfterKey.value;
+		initialize();
+		return keyNames;
 	}
+
+	private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getSuffixToKeyValue()
+	public NamesAfterKey namesAfterKey()
 	{
-		return (suffixToKey == null) ? null : suffixToKey.value;
+		initialize();
+		return namesAfterKey;
 	}
+
+	private SuffixToKey suffixToKey = SuffixToKey.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getLettersAfterNamesValue()
+	public SuffixToKey suffixToKey()
 	{
-		return (lettersAfterNames == null) ? null : lettersAfterNames.value;
+		initialize();
+		return suffixToKey;
 	}
+
+	private LettersAfterNames lettersAfterNames = LettersAfterNames.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getTitlesAfterNamesValue()
+	public LettersAfterNames lettersAfterNames()
 	{
-		return (titlesAfterNames == null) ? null : titlesAfterNames.value;
+		initialize();
+		return lettersAfterNames;
 	}
 
-	public JonixPersonNameIdentifier findPersonNameIdentifier(PersonNameIdentifierTypes personNameIDType)
+	private TitlesAfterNames titlesAfterNames = TitlesAfterNames.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TitlesAfterNames titlesAfterNames()
 	{
-		if (personNameIdentifiers != null)
-		{
-			for (PersonNameIdentifier x : personNameIdentifiers)
-			{
-				if (x.getPersonNameIDTypeValue() == personNameIDType)
-					return x.asJonixPersonNameIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return titlesAfterNames;
 	}
 
-	public List<JonixPersonNameIdentifier> findPersonNameIdentifiers(
-			java.util.Set<PersonNameIdentifierTypes> personNameIDTypes)
+	private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers()
 	{
-		if (personNameIdentifiers != null)
-		{
-			List<JonixPersonNameIdentifier> matches = new ArrayList<>();
-			for (PersonNameIdentifier x : personNameIdentifiers)
-			{
-				if (personNameIDTypes == null || personNameIDTypes.contains(x.getPersonNameIDTypeValue()))
-					matches.add(x.asJonixPersonNameIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return personNameIdentifiers;
 	}
 }

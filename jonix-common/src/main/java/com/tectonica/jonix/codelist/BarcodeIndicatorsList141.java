@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,91 +40,89 @@ interface CodeList141
  * Description: Barcode indicator
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist141">ONIX
- *      Codelist 141 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist141">ONIX Codelist 141 in Reference Guide</a>
  */
 public enum BarcodeIndicatorsList141 implements OnixCodelist, CodeList141
 {
-	Not_barcoded("00", "Not barcoded"), //
+   Not_barcoded("00", "Not barcoded"), //
 
-	Barcoded_scheme_unspecified("01", "Barcoded, scheme unspecified"), //
+   Barcoded_scheme_unspecified("01", "Barcoded, scheme unspecified"), //
 
-	GTIN_13("02", "GTIN-13"), //
+   GTIN_13("02", "GTIN-13"), //
 
-	GTIN_13_5_US_dollar_price_encoded("03", "GTIN-13+5 (US dollar price encoded)"), //
+   GTIN_13_5_US_dollar_price_encoded("03", "GTIN-13+5 (US dollar price encoded)"), //
 
-	GTIN_13_5_CAN_dollar_price_encoded("04", "GTIN-13+5 (CAN dollar price encoded)"), //
+   GTIN_13_5_CAN_dollar_price_encoded("04", "GTIN-13+5 (CAN dollar price encoded)"), //
 
-	GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"), //
+   GTIN_13_5_no_price_encoded("05", "GTIN-13+5 (no price encoded)"), //
 
-	/**
-	 * AKA item/price
-	 */
-	UPC_12_item_specific("06", "UPC-12 (item-specific)"), //
+   /**
+    * AKA item/price
+    */
+   UPC_12_item_specific("06", "UPC-12 (item-specific)"), //
 
-	/**
-	 * AKA item/price
-	 */
-	UPC_12_5_item_specific("07", "UPC-12+5 (item-specific)"), //
+   /**
+    * AKA item/price
+    */
+   UPC_12_5_item_specific("07", "UPC-12+5 (item-specific)"), //
 
-	/**
-	 * AKA price/item
-	 */
-	UPC_12_price_point("08", "UPC-12 (price-point)"), //
+   /**
+    * AKA price/item
+    */
+   UPC_12_price_point("08", "UPC-12 (price-point)"), //
 
-	/**
-	 * AKA price/item
-	 */
-	UPC_12_5_price_point("09", "UPC-12+5 (price-point)");
+   /**
+    * AKA price/item
+    */
+   UPC_12_5_price_point("09", "UPC-12+5 (price-point)");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private BarcodeIndicatorsList141(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private BarcodeIndicatorsList141(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, BarcodeIndicatorsList141> map;
+   private static volatile Map<String, BarcodeIndicatorsList141> map;
 
-	private static Map<String, BarcodeIndicatorsList141> map()
-	{
-		Map<String, BarcodeIndicatorsList141> result = map;
-		if (result == null)
-		{
-			synchronized (BarcodeIndicatorsList141.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (BarcodeIndicatorsList141 e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, BarcodeIndicatorsList141> map()
+   {
+      Map<String, BarcodeIndicatorsList141> result = map;
+      if (result == null)
+      {
+         synchronized(BarcodeIndicatorsList141.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (BarcodeIndicatorsList141 e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static BarcodeIndicatorsList141 byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static BarcodeIndicatorsList141 byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -61,9 +60,9 @@ public class Addressee implements OnixSuperComposite, Serializable
 	public static final String refname = "Addressee";
 	public static final String shortname = "addressee";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,110 +73,104 @@ public class Addressee implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<AddresseeIdentifier> addresseeIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AddresseeName addresseeName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContactName contactName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EmailAddress emailAddress;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Addressee EMPTY = new Addressee();
 
 	public Addressee()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Addressee(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
-					addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(element));
-				else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname))
-					addresseeName = new AddresseeName(element);
-				else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-					contactName = new ContactName(element);
-				else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-					emailAddress = new EmailAddress(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
+				addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
+			else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname))
+				addresseeName = new AddresseeName(e);
+			else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
+				contactName = new ContactName(e);
+			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
+				emailAddress = new EmailAddress(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 50 characters
-	 */
-	public String getAddresseeNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (addresseeName == null) ? null : addresseeName.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getContactNameValue()
+	public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers()
 	{
-		return (contactName == null) ? null : contactName.value;
+		initialize();
+		return addresseeIdentifiers;
 	}
+
+	private AddresseeName addresseeName = AddresseeName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getEmailAddressValue()
+	public AddresseeName addresseeName()
 	{
-		return (emailAddress == null) ? null : emailAddress.value;
+		initialize();
+		return addresseeName;
 	}
 
-	public JonixAddresseeIdentifier findAddresseeIdentifier(NameCodeTypes addresseeIDType)
+	private ContactName contactName = ContactName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContactName contactName()
 	{
-		if (addresseeIdentifiers != null)
-		{
-			for (AddresseeIdentifier x : addresseeIdentifiers)
-			{
-				if (x.getAddresseeIDTypeValue() == addresseeIDType)
-					return x.asJonixAddresseeIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return contactName;
 	}
 
-	public List<JonixAddresseeIdentifier> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
+	private EmailAddress emailAddress = EmailAddress.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EmailAddress emailAddress()
 	{
-		if (addresseeIdentifiers != null)
-		{
-			List<JonixAddresseeIdentifier> matches = new ArrayList<>();
-			for (AddresseeIdentifier x : addresseeIdentifiers)
-			{
-				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
-					matches.add(x.asJonixAddresseeIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return emailAddress;
 	}
 }

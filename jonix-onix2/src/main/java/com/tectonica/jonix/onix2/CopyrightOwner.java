@@ -30,7 +30,7 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -58,9 +58,9 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 	public static final String refname = "CopyrightOwner";
 	public static final String shortname = "copyrightowner";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -79,34 +79,35 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public CopyrightOwnerIdentifier copyrightOwnerIdentifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PersonName personName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CorporateName corporateName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final CopyrightOwner EMPTY = new CopyrightOwner();
 
 	public CopyrightOwner()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public CopyrightOwner(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -115,35 +116,57 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
-					copyrightOwnerIdentifier = new CopyrightOwnerIdentifier(element);
-				else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-					personName = new PersonName(element);
-				else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-					corporateName = new CorporateName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
+				copyrightOwnerIdentifier = new CopyrightOwnerIdentifier(e);
+			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
+				personName = new PersonName(e);
+			else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
+				corporateName = new CorporateName(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 */
-	public String getPersonNameValue()
+	@Override
+	public boolean exists()
 	{
-		return (personName == null) ? null : personName.value;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private CopyrightOwnerIdentifier copyrightOwnerIdentifier = CopyrightOwnerIdentifier.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is required)
 	 */
-	public String getCorporateNameValue()
+	public CopyrightOwnerIdentifier copyrightOwnerIdentifier()
 	{
-		return (corporateName == null) ? null : corporateName.value;
+		initialize();
+		return copyrightOwnerIdentifier;
+	}
+
+	private PersonName personName = PersonName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PersonName personName()
+	{
+		initialize();
+		return personName;
+	}
+
+	private CorporateName corporateName = CorporateName.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CorporateName corporateName()
+	{
+		initialize();
+		return corporateName;
 	}
 }

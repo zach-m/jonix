@@ -27,7 +27,7 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.Regions;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -73,16 +73,16 @@ import com.tectonica.jonix.codelist.Regions;
  * </tr>
  * </table>
  */
-public class RegionsIncluded implements OnixElement, Serializable
+public class RegionsIncluded implements OnixElement<java.util.Set<Regions>>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "RegionsIncluded";
 	public static final String shortname = "x450";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -93,21 +93,36 @@ public class RegionsIncluded implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public java.util.Set<Regions> value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public java.util.Set<Regions> _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final RegionsIncluded EMPTY = new RegionsIncluded();
 
 	public RegionsIncluded()
-	{}
+	{
+		exists = false;
+	}
 
 	public RegionsIncluded(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
@@ -115,5 +130,11 @@ public class RegionsIncluded implements OnixElement, Serializable
 		value = new java.util.HashSet<>();
 		for (String split : JPU.getContentAsString(element).trim().split(" +"))
 			value.add(Regions.byCode(split));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

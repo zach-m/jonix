@@ -20,85 +20,69 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.ImageAudioVideoFileFormats;
-import com.tectonica.jonix.codelist.ImageAudioVideoFileLinkTypes;
-import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixMediaFile implements Serializable
+public class JonixMediaFile implements JonixKeyedStruct<ImageAudioVideoFileTypes>, Serializable
 {
-	/**
-	 * the key of this struct (by which it can be looked up)
-	 */
-	public ImageAudioVideoFileTypes mediaFileTypeCode;
+   public static JonixMediaFile EMPTY = new JonixMediaFile();
 
-	public ImageAudioVideoFileFormats mediaFileFormatCode;
+   /**
+    * the key of this struct (by which it can be looked up)
+    */
+   public ImageAudioVideoFileTypes mediaFileTypeCode;
 
-	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 6 digits
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String imageResolution;
+   public ImageAudioVideoFileFormats mediaFileFormatCode;
 
-	public ImageAudioVideoFileLinkTypes mediaFileLinkTypeCode;
+   /**
+    * Raw Format: Variable-length integer, suggested maximum length 6 digits <p> (type: NonEmptyString)
+    */
+   public String imageResolution;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String mediaFileLink;
+   public ImageAudioVideoFileLinkTypes mediaFileLinkTypeCode;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element -
-	 * see ONIX for Books - Product Information Message - XML Message Specification, Section 7)
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String textWithDownload;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
+    */
+   public String mediaFileLink;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String downloadCaption;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 1,000 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
+    */
+   public String textWithDownload;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String downloadCredit;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
+    */
+   public String downloadCaption;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String downloadCopyrightNotice;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
+    */
+   public String downloadCredit;
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String downloadTerms;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 300 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
+    */
+   public String downloadCopyrightNotice;
 
-	/**
-	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String mediaFileDate;
+   /**
+    * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
+    */
+   public String downloadTerms;
+
+   /**
+    * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD <p> (type: NonEmptyString)
+    */
+   public String mediaFileDate;
+
+   @Override
+   public ImageAudioVideoFileTypes key() { return mediaFileTypeCode; }
 }

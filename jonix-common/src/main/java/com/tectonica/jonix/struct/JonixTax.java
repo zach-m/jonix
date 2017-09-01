@@ -20,41 +20,36 @@
 package com.tectonica.jonix.struct;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.tectonica.jonix.codelist.TaxRateCodeds;
-import com.tectonica.jonix.codelist.TaxTypes;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixTax implements Serializable
+public class JonixTax implements JonixStruct, Serializable
 {
-	public TaxTypes taxType;
+   public static JonixTax EMPTY = new JonixTax();
 
-	public TaxRateCodeds taxRateCode;
+   public TaxTypes taxType;
 
-	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point where required
-	 * <p>
-	 * (type: dt.PercentDecimal)
-	 */
-	public Double taxRatePercent;
+   public TaxRateCodeds taxRateCode;
 
-	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
-	 * <p>
-	 * (type: dt.StrictPositiveDecimal)
-	 */
-	public Double taxableAmount;
+   /**
+    * Raw Format: Variable length real number, with an explicit decimal point where required <p> (type: dt.PercentDecimal)
+    */
+   public Double taxRatePercent;
 
-	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
-	 * <p>
-	 * (type: dt.PositiveDecimal)
-	 */
-	public Double taxAmount;
+   /**
+    * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12 characters <p> (type: dt.StrictPositiveDecimal)
+    */
+   public Double taxableAmount;
+
+   /**
+    * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12 characters <p> (type: dt.PositiveDecimal)
+    */
+   public Double taxAmount;
 }

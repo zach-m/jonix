@@ -20,17 +20,12 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.DefaultLinearUnits;
-import com.tectonica.jonix.codelist.DefaultUnitOfWeights;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
@@ -39,7 +34,7 @@ import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 import com.tectonica.jonix.struct.JonixSenderIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -69,9 +64,9 @@ public class Header implements OnixSuperComposite, Serializable
 	public static final String refname = "Header";
 	public static final String shortname = "header";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -90,124 +85,35 @@ public class Header implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public FromEANNumber fromEANNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public FromSAN fromSAN;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SenderIdentifier> senderIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public FromCompany fromCompany;
-
-	/**
-	 * (this field is optional)
-	 */
-	public FromPerson fromPerson;
-
-	/**
-	 * (this field is optional)
-	 */
-	public FromEmail fromEmail;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ToEANNumber toEANNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ToSAN toSAN;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<AddresseeIdentifier> addresseeIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ToCompany toCompany;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ToPerson toPerson;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MessageNumber messageNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MessageRepeat messageRepeat;
-
-	/**
-	 * (this field is required)
-	 */
-	public SentDate sentDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MessageNote messageNote;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultLanguageOfText defaultLanguageOfText;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultPriceTypeCode defaultPriceTypeCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultCurrencyCode defaultCurrencyCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultLinearUnit defaultLinearUnit;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultWeightUnit defaultWeightUnit;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DefaultClassOfTrade defaultClassOfTrade;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Header EMPTY = new Header();
 
 	public Header()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Header(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -216,250 +122,293 @@ public class Header implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(FromEANNumber.refname) || name.equals(FromEANNumber.shortname))
-					fromEANNumber = new FromEANNumber(element);
-				else if (name.equals(FromSAN.refname) || name.equals(FromSAN.shortname))
-					fromSAN = new FromSAN(element);
-				else if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
-					senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(element));
-				else if (name.equals(FromCompany.refname) || name.equals(FromCompany.shortname))
-					fromCompany = new FromCompany(element);
-				else if (name.equals(FromPerson.refname) || name.equals(FromPerson.shortname))
-					fromPerson = new FromPerson(element);
-				else if (name.equals(FromEmail.refname) || name.equals(FromEmail.shortname))
-					fromEmail = new FromEmail(element);
-				else if (name.equals(ToEANNumber.refname) || name.equals(ToEANNumber.shortname))
-					toEANNumber = new ToEANNumber(element);
-				else if (name.equals(ToSAN.refname) || name.equals(ToSAN.shortname))
-					toSAN = new ToSAN(element);
-				else if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
-					addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(element));
-				else if (name.equals(ToCompany.refname) || name.equals(ToCompany.shortname))
-					toCompany = new ToCompany(element);
-				else if (name.equals(ToPerson.refname) || name.equals(ToPerson.shortname))
-					toPerson = new ToPerson(element);
-				else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
-					messageNumber = new MessageNumber(element);
-				else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
-					messageRepeat = new MessageRepeat(element);
-				else if (name.equals(SentDate.refname) || name.equals(SentDate.shortname))
-					sentDate = new SentDate(element);
-				else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
-					messageNote = new MessageNote(element);
-				else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
-					defaultLanguageOfText = new DefaultLanguageOfText(element);
-				else if (name.equals(DefaultPriceTypeCode.refname) || name.equals(DefaultPriceTypeCode.shortname))
-					defaultPriceTypeCode = new DefaultPriceTypeCode(element);
-				else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
-					defaultCurrencyCode = new DefaultCurrencyCode(element);
-				else if (name.equals(DefaultLinearUnit.refname) || name.equals(DefaultLinearUnit.shortname))
-					defaultLinearUnit = new DefaultLinearUnit(element);
-				else if (name.equals(DefaultWeightUnit.refname) || name.equals(DefaultWeightUnit.shortname))
-					defaultWeightUnit = new DefaultWeightUnit(element);
-				else if (name.equals(DefaultClassOfTrade.refname) || name.equals(DefaultClassOfTrade.shortname))
-					defaultClassOfTrade = new DefaultClassOfTrade(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(FromEANNumber.refname) || name.equals(FromEANNumber.shortname))
+				fromEANNumber = new FromEANNumber(e);
+			else if (name.equals(FromSAN.refname) || name.equals(FromSAN.shortname))
+				fromSAN = new FromSAN(e);
+			else if (name.equals(SenderIdentifier.refname) || name.equals(SenderIdentifier.shortname))
+				senderIdentifiers = JPU.addToList(senderIdentifiers, new SenderIdentifier(e));
+			else if (name.equals(FromCompany.refname) || name.equals(FromCompany.shortname))
+				fromCompany = new FromCompany(e);
+			else if (name.equals(FromPerson.refname) || name.equals(FromPerson.shortname))
+				fromPerson = new FromPerson(e);
+			else if (name.equals(FromEmail.refname) || name.equals(FromEmail.shortname))
+				fromEmail = new FromEmail(e);
+			else if (name.equals(ToEANNumber.refname) || name.equals(ToEANNumber.shortname))
+				toEANNumber = new ToEANNumber(e);
+			else if (name.equals(ToSAN.refname) || name.equals(ToSAN.shortname))
+				toSAN = new ToSAN(e);
+			else if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
+				addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
+			else if (name.equals(ToCompany.refname) || name.equals(ToCompany.shortname))
+				toCompany = new ToCompany(e);
+			else if (name.equals(ToPerson.refname) || name.equals(ToPerson.shortname))
+				toPerson = new ToPerson(e);
+			else if (name.equals(MessageNumber.refname) || name.equals(MessageNumber.shortname))
+				messageNumber = new MessageNumber(e);
+			else if (name.equals(MessageRepeat.refname) || name.equals(MessageRepeat.shortname))
+				messageRepeat = new MessageRepeat(e);
+			else if (name.equals(SentDate.refname) || name.equals(SentDate.shortname))
+				sentDate = new SentDate(e);
+			else if (name.equals(MessageNote.refname) || name.equals(MessageNote.shortname))
+				messageNote = new MessageNote(e);
+			else if (name.equals(DefaultLanguageOfText.refname) || name.equals(DefaultLanguageOfText.shortname))
+				defaultLanguageOfText = new DefaultLanguageOfText(e);
+			else if (name.equals(DefaultPriceTypeCode.refname) || name.equals(DefaultPriceTypeCode.shortname))
+				defaultPriceTypeCode = new DefaultPriceTypeCode(e);
+			else if (name.equals(DefaultCurrencyCode.refname) || name.equals(DefaultCurrencyCode.shortname))
+				defaultCurrencyCode = new DefaultCurrencyCode(e);
+			else if (name.equals(DefaultLinearUnit.refname) || name.equals(DefaultLinearUnit.shortname))
+				defaultLinearUnit = new DefaultLinearUnit(e);
+			else if (name.equals(DefaultWeightUnit.refname) || name.equals(DefaultWeightUnit.shortname))
+				defaultWeightUnit = new DefaultWeightUnit(e);
+			else if (name.equals(DefaultClassOfTrade.refname) || name.equals(DefaultClassOfTrade.shortname))
+				defaultClassOfTrade = new DefaultClassOfTrade(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
-	 */
-	public String getFromEANNumberValue()
+	@Override
+	public boolean exists()
 	{
-		return (fromEANNumber == null) ? null : fromEANNumber.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private FromEANNumber fromEANNumber = FromEANNumber.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
-	 * character which may be a numeric digit or letter X.
+	 * (this field is required)
 	 */
-	public String getFromSANValue()
+	public FromEANNumber fromEANNumber()
 	{
-		return (fromSAN == null) ? null : fromSAN.value;
+		initialize();
+		return fromEANNumber;
 	}
+
+	private FromSAN fromSAN = FromSAN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 30 characters
+	 * (this field is optional)
 	 */
-	public String getFromCompanyValue()
+	public FromSAN fromSAN()
 	{
-		return (fromCompany == null) ? null : fromCompany.value;
+		initialize();
+		return fromSAN;
 	}
+
+	private ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
+	 * (this list may be empty)
 	 */
-	public String getFromPersonValue()
+	public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers()
 	{
-		return (fromPerson == null) ? null : fromPerson.value;
+		initialize();
+		return senderIdentifiers;
 	}
+
+	private FromCompany fromCompany = FromCompany.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 100 characters
+	 * (this field is optional)
 	 */
-	public String getFromEmailValue()
+	public FromCompany fromCompany()
 	{
-		return (fromEmail == null) ? null : fromEmail.value;
+		initialize();
+		return fromCompany;
 	}
+
+	private FromPerson fromPerson = FromPerson.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, thirteen numeric digits, of which the last is a check digit.
+	 * (this field is optional)
 	 */
-	public String getToEANNumberValue()
+	public FromPerson fromPerson()
 	{
-		return (toEANNumber == null) ? null : toEANNumber.value;
+		initialize();
+		return fromPerson;
 	}
+
+	private FromEmail fromEmail = FromEmail.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, seven characters. The first six are numeric digits, and the seventh is a check
-	 * character which may be a numeric digit or letter X.
+	 * (this field is optional)
 	 */
-	public String getToSANValue()
+	public FromEmail fromEmail()
 	{
-		return (toSAN == null) ? null : toSAN.value;
+		initialize();
+		return fromEmail;
 	}
+
+	private ToEANNumber toEANNumber = ToEANNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 30 characters
+	 * (this field is optional)
 	 */
-	public String getToCompanyValue()
+	public ToEANNumber toEANNumber()
 	{
-		return (toCompany == null) ? null : toCompany.value;
+		initialize();
+		return toEANNumber;
 	}
+
+	private ToSAN toSAN = ToSAN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getToPersonValue()
+	public ToSAN toSAN()
 	{
-		return (toPerson == null) ? null : toPerson.value;
+		initialize();
+		return toSAN;
 	}
+
+	private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length integer,
+	 * (this list may be empty)
 	 */
-	public String getMessageNumberValue()
+	public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers()
 	{
-		return (messageNumber == null) ? null : messageNumber.value;
+		initialize();
+		return addresseeIdentifiers;
 	}
+
+	private ToCompany toCompany = ToCompany.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer
+	 * (this field is optional)
 	 */
-	public String getMessageRepeatValue()
+	public ToCompany toCompany()
 	{
-		return (messageRepeat == null) ? null : messageRepeat.value;
+		initialize();
+		return toCompany;
 	}
+
+	private ToPerson toPerson = ToPerson.EMPTY;
 
 	/**
-	 * Raw Format: Eight or twelve numeric digits only (YYYYMMDD or YYYYMMDDHHMM)
+	 * (this field is optional)
 	 */
-	public String getSentDateValue()
+	public ToPerson toPerson()
 	{
-		return (sentDate == null) ? null : sentDate.value;
+		initialize();
+		return toPerson;
 	}
+
+	private MessageNumber messageNumber = MessageNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 500 characters
+	 * (this field is optional)
 	 */
-	public String getMessageNoteValue()
+	public MessageNumber messageNumber()
 	{
-		return (messageNote == null) ? null : messageNote.value;
+		initialize();
+		return messageNumber;
 	}
 
-	public LanguageCodes getDefaultLanguageOfTextValue()
-	{
-		return (defaultLanguageOfText == null) ? null : defaultLanguageOfText.value;
-	}
-
-	public PriceTypes getDefaultPriceTypeCodeValue()
-	{
-		return (defaultPriceTypeCode == null) ? null : defaultPriceTypeCode.value;
-	}
-
-	public CurrencyCodes getDefaultCurrencyCodeValue()
-	{
-		return (defaultCurrencyCode == null) ? null : defaultCurrencyCode.value;
-	}
-
-	public DefaultLinearUnits getDefaultLinearUnitValue()
-	{
-		return (defaultLinearUnit == null) ? null : defaultLinearUnit.value;
-	}
-
-	public DefaultUnitOfWeights getDefaultWeightUnitValue()
-	{
-		return (defaultWeightUnit == null) ? null : defaultWeightUnit.value;
-	}
+	private MessageRepeat messageRepeat = MessageRepeat.EMPTY;
 
 	/**
-	 * Raw Format: Variable length ASCII text, suggested maximum length 50 characters
+	 * (this field is optional)
 	 */
-	public String getDefaultClassOfTradeValue()
+	public MessageRepeat messageRepeat()
 	{
-		return (defaultClassOfTrade == null) ? null : defaultClassOfTrade.value;
+		initialize();
+		return messageRepeat;
 	}
 
-	public JonixSenderIdentifier findSenderIdentifier(NameCodeTypes senderIDType)
+	private SentDate sentDate = SentDate.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public SentDate sentDate()
 	{
-		if (senderIdentifiers != null)
-		{
-			for (SenderIdentifier x : senderIdentifiers)
-			{
-				if (x.getSenderIDTypeValue() == senderIDType)
-					return x.asJonixSenderIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return sentDate;
 	}
 
-	public List<JonixSenderIdentifier> findSenderIdentifiers(java.util.Set<NameCodeTypes> senderIDTypes)
+	private MessageNote messageNote = MessageNote.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public MessageNote messageNote()
 	{
-		if (senderIdentifiers != null)
-		{
-			List<JonixSenderIdentifier> matches = new ArrayList<>();
-			for (SenderIdentifier x : senderIdentifiers)
-			{
-				if (senderIDTypes == null || senderIDTypes.contains(x.getSenderIDTypeValue()))
-					matches.add(x.asJonixSenderIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return messageNote;
 	}
 
-	public JonixAddresseeIdentifier findAddresseeIdentifier(NameCodeTypes addresseeIDType)
+	private DefaultLanguageOfText defaultLanguageOfText = DefaultLanguageOfText.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultLanguageOfText defaultLanguageOfText()
 	{
-		if (addresseeIdentifiers != null)
-		{
-			for (AddresseeIdentifier x : addresseeIdentifiers)
-			{
-				if (x.getAddresseeIDTypeValue() == addresseeIDType)
-					return x.asJonixAddresseeIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return defaultLanguageOfText;
 	}
 
-	public List<JonixAddresseeIdentifier> findAddresseeIdentifiers(java.util.Set<NameCodeTypes> addresseeIDTypes)
+	private DefaultPriceTypeCode defaultPriceTypeCode = DefaultPriceTypeCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultPriceTypeCode defaultPriceTypeCode()
 	{
-		if (addresseeIdentifiers != null)
-		{
-			List<JonixAddresseeIdentifier> matches = new ArrayList<>();
-			for (AddresseeIdentifier x : addresseeIdentifiers)
-			{
-				if (addresseeIDTypes == null || addresseeIDTypes.contains(x.getAddresseeIDTypeValue()))
-					matches.add(x.asJonixAddresseeIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return defaultPriceTypeCode;
+	}
+
+	private DefaultCurrencyCode defaultCurrencyCode = DefaultCurrencyCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultCurrencyCode defaultCurrencyCode()
+	{
+		initialize();
+		return defaultCurrencyCode;
+	}
+
+	private DefaultLinearUnit defaultLinearUnit = DefaultLinearUnit.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultLinearUnit defaultLinearUnit()
+	{
+		initialize();
+		return defaultLinearUnit;
+	}
+
+	private DefaultWeightUnit defaultWeightUnit = DefaultWeightUnit.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultWeightUnit defaultWeightUnit()
+	{
+		initialize();
+		return defaultWeightUnit;
+	}
+
+	private DefaultClassOfTrade defaultClassOfTrade = DefaultClassOfTrade.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public DefaultClassOfTrade defaultClassOfTrade()
+	{
+		initialize();
+		return defaultClassOfTrade;
 	}
 }

@@ -20,10 +20,11 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -34,7 +35,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixMediaFile;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -75,9 +76,9 @@ public class Reissue implements OnixSuperComposite, Serializable
 	public static final String refname = "Reissue";
 	public static final String shortname = "reissue";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -96,39 +97,35 @@ public class Reissue implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ReissueDate reissueDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReissueDescription reissueDescription;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Price> prices;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MediaFile> mediaFiles;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Reissue EMPTY = new Reissue();
 
 	public Reissue()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Reissue(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -137,65 +134,71 @@ public class Reissue implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
-					reissueDate = new ReissueDate(element);
-				else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
-					reissueDescription = new ReissueDescription(element);
-				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					prices = JPU.addToList(prices, new Price(element));
-				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
-					mediaFiles = JPU.addToList(mediaFiles, new MediaFile(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
+				reissueDate = new ReissueDate(e);
+			else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
+				reissueDescription = new ReissueDescription(e);
+			else if (name.equals(Price.refname) || name.equals(Price.shortname))
+				prices = JPU.addToList(prices, new Price(e));
+			else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
+				mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
 		});
 	}
 
-	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
-	 */
-	public String getReissueDateValue()
+	@Override
+	public boolean exists()
 	{
-		return (reissueDate == null) ? null : reissueDate.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ReissueDate reissueDate = ReissueDate.EMPTY;
 
 	/**
-	 * Raw Format: Free text, suggested maximum length 500 characters
+	 * (this field is required)
 	 */
-	public String getReissueDescriptionValue()
+	public ReissueDate reissueDate()
 	{
-		return (reissueDescription == null) ? null : reissueDescription.value;
+		initialize();
+		return reissueDate;
 	}
 
-	public JonixMediaFile findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	private ReissueDescription reissueDescription = ReissueDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReissueDescription reissueDescription()
 	{
-		if (mediaFiles != null)
-		{
-			for (MediaFile x : mediaFiles)
-			{
-				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
-					return x.asJonixMediaFile();
-			}
-		}
-		return null;
+		initialize();
+		return reissueDescription;
 	}
 
-	public List<JonixMediaFile> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	private List<Price> prices = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices()
 	{
-		if (mediaFiles != null)
-		{
-			List<JonixMediaFile> matches = new ArrayList<>();
-			for (MediaFile x : mediaFiles)
-			{
-				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
-					matches.add(x.asJonixMediaFile());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return prices;
+	}
+
+	private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles()
+	{
+		initialize();
+		return mediaFiles;
 	}
 }

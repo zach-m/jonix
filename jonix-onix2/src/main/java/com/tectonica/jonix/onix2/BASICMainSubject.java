@@ -30,15 +30,17 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
  * <h1>BISAC main subject category</h1>
  * <p>
  * A BISAC subject category code which identifies the main subject of the product. Optional and non-repeating.
- * Additional BISAC subject category codes may be sent using the &lt;Subject&gt; composite.
- * <em>Note that the data element reference name was assigned during a period when the BISAC name had been changed to “BASIC”. The name has now officially reverted to “BISAC”, but the ONIX data element name cannot be changed for reasons of upwards compatibility.</em>
+ * Additional BISAC subject category codes may be sent using the &lt;Subject&gt; composite. <em>Note that the data
+ * element reference name was assigned during a period when the BISAC name had been changed to “BASIC”. The name has now
+ * officially reverted to “BISAC”, but the ONIX data element name cannot be changed for reasons of upwards
+ * compatibility.</em>
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -64,16 +66,16 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
  * </tr>
  * </table>
  */
-public class BASICMainSubject implements OnixElement, Serializable
+public class BASICMainSubject implements OnixElement<String>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "BASICMainSubject";
 	public static final String shortname = "b064";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -92,9 +94,9 @@ public class BASICMainSubject implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Raw Format: Fixed-length, three upper-case letters and six numeric digits.
@@ -103,15 +105,30 @@ public class BASICMainSubject implements OnixElement, Serializable
 	 */
 	public String value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public String _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final BASICMainSubject EMPTY = new BASICMainSubject();
 
 	public BASICMainSubject()
-	{}
+	{
+		exists = false;
+	}
 
 	public BASICMainSubject(org.w3c.dom.Element element)
 	{
+		exists = true;
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -121,5 +138,11 @@ public class BASICMainSubject implements OnixElement, Serializable
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = JPU.getContentAsString(element);
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

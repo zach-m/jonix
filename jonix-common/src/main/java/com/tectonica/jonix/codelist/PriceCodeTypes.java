@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,58 +37,53 @@ interface CodeList179
  * Description: Price code type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist179">ONIX
- *      Codelist 179 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist179">ONIX Codelist 179 in Reference Guide</a>
  */
 public enum PriceCodeTypes implements OnixCodelist, CodeList179
 {
-	/**
-	 * A publisher or retailer's proprietary code list which identifies particular codes with particular price points,
-	 * price tiers or bands
-	 */
-	Proprietary("01", "Proprietary"), //
+   /**
+    * A publisher or retailer's proprietary code list which identifies particular codes with particular price points, price tiers or bands
+    */
+   Proprietary("01", "Proprietary"), //
 
-	/**
-	 * Price Code scheme for Finnish Pocket Books (Pokkareiden hintaryhm&#228;). Price codes expressed as letters A-J in
-	 * &lt;PriceCode&gt;
-	 */
-	Finnish_Pocket_Book_price_code("02", "Finnish Pocket Book price code"), //
+   /**
+    * Price Code scheme for Finnish Pocket Books (Pokkareiden hintaryhm&#228;). Price codes expressed as letters A-J in &lt;PriceCode&gt;
+    */
+   Finnish_Pocket_Book_price_code("02", "Finnish Pocket Book price code"), //
 
-	/**
-	 * Price Code scheme for Finnish Miki Books (Miki-kirjojen hintaryhm&#228;). Price codes expressed as an integer 1-n
-	 * in &lt;PriceCode&gt;
-	 */
-	Finnish_Miki_Book_price_code("03", "Finnish Miki Book price code");
+   /**
+    * Price Code scheme for Finnish Miki Books (Miki-kirjojen hintaryhm&#228;). Price codes expressed as an integer 1-n in &lt;PriceCode&gt;
+    */
+   Finnish_Miki_Book_price_code("03", "Finnish Miki Book price code");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private PriceCodeTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private PriceCodeTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static PriceCodeTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (PriceCodeTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static PriceCodeTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (PriceCodeTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

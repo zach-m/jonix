@@ -27,15 +27,15 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
  * <h1>Unpriced item type</h1>
  * <p>
- * An ONIX code which specifies a reason why a price amount is not sent.
- * <em>If code value 02 is used to send advance information without giving a price, the price must be confirmed as soon as possible.</em>
- * Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a price.
+ * An ONIX code which specifies a reason why a price amount is not sent. <em>If code value 02 is used to send advance
+ * information without giving a price, the price must be confirmed as soon as possible.</em> Optional and non-repeating,
+ * but required if the &lt;SupplyDetail&gt; composite does not carry a price.
  * </p>
  * <table border='1' cellpadding='3'>
  * <tr>
@@ -64,16 +64,16 @@ import com.tectonica.jonix.codelist.UnpricedItemTypes;
  * </tr>
  * </table>
  */
-public class UnpricedItemType implements OnixElement, Serializable
+public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "UnpricedItemType";
 	public static final String shortname = "j192";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -84,25 +84,46 @@ public class UnpricedItemType implements OnixElement, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// VALUE MEMBER
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public UnpricedItemTypes value;
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/**
+	 * Internal API, use the {@link #value} field instead
+	 */
+	@Override
+	public UnpricedItemTypes _value()
+	{
+		return value;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private final boolean exists;
+	public static final UnpricedItemType EMPTY = new UnpricedItemType();
 
 	public UnpricedItemType()
-	{}
+	{
+		exists = false;
+	}
 
 	public UnpricedItemType(org.w3c.dom.Element element)
 	{
+		exists = true;
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
 		value = UnpricedItemTypes.byCode(JPU.getContentAsString(element));
+	}
+
+	@Override
+	public boolean exists()
+	{
+		return exists;
 	}
 }

@@ -20,16 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.RightsTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -61,9 +61,9 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 	public static final String refname = "CopyrightStatement";
 	public static final String shortname = "copyrightstatement";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,72 +74,90 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public CopyrightType copyrightType;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<CopyrightYear> copyrightYears;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CopyrightOwner> copyrightOwners;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final CopyrightStatement EMPTY = new CopyrightStatement();
 
 	public CopyrightStatement()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public CopyrightStatement(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(CopyrightType.refname) || name.equals(CopyrightType.shortname))
-					copyrightType = new CopyrightType(element);
-				else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
-					copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(element));
-				else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname))
-					copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(CopyrightType.refname) || name.equals(CopyrightType.shortname))
+				copyrightType = new CopyrightType(e);
+			else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
+				copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(e));
+			else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname))
+				copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(e));
 		});
 	}
 
-	public RightsTypes getCopyrightTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (copyrightType == null) ? null : copyrightType.value;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private CopyrightType copyrightType = CopyrightType.EMPTY;
+
 	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
-	 * missing)
+	 * (this field is optional)
 	 */
-	public List<String> getCopyrightYearValues()
+	public CopyrightType copyrightType()
 	{
-		if (copyrightYears != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CopyrightYear i : copyrightYears)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return copyrightType;
+	}
+
+	private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public ListOfOnixElement<CopyrightYear, String> copyrightYears()
+	{
+		initialize();
+		return copyrightYears;
+	}
+
+	private List<CopyrightOwner> copyrightOwners = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopyrightOwner> copyrightOwners()
+	{
+		initialize();
+		return copyrightOwners;
 	}
 }

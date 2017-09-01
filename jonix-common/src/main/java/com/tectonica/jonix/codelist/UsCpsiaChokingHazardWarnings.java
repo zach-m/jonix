@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,82 +37,73 @@ interface CodeList140
  * Description: US CPSIA choking hazard warning code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist140">ONIX
- *      Codelist 140 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist140">ONIX Codelist 140 in Reference Guide</a>
  */
 public enum UsCpsiaChokingHazardWarnings implements OnixCodelist, CodeList140
 {
-	/**
-	 * List withdrawn - use List 143
-	 */
-	WARNING_CHOKING_HAZARD_Small_parts_Not_for_children_under_3_yrs_("01",
-			"WARNING: CHOKING HAZARD – Small parts | Not for children under 3 yrs."), //
+   /**
+    * List withdrawn - use List 143
+    */
+   WARNING_CHOKING_HAZARD_Small_parts_Not_for_children_under_3_yrs_("01", "WARNING: CHOKING HAZARD – Small parts | Not for children under 3 yrs."), //
 
-	/**
-	 * List withdrawn - use List 143
-	 */
-	WARNING_CHOKING_HAZARD_This_toy_is_a_small_ball_Not_for_children_under_3_yrs_("02",
-			"WARNING: CHOKING HAZARD – This toy is a small ball | Not for children under 3 yrs."), //
+   /**
+    * List withdrawn - use List 143
+    */
+   WARNING_CHOKING_HAZARD_This_toy_is_a_small_ball_Not_for_children_under_3_yrs_("02", "WARNING: CHOKING HAZARD – This toy is a small ball | Not for children under 3 yrs."), //
 
-	/**
-	 * List withdrawn - use List 143
-	 */
-	WARNING_CHOKING_HAZARD_Toy_contains_a_small_ball_Not_for_children_under_3_yrs_("03",
-			"WARNING: CHOKING HAZARD – Toy contains a small ball | Not for children under 3 yrs."), //
+   /**
+    * List withdrawn - use List 143
+    */
+   WARNING_CHOKING_HAZARD_Toy_contains_a_small_ball_Not_for_children_under_3_yrs_("03", "WARNING: CHOKING HAZARD – Toy contains a small ball | Not for children under 3 yrs."), //
 
-	/**
-	 * List withdrawn - use List 143
-	 */
-	WARNING_CHOKING_HAZARD_Children_under_8_yrs_can_choke_or_suffocate_on_uninflated_or_broken_balloons_Adult_supervision_required_Keep_uninflated_balloons_from_children_Discard_broken_balloons_at_once_(
-			"04",
-			"WARNING: CHOKING HAZARD – Children under 8 yrs. can choke or suffocate on uninflated or broken balloons. Adult supervision required | Keep uninflated balloons from children. Discard broken balloons at once."), //
+   /**
+    * List withdrawn - use List 143
+    */
+   WARNING_CHOKING_HAZARD_Children_under_8_yrs_can_choke_or_suffocate_on_uninflated_or_broken_balloons_Adult_supervision_required_Keep_uninflated_balloons_from_children_Discard_broken_balloons_at_once_("04", "WARNING: CHOKING HAZARD – Children under 8 yrs. can choke or suffocate on uninflated or broken balloons. Adult supervision required | Keep uninflated balloons from children. Discard broken balloons at once."), //
 
-	/**
-	 * List withdrawn - use List 143
-	 */
-	WARNING_CHOKING_HAZARD_This_toy_is_a_marble_Not_for_children_under_3_yrs_("05",
-			"WARNING: CHOKING HAZARD – This toy is a marble | Not for children under 3 yrs."), //
+   /**
+    * List withdrawn - use List 143
+    */
+   WARNING_CHOKING_HAZARD_This_toy_is_a_marble_Not_for_children_under_3_yrs_("05", "WARNING: CHOKING HAZARD – This toy is a marble | Not for children under 3 yrs."), //
 
-	/**
-	 * List withdrawn - use List 143
-	 */
-	WARNING_CHOKING_HAZARD_Toy_contains_a_marble_Not_for_children_under_3_yrs_("06",
-			"WARNING: CHOKING HAZARD – Toy contains a marble | Not for children under 3 yrs."), //
+   /**
+    * List withdrawn - use List 143
+    */
+   WARNING_CHOKING_HAZARD_Toy_contains_a_marble_Not_for_children_under_3_yrs_("06", "WARNING: CHOKING HAZARD – Toy contains a marble | Not for children under 3 yrs."), //
 
-	/**
-	 * List withdrawn - use List 143
-	 */
-	No_choking_hazard_warning_necessary("07", "No choking hazard warning necessary");
+   /**
+    * List withdrawn - use List 143
+    */
+   No_choking_hazard_warning_necessary("07", "No choking hazard warning necessary");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private UsCpsiaChokingHazardWarnings(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private UsCpsiaChokingHazardWarnings(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static UsCpsiaChokingHazardWarnings byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (UsCpsiaChokingHazardWarnings e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static UsCpsiaChokingHazardWarnings byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (UsCpsiaChokingHazardWarnings e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

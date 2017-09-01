@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixProductClassification;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +53,17 @@ import com.tectonica.jonix.struct.JonixProductClassification;
  * </tr>
  * </table>
  */
-public class ProductClassification implements OnixDataComposite, Serializable
+public class ProductClassification
+		implements OnixDataCompositeWithKey<JonixProductClassification, ProductClassificationTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ProductClassification";
 	public static final String shortname = "productclassification";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,34 +82,35 @@ public class ProductClassification implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductClassificationType productClassificationType;
-
-	/**
-	 * (this field is required)
-	 */
-	public ProductClassificationCode productClassificationCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Percent percent;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ProductClassification EMPTY = new ProductClassification();
 
 	public ProductClassification()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ProductClassification(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,50 +119,74 @@ public class ProductClassification implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname))
-					productClassificationType = new ProductClassificationType(element);
-				else if (name.equals(ProductClassificationCode.refname)
-						|| name.equals(ProductClassificationCode.shortname))
-					productClassificationCode = new ProductClassificationCode(element);
-				else if (name.equals(Percent.refname) || name.equals(Percent.shortname))
-					percent = new Percent(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname))
+				productClassificationType = new ProductClassificationType(e);
+			else if (name.equals(ProductClassificationCode.refname) || name.equals(ProductClassificationCode.shortname))
+				productClassificationCode = new ProductClassificationCode(e);
+			else if (name.equals(Percent.refname) || name.equals(Percent.shortname))
+				percent = new Percent(e);
 		});
 	}
 
-	public ProductClassificationTypes getProductClassificationTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (productClassificationType == null) ? null : productClassificationType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ProductClassificationType productClassificationType = ProductClassificationType.EMPTY;
 
 	/**
-	 * Raw Format: According to the identifier type specified in &lt;ProductClassificationType&gt;
+	 * (this field is required)
 	 */
-	public String getProductClassificationCodeValue()
+	public ProductClassificationType productClassificationType()
 	{
-		return (productClassificationCode == null) ? null : productClassificationCode.value;
+		initialize();
+		return productClassificationType;
 	}
+
+	private ProductClassificationCode productClassificationCode = ProductClassificationCode.EMPTY;
 
 	/**
-	 * Raw Format: Real decimal number in the range 0 to 100
+	 * (this field is required)
 	 */
-	public String getPercentValue()
+	public ProductClassificationCode productClassificationCode()
 	{
-		return (percent == null) ? null : percent.value;
+		initialize();
+		return productClassificationCode;
 	}
 
-	public JonixProductClassification asJonixProductClassification()
+	private Percent percent = Percent.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Percent percent()
 	{
-		JonixProductClassification x = new JonixProductClassification();
-		x.productClassificationType = getProductClassificationTypeValue();
-		x.percent = JPU.convertStringToDouble(getPercentValue());
-		x.productClassificationCode = getProductClassificationCodeValue();
-		return x;
+		initialize();
+		return percent;
+	}
+
+	@Override
+	public JonixProductClassification asStruct()
+	{
+		initialize();
+		JonixProductClassification struct = new JonixProductClassification();
+		struct.productClassificationType = productClassificationType.value;
+		struct.percent = JPU.convertStringToDouble(percent.value);
+		struct.productClassificationCode = productClassificationCode.value;
+		return struct;
+	}
+
+	@Override
+	public ProductClassificationTypes structKey()
+	{
+		return productClassificationType().value;
 	}
 }

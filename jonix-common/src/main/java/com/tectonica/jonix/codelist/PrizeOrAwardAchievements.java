@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,77 +37,70 @@ interface CodeList41
  * Description: Prize or award achievement code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist41">ONIX
- *      Codelist 41 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist41">ONIX Codelist 41 in Reference Guide</a>
  */
 public enum PrizeOrAwardAchievements implements OnixCodelist, CodeList41
 {
-	Winner("01", "Winner"), //
+   Winner("01", "Winner"), //
 
-	/**
-	 * Named as being in second place
-	 */
-	Runner_up("02", "Runner-up"), //
+   /**
+    * Named as being in second place
+    */
+   Runner_up("02", "Runner-up"), //
 
-	/**
-	 * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically
-	 * as winner or runner-up. Possible terminology used by a particular prize includes 'specially commended' or
-	 * 'honored'
-	 */
-	Commended("03", "Commended"), //
+   /**
+    * Cited as being worthy of special attention at the final stage of the judging process, but not named specifically as winner or runner-up. Possible terminology used by a particular prize includes 'specially commended' or 'honored'
+    */
+   Commended("03", "Commended"), //
 
-	/**
-	 * Title named by the judging process to be one of the final list of candidates, such as a 'short-list' from which
-	 * the winner is selected, or a title named as 'finalist'
-	 */
-	Short_listed("04", "Short-listed"), //
+   /**
+    * Title named by the judging process to be one of the final list of candidates, such as a 'short-list' from which the winner is selected, or a title named as 'finalist'
+    */
+   Short_listed("04", "Short-listed"), //
 
-	/**
-	 * Title named by the judging process to be one of the preliminary list of candidates, such as a 'long-list' from
-	 * which first a shorter list or set of finalists is selected, and then the winner is announced
-	 */
-	Long_listed("05", "Long-listed"), //
+   /**
+    * Title named by the judging process to be one of the preliminary list of candidates, such as a 'long-list' from which first a shorter list or set of finalists is selected, and then the winner is announced
+    */
+   Long_listed("05", "Long-listed"), //
 
-	/**
-	 * Or co-winner
-	 */
-	Joint_winner("06", "Joint winner"), //
+   /**
+    * Or co-winner
+    */
+   Joint_winner("06", "Joint winner"), //
 
-	/**
-	 * Selected by judging panel or an official nominating process for final consideration for a prize, award or honor
-	 * for which no 'short-list' or 'long list' exists
-	 */
-	Nominated("07", "Nominated");
+   /**
+    * Selected by judging panel or an official nominating process for final consideration for a prize, award or honor for which no 'short-list' or 'long list' exists
+    */
+   Nominated("07", "Nominated");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private PrizeOrAwardAchievements(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private PrizeOrAwardAchievements(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static PrizeOrAwardAchievements byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (PrizeOrAwardAchievements e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static PrizeOrAwardAchievements byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (PrizeOrAwardAchievements e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

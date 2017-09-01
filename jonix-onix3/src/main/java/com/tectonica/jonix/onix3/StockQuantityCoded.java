@@ -22,13 +22,13 @@ package com.tectonica.jonix.onix3;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
 import com.tectonica.jonix.struct.JonixStockQuantityCoded;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -54,16 +54,17 @@ import com.tectonica.jonix.struct.JonixStockQuantityCoded;
  * </tr>
  * </table>
  */
-public class StockQuantityCoded implements OnixDataComposite, Serializable
+public class StockQuantityCoded
+		implements OnixDataCompositeWithKey<JonixStockQuantityCoded, StockQuantityCodeTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "StockQuantityCoded";
 	public static final String shortname = "stockquantitycoded";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,82 +75,107 @@ public class StockQuantityCoded implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public StockQuantityCodeType stockQuantityCodeType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public StockQuantityCodeTypeName stockQuantityCodeTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public StockQuantityCode stockQuantityCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final StockQuantityCoded EMPTY = new StockQuantityCoded();
 
 	public StockQuantityCoded()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public StockQuantityCoded(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(StockQuantityCodeType.refname) || name.equals(StockQuantityCodeType.shortname))
-					stockQuantityCodeType = new StockQuantityCodeType(element);
-				else if (name.equals(StockQuantityCodeTypeName.refname)
-						|| name.equals(StockQuantityCodeTypeName.shortname))
-					stockQuantityCodeTypeName = new StockQuantityCodeTypeName(element);
-				else if (name.equals(StockQuantityCode.refname) || name.equals(StockQuantityCode.shortname))
-					stockQuantityCode = new StockQuantityCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(StockQuantityCodeType.refname) || name.equals(StockQuantityCodeType.shortname))
+				stockQuantityCodeType = new StockQuantityCodeType(e);
+			else if (name.equals(StockQuantityCodeTypeName.refname) || name.equals(StockQuantityCodeTypeName.shortname))
+				stockQuantityCodeTypeName = new StockQuantityCodeTypeName(e);
+			else if (name.equals(StockQuantityCode.refname) || name.equals(StockQuantityCode.shortname))
+				stockQuantityCode = new StockQuantityCode(e);
 		});
 	}
 
-	public StockQuantityCodeTypes getStockQuantityCodeTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (stockQuantityCodeType == null) ? null : stockQuantityCodeType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private StockQuantityCodeType stockQuantityCodeType = StockQuantityCodeType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
+	 * (this field is required)
 	 */
-	public String getStockQuantityCodeTypeNameValue()
+	public StockQuantityCodeType stockQuantityCodeType()
 	{
-		return (stockQuantityCodeTypeName == null) ? null : stockQuantityCodeTypeName.value;
+		initialize();
+		return stockQuantityCodeType;
 	}
+
+	private StockQuantityCodeTypeName stockQuantityCodeTypeName = StockQuantityCodeTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the scheme specified in &lt;StockQuantityCodeType&gt;
+	 * (this field is optional)
 	 */
-	public String getStockQuantityCodeValue()
+	public StockQuantityCodeTypeName stockQuantityCodeTypeName()
 	{
-		return (stockQuantityCode == null) ? null : stockQuantityCode.value;
+		initialize();
+		return stockQuantityCodeTypeName;
 	}
 
-	public JonixStockQuantityCoded asJonixStockQuantityCoded()
+	private StockQuantityCode stockQuantityCode = StockQuantityCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public StockQuantityCode stockQuantityCode()
 	{
-		JonixStockQuantityCoded x = new JonixStockQuantityCoded();
-		x.stockQuantityCodeType = getStockQuantityCodeTypeValue();
-		x.stockQuantityCode = getStockQuantityCodeValue();
-		x.stockQuantityCodeTypeName = getStockQuantityCodeTypeNameValue();
-		return x;
+		initialize();
+		return stockQuantityCode;
+	}
+
+	@Override
+	public JonixStockQuantityCoded asStruct()
+	{
+		initialize();
+		JonixStockQuantityCoded struct = new JonixStockQuantityCoded();
+		struct.stockQuantityCodeType = stockQuantityCodeType.value;
+		struct.stockQuantityCode = stockQuantityCode.value;
+		struct.stockQuantityCodeTypeName = stockQuantityCodeTypeName.value;
+		return struct;
+	}
+
+	@Override
+	public StockQuantityCodeTypes structKey()
+	{
+		return stockQuantityCodeType().value;
 	}
 }

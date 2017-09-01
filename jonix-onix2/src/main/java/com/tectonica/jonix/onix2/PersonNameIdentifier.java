@@ -22,7 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -32,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +53,17 @@ import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
  * </tr>
  * </table>
  */
-public class PersonNameIdentifier implements OnixDataComposite, Serializable
+public class PersonNameIdentifier
+		implements OnixDataCompositeWithKey<JonixPersonNameIdentifier, PersonNameIdentifierTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "PersonNameIdentifier";
 	public static final String shortname = "personnameidentifier";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,34 +82,35 @@ public class PersonNameIdentifier implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public PersonNameIDType personNameIDType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName;
-
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final PersonNameIdentifier EMPTY = new PersonNameIdentifier();
 
 	public PersonNameIdentifier()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public PersonNameIdentifier(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,49 +119,74 @@ public class PersonNameIdentifier implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(PersonNameIDType.refname) || name.equals(PersonNameIDType.shortname))
-					personNameIDType = new PersonNameIDType(element);
-				else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-					idTypeName = new IDTypeName(element);
-				else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-					idValue = new IDValue(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(PersonNameIDType.refname) || name.equals(PersonNameIDType.shortname))
+				personNameIDType = new PersonNameIDType(e);
+			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
+				idTypeName = new IDTypeName(e);
+			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
+				idValue = new IDValue(e);
 		});
 	}
 
-	public PersonNameIdentifierTypes getPersonNameIDTypeValue()
+	@Override
+	public boolean exists()
 	{
-		return (personNameIDType == null) ? null : personNameIDType.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private PersonNameIDType personNameIDType = PersonNameIDType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length ASCII text, suggested maximum 50 characters
+	 * (this field is required)
 	 */
-	public String getIDTypeNameValue()
+	public PersonNameIDType personNameIDType()
 	{
-		return (idTypeName == null) ? null : idTypeName.value;
+		initialize();
+		return personNameIDType;
 	}
+
+	private IDTypeName idTypeName = IDTypeName.EMPTY;
 
 	/**
-	 * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt;
+	 * (this field is optional)
 	 */
-	public String getIDValueValue()
+	public IDTypeName idTypeName()
 	{
-		return (idValue == null) ? null : idValue.value;
+		initialize();
+		return idTypeName;
 	}
 
-	public JonixPersonNameIdentifier asJonixPersonNameIdentifier()
+	private IDValue idValue = IDValue.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public IDValue idValue()
 	{
-		JonixPersonNameIdentifier x = new JonixPersonNameIdentifier();
-		x.personNameIDType = getPersonNameIDTypeValue();
-		x.idTypeName = getIDTypeNameValue();
-		x.idValue = getIDValueValue();
-		return x;
+		initialize();
+		return idValue;
+	}
+
+	@Override
+	public JonixPersonNameIdentifier asStruct()
+	{
+		initialize();
+		JonixPersonNameIdentifier struct = new JonixPersonNameIdentifier();
+		struct.personNameIDType = personNameIDType.value;
+		struct.idTypeName = idTypeName.value;
+		struct.idValue = idValue.value;
+		return struct;
+	}
+
+	@Override
+	public PersonNameIdentifierTypes structKey()
+	{
+		return personNameIDType().value;
 	}
 }

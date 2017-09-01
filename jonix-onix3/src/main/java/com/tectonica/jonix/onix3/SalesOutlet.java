@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +61,9 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 	public static final String refname = "SalesOutlet";
 	public static final String shortname = "salesoutlet";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -75,81 +74,78 @@ public class SalesOutlet implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SalesOutletIdentifier> salesOutletIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SalesOutletName salesOutletName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final SalesOutlet EMPTY = new SalesOutlet();
 
 	public SalesOutlet()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public SalesOutlet(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname))
-					salesOutletIdentifiers = JPU.addToList(salesOutletIdentifiers, new SalesOutletIdentifier(element));
-				else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname))
-					salesOutletName = new SalesOutletName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SalesOutletIdentifier.refname) || name.equals(SalesOutletIdentifier.shortname))
+				salesOutletIdentifiers = JPU.addToList(salesOutletIdentifiers, new SalesOutletIdentifier(e));
+			else if (name.equals(SalesOutletName.refname) || name.equals(SalesOutletName.shortname))
+				salesOutletName = new SalesOutletName(e);
 		});
 	}
 
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes> salesOutletIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getSalesOutletNameValue()
+	public ListOfOnixDataCompositeWithKey<SalesOutletIdentifier, JonixSalesOutletIdentifier, SalesOutletIdentifierTypes> salesOutletIdentifiers()
 	{
-		return (salesOutletName == null) ? null : salesOutletName.value;
+		initialize();
+		return salesOutletIdentifiers;
 	}
 
-	public JonixSalesOutletIdentifier findSalesOutletIdentifier(SalesOutletIdentifierTypes salesOutletIDType)
-	{
-		if (salesOutletIdentifiers != null)
-		{
-			for (SalesOutletIdentifier x : salesOutletIdentifiers)
-			{
-				if (x.getSalesOutletIDTypeValue() == salesOutletIDType)
-					return x.asJonixSalesOutletIdentifier();
-			}
-		}
-		return null;
-	}
+	private SalesOutletName salesOutletName = SalesOutletName.EMPTY;
 
-	public List<JonixSalesOutletIdentifier> findSalesOutletIdentifiers(
-			java.util.Set<SalesOutletIdentifierTypes> salesOutletIDTypes)
+	/**
+	 * (this field is optional)
+	 */
+	public SalesOutletName salesOutletName()
 	{
-		if (salesOutletIdentifiers != null)
-		{
-			List<JonixSalesOutletIdentifier> matches = new ArrayList<>();
-			for (SalesOutletIdentifier x : salesOutletIdentifiers)
-			{
-				if (salesOutletIDTypes == null || salesOutletIDTypes.contains(x.getSalesOutletIDTypeValue()))
-					matches.add(x.asJonixSalesOutletIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return salesOutletName;
 	}
 }

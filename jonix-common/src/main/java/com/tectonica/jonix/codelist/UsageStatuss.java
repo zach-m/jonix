@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,49 +37,47 @@ interface CodeList146
  * Description: Usage status
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist146">ONIX
- *      Codelist 146 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist146">ONIX Codelist 146 in Reference Guide</a>
  */
 public enum UsageStatuss implements OnixCodelist, CodeList146
 {
-	Permitted_unlimited("01", "Permitted unlimited"), //
+   Permitted_unlimited("01", "Permitted unlimited"), //
 
-	/**
-	 * Limit should be specified in &lt;EpubUsageLimit&gt;
-	 */
-	Permitted_subject_to_limit("02", "Permitted subject to limit"), //
+   /**
+    * Limit should be specified in &lt;EpubUsageLimit&gt;
+    */
+   Permitted_subject_to_limit("02", "Permitted subject to limit"), //
 
-	Prohibited("03", "Prohibited");
+   Prohibited("03", "Prohibited");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private UsageStatuss(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private UsageStatuss(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static UsageStatuss byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (UsageStatuss e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static UsageStatuss byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (UsageStatuss e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

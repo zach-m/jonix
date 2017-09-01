@@ -22,8 +22,7 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -33,7 +32,7 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixLanguage;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,16 @@ import com.tectonica.jonix.struct.JonixLanguage;
  * </tr>
  * </table>
  */
-public class Language implements OnixDataComposite, Serializable
+public class Language implements OnixDataCompositeWithKey<JonixLanguage, LanguageRoles>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "Language";
 	public static final String shortname = "language";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,34 +80,35 @@ public class Language implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public LanguageRole languageRole;
-
-	/**
-	 * (this field is required)
-	 */
-	public LanguageCode languageCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountryCode countryCode;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Language EMPTY = new Language();
 
 	public Language()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Language(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -117,43 +117,74 @@ public class Language implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
-					languageRole = new LanguageRole(element);
-				else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
-					languageCode = new LanguageCode(element);
-				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					countryCode = new CountryCode(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(LanguageRole.refname) || name.equals(LanguageRole.shortname))
+				languageRole = new LanguageRole(e);
+			else if (name.equals(LanguageCode.refname) || name.equals(LanguageCode.shortname))
+				languageCode = new LanguageCode(e);
+			else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
+				countryCode = new CountryCode(e);
 		});
 	}
 
-	public LanguageRoles getLanguageRoleValue()
+	@Override
+	public boolean exists()
 	{
-		return (languageRole == null) ? null : languageRole.value;
+		return exists;
 	}
 
-	public LanguageCodes getLanguageCodeValue()
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private LanguageRole languageRole = LanguageRole.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public LanguageRole languageRole()
 	{
-		return (languageCode == null) ? null : languageCode.value;
+		initialize();
+		return languageRole;
 	}
 
-	public CountryCodes getCountryCodeValue()
+	private LanguageCode languageCode = LanguageCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public LanguageCode languageCode()
 	{
-		return (countryCode == null) ? null : countryCode.value;
+		initialize();
+		return languageCode;
 	}
 
-	public JonixLanguage asJonixLanguage()
+	private CountryCode countryCode = CountryCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CountryCode countryCode()
 	{
-		JonixLanguage x = new JonixLanguage();
-		x.languageRole = getLanguageRoleValue();
-		x.countryCode = getCountryCodeValue();
-		x.languageCode = getLanguageCodeValue();
-		return x;
+		initialize();
+		return countryCode;
+	}
+
+	@Override
+	public JonixLanguage asStruct()
+	{
+		initialize();
+		JonixLanguage struct = new JonixLanguage();
+		struct.languageRole = languageRole.value;
+		struct.countryCode = countryCode.value;
+		struct.languageCode = languageCode.value;
+		return struct;
+	}
+
+	@Override
+	public LanguageRoles structKey()
+	{
+		return languageRole().value;
 	}
 }

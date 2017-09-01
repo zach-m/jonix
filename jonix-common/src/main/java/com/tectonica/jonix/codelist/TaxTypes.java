@@ -22,7 +22,7 @@ package com.tectonica.jonix.codelist;
 import com.tectonica.jonix.OnixCodelist;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -37,57 +37,54 @@ interface CodeList171
  * Description: Tax type
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist171">ONIX
- *      Codelist 171 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist171">ONIX Codelist 171 in Reference Guide</a>
  */
 public enum TaxTypes implements OnixCodelist, CodeList171
 {
-	/**
-	 * Value-added tax (TVA, IVA, MwSt etc)
-	 */
-	VAT("01", "VAT"), //
+   /**
+    * Value-added tax (TVA, IVA, MwSt etc)
+    */
+   VAT("01", "VAT"), //
 
-	/**
-	 * General sales tax
-	 */
-	GST("02", "GST"), //
+   /**
+    * General sales tax
+    */
+   GST("02", "GST"), //
 
-	/**
-	 * 'Green' or eco-tax, levied to encourage responsible production or disposal, used only where this is identified
-	 * separately from value-added or sales taxes (eg French &#233;co-participation tax) &lt;p&gt;NOTE: Introduced in
-	 * Onix3
-	 */
-	ECO("03", "ECO");
+   /**
+    * 'Green' or eco-tax, levied to encourage responsible production or disposal, used only where this is identified separately from value-added or sales taxes (eg French &#233;co-participation tax)
+&lt;p&gt;NOTE: Introduced in Onix3
+    */
+   ECO("03", "ECO");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private TaxTypes(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private TaxTypes(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	public static TaxTypes byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		for (TaxTypes e : values())
-			if (e.code.equals(code))
-				return e;
-		return null;
-	}
+   public static TaxTypes byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      for (TaxTypes e : values())
+         if (e.code.equals(code))
+            return e;
+      return null;
+   }
 }

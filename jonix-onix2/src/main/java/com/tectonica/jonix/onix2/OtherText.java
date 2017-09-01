@@ -22,18 +22,17 @@ package com.tectonica.jonix.onix2;
 import java.io.Serializable;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.TextLinkTypes;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixOtherText;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -53,16 +52,16 @@ import com.tectonica.jonix.struct.JonixOtherText;
  * </tr>
  * </table>
  */
-public class OtherText implements OnixDataComposite, Serializable
+public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, OtherTextTypes>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "OtherText";
 	public static final String shortname = "othertext";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -81,74 +80,35 @@ public class OtherText implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public TextTypeCode textTypeCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextFormat textFormat;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Text text;
-
-	/**
-	 * (this field is required)
-	 */
-	public TextLinkType textLinkType;
-
-	/**
-	 * (this field is required)
-	 */
-	public TextLink textLink;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextAuthor textAuthor;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextSourceCorporate textSourceCorporate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextSourceTitle textSourceTitle;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextPublicationDate textPublicationDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public StartDate startDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EndDate endDate;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final OtherText EMPTY = new OtherText();
 
 	public OtherText()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public OtherText(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -157,132 +117,186 @@ public class OtherText implements OnixDataComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(TextTypeCode.refname) || name.equals(TextTypeCode.shortname))
-					textTypeCode = new TextTypeCode(element);
-				else if (name.equals(TextFormat.refname) || name.equals(TextFormat.shortname))
-					textFormat = new TextFormat(element);
-				else if (name.equals(Text.refname) || name.equals(Text.shortname))
-					text = new Text(element);
-				else if (name.equals(TextLinkType.refname) || name.equals(TextLinkType.shortname))
-					textLinkType = new TextLinkType(element);
-				else if (name.equals(TextLink.refname) || name.equals(TextLink.shortname))
-					textLink = new TextLink(element);
-				else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname))
-					textAuthor = new TextAuthor(element);
-				else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname))
-					textSourceCorporate = new TextSourceCorporate(element);
-				else if (name.equals(TextSourceTitle.refname) || name.equals(TextSourceTitle.shortname))
-					textSourceTitle = new TextSourceTitle(element);
-				else if (name.equals(TextPublicationDate.refname) || name.equals(TextPublicationDate.shortname))
-					textPublicationDate = new TextPublicationDate(element);
-				else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
-					startDate = new StartDate(element);
-				else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
-					endDate = new EndDate(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(TextTypeCode.refname) || name.equals(TextTypeCode.shortname))
+				textTypeCode = new TextTypeCode(e);
+			else if (name.equals(TextFormat.refname) || name.equals(TextFormat.shortname))
+				textFormat = new TextFormat(e);
+			else if (name.equals(Text.refname) || name.equals(Text.shortname))
+				text = new Text(e);
+			else if (name.equals(TextLinkType.refname) || name.equals(TextLinkType.shortname))
+				textLinkType = new TextLinkType(e);
+			else if (name.equals(TextLink.refname) || name.equals(TextLink.shortname))
+				textLink = new TextLink(e);
+			else if (name.equals(TextAuthor.refname) || name.equals(TextAuthor.shortname))
+				textAuthor = new TextAuthor(e);
+			else if (name.equals(TextSourceCorporate.refname) || name.equals(TextSourceCorporate.shortname))
+				textSourceCorporate = new TextSourceCorporate(e);
+			else if (name.equals(TextSourceTitle.refname) || name.equals(TextSourceTitle.shortname))
+				textSourceTitle = new TextSourceTitle(e);
+			else if (name.equals(TextPublicationDate.refname) || name.equals(TextPublicationDate.shortname))
+				textPublicationDate = new TextPublicationDate(e);
+			else if (name.equals(StartDate.refname) || name.equals(StartDate.shortname))
+				startDate = new StartDate(e);
+			else if (name.equals(EndDate.refname) || name.equals(EndDate.shortname))
+				endDate = new EndDate(e);
 		});
 	}
 
-	public OtherTextTypes getTextTypeCodeValue()
+	@Override
+	public boolean exists()
 	{
-		return (textTypeCode == null) ? null : textTypeCode.value;
+		return exists;
 	}
 
-	public TextFormats getTextFormatValue()
-	{
-		return (textFormat == null) ? null : textFormat.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length text (XHTML is enabled in this element - see ONIX for Books - Product Information
-	 * Message - XML Message Specification, Section 7)
-	 */
-	public String getTextValue()
-	{
-		return (text == null) ? null : text.value;
-	}
-
-	public TextLinkTypes getTextLinkTypeValue()
-	{
-		return (textLinkType == null) ? null : textLinkType.value;
-	}
+	private TextTypeCode textTypeCode = TextTypeCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public String getTextLinkValue()
+	public TextTypeCode textTypeCode()
 	{
-		return (textLink == null) ? null : textLink.value;
+		initialize();
+		return textTypeCode;
 	}
+
+	private TextFormat textFormat = TextFormat.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getTextAuthorValue()
+	public TextFormat textFormat()
 	{
-		return (textAuthor == null) ? null : textAuthor.value;
+		initialize();
+		return textFormat;
 	}
+
+	private Text text = Text.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is optional)
 	 */
-	public String getTextSourceCorporateValue()
+	public Text text()
 	{
-		return (textSourceCorporate == null) ? null : textSourceCorporate.value;
+		initialize();
+		return text;
 	}
+
+	private TextLinkType textLinkType = TextLinkType.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getTextSourceTitleValue()
+	public TextLinkType textLinkType()
 	{
-		return (textSourceTitle == null) ? null : textSourceTitle.value;
+		initialize();
+		return textLinkType;
 	}
+
+	private TextLink textLink = TextLink.EMPTY;
 
 	/**
-	 * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
+	 * (this field is required)
 	 */
-	public String getTextPublicationDateValue()
+	public TextLink textLink()
 	{
-		return (textPublicationDate == null) ? null : textPublicationDate.value;
+		initialize();
+		return textLink;
 	}
+
+	private TextAuthor textAuthor = TextAuthor.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * (this field is optional)
 	 */
-	public String getStartDateValue()
+	public TextAuthor textAuthor()
 	{
-		return (startDate == null) ? null : startDate.value;
+		initialize();
+		return textAuthor;
 	}
+
+	private TextSourceCorporate textSourceCorporate = TextSourceCorporate.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD
+	 * (this field is optional)
 	 */
-	public String getEndDateValue()
+	public TextSourceCorporate textSourceCorporate()
 	{
-		return (endDate == null) ? null : endDate.value;
+		initialize();
+		return textSourceCorporate;
 	}
 
-	public JonixOtherText asJonixOtherText()
+	private TextSourceTitle textSourceTitle = TextSourceTitle.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextSourceTitle textSourceTitle()
 	{
-		JonixOtherText x = new JonixOtherText();
-		x.textTypeCode = getTextTypeCodeValue();
-		x.textFormat = getTextFormatValue();
-		x.text = getTextValue();
-		x.textLinkType = getTextLinkTypeValue();
-		x.textLink = getTextLinkValue();
-		x.textAuthor = getTextAuthorValue();
-		x.textSourceCorporate = getTextSourceCorporateValue();
-		x.textSourceTitle = getTextSourceTitleValue();
-		x.textPublicationDate = getTextPublicationDateValue();
-		x.startDate = getStartDateValue();
-		x.endDate = getEndDateValue();
-		return x;
+		initialize();
+		return textSourceTitle;
+	}
+
+	private TextPublicationDate textPublicationDate = TextPublicationDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TextPublicationDate textPublicationDate()
+	{
+		initialize();
+		return textPublicationDate;
+	}
+
+	private StartDate startDate = StartDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public StartDate startDate()
+	{
+		initialize();
+		return startDate;
+	}
+
+	private EndDate endDate = EndDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EndDate endDate()
+	{
+		initialize();
+		return endDate;
+	}
+
+	@Override
+	public JonixOtherText asStruct()
+	{
+		initialize();
+		JonixOtherText struct = new JonixOtherText();
+		struct.textTypeCode = textTypeCode.value;
+		struct.textFormat = textFormat.value;
+		struct.text = text.value;
+		struct.textLinkType = textLinkType.value;
+		struct.textLink = textLink.value;
+		struct.textAuthor = textAuthor.value;
+		struct.textSourceCorporate = textSourceCorporate.value;
+		struct.textSourceTitle = textSourceTitle.value;
+		struct.textPublicationDate = textPublicationDate.value;
+		struct.startDate = startDate.value;
+		struct.endDate = endDate.value;
+		return struct;
+	}
+
+	@Override
+	public OtherTextTypes structKey()
+	{
+		return textTypeCode().value;
 	}
 }

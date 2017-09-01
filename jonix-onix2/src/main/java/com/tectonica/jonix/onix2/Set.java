@@ -20,10 +20,9 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -36,7 +35,7 @@ import com.tectonica.jonix.struct.JonixProductIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +61,9 @@ public class Set implements OnixSuperComposite, Serializable
 	public static final String refname = "Set";
 	public static final String shortname = "set";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -83,69 +82,35 @@ public class Set implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public ISBNOfSet isbnOfSet;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EAN13OfSet ean13OfSet;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this field is required)
-	 */
-	public TitleOfSet titleOfSet;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Title> titles;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SetPartNumber setPartNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SetPartTitle setPartTitle;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ItemNumberWithinSet itemNumberWithinSet;
-
-	/**
-	 * (this field is optional)
-	 */
-	public LevelSequenceNumber levelSequenceNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public SetItemTitle setItemTitle;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Set EMPTY = new Set();
 
 	public Set()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Set(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -154,154 +119,150 @@ public class Set implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ISBNOfSet.refname) || name.equals(ISBNOfSet.shortname))
-					isbnOfSet = new ISBNOfSet(element);
-				else if (name.equals(EAN13OfSet.refname) || name.equals(EAN13OfSet.shortname))
-					ean13OfSet = new EAN13OfSet(element);
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(TitleOfSet.refname) || name.equals(TitleOfSet.shortname))
-					titleOfSet = new TitleOfSet(element);
-				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					titles = JPU.addToList(titles, new Title(element));
-				else if (name.equals(SetPartNumber.refname) || name.equals(SetPartNumber.shortname))
-					setPartNumber = new SetPartNumber(element);
-				else if (name.equals(SetPartTitle.refname) || name.equals(SetPartTitle.shortname))
-					setPartTitle = new SetPartTitle(element);
-				else if (name.equals(ItemNumberWithinSet.refname) || name.equals(ItemNumberWithinSet.shortname))
-					itemNumberWithinSet = new ItemNumberWithinSet(element);
-				else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-					levelSequenceNumber = new LevelSequenceNumber(element);
-				else if (name.equals(SetItemTitle.refname) || name.equals(SetItemTitle.shortname))
-					setItemTitle = new SetItemTitle(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ISBNOfSet.refname) || name.equals(ISBNOfSet.shortname))
+				isbnOfSet = new ISBNOfSet(e);
+			else if (name.equals(EAN13OfSet.refname) || name.equals(EAN13OfSet.shortname))
+				ean13OfSet = new EAN13OfSet(e);
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(TitleOfSet.refname) || name.equals(TitleOfSet.shortname))
+				titleOfSet = new TitleOfSet(e);
+			else if (name.equals(Title.refname) || name.equals(Title.shortname))
+				titles = JPU.addToList(titles, new Title(e));
+			else if (name.equals(SetPartNumber.refname) || name.equals(SetPartNumber.shortname))
+				setPartNumber = new SetPartNumber(e);
+			else if (name.equals(SetPartTitle.refname) || name.equals(SetPartTitle.shortname))
+				setPartTitle = new SetPartTitle(e);
+			else if (name.equals(ItemNumberWithinSet.refname) || name.equals(ItemNumberWithinSet.shortname))
+				itemNumberWithinSet = new ItemNumberWithinSet(e);
+			else if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
+				levelSequenceNumber = new LevelSequenceNumber(e);
+			else if (name.equals(SetItemTitle.refname) || name.equals(SetItemTitle.shortname))
+				setItemTitle = new SetItemTitle(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X
-	 */
-	public String getISBNOfSetValue()
+	@Override
+	public boolean exists()
 	{
-		return (isbnOfSet == null) ? null : isbnOfSet.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ISBNOfSet isbnOfSet = ISBNOfSet.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits
+	 * (this field is optional)
 	 */
-	public String getEAN13OfSetValue()
+	public ISBNOfSet isbnOfSet()
 	{
-		return (ean13OfSet == null) ? null : ean13OfSet.value;
+		initialize();
+		return isbnOfSet;
 	}
+
+	private EAN13OfSet ean13OfSet = EAN13OfSet.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getTitleOfSetValue()
+	public EAN13OfSet ean13OfSet()
 	{
-		return (titleOfSet == null) ? null : titleOfSet.value;
+		initialize();
+		return ean13OfSet;
 	}
+
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this list may be empty)
 	 */
-	public String getSetPartNumberValue()
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		return (setPartNumber == null) ? null : setPartNumber.value;
+		initialize();
+		return productIdentifiers;
 	}
+
+	private TitleOfSet titleOfSet = TitleOfSet.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public String getSetPartTitleValue()
+	public TitleOfSet titleOfSet()
 	{
-		return (setPartTitle == null) ? null : setPartTitle.value;
+		initialize();
+		return titleOfSet;
 	}
+
+	private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this list may be empty)
 	 */
-	public String getItemNumberWithinSetValue()
+	public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles()
 	{
-		return (itemNumberWithinSet == null) ? null : itemNumberWithinSet.value;
+		initialize();
+		return titles;
 	}
+
+	private SetPartNumber setPartNumber = SetPartNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length string of integers, each successive integer being separated by a full stop, suggested
-	 * maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getLevelSequenceNumberValue()
+	public SetPartNumber setPartNumber()
 	{
-		return (levelSequenceNumber == null) ? null : levelSequenceNumber.value;
+		initialize();
+		return setPartNumber;
 	}
+
+	private SetPartTitle setPartTitle = SetPartTitle.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getSetItemTitleValue()
+	public SetPartTitle setPartTitle()
 	{
-		return (setItemTitle == null) ? null : setItemTitle.value;
+		initialize();
+		return setPartTitle;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private ItemNumberWithinSet itemNumberWithinSet = ItemNumberWithinSet.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ItemNumberWithinSet itemNumberWithinSet()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return itemNumberWithinSet;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public LevelSequenceNumber levelSequenceNumber()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return levelSequenceNumber;
 	}
 
-	public JonixTitle findTitle(TitleTypes titleType)
-	{
-		if (titles != null)
-		{
-			for (Title x : titles)
-			{
-				if (x.getTitleTypeValue() == titleType)
-					return x.asJonixTitle();
-			}
-		}
-		return null;
-	}
+	private SetItemTitle setItemTitle = SetItemTitle.EMPTY;
 
-	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
+	/**
+	 * (this field is optional)
+	 */
+	public SetItemTitle setItemTitle()
 	{
-		if (titles != null)
-		{
-			List<JonixTitle> matches = new ArrayList<>();
-			for (Title x : titles)
-			{
-				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asJonixTitle());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return setItemTitle;
 	}
 }

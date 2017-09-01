@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,81 +40,79 @@ interface CodeList50
  * Description: Measure unit code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist50">ONIX
- *      Codelist 50 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist50">ONIX Codelist 50 in Reference Guide</a>
  */
 public enum MeasureUnits implements OnixCodelist, CodeList50
 {
-	/**
-	 * Millimeters are the preferred metric unit of length
-	 */
-	Centimeters("cm", "Centimeters"), //
+   /**
+    * Millimeters are the preferred metric unit of length
+    */
+   Centimeters("cm", "Centimeters"), //
 
-	Grams("gr", "Grams"), //
+   Grams("gr", "Grams"), //
 
-	Inches_US("in", "Inches (US)"), //
+   Inches_US("in", "Inches (US)"), //
 
-	/**
-	 * Grams are the preferred metric unit of weight
-	 */
-	Kilograms("kg", "Kilograms"), //
+   /**
+    * Grams are the preferred metric unit of weight
+    */
+   Kilograms("kg", "Kilograms"), //
 
-	Pounds_US("lb", "Pounds (US)"), //
+   Pounds_US("lb", "Pounds (US)"), //
 
-	Millimeters("mm", "Millimeters"), //
+   Millimeters("mm", "Millimeters"), //
 
-	Ounces_US("oz", "Ounces (US)"), //
+   Ounces_US("oz", "Ounces (US)"), //
 
-	Pixels("px", "Pixels");
+   Pixels("px", "Pixels");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private MeasureUnits(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private MeasureUnits(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, MeasureUnits> map;
+   private static volatile Map<String, MeasureUnits> map;
 
-	private static Map<String, MeasureUnits> map()
-	{
-		Map<String, MeasureUnits> result = map;
-		if (result == null)
-		{
-			synchronized (MeasureUnits.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (MeasureUnits e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, MeasureUnits> map()
+   {
+      Map<String, MeasureUnits> result = map;
+      if (result == null)
+      {
+         synchronized(MeasureUnits.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (MeasureUnits e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static MeasureUnits byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static MeasureUnits byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

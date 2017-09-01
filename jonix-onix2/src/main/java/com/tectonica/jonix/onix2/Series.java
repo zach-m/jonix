@@ -20,10 +20,11 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -36,7 +37,7 @@ import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -62,9 +63,9 @@ public class Series implements OnixSuperComposite, Serializable
 	public static final String refname = "Series";
 	public static final String shortname = "series";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -83,59 +84,35 @@ public class Series implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is optional)
-	 */
-	public SeriesISSN seriesISSN;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherSeriesCode publisherSeriesCode;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SeriesIdentifier> seriesIdentifiers;
-
-	/**
-	 * (this field is required)
-	 */
-	public TitleOfSeries titleOfSeries;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Title> titles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Contributor> contributors;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberWithinSeries numberWithinSeries;
-
-	/**
-	 * (this field is optional)
-	 */
-	public YearOfAnnual yearOfAnnual;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Series EMPTY = new Series();
 
 	public Series()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Series(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -144,125 +121,124 @@ public class Series implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(SeriesISSN.refname) || name.equals(SeriesISSN.shortname))
-					seriesISSN = new SeriesISSN(element);
-				else if (name.equals(PublisherSeriesCode.refname) || name.equals(PublisherSeriesCode.shortname))
-					publisherSeriesCode = new PublisherSeriesCode(element);
-				else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
-					seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(element));
-				else if (name.equals(TitleOfSeries.refname) || name.equals(TitleOfSeries.shortname))
-					titleOfSeries = new TitleOfSeries(element);
-				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					titles = JPU.addToList(titles, new Title(element));
-				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					contributors = JPU.addToList(contributors, new Contributor(element));
-				else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
-					numberWithinSeries = new NumberWithinSeries(element);
-				else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
-					yearOfAnnual = new YearOfAnnual(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(SeriesISSN.refname) || name.equals(SeriesISSN.shortname))
+				seriesISSN = new SeriesISSN(e);
+			else if (name.equals(PublisherSeriesCode.refname) || name.equals(PublisherSeriesCode.shortname))
+				publisherSeriesCode = new PublisherSeriesCode(e);
+			else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
+				seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
+			else if (name.equals(TitleOfSeries.refname) || name.equals(TitleOfSeries.shortname))
+				titleOfSeries = new TitleOfSeries(e);
+			else if (name.equals(Title.refname) || name.equals(Title.shortname))
+				titles = JPU.addToList(titles, new Title(e));
+			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
+				contributors = JPU.addToList(contributors, new Contributor(e));
+			else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
+				numberWithinSeries = new NumberWithinSeries(e);
+			else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
+				yearOfAnnual = new YearOfAnnual(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Fixed-length, eight numeric digits, of which the last is a check digit; see http://www.issn.org/
-	 */
-	public String getSeriesISSNValue()
+	@Override
+	public boolean exists()
 	{
-		return (seriesISSN == null) ? null : seriesISSN.value;
+		return exists;
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private SeriesISSN seriesISSN = SeriesISSN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public String getPublisherSeriesCodeValue()
+	public SeriesISSN seriesISSN()
 	{
-		return (publisherSeriesCode == null) ? null : publisherSeriesCode.value;
+		initialize();
+		return seriesISSN;
 	}
+
+	private PublisherSeriesCode publisherSeriesCode = PublisherSeriesCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getTitleOfSeriesValue()
+	public PublisherSeriesCode publisherSeriesCode()
 	{
-		return (titleOfSeries == null) ? null : titleOfSeries.value;
+		initialize();
+		return publisherSeriesCode;
 	}
+
+	private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this list may be empty)
 	 */
-	public String getNumberWithinSeriesValue()
+	public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers()
 	{
-		return (numberWithinSeries == null) ? null : numberWithinSeries.value;
+		initialize();
+		return seriesIdentifiers;
 	}
+
+	private TitleOfSeries titleOfSeries = TitleOfSeries.EMPTY;
 
 	/**
-	 * Raw Format: Either four numeric digits, or four numeric digits followed by hyphen followed by four numeric digits
+	 * (this field is required)
 	 */
-	public String getYearOfAnnualValue()
+	public TitleOfSeries titleOfSeries()
 	{
-		return (yearOfAnnual == null) ? null : yearOfAnnual.value;
+		initialize();
+		return titleOfSeries;
 	}
 
-	public JonixSeriesIdentifier findSeriesIdentifier(SeriesIdentifierTypes seriesIDType)
+	private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles()
 	{
-		if (seriesIdentifiers != null)
-		{
-			for (SeriesIdentifier x : seriesIdentifiers)
-			{
-				if (x.getSeriesIDTypeValue() == seriesIDType)
-					return x.asJonixSeriesIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return titles;
 	}
 
-	public List<JonixSeriesIdentifier> findSeriesIdentifiers(java.util.Set<SeriesIdentifierTypes> seriesIDTypes)
+	private List<Contributor> contributors = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Contributor> contributors()
 	{
-		if (seriesIdentifiers != null)
-		{
-			List<JonixSeriesIdentifier> matches = new ArrayList<>();
-			for (SeriesIdentifier x : seriesIdentifiers)
-			{
-				if (seriesIDTypes == null || seriesIDTypes.contains(x.getSeriesIDTypeValue()))
-					matches.add(x.asJonixSeriesIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return contributors;
 	}
 
-	public JonixTitle findTitle(TitleTypes titleType)
+	private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberWithinSeries numberWithinSeries()
 	{
-		if (titles != null)
-		{
-			for (Title x : titles)
-			{
-				if (x.getTitleTypeValue() == titleType)
-					return x.asJonixTitle();
-			}
-		}
-		return null;
+		initialize();
+		return numberWithinSeries;
 	}
 
-	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
+	private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public YearOfAnnual yearOfAnnual()
 	{
-		if (titles != null)
-		{
-			List<JonixTitle> matches = new ArrayList<>();
-			for (Title x : titles)
-			{
-				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asJonixTitle());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return yearOfAnnual;
 	}
 }

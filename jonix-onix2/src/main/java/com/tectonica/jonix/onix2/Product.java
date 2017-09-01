@@ -20,62 +20,59 @@
 package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataComposite;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
 import com.tectonica.jonix.codelist.BookFormDetails;
-import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.EditionTypes;
-import com.tectonica.jonix.codelist.EpublicationFormats;
-import com.tectonica.jonix.codelist.EpublicationTypes;
 import com.tectonica.jonix.codelist.ExtentTypes;
-import com.tectonica.jonix.codelist.FrontCoverImageFileFormats;
-import com.tectonica.jonix.codelist.FrontCoverImageFileLinkTypes;
 import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
 import com.tectonica.jonix.codelist.ImageAudioVideoFileTypes;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.MeasureTypes;
-import com.tectonica.jonix.codelist.NameCodeTypes;
-import com.tectonica.jonix.codelist.NotificationOrUpdateTypes;
 import com.tectonica.jonix.codelist.OtherTextTypes;
 import com.tectonica.jonix.codelist.ProductClassificationTypes;
-import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.ProductContentTypes;
 import com.tectonica.jonix.codelist.ProductFormDetails;
 import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
-import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
-import com.tectonica.jonix.codelist.ProductPackagingTypes;
-import com.tectonica.jonix.codelist.PublishingStatuss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
-import com.tectonica.jonix.codelist.ThesisTypes;
 import com.tectonica.jonix.codelist.TitleTypes;
-import com.tectonica.jonix.codelist.TradeCategorys;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.WorkIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAudience;
+import com.tectonica.jonix.struct.JonixAudienceRange;
+import com.tectonica.jonix.struct.JonixComplexity;
 import com.tectonica.jonix.struct.JonixExtent;
 import com.tectonica.jonix.struct.JonixIllustrations;
 import com.tectonica.jonix.struct.JonixLanguage;
+import com.tectonica.jonix.struct.JonixMainSubject;
 import com.tectonica.jonix.struct.JonixMeasure;
 import com.tectonica.jonix.struct.JonixMediaFile;
 import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.struct.JonixPrize;
 import com.tectonica.jonix.struct.JonixProductClassification;
 import com.tectonica.jonix.struct.JonixProductFormFeature;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
+import com.tectonica.jonix.struct.JonixProductWebsite;
+import com.tectonica.jonix.struct.JonixSubject;
 import com.tectonica.jonix.struct.JonixTitle;
+import com.tectonica.jonix.struct.JonixWebsite;
 import com.tectonica.jonix.struct.JonixWorkIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 public class Product implements OnixSuperComposite, Serializable
@@ -85,9 +82,9 @@ public class Product implements OnixSuperComposite, Serializable
 	public static final String refname = "Product";
 	public static final String shortname = "product";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	public TextFormats textformat;
 
@@ -106,779 +103,35 @@ public class Product implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
-
-	/**
-	 * (this field is required)
-	 */
-	public RecordReference recordReference;
-
-	/**
-	 * (this field is required)
-	 */
-	public NotificationType notificationType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DeletionCode deletionCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DeletionText deletionText;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceType recordSourceType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceIdentifierType recordSourceIdentifierType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceIdentifier recordSourceIdentifier;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RecordSourceName recordSourceName;
-
-	/**
-	 * (this field is required)
-	 */
-	public ISBN isbn;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EAN13 ean13;
-
-	/**
-	 * (this field is optional)
-	 */
-	public UPC upc;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherProductNo publisherProductNo;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ISMN ismn;
-
-	/**
-	 * (this field is optional)
-	 */
-	public DOI doi;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductIdentifier> productIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Barcode> barcodes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReplacesISBN replacesISBN;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReplacesEAN13 replacesEAN13;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductForm productForm;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormDetail> productFormDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductFormFeature> productFormFeatures;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<BookFormDetail> bookFormDetails;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductPackaging productPackaging;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ProductFormDescription productFormDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberOfPieces numberOfPieces;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TradeCategory tradeCategory;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductContentType> productContentTypes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ContainedItem> containedItems;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductClassification> productClassifications;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubType epubType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubTypeVersion epubTypeVersion;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubTypeDescription epubTypeDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubFormat epubFormat;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubFormatVersion epubFormatVersion;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubFormatDescription epubFormatDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubSource epubSource;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubSourceVersion epubSourceVersion;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubSourceDescription epubSourceDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EpubTypeNote epubTypeNote;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Series> seriess;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NoSeries noSeries;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Set> sets;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TextCaseFlag textCaseFlag;
-
-	/**
-	 * (this field is required)
-	 */
-	public DistinctiveTitle distinctiveTitle;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitlePrefix titlePrefix;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TitleWithoutPrefix titleWithoutPrefix;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Subtitle subtitle;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TranslationOfTitle translationOfTitle;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<FormerTitle> formerTitles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Title> titles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<WorkIdentifier> workIdentifiers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Website> websites;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ThesisType thesisType;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ThesisPresentedTo thesisPresentedTo;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ThesisYear thesisYear;
-
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<Contributor> contributors;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ContributorStatement contributorStatement;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NoContributor noContributor;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceDescription conferenceDescription;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceRole conferenceRole;
-
-	/**
-	 * (this field is required)
-	 */
-	public ConferenceName conferenceName;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceNumber conferenceNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferenceDate conferenceDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ConferencePlace conferencePlace;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Conference> conferences;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<EditionTypeCode> editionTypeCodes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EditionNumber editionNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EditionVersionNumber editionVersionNumber;
-
-	/**
-	 * (this field is optional)
-	 */
-	public EditionStatement editionStatement;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NoEdition noEdition;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReligiousText religiousText;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<LanguageOfText> languageOfTexts;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OriginalLanguage originalLanguage;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Language> languages;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberOfPages numberOfPages;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PagesRoman pagesRoman;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PagesArabic pagesArabic;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Extent> extents;
-
-	/**
-	 * (this field is optional)
-	 */
-	public NumberOfIllustrations numberOfIllustrations;
-
-	/**
-	 * (this field is optional)
-	 */
-	public IllustrationsNote illustrationsNote;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Illustrations> illustrationss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MapScale> mapScales;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BASICMainSubject basicMainSubject;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BASICVersion basicVersion;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BICMainSubject bicMainSubject;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BICVersion bicVersion;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MainSubject> mainSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Subject> subjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PersonAsSubject> personAsSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CorporateBodyAsSubject> corporateBodyAsSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<PlaceAsSubject> placeAsSubjects;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<AudienceCode> audienceCodes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Audience> audiences;
-
-	/**
-	 * (this field is optional)
-	 */
-	public USSchoolGrade usSchoolGrade;
-
-	/**
-	 * (this field is optional)
-	 */
-	public InterestAge interestAge;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<AudienceRange> audienceRanges;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AudienceDescription audienceDescription;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Complexity> complexitys;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Annotation annotation;
-
-	/**
-	 * (this field is optional)
-	 */
-	public MainDescription mainDescription;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<OtherText> otherTexts;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ReviewQuote> reviewQuotes;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CoverImageFormatCode coverImageFormatCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CoverImageLinkTypeCode coverImageLinkTypeCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CoverImageLink coverImageLink;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MediaFile> mediaFiles;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ProductWebsite> productWebsites;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PrizesDescription prizesDescription;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Prize> prizes;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ContentItem> contentItems;
-
-	/**
-	 * (this field is required)
-	 */
-	public ImprintName imprintName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Imprint> imprints;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherName publisherName;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Publisher> publishers;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CityOfPublication> cityOfPublications;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CountryOfPublication countryOfPublication;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CopublisherName> copublisherNames;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SponsorName> sponsorNames;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OriginalPublisher originalPublisher;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublishingStatus publishingStatus;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublishingStatusNote publishingStatusNote;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AnnouncementDate announcementDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public TradeAnnouncementDate tradeAnnouncementDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PublicationDate publicationDate;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CopyrightStatement> copyrightStatements;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CopyrightYear copyrightYear;
-
-	/**
-	 * (this field is optional)
-	 */
-	public YearFirstPublished yearFirstPublished;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRights> salesRightss;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<NotForSale> notForSales;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SalesRestriction> salesRestrictions;
-
-	/**
-	 * (this field is required)
-	 */
-	public Height height;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Width width;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Thickness thickness;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Weight weight;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Measure> measures;
-
-	/**
-	 * (this field is optional)
-	 */
-	public Dimensions dimensions;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReplacedByISBN replacedByISBN;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReplacedByEAN13 replacedByEAN13;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AlternativeFormatISBN alternativeFormatISBN;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AlternativeFormatEAN13 alternativeFormatEAN13;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AlternativeProductISBN alternativeProductISBN;
-
-	/**
-	 * (this field is optional)
-	 */
-	public AlternativeProductEAN13 alternativeProductEAN13;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RelatedProduct> relatedProducts;
-
-	/**
-	 * (this field is optional)
-	 */
-	public OutOfPrintDate outOfPrintDate;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupplyDetail> supplyDetails;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MarketRepresentation> marketRepresentations;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PromotionCampaign promotionCampaign;
-
-	/**
-	 * (this field is optional)
-	 */
-	public PromotionContact promotionContact;
-
-	/**
-	 * (this field is optional)
-	 */
-	public InitialPrintRun initialPrintRun;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<ReprintDetail> reprintDetails;
-
-	/**
-	 * (this field is optional)
-	 */
-	public CopiesSold copiesSold;
-
-	/**
-	 * (this field is optional)
-	 */
-	public BookClubAdoption bookClubAdoption;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Product EMPTY = new Product();
 
 	public Product()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Product(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -887,1628 +140,2023 @@ public class Product implements OnixSuperComposite, Serializable
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
-					recordReference = new RecordReference(element);
-				else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
-					notificationType = new NotificationType(element);
-				else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
-					deletionCode = new DeletionCode(element);
-				else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
-					deletionText = new DeletionText(element);
-				else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
-					recordSourceType = new RecordSourceType(element);
-				else if (name.equals(RecordSourceIdentifierType.refname)
-						|| name.equals(RecordSourceIdentifierType.shortname))
-					recordSourceIdentifierType = new RecordSourceIdentifierType(element);
-				else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
-					recordSourceIdentifier = new RecordSourceIdentifier(element);
-				else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
-					recordSourceName = new RecordSourceName(element);
-				else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
-					isbn = new ISBN(element);
-				else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
-					ean13 = new EAN13(element);
-				else if (name.equals(UPC.refname) || name.equals(UPC.shortname))
-					upc = new UPC(element);
-				else if (name.equals(PublisherProductNo.refname) || name.equals(PublisherProductNo.shortname))
-					publisherProductNo = new PublisherProductNo(element);
-				else if (name.equals(ISMN.refname) || name.equals(ISMN.shortname))
-					ismn = new ISMN(element);
-				else if (name.equals(DOI.refname) || name.equals(DOI.shortname))
-					doi = new DOI(element);
-				else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-					productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(element));
-				else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
-					barcodes = JPU.addToList(barcodes, new Barcode(element));
-				else if (name.equals(ReplacesISBN.refname) || name.equals(ReplacesISBN.shortname))
-					replacesISBN = new ReplacesISBN(element);
-				else if (name.equals(ReplacesEAN13.refname) || name.equals(ReplacesEAN13.shortname))
-					replacesEAN13 = new ReplacesEAN13(element);
-				else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-					productForm = new ProductForm(element);
-				else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-					productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(element));
-				else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
-					productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(element));
-				else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
-					bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(element));
-				else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
-					productPackaging = new ProductPackaging(element);
-				else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
-					productFormDescription = new ProductFormDescription(element);
-				else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
-					numberOfPieces = new NumberOfPieces(element);
-				else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
-					tradeCategory = new TradeCategory(element);
-				else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
-					productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(element));
-				else if (name.equals(ContainedItem.refname) || name.equals(ContainedItem.shortname))
-					containedItems = JPU.addToList(containedItems, new ContainedItem(element));
-				else if (name.equals(ProductClassification.refname) || name.equals(ProductClassification.shortname))
-					productClassifications = JPU.addToList(productClassifications, new ProductClassification(element));
-				else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname))
-					epubType = new EpubType(element);
-				else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname))
-					epubTypeVersion = new EpubTypeVersion(element);
-				else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname))
-					epubTypeDescription = new EpubTypeDescription(element);
-				else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname))
-					epubFormat = new EpubFormat(element);
-				else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname))
-					epubFormatVersion = new EpubFormatVersion(element);
-				else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname))
-					epubFormatDescription = new EpubFormatDescription(element);
-				else if (name.equals(EpubSource.refname) || name.equals(EpubSource.shortname))
-					epubSource = new EpubSource(element);
-				else if (name.equals(EpubSourceVersion.refname) || name.equals(EpubSourceVersion.shortname))
-					epubSourceVersion = new EpubSourceVersion(element);
-				else if (name.equals(EpubSourceDescription.refname) || name.equals(EpubSourceDescription.shortname))
-					epubSourceDescription = new EpubSourceDescription(element);
-				else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname))
-					epubTypeNote = new EpubTypeNote(element);
-				else if (name.equals(Series.refname) || name.equals(Series.shortname))
-					seriess = JPU.addToList(seriess, new Series(element));
-				else if (name.equals(NoSeries.refname) || name.equals(NoSeries.shortname))
-					noSeries = new NoSeries(element);
-				else if (name.equals(Set.refname) || name.equals(Set.shortname))
-					sets = JPU.addToList(sets, new Set(element));
-				else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
-					textCaseFlag = new TextCaseFlag(element);
-				else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
-					distinctiveTitle = new DistinctiveTitle(element);
-				else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-					titlePrefix = new TitlePrefix(element);
-				else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-					titleWithoutPrefix = new TitleWithoutPrefix(element);
-				else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-					subtitle = new Subtitle(element);
-				else if (name.equals(TranslationOfTitle.refname) || name.equals(TranslationOfTitle.shortname))
-					translationOfTitle = new TranslationOfTitle(element);
-				else if (name.equals(FormerTitle.refname) || name.equals(FormerTitle.shortname))
-					formerTitles = JPU.addToList(formerTitles, new FormerTitle(element));
-				else if (name.equals(Title.refname) || name.equals(Title.shortname))
-					titles = JPU.addToList(titles, new Title(element));
-				else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
-					workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(element));
-				else if (name.equals(Website.refname) || name.equals(Website.shortname))
-					websites = JPU.addToList(websites, new Website(element));
-				else if (name.equals(ThesisType.refname) || name.equals(ThesisType.shortname))
-					thesisType = new ThesisType(element);
-				else if (name.equals(ThesisPresentedTo.refname) || name.equals(ThesisPresentedTo.shortname))
-					thesisPresentedTo = new ThesisPresentedTo(element);
-				else if (name.equals(ThesisYear.refname) || name.equals(ThesisYear.shortname))
-					thesisYear = new ThesisYear(element);
-				else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-					contributors = JPU.addToList(contributors, new Contributor(element));
-				else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
-					contributorStatement = new ContributorStatement(element);
-				else if (name.equals(NoContributor.refname) || name.equals(NoContributor.shortname))
-					noContributor = new NoContributor(element);
-				else if (name.equals(ConferenceDescription.refname) || name.equals(ConferenceDescription.shortname))
-					conferenceDescription = new ConferenceDescription(element);
-				else if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
-					conferenceRole = new ConferenceRole(element);
-				else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
-					conferenceName = new ConferenceName(element);
-				else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
-					conferenceNumber = new ConferenceNumber(element);
-				else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
-					conferenceDate = new ConferenceDate(element);
-				else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
-					conferencePlace = new ConferencePlace(element);
-				else if (name.equals(Conference.refname) || name.equals(Conference.shortname))
-					conferences = JPU.addToList(conferences, new Conference(element));
-				else if (name.equals(EditionTypeCode.refname) || name.equals(EditionTypeCode.shortname))
-					editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(element));
-				else if (name.equals(EditionNumber.refname) || name.equals(EditionNumber.shortname))
-					editionNumber = new EditionNumber(element);
-				else if (name.equals(EditionVersionNumber.refname) || name.equals(EditionVersionNumber.shortname))
-					editionVersionNumber = new EditionVersionNumber(element);
-				else if (name.equals(EditionStatement.refname) || name.equals(EditionStatement.shortname))
-					editionStatement = new EditionStatement(element);
-				else if (name.equals(NoEdition.refname) || name.equals(NoEdition.shortname))
-					noEdition = new NoEdition(element);
-				else if (name.equals(ReligiousText.refname) || name.equals(ReligiousText.shortname))
-					religiousText = new ReligiousText(element);
-				else if (name.equals(LanguageOfText.refname) || name.equals(LanguageOfText.shortname))
-					languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(element));
-				else if (name.equals(OriginalLanguage.refname) || name.equals(OriginalLanguage.shortname))
-					originalLanguage = new OriginalLanguage(element);
-				else if (name.equals(Language.refname) || name.equals(Language.shortname))
-					languages = JPU.addToList(languages, new Language(element));
-				else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
-					numberOfPages = new NumberOfPages(element);
-				else if (name.equals(PagesRoman.refname) || name.equals(PagesRoman.shortname))
-					pagesRoman = new PagesRoman(element);
-				else if (name.equals(PagesArabic.refname) || name.equals(PagesArabic.shortname))
-					pagesArabic = new PagesArabic(element);
-				else if (name.equals(Extent.refname) || name.equals(Extent.shortname))
-					extents = JPU.addToList(extents, new Extent(element));
-				else if (name.equals(NumberOfIllustrations.refname) || name.equals(NumberOfIllustrations.shortname))
-					numberOfIllustrations = new NumberOfIllustrations(element);
-				else if (name.equals(IllustrationsNote.refname) || name.equals(IllustrationsNote.shortname))
-					illustrationsNote = new IllustrationsNote(element);
-				else if (name.equals(Illustrations.refname) || name.equals(Illustrations.shortname))
-					illustrationss = JPU.addToList(illustrationss, new Illustrations(element));
-				else if (name.equals(MapScale.refname) || name.equals(MapScale.shortname))
-					mapScales = JPU.addToList(mapScales, new MapScale(element));
-				else if (name.equals(BASICMainSubject.refname) || name.equals(BASICMainSubject.shortname))
-					basicMainSubject = new BASICMainSubject(element);
-				else if (name.equals(BASICVersion.refname) || name.equals(BASICVersion.shortname))
-					basicVersion = new BASICVersion(element);
-				else if (name.equals(BICMainSubject.refname) || name.equals(BICMainSubject.shortname))
-					bicMainSubject = new BICMainSubject(element);
-				else if (name.equals(BICVersion.refname) || name.equals(BICVersion.shortname))
-					bicVersion = new BICVersion(element);
-				else if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname))
-					mainSubjects = JPU.addToList(mainSubjects, new MainSubject(element));
-				else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
-					subjects = JPU.addToList(subjects, new Subject(element));
-				else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
-					personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(element));
-				else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
-					corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects,
-							new CorporateBodyAsSubject(element));
-				else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
-					placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(element));
-				else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname))
-					audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(element));
-				else if (name.equals(Audience.refname) || name.equals(Audience.shortname))
-					audiences = JPU.addToList(audiences, new Audience(element));
-				else if (name.equals(USSchoolGrade.refname) || name.equals(USSchoolGrade.shortname))
-					usSchoolGrade = new USSchoolGrade(element);
-				else if (name.equals(InterestAge.refname) || name.equals(InterestAge.shortname))
-					interestAge = new InterestAge(element);
-				else if (name.equals(AudienceRange.refname) || name.equals(AudienceRange.shortname))
-					audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(element));
-				else if (name.equals(AudienceDescription.refname) || name.equals(AudienceDescription.shortname))
-					audienceDescription = new AudienceDescription(element);
-				else if (name.equals(Complexity.refname) || name.equals(Complexity.shortname))
-					complexitys = JPU.addToList(complexitys, new Complexity(element));
-				else if (name.equals(Annotation.refname) || name.equals(Annotation.shortname))
-					annotation = new Annotation(element);
-				else if (name.equals(MainDescription.refname) || name.equals(MainDescription.shortname))
-					mainDescription = new MainDescription(element);
-				else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
-					otherTexts = JPU.addToList(otherTexts, new OtherText(element));
-				else if (name.equals(ReviewQuote.refname) || name.equals(ReviewQuote.shortname))
-					reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(element));
-				else if (name.equals(CoverImageFormatCode.refname) || name.equals(CoverImageFormatCode.shortname))
-					coverImageFormatCode = new CoverImageFormatCode(element);
-				else if (name.equals(CoverImageLinkTypeCode.refname) || name.equals(CoverImageLinkTypeCode.shortname))
-					coverImageLinkTypeCode = new CoverImageLinkTypeCode(element);
-				else if (name.equals(CoverImageLink.refname) || name.equals(CoverImageLink.shortname))
-					coverImageLink = new CoverImageLink(element);
-				else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
-					mediaFiles = JPU.addToList(mediaFiles, new MediaFile(element));
-				else if (name.equals(ProductWebsite.refname) || name.equals(ProductWebsite.shortname))
-					productWebsites = JPU.addToList(productWebsites, new ProductWebsite(element));
-				else if (name.equals(PrizesDescription.refname) || name.equals(PrizesDescription.shortname))
-					prizesDescription = new PrizesDescription(element);
-				else if (name.equals(Prize.refname) || name.equals(Prize.shortname))
-					prizes = JPU.addToList(prizes, new Prize(element));
-				else if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname))
-					contentItems = JPU.addToList(contentItems, new ContentItem(element));
-				else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
-					imprintName = new ImprintName(element);
-				else if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
-					imprints = JPU.addToList(imprints, new Imprint(element));
-				else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
-					publisherName = new PublisherName(element);
-				else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
-					publishers = JPU.addToList(publishers, new Publisher(element));
-				else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
-					cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(element));
-				else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
-					countryOfPublication = new CountryOfPublication(element);
-				else if (name.equals(CopublisherName.refname) || name.equals(CopublisherName.shortname))
-					copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(element));
-				else if (name.equals(SponsorName.refname) || name.equals(SponsorName.shortname))
-					sponsorNames = JPU.addToList(sponsorNames, new SponsorName(element));
-				else if (name.equals(OriginalPublisher.refname) || name.equals(OriginalPublisher.shortname))
-					originalPublisher = new OriginalPublisher(element);
-				else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
-					publishingStatus = new PublishingStatus(element);
-				else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
-					publishingStatusNote = new PublishingStatusNote(element);
-				else if (name.equals(AnnouncementDate.refname) || name.equals(AnnouncementDate.shortname))
-					announcementDate = new AnnouncementDate(element);
-				else if (name.equals(TradeAnnouncementDate.refname) || name.equals(TradeAnnouncementDate.shortname))
-					tradeAnnouncementDate = new TradeAnnouncementDate(element);
-				else if (name.equals(PublicationDate.refname) || name.equals(PublicationDate.shortname))
-					publicationDate = new PublicationDate(element);
-				else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
-					copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(element));
-				else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
-					copyrightYear = new CopyrightYear(element);
-				else if (name.equals(YearFirstPublished.refname) || name.equals(YearFirstPublished.shortname))
-					yearFirstPublished = new YearFirstPublished(element);
-				else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
-					salesRightss = JPU.addToList(salesRightss, new SalesRights(element));
-				else if (name.equals(NotForSale.refname) || name.equals(NotForSale.shortname))
-					notForSales = JPU.addToList(notForSales, new NotForSale(element));
-				else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
-					salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(element));
-				else if (name.equals(Height.refname) || name.equals(Height.shortname))
-					height = new Height(element);
-				else if (name.equals(Width.refname) || name.equals(Width.shortname))
-					width = new Width(element);
-				else if (name.equals(Thickness.refname) || name.equals(Thickness.shortname))
-					thickness = new Thickness(element);
-				else if (name.equals(Weight.refname) || name.equals(Weight.shortname))
-					weight = new Weight(element);
-				else if (name.equals(Measure.refname) || name.equals(Measure.shortname))
-					measures = JPU.addToList(measures, new Measure(element));
-				else if (name.equals(Dimensions.refname) || name.equals(Dimensions.shortname))
-					dimensions = new Dimensions(element);
-				else if (name.equals(ReplacedByISBN.refname) || name.equals(ReplacedByISBN.shortname))
-					replacedByISBN = new ReplacedByISBN(element);
-				else if (name.equals(ReplacedByEAN13.refname) || name.equals(ReplacedByEAN13.shortname))
-					replacedByEAN13 = new ReplacedByEAN13(element);
-				else if (name.equals(AlternativeFormatISBN.refname) || name.equals(AlternativeFormatISBN.shortname))
-					alternativeFormatISBN = new AlternativeFormatISBN(element);
-				else if (name.equals(AlternativeFormatEAN13.refname) || name.equals(AlternativeFormatEAN13.shortname))
-					alternativeFormatEAN13 = new AlternativeFormatEAN13(element);
-				else if (name.equals(AlternativeProductISBN.refname) || name.equals(AlternativeProductISBN.shortname))
-					alternativeProductISBN = new AlternativeProductISBN(element);
-				else if (name.equals(AlternativeProductEAN13.refname) || name.equals(AlternativeProductEAN13.shortname))
-					alternativeProductEAN13 = new AlternativeProductEAN13(element);
-				else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
-					relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(element));
-				else if (name.equals(OutOfPrintDate.refname) || name.equals(OutOfPrintDate.shortname))
-					outOfPrintDate = new OutOfPrintDate(element);
-				else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
-					supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(element));
-				else if (name.equals(MarketRepresentation.refname) || name.equals(MarketRepresentation.shortname))
-					marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(element));
-				else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))
-					promotionCampaign = new PromotionCampaign(element);
-				else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname))
-					promotionContact = new PromotionContact(element);
-				else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname))
-					initialPrintRun = new InitialPrintRun(element);
-				else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname))
-					reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(element));
-				else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname))
-					copiesSold = new CopiesSold(element);
-				else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname))
-					bookClubAdoption = new BookClubAdoption(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(RecordReference.refname) || name.equals(RecordReference.shortname))
+				recordReference = new RecordReference(e);
+			else if (name.equals(NotificationType.refname) || name.equals(NotificationType.shortname))
+				notificationType = new NotificationType(e);
+			else if (name.equals(DeletionCode.refname) || name.equals(DeletionCode.shortname))
+				deletionCode = new DeletionCode(e);
+			else if (name.equals(DeletionText.refname) || name.equals(DeletionText.shortname))
+				deletionText = new DeletionText(e);
+			else if (name.equals(RecordSourceType.refname) || name.equals(RecordSourceType.shortname))
+				recordSourceType = new RecordSourceType(e);
+			else if (name.equals(RecordSourceIdentifierType.refname)
+					|| name.equals(RecordSourceIdentifierType.shortname))
+				recordSourceIdentifierType = new RecordSourceIdentifierType(e);
+			else if (name.equals(RecordSourceIdentifier.refname) || name.equals(RecordSourceIdentifier.shortname))
+				recordSourceIdentifier = new RecordSourceIdentifier(e);
+			else if (name.equals(RecordSourceName.refname) || name.equals(RecordSourceName.shortname))
+				recordSourceName = new RecordSourceName(e);
+			else if (name.equals(ISBN.refname) || name.equals(ISBN.shortname))
+				isbn = new ISBN(e);
+			else if (name.equals(EAN13.refname) || name.equals(EAN13.shortname))
+				ean13 = new EAN13(e);
+			else if (name.equals(UPC.refname) || name.equals(UPC.shortname))
+				upc = new UPC(e);
+			else if (name.equals(PublisherProductNo.refname) || name.equals(PublisherProductNo.shortname))
+				publisherProductNo = new PublisherProductNo(e);
+			else if (name.equals(ISMN.refname) || name.equals(ISMN.shortname))
+				ismn = new ISMN(e);
+			else if (name.equals(DOI.refname) || name.equals(DOI.shortname))
+				doi = new DOI(e);
+			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
+				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+			else if (name.equals(Barcode.refname) || name.equals(Barcode.shortname))
+				barcodes = JPU.addToList(barcodes, new Barcode(e));
+			else if (name.equals(ReplacesISBN.refname) || name.equals(ReplacesISBN.shortname))
+				replacesISBN = new ReplacesISBN(e);
+			else if (name.equals(ReplacesEAN13.refname) || name.equals(ReplacesEAN13.shortname))
+				replacesEAN13 = new ReplacesEAN13(e);
+			else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
+				productForm = new ProductForm(e);
+			else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
+				productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+			else if (name.equals(ProductFormFeature.refname) || name.equals(ProductFormFeature.shortname))
+				productFormFeatures = JPU.addToList(productFormFeatures, new ProductFormFeature(e));
+			else if (name.equals(BookFormDetail.refname) || name.equals(BookFormDetail.shortname))
+				bookFormDetails = JPU.addToList(bookFormDetails, new BookFormDetail(e));
+			else if (name.equals(ProductPackaging.refname) || name.equals(ProductPackaging.shortname))
+				productPackaging = new ProductPackaging(e);
+			else if (name.equals(ProductFormDescription.refname) || name.equals(ProductFormDescription.shortname))
+				productFormDescription = new ProductFormDescription(e);
+			else if (name.equals(NumberOfPieces.refname) || name.equals(NumberOfPieces.shortname))
+				numberOfPieces = new NumberOfPieces(e);
+			else if (name.equals(TradeCategory.refname) || name.equals(TradeCategory.shortname))
+				tradeCategory = new TradeCategory(e);
+			else if (name.equals(ProductContentType.refname) || name.equals(ProductContentType.shortname))
+				productContentTypes = JPU.addToList(productContentTypes, new ProductContentType(e));
+			else if (name.equals(ContainedItem.refname) || name.equals(ContainedItem.shortname))
+				containedItems = JPU.addToList(containedItems, new ContainedItem(e));
+			else if (name.equals(ProductClassification.refname) || name.equals(ProductClassification.shortname))
+				productClassifications = JPU.addToList(productClassifications, new ProductClassification(e));
+			else if (name.equals(EpubType.refname) || name.equals(EpubType.shortname))
+				epubType = new EpubType(e);
+			else if (name.equals(EpubTypeVersion.refname) || name.equals(EpubTypeVersion.shortname))
+				epubTypeVersion = new EpubTypeVersion(e);
+			else if (name.equals(EpubTypeDescription.refname) || name.equals(EpubTypeDescription.shortname))
+				epubTypeDescription = new EpubTypeDescription(e);
+			else if (name.equals(EpubFormat.refname) || name.equals(EpubFormat.shortname))
+				epubFormat = new EpubFormat(e);
+			else if (name.equals(EpubFormatVersion.refname) || name.equals(EpubFormatVersion.shortname))
+				epubFormatVersion = new EpubFormatVersion(e);
+			else if (name.equals(EpubFormatDescription.refname) || name.equals(EpubFormatDescription.shortname))
+				epubFormatDescription = new EpubFormatDescription(e);
+			else if (name.equals(EpubSource.refname) || name.equals(EpubSource.shortname))
+				epubSource = new EpubSource(e);
+			else if (name.equals(EpubSourceVersion.refname) || name.equals(EpubSourceVersion.shortname))
+				epubSourceVersion = new EpubSourceVersion(e);
+			else if (name.equals(EpubSourceDescription.refname) || name.equals(EpubSourceDescription.shortname))
+				epubSourceDescription = new EpubSourceDescription(e);
+			else if (name.equals(EpubTypeNote.refname) || name.equals(EpubTypeNote.shortname))
+				epubTypeNote = new EpubTypeNote(e);
+			else if (name.equals(Series.refname) || name.equals(Series.shortname))
+				seriess = JPU.addToList(seriess, new Series(e));
+			else if (name.equals(NoSeries.refname) || name.equals(NoSeries.shortname))
+				noSeries = new NoSeries(e);
+			else if (name.equals(Set.refname) || name.equals(Set.shortname))
+				sets = JPU.addToList(sets, new Set(e));
+			else if (name.equals(TextCaseFlag.refname) || name.equals(TextCaseFlag.shortname))
+				textCaseFlag = new TextCaseFlag(e);
+			else if (name.equals(DistinctiveTitle.refname) || name.equals(DistinctiveTitle.shortname))
+				distinctiveTitle = new DistinctiveTitle(e);
+			else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
+				titlePrefix = new TitlePrefix(e);
+			else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
+				titleWithoutPrefix = new TitleWithoutPrefix(e);
+			else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
+				subtitle = new Subtitle(e);
+			else if (name.equals(TranslationOfTitle.refname) || name.equals(TranslationOfTitle.shortname))
+				translationOfTitle = new TranslationOfTitle(e);
+			else if (name.equals(FormerTitle.refname) || name.equals(FormerTitle.shortname))
+				formerTitles = JPU.addToList(formerTitles, new FormerTitle(e));
+			else if (name.equals(Title.refname) || name.equals(Title.shortname))
+				titles = JPU.addToList(titles, new Title(e));
+			else if (name.equals(WorkIdentifier.refname) || name.equals(WorkIdentifier.shortname))
+				workIdentifiers = JPU.addToList(workIdentifiers, new WorkIdentifier(e));
+			else if (name.equals(Website.refname) || name.equals(Website.shortname))
+				websites = JPU.addToList(websites, new Website(e));
+			else if (name.equals(ThesisType.refname) || name.equals(ThesisType.shortname))
+				thesisType = new ThesisType(e);
+			else if (name.equals(ThesisPresentedTo.refname) || name.equals(ThesisPresentedTo.shortname))
+				thesisPresentedTo = new ThesisPresentedTo(e);
+			else if (name.equals(ThesisYear.refname) || name.equals(ThesisYear.shortname))
+				thesisYear = new ThesisYear(e);
+			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
+				contributors = JPU.addToList(contributors, new Contributor(e));
+			else if (name.equals(ContributorStatement.refname) || name.equals(ContributorStatement.shortname))
+				contributorStatement = new ContributorStatement(e);
+			else if (name.equals(NoContributor.refname) || name.equals(NoContributor.shortname))
+				noContributor = new NoContributor(e);
+			else if (name.equals(ConferenceDescription.refname) || name.equals(ConferenceDescription.shortname))
+				conferenceDescription = new ConferenceDescription(e);
+			else if (name.equals(ConferenceRole.refname) || name.equals(ConferenceRole.shortname))
+				conferenceRole = new ConferenceRole(e);
+			else if (name.equals(ConferenceName.refname) || name.equals(ConferenceName.shortname))
+				conferenceName = new ConferenceName(e);
+			else if (name.equals(ConferenceNumber.refname) || name.equals(ConferenceNumber.shortname))
+				conferenceNumber = new ConferenceNumber(e);
+			else if (name.equals(ConferenceDate.refname) || name.equals(ConferenceDate.shortname))
+				conferenceDate = new ConferenceDate(e);
+			else if (name.equals(ConferencePlace.refname) || name.equals(ConferencePlace.shortname))
+				conferencePlace = new ConferencePlace(e);
+			else if (name.equals(Conference.refname) || name.equals(Conference.shortname))
+				conferences = JPU.addToList(conferences, new Conference(e));
+			else if (name.equals(EditionTypeCode.refname) || name.equals(EditionTypeCode.shortname))
+				editionTypeCodes = JPU.addToList(editionTypeCodes, new EditionTypeCode(e));
+			else if (name.equals(EditionNumber.refname) || name.equals(EditionNumber.shortname))
+				editionNumber = new EditionNumber(e);
+			else if (name.equals(EditionVersionNumber.refname) || name.equals(EditionVersionNumber.shortname))
+				editionVersionNumber = new EditionVersionNumber(e);
+			else if (name.equals(EditionStatement.refname) || name.equals(EditionStatement.shortname))
+				editionStatement = new EditionStatement(e);
+			else if (name.equals(NoEdition.refname) || name.equals(NoEdition.shortname))
+				noEdition = new NoEdition(e);
+			else if (name.equals(ReligiousText.refname) || name.equals(ReligiousText.shortname))
+				religiousText = new ReligiousText(e);
+			else if (name.equals(LanguageOfText.refname) || name.equals(LanguageOfText.shortname))
+				languageOfTexts = JPU.addToList(languageOfTexts, new LanguageOfText(e));
+			else if (name.equals(OriginalLanguage.refname) || name.equals(OriginalLanguage.shortname))
+				originalLanguage = new OriginalLanguage(e);
+			else if (name.equals(Language.refname) || name.equals(Language.shortname))
+				languages = JPU.addToList(languages, new Language(e));
+			else if (name.equals(NumberOfPages.refname) || name.equals(NumberOfPages.shortname))
+				numberOfPages = new NumberOfPages(e);
+			else if (name.equals(PagesRoman.refname) || name.equals(PagesRoman.shortname))
+				pagesRoman = new PagesRoman(e);
+			else if (name.equals(PagesArabic.refname) || name.equals(PagesArabic.shortname))
+				pagesArabic = new PagesArabic(e);
+			else if (name.equals(Extent.refname) || name.equals(Extent.shortname))
+				extents = JPU.addToList(extents, new Extent(e));
+			else if (name.equals(NumberOfIllustrations.refname) || name.equals(NumberOfIllustrations.shortname))
+				numberOfIllustrations = new NumberOfIllustrations(e);
+			else if (name.equals(IllustrationsNote.refname) || name.equals(IllustrationsNote.shortname))
+				illustrationsNote = new IllustrationsNote(e);
+			else if (name.equals(Illustrations.refname) || name.equals(Illustrations.shortname))
+				illustrationss = JPU.addToList(illustrationss, new Illustrations(e));
+			else if (name.equals(MapScale.refname) || name.equals(MapScale.shortname))
+				mapScales = JPU.addToList(mapScales, new MapScale(e));
+			else if (name.equals(BASICMainSubject.refname) || name.equals(BASICMainSubject.shortname))
+				basicMainSubject = new BASICMainSubject(e);
+			else if (name.equals(BASICVersion.refname) || name.equals(BASICVersion.shortname))
+				basicVersion = new BASICVersion(e);
+			else if (name.equals(BICMainSubject.refname) || name.equals(BICMainSubject.shortname))
+				bicMainSubject = new BICMainSubject(e);
+			else if (name.equals(BICVersion.refname) || name.equals(BICVersion.shortname))
+				bicVersion = new BICVersion(e);
+			else if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname))
+				mainSubjects = JPU.addToList(mainSubjects, new MainSubject(e));
+			else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
+				subjects = JPU.addToList(subjects, new Subject(e));
+			else if (name.equals(PersonAsSubject.refname) || name.equals(PersonAsSubject.shortname))
+				personAsSubjects = JPU.addToList(personAsSubjects, new PersonAsSubject(e));
+			else if (name.equals(CorporateBodyAsSubject.refname) || name.equals(CorporateBodyAsSubject.shortname))
+				corporateBodyAsSubjects = JPU.addToList(corporateBodyAsSubjects, new CorporateBodyAsSubject(e));
+			else if (name.equals(PlaceAsSubject.refname) || name.equals(PlaceAsSubject.shortname))
+				placeAsSubjects = JPU.addToList(placeAsSubjects, new PlaceAsSubject(e));
+			else if (name.equals(AudienceCode.refname) || name.equals(AudienceCode.shortname))
+				audienceCodes = JPU.addToList(audienceCodes, new AudienceCode(e));
+			else if (name.equals(Audience.refname) || name.equals(Audience.shortname))
+				audiences = JPU.addToList(audiences, new Audience(e));
+			else if (name.equals(USSchoolGrade.refname) || name.equals(USSchoolGrade.shortname))
+				usSchoolGrade = new USSchoolGrade(e);
+			else if (name.equals(InterestAge.refname) || name.equals(InterestAge.shortname))
+				interestAge = new InterestAge(e);
+			else if (name.equals(AudienceRange.refname) || name.equals(AudienceRange.shortname))
+				audienceRanges = JPU.addToList(audienceRanges, new AudienceRange(e));
+			else if (name.equals(AudienceDescription.refname) || name.equals(AudienceDescription.shortname))
+				audienceDescription = new AudienceDescription(e);
+			else if (name.equals(Complexity.refname) || name.equals(Complexity.shortname))
+				complexitys = JPU.addToList(complexitys, new Complexity(e));
+			else if (name.equals(Annotation.refname) || name.equals(Annotation.shortname))
+				annotation = new Annotation(e);
+			else if (name.equals(MainDescription.refname) || name.equals(MainDescription.shortname))
+				mainDescription = new MainDescription(e);
+			else if (name.equals(OtherText.refname) || name.equals(OtherText.shortname))
+				otherTexts = JPU.addToList(otherTexts, new OtherText(e));
+			else if (name.equals(ReviewQuote.refname) || name.equals(ReviewQuote.shortname))
+				reviewQuotes = JPU.addToList(reviewQuotes, new ReviewQuote(e));
+			else if (name.equals(CoverImageFormatCode.refname) || name.equals(CoverImageFormatCode.shortname))
+				coverImageFormatCode = new CoverImageFormatCode(e);
+			else if (name.equals(CoverImageLinkTypeCode.refname) || name.equals(CoverImageLinkTypeCode.shortname))
+				coverImageLinkTypeCode = new CoverImageLinkTypeCode(e);
+			else if (name.equals(CoverImageLink.refname) || name.equals(CoverImageLink.shortname))
+				coverImageLink = new CoverImageLink(e);
+			else if (name.equals(MediaFile.refname) || name.equals(MediaFile.shortname))
+				mediaFiles = JPU.addToList(mediaFiles, new MediaFile(e));
+			else if (name.equals(ProductWebsite.refname) || name.equals(ProductWebsite.shortname))
+				productWebsites = JPU.addToList(productWebsites, new ProductWebsite(e));
+			else if (name.equals(PrizesDescription.refname) || name.equals(PrizesDescription.shortname))
+				prizesDescription = new PrizesDescription(e);
+			else if (name.equals(Prize.refname) || name.equals(Prize.shortname))
+				prizes = JPU.addToList(prizes, new Prize(e));
+			else if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname))
+				contentItems = JPU.addToList(contentItems, new ContentItem(e));
+			else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
+				imprintName = new ImprintName(e);
+			else if (name.equals(Imprint.refname) || name.equals(Imprint.shortname))
+				imprints = JPU.addToList(imprints, new Imprint(e));
+			else if (name.equals(PublisherName.refname) || name.equals(PublisherName.shortname))
+				publisherName = new PublisherName(e);
+			else if (name.equals(Publisher.refname) || name.equals(Publisher.shortname))
+				publishers = JPU.addToList(publishers, new Publisher(e));
+			else if (name.equals(CityOfPublication.refname) || name.equals(CityOfPublication.shortname))
+				cityOfPublications = JPU.addToList(cityOfPublications, new CityOfPublication(e));
+			else if (name.equals(CountryOfPublication.refname) || name.equals(CountryOfPublication.shortname))
+				countryOfPublication = new CountryOfPublication(e);
+			else if (name.equals(CopublisherName.refname) || name.equals(CopublisherName.shortname))
+				copublisherNames = JPU.addToList(copublisherNames, new CopublisherName(e));
+			else if (name.equals(SponsorName.refname) || name.equals(SponsorName.shortname))
+				sponsorNames = JPU.addToList(sponsorNames, new SponsorName(e));
+			else if (name.equals(OriginalPublisher.refname) || name.equals(OriginalPublisher.shortname))
+				originalPublisher = new OriginalPublisher(e);
+			else if (name.equals(PublishingStatus.refname) || name.equals(PublishingStatus.shortname))
+				publishingStatus = new PublishingStatus(e);
+			else if (name.equals(PublishingStatusNote.refname) || name.equals(PublishingStatusNote.shortname))
+				publishingStatusNote = new PublishingStatusNote(e);
+			else if (name.equals(AnnouncementDate.refname) || name.equals(AnnouncementDate.shortname))
+				announcementDate = new AnnouncementDate(e);
+			else if (name.equals(TradeAnnouncementDate.refname) || name.equals(TradeAnnouncementDate.shortname))
+				tradeAnnouncementDate = new TradeAnnouncementDate(e);
+			else if (name.equals(PublicationDate.refname) || name.equals(PublicationDate.shortname))
+				publicationDate = new PublicationDate(e);
+			else if (name.equals(CopyrightStatement.refname) || name.equals(CopyrightStatement.shortname))
+				copyrightStatements = JPU.addToList(copyrightStatements, new CopyrightStatement(e));
+			else if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
+				copyrightYear = new CopyrightYear(e);
+			else if (name.equals(YearFirstPublished.refname) || name.equals(YearFirstPublished.shortname))
+				yearFirstPublished = new YearFirstPublished(e);
+			else if (name.equals(SalesRights.refname) || name.equals(SalesRights.shortname))
+				salesRightss = JPU.addToList(salesRightss, new SalesRights(e));
+			else if (name.equals(NotForSale.refname) || name.equals(NotForSale.shortname))
+				notForSales = JPU.addToList(notForSales, new NotForSale(e));
+			else if (name.equals(SalesRestriction.refname) || name.equals(SalesRestriction.shortname))
+				salesRestrictions = JPU.addToList(salesRestrictions, new SalesRestriction(e));
+			else if (name.equals(Height.refname) || name.equals(Height.shortname))
+				height = new Height(e);
+			else if (name.equals(Width.refname) || name.equals(Width.shortname))
+				width = new Width(e);
+			else if (name.equals(Thickness.refname) || name.equals(Thickness.shortname))
+				thickness = new Thickness(e);
+			else if (name.equals(Weight.refname) || name.equals(Weight.shortname))
+				weight = new Weight(e);
+			else if (name.equals(Measure.refname) || name.equals(Measure.shortname))
+				measures = JPU.addToList(measures, new Measure(e));
+			else if (name.equals(Dimensions.refname) || name.equals(Dimensions.shortname))
+				dimensions = new Dimensions(e);
+			else if (name.equals(ReplacedByISBN.refname) || name.equals(ReplacedByISBN.shortname))
+				replacedByISBN = new ReplacedByISBN(e);
+			else if (name.equals(ReplacedByEAN13.refname) || name.equals(ReplacedByEAN13.shortname))
+				replacedByEAN13 = new ReplacedByEAN13(e);
+			else if (name.equals(AlternativeFormatISBN.refname) || name.equals(AlternativeFormatISBN.shortname))
+				alternativeFormatISBN = new AlternativeFormatISBN(e);
+			else if (name.equals(AlternativeFormatEAN13.refname) || name.equals(AlternativeFormatEAN13.shortname))
+				alternativeFormatEAN13 = new AlternativeFormatEAN13(e);
+			else if (name.equals(AlternativeProductISBN.refname) || name.equals(AlternativeProductISBN.shortname))
+				alternativeProductISBN = new AlternativeProductISBN(e);
+			else if (name.equals(AlternativeProductEAN13.refname) || name.equals(AlternativeProductEAN13.shortname))
+				alternativeProductEAN13 = new AlternativeProductEAN13(e);
+			else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
+				relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
+			else if (name.equals(OutOfPrintDate.refname) || name.equals(OutOfPrintDate.shortname))
+				outOfPrintDate = new OutOfPrintDate(e);
+			else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
+				supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+			else if (name.equals(MarketRepresentation.refname) || name.equals(MarketRepresentation.shortname))
+				marketRepresentations = JPU.addToList(marketRepresentations, new MarketRepresentation(e));
+			else if (name.equals(PromotionCampaign.refname) || name.equals(PromotionCampaign.shortname))
+				promotionCampaign = new PromotionCampaign(e);
+			else if (name.equals(PromotionContact.refname) || name.equals(PromotionContact.shortname))
+				promotionContact = new PromotionContact(e);
+			else if (name.equals(InitialPrintRun.refname) || name.equals(InitialPrintRun.shortname))
+				initialPrintRun = new InitialPrintRun(e);
+			else if (name.equals(ReprintDetail.refname) || name.equals(ReprintDetail.shortname))
+				reprintDetails = JPU.addToList(reprintDetails, new ReprintDetail(e));
+			else if (name.equals(CopiesSold.refname) || name.equals(CopiesSold.shortname))
+				copiesSold = new CopiesSold(e);
+			else if (name.equals(BookClubAdoption.refname) || name.equals(BookClubAdoption.shortname))
+				bookClubAdoption = new BookClubAdoption(e);
 		});
 	}
 
-	/**
-	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
-	 */
-	public String getRecordReferenceValue()
+	@Override
+	public boolean exists()
 	{
-		return (recordReference == null) ? null : recordReference.value;
+		return exists;
 	}
 
-	public NotificationOrUpdateTypes getNotificationTypeValue()
-	{
-		return (notificationType == null) ? null : notificationType.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	public ProductCompositions getDeletionCodeValue()
-	{
-		return (deletionCode == null) ? null : deletionCode.value;
-	}
+	private RecordReference recordReference = RecordReference.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public String getDeletionTextValue()
+	public RecordReference recordReference()
 	{
-		return (deletionText == null) ? null : deletionText.value;
+		initialize();
+		return recordReference;
 	}
 
-	public RecordSourceTypes getRecordSourceTypeValue()
-	{
-		return (recordSourceType == null) ? null : recordSourceType.value;
-	}
-
-	public NameCodeTypes getRecordSourceIdentifierTypeValue()
-	{
-		return (recordSourceIdentifierType == null) ? null : recordSourceIdentifierType.value;
-	}
+	private NotificationType notificationType = NotificationType.EMPTY;
 
 	/**
-	 * Raw Format: Defined by the identifier scheme specified in &lt;RecordSourceIdentifierType&gt;
+	 * (this field is required)
 	 */
-	public String getRecordSourceIdentifierValue()
+	public NotificationType notificationType()
 	{
-		return (recordSourceIdentifier == null) ? null : recordSourceIdentifier.value;
+		initialize();
+		return notificationType;
 	}
+
+	private DeletionCode deletionCode = DeletionCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getRecordSourceNameValue()
+	public DeletionCode deletionCode()
 	{
-		return (recordSourceName == null) ? null : recordSourceName.value;
+		initialize();
+		return deletionCode;
 	}
+
+	private DeletionText deletionText = DeletionText.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this field is optional)
 	 */
-	public String getISBNValue()
+	public DeletionText deletionText()
 	{
-		return (isbn == null) ? null : isbn.value;
+		initialize();
+		return deletionText;
 	}
+
+	private RecordSourceType recordSourceType = RecordSourceType.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this field is optional)
 	 */
-	public String getEAN13Value()
+	public RecordSourceType recordSourceType()
 	{
-		return (ean13 == null) ? null : ean13.value;
+		initialize();
+		return recordSourceType;
 	}
+
+	private RecordSourceIdentifierType recordSourceIdentifierType = RecordSourceIdentifierType.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 12 numeric digits. The last digit is a modulus-10 check digit. For more information see
-	 * http://www.uc-council.org/main/ID_Numbers_and_Bar_Codes.html
+	 * (this field is optional)
 	 */
-	public String getUPCValue()
+	public RecordSourceIdentifierType recordSourceIdentifierType()
 	{
-		return (upc == null) ? null : upc.value;
+		initialize();
+		return recordSourceIdentifierType;
 	}
+
+	private RecordSourceIdentifier recordSourceIdentifier = RecordSourceIdentifier.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 35 characters.
+	 * (this field is optional)
 	 */
-	public String getPublisherProductNoValue()
+	public RecordSourceIdentifier recordSourceIdentifier()
 	{
-		return (publisherProductNo == null) ? null : publisherProductNo.value;
+		initialize();
+		return recordSourceIdentifier;
 	}
+
+	private RecordSourceName recordSourceName = RecordSourceName.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, letter M followed by nine numeric digits, the last of which is a check character
-	 * calculated according to rules given at http://www.nlc-bnc.ca/ismn/s12-200-e.html
+	 * (this field is optional)
 	 */
-	public String getISMNValue()
+	public RecordSourceName recordSourceName()
 	{
-		return (ismn == null) ? null : ismn.value;
+		initialize();
+		return recordSourceName;
 	}
+
+	private ISBN isbn = ISBN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters.
+	 * (this field is required)
 	 */
-	public String getDOIValue()
+	public ISBN isbn()
 	{
-		return (doi == null) ? null : doi.value;
+		initialize();
+		return isbn;
 	}
 
-	public List<BarcodeIndicators> getBarcodeValues()
-	{
-		if (barcodes != null)
-		{
-			List<BarcodeIndicators> list = new ArrayList<>();
-			for (Barcode i : barcodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private EAN13 ean13 = EAN13.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this field is optional)
 	 */
-	public String getReplacesISBNValue()
+	public EAN13 ean13()
 	{
-		return (replacesISBN == null) ? null : replacesISBN.value;
+		initialize();
+		return ean13;
 	}
+
+	private UPC upc = UPC.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this field is optional)
 	 */
-	public String getReplacesEAN13Value()
+	public UPC upc()
 	{
-		return (replacesEAN13 == null) ? null : replacesEAN13.value;
+		initialize();
+		return upc;
 	}
 
-	public ProductForms getProductFormValue()
-	{
-		return (productForm == null) ? null : productForm.value;
-	}
-
-	public List<ProductFormDetails> getProductFormDetailValues()
-	{
-		if (productFormDetails != null)
-		{
-			List<ProductFormDetails> list = new ArrayList<>();
-			for (ProductFormDetail i : productFormDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public List<BookFormDetails> getBookFormDetailValues()
-	{
-		if (bookFormDetails != null)
-		{
-			List<BookFormDetails> list = new ArrayList<>();
-			for (BookFormDetail i : bookFormDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public ProductPackagingTypes getProductPackagingValue()
-	{
-		return (productPackaging == null) ? null : productPackaging.value;
-	}
+	private PublisherProductNo publisherProductNo = PublisherProductNo.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
+	 * (this field is optional)
 	 */
-	public String getProductFormDescriptionValue()
+	public PublisherProductNo publisherProductNo()
 	{
-		return (productFormDescription == null) ? null : productFormDescription.value;
+		initialize();
+		return publisherProductNo;
 	}
+
+	private ISMN ismn = ISMN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
+	 * (this field is optional)
 	 */
-	public String getNumberOfPiecesValue()
+	public ISMN ismn()
 	{
-		return (numberOfPieces == null) ? null : numberOfPieces.value;
+		initialize();
+		return ismn;
 	}
 
-	public TradeCategorys getTradeCategoryValue()
-	{
-		return (tradeCategory == null) ? null : tradeCategory.value;
-	}
-
-	public List<ProductContentTypes> getProductContentTypeValues()
-	{
-		if (productContentTypes != null)
-		{
-			List<ProductContentTypes> list = new ArrayList<>();
-			for (ProductContentType i : productContentTypes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public EpublicationTypes getEpubTypeValue()
-	{
-		return (epubType == null) ? null : epubType.value;
-	}
+	private DOI doi = DOI.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 10 characters
+	 * (this field is optional)
 	 */
-	public String getEpubTypeVersionValue()
+	public DOI doi()
 	{
-		return (epubTypeVersion == null) ? null : epubTypeVersion.value;
+		initialize();
+		return doi;
 	}
+
+	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
+	 * (this list may be empty)
 	 */
-	public String getEpubTypeDescriptionValue()
+	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
 	{
-		return (epubTypeDescription == null) ? null : epubTypeDescription.value;
+		initialize();
+		return productIdentifiers;
 	}
 
-	public EpublicationFormats getEpubFormatValue()
-	{
-		return (epubFormat == null) ? null : epubFormat.value;
-	}
+	private ListOfOnixElement<Barcode, BarcodeIndicators> barcodes = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 10 characters
+	 * (this list may be empty)
 	 */
-	public String getEpubFormatVersionValue()
+	public ListOfOnixElement<Barcode, BarcodeIndicators> barcodes()
 	{
-		return (epubFormatVersion == null) ? null : epubFormatVersion.value;
+		initialize();
+		return barcodes;
 	}
+
+	private ReplacesISBN replacesISBN = ReplacesISBN.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
+	 * (this field is optional)
 	 */
-	public String getEpubFormatDescriptionValue()
+	public ReplacesISBN replacesISBN()
 	{
-		return (epubFormatDescription == null) ? null : epubFormatDescription.value;
+		initialize();
+		return replacesISBN;
 	}
 
-	public EpublicationFormats getEpubSourceValue()
-	{
-		return (epubSource == null) ? null : epubSource.value;
-	}
+	private ReplacesEAN13 replacesEAN13 = ReplacesEAN13.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 10 characters
+	 * (this field is optional)
 	 */
-	public String getEpubSourceVersionValue()
+	public ReplacesEAN13 replacesEAN13()
 	{
-		return (epubSourceVersion == null) ? null : epubSourceVersion.value;
+		initialize();
+		return replacesEAN13;
 	}
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
-	 */
-	public String getEpubSourceDescriptionValue()
-	{
-		return (epubSourceDescription == null) ? null : epubSourceDescription.value;
-	}
+	private ProductForm productForm = ProductForm.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters
+	 * (this field is optional)
 	 */
-	public String getEpubTypeNoteValue()
+	public ProductForm productForm()
 	{
-		return (epubTypeNote == null) ? null : epubTypeNote.value;
+		initialize();
+		return productForm;
+	}
+
+	private ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails()
+	{
+		initialize();
+		return productFormDetails;
+	}
+
+	private ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures()
+	{
+		initialize();
+		return productFormFeatures;
+	}
+
+	private ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails()
+	{
+		initialize();
+		return bookFormDetails;
+	}
+
+	private ProductPackaging productPackaging = ProductPackaging.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductPackaging productPackaging()
+	{
+		initialize();
+		return productPackaging;
+	}
+
+	private ProductFormDescription productFormDescription = ProductFormDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ProductFormDescription productFormDescription()
+	{
+		initialize();
+		return productFormDescription;
+	}
+
+	private NumberOfPieces numberOfPieces = NumberOfPieces.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NumberOfPieces numberOfPieces()
+	{
+		initialize();
+		return numberOfPieces;
+	}
+
+	private TradeCategory tradeCategory = TradeCategory.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeCategory tradeCategory()
+	{
+		initialize();
+		return tradeCategory;
+	}
+
+	private ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes()
+	{
+		initialize();
+		return productContentTypes;
+	}
+
+	private List<ContainedItem> containedItems = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<ContainedItem> containedItems()
+	{
+		initialize();
+		return containedItems;
+	}
+
+	private ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications()
+	{
+		initialize();
+		return productClassifications;
+	}
+
+	private EpubType epubType = EpubType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubType epubType()
+	{
+		initialize();
+		return epubType;
+	}
+
+	private EpubTypeVersion epubTypeVersion = EpubTypeVersion.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeVersion epubTypeVersion()
+	{
+		initialize();
+		return epubTypeVersion;
+	}
+
+	private EpubTypeDescription epubTypeDescription = EpubTypeDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeDescription epubTypeDescription()
+	{
+		initialize();
+		return epubTypeDescription;
+	}
+
+	private EpubFormat epubFormat = EpubFormat.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormat epubFormat()
+	{
+		initialize();
+		return epubFormat;
+	}
+
+	private EpubFormatVersion epubFormatVersion = EpubFormatVersion.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatVersion epubFormatVersion()
+	{
+		initialize();
+		return epubFormatVersion;
+	}
+
+	private EpubFormatDescription epubFormatDescription = EpubFormatDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubFormatDescription epubFormatDescription()
+	{
+		initialize();
+		return epubFormatDescription;
+	}
+
+	private EpubSource epubSource = EpubSource.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubSource epubSource()
+	{
+		initialize();
+		return epubSource;
+	}
+
+	private EpubSourceVersion epubSourceVersion = EpubSourceVersion.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubSourceVersion epubSourceVersion()
+	{
+		initialize();
+		return epubSourceVersion;
+	}
+
+	private EpubSourceDescription epubSourceDescription = EpubSourceDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubSourceDescription epubSourceDescription()
+	{
+		initialize();
+		return epubSourceDescription;
+	}
+
+	private EpubTypeNote epubTypeNote = EpubTypeNote.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EpubTypeNote epubTypeNote()
+	{
+		initialize();
+		return epubTypeNote;
+	}
+
+	private List<Series> seriess = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Series> seriess()
+	{
+		initialize();
+		return seriess;
+	}
+
+	private NoSeries noSeries = NoSeries.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoSeries noSeries()
+	{
+		initialize();
+		return noSeries;
 	}
 
 	public boolean isNoSeries()
 	{
-		return (noSeries != null);
+		return (noSeries().exists());
 	}
 
-	public TextCaseFlags getTextCaseFlagValue()
-	{
-		return (textCaseFlag == null) ? null : textCaseFlag.value;
-	}
+	private List<Set> sets = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 300 characters
+	 * (this list may be empty)
 	 */
-	public String getDistinctiveTitleValue()
+	public List<Set> sets()
 	{
-		return (distinctiveTitle == null) ? null : distinctiveTitle.value;
+		initialize();
+		return sets;
 	}
+
+	private TextCaseFlag textCaseFlag = TextCaseFlag.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
+	 * (this field is optional)
 	 */
-	public String getTitlePrefixValue()
+	public TextCaseFlag textCaseFlag()
 	{
-		return (titlePrefix == null) ? null : titlePrefix.value;
+		initialize();
+		return textCaseFlag;
 	}
+
+	private DistinctiveTitle distinctiveTitle = DistinctiveTitle.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is required)
 	 */
-	public String getTitleWithoutPrefixValue()
+	public DistinctiveTitle distinctiveTitle()
 	{
-		return (titleWithoutPrefix == null) ? null : titleWithoutPrefix.value;
+		initialize();
+		return distinctiveTitle;
 	}
+
+	private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
+	 * (this field is optional)
 	 */
-	public String getSubtitleValue()
+	public TitlePrefix titlePrefix()
 	{
-		return (subtitle == null) ? null : subtitle.value;
+		initialize();
+		return titlePrefix;
 	}
+
+	private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getTranslationOfTitleValue()
+	public TitleWithoutPrefix titleWithoutPrefix()
 	{
-		return (translationOfTitle == null) ? null : translationOfTitle.value;
+		initialize();
+		return titleWithoutPrefix;
 	}
+
+	private Subtitle subtitle = Subtitle.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public List<String> getFormerTitleValues()
+	public Subtitle subtitle()
 	{
-		if (formerTitles != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (FormerTitle i : formerTitles)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return subtitle;
 	}
 
-	public ThesisTypes getThesisTypeValue()
-	{
-		return (thesisType == null) ? null : thesisType.value;
-	}
+	private TranslationOfTitle translationOfTitle = TranslationOfTitle.EMPTY;
 
 	/**
-	 * Raw Format: Free text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getThesisPresentedToValue()
+	public TranslationOfTitle translationOfTitle()
 	{
-		return (thesisPresentedTo == null) ? null : thesisPresentedTo.value;
+		initialize();
+		return translationOfTitle;
 	}
 
-	/**
-	 * Raw Format: Fixed-length, four numeric digits
-	 */
-	public String getThesisYearValue()
-	{
-		return (thesisYear == null) ? null : thesisYear.value;
-	}
+	private ListOfOnixElement<FormerTitle, String> formerTitles = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1000 characters
+	 * (this list may be empty)
 	 */
-	public String getContributorStatementValue()
+	public ListOfOnixElement<FormerTitle, String> formerTitles()
 	{
-		return (contributorStatement == null) ? null : contributorStatement.value;
+		initialize();
+		return formerTitles;
+	}
+
+	private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles()
+	{
+		initialize();
+		return titles;
+	}
+
+	private ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers()
+	{
+		initialize();
+		return workIdentifiers;
+	}
+
+	private ListOfOnixDataComposite<Website, JonixWebsite> websites = ListOfOnixDataComposite.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataComposite<Website, JonixWebsite> websites()
+	{
+		initialize();
+		return websites;
+	}
+
+	private ThesisType thesisType = ThesisType.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisType thesisType()
+	{
+		initialize();
+		return thesisType;
+	}
+
+	private ThesisPresentedTo thesisPresentedTo = ThesisPresentedTo.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisPresentedTo thesisPresentedTo()
+	{
+		initialize();
+		return thesisPresentedTo;
+	}
+
+	private ThesisYear thesisYear = ThesisYear.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ThesisYear thesisYear()
+	{
+		initialize();
+		return thesisYear;
+	}
+
+	private List<Contributor> contributors = Collections.emptyList();
+
+	/**
+	 * (this list is required to contain at least one item)
+	 */
+	public List<Contributor> contributors()
+	{
+		initialize();
+		return contributors;
+	}
+
+	private ContributorStatement contributorStatement = ContributorStatement.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ContributorStatement contributorStatement()
+	{
+		initialize();
+		return contributorStatement;
+	}
+
+	private NoContributor noContributor = NoContributor.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoContributor noContributor()
+	{
+		initialize();
+		return noContributor;
 	}
 
 	public boolean isNoContributor()
 	{
-		return (noContributor != null);
+		return (noContributor().exists());
 	}
+
+	private ConferenceDescription conferenceDescription = ConferenceDescription.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getConferenceDescriptionValue()
+	public ConferenceDescription conferenceDescription()
 	{
-		return (conferenceDescription == null) ? null : conferenceDescription.value;
+		initialize();
+		return conferenceDescription;
 	}
+
+	private ConferenceRole conferenceRole = ConferenceRole.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, two numeric digits
+	 * (this field is optional)
 	 */
-	public String getConferenceRoleValue()
+	public ConferenceRole conferenceRole()
 	{
-		return (conferenceRole == null) ? null : conferenceRole.value;
+		initialize();
+		return conferenceRole;
 	}
+
+	private ConferenceName conferenceName = ConferenceName.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters.
+	 * (this field is required)
 	 */
-	public String getConferenceNameValue()
+	public ConferenceName conferenceName()
 	{
-		return (conferenceName == null) ? null : conferenceName.value;
+		initialize();
+		return conferenceName;
 	}
+
+	private ConferenceNumber conferenceNumber = ConferenceNumber.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 characters
+	 * (this field is optional)
 	 */
-	public String getConferenceNumberValue()
+	public ConferenceNumber conferenceNumber()
 	{
-		return (conferenceNumber == null) ? null : conferenceNumber.value;
+		initialize();
+		return conferenceNumber;
 	}
+
+	private ConferenceDate conferenceDate = ConferenceDate.EMPTY;
 
 	/**
-	 * Raw Format: Date as year (YYYY) or month and year (YYYYMM).
+	 * (this field is optional)
 	 */
-	public String getConferenceDateValue()
+	public ConferenceDate conferenceDate()
 	{
-		return (conferenceDate == null) ? null : conferenceDate.value;
+		initialize();
+		return conferenceDate;
 	}
+
+	private ConferencePlace conferencePlace = ConferencePlace.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is optional)
 	 */
-	public String getConferencePlaceValue()
+	public ConferencePlace conferencePlace()
 	{
-		return (conferencePlace == null) ? null : conferencePlace.value;
+		initialize();
+		return conferencePlace;
 	}
 
-	public List<EditionTypes> getEditionTypeCodeValues()
-	{
-		if (editionTypeCodes != null)
-		{
-			List<EditionTypes> list = new ArrayList<>();
-			for (EditionTypeCode i : editionTypeCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private List<Conference> conferences = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits.
+	 * (this list may be empty)
 	 */
-	public String getEditionNumberValue()
+	public List<Conference> conferences()
 	{
-		return (editionNumber == null) ? null : editionNumber.value;
+		initialize();
+		return conferences;
 	}
 
-	/**
-	 * Raw Format: Free form, suggested maximum length 20 characters.
-	 */
-	public String getEditionVersionNumberValue()
-	{
-		return (editionVersionNumber == null) ? null : editionVersionNumber.value;
-	}
+	private ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
+	 * (this list may be empty)
 	 */
-	public String getEditionStatementValue()
+	public ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes()
 	{
-		return (editionStatement == null) ? null : editionStatement.value;
+		initialize();
+		return editionTypeCodes;
+	}
+
+	private EditionNumber editionNumber = EditionNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionNumber editionNumber()
+	{
+		initialize();
+		return editionNumber;
+	}
+
+	private EditionVersionNumber editionVersionNumber = EditionVersionNumber.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionVersionNumber editionVersionNumber()
+	{
+		initialize();
+		return editionVersionNumber;
+	}
+
+	private EditionStatement editionStatement = EditionStatement.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public EditionStatement editionStatement()
+	{
+		initialize();
+		return editionStatement;
+	}
+
+	private NoEdition noEdition = NoEdition.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public NoEdition noEdition()
+	{
+		initialize();
+		return noEdition;
 	}
 
 	public boolean isNoEdition()
 	{
-		return (noEdition != null);
+		return (noEdition().exists());
 	}
 
-	public List<LanguageCodes> getLanguageOfTextValues()
-	{
-		if (languageOfTexts != null)
-		{
-			List<LanguageCodes> list = new ArrayList<>();
-			for (LanguageOfText i : languageOfTexts)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
-
-	public LanguageCodes getOriginalLanguageValue()
-	{
-		return (originalLanguage == null) ? null : originalLanguage.value;
-	}
+	private ReligiousText religiousText = ReligiousText.EMPTY;
 
 	/**
-	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
+	 * (this field is optional)
 	 */
-	public String getNumberOfPagesValue()
+	public ReligiousText religiousText()
 	{
-		return (numberOfPages == null) ? null : numberOfPages.value;
+		initialize();
+		return religiousText;
 	}
+
+	private ListOfOnixElement<LanguageOfText, LanguageCodes> languageOfTexts = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable length alphabetic, suggested maximum length 10 characters.
+	 * (this list may be empty)
 	 */
-	public String getPagesRomanValue()
+	public ListOfOnixElement<LanguageOfText, LanguageCodes> languageOfTexts()
 	{
-		return (pagesRoman == null) ? null : pagesRoman.value;
+		initialize();
+		return languageOfTexts;
 	}
+
+	private OriginalLanguage originalLanguage = OriginalLanguage.EMPTY;
 
 	/**
-	 * Raw Format: Variable length numeric, suggested maximum length 6 characters.
+	 * (this field is optional)
 	 */
-	public String getPagesArabicValue()
+	public OriginalLanguage originalLanguage()
 	{
-		return (pagesArabic == null) ? null : pagesArabic.value;
+		initialize();
+		return originalLanguage;
 	}
+
+	private ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
+	 * (this list may be empty)
 	 */
-	public String getNumberOfIllustrationsValue()
+	public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages()
 	{
-		return (numberOfIllustrations == null) ? null : numberOfIllustrations.value;
+		initialize();
+		return languages;
 	}
+
+	private NumberOfPages numberOfPages = NumberOfPages.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 200 characters.
+	 * (this field is optional)
 	 */
-	public String getIllustrationsNoteValue()
+	public NumberOfPages numberOfPages()
 	{
-		return (illustrationsNote == null) ? null : illustrationsNote.value;
+		initialize();
+		return numberOfPages;
 	}
+
+	private PagesRoman pagesRoman = PagesRoman.EMPTY;
 
 	/**
-	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
+	 * (this field is optional)
 	 */
-	public List<String> getMapScaleValues()
+	public PagesRoman pagesRoman()
 	{
-		if (mapScales != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (MapScale i : mapScales)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return pagesRoman;
 	}
+
+	private PagesArabic pagesArabic = PagesArabic.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, three upper-case letters and six numeric digits.
+	 * (this field is optional)
 	 */
-	public String getBASICMainSubjectValue()
+	public PagesArabic pagesArabic()
 	{
-		return (basicMainSubject == null) ? null : basicMainSubject.value;
+		initialize();
+		return pagesArabic;
 	}
+
+	private ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
-	 * Suggested maximum length 10 characters, for consistency with other version number elements.
+	 * (this list may be empty)
 	 */
-	public String getBASICVersionValue()
+	public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents()
 	{
-		return (basicVersion == null) ? null : basicVersion.value;
+		initialize();
+		return extents;
 	}
+
+	private NumberOfIllustrations numberOfIllustrations = NumberOfIllustrations.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 10 characters to allow for expansion.
+	 * (this field is optional)
 	 */
-	public String getBICMainSubjectValue()
+	public NumberOfIllustrations numberOfIllustrations()
 	{
-		return (bicMainSubject == null) ? null : bicMainSubject.value;
+		initialize();
+		return numberOfIllustrations;
 	}
+
+	private IllustrationsNote illustrationsNote = IllustrationsNote.EMPTY;
 
 	/**
-	 * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
-	 * consistency with other version number elements.
+	 * (this field is optional)
 	 */
-	public String getBICVersionValue()
+	public IllustrationsNote illustrationsNote()
 	{
-		return (bicVersion == null) ? null : bicVersion.value;
+		initialize();
+		return illustrationsNote;
 	}
+
+	private ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 200 characters.
+	 * (this list may be empty)
 	 */
-	public List<String> getCorporateBodyAsSubjectValues()
+	public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss()
 	{
-		if (corporateBodyAsSubjects != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CorporateBodyAsSubject i : corporateBodyAsSubjects)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return illustrationss;
 	}
+
+	private ListOfOnixElement<MapScale, String> mapScales = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 100 characters.
+	 * (this list may be empty)
 	 */
-	public List<String> getPlaceAsSubjectValues()
+	public ListOfOnixElement<MapScale, String> mapScales()
 	{
-		if (placeAsSubjects != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (PlaceAsSubject i : placeAsSubjects)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return mapScales;
 	}
 
-	public List<Audiences> getAudienceCodeValues()
-	{
-		if (audienceCodes != null)
-		{
-			List<Audiences> list = new ArrayList<>();
-			for (AudienceCode i : audienceCodes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
-	}
+	private BASICMainSubject basicMainSubject = BASICMainSubject.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, maximum 15 characters.
+	 * (this field is optional)
 	 */
-	public String getUSSchoolGradeValue()
+	public BASICMainSubject basicMainSubject()
 	{
-		return (usSchoolGrade == null) ? null : usSchoolGrade.value;
+		initialize();
+		return basicMainSubject;
 	}
+
+	private BASICVersion basicVersion = BASICVersion.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, maximum 15 characters.
+	 * (this field is optional)
 	 */
-	public String getInterestAgeValue()
+	public BASICVersion basicVersion()
 	{
-		return (interestAge == null) ? null : interestAge.value;
+		initialize();
+		return basicVersion;
 	}
+
+	private BICMainSubject bicMainSubject = BICMainSubject.EMPTY;
 
 	/**
-	 * Raw Format: Free text, suggested maximum length 1000 characters.
+	 * (this field is optional)
 	 */
-	public String getAudienceDescriptionValue()
+	public BICMainSubject bicMainSubject()
 	{
-		return (audienceDescription == null) ? null : audienceDescription.value;
+		initialize();
+		return bicMainSubject;
 	}
+
+	private BICVersion bicVersion = BICVersion.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, maximum 350 characters
+	 * (this field is optional)
 	 */
-	public String getAnnotationValue()
+	public BICVersion bicVersion()
 	{
-		return (annotation == null) ? null : annotation.value;
+		initialize();
+		return bicVersion;
 	}
+
+	private ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 2,000 characters (XHTML is enabled in this element - see ONIX
-	 * for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this list may be empty)
 	 */
-	public String getMainDescriptionValue()
+	public ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects()
 	{
-		return (mainDescription == null) ? null : mainDescription.value;
+		initialize();
+		return mainSubjects;
 	}
+
+	private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters (XHTML is enabled in this element - see
-	 * ONIX for Books - Product Information Message - XML Message Specification, Section 7)
+	 * (this list may be empty)
 	 */
-	public List<String> getReviewQuoteValues()
+	public ListOfOnixDataComposite<Subject, JonixSubject> subjects()
 	{
-		if (reviewQuotes != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ReviewQuote i : reviewQuotes)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return subjects;
 	}
 
-	public FrontCoverImageFileFormats getCoverImageFormatCodeValue()
-	{
-		return (coverImageFormatCode == null) ? null : coverImageFormatCode.value;
-	}
-
-	public FrontCoverImageFileLinkTypes getCoverImageLinkTypeCodeValue()
-	{
-		return (coverImageLinkTypeCode == null) ? null : coverImageLinkTypeCode.value;
-	}
+	private List<PersonAsSubject> personAsSubjects = Collections.emptyList();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this list may be empty)
 	 */
-	public String getCoverImageLinkValue()
+	public List<PersonAsSubject> personAsSubjects()
 	{
-		return (coverImageLink == null) ? null : coverImageLink.value;
+		initialize();
+		return personAsSubjects;
 	}
+
+	private ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters
+	 * (this list may be empty)
 	 */
-	public String getPrizesDescriptionValue()
+	public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects()
 	{
-		return (prizesDescription == null) ? null : prizesDescription.value;
+		initialize();
+		return corporateBodyAsSubjects;
 	}
+
+	private ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this list may be empty)
 	 */
-	public String getImprintNameValue()
+	public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects()
 	{
-		return (imprintName == null) ? null : imprintName.value;
+		initialize();
+		return placeAsSubjects;
 	}
+
+	private ListOfOnixElement<AudienceCode, Audiences> audienceCodes = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this list may be empty)
 	 */
-	public String getPublisherNameValue()
+	public ListOfOnixElement<AudienceCode, Audiences> audienceCodes()
 	{
-		return (publisherName == null) ? null : publisherName.value;
+		initialize();
+		return audienceCodes;
 	}
+
+	private ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Free text, suggested maximum length 50 characters.
+	 * (this list may be empty)
 	 */
-	public List<String> getCityOfPublicationValues()
+	public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences()
 	{
-		if (cityOfPublications != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CityOfPublication i : cityOfPublications)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return audiences;
 	}
 
-	public CountryCodes getCountryOfPublicationValue()
-	{
-		return (countryOfPublication == null) ? null : countryOfPublication.value;
-	}
+	private USSchoolGrade usSchoolGrade = USSchoolGrade.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this field is optional)
 	 */
-	public List<String> getCopublisherNameValues()
+	public USSchoolGrade usSchoolGrade()
 	{
-		if (copublisherNames != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (CopublisherName i : copublisherNames)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return usSchoolGrade;
 	}
+
+	private InterestAge interestAge = InterestAge.EMPTY;
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this field is optional)
 	 */
-	public List<String> getSponsorNameValues()
+	public InterestAge interestAge()
 	{
-		if (sponsorNames != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (SponsorName i : sponsorNames)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return interestAge;
 	}
+
+	private ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this list may be empty)
 	 */
-	public String getOriginalPublisherValue()
+	public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges()
 	{
-		return (originalPublisher == null) ? null : originalPublisher.value;
+		initialize();
+		return audienceRanges;
 	}
 
-	public PublishingStatuss getPublishingStatusValue()
-	{
-		return (publishingStatus == null) ? null : publishingStatus.value;
-	}
+	private AudienceDescription audienceDescription = AudienceDescription.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters.
+	 * (this field is optional)
 	 */
-	public String getPublishingStatusNoteValue()
+	public AudienceDescription audienceDescription()
 	{
-		return (publishingStatusNote == null) ? null : publishingStatusNote.value;
+		initialize();
+		return audienceDescription;
 	}
+
+	private ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this list may be empty)
 	 */
-	public String getAnnouncementDateValue()
+	public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys()
 	{
-		return (announcementDate == null) ? null : announcementDate.value;
+		initialize();
+		return complexitys;
 	}
+
+	private Annotation annotation = Annotation.EMPTY;
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this field is optional)
 	 */
-	public String getTradeAnnouncementDateValue()
+	public Annotation annotation()
 	{
-		return (tradeAnnouncementDate == null) ? null : tradeAnnouncementDate.value;
+		initialize();
+		return annotation;
 	}
+
+	private MainDescription mainDescription = MainDescription.EMPTY;
 
 	/**
-	 * Raw Format: Four, six or eight numeric digits (YYYY, YYYYMM, or YYYYMMDD).
+	 * (this field is optional)
 	 */
-	public String getPublicationDateValue()
+	public MainDescription mainDescription()
 	{
-		return (publicationDate == null) ? null : publicationDate.value;
+		initialize();
+		return mainDescription;
 	}
+
+	private ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Date as year only (YYYY)
+	 * (this list may be empty)
 	 */
-	public String getCopyrightYearValue()
+	public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts()
 	{
-		return (copyrightYear == null) ? null : copyrightYear.value;
+		initialize();
+		return otherTexts;
 	}
+
+	private ListOfOnixElement<ReviewQuote, String> reviewQuotes = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Date as year only (YYYY)
+	 * (this list may be empty)
 	 */
-	public String getYearFirstPublishedValue()
+	public ListOfOnixElement<ReviewQuote, String> reviewQuotes()
 	{
-		return (yearFirstPublished == null) ? null : yearFirstPublished.value;
+		initialize();
+		return reviewQuotes;
 	}
+
+	private CoverImageFormatCode coverImageFormatCode = CoverImageFormatCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-	 * characters including a decimal point.
+	 * (this field is optional)
 	 */
-	public String getHeightValue()
+	public CoverImageFormatCode coverImageFormatCode()
 	{
-		return (height == null) ? null : height.value;
+		initialize();
+		return coverImageFormatCode;
 	}
+
+	private CoverImageLinkTypeCode coverImageLinkTypeCode = CoverImageLinkTypeCode.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-	 * characters including a decimal point.
+	 * (this field is optional)
 	 */
-	public String getWidthValue()
+	public CoverImageLinkTypeCode coverImageLinkTypeCode()
 	{
-		return (width == null) ? null : width.value;
+		initialize();
+		return coverImageLinkTypeCode;
 	}
+
+	private CoverImageLink coverImageLink = CoverImageLink.EMPTY;
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-	 * characters including a decimal point.
+	 * (this field is optional)
 	 */
-	public String getThicknessValue()
+	public CoverImageLink coverImageLink()
 	{
-		return (thickness == null) ? null : thickness.value;
+		initialize();
+		return coverImageLink;
 	}
+
+	private ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
 
 	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-	 * characters including a decimal point.
+	 * (this list may be empty)
 	 */
-	public String getWeightValue()
+	public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles()
 	{
-		return (weight == null) ? null : weight.value;
+		initialize();
+		return mediaFiles;
 	}
+
+	private ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites = ListOfOnixDataComposite
+			.empty();
 
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters.
+	 * (this list may be empty)
 	 */
-	public String getDimensionsValue()
+	public ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites()
 	{
-		return (dimensions == null) ? null : dimensions.value;
+		initialize();
+		return productWebsites;
 	}
+
+	private PrizesDescription prizesDescription = PrizesDescription.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this field is optional)
 	 */
-	public String getReplacedByISBNValue()
+	public PrizesDescription prizesDescription()
 	{
-		return (replacedByISBN == null) ? null : replacedByISBN.value;
+		initialize();
+		return prizesDescription;
 	}
+
+	private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this list may be empty)
 	 */
-	public String getReplacedByEAN13Value()
+	public ListOfOnixDataComposite<Prize, JonixPrize> prizes()
 	{
-		return (replacedByEAN13 == null) ? null : replacedByEAN13.value;
+		initialize();
+		return prizes;
 	}
+
+	private List<ContentItem> contentItems = Collections.emptyList();
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this list may be empty)
 	 */
-	public String getAlternativeFormatISBNValue()
+	public List<ContentItem> contentItems()
 	{
-		return (alternativeFormatISBN == null) ? null : alternativeFormatISBN.value;
+		initialize();
+		return contentItems;
 	}
+
+	private ImprintName imprintName = ImprintName.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this field is required)
 	 */
-	public String getAlternativeFormatEAN13Value()
+	public ImprintName imprintName()
 	{
-		return (alternativeFormatEAN13 == null) ? null : alternativeFormatEAN13.value;
+		initialize();
+		return imprintName;
 	}
+
+	private List<Imprint> imprints = Collections.emptyList();
 
 	/**
-	 * Raw Format: Fixed-length, 10 characters, all numeric except last character, which may be letter X.
+	 * (this list may be empty)
 	 */
-	public String getAlternativeProductISBNValue()
+	public List<Imprint> imprints()
 	{
-		return (alternativeProductISBN == null) ? null : alternativeProductISBN.value;
+		initialize();
+		return imprints;
 	}
+
+	private PublisherName publisherName = PublisherName.EMPTY;
 
 	/**
-	 * Raw Format: Fixed-length, 13 numeric digits.
+	 * (this field is optional)
 	 */
-	public String getAlternativeProductEAN13Value()
+	public PublisherName publisherName()
 	{
-		return (alternativeProductEAN13 == null) ? null : alternativeProductEAN13.value;
+		initialize();
+		return publisherName;
 	}
+
+	private List<Publisher> publishers = Collections.emptyList();
 
 	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
+	 * (this list may be empty)
 	 */
-	public String getOutOfPrintDateValue()
+	public List<Publisher> publishers()
 	{
-		return (outOfPrintDate == null) ? null : outOfPrintDate.value;
+		initialize();
+		return publishers;
 	}
+
+	private ListOfOnixElement<CityOfPublication, String> cityOfPublications = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 1,000 characters
+	 * (this list may be empty)
 	 */
-	public String getPromotionCampaignValue()
+	public ListOfOnixElement<CityOfPublication, String> cityOfPublications()
 	{
-		return (promotionCampaign == null) ? null : promotionCampaign.value;
+		initialize();
+		return cityOfPublications;
 	}
+
+	private CountryOfPublication countryOfPublication = CountryOfPublication.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 300 characters
+	 * (this field is optional)
 	 */
-	public String getPromotionContactValue()
+	public CountryOfPublication countryOfPublication()
 	{
-		return (promotionContact == null) ? null : promotionContact.value;
+		initialize();
+		return countryOfPublication;
 	}
+
+	private ListOfOnixElement<CopublisherName, String> copublisherNames = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list may be empty)
 	 */
-	public String getInitialPrintRunValue()
+	public ListOfOnixElement<CopublisherName, String> copublisherNames()
 	{
-		return (initialPrintRun == null) ? null : initialPrintRun.value;
+		initialize();
+		return copublisherNames;
 	}
+
+	private ListOfOnixElement<SponsorName, String> sponsorNames = ListOfOnixElement.empty();
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this list may be empty)
 	 */
-	public List<String> getReprintDetailValues()
+	public ListOfOnixElement<SponsorName, String> sponsorNames()
 	{
-		if (reprintDetails != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (ReprintDetail i : reprintDetails)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return sponsorNames;
 	}
+
+	private OriginalPublisher originalPublisher = OriginalPublisher.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is optional)
 	 */
-	public String getCopiesSoldValue()
+	public OriginalPublisher originalPublisher()
 	{
-		return (copiesSold == null) ? null : copiesSold.value;
+		initialize();
+		return originalPublisher;
 	}
+
+	private PublishingStatus publishingStatus = PublishingStatus.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
+	 * (this field is optional)
 	 */
-	public String getBookClubAdoptionValue()
+	public PublishingStatus publishingStatus()
 	{
-		return (bookClubAdoption == null) ? null : bookClubAdoption.value;
+		initialize();
+		return publishingStatus;
 	}
 
-	public JonixProductIdentifier findProductIdentifier(ProductIdentifierTypes productIDType)
+	private PublishingStatusNote publishingStatusNote = PublishingStatusNote.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublishingStatusNote publishingStatusNote()
 	{
-		if (productIdentifiers != null)
-		{
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (x.getProductIDTypeValue() == productIDType)
-					return x.asJonixProductIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return publishingStatusNote;
 	}
 
-	public List<JonixProductIdentifier> findProductIdentifiers(java.util.Set<ProductIdentifierTypes> productIDTypes)
+	private AnnouncementDate announcementDate = AnnouncementDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AnnouncementDate announcementDate()
 	{
-		if (productIdentifiers != null)
-		{
-			List<JonixProductIdentifier> matches = new ArrayList<>();
-			for (ProductIdentifier x : productIdentifiers)
-			{
-				if (productIDTypes == null || productIDTypes.contains(x.getProductIDTypeValue()))
-					matches.add(x.asJonixProductIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return announcementDate;
 	}
 
-	public JonixProductFormFeature findProductFormFeature(ProductFormFeatureTypes productFormFeatureType)
+	private TradeAnnouncementDate tradeAnnouncementDate = TradeAnnouncementDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public TradeAnnouncementDate tradeAnnouncementDate()
 	{
-		if (productFormFeatures != null)
-		{
-			for (ProductFormFeature x : productFormFeatures)
-			{
-				if (x.getProductFormFeatureTypeValue() == productFormFeatureType)
-					return x.asJonixProductFormFeature();
-			}
-		}
-		return null;
+		initialize();
+		return tradeAnnouncementDate;
 	}
 
-	public List<JonixProductFormFeature> findProductFormFeatures(
-			java.util.Set<ProductFormFeatureTypes> productFormFeatureTypes)
+	private PublicationDate publicationDate = PublicationDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PublicationDate publicationDate()
 	{
-		if (productFormFeatures != null)
-		{
-			List<JonixProductFormFeature> matches = new ArrayList<>();
-			for (ProductFormFeature x : productFormFeatures)
-			{
-				if (productFormFeatureTypes == null
-						|| productFormFeatureTypes.contains(x.getProductFormFeatureTypeValue()))
-					matches.add(x.asJonixProductFormFeature());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return publicationDate;
 	}
 
-	public JonixProductClassification findProductClassification(ProductClassificationTypes productClassificationType)
+	private List<CopyrightStatement> copyrightStatements = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<CopyrightStatement> copyrightStatements()
 	{
-		if (productClassifications != null)
-		{
-			for (ProductClassification x : productClassifications)
-			{
-				if (x.getProductClassificationTypeValue() == productClassificationType)
-					return x.asJonixProductClassification();
-			}
-		}
-		return null;
+		initialize();
+		return copyrightStatements;
 	}
 
-	public List<JonixProductClassification> findProductClassifications(
-			java.util.Set<ProductClassificationTypes> productClassificationTypes)
+	private CopyrightYear copyrightYear = CopyrightYear.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CopyrightYear copyrightYear()
 	{
-		if (productClassifications != null)
-		{
-			List<JonixProductClassification> matches = new ArrayList<>();
-			for (ProductClassification x : productClassifications)
-			{
-				if (productClassificationTypes == null
-						|| productClassificationTypes.contains(x.getProductClassificationTypeValue()))
-					matches.add(x.asJonixProductClassification());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return copyrightYear;
 	}
 
-	public JonixTitle findTitle(TitleTypes titleType)
+	private YearFirstPublished yearFirstPublished = YearFirstPublished.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public YearFirstPublished yearFirstPublished()
 	{
-		if (titles != null)
-		{
-			for (Title x : titles)
-			{
-				if (x.getTitleTypeValue() == titleType)
-					return x.asJonixTitle();
-			}
-		}
-		return null;
+		initialize();
+		return yearFirstPublished;
 	}
 
-	public List<JonixTitle> findTitles(java.util.Set<TitleTypes> titleTypes)
+	private List<SalesRights> salesRightss = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRights> salesRightss()
 	{
-		if (titles != null)
-		{
-			List<JonixTitle> matches = new ArrayList<>();
-			for (Title x : titles)
-			{
-				if (titleTypes == null || titleTypes.contains(x.getTitleTypeValue()))
-					matches.add(x.asJonixTitle());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return salesRightss;
 	}
 
-	public JonixWorkIdentifier findWorkIdentifier(WorkIdentifierTypes workIDType)
+	private List<NotForSale> notForSales = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<NotForSale> notForSales()
 	{
-		if (workIdentifiers != null)
-		{
-			for (WorkIdentifier x : workIdentifiers)
-			{
-				if (x.getWorkIDTypeValue() == workIDType)
-					return x.asJonixWorkIdentifier();
-			}
-		}
-		return null;
+		initialize();
+		return notForSales;
 	}
 
-	public List<JonixWorkIdentifier> findWorkIdentifiers(java.util.Set<WorkIdentifierTypes> workIDTypes)
+	private List<SalesRestriction> salesRestrictions = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SalesRestriction> salesRestrictions()
 	{
-		if (workIdentifiers != null)
-		{
-			List<JonixWorkIdentifier> matches = new ArrayList<>();
-			for (WorkIdentifier x : workIdentifiers)
-			{
-				if (workIDTypes == null || workIDTypes.contains(x.getWorkIDTypeValue()))
-					matches.add(x.asJonixWorkIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return salesRestrictions;
 	}
 
-	public JonixLanguage findLanguage(LanguageRoles languageRole)
+	private Height height = Height.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public Height height()
 	{
-		if (languages != null)
-		{
-			for (Language x : languages)
-			{
-				if (x.getLanguageRoleValue() == languageRole)
-					return x.asJonixLanguage();
-			}
-		}
-		return null;
+		initialize();
+		return height;
 	}
 
-	public List<JonixLanguage> findLanguages(java.util.Set<LanguageRoles> languageRoles)
+	private Width width = Width.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Width width()
 	{
-		if (languages != null)
-		{
-			List<JonixLanguage> matches = new ArrayList<>();
-			for (Language x : languages)
-			{
-				if (languageRoles == null || languageRoles.contains(x.getLanguageRoleValue()))
-					matches.add(x.asJonixLanguage());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return width;
 	}
 
-	public JonixExtent findExtent(ExtentTypes extentType)
+	private Thickness thickness = Thickness.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Thickness thickness()
 	{
-		if (extents != null)
-		{
-			for (Extent x : extents)
-			{
-				if (x.getExtentTypeValue() == extentType)
-					return x.asJonixExtent();
-			}
-		}
-		return null;
+		initialize();
+		return thickness;
 	}
 
-	public List<JonixExtent> findExtents(java.util.Set<ExtentTypes> extentTypes)
+	private Weight weight = Weight.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Weight weight()
 	{
-		if (extents != null)
-		{
-			List<JonixExtent> matches = new ArrayList<>();
-			for (Extent x : extents)
-			{
-				if (extentTypes == null || extentTypes.contains(x.getExtentTypeValue()))
-					matches.add(x.asJonixExtent());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return weight;
 	}
 
-	public JonixIllustrations findIllustrations(IllustrationAndOtherContentTypes illustrationType)
+	private ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures()
 	{
-		if (illustrationss != null)
-		{
-			for (Illustrations x : illustrationss)
-			{
-				if (x.getIllustrationTypeValue() == illustrationType)
-					return x.asJonixIllustrations();
-			}
-		}
-		return null;
+		initialize();
+		return measures;
 	}
 
-	public List<JonixIllustrations> findIllustrationss(java.util.Set<IllustrationAndOtherContentTypes> illustrationTypes)
+	private Dimensions dimensions = Dimensions.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public Dimensions dimensions()
 	{
-		if (illustrationss != null)
-		{
-			List<JonixIllustrations> matches = new ArrayList<>();
-			for (Illustrations x : illustrationss)
-			{
-				if (illustrationTypes == null || illustrationTypes.contains(x.getIllustrationTypeValue()))
-					matches.add(x.asJonixIllustrations());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return dimensions;
 	}
 
-	public JonixAudience findAudience(AudienceCodeTypes audienceCodeType)
+	private ReplacedByISBN replacedByISBN = ReplacedByISBN.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReplacedByISBN replacedByISBN()
 	{
-		if (audiences != null)
-		{
-			for (Audience x : audiences)
-			{
-				if (x.getAudienceCodeTypeValue() == audienceCodeType)
-					return x.asJonixAudience();
-			}
-		}
-		return null;
+		initialize();
+		return replacedByISBN;
 	}
 
-	public List<JonixAudience> findAudiences(java.util.Set<AudienceCodeTypes> audienceCodeTypes)
+	private ReplacedByEAN13 replacedByEAN13 = ReplacedByEAN13.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReplacedByEAN13 replacedByEAN13()
 	{
-		if (audiences != null)
-		{
-			List<JonixAudience> matches = new ArrayList<>();
-			for (Audience x : audiences)
-			{
-				if (audienceCodeTypes == null || audienceCodeTypes.contains(x.getAudienceCodeTypeValue()))
-					matches.add(x.asJonixAudience());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return replacedByEAN13;
 	}
 
-	public JonixOtherText findOtherText(OtherTextTypes textTypeCode)
+	private AlternativeFormatISBN alternativeFormatISBN = AlternativeFormatISBN.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeFormatISBN alternativeFormatISBN()
 	{
-		if (otherTexts != null)
-		{
-			for (OtherText x : otherTexts)
-			{
-				if (x.getTextTypeCodeValue() == textTypeCode)
-					return x.asJonixOtherText();
-			}
-		}
-		return null;
+		initialize();
+		return alternativeFormatISBN;
 	}
 
-	public List<JonixOtherText> findOtherTexts(java.util.Set<OtherTextTypes> textTypeCodes)
+	private AlternativeFormatEAN13 alternativeFormatEAN13 = AlternativeFormatEAN13.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeFormatEAN13 alternativeFormatEAN13()
 	{
-		if (otherTexts != null)
-		{
-			List<JonixOtherText> matches = new ArrayList<>();
-			for (OtherText x : otherTexts)
-			{
-				if (textTypeCodes == null || textTypeCodes.contains(x.getTextTypeCodeValue()))
-					matches.add(x.asJonixOtherText());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return alternativeFormatEAN13;
 	}
 
-	public JonixMediaFile findMediaFile(ImageAudioVideoFileTypes mediaFileTypeCode)
+	private AlternativeProductISBN alternativeProductISBN = AlternativeProductISBN.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeProductISBN alternativeProductISBN()
 	{
-		if (mediaFiles != null)
-		{
-			for (MediaFile x : mediaFiles)
-			{
-				if (x.getMediaFileTypeCodeValue() == mediaFileTypeCode)
-					return x.asJonixMediaFile();
-			}
-		}
-		return null;
+		initialize();
+		return alternativeProductISBN;
 	}
 
-	public List<JonixMediaFile> findMediaFiles(java.util.Set<ImageAudioVideoFileTypes> mediaFileTypeCodes)
+	private AlternativeProductEAN13 alternativeProductEAN13 = AlternativeProductEAN13.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public AlternativeProductEAN13 alternativeProductEAN13()
 	{
-		if (mediaFiles != null)
-		{
-			List<JonixMediaFile> matches = new ArrayList<>();
-			for (MediaFile x : mediaFiles)
-			{
-				if (mediaFileTypeCodes == null || mediaFileTypeCodes.contains(x.getMediaFileTypeCodeValue()))
-					matches.add(x.asJonixMediaFile());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return alternativeProductEAN13;
 	}
 
-	public JonixMeasure findMeasure(MeasureTypes measureTypeCode)
+	private List<RelatedProduct> relatedProducts = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<RelatedProduct> relatedProducts()
 	{
-		if (measures != null)
-		{
-			for (Measure x : measures)
-			{
-				if (x.getMeasureTypeCodeValue() == measureTypeCode)
-					return x.asJonixMeasure();
-			}
-		}
-		return null;
+		initialize();
+		return relatedProducts;
 	}
 
-	public List<JonixMeasure> findMeasures(java.util.Set<MeasureTypes> measureTypeCodes)
+	private OutOfPrintDate outOfPrintDate = OutOfPrintDate.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public OutOfPrintDate outOfPrintDate()
 	{
-		if (measures != null)
-		{
-			List<JonixMeasure> matches = new ArrayList<>();
-			for (Measure x : measures)
-			{
-				if (measureTypeCodes == null || measureTypeCodes.contains(x.getMeasureTypeCodeValue()))
-					matches.add(x.asJonixMeasure());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return outOfPrintDate;
+	}
+
+	private List<SupplyDetail> supplyDetails = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupplyDetail> supplyDetails()
+	{
+		initialize();
+		return supplyDetails;
+	}
+
+	private List<MarketRepresentation> marketRepresentations = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<MarketRepresentation> marketRepresentations()
+	{
+		initialize();
+		return marketRepresentations;
+	}
+
+	private PromotionCampaign promotionCampaign = PromotionCampaign.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PromotionCampaign promotionCampaign()
+	{
+		initialize();
+		return promotionCampaign;
+	}
+
+	private PromotionContact promotionContact = PromotionContact.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public PromotionContact promotionContact()
+	{
+		initialize();
+		return promotionContact;
+	}
+
+	private InitialPrintRun initialPrintRun = InitialPrintRun.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public InitialPrintRun initialPrintRun()
+	{
+		initialize();
+		return initialPrintRun;
+	}
+
+	private ListOfOnixElement<ReprintDetail, String> reprintDetails = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<ReprintDetail, String> reprintDetails()
+	{
+		initialize();
+		return reprintDetails;
+	}
+
+	private CopiesSold copiesSold = CopiesSold.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public CopiesSold copiesSold()
+	{
+		initialize();
+		return copiesSold;
+	}
+
+	private BookClubAdoption bookClubAdoption = BookClubAdoption.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public BookClubAdoption bookClubAdoption()
+	{
+		initialize();
+		return bookClubAdoption;
 	}
 }

@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,117 +40,113 @@ interface CodeList93
  * Description: Supplier role
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist93">ONIX
- *      Codelist 93 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist93">ONIX Codelist 93 in Reference Guide</a>
  */
 public enum SupplierRoles implements OnixCodelist, CodeList93
 {
-	/**
-	 * Default
-	 */
-	Unspecified("00", "Unspecified"), //
+   /**
+    * Default
+    */
+   Unspecified("00", "Unspecified"), //
 
-	/**
-	 * Publisher as supplier to retail trade outlets
-	 */
-	Publisher_to_retailers("01", "Publisher to retailers"), //
+   /**
+    * Publisher as supplier to retail trade outlets
+    */
+   Publisher_to_retailers("01", "Publisher to retailers"), //
 
-	Publisher_s_exclusive_distributor_to_retailers("02", "Publisher’s exclusive distributor to retailers"), //
+   Publisher_s_exclusive_distributor_to_retailers("02", "Publisher’s exclusive distributor to retailers"), //
 
-	Publisher_s_non_exclusive_distributor_to_retailers("03", "Publisher’s non-exclusive distributor to retailers"), //
+   Publisher_s_non_exclusive_distributor_to_retailers("03", "Publisher’s non-exclusive distributor to retailers"), //
 
-	/**
-	 * Wholesaler supplying retail trade outlets
-	 */
-	Wholesaler("04", "Wholesaler"), //
+   /**
+    * Wholesaler supplying retail trade outlets
+    */
+   Wholesaler("04", "Wholesaler"), //
 
-	/**
-	 * DEPRECATED - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to specify
-	 * a sales agent
-	 */
-	Sales_agent("05", "Sales agent"), //
+   /**
+    * DEPRECATED - use &lt;MarketRepresentation&gt; (ONIX 2.1) or &lt;MarketPublishingDetail&gt; (ONIX 3.0) to specify a sales agent
+    */
+   Sales_agent("05", "Sales agent"), //
 
-	/**
-	 * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as
-	 * appropriate, where possible
-	 */
-	Publisher_s_distributor_to_retailers("06", "Publisher’s distributor to retailers"), //
+   /**
+    * In a specified supply territory. Use only where exclusive/non-exclusive status is not known. Prefer 02 or 03 as appropriate, where possible
+    */
+   Publisher_s_distributor_to_retailers("06", "Publisher’s distributor to retailers"), //
 
-	/**
-	 * Where a POD product is supplied to retailers and/or consumers direct from a POD source
-	 */
-	POD_supplier("07", "POD supplier"), //
+   /**
+    * Where a POD product is supplied to retailers and/or consumers direct from a POD source
+    */
+   POD_supplier("07", "POD supplier"), //
 
-	Retailer("08", "Retailer"), //
+   Retailer("08", "Retailer"), //
 
-	/**
-	 * Publisher as supplier direct to consumers and/or institutional customers
-	 */
-	Publisher_to_end_customers("09", "Publisher to end-customers"), //
+   /**
+    * Publisher as supplier direct to consumers and/or institutional customers
+    */
+   Publisher_to_end_customers("09", "Publisher to end-customers"), //
 
-	/**
-	 * Intermediary as exclusive distributor direct to consumers and/or institutional customers
-	 */
-	Exclusive_distributor_to_end_customers("10", "Exclusive distributor to end-customers"), //
+   /**
+    * Intermediary as exclusive distributor direct to consumers and/or institutional customers
+    */
+   Exclusive_distributor_to_end_customers("10", "Exclusive distributor to end-customers"), //
 
-	/**
-	 * Intermediary as non-exclusive distributor direct to consumers and/or institutional customers
-	 */
-	Non_exclusive_distributor_to_end_customers("11", "Non-exclusive distributor to end-customers"), //
+   /**
+    * Intermediary as non-exclusive distributor direct to consumers and/or institutional customers
+    */
+   Non_exclusive_distributor_to_end_customers("11", "Non-exclusive distributor to end-customers"), //
 
-	/**
-	 * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
-	 */
-	Distributor_to_end_customers("12", "Distributor to end-customers");
+   /**
+    * Use only where exclusive/non-exclusive status is not known. Prefer 10 or 11 as appropriate, where possible
+    */
+   Distributor_to_end_customers("12", "Distributor to end-customers");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private SupplierRoles(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private SupplierRoles(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, SupplierRoles> map;
+   private static volatile Map<String, SupplierRoles> map;
 
-	private static Map<String, SupplierRoles> map()
-	{
-		Map<String, SupplierRoles> result = map;
-		if (result == null)
-		{
-			synchronized (SupplierRoles.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (SupplierRoles e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, SupplierRoles> map()
+   {
+      Map<String, SupplierRoles> result = map;
+      if (result == null)
+      {
+         synchronized(SupplierRoles.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (SupplierRoles e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static SupplierRoles byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static SupplierRoles byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

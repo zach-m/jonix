@@ -19,13 +19,13 @@
 
 package com.tectonica.jonix.codelist;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.tectonica.jonix.OnixCodelist;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -40,142 +40,127 @@ interface CodeList12
  * Description: Trade category code
  * 
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a
- *      href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist12">ONIX
- *      Codelist 12 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist12">ONIX Codelist 12 in Reference Guide</a>
  */
 public enum TradeCategorys implements OnixCodelist, CodeList12
 {
-	/**
-	 * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details
-	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
-	 */
-	UK_open_market_edition("01", "UK open market edition"), //
+   /**
+    * An edition from a UK publisher sold only in territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
+    */
+   UK_open_market_edition("01", "UK open market edition"), //
 
-	/**
-	 * In UK, an edition intended primarily for airside sales in UK airports, though it may be available for sale in
-	 * other territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR
-	 * P.21 (ONIX 3.0) as usual
-	 */
-	Airport_edition("02", "Airport edition"), //
+   /**
+    * In UK, an edition intended primarily for airside sales in UK airports, though it may be available for sale in other territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
+    */
+   Airport_edition("02", "Airport edition"), //
 
-	/**
-	 * In Germany, a special printing sold at a lower price than the regular hardback
-	 */
-	Sonderausgabe("03", "Sonderausgabe"), //
+   /**
+    * In Germany, a special printing sold at a lower price than the regular hardback
+    */
+   Sonderausgabe("03", "Sonderausgabe"), //
 
-	/**
-	 * In countries where recognised as a distinct trade category, eg France 'livre de poche', Germany 'Taschenbuch',
-	 * Italy 'tascabile', Spain 'libro de bolsillo'
-	 */
-	Pocket_paperback("04", "Pocket paperback"), //
+   /**
+    * In countries where recognised as a distinct trade category, eg France 'livre de poche', Germany 'Taschenbuch', Italy 'tascabile', Spain 'libro de bolsillo'
+    */
+   Pocket_paperback("04", "Pocket paperback"), //
 
-	/**
-	 * Edition produced solely for sale in designated export markets
-	 */
-	International_edition_US("05", "International edition (US)"), //
+   /**
+    * Edition produced solely for sale in designated export markets
+    */
+   International_edition_US("05", "International edition (US)"), //
 
-	/**
-	 * Audio product sold in special durable packaging and with a replacement guarantee for the contained cassettes or
-	 * CDs for a specified shelf-life
-	 */
-	Library_audio_edition("06", "Library audio edition"), //
+   /**
+    * Audio product sold in special durable packaging and with a replacement guarantee for the contained cassettes or CDs for a specified shelf-life
+    */
+   Library_audio_edition("06", "Library audio edition"), //
 
-	/**
-	 * An edition from a US publisher sold only in territories where exclusive rights are not held. Rights details
-	 * should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
-	 */
-	US_open_market_edition("07", "US open market edition"), //
+   /**
+    * An edition from a US publisher sold only in territories where exclusive rights are not held. Rights details should be carried in PR.21 (ONIX 2.1) OR P.21 (ONIX 3.0) as usual
+    */
+   US_open_market_edition("07", "US open market edition"), //
 
-	/**
-	 * In France, a category of book that has a particular legal status, claimed by the publisher
-	 */
-	Livre_scolaire_d_clar_par_l_diteur("08", "Livre scolaire, déclaré par l’éditeur"), //
+   /**
+    * In France, a category of book that has a particular legal status, claimed by the publisher
+    */
+   Livre_scolaire_d_clar_par_l_diteur("08", "Livre scolaire, déclaré par l’éditeur"), //
 
-	/**
-	 * In France, a category of book that has a particular legal status, designated independently of the publisher
-	 */
-	Livre_scolaire_non_sp_cifi_("09", "Livre scolaire (non spécifié)"), //
+   /**
+    * In France, a category of book that has a particular legal status, designated independently of the publisher
+    */
+   Livre_scolaire_non_sp_cifi_("09", "Livre scolaire (non spécifié)"), //
 
-	/**
-	 * Edition published for sale only with a newspaper or periodical
-	 */
-	Supplement_to_newspaper("10", "Supplement to newspaper"), //
+   /**
+    * Edition published for sale only with a newspaper or periodical
+    */
+   Supplement_to_newspaper("10", "Supplement to newspaper"), //
 
-	/**
-	 * In Spain, a school textbook for which there is no fixed or suggested retail price and which is supplied by the
-	 * publisher on terms individually agreed with the bookseller
-	 */
-	Precio_libre_textbook("11", "Precio libre textbook"), //
+   /**
+    * In Spain, a school textbook for which there is no fixed or suggested retail price and which is supplied by the publisher on terms individually agreed with the bookseller
+    */
+   Precio_libre_textbook("11", "Precio libre textbook"), //
 
-	/**
-	 * For editions sold only through newsstands/newsagents
-	 */
-	News_outlet_edition("12", "News outlet edition"), //
+   /**
+    * For editions sold only through newsstands/newsagents
+    */
+   News_outlet_edition("12", "News outlet edition"), //
 
-	/**
-	 * In the US and Canada, a book that is published primarily for use by students in school or college education as a
-	 * basis for study. Textbooks published for the elementary and secondary school markets are generally purchased by
-	 * school districts for the use of students. Textbooks published for the higher education market are generally
-	 * adopted for use in particular classes by the instructors of those classes. Textbooks are usually not marketed to
-	 * the general public, which distinguishes them from trade books. Note that trade books adopted for course use are
-	 * not considered to be textbooks (though a specific education edition of a trade title may be)
-	 */
-	US_textbook("13", "US textbook"), //
+   /**
+    * In the US and Canada, a book that is published primarily for use by students in school or college education as a basis for study. Textbooks published for the elementary and secondary school markets are generally purchased by school districts for the use of students. Textbooks published for the higher education market are generally adopted for use in particular classes by the instructors of those classes. Textbooks are usually not marketed to the general public, which distinguishes them from trade books. Note that trade books adopted for course use are not considered to be textbooks (though a specific education edition of a trade title may be)
+    */
+   US_textbook("13", "US textbook"), //
 
-	/**
-	 * 'Short' e-book (sometimes also called a 'single'), typically containing a single short story, an essay or piece
-	 * of long-form journalism
-	 */
-	E_book_short("14", "E-book short");
+   /**
+    * 'Short' e-book (sometimes also called a 'single'), typically containing a single short story, an essay or piece of long-form journalism
+    */
+   E_book_short("14", "E-book short");
 
-	public final String code;
-	public final String description;
+   public final String code;
+   public final String description;
 
-	private TradeCategorys(String code, String description)
-	{
-		this.code = code;
-		this.description = description;
-	}
+   private TradeCategorys(String code, String description)
+   {
+      this.code = code;
+      this.description = description;
+   }
 
-	@Override
-	public String getCode()
-	{
-		return code;
-	}
+   @Override
+   public String getCode()
+   {
+      return code;
+   }
 
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
+   @Override
+   public String getDescription()
+   {
+      return description;
+   }
 
-	private static volatile Map<String, TradeCategorys> map;
+   private static volatile Map<String, TradeCategorys> map;
 
-	private static Map<String, TradeCategorys> map()
-	{
-		Map<String, TradeCategorys> result = map;
-		if (result == null)
-		{
-			synchronized (TradeCategorys.class)
-			{
-				result = map;
-				if (result == null)
-				{
-					result = new HashMap<>();
-					for (TradeCategorys e : values())
-						result.put(e.code, e);
-					map = result;
-				}
-			}
-		}
-		return result;
-	}
+   private static Map<String, TradeCategorys> map()
+   {
+      Map<String, TradeCategorys> result = map;
+      if (result == null)
+      {
+         synchronized(TradeCategorys.class)
+         {
+            result = map;
+            if (result == null)
+            {
+               result = new HashMap<>();
+               for (TradeCategorys e : values())
+                  result.put(e.code, e);
+               map = result;
+            }
+         }
+      }
+      return result;
+   }
 
-	public static TradeCategorys byCode(String code)
-	{
-		if (code == null || code.isEmpty())
-			return null;
-		return map().get(code);
-	}
+   public static TradeCategorys byCode(String code)
+   {
+      if (code == null || code.isEmpty())
+         return null;
+      return map().get(code);
+   }
 }

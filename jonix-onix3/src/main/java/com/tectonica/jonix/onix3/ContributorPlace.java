@@ -20,19 +20,15 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.codelist.ContributorPlaceRelators;
-import com.tectonica.jonix.codelist.CountryCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
-import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.struct.JonixContributorPlace;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -56,16 +52,16 @@ import com.tectonica.jonix.struct.JonixContributorPlace;
  * </tr>
  * </table>
  */
-public class ContributorPlace implements OnixDataComposite, Serializable
+public class ContributorPlace implements OnixDataComposite<JonixContributorPlace>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
 	public static final String refname = "ContributorPlace";
 	public static final String shortname = "contributorplace";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -76,98 +72,115 @@ public class ContributorPlace implements OnixDataComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ContributorPlaceRelator contributorPlaceRelator;
-
-	/**
-	 * (this field is required)
-	 */
-	public CountryCode countryCode;
-
-	/**
-	 * (this field is optional)
-	 */
-	public RegionCode regionCode;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<LocationName> locationNames;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final ContributorPlace EMPTY = new ContributorPlace();
 
 	public ContributorPlace()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public ContributorPlace(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ContributorPlaceRelator.refname) || name.equals(ContributorPlaceRelator.shortname))
-					contributorPlaceRelator = new ContributorPlaceRelator(element);
-				else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
-					countryCode = new CountryCode(element);
-				else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname))
-					regionCode = new RegionCode(element);
-				else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
-					locationNames = JPU.addToList(locationNames, new LocationName(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ContributorPlaceRelator.refname) || name.equals(ContributorPlaceRelator.shortname))
+				contributorPlaceRelator = new ContributorPlaceRelator(e);
+			else if (name.equals(CountryCode.refname) || name.equals(CountryCode.shortname))
+				countryCode = new CountryCode(e);
+			else if (name.equals(RegionCode.refname) || name.equals(RegionCode.shortname))
+				regionCode = new RegionCode(e);
+			else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
+				locationNames = JPU.addToList(locationNames, new LocationName(e));
 		});
 	}
 
-	public ContributorPlaceRelators getContributorPlaceRelatorValue()
+	@Override
+	public boolean exists()
 	{
-		return (contributorPlaceRelator == null) ? null : contributorPlaceRelator.value;
+		return exists;
 	}
 
-	public CountryCodes getCountryCodeValue()
-	{
-		return (countryCode == null) ? null : countryCode.value;
-	}
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
 
-	public Regions getRegionCodeValue()
-	{
-		return (regionCode == null) ? null : regionCode.value;
-	}
+	private ContributorPlaceRelator contributorPlaceRelator = ContributorPlaceRelator.EMPTY;
 
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
+	 * (this field is required)
 	 */
-	public List<String> getLocationNameValues()
+	public ContributorPlaceRelator contributorPlaceRelator()
 	{
-		if (locationNames != null)
-		{
-			List<String> list = new ArrayList<>();
-			for (LocationName i : locationNames)
-				list.add(i.value);
-			return list;
-		}
-		return null;
+		initialize();
+		return contributorPlaceRelator;
 	}
 
-	public JonixContributorPlace asJonixContributorPlace()
+	private CountryCode countryCode = CountryCode.EMPTY;
+
+	/**
+	 * (this field is required)
+	 */
+	public CountryCode countryCode()
 	{
-		JonixContributorPlace x = new JonixContributorPlace();
-		x.contributorPlaceRelator = getContributorPlaceRelatorValue();
-		x.countryCode = getCountryCodeValue();
-		x.regionCode = getRegionCodeValue();
-		x.locationNames = getLocationNameValues();
-		return x;
+		initialize();
+		return countryCode;
+	}
+
+	private RegionCode regionCode = RegionCode.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public RegionCode regionCode()
+	{
+		initialize();
+		return regionCode;
+	}
+
+	private ListOfOnixElement<LocationName, String> locationNames = ListOfOnixElement.empty();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public ListOfOnixElement<LocationName, String> locationNames()
+	{
+		initialize();
+		return locationNames;
+	}
+
+	@Override
+	public JonixContributorPlace asStruct()
+	{
+		initialize();
+		JonixContributorPlace struct = new JonixContributorPlace();
+		struct.contributorPlaceRelator = contributorPlaceRelator.value;
+		struct.countryCode = countryCode.value;
+		struct.regionCode = regionCode.value;
+		struct.locationNames = locationNames.values();
+		return struct;
 	}
 }

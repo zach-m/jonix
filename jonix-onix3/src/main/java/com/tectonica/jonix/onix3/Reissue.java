@@ -20,6 +20,7 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import com.tectonica.jonix.JPU;
@@ -27,7 +28,7 @@ import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -39,8 +40,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * <p>
  * The entire &lt;Reissue&gt; composite is deprecated. Suppliers should supply information about planned reissues in
  * other parts of the Product record – the date of a planned reissue in &lt;PublishingDate&gt; and/or in
- * &lt;MarketDate&gt;, and new collateral material alongside old collateral in <a
- * href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
+ * &lt;MarketDate&gt;, and new collateral material alongside old collateral in
+ * <a href="#onixmessage_product_collateraldetail">Block&nbsp;2</a> where collateral items may be associated with
  * appropriate end and start dates using &lt;ContentDate&gt;.
  * </p>
  * <p>
@@ -54,7 +55,8 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
  * <li>When the product is still available during the period up to the reissue date. In this case, the ONIX record
  * should continue to describe the existing product and the &lt;ProductAvailability&gt; value should continue to record
  * the product as ‘available’ (<i>eg</i> code 21) right up to the reissue date. At that date, the record should be
- * updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining unchanged.</li>
+ * updated to describe the reissued product, with the &lt;ProductAvailability&gt; value usually remaining
+ * unchanged.</li>
  * </ol>
  * <p>
  * After reissue, the &lt;Reissue&gt; composite can be retained as a permanent element of the ONIX record, carrying only
@@ -82,9 +84,9 @@ public class Reissue implements OnixSuperComposite, Serializable
 	public static final String refname = "Reissue";
 	public static final String shortname = "reissue";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -95,76 +97,103 @@ public class Reissue implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this field is required)
-	 */
-	public ReissueDate reissueDate;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ReissueDescription reissueDescription;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Price> prices;
-
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupportingResource> supportingResources;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Reissue EMPTY = new Reissue();
 
 	public Reissue()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Reissue(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
-					reissueDate = new ReissueDate(element);
-				else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
-					reissueDescription = new ReissueDescription(element);
-				else if (name.equals(Price.refname) || name.equals(Price.shortname))
-					prices = JPU.addToList(prices, new Price(element));
-				else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
-					supportingResources = JPU.addToList(supportingResources, new SupportingResource(element));
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ReissueDate.refname) || name.equals(ReissueDate.shortname))
+				reissueDate = new ReissueDate(e);
+			else if (name.equals(ReissueDescription.refname) || name.equals(ReissueDescription.shortname))
+				reissueDescription = new ReissueDescription(e);
+			else if (name.equals(Price.refname) || name.equals(Price.shortname))
+				prices = JPU.addToList(prices, new Price(e));
+			else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
+				supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
 		});
 	}
 
-	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
-	 * missing
-	 */
-	public String getReissueDateValue()
+	@Override
+	public boolean exists()
 	{
-		return (reissueDate == null) ? null : reissueDate.value;
+		return exists;
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ReissueDate reissueDate = ReissueDate.EMPTY;
+
 	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
+	 * (this field is required)
 	 */
-	public String getReissueDescriptionValue()
+	public ReissueDate reissueDate()
 	{
-		return (reissueDescription == null) ? null : reissueDescription.value;
+		initialize();
+		return reissueDate;
+	}
+
+	private ReissueDescription reissueDescription = ReissueDescription.EMPTY;
+
+	/**
+	 * (this field is optional)
+	 */
+	public ReissueDescription reissueDescription()
+	{
+		initialize();
+		return reissueDescription;
+	}
+
+	private List<Price> prices = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<Price> prices()
+	{
+		initialize();
+		return prices;
+	}
+
+	private List<SupportingResource> supportingResources = Collections.emptyList();
+
+	/**
+	 * (this list may be empty)
+	 */
+	public List<SupportingResource> supportingResources()
+	{
+		initialize();
+		return supportingResources;
 	}
 }

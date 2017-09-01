@@ -22,32 +22,29 @@ package com.tectonica.jonix.struct;
 import java.io.Serializable;
 import java.util.List;
 
-import com.tectonica.jonix.codelist.BibleContentss;
-import com.tectonica.jonix.codelist.BiblePurposes;
-import com.tectonica.jonix.codelist.BibleReferenceLocations;
-import com.tectonica.jonix.codelist.BibleTextFeatures;
-import com.tectonica.jonix.codelist.BibleTextOrganizations;
-import com.tectonica.jonix.codelist.BibleVersions;
-import com.tectonica.jonix.codelist.StudyBibleTypes;
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.*;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixBible implements Serializable
+public class JonixBible implements JonixStruct, Serializable
 {
-	public List<BibleContentss> bibleContentss;
+   public static JonixBible EMPTY = new JonixBible();
 
-	public List<BiblePurposes> biblePurposes;
+   public List<BibleContentss> bibleContentss;
 
-	public BibleReferenceLocations bibleReferenceLocation;
+   public List<BiblePurposes> biblePurposes;
 
-	public List<BibleTextFeatures> bibleTextFeatures;
+   public BibleReferenceLocations bibleReferenceLocation;
 
-	public BibleTextOrganizations bibleTextOrganization;
+   public List<BibleTextFeatures> bibleTextFeatures;
 
-	public List<BibleVersions> bibleVersions;
+   public BibleTextOrganizations bibleTextOrganization;
 
-	public StudyBibleTypes studyBibleType;
+   public List<BibleVersions> bibleVersions;
+
+   public StudyBibleTypes studyBibleType;
 }

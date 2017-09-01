@@ -20,17 +20,16 @@
 package com.tectonica.jonix.onix3;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixImprintIdentifier;
 
 /*
- * NOTE: THIS IS AN AUTO-GENERATED FILE, DON'T EDIT MANUALLY
+ * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
@@ -61,9 +60,9 @@ public class Imprint implements OnixSuperComposite, Serializable
 	public static final String refname = "Imprint";
 	public static final String shortname = "imprint";
 
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 	// ATTRIBUTES
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * (type: dt.DateOrDateTime)
@@ -74,80 +73,78 @@ public class Imprint implements OnixSuperComposite, Serializable
 
 	public String sourcename;
 
-	// ///////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	// ///////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	// CONSTRUCTION
+	/////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ImprintIdentifier> imprintIdentifiers;
-
-	/**
-	 * (this field is optional)
-	 */
-	public ImprintName imprintName;
-
-	// ///////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	// ///////////////////////////////////////////////////////////////////////////////
+	private boolean initialized;
+	private final boolean exists;
+	private final org.w3c.dom.Element element;
+	public static final Imprint EMPTY = new Imprint();
 
 	public Imprint()
-	{}
+	{
+		exists = false;
+		element = null;
+		initialized = true; // so that no further processing will be done on this intentionally-empty object
+	}
 
 	public Imprint(org.w3c.dom.Element element)
 	{
+		exists = true;
+		initialized = false;
+		this.element = element;
+	}
+
+	private void initialize()
+	{
+		if (initialized)
+			return;
+		initialized = true;
+
 		datestamp = JPU.getAttribute(element, "datestamp");
 		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
 		sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, new JPU.ElementListener()
-		{
-			@Override
-			public void onElement(org.w3c.dom.Element element)
-			{
-				final String name = element.getNodeName();
-				if (name.equals(ImprintIdentifier.refname) || name.equals(ImprintIdentifier.shortname))
-					imprintIdentifiers = JPU.addToList(imprintIdentifiers, new ImprintIdentifier(element));
-				else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
-					imprintName = new ImprintName(element);
-			}
+		JPU.forElementsOf(element, e -> {
+			final String name = e.getNodeName();
+			if (name.equals(ImprintIdentifier.refname) || name.equals(ImprintIdentifier.shortname))
+				imprintIdentifiers = JPU.addToList(imprintIdentifiers, new ImprintIdentifier(e));
+			else if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
+				imprintName = new ImprintName(e);
 		});
 	}
 
+	@Override
+	public boolean exists()
+	{
+		return exists;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// MEMBERS
+	/////////////////////////////////////////////////////////////////////////////////
+
+	private ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameCodeTypes> imprintIdentifiers = ListOfOnixDataCompositeWithKey
+			.emptyKeyed();
+
 	/**
-	 * Raw Format: Variable length text, suggested maximum length 100 characters
+	 * (this list is required to contain at least one item)
 	 */
-	public String getImprintNameValue()
+	public ListOfOnixDataCompositeWithKey<ImprintIdentifier, JonixImprintIdentifier, NameCodeTypes> imprintIdentifiers()
 	{
-		return (imprintName == null) ? null : imprintName.value;
+		initialize();
+		return imprintIdentifiers;
 	}
 
-	public JonixImprintIdentifier findImprintIdentifier(NameCodeTypes imprintIDType)
-	{
-		if (imprintIdentifiers != null)
-		{
-			for (ImprintIdentifier x : imprintIdentifiers)
-			{
-				if (x.getImprintIDTypeValue() == imprintIDType)
-					return x.asJonixImprintIdentifier();
-			}
-		}
-		return null;
-	}
+	private ImprintName imprintName = ImprintName.EMPTY;
 
-	public List<JonixImprintIdentifier> findImprintIdentifiers(java.util.Set<NameCodeTypes> imprintIDTypes)
+	/**
+	 * (this field is optional)
+	 */
+	public ImprintName imprintName()
 	{
-		if (imprintIdentifiers != null)
-		{
-			List<JonixImprintIdentifier> matches = new ArrayList<>();
-			for (ImprintIdentifier x : imprintIdentifiers)
-			{
-				if (imprintIDTypes == null || imprintIDTypes.contains(x.getImprintIDTypeValue()))
-					matches.add(x.asJonixImprintIdentifier());
-			}
-			return matches;
-		}
-		return null;
+		initialize();
+		return imprintName;
 	}
 }
