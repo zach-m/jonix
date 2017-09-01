@@ -19,16 +19,15 @@
 
 package com.tectonica.jonix.stream;
 
-public enum JonixOnixVersion
-{
-	ONIX2, //
+public enum JonixOnixVersion {
+    ONIX2, //
 
-	ONIX3, //
+    ONIX3, //
 
-	UNKNOWN, //
+    UNKNOWN, //
 
-	/**
-	 * currently not used by Jonix. when a non-ONIX source is detected, an exception is thrown
-	 */
-	NOT_ONIX;
+    /**
+     * currently not used by Jonix. when a non-ONIX source is detected, an exception is thrown
+     */
+    NOT_ONIX;
 }

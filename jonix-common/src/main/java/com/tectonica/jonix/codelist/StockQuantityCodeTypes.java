@@ -28,54 +28,53 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 70 (Stock quantity code type)
  */
-interface CodeList70
-{}
+interface CodeList70 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 70</b>
  * <p>
  * Description: Stock quantity code type
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist70">ONIX Codelist 70 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist70">ONIX
+ * Codelist 70 in Reference Guide</a>
  */
-public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70
-{
-   Proprietary("01", "Proprietary"), //
+public enum StockQuantityCodeTypes implements OnixCodelist, CodeList70 {
+    Proprietary("01", "Proprietary"), //
 
-   /**
-    * Code scheme defined by the Australian Publishers Association
-    */
-   APA_stock_quantity_code("02", "APA stock quantity code");
+    /**
+     * Code scheme defined by the Australian Publishers Association
+     */
+    APA_stock_quantity_code("02", "APA stock quantity code");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private StockQuantityCodeTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private StockQuantityCodeTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static StockQuantityCodeTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (StockQuantityCodeTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static StockQuantityCodeTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (StockQuantityCodeTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

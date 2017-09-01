@@ -19,41 +19,34 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
-import javax.xml.stream.XMLStreamException;
-
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TextTypes;
 import com.tectonica.xmlchunk.XmlUtil;
+
+import javax.xml.stream.XMLStreamException;
+import java.io.Serializable;
 
 /**
  * Contains the essential information included in ONIX2 &lt;OtherText&gt; / ONIX3 &lt;TextContent&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicText implements Serializable
-{
-	public TextTypes textType;
-	public TextFormats textFormat;
-	public String text;
+public abstract class BasicText implements Serializable {
+    public TextTypes textType;
+    public TextFormats textFormat;
+    public String text;
 
-	public String getUnescapedText()
-	{
-		if ((textFormat == TextFormats.XHTML) || (textFormat == TextFormats.XML) || (textFormat == TextFormats.HTML))
-		{
-			try
-			{
-				return XmlUtil.unescape(text);
-			}
-			catch (XMLStreamException e)
-			{
-				// ignore
-			}
-		}
-		return text;
-	}
+    public String getUnescapedText() {
+        if ((textFormat == TextFormats.XHTML) || (textFormat == TextFormats.XML) || (textFormat == TextFormats.HTML)) {
+            try {
+                return XmlUtil.unescape(text);
+            } catch (XMLStreamException e) {
+                // ignore
+            }
+        }
+        return text;
+    }
 }

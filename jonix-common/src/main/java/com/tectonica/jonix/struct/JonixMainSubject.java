@@ -19,35 +19,34 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.MainSubjectSchemeIdentifiers;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixMainSubject implements JonixStruct, Serializable
-{
-   public static JonixMainSubject EMPTY = new JonixMainSubject();
+public class JonixMainSubject implements JonixStruct, Serializable {
+    public static JonixMainSubject EMPTY = new JonixMainSubject();
 
-   public MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier;
+    public MainSubjectSchemeIdentifiers mainSubjectSchemeIdentifier;
 
-   /**
-    * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements. <p> (type: NonEmptyString)
-    */
-   public String subjectSchemeVersion;
+    /**
+     * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
+     * elements. <p> (type: NonEmptyString)
+     */
+    public String subjectSchemeVersion;
 
-   /**
-    * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters. <p> (type: NonEmptyString)
-    */
-   public String subjectCode;
+    /**
+     * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters. <p> (type: NonEmptyString)
+     */
+    public String subjectCode;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 100 characters. <p> (type: NonEmptyString)
-    */
-   public String subjectHeadingText;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters. <p> (type: NonEmptyString)
+     */
+    public String subjectHeadingText;
 }

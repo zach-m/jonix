@@ -19,33 +19,35 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.MeasureTypes;
+import com.tectonica.jonix.codelist.MeasureUnits;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixMeasure implements JonixKeyedStruct<MeasureTypes>, Serializable
-{
-   public static JonixMeasure EMPTY = new JonixMeasure();
+public class JonixMeasure implements JonixKeyedStruct<MeasureTypes>, Serializable {
+    public static JonixMeasure EMPTY = new JonixMeasure();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public MeasureTypes measureType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public MeasureTypes measureType;
 
-   public MeasureUnits measureUnitCode;
+    public MeasureUnits measureUnitCode;
 
-   /**
-    * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6 characters including a decimal point <p> (type: dt.StrictPositiveDecimal)
-    */
-   public Double measurement;
+    /**
+     * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+     * characters including a decimal point <p> (type: dt.StrictPositiveDecimal)
+     */
+    public Double measurement;
 
-   @Override
-   public MeasureTypes key() { return measureType; }
+    @Override
+    public MeasureTypes key() {
+        return measureType;
+    }
 }

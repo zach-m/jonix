@@ -28,60 +28,59 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 169 (Quantity unit)
  */
-interface CodeList169
-{}
+interface CodeList169 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 169</b>
  * <p>
  * Description: Quantity unit
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist169">ONIX Codelist 169 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist169">ONIX
+ * Codelist 169 in Reference Guide</a>
  */
-public enum QuantityUnits implements OnixCodelist, CodeList169
-{
-   /**
-    * The quantity refers to a unit implied by the quantity type
-    */
-   Units("00", "Units"), //
+public enum QuantityUnits implements OnixCodelist, CodeList169 {
+    /**
+     * The quantity refers to a unit implied by the quantity type
+     */
+    Units("00", "Units"), //
 
-   Days("07", "Days"), //
+    Days("07", "Days"), //
 
-   Weeks("08", "Weeks"), //
+    Weeks("08", "Weeks"), //
 
-   Months("09", "Months"), //
+    Months("09", "Months"), //
 
-   Years("10", "Years");
+    Years("10", "Years");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private QuantityUnits(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private QuantityUnits(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static QuantityUnits byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (QuantityUnits e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static QuantityUnits byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (QuantityUnits e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

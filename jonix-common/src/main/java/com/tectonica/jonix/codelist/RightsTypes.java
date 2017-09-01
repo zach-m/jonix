@@ -28,62 +28,61 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 219 (Rights type code)
  */
-interface CodeList219
-{}
+interface CodeList219 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 219</b>
  * <p>
  * Description: Rights type code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist219">ONIX Codelist 219 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist219">ONIX
+ * Codelist 219 in Reference Guide</a>
  */
-public enum RightsTypes implements OnixCodelist, CodeList219
-{
-   /**
-    * Text or image copyright (normally indicated by the &#169; symbol)
-    */
-   Copyright("C", "Copyright"), //
+public enum RightsTypes implements OnixCodelist, CodeList219 {
+    /**
+     * Text or image copyright (normally indicated by the &#169; symbol)
+     */
+    Copyright("C", "Copyright"), //
 
-   /**
-    * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol)
-    */
-   Phonogram_right("P", "Phonogram right"), //
+    /**
+     * Phonogram copyright or neighbouring right (normally indicated by the &#8471; symbol)
+     */
+    Phonogram_right("P", "Phonogram right"), //
 
-   /**
-    * Sui generis database right
-    */
-   Database_right("D", "Database right");
+    /**
+     * Sui generis database right
+     */
+    Database_right("D", "Database right");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private RightsTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private RightsTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static RightsTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (RightsTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static RightsTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (RightsTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

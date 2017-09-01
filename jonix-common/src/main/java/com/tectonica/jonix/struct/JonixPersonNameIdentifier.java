@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.PersonNameIdentifierTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPersonNameIdentifier implements JonixKeyedStruct<PersonNameIdentifierTypes>, Serializable
-{
-   public static JonixPersonNameIdentifier EMPTY = new JonixPersonNameIdentifier();
+public class JonixPersonNameIdentifier implements JonixKeyedStruct<PersonNameIdentifierTypes>, Serializable {
+    public static JonixPersonNameIdentifier EMPTY = new JonixPersonNameIdentifier();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public PersonNameIdentifierTypes personNameIDType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public PersonNameIdentifierTypes personNameIDType;
 
-   /**
-    * Raw Format: Variable-length ASCII text, suggested maximum 50 characters <p> (type: NonEmptyString)
-    */
-   public String idTypeName;
+    /**
+     * Raw Format: Variable-length ASCII text, suggested maximum 50 characters <p> (type: NonEmptyString)
+     */
+    public String idTypeName;
 
-   /**
-    * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt; <p> (type: NonEmptyString)
-    */
-   public String idValue;
+    /**
+     * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt; <p> (type: NonEmptyString)
+     */
+    public String idValue;
 
-   @Override
-   public PersonNameIdentifierTypes key() { return personNameIDType; }
+    @Override
+    public PersonNameIdentifierTypes key() {
+        return personNameIDType;
+    }
 }

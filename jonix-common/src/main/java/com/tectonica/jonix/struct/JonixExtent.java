@@ -19,33 +19,35 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.ExtentTypes;
+import com.tectonica.jonix.codelist.ExtentUnits;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixExtent implements JonixKeyedStruct<ExtentTypes>, Serializable
-{
-   public static JonixExtent EMPTY = new JonixExtent();
+public class JonixExtent implements JonixKeyedStruct<ExtentTypes>, Serializable {
+    public static JonixExtent EMPTY = new JonixExtent();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public ExtentTypes extentType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public ExtentTypes extentType;
 
-   public ExtentUnits extentUnit;
+    public ExtentUnits extentUnit;
 
-   /**
-    * Raw Format: Numeric, with decimal point where required, as appropriate for the units specified in &lt;ExtentUnit&gt; <p> (type: dt.StrictPositiveDecimal)
-    */
-   public Double extentValue;
+    /**
+     * Raw Format: Numeric, with decimal point where required, as appropriate for the units specified in
+     * &lt;ExtentUnit&gt; <p> (type: dt.StrictPositiveDecimal)
+     */
+    public Double extentValue;
 
-   @Override
-   public ExtentTypes key() { return extentType; }
+    @Override
+    public ExtentTypes key() {
+        return extentType;
+    }
 }

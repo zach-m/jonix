@@ -19,24 +19,23 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.codelist.SupplierRoles;
+
+import java.io.Serializable;
 
 /**
  * Contains the essential information included in ONIX's &lt;SupplyDetail&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicSupplyDetail implements Serializable
-{
-	public SupplierRoles supplierRole;
-	public String supplierName;
-	public String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys
-	public BasicPrices prices;
+public abstract class BasicSupplyDetail implements Serializable {
+    public SupplierRoles supplierRole;
+    public String supplierName;
+    public String availability; // name of an enum, AvailabilityStatuss or ProductAvailabilitys
+    public BasicPrices prices;
 
-	// TODO: replace availability from String to still non-existing interface 'OnixCodelist'
+    // TODO: replace availability from String to still non-existing interface 'OnixCodelist'
 }

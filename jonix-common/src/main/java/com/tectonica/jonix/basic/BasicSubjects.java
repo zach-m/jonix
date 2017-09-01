@@ -19,38 +19,38 @@
 
 package com.tectonica.jonix.basic;
 
+import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
-
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;Subject&gt; that may exist in an ONIX product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicSubjects extends LazyMap<SubjectSchemeIdentifiers, List<BasicSubject>>
-{
-	protected void addKV(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, BasicSubject subject,
-			boolean insertFirst)
-	{
-		List<BasicSubject> items = map.get(subject.subjectSchemeIdentifier);
-		if (items == null)
-			map.put(subject.subjectSchemeIdentifier, items = new ArrayList<BasicSubject>());
-		if (insertFirst)
-			items.add(0, subject);
-		else
-			items.add(subject);
-	}
+public abstract class BasicSubjects extends LazyMap<SubjectSchemeIdentifiers, List<BasicSubject>> {
+    protected void addKV(Map<SubjectSchemeIdentifiers, List<BasicSubject>> map, BasicSubject subject,
+                         boolean insertFirst) {
+        List<BasicSubject> items = map.get(subject.subjectSchemeIdentifier);
+        if (items == null) {
+            map.put(subject.subjectSchemeIdentifier, items = new ArrayList<BasicSubject>());
+        }
+        if (insertFirst) {
+            items.add(0, subject);
+        } else {
+            items.add(subject);
+        }
+    }
 
-	public List<BasicSubject> findSubjects(SubjectSchemeIdentifiers requestedScheme)
-	{
-		List<BasicSubject> items = get(requestedScheme);
-		if (items == null)
-			return Collections.emptyList();
-		return items;
-	}
+    public List<BasicSubject> findSubjects(SubjectSchemeIdentifiers requestedScheme) {
+        List<BasicSubject> items = get(requestedScheme);
+        if (items == null) {
+            return Collections.emptyList();
+        }
+        return items;
+    }
 }

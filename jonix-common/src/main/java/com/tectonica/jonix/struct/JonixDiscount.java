@@ -19,40 +19,40 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.DiscountTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixDiscount implements JonixStruct, Serializable
-{
-   public static JonixDiscount EMPTY = new JonixDiscount();
+public class JonixDiscount implements JonixStruct, Serializable {
+    public static JonixDiscount EMPTY = new JonixDiscount();
 
-   public DiscountTypes discountType;
+    public DiscountTypes discountType;
 
-   /**
-    * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
-    */
-   public Double quantity;
+    /**
+     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     */
+    public Double quantity;
 
-   /**
-    * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
-    */
-   public Double toQuantity;
+    /**
+     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     */
+    public Double toQuantity;
 
-   /**
-    * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters <p> (type: dt.PercentDecimal)
-    */
-   public Double discountPercent;
+    /**
+     * Raw Format: Variable-length numeric, including decimal point if required, suggested maximum length 6 characters
+     * <p> (type: dt.PercentDecimal)
+     */
+    public Double discountPercent;
 
-   /**
-    * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12 characters <p> (type: dt.PositiveDecimal)
-    */
-   public Double discountAmount;
+    /**
+     * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+     * characters <p> (type: dt.PositiveDecimal)
+     */
+    public Double discountAmount;
 }

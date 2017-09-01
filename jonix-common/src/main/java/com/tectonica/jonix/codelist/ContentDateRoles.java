@@ -21,8 +21,8 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -31,106 +31,105 @@ import java.util.HashMap;
 /**
  * marker interface to assist in IDE navigation to code-list 155 (Content date role)
  */
-interface CodeList155
-{}
+interface CodeList155 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 155</b>
  * <p>
  * Description: Content date role
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist155">ONIX Codelist 155 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist155">ONIX
+ * Codelist 155 in Reference Guide</a>
  */
-public enum ContentDateRoles implements OnixCodelist, CodeList155
-{
-   /**
-    * Nominal date of publication (of the content item or supporting resource)
-    */
-   Publication_date("01", "Publication date"), //
+public enum ContentDateRoles implements OnixCodelist, CodeList155 {
+    /**
+     * Nominal date of publication (of the content item or supporting resource)
+     */
+    Publication_date("01", "Publication date"), //
 
-   /**
-    * Date when a TV or radio program was / will be broadcast
-    */
-   Broadcast_date("04", "Broadcast date"), //
+    /**
+     * Date when a TV or radio program was / will be broadcast
+     */
+    Broadcast_date("04", "Broadcast date"), //
 
-   /**
-    * Date from which a content item or supporting resource may be referenced or used. The content is embargoed until this date
-    */
-   From_date("14", "From date"), //
+    /**
+     * Date from which a content item or supporting resource may be referenced or used. The content is embargoed until
+     * this date
+     */
+    From_date("14", "From date"), //
 
-   /**
-    * Date until which a content item or supporting resource may be referenced or used
-    */
-   Until_date("15", "Until date"), //
+    /**
+     * Date until which a content item or supporting resource may be referenced or used
+     */
+    Until_date("15", "Until date"), //
 
-   /**
-    * Date when a resource was last changed or updated
-    */
-   Last_updated("17", "Last updated"), //
+    /**
+     * Date when a resource was last changed or updated
+     */
+    Last_updated("17", "Last updated"), //
 
-   /**
-    * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat 06
-    */
-   From_until_date("24", "From… until date"), //
+    /**
+     * Combines From date and Until date to define a period (both dates are inclusive). Use with for example dateformat
+     * 06
+     */
+    From_until_date("24", "From… until date"), //
 
-   /**
-    * Date from which a supporting resource is available for download. Note that this date also implies that it can be immediately displayed to the intended audience, unless a From date (code 14) is also supplied and is later than the Available from date
-    */
-   Available_from("27", "Available from"), //
+    /**
+     * Date from which a supporting resource is available for download. Note that this date also implies that it can be
+     * immediately displayed to the intended audience, unless a From date (code 14) is also supplied and is later than
+     * the Available from date
+     */
+    Available_from("27", "Available from"), //
 
-   /**
-    * Date until which a supporting resource is available for download. Note that this date does not imply it must be removed from display to the intended audience on this date - for this, use Until date (code 15)
-    */
-   Available_until("28", "Available until");
+    /**
+     * Date until which a supporting resource is available for download. Note that this date does not imply it must be
+     * removed from display to the intended audience on this date - for this, use Until date (code 15)
+     */
+    Available_until("28", "Available until");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ContentDateRoles(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ContentDateRoles(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, ContentDateRoles> map;
+    private static volatile Map<String, ContentDateRoles> map;
 
-   private static Map<String, ContentDateRoles> map()
-   {
-      Map<String, ContentDateRoles> result = map;
-      if (result == null)
-      {
-         synchronized(ContentDateRoles.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (ContentDateRoles e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, ContentDateRoles> map() {
+        Map<String, ContentDateRoles> result = map;
+        if (result == null) {
+            synchronized (ContentDateRoles.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (ContentDateRoles e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static ContentDateRoles byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static ContentDateRoles byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

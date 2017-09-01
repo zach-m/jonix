@@ -19,42 +19,39 @@
 
 package com.tectonica.jonix.basic;
 
+import com.tectonica.jonix.codelist.CurrencyCodes;
+import com.tectonica.jonix.codelist.PriceTypes;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.PriceTypes;
-
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;Price&gt; that may exist in ONIX supply-details
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicPrices extends LazyList<BasicPrice>
-{
-	public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes)
-	{
-		List<BasicPrice> matches = new ArrayList<BasicPrice>();
-		for (BasicPrice price : this)
-		{
-			if (requestedTypes.contains(price.priceType))
-				matches.add(price);
-		}
-		return matches;
-	}
+public abstract class BasicPrices extends LazyList<BasicPrice> {
+    public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes) {
+        List<BasicPrice> matches = new ArrayList<BasicPrice>();
+        for (BasicPrice price : this) {
+            if (requestedTypes.contains(price.priceType)) {
+                matches.add(price);
+            }
+        }
+        return matches;
+    }
 
-	public String findRetailPrice(CurrencyCodes currency, boolean includingTax)
-	{
-		for (BasicPrice price : this)
-		{
-			PriceTypes type = price.priceType;
-			boolean correctType = (includingTax && type == PriceTypes.RRP_including_tax)
-					|| (!includingTax && type == PriceTypes.RRP_excluding_tax);
-			if (correctType && (price.currencyCode == currency))
-				return price.priceAmountAsStr;
-		}
-		return null;
-	}
+    public String findRetailPrice(CurrencyCodes currency, boolean includingTax) {
+        for (BasicPrice price : this) {
+            PriceTypes type = price.priceType;
+            boolean correctType = (includingTax && type == PriceTypes.RRP_including_tax)
+                || (!includingTax && type == PriceTypes.RRP_excluding_tax);
+            if (correctType && (price.currencyCode == currency)) {
+                return price.priceAmountAsStr;
+            }
+        }
+        return null;
+    }
 }

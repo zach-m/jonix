@@ -30,30 +30,28 @@ import java.io.Serializable;
  * content, allowing the user to write a version-agnostic code.
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicProduct implements Serializable
-{
-	public transient Object onixProduct;
+public abstract class BasicProduct implements Serializable {
+    public transient Object onixProduct;
 
-	public BasicInfo info;
-	public BasicDescription description;
-	public BasicPublishingDetails publishingDetails;
+    public BasicInfo info;
+    public BasicDescription description;
+    public BasicPublishingDetails publishingDetails;
 
-	public BasicTitles titles;
-	public BasicContributors contributors;
-	public BasicCollections collections;
-	public BasicSubjects subjects;
-	public BasicTexts texts;
-	public BasicPublishers publishers;
-	public BasicImprints imprints;
-	public BasicSupplyDetails supplyDetails;
-	public BasicSalesRightss salesRightss;
+    public BasicTitles titles;
+    public BasicContributors contributors;
+    public BasicCollections collections;
+    public BasicSubjects subjects;
+    public BasicTexts texts;
+    public BasicPublishers publishers;
+    public BasicImprints imprints;
+    public BasicSupplyDetails supplyDetails;
+    public BasicSalesRightss salesRightss;
 
-	public String getLabel()
-	{
-		return (titles.size() > 0) ? titles.get(0).titleText : info.recordReference;
-	}
+    public String getLabel() {
+        return (titles.size() > 0) ? titles.get(0).titleText : info.recordReference;
+    }
 }

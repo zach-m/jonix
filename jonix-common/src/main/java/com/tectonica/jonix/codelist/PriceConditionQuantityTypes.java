@@ -28,57 +28,56 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 168 (Price condition quantity type)
  */
-interface CodeList168
-{}
+interface CodeList168 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 168</b>
  * <p>
  * Description: Price condition quantity type
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist168">ONIX Codelist 168 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist168">ONIX
+ * Codelist 168 in Reference Guide</a>
  */
-public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168
-{
-   /**
-    * The price condition quantity represents a time period
-    */
-   Time_period("01", "Time period"), //
+public enum PriceConditionQuantityTypes implements OnixCodelist, CodeList168 {
+    /**
+     * The price condition quantity represents a time period
+     */
+    Time_period("01", "Time period"), //
 
-   /**
-    * The price condition quantity is a number of updates
-    */
-   Number_of_updates("02", "Number of updates");
+    /**
+     * The price condition quantity is a number of updates
+     */
+    Number_of_updates("02", "Number of updates");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private PriceConditionQuantityTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private PriceConditionQuantityTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static PriceConditionQuantityTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (PriceConditionQuantityTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static PriceConditionQuantityTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (PriceConditionQuantityTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

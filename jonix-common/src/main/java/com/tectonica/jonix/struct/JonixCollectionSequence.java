@@ -19,36 +19,37 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.CollectionSequenceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixCollectionSequence implements JonixKeyedStruct<CollectionSequenceTypes>, Serializable
-{
-   public static JonixCollectionSequence EMPTY = new JonixCollectionSequence();
+public class JonixCollectionSequence implements JonixKeyedStruct<CollectionSequenceTypes>, Serializable {
+    public static JonixCollectionSequence EMPTY = new JonixCollectionSequence();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public CollectionSequenceTypes collectionSequenceType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public CollectionSequenceTypes collectionSequenceType;
 
-   /**
-    * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String collectionSequenceTypeName;
+    /**
+     * Raw Format: Variable length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String collectionSequenceTypeName;
 
-   /**
-    * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period character, suggested maximum length 100 characters <p> (type: dt.MultiLevelNumber)
-    */
-   public String collectionSequenceNumber;
+    /**
+     * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
+     * character, suggested maximum length 100 characters <p> (type: dt.MultiLevelNumber)
+     */
+    public String collectionSequenceNumber;
 
-   @Override
-   public CollectionSequenceTypes key() { return collectionSequenceType; }
+    @Override
+    public CollectionSequenceTypes key() {
+        return collectionSequenceType;
+    }
 }

@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.DiscountCodeTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixDiscountCoded implements JonixKeyedStruct<DiscountCodeTypes>, Serializable
-{
-   public static JonixDiscountCoded EMPTY = new JonixDiscountCoded();
+public class JonixDiscountCoded implements JonixKeyedStruct<DiscountCodeTypes>, Serializable {
+    public static JonixDiscountCoded EMPTY = new JonixDiscountCoded();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public DiscountCodeTypes discountCodeType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public DiscountCodeTypes discountCodeType;
 
-   /**
-    * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String discountCode;
+    /**
+     * Raw Format: According to the scheme specified in &lt;DiscountCodeType&gt; <p> (type: dt.NonEmptyString)
+     */
+    public String discountCode;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String discountCodeTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String discountCodeTypeName;
 
-   @Override
-   public DiscountCodeTypes key() { return discountCodeType; }
+    @Override
+    public DiscountCodeTypes key() {
+        return discountCodeType;
+    }
 }

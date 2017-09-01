@@ -1,4 +1,4 @@
 package com.tectonica.jonix;
 
-public interface JonixStruct
-{}
+public interface JonixStruct {
+}

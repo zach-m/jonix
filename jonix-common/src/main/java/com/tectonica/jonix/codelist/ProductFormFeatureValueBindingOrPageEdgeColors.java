@@ -21,125 +21,120 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * marker interface to assist in IDE navigation to code-list 98 (Product form feature value - binding or page edge color)
+ * marker interface to assist in IDE navigation to code-list 98 (Product form feature value - binding or page edge
+ * color)
  */
-interface CodeList98
-{}
+interface CodeList98 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 98</b>
  * <p>
  * Description: Product form feature value - binding or page edge color
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist98">ONIX Codelist 98 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist98">ONIX
+ * Codelist 98 in Reference Guide</a>
  */
-public enum ProductFormFeatureValueBindingOrPageEdgeColors implements OnixCodelist, CodeList98
-{
-   Black("BLK", "Black"), //
+public enum ProductFormFeatureValueBindingOrPageEdgeColors implements OnixCodelist, CodeList98 {
+    Black("BLK", "Black"), //
 
-   Blue("BLU", "Blue"), //
+    Blue("BLU", "Blue"), //
 
-   Brown("BRN", "Brown"), //
+    Brown("BRN", "Brown"), //
 
-   Burgundy_maroon("BUR", "Burgundy/maroon"), //
+    Burgundy_maroon("BUR", "Burgundy/maroon"), //
 
-   Cream("CRE", "Cream"), //
+    Cream("CRE", "Cream"), //
 
-   Four_color("FCO", "Four-color"), //
+    Four_color("FCO", "Four-color"), //
 
-   Four_color_and_spot_color("FCS", "Four-color and spot-color"), //
+    Four_color_and_spot_color("FCS", "Four-color and spot-color"), //
 
-   Gold("GLD", "Gold"), //
+    Gold("GLD", "Gold"), //
 
-   Green("GRN", "Green"), //
+    Green("GRN", "Green"), //
 
-   Grey("GRY", "Grey"), //
+    Grey("GRY", "Grey"), //
 
-   /**
-    * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
-    */
-   Multicolor("MUL", "Multicolor"), //
+    /**
+     * Use &lt;ProductFormFeatureDescription&gt; to add brief details if required
+     */
+    Multicolor("MUL", "Multicolor"), //
 
-   Navy_Dark_blue("NAV", "Navy/Dark blue"), //
+    Navy_Dark_blue("NAV", "Navy/Dark blue"), //
 
-   Orange("ORG", "Orange"), //
+    Orange("ORG", "Orange"), //
 
-   Pink("PNK", "Pink"), //
+    Pink("PNK", "Pink"), //
 
-   Purple("PUR", "Purple"), //
+    Purple("PUR", "Purple"), //
 
-   Red("RED", "Red"), //
+    Red("RED", "Red"), //
 
-   Sky_Pale_blue("SKY", "Sky/Pale blue"), //
+    Sky_Pale_blue("SKY", "Sky/Pale blue"), //
 
-   Silver("SLV", "Silver"), //
+    Silver("SLV", "Silver"), //
 
-   Tan_Light_brown("TAN", "Tan/Light brown"), //
+    Tan_Light_brown("TAN", "Tan/Light brown"), //
 
-   Teal_Turquoise_green("TEA", "Teal/Turquoise green"), //
+    Teal_Turquoise_green("TEA", "Teal/Turquoise green"), //
 
-   White("WHI", "White"), //
+    White("WHI", "White"), //
 
-   Yellow("YEL", "Yellow"), //
+    Yellow("YEL", "Yellow"), //
 
-   Other("ZZZ", "Other");
+    Other("ZZZ", "Other");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ProductFormFeatureValueBindingOrPageEdgeColors(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ProductFormFeatureValueBindingOrPageEdgeColors(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map;
+    private static volatile Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map;
 
-   private static Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map()
-   {
-      Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> result = map;
-      if (result == null)
-      {
-         synchronized(ProductFormFeatureValueBindingOrPageEdgeColors.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (ProductFormFeatureValueBindingOrPageEdgeColors e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> map() {
+        Map<String, ProductFormFeatureValueBindingOrPageEdgeColors> result = map;
+        if (result == null) {
+            synchronized (ProductFormFeatureValueBindingOrPageEdgeColors.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (ProductFormFeatureValueBindingOrPageEdgeColors e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static ProductFormFeatureValueBindingOrPageEdgeColors byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static ProductFormFeatureValueBindingOrPageEdgeColors byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

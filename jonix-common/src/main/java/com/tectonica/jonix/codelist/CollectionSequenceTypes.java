@@ -28,72 +28,73 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 197 (Collection sequence type)
  */
-interface CodeList197
-{}
+interface CodeList197 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 197</b>
  * <p>
  * Description: Collection sequence type
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist197">ONIX Codelist 197 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist197">ONIX
+ * Codelist 197 in Reference Guide</a>
  */
-public enum CollectionSequenceTypes implements OnixCodelist, CodeList197
-{
-   /**
-    * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;
-    */
-   Proprietary("01", "Proprietary"), //
+public enum CollectionSequenceTypes implements OnixCodelist, CodeList197 {
+    /**
+     * A short explanatory label for the sequence should be provided in &lt;CollectionSequenceTypeName&gt;
+     */
+    Proprietary("01", "Proprietary"), //
 
-   /**
-    * Order as specified by the title, eg by volume or part number sequence, provided for confirmation
-    */
-   Title_order("02", "Title order"), //
+    /**
+     * Order as specified by the title, eg by volume or part number sequence, provided for confirmation
+     */
+    Title_order("02", "Title order"), //
 
-   /**
-    * Order of publication of products within the collection
-    */
-   Publication_order("03", "Publication order"), //
+    /**
+     * Order of publication of products within the collection
+     */
+    Publication_order("03", "Publication order"), //
 
-   /**
-    * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to either fiction or to non-fiction (eg within a collection of history textbooks)
-    */
-   Temporal_narrative_order("04", "Temporal/narrative order"), //
+    /**
+     * Order defined by a continuing narrative or temporal sequence within products in the collection. Applicable to
+     * either fiction or to non-fiction (eg within a collection of history textbooks)
+     */
+    Temporal_narrative_order("04", "Temporal/narrative order"), //
 
-   /**
-    * Original publication order, for a republished collection or collected works originally published outside a collection
-    */
-   Original_publication_order("05", "Original publication order");
+    /**
+     * Original publication order, for a republished collection or collected works originally published outside a
+     * collection
+     */
+    Original_publication_order("05", "Original publication order");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private CollectionSequenceTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private CollectionSequenceTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static CollectionSequenceTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (CollectionSequenceTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static CollectionSequenceTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (CollectionSequenceTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

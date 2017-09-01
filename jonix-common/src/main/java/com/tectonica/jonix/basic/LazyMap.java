@@ -29,138 +29,119 @@ import java.util.Map;
 import java.util.Set;
 
 @SuppressWarnings("serial")
-public abstract class LazyMap<K, V> implements Map<K, V>, Serializable
-{
-	private Map<K, V> map;
+public abstract class LazyMap<K, V> implements Map<K, V>, Serializable {
+    private Map<K, V> map;
 
-	abstract protected Map<K, V> initialize();
+    protected abstract Map<K, V> initialize();
 
-	/**
-	 * lazily initializes this map (if needed) in a thread-safe manner
-	 */
-	private void ensure()
-	{
-		Map<K, V> m = map;
-		if (m == null)
-		{
-			synchronized (this)
-			{
-				m = map;
-				if (m == null)
-				{
-					m = initialize();
-					if (m == null)
-						map = Collections.emptyMap();
-					else
-						map = Collections.synchronizedMap(m);
-				}
-			}
-		}
-	}
+    /**
+     * lazily initializes this map (if needed) in a thread-safe manner
+     */
+    private void ensure() {
+        Map<K, V> m = map;
+        if (m == null) {
+            synchronized (this) {
+                m = map;
+                if (m == null) {
+                    m = initialize();
+                    if (m == null) {
+                        map = Collections.emptyMap();
+                    } else {
+                        map = Collections.synchronizedMap(m);
+                    }
+                }
+            }
+        }
+    }
 
-	// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	private void writeObject(ObjectOutputStream out) throws IOException
-	{
-		ensure();
-		out.defaultWriteObject();
-	}
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        ensure();
+        out.defaultWriteObject();
+    }
 
-	private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException
-	{
-		in.defaultReadObject();
-	}
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+    }
 
-	@Override
-	public String toString()
-	{
-		ensure();
-		return map.toString();
-	}
+    @Override
+    public String toString() {
+        ensure();
+        return map.toString();
+    }
 
-	// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	@Override
-	public int size()
-	{
-		ensure();
-		return map.size();
-	}
+    @Override
+    public int size() {
+        ensure();
+        return map.size();
+    }
 
-	@Override
-	public boolean isEmpty()
-	{
-		ensure();
-		return map.isEmpty();
-	}
+    @Override
+    public boolean isEmpty() {
+        ensure();
+        return map.isEmpty();
+    }
 
-	@Override
-	public boolean containsKey(Object key)
-	{
-		ensure();
-		return map.containsKey(key);
-	}
+    @Override
+    public boolean containsKey(Object key) {
+        ensure();
+        return map.containsKey(key);
+    }
 
-	@Override
-	public boolean containsValue(Object value)
-	{
-		ensure();
-		return map.containsValue(value);
-	}
+    @Override
+    public boolean containsValue(Object value) {
+        ensure();
+        return map.containsValue(value);
+    }
 
-	@Override
-	public V get(Object key)
-	{
-		ensure();
-		return map.get(key);
-	}
+    @Override
+    public V get(Object key) {
+        ensure();
+        return map.get(key);
+    }
 
-	@Override
-	public V put(K key, V value)
-	{
-		ensure();
-		return map.put(key, value);
-	}
+    @Override
+    public V put(K key, V value) {
+        ensure();
+        return map.put(key, value);
+    }
 
-	@Override
-	public V remove(Object key)
-	{
-		ensure();
-		return map.remove(key);
-	}
+    @Override
+    public V remove(Object key) {
+        ensure();
+        return map.remove(key);
+    }
 
-	@Override
-	public void putAll(Map<? extends K, ? extends V> m)
-	{
-		ensure();
-		map.putAll(m);
-	}
+    @Override
+    public void putAll(Map<? extends K, ? extends V> m) {
+        ensure();
+        map.putAll(m);
+    }
 
-	@Override
-	public void clear()
-	{
-		ensure();
-		map.clear();
-	}
+    @Override
+    public void clear() {
+        ensure();
+        map.clear();
+    }
 
-	@Override
-	public Set<K> keySet()
-	{
-		ensure();
-		return map.keySet();
-	}
+    @Override
+    public Set<K> keySet() {
+        ensure();
+        return map.keySet();
+    }
 
-	@Override
-	public Collection<V> values()
-	{
-		ensure();
-		return map.values();
-	}
+    @Override
+    public Collection<V> values() {
+        ensure();
+        return map.values();
+    }
 
-	@Override
-	public Set<java.util.Map.Entry<K, V>> entrySet()
-	{
-		ensure();
-		return map.entrySet();
-	}
+    @Override
+    public Set<java.util.Map.Entry<K, V>> entrySet() {
+        ensure();
+        return map.entrySet();
+    }
 }

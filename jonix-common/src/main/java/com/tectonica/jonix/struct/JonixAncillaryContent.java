@@ -19,36 +19,38 @@
 
 package com.tectonica.jonix.struct;
 
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixAncillaryContent implements JonixKeyedStruct<IllustrationAndOtherContentTypes>, Serializable
-{
-   public static JonixAncillaryContent EMPTY = new JonixAncillaryContent();
+public class JonixAncillaryContent implements JonixKeyedStruct<IllustrationAndOtherContentTypes>, Serializable {
+    public static JonixAncillaryContent EMPTY = new JonixAncillaryContent();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public IllustrationAndOtherContentTypes ancillaryContentType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public IllustrationAndOtherContentTypes ancillaryContentType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
-    */
-   public List<String> ancillaryContentDescriptions;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+     */
+    public List<String> ancillaryContentDescriptions;
 
-   /**
-    * Raw Format: Variable-length integer, suggested maximum length 6 digits <p> (type: dt.PositiveInteger)
-    */
-   public Integer number;
+    /**
+     * Raw Format: Variable-length integer, suggested maximum length 6 digits <p> (type: dt.PositiveInteger)
+     */
+    public Integer number;
 
-   @Override
-   public IllustrationAndOtherContentTypes key() { return ancillaryContentType; }
+    @Override
+    public IllustrationAndOtherContentTypes key() {
+        return ancillaryContentType;
+    }
 }

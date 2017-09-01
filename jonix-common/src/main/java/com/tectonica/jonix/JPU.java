@@ -19,9 +19,11 @@
 
 package com.tectonica.jonix;
 
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.List;
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -29,204 +31,179 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import com.tectonica.jonix.OnixComposite.OnixDataComposite;
-import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * an all-static Jonix Processing Utility class, assisting in run time processing of the DOM elements.
  * <p>
  * IMPORTANT: Beware editing! the auto-generated classes all rely heavily on the methods in this class
- * 
+ *
  * @author Zach Melamed
  */
-public class JPU
-{
-	public static Element firstElemChild(Node node)
-	{
-		final NodeList childNodes = node.getChildNodes();
-		for (int i = 0; i < childNodes.getLength(); i++)
-		{
-			final Node item = childNodes.item(i);
-			if ((item.getNodeType() == Node.ELEMENT_NODE))
-				return (Element) item;
-		}
-		return null;
-	}
+public class JPU {
+    public static Element firstElemChild(Node node) {
+        final NodeList childNodes = node.getChildNodes();
+        for (int i = 0; i < childNodes.getLength(); i++) {
+            final Node item = childNodes.item(i);
+            if ((item.getNodeType() == Node.ELEMENT_NODE)) {
+                return (Element) item;
+            }
+        }
+        return null;
+    }
 
-	public static Element nextElemChild(Node node)
-	{
-		Node item = node.getNextSibling();
-		while (item != null && (item.getNodeType() != Node.ELEMENT_NODE))
-			item = item.getNextSibling();
-		return (Element) item;
-	}
+    public static Element nextElemChild(Node node) {
+        Node item = node.getNextSibling();
+        while (item != null && (item.getNodeType() != Node.ELEMENT_NODE)) {
+            item = item.getNextSibling();
+        }
+        return (Element) item;
+    }
 
-	@FunctionalInterface
-	public static interface ElementListener
-	{
-		void onElement(Element element);
-	}
+    @FunctionalInterface
+    public static interface ElementListener {
+        void onElement(Element element);
+    }
 
-	public static void forElementsOf(Node node, ElementListener listener)
-	{
-		for (Element element = firstElemChild(node); element != null; element = nextElemChild(element))
-			listener.onElement(element);
-	}
+    public static void forElementsOf(Node node, ElementListener listener) {
+        for (Element element = firstElemChild(node); element != null; element = nextElemChild(element)) {
+            listener.onElement(element);
+        }
+    }
 
-	public static String getAttribute(Element element, String name)
-	{
-		final String value = element.getAttribute(name);
-		return value.isEmpty() ? null : value;
-	}
+    public static String getAttribute(Element element, String name) {
+        final String value = element.getAttribute(name);
+        return value.isEmpty() ? null : value;
+    }
 
-	public static String getContentAsString(Element element)
-	{
-		return getChildText(element);
-	}
+    public static String getContentAsString(Element element) {
+        return getChildText(element);
+    }
 
-	public static Integer getContentAsInteger(Element element)
-	{
-		final String s = getChildText(element);
-		return (s.isEmpty() ? null : Integer.valueOf(s));
-	}
+    public static Integer getContentAsInteger(Element element) {
+        final String s = getChildText(element);
+        return (s.isEmpty() ? null : Integer.valueOf(s));
+    }
 
-	public static Double getContentAsDouble(Element element)
-	{
-		final String s = getChildText(element);
-		return (s.isEmpty() ? null : Double.valueOf(s));
-	}
+    public static Double getContentAsDouble(Element element) {
+        final String s = getChildText(element);
+        return (s.isEmpty() ? null : Double.valueOf(s));
+    }
 
-	private static String getChildText(Node node)
-	{
-		if (node == null)
-			return null;
+    private static String getChildText(Node node) {
+        if (node == null) {
+            return null;
+        }
 
-		StringBuffer str = new StringBuffer();
-		Node child = node.getFirstChild();
-		while (child != null)
-		{
-			short type = child.getNodeType();
-			if (type == Node.TEXT_NODE)
-				str.append(child.getNodeValue());
-			else if (type == Node.CDATA_SECTION_NODE)
-				str.append(getChildText(child));
-			child = child.getNextSibling();
-		}
+        StringBuffer str = new StringBuffer();
+        Node child = node.getFirstChild();
+        while (child != null) {
+            short type = child.getNodeType();
+            if (type == Node.TEXT_NODE) {
+                str.append(child.getNodeValue());
+            } else if (type == Node.CDATA_SECTION_NODE) {
+                str.append(getChildText(child));
+            }
+            child = child.getNextSibling();
+        }
 
-		return str.toString().trim();
-	}
+        return str.toString().trim();
+    }
 
-	public static String getChildXHTML(Node node, boolean strip)
-	{
-		StringWriter sw = new StringWriter();
-		try
-		{
-			Transformer t = TransformerFactory.newInstance().newTransformer();
-			t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-			t.transform(new DOMSource(node), new StreamResult(sw));
-		}
-		catch (TransformerException e)
-		{
-			throw new RuntimeException(e);
-		}
-		final String content = sw.toString();
+    public static String getChildXHTML(Node node, boolean strip) {
+        StringWriter sw = new StringWriter();
+        try {
+            Transformer t = TransformerFactory.newInstance().newTransformer();
+            t.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            t.transform(new DOMSource(node), new StreamResult(sw));
+        } catch (TransformerException e) {
+            throw new RuntimeException(e);
+        }
+        final String content = sw.toString();
 
-		if (strip)
-		{
-			final int beginIndex = content.indexOf(">") + 1;
-			final int endIndex = content.lastIndexOf("<");
-			if (endIndex > beginIndex)
-				return content.substring(beginIndex, endIndex);
-		}
-		return content;
-	}
+        if (strip) {
+            final int beginIndex = content.indexOf(">") + 1;
+            final int endIndex = content.lastIndexOf("<");
+            if (endIndex > beginIndex) {
+                return content.substring(beginIndex, endIndex);
+            }
+        }
+        return content;
+    }
 
-	public static <T> List<T> addToList(List<T> in, T item)
-	{
-		List<T> out = (in.size() > 0) ? in : new ArrayList<>();
-		out.add(item);
-		return out;
-	}
+    public static <T> List<T> addToList(List<T> in, T item) {
+        List<T> out = (in.size() > 0) ? in : new ArrayList<>();
+        out.add(item);
+        return out;
+    }
 
-	public static <E extends OnixElement<V>, V> ListOfOnixElement<E, V> addToList(ListOfOnixElement<E, V> in, E item)
-	{
-		ListOfOnixElement<E, V> out = (in.size() > 0) ? in : new ListOfOnixElement<>();
-		out.add(item);
-		return out;
-	}
+    public static <E extends OnixElement<V>, V> ListOfOnixElement<E, V> addToList(ListOfOnixElement<E, V> in, E item) {
+        ListOfOnixElement<E, V> out = (in.size() > 0) ? in : new ListOfOnixElement<>();
+        out.add(item);
+        return out;
+    }
 
-	public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> addToList(
-			ListOfOnixDataComposite<C, S> in, C item)
-	{
-		ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>();
-		out.add(item);
-		return out;
-	}
+    public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> addToList(
+        ListOfOnixDataComposite<C, S> in, C item) {
+        ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>();
+        out.add(item);
+        return out;
+    }
 
-	public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K>> ListOfOnixDataCompositeWithKey<C, S, K> addToList(
-			ListOfOnixDataCompositeWithKey<C, S, K> in, C item)
-	{
-		ListOfOnixDataCompositeWithKey<C, S, K> out = (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>();
-		out.add(item);
-		return out;
-	}
+    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K>>
+        ListOfOnixDataCompositeWithKey<C, S, K> addToList(ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
+        ListOfOnixDataCompositeWithKey<C, S, K> out = (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>();
+        out.add(item);
+        return out;
+    }
 
-	public static Integer convertStringToInteger(String s)
-	{
-		return (s == null) ? null : Integer.parseInt(s.trim());
-	}
+    public static Integer convertStringToInteger(String s) {
+        return (s == null) ? null : Integer.parseInt(s.trim());
+    }
 
-	/**
-	 * converts if possible, but returns null if the string isn't an integer
-	 */
-	public static Integer convertStringToIntegerSafe(String s)
-	{
-		try
-		{
-			return convertStringToInteger(s);
-		}
-		catch (NumberFormatException e)
-		{
-			return null;
-		}
-	}
+    /**
+     * converts if possible, but returns null if the string isn't an integer
+     */
+    public static Integer convertStringToIntegerSafe(String s) {
+        try {
+            return convertStringToInteger(s);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
 
-	public static Double convertStringToDouble(String s)
-	{
-		return (s == null) ? null : Double.parseDouble(s.trim());
-	}
+    public static Double convertStringToDouble(String s) {
+        return (s == null) ? null : Double.parseDouble(s.trim());
+    }
 
-	/**
-	 * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes, etc.
-	 */
-	public static Double convertStringToDoubleSafe(String s)
-	{
-		try
-		{
-			return convertStringToDouble(s);
-		}
-		catch (NumberFormatException e)
-		{
-			s = s.trim();
+    /**
+     * deals with all sorts of extra-characters that may come along with a double, such as currency symbol, quotes,
+     * etc.
+     */
+    public static Double convertStringToDoubleSafe(String s) {
+        try {
+            return convertStringToDouble(s);
+        } catch (NumberFormatException e) {
+            s = s.trim();
 
-			if (s.isEmpty())
-				return null;
+            if (s.isEmpty()) {
+                return null;
+            }
 
-			if (Character.getType(s.charAt(0)) == Character.CURRENCY_SYMBOL)
-				return convertStringToDoubleSafe(s.substring(1, s.length()));
+            if (Character.getType(s.charAt(0)) == Character.CURRENCY_SYMBOL) {
+                return convertStringToDoubleSafe(s.substring(1, s.length()));
+            }
 
-			final boolean quoted1 = s.startsWith("'") && s.endsWith("'");
-			final boolean quoted2 = s.startsWith("\"") && s.endsWith("\"");
-			final boolean quoted3 = s.startsWith("`") && s.endsWith("`");
-			if (quoted1 || quoted2 || quoted3)
-				return convertStringToDoubleSafe(s.substring(1, s.length() - 1));
+            final boolean quoted1 = s.startsWith("'") && s.endsWith("'");
+            final boolean quoted2 = s.startsWith("\"") && s.endsWith("\"");
+            final boolean quoted3 = s.startsWith("`") && s.endsWith("`");
+            if (quoted1 || quoted2 || quoted3) {
+                return convertStringToDoubleSafe(s.substring(1, s.length() - 1));
+            }
 
-			return null;
-		}
-	}
+            return null;
+        }
+    }
 }

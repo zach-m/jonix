@@ -19,33 +19,34 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.PriceConditionQuantityTypes;
+import com.tectonica.jonix.codelist.QuantityUnits;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPriceConditionQuantity implements JonixKeyedStruct<PriceConditionQuantityTypes>, Serializable
-{
-   public static JonixPriceConditionQuantity EMPTY = new JonixPriceConditionQuantity();
+public class JonixPriceConditionQuantity implements JonixKeyedStruct<PriceConditionQuantityTypes>, Serializable {
+    public static JonixPriceConditionQuantity EMPTY = new JonixPriceConditionQuantity();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public PriceConditionQuantityTypes priceConditionQuantityType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public PriceConditionQuantityTypes priceConditionQuantityType;
 
-   /**
-    * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
-    */
-   public Double quantity;
+    /**
+     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     */
+    public Double quantity;
 
-   public QuantityUnits quantityUnit;
+    public QuantityUnits quantityUnit;
 
-   @Override
-   public PriceConditionQuantityTypes key() { return priceConditionQuantityType; }
+    @Override
+    public PriceConditionQuantityTypes key() {
+        return priceConditionQuantityType;
+    }
 }

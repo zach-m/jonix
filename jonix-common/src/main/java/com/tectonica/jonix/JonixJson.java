@@ -1,9 +1,5 @@
 package com.tectonica.jonix;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.TimeZone;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -11,43 +7,41 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-public class JonixJson
-{
-	private static final ObjectMapper publicFieldsMapper = createPublicFieldsMapper();
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
-	private static ObjectMapper createPublicFieldsMapper()
-	{
-		ObjectMapper mapper = new ObjectMapper();
+public class JonixJson {
+    private static final ObjectMapper publicFieldsMapper = createPublicFieldsMapper();
 
-		// configure to use public fields only, consistent with Jonix design
-		mapper.setVisibility(PropertyAccessor.FIELD, Visibility.PUBLIC_ONLY);
-		mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
-		mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
+    private static ObjectMapper createPublicFieldsMapper() {
+        ObjectMapper mapper = new ObjectMapper();
 
-		// general configuration
-		mapper.setSerializationInclusion(Include.NON_NULL);
-		mapper.enable(SerializationFeature.INDENT_OUTPUT);
-		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+        // configure to use public fields only, consistent with Jonix design
+        mapper.setVisibility(PropertyAccessor.FIELD, Visibility.PUBLIC_ONLY);
+        mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
+        mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-		mapper.setDateFormat(sdf);
+        // general configuration
+        mapper.setSerializationInclusion(Include.NON_NULL);
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
-		return mapper;
-	}
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        mapper.setDateFormat(sdf);
 
-	/**
-	 * returns a JSON string, based on the given Object's public fields
-	 */
-	public static String toJson(Object o)
-	{
-		try
-		{
-			return publicFieldsMapper.writeValueAsString(o);
-		}
-		catch (IOException e)
-		{
-			throw new RuntimeException(e);
-		}
-	}
+        return mapper;
+    }
+
+    /**
+     * returns a JSON string, based on the given Object's public fields
+     */
+    public static String toJson(Object o) {
+        try {
+            return publicFieldsMapper.writeValueAsString(o);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

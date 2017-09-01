@@ -18,19 +18,19 @@
  *   You should have received a copy of the GNU Lesser General Public License
  *   along with ISBNHyphenAppender.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package net.sourceforge.isbnhyphenappender;
 
 /**
  * Represents an ISBN group.
  * <p>
- * Each group is based in the information on
- * https://www.isbn-international.org/export_rangemessage.xml
+ * Each group is based in the information on https://www.isbn-international.org/export_rangemessage.xml
  * <p>
- * Updated to: {@code 3a9e9271-089c-4726-807e-332336cc4315}
- * {@code (Tue, 8 Mar 2016 17:35:37 CET}
- * @see <a href="https://www.isbn-international.org/export_rangemessage.xml">https://www.isbn-international.org/export_rangemessage.xml</a>
+ * Updated to: {@code 3a9e9271-089c-4726-807e-332336cc4315} {@code (Tue, 8 Mar 2016 17:35:37 CET}
+ *
  * @author Francisco Sariego Rodríguez
  * @version $Revision: 54 $ $Id: Group.java 54 2016-03-20 20:21:03Z frsarieg $
+ * @see <a href="https://www.isbn-international.org/export_rangemessage.xml">https://www.isbn-international.org/export_rangemessage.xml</a>
  */
 public enum Group {
 
@@ -46,7 +46,7 @@ public enum Group {
      *  9500000 - 9999999</pre>
      * Maximum length: 7
      */
-    _9780(9780, new String[][]{
+    _9780(9780, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -65,7 +65,7 @@ public enum Group {
      *  9990000 - 9999999</pre>
      * Maximum length: 7
      */
-    _9781(9781, new String[][]{
+    _9781(9781, new String[][] {
         {"00", "09"},
         {"100", "399"},
         {"4000", "5499"},
@@ -86,7 +86,7 @@ public enum Group {
      *  9500000 - 9999999</pre>
      * Maximum length: 7
      */
-    _9782(9782, new String[][]{
+    _9782(9782, new String[][] {
         {"00", "19"},
         {"200", "349"},
         {"35000", "39999"},
@@ -115,7 +115,7 @@ public enum Group {
      *    99500 - 99999</pre>
      * Maximum length: 7
      */
-    _9783(9783, new String[][]{
+    _9783(9783, new String[][] {
         {"00", "02"},
         {"030", "033"},
         {"0340", "0369"},
@@ -142,7 +142,7 @@ public enum Group {
      *  9500000 - 9999999</pre>
      * Maximum length: 7
      */
-    _9784(9784, new String[][]{
+    _9784(9784, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -176,7 +176,7 @@ public enum Group {
      *     9910 - 9999</pre>
      * Maximum length: 7
      */
-    _9785(9785, new String[][]{
+    _9785(9785, new String[][] {
         {"00000", "00499"},
         {"0050", "0099"},
         {"01", "19"},
@@ -208,7 +208,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978600(978600, new String[][]{
+    _978600(978600, new String[][] {
         {"00", "09"},
         {"100", "499"},
         {"5000", "8999"},
@@ -224,7 +224,7 @@ public enum Group {
      *       85 - 99</pre>
      * Maximum length: 5
      */
-    _978601(978601, new String[][]{
+    _978601(978601, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "7999"},
@@ -253,7 +253,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978602(978602, new String[][]{
+    _978602(978602, new String[][] {
         {"00", "07"},
         {"0800", "0899"},
         {"0900", "1099"},
@@ -282,7 +282,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978603(978603, new String[][]{
+    _978603(978603, new String[][] {
         {"00", "04"},
         {"05", "49"},
         {"500", "799"},
@@ -298,7 +298,7 @@ public enum Group {
      *     9800 - 9999</pre>
      * Maximum length: 4
      */
-    _978604(978604, new String[][]{
+    _978604(978604, new String[][] {
         {"0", "4"},
         {"50", "89"},
         {"900", "979"},
@@ -317,7 +317,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 5
      */
-    _978605(978605, new String[][]{
+    _978605(978605, new String[][] {
         {"0000000", "0099999"},
         {"01", "02"},
         {"030", "039"},
@@ -339,7 +339,7 @@ public enum Group {
      *      975 - 999</pre>
      * Maximum length: 5
      */
-    _978606(978606, new String[][]{
+    _978606(978606, new String[][] {
         {"0", "0"},
         {"10", "49"},
         {"500", "799"},
@@ -357,7 +357,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978607(978607, new String[][]{
+    _978607(978607, new String[][] {
         {"00", "39"},
         {"400", "749"},
         {"7500", "9499"},
@@ -374,7 +374,7 @@ public enum Group {
      *        7 - 9</pre>
      * Maximum length: 5
      */
-    _978608(978608, new String[][]{
+    _978608(978608, new String[][] {
         {"0", "0"},
         {"10", "19"},
         {"200", "449"},
@@ -391,7 +391,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978609(978609, new String[][]{
+    _978609(978609, new String[][] {
         {"00", "39"},
         {"400", "799"},
         {"8000", "9499"},
@@ -403,7 +403,7 @@ public enum Group {
      *  0000000 - 9999999</pre>
      * Maximum length: 0
      */
-    _978611(978611, new String[][]{
+    _978611(978611, new String[][] {
         {"0000000", "9999999"},}, 0),
     /**
      * Group: 978-612 - Peru.
@@ -416,7 +416,7 @@ public enum Group {
      *       50 - 99</pre>
      * Maximum length: 5
      */
-    _978612(978612, new String[][]{
+    _978612(978612, new String[][] {
         {"00", "29"},
         {"300", "399"},
         {"4000", "4499"},
@@ -429,7 +429,7 @@ public enum Group {
      *        0 - 9</pre>
      * Maximum length: 1
      */
-    _978613(978613, new String[][]{
+    _978613(978613, new String[][] {
         {"0", "9"},}, 1),
     /**
      * Group: 978-614 - Lebanon.
@@ -441,7 +441,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978614(978614, new String[][]{
+    _978614(978614, new String[][] {
         {"00", "39"},
         {"400", "799"},
         {"8000", "9499"},
@@ -457,7 +457,7 @@ public enum Group {
      *  9000000 - 9999999</pre>
      * Maximum length: 5
      */
-    _978615(978615, new String[][]{
+    _978615(978615, new String[][] {
         {"00", "09"},
         {"100", "499"},
         {"5000", "7999"},
@@ -473,7 +473,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978616(978616, new String[][]{
+    _978616(978616, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8999"},
@@ -488,7 +488,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978617(978617, new String[][]{
+    _978617(978617, new String[][] {
         {"00", "49"},
         {"500", "699"},
         {"7000", "8999"},
@@ -503,7 +503,7 @@ public enum Group {
      *    80000 - 99999</pre>
      * Maximum length: 5
      */
-    _978618(978618, new String[][]{
+    _978618(978618, new String[][] {
         {"00", "19"},
         {"200", "499"},
         {"5000", "7999"},
@@ -518,7 +518,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978619(978619, new String[][]{
+    _978619(978619, new String[][] {
         {"00", "14"},
         {"150", "699"},
         {"7000", "8999"},
@@ -530,7 +530,7 @@ public enum Group {
      *        0 - 9</pre>
      * Maximum length: 1
      */
-    _978620(978620, new String[][]{
+    _978620(978620, new String[][] {
         {"0", "9"},}, 1),
     /**
      * Group: 978-621 - Philippines.
@@ -545,7 +545,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978621(978621, new String[][]{
+    _978621(978621, new String[][] {
         {"00", "29"},
         {"3000000", "3999999"},
         {"400", "599"},
@@ -564,7 +564,7 @@ public enum Group {
      *   900000 - 999999</pre>
      * Maximum length: 6
      */
-    _9787(9787, new String[][]{
+    _9787(9787, new String[][] {
         {"00", "09"},
         {"100", "499"},
         {"5000", "7999"},
@@ -581,7 +581,7 @@ public enum Group {
      *   900000 - 999999</pre>
      * Maximum length: 6
      */
-    _97880(97880, new String[][]{
+    _97880(97880, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -598,7 +598,7 @@ public enum Group {
      *   900000 - 999999</pre>
      * Maximum length: 6
      */
-    _97881(97881, new String[][]{
+    _97881(97881, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -616,7 +616,7 @@ public enum Group {
      *   990000 - 999999</pre>
      * Maximum length: 6
      */
-    _97882(97882, new String[][]{
+    _97882(97882, new String[][] {
         {"00", "19"},
         {"200", "689"},
         {"690000", "699999"},
@@ -635,7 +635,7 @@ public enum Group {
      *   900000 - 999999</pre>
      * Maximum length: 6
      */
-    _97883(97883, new String[][]{
+    _97883(97883, new String[][] {
         {"00", "19"},
         {"200", "599"},
         {"60000", "69999"},
@@ -660,7 +660,7 @@ public enum Group {
      *     9700 - 9999</pre>
      * Maximum length: 6
      */
-    _97884(97884, new String[][]{
+    _97884(97884, new String[][] {
         {"00", "13"},
         {"140", "149"},
         {"15000", "19999"},
@@ -690,7 +690,7 @@ public enum Group {
      *    98000 - 99999</pre>
      * Maximum length: 6
      */
-    _97885(97885, new String[][]{
+    _97885(97885, new String[][] {
         {"00", "19"},
         {"200", "549"},
         {"5500", "5999"},
@@ -713,7 +713,7 @@ public enum Group {
      *   900000 - 999999</pre>
      * Maximum length: 6
      */
-    _97886(97886, new String[][]{
+    _97886(97886, new String[][] {
         {"00", "29"},
         {"300", "599"},
         {"6000", "7999"},
@@ -734,7 +734,7 @@ public enum Group {
      *   970000 - 999999</pre>
      * Maximum length: 6
      */
-    _97887(97887, new String[][]{
+    _97887(97887, new String[][] {
         {"00", "29"},
         {"3000000", "3999999"},
         {"400", "649"},
@@ -759,7 +759,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 6
      */
-    _97888(97888, new String[][]{
+    _97888(97888, new String[][] {
         {"00", "19"},
         {"200", "599"},
         {"6000", "8499"},
@@ -782,7 +782,7 @@ public enum Group {
      *      990 - 999</pre>
      * Maximum length: 6
      */
-    _97889(97889, new String[][]{
+    _97889(97889, new String[][] {
         {"00", "24"},
         {"250", "549"},
         {"5500", "8499"},
@@ -806,7 +806,7 @@ public enum Group {
      *  9500000 - 9999999</pre>
      * Maximum length: 6
      */
-    _97890(97890, new String[][]{
+    _97890(97890, new String[][] {
         {"00", "19"},
         {"200", "499"},
         {"5000", "6999"},
@@ -832,7 +832,7 @@ public enum Group {
      *   970000 - 999999</pre>
      * Maximum length: 6
      */
-    _97891(97891, new String[][]{
+    _97891(97891, new String[][] {
         {"0", "1"},
         {"20", "49"},
         {"500", "649"},
@@ -854,7 +854,7 @@ public enum Group {
      *   990000 - 999999</pre>
      * Maximum length: 6
      */
-    _97892(97892, new String[][]{
+    _97892(97892, new String[][] {
         {"0", "5"},
         {"60", "79"},
         {"800", "899"},
@@ -872,7 +872,7 @@ public enum Group {
      *   950000 - 999999</pre>
      * Maximum length: 6
      */
-    _97893(97893, new String[][]{
+    _97893(97893, new String[][] {
         {"00", "09"},
         {"100", "499"},
         {"5000", "7999"},
@@ -887,7 +887,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _97894(97894, new String[][]{
+    _97894(97894, new String[][] {
         {"000", "599"},
         {"6000", "8999"},
         {"90000", "99999"},}, 5),
@@ -901,7 +901,7 @@ public enum Group {
      *    99000 - 99999</pre>
      * Maximum length: 5
      */
-    _978950(978950, new String[][]{
+    _978950(978950, new String[][] {
         {"00", "49"},
         {"500", "899"},
         {"9000", "9899"},
@@ -917,7 +917,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978951(978951, new String[][]{
+    _978951(978951, new String[][] {
         {"0", "1"},
         {"20", "54"},
         {"550", "889"},
@@ -939,7 +939,7 @@ public enum Group {
      *    99000 - 99999</pre>
      * Maximum length: 5
      */
-    _978952(978952, new String[][]{
+    _978952(978952, new String[][] {
         {"00", "19"},
         {"200", "499"},
         {"5000", "5999"},
@@ -963,7 +963,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978953(978953, new String[][]{
+    _978953(978953, new String[][] {
         {"0", "0"},
         {"10", "14"},
         {"150", "509"},
@@ -983,7 +983,7 @@ public enum Group {
      *     9300 - 9999</pre>
      * Maximum length: 5
      */
-    _978954(978954, new String[][]{
+    _978954(978954, new String[][] {
         {"00", "28"},
         {"2900", "2999"},
         {"300", "799"},
@@ -1007,7 +1007,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978955(978955, new String[][]{
+    _978955(978955, new String[][] {
         {"0000", "1999"},
         {"20", "38"},
         {"3900", "4099"},
@@ -1028,7 +1028,7 @@ public enum Group {
      *     7000 - 9999</pre>
      * Maximum length: 4
      */
-    _978956(978956, new String[][]{
+    _978956(978956, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "9999"},}, 4),
@@ -1048,7 +1048,7 @@ public enum Group {
      *    97000 - 99999</pre>
      * Maximum length: 5
      */
-    _978957(978957, new String[][]{
+    _978957(978957, new String[][] {
         {"00", "02"},
         {"0300", "0499"},
         {"05", "19"},
@@ -1070,7 +1070,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978958(978958, new String[][]{
+    _978958(978958, new String[][] {
         {"00", "56"},
         {"57000", "59999"},
         {"600", "799"},
@@ -1086,7 +1086,7 @@ public enum Group {
      *    85000 - 99999</pre>
      * Maximum length: 5
      */
-    _978959(978959, new String[][]{
+    _978959(978959, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -1106,7 +1106,7 @@ public enum Group {
      *    98000 - 99999</pre>
      * Maximum length: 5
      */
-    _978960(978960, new String[][]{
+    _978960(978960, new String[][] {
         {"00", "19"},
         {"200", "659"},
         {"6600", "6899"},
@@ -1127,7 +1127,7 @@ public enum Group {
      *  9500000 - 9999999</pre>
      * Maximum length: 5
      */
-    _978961(978961, new String[][]{
+    _978961(978961, new String[][] {
         {"00", "19"},
         {"200", "599"},
         {"6000", "8999"},
@@ -1145,7 +1145,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 5
      */
-    _978962(978962, new String[][]{
+    _978962(978962, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -1163,7 +1163,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 5
      */
-    _978963(978963, new String[][]{
+    _978963(978963, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -1183,7 +1183,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 5
      */
-    _978964(978964, new String[][]{
+    _978964(978964, new String[][] {
         {"00", "14"},
         {"150", "249"},
         {"2500", "2999"},
@@ -1204,7 +1204,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978965(978965, new String[][]{
+    _978965(978965, new String[][] {
         {"00", "19"},
         {"200", "599"},
         {"6000000", "6999999"},
@@ -1231,7 +1231,7 @@ public enum Group {
      *      980 - 999</pre>
      * Maximum length: 5
      */
-    _978966(978966, new String[][]{
+    _978966(978966, new String[][] {
         {"00", "12"},
         {"130", "139"},
         {"14", "14"},
@@ -1263,7 +1263,7 @@ public enum Group {
      *    99900 - 99999</pre>
      * Maximum length: 5
      */
-    _978967(978967, new String[][]{
+    _978967(978967, new String[][] {
         {"00", "00"},
         {"0100", "0999"},
         {"10000", "19999"},
@@ -1286,7 +1286,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _978968(978968, new String[][]{
+    _978968(978968, new String[][] {
         {"01", "39"},
         {"400", "499"},
         {"5000", "7999"},
@@ -1304,7 +1304,7 @@ public enum Group {
      *     7500 - 9999</pre>
      * Maximum length: 5
      */
-    _978969(978969, new String[][]{
+    _978969(978969, new String[][] {
         {"0", "1"},
         {"20", "22"},
         {"23000", "23999"},
@@ -1322,7 +1322,7 @@ public enum Group {
      *     9700 - 9999</pre>
      * Maximum length: 5
      */
-    _978970(978970, new String[][]{
+    _978970(978970, new String[][] {
         {"01", "59"},
         {"600", "899"},
         {"9000", "9099"},
@@ -1345,7 +1345,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 5
      */
-    _978971(978971, new String[][]{
+    _978971(978971, new String[][] {
         {"000", "015"},
         {"0160", "0199"},
         {"02", "02"},
@@ -1368,7 +1368,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978972(978972, new String[][]{
+    _978972(978972, new String[][] {
         {"0", "1"},
         {"20", "54"},
         {"550", "799"},
@@ -1389,7 +1389,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978973(978973, new String[][]{
+    _978973(978973, new String[][] {
         {"0", "0"},
         {"100", "169"},
         {"1700", "1999"},
@@ -1411,7 +1411,7 @@ public enum Group {
      *     9500 - 9999</pre>
      * Maximum length: 5
      */
-    _978974(978974, new String[][]{
+    _978974(978974, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8499"},
@@ -1430,7 +1430,7 @@ public enum Group {
      *      990 - 999</pre>
      * Maximum length: 5
      */
-    _978975(978975, new String[][]{
+    _978975(978975, new String[][] {
         {"00000", "01999"},
         {"02", "24"},
         {"250", "599"},
@@ -1448,7 +1448,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978976(978976, new String[][]{
+    _978976(978976, new String[][] {
         {"0", "3"},
         {"40", "59"},
         {"600", "799"},
@@ -1466,7 +1466,7 @@ public enum Group {
      *       90 - 99</pre>
      * Maximum length: 5
      */
-    _978977(978977, new String[][]{
+    _978977(978977, new String[][] {
         {"00", "19"},
         {"200", "499"},
         {"5000", "6999"},
@@ -1484,7 +1484,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 5
      */
-    _978978(978978, new String[][]{
+    _978978(978978, new String[][] {
         {"000", "199"},
         {"2000", "2999"},
         {"30000", "79999"},
@@ -1504,7 +1504,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978979(978979, new String[][]{
+    _978979(978979, new String[][] {
         {"000", "099"},
         {"1000", "1499"},
         {"15000", "19999"},
@@ -1522,7 +1522,7 @@ public enum Group {
      *     6000 - 9999</pre>
      * Maximum length: 4
      */
-    _978980(978980, new String[][]{
+    _978980(978980, new String[][] {
         {"00", "19"},
         {"200", "599"},
         {"6000", "9999"},}, 4),
@@ -1538,7 +1538,7 @@ public enum Group {
      *     4000 - 9999</pre>
      * Maximum length: 5
      */
-    _978981(978981, new String[][]{
+    _978981(978981, new String[][] {
         {"00", "16"},
         {"17000", "19999"},
         {"200", "299"},
@@ -1556,7 +1556,7 @@ public enum Group {
      *    98000 - 99999</pre>
      * Maximum length: 5
      */
-    _978982(978982, new String[][]{
+    _978982(978982, new String[][] {
         {"00", "09"},
         {"100", "699"},
         {"70", "89"},
@@ -1577,7 +1577,7 @@ public enum Group {
      *    99000 - 99999</pre>
      * Maximum length: 5
      */
-    _978983(978983, new String[][]{
+    _978983(978983, new String[][] {
         {"00", "01"},
         {"020", "199"},
         {"2000", "3999"},
@@ -1597,7 +1597,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978984(978984, new String[][]{
+    _978984(978984, new String[][] {
         {"00", "39"},
         {"400", "799"},
         {"8000", "8999"},
@@ -1612,7 +1612,7 @@ public enum Group {
      *    90000 - 99999</pre>
      * Maximum length: 5
      */
-    _978985(978985, new String[][]{
+    _978985(978985, new String[][] {
         {"00", "39"},
         {"400", "599"},
         {"6000", "8999"},
@@ -1627,7 +1627,7 @@ public enum Group {
      *    80000 - 99999</pre>
      * Maximum length: 5
      */
-    _978986(978986, new String[][]{
+    _978986(978986, new String[][] {
         {"00", "11"},
         {"120", "559"},
         {"5600", "7999"},
@@ -1651,7 +1651,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978987(978987, new String[][]{
+    _978987(978987, new String[][] {
         {"00", "09"},
         {"1000", "1999"},
         {"20000", "29999"},
@@ -1679,7 +1679,7 @@ public enum Group {
      *    97000 - 99999</pre>
      * Maximum length: 5
      */
-    _978988(978988, new String[][]{
+    _978988(978988, new String[][] {
         {"00", "11"},
         {"12000", "14999"},
         {"15000", "16999"},
@@ -1699,7 +1699,7 @@ public enum Group {
      *    95000 - 99999</pre>
      * Maximum length: 5
      */
-    _978989(978989, new String[][]{
+    _978989(978989, new String[][] {
         {"0", "1"},
         {"20", "54"},
         {"550", "799"},
@@ -1717,7 +1717,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789924(9789924, new String[][]{
+    _9789924(9789924, new String[][] {
         {"0000000", "2999999"},
         {"30", "39"},
         {"4000000", "4999999"},
@@ -1734,7 +1734,7 @@ public enum Group {
      *     7350 - 9999</pre>
      * Maximum length: 4
      */
-    _9789925(9789925, new String[][]{
+    _9789925(9789925, new String[][] {
         {"0", "2"},
         {"30", "54"},
         {"550", "734"},
@@ -1749,7 +1749,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789926(9789926, new String[][]{
+    _9789926(9789926, new String[][] {
         {"0", "1"},
         {"20", "39"},
         {"400", "799"},
@@ -1764,7 +1764,7 @@ public enum Group {
      *  5000000 - 9999999</pre>
      * Maximum length: 4
      */
-    _9789927(9789927, new String[][]{
+    _9789927(9789927, new String[][] {
         {"00", "09"},
         {"100", "399"},
         {"4000", "4999"},
@@ -1779,7 +1779,7 @@ public enum Group {
      *  5000000 - 9999999</pre>
      * Maximum length: 4
      */
-    _9789928(9789928, new String[][]{
+    _9789928(9789928, new String[][] {
         {"00", "09"},
         {"100", "399"},
         {"4000", "4999"},
@@ -1794,7 +1794,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789929(9789929, new String[][]{
+    _9789929(9789929, new String[][] {
         {"0", "3"},
         {"40", "54"},
         {"550", "799"},
@@ -1808,7 +1808,7 @@ public enum Group {
      *     9400 - 9999</pre>
      * Maximum length: 4
      */
-    _9789930(9789930, new String[][]{
+    _9789930(9789930, new String[][] {
         {"00", "49"},
         {"500", "939"},
         {"9400", "9999"},}, 4),
@@ -1821,7 +1821,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789931(9789931, new String[][]{
+    _9789931(9789931, new String[][] {
         {"00", "29"},
         {"300", "899"},
         {"9000", "9999"},}, 4),
@@ -1834,7 +1834,7 @@ public enum Group {
      *     8500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789932(9789932, new String[][]{
+    _9789932(9789932, new String[][] {
         {"00", "39"},
         {"400", "849"},
         {"8500", "9999"},}, 4),
@@ -1848,7 +1848,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789933(9789933, new String[][]{
+    _9789933(9789933, new String[][] {
         {"0", "0"},
         {"10", "39"},
         {"400", "899"},
@@ -1863,7 +1863,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789934(9789934, new String[][]{
+    _9789934(9789934, new String[][] {
         {"0", "0"},
         {"10", "49"},
         {"500", "799"},
@@ -1878,7 +1878,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789935(9789935, new String[][]{
+    _9789935(9789935, new String[][] {
         {"0", "0"},
         {"10", "39"},
         {"400", "899"},
@@ -1893,7 +1893,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789936(9789936, new String[][]{
+    _9789936(9789936, new String[][] {
         {"0", "1"},
         {"20", "39"},
         {"400", "799"},
@@ -1908,7 +1908,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789937(9789937, new String[][]{
+    _9789937(9789937, new String[][] {
         {"0", "2"},
         {"30", "49"},
         {"500", "799"},
@@ -1922,7 +1922,7 @@ public enum Group {
      *     9500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789938(9789938, new String[][]{
+    _9789938(9789938, new String[][] {
         {"00", "79"},
         {"800", "949"},
         {"9500", "9999"},}, 4),
@@ -1936,7 +1936,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789939(9789939, new String[][]{
+    _9789939(9789939, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "899"},
@@ -1951,7 +1951,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789940(9789940, new String[][]{
+    _9789940(9789940, new String[][] {
         {"0", "1"},
         {"20", "49"},
         {"500", "899"},
@@ -1966,7 +1966,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789941(9789941, new String[][]{
+    _9789941(9789941, new String[][] {
         {"0", "0"},
         {"10", "39"},
         {"400", "899"},
@@ -1981,7 +1981,7 @@ public enum Group {
      *     9850 - 9999</pre>
      * Maximum length: 4
      */
-    _9789942(9789942, new String[][]{
+    _9789942(9789942, new String[][] {
         {"00", "84"},
         {"8500", "8999"},
         {"900", "984"},
@@ -1996,7 +1996,7 @@ public enum Group {
      *      975 - 999</pre>
      * Maximum length: 4
      */
-    _9789943(9789943, new String[][]{
+    _9789943(9789943, new String[][] {
         {"00", "29"},
         {"300", "399"},
         {"4000", "9749"},
@@ -2014,7 +2014,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 4
      */
-    _9789944(9789944, new String[][]{
+    _9789944(9789944, new String[][] {
         {"0000", "0999"},
         {"100", "499"},
         {"5000", "5999"},
@@ -2035,7 +2035,7 @@ public enum Group {
      *     8500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789945(9789945, new String[][]{
+    _9789945(9789945, new String[][] {
         {"00", "00"},
         {"010", "079"},
         {"08", "39"},
@@ -2053,7 +2053,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789946(9789946, new String[][]{
+    _9789946(9789946, new String[][] {
         {"0", "1"},
         {"20", "39"},
         {"400", "899"},
@@ -2067,7 +2067,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _9789947(9789947, new String[][]{
+    _9789947(9789947, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "999"},}, 3),
@@ -2080,7 +2080,7 @@ public enum Group {
      *     8500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789948(9789948, new String[][]{
+    _9789948(9789948, new String[][] {
         {"00", "39"},
         {"400", "849"},
         {"8500", "9999"},}, 4),
@@ -2095,7 +2095,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789949(9789949, new String[][]{
+    _9789949(9789949, new String[][] {
         {"0", "0"},
         {"10", "39"},
         {"400", "749"},
@@ -2110,7 +2110,7 @@ public enum Group {
      *     8500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789950(9789950, new String[][]{
+    _9789950(9789950, new String[][] {
         {"00", "29"},
         {"300", "849"},
         {"8500", "9999"},}, 4),
@@ -2123,7 +2123,7 @@ public enum Group {
      *     8500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789951(9789951, new String[][]{
+    _9789951(9789951, new String[][] {
         {"00", "39"},
         {"400", "849"},
         {"8500", "9999"},}, 4),
@@ -2137,7 +2137,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789952(9789952, new String[][]{
+    _9789952(9789952, new String[][] {
         {"0", "1"},
         {"20", "39"},
         {"400", "799"},
@@ -2153,7 +2153,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789953(9789953, new String[][]{
+    _9789953(9789953, new String[][] {
         {"0", "0"},
         {"10", "39"},
         {"400", "599"},
@@ -2169,7 +2169,7 @@ public enum Group {
      *     8000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789954(9789954, new String[][]{
+    _9789954(9789954, new String[][] {
         {"0", "1"},
         {"20", "39"},
         {"400", "799"},
@@ -2183,7 +2183,7 @@ public enum Group {
      *     9300 - 9999</pre>
      * Maximum length: 4
      */
-    _9789955(9789955, new String[][]{
+    _9789955(9789955, new String[][] {
         {"00", "39"},
         {"400", "929"},
         {"9300", "9999"},}, 4),
@@ -2197,7 +2197,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789956(9789956, new String[][]{
+    _9789956(9789956, new String[][] {
         {"0", "0"},
         {"10", "39"},
         {"400", "899"},
@@ -2214,7 +2214,7 @@ public enum Group {
      *       88 - 99</pre>
      * Maximum length: 4
      */
-    _9789957(9789957, new String[][]{
+    _9789957(9789957, new String[][] {
         {"00", "39"},
         {"400", "649"},
         {"65", "69"},
@@ -2237,7 +2237,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789958(9789958, new String[][]{
+    _9789958(9789958, new String[][] {
         {"00", "01"},
         {"020", "029"},
         {"0300", "0399"},
@@ -2260,7 +2260,7 @@ public enum Group {
      *       98 - 99</pre>
      * Maximum length: 4
      */
-    _9789959(9789959, new String[][]{
+    _9789959(9789959, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "949"},
@@ -2276,7 +2276,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789960(9789960, new String[][]{
+    _9789960(9789960, new String[][] {
         {"00", "59"},
         {"600", "899"},
         {"9000", "9999"},}, 4),
@@ -2290,7 +2290,7 @@ public enum Group {
      *     9500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789961(9789961, new String[][]{
+    _9789961(9789961, new String[][] {
         {"0", "2"},
         {"30", "69"},
         {"700", "949"},
@@ -2306,7 +2306,7 @@ public enum Group {
      *     8500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789962(9789962, new String[][]{
+    _9789962(9789962, new String[][] {
         {"00", "54"},
         {"5500", "5599"},
         {"56", "59"},
@@ -2326,7 +2326,7 @@ public enum Group {
      *     7500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789963(9789963, new String[][]{
+    _9789963(9789963, new String[][] {
         {"0", "1"},
         {"2000", "2499"},
         {"250", "279"},
@@ -2344,7 +2344,7 @@ public enum Group {
      *      950 - 999</pre>
      * Maximum length: 3
      */
-    _9789964(9789964, new String[][]{
+    _9789964(9789964, new String[][] {
         {"0", "6"},
         {"70", "94"},
         {"950", "999"},}, 3),
@@ -2357,7 +2357,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789965(9789965, new String[][]{
+    _9789965(9789965, new String[][] {
         {"00", "39"},
         {"400", "899"},
         {"9000", "9999"},}, 4),
@@ -2373,7 +2373,7 @@ public enum Group {
      *     9600 - 9999</pre>
      * Maximum length: 4
      */
-    _9789966(9789966, new String[][]{
+    _9789966(9789966, new String[][] {
         {"000", "149"},
         {"1500", "1999"},
         {"20", "69"},
@@ -2389,7 +2389,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789967(9789967, new String[][]{
+    _9789967(9789967, new String[][] {
         {"00", "39"},
         {"400", "899"},
         {"9000", "9999"},}, 4),
@@ -2402,7 +2402,7 @@ public enum Group {
      *     9400 - 9999</pre>
      * Maximum length: 4
      */
-    _9789968(9789968, new String[][]{
+    _9789968(9789968, new String[][] {
         {"00", "49"},
         {"500", "939"},
         {"9400", "9999"},}, 4),
@@ -2415,7 +2415,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789970(9789970, new String[][]{
+    _9789970(9789970, new String[][] {
         {"00", "39"},
         {"400", "899"},
         {"9000", "9999"},}, 4),
@@ -2429,7 +2429,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789971(9789971, new String[][]{
+    _9789971(9789971, new String[][] {
         {"0", "5"},
         {"60", "89"},
         {"900", "989"},
@@ -2447,7 +2447,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789972(9789972, new String[][]{
+    _9789972(9789972, new String[][] {
         {"00", "09"},
         {"1", "1"},
         {"200", "249"},
@@ -2467,7 +2467,7 @@ public enum Group {
      *     9700 - 9999</pre>
      * Maximum length: 4
      */
-    _9789973(9789973, new String[][]{
+    _9789973(9789973, new String[][] {
         {"00", "05"},
         {"060", "089"},
         {"0900", "0999"},
@@ -2486,7 +2486,7 @@ public enum Group {
      *       95 - 99</pre>
      * Maximum length: 4
      */
-    _9789974(9789974, new String[][]{
+    _9789974(9789974, new String[][] {
         {"0", "2"},
         {"30", "54"},
         {"550", "749"},
@@ -2506,7 +2506,7 @@ public enum Group {
      *     9500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789975(9789975, new String[][]{
+    _9789975(9789975, new String[][] {
         {"0", "0"},
         {"100", "299"},
         {"3000", "3999"},
@@ -2524,7 +2524,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789976(9789976, new String[][]{
+    _9789976(9789976, new String[][] {
         {"0", "5"},
         {"60", "89"},
         {"900", "989"},
@@ -2538,7 +2538,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789977(9789977, new String[][]{
+    _9789977(9789977, new String[][] {
         {"00", "89"},
         {"900", "989"},
         {"9900", "9999"},}, 4),
@@ -2553,7 +2553,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789978(9789978, new String[][]{
+    _9789978(9789978, new String[][] {
         {"00", "29"},
         {"300", "399"},
         {"40", "94"},
@@ -2571,7 +2571,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789979(9789979, new String[][]{
+    _9789979(9789979, new String[][] {
         {"0", "4"},
         {"50", "64"},
         {"650", "659"},
@@ -2588,7 +2588,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789980(9789980, new String[][]{
+    _9789980(9789980, new String[][] {
         {"0", "3"},
         {"40", "89"},
         {"900", "989"},
@@ -2605,7 +2605,7 @@ public enum Group {
      *     9500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789981(9789981, new String[][]{
+    _9789981(9789981, new String[][] {
         {"00", "09"},
         {"100", "159"},
         {"1600", "1999"},
@@ -2621,7 +2621,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789982(9789982, new String[][]{
+    _9789982(9789982, new String[][] {
         {"00", "79"},
         {"800", "989"},
         {"9900", "9999"},}, 4),
@@ -2635,7 +2635,7 @@ public enum Group {
      *     9900 - 9999</pre>
      * Maximum length: 4
      */
-    _9789983(9789983, new String[][]{
+    _9789983(9789983, new String[][] {
         {"0000000", "7999999"},
         {"80", "94"},
         {"950", "989"},
@@ -2649,7 +2649,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789984(9789984, new String[][]{
+    _9789984(9789984, new String[][] {
         {"00", "49"},
         {"500", "899"},
         {"9000", "9999"},}, 4),
@@ -2663,7 +2663,7 @@ public enum Group {
      *     9000 - 9999</pre>
      * Maximum length: 4
      */
-    _9789985(9789985, new String[][]{
+    _9789985(9789985, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "899"},
@@ -2679,7 +2679,7 @@ public enum Group {
      *       97 - 99</pre>
      * Maximum length: 4
      */
-    _9789986(9789986, new String[][]{
+    _9789986(9789986, new String[][] {
         {"00", "39"},
         {"400", "899"},
         {"9000", "9399"},
@@ -2694,7 +2694,7 @@ public enum Group {
      *     8800 - 9999</pre>
      * Maximum length: 4
      */
-    _9789987(9789987, new String[][]{
+    _9789987(9789987, new String[][] {
         {"00", "39"},
         {"400", "879"},
         {"8800", "9999"},}, 4),
@@ -2708,7 +2708,7 @@ public enum Group {
      *     7500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789988(9789988, new String[][]{
+    _9789988(9789988, new String[][] {
         {"0", "2"},
         {"30", "54"},
         {"550", "749"},
@@ -2725,7 +2725,7 @@ public enum Group {
      *     9500 - 9999</pre>
      * Maximum length: 4
      */
-    _9789989(9789989, new String[][]{
+    _9789989(9789989, new String[][] {
         {"0", "0"},
         {"100", "199"},
         {"2000", "2999"},
@@ -2741,7 +2741,7 @@ public enum Group {
      *       80 - 99</pre>
      * Maximum length: 3
      */
-    _97899901(97899901, new String[][]{
+    _97899901(97899901, new String[][] {
         {"00", "49"},
         {"500", "799"},
         {"80", "99"},}, 3),
@@ -2752,7 +2752,7 @@ public enum Group {
      *  0000000 - 9999999</pre>
      * Maximum length: 0
      */
-    _97899902(97899902, new String[][]{
+    _97899902(97899902, new String[][] {
         {"0000000", "9999999"},}, 0),
     /**
      * Group: 978-99903 - Mauritius.
@@ -2763,7 +2763,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899903(97899903, new String[][]{
+    _97899903(97899903, new String[][] {
         {"0", "1"},
         {"20", "89"},
         {"900", "999"},}, 3),
@@ -2776,7 +2776,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899904(97899904, new String[][]{
+    _97899904(97899904, new String[][] {
         {"0", "5"},
         {"60", "89"},
         {"900", "999"},}, 3),
@@ -2789,7 +2789,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899905(97899905, new String[][]{
+    _97899905(97899905, new String[][] {
         {"0", "3"},
         {"40", "79"},
         {"800", "999"},}, 3),
@@ -2805,7 +2805,7 @@ public enum Group {
      *      950 - 999</pre>
      * Maximum length: 3
      */
-    _97899906(97899906, new String[][]{
+    _97899906(97899906, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "699"},
@@ -2821,7 +2821,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899908(97899908, new String[][]{
+    _97899908(97899908, new String[][] {
         {"0", "0"},
         {"10", "89"},
         {"900", "999"},}, 3),
@@ -2834,7 +2834,7 @@ public enum Group {
      *      950 - 999</pre>
      * Maximum length: 3
      */
-    _97899909(97899909, new String[][]{
+    _97899909(97899909, new String[][] {
         {"0", "3"},
         {"40", "94"},
         {"950", "999"},}, 3),
@@ -2847,7 +2847,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899910(97899910, new String[][]{
+    _97899910(97899910, new String[][] {
         {"0", "2"},
         {"30", "89"},
         {"900", "999"},}, 3),
@@ -2859,7 +2859,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899911(97899911, new String[][]{
+    _97899911(97899911, new String[][] {
         {"00", "59"},
         {"600", "999"},}, 3),
     /**
@@ -2872,7 +2872,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899912(97899912, new String[][]{
+    _97899912(97899912, new String[][] {
         {"0", "3"},
         {"400", "599"},
         {"60", "89"},
@@ -2888,7 +2888,7 @@ public enum Group {
      *  6050000 - 9999999</pre>
      * Maximum length: 3
      */
-    _97899913(97899913, new String[][]{
+    _97899913(97899913, new String[][] {
         {"0", "2"},
         {"30", "35"},
         {"3600000", "5999999"},
@@ -2903,7 +2903,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899914(97899914, new String[][]{
+    _97899914(97899914, new String[][] {
         {"0", "4"},
         {"50", "89"},
         {"900", "999"},}, 3),
@@ -2916,7 +2916,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899915(97899915, new String[][]{
+    _97899915(97899915, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -2929,7 +2929,7 @@ public enum Group {
      *      700 - 999</pre>
      * Maximum length: 3
      */
-    _97899916(97899916, new String[][]{
+    _97899916(97899916, new String[][] {
         {"0", "2"},
         {"30", "69"},
         {"700", "999"},}, 3),
@@ -2942,7 +2942,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899917(97899917, new String[][]{
+    _97899917(97899917, new String[][] {
         {"0", "2"},
         {"30", "89"},
         {"900", "999"},}, 3),
@@ -2955,7 +2955,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899918(97899918, new String[][]{
+    _97899918(97899918, new String[][] {
         {"0", "3"},
         {"40", "79"},
         {"800", "999"},}, 3),
@@ -2972,7 +2972,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899919(97899919, new String[][]{
+    _97899919(97899919, new String[][] {
         {"0", "2"},
         {"300", "399"},
         {"40", "69"},
@@ -2989,7 +2989,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899920(97899920, new String[][]{
+    _97899920(97899920, new String[][] {
         {"0", "4"},
         {"50", "89"},
         {"900", "999"},}, 3),
@@ -3004,7 +3004,7 @@ public enum Group {
      *       90 - 99</pre>
      * Maximum length: 3
      */
-    _97899921(97899921, new String[][]{
+    _97899921(97899921, new String[][] {
         {"0", "1"},
         {"20", "69"},
         {"700", "799"},
@@ -3019,7 +3019,7 @@ public enum Group {
      *      700 - 999</pre>
      * Maximum length: 3
      */
-    _97899922(97899922, new String[][]{
+    _97899922(97899922, new String[][] {
         {"0", "3"},
         {"40", "69"},
         {"700", "999"},}, 3),
@@ -3032,7 +3032,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899923(97899923, new String[][]{
+    _97899923(97899923, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "999"},}, 3),
@@ -3045,7 +3045,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899924(97899924, new String[][]{
+    _97899924(97899924, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "999"},}, 3),
@@ -3058,7 +3058,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899925(97899925, new String[][]{
+    _97899925(97899925, new String[][] {
         {"0", "3"},
         {"40", "79"},
         {"800", "999"},}, 3),
@@ -3073,7 +3073,7 @@ public enum Group {
      *       90 - 99</pre>
      * Maximum length: 3
      */
-    _97899926(97899926, new String[][]{
+    _97899926(97899926, new String[][] {
         {"0", "0"},
         {"10", "59"},
         {"600", "869"},
@@ -3088,7 +3088,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899927(97899927, new String[][]{
+    _97899927(97899927, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "999"},}, 3),
@@ -3101,7 +3101,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899928(97899928, new String[][]{
+    _97899928(97899928, new String[][] {
         {"0", "0"},
         {"10", "79"},
         {"800", "999"},}, 3),
@@ -3114,7 +3114,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899929(97899929, new String[][]{
+    _97899929(97899929, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3127,7 +3127,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899930(97899930, new String[][]{
+    _97899930(97899930, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3140,7 +3140,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899931(97899931, new String[][]{
+    _97899931(97899931, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3155,7 +3155,7 @@ public enum Group {
      *       80 - 99</pre>
      * Maximum length: 3
      */
-    _97899932(97899932, new String[][]{
+    _97899932(97899932, new String[][] {
         {"0", "0"},
         {"10", "59"},
         {"600", "699"},
@@ -3170,7 +3170,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899933(97899933, new String[][]{
+    _97899933(97899933, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "999"},}, 3),
@@ -3183,7 +3183,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899934(97899934, new String[][]{
+    _97899934(97899934, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "999"},}, 3),
@@ -3198,7 +3198,7 @@ public enum Group {
      *       90 - 99</pre>
      * Maximum length: 3
      */
-    _97899935(97899935, new String[][]{
+    _97899935(97899935, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "699"},
@@ -3213,7 +3213,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899936(97899936, new String[][]{
+    _97899936(97899936, new String[][] {
         {"0", "0"},
         {"10", "59"},
         {"600", "999"},}, 3),
@@ -3226,7 +3226,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899937(97899937, new String[][]{
+    _97899937(97899937, new String[][] {
         {"0", "1"},
         {"20", "59"},
         {"600", "999"},}, 3),
@@ -3240,7 +3240,7 @@ public enum Group {
      *       90 - 99</pre>
      * Maximum length: 3
      */
-    _97899938(97899938, new String[][]{
+    _97899938(97899938, new String[][] {
         {"0", "1"},
         {"20", "59"},
         {"600", "899"},
@@ -3254,7 +3254,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899939(97899939, new String[][]{
+    _97899939(97899939, new String[][] {
         {"0", "5"},
         {"60", "89"},
         {"900", "999"},}, 3),
@@ -3267,7 +3267,7 @@ public enum Group {
      *      700 - 999</pre>
      * Maximum length: 3
      */
-    _97899940(97899940, new String[][]{
+    _97899940(97899940, new String[][] {
         {"0", "0"},
         {"10", "69"},
         {"700", "999"},}, 3),
@@ -3280,7 +3280,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899941(97899941, new String[][]{
+    _97899941(97899941, new String[][] {
         {"0", "2"},
         {"30", "79"},
         {"800", "999"},}, 3),
@@ -3293,7 +3293,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899942(97899942, new String[][]{
+    _97899942(97899942, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3306,7 +3306,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899943(97899943, new String[][]{
+    _97899943(97899943, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "999"},}, 3),
@@ -3319,7 +3319,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899944(97899944, new String[][]{
+    _97899944(97899944, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3332,7 +3332,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899945(97899945, new String[][]{
+    _97899945(97899945, new String[][] {
         {"0", "5"},
         {"60", "89"},
         {"900", "999"},}, 3),
@@ -3345,7 +3345,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899946(97899946, new String[][]{
+    _97899946(97899946, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "999"},}, 3),
@@ -3358,7 +3358,7 @@ public enum Group {
      *      700 - 999</pre>
      * Maximum length: 3
      */
-    _97899947(97899947, new String[][]{
+    _97899947(97899947, new String[][] {
         {"0", "2"},
         {"30", "69"},
         {"700", "999"},}, 3),
@@ -3371,7 +3371,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899948(97899948, new String[][]{
+    _97899948(97899948, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3384,7 +3384,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899949(97899949, new String[][]{
+    _97899949(97899949, new String[][] {
         {"0", "1"},
         {"20", "89"},
         {"900", "999"},}, 3),
@@ -3397,7 +3397,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899950(97899950, new String[][]{
+    _97899950(97899950, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3408,7 +3408,7 @@ public enum Group {
      *  0000000 - 9999999</pre>
      * Maximum length: 0
      */
-    _97899951(97899951, new String[][]{
+    _97899951(97899951, new String[][] {
         {"0000000", "9999999"},}, 0),
     /**
      * Group: 978-99952 - Mali.
@@ -3419,7 +3419,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899952(97899952, new String[][]{
+    _97899952(97899952, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3433,7 +3433,7 @@ public enum Group {
      *       94 - 99</pre>
      * Maximum length: 3
      */
-    _97899953(97899953, new String[][]{
+    _97899953(97899953, new String[][] {
         {"0", "2"},
         {"30", "79"},
         {"800", "939"},
@@ -3448,7 +3448,7 @@ public enum Group {
      *       88 - 99</pre>
      * Maximum length: 3
      */
-    _97899954(97899954, new String[][]{
+    _97899954(97899954, new String[][] {
         {"0", "2"},
         {"30", "69"},
         {"700", "879"},
@@ -3463,7 +3463,7 @@ public enum Group {
      *       80 - 99</pre>
      * Maximum length: 3
      */
-    _97899955(97899955, new String[][]{
+    _97899955(97899955, new String[][] {
         {"0", "1"},
         {"20", "59"},
         {"600", "799"},
@@ -3477,7 +3477,7 @@ public enum Group {
      *       86 - 99</pre>
      * Maximum length: 3
      */
-    _97899956(97899956, new String[][]{
+    _97899956(97899956, new String[][] {
         {"00", "59"},
         {"600", "859"},
         {"86", "99"},}, 3),
@@ -3490,7 +3490,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899957(97899957, new String[][]{
+    _97899957(97899957, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "999"},}, 3),
@@ -3504,7 +3504,7 @@ public enum Group {
      *      950 - 999</pre>
      * Maximum length: 3
      */
-    _97899958(97899958, new String[][]{
+    _97899958(97899958, new String[][] {
         {"0", "4"},
         {"50", "93"},
         {"940", "949"},
@@ -3518,7 +3518,7 @@ public enum Group {
      *      600 - 999</pre>
      * Maximum length: 3
      */
-    _97899959(97899959, new String[][]{
+    _97899959(97899959, new String[][] {
         {"0", "2"},
         {"30", "59"},
         {"600", "999"},}, 3),
@@ -3531,7 +3531,7 @@ public enum Group {
      *      950 - 999</pre>
      * Maximum length: 3
      */
-    _97899960(97899960, new String[][]{
+    _97899960(97899960, new String[][] {
         {"0", "0"},
         {"10", "94"},
         {"950", "999"},}, 3),
@@ -3544,7 +3544,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899961(97899961, new String[][]{
+    _97899961(97899961, new String[][] {
         {"0", "3"},
         {"40", "89"},
         {"900", "999"},}, 3),
@@ -3557,7 +3557,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899962(97899962, new String[][]{
+    _97899962(97899962, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3570,7 +3570,7 @@ public enum Group {
      *       92 - 99</pre>
      * Maximum length: 3
      */
-    _97899963(97899963, new String[][]{
+    _97899963(97899963, new String[][] {
         {"00", "49"},
         {"500", "919"},
         {"92", "99"},}, 3),
@@ -3583,7 +3583,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899964(97899964, new String[][]{
+    _97899964(97899964, new String[][] {
         {"0", "1"},
         {"20", "79"},
         {"800", "999"},}, 3),
@@ -3596,7 +3596,7 @@ public enum Group {
      *      630 - 999</pre>
      * Maximum length: 3
      */
-    _97899965(97899965, new String[][]{
+    _97899965(97899965, new String[][] {
         {"0", "3"},
         {"40", "62"},
         {"630", "999"},}, 3),
@@ -3611,7 +3611,7 @@ public enum Group {
      *  9500000 - 9999999</pre>
      * Maximum length: 3
      */
-    _97899966(97899966, new String[][]{
+    _97899966(97899966, new String[][] {
         {"0", "2"},
         {"30", "69"},
         {"700", "799"},
@@ -3627,7 +3627,7 @@ public enum Group {
      *  9000000 - 9999999</pre>
      * Maximum length: 3
      */
-    _97899967(97899967, new String[][]{
+    _97899967(97899967, new String[][] {
         {"0", "1"},
         {"20", "59"},
         {"600", "899"},
@@ -3642,7 +3642,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899968(97899968, new String[][]{
+    _97899968(97899968, new String[][] {
         {"0", "3"},
         {"400", "599"},
         {"60", "89"},
@@ -3656,7 +3656,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899969(97899969, new String[][]{
+    _97899969(97899969, new String[][] {
         {"0", "4"},
         {"50", "79"},
         {"800", "999"},}, 3),
@@ -3669,7 +3669,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899970(97899970, new String[][]{
+    _97899970(97899970, new String[][] {
         {"0", "4"},
         {"50", "89"},
         {"900", "999"},}, 3),
@@ -3682,7 +3682,7 @@ public enum Group {
      *      850 - 999</pre>
      * Maximum length: 3
      */
-    _97899971(97899971, new String[][]{
+    _97899971(97899971, new String[][] {
         {"0", "5"},
         {"60", "84"},
         {"850", "999"},}, 3),
@@ -3695,7 +3695,7 @@ public enum Group {
      *      900 - 999</pre>
      * Maximum length: 3
      */
-    _97899972(97899972, new String[][]{
+    _97899972(97899972, new String[][] {
         {"0", "4"},
         {"50", "89"},
         {"900", "999"},}, 3),
@@ -3708,7 +3708,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899973(97899973, new String[][]{
+    _97899973(97899973, new String[][] {
         {"0", "3"},
         {"40", "79"},
         {"800", "999"},}, 3),
@@ -3721,7 +3721,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899974(97899974, new String[][]{
+    _97899974(97899974, new String[][] {
         {"0000000", "3999999"},
         {"40", "79"},
         {"800", "999"},}, 3),
@@ -3734,7 +3734,7 @@ public enum Group {
      *      800 - 999</pre>
      * Maximum length: 3
      */
-    _97899975(97899975, new String[][]{
+    _97899975(97899975, new String[][] {
         {"0", "3"},
         {"40", "79"},
         {"800", "999"},}, 3),
@@ -3748,7 +3748,7 @@ public enum Group {
      *  8000000 - 9999999</pre>
      * Maximum length: 3
      */
-    _97899976(97899976, new String[][]{
+    _97899976(97899976, new String[][] {
         {"0", "1"},
         {"20", "59"},
         {"600", "799"},
@@ -3764,7 +3764,7 @@ public enum Group {
      *  8000000 - 9999999</pre>
      * Maximum length: 3
      */
-    _97899977(97899977, new String[][]{
+    _97899977(97899977, new String[][] {
         {"0", "1"},
         {"2000000", "3999999"},
         {"40", "69"},
@@ -3781,7 +3781,7 @@ public enum Group {
      *   976000 - 999999</pre>
      * Maximum length: 6
      */
-    _97910(97910, new String[][]{
+    _97910(97910, new String[][] {
         {"00", "19"},
         {"200", "699"},
         {"7000", "8999"},
@@ -3798,7 +3798,7 @@ public enum Group {
      *   950000 - 999999</pre>
      * Maximum length: 6
      */
-    _97911(97911, new String[][]{
+    _97911(97911, new String[][] {
         {"00", "24"},
         {"250", "549"},
         {"5500", "8499"},
@@ -3813,7 +3813,7 @@ public enum Group {
      *  2010000 - 9999999</pre>
      * Maximum length: 3
      */
-    _97912(97912, new String[][]{
+    _97912(97912, new String[][] {
         {"0000000", "1999999"},
         {"200", "200"},
         {"2010000", "9999999"},}, 3),;
@@ -3834,12 +3834,12 @@ public enum Group {
     /**
      * Initializes the group attributes.
      *
-     * @param number number of the group
-     * @param validPublisherNumbers valid publisher numbers for the group
+     * @param number                       number of the group
+     * @param validPublisherNumbers        valid publisher numbers for the group
      * @param maximumPublisherNumberLength maximum publisher number length
      */
     private Group(int number, String[][] validPublisherNumbers,
-            int maximumPublisherNumberLength) {
+                  int maximumPublisherNumberLength) {
         this.number = number;
         this.validPublisherNumbers = validPublisherNumbers;
         this.maximumPublisherNumberLength = maximumPublisherNumberLength;
@@ -3849,8 +3849,7 @@ public enum Group {
      * Returns the group of the specified ISBN.
      *
      * @param ISBN ISBN for the group wants to get.
-     * @return the group of the specified ISBN or {@code null} if the ISBN is
-     * not from any group.
+     * @return the group of the specified ISBN or {@code null} if the ISBN is not from any group.
      */
     public static Group getGroup(String ISBN) {
         Group result = null;
@@ -3862,6 +3861,7 @@ public enum Group {
             try {
                 result = Group.valueOf('_' + ISBN.substring(0, i));
             } catch (IllegalArgumentException ex) {
+                // empty on purpose
             }
 
             i++;

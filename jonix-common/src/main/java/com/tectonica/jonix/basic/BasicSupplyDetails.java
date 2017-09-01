@@ -19,33 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
+import com.tectonica.jonix.codelist.CurrencyCodes;
+import com.tectonica.jonix.codelist.PriceTypes;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.codelist.CurrencyCodes;
-import com.tectonica.jonix.codelist.PriceTypes;
-
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;SupplyDetail&gt; that may exist in an ONIX product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicSupplyDetails extends LazyList<BasicSupplyDetail>
-{
-	public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes)
-	{
-		List<BasicPrice> matches = new ArrayList<BasicPrice>();
-		for (BasicSupplyDetail sd : this)
-			matches.addAll(sd.prices.findPrices(requestedTypes));
-		return matches;
-	}
+public abstract class BasicSupplyDetails extends LazyList<BasicSupplyDetail> {
+    public List<BasicPrice> findPrices(Set<PriceTypes> requestedTypes) {
+        List<BasicPrice> matches = new ArrayList<BasicPrice>();
+        for (BasicSupplyDetail sd : this) {
+            matches.addAll(sd.prices.findPrices(requestedTypes));
+        }
+        return matches;
+    }
 
-	public String findFirstRetailPrice(CurrencyCodes currency, boolean includingTax)
-	{
-		if (!isEmpty())
-			return get(0).prices.findRetailPrice(currency, includingTax);
-		return null;
-	}
+    public String findFirstRetailPrice(CurrencyCodes currency, boolean includingTax) {
+        if (!isEmpty()) {
+            return get(0).prices.findRetailPrice(currency, includingTax);
+        }
+        return null;
+    }
 }

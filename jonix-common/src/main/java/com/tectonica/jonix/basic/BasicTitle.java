@@ -19,27 +19,25 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.codelist.TitleTypes;
+
+import java.io.Serializable;
 
 /**
  * Contains the essential information included in ONIX2 &lt;Title&gt; / ONIX3 &lt;TitleDetail&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicTitle implements Serializable
-{
-	public TitleTypes titleType;
-	public String titleText;
-	public String titleWithoutPrefix;
-	public String subtitle;
+public abstract class BasicTitle implements Serializable {
+    public TitleTypes titleType;
+    public String titleText;
+    public String titleWithoutPrefix;
+    public String subtitle;
 
-	protected String noBreaks(String s)
-	{
-		return (s == null || s.isEmpty()) ? s : s.replaceAll("\\t|\\n|\\r", " ").trim();
-	}
+    protected String noBreaks(String s) {
+        return (s == null || s.isEmpty()) ? s : s.replaceAll("\\t|\\n|\\r", " ").trim();
+    }
 }

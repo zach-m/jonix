@@ -19,28 +19,26 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixOnOrderDetail implements JonixStruct, Serializable
-{
-   public static JonixOnOrderDetail EMPTY = new JonixOnOrderDetail();
+public class JonixOnOrderDetail implements JonixStruct, Serializable {
+    public static JonixOnOrderDetail EMPTY = new JonixOnOrderDetail();
 
-   /**
-    * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is missing <p> (type: dt.NonEmptyString)
-    */
-   public String expectedDate;
+    /**
+     * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYYMMDD if the attribute is
+     * missing <p> (type: dt.NonEmptyString)
+     */
+    public String expectedDate;
 
-   /**
-    * Raw Format: Variable-length integer, suggested maximum length 7 digits <p> (type: dt.PositiveInteger)
-    */
-   public Integer onOrder;
+    /**
+     * Raw Format: Variable-length integer, suggested maximum length 7 digits <p> (type: dt.PositiveInteger)
+     */
+    public Integer onOrder;
 }

@@ -19,33 +19,30 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.List;
-
 import com.tectonica.jonix.codelist.TextTypes;
+
+import java.util.List;
 
 /**
  * A {@link List} containing the multiple instances of ONIX2 &lt;OtherText&gt; / ONIX3 &lt;TextContent&gt; that may
  * exist in a product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicTexts extends LazyList<BasicText>
-{
-	public BasicText findText(TextTypes requestedType)
-	{
-		// we don't use product.findOtherText() because we need the 'textFormat' attribute, not just the value
-		for (BasicText text : this)
-		{
-			if (text.textType == requestedType)
-				return text;
-		}
-		return null;
-	}
+public abstract class BasicTexts extends LazyList<BasicText> {
+    public BasicText findText(TextTypes requestedType) {
+        // we don't use product.findOtherText() because we need the 'textFormat' attribute, not just the value
+        for (BasicText text : this) {
+            if (text.textType == requestedType) {
+                return text;
+            }
+        }
+        return null;
+    }
 
-	public String getUnescapedText(TextTypes requestedType)
-	{
-		BasicText found = findText(requestedType);
-		return (found == null) ? null : found.getUnescapedText();
-	}
+    public String getUnescapedText(TextTypes requestedType) {
+        BasicText found = findText(requestedType);
+        return (found == null) ? null : found.getUnescapedText();
+    }
 }

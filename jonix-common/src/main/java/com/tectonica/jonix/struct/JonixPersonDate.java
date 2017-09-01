@@ -19,33 +19,34 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.codelist.PersonDateRoles;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPersonDate implements JonixKeyedStruct<PersonDateRoles>, Serializable
-{
-   public static JonixPersonDate EMPTY = new JonixPersonDate();
+public class JonixPersonDate implements JonixKeyedStruct<PersonDateRoles>, Serializable {
+    public static JonixPersonDate EMPTY = new JonixPersonDate();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public PersonDateRoles personDateRole;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public PersonDateRoles personDateRole;
 
-   public DateFormats dateFormat;
+    public DateFormats dateFormat;
 
-   /**
-    * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD <p> (type: NonEmptyString)
-    */
-   public String date;
+    /**
+     * Raw Format: As specified by the value in &lt;DateFormat&gt;: default YYYYMMDD <p> (type: NonEmptyString)
+     */
+    public String date;
 
-   @Override
-   public PersonDateRoles key() { return personDateRole; }
+    @Override
+    public PersonDateRoles key() {
+        return personDateRole;
+    }
 }

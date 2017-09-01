@@ -19,36 +19,39 @@
 
 package com.tectonica.jonix.struct;
 
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixResourceVersionFeature implements JonixKeyedStruct<ResourceVersionFeatureTypes>, Serializable
-{
-   public static JonixResourceVersionFeature EMPTY = new JonixResourceVersionFeature();
+public class JonixResourceVersionFeature implements JonixKeyedStruct<ResourceVersionFeatureTypes>, Serializable {
+    public static JonixResourceVersionFeature EMPTY = new JonixResourceVersionFeature();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public ResourceVersionFeatureTypes resourceVersionFeatureType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public ResourceVersionFeatureTypes resourceVersionFeatureType;
 
-   /**
-    * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or may not be taken from a code list <p> (type: dt.NonEmptyString)
-    */
-   public String featureValue;
+    /**
+     * Raw Format: Dependent on the feature specified in &lt;ResourceVersionFeatureType&gt;; the feature value may or
+     * may not be taken from a code list <p> (type: dt.NonEmptyString)
+     */
+    public String featureValue;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
-    */
-   public List<String> featureNotes;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 300 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+     */
+    public List<String> featureNotes;
 
-   @Override
-   public ResourceVersionFeatureTypes key() { return resourceVersionFeatureType; }
+    @Override
+    public ResourceVersionFeatureTypes key() {
+        return resourceVersionFeatureType;
+    }
 }

@@ -19,36 +19,33 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import com.tectonica.jonix.JonixUtil;
 import com.tectonica.jonix.codelist.CountryCodes;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Bundles together some publishing-related information included in an ONIX product
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicPublishingDetails implements Serializable
-{
-	public String publicationDate;
-	public String outOfPrintDate;
-	public CountryCodes countryOfPublication;
-	public String cityOfPublication;
+public abstract class BasicPublishingDetails implements Serializable {
+    public String publicationDate;
+    public String outOfPrintDate;
+    public CountryCodes countryOfPublication;
+    public String cityOfPublication;
 
-	public Date getPublicationDate()
-	{
-		// TODO: the 'publicationDate' maybe in other formats than YYYYMMDD (which is <DateFormat>00</DateFormat>)
-		return JonixUtil.parseYYYYMMDD(publicationDate);
-	}
+    public Date getPublicationDate() {
+        // TODO: the 'publicationDate' maybe in other formats than YYYYMMDD (which is <DateFormat>00</DateFormat>)
+        return JonixUtil.parseYYYYMMDD(publicationDate);
+    }
 
-	public Date getOutOfPrintDate()
-	{
-		// TODO: the 'publicationDate' maybe in other formats than YYYYMMDD (which is <DateFormat>00</DateFormat>)
-		return JonixUtil.parseYYYYMMDD(outOfPrintDate);
-	}
+    public Date getOutOfPrintDate() {
+        // TODO: the 'publicationDate' maybe in other formats than YYYYMMDD (which is <DateFormat>00</DateFormat>)
+        return JonixUtil.parseYYYYMMDD(outOfPrintDate);
+    }
 }

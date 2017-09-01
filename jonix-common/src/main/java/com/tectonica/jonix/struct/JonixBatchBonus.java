@@ -19,28 +19,25 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixBatchBonus implements JonixStruct, Serializable
-{
-   public static JonixBatchBonus EMPTY = new JonixBatchBonus();
+public class JonixBatchBonus implements JonixStruct, Serializable {
+    public static JonixBatchBonus EMPTY = new JonixBatchBonus();
 
-   /**
-    * Raw Format: Variable-length integer, suggested maximum length 4 digits <p> (type: dt.StrictPositiveInteger)
-    */
-   public Integer batchQuantity;
+    /**
+     * Raw Format: Variable-length integer, suggested maximum length 4 digits <p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer batchQuantity;
 
-   /**
-    * Raw Format: Variable-length integer, suggested maximum length 4 digits <p> (type: dt.StrictPositiveInteger)
-    */
-   public Integer freeQuantity;
+    /**
+     * Raw Format: Variable-length integer, suggested maximum length 4 digits <p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer freeQuantity;
 }

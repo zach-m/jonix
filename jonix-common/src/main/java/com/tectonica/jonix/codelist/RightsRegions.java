@@ -28,58 +28,58 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 47 (Rights region)
  */
-interface CodeList47
-{}
+interface CodeList47 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 47</b>
  * <p>
  * Description: Rights region
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist47">ONIX Codelist 47 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist47">ONIX
+ * Codelist 47 in Reference Guide</a>
  */
-public enum RightsRegions implements OnixCodelist, CodeList47
-{
-   World("000", "World"), //
+public enum RightsRegions implements OnixCodelist, CodeList47 {
+    World("000", "World"), //
 
-   World_except_territories_specified_elsewhere_in_rights_statements("001", "World except territories specified elsewhere in rights statements"), //
+    World_except_territories_specified_elsewhere_in_rights_statements("001",
+        "World except territories specified elsewhere in rights statements"), //
 
-   UK_airports("002", "UK airports"), //
+    UK_airports("002", "UK airports"), //
 
-   /**
-    * Use when an open market edition is published under its own ISBN
-    */
-   UK_open_market_("003", "UK ‘open market’");
+    /**
+     * Use when an open market edition is published under its own ISBN
+     */
+    UK_open_market_("003", "UK ‘open market’");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private RightsRegions(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private RightsRegions(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static RightsRegions byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (RightsRegions e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static RightsRegions byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (RightsRegions e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

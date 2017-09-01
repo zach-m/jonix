@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.PriceCodeTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPriceCoded implements JonixKeyedStruct<PriceCodeTypes>, Serializable
-{
-   public static JonixPriceCoded EMPTY = new JonixPriceCoded();
+public class JonixPriceCoded implements JonixKeyedStruct<PriceCodeTypes>, Serializable {
+    public static JonixPriceCoded EMPTY = new JonixPriceCoded();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public PriceCodeTypes priceCodeType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public PriceCodeTypes priceCodeType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String priceCodeTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String priceCodeTypeName;
 
-   /**
-    * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String priceCode;
+    /**
+     * Raw Format: According to the scheme specified in &lt;PriceCodeType&gt; <p> (type: dt.NonEmptyString)
+     */
+    public String priceCode;
 
-   @Override
-   public PriceCodeTypes key() { return priceCodeType; }
+    @Override
+    public PriceCodeTypes key() {
+        return priceCodeType;
+    }
 }

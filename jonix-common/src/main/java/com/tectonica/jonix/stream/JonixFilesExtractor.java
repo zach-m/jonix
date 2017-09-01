@@ -22,32 +22,28 @@ package com.tectonica.jonix.stream;
 import java.util.List;
 
 /**
- * Simple extension of {@link JonixExtractor} adding events related for file-processing, fired by a
- * {@link JonixFilesStreamer}. Doesn't add any new abstract methods, hence puts no additional burden compared to
- * sub-classing from {@link JonixExtractor}.
- * 
+ * Simple extension of {@link JonixExtractor} adding events related for file-processing, fired by a {@link
+ * JonixFilesStreamer}. Doesn't add any new abstract methods, hence puts no additional burden compared to sub-classing
+ * from {@link JonixExtractor}.
+ *
  * @author Zach Melamed
  */
-public abstract class JonixFilesExtractor extends JonixExtractor
-{
-	protected boolean onBeforeFileList(List<String> fileNames, JonixStreamer streamer)
-	{
-		return true;
-	}
+public abstract class JonixFilesExtractor extends JonixExtractor {
+    protected boolean onBeforeFileList(List<String> fileNames, JonixStreamer streamer) {
+        return true;
+    }
 
-	/**
-	 * return false here to skip this particular file
-	 */
-	protected boolean onBeforeFile(String fileName, JonixStreamer streamer)
-	{
-		return true;
-	}
+    /**
+     * return false here to skip this particular file
+     */
+    protected boolean onBeforeFile(String fileName, JonixStreamer streamer) {
+        return true;
+    }
 
-	protected void onAfterFileList(List<String> processedFileNames, JonixStreamer streamer)
-	{}
+    protected void onAfterFileList(List<String> processedFileNames, JonixStreamer streamer) {
+    }
 
-	public String onGetFileEncoding(String fileName, JonixStreamer streamer)
-	{
-		return "UTF-8";
-	}
+    public String onGetFileEncoding(String fileName, JonixStreamer streamer) {
+        return "UTF-8";
+    }
 }

@@ -21,8 +21,8 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -31,584 +31,578 @@ import java.util.HashMap;
 /**
  * marker interface to assist in IDE navigation to code-list 91 (Country code - ISO 3166-1)
  */
-interface CodeList91
-{}
+interface CodeList91 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 91</b>
  * <p>
  * Description: Country code - ISO 3166-1
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist91">ONIX Codelist 91 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist91">ONIX
+ * Codelist 91 in Reference Guide</a>
  */
-public enum CountryCodes implements OnixCodelist, CodeList91
-{
-   /**
-    * All unspecified countries
-    */
-   Rest_Of_World("ROW", "Rest Of World"), //
+public enum CountryCodes implements OnixCodelist, CodeList91 {
+    /**
+     * All unspecified countries
+     */
+    Rest_Of_World("ROW", "Rest Of World"), //
 
-   Andorra("AD", "Andorra"), //
+    Andorra("AD", "Andorra"), //
 
-   United_Arab_Emirates("AE", "United Arab Emirates"), //
+    United_Arab_Emirates("AE", "United Arab Emirates"), //
 
-   Afghanistan("AF", "Afghanistan"), //
+    Afghanistan("AF", "Afghanistan"), //
 
-   Antigua_and_Barbuda("AG", "Antigua and Barbuda"), //
+    Antigua_and_Barbuda("AG", "Antigua and Barbuda"), //
 
-   Anguilla("AI", "Anguilla"), //
+    Anguilla("AI", "Anguilla"), //
 
-   Albania("AL", "Albania"), //
+    Albania("AL", "Albania"), //
 
-   Armenia("AM", "Armenia"), //
+    Armenia("AM", "Armenia"), //
 
-   /**
-    * Deprecated - use BQ, CW or SX as appropriate
-    */
-   Netherlands_Antilles("AN", "Netherlands Antilles"), //
+    /**
+     * Deprecated - use BQ, CW or SX as appropriate
+     */
+    Netherlands_Antilles("AN", "Netherlands Antilles"), //
 
-   Angola("AO", "Angola"), //
+    Angola("AO", "Angola"), //
 
-   Antarctica("AQ", "Antarctica"), //
+    Antarctica("AQ", "Antarctica"), //
 
-   Argentina("AR", "Argentina"), //
+    Argentina("AR", "Argentina"), //
 
-   American_Samoa("AS", "American Samoa"), //
+    American_Samoa("AS", "American Samoa"), //
 
-   Austria("AT", "Austria"), //
+    Austria("AT", "Austria"), //
 
-   Australia("AU", "Australia"), //
+    Australia("AU", "Australia"), //
 
-   Aruba("AW", "Aruba"), //
+    Aruba("AW", "Aruba"), //
 
-   _land_Islands("AX", "Åland Islands"), //
+    _land_Islands("AX", "Åland Islands"), //
 
-   Azerbaijan("AZ", "Azerbaijan"), //
+    Azerbaijan("AZ", "Azerbaijan"), //
 
-   Bosnia_and_Herzegovina("BA", "Bosnia and Herzegovina"), //
+    Bosnia_and_Herzegovina("BA", "Bosnia and Herzegovina"), //
 
-   Barbados("BB", "Barbados"), //
+    Barbados("BB", "Barbados"), //
 
-   Bangladesh("BD", "Bangladesh"), //
+    Bangladesh("BD", "Bangladesh"), //
 
-   Belgium("BE", "Belgium"), //
+    Belgium("BE", "Belgium"), //
 
-   Burkina_Faso("BF", "Burkina Faso"), //
+    Burkina_Faso("BF", "Burkina Faso"), //
 
-   Bulgaria("BG", "Bulgaria"), //
+    Bulgaria("BG", "Bulgaria"), //
 
-   Bahrain("BH", "Bahrain"), //
+    Bahrain("BH", "Bahrain"), //
 
-   Burundi("BI", "Burundi"), //
+    Burundi("BI", "Burundi"), //
 
-   Benin("BJ", "Benin"), //
+    Benin("BJ", "Benin"), //
 
-   Saint_Barth_lemy("BL", "Saint Barthélemy"), //
+    Saint_Barth_lemy("BL", "Saint Barthélemy"), //
 
-   Bermuda("BM", "Bermuda"), //
+    Bermuda("BM", "Bermuda"), //
 
-   Brunei_Darussalam("BN", "Brunei Darussalam"), //
+    Brunei_Darussalam("BN", "Brunei Darussalam"), //
 
-   Bolivia_Plurinational_State_of("BO", "Bolivia, Plurinational State of"), //
+    Bolivia_Plurinational_State_of("BO", "Bolivia, Plurinational State of"), //
 
-   Bonaire_Sint_Eustatius_and_Saba("BQ", "Bonaire, Sint Eustatius and Saba"), //
+    Bonaire_Sint_Eustatius_and_Saba("BQ", "Bonaire, Sint Eustatius and Saba"), //
 
-   Brazil("BR", "Brazil"), //
+    Brazil("BR", "Brazil"), //
 
-   Bahamas("BS", "Bahamas"), //
+    Bahamas("BS", "Bahamas"), //
 
-   Bhutan("BT", "Bhutan"), //
+    Bhutan("BT", "Bhutan"), //
 
-   Bouvet_Island("BV", "Bouvet Island"), //
+    Bouvet_Island("BV", "Bouvet Island"), //
 
-   Botswana("BW", "Botswana"), //
+    Botswana("BW", "Botswana"), //
 
-   Belarus("BY", "Belarus"), //
+    Belarus("BY", "Belarus"), //
 
-   Belize("BZ", "Belize"), //
+    Belize("BZ", "Belize"), //
 
-   Canada("CA", "Canada"), //
+    Canada("CA", "Canada"), //
 
-   Cocos_Keeling("CC", "Cocos (Keeling) Islands"), //
+    Cocos_Keeling("CC", "Cocos (Keeling) Islands"), //
 
-   Congo_Democratic_Republic_of_the("CD", "Congo, Democratic Republic of the"), //
+    Congo_Democratic_Republic_of_the("CD", "Congo, Democratic Republic of the"), //
 
-   Central_African_Republic("CF", "Central African Republic"), //
+    Central_African_Republic("CF", "Central African Republic"), //
 
-   Congo("CG", "Congo"), //
+    Congo("CG", "Congo"), //
 
-   Switzerland("CH", "Switzerland"), //
+    Switzerland("CH", "Switzerland"), //
 
-   Cote_d_Ivoire("CI", "Cote d’Ivoire"), //
+    Cote_d_Ivoire("CI", "Cote d’Ivoire"), //
 
-   Cook_Islands("CK", "Cook Islands"), //
+    Cook_Islands("CK", "Cook Islands"), //
 
-   Chile("CL", "Chile"), //
+    Chile("CL", "Chile"), //
 
-   Cameroon("CM", "Cameroon"), //
+    Cameroon("CM", "Cameroon"), //
 
-   China("CN", "China"), //
+    China("CN", "China"), //
 
-   Colombia("CO", "Colombia"), //
+    Colombia("CO", "Colombia"), //
 
-   Costa_Rica("CR", "Costa Rica"), //
+    Costa_Rica("CR", "Costa Rica"), //
 
-   /**
-    * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
-    */
-   Serbia_and_Montenegro("CS", "Serbia and Montenegro"), //
+    /**
+     * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
+     */
+    Serbia_and_Montenegro("CS", "Serbia and Montenegro"), //
 
-   Cuba("CU", "Cuba"), //
+    Cuba("CU", "Cuba"), //
 
-   Cabo_Verde("CV", "Cabo Verde"), //
+    Cabo_Verde("CV", "Cabo Verde"), //
 
-   Cura_ao("CW", "Curaçao"), //
+    Cura_ao("CW", "Curaçao"), //
 
-   Christmas_Island("CX", "Christmas Island"), //
+    Christmas_Island("CX", "Christmas Island"), //
 
-   Cyprus("CY", "Cyprus"), //
+    Cyprus("CY", "Cyprus"), //
 
-   Czech_Republic("CZ", "Czech Republic"), //
+    Czech_Republic("CZ", "Czech Republic"), //
 
-   Germany("DE", "Germany"), //
+    Germany("DE", "Germany"), //
 
-   Djibouti("DJ", "Djibouti"), //
+    Djibouti("DJ", "Djibouti"), //
 
-   Denmark("DK", "Denmark"), //
+    Denmark("DK", "Denmark"), //
 
-   Dominica("DM", "Dominica"), //
+    Dominica("DM", "Dominica"), //
 
-   Dominican_Republic("DO", "Dominican Republic"), //
+    Dominican_Republic("DO", "Dominican Republic"), //
 
-   Algeria("DZ", "Algeria"), //
+    Algeria("DZ", "Algeria"), //
 
-   Ecuador("EC", "Ecuador"), //
+    Ecuador("EC", "Ecuador"), //
 
-   Estonia("EE", "Estonia"), //
+    Estonia("EE", "Estonia"), //
 
-   Egypt("EG", "Egypt"), //
+    Egypt("EG", "Egypt"), //
 
-   Western_Sahara("EH", "Western Sahara"), //
+    Western_Sahara("EH", "Western Sahara"), //
 
-   Eritrea("ER", "Eritrea"), //
+    Eritrea("ER", "Eritrea"), //
 
-   Spain("ES", "Spain"), //
+    Spain("ES", "Spain"), //
 
-   Ethiopia("ET", "Ethiopia"), //
+    Ethiopia("ET", "Ethiopia"), //
 
-   Finland("FI", "Finland"), //
+    Finland("FI", "Finland"), //
 
-   Fiji("FJ", "Fiji"), //
+    Fiji("FJ", "Fiji"), //
 
-   Falkland_Islands_Malvinas("FK", "Falkland Islands (Malvinas)"), //
+    Falkland_Islands_Malvinas("FK", "Falkland Islands (Malvinas)"), //
 
-   Micronesia_Federated_States_of("FM", "Micronesia, Federated States of"), //
+    Micronesia_Federated_States_of("FM", "Micronesia, Federated States of"), //
 
-   Faroe_Islands("FO", "Faroe Islands"), //
+    Faroe_Islands("FO", "Faroe Islands"), //
 
-   France("FR", "France"), //
+    France("FR", "France"), //
 
-   Gabon("GA", "Gabon"), //
+    Gabon("GA", "Gabon"), //
 
-   United_Kingdom("GB", "United Kingdom"), //
+    United_Kingdom("GB", "United Kingdom"), //
 
-   Grenada("GD", "Grenada"), //
+    Grenada("GD", "Grenada"), //
 
-   Georgia("GE", "Georgia"), //
+    Georgia("GE", "Georgia"), //
 
-   French_Guiana("GF", "French Guiana"), //
+    French_Guiana("GF", "French Guiana"), //
 
-   Guernsey("GG", "Guernsey"), //
+    Guernsey("GG", "Guernsey"), //
 
-   Ghana("GH", "Ghana"), //
+    Ghana("GH", "Ghana"), //
 
-   Gibraltar("GI", "Gibraltar"), //
+    Gibraltar("GI", "Gibraltar"), //
 
-   Greenland("GL", "Greenland"), //
+    Greenland("GL", "Greenland"), //
 
-   Gambia("GM", "Gambia"), //
+    Gambia("GM", "Gambia"), //
 
-   Guinea("GN", "Guinea"), //
+    Guinea("GN", "Guinea"), //
 
-   Guadeloupe("GP", "Guadeloupe"), //
+    Guadeloupe("GP", "Guadeloupe"), //
 
-   Equatorial_Guinea("GQ", "Equatorial Guinea"), //
+    Equatorial_Guinea("GQ", "Equatorial Guinea"), //
 
-   Greece("GR", "Greece"), //
+    Greece("GR", "Greece"), //
 
-   South_Georgia_and_the_South_Sandwich_Islands("GS", "South Georgia and the South Sandwich Islands"), //
+    South_Georgia_and_the_South_Sandwich_Islands("GS", "South Georgia and the South Sandwich Islands"), //
 
-   Guatemala("GT", "Guatemala"), //
+    Guatemala("GT", "Guatemala"), //
 
-   Guam("GU", "Guam"), //
+    Guam("GU", "Guam"), //
 
-   Guinea_Bissau("GW", "Guinea-Bissau"), //
+    Guinea_Bissau("GW", "Guinea-Bissau"), //
 
-   Guyana("GY", "Guyana"), //
+    Guyana("GY", "Guyana"), //
 
-   Hong_Kong("HK", "Hong Kong"), //
+    Hong_Kong("HK", "Hong Kong"), //
 
-   Heard_Island_and_McDonald_Islands("HM", "Heard Island and McDonald Islands"), //
+    Heard_Island_and_McDonald_Islands("HM", "Heard Island and McDonald Islands"), //
 
-   Honduras("HN", "Honduras"), //
+    Honduras("HN", "Honduras"), //
 
-   Croatia("HR", "Croatia"), //
+    Croatia("HR", "Croatia"), //
 
-   Haiti("HT", "Haiti"), //
+    Haiti("HT", "Haiti"), //
 
-   Hungary("HU", "Hungary"), //
+    Hungary("HU", "Hungary"), //
 
-   Indonesia("ID", "Indonesia"), //
+    Indonesia("ID", "Indonesia"), //
 
-   Ireland("IE", "Ireland"), //
+    Ireland("IE", "Ireland"), //
 
-   Israel("IL", "Israel"), //
+    Israel("IL", "Israel"), //
 
-   Isle_of_Man("IM", "Isle of Man"), //
+    Isle_of_Man("IM", "Isle of Man"), //
 
-   India("IN", "India"), //
+    India("IN", "India"), //
 
-   British_Indian_Ocean_Territory("IO", "British Indian Ocean Territory"), //
+    British_Indian_Ocean_Territory("IO", "British Indian Ocean Territory"), //
 
-   Iraq("IQ", "Iraq"), //
+    Iraq("IQ", "Iraq"), //
 
-   Iran_Islamic_Republic_of("IR", "Iran, Islamic Republic of"), //
+    Iran_Islamic_Republic_of("IR", "Iran, Islamic Republic of"), //
 
-   Iceland("IS", "Iceland"), //
+    Iceland("IS", "Iceland"), //
 
-   Italy("IT", "Italy"), //
+    Italy("IT", "Italy"), //
 
-   Jersey("JE", "Jersey"), //
+    Jersey("JE", "Jersey"), //
 
-   Jamaica("JM", "Jamaica"), //
+    Jamaica("JM", "Jamaica"), //
 
-   Jordan("JO", "Jordan"), //
+    Jordan("JO", "Jordan"), //
 
-   Japan("JP", "Japan"), //
+    Japan("JP", "Japan"), //
 
-   Kenya("KE", "Kenya"), //
+    Kenya("KE", "Kenya"), //
 
-   Kyrgyzstan("KG", "Kyrgyzstan"), //
+    Kyrgyzstan("KG", "Kyrgyzstan"), //
 
-   Cambodia("KH", "Cambodia"), //
+    Cambodia("KH", "Cambodia"), //
 
-   Kiribati("KI", "Kiribati"), //
+    Kiribati("KI", "Kiribati"), //
 
-   Comoros("KM", "Comoros"), //
+    Comoros("KM", "Comoros"), //
 
-   Saint_Kitts_and_Nevis("KN", "Saint Kitts and Nevis"), //
+    Saint_Kitts_and_Nevis("KN", "Saint Kitts and Nevis"), //
 
-   Korea_Democratic_People_s_Republic_of("KP", "Korea, Democratic People’s Republic of"), //
+    Korea_Democratic_People_s_Republic_of("KP", "Korea, Democratic People’s Republic of"), //
 
-   Korea_Republic_of("KR", "Korea, Republic of"), //
+    Korea_Republic_of("KR", "Korea, Republic of"), //
 
-   Kuwait("KW", "Kuwait"), //
+    Kuwait("KW", "Kuwait"), //
 
-   Cayman_Islands("KY", "Cayman Islands"), //
+    Cayman_Islands("KY", "Cayman Islands"), //
 
-   Kazakhstan("KZ", "Kazakhstan"), //
+    Kazakhstan("KZ", "Kazakhstan"), //
 
-   Lao_People_s_Democratic_Republic("LA", "Lao People’s Democratic Republic"), //
+    Lao_People_s_Democratic_Republic("LA", "Lao People’s Democratic Republic"), //
 
-   Lebanon("LB", "Lebanon"), //
+    Lebanon("LB", "Lebanon"), //
 
-   Saint_Lucia("LC", "Saint Lucia"), //
+    Saint_Lucia("LC", "Saint Lucia"), //
 
-   Liechtenstein("LI", "Liechtenstein"), //
+    Liechtenstein("LI", "Liechtenstein"), //
 
-   Sri_Lanka("LK", "Sri Lanka"), //
+    Sri_Lanka("LK", "Sri Lanka"), //
 
-   Liberia("LR", "Liberia"), //
+    Liberia("LR", "Liberia"), //
 
-   Lesotho("LS", "Lesotho"), //
+    Lesotho("LS", "Lesotho"), //
 
-   Lithuania("LT", "Lithuania"), //
+    Lithuania("LT", "Lithuania"), //
 
-   Luxembourg("LU", "Luxembourg"), //
+    Luxembourg("LU", "Luxembourg"), //
 
-   Latvia("LV", "Latvia"), //
+    Latvia("LV", "Latvia"), //
 
-   Libya("LY", "Libya"), //
+    Libya("LY", "Libya"), //
 
-   Morocco("MA", "Morocco"), //
+    Morocco("MA", "Morocco"), //
 
-   Monaco("MC", "Monaco"), //
+    Monaco("MC", "Monaco"), //
 
-   Moldova_Repubic_of("MD", "Moldova, Repubic of"), //
+    Moldova_Repubic_of("MD", "Moldova, Repubic of"), //
 
-   Montenegro("ME", "Montenegro"), //
+    Montenegro("ME", "Montenegro"), //
 
-   Saint_Martin_French_part("MF", "Saint Martin (French part)"), //
+    Saint_Martin_French_part("MF", "Saint Martin (French part)"), //
 
-   Madagascar("MG", "Madagascar"), //
+    Madagascar("MG", "Madagascar"), //
 
-   Marshall_Islands("MH", "Marshall Islands"), //
+    Marshall_Islands("MH", "Marshall Islands"), //
 
-   Macedonia_the_former_Yugoslav_Republic_of("MK", "Macedonia, the former Yugoslav Republic of"), //
+    Macedonia_the_former_Yugoslav_Republic_of("MK", "Macedonia, the former Yugoslav Republic of"), //
 
-   Mali("ML", "Mali"), //
+    Mali("ML", "Mali"), //
 
-   Myanmar("MM", "Myanmar"), //
+    Myanmar("MM", "Myanmar"), //
 
-   Mongolia("MN", "Mongolia"), //
+    Mongolia("MN", "Mongolia"), //
 
-   Macao("MO", "Macao"), //
+    Macao("MO", "Macao"), //
 
-   Northern_Mariana_Islands("MP", "Northern Mariana Islands"), //
+    Northern_Mariana_Islands("MP", "Northern Mariana Islands"), //
 
-   Martinique("MQ", "Martinique"), //
+    Martinique("MQ", "Martinique"), //
 
-   Mauritania("MR", "Mauritania"), //
+    Mauritania("MR", "Mauritania"), //
 
-   Montserrat("MS", "Montserrat"), //
+    Montserrat("MS", "Montserrat"), //
 
-   Malta("MT", "Malta"), //
+    Malta("MT", "Malta"), //
 
-   Mauritius("MU", "Mauritius"), //
+    Mauritius("MU", "Mauritius"), //
 
-   Maldives("MV", "Maldives"), //
+    Maldives("MV", "Maldives"), //
 
-   Malawi("MW", "Malawi"), //
+    Malawi("MW", "Malawi"), //
 
-   Mexico("MX", "Mexico"), //
+    Mexico("MX", "Mexico"), //
 
-   Malaysia("MY", "Malaysia"), //
+    Malaysia("MY", "Malaysia"), //
 
-   Mozambique("MZ", "Mozambique"), //
+    Mozambique("MZ", "Mozambique"), //
 
-   Namibia("NA", "Namibia"), //
+    Namibia("NA", "Namibia"), //
 
-   New_Caledonia("NC", "New Caledonia"), //
+    New_Caledonia("NC", "New Caledonia"), //
 
-   Niger("NE", "Niger"), //
+    Niger("NE", "Niger"), //
 
-   Norfolk_Island("NF", "Norfolk Island"), //
+    Norfolk_Island("NF", "Norfolk Island"), //
 
-   Nigeria("NG", "Nigeria"), //
+    Nigeria("NG", "Nigeria"), //
 
-   Nicaragua("NI", "Nicaragua"), //
+    Nicaragua("NI", "Nicaragua"), //
 
-   Netherlands("NL", "Netherlands"), //
+    Netherlands("NL", "Netherlands"), //
 
-   Norway("NO", "Norway"), //
+    Norway("NO", "Norway"), //
 
-   Nepal("NP", "Nepal"), //
+    Nepal("NP", "Nepal"), //
 
-   Nauru("NR", "Nauru"), //
+    Nauru("NR", "Nauru"), //
 
-   Niue("NU", "Niue"), //
+    Niue("NU", "Niue"), //
 
-   New_Zealand("NZ", "New Zealand"), //
+    New_Zealand("NZ", "New Zealand"), //
 
-   Oman("OM", "Oman"), //
+    Oman("OM", "Oman"), //
 
-   Panama("PA", "Panama"), //
+    Panama("PA", "Panama"), //
 
-   Peru("PE", "Peru"), //
+    Peru("PE", "Peru"), //
 
-   French_Polynesia("PF", "French Polynesia"), //
+    French_Polynesia("PF", "French Polynesia"), //
 
-   Papua_New_Guinea("PG", "Papua New Guinea"), //
+    Papua_New_Guinea("PG", "Papua New Guinea"), //
 
-   Philippines("PH", "Philippines"), //
+    Philippines("PH", "Philippines"), //
 
-   Pakistan("PK", "Pakistan"), //
+    Pakistan("PK", "Pakistan"), //
 
-   Poland("PL", "Poland"), //
+    Poland("PL", "Poland"), //
 
-   Saint_Pierre_and_Miquelon("PM", "Saint Pierre and Miquelon"), //
+    Saint_Pierre_and_Miquelon("PM", "Saint Pierre and Miquelon"), //
 
-   Pitcairn("PN", "Pitcairn"), //
+    Pitcairn("PN", "Pitcairn"), //
 
-   Puerto_Rico("PR", "Puerto Rico"), //
+    Puerto_Rico("PR", "Puerto Rico"), //
 
-   Palestine_State_of("PS", "Palestine, State of"), //
+    Palestine_State_of("PS", "Palestine, State of"), //
 
-   Portugal("PT", "Portugal"), //
+    Portugal("PT", "Portugal"), //
 
-   Palau("PW", "Palau"), //
+    Palau("PW", "Palau"), //
 
-   Paraguay("PY", "Paraguay"), //
+    Paraguay("PY", "Paraguay"), //
 
-   Qatar("QA", "Qatar"), //
+    Qatar("QA", "Qatar"), //
 
-   R_union("RE", "Réunion"), //
+    R_union("RE", "Réunion"), //
 
-   Romania("RO", "Romania"), //
+    Romania("RO", "Romania"), //
 
-   Serbia("RS", "Serbia"), //
+    Serbia("RS", "Serbia"), //
 
-   Russian_Federation("RU", "Russian Federation"), //
+    Russian_Federation("RU", "Russian Federation"), //
 
-   Rwanda("RW", "Rwanda"), //
+    Rwanda("RW", "Rwanda"), //
 
-   Saudi_Arabia("SA", "Saudi Arabia"), //
+    Saudi_Arabia("SA", "Saudi Arabia"), //
 
-   Solomon_Islands("SB", "Solomon Islands"), //
+    Solomon_Islands("SB", "Solomon Islands"), //
 
-   Seychelles("SC", "Seychelles"), //
+    Seychelles("SC", "Seychelles"), //
 
-   Sudan("SD", "Sudan"), //
+    Sudan("SD", "Sudan"), //
 
-   Sweden("SE", "Sweden"), //
+    Sweden("SE", "Sweden"), //
 
-   Singapore("SG", "Singapore"), //
+    Singapore("SG", "Singapore"), //
 
-   Saint_Helena_Ascension_and_Tristan_da_Cunha("SH", "Saint Helena, Ascension and Tristan da Cunha"), //
+    Saint_Helena_Ascension_and_Tristan_da_Cunha("SH", "Saint Helena, Ascension and Tristan da Cunha"), //
 
-   Slovenia("SI", "Slovenia"), //
+    Slovenia("SI", "Slovenia"), //
 
-   Svalbard_and_Jan_Mayen("SJ", "Svalbard and Jan Mayen"), //
+    Svalbard_and_Jan_Mayen("SJ", "Svalbard and Jan Mayen"), //
 
-   Slovakia("SK", "Slovakia"), //
+    Slovakia("SK", "Slovakia"), //
 
-   Sierra_Leone("SL", "Sierra Leone"), //
+    Sierra_Leone("SL", "Sierra Leone"), //
 
-   San_Marino("SM", "San Marino"), //
+    San_Marino("SM", "San Marino"), //
 
-   Senegal("SN", "Senegal"), //
+    Senegal("SN", "Senegal"), //
 
-   Somalia("SO", "Somalia"), //
+    Somalia("SO", "Somalia"), //
 
-   Suriname("SR", "Suriname"), //
+    Suriname("SR", "Suriname"), //
 
-   South_Sudan("SS", "South Sudan"), //
+    South_Sudan("SS", "South Sudan"), //
 
-   Sao_Tome_and_Principe("ST", "Sao Tome and Principe"), //
+    Sao_Tome_and_Principe("ST", "Sao Tome and Principe"), //
 
-   El_Salvador("SV", "El Salvador"), //
+    El_Salvador("SV", "El Salvador"), //
 
-   Sint_Maarten_Dutch_part("SX", "Sint Maarten (Dutch part)"), //
+    Sint_Maarten_Dutch_part("SX", "Sint Maarten (Dutch part)"), //
 
-   Syrian_Arab_Republic("SY", "Syrian Arab Republic"), //
+    Syrian_Arab_Republic("SY", "Syrian Arab Republic"), //
 
-   Swaziland("SZ", "Swaziland"), //
+    Swaziland("SZ", "Swaziland"), //
 
-   Turks_and_Caicos_Islands("TC", "Turks and Caicos Islands"), //
+    Turks_and_Caicos_Islands("TC", "Turks and Caicos Islands"), //
 
-   Chad("TD", "Chad"), //
+    Chad("TD", "Chad"), //
 
-   French_Southern_Territories("TF", "French Southern Territories"), //
+    French_Southern_Territories("TF", "French Southern Territories"), //
 
-   Togo("TG", "Togo"), //
+    Togo("TG", "Togo"), //
 
-   Thailand("TH", "Thailand"), //
+    Thailand("TH", "Thailand"), //
 
-   Tajikistan("TJ", "Tajikistan"), //
+    Tajikistan("TJ", "Tajikistan"), //
 
-   Tokelau("TK", "Tokelau"), //
+    Tokelau("TK", "Tokelau"), //
 
-   Timor_Leste("TL", "Timor-Leste"), //
+    Timor_Leste("TL", "Timor-Leste"), //
 
-   Turkmenistan("TM", "Turkmenistan"), //
+    Turkmenistan("TM", "Turkmenistan"), //
 
-   Tunisia("TN", "Tunisia"), //
+    Tunisia("TN", "Tunisia"), //
 
-   Tonga("TO", "Tonga"), //
+    Tonga("TO", "Tonga"), //
 
-   Turkey("TR", "Turkey"), //
+    Turkey("TR", "Turkey"), //
 
-   Trinidad_and_Tobago("TT", "Trinidad and Tobago"), //
+    Trinidad_and_Tobago("TT", "Trinidad and Tobago"), //
 
-   Tuvalu("TV", "Tuvalu"), //
+    Tuvalu("TV", "Tuvalu"), //
 
-   Taiwan_Province_of_China("TW", "Taiwan, Province of China"), //
+    Taiwan_Province_of_China("TW", "Taiwan, Province of China"), //
 
-   Tanzania_United_Republic_of("TZ", "Tanzania, United Republic of"), //
+    Tanzania_United_Republic_of("TZ", "Tanzania, United Republic of"), //
 
-   Ukraine("UA", "Ukraine"), //
+    Ukraine("UA", "Ukraine"), //
 
-   Uganda("UG", "Uganda"), //
+    Uganda("UG", "Uganda"), //
 
-   United_States_Minor_Outlying_Islands("UM", "United States Minor Outlying Islands"), //
+    United_States_Minor_Outlying_Islands("UM", "United States Minor Outlying Islands"), //
 
-   United_States("US", "United States"), //
+    United_States("US", "United States"), //
 
-   Uruguay("UY", "Uruguay"), //
+    Uruguay("UY", "Uruguay"), //
 
-   Uzbekistan("UZ", "Uzbekistan"), //
+    Uzbekistan("UZ", "Uzbekistan"), //
 
-   Holy_See_Vatican_City_State("VA", "Holy See (Vatican City State)"), //
+    Holy_See_Vatican_City_State("VA", "Holy See (Vatican City State)"), //
 
-   Saint_Vincent_and_the_Grenadines("VC", "Saint Vincent and the Grenadines"), //
+    Saint_Vincent_and_the_Grenadines("VC", "Saint Vincent and the Grenadines"), //
 
-   Venezuela_Bolivarian_Republic_of("VE", "Venezuela, Bolivarian Republic of"), //
+    Venezuela_Bolivarian_Republic_of("VE", "Venezuela, Bolivarian Republic of"), //
 
-   Virgin_Islands_British("VG", "Virgin Islands, British"), //
+    Virgin_Islands_British("VG", "Virgin Islands, British"), //
 
-   Virgin_Islands_US("VI", "Virgin Islands, US"), //
+    Virgin_Islands_US("VI", "Virgin Islands, US"), //
 
-   Viet_Nam("VN", "Viet Nam"), //
+    Viet_Nam("VN", "Viet Nam"), //
 
-   Vanuatu("VU", "Vanuatu"), //
+    Vanuatu("VU", "Vanuatu"), //
 
-   Wallis_and_Futuna("WF", "Wallis and Futuna"), //
+    Wallis_and_Futuna("WF", "Wallis and Futuna"), //
 
-   Samoa("WS", "Samoa"), //
+    Samoa("WS", "Samoa"), //
 
-   Yemen("YE", "Yemen"), //
+    Yemen("YE", "Yemen"), //
 
-   Mayotte("YT", "Mayotte"), //
+    Mayotte("YT", "Mayotte"), //
 
-   /**
-    * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
-    */
-   Yugoslavia("YU", "Yugoslavia"), //
+    /**
+     * DEPRECATED, replaced by ME - Montenegro and RS - Serbia
+     */
+    Yugoslavia("YU", "Yugoslavia"), //
 
-   South_Africa("ZA", "South Africa"), //
+    South_Africa("ZA", "South Africa"), //
 
-   Zambia("ZM", "Zambia"), //
+    Zambia("ZM", "Zambia"), //
 
-   Zimbabwe("ZW", "Zimbabwe");
+    Zimbabwe("ZW", "Zimbabwe");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private CountryCodes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private CountryCodes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, CountryCodes> map;
+    private static volatile Map<String, CountryCodes> map;
 
-   private static Map<String, CountryCodes> map()
-   {
-      Map<String, CountryCodes> result = map;
-      if (result == null)
-      {
-         synchronized(CountryCodes.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (CountryCodes e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, CountryCodes> map() {
+        Map<String, CountryCodes> result = map;
+        if (result == null) {
+            synchronized (CountryCodes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (CountryCodes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static CountryCodes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static CountryCodes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

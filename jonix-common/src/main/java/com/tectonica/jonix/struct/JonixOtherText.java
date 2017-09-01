@@ -19,70 +19,73 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.OtherTextTypes;
+import com.tectonica.jonix.codelist.TextFormats;
+import com.tectonica.jonix.codelist.TextLinkTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixOtherText implements JonixKeyedStruct<OtherTextTypes>, Serializable
-{
-   public static JonixOtherText EMPTY = new JonixOtherText();
+public class JonixOtherText implements JonixKeyedStruct<OtherTextTypes>, Serializable {
+    public static JonixOtherText EMPTY = new JonixOtherText();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public OtherTextTypes textTypeCode;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public OtherTextTypes textTypeCode;
 
-   public TextFormats textFormat;
+    public TextFormats textFormat;
 
-   /**
-    * Raw Format: Variable length text (XHTML is enabled in this element - see ONIX for Books - Product Information Message - XML Message Specification, Section 7) <p> (type: XHTML)
-    */
-   public String text;
+    /**
+     * Raw Format: Variable length text (XHTML is enabled in this element - see ONIX for Books - Product Information
+     * Message - XML Message Specification, Section 7) <p> (type: XHTML)
+     */
+    public String text;
 
-   public TextLinkTypes textLinkType;
+    public TextLinkTypes textLinkType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
-    */
-   public String textLink;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
+     */
+    public String textLink;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
-    */
-   public String textAuthor;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 300 characters <p> (type: NonEmptyString)
+     */
+    public String textAuthor;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 200 characters <p> (type: NonEmptyString)
-    */
-   public String textSourceCorporate;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 200 characters <p> (type: NonEmptyString)
+     */
+    public String textSourceCorporate;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: NonEmptyString)
-    */
-   public String textSourceTitle;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: NonEmptyString)
+     */
+    public String textSourceTitle;
 
-   /**
-    * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD) <p> (type: NonEmptyString)
-    */
-   public String textPublicationDate;
+    /**
+     * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD) <p> (type: NonEmptyString)
+     */
+    public String textPublicationDate;
 
-   /**
-    * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD <p> (type: NonEmptyString)
-    */
-   public String startDate;
+    /**
+     * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD <p> (type: NonEmptyString)
+     */
+    public String startDate;
 
-   /**
-    * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD <p> (type: NonEmptyString)
-    */
-   public String endDate;
+    /**
+     * Raw Format: Fixed-length, 8 numeric digits, YYYYMMDD <p> (type: NonEmptyString)
+     */
+    public String endDate;
 
-   @Override
-   public OtherTextTypes key() { return textTypeCode; }
+    @Override
+    public OtherTextTypes key() {
+        return textTypeCode;
+    }
 }

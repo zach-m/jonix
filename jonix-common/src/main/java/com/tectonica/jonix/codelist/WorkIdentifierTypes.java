@@ -28,74 +28,77 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 16 (Work identifier type code)
  */
-interface CodeList16
-{}
+interface CodeList16 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 16</b>
  * <p>
  * Description: Work identifier type code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist16">ONIX Codelist 16 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist16">ONIX
+ * Codelist 16 in Reference Guide</a>
  */
-public enum WorkIdentifierTypes implements OnixCodelist, CodeList16
-{
-   Proprietary("01", "Proprietary"), //
+public enum WorkIdentifierTypes implements OnixCodelist, CodeList16 {
+    Proprietary("01", "Proprietary"), //
 
-   /**
-    * 10-character ISBN of manifestation of work, when this is the only work identifier available - now DEPRECATED in ONIX for Books, except where providing historical information for compatibility with legacy systems. It should only be used in relation to products published before 2007 - when ISBN-13 superseded it - and should never be used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13 of the manifestation of the work)
-    */
-   ISBN_10("02", "ISBN-10"), //
+    /**
+     * 10-character ISBN of manifestation of work, when this is the only work identifier available - now DEPRECATED in
+     * ONIX for Books, except where providing historical information for compatibility with legacy systems. It should
+     * only be used in relation to products published before 2007 - when ISBN-13 superseded it - and should never be
+     * used as the ONLY identifier (it should always be accompanied by the correct GTIN-13 / ISBN-13 of the
+     * manifestation of the work)
+     */
+    ISBN_10("02", "ISBN-10"), //
 
-   /**
-    * Digital Object Identifier (variable length and character set)
-    */
-   DOI("06", "DOI"), //
+    /**
+     * Digital Object Identifier (variable length and character set)
+     */
+    DOI("06", "DOI"), //
 
-   /**
-    * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated)
-    */
-   ISTC("11", "ISTC"), //
+    /**
+     * International Standard Text Code (16 characters: numerals and letters A-F, unhyphenated)
+     */
+    ISTC("11", "ISTC"), //
 
-   /**
-    * 13-character ISBN of manifestation of work, when this is the only work identifier available
-    */
-   ISBN_13("15", "ISBN-13"), //
+    /**
+     * 13-character ISBN of manifestation of work, when this is the only work identifier available
+     */
+    ISBN_13("15", "ISBN-13"), //
 
-   /**
-    * International Standard Recording Code
-    */
-   ISRC("18", "ISRC");
+    /**
+     * International Standard Recording Code
+     */
+    ISRC("18", "ISRC");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private WorkIdentifierTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private WorkIdentifierTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static WorkIdentifierTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (WorkIdentifierTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static WorkIdentifierTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (WorkIdentifierTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

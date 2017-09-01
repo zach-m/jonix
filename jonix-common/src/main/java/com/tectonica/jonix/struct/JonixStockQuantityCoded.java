@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.StockQuantityCodeTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixStockQuantityCoded implements JonixKeyedStruct<StockQuantityCodeTypes>, Serializable
-{
-   public static JonixStockQuantityCoded EMPTY = new JonixStockQuantityCoded();
+public class JonixStockQuantityCoded implements JonixKeyedStruct<StockQuantityCodeTypes>, Serializable {
+    public static JonixStockQuantityCoded EMPTY = new JonixStockQuantityCoded();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public StockQuantityCodeTypes stockQuantityCodeType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public StockQuantityCodeTypes stockQuantityCodeType;
 
-   /**
-    * Raw Format: According to the scheme specified in &lt;StockQuantityCodeType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String stockQuantityCode;
+    /**
+     * Raw Format: According to the scheme specified in &lt;StockQuantityCodeType&gt; <p> (type: dt.NonEmptyString)
+     */
+    public String stockQuantityCode;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String stockQuantityCodeTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String stockQuantityCodeTypeName;
 
-   @Override
-   public StockQuantityCodeTypes key() { return stockQuantityCodeType; }
+    @Override
+    public StockQuantityCodeTypes key() {
+        return stockQuantityCodeType;
+    }
 }

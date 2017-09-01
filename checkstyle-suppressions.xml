@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "http://checkstyle.sourceforge.net/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+    <!-- all codelist generated-classes have a marker interface in them, as a top-level class -->
+    <suppress id="one-top-level-restriction" files="com[/\\]tectonica[/\\]jonix[/\\]codelist[/\\].*\.java$"/>
+</suppressions>

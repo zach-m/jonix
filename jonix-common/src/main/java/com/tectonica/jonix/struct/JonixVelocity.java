@@ -19,27 +19,26 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.Proximitys;
+import com.tectonica.jonix.codelist.Velocitys;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixVelocity implements JonixStruct, Serializable
-{
-   public static JonixVelocity EMPTY = new JonixVelocity();
+public class JonixVelocity implements JonixStruct, Serializable {
+    public static JonixVelocity EMPTY = new JonixVelocity();
 
-   public Velocitys velocityMetric;
+    public Velocitys velocityMetric;
 
-   /**
-    * Raw Format: Variable length integer, suggested maximum length 7 digits <p> (type: dt.Integer)
-    */
-   public Integer rate;
+    /**
+     * Raw Format: Variable length integer, suggested maximum length 7 digits <p> (type: dt.Integer)
+     */
+    public Integer rate;
 
-   public Proximitys proximity;
+    public Proximitys proximity;
 }

@@ -28,58 +28,57 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 66 (BISAC returnable indicator)
  */
-interface CodeList66
-{}
+interface CodeList66 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 66</b>
  * <p>
  * Description: BISAC returnable indicator
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist66">ONIX Codelist 66 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist66">ONIX
+ * Codelist 66 in Reference Guide</a>
  */
-public enum BisacReturnableIndicators implements OnixCodelist, CodeList66
-{
-   No_not_returnable("N", "No, not returnable"), //
+public enum BisacReturnableIndicators implements OnixCodelist, CodeList66 {
+    No_not_returnable("N", "No, not returnable"), //
 
-   Yes_returnable_full_copies_only("Y", "Yes, returnable, full copies only"), //
+    Yes_returnable_full_copies_only("Y", "Yes, returnable, full copies only"), //
 
-   Yes_returnable_stripped_cover("S", "Yes, returnable, stripped cover"), //
+    Yes_returnable_stripped_cover("S", "Yes, returnable, stripped cover"), //
 
-   /**
-    * Contact publisher for requirements and/or authorization
-    */
-   Conditional("C", "Conditional");
+    /**
+     * Contact publisher for requirements and/or authorization
+     */
+    Conditional("C", "Conditional");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private BisacReturnableIndicators(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private BisacReturnableIndicators(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static BisacReturnableIndicators byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (BisacReturnableIndicators e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static BisacReturnableIndicators byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (BisacReturnableIndicators e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

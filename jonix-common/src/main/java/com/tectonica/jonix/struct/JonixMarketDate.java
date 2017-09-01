@@ -19,33 +19,35 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.DateFormats;
+import com.tectonica.jonix.codelist.PublishingDateRoles;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixMarketDate implements JonixKeyedStruct<PublishingDateRoles>, Serializable
-{
-   public static JonixMarketDate EMPTY = new JonixMarketDate();
+public class JonixMarketDate implements JonixKeyedStruct<PublishingDateRoles>, Serializable {
+    public static JonixMarketDate EMPTY = new JonixMarketDate();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public PublishingDateRoles marketDateRole;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public PublishingDateRoles marketDateRole;
 
-   /**
-    * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD <p> (type: dt.NonEmptyString)
-    */
-   public String date;
+    /**
+     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
+     * <p> (type: dt.NonEmptyString)
+     */
+    public String date;
 
-   public DateFormats dateFormat;
+    public DateFormats dateFormat;
 
-   @Override
-   public PublishingDateRoles key() { return marketDateRole; }
+    @Override
+    public PublishingDateRoles key() {
+        return marketDateRole;
+    }
 }

@@ -19,40 +19,40 @@
 
 package com.tectonica.jonix.struct;
 
+import com.tectonica.jonix.JonixStruct;
+import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixSubject implements JonixStruct, Serializable
-{
-   public static JonixSubject EMPTY = new JonixSubject();
+public class JonixSubject implements JonixStruct, Serializable {
+    public static JonixSubject EMPTY = new JonixSubject();
 
-   /**
-    * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
-    */
-   public String subjectCode;
+    /**
+     * Raw Format: Variable-length, alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     */
+    public String subjectCode;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 250 characters <p> (type: dt.NonEmptyString)
-    */
-   public List<String> subjectHeadingTexts;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 250 characters <p> (type: dt.NonEmptyString)
+     */
+    public List<String> subjectHeadingTexts;
 
-   public SubjectSchemeIdentifiers subjectSchemeIdentifier;
+    public SubjectSchemeIdentifiers subjectSchemeIdentifier;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
-    */
-   public String subjectSchemeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters <p> (type: dt.NonEmptyString)
+     */
+    public String subjectSchemeName;
 
-   /**
-    * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements <p> (type: dt.NonEmptyString)
-    */
-   public String subjectSchemeVersion;
+    /**
+     * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number elements
+     * <p> (type: dt.NonEmptyString)
+     */
+    public String subjectSchemeVersion;
 }

@@ -28,55 +28,54 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 157 (Content source type)
  */
-interface CodeList157
-{}
+interface CodeList157 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 157</b>
  * <p>
  * Description: Content source type
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist157">ONIX Codelist 157 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist157">ONIX
+ * Codelist 157 in Reference Guide</a>
  */
-public enum ContentSourceTypes implements OnixCodelist, CodeList157
-{
-   Printed_media("01", "Printed media"), //
+public enum ContentSourceTypes implements OnixCodelist, CodeList157 {
+    Printed_media("01", "Printed media"), //
 
-   Website("02", "Website"), //
+    Website("02", "Website"), //
 
-   Radio("03", "Radio"), //
+    Radio("03", "Radio"), //
 
-   TV("04", "TV");
+    TV("04", "TV");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ContentSourceTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ContentSourceTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static ContentSourceTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (ContentSourceTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static ContentSourceTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (ContentSourceTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

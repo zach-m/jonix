@@ -19,32 +19,29 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.List;
-
 import com.tectonica.jonix.codelist.TitleTypes;
+
+import java.util.List;
 
 /**
  * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
  * a product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicTitles extends LazyList<BasicTitle>
-{
-	public String findTitleText(TitleTypes requestedType)
-	{
-		BasicTitle title = findTitle(requestedType);
-		return (title == null) ? null : title.titleText;
-	}
+public abstract class BasicTitles extends LazyList<BasicTitle> {
+    public String findTitleText(TitleTypes requestedType) {
+        BasicTitle title = findTitle(requestedType);
+        return (title == null) ? null : title.titleText;
+    }
 
-	public BasicTitle findTitle(TitleTypes requestedType)
-	{
-		for (BasicTitle title : this)
-		{
-			if (title.titleType == requestedType)
-				return title;
-		}
-		return null;
-	}
+    public BasicTitle findTitle(TitleTypes requestedType) {
+        for (BasicTitle title : this) {
+            if (title.titleType == requestedType) {
+                return title;
+            }
+        }
+        return null;
+    }
 }

@@ -28,49 +28,48 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 217 (Price identifier type code)
  */
-interface CodeList217
-{}
+interface CodeList217 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 217</b>
  * <p>
  * Description: Price identifier type code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist217">ONIX Codelist 217 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist217">ONIX
+ * Codelist 217 in Reference Guide</a>
  */
-public enum PriceIdentifierTypes implements OnixCodelist, CodeList217
-{
-   Proprietary("01", "Proprietary");
+public enum PriceIdentifierTypes implements OnixCodelist, CodeList217 {
+    Proprietary("01", "Proprietary");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private PriceIdentifierTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private PriceIdentifierTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static PriceIdentifierTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (PriceIdentifierTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static PriceIdentifierTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (PriceIdentifierTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

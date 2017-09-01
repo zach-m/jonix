@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixReturnsConditions implements JonixKeyedStruct<ReturnsConditionsCodeTypes>, Serializable
-{
-   public static JonixReturnsConditions EMPTY = new JonixReturnsConditions();
+public class JonixReturnsConditions implements JonixKeyedStruct<ReturnsConditionsCodeTypes>, Serializable {
+    public static JonixReturnsConditions EMPTY = new JonixReturnsConditions();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public ReturnsConditionsCodeTypes returnsCodeType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public ReturnsConditionsCodeTypes returnsCodeType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String returnsCodeTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String returnsCodeTypeName;
 
-   /**
-    * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String returnsCode;
+    /**
+     * Raw Format: According to the scheme specified in &lt;ReturnsCodeType&gt; <p> (type: dt.NonEmptyString)
+     */
+    public String returnsCode;
 
-   @Override
-   public ReturnsConditionsCodeTypes key() { return returnsCodeType; }
+    @Override
+    public ReturnsConditionsCodeTypes key() {
+        return returnsCodeType;
+    }
 }

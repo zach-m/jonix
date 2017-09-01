@@ -19,33 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
+import com.tectonica.jonix.JonixKeyedStruct;
+import com.tectonica.jonix.codelist.ReligiousTextFeatureTypes;
+import com.tectonica.jonix.codelist.ReligiousTextFeatures;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixReligiousTextFeature implements JonixKeyedStruct<ReligiousTextFeatureTypes>, Serializable
-{
-   public static JonixReligiousTextFeature EMPTY = new JonixReligiousTextFeature();
+public class JonixReligiousTextFeature implements JonixKeyedStruct<ReligiousTextFeatureTypes>, Serializable {
+    public static JonixReligiousTextFeature EMPTY = new JonixReligiousTextFeature();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public ReligiousTextFeatureTypes religiousTextFeatureType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public ReligiousTextFeatureTypes religiousTextFeatureType;
 
-   public ReligiousTextFeatures religiousTextFeatureCode;
+    public ReligiousTextFeatures religiousTextFeatureCode;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
-    */
-   public List<String> religiousTextFeatureDescriptions;
+    /**
+     * Raw Format: Variable-length text, suggested maximum 100 characters. XHTML is enabled in this element - see Using
+     * XHTML, HTML or XML with ONIX text fields <p> (type: XHTML)
+     */
+    public List<String> religiousTextFeatureDescriptions;
 
-   @Override
-   public ReligiousTextFeatureTypes key() { return religiousTextFeatureType; }
+    @Override
+    public ReligiousTextFeatureTypes key() {
+        return religiousTextFeatureType;
+    }
 }

@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixLocationIdentifier implements JonixKeyedStruct<SupplierIdentifierTypes>, Serializable
-{
-   public static JonixLocationIdentifier EMPTY = new JonixLocationIdentifier();
+public class JonixLocationIdentifier implements JonixKeyedStruct<SupplierIdentifierTypes>, Serializable {
+    public static JonixLocationIdentifier EMPTY = new JonixLocationIdentifier();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public SupplierIdentifierTypes locationIDType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public SupplierIdentifierTypes locationIDType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String idTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String idTypeName;
 
-   /**
-    * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String idValue;
+    /**
+     * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
+     */
+    public String idValue;
 
-   @Override
-   public SupplierIdentifierTypes key() { return locationIDType; }
+    @Override
+    public SupplierIdentifierTypes key() {
+        return locationIDType;
+    }
 }

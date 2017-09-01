@@ -28,67 +28,67 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 69 (Agent role)
  */
-interface CodeList69
-{}
+interface CodeList69 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 69</b>
  * <p>
  * Description: Agent role
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist69">ONIX Codelist 69 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist69">ONIX
+ * Codelist 69 in Reference Guide</a>
  */
-public enum AgentRoles implements OnixCodelist, CodeList69
-{
-   /**
-    * Publisher's exclusive sales agent in a specified territory
-    */
-   Exclusive_sales_agent("05", "Exclusive sales agent"), //
+public enum AgentRoles implements OnixCodelist, CodeList69 {
+    /**
+     * Publisher's exclusive sales agent in a specified territory
+     */
+    Exclusive_sales_agent("05", "Exclusive sales agent"), //
 
-   /**
-    * Publisher's non-exclusive sales agent in a specified territory
-    */
-   Non_exclusive_sales_agent("06", "Non-exclusive sales agent"), //
+    /**
+     * Publisher's non-exclusive sales agent in a specified territory
+     */
+    Non_exclusive_sales_agent("06", "Non-exclusive sales agent"), //
 
-   /**
-    * Publisher for a specified territory
-    */
-   Local_publisher("07", "Local publisher"), //
+    /**
+     * Publisher for a specified territory
+     */
+    Local_publisher("07", "Local publisher"), //
 
-   /**
-    * Publisher's sales agent in a specific territory. Use only where exclusive / non-exclusive status is not known. Prefer 05 or 06 as appropriate, where possible
-    */
-   Sales_agent("08", "Sales agent");
+    /**
+     * Publisher's sales agent in a specific territory. Use only where exclusive / non-exclusive status is not known.
+     * Prefer 05 or 06 as appropriate, where possible
+     */
+    Sales_agent("08", "Sales agent");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private AgentRoles(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private AgentRoles(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static AgentRoles byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (AgentRoles e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static AgentRoles byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (AgentRoles e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

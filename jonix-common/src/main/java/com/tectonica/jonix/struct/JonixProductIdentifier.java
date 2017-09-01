@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.ProductIdentifierTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixProductIdentifier implements JonixKeyedStruct<ProductIdentifierTypes>, Serializable
-{
-   public static JonixProductIdentifier EMPTY = new JonixProductIdentifier();
+public class JonixProductIdentifier implements JonixKeyedStruct<ProductIdentifierTypes>, Serializable {
+    public static JonixProductIdentifier EMPTY = new JonixProductIdentifier();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public ProductIdentifierTypes productIDType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public ProductIdentifierTypes productIDType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String idTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String idTypeName;
 
-   /**
-    * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String idValue;
+    /**
+     * Raw Format: According to the identifier type specified in &lt;PriceIDType&gt; <p> (type: dt.NonEmptyString)
+     */
+    public String idValue;
 
-   @Override
-   public ProductIdentifierTypes key() { return productIDType; }
+    @Override
+    public ProductIdentifierTypes key() {
+        return productIDType;
+    }
 }

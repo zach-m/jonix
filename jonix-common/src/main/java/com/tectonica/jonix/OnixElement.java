@@ -24,16 +24,13 @@ import java.util.Optional;
 /**
  * represents an ONIX element (i.e. contains a single value field and possibly some attributes, but nothing else)
  */
-public interface OnixElement<V> extends OnixTag
-{
-	V _value();
+public interface OnixElement<V> extends OnixTag {
+    V _value();
 
-	/**
-	 * @return
-	 * 	an {@link Optional} wrapping the (single) value included in this object
-	 */
-	default Optional<V> value()
-	{
-		return Optional.ofNullable(_value());
-	}
+    /**
+     * @return an {@link Optional} wrapping the (single) value included in this object
+     */
+    default Optional<V> value() {
+        return Optional.ofNullable(_value());
+    }
 }

@@ -28,72 +28,71 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 220 (E-publication version number)
  */
-interface CodeList220
-{}
+interface CodeList220 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 220</b>
  * <p>
  * Description: E-publication version number
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist220">ONIX Codelist 220 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist220">ONIX
+ * Codelist 220 in Reference Guide</a>
  */
-public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220
-{
-   /**
-    * Use only with &lt;ProductFormDetail&gt; codes E101 or E102
-    */
-   EPUB_2_0_1("101A", "EPUB 2.0.1"), //
+public enum EpublicationVersionNumbers implements OnixCodelist, CodeList220 {
+    /**
+     * Use only with &lt;ProductFormDetail&gt; codes E101 or E102
+     */
+    EPUB_2_0_1("101A", "EPUB 2.0.1"), //
 
-   /**
-    * Use only with &lt;ProductFormDetail&gt; code E101
-    */
-   EPUB_3_0("101B", "EPUB 3.0"), //
+    /**
+     * Use only with &lt;ProductFormDetail&gt; code E101
+     */
+    EPUB_3_0("101B", "EPUB 3.0"), //
 
-   /**
-    * Use only with &lt;ProductFormDetail&gt; code E101
-    */
-   EPUB_3_0_1("101C", "EPUB 3.0.1"), //
+    /**
+     * Use only with &lt;ProductFormDetail&gt; code E101
+     */
+    EPUB_3_0_1("101C", "EPUB 3.0.1"), //
 
-   /**
-    * Use only with &lt;ProductFormDetail&gt; codes E116 or E127
-    */
-   Kindle_mobi_7("116A", "Kindle mobi 7"), //
+    /**
+     * Use only with &lt;ProductFormDetail&gt; codes E116 or E127
+     */
+    Kindle_mobi_7("116A", "Kindle mobi 7"), //
 
-   /**
-    * Use only with &lt;ProductFormDetail&gt; code E116
-    */
-   Kindle_KF8("116B", "Kindle KF8");
+    /**
+     * Use only with &lt;ProductFormDetail&gt; code E116
+     */
+    Kindle_KF8("116B", "Kindle KF8");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private EpublicationVersionNumbers(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private EpublicationVersionNumbers(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static EpublicationVersionNumbers byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (EpublicationVersionNumbers e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static EpublicationVersionNumbers byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (EpublicationVersionNumbers e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

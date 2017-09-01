@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.IllustrationAndOtherContentTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixIllustrations implements JonixKeyedStruct<IllustrationAndOtherContentTypes>, Serializable
-{
-   public static JonixIllustrations EMPTY = new JonixIllustrations();
+public class JonixIllustrations implements JonixKeyedStruct<IllustrationAndOtherContentTypes>, Serializable {
+    public static JonixIllustrations EMPTY = new JonixIllustrations();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public IllustrationAndOtherContentTypes illustrationType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public IllustrationAndOtherContentTypes illustrationType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 100 characters. <p> (type: NonEmptyString)
-    */
-   public String illustrationTypeDescription;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters. <p> (type: NonEmptyString)
+     */
+    public String illustrationTypeDescription;
 
-   /**
-    * Raw Format: Variable-length integer, suggested maximum length 6 digits. <p> (type: NonEmptyString)
-    */
-   public String number;
+    /**
+     * Raw Format: Variable-length integer, suggested maximum length 6 digits. <p> (type: NonEmptyString)
+     */
+    public String number;
 
-   @Override
-   public IllustrationAndOtherContentTypes key() { return illustrationType; }
+    @Override
+    public IllustrationAndOtherContentTypes key() {
+        return illustrationType;
+    }
 }

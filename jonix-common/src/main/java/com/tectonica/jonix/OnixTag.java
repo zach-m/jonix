@@ -1,6 +1,5 @@
 package com.tectonica.jonix;
 
-public interface OnixTag
-{
-	boolean exists();
+public interface OnixTag {
+    boolean exists();
 }

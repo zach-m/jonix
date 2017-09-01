@@ -19,29 +19,26 @@
 
 package com.tectonica.jonix.basic;
 
+import com.tectonica.jonix.codelist.SalesRightsTypes;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import com.tectonica.jonix.codelist.SalesRightsTypes;
-
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;SalesRights&gt; that may exist in an ONIX product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicSalesRightss extends LazyList<BasicSalesRights>
-{
-	public List<BasicSalesRights> findSalesRights(Set<SalesRightsTypes> requestedTypes)
-	{
-//		return product.findSalesRightss(requestedTypes);
-		List<BasicSalesRights> matches = new ArrayList<BasicSalesRights>();
-		for (BasicSalesRights salesRights : this)
-		{
-			if (requestedTypes.contains(salesRights.salesRightsType))
-				matches.add(salesRights);
-		}
-		return matches;
-	}
+public abstract class BasicSalesRightss extends LazyList<BasicSalesRights> {
+    public List<BasicSalesRights> findSalesRights(Set<SalesRightsTypes> requestedTypes) {
+        List<BasicSalesRights> matches = new ArrayList<>();
+        for (BasicSalesRights salesRights : this) {
+            if (requestedTypes.contains(salesRights.salesRightsType)) {
+                matches.add(salesRights);
+            }
+        }
+        return matches;
+    }
 }

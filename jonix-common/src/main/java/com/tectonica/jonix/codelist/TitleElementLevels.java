@@ -28,77 +28,81 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 149 (Title element level)
  */
-interface CodeList149
-{}
+interface CodeList149 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 149</b>
  * <p>
  * Description: Title element level
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist149">ONIX Codelist 149 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist149">ONIX
+ * Codelist 149 in Reference Guide</a>
  */
-public enum TitleElementLevels implements OnixCodelist, CodeList149
-{
-   /**
-    * The title element refers to an individual product
-    */
-   Product("01", "Product"), //
+public enum TitleElementLevels implements OnixCodelist, CodeList149 {
+    /**
+     * The title element refers to an individual product
+     */
+    Product("01", "Product"), //
 
-   /**
-    * The title element refers to the top level of a bibliographic collection
-    */
-   Collection_level("02", "Collection level"), //
+    /**
+     * The title element refers to the top level of a bibliographic collection
+     */
+    Collection_level("02", "Collection level"), //
 
-   /**
-    * The title element refers to an intermediate level of a bibliographic collection that comprises two or more 'sub-collections'
-    */
-   Subcollection("03", "Subcollection"), //
+    /**
+     * The title element refers to an intermediate level of a bibliographic collection that comprises two or more
+     * 'sub-collections'
+     */
+    Subcollection("03", "Subcollection"), //
 
-   /**
-    * The title element refers to a content item within a product, eg a work included in a combined or 'omnibus' edition, or a chapter in a book
-    */
-   Content_item("04", "Content item"), //
+    /**
+     * The title element refers to a content item within a product, eg a work included in a combined or 'omnibus'
+     * edition, or a chapter in a book
+     */
+    Content_item("04", "Content item"), //
 
-   /**
-    * The title element names a master brand where the use of the brand spans multiple collections and product forms, and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a children's character brand
-    */
-   Master_brand("05", "Master brand"), //
+    /**
+     * The title element names a master brand where the use of the brand spans multiple collections and product forms,
+     * and possibly multiple imprints and publishers. Used only for branded media properties carrying, for example, a
+     * children's character brand
+     */
+    Master_brand("05", "Master brand"), //
 
-   /**
-    * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a sub-collection (a third level of collective identity)
-    */
-   Sub_subcollection("06", "Sub-subcollection");
+    /**
+     * The title element refers to an intermediate level of a bibliographic collection that is a subdivision of a
+     * sub-collection (a third level of collective identity)
+     */
+    Sub_subcollection("06", "Sub-subcollection");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private TitleElementLevels(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private TitleElementLevels(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static TitleElementLevels byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (TitleElementLevels e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static TitleElementLevels byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (TitleElementLevels e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

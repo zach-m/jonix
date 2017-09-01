@@ -28,76 +28,75 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 43 (Text item identifier type code)
  */
-interface CodeList43
-{}
+interface CodeList43 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 43</b>
  * <p>
  * Description: Text item identifier type code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist43">ONIX Codelist 43 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist43">ONIX
+ * Codelist 43 in Reference Guide</a>
  */
-public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43
-{
-   /**
-    * For example, a publisher's own identifier
-    */
-   Proprietary("01", "Proprietary"), //
+public enum TextItemIdentifierTypes implements OnixCodelist, CodeList43 {
+    /**
+     * For example, a publisher's own identifier
+     */
+    Proprietary("01", "Proprietary"), //
 
-   /**
-    * Formerly known as the EAN-13 (unhyphenated)
-    */
-   GTIN_13("03", "GTIN-13"), //
+    /**
+     * Formerly known as the EAN-13 (unhyphenated)
+     */
+    GTIN_13("03", "GTIN-13"), //
 
-   DOI("06", "DOI"), //
+    DOI("06", "DOI"), //
 
-   /**
-    * Publisher item identifier
-    */
-   PII("09", "PII"), //
+    /**
+     * Publisher item identifier
+     */
+    PII("09", "PII"), //
 
-   /**
-    * For serial items only
-    */
-   SICI("10", "SICI"), //
+    /**
+     * For serial items only
+     */
+    SICI("10", "SICI"), //
 
-   ISTC("11", "ISTC"), //
+    ISTC("11", "ISTC"), //
 
-   /**
-    * (Unhyphenated)
-    */
-   ISBN_13("15", "ISBN-13");
+    /**
+     * (Unhyphenated)
+     */
+    ISBN_13("15", "ISBN-13");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private TextItemIdentifierTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private TextItemIdentifierTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static TextItemIdentifierTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (TextItemIdentifierTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static TextItemIdentifierTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (TextItemIdentifierTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

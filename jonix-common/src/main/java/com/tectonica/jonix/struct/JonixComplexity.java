@@ -19,25 +19,23 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixComplexity implements JonixStruct, Serializable
-{
-   public static JonixComplexity EMPTY = new JonixComplexity();
+public class JonixComplexity implements JonixStruct, Serializable {
+    public static JonixComplexity EMPTY = new JonixComplexity();
 
-   /**
-    * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
-    */
-   public String complexityCode;
+    /**
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     */
+    public String complexityCode;
 
-   public ComplexitySchemeIdentifiers complexitySchemeIdentifier;
+    public ComplexitySchemeIdentifiers complexitySchemeIdentifier;
 }

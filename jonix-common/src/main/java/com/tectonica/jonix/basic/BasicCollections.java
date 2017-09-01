@@ -24,26 +24,22 @@ import java.util.List;
 /**
  * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
  * an ONIX product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicCollections extends LazyList<BasicCollection>
-{
-	public BasicCollection getFirst()
-	{
-		return (size() > 0) ? get(0) : null;
-	}
+public abstract class BasicCollections extends LazyList<BasicCollection> {
+    public BasicCollection getFirst() {
+        return (size() > 0) ? get(0) : null;
+    }
 
-	public String getFirstNumberWithinSeries()
-	{
-		BasicCollection first = getFirst();
-		return (first == null) ? null : first.numberWithinSeries;
-	}
+    public String getFirstNumberWithinSeries() {
+        BasicCollection first = getFirst();
+        return (first == null) ? null : first.numberWithinSeries;
+    }
 
-	public String getFirstTitle()
-	{
-		BasicCollection first = getFirst();
-		return (first == null) ? null : first.mainTitle;
-	}
+    public String getFirstTitle() {
+        BasicCollection first = getFirst();
+        return (first == null) ? null : first.mainTitle;
+    }
 }

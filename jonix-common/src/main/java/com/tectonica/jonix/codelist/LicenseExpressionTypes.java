@@ -28,59 +28,58 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 218 (License expression type code)
  */
-interface CodeList218
-{}
+interface CodeList218 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 218</b>
  * <p>
  * Description: License expression type code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist218">ONIX Codelist 218 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist218">ONIX
+ * Codelist 218 in Reference Guide</a>
  */
-public enum LicenseExpressionTypes implements OnixCodelist, CodeList218
-{
-   /**
-    * Document (eg Word file, PDF or web page) Intended for the lay reader
-    */
-   Human_readable("01", "Human readable"), //
+public enum LicenseExpressionTypes implements OnixCodelist, CodeList218 {
+    /**
+     * Document (eg Word file, PDF or web page) Intended for the lay reader
+     */
+    Human_readable("01", "Human readable"), //
 
-   /**
-    * Document (eg Word file, PDF or web page) Intended for the legal specialist reader
-    */
-   Professional_readable("02", "Professional readable"), //
+    /**
+     * Document (eg Word file, PDF or web page) Intended for the legal specialist reader
+     */
+    Professional_readable("02", "Professional readable"), //
 
-   ONIX_PL("10", "ONIX-PL");
+    ONIX_PL("10", "ONIX-PL");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private LicenseExpressionTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private LicenseExpressionTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static LicenseExpressionTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (LicenseExpressionTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static LicenseExpressionTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (LicenseExpressionTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

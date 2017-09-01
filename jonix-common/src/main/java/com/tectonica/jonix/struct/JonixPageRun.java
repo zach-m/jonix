@@ -19,28 +19,25 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixPageRun implements JonixStruct, Serializable
-{
-   public static JonixPageRun EMPTY = new JonixPageRun();
+public class JonixPageRun implements JonixStruct, Serializable {
+    public static JonixPageRun EMPTY = new JonixPageRun();
 
-   /**
-    * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
-    */
-   public String firstPageNumber;
+    /**
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     */
+    public String firstPageNumber;
 
-   /**
-    * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
-    */
-   public String lastPageNumber;
+    /**
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters <p> (type: dt.NonEmptyString)
+     */
+    public String lastPageNumber;
 }

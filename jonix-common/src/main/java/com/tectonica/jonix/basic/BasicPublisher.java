@@ -19,20 +19,19 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.codelist.PublishingRoles;
+
+import java.io.Serializable;
 
 /**
  * Contains the essential information included in ONIX &lt;Publisher&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicPublisher implements Serializable
-{
-	public PublishingRoles publishingRole;
-	public String publisherName;
+public abstract class BasicPublisher implements Serializable {
+    public PublishingRoles publishingRole;
+    public String publisherName;
 }

@@ -19,25 +19,23 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.UnitOfUsages;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixEpubUsageLimit implements JonixStruct, Serializable
-{
-   public static JonixEpubUsageLimit EMPTY = new JonixEpubUsageLimit();
+public class JonixEpubUsageLimit implements JonixStruct, Serializable {
+    public static JonixEpubUsageLimit EMPTY = new JonixEpubUsageLimit();
 
-   /**
-    * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
-    */
-   public Double quantity;
+    /**
+     * Raw Format: Variable-length decimal number, here necessarily an integer <p> (type: dt.PositiveDecimal)
+     */
+    public Double quantity;
 
-   public UnitOfUsages epubUsageUnit;
+    public UnitOfUsages epubUsageUnit;
 }

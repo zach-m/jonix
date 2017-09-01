@@ -21,8 +21,8 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -31,212 +31,207 @@ import java.util.HashMap;
 /**
  * marker interface to assist in IDE navigation to code-list 178 (Supporting resource file format)
  */
-interface CodeList178
-{}
+interface CodeList178 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 178</b>
  * <p>
  * Description: Supporting resource file format
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist178">ONIX Codelist 178 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist178">ONIX
+ * Codelist 178 in Reference Guide</a>
  */
-public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178
-{
-   /**
-    * MPEG 1/2 Audio Layer III file
-    */
-   MP3("A103", "MP3"), //
+public enum SupportingResourceFileFormats implements OnixCodelist, CodeList178 {
+    /**
+     * MPEG 1/2 Audio Layer III file
+     */
+    MP3("A103", "MP3"), //
 
-   /**
-    * Waveform Audio file
-    */
-   WAV("A104", "WAV"), //
+    /**
+     * Waveform Audio file
+     */
+    WAV("A104", "WAV"), //
 
-   /**
-    * Proprietary RealNetworks format
-    */
-   Real_Audio("A105", "Real Audio"), //
+    /**
+     * Proprietary RealNetworks format
+     */
+    Real_Audio("A105", "Real Audio"), //
 
-   /**
-    * Windows Media Audio format
-    */
-   WMA("A106", "WMA"), //
+    /**
+     * Windows Media Audio format
+     */
+    WMA("A106", "WMA"), //
 
-   /**
-    * Advanced Audio Coding format
-    */
-   AAC("A107", "AAC"), //
+    /**
+     * Advanced Audio Coding format
+     */
+    AAC("A107", "AAC"), //
 
-   /**
-    * Audio Interchange File format
-    */
-   AIFF("A111", "AIFF"), //
+    /**
+     * Audio Interchange File format
+     */
+    AIFF("A111", "AIFF"), //
 
-   /**
-    * Proprietary RealNetworks format. Includes Real Video packaged within a .rm RealMedia container
-    */
-   Real_Video("D101", "Real Video"), //
+    /**
+     * Proprietary RealNetworks format. Includes Real Video packaged within a .rm RealMedia container
+     */
+    Real_Video("D101", "Real Video"), //
 
-   /**
-    * Quicktime container format (.mov)
-    */
-   Quicktime("D102", "Quicktime"), //
+    /**
+     * Quicktime container format (.mov)
+     */
+    Quicktime("D102", "Quicktime"), //
 
-   /**
-    * Audio Video Interleave format
-    */
-   AVI("D103", "AVI"), //
+    /**
+     * Audio Video Interleave format
+     */
+    AVI("D103", "AVI"), //
 
-   /**
-    * Windows Media Video format
-    */
-   WMV("D104", "WMV"), //
+    /**
+     * Windows Media Video format
+     */
+    WMV("D104", "WMV"), //
 
-   /**
-    * MPEG-4 container format (.mp4, .m4a)
-    */
-   MPEG_4("D105", "MPEG-4"), //
+    /**
+     * MPEG-4 container format (.mp4, .m4a)
+     */
+    MPEG_4("D105", "MPEG-4"), //
 
-   /**
-    * Flash Video (.flv, .f4v)
-    */
-   FLV("D106", "FLV"), //
+    /**
+     * Flash Video (.flv, .f4v)
+     */
+    FLV("D106", "FLV"), //
 
-   /**
-    * ShockWave (.swf)
-    */
-   SWF("D107", "SWF"), //
+    /**
+     * ShockWave (.swf)
+     */
+    SWF("D107", "SWF"), //
 
-   /**
-    * 3GPP container format (.3gp, .3g2)
-    */
-   _3GP("D108", "3GP"), //
+    /**
+     * 3GPP container format (.3gp, .3g2)
+     */
+    _3GP("D108", "3GP"), //
 
-   /**
-    * WebM container format (includes .mkv)
-    */
-   WebM("D109", "WebM"), //
+    /**
+     * WebM container format (includes .mkv)
+     */
+    WebM("D109", "WebM"), //
 
-   /**
-    * Portable Document File format
-    */
-   PDF("D401", "PDF"), //
+    /**
+     * Portable Document File format
+     */
+    PDF("D401", "PDF"), //
 
-   /**
-    * Graphic Interchange File format
-    */
-   GIF("D501", "GIF"), //
+    /**
+     * Graphic Interchange File format
+     */
+    GIF("D501", "GIF"), //
 
-   /**
-    * Joint Photographic Experts Group format
-    */
-   JPEG("D502", "JPEG"), //
+    /**
+     * Joint Photographic Experts Group format
+     */
+    JPEG("D502", "JPEG"), //
 
-   /**
-    * Portable Network Graphics format
-    */
-   PNG("D503", "PNG"), //
+    /**
+     * Portable Network Graphics format
+     */
+    PNG("D503", "PNG"), //
 
-   /**
-    * Tagged Image File format
-    */
-   TIFF("D504", "TIFF"), //
+    /**
+     * Tagged Image File format
+     */
+    TIFF("D504", "TIFF"), //
 
-   /**
-    * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum (IDPF) [File extension .epub]
-    */
-   EPUB("E101", "EPUB"), //
+    /**
+     * The Open Publication Structure / OPS Container Format standard of the International Digital Publishing Forum
+     * (IDPF) [File extension .epub]
+     */
+    EPUB("E101", "EPUB"), //
 
-   /**
-    * HyperText Mark-up Language [File extension .html, .htm]
-    */
-   HTML("E105", "HTML"), //
+    /**
+     * HyperText Mark-up Language [File extension .html, .htm]
+     */
+    HTML("E105", "HTML"), //
 
-   /**
-    * Portable Document Format (ISO 32000-1:2008) [File extension .pdf]
-    */
-   PDF_("E107", "PDF"), //
+    /**
+     * Portable Document Format (ISO 32000-1:2008) [File extension .pdf]
+     */
+    PDF_("E107", "PDF"), //
 
-   /**
-    * Plain text (either ASCII or UTF-8/16 Unicode)
-&lt;p&gt;NOTE: Introduced in Onix3
-    */
-   TXT("E112", "TXT"), //
+    /**
+     * Plain text (either ASCII or UTF-8/16 Unicode) &lt;p&gt;NOTE: Introduced in Onix3
+     */
+    TXT("E112", "TXT"), //
 
-   /**
-    * Extensible Hypertext Markup Language [File extension .xhtml, .xht, .xml, .html, .htm]
-    */
-   XHTML("E113", "XHTML"), //
+    /**
+     * Extensible Hypertext Markup Language [File extension .xhtml, .xht, .xml, .html, .htm]
+     */
+    XHTML("E113", "XHTML"), //
 
-   /**
-    * XML Paper Specification
-    */
-   XPS("E115", "XPS"), //
+    /**
+     * XML Paper Specification
+     */
+    XPS("E115", "XPS"), //
 
-   /**
-    * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw, .mobi, .prc]
-    */
-   Amazon_Kindle("E116", "Amazon Kindle"), //
+    /**
+     * A format proprietary to Amazon for use with its Kindle reading devices or software readers [File extensions .azw,
+     * .mobi, .prc]
+     */
+    Amazon_Kindle("E116", "Amazon Kindle"), //
 
-   /**
-    * Founder Apabi's proprietary basic e-book format
-    */
-   CEB("E139", "CEB"), //
+    /**
+     * Founder Apabi's proprietary basic e-book format
+     */
+    CEB("E139", "CEB"), //
 
-   /**
-    * Founder Apabi's proprietary XML e-book format
-    */
-   CEBX("E140", "CEBX");
+    /**
+     * Founder Apabi's proprietary XML e-book format
+     */
+    CEBX("E140", "CEBX");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private SupportingResourceFileFormats(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private SupportingResourceFileFormats(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, SupportingResourceFileFormats> map;
+    private static volatile Map<String, SupportingResourceFileFormats> map;
 
-   private static Map<String, SupportingResourceFileFormats> map()
-   {
-      Map<String, SupportingResourceFileFormats> result = map;
-      if (result == null)
-      {
-         synchronized(SupportingResourceFileFormats.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (SupportingResourceFileFormats e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, SupportingResourceFileFormats> map() {
+        Map<String, SupportingResourceFileFormats> result = map;
+        if (result == null) {
+            synchronized (SupportingResourceFileFormats.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (SupportingResourceFileFormats e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static SupportingResourceFileFormats byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static SupportingResourceFileFormats byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

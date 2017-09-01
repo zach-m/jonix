@@ -19,11 +19,11 @@
 
 package com.tectonica.jonix.stream;
 
-import java.io.InputStream;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
+
+import java.io.InputStream;
 
 /**
  * An abstract base-class for an <b>extractor</b> - a listener for {@link JonixStreamer} processing the events it fires
@@ -31,37 +31,35 @@ import org.w3c.dom.Element;
  * and {@link #onProductElement(Element, JonixStreamer)}, but may also override the other protected methods.
  * <p>
  * NOTE: extractors may be reused over different streamers, if needed
- * 
+ *
  * @author Zach Melamed
  */
-public abstract class JonixExtractor
-{
-	protected static final Logger LOG = LoggerFactory.getLogger(JonixExtractor.class);
+public abstract class JonixExtractor {
+    protected static final Logger LOG = LoggerFactory.getLogger(JonixExtractor.class);
 
-	/**
-	 * fired when a {@code Header} element is encountered in the ONIX file
-	 * 
-	 * @return whether or not to continue to the processing of the file
-	 */
-	protected abstract boolean onHeaderElement(Element header, JonixStreamer streamer);
+    /**
+     * fired when a {@code Header} element is encountered in the ONIX file
+     *
+     * @return whether or not to continue to the processing of the file
+     */
+    protected abstract boolean onHeaderElement(Element header, JonixStreamer streamer);
 
-	/**
-	 * fired when a {@code Product} element is encountered in the ONIX file
-	 * 
-	 * @return whether or not to continue to the processing of the file
-	 */
-	protected abstract boolean onProductElement(Element product, JonixStreamer streamer);
+    /**
+     * fired when a {@code Product} element is encountered in the ONIX file
+     *
+     * @return whether or not to continue to the processing of the file
+     */
+    protected abstract boolean onProductElement(Element product, JonixStreamer streamer);
 
-	// /////////////////////////////////////////////////////////////////////////////////////////
+    // /////////////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * return false here to skip this particular source
-	 */
-	protected boolean onBeforeSource(InputStream source, JonixStreamer streamer)
-	{
-		return true;
-	}
+    /**
+     * return false here to skip this particular source
+     */
+    protected boolean onBeforeSource(InputStream source, JonixStreamer streamer) {
+        return true;
+    }
 
-	protected void onAfterSource(JonixStreamer streamer)
-	{}
+    protected void onAfterSource(JonixStreamer streamer) {
+    }
 }

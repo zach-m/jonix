@@ -28,53 +28,52 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 31 (Audience range precision)
  */
-interface CodeList31
-{}
+interface CodeList31 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 31</b>
  * <p>
  * Description: Audience range precision
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist31">ONIX Codelist 31 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist31">ONIX
+ * Codelist 31 in Reference Guide</a>
  */
-public enum AudienceRangePrecisions implements OnixCodelist, CodeList31
-{
-   Exact("01", "Exact"), //
+public enum AudienceRangePrecisions implements OnixCodelist, CodeList31 {
+    Exact("01", "Exact"), //
 
-   From("03", "From"), //
+    From("03", "From"), //
 
-   To("04", "To");
+    To("04", "To");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private AudienceRangePrecisions(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private AudienceRangePrecisions(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static AudienceRangePrecisions byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (AudienceRangePrecisions e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static AudienceRangePrecisions byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (AudienceRangePrecisions e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

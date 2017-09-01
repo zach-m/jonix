@@ -19,32 +19,30 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
+
+import java.io.Serializable;
 
 /**
  * Contains the essential information included in ONIX &lt;Subject&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicSubject implements Serializable
-{
-	public SubjectSchemeIdentifiers subjectSchemeIdentifier;
-	public String subjectCode;
-	public String subjectHeadingText;
+public abstract class BasicSubject implements Serializable {
+    public SubjectSchemeIdentifiers subjectSchemeIdentifier;
+    public String subjectCode;
+    public String subjectHeadingText;
 
-	protected BasicSubject()
-	{}
+    protected BasicSubject() {
+    }
 
-	protected BasicSubject(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
-			String subjectHeadingText)
-	{
-		this.subjectSchemeIdentifier = subjectSchemeIdentifier;
-		this.subjectCode = subjectCode;
-		this.subjectHeadingText = subjectHeadingText;
-	}
+    protected BasicSubject(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
+                           String subjectHeadingText) {
+        this.subjectSchemeIdentifier = subjectSchemeIdentifier;
+        this.subjectCode = subjectCode;
+        this.subjectHeadingText = subjectHeadingText;
+    }
 }

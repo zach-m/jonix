@@ -28,64 +28,63 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 156 (Cited content type)
  */
-interface CodeList156
-{}
+interface CodeList156 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 156</b>
  * <p>
  * Description: Cited content type
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist156">ONIX Codelist 156 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist156">ONIX
+ * Codelist 156 in Reference Guide</a>
  */
-public enum CitedContentTypes implements OnixCodelist, CodeList156
-{
-   /**
-    * The full text of a review in a third-party publication in any medium
-    */
-   Review("01", "Review"), //
+public enum CitedContentTypes implements OnixCodelist, CodeList156 {
+    /**
+     * The full text of a review in a third-party publication in any medium
+     */
+    Review("01", "Review"), //
 
-   Bestseller_list("02", "Bestseller list"), //
+    Bestseller_list("02", "Bestseller list"), //
 
-   /**
-    * Other than a review
-    */
-   Media_mention("03", "Media mention"), //
+    /**
+     * Other than a review
+     */
+    Media_mention("03", "Media mention"), //
 
-   /**
-    * (North America) Inclusion in a program such as 'Chicago Reads', 'Seattle Reads'
-    */
-   _One_locality_one_book_program("04", "‘One locality, one book’ program");
+    /**
+     * (North America) Inclusion in a program such as 'Chicago Reads', 'Seattle Reads'
+     */
+    _One_locality_one_book_program("04", "‘One locality, one book’ program");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private CitedContentTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private CitedContentTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static CitedContentTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (CitedContentTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static CitedContentTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (CitedContentTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

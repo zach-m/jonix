@@ -31,27 +31,25 @@ import java.util.List;
  * user to write a version-agnostic code.
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicHeader implements Serializable
-{
-	public String fromCompany;
-	public String fromPerson;
-	public String fromEmail;
-	public List<String> toCompanies;
-	public String sentDate;
+public abstract class BasicHeader implements Serializable {
+    public String fromCompany;
+    public String fromPerson;
+    public String fromEmail;
+    public List<String> toCompanies;
+    public String sentDate;
 
-	@Override
-	public String toString()
-	{
-		StringBuilder sb = new StringBuilder();
-		sb.append("FromCompany: ").append(fromCompany).append("\n");
-		sb.append("FromPerson:  ").append(fromPerson).append("\n");
-		sb.append("FromEmail:   ").append(fromEmail).append("\n");
-		sb.append("ToCompany:   ").append(toCompanies).append("\n");
-		sb.append("SentDate:    ").append(sentDate);
-		return sb.toString();
-	}
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("FromCompany: ").append(fromCompany).append("\n");
+        sb.append("FromPerson:  ").append(fromPerson).append("\n");
+        sb.append("FromEmail:   ").append(fromEmail).append("\n");
+        sb.append("ToCompany:   ").append(toCompanies).append("\n");
+        sb.append("SentDate:    ").append(sentDate);
+        return sb.toString();
+    }
 }

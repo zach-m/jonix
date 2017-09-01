@@ -25,11 +25,10 @@ import java.io.Serializable;
  * Contains the essential information included in ONIX &lt;Imprint&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicImprint implements Serializable
-{
-	public String imprintName;
+public abstract class BasicImprint implements Serializable {
+    public String imprintName;
 }

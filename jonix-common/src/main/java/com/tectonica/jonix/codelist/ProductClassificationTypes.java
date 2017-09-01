@@ -21,8 +21,8 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -31,121 +31,119 @@ import java.util.HashMap;
 /**
  * marker interface to assist in IDE navigation to code-list 9 (Product classification type code)
  */
-interface CodeList9
-{}
+interface CodeList9 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 9</b>
  * <p>
  * Description: Product classification type code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist9">ONIX Codelist 9 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist9">ONIX
+ * Codelist 9 in Reference Guide</a>
  */
-public enum ProductClassificationTypes implements OnixCodelist, CodeList9
-{
-   /**
-    * World Customs Organization Harmonized Commodity Coding and Description System
-    */
-   WCO_Harmonized_System("01", "WCO Harmonized System"), //
+public enum ProductClassificationTypes implements OnixCodelist, CodeList9 {
+    /**
+     * World Customs Organization Harmonized Commodity Coding and Description System
+     */
+    WCO_Harmonized_System("01", "WCO Harmonized System"), //
 
-   /**
-    * UN Standard Product and Service Classification
-    */
-   UNSPSC("02", "UNSPSC"), //
+    /**
+     * UN Standard Product and Service Classification
+     */
+    UNSPSC("02", "UNSPSC"), //
 
-   /**
-    * UK Revenue and Customs classifications, based on the Harmonized System
-    */
-   HMRC("03", "HMRC"), //
+    /**
+     * UK Revenue and Customs classifications, based on the Harmonized System
+     */
+    HMRC("03", "HMRC"), //
 
-   /**
-    * German export trade classification, based on the Harmonised System
-    */
-   Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"), //
+    /**
+     * German export trade classification, based on the Harmonised System
+     */
+    Warenverzeichnis_f_r_die_Au_enhandelsstatistik("04", "Warenverzeichnis für die Außenhandelsstatistik"), //
 
-   /**
-    * EU TARIC codes, an extended version of the Harmonized System
-    */
-   TARIC("05", "TARIC"), //
+    /**
+     * EU TARIC codes, an extended version of the Harmonized System
+     */
+    TARIC("05", "TARIC"), //
 
-   /**
-    * Centraal Boekhuis free classification field for publishers
-    */
-   Fondsgroep("06", "Fondsgroep"), //
+    /**
+     * Centraal Boekhuis free classification field for publishers
+     */
+    Fondsgroep("06", "Fondsgroep"), //
 
-   /**
-    * A product category (not a subject classification) assigned by the sender
-    */
-   Sender_s_product_category("07", "Sender’s product category"), //
+    /**
+     * A product category (not a subject classification) assigned by the sender
+     */
+    Sender_s_product_category("07", "Sender’s product category"), //
 
-   /**
-    * Product classification maintained by the Chinese General Administration of Press and Publication (http://www.gapp.gov.cn)
-    */
-   GAPP_Product_Class("08", "GAPP Product Class"), //
+    /**
+     * Product classification maintained by the Chinese General Administration of Press and Publication
+     * (http://www.gapp.gov.cn)
+     */
+    GAPP_Product_Class("08", "GAPP Product Class"), //
 
-   /**
-    * Statistical Classification of Products by Activity in the European Economic Community, see http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=CPA_2008. Up to six digits, with one or two periods. For example, printed children's books are '58.11.13', but the periods are normally ommited in ONIX
-    */
-   CPA("09", "CPA"), //
+    /**
+     * Statistical Classification of Products by Activity in the European Economic Community, see
+     * http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&amp;StrNom=CPA_2008. Up to six
+     * digits, with one or two periods. For example, printed children's books are '58.11.13', but the periods are
+     * normally ommited in ONIX
+     */
+    CPA("09", "CPA"), //
 
-   /**
-    * Mercosur/Mercosul Common Nomenclature, based on the Harmonised System
-    */
-   NCM("10", "NCM"), //
+    /**
+     * Mercosur/Mercosul Common Nomenclature, based on the Harmonised System
+     */
+    NCM("10", "NCM"), //
 
-   /**
-    * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)
-    */
-   Electre_genre("50", "Electre genre");
+    /**
+     * Typologie de march&#233; g&#233;r&#233; par Electre (Market segment code maintained by Electre)
+     */
+    Electre_genre("50", "Electre genre");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ProductClassificationTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ProductClassificationTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, ProductClassificationTypes> map;
+    private static volatile Map<String, ProductClassificationTypes> map;
 
-   private static Map<String, ProductClassificationTypes> map()
-   {
-      Map<String, ProductClassificationTypes> result = map;
-      if (result == null)
-      {
-         synchronized(ProductClassificationTypes.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (ProductClassificationTypes e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, ProductClassificationTypes> map() {
+        Map<String, ProductClassificationTypes> result = map;
+        if (result == null) {
+            synchronized (ProductClassificationTypes.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (ProductClassificationTypes e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static ProductClassificationTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static ProductClassificationTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

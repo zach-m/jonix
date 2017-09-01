@@ -23,9 +23,9 @@ import java.util.List;
 
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;Imprint&gt; that may exist in an ONIX product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicImprints extends LazyList<BasicImprint>
-{}
+public abstract class BasicImprints extends LazyList<BasicImprint> {
+}

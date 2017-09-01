@@ -19,24 +19,23 @@
 
 package com.tectonica.jonix.basic;
 
+import com.tectonica.jonix.struct.JonixCollectionIdentifier;
+
 import java.io.Serializable;
 import java.util.List;
-
-import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 
 /**
  * Contains the essential information included in ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicCollection implements Serializable
-{
-	public String mainTitle;
-	public String numberWithinSeries;
-	public List<JonixCollectionIdentifier> seriesIdentifiers;
-	public BasicTitles titles;
-	public BasicContributors contributors;
+public abstract class BasicCollection implements Serializable {
+    public String mainTitle;
+    public String numberWithinSeries;
+    public List<JonixCollectionIdentifier> seriesIdentifiers;
+    public BasicTitles titles;
+    public BasicContributors contributors;
 }

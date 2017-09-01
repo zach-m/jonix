@@ -28,52 +28,51 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 89 (Religious text feature type)
  */
-interface CodeList89
-{}
+interface CodeList89 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 89</b>
  * <p>
  * Description: Religious text feature type
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist89">ONIX Codelist 89 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist89">ONIX
+ * Codelist 89 in Reference Guide</a>
  */
-public enum ReligiousTextFeatureTypes implements OnixCodelist, CodeList89
-{
-   /**
-    * A church season or activity for which a religious text is intended
-    */
-   Church_season_or_activity("01", "Church season or activity");
+public enum ReligiousTextFeatureTypes implements OnixCodelist, CodeList89 {
+    /**
+     * A church season or activity for which a religious text is intended
+     */
+    Church_season_or_activity("01", "Church season or activity");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ReligiousTextFeatureTypes(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ReligiousTextFeatureTypes(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static ReligiousTextFeatureTypes byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (ReligiousTextFeatureTypes e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static ReligiousTextFeatureTypes byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (ReligiousTextFeatureTypes e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

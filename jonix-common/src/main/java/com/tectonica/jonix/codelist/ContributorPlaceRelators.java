@@ -21,8 +21,8 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -31,85 +31,79 @@ import java.util.HashMap;
 /**
  * marker interface to assist in IDE navigation to code-list 151 (Contributor place relator)
  */
-interface CodeList151
-{}
+interface CodeList151 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 151</b>
  * <p>
  * Description: Contributor place relator
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist151">ONIX Codelist 151 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist151">ONIX
+ * Codelist 151 in Reference Guide</a>
  */
-public enum ContributorPlaceRelators implements OnixCodelist, CodeList151
-{
-   Born_in("01", "Born in"), //
+public enum ContributorPlaceRelators implements OnixCodelist, CodeList151 {
+    Born_in("01", "Born in"), //
 
-   Died_in("02", "Died in"), //
+    Died_in("02", "Died in"), //
 
-   Formerly_resided_in("03", "Formerly resided in"), //
+    Formerly_resided_in("03", "Formerly resided in"), //
 
-   Currently_resides_in("04", "Currently resides in"), //
+    Currently_resides_in("04", "Currently resides in"), //
 
-   Educated_in("05", "Educated in"), //
+    Educated_in("05", "Educated in"), //
 
-   Worked_in("06", "Worked in"), //
+    Worked_in("06", "Worked in"), //
 
-   Flourished_in("07", "Flourished in"), //
+    Flourished_in("07", "Flourished in"), //
 
-   /**
-    * Or nationality. For use with country codes only
-    */
-   Citizen_of("08", "Citizen of");
+    /**
+     * Or nationality. For use with country codes only
+     */
+    Citizen_of("08", "Citizen of");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ContributorPlaceRelators(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ContributorPlaceRelators(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, ContributorPlaceRelators> map;
+    private static volatile Map<String, ContributorPlaceRelators> map;
 
-   private static Map<String, ContributorPlaceRelators> map()
-   {
-      Map<String, ContributorPlaceRelators> result = map;
-      if (result == null)
-      {
-         synchronized(ContributorPlaceRelators.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (ContributorPlaceRelators e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, ContributorPlaceRelators> map() {
+        Map<String, ContributorPlaceRelators> result = map;
+        if (result == null) {
+            synchronized (ContributorPlaceRelators.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (ContributorPlaceRelators e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static ContributorPlaceRelators byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static ContributorPlaceRelators byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

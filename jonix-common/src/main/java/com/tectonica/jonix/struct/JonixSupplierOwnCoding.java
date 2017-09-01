@@ -19,36 +19,37 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.SupplierOwnCodeTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixSupplierOwnCoding implements JonixKeyedStruct<SupplierOwnCodeTypes>, Serializable
-{
-   public static JonixSupplierOwnCoding EMPTY = new JonixSupplierOwnCoding();
+public class JonixSupplierOwnCoding implements JonixKeyedStruct<SupplierOwnCodeTypes>, Serializable {
+    public static JonixSupplierOwnCoding EMPTY = new JonixSupplierOwnCoding();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public SupplierOwnCodeTypes supplierCodeType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public SupplierOwnCodeTypes supplierCodeType;
 
-   /**
-    * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
-    */
-   public String supplierCodeTypeName;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters <p> (type: dt.NonEmptyString)
+     */
+    public String supplierCodeTypeName;
 
-   /**
-    * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt; <p> (type: dt.NonEmptyString)
-    */
-   public String supplierCodeValue;
+    /**
+     * Raw Format: According to the supplier's own format for the code type specified in &lt;SupplierCodeType&gt; <p>
+     * (type: dt.NonEmptyString)
+     */
+    public String supplierCodeValue;
 
-   @Override
-   public SupplierOwnCodeTypes key() { return supplierCodeType; }
+    @Override
+    public SupplierOwnCodeTypes key() {
+        return supplierCodeType;
+    }
 }

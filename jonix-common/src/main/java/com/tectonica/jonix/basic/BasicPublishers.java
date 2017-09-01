@@ -19,33 +19,33 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.List;
-
 import com.tectonica.jonix.codelist.PublishingRoles;
+
+import java.util.List;
 
 /**
  * A {@link List} containing the multiple instances of ONIX &lt;Publisher&gt; that may exist in an ONIX product
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicPublishers extends LazyList<BasicPublisher>
-{
-	public String getMainPublisher()
-	{
-		BasicPublisher candidatePublisher = null;
-		// first we look for the main publisher by its role
-		for (BasicPublisher publisher : this)
-		{
-			PublishingRoles role = publisher.publishingRole;
-			if (role == PublishingRoles.Publisher)
-				return publisher.publisherName;
-			if (role == null && candidatePublisher == null)
-				candidatePublisher = publisher;
-		}
-		// if no designated publisher found, we return the first un-designated
-		if (candidatePublisher != null)
-			return candidatePublisher.publisherName;
-		return null;
-	}
+public abstract class BasicPublishers extends LazyList<BasicPublisher> {
+    public String getMainPublisher() {
+        BasicPublisher candidatePublisher = null;
+        // first we look for the main publisher by its role
+        for (BasicPublisher publisher : this) {
+            PublishingRoles role = publisher.publishingRole;
+            if (role == PublishingRoles.Publisher) {
+                return publisher.publisherName;
+            }
+            if (role == null && candidatePublisher == null) {
+                candidatePublisher = publisher;
+            }
+        }
+        // if no designated publisher found, we return the first un-designated
+        if (candidatePublisher != null) {
+            return candidatePublisher.publisherName;
+        }
+        return null;
+    }
 }

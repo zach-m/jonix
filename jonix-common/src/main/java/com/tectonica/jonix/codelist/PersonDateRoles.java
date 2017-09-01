@@ -28,51 +28,50 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 75 (Person date role)
  */
-interface CodeList75
-{}
+interface CodeList75 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 75</b>
  * <p>
  * Description: Person date role
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist75">ONIX Codelist 75 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist75">ONIX
+ * Codelist 75 in Reference Guide</a>
  */
-public enum PersonDateRoles implements OnixCodelist, CodeList75
-{
-   Date_of_birth("007", "Date of birth"), //
+public enum PersonDateRoles implements OnixCodelist, CodeList75 {
+    Date_of_birth("007", "Date of birth"), //
 
-   Date_of_death("008", "Date of death");
+    Date_of_death("008", "Date of death");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private PersonDateRoles(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private PersonDateRoles(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static PersonDateRoles byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (PersonDateRoles e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static PersonDateRoles byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (PersonDateRoles e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

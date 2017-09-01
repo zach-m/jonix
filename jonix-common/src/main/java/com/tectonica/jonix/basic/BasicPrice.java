@@ -19,23 +19,22 @@
 
 package com.tectonica.jonix.basic;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.codelist.CurrencyCodes;
 import com.tectonica.jonix.codelist.PriceTypes;
+
+import java.io.Serializable;
 
 /**
  * Contains the essential information included in ONIX &lt;Price&gt;
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
- * 
+ *
  * @author Zach Melamed
  */
 @SuppressWarnings("serial")
-public abstract class BasicPrice implements Serializable
-{
-	public PriceTypes priceType;
-	public Double priceAmount;
-	public String priceAmountAsStr;
-	public CurrencyCodes currencyCode;
+public abstract class BasicPrice implements Serializable {
+    public PriceTypes priceType;
+    public Double priceAmount;
+    public String priceAmountAsStr;
+    public CurrencyCodes currencyCode;
 }

@@ -28,52 +28,51 @@ import com.tectonica.jonix.OnixCodelist;
 /**
  * marker interface to assist in IDE navigation to code-list 172 (Currency zone)
  */
-interface CodeList172
-{}
+interface CodeList172 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 172</b>
  * <p>
  * Description: Currency zone
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist172">ONIX Codelist 172 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist172">ONIX
+ * Codelist 172 in Reference Guide</a>
  */
-public enum CurrencyZones implements OnixCodelist, CodeList172
-{
-   /**
-    * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3
-    */
-   Eurozone("EUR", "Eurozone");
+public enum CurrencyZones implements OnixCodelist, CodeList172 {
+    /**
+     * Countries that at the time being have the Euro as their national currency. Deprecated in ONIX 3
+     */
+    Eurozone("EUR", "Eurozone");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private CurrencyZones(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private CurrencyZones(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   public static CurrencyZones byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      for (CurrencyZones e : values())
-         if (e.code.equals(code))
-            return e;
-      return null;
-   }
+    public static CurrencyZones byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        for (CurrencyZones e : values()) {
+            if (e.code.equals(code)) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

@@ -19,36 +19,36 @@
 
 package com.tectonica.jonix.struct;
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.tectonica.jonix.JonixKeyedStruct;
-import com.tectonica.jonix.codelist.*;
+import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 @SuppressWarnings("serial")
-public class JonixSeriesIdentifier implements JonixKeyedStruct<SeriesIdentifierTypes>, Serializable
-{
-   public static JonixSeriesIdentifier EMPTY = new JonixSeriesIdentifier();
+public class JonixSeriesIdentifier implements JonixKeyedStruct<SeriesIdentifierTypes>, Serializable {
+    public static JonixSeriesIdentifier EMPTY = new JonixSeriesIdentifier();
 
-   /**
-    * the key of this struct (by which it can be looked up)
-    */
-   public SeriesIdentifierTypes seriesIDType;
+    /**
+     * the key of this struct (by which it can be looked up)
+     */
+    public SeriesIdentifierTypes seriesIDType;
 
-   /**
-    * Raw Format: Variable-length ASCII text, suggested maximum 50 characters <p> (type: NonEmptyString)
-    */
-   public String idTypeName;
+    /**
+     * Raw Format: Variable-length ASCII text, suggested maximum 50 characters <p> (type: NonEmptyString)
+     */
+    public String idTypeName;
 
-   /**
-    * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt; <p> (type: NonEmptyString)
-    */
-   public String idValue;
+    /**
+     * Raw Format: According to the identifier type specified in &lt;AddresseeIDType&gt; <p> (type: NonEmptyString)
+     */
+    public String idValue;
 
-   @Override
-   public SeriesIdentifierTypes key() { return seriesIDType; }
+    @Override
+    public SeriesIdentifierTypes key() {
+        return seriesIDType;
+    }
 }

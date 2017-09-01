@@ -21,8 +21,8 @@ package com.tectonica.jonix.codelist;
 
 import com.tectonica.jonix.OnixCodelist;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
@@ -31,121 +31,116 @@ import java.util.HashMap;
 /**
  * marker interface to assist in IDE navigation to code-list 90 (Religious text feature code)
  */
-interface CodeList90
-{}
+interface CodeList90 {
+}
 
 /**
  * <code>Enum</code> that corresponds to ONIX <b>Codelist 90</b>
  * <p>
  * Description: Religious text feature code
- * 
+ *
  * @see <a href="http://www.editeur.org/14/code-lists">About ONIX Codelists</a>
- * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist90">ONIX Codelist 90 in Reference Guide</a>
+ * @see <a href="http://www.editeur.org/files/ONIX%20for%20books%20-%20code%20lists/ONIX_BookProduct_Codelists_Issue_32.html#codelist90">ONIX
+ * Codelist 90 in Reference Guide</a>
  */
-public enum ReligiousTextFeatures implements OnixCodelist, CodeList90
-{
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Academic_year("01", "Academic year"), //
+public enum ReligiousTextFeatures implements OnixCodelist, CodeList90 {
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Academic_year("01", "Academic year"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Catechistic_year("02", "Catechistic year"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Catechistic_year("02", "Catechistic year"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Liturgical_year("03", "Liturgical year"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Liturgical_year("03", "Liturgical year"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Advent_and_Christmas("04", "Advent and Christmas"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Advent_and_Christmas("04", "Advent and Christmas"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Blessings("05", "Blessings"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Blessings("05", "Blessings"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Scholastic_cycles("06", "Scholastic cycles"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Scholastic_cycles("06", "Scholastic cycles"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Confirmation_and_Holy_Communion("07", "Confirmation and Holy Communion"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Confirmation_and_Holy_Communion("07", "Confirmation and Holy Communion"), //
 
-   /**
-    * For example, summer camps and other youth recreational activities: use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Summer_activites("08", "Summer activites"), //
+    /**
+     * For example, summer camps and other youth recreational activities: use with code 01 in
+     * &lt;ReligiousTextFeatureType&gt;
+     */
+    Summer_activites("08", "Summer activites"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Easter("09", "Easter"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Easter("09", "Easter"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Lent("10", "Lent"), //
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Lent("10", "Lent"), //
 
-   /**
-    * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
-    */
-   Marian_themes("11", "Marian themes");
+    /**
+     * Use with code 01 in &lt;ReligiousTextFeatureType&gt;
+     */
+    Marian_themes("11", "Marian themes");
 
-   public final String code;
-   public final String description;
+    public final String code;
+    public final String description;
 
-   private ReligiousTextFeatures(String code, String description)
-   {
-      this.code = code;
-      this.description = description;
-   }
+    private ReligiousTextFeatures(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 
-   @Override
-   public String getCode()
-   {
-      return code;
-   }
+    @Override
+    public String getCode() {
+        return code;
+    }
 
-   @Override
-   public String getDescription()
-   {
-      return description;
-   }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-   private static volatile Map<String, ReligiousTextFeatures> map;
+    private static volatile Map<String, ReligiousTextFeatures> map;
 
-   private static Map<String, ReligiousTextFeatures> map()
-   {
-      Map<String, ReligiousTextFeatures> result = map;
-      if (result == null)
-      {
-         synchronized(ReligiousTextFeatures.class)
-         {
-            result = map;
-            if (result == null)
-            {
-               result = new HashMap<>();
-               for (ReligiousTextFeatures e : values())
-                  result.put(e.code, e);
-               map = result;
+    private static Map<String, ReligiousTextFeatures> map() {
+        Map<String, ReligiousTextFeatures> result = map;
+        if (result == null) {
+            synchronized (ReligiousTextFeatures.class) {
+                result = map;
+                if (result == null) {
+                    result = new HashMap<>();
+                    for (ReligiousTextFeatures e : values()) {
+                        result.put(e.code, e);
+                    }
+                    map = result;
+                }
             }
-         }
-      }
-      return result;
-   }
+        }
+        return result;
+    }
 
-   public static ReligiousTextFeatures byCode(String code)
-   {
-      if (code == null || code.isEmpty())
-         return null;
-      return map().get(code);
-   }
+    public static ReligiousTextFeatures byCode(String code) {
+        if (code == null || code.isEmpty()) {
+            return null;
+        }
+        return map().get(code);
+    }
 }

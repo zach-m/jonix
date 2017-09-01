@@ -22,9 +22,8 @@ package com.tectonica.jonix;
 /**
  * represents an ONIX codelist
  */
-public interface OnixCodelist
-{
-	String getCode();
+public interface OnixCodelist {
+    String getCode();
 
-	String getDescription();
+    String getDescription();
 }
