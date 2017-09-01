@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
@@ -164,7 +165,7 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
 		initialize();
 		JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
 		struct.affiliation = affiliation.value;
-		struct.professionalPositions = Arrays.asList(professionalPosition.value);
+		struct.professionalPositions = Collections.singletonList(professionalPosition.value);
 		return struct;
 	}
 }

@@ -3,6 +3,7 @@ package com.tectonica.jonix;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
 {
@@ -19,7 +20,7 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
 	public List<V> values()
 	{
 		if (cachedValues == null)
-			return cachedValues = valuesInto(new ArrayList<>());
+			return cachedValues = valuesInto(new ArrayList<>(this.size()));
 		return cachedValues;
 	}
 
@@ -29,11 +30,9 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
 		return collection;
 	}
 
-	public V firstValueOrNull()
+	public Optional<V> firstValue()
 	{
-		if (size() == 0)
-			return null;
-		return get(0)._value();
+		return (size() == 0) ? Optional.empty() : Optional.of(get(0)._value());
 	}
 
 	private static ListOfOnixElement<OnixElement<Object>, Object> EMPTY = new ListOfOnixElement<>();

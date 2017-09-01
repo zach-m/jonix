@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
@@ -203,8 +204,8 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable
 		JonixPrize struct = new JonixPrize();
 		struct.prizeCode = prizeCode.value;
 		struct.prizeCountry = prizeCountry.value;
-		struct.prizeJurys = Arrays.asList(prizeJury.value);
-		struct.prizeNames = Arrays.asList(prizeName.value);
+		struct.prizeJurys = Collections.singletonList(prizeJury.value);
+		struct.prizeNames = Collections.singletonList(prizeName.value);
 		struct.prizeYear = prizeYear.value;
 		return struct;
 	}

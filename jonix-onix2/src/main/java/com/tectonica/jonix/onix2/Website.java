@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
@@ -176,7 +177,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable
 	{
 		initialize();
 		JonixWebsite struct = new JonixWebsite();
-		struct.websiteDescriptions = Arrays.asList(websiteDescription.value);
+		struct.websiteDescriptions = Collections.singletonList(websiteDescription.value);
 		struct.websiteLink = websiteLink.value;
 		struct.websiteRole = websiteRole.value;
 		return struct;

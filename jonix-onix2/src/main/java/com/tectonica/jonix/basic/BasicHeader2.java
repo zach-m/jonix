@@ -20,6 +20,7 @@
 package com.tectonica.jonix.basic;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.onix2.Header;
 
@@ -37,8 +38,7 @@ public class BasicHeader2 extends BasicHeader
 		fromCompany = header.fromCompany().value;
 		fromPerson = header.fromPerson().value;
 		fromEmail = header.fromEmail().value;
-		String toCompany = header.toCompany().value;
-		toCompanies = (toCompany == null) ? null : Arrays.asList(toCompany);
+		toCompanies = header.toCompany().value().map(tc -> Collections.singletonList(tc)).orElse(null);
 		sentDate = header.sentDate().value;
 	}
 }

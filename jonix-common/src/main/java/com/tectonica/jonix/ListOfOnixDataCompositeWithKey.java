@@ -1,10 +1,7 @@
 package com.tectonica.jonix;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 
@@ -13,17 +10,22 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
 {
 	private static final long serialVersionUID = 1L;
 
-	public C findOrNull(K structKey)
+	public Optional<C> find(K structKey)
 	{
 		for (C item : this)
 		{
 			if (item.structKey() == structKey)
-				return item;
+				return Optional.of(item);
 		}
-		return null;
+		return Optional.empty();
 	}
 
-	public List<C> find(Set<K> structKeys)
+	public Optional<S> findAsStruct(K structKey)
+	{
+		return find(structKey).map(i -> i.asStruct());
+	}
+
+	public List<C> findAll(Set<K> structKeys)
 	{
 		List<C> matches = new ArrayList<>();
 		forEach(item -> {
@@ -34,29 +36,14 @@ public class ListOfOnixDataCompositeWithKey<C extends OnixDataCompositeWithKey<S
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<C> find(K... structKeys)
+	public List<C> findAll(K... structKeys)
 	{
-		return find(new HashSet<>(Arrays.asList(structKeys)));
+		return findAll(new HashSet<>(Arrays.asList(structKeys)));
 	}
 
-	public S findAsStructOrNull(K structKey)
+	public List<S> findAllAsStructs(Set<K> structKeys)
 	{
-		for (C item : this)
-		{
-			if (item.structKey() == structKey)
-				return item.asStruct();
-		}
-		return null;
-	}
-
-	public List<S> findAsStructs(Set<K> structKeys)
-	{
-		List<S> matches = new ArrayList<>();
-		forEach(item -> {
-			if (structKeys == null || structKeys.contains(item.structKey()))
-				matches.add(item.asStruct());
-		});
-		return matches;
+		return findAll(structKeys).stream().map(i -> i.asStruct()).collect(Collectors.toList());
 	}
 
 	private static ListOfOnixDataCompositeWithKey<?, ?, ?> EMPTY = new ListOfOnixDataCompositeWithKey<>();

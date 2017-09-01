@@ -40,7 +40,6 @@ import com.tectonica.jonix.stream.JonixStreamer;
 
 public class TestSingle
 {
-
 	@Before
 	public void setUp() throws Exception
 	{}
@@ -56,14 +55,7 @@ public class TestSingle
 			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 			// disable dtd validation
-			docBuilder.setEntityResolver(new EntityResolver()
-			{
-				@Override
-				public InputSource resolveEntity(String publicId, String systemId)
-				{
-					return new InputSource(new StringReader(""));
-				}
-			});
+			docBuilder.setEntityResolver((publicId, systemId) -> new InputSource(new StringReader("")));
 			return docBuilder.parse(is);
 		}
 		catch (Exception e)

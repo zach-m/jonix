@@ -54,6 +54,6 @@ public class BasicContributor3 extends BasicContributor
 			if (bio.language == null || bio.language == LanguageCodes.English)
 				return bio.value;
 		}
-		return contributor.biographicalNotes().firstValueOrNull(); // return whatever language we have
+		return contributor.biographicalNotes().firstValue().orElse(null); // return whatever language we have
 	}
 }

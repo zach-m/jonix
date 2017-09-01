@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
@@ -203,7 +204,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable
 		initialize();
 		JonixSubject struct = new JonixSubject();
 		struct.subjectCode = subjectCode.value;
-		struct.subjectHeadingTexts = Arrays.asList(subjectHeadingText.value);
+		struct.subjectHeadingTexts = Collections.singletonList(subjectHeadingText.value);
 		struct.subjectSchemeIdentifier = subjectSchemeIdentifier.value;
 		struct.subjectSchemeName = subjectSchemeName.value;
 		struct.subjectSchemeVersion = subjectSchemeVersion.value;

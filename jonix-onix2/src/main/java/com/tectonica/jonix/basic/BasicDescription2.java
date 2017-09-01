@@ -37,15 +37,14 @@ public class BasicDescription2 extends BasicDescription
 
 	public BasicDescription2(Product product)
 	{
-		editionType = product.editionTypeCodes().firstValueOrNull();
+		editionType = product.editionTypeCodes().firstValue().orElse(null);
 		editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
-		ProductForms productFormValue = product.productForm().value;
-		productForm = (productFormValue == null) ? null : productFormValue.description;
+		productForm = product.productForm().value().map(fv -> fv.description).orElse(null);
 		numberOfPages = product.numberOfPages().value;
-		languages = product.languages().asStructs(); // TODO: lazy
-		audiences = product.audiences().asStructs(); // TODO: lazy
+		languages = product.languages().asStructs(); // TODO: lazify
+		audiences = product.audiences().asStructs(); // TODO: lazify
 		audienceCodes = product.audienceCodes().values();
-		audienceRange = product.audienceRanges().firstOrNull();
+		audienceRange = product.audienceRanges().first().orElse(null);
 	}
 
 	@Override

@@ -22,6 +22,7 @@ package com.tectonica.jonix;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Optional;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;
@@ -73,22 +74,18 @@ public class TestXmlChunkerWithProducts
 					Product product = new Product(element);
 
 					// get some basic properties of the book
-					JonixProductIdentifier isbn = product.productIdentifiers()
-							.findAsStructOrNull(ProductIdentifierTypes.ISBN_13);
-					JonixTitle title = product.titles().findAsStructOrNull(TitleTypes.Distinctive_title_book);
-					String titleValue = (title == null) ? "N/A" : title.titleText;
-					String isbnValue = (isbn == null) ? "N/A" : isbn.idValue;
-					boolean hasSeriesInfo = !product.seriess().isEmpty();
-					String seriesTitleValue = hasSeriesInfo ? product.seriess().get(0).titleOfSeries().value + " / "
-							: "";
+					Optional<JonixTitle> title = product.titles().findAsStruct(TitleTypes.Distinctive_title_book);
+					String titleValue = title.map(t -> t.titleText).orElse("N/A");
+					String isbnValue = product.productIdentifiers().findAsStruct(ProductIdentifierTypes.ISBN_13).map(i -> i.idValue).orElse("N/A");
+					String seriesPrefix = product.seriess().isEmpty() ? "" : product.seriess().get(0).titleOfSeries().value + " / ";
 
 					// print
 					++count;
 					System.out.println(String.format("#%04d: title='%s', isbn='%s'", count,
-							seriesTitleValue + titleValue, isbnValue));
+							seriesPrefix + titleValue, isbnValue));
 
 					// in rare cases where there is no title, we print the entire XML record (as JSON)
-					if (title == null)
+					if (!title.isPresent())
 						System.err.println(JonixJson.toJson(product));
 				}
 				return true;

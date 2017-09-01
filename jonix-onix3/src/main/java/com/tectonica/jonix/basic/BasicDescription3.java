@@ -42,17 +42,17 @@ public class BasicDescription3 extends BasicDescription
 		DescriptiveDetail dd = product.descriptiveDetail();
 		if (dd.exists())
 		{
-			editionType = dd.editionTypes().firstValueOrNull();
+			editionType = dd.editionTypes().firstValue().orElse(null);
 			editionNumber = dd.editionNumber().value;
 			ProductFormsList150 productFormValue = dd.productForm().value;
 			productForm = (productFormValue == null) ? null : productFormValue.description;
-			JonixExtent jNumberOfPages = dd.extents().findAsStructOrNull(ExtentTypes.Main_content_page_count);
+			JonixExtent jNumberOfPages = dd.extents().findAsStruct(ExtentTypes.Main_content_page_count).orElse(null);
 			numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null
 					: jNumberOfPages.extentValue.toString();
 			languages = dd.languages().asStructs();
 			audiences = dd.audiences().asStructs();
 			audienceCodes = dd.audienceCodes().values();
-			audienceRange = dd.audienceRanges().firstOrNull();
+			audienceRange = dd.audienceRanges().first().orElse(null);
 		}
 		else
 		{

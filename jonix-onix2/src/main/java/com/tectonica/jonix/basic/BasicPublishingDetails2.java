@@ -47,6 +47,6 @@ public class BasicPublishingDetails2 extends BasicPublishingDetails
 			if (cop.language == null || cop.language == preferredLanguage)
 				return cop.value;
 		}
-		return product.cityOfPublications().firstValueOrNull(); // return whatever language we have
+		return product.cityOfPublications().firstValue().orElse(null); // return whatever language we have
 	}
 }

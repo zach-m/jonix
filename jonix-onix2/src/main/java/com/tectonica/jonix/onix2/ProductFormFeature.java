@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
@@ -180,7 +181,7 @@ public class ProductFormFeature
 		initialize();
 		JonixProductFormFeature struct = new JonixProductFormFeature();
 		struct.productFormFeatureType = productFormFeatureType.value;
-		struct.productFormFeatureDescriptions = Arrays.asList(productFormFeatureDescription.value);
+		struct.productFormFeatureDescriptions = Collections.singletonList(productFormFeatureDescription.value);
 		struct.productFormFeatureValue = productFormFeatureValue.value;
 		return struct;
 	}

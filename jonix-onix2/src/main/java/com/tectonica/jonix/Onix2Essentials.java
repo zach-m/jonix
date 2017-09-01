@@ -2,12 +2,7 @@ package com.tectonica.jonix;
 
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -89,14 +84,11 @@ public class Onix2Essentials implements JonixEssentials
 			return null;
 
 		case Language:
-			JonixLanguage languageTag = product.languages().findAsStructOrNull(LanguageRoles.Language_of_text);
-			return (languageTag == null) ? null : languageTag.languageCode.description;
+			return product.languages().findAsStruct(LanguageRoles.Language_of_text).map(s -> s.languageCode.description).orElse(null);
 
 		case Audience:
 			// we pick the first audience, as in practice it's very rare to see more than one
-			Audiences audience = product.audienceCodes().firstValueOrNull();
-			if (audience != null)
-				return (audience == null) ? null : audience.description;
+			return product.audienceCodes().firstValue().map(s -> s.description).orElse(null);
 
 		case PackQuantity:
 			if (!product.supplyDetails().isEmpty())
@@ -125,25 +117,24 @@ public class Onix2Essentials implements JonixEssentials
 			return product.numberOfPages().value;
 
 		case ShippingWeightLB:
-			List<Measure> weight = product.measures().find(MeasureTypes.Unit_weight);
-			if (!weight.isEmpty())
+			List<Measure> weights = product.measures().findAll(MeasureTypes.Unit_weight);
+			if (!weights.isEmpty())
 			{
-				if (weight.get(0).measureUnitCode().value == MeasureUnits.Ounces_US)
+				if (weights.get(0).measureUnitCode().value == MeasureUnits.Ounces_US)
 				{
-					Double oz = JPU.convertStringToDouble(weight.get(0).measurement().value);
+					Double oz = JPU.convertStringToDouble(weights.get(0).measurement().value);
 					return String.valueOf(oz * 0.0625);
 				}
 				else
-					return weight.get(0).measurement().value; // presumably, in Pounds_US
+					return weights.get(0).measurement().value; // presumably, in Pounds_US
 			}
 			return null;
 
 		case FontSize:
-			JonixProductFormFeature textFontTag = product.productFormFeatures()
-					.findAsStructOrNull(ProductFormFeatureTypes.Text_font);
-			if (textFontTag != null && textFontTag.productFormFeatureDescriptions != null)
-				return textFontTag.productFormFeatureDescriptions.get(0);
-			return null;
+            product.productFormFeatures().findAsStruct(ProductFormFeatureTypes.Text_font)
+                    .filter(tf -> !tf.productFormFeatureDescriptions.isEmpty())
+                    .map(tf -> tf.productFormFeatureDescriptions.get(0))
+                    .orElse(null);
 
 		case Publisher:
 			Publisher candidatePublisher = null;
@@ -196,7 +187,7 @@ public class Onix2Essentials implements JonixEssentials
 
 		case Measurements:
 			List<String> wht = new ArrayList<>();
-			List<Measure> widthHeight = product.measures().find(MeasureTypes.Width, MeasureTypes.Height);
+			List<Measure> widthHeight = product.measures().findAll(MeasureTypes.Width, MeasureTypes.Height);
 			if (widthHeight.size() == 2)
 			{
 				String mv0 = widthHeight.get(0).measurement().value;
@@ -205,7 +196,7 @@ public class Onix2Essentials implements JonixEssentials
 				wht.add(mv0IsWidth ? mv0 : mv1);
 				wht.add(mv0IsWidth ? mv1 : mv0);
 
-				List<Measure> thickness = product.measures().find(MeasureTypes.Thickness);
+				List<Measure> thickness = product.measures().findAll(MeasureTypes.Thickness);
 				if (!thickness.isEmpty())
 					wht.add(thickness.get(0).measurement().value);
 			}
@@ -234,20 +225,14 @@ public class Onix2Essentials implements JonixEssentials
 
 	public String getProductIdentifier(ProductIdentifierTypes idType)
 	{
-		JonixProductIdentifier productIdentifier = product.productIdentifiers().findAsStructOrNull(idType);
-		return (productIdentifier == null) ? null : productIdentifier.idValue;
+	    return product.productIdentifiers().findAsStruct(idType).map(pi -> pi.idValue).orElse(null);
 	}
 
 	private String getTitle(TitleTypes titleType, boolean returnSubtitle)
 	{
-		JonixTitle titleTag = product.titles().findAsStructOrNull(titleType);
-		if (titleTag != null)
-		{
-			if (returnSubtitle)
-				return titleTag.subtitle;
-			return titleTag.titleText;
-		}
-		return null;
+		return product.titles().findAsStruct(titleType)
+                .map(titleTag -> returnSubtitle ? titleTag.subtitle : titleTag.titleText)
+                .orElse(null);
 	}
 
 	public List<Contributor> findContributors(ContributorRoles... requestedRoles)
@@ -297,22 +282,16 @@ public class Onix2Essentials implements JonixEssentials
 		if (!isSequenced)
 			return;
 
-		Collections.sort(contributors, new Comparator<Contributor>()
-		{
+		contributors.sort(new Comparator<Contributor>() {
 			@Override
-			public int compare(Contributor o1, Contributor o2)
-			{
+			public int compare(Contributor o1, Contributor o2) {
 				return Integer.compare(toInt(o1.sequenceNumber().value), toInt(o2.sequenceNumber().value));
 			}
 
-			private int toInt(String s1)
-			{
-				try
-				{
+			private int toInt(String s1) {
+				try {
 					return Integer.parseInt(s1);
-				}
-				catch (NumberFormatException nfe)
-				{
+				} catch (NumberFormatException nfe) {
 					return Integer.MAX_VALUE; // i.e. unsequenced items in an hybrid list go to the end
 				}
 			}

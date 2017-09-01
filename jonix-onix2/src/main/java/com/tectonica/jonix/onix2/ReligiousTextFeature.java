@@ -21,6 +21,7 @@ package com.tectonica.jonix.onix2;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collections;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
@@ -180,7 +181,7 @@ public class ReligiousTextFeature
 		JonixReligiousTextFeature struct = new JonixReligiousTextFeature();
 		struct.religiousTextFeatureType = religiousTextFeatureType.value;
 		struct.religiousTextFeatureCode = religiousTextFeatureCode.value;
-		struct.religiousTextFeatureDescriptions = Arrays.asList(religiousTextFeatureDescription.value);
+		struct.religiousTextFeatureDescriptions = Collections.singletonList(religiousTextFeatureDescription.value);
 		return struct;
 	}
 

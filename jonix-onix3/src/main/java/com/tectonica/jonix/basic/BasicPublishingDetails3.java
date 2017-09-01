@@ -42,12 +42,8 @@ public class BasicPublishingDetails3 extends BasicPublishingDetails
 		PublishingDetail pd = product.publishingDetail();
 		if (pd.exists())
 		{
-			JonixPublishingDate jPublicationDate = pd.publishingDates()
-					.findAsStructOrNull(PublishingDateRoles.Publication_date);
-			publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
-			JonixPublishingDate jOutOfPrintDate = pd.publishingDates()
-					.findAsStructOrNull(PublishingDateRoles.Out_of_print_deletion_date);
-			outOfPrintDate = (jOutOfPrintDate == null) ? null : jOutOfPrintDate.date;
+			publicationDate = pd.publishingDates().findAsStruct(PublishingDateRoles.Publication_date).map(p -> p.date).orElse(null);
+			outOfPrintDate = pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_deletion_date).map(p -> p.date).orElse(null);
 			countryOfPublication = pd.countryOfPublication().value;
 			cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 		}
@@ -61,10 +57,8 @@ public class BasicPublishingDetails3 extends BasicPublishingDetails
 
 	private String pickCityOfPublication(Product product, LanguageCodes preferredLanguage)
 	{
-		if (!product.publishingDetail().exists())
-			return null;
-
 		List<CityOfPublication> cops = product.publishingDetail().cityOfPublications();
+
 		if (cops.isEmpty())
 			return null;
 

@@ -3,6 +3,7 @@ package com.tectonica.jonix;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 
@@ -20,7 +21,7 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
 	public List<S> asStructs()
 	{
 		if (cachedStructs == null)
-			return cachedStructs = structsInto(new ArrayList<>());
+			return cachedStructs = structsInto(new ArrayList<>(this.size()));
 		return cachedStructs;
 	}
 
@@ -30,18 +31,14 @@ public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends J
 		return collection;
 	}
 
-	public S firstStructOrNull()
+	public Optional<C> first()
 	{
-		if (size() == 0)
-			return null;
-		return get(0).asStruct();
+		return (size() == 0) ? Optional.empty() : Optional.of(get(0));
 	}
 
-	public C firstOrNull()
+	public Optional<S> firstAsStruct()
 	{
-		if (size() == 0)
-			return null;
-		return get(0);
+		return first().map(i -> i.asStruct());
 	}
 
 	private static ListOfOnixDataComposite<OnixDataComposite<JonixStruct>, JonixStruct> EMPTY = new ListOfOnixDataComposite<>();
