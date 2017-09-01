@@ -5,8 +5,11 @@
         "http://checkstyle.sourceforge.net/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <!-- all codelist generated-classes have a marker interface in them, as a top-level class -->
+    <!-- generated-classes for codelist have a marker interface in them, as a top-level class -->
     <suppress id="one-top-level-restriction" files="com[/\\]tectonica[/\\]jonix[/\\]codelist[/\\].*\.java$"/>
+
+    <!-- generated-classes for codelist may have very long enums, we have to allow it -->
+    <suppress id="line-size-restriction" files="com[/\\]tectonica[/\\]jonix[/\\]codelist[/\\].*\.java$"/>
 
     <!-- generated-classes for onix2/onix3 may have long java-doc comment which intelli-J won't wrap -->
     <suppress id="line-size-restriction" files="com[/\\]tectonica[/\\]jonix[/\\]onix[23][/\\].*\.java$"/>

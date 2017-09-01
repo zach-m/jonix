@@ -98,6 +98,7 @@
         </pluginManagement>
 
         <plugins>
+            <!-- CheckStyle plugin. To execute:  mvn clean verify -DskipTests; look for '*/checkstyle-result.xml' -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
