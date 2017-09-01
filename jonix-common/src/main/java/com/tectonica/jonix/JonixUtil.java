@@ -1,6 +1,6 @@
 package com.tectonica.jonix;
 
-import net.sourceforge.isbnhyphenappender.ISBNHyphenAppender;
+import repackaged.net.sourceforge.isbnhyphenappender.ISBNHyphenAppender;
 
 import java.text.DateFormat;
 import java.text.ParseException;

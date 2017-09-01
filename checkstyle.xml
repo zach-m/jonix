@@ -15,6 +15,10 @@
         <property name="eachLine" value="true"/>
     </module>
 
+    <module name="BeforeExecutionExclusionFileFilter">
+        <property name="fileNamePattern" value="repackaged[/\\].*\.java$"/>
+    </module>
+
     <module name="SuppressionFilter">
         <property name="file" value="checkstyle-suppressions.xml"/>
         <property name="optional" value="false"/>

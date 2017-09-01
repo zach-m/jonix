@@ -19,11 +19,11 @@
 
 package com.tectonica.jonix.stream;
 
-import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
+import repackaged.org.apache.commons.io.input.BOMInputStream;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.events.Attribute;

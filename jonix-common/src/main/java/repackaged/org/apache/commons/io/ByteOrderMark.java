@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.tectonica.repackaged.org.apache.commons.io;
+package repackaged.org.apache.commons.io;
 
-import com.tectonica.repackaged.org.apache.commons.io.input.BOMInputStream;
+import repackaged.org.apache.commons.io.input.BOMInputStream;
 
 import java.io.Serializable;
 
@@ -25,7 +25,7 @@ import java.io.Serializable;
  * Byte Order Mark (BOM) representation - see {@link BOMInputStream}.
  *
  * @version $Id: ByteOrderMark.java 1005099 2010-10-06 16:13:01Z niallp $
- * @see org.apache.commons.io.input.BOMInputStream
+ * @see repackaged.org.apache.commons.io.input.BOMInputStream
  * @see <a href="http://en.wikipedia.org/wiki/Byte_order_mark">Wikipedia - Byte Order Mark</a>
  * @since Commons IO 2.0
  */

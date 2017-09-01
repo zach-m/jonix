@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.tectonica.repackaged.org.apache.commons.io.input;
+package repackaged.org.apache.commons.io.input;
 
-import com.tectonica.repackaged.org.apache.commons.io.ByteOrderMark;
+import repackaged.org.apache.commons.io.ByteOrderMark;
 
 import java.io.IOException;
 import java.io.InputStream;

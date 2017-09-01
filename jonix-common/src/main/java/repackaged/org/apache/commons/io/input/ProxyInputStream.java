@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.repackaged.org.apache.commons.io.input;
+package repackaged.org.apache.commons.io.input;
 
 import java.io.FilterInputStream;
 import java.io.IOException;
