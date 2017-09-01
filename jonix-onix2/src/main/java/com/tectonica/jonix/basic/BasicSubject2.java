@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicSubject;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix2.Subject;
 
@@ -32,15 +31,16 @@ public class BasicSubject2 extends BasicSubject
 {
 	private static final long serialVersionUID = 1L;
 
-	public BasicSubject2(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
+	public BasicSubject2(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
+			String subjectHeadingText)
 	{
 		super(subjectSchemeIdentifier, subjectCode, subjectHeadingText);
 	}
 
 	public BasicSubject2(Subject s)
 	{
-		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
-		subjectCode = s.getSubjectCodeValue();
-		subjectHeadingText = s.getSubjectHeadingTextValue();
+		subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
+		subjectCode = s.subjectCode().value;
+		subjectHeadingText = s.subjectHeadingText().value;
 	}
 }

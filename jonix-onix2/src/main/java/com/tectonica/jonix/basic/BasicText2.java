@@ -34,13 +34,13 @@ public class BasicText2 extends BasicText
 
 	public BasicText2(OtherText otherText)
 	{
-		textType = translate33to153(otherText.getTextTypeCodeValue());
-		textFormat = otherText.getTextFormatValue();
-		if (otherText.text != null)
+		textType = translate33to153(otherText.textTypeCode().value);
+		textFormat = otherText.textFormat().value;
+		if (otherText.text() != null)
 		{
-			text = otherText.text.value;
+			text = otherText.text().value;
 			if (textFormat == null)
-				textFormat = otherText.text.textformat;
+				textFormat = otherText.text().textformat;
 		}
 	}
 

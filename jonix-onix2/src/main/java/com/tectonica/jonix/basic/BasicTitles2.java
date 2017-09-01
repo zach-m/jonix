@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicTitle;
-import com.tectonica.jonix.basic.BasicTitles;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.onix2.Title;
@@ -41,23 +39,20 @@ public class BasicTitles2 extends BasicTitles
 
 	public BasicTitles2(Product product)
 	{
-		titles = product.titles;
+		titles = product.titles();
 	}
 
 	public BasicTitles2(Series series)
 	{
-		titles = series.titles;
+		titles = series.titles();
 	}
 
 	@Override
 	protected List<BasicTitle> initialize()
 	{
 		List<BasicTitle> list = new ArrayList<>();
-		if (titles != null)
-		{
-			for (Title title : titles)
-				list.add(new BasicTitle2(title));
-		}
+		for (Title title : titles)
+			list.add(new BasicTitle2(title));
 		return list;
 	}
 }

@@ -21,7 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.util.Arrays;
 
-import com.tectonica.jonix.basic.BasicSalesRights;
 import com.tectonica.jonix.onix3.SalesRights;
 import com.tectonica.jonix.onix3.Territory;
 
@@ -36,12 +35,12 @@ public class BasicSalesRights3 extends BasicSalesRights
 
 	public BasicSalesRights3(SalesRights salesRights)
 	{
-		Territory territory = salesRights.territory;
-		salesRightsType = salesRights.getSalesRightsTypeValue();
-		countries = Arrays.asList(territory.getCountriesIncludedSet());
-		regions = territory.getRegionsIncludedSet();
+		Territory territory = salesRights.territory();
+		salesRightsType = salesRights.salesRightsType().value;
+		countries = Arrays.asList(territory.countriesIncluded().value);
+		regions = territory.regionsIncluded().value;
 		rightRegions = null;
-		countriesExcluded = territory.getCountriesExcludedSet();
-		regionsExcluded = territory.getRegionsExcludedSet();
+		countriesExcluded = territory.countriesExcluded().value;
+		regionsExcluded = territory.regionsExcluded().value;
 	}
 }

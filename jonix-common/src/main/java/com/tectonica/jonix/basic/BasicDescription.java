@@ -80,7 +80,7 @@ public abstract class BasicDescription implements Serializable
 		return (audienceCodes == null) ? null : audienceCodes.get(0).description;
 	}
 
-	protected Integer[] getAudienceAgeRange(JonixAudienceRange audienceRange)
+	public static Integer[] getAudienceAgeRange(JonixAudienceRange audienceRange)
 	{
 		Integer[] ageRange = new Integer[] { null, null };
 		AudienceRangeQualifiers qualifier = audienceRange.audienceRangeQualifier;

@@ -1,6 +1,5 @@
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicInfo;
 import com.tectonica.jonix.onix2.Product;
 
 /**
@@ -14,8 +13,8 @@ public class BasicInfo2 extends BasicInfo
 
 	public BasicInfo2(Product product)
 	{
-		recordReference = product.getRecordReferenceValue();
-		notificationType = product.getNotificationTypeValue();
-		productIds = product.findProductIdentifiers(null); // TODO: lazy
+		recordReference = product.recordReference().value;
+		notificationType = product.notificationType().value;
+		productIds = product.productIdentifiers().asStructs(); // TODO: lazy
 	}
 }

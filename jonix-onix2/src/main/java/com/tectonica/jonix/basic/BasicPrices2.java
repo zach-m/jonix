@@ -45,11 +45,8 @@ public class BasicPrices2 extends BasicPrices
 	protected List<BasicPrice> initialize()
 	{
 		List<BasicPrice> list = new ArrayList<>();
-		if (supplyDetail.prices != null)
-		{
-			for (Price price : supplyDetail.prices)
-				list.add(new BasicPrice2(price));
-		}
+		for (Price price : supplyDetail.prices())
+			list.add(new BasicPrice2(price));
 		return list;
 	}
 }

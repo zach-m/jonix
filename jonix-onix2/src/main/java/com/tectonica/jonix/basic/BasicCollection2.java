@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicCollection;
-import com.tectonica.jonix.basic.LazyList;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.struct.JonixSeriesIdentifier;
@@ -40,14 +38,14 @@ public class BasicCollection2 extends BasicCollection
 	@SuppressWarnings("serial")
 	public BasicCollection2(final Series c)
 	{
-		mainTitle = c.getTitleOfSeriesValue();
-		numberWithinSeries = c.getNumberWithinSeriesValue();
+		mainTitle = c.titleOfSeries().value;
+		numberWithinSeries = c.numberWithinSeries().value;
 		seriesIdentifiers = new LazyList<JonixCollectionIdentifier>()
 		{
 			@Override
 			protected List<JonixCollectionIdentifier> initialize()
 			{
-				return sidsToCids(c.findSeriesIdentifiers(null));
+				return sidsToCids(c.seriesIdentifiers().asStructs());
 			}
 		};
 		titles = new BasicTitles2(c);

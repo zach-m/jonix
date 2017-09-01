@@ -34,13 +34,13 @@ public class BasicContributor2 extends BasicContributor
 
 	public BasicContributor2(Contributor c)
 	{
-		contributorRoles = new HashSet<>(c.getContributorRoleValues());
-		sequenceNumber = c.getSequenceNumberValue();
-		personName = c.getPersonNameValue();
-		personNameKey = c.getKeyNamesValue();
-		personNameBeforeKey = c.getNamesBeforeKeyValue();
-		personNameInverted = c.getPersonNameInvertedValue();
-		corporateName = c.getCorporateNameValue();
-		biographicalNote = c.getBiographicalNoteValue();
+		contributorRoles = c.contributorRoles().valuesInto(new HashSet<>());
+		sequenceNumber = c.sequenceNumber().value;
+		personName = c.personName().value;
+		personNameKey = c.keyNames().value;
+		personNameBeforeKey = c.namesBeforeKey().value;
+		personNameInverted = c.personNameInverted().value;
+		corporateName = c.corporateName().value;
+		biographicalNote = c.biographicalNote().value;
 	}
 }

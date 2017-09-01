@@ -33,10 +33,10 @@ public class BasicSupplyDetail2 extends BasicSupplyDetail
 
 	public BasicSupplyDetail2(SupplyDetail supplyDetail)
 	{
-		final AvailabilityStatuss availabilityCode = supplyDetail.getAvailabilityCodeValue();
+		final AvailabilityStatuss availabilityCode = supplyDetail.availabilityCode().value;
 		// NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
-		supplierRole = supplyDetail.getSupplierRoleValue();
-		supplierName = supplyDetail.getSupplierNameValue();
+		supplierRole = supplyDetail.supplierRole().value;
+		supplierName = supplyDetail.supplierName().value;
 		availability = (availabilityCode == null) ? null : availabilityCode.name();
 		prices = new BasicPrices2(supplyDetail);
 	}

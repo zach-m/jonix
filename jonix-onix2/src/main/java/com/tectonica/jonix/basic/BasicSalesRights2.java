@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicSalesRights;
 import com.tectonica.jonix.onix2.SalesRights;
 
 /**
@@ -33,10 +32,10 @@ public class BasicSalesRights2 extends BasicSalesRights
 
 	public BasicSalesRights2(SalesRights salesRights)
 	{
-		salesRightsType = salesRights.getSalesRightsTypeValue();
-		countries = salesRights.getRightsCountrySets();
-		regions = salesRights.getRightsTerritorySet();
-		rightRegions = salesRights.getRightsRegionValues();
+		salesRightsType = salesRights.salesRightsType().value;
+		countries = salesRights.rightsCountrys().values();
+		regions = salesRights.rightsTerritory().value;
+		rightRegions = salesRights.rightsRegions().values();
 		countriesExcluded = null;
 		regionsExcluded = null;
 	}

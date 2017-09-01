@@ -19,9 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.List;
-
-import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.ProductFormsList150;
 import com.tectonica.jonix.onix3.AudienceRange;
@@ -42,20 +39,20 @@ public class BasicDescription3 extends BasicDescription
 
 	public BasicDescription3(Product product)
 	{
-		DescriptiveDetail dd = product.descriptiveDetail;
-		if (dd != null)
+		DescriptiveDetail dd = product.descriptiveDetail();
+		if (dd.exists())
 		{
-			List<EditionTypes> editionTypes = dd.getEditionTypeValues();
-			editionType = (editionTypes == null) ? null : editionTypes.get(0);
-			editionNumber = dd.getEditionNumberValue();
-			ProductFormsList150 productFormValue = dd.getProductFormValue();
+			editionType = dd.editionTypes().firstValueOrNull();
+			editionNumber = dd.editionNumber().value;
+			ProductFormsList150 productFormValue = dd.productForm().value;
 			productForm = (productFormValue == null) ? null : productFormValue.description;
-			JonixExtent jNumberOfPages = dd.findExtent(ExtentTypes.Main_content_page_count);
-			numberOfPages = (jNumberOfPages == null) ? null : jNumberOfPages.extentValue.toString();
-			languages = dd.findLanguages(null);
-			audiences = dd.findAudiences(null);
-			audienceCodes = dd.getAudienceCodeValues();
-			audienceRange = (dd.audienceRanges == null) ? null : dd.audienceRanges.get(0);
+			JonixExtent jNumberOfPages = dd.extents().findAsStructOrNull(ExtentTypes.Main_content_page_count);
+			numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null
+					: jNumberOfPages.extentValue.toString();
+			languages = dd.languages().asStructs();
+			audiences = dd.audiences().asStructs();
+			audienceCodes = dd.audienceCodes().values();
+			audienceRange = dd.audienceRanges().firstOrNull();
 		}
 		else
 		{
@@ -67,7 +64,7 @@ public class BasicDescription3 extends BasicDescription
 	public Integer[] getFirstAudienceAgeRange()
 	{
 		if (audienceRange != null)
-			return getAudienceAgeRange(audienceRange.asJonixAudienceRange());
+			return getAudienceAgeRange(audienceRange.asStruct());
 		return new Integer[] { null, null };
 	}
 }

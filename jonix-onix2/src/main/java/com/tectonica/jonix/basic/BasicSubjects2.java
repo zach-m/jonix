@@ -23,8 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.tectonica.jonix.basic.BasicSubject;
-import com.tectonica.jonix.basic.BasicSubjects;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Subject;
@@ -49,19 +47,17 @@ public class BasicSubjects2 extends BasicSubjects
 	protected Map<SubjectSchemeIdentifiers, List<BasicSubject>> initialize()
 	{
 		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
-		String bisacMainSubject = product.getBASICMainSubjectValue();
+		String bisacMainSubject = product.basicMainSubject().value;
 		if (bisacMainSubject != null)
-			addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null), false);
+			addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null),
+					false);
 
-		String bicMainSubject = product.getBICMainSubjectValue();
+		String bicMainSubject = product.bicMainSubject().value;
 		if (bicMainSubject != null)
 			addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null), false);
 
-		if (product.subjects != null)
-		{
-			for (Subject subject : product.subjects)
-				addKV(map, new BasicSubject2(subject), false);
-		}
+		for (Subject subject : product.subjects())
+			addKV(map, new BasicSubject2(subject), false);
 		return map;
 	}
 }

@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicPublishingDetails;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.onix2.CityOfPublication;
 import com.tectonica.jonix.onix2.Product;
@@ -35,23 +34,19 @@ public class BasicPublishingDetails2 extends BasicPublishingDetails
 
 	public BasicPublishingDetails2(Product product)
 	{
-		publicationDate = product.getPublicationDateValue();
-		outOfPrintDate = product.getOutOfPrintDateValue();
-		countryOfPublication = product.getCountryOfPublicationValue();
+		publicationDate = product.publicationDate().value;
+		outOfPrintDate = product.outOfPrintDate().value;
+		countryOfPublication = product.countryOfPublication().value;
 		cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 	}
 
-	private String pickCityOfPublication(Product product, LanguageCodes preferredLanguage)
+	public static String pickCityOfPublication(Product product, LanguageCodes preferredLanguage)
 	{
-		if (product.cityOfPublications != null)
+		for (CityOfPublication cop : product.cityOfPublications())
 		{
-			for (CityOfPublication cop : product.cityOfPublications)
-			{
-				if (cop.language == null || cop.language == preferredLanguage)
-					return cop.value;
-			}
-			return product.cityOfPublications.get(0).value; // return whatever language we have
+			if (cop.language == null || cop.language == preferredLanguage)
+				return cop.value;
 		}
-		return null;
+		return product.cityOfPublications().firstValueOrNull(); // return whatever language we have
 	}
 }

@@ -21,7 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicPublishingDetails;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.onix3.CityOfPublication;
@@ -40,14 +39,16 @@ public class BasicPublishingDetails3 extends BasicPublishingDetails
 
 	public BasicPublishingDetails3(Product product)
 	{
-		PublishingDetail pd = product.publishingDetail;
-		if (pd != null)
+		PublishingDetail pd = product.publishingDetail();
+		if (pd.exists())
 		{
-			JonixPublishingDate jPublicationDate = pd.findPublishingDate(PublishingDateRoles.Publication_date);
+			JonixPublishingDate jPublicationDate = pd.publishingDates()
+					.findAsStructOrNull(PublishingDateRoles.Publication_date);
 			publicationDate = (jPublicationDate == null) ? null : jPublicationDate.date;
-			JonixPublishingDate jOutOfPrintDate = pd.findPublishingDate(PublishingDateRoles.Out_of_print_deletion_date);
+			JonixPublishingDate jOutOfPrintDate = pd.publishingDates()
+					.findAsStructOrNull(PublishingDateRoles.Out_of_print_deletion_date);
 			outOfPrintDate = (jOutOfPrintDate == null) ? null : jOutOfPrintDate.date;
-			countryOfPublication = pd.getCountryOfPublicationValue();
+			countryOfPublication = pd.countryOfPublication().value;
 			cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
 		}
 		else
@@ -60,11 +61,11 @@ public class BasicPublishingDetails3 extends BasicPublishingDetails
 
 	private String pickCityOfPublication(Product product, LanguageCodes preferredLanguage)
 	{
-		if (product.publishingDetail == null)
+		if (!product.publishingDetail().exists())
 			return null;
 
-		List<CityOfPublication> cops = product.publishingDetail.cityOfPublications;
-		if (cops == null)
+		List<CityOfPublication> cops = product.publishingDetail().cityOfPublications();
+		if (cops.isEmpty())
 			return null;
 
 		for (CityOfPublication cop : cops)

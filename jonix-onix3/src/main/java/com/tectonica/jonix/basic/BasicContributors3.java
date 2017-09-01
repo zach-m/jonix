@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicContributor;
-import com.tectonica.jonix.basic.BasicContributors;
 import com.tectonica.jonix.onix3.Contributor;
 import com.tectonica.jonix.onix3.Product;
 
@@ -40,23 +38,20 @@ public class BasicContributors3 extends BasicContributors
 
 	public BasicContributors3(Product product)
 	{
-		contributors = (product.descriptiveDetail != null) ? product.descriptiveDetail.contributors : null;
+		contributors = product.descriptiveDetail().contributors();
 	}
 
 	public BasicContributors3(com.tectonica.jonix.onix3.Collection collection)
 	{
-		contributors = collection.contributors;
+		contributors = collection.contributors();
 	}
 
 	@Override
 	protected List<BasicContributor> initialize()
 	{
 		List<BasicContributor> list = new ArrayList<>();
-		if (contributors != null)
-		{
-			for (Contributor contributor : contributors)
-				list.add(new BasicContributor3(contributor));
-		}
+		for (Contributor contributor : contributors)
+			list.add(new BasicContributor3(contributor));
 		sortBySequence(list);
 		return list;
 	}

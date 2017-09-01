@@ -20,7 +20,6 @@
 package com.tectonica.jonix.basic;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.basic.BasicPrice;
 import com.tectonica.jonix.onix2.Price;
 
 /**
@@ -34,9 +33,9 @@ public class BasicPrice2 extends BasicPrice
 
 	public BasicPrice2(Price p)
 	{
-		priceType = p.getPriceTypeCodeValue();
-		priceAmount = JPU.convertStringToDoubleSafe(p.getPriceAmountValue());
+		priceType = p.priceTypeCode().value;
+		priceAmount = JPU.convertStringToDoubleSafe(p.priceAmount().value);
 		priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
-		currencyCode = p.getCurrencyCodeValue();
+		currencyCode = p.currencyCode().value;
 	}
 }

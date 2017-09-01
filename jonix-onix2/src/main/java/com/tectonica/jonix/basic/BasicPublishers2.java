@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicPublisher;
-import com.tectonica.jonix.basic.BasicPublishers;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Publisher;
 
@@ -47,11 +45,8 @@ public class BasicPublishers2 extends BasicPublishers
 	protected List<BasicPublisher> initialize()
 	{
 		List<BasicPublisher> list = new ArrayList<>();
-		if (product.publishers != null)
-		{
-			for (Publisher publisher : product.publishers)
-				list.add(new BasicPublisher2(publisher));
-		}
+		for (Publisher publisher : product.publishers())
+			list.add(new BasicPublisher2(publisher));
 		return list;
 	}
 }

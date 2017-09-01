@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicSubject;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix3.Subject;
@@ -34,28 +33,29 @@ public class BasicSubject3 extends BasicSubject
 {
 	private static final long serialVersionUID = 1L;
 
-	public BasicSubject3(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode, String subjectHeadingText)
+	public BasicSubject3(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
+			String subjectHeadingText)
 	{
 		super(subjectSchemeIdentifier, subjectCode, subjectHeadingText);
 	}
 
 	public BasicSubject3(Subject s)
 	{
-		subjectSchemeIdentifier = s.getSubjectSchemeIdentifierValue();
-		subjectCode = s.getSubjectCodeValue();
+		subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
+		subjectCode = s.subjectCode().value;
 		subjectHeadingText = pickSubjectHeadingText(s);
 	}
 
 	private String pickSubjectHeadingText(Subject subject)
 	{
-		if (subject.subjectHeadingTexts != null)
+		if (!subject.subjectHeadingTexts().isEmpty())
 		{
-			for (SubjectHeadingText sht : subject.subjectHeadingTexts)
+			for (SubjectHeadingText sht : subject.subjectHeadingTexts())
 			{
 				if (sht.language == null || sht.language == LanguageCodes.English)
 					return sht.value;
 			}
-			return subject.subjectHeadingTexts.get(0).value; // return whatever language we have
+			return subject.subjectHeadingTexts().get(0).value; // return whatever language we have
 		}
 		return null;
 	}

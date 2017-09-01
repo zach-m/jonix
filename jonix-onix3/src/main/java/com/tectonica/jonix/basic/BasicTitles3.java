@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicTitle;
-import com.tectonica.jonix.basic.BasicTitles;
 import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.TitleDetail;
@@ -39,25 +37,22 @@ public class BasicTitles3 extends BasicTitles
 
 	private transient final List<TitleDetail> titles;
 
-	@Override
-	protected List<BasicTitle> initialize()
-	{
-		List<BasicTitle> list = new ArrayList<>();
-		if (titles != null)
-		{
-			for (TitleDetail title : titles)
-				list.add(new BasicTitle3(title));
-		}
-		return list;
-	}
-
 	public BasicTitles3(Product product)
 	{
-		titles = (product.descriptiveDetail != null) ? product.descriptiveDetail.titleDetails : null;
+		titles = product.descriptiveDetail().titleDetails();
 	}
 
 	public BasicTitles3(Collection collection)
 	{
-		titles = collection.titleDetails;
+		titles = collection.titleDetails();
+	}
+
+	@Override
+	protected List<BasicTitle> initialize()
+	{
+		List<BasicTitle> list = new ArrayList<>();
+		for (TitleDetail title : titles)
+			list.add(new BasicTitle3(title));
+		return list;
 	}
 }

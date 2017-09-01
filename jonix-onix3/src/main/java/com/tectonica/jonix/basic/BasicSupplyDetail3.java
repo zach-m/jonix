@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicSupplyDetail;
 import com.tectonica.jonix.onix3.SupplyDetail;
 
 /**
@@ -33,9 +32,9 @@ public class BasicSupplyDetail3 extends BasicSupplyDetail
 
 	public BasicSupplyDetail3(SupplyDetail supplyDetail)
 	{
-		supplierRole = supplyDetail.supplier.getSupplierRoleValue();
-		supplierName = supplyDetail.supplier.getSupplierNameValue();
-		availability = supplyDetail.getProductAvailabilityValue().name();
+		supplierRole = supplyDetail.supplier().supplierRole().value;
+		supplierName = supplyDetail.supplier().supplierName().value;
+		availability = supplyDetail.productAvailability().value.name();
 		prices = new BasicPrices3(supplyDetail);
 	}
 }

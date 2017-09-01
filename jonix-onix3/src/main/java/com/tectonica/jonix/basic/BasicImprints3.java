@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicImprint;
-import com.tectonica.jonix.basic.BasicImprints;
 import com.tectonica.jonix.onix3.Imprint;
 import com.tectonica.jonix.onix3.Product;
 
@@ -47,11 +45,8 @@ public class BasicImprints3 extends BasicImprints
 	protected List<BasicImprint> initialize()
 	{
 		List<BasicImprint> list = new ArrayList<>();
-		if (product.publishingDetail.imprints != null)
-		{
-			for (Imprint imprint : product.publishingDetail.imprints)
-				list.add(new BasicImprint3(imprint));
-		}
+		for (Imprint imprint : product.publishingDetail().imprints())
+			list.add(new BasicImprint3(imprint));
 		return list;
 	}
 }

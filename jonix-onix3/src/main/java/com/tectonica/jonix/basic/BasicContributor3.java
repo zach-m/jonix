@@ -21,7 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.util.HashSet;
 
-import com.tectonica.jonix.basic.BasicContributor;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.onix3.BiographicalNote;
 import com.tectonica.jonix.onix3.Contributor;
@@ -37,28 +36,24 @@ public class BasicContributor3 extends BasicContributor
 
 	public BasicContributor3(Contributor c)
 	{
-		contributorRoles = new HashSet<>(c.getContributorRoleValues());
-		Integer sequenceNumberValue = c.getSequenceNumberValue();
+		contributorRoles = (c.contributorRoles().valuesInto(new HashSet<>()));
+		Integer sequenceNumberValue = c.sequenceNumber().value;
 		sequenceNumber = (sequenceNumberValue == null) ? null : sequenceNumberValue.toString();
-		personName = c.getPersonNameValue();
-		personNameKey = c.getKeyNamesValue();
-		personNameBeforeKey = c.getNamesBeforeKeyValue();
-		personNameInverted = c.getPersonNameInvertedValue();
-		corporateName = c.getCorporateNameValue();
+		personName = c.personName().value;
+		personNameKey = c.keyNames().value;
+		personNameBeforeKey = c.namesBeforeKey().value;
+		personNameInverted = c.personNameInverted().value;
+		corporateName = c.corporateName().value;
 		biographicalNote = pickBiographicalNote(c);
 	}
 
 	private String pickBiographicalNote(Contributor contributor)
 	{
-		if (contributor.biographicalNotes != null)
+		for (BiographicalNote bio : contributor.biographicalNotes())
 		{
-			for (BiographicalNote bio : contributor.biographicalNotes)
-			{
-				if (bio.language == null || bio.language == LanguageCodes.English)
-					return bio.value;
-			}
-			return contributor.biographicalNotes.get(0).value; // return whatever language we have
+			if (bio.language == null || bio.language == LanguageCodes.English)
+				return bio.value;
 		}
-		return null;
+		return contributor.biographicalNotes().firstValueOrNull(); // return whatever language we have
 	}
 }

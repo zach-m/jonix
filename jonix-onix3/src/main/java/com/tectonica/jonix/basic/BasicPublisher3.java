@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicPublisher;
 import com.tectonica.jonix.onix3.Publisher;
 
 /**
@@ -33,7 +32,7 @@ public class BasicPublisher3 extends BasicPublisher
 
 	public BasicPublisher3(Publisher i)
 	{
-		publishingRole = i.getPublishingRoleValue();
-		publisherName = i.getPublisherNameValue();
+		publishingRole = i.publishingRole().value;
+		publisherName = i.publisherName().value;
 	}
 }

@@ -22,7 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.onix3.Addressee;
 import com.tectonica.jonix.onix3.Header;
 
@@ -37,24 +36,21 @@ public class BasicHeader3 extends BasicHeader
 
 	public BasicHeader3(Header header)
 	{
-		fromCompany = header.sender.getSenderNameValue();
-		fromPerson = header.sender.getContactNameValue();
-		fromEmail = header.sender.getEmailAddressValue();
+		fromCompany = header.sender().senderName().value;
+		fromPerson = header.sender().contactName().value;
+		fromEmail = header.sender().emailAddress().value;
 		toCompanies = extractToCompanies(header);
-		sentDate = header.getSentDateTimeValue();
+		sentDate = header.sentDateTime().value;
 	}
 
 	private List<String> extractToCompanies(Header header)
 	{
 		List<String> list = new ArrayList<>();
-		if (header.addressees != null)
+		for (Addressee addressee : header.addressees())
 		{
-			for (Addressee addressee : header.addressees)
-			{
-				String toCompany = addressee.getAddresseeNameValue();
-				if (toCompany != null)
-					list.add(toCompany);
-			}
+			String toCompany = addressee.addresseeName().value;
+			if (toCompany != null)
+				list.add(toCompany);
 		}
 		return list.size() > 0 ? list : null;
 	}

@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.onix3.Product;
 
 /**

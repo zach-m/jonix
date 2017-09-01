@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicSupplyDetail;
-import com.tectonica.jonix.basic.BasicSupplyDetails;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.ProductSupply;
 import com.tectonica.jonix.onix3.SupplyDetail;
@@ -48,13 +46,10 @@ public class BasicSupplyDetails3 extends BasicSupplyDetails
 	protected List<BasicSupplyDetail> initialize()
 	{
 		List<BasicSupplyDetail> list = new ArrayList<>();
-		if (product.productSupplys != null)
+		for (ProductSupply ps : product.productSupplys()) // scanning all markets, maybe not good idea
 		{
-			for (ProductSupply ps : product.productSupplys) // scanning all markets, maybe not good idea
-			{
-				for (SupplyDetail supplyDetail : ps.supplyDetails)
-					list.add(new BasicSupplyDetail3(supplyDetail));
-			}
+			for (SupplyDetail supplyDetail : ps.supplyDetails())
+				list.add(new BasicSupplyDetail3(supplyDetail));
 		}
 		return list;
 	}

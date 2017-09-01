@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicTitle;
 import com.tectonica.jonix.onix2.Title;
 
 /**
@@ -33,9 +32,9 @@ public class BasicTitle2 extends BasicTitle
 
 	public BasicTitle2(Title title)
 	{
-		titleType = title.getTitleTypeValue();
-		titleText = noBreaks(title.getTitleTextValue());
-		titleWithoutPrefix = noBreaks(title.getTitleWithoutPrefixValue());
-		subtitle = noBreaks(title.getSubtitleValue());
+		titleType = title.titleType().value;
+		titleText = noBreaks(title.titleText().value);
+		titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
+		subtitle = noBreaks(title.subtitle().value);
 	}
 }

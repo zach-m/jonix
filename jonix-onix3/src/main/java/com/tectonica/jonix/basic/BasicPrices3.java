@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicPrice;
-import com.tectonica.jonix.basic.BasicPrices;
 import com.tectonica.jonix.onix3.Price;
 import com.tectonica.jonix.onix3.SupplyDetail;
 
@@ -47,11 +45,8 @@ public class BasicPrices3 extends BasicPrices
 	protected List<BasicPrice> initialize()
 	{
 		List<BasicPrice> list = new ArrayList<>();
-		if (supplyDetail.prices != null)
-		{
-			for (Price price : supplyDetail.prices)
-				list.add(new BasicPrice3(price));
-		}
+		for (Price price : supplyDetail.prices())
+			list.add(new BasicPrice3(price));
 		return list;
 	}
 }

@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicText;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.onix3.Text;
 import com.tectonica.jonix.onix3.TextContent;
@@ -35,7 +34,7 @@ public class BasicText3 extends BasicText
 
 	public BasicText3(TextContent textContent)
 	{
-		textType = textContent.getTextTypeValue();
+		textType = textContent.textType().value;
 		Text textElement = pickTextObject(textContent);
 		if (textElement != null) // invalid ONIX
 		{
@@ -50,14 +49,14 @@ public class BasicText3 extends BasicText
 	 */
 	private Text pickTextObject(TextContent textContent)
 	{
-		if (textContent.texts != null)
+		if (!textContent.texts().isEmpty())
 		{
-			for (Text text : textContent.texts)
+			for (Text text : textContent.texts())
 			{
 				if (text.language == null || text.language == LanguageCodes.English)
 					return text;
 			}
-			return textContent.texts.get(0); // return the first element, regardless of its language
+			return textContent.texts().get(0); // return the first element, regardless of its language
 		}
 		return null;
 	}

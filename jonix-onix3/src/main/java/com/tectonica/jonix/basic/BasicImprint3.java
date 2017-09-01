@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicImprint;
 import com.tectonica.jonix.onix3.Imprint;
 
 /**
@@ -34,6 +33,6 @@ public class BasicImprint3 extends BasicImprint
 	public BasicImprint3(Imprint imprint)
 	{
 		// TODO: we should at least read one required field (unlike ImprintName)
-		imprintName = imprint.getImprintNameValue();
+		imprintName = imprint.imprintName().value;
 	}
 }

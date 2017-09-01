@@ -37,22 +37,22 @@ public class BasicDescription2 extends BasicDescription
 
 	public BasicDescription2(Product product)
 	{
-		editionType = (product.editionTypeCodes == null) ? null : product.editionTypeCodes.get(0).value;
-		editionNumber = JPU.convertStringToInteger(product.getEditionNumberValue());
-		ProductForms productFormValue = product.getProductFormValue();
+		editionType = product.editionTypeCodes().firstValueOrNull();
+		editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
+		ProductForms productFormValue = product.productForm().value;
 		productForm = (productFormValue == null) ? null : productFormValue.description;
-		numberOfPages = product.getNumberOfPagesValue();
-		languages = product.findLanguages(null); // TODO: lazy
-		audiences = product.findAudiences(null); // TODO: lazy
-		audienceCodes = product.getAudienceCodeValues();
-		audienceRange = (product.audienceRanges == null) ? null : product.audienceRanges.get(0);
+		numberOfPages = product.numberOfPages().value;
+		languages = product.languages().asStructs(); // TODO: lazy
+		audiences = product.audiences().asStructs(); // TODO: lazy
+		audienceCodes = product.audienceCodes().values();
+		audienceRange = product.audienceRanges().firstOrNull();
 	}
 
 	@Override
 	public Integer[] getFirstAudienceAgeRange()
 	{
 		if (audienceRange != null)
-			return getAudienceAgeRange(audienceRange.asJonixAudienceRange());
+			return getAudienceAgeRange(audienceRange.asStruct());
 		return new Integer[] { null, null };
 	}
 }

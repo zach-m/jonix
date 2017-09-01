@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicText;
-import com.tectonica.jonix.basic.BasicTexts;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.TextContent;
 
@@ -47,11 +45,8 @@ public class BasicTexts3 extends BasicTexts
 	protected List<BasicText> initialize()
 	{
 		List<BasicText> list = new ArrayList<>();
-		if (product.collateralDetail.textContents != null)
-		{
-			for (TextContent textContent : product.collateralDetail.textContents)
-				list.add(new BasicText3(textContent));
-		}
+		for (TextContent textContent : product.collateralDetail().textContents())
+			list.add(new BasicText3(textContent));
 		return list;
 	}
 }

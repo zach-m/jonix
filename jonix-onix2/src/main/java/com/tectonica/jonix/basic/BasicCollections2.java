@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicCollection;
-import com.tectonica.jonix.basic.BasicCollections;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Series;
 
@@ -47,11 +45,8 @@ public class BasicCollections2 extends BasicCollections
 	protected List<BasicCollection> initialize()
 	{
 		List<BasicCollection> list = new ArrayList<>();
-		if (product.seriess != null)
-		{
-			for (Series series : product.seriess)
-				list.add(new BasicCollection2(series));
-		}
+		for (Series series : product.seriess())
+			list.add(new BasicCollection2(series));
 		return list;
 	}
 }

@@ -21,7 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.util.Arrays;
 
-import com.tectonica.jonix.basic.BasicHeader;
 import com.tectonica.jonix.onix2.Header;
 
 /**
@@ -35,38 +34,11 @@ public class BasicHeader2 extends BasicHeader
 
 	public BasicHeader2(Header header)
 	{
-		fromCompany = header.getFromCompanyValue();
-		fromPerson = header.getFromPersonValue();
-		fromEmail = header.getFromEmailValue();
-		String toCompany = header.getToCompanyValue();
+		fromCompany = header.fromCompany().value;
+		fromPerson = header.fromPerson().value;
+		fromEmail = header.fromEmail().value;
+		String toCompany = header.toCompany().value;
 		toCompanies = (toCompany == null) ? null : Arrays.asList(toCompany);
-		sentDate = header.getSentDateValue();
+		sentDate = header.sentDate().value;
 	}
-
-//	/**
-//	 * constructor for ONIX3 &lt;Header&gt; element
-//	 */
-//	public BasicHeader2(com.tectonica.jonix.onix3.Header header)
-//	{
-//		fromCompany = header.sender.getSenderNameValue();
-//		fromPerson = header.sender.getContactNameValue();
-//		fromEmail = header.sender.getEmailAddressValue();
-//		toCompanies = extractToCompanies(header);
-//		sentDate = header.getSentDateTimeValue();
-//	}
-//
-//	private List<String> extractToCompanies(com.tectonica.jonix.onix3.Header header)
-//	{
-//		List<String> list = new ArrayList<>();
-//		if (header.addressees != null)
-//		{
-//			for (Addressee addressee : header.addressees)
-//			{
-//				String toCompany = addressee.getAddresseeNameValue();
-//				if (toCompany != null)
-//					list.add(toCompany);
-//			}
-//		}
-//		return list.size() > 0 ? list : null;
-//	}
 }

@@ -22,8 +22,6 @@ package com.tectonica.jonix.basic;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicSalesRights;
-import com.tectonica.jonix.basic.BasicSalesRightss;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.SalesRights;
 
@@ -47,11 +45,8 @@ public class BasicSalesRightss2 extends BasicSalesRightss
 	protected List<BasicSalesRights> initialize()
 	{
 		List<BasicSalesRights> list = new ArrayList<>();
-		if (product.salesRightss != null)
-		{
-			for (SalesRights salesRights : product.salesRightss)
-				list.add(new BasicSalesRights2(salesRights));
-		}
+		for (SalesRights salesRights : product.salesRightss())
+			list.add(new BasicSalesRights2(salesRights));
 		return list;
 	}
 }

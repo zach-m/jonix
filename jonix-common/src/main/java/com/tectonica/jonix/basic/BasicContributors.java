@@ -37,7 +37,7 @@ import com.tectonica.jonix.codelist.ContributorRoles;
 @SuppressWarnings("serial")
 public abstract class BasicContributors extends LazyList<BasicContributor>
 {
-	protected void sortBySequence(List<BasicContributor> contributors)
+	public static void sortBySequence(List<BasicContributor> contributors)
 	{
 		// run a quick test to see if the list is at all sequenced. If it is, then this loop should really stop after
 		// one iteration. The only reason to run a loop (rather than examining the first item) is that we want to

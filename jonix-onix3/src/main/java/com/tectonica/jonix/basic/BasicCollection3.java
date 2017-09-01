@@ -21,8 +21,6 @@ package com.tectonica.jonix.basic;
 
 import java.util.List;
 
-import com.tectonica.jonix.basic.BasicCollection;
-import com.tectonica.jonix.basic.LazyList;
 import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 
@@ -40,17 +38,17 @@ public class BasicCollection3 extends BasicCollection
 	{
 		titles = new BasicTitles3(c);
 		mainTitle = (titles != null) ? titles.get(0).titleText : null;
-		
+
 		// TODO: also look at Collection -> TitleDetail -> TitleElement -> PartNumber
-		numberWithinSeries = (c.collectionSequences != null) ? c.collectionSequences.get(0)
-				.getCollectionSequenceNumberValue() : null;
+		numberWithinSeries = (c.collectionSequences().isEmpty()) ? null
+				: c.collectionSequences().get(0).collectionSequenceNumber().value;
 
 		seriesIdentifiers = new LazyList<JonixCollectionIdentifier>()
 		{
 			@Override
 			protected List<JonixCollectionIdentifier> initialize()
 			{
-				return c.findCollectionIdentifiers(null);
+				return c.collectionIdentifiers().asStructs();
 			}
 		};
 		contributors = new BasicContributors3(c);

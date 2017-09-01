@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix.basic;
 
-import com.tectonica.jonix.basic.BasicTitle;
 import com.tectonica.jonix.onix3.TitleDetail;
 import com.tectonica.jonix.onix3.TitleElement;
 
@@ -34,11 +33,11 @@ public class BasicTitle3 extends BasicTitle
 
 	public BasicTitle3(TitleDetail title)
 	{
-		// TODO: check out the TitleElementLevel of the TitleElement, especially in collections 
-		TitleElement titleElement = title.titleElements.get(0); // at least 1 is mandatory
-		titleType = title.getTitleTypeValue();
-		titleText = noBreaks(titleElement.getTitleTextValue());
-		titleWithoutPrefix = noBreaks(titleElement.getTitleWithoutPrefixValue());
-		subtitle = noBreaks(titleElement.getSubtitleValue());
+		// TODO: check out the TitleElementLevel of the TitleElement, especially in collections
+		TitleElement titleElement = title.titleElements().get(0); // at least 1 is mandatory
+		titleType = title.titleType().value;
+		titleText = noBreaks(titleElement.titleText().value);
+		titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
+		subtitle = noBreaks(titleElement.subtitle().value);
 	}
 }
