@@ -1,253 +1,281 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.tectonica</groupId>
-	<artifactId>jonix-parent</artifactId>
-	<version>8.0-rc1</version>
-	<packaging>pom</packaging>
+    <groupId>com.tectonica</groupId>
+    <artifactId>jonix-parent</artifactId>
+    <version>8.0-rc1</version>
+    <packaging>pom</packaging>
 
-	<name>Jonix - Parent</name>
-	<description>Common configuration for Jonix projects</description>
-	<url>https://github.com/zach-m/jonix</url>
+    <name>Jonix - Parent</name>
+    <description>Common configuration for Jonix projects</description>
+    <url>https://github.com/zach-m/jonix</url>
 
-	<organization>
-		<name>Tectonica Labs</name>
-		<url>www.tectonica.co.il</url>
-	</organization>
+    <organization>
+        <name>Tectonica Labs</name>
+        <url>www.tectonica.co.il</url>
+    </organization>
 
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
-			<name>Zach Melamed</name>
-			<email>zach@tectonica.co.il</email>
-			<organization>Tectonica Labs</organization>
-			<organizationUrl>www.tectonica.co.il</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Zach Melamed</name>
+            <email>zach@tectonica.co.il</email>
+            <organization>Tectonica Labs</organization>
+            <organizationUrl>www.tectonica.co.il</organizationUrl>
+        </developer>
+    </developers>
 
-	<scm>
-		<url>https://github.com/zach-m/jonix.git</url>
-		<connection>scm:git:https://github.com/zach-m/jonix.git</connection>
-	</scm>
+    <scm>
+        <url>https://github.com/zach-m/jonix.git</url>
+        <connection>scm:git:https://github.com/zach-m/jonix.git</connection>
+    </scm>
 
-	<modules>
-		<module>jonix</module>
-		<module>jonix-common</module>
-		<module>jonix-xml</module>
-		<module>jonix-onix2</module>
-		<module>jonix-onix3</module>
-	</modules>
+    <modules>
+        <module>jonix</module>
+        <module>jonix-common</module>
+        <module>jonix-xml</module>
+        <module>jonix-onix2</module>
+        <module>jonix-onix3</module>
+    </modules>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.jackson>2.6.5</version.jackson>
-		<version.slf4j>1.7.7</version.slf4j>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.jackson>2.6.5</version.jackson>
+        <version.slf4j>1.7.7</version.slf4j>
+    </properties>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<!-- Configure Compiler -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.5.1</version>
-					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
-					</configuration>
-				</plugin>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Configure Compiler -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
 
-				<!-- Configure the Master Javadocs -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>2.10.4</version>
-					<configuration>
-						<doctitle>Jonix Framework ${project.version} APIs</doctitle>
-						<windowtitle>Jonix Framework ${project.version} APIs</windowtitle>
-						<encoding>UTF-8</encoding>
-						<aggregate>true</aggregate>
-						<excludePackageNames>com.tectonica.repackaged:net</excludePackageNames>
-					</configuration>
-				</plugin>
+                <!-- Configure the Master Javadocs -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.4</version>
+                    <configuration>
+                        <doctitle>Jonix Framework ${project.version} APIs</doctitle>
+                        <windowtitle>Jonix Framework ${project.version} APIs</windowtitle>
+                        <encoding>UTF-8</encoding>
+                        <aggregate>true</aggregate>
+                        <excludePackageNames>com.tectonica.repackaged:net</excludePackageNames>
+                    </configuration>
+                </plugin>
 
-				<!-- Configure logging properties when running tests -->
-				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.19.1</version>
-					<configuration>
-						<systemProperties>
-							<property>
-								<name>java.util.logging.config.file</name>
-								<value>src/test/resources/logging.properties</value>
-							</property>
-						</systemProperties>
-					</configuration>
-				</plugin>
+                <!-- Configure logging properties when running tests -->
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <configuration>
+                        <systemProperties>
+                            <property>
+                                <name>java.util.logging.config.file</name>
+                                <value>src/test/resources/logging.properties</value>
+                            </property>
+                        </systemProperties>
+                    </configuration>
+                </plugin>
 
-			</plugins>
-		</pluginManagement>
-	</build>
+            </plugins>
+        </pluginManagement>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- Internal Projects -->
-			<dependency>
-				<groupId>com.tectonica</groupId>
-				<artifactId>jonix</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-codegen</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-common</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-xml</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-onix2</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.tectonica</groupId>
-				<artifactId>jonix-onix3</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.17</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>8.1</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate-checkstyle</id>
+                        <phase>verify</phase>
+                        <!--<phase>process-classes</phase>-->
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
-			<!-- JSON -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>${version.jackson}</version>
-			</dependency>
+    <dependencyManagement>
+        <dependencies>
+            <!-- Internal Projects -->
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix-codegen</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix-xml</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix-onix2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix-onix3</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-			<!-- Logging -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-jdk14</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
+            <!-- JSON -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${version.jackson}</version>
+            </dependency>
 
-			<!-- Testing -->
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.12</version>
-				<scope>test</scope>
-			</dependency>
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${version.slf4j}</version>
+            </dependency>
 
-		</dependencies>
-	</dependencyManagement>
+            <!-- Testing -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
 
-	<!-- Deployment-related configuration -->
-	<!-- To deploy: mvn clean deploy -P release -->
-	<profiles>
-		<profile>
-			<id>release</id>
+        </dependencies>
+    </dependencyManagement>
 
-			<!-- Repository location -->
-			<distributionManagement>
-				<snapshotRepository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</snapshotRepository>
-			</distributionManagement>
+    <!-- Deployment-related configuration -->
+    <!-- To deploy: mvn clean deploy -P release -->
+    <profiles>
+        <profile>
+            <id>release</id>
 
-			<build>
-				<plugins>
+            <!-- Repository location -->
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
 
-					<!-- Generate source code -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>3.0.1</version>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
+            <build>
+                <plugins>
 
-					<!-- Generate javadocs -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.10.4</version>
-						<configuration>
-							<doctitle>${project.name} ${project.version} APIs</doctitle>
-							<windowtitle>${project.name} ${project.version} APIs</windowtitle>
-							<encoding>UTF-8</encoding>
-							<aggregate>false</aggregate>
-						</configuration>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
+                    <!-- Generate source code -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-					<!-- GPG - needed for deployment -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
+                    <!-- Generate javadocs -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.4</version>
+                        <configuration>
+                            <doctitle>${project.name} ${project.version} APIs</doctitle>
+                            <windowtitle>${project.name} ${project.version} APIs</windowtitle>
+                            <encoding>UTF-8</encoding>
+                            <aggregate>false</aggregate>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-					<!-- deployment to OSSRH -->
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.7</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
+                    <!-- GPG - needed for deployment -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-				</plugins>
-			</build>
-		</profile>
+                    <!-- deployment to OSSRH -->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
 
-	</profiles>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 </project>
