@@ -34,6 +34,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
+
 /**
  * an all-static Jonix Processing Utility class, assisting in run time processing of the DOM elements.
  * <p>
@@ -63,6 +66,7 @@ public class JPU
 		return (Element) item;
 	}
 
+	@FunctionalInterface
 	public static interface ElementListener
 	{
 		void onElement(Element element);
@@ -144,7 +148,30 @@ public class JPU
 
 	public static <T> List<T> addToList(List<T> in, T item)
 	{
-		List<T> out = (in != null) ? in : new ArrayList<T>();
+		List<T> out = (in.size() > 0) ? in : new ArrayList<>();
+		out.add(item);
+		return out;
+	}
+
+	public static <E extends OnixElement<V>, V> ListOfOnixElement<E, V> addToList(ListOfOnixElement<E, V> in, E item)
+	{
+		ListOfOnixElement<E, V> out = (in.size() > 0) ? in : new ListOfOnixElement<>();
+		out.add(item);
+		return out;
+	}
+
+	public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> addToList(
+			ListOfOnixDataComposite<C, S> in, C item)
+	{
+		ListOfOnixDataComposite<C, S> out = (in.size() > 0) ? in : new ListOfOnixDataComposite<>();
+		out.add(item);
+		return out;
+	}
+
+	public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K>> ListOfOnixDataCompositeWithKey<C, S, K> addToList(
+			ListOfOnixDataCompositeWithKey<C, S, K> in, C item)
+	{
+		ListOfOnixDataCompositeWithKey<C, S, K> out = (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>();
 		out.add(item);
 		return out;
 	}

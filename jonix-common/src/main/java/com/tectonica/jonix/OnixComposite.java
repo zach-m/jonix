@@ -22,7 +22,7 @@ package com.tectonica.jonix;
 /**
  * represents an ONIX composite (i.e. a container for ONIX elements and possibly other ONIX composites)
  */
-public interface OnixComposite
+public interface OnixComposite extends OnixTag
 {
 	/**
 	 * represents an ONIX composite that contains other composites
@@ -31,8 +31,27 @@ public interface OnixComposite
 	{}
 
 	/**
-	 * represents an ONIX composite that contains only ONIX elements (i.e. no composites)
+	 * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites). This composite is
+	 * unique to specific version of ONIX, and isn't common to all
 	 */
-	public static interface OnixDataComposite extends OnixComposite
+	public static interface OnixDataCompositeUncommon extends OnixComposite
 	{}
+
+	/**
+	 * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites)
+	 */
+	public static interface OnixDataComposite<V extends JonixStruct> extends OnixComposite
+	{
+		V asStruct();
+	}
+
+	/**
+	 * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites), one of which is the
+	 * key of the composite (i.e. a mandatory enumerated value, by which a composite can't be looked up)
+	 */
+	public static interface OnixDataCompositeWithKey<V extends JonixKeyedStruct<K>, K extends Enum<K>>
+			extends OnixDataComposite<V>
+	{
+		K structKey();
+	}
 }

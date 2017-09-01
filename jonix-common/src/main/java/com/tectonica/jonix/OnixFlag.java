@@ -22,5 +22,5 @@ package com.tectonica.jonix;
 /**
  * represents an ONIX flag (i.e. has no content, marks something simply by being present)
  */
-public interface OnixFlag
+public interface OnixFlag extends OnixTag
 {}

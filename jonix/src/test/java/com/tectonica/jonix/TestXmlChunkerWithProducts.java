@@ -73,17 +73,19 @@ public class TestXmlChunkerWithProducts
 					Product product = new Product(element);
 
 					// get some basic properties of the book
-					JonixProductIdentifier isbn = product.findProductIdentifier(ProductIdentifierTypes.ISBN_13);
-					JonixTitle title = product.findTitle(TitleTypes.Distinctive_title_book);
+					JonixProductIdentifier isbn = product.productIdentifiers()
+							.findAsStructOrNull(ProductIdentifierTypes.ISBN_13);
+					JonixTitle title = product.titles().findAsStructOrNull(TitleTypes.Distinctive_title_book);
 					String titleValue = (title == null) ? "N/A" : title.titleText;
 					String isbnValue = (isbn == null) ? "N/A" : isbn.idValue;
-					boolean hasSeriesInfo = (product.seriess != null) && !product.seriess.isEmpty();
-					String seriesTitleValue = hasSeriesInfo ? product.seriess.get(0).titleOfSeries.value + " / " : "";
+					boolean hasSeriesInfo = !product.seriess().isEmpty();
+					String seriesTitleValue = hasSeriesInfo ? product.seriess().get(0).titleOfSeries().value + " / "
+							: "";
 
 					// print
 					++count;
-					System.out.println(String.format("#%04d: title='%s', isbn='%s'", count, seriesTitleValue
-							+ titleValue, isbnValue));
+					System.out.println(String.format("#%04d: title='%s', isbn='%s'", count,
+							seriesTitleValue + titleValue, isbnValue));
 
 					// in rare cases where there is no title, we print the entire XML record (as JSON)
 					if (title == null)

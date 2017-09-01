@@ -28,7 +28,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class OnixStruct implements Comparable<OnixStruct>
 {
 	public final OnixCompositeDef containingComposite;
+	
+	/**
+	 * key member refers to a mandatory enum field of the struct
+	 */
 	public OnixStructMember keyMember = null;
+	
 	public List<OnixStructMember> members = new ArrayList<>();
 
 	public OnixStruct(OnixCompositeDef containingComposite)

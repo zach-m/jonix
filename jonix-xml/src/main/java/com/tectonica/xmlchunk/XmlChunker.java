@@ -78,6 +78,7 @@ public class XmlChunker
 	 * 
 	 * @author Zach Melamed
 	 */
+	@FunctionalInterface
 	public static interface Listener
 	{
 		/**
@@ -89,7 +90,8 @@ public class XmlChunker
 		 * @param element
 		 *            the element itself (this is NOT a DOM element)
 		 */
-		public void onPreTargetStart(int depth, StartElement element);
+		public default void onPreTargetStart(int depth, StartElement element)
+		{};
 
 		/**
 		 * Fired with an in-memory DOM representation of an XML sub-tree positioned at the target depth

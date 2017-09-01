@@ -35,7 +35,6 @@ import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.metadata.OnixStructMember;
-import com.tectonica.jonix.codegen.metadata.OnixStructMember.TransformationType;
 
 public class OnixClassGen
 {
@@ -78,8 +77,38 @@ public class OnixClassGen
 
 	private void writeCompositeClass(OnixCompositeDef composite, PrintStream p)
 	{
+		final String markerInterfaceName;
+
 		final boolean isDataComposite = ref.jonixStructs.containsKey(composite.name);
-		final String markerInterfaceName = isDataComposite ? "OnixDataComposite" : "OnixSuperComposite";
+		final OnixStruct struct = ref.unifiedStructs.get(composite.name);
+		if (isDataComposite)
+		{
+			if (struct == null)
+			{
+				markerInterfaceName = "OnixDataCompositeUncommon";
+			}
+			else
+			{
+				final String structName = "Jonix" + composite.name;
+
+				if (struct.isKeyed())
+				{
+					OnixCompositeMember keyMember = struct.keyMember.dataMember;
+					OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
+					TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+					markerInterfaceName = String.format("OnixDataCompositeWithKey<%s,%s>", structName,
+							keyTypeInfo.javaType);
+				}
+				else
+				{
+					markerInterfaceName = String.format("OnixDataComposite<%s>", structName);
+				}
+			}
+		}
+		else
+		{
+			markerInterfaceName = "OnixSuperComposite";
+		}
 
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
@@ -87,9 +116,11 @@ public class OnixClassGen
 		p.println("import java.io.Serializable;");
 		p.println("import java.util.List;");
 		p.println("import java.util.ArrayList;");
+		p.println("import java.util.Arrays;");
+		p.println("import java.util.Collections;");
 		p.println();
-		p.printf("import %s.JPU;\n", GenUtil.COMMON_PACKAGE);
-		p.printf("import %s.OnixComposite.%s;\n", GenUtil.COMMON_PACKAGE, markerInterfaceName);
+		p.printf("import %s.*;\n", GenUtil.COMMON_PACKAGE);
+		p.printf("import %s.OnixComposite.*;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.codelist.*;\n", GenUtil.COMMON_PACKAGE);
 		p.printf("import %s.struct.*;\n", GenUtil.COMMON_PACKAGE);
 		p.println();
@@ -101,203 +132,197 @@ public class OnixClassGen
 
 		declareConstsAndAttributes(p, composite);
 
-		p.println();
-		printCaptionComment(p, "MEMBERS");
-
-		// declare members
-		for (OnixCompositeMember member : composite.members)
-		{
-			final FieldInfo fi = GenUtil.fieldInfoOf(member);
-			p.println();
-			p.printf("   /**\n");
-			p.printf("    * %s\n", fi.comment);
-			p.printf("    */\n");
-			p.printf("   public %s %s;\n", fi.type, fi.name, fi.comment);
-		}
+		/////////////////////////////////////////////////////////////////////////////////
+		// CONSTRUCTION
+		/////////////////////////////////////////////////////////////////////////////////
 
 		p.println();
-		printCaptionComment(p, "SERVICES");
+		printCaptionComment(p, "CONSTRUCTION");
+
+		p.println();
+		p.printf("   private boolean initialized;\n");
+		p.printf("   private final boolean exists;\n");
+		p.printf("   private final org.w3c.dom.Element element;\n");
+		p.printf("   public static final %s EMPTY = new %s();\n", composite.name, composite.name);
 
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", composite.name);
-		p.printf("   {}\n");
+		p.printf("   {\n");
+		p.printf("      exists = false;\n");
+		p.printf("      element = null;\n");
+		p.printf("      initialized = true; "
+				+ "// so that no further processing will be done on this intentionally-empty object\n");
+		p.printf("   }\n");
 
 		// constructor
 		p.println();
 		p.printf("   public %s(org.w3c.dom.Element element)\n", composite.name);
 		p.printf("   {\n");
+		p.printf("      exists = true;\n");
+		p.printf("      initialized = false;\n");
+		p.printf("      this.element = element;\n");
+		p.printf("   }\n");
 
+		p.println();
+		p.printf("   private void initialize()\n", composite.name);
+		p.printf("   {\n");
+		p.printf("      if (initialized) return;\n");
+		p.printf("      initialized = true;\n");
+
+		p.println();
 		setInitializers(composite, p);
 
 		p.println();
-		p.printf("      JPU.forElementsOf(element, new JPU.ElementListener()\n");
-		p.printf("      {\n");
-		p.printf("         @Override\n");
-		p.printf("         public void onElement(org.w3c.dom.Element element)\n");
-		p.printf("         {\n");
-		p.printf("            final String name = element.getNodeName();\n");
+		p.printf("      JPU.forElementsOf(element, e -> {\n");
+		p.printf("         final String name = e.getNodeName();\n");
 		boolean first = true;
 		for (OnixCompositeMember m : composite.members)
 		{
 			final String className = m.className;
-			final String field = GenUtil.fieldOf(className);
-			p.print("            ");
+			String field = GenUtil.fieldOf(className);
+			if (!m.cardinality.singular)
+				field += "s";
+			p.print("         ");
 			if (first)
 				first = false;
 			else
 				p.print("else ");
 			p.printf("if (name.%s(%s.refname) || name.%s(%s.shortname))\n", EQUALS, className, EQUALS, className);
 			if (m.cardinality.singular)
-				p.printf("               %s = new %s(element);\n", field, className);
+				p.printf("            %s = new %s(e);\n", field, className);
 			else
-				p.printf("               %ss = JPU.addToList(%ss, new %s(element));\n", field, field, className);
+				p.printf("            %s = JPU.addToList(%s, new %s(e));\n", field, field, className);
 		}
-		p.printf("         }\n");
 		p.printf("      });\n");
 
 		p.printf("   }\n");
 
-		// generate getters for members that have a single value (or single collection of values)
-		for (OnixCompositeMember m : composite.members)
+		p.println();
+		p.printf("   @Override\n");
+		p.printf("   public boolean exists()\n");
+		p.printf("   {\n");
+		p.printf("      return exists;\n");
+		p.printf("   }\n");
+
+		/////////////////////////////////////////////////////////////////////////////////
+		// MEMBERS
+		/////////////////////////////////////////////////////////////////////////////////
+
+		p.println();
+		printCaptionComment(p, "MEMBERS");
+
+		for (OnixCompositeMember member : composite.members)
 		{
-			// declare direct value getters for element-members
-			final OnixElementDef element = ref.onixElements.get(m.className);
-			if (element != null)
-			{
-				p.println();
-				boolean isEnum = element.valueMember.simpleType.isEnum();
-				if (!isEnum) // no need to provide format information on enums, they are parsed by the system
-				{
-					if (element.onixDoc != null && element.onixDoc.format != null && !element.onixDoc.format.isEmpty())
-					{
-						p.printf("   /**\n");
-						p.printf("   * Raw Format: %s\n", element.onixDoc.format);
-						p.printf("   */\n");
-					}
-				}
-				final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
-				final String field = GenUtil.fieldOf(m.className);
-				String javaType = ti.javaType;
-				if (element.isSpaceable)
-					javaType = "java.util.Set<" + javaType + ">";
-				if (m.cardinality.singular)
-				{
-					final String caption = element.isSpaceable ? "Set" : "Value";
-					p.printf("   public %s get%s%s()\n", javaType, m.className, caption);
-					p.printf("   {\n");
-					p.printf("      return (%s == null) ? null : %s.value;\n", field, field);
-					p.printf("   }\n");
-				}
-				else
-				{
-					final String caption = element.isSpaceable ? "Sets" : "Values";
-					p.printf("   public List<%s> get%s%s()\n", javaType, m.className, caption);
-					p.printf("   {\n");
-					p.printf("      if (%ss != null) \n", field);
-					p.printf("      { \n");
-					p.printf("         List<%s> list = new ArrayList<>(); \n", javaType);
-					p.printf("         for (%s i : %ss) \n", m.className, field);
-					p.printf("            list.add(i.value); \n");
-					p.printf("         return list; \n");
-					p.printf("      } \n");
-					p.printf("      return null;\n");
-					p.printf("   }\n");
-				}
-			}
+			final FieldInfo fi = GenUtil.fieldInfoOf(member, ref);
+
+			// declare member in a private field
+			p.println();
+			p.printf("   private %s %s = %s;\n", fi.type, fi.name, fi.emptyPhrase);
+
+			// declare public accessor to the member
+			p.println();
+			p.printf("   /**\n");
+			p.printf("    * %s\n", fi.comment);
+			p.printf("    */\n");
+			p.printf("   public %s %s()\n", fi.type, fi.name);
+			p.printf("   {\n");
+			p.printf("      initialize();\n");
+			p.printf("      return %s;\n", fi.name);
+			p.printf("   }\n");
 
 			// declare direct boolean getter for flag-members
-			final OnixFlagDef flag = ref.onixFlags.get(m.className);
+			final OnixFlagDef flag = ref.onixFlags.get(member.className);
 			if (flag != null)
 			{
-				final String field = GenUtil.fieldOf(flag.name);
-				if (m.cardinality.singular)
+				if (!member.cardinality.singular)
 				{
-					p.println();
-					p.printf("   public boolean is%s()\n", flag.name);
-					p.printf("   {\n");
-					p.printf("      return (%s != null);\n", field);
-					p.printf("   }\n");
-				}
-				else
-				{
+					// TODO: this is not the right place to make this validation. move to parsing.
 					throw new RuntimeException("can't handle multiple flags");
 				}
+
+				p.println();
+				p.printf("   public boolean is%s()\n", member.className);
+				p.printf("   {\n");
+				p.printf("      return (%s().exists());\n", fi.name);
+				p.printf("   }\n");
 			}
-		}
 
-		// declare struct finder for keyed, repeatable elements
-		for (OnixCompositeMember m : composite.members)
-		{
-			if (!m.cardinality.singular)
-			{
-				final OnixStruct struct = ref.unifiedStructs.get(m.className);
-				if (struct != null && struct.isKeyed())
-				{
-					final String structName = "Jonix" + m.className;
-					final OnixCompositeMember keyMember = struct.keyMember.dataMember;
-					final OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
-					final TypeInfo kti = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-					String keyClassName = keyMember.className;
-					if (struct.keyMember.transformationNeededInVersion == ref.onixVersion
-							&& struct.keyMember.transformationType == TransformationType.ChangeClassName)
-						keyClassName = struct.keyMember.transformationHint;
-					final String keyField = GenUtil.fieldOf(keyClassName);
-					final String memberfield = GenUtil.fieldOf(m.className) + "s";
-					final String caption = keyClass.isSpaceable ? "Set" : "Value";
-
-					p.println();
-					p.printf("   public %s find%s(%s %s)\n", structName, m.className, kti.javaType, keyField);
-					p.printf("   {\n");
-					p.printf("      if (%s != null)\n", memberfield);
-					p.printf("      {\n");
-					p.printf("         for (%s x : %s)\n", m.className, memberfield);
-					p.printf("         {\n");
-					p.printf("            if (x.get%s%s() == %s)\n", keyClassName, caption, keyField);
-					p.printf("               return x.as%s();\n", structName);
-					p.printf("         }\n");
-					p.printf("      }\n");
-					p.printf("      return null;\n");
-					p.printf("   }\n");
-
-					p.println();
-					p.printf("   public List<%s> find%ss(java.util.Set<%s> %ss)\n", structName, m.className,
-							kti.javaType, keyField);
-					p.printf("   {\n");
-					p.printf("      if (%s != null)\n", memberfield);
-					p.printf("      {\n");
-					p.printf("         List<%s> matches = new ArrayList<>();\n", structName);
-					p.printf("         for (%s x : %s)\n", m.className, memberfield);
-					p.printf("         {\n");
-					p.printf("            if (%ss == null || %ss.contains(x.get%s%s()))\n", keyField, keyField,
-							keyClassName, caption);
-					p.printf("               matches.add(x.as%s());\n", structName);
-					p.printf("         }\n");
-					p.printf("         return matches;\n", structName);
-					p.printf("      }\n");
-					p.printf("      return null;\n");
-					p.printf("   }\n");
-				}
-			}
+			// declare struct finder for keyed, repeatable elements
+//			if (!member.cardinality.singular)
+//			{
+//				final OnixStruct struct = ref.unifiedStructs.get(member.className);
+//				if (struct != null && struct.isKeyed())
+//				{
+//					// keyed struct means that it has a mandatory key field which is of enum type
+//					final String structName = "Jonix" + member.className;
+//					final OnixCompositeMember keyMember = struct.keyMember.dataMember;
+//					final OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
+//					final TypeInfo kti = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+//					String keyClassName = keyMember.className;
+//					if (struct.keyMember.transformationNeededInVersion == ref.onixVersion
+//							&& struct.keyMember.transformationType == TransformationType.ChangeClassName)
+//					{
+//						// we need to adapt the field name to the one of the struct (which based on another onix
+//						// version)
+//						// an (only) example is currently: MeasureType (onix2) --> MeasureTypeCode (onix3)
+//						keyClassName = struct.keyMember.transformationHint;
+//					}
+//					final String keyField = GenUtil.fieldOf(keyClassName);
+//					final String memberfield = GenUtil.fieldOf(member.className);
+//
+//					p.println();
+//					p.printf("   public %s %sStructOf(%s key)\n", structName, memberfield, kti.javaType);
+//					p.printf("   {\n");
+//					p.printf("      for (%s item : %ss())\n", member.className, memberfield);
+//					p.printf("      {\n");
+//					p.printf("         if (item.%s().value == key)\n", keyField);
+//					p.printf("            return item.struct();\n");
+//					p.printf("      }\n");
+//					p.printf("      return %s.EMPTY;\n", structName);
+//					p.printf("   }\n");
+//
+//					p.println();
+//					p.printf("   public List<%s> %sStructs()\n", structName, memberfield, kti.javaType);
+//					p.printf("   {\n");
+//					p.printf("      return %sStructsOf(null);\n", memberfield);
+//					p.printf("   }\n");
+//
+//					p.println();
+//					p.printf("   public List<%s> %sStructsOf(java.util.Set<%s> keys)\n", structName, memberfield,
+//							kti.javaType);
+//					p.printf("   {\n");
+//					p.printf("      List<%s> matches = new ArrayList<>();\n", structName);
+//					p.printf("      for (%s item : %ss())\n", member.className, memberfield);
+//					p.printf("      {\n");
+//					p.printf("         if (keys == null || keys.contains(item.%s().value))\n", keyField);
+//					p.printf("            matches.add(item.struct());\n");
+//					p.printf("      }\n");
+//					p.printf("      return matches;\n");
+//					p.printf("   }\n");
+//				}
+//			}
 		}
 
 		// declare struct provider on composites that can be represented as one
-		final OnixStruct struct = ref.unifiedStructs.get(composite.name);
 		if (struct != null)
 		{
 			final String structName = "Jonix" + composite.name;
 
 			p.println();
-			p.printf("   public %s as%s()\n", structName, structName);
+			p.printf("   @Override\n");
+			p.printf("   public %s asStruct()\n", structName);
 			p.printf("   {\n");
-			p.printf("      %s x = new %s();\n", structName, structName);
+			p.printf("      initialize();\n", structName, structName);
+			p.printf("      %s struct = new %s();\n", structName, structName);
 
 			for (OnixStructMember structMember : struct.allMembers())
 			{
 				final OnixCompositeMember member = structMember.dataMember;
 				if (member.onixClass instanceof OnixElementDef)
 				{
-					String field = GenUtil.fieldOf(member.className);
+					String targetField = GenUtil.fieldOf(member.className);
+					String field = targetField;
 					if (!member.cardinality.singular)
 						field += "s";
 					boolean transformationNeeded = (structMember.transformationNeededInVersion == ref.onixVersion);
@@ -306,33 +331,58 @@ public class OnixClassGen
 						switch (structMember.transformationType)
 						{
 						case SingularToMultiple:
-							p.printf("      x.%s = java.util.Arrays.asList(get%sValue());\n", field, member.className);
+							p.printf("      struct.%s = Arrays.asList(%s.value);\n", field, targetField);
 							break;
 						case ChangeClassName:
-							p.printf("      x.%s = get%sValue();\n", field, structMember.transformationHint);
+							p.printf("      struct.%s = %s.value;\n", field,
+									GenUtil.fieldOf(structMember.transformationHint));
 							break;
 						default:
-							p.printf("      x.%s = JPU.convert%s(get%sValue());\n", field,
-									structMember.transformationType.name(), member.className);
+							p.printf("      struct.%s = JPU.convert%s(%s.value);\n", field,
+									structMember.transformationType.name(), field);
 						}
 					}
 					else
 					{
-						String caption = ((OnixElementDef) member.onixClass).isSpaceable ? "Set" : "Value";
-						if (!member.cardinality.singular)
-							caption += "s";
-						p.printf("      x.%s = get%s%s();\n", field, member.className, caption);
+						String caption = (member.cardinality.singular) ? "value" : "values()";
+						p.printf("      struct.%s = %s.%s;\n", field, field, caption);
 					}
 				}
 				else
 				// i.e. (member.onixClass instanceof OnixFlagDef)
 				{
-					p.printf("      x.is%s = is%s();\n", member.className, member.className);
+					p.printf("      struct.is%s = is%s();\n", member.className, member.className);
 				}
 			}
 
-			p.printf("      return x;\n");
+			p.printf("      return struct;\n");
 			p.printf("   }\n");
+
+			if (struct.isKeyed())
+			{
+				OnixCompositeMember keyMember = struct.keyMember.dataMember;
+				OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
+				TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+				String field = GenUtil.fieldOf(keyMember.className);
+				boolean transformationNeeded = (struct.keyMember.transformationNeededInVersion == ref.onixVersion);
+				if (transformationNeeded)
+				{
+					switch (struct.keyMember.transformationType)
+					{
+					case ChangeClassName:
+						field = GenUtil.fieldOf(struct.keyMember.transformationHint);
+						break;
+					default:
+						throw new UnsupportedOperationException("Still not handling key-transofmration other than ChangeClassName");
+					}
+				}
+				p.println();
+				p.printf("   @Override\n");
+				p.printf("   public %s structKey()\n", keyTypeInfo.javaType);
+				p.printf("   {\n");
+				p.printf("      return %s().value;\n", field);
+				p.printf("   }\n");
+			}
 		}
 
 		p.println("}");
@@ -350,8 +400,12 @@ public class OnixClassGen
 		p.println();
 		p.println(Comments.AutoGen);
 
+		// analyze the main value of the element
+		final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
+		String valueType = element.isSpaceable ? String.format("java.util.Set<%s>", ti.javaType) : ti.javaType;
+
 		printOnixDoc(p, element.onixDoc);
-		p.printf("public class %s implements OnixElement, Serializable\n", element.name);
+		p.printf("public class %s implements OnixElement<%s>, Serializable\n", element.name, valueType);
 		p.printf("{\n");
 
 		declareConstsAndAttributes(p, element);
@@ -360,7 +414,6 @@ public class OnixClassGen
 		printCaptionComment(p, "VALUE MEMBER");
 
 		// declare value
-		final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
 		p.println();
 		if (ti.comment != null)
 		{
@@ -370,23 +423,38 @@ public class OnixClassGen
 			p.printf("   * %s\n", ti.comment);
 			p.printf("   */\n");
 		}
-		if (!element.isSpaceable)
-			p.printf("   public %s value;\n", ti.javaType);
-		else
-			p.printf("   public java.util.Set<%s> value;\n", ti.javaType);
+		p.printf("   public %s value;\n", valueType);
+
+		// declare internal accessor to value
+		p.println();
+		p.printf("   /**\n");
+		p.printf("   * Internal API, use the {@link #value} field instead\n");
+		p.printf("   */\n");
+		p.printf("   @Override\n", valueType);
+		p.printf("   public %s _value()\n", valueType);
+		p.printf("   {\n", valueType);
+		p.printf("      return value;\n", valueType);
+		p.printf("   }\n", valueType);
 
 		p.println();
 		printCaptionComment(p, "SERVICES");
 
+		p.println();
+		p.printf("   private final boolean exists;\n");
+		p.printf("   public static final %s EMPTY = new %s();\n", element.name, element.name);
+
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", element.name);
-		p.printf("   {}\n");
+		p.printf("   {\n");
+		p.printf("      exists = false;\n");
+		p.printf("   }\n");
 
 		// constructor
 		p.println();
 		p.printf("   public %s(org.w3c.dom.Element element)\n", element.name);
 		p.printf("   {\n");
+		p.printf("      exists = true;\n");
 
 		setInitializers(element, p);
 
@@ -412,6 +480,13 @@ public class OnixClassGen
 
 		p.printf("   }\n");
 
+		p.println();
+		p.printf("   @Override\n");
+		p.printf("   public boolean exists()\n");
+		p.printf("   {\n");
+		p.printf("      return exists;\n");
+		p.printf("   }\n");
+		
 		p.println("}");
 	}
 
@@ -436,18 +511,32 @@ public class OnixClassGen
 		p.println();
 		printCaptionComment(p, "CONSTRUCTORS");
 
+		p.println();
+		p.printf("   private final boolean exists;\n");
+		p.printf("   public static final %s EMPTY = new %s();\n", flag.name, flag.name);
+
 		// default-constructor
 		p.println();
 		p.printf("   public %s()\n", flag.name);
-		p.printf("   {}\n");
+		p.printf("   {\n");
+		p.printf("      exists = false;\n");
+		p.printf("   }\n");
 
 		// constructor
 		p.println();
 		p.printf("   public %s(org.w3c.dom.Element element)\n", flag.name);
 		p.printf("   {\n");
+		p.printf("      exists = true;\n");
 
 		setInitializers(flag, p);
 
+		p.printf("   }\n");
+
+		p.println();
+		p.printf("   @Override\n");
+		p.printf("   public boolean exists()\n");
+		p.printf("   {\n");
+		p.printf("      return exists;\n");
 		p.printf("   }\n");
 
 		p.println("}");
@@ -492,10 +581,13 @@ public class OnixClassGen
 		{
 			String enumName = a.getEnumName();
 
-			if (enumName == null) {
+			if (enumName == null)
+			{
 				// EXAMPLE: datestamp = JPU.getAttribute(element, "datestamp");
 				p.printf("      %s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
-			} else {
+			}
+			else
+			{
 				// EXAMPLE: textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 				p.printf("      %s = %s.byCode(JPU.getAttribute(element, \"%s\"));\n", a.name, enumName, a.name);
 			}

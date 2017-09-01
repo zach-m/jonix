@@ -21,10 +21,14 @@ package com.tectonica.jonix.codegen.generator;
 
 import java.io.File;
 
+import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
 import com.tectonica.jonix.codegen.metadata.Cardinality;
 import com.tectonica.jonix.codegen.metadata.OnixAttribute;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
+import com.tectonica.jonix.codegen.metadata.OnixElementDef;
+import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
+import com.tectonica.jonix.codegen.metadata.OnixStruct;
 
 public class GenUtil
 {
@@ -79,6 +83,9 @@ public class GenUtil
 		String name;
 		String type;
 		String comment;
+		String valueType;
+		String emptyPhrase;
+		String structName;
 	}
 
 	private static String commentOf(Cardinality cardinality)
@@ -98,16 +105,58 @@ public class GenUtil
 		}
 	}
 
-	public static FieldInfo fieldInfoOf(OnixCompositeMember member)
+	public static FieldInfo fieldInfoOf(OnixCompositeMember member, OnixMetadata ref)
 	{
 		FieldInfo result = new FieldInfo();
 		result.name = fieldOf(member.className);
 		result.type = member.className;
 		result.comment = commentOf(member.cardinality);
-		if (!member.cardinality.singular)
+		if (member.cardinality.singular)
 		{
-			result.name = String.format("%ss", result.name);
-			result.type = String.format("List<%s>", result.type);
+			result.emptyPhrase = String.format("%s.EMPTY", result.type);
+		}
+		else
+		{
+			result.name += "s";
+			OnixElementDef element = ref.onixElements.get(member.className);
+			if (element != null)
+			{
+				// this is a list of elements
+				final TypeInfo ti = typeInfoOf(element.valueMember.simpleType);
+				result.valueType = ti.javaType;
+				if (element.isSpaceable)
+					result.valueType = "java.util.Set<" + result.valueType + ">";
+				result.type = String.format("ListOfOnixElement<%s, %s>", result.type, result.valueType);
+				result.emptyPhrase = "ListOfOnixElement.empty()";
+			}
+			else
+			{
+				// this is a list of data-composites
+				final OnixStruct struct = ref.unifiedStructs.get(member.className);
+				if (struct != null)
+				{
+					result.structName = "Jonix" + member.className;
+					if (struct.isKeyed())
+					{
+						OnixCompositeMember keyMember = struct.keyMember.dataMember;
+						OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
+						TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+						result.type = String.format("ListOfOnixDataCompositeWithKey<%s,%s,%s>", result.type,
+								result.structName, keyTypeInfo.javaType);
+						result.emptyPhrase = "ListOfOnixDataCompositeWithKey.emptyKeyed()";
+					}
+					else
+					{
+						result.type = String.format("ListOfOnixDataComposite<%s,%s>", result.type, result.structName);
+						result.emptyPhrase = "ListOfOnixDataComposite.empty()";
+					}
+				}
+				else
+				{
+					result.type = String.format("List<%s>", result.type);
+					result.emptyPhrase = "Collections.emptyList()";
+				}
+			}
 		}
 		return result;
 	}

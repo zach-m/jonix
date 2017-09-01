@@ -94,13 +94,10 @@ public class Onix2Essentials implements JonixEssentials
 			return (languageTag == null) ? null : languageTag.languageCode.description;
 
 		case Audience:
-			List<Audiences> audiences = product.getAudienceCodeValues();
-			if (audiences != null && !audiences.isEmpty())
-			{
-				// we pick the first audience, as in practice it's very rare to see more than one
-				return audiences.get(0).description;
-			}
-			return null;
+			// we pick the first audience, as in practice it's very rare to see more than one
+			Audiences audience = product.audienceCodes().firstValue();
+			if (audience != null)
+				return (audience == null) ? null : audience.description;
 
 		case PackQuantity:
 			if (product.supplyDetails != null)
@@ -198,8 +195,9 @@ public class Onix2Essentials implements JonixEssentials
 
 		case AudienceAgeRange:
 			Integer[] ageRange = getAudienceAgeRange();
-			return Arrays.asList(new String[] { ageRange[0] == null ? null : ageRange[0].toString(),
-					ageRange[1] == null ? null : ageRange[1].toString() });
+			return Arrays
+					.asList(new String[]
+					{ ageRange[0] == null ? null : ageRange[0].toString(), ageRange[1] == null ? null : ageRange[1].toString() });
 
 		case Measurements:
 			List<String> wht = new ArrayList<>();
@@ -358,8 +356,8 @@ public class Onix2Essentials implements JonixEssentials
 
 		for (Contributor c : findContributors(requestedRoles))
 		{
-			String displayName = JonixUtil.contributorDisplayName(c.getPersonNameValue(), c.getKeyNamesValue(),
-					c.getNamesBeforeKeyValue(), c.getPersonNameInvertedValue(), c.getCorporateNameValue());
+			String displayName = JonixUtil.contributorDisplayName(c.getPersonNameValue(), c.getKeyNamesValue(), c.getNamesBeforeKeyValue(),
+					c.getPersonNameInvertedValue(), c.getCorporateNameValue());
 			result.add(displayName);
 		}
 
@@ -444,8 +442,7 @@ public class Onix2Essentials implements JonixEssentials
 					if ((jonixOtherText.textFormat == null) && (x.text != null))
 					{
 						jonixOtherText.textFormat = x.text.textformat;
-						if ((jonixOtherText.textFormat == TextFormats.XHTML)
-								|| (jonixOtherText.textFormat == TextFormats.XML)
+						if ((jonixOtherText.textFormat == TextFormats.XHTML) || (jonixOtherText.textFormat == TextFormats.XML)
 								|| (jonixOtherText.textFormat == TextFormats.HTML))
 						{
 							try

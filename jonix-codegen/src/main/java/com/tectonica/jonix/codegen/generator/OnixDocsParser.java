@@ -1,5 +1,6 @@
 package com.tectonica.jonix.codegen.generator;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -22,13 +23,13 @@ public class OnixDocsParser
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException
 	{
-		parseAndSave("/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html", "C:\\Users\\zach\\Desktop\\Onix2.html");
-		parseAndSave("/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html", "C:\\Users\\zach\\Desktop\\Onix3.html");
+		parseAndSave("/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html", new File("parsed","Onix2.html"));
+		parseAndSave("/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html", new File("parsed","Onix3.html"));
 	}
 
-	private static void parseAndSave(final String specHtml, String targetHtml) throws IOException, FileNotFoundException
+	private static void parseAndSave(final String specHtml, File targetHtml) throws IOException, FileNotFoundException
 	{
-		System.out.println("Parsing " + specHtml + " into " + targetHtml);
+		System.out.println("Parsing " + specHtml + " into " + targetHtml.getAbsolutePath());
 		OnixDocs onixDocs = parse(specHtml);
 
 //		JSON.saveAsJson(new File(targetHtml + ".json"), onixDocs);

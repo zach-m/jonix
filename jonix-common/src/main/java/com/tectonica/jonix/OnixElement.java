@@ -22,5 +22,7 @@ package com.tectonica.jonix;
 /**
  * represents an ONIX element (i.e. contains a single value field and possibly some attributes, but nothing else)
  */
-public interface OnixElement
-{}
+public interface OnixElement<V> extends OnixTag
+{
+	V _value();
+}

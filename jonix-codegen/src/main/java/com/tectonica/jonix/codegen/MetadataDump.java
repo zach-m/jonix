@@ -38,7 +38,7 @@ import com.tectonica.jonix.codegen.util.ParseUtil;
 
 public class MetadataDump
 {
-	private static final String DUMP_FOLDER = "C:/Users/zach/Desktop";
+	private static final File DUMP_FOLDER = new File("parsed");
 
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException
 	{
@@ -53,32 +53,35 @@ public class MetadataDump
 
 	private static void parse2() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2,
-				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
-		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2,
-				ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_SHORT_2, ParseUtil.RES_HTML_SPEC_2);
+		final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
+				ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
+		final OnixMetadata short2 = ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2,
+				ParseUtil.SPACEABLE_SHORT_2, ParseUtil.RES_HTML_SPEC_2);
 
-		saveMetadata(ref2, "/onix2/reference");
-		saveMetadata(short2, "/onix2/short");
+		File parent = new File(DUMP_FOLDER, "onix2");
+		saveMetadata(ref2, new File(parent, "reference"));
+		saveMetadata(short2, new File(parent, "short"));
 	}
 
 	private static void parse3() throws IOException, ParserConfigurationException, SAXException
 	{
-		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3,
-				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
-		final OnixMetadata short3 = ParseUtil.parse(OnixVersion.Ver3_0_02, true, ParseUtil.RES_SHORT_3,
-				ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_SHORT_3, ParseUtil.RES_HTML_SPEC_3);
+		final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
+				ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
+		final OnixMetadata short3 = ParseUtil.parse(OnixVersion.Ver3_0_02, true, ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3,
+				ParseUtil.SPACEABLE_SHORT_3, ParseUtil.RES_HTML_SPEC_3);
 
-		saveMetadata(ref3, "/onix3/reference");
-		saveMetadata(short3, "/onix3/short");
+		File parent = new File(DUMP_FOLDER, "onix3");
+		saveMetadata(ref3, new File(parent, "reference"));
+		saveMetadata(short3, new File(parent, "short"));
 	}
 
 	// ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static void saveMetadata(OnixMetadata metadata, String prefix) throws IOException
+	public static void saveMetadata(OnixMetadata metadata, File dir) throws IOException
 	{
-		final String folder = DUMP_FOLDER + prefix;
-		new File(folder).mkdirs();
+		dir.mkdirs();
+
+		String folder = dir.getAbsolutePath();
 
 //		saveAsJson(metadata.onixComposites.values(), folder + "/composites.txt");
 //		saveAsJson(metadata.onixElements.values(), folder + "/elements.txt");

@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,11 +40,11 @@ public class JonixUtil
 	/**
 	 * Attempts to retrieve a time-stamp from a given file-name. Looks for the following constructs in the filename:
 	 * <ul>
-	 * <li> <code>hhmm</code>
-	 * <li> <code>hhmmss</code>
-	 * <li> <code>yyyyMMdd</code>
-	 * <li> <code>yyyyMMddhhmm</code>
-	 * <li> <code>yyyyMMddhhmmss</code>
+	 * <li><code>hhmm</code>
+	 * <li><code>hhmmss</code>
+	 * <li><code>yyyyMMdd</code>
+	 * <li><code>yyyyMMddhhmm</code>
+	 * <li><code>yyyyMMddhhmmss</code>
 	 * </ul>
 	 * 
 	 * @param fileName
@@ -210,4 +211,12 @@ public class JonixUtil
 			throw new RuntimeException(e);
 		}
 	}
+
+//	public static <T> T firstItemIfExists(Iterable<T> items)
+//	{
+//		Iterator<T> iter = items.iterator();
+//		if (iter.hasNext())
+//			return iter.next();
+//		return null;
+//	}
 }

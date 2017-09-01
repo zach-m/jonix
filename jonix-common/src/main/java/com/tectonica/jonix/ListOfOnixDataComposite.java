@@ -1,0 +1,54 @@
+package com.tectonica.jonix;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import com.tectonica.jonix.OnixComposite.OnixDataComposite;
+
+public class ListOfOnixDataComposite<C extends OnixDataComposite<S>, S extends JonixStruct> extends ArrayList<C>
+{
+	private static final long serialVersionUID = 1L;
+
+	private List<S> cachedStructs = null;
+
+	/**
+	 * returns a list of the items inside this list, transformed into Jonix structs
+	 * 
+	 * @return a non-null, possibly empty, list of the structs
+	 */
+	public List<S> asStructs()
+	{
+		if (cachedStructs == null)
+			return cachedStructs = structsInto(new ArrayList<>());
+		return cachedStructs;
+	}
+
+	public <L extends Collection<S>> L structsInto(L collection)
+	{
+		forEach(item -> collection.add(item.asStruct()));
+		return collection;
+	}
+
+	public S firstStructOrNull()
+	{
+		if (size() == 0)
+			return null;
+		return get(0).asStruct();
+	}
+
+	public C firstOrNull()
+	{
+		if (size() == 0)
+			return null;
+		return get(0);
+	}
+
+	private static ListOfOnixDataComposite<OnixDataComposite<JonixStruct>, JonixStruct> EMPTY = new ListOfOnixDataComposite<>();
+
+	@SuppressWarnings("unchecked")
+	public static <C extends OnixDataComposite<S>, S extends JonixStruct> ListOfOnixDataComposite<C, S> empty()
+	{
+		return (ListOfOnixDataComposite<C, S>) EMPTY;
+	}
+}

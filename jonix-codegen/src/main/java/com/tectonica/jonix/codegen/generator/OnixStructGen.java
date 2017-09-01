@@ -62,26 +62,46 @@ public class OnixStructGen
 
 	private void writeStruct(OnixStruct struct, String structName, PrintStream p)
 	{
+		String structMarkerInterface = "JonixStruct";
+		String structKeyQualifier = "";
+		
+		OnixCompositeMember keyMember = null;
+		OnixElementDef keyClass = null;
+		TypeInfo keyTypeInfo = null;
+		String keyField = null;
+		if (struct.isKeyed())
+		{
+			keyMember = struct.keyMember.dataMember;
+			keyClass = (OnixElementDef) keyMember.onixClass;
+			keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+			keyField = GenUtil.fieldOf(keyMember.className);
+			structMarkerInterface = "JonixKeyedStruct";
+			structKeyQualifier = "<"+ keyTypeInfo.javaType +">";
+		}
+
+
 		p.println(Comments.Copyright);
 		p.printf("package %s;\n", packageName);
 		p.println();
 		p.println("import java.io.Serializable;");
 		p.println("import java.util.List;");
 		p.println();
+
+		p.printf("import %s.%s;\n", COMMON_PACKAGE, structMarkerInterface);
 		p.printf("import %s.codelist.*;\n", COMMON_PACKAGE);
 		p.println();
 		p.println(Comments.AutoGen);
 		p.printf("@SuppressWarnings(\"serial\")\n");
-		p.printf("public class %s implements Serializable\n", structName);
+		p.printf("public class %s implements %s%s, Serializable\n", structName, structMarkerInterface,
+				structKeyQualifier);
 		p.printf("{\n");
+
+		p.printf("   public static %s EMPTY = new %s();\n", structName, structName);
+		p.println();
 
 		// declare key
 		if (struct.isKeyed())
 		{
-			final OnixCompositeMember keyMember = struct.keyMember.dataMember;
-			final OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
-			final TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-			final String keyField = GenUtil.fieldOf(keyMember.className);
 			p.printf("   /**\n");
 			p.printf("    * the key of this struct (by which it can be looked up)\n");
 			if (keyTypeInfo.comment != null)
@@ -147,6 +167,14 @@ public class OnixStructGen
 //		p.println();
 //		p.printf("   public %s()\n", structName);
 //		p.printf("   {}\n");
+
+		// declare key
+		if (struct.isKeyed())
+		{
+			p.println();
+			p.printf("   @Override\n", keyTypeInfo.javaType, keyField);
+			p.printf("   public %s key() { return %s; }\n", keyTypeInfo.javaType, keyField);
+		}
 
 		p.println("}");
 	}
