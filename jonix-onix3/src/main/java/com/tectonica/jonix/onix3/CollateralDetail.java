@@ -19,161 +19,138 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPrize;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1>
- * <h4 class="nobreak">Collateral detail composite</h4>
- * <p>
- * The collateral detail block covers data element Groups P.14 to P.17, all of which are primarily concerned with
- * information and/or resources which in one way or another support the marketing of the product. The block as a whole
- * is non-repeating. It is not mandatory within the &lt;Product&gt; record, nor are any of the individual sections
- * mandatory within an occurrence of the block.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CollateralDetail&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;collateraldetail&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * </table>
+ * <h1>null</h1><h4 class="nobreak">Collateral detail composite</h4><p>The collateral detail block covers data element
+ * Groups P.14 to P.17, all of which are primarily concerned with information and/or resources which in one way or
+ * another support the marketing of the product. The block as a whole is non-repeating. It is not mandatory within the
+ * &lt;Product&gt; record, nor are any of the individual sections mandatory within an occurrence of the block.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;CollateralDetail&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;collateraldetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
-public class CollateralDetail implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CollateralDetail implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CollateralDetail";
-	public static final String shortname = "collateraldetail";
+    public static final String refname = "CollateralDetail";
+    public static final String shortname = "collateraldetail";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final CollateralDetail EMPTY = new CollateralDetail();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final CollateralDetail EMPTY = new CollateralDetail();
 
-	public CollateralDetail()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public CollateralDetail() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public CollateralDetail(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public CollateralDetail(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(TextContent.refname) || name.equals(TextContent.shortname))
-				textContents = JPU.addToList(textContents, new TextContent(e));
-			else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname))
-				citedContents = JPU.addToList(citedContents, new CitedContent(e));
-			else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
-				supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
-			else if (name.equals(Prize.refname) || name.equals(Prize.shortname))
-				prizes = JPU.addToList(prizes, new Prize(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(TextContent.refname) || name.equals(TextContent.shortname)) {
+                textContents = JPU.addToList(textContents, new TextContent(e));
+            } else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname)) {
+                citedContents = JPU.addToList(citedContents, new CitedContent(e));
+            } else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname)) {
+                supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
+            } else if (name.equals(Prize.refname) || name.equals(Prize.shortname)) {
+                prizes = JPU.addToList(prizes, new Prize(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private List<TextContent> textContents = Collections.emptyList();
+    private List<TextContent> textContents = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TextContent> textContents()
-	{
-		initialize();
-		return textContents;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<TextContent> textContents() {
+        initialize();
+        return textContents;
+    }
 
-	private List<CitedContent> citedContents = Collections.emptyList();
+    private List<CitedContent> citedContents = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CitedContent> citedContents()
-	{
-		initialize();
-		return citedContents;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<CitedContent> citedContents() {
+        initialize();
+        return citedContents;
+    }
 
-	private List<SupportingResource> supportingResources = Collections.emptyList();
+    private List<SupportingResource> supportingResources = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupportingResource> supportingResources()
-	{
-		initialize();
-		return supportingResources;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<SupportingResource> supportingResources() {
+        initialize();
+        return supportingResources;
+    }
 
-	private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Prize, JonixPrize> prizes = ListOfOnixDataComposite.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataComposite<Prize, JonixPrize> prizes()
-	{
-		initialize();
-		return prizes;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
+        initialize();
+        return prizes;
+    }
 }

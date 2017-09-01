@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Message sequence number</h1>
- * <p>
- * A monotonic sequence number of the messages in a series sent between trading partners, to enable the receiver to
- * check against gaps and duplicates. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length integer</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;MessageNumber&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;m180&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;m180&gt;1234&lt;/m180&gt;</td>
- * </tr>
- * </table>
+ * <h1>Message sequence number</h1><p>A monotonic sequence number of the messages in a series sent between trading
+ * partners, to enable the receiver to check against gaps and duplicates. Optional and non-repeating.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length integer</td></tr><tr><td>Reference
+ * name</td><td>&lt;MessageNumber&gt;</td></tr><tr><td>Short tag</td><td>&lt;m180&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m180&gt;1234&lt;/m180&gt;</td></tr></table>
  */
-public class MessageNumber implements OnixElement<Integer>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class MessageNumber implements OnixElement<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "MessageNumber";
-	public static final String shortname = "m180";
+    public static final String refname = "MessageNumber";
+    public static final String shortname = "m180";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length integer
-	 * <p>
-	 * (type: dt.StrictPositiveInteger)
-	 */
-	public Integer value;
+    /**
+     * Raw Format: Variable length integer<p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Integer _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Integer _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final MessageNumber EMPTY = new MessageNumber();
+    private final boolean exists;
+    public static final MessageNumber EMPTY = new MessageNumber();
 
-	public MessageNumber()
-	{
-		exists = false;
-	}
+    public MessageNumber() {
+        exists = false;
+    }
 
-	public MessageNumber(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public MessageNumber(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsInteger(element);
-	}
+        value = JPU.getContentAsInteger(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

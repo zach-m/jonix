@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Edition type code</h1>
- * <p>
- * An ONIX code, indicating the type of a version or edition. Optional, and repeatable if the product has
- * characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, three upper-case letters</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 21</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;EditionType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x419&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;EditionType&gt;ILL&lt;/EditionType&gt; (Illustrated edition)</td>
- * </tr>
- * </table>
+ * <h1>Edition type code</h1><p>An ONIX code, indicating the type of a version or edition. Optional, and repeatable if
+ * the product has characteristics of two or more types (<i>eg</i> ‘revised’ and ‘annotated’).</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three upper-case letters</td></tr><tr><td>Codelist</td><td>List
+ * 21</td></tr><tr><td>Reference name</td><td>&lt;EditionType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x419&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Example</td><td>&lt;EditionType&gt;ILL&lt;/EditionType&gt;
+ * (Illustrated edition)</td></tr></table>
  */
-public class EditionType implements OnixElement<EditionTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class EditionType implements OnixElement<EditionTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "EditionType";
-	public static final String shortname = "x419";
+    public static final String refname = "EditionType";
+    public static final String shortname = "x419";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public EditionTypes value;
+    public EditionTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public EditionTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public EditionTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final EditionType EMPTY = new EditionType();
+    private final boolean exists;
+    public static final EditionType EMPTY = new EditionType();
 
-	public EditionType()
-	{
-		exists = false;
-	}
+    public EditionType() {
+        exists = false;
+    }
 
-	public EditionType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public EditionType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = EditionTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = EditionTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

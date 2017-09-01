@@ -19,111 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Price type code</h1>
- * <p>
- * An ONIX code indicating the type of the comparison price in the &lt;PriceAmount&gt; element within the
- * &lt;ComparisonProductPrice&gt; composite. Optional if a &lt;DefaultPriceType&gt; has been specified in the message
- * header, otherwise mandatory. Non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 58</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PriceType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x462&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;PriceType&gt;01&lt;/PriceType&gt; (RRP excluding tax)</td>
- * </tr>
- * </table>
+ * <h1>Price type code</h1><p>An ONIX code indicating the type of the comparison price in the &lt;PriceAmount&gt;
+ * element within the &lt;ComparisonProductPrice&gt; composite. Optional if a &lt;DefaultPriceType&gt; has been
+ * specified in the message header, otherwise mandatory. Non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 58</td></tr><tr><td>Reference name</td><td>&lt;PriceType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x462&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PriceType&gt;01&lt;/PriceType&gt;
+ * (RRP excluding tax)</td></tr></table>
  */
-public class PriceType implements OnixElement<PriceTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PriceType implements OnixElement<PriceTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PriceType";
-	public static final String shortname = "x462";
+    public static final String refname = "PriceType";
+    public static final String shortname = "x462";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public PriceTypes value;
+    public PriceTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public PriceTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public PriceTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final PriceType EMPTY = new PriceType();
+    private final boolean exists;
+    public static final PriceType EMPTY = new PriceType();
 
-	public PriceType()
-	{
-		exists = false;
-	}
+    public PriceType() {
+        exists = false;
+    }
 
-	public PriceType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public PriceType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = PriceTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = PriceTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

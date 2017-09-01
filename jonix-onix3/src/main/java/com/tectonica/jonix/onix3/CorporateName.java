@@ -19,127 +19,95 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextScriptCodes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Corporate name</h1>
- * <p>
- * The name of a corporate body, used here for a corporate copyright owner. Optional and non- repeating. Each occurrence
- * of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate), or an identifier, or both a
- * name and an identifier.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 200 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CorporateName&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b047&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>collationkey, language, textscript</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CorporateName&gt;Johnson &amp;amp; Johnson Inc&lt;/CorporateName&gt; (note this is represented as 'Johnson
- * &amp;amp; Johnson Inc', since &amp; is a reserved character in XML)</td>
- * </tr>
- * </table>
+ * <h1>Corporate name</h1><p>The name of a corporate body, used here for a corporate copyright owner. Optional and non-
+ * repeating. Each occurrence of the &lt;CopyrightOwner&gt; composite may carry a single name (personal or corporate),
+ * or an identifier, or both a name and an identifier.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
+ * text, suggested maximum length 200 characters</td></tr><tr><td>Reference name</td><td>&lt;CorporateName&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b047&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * language, textscript</td></tr><tr><td>Example</td><td>&lt;CorporateName&gt;Johnson &amp;amp; Johnson
+ * Inc&lt;/CorporateName&gt; (note this is represented as 'Johnson &amp;amp; Johnson Inc', since &amp; is a reserved
+ * character in XML)</td></tr></table>
  */
-public class CorporateName implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CorporateName implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CorporateName";
-	public static final String shortname = "b047";
+    public static final String refname = "CorporateName";
+    public static final String shortname = "b047";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public String collationkey;
+    public String collationkey;
 
-	public TextScriptCodes textscript;
+    public TextScriptCodes textscript;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 200 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CorporateName EMPTY = new CorporateName();
+    private final boolean exists;
+    public static final CorporateName EMPTY = new CorporateName();
 
-	public CorporateName()
-	{
-		exists = false;
-	}
+    public CorporateName() {
+        exists = false;
+    }
 
-	public CorporateName(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		collationkey = JPU.getAttribute(element, "collationkey");
-		textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+    public CorporateName(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        collationkey = JPU.getAttribute(element, "collationkey");
+        textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

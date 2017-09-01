@@ -19,110 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Free quantity</h1>
- * <p>
- * The number of free copies which will be supplied with an order for the batch quantity specified in the
- * &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length integer, suggested maximum length 4 digits</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;FreeQuantity&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j265&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;FreeQuantity&gt;1&lt;/FreeQuantity&gt;</td>
- * </tr>
- * </table>
+ * <h1>Free quantity</h1><p>The number of free copies which will be supplied with an order for the batch quantity
+ * specified in the &lt;BatchQuantity&gt; field. Mandatory in each occurrence of the &lt;BatchBonus&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, suggested maximum
+ * length 4 digits</td></tr><tr><td>Reference name</td><td>&lt;FreeQuantity&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j265&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;FreeQuantity&gt;1&lt;/FreeQuantity&gt;</td></tr></table>
  */
-public class FreeQuantity implements OnixElement<Integer>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class FreeQuantity implements OnixElement<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "FreeQuantity";
-	public static final String shortname = "j265";
+    public static final String refname = "FreeQuantity";
+    public static final String shortname = "j265";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length integer, suggested maximum length 4 digits
-	 * <p>
-	 * (type: dt.StrictPositiveInteger)
-	 */
-	public Integer value;
+    /**
+     * Raw Format: Variable-length integer, suggested maximum length 4 digits<p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Integer _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Integer _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final FreeQuantity EMPTY = new FreeQuantity();
+    private final boolean exists;
+    public static final FreeQuantity EMPTY = new FreeQuantity();
 
-	public FreeQuantity()
-	{
-		exists = false;
-	}
+    public FreeQuantity() {
+        exists = false;
+    }
 
-	public FreeQuantity(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public FreeQuantity(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsInteger(element);
-	}
+        value = JPU.getContentAsInteger(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

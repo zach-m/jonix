@@ -19,38 +19,35 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.ProductSupply;
 import com.tectonica.jonix.onix3.SupplyDetail;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicSupplyDetails}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSupplyDetails3 extends BasicSupplyDetails
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSupplyDetails3 extends BasicSupplyDetails {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicSupplyDetails3(Product product)
-	{
-		this.product = product;
-	}
+    public BasicSupplyDetails3(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicSupplyDetail> initialize()
-	{
-		List<BasicSupplyDetail> list = new ArrayList<>();
-		for (ProductSupply ps : product.productSupplys()) // scanning all markets, maybe not good idea
-		{
-			for (SupplyDetail supplyDetail : ps.supplyDetails())
-				list.add(new BasicSupplyDetail3(supplyDetail));
-		}
-		return list;
-	}
+    @Override
+    protected List<BasicSupplyDetail> initialize() {
+        List<BasicSupplyDetail> list = new ArrayList<>();
+        for (ProductSupply ps : product.productSupplys()) { // scanning all markets, maybe not good idea
+            for (SupplyDetail supplyDetail : ps.supplyDetails()) {
+                list.add(new BasicSupplyDetail3(supplyDetail));
+            }
+        }
+        return list;
+    }
 }

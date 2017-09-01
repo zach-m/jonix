@@ -19,181 +19,157 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixDiscount;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Discount composite</h1>
- * <p>
- * A repeatable group of data elements which together define a discount either as a percentage or as an absolute amount.
- * Optional. Used only when an ONIX message is sent within the context of a specific trading relationship.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Discount&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;discount&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Discount composite</h1><p>A repeatable group of data elements which together define a discount either as a
+ * percentage or as an absolute amount. Optional. Used only when an ONIX message is sent within the context of a
+ * specific trading relationship.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Discount&gt;</td></tr><tr><td>Short tag</td><td>&lt;discount&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Discount implements OnixDataComposite<JonixDiscount>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Discount implements OnixDataComposite<JonixDiscount>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Discount";
-	public static final String shortname = "discount";
+    public static final String refname = "Discount";
+    public static final String shortname = "discount";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Discount EMPTY = new Discount();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Discount EMPTY = new Discount();
 
-	public Discount()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Discount() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Discount(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Discount(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(DiscountType.refname) || name.equals(DiscountType.shortname))
-				discountType = new DiscountType(e);
-			else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-				quantity = new Quantity(e);
-			else if (name.equals(ToQuantity.refname) || name.equals(ToQuantity.shortname))
-				toQuantity = new ToQuantity(e);
-			else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname))
-				discountPercent = new DiscountPercent(e);
-			else if (name.equals(DiscountAmount.refname) || name.equals(DiscountAmount.shortname))
-				discountAmount = new DiscountAmount(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(DiscountType.refname) || name.equals(DiscountType.shortname)) {
+                discountType = new DiscountType(e);
+            } else if (name.equals(Quantity.refname) || name.equals(Quantity.shortname)) {
+                quantity = new Quantity(e);
+            } else if (name.equals(ToQuantity.refname) || name.equals(ToQuantity.shortname)) {
+                toQuantity = new ToQuantity(e);
+            } else if (name.equals(DiscountPercent.refname) || name.equals(DiscountPercent.shortname)) {
+                discountPercent = new DiscountPercent(e);
+            } else if (name.equals(DiscountAmount.refname) || name.equals(DiscountAmount.shortname)) {
+                discountAmount = new DiscountAmount(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private DiscountType discountType = DiscountType.EMPTY;
+    private DiscountType discountType = DiscountType.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public DiscountType discountType()
-	{
-		initialize();
-		return discountType;
-	}
+    /**
+     * (this field is optional)
+     */
+    public DiscountType discountType() {
+        initialize();
+        return discountType;
+    }
 
-	private Quantity quantity = Quantity.EMPTY;
+    private Quantity quantity = Quantity.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Quantity quantity()
-	{
-		initialize();
-		return quantity;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Quantity quantity() {
+        initialize();
+        return quantity;
+    }
 
-	private ToQuantity toQuantity = ToQuantity.EMPTY;
+    private ToQuantity toQuantity = ToQuantity.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ToQuantity toQuantity()
-	{
-		initialize();
-		return toQuantity;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ToQuantity toQuantity() {
+        initialize();
+        return toQuantity;
+    }
 
-	private DiscountPercent discountPercent = DiscountPercent.EMPTY;
+    private DiscountPercent discountPercent = DiscountPercent.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public DiscountPercent discountPercent()
-	{
-		initialize();
-		return discountPercent;
-	}
+    /**
+     * (this field is required)
+     */
+    public DiscountPercent discountPercent() {
+        initialize();
+        return discountPercent;
+    }
 
-	private DiscountAmount discountAmount = DiscountAmount.EMPTY;
+    private DiscountAmount discountAmount = DiscountAmount.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public DiscountAmount discountAmount()
-	{
-		initialize();
-		return discountAmount;
-	}
+    /**
+     * (this field is optional)
+     */
+    public DiscountAmount discountAmount() {
+        initialize();
+        return discountAmount;
+    }
 
-	@Override
-	public JonixDiscount asStruct()
-	{
-		initialize();
-		JonixDiscount struct = new JonixDiscount();
-		struct.discountType = discountType.value;
-		struct.quantity = quantity.value;
-		struct.toQuantity = toQuantity.value;
-		struct.discountPercent = discountPercent.value;
-		struct.discountAmount = discountAmount.value;
-		return struct;
-	}
+    @Override
+    public JonixDiscount asStruct() {
+        initialize();
+        JonixDiscount struct = new JonixDiscount();
+        struct.discountType = discountType.value;
+        struct.quantity = quantity.value;
+        struct.toQuantity = toQuantity.value;
+        struct.discountPercent = discountPercent.value;
+        struct.discountAmount = discountAmount.value;
+        return struct;
+    }
 }

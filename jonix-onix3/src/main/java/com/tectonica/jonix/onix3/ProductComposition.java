@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.ProductCompositions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product composition</h1>
- * <p>
- * An ONIX code which indicates whether a product consists of a single item or multiple items. Mandatory in an
- * occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 2</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductComposition&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x314&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x314&gt;00&lt;/x314&gt; (Single-item product)</td>
- * </tr>
- * </table>
+ * <h1>Product composition</h1><p>An ONIX code which indicates whether a product consists of a single item or multiple
+ * items. Mandatory in an occurrence of &lt;DescriptiveDetail&gt;, and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 2</td></tr><tr><td>Reference name</td><td>&lt;ProductComposition&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x314&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x314&gt;00&lt;/x314&gt;
+ * (Single-item product)</td></tr></table>
  */
-public class ProductComposition implements OnixElement<ProductCompositions>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ProductComposition implements OnixElement<ProductCompositions>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductComposition";
-	public static final String shortname = "x314";
+    public static final String refname = "ProductComposition";
+    public static final String shortname = "x314";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ProductCompositions value;
+    public ProductCompositions value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ProductCompositions _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ProductCompositions _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ProductComposition EMPTY = new ProductComposition();
+    private final boolean exists;
+    public static final ProductComposition EMPTY = new ProductComposition();
 
-	public ProductComposition()
-	{
-		exists = false;
-	}
+    public ProductComposition() {
+        exists = false;
+    }
 
-	public ProductComposition(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ProductComposition(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductCompositions.byCode(JPU.getContentAsString(element));
-	}
+        value = ProductCompositions.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

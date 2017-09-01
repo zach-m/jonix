@@ -19,38 +19,34 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicCollection}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicCollection3 extends BasicCollection
-{
-	private static final long serialVersionUID = 1L;
+public class BasicCollection3 extends BasicCollection {
+    private static final long serialVersionUID = 1L;
 
-	@SuppressWarnings("serial")
-	public BasicCollection3(final Collection c)
-	{
-		titles = new BasicTitles3(c);
-		mainTitle = (titles != null) ? titles.get(0).titleText : null;
+    @SuppressWarnings("serial")
+    public BasicCollection3(final Collection c) {
+        titles = new BasicTitles3(c);
+        mainTitle = (titles != null) ? titles.get(0).titleText : null;
 
-		// TODO: also look at Collection -> TitleDetail -> TitleElement -> PartNumber
-		numberWithinSeries = (c.collectionSequences().isEmpty()) ? null
-				: c.collectionSequences().get(0).collectionSequenceNumber().value;
+        // TODO: also look at Collection -> TitleDetail -> TitleElement -> PartNumber
+        numberWithinSeries = (c.collectionSequences().isEmpty()) ? null
+            : c.collectionSequences().get(0).collectionSequenceNumber().value;
 
-		seriesIdentifiers = new LazyList<JonixCollectionIdentifier>()
-		{
-			@Override
-			protected List<JonixCollectionIdentifier> initialize()
-			{
-				return c.collectionIdentifiers().asStructs();
-			}
-		};
-		contributors = new BasicContributors3(c);
-	}
+        seriesIdentifiers = new LazyList<JonixCollectionIdentifier>() {
+            @Override
+            protected List<JonixCollectionIdentifier> initialize() {
+                return c.collectionIdentifiers().asStructs();
+            }
+        };
+        contributors = new BasicContributors3(c);
+    }
 }

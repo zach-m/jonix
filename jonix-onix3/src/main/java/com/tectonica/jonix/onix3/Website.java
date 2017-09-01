@@ -19,154 +19,132 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixWebsite;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Website composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together identify and provide pointers to a website which is
- * related to the organization identified in an occurrence of the &lt;Supplier&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Website&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;website&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Website composite</h1><p>An optional and repeatable group of data elements which together identify and provide
+ * pointers to a website which is related to the organization identified in an occurrence of the &lt;Supplier&gt;
+ * composite.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Website&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;website&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Website implements OnixDataComposite<JonixWebsite>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Website";
-	public static final String shortname = "website";
+    public static final String refname = "Website";
+    public static final String shortname = "website";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Website EMPTY = new Website();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Website EMPTY = new Website();
 
-	public Website()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Website() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Website(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Website(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname))
-				websiteRole = new WebsiteRole(e);
-			else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname))
-				websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(e));
-			else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname))
-				websiteLink = new WebsiteLink(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(WebsiteRole.refname) || name.equals(WebsiteRole.shortname)) {
+                websiteRole = new WebsiteRole(e);
+            } else if (name.equals(WebsiteDescription.refname) || name.equals(WebsiteDescription.shortname)) {
+                websiteDescriptions = JPU.addToList(websiteDescriptions, new WebsiteDescription(e));
+            } else if (name.equals(WebsiteLink.refname) || name.equals(WebsiteLink.shortname)) {
+                websiteLink = new WebsiteLink(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private WebsiteRole websiteRole = WebsiteRole.EMPTY;
+    private WebsiteRole websiteRole = WebsiteRole.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public WebsiteRole websiteRole()
-	{
-		initialize();
-		return websiteRole;
-	}
+    /**
+     * (this field is optional)
+     */
+    public WebsiteRole websiteRole() {
+        initialize();
+        return websiteRole;
+    }
 
-	private ListOfOnixElement<WebsiteDescription, String> websiteDescriptions = ListOfOnixElement.empty();
+    private ListOfOnixElement<WebsiteDescription, String> websiteDescriptions = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions()
-	{
-		initialize();
-		return websiteDescriptions;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions() {
+        initialize();
+        return websiteDescriptions;
+    }
 
-	private WebsiteLink websiteLink = WebsiteLink.EMPTY;
+    private WebsiteLink websiteLink = WebsiteLink.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public WebsiteLink websiteLink()
-	{
-		initialize();
-		return websiteLink;
-	}
+    /**
+     * (this field is required)
+     */
+    public WebsiteLink websiteLink() {
+        initialize();
+        return websiteLink;
+    }
 
-	@Override
-	public JonixWebsite asStruct()
-	{
-		initialize();
-		JonixWebsite struct = new JonixWebsite();
-		struct.websiteDescriptions = websiteDescriptions.values();
-		struct.websiteLink = websiteLink.value;
-		struct.websiteRole = websiteRole.value;
-		return struct;
-	}
+    @Override
+    public JonixWebsite asStruct() {
+        initialize();
+        JonixWebsite struct = new JonixWebsite();
+        struct.websiteDescriptions = websiteDescriptions.values();
+        struct.websiteLink = websiteLink.value;
+        struct.websiteRole = websiteRole.value;
+        return struct;
+    }
 }

@@ -19,171 +19,146 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixTerritory;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Territory composite</h1>
- * <p>
- * A group of data elements which together identify a territory in which the price stated in an occurrence of the
- * &lt;Price&gt; composite is applicable. Optional and non-repeating.
- * </p>
- * <p>
- * <strong>Additional guidance on the description of price territories in ONIX 3.0 will be found in a separate document
- * <cite>ONIX for Books Product Information Message: How to Specify Markets and Suppliers in ONIX 3</cite>.</strong>
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Territory&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;territory&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * </table>
+ * <h1>Territory composite</h1><p>A group of data elements which together identify a territory in which the price stated
+ * in an occurrence of the &lt;Price&gt; composite is applicable. Optional and non-repeating.</p><p><strong>Additional
+ * guidance on the description of price territories in ONIX 3.0 will be found in a separate document <cite>ONIX for
+ * Books Product Information Message: How to Specify Markets and Suppliers in ONIX 3</cite>.</strong></p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Territory&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;territory&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
-public class Territory implements OnixDataComposite<JonixTerritory>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Territory implements OnixDataComposite<JonixTerritory>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Territory";
-	public static final String shortname = "territory";
+    public static final String refname = "Territory";
+    public static final String shortname = "territory";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Territory EMPTY = new Territory();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Territory EMPTY = new Territory();
 
-	public Territory()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Territory() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Territory(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Territory(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname))
-				countriesIncluded = new CountriesIncluded(e);
-			else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname))
-				regionsIncluded = new RegionsIncluded(e);
-			else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname))
-				countriesExcluded = new CountriesExcluded(e);
-			else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname))
-				regionsExcluded = new RegionsExcluded(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(CountriesIncluded.refname) || name.equals(CountriesIncluded.shortname)) {
+                countriesIncluded = new CountriesIncluded(e);
+            } else if (name.equals(RegionsIncluded.refname) || name.equals(RegionsIncluded.shortname)) {
+                regionsIncluded = new RegionsIncluded(e);
+            } else if (name.equals(CountriesExcluded.refname) || name.equals(CountriesExcluded.shortname)) {
+                countriesExcluded = new CountriesExcluded(e);
+            } else if (name.equals(RegionsExcluded.refname) || name.equals(RegionsExcluded.shortname)) {
+                regionsExcluded = new RegionsExcluded(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private CountriesIncluded countriesIncluded = CountriesIncluded.EMPTY;
+    private CountriesIncluded countriesIncluded = CountriesIncluded.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public CountriesIncluded countriesIncluded()
-	{
-		initialize();
-		return countriesIncluded;
-	}
+    /**
+     * (this field is required)
+     */
+    public CountriesIncluded countriesIncluded() {
+        initialize();
+        return countriesIncluded;
+    }
 
-	private RegionsIncluded regionsIncluded = RegionsIncluded.EMPTY;
+    private RegionsIncluded regionsIncluded = RegionsIncluded.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public RegionsIncluded regionsIncluded()
-	{
-		initialize();
-		return regionsIncluded;
-	}
+    /**
+     * (this field is optional)
+     */
+    public RegionsIncluded regionsIncluded() {
+        initialize();
+        return regionsIncluded;
+    }
 
-	private CountriesExcluded countriesExcluded = CountriesExcluded.EMPTY;
+    private CountriesExcluded countriesExcluded = CountriesExcluded.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public CountriesExcluded countriesExcluded()
-	{
-		initialize();
-		return countriesExcluded;
-	}
+    /**
+     * (this field is optional)
+     */
+    public CountriesExcluded countriesExcluded() {
+        initialize();
+        return countriesExcluded;
+    }
 
-	private RegionsExcluded regionsExcluded = RegionsExcluded.EMPTY;
+    private RegionsExcluded regionsExcluded = RegionsExcluded.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public RegionsExcluded regionsExcluded()
-	{
-		initialize();
-		return regionsExcluded;
-	}
+    /**
+     * (this field is optional)
+     */
+    public RegionsExcluded regionsExcluded() {
+        initialize();
+        return regionsExcluded;
+    }
 
-	@Override
-	public JonixTerritory asStruct()
-	{
-		initialize();
-		JonixTerritory struct = new JonixTerritory();
-		struct.countriesIncluded = countriesIncluded.value;
-		struct.regionsIncluded = regionsIncluded.value;
-		struct.countriesExcluded = countriesExcluded.value;
-		struct.regionsExcluded = regionsExcluded.value;
-		return struct;
-	}
+    @Override
+    public JonixTerritory asStruct() {
+        initialize();
+        JonixTerritory struct = new JonixTerritory();
+        struct.countriesIncluded = countriesIncluded.value;
+        struct.regionsIncluded = regionsIncluded.value;
+        struct.countriesExcluded = countriesExcluded.value;
+        struct.regionsExcluded = regionsExcluded.value;
+        return struct;
+    }
 }

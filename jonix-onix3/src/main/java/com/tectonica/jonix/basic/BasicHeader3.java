@@ -19,39 +19,36 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Addressee;
 import com.tectonica.jonix.onix3.Header;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicHeader}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicHeader3 extends BasicHeader
-{
-	private static final long serialVersionUID = 1L;
+public class BasicHeader3 extends BasicHeader {
+    private static final long serialVersionUID = 1L;
 
-	public BasicHeader3(Header header)
-	{
-		fromCompany = header.sender().senderName().value;
-		fromPerson = header.sender().contactName().value;
-		fromEmail = header.sender().emailAddress().value;
-		toCompanies = extractToCompanies(header);
-		sentDate = header.sentDateTime().value;
-	}
+    public BasicHeader3(Header header) {
+        fromCompany = header.sender().senderName().value;
+        fromPerson = header.sender().contactName().value;
+        fromEmail = header.sender().emailAddress().value;
+        toCompanies = extractToCompanies(header);
+        sentDate = header.sentDateTime().value;
+    }
 
-	private List<String> extractToCompanies(Header header)
-	{
-		List<String> list = new ArrayList<>();
-		for (Addressee addressee : header.addressees())
-		{
-			String toCompany = addressee.addresseeName().value;
-			if (toCompany != null)
-				list.add(toCompany);
-		}
-		return list.size() > 0 ? list : null;
-	}
+    private List<String> extractToCompanies(Header header) {
+        List<String> list = new ArrayList<>();
+        for (Addressee addressee : header.addressees()) {
+            String toCompany = addressee.addresseeName().value;
+            if (toCompany != null) {
+                list.add(toCompany);
+            }
+        }
+        return list.size() > 0 ? list : null;
+    }
 }

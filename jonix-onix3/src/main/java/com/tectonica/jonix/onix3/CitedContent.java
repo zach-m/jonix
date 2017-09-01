@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
@@ -30,213 +28,188 @@ import com.tectonica.jonix.codelist.ContentDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixContentDate;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Cited content composite</h1>
- * <p>
- * A group of data elements which together describe a piece of cited content. Optional and repeatable.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CitedContent&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;citedcontent&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Cited content composite</h1><p>A group of data elements which together describe a piece of cited content.
+ * Optional and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;CitedContent&gt;</td></tr><tr><td>Short tag</td><td>&lt;citedcontent&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class CitedContent implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CitedContent implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CitedContent";
-	public static final String shortname = "citedcontent";
+    public static final String refname = "CitedContent";
+    public static final String shortname = "citedcontent";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final CitedContent EMPTY = new CitedContent();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final CitedContent EMPTY = new CitedContent();
 
-	public CitedContent()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public CitedContent() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public CitedContent(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public CitedContent(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname))
-				citedContentType = new CitedContentType(e);
-			else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
-				contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
-			else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname))
-				sourceType = new SourceType(e);
-			else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname))
-				sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
-			else if (name.equals(ListName.refname) || name.equals(ListName.shortname))
-				listNames = JPU.addToList(listNames, new ListName(e));
-			else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname))
-				positionOnList = new PositionOnList(e);
-			else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname))
-				citationNotes = JPU.addToList(citationNotes, new CitationNote(e));
-			else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
-				resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
-			else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-				contentDates = JPU.addToList(contentDates, new ContentDate(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(CitedContentType.refname) || name.equals(CitedContentType.shortname)) {
+                citedContentType = new CitedContentType(e);
+            } else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname)) {
+                contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+            } else if (name.equals(SourceType.refname) || name.equals(SourceType.shortname)) {
+                sourceType = new SourceType(e);
+            } else if (name.equals(SourceTitle.refname) || name.equals(SourceTitle.shortname)) {
+                sourceTitles = JPU.addToList(sourceTitles, new SourceTitle(e));
+            } else if (name.equals(ListName.refname) || name.equals(ListName.shortname)) {
+                listNames = JPU.addToList(listNames, new ListName(e));
+            } else if (name.equals(PositionOnList.refname) || name.equals(PositionOnList.shortname)) {
+                positionOnList = new PositionOnList(e);
+            } else if (name.equals(CitationNote.refname) || name.equals(CitationNote.shortname)) {
+                citationNotes = JPU.addToList(citationNotes, new CitationNote(e));
+            } else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname)) {
+                resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+            } else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname)) {
+                contentDates = JPU.addToList(contentDates, new ContentDate(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private CitedContentType citedContentType = CitedContentType.EMPTY;
+    private CitedContentType citedContentType = CitedContentType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public CitedContentType citedContentType()
-	{
-		initialize();
-		return citedContentType;
-	}
+    /**
+     * (this field is required)
+     */
+    public CitedContentType citedContentType() {
+        initialize();
+        return citedContentType;
+    }
 
-	private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
+    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences()
-	{
-		initialize();
-		return contentAudiences;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
+        initialize();
+        return contentAudiences;
+    }
 
-	private SourceType sourceType = SourceType.EMPTY;
+    private SourceType sourceType = SourceType.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public SourceType sourceType()
-	{
-		initialize();
-		return sourceType;
-	}
+    /**
+     * (this field is optional)
+     */
+    public SourceType sourceType() {
+        initialize();
+        return sourceType;
+    }
 
-	private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
+    private ListOfOnixElement<SourceTitle, String> sourceTitles = ListOfOnixElement.empty();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixElement<SourceTitle, String> sourceTitles()
-	{
-		initialize();
-		return sourceTitles;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixElement<SourceTitle, String> sourceTitles() {
+        initialize();
+        return sourceTitles;
+    }
 
-	private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
+    private ListOfOnixElement<ListName, String> listNames = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<ListName, String> listNames()
-	{
-		initialize();
-		return listNames;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ListName, String> listNames() {
+        initialize();
+        return listNames;
+    }
 
-	private PositionOnList positionOnList = PositionOnList.EMPTY;
+    private PositionOnList positionOnList = PositionOnList.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PositionOnList positionOnList()
-	{
-		initialize();
-		return positionOnList;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PositionOnList positionOnList() {
+        initialize();
+        return positionOnList;
+    }
 
-	private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();
+    private ListOfOnixElement<CitationNote, String> citationNotes = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<CitationNote, String> citationNotes()
-	{
-		initialize();
-		return citationNotes;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<CitationNote, String> citationNotes() {
+        initialize();
+        return citationNotes;
+    }
 
-	private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<ResourceLink, String> resourceLinks()
-	{
-		initialize();
-		return resourceLinks;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ResourceLink, String> resourceLinks() {
+        initialize();
+        return resourceLinks;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates()
-	{
-		initialize();
-		return contentDates;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
+        initialize();
+        return contentDates;
+    }
 }

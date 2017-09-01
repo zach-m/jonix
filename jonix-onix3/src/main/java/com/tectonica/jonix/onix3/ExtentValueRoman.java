@@ -19,110 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Extent value in Roman numerals</h1>
- * <p>
- * The value of the extent expressed in Roman numerals. Optional, and non-repeating. Used only for page runs which are
- * numbered in Roman.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Letters forming a valid Roman numeral</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ExtentValueRoman&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x421&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;ExtentValueRoman&gt;xxiii&lt;/ExtentValueRoman&gt; (23)</td>
- * </tr>
- * </table>
+ * <h1>Extent value in Roman numerals</h1><p>The value of the extent expressed in Roman numerals. Optional, and
+ * non-repeating. Used only for page runs which are numbered in Roman.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Letters forming a valid Roman numeral</td></tr><tr><td>Reference
+ * name</td><td>&lt;ExtentValueRoman&gt;</td></tr><tr><td>Short tag</td><td>&lt;x421&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ExtentValueRoman&gt;xxiii&lt;/ExtentValueRoman&gt;
+ * (23)</td></tr></table>
  */
-public class ExtentValueRoman implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ExtentValueRoman implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ExtentValueRoman";
-	public static final String shortname = "x421";
+    public static final String refname = "ExtentValueRoman";
+    public static final String shortname = "x421";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Letters forming a valid Roman numeral
-	 * <p>
-	 * (type: dt.RomanNumeralString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Letters forming a valid Roman numeral<p> (type: dt.RomanNumeralString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ExtentValueRoman EMPTY = new ExtentValueRoman();
+    private final boolean exists;
+    public static final ExtentValueRoman EMPTY = new ExtentValueRoman();
 
-	public ExtentValueRoman()
-	{
-		exists = false;
-	}
+    public ExtentValueRoman() {
+        exists = false;
+    }
 
-	public ExtentValueRoman(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ExtentValueRoman(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

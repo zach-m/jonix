@@ -23,16 +23,14 @@ import com.tectonica.jonix.onix3.Imprint;
 
 /**
  * ONIX3 concrete implementation for {@link BasicImprint}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicImprint3 extends BasicImprint
-{
-	private static final long serialVersionUID = 1L;
+public class BasicImprint3 extends BasicImprint {
+    private static final long serialVersionUID = 1L;
 
-	public BasicImprint3(Imprint imprint)
-	{
-		// TODO: we should at least read one required field (unlike ImprintName)
-		imprintName = imprint.imprintName().value;
-	}
+    public BasicImprint3(Imprint imprint) {
+        // TODO: we should at least read one required field (unlike ImprintName)
+        imprintName = imprint.imprintName().value;
+    }
 }

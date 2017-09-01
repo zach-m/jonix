@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.onix3.Product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicCollections}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicCollections3 extends BasicCollections
-{
-	private static final long serialVersionUID = 1L;
+public class BasicCollections3 extends BasicCollections {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicCollections3(Product product)
-	{
-		this.product = product;
-	}
+    public BasicCollections3(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicCollection> initialize()
-	{
-		List<BasicCollection> list = new ArrayList<>();
-		for (Collection collection : product.descriptiveDetail().collections())
-			list.add(new BasicCollection3(collection));
-		return list;
-	}
+    @Override
+    protected List<BasicCollection> initialize() {
+        List<BasicCollection> list = new ArrayList<>();
+        for (Collection collection : product.descriptiveDetail().collections()) {
+            list.add(new BasicCollection3(collection));
+        }
+        return list;
+    }
 }

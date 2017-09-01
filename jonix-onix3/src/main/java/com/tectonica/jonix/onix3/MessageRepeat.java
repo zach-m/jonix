@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Message repeat number</h1>
- * <p>
- * A number which distinguishes any repeat transmissions of a message. If this element is used, the original is numbered
- * 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length integer</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;MessageRepeat&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;m181&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;m181&gt;2&lt;/m181&gt;</td>
- * </tr>
- * </table>
+ * <h1>Message repeat number</h1><p>A number which distinguishes any repeat transmissions of a message. If this element
+ * is used, the original is numbered 1 and repeats are numbered 2, 3 <i>etc</i>. Optional and non-repeating.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable length integer</td></tr><tr><td>Reference
+ * name</td><td>&lt;MessageRepeat&gt;</td></tr><tr><td>Short tag</td><td>&lt;m181&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;m181&gt;2&lt;/m181&gt;</td></tr></table>
  */
-public class MessageRepeat implements OnixElement<Integer>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class MessageRepeat implements OnixElement<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "MessageRepeat";
-	public static final String shortname = "m181";
+    public static final String refname = "MessageRepeat";
+    public static final String shortname = "m181";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length integer
-	 * <p>
-	 * (type: dt.StrictPositiveInteger)
-	 */
-	public Integer value;
+    /**
+     * Raw Format: Variable length integer<p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Integer _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Integer _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final MessageRepeat EMPTY = new MessageRepeat();
+    private final boolean exists;
+    public static final MessageRepeat EMPTY = new MessageRepeat();
 
-	public MessageRepeat()
-	{
-		exists = false;
-	}
+    public MessageRepeat() {
+        exists = false;
+    }
 
-	public MessageRepeat(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public MessageRepeat(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsInteger(element);
-	}
+        value = JPU.getContentAsInteger(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

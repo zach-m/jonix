@@ -19,36 +19,34 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.Subject;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * ONIX3 concrete implementation for {@link BasicSubjects}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSubjects3 extends BasicSubjects
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSubjects3 extends BasicSubjects {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicSubjects3(Product product)
-	{
-		this.product = product;
-	}
+    public BasicSubjects3(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected Map<SubjectSchemeIdentifiers, List<BasicSubject>> initialize()
-	{
-		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
-		for (Subject subject : product.descriptiveDetail().subjects())
-			addKV(map, new BasicSubject3(subject), subject.isMainSubject());
-		return map;
-	}
+    @Override
+    protected Map<SubjectSchemeIdentifiers, List<BasicSubject>> initialize() {
+        Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
+        for (Subject subject : product.descriptiveDetail().subjects()) {
+            addKV(map, new BasicSubject3(subject), subject.isMainSubject());
+        }
+        return map;
+    }
 }

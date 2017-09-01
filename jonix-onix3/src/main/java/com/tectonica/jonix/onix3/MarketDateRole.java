@@ -19,115 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Market date role code</h1>
- * <p>
- * An ONIX code indicating the significance of the date. Mandatory in each occurrence of the &lt;MarketDate&gt;
- * composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 163</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;MarketDateRole&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j408&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;j408&gt;01&lt;/j408&gt; (Publication date)</td>
- * </tr>
- * <tr>
- * <td>Notes</td>
- * <td>A date such as a publication date should be interpreted as the 'publication' or first availability date within
- * the market, and not as a 'global' publication date.</td>
- * </tr>
- * </table>
+ * <h1>Market date role code</h1><p>An ONIX code indicating the significance of the date. Mandatory in each occurrence
+ * of the &lt;MarketDate&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two digits</td></tr><tr><td>Codelist</td><td>List 163</td></tr><tr><td>Reference
+ * name</td><td>&lt;MarketDateRole&gt;</td></tr><tr><td>Short tag</td><td>&lt;j408&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;j408&gt;01&lt;/j408&gt;
+ * (Publication date)</td></tr><tr><td>Notes</td><td>A date such as a publication date should be interpreted as the
+ * 'publication' or first availability date within the market, and not as a 'global' publication
+ * date.</td></tr></table>
  */
-public class MarketDateRole implements OnixElement<PublishingDateRoles>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class MarketDateRole implements OnixElement<PublishingDateRoles>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "MarketDateRole";
-	public static final String shortname = "j408";
+    public static final String refname = "MarketDateRole";
+    public static final String shortname = "j408";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public PublishingDateRoles value;
+    public PublishingDateRoles value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public PublishingDateRoles _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public PublishingDateRoles _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final MarketDateRole EMPTY = new MarketDateRole();
+    private final boolean exists;
+    public static final MarketDateRole EMPTY = new MarketDateRole();
 
-	public MarketDateRole()
-	{
-		exists = false;
-	}
+    public MarketDateRole() {
+        exists = false;
+    }
 
-	public MarketDateRole(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public MarketDateRole(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = PublishingDateRoles.byCode(JPU.getContentAsString(element));
-	}
+        value = PublishingDateRoles.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -23,16 +23,14 @@ import com.tectonica.jonix.onix3.Publisher;
 
 /**
  * ONIX3 concrete implementation for {@link BasicPublisher}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPublisher3 extends BasicPublisher
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPublisher3 extends BasicPublisher {
+    private static final long serialVersionUID = 1L;
 
-	public BasicPublisher3(Publisher i)
-	{
-		publishingRole = i.publishingRole().value;
-		publisherName = i.publisherName().value;
-	}
+    public BasicPublisher3(Publisher i) {
+        publishingRole = i.publishingRole().value;
+        publisherName = i.publisherName().value;
+    }
 }

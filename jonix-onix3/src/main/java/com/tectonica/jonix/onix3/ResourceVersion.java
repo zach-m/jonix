@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
@@ -31,151 +29,130 @@ import com.tectonica.jonix.codelist.ResourceVersionFeatureTypes;
 import com.tectonica.jonix.struct.JonixContentDate;
 import com.tectonica.jonix.struct.JonixResourceVersionFeature;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Resource version composite</h1>
- * <p>
- * A repeatable group of data elements which together describe a version of a supporting resource, for example a
- * particular format of a cover image. At least one instance is mandatory in each occurrence of the
- * &lt;SupportingResource&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ResourceVersion&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;resourceversion&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Resource version composite</h1><p>A repeatable group of data elements which together describe a version of a
+ * supporting resource, for example a particular format of a cover image. At least one instance is mandatory in each
+ * occurrence of the &lt;SupportingResource&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;ResourceVersion&gt;</td></tr><tr><td>Short tag</td><td>&lt;resourceversion&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
  */
-public class ResourceVersion implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ResourceVersion implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ResourceVersion";
-	public static final String shortname = "resourceversion";
+    public static final String refname = "ResourceVersion";
+    public static final String shortname = "resourceversion";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ResourceVersion EMPTY = new ResourceVersion();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ResourceVersion EMPTY = new ResourceVersion();
 
-	public ResourceVersion()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ResourceVersion() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ResourceVersion(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ResourceVersion(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname))
-				resourceForm = new ResourceForm(e);
-			else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname))
-				resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
-			else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname))
-				resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
-			else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname))
-				contentDates = JPU.addToList(contentDates, new ContentDate(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ResourceForm.refname) || name.equals(ResourceForm.shortname)) {
+                resourceForm = new ResourceForm(e);
+            } else if (name.equals(ResourceVersionFeature.refname) || name.equals(ResourceVersionFeature.shortname)) {
+                resourceVersionFeatures = JPU.addToList(resourceVersionFeatures, new ResourceVersionFeature(e));
+            } else if (name.equals(ResourceLink.refname) || name.equals(ResourceLink.shortname)) {
+                resourceLinks = JPU.addToList(resourceLinks, new ResourceLink(e));
+            } else if (name.equals(ContentDate.refname) || name.equals(ContentDate.shortname)) {
+                contentDates = JPU.addToList(contentDates, new ContentDate(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ResourceForm resourceForm = ResourceForm.EMPTY;
+    private ResourceForm resourceForm = ResourceForm.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ResourceForm resourceForm()
-	{
-		initialize();
-		return resourceForm;
-	}
+    /**
+     * (this field is required)
+     */
+    public ResourceForm resourceForm() {
+        initialize();
+        return resourceForm;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes>
+        resourceVersionFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures()
-	{
-		initialize();
-		return resourceVersionFeatures;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures() {
+        initialize();
+        return resourceVersionFeatures;
+    }
 
-	private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
+    private ListOfOnixElement<ResourceLink, String> resourceLinks = ListOfOnixElement.empty();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixElement<ResourceLink, String> resourceLinks()
-	{
-		initialize();
-		return resourceLinks;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixElement<ResourceLink, String> resourceLinks() {
+        initialize();
+        return resourceLinks;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates()
-	{
-		initialize();
-		return contentDates;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
+        initialize();
+        return contentDates;
+    }
 }

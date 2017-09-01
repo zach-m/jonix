@@ -19,140 +19,119 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixBarcode;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Barcode composite</h1>
- * <p>
- * A group of data elements which together specify a barcode type and its position on a product. Optional: expected to
- * be used only in North America. Repeatable if more than one type of barcode is carried on a single product. The
- * absence of this composite does <em>not</em> mean that a product is not bar-coded.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Barcode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;barcode&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Barcode composite</h1><p>A group of data elements which together specify a barcode type and its position on a
+ * product. Optional: expected to be used only in North America. Repeatable if more than one type of barcode is carried
+ * on a single product. The absence of this composite does <em>not</em> mean that a product is not bar-coded.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Barcode&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;barcode&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Barcode";
-	public static final String shortname = "barcode";
+    public static final String refname = "Barcode";
+    public static final String shortname = "barcode";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Barcode EMPTY = new Barcode();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Barcode EMPTY = new Barcode();
 
-	public Barcode()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Barcode() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Barcode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Barcode(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname))
-				barcodeType = new BarcodeType(e);
-			else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname))
-				positionOnProduct = new PositionOnProduct(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(BarcodeType.refname) || name.equals(BarcodeType.shortname)) {
+                barcodeType = new BarcodeType(e);
+            } else if (name.equals(PositionOnProduct.refname) || name.equals(PositionOnProduct.shortname)) {
+                positionOnProduct = new PositionOnProduct(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private BarcodeType barcodeType = BarcodeType.EMPTY;
+    private BarcodeType barcodeType = BarcodeType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public BarcodeType barcodeType()
-	{
-		initialize();
-		return barcodeType;
-	}
+    /**
+     * (this field is required)
+     */
+    public BarcodeType barcodeType() {
+        initialize();
+        return barcodeType;
+    }
 
-	private PositionOnProduct positionOnProduct = PositionOnProduct.EMPTY;
+    private PositionOnProduct positionOnProduct = PositionOnProduct.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PositionOnProduct positionOnProduct()
-	{
-		initialize();
-		return positionOnProduct;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PositionOnProduct positionOnProduct() {
+        initialize();
+        return positionOnProduct;
+    }
 
-	@Override
-	public JonixBarcode asStruct()
-	{
-		initialize();
-		JonixBarcode struct = new JonixBarcode();
-		struct.barcodeType = barcodeType.value;
-		struct.positionOnProduct = positionOnProduct.value;
-		return struct;
-	}
+    @Override
+    public JonixBarcode asStruct() {
+        initialize();
+        JonixBarcode struct = new JonixBarcode();
+        struct.barcodeType = barcodeType.value;
+        struct.positionOnProduct = positionOnProduct.value;
+        return struct;
+    }
 }

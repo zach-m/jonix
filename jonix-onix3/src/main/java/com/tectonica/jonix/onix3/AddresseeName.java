@@ -19,111 +19,83 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Addressee name</h1>
- * <p>
- * The name of the addressee organization, which should always be stated in a standard form agreed with the addressee.
- * Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element <em>or</em> a
- * &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum 50 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AddresseeName&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x300&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x300&gt;BiblioAggregator Ltd&lt;/x300&gt;</td>
- * </tr>
- * </table>
+ * <h1>Addressee name</h1><p>The name of the addressee organization, which should always be stated in a standard form
+ * agreed with the addressee. Optional and non-repeating; but <em>either</em> a &lt;AddresseeName&gt; element
+ * <em>or</em> a &lt;AddresseeIdentifier&gt; composite <em>must</em> be included.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum 50
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;AddresseeName&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x300&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x300&gt;BiblioAggregator
+ * Ltd&lt;/x300&gt;</td></tr></table>
  */
-public class AddresseeName implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class AddresseeName implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AddresseeName";
-	public static final String shortname = "x300";
+    public static final String refname = "AddresseeName";
+    public static final String shortname = "x300";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 50 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum 50 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final AddresseeName EMPTY = new AddresseeName();
+    private final boolean exists;
+    public static final AddresseeName EMPTY = new AddresseeName();
 
-	public AddresseeName()
-	{
-		exists = false;
-	}
+    public AddresseeName() {
+        exists = false;
+    }
 
-	public AddresseeName(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public AddresseeName(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

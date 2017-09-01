@@ -19,114 +19,84 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Discount amount</h1>
- * <p>
- * A discount expressed as an absolute amount per copy. Optional and non-repeating; but either &lt;DiscountPercent&gt;
- * or &lt;DiscountAmount&gt; or both must be present in each occurrence of the &lt;Discount&gt; composite. Note that
- * when both are present, they represent two different expressions of the same discount – the discounts are not
- * cumulative.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length real number, with explicit decimal point when required, suggested maximum length 12
- * characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;DiscountAmount&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x469&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</td>
- * </tr>
- * </table>
+ * <h1>Discount amount</h1><p>A discount expressed as an absolute amount per copy. Optional and non-repeating; but
+ * either &lt;DiscountPercent&gt; or &lt;DiscountAmount&gt; or both must be present in each occurrence of the
+ * &lt;Discount&gt; composite. Note that when both are present, they represent two different expressions of the same
+ * discount – the discounts are not cumulative.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length real number, with explicit decimal point when required, suggested maximum length 12
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;DiscountAmount&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x469&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;DiscountAmount&gt;4.59&lt;/DiscountAmount&gt;</td></tr></table>
  */
-public class DiscountAmount implements OnixElement<Double>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class DiscountAmount implements OnixElement<Double>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "DiscountAmount";
-	public static final String shortname = "x469";
+    public static final String refname = "DiscountAmount";
+    public static final String shortname = "x469";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
-	 * <p>
-	 * (type: dt.PositiveDecimal)
-	 */
-	public Double value;
+    /**
+     * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+     * characters<p> (type: dt.PositiveDecimal)
+     */
+    public Double value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Double _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Double _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final DiscountAmount EMPTY = new DiscountAmount();
+    private final boolean exists;
+    public static final DiscountAmount EMPTY = new DiscountAmount();
 
-	public DiscountAmount()
-	{
-		exists = false;
-	}
+    public DiscountAmount() {
+        exists = false;
+    }
 
-	public DiscountAmount(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public DiscountAmount(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsDouble(element);
-	}
+        value = JPU.getContentAsDouble(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

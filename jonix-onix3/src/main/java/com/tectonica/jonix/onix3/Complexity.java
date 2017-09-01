@@ -19,138 +19,117 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixComplexity;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Complexity composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together describe the level of complexity of a text.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Complexity&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;complexity&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Complexity composite</h1><p>An optional and repeatable group of data elements which together describe the level
+ * of complexity of a text.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Complexity&gt;</td></tr><tr><td>Short tag</td><td>&lt;complexity&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Complexity implements OnixDataComposite<JonixComplexity>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Complexity implements OnixDataComposite<JonixComplexity>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Complexity";
-	public static final String shortname = "complexity";
+    public static final String refname = "Complexity";
+    public static final String shortname = "complexity";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Complexity EMPTY = new Complexity();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Complexity EMPTY = new Complexity();
 
-	public Complexity()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Complexity() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Complexity(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Complexity(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ComplexitySchemeIdentifier.refname) || name.equals(ComplexitySchemeIdentifier.shortname))
-				complexitySchemeIdentifier = new ComplexitySchemeIdentifier(e);
-			else if (name.equals(ComplexityCode.refname) || name.equals(ComplexityCode.shortname))
-				complexityCode = new ComplexityCode(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ComplexitySchemeIdentifier.refname) || name.equals(ComplexitySchemeIdentifier.shortname)) {
+                complexitySchemeIdentifier = new ComplexitySchemeIdentifier(e);
+            } else if (name.equals(ComplexityCode.refname) || name.equals(ComplexityCode.shortname)) {
+                complexityCode = new ComplexityCode(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ComplexitySchemeIdentifier complexitySchemeIdentifier = ComplexitySchemeIdentifier.EMPTY;
+    private ComplexitySchemeIdentifier complexitySchemeIdentifier = ComplexitySchemeIdentifier.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ComplexitySchemeIdentifier complexitySchemeIdentifier()
-	{
-		initialize();
-		return complexitySchemeIdentifier;
-	}
+    /**
+     * (this field is required)
+     */
+    public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
+        initialize();
+        return complexitySchemeIdentifier;
+    }
 
-	private ComplexityCode complexityCode = ComplexityCode.EMPTY;
+    private ComplexityCode complexityCode = ComplexityCode.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ComplexityCode complexityCode()
-	{
-		initialize();
-		return complexityCode;
-	}
+    /**
+     * (this field is required)
+     */
+    public ComplexityCode complexityCode() {
+        initialize();
+        return complexityCode;
+    }
 
-	@Override
-	public JonixComplexity asStruct()
-	{
-		initialize();
-		JonixComplexity struct = new JonixComplexity();
-		struct.complexityCode = complexityCode.value;
-		struct.complexitySchemeIdentifier = complexitySchemeIdentifier.value;
-		return struct;
-	}
+    @Override
+    public JonixComplexity asStruct() {
+        initialize();
+        JonixComplexity struct = new JonixComplexity();
+        struct.complexityCode = complexityCode.value;
+        struct.complexitySchemeIdentifier = complexitySchemeIdentifier.value;
+        return struct;
+    }
 }

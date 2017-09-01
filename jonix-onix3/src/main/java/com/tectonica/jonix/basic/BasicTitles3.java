@@ -19,40 +19,37 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Collection;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.TitleDetail;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicTitles}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicTitles3 extends BasicTitles
-{
-	private static final long serialVersionUID = 1L;
+public class BasicTitles3 extends BasicTitles {
+    private static final long serialVersionUID = 1L;
 
-	private transient final List<TitleDetail> titles;
+    private final transient List<TitleDetail> titles;
 
-	public BasicTitles3(Product product)
-	{
-		titles = product.descriptiveDetail().titleDetails();
-	}
+    public BasicTitles3(Product product) {
+        titles = product.descriptiveDetail().titleDetails();
+    }
 
-	public BasicTitles3(Collection collection)
-	{
-		titles = collection.titleDetails();
-	}
+    public BasicTitles3(Collection collection) {
+        titles = collection.titleDetails();
+    }
 
-	@Override
-	protected List<BasicTitle> initialize()
-	{
-		List<BasicTitle> list = new ArrayList<>();
-		for (TitleDetail title : titles)
-			list.add(new BasicTitle3(title));
-		return list;
-	}
+    @Override
+    protected List<BasicTitle> initialize() {
+        List<BasicTitle> list = new ArrayList<>();
+        for (TitleDetail title : titles) {
+            list.add(new BasicTitle3(title));
+        }
+        return list;
+    }
 }

@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.PrizeOrAwardAchievements;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Prize or award achievement code</h1>
- * <p>
- * An ONIX code indicating the achievement of the product in relation to a prize or award, <i>eg</i> winner, runner-up,
- * shortlisted. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 41</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PrizeCode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;g129&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;PrizeCode&gt;02&lt;/PrizeCode&gt; (Runner up)</td>
- * </tr>
- * </table>
+ * <h1>Prize or award achievement code</h1><p>An ONIX code indicating the achievement of the product in relation to a
+ * prize or award, <i>eg</i> winner, runner-up, shortlisted. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 41</td></tr><tr><td>Reference name</td><td>&lt;PrizeCode&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;g129&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;PrizeCode&gt;02&lt;/PrizeCode&gt;
+ * (Runner up)</td></tr></table>
  */
-public class PrizeCode implements OnixElement<PrizeOrAwardAchievements>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PrizeCode implements OnixElement<PrizeOrAwardAchievements>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PrizeCode";
-	public static final String shortname = "g129";
+    public static final String refname = "PrizeCode";
+    public static final String shortname = "g129";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public PrizeOrAwardAchievements value;
+    public PrizeOrAwardAchievements value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public PrizeOrAwardAchievements _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public PrizeOrAwardAchievements _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final PrizeCode EMPTY = new PrizeCode();
+    private final boolean exists;
+    public static final PrizeCode EMPTY = new PrizeCode();
 
-	public PrizeCode()
-	{
-		exists = false;
-	}
+    public PrizeCode() {
+        exists = false;
+    }
 
-	public PrizeCode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public PrizeCode(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = PrizeOrAwardAchievements.byCode(JPU.getContentAsString(element));
-	}
+        value = PrizeOrAwardAchievements.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

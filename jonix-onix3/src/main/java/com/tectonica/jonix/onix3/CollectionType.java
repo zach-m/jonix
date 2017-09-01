@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.CollectionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Collection type code</h1>
- * <p>
- * An ONIX code indicating the type of a collection: publisher collection, ascribed collection, or unspecified.
- * Mandatory in each occurrence of the &lt;Collection&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length text, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 148</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CollectionType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x329&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x329&gt;10&lt;/x329&gt; (Publisher collection)</td>
- * </tr>
- * </table>
+ * <h1>Collection type code</h1><p>An ONIX code indicating the type of a collection: publisher collection, ascribed
+ * collection, or unspecified. Mandatory in each occurrence of the &lt;Collection&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length text, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 148</td></tr><tr><td>Reference name</td><td>&lt;CollectionType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x329&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x329&gt;10&lt;/x329&gt;
+ * (Publisher collection)</td></tr></table>
  */
-public class CollectionType implements OnixElement<CollectionTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CollectionType implements OnixElement<CollectionTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CollectionType";
-	public static final String shortname = "x329";
+    public static final String refname = "CollectionType";
+    public static final String shortname = "x329";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public CollectionTypes value;
+    public CollectionTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public CollectionTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public CollectionTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CollectionType EMPTY = new CollectionType();
+    private final boolean exists;
+    public static final CollectionType EMPTY = new CollectionType();
 
-	public CollectionType()
-	{
-		exists = false;
-	}
+    public CollectionType() {
+        exists = false;
+    }
 
-	public CollectionType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CollectionType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = CollectionTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = CollectionTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

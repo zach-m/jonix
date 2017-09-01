@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Imprint;
 import com.tectonica.jonix.onix3.Product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicImprints}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicImprints3 extends BasicImprints
-{
-	private static final long serialVersionUID = 1L;
+public class BasicImprints3 extends BasicImprints {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicImprints3(Product product)
-	{
-		this.product = product;
-	}
+    public BasicImprints3(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicImprint> initialize()
-	{
-		List<BasicImprint> list = new ArrayList<>();
-		for (Imprint imprint : product.publishingDetail().imprints())
-			list.add(new BasicImprint3(imprint));
-		return list;
-	}
+    @Override
+    protected List<BasicImprint> initialize() {
+        List<BasicImprint> list = new ArrayList<>();
+        for (Imprint imprint : product.publishingDetail().imprints()) {
+            list.add(new BasicImprint3(imprint));
+        }
+        return list;
+    }
 }

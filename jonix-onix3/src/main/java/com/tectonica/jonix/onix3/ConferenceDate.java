@@ -19,121 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Conference date</h1>
- * <p>
- * The date of a conference to which the product is related. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing. Note
- * that the dateformat attribute allows exact dates to be supplied if necessary, including the cases where a conference
- * spreads over a range of dates or the date can only be supplied as a text string</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ConferenceDate&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b054&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>dateformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b054 dateformat=&quot;12&quot;&gt;7-9 October 2009&lt;/b054&gt;</td>
- * </tr>
- * </table>
+ * <h1>Conference date</h1><p>The date of a conference to which the product is related. Optional and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value in the
+ * dateformat attribute, or the default of YYYY if the attribute is missing. Note that the dateformat attribute allows
+ * exact dates to be supplied if necessary, including the cases where a conference spreads over a range of dates or the
+ * date can only be supplied as a text string</td></tr><tr><td>Reference name</td><td>&lt;ConferenceDate&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b054&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td>&lt;b054
+ * dateformat=&quot;12&quot;&gt;7-9 October 2009&lt;/b054&gt;</td></tr></table>
  */
-public class ConferenceDate implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ConferenceDate implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ConferenceDate";
-	public static final String shortname = "b054";
+    public static final String refname = "ConferenceDate";
+    public static final String shortname = "b054";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public DateFormats dateformat;
+    public DateFormats dateformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
-	 * missing. Note that the dateformat attribute allows exact dates to be supplied if necessary, including the cases
-	 * where a conference spreads over a range of dates or the date can only be supplied as a text string
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+     * missing. Note that the dateformat attribute allows exact dates to be supplied if necessary, including the cases
+     * where a conference spreads over a range of dates or the date can only be supplied as a text string<p> (type:
+     * dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ConferenceDate EMPTY = new ConferenceDate();
+    private final boolean exists;
+    public static final ConferenceDate EMPTY = new ConferenceDate();
 
-	public ConferenceDate()
-	{
-		exists = false;
-	}
+    public ConferenceDate() {
+        exists = false;
+    }
 
-	public ConferenceDate(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
+    public ConferenceDate(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -19,28 +19,26 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.Arrays;
-
 import com.tectonica.jonix.onix3.SalesRights;
 import com.tectonica.jonix.onix3.Territory;
 
+import java.util.Arrays;
+
 /**
  * ONIX3 concrete implementation for {@link BasicSalesRights}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSalesRights3 extends BasicSalesRights
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSalesRights3 extends BasicSalesRights {
+    private static final long serialVersionUID = 1L;
 
-	public BasicSalesRights3(SalesRights salesRights)
-	{
-		Territory territory = salesRights.territory();
-		salesRightsType = salesRights.salesRightsType().value;
-		countries = Arrays.asList(territory.countriesIncluded().value);
-		regions = territory.regionsIncluded().value;
-		rightRegions = null;
-		countriesExcluded = territory.countriesExcluded().value;
-		regionsExcluded = territory.regionsExcluded().value;
-	}
+    public BasicSalesRights3(SalesRights salesRights) {
+        Territory territory = salesRights.territory();
+        salesRightsType = salesRights.salesRightsType().value;
+        countries = Arrays.asList(territory.countriesIncluded().value);
+        regions = territory.regionsIncluded().value;
+        rightRegions = null;
+        countriesExcluded = territory.countriesExcluded().value;
+        regionsExcluded = territory.regionsExcluded().value;
+    }
 }

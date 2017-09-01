@@ -19,120 +19,100 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1>
- * <h4 class="nobreak">Content detail composite</h4>
- * <p>
- * The content detail block comprises the single data element Group&nbsp;P.18. The block as a whole is non-repeating. It
- * is not mandatory within the &lt;Product&gt; record, and is used only when there is a requirement to describe
- * individual chapters or parts within a product in a fully structured way. The more usual ONIX practice is to send a
- * table of contents as text, possibly in XHTML, in Group&nbsp;P.14.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ContentDetail&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;contentdetail&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * </table>
+ * <h1>null</h1><h4 class="nobreak">Content detail composite</h4><p>The content detail block comprises the single data
+ * element Group&nbsp;P.18. The block as a whole is non-repeating. It is not mandatory within the &lt;Product&gt;
+ * record, and is used only when there is a requirement to describe individual chapters or parts within a product in a
+ * fully structured way. The more usual ONIX practice is to send a table of contents as text, possibly in XHTML, in
+ * Group&nbsp;P.14.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentDetail&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;contentdetail&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
-public class ContentDetail implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ContentDetail implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ContentDetail";
-	public static final String shortname = "contentdetail";
+    public static final String refname = "ContentDetail";
+    public static final String shortname = "contentdetail";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ContentDetail EMPTY = new ContentDetail();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ContentDetail EMPTY = new ContentDetail();
 
-	public ContentDetail()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ContentDetail() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ContentDetail(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ContentDetail(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname))
-				contentItems = JPU.addToList(contentItems, new ContentItem(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ContentItem.refname) || name.equals(ContentItem.shortname)) {
+                contentItems = JPU.addToList(contentItems, new ContentItem(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private List<ContentItem> contentItems = Collections.emptyList();
+    private List<ContentItem> contentItems = Collections.emptyList();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ContentItem> contentItems()
-	{
-		initialize();
-		return contentItems;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public List<ContentItem> contentItems() {
+        initialize();
+        return contentItems;
+    }
 }

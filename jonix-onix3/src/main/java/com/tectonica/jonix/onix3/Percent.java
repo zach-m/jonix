@@ -19,111 +19,82 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Percentage</h1>
- * <p>
- * The percentage of the unit value of the product that is assignable to a designated product classification. Optional
- * and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two or more product
- * classifications. If omitted, the product classification code applies to 100% of the product.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Real decimal number in the range 0 to 100</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Percent&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b337&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;Percent&gt;66.67&lt;/Percent&gt;</td>
- * </tr>
- * </table>
+ * <h1>Percentage</h1><p>The percentage of the unit value of the product that is assignable to a designated product
+ * classification. Optional and non-repeating. Used when a mixed product (<i>eg</i> book and CD) belongs partly to two
+ * or more product classifications. If omitted, the product classification code applies to 100% of the
+ * product.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Real decimal number in the range 0 to
+ * 100</td></tr><tr><td>Reference name</td><td>&lt;Percent&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b337&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Percent&gt;66.67&lt;/Percent&gt;</td></tr></table>
  */
-public class Percent implements OnixElement<Double>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Percent implements OnixElement<Double>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Percent";
-	public static final String shortname = "b337";
+    public static final String refname = "Percent";
+    public static final String shortname = "b337";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Real decimal number in the range 0 to 100
-	 * <p>
-	 * (type: dt.PercentDecimal)
-	 */
-	public Double value;
+    /**
+     * Raw Format: Real decimal number in the range 0 to 100<p> (type: dt.PercentDecimal)
+     */
+    public Double value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Double _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Double _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final Percent EMPTY = new Percent();
+    private final boolean exists;
+    public static final Percent EMPTY = new Percent();
 
-	public Percent()
-	{
-		exists = false;
-	}
+    public Percent() {
+        exists = false;
+    }
 
-	public Percent(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public Percent(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsDouble(element);
-	}
+        value = JPU.getContentAsDouble(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

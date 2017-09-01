@@ -19,161 +19,137 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ReturnsConditionsCodeTypes;
 import com.tectonica.jonix.struct.JonixReturnsConditions;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Returns conditions composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together allow returns conditions to be specified in coded
- * form.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ReturnsConditions&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;returnsconditions&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Returns conditions composite</h1><p>An optional and repeatable group of data elements which together allow
+ * returns conditions to be specified in coded form.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;ReturnsConditions&gt;</td></tr><tr><td>Short tag</td><td>&lt;returnsconditions&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ReturnsConditions
-		implements OnixDataCompositeWithKey<JonixReturnsConditions, ReturnsConditionsCodeTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixReturnsConditions, ReturnsConditionsCodeTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ReturnsConditions";
-	public static final String shortname = "returnsconditions";
+    public static final String refname = "ReturnsConditions";
+    public static final String shortname = "returnsconditions";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ReturnsConditions EMPTY = new ReturnsConditions();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ReturnsConditions EMPTY = new ReturnsConditions();
 
-	public ReturnsConditions()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ReturnsConditions() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ReturnsConditions(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ReturnsConditions(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname))
-				returnsCodeType = new ReturnsCodeType(e);
-			else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname))
-				returnsCodeTypeName = new ReturnsCodeTypeName(e);
-			else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname))
-				returnsCode = new ReturnsCode(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ReturnsCodeType.refname) || name.equals(ReturnsCodeType.shortname)) {
+                returnsCodeType = new ReturnsCodeType(e);
+            } else if (name.equals(ReturnsCodeTypeName.refname) || name.equals(ReturnsCodeTypeName.shortname)) {
+                returnsCodeTypeName = new ReturnsCodeTypeName(e);
+            } else if (name.equals(ReturnsCode.refname) || name.equals(ReturnsCode.shortname)) {
+                returnsCode = new ReturnsCode(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ReturnsCodeType returnsCodeType = ReturnsCodeType.EMPTY;
+    private ReturnsCodeType returnsCodeType = ReturnsCodeType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ReturnsCodeType returnsCodeType()
-	{
-		initialize();
-		return returnsCodeType;
-	}
+    /**
+     * (this field is required)
+     */
+    public ReturnsCodeType returnsCodeType() {
+        initialize();
+        return returnsCodeType;
+    }
 
-	private ReturnsCodeTypeName returnsCodeTypeName = ReturnsCodeTypeName.EMPTY;
+    private ReturnsCodeTypeName returnsCodeTypeName = ReturnsCodeTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ReturnsCodeTypeName returnsCodeTypeName()
-	{
-		initialize();
-		return returnsCodeTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ReturnsCodeTypeName returnsCodeTypeName() {
+        initialize();
+        return returnsCodeTypeName;
+    }
 
-	private ReturnsCode returnsCode = ReturnsCode.EMPTY;
+    private ReturnsCode returnsCode = ReturnsCode.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ReturnsCode returnsCode()
-	{
-		initialize();
-		return returnsCode;
-	}
+    /**
+     * (this field is required)
+     */
+    public ReturnsCode returnsCode() {
+        initialize();
+        return returnsCode;
+    }
 
-	@Override
-	public JonixReturnsConditions asStruct()
-	{
-		initialize();
-		JonixReturnsConditions struct = new JonixReturnsConditions();
-		struct.returnsCodeType = returnsCodeType.value;
-		struct.returnsCodeTypeName = returnsCodeTypeName.value;
-		struct.returnsCode = returnsCode.value;
-		return struct;
-	}
+    @Override
+    public JonixReturnsConditions asStruct() {
+        initialize();
+        JonixReturnsConditions struct = new JonixReturnsConditions();
+        struct.returnsCodeType = returnsCodeType.value;
+        struct.returnsCodeTypeName = returnsCodeTypeName.value;
+        struct.returnsCode = returnsCode.value;
+        return struct;
+    }
 
-	@Override
-	public ReturnsConditionsCodeTypes structKey()
-	{
-		return returnsCodeType().value;
-	}
+    @Override
+    public ReturnsConditionsCodeTypes structKey() {
+        return returnsCodeType().value;
+    }
 }

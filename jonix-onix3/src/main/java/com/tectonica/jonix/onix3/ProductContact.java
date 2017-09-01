@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -28,162 +26,142 @@ import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductContactIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product contact composite</h1>
- * <p>
- * A group of data elements which together specify an organization (which may or may not be the publisher’s
- * representative) responsible for dealing with enquiries related to the product in the market.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductContact&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;productcontact&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Product contact composite</h1><p>A group of data elements which together specify an organization (which may or
+ * may not be the publisher’s representative) responsible for dealing with enquiries related to the product in the
+ * market.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductContact&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;productcontact&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class ProductContact implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ProductContact implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductContact";
-	public static final String shortname = "productcontact";
+    public static final String refname = "ProductContact";
+    public static final String shortname = "productcontact";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ProductContact EMPTY = new ProductContact();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProductContact EMPTY = new ProductContact();
 
-	public ProductContact()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ProductContact() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ProductContact(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ProductContact(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname))
-				productContactRole = new ProductContactRole(e);
-			else if (name.equals(ProductContactIdentifier.refname) || name.equals(ProductContactIdentifier.shortname))
-				productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(e));
-			else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname))
-				productContactName = new ProductContactName(e);
-			else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-				contactName = new ContactName(e);
-			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-				emailAddress = new EmailAddress(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProductContactRole.refname) || name.equals(ProductContactRole.shortname)) {
+                productContactRole = new ProductContactRole(e);
+            } else if (name.equals(ProductContactIdentifier.refname) ||
+                name.equals(ProductContactIdentifier.shortname)) {
+                productContactIdentifiers = JPU.addToList(productContactIdentifiers, new ProductContactIdentifier(e));
+            } else if (name.equals(ProductContactName.refname) || name.equals(ProductContactName.shortname)) {
+                productContactName = new ProductContactName(e);
+            } else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname)) {
+                contactName = new ContactName(e);
+            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
+                emailAddress = new EmailAddress(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ProductContactRole productContactRole = ProductContactRole.EMPTY;
+    private ProductContactRole productContactRole = ProductContactRole.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductContactRole productContactRole()
-	{
-		initialize();
-		return productContactRole;
-	}
+    /**
+     * (this field is required)
+     */
+    public ProductContactRole productContactRole() {
+        initialize();
+        return productContactRole;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes> productContactIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes>
+        productContactIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes> productContactIdentifiers()
-	{
-		initialize();
-		return productContactIdentifiers;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixDataCompositeWithKey<ProductContactIdentifier, JonixProductContactIdentifier, NameCodeTypes> productContactIdentifiers() {
+        initialize();
+        return productContactIdentifiers;
+    }
 
-	private ProductContactName productContactName = ProductContactName.EMPTY;
+    private ProductContactName productContactName = ProductContactName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ProductContactName productContactName()
-	{
-		initialize();
-		return productContactName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ProductContactName productContactName() {
+        initialize();
+        return productContactName;
+    }
 
-	private ContactName contactName = ContactName.EMPTY;
+    private ContactName contactName = ContactName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ContactName contactName()
-	{
-		initialize();
-		return contactName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ContactName contactName() {
+        initialize();
+        return contactName;
+    }
 
-	private EmailAddress emailAddress = EmailAddress.EMPTY;
+    private EmailAddress emailAddress = EmailAddress.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public EmailAddress emailAddress()
-	{
-		initialize();
-		return emailAddress;
-	}
+    /**
+     * (this field is optional)
+     */
+    public EmailAddress emailAddress() {
+        initialize();
+        return emailAddress;
+    }
 }

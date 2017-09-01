@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
@@ -28,158 +26,137 @@ import com.tectonica.jonix.codelist.ProductFormFeatureTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductFormFeature;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product form feature composite (product part)</h1>
- * <p>
- * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
- * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional, and not normally expected to be
- * used in the description of a product part. The composite is included here so that it can if necessary be used in the
- * US to carry consumer protection data related to a product part.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductFormFeature&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;productformfeature&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Product form feature composite (product part)</h1><p>A repeatable group of data elements which together describe
+ * an aspect of product form that is too specific to be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt;
+ * elements. Optional, and not normally expected to be used in the description of a product part. The composite is
+ * included here so that it can if necessary be used in the US to carry consumer protection data related to a product
+ * part.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductFormFeature&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;productformfeature&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class ProductFormFeature
-		implements OnixDataCompositeWithKey<JonixProductFormFeature, ProductFormFeatureTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixProductFormFeature, ProductFormFeatureTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductFormFeature";
-	public static final String shortname = "productformfeature";
+    public static final String refname = "ProductFormFeature";
+    public static final String shortname = "productformfeature";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ProductFormFeature EMPTY = new ProductFormFeature();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProductFormFeature EMPTY = new ProductFormFeature();
 
-	public ProductFormFeature()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ProductFormFeature() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ProductFormFeature(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ProductFormFeature(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname))
-				productFormFeatureType = new ProductFormFeatureType(e);
-			else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname))
-				productFormFeatureValue = new ProductFormFeatureValue(e);
-			else if (name.equals(ProductFormFeatureDescription.refname)
-					|| name.equals(ProductFormFeatureDescription.shortname))
-				productFormFeatureDescriptions = JPU.addToList(productFormFeatureDescriptions,
-						new ProductFormFeatureDescription(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname)) {
+                productFormFeatureType = new ProductFormFeatureType(e);
+            } else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname)) {
+                productFormFeatureValue = new ProductFormFeatureValue(e);
+            } else if (name.equals(ProductFormFeatureDescription.refname) ||
+                name.equals(ProductFormFeatureDescription.shortname)) {
+                productFormFeatureDescriptions =
+                    JPU.addToList(productFormFeatureDescriptions, new ProductFormFeatureDescription(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ProductFormFeatureType productFormFeatureType = ProductFormFeatureType.EMPTY;
+    private ProductFormFeatureType productFormFeatureType = ProductFormFeatureType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductFormFeatureType productFormFeatureType()
-	{
-		initialize();
-		return productFormFeatureType;
-	}
+    /**
+     * (this field is required)
+     */
+    public ProductFormFeatureType productFormFeatureType() {
+        initialize();
+        return productFormFeatureType;
+    }
 
-	private ProductFormFeatureValue productFormFeatureValue = ProductFormFeatureValue.EMPTY;
+    private ProductFormFeatureValue productFormFeatureValue = ProductFormFeatureValue.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ProductFormFeatureValue productFormFeatureValue()
-	{
-		initialize();
-		return productFormFeatureValue;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ProductFormFeatureValue productFormFeatureValue() {
+        initialize();
+        return productFormFeatureValue;
+    }
 
-	private ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions = ListOfOnixElement
-			.empty();
+    private ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions =
+        ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions()
-	{
-		initialize();
-		return productFormFeatureDescriptions;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions() {
+        initialize();
+        return productFormFeatureDescriptions;
+    }
 
-	@Override
-	public JonixProductFormFeature asStruct()
-	{
-		initialize();
-		JonixProductFormFeature struct = new JonixProductFormFeature();
-		struct.productFormFeatureType = productFormFeatureType.value;
-		struct.productFormFeatureDescriptions = productFormFeatureDescriptions.values();
-		struct.productFormFeatureValue = productFormFeatureValue.value;
-		return struct;
-	}
+    @Override
+    public JonixProductFormFeature asStruct() {
+        initialize();
+        JonixProductFormFeature struct = new JonixProductFormFeature();
+        struct.productFormFeatureType = productFormFeatureType.value;
+        struct.productFormFeatureDescriptions = productFormFeatureDescriptions.values();
+        struct.productFormFeatureValue = productFormFeatureValue.value;
+        return struct;
+    }
 
-	@Override
-	public ProductFormFeatureTypes structKey()
-	{
-		return productFormFeatureType().value;
-	}
+    @Override
+    public ProductFormFeatureTypes structKey() {
+        return productFormFeatureType().value;
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -28,169 +26,141 @@ import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Comparison product price composite</h1>
- * <p>
- * Optional and repeatable group of data elements that together define a price for a directly comparable product, to
- * facilitate supply of price data to retailers who do not receive a full ONIX record for that comparable product. This
- * is primarily intended for use within a &lt;Product&gt; record for a digital product, to provide a price for a
- * comparable physical product.
- * </p>
- * <p>
- * Those using this composite should be wary of the volatile nature of product prices: special note should be taken of
- * the risk of stale data being stored in data recipients’ systems when prices for the comparison product are updated,
- * as those updates to the comparison product may occur outside the context of the main product being described in the
- * &lt;Product&gt; record. Because of this, ONIX suppliers are cautioned of the risk of contradictory data in separate
- * data feeds. <em>This composite should not be supplied unless specifically requested by a particular recipient.</em>
- * </p>
- * <p>
- * The inclusion of a comparison price in itself implies nothing about the availability or status of the comparable
- * product. However, there may be legal requirements in particular territories relating to the use of comparison prices
- * in promotion that users of this data must comply with.
- * </p>
- * <p>
- * Note that the comparison product price composite does not include all the features of the &lt;Price&gt; composite:
- * for example, &lt;PriceQualifier&gt; is not included. Thus data providers should ensure that any conditions attached
- * to the comparison product price are such that it is directly comparable to the price of the main product being
- * described.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ComparisonProductPrice&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;comparisonproductprice&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Comparison product price composite</h1><p>Optional and repeatable group of data elements that together define a
+ * price for a directly comparable product, to facilitate supply of price data to retailers who do not receive a full
+ * ONIX record for that comparable product. This is primarily intended for use within a &lt;Product&gt; record for a
+ * digital product, to provide a price for a comparable physical product.</p><p>Those using this composite should be
+ * wary of the volatile nature of product prices: special note should be taken of the risk of stale data being stored in
+ * data recipients’ systems when prices for the comparison product are updated, as those updates to the comparison
+ * product may occur outside the context of the main product being described in the &lt;Product&gt; record. Because of
+ * this, ONIX suppliers are cautioned of the risk of contradictory data in separate data feeds. <em>This composite
+ * should not be supplied unless specifically requested by a particular recipient.</em></p><p>The inclusion of a
+ * comparison price in itself implies nothing about the availability or status of the comparable product. However, there
+ * may be legal requirements in particular territories relating to the use of comparison prices in promotion that users
+ * of this data must comply with.</p><p>Note that the comparison product price composite does not include all the
+ * features of the &lt;Price&gt; composite: for example, &lt;PriceQualifier&gt; is not included. Thus data providers
+ * should ensure that any conditions attached to the comparison product price are such that it is directly comparable to
+ * the price of the main product being described.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;ComparisonProductPrice&gt;</td></tr><tr><td>Short tag</td><td>&lt;comparisonproductprice&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class ComparisonProductPrice implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ComparisonProductPrice implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ComparisonProductPrice";
-	public static final String shortname = "comparisonproductprice";
+    public static final String refname = "ComparisonProductPrice";
+    public static final String shortname = "comparisonproductprice";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ComparisonProductPrice EMPTY = new ComparisonProductPrice();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ComparisonProductPrice EMPTY = new ComparisonProductPrice();
 
-	public ComparisonProductPrice()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ComparisonProductPrice() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ComparisonProductPrice(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ComparisonProductPrice(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-			else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname))
-				priceType = new PriceType(e);
-			else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname))
-				priceAmount = new PriceAmount(e);
-			else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname))
-				currencyCode = new CurrencyCode(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
+                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+            } else if (name.equals(PriceType.refname) || name.equals(PriceType.shortname)) {
+                priceType = new PriceType(e);
+            } else if (name.equals(PriceAmount.refname) || name.equals(PriceAmount.shortname)) {
+                priceAmount = new PriceAmount(e);
+            } else if (name.equals(CurrencyCode.refname) || name.equals(CurrencyCode.shortname)) {
+                currencyCode = new CurrencyCode(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
-	{
-		initialize();
-		return productIdentifiers;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        initialize();
+        return productIdentifiers;
+    }
 
-	private PriceType priceType = PriceType.EMPTY;
+    private PriceType priceType = PriceType.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PriceType priceType()
-	{
-		initialize();
-		return priceType;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PriceType priceType() {
+        initialize();
+        return priceType;
+    }
 
-	private PriceAmount priceAmount = PriceAmount.EMPTY;
+    private PriceAmount priceAmount = PriceAmount.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PriceAmount priceAmount()
-	{
-		initialize();
-		return priceAmount;
-	}
+    /**
+     * (this field is required)
+     */
+    public PriceAmount priceAmount() {
+        initialize();
+        return priceAmount;
+    }
 
-	private CurrencyCode currencyCode = CurrencyCode.EMPTY;
+    private CurrencyCode currencyCode = CurrencyCode.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public CurrencyCode currencyCode()
-	{
-		initialize();
-		return currencyCode;
-	}
+    /**
+     * (this field is optional)
+     */
+    public CurrencyCode currencyCode() {
+        initialize();
+        return currencyCode;
+    }
 }

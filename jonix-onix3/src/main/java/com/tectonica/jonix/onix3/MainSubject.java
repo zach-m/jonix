@@ -19,90 +19,63 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixFlag;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Main subject flag</h1>
- * <p>
- * An empty element that identifies an instance of the &lt;Subject&gt; composite as representing the main subject
- * category for the product. The main category may be expressed in more than one subject scheme, <i>ie</i> there may be
- * two or more instances of the &lt;Subject&gt; composite, using different schemes, each carrying the
- * &lt;MainSubject/&gt; flag. Optional and non-repeating in each occurrence of the &lt;Subject&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>XML empty element</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;MainSubject&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x425&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;MainSubject/&gt;</td>
- * </tr>
- * </table>
+ * <h1>Main subject flag</h1><p>An empty element that identifies an instance of the &lt;Subject&gt; composite as
+ * representing the main subject category for the product. The main category may be expressed in more than one subject
+ * scheme, <i>ie</i> there may be two or more instances of the &lt;Subject&gt; composite, using different schemes, each
+ * carrying the &lt;MainSubject/&gt; flag. Optional and non-repeating in each occurrence of the &lt;Subject&gt;
+ * composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty element</td></tr><tr><td>Reference
+ * name</td><td>&lt;MainSubject&gt;</td></tr><tr><td>Short tag</td><td>&lt;x425&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;MainSubject/&gt;</td></tr></table>
  */
-public class MainSubject implements OnixFlag, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class MainSubject implements OnixFlag, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "MainSubject";
-	public static final String shortname = "x425";
+    public static final String refname = "MainSubject";
+    public static final String shortname = "x425";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTORS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTORS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final MainSubject EMPTY = new MainSubject();
+    private final boolean exists;
+    public static final MainSubject EMPTY = new MainSubject();
 
-	public MainSubject()
-	{
-		exists = false;
-	}
+    public MainSubject() {
+        exists = false;
+    }
 
-	public MainSubject(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-	}
+    public MainSubject(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

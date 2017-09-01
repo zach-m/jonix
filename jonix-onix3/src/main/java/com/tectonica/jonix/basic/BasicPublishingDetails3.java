@@ -19,54 +19,51 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.List;
-
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.onix3.CityOfPublication;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.PublishingDetail;
-import com.tectonica.jonix.struct.JonixPublishingDate;
+
+import java.util.List;
 
 /**
  * ONIX3 concrete implementation for {@link BasicPublishingDetails}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPublishingDetails3 extends BasicPublishingDetails
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPublishingDetails3 extends BasicPublishingDetails {
+    private static final long serialVersionUID = 1L;
 
-	public BasicPublishingDetails3(Product product)
-	{
-		PublishingDetail pd = product.publishingDetail();
-		if (pd.exists())
-		{
-			publicationDate = pd.publishingDates().findAsStruct(PublishingDateRoles.Publication_date).map(p -> p.date).orElse(null);
-			outOfPrintDate = pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_deletion_date).map(p -> p.date).orElse(null);
-			countryOfPublication = pd.countryOfPublication().value;
-			cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
-		}
-		else
-		{
-			publicationDate = null;
-			countryOfPublication = null;
-			cityOfPublication = null;
-		}
-	}
+    public BasicPublishingDetails3(Product product) {
+        PublishingDetail pd = product.publishingDetail();
+        if (pd.exists()) {
+            publicationDate =
+                pd.publishingDates().findAsStruct(PublishingDateRoles.Publication_date).map(p -> p.date).orElse(null);
+            outOfPrintDate =
+                pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_deletion_date).map(p -> p.date)
+                    .orElse(null);
+            countryOfPublication = pd.countryOfPublication().value;
+            cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
+        } else {
+            publicationDate = null;
+            countryOfPublication = null;
+            cityOfPublication = null;
+        }
+    }
 
-	private String pickCityOfPublication(Product product, LanguageCodes preferredLanguage)
-	{
-		List<CityOfPublication> cops = product.publishingDetail().cityOfPublications();
+    private String pickCityOfPublication(Product product, LanguageCodes preferredLanguage) {
+        List<CityOfPublication> cops = product.publishingDetail().cityOfPublications();
 
-		if (cops.isEmpty())
-			return null;
+        if (cops.isEmpty()) {
+            return null;
+        }
 
-		for (CityOfPublication cop : cops)
-		{
-			if (cop.language == null || cop.language == preferredLanguage)
-				return cop.value;
-		}
-		return cops.get(0).value; // return whatever language we have
-	}
+        for (CityOfPublication cop : cops) {
+            if (cop.language == null || cop.language == preferredLanguage) {
+                return cop.value;
+            }
+        }
+        return cops.get(0).value; // return whatever language we have
+    }
 }

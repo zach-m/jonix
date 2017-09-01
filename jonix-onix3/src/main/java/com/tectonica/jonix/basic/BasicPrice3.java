@@ -23,18 +23,16 @@ import com.tectonica.jonix.onix3.Price;
 
 /**
  * ONIX3 concrete implementation for {@link BasicPrice}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPrice3 extends BasicPrice
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPrice3 extends BasicPrice {
+    private static final long serialVersionUID = 1L;
 
-	public BasicPrice3(Price p)
-	{
-		priceType = p.priceType().value;
-		priceAmount = p.priceAmount().value;
-		priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
-		currencyCode = p.currencyCode().value;
-	}
+    public BasicPrice3(Price p) {
+        priceType = p.priceType().value;
+        priceAmount = p.priceAmount().value;
+        priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
+        currencyCode = p.currencyCode().value;
+    }
 }

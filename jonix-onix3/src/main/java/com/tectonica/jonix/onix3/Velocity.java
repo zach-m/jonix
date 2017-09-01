@@ -19,154 +19,132 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixVelocity;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Velocity composite</h1>
- * <p>
- * An optional group of data elements which together specify the rate of stock depletion – or equally, a rate of
- * accumulation of backorders. Repeatable if the rate of depletion is specified using more than one metric (<i>eg</i>
- * specifying both a minimum and maximum daily sale).
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Velocity&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;velocity&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Velocity composite</h1><p>An optional group of data elements which together specify the rate of stock depletion –
+ * or equally, a rate of accumulation of backorders. Repeatable if the rate of depletion is specified using more than
+ * one metric (<i>eg</i> specifying both a minimum and maximum daily sale).</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Velocity&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;velocity&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Velocity";
-	public static final String shortname = "velocity";
+    public static final String refname = "Velocity";
+    public static final String shortname = "velocity";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Velocity EMPTY = new Velocity();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Velocity EMPTY = new Velocity();
 
-	public Velocity()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Velocity() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Velocity(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Velocity(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname))
-				velocityMetric = new VelocityMetric(e);
-			else if (name.equals(Rate.refname) || name.equals(Rate.shortname))
-				rate = new Rate(e);
-			else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname))
-				proximity = new Proximity(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(VelocityMetric.refname) || name.equals(VelocityMetric.shortname)) {
+                velocityMetric = new VelocityMetric(e);
+            } else if (name.equals(Rate.refname) || name.equals(Rate.shortname)) {
+                rate = new Rate(e);
+            } else if (name.equals(Proximity.refname) || name.equals(Proximity.shortname)) {
+                proximity = new Proximity(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private VelocityMetric velocityMetric = VelocityMetric.EMPTY;
+    private VelocityMetric velocityMetric = VelocityMetric.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public VelocityMetric velocityMetric()
-	{
-		initialize();
-		return velocityMetric;
-	}
+    /**
+     * (this field is required)
+     */
+    public VelocityMetric velocityMetric() {
+        initialize();
+        return velocityMetric;
+    }
 
-	private Rate rate = Rate.EMPTY;
+    private Rate rate = Rate.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public Rate rate()
-	{
-		initialize();
-		return rate;
-	}
+    /**
+     * (this field is required)
+     */
+    public Rate rate() {
+        initialize();
+        return rate;
+    }
 
-	private Proximity proximity = Proximity.EMPTY;
+    private Proximity proximity = Proximity.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Proximity proximity()
-	{
-		initialize();
-		return proximity;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Proximity proximity() {
+        initialize();
+        return proximity;
+    }
 
-	@Override
-	public JonixVelocity asStruct()
-	{
-		initialize();
-		JonixVelocity struct = new JonixVelocity();
-		struct.velocityMetric = velocityMetric.value;
-		struct.rate = rate.value;
-		struct.proximity = proximity.value;
-		return struct;
-	}
+    @Override
+    public JonixVelocity asStruct() {
+        initialize();
+        JonixVelocity struct = new JonixVelocity();
+        struct.velocityMetric = velocityMetric.value;
+        struct.rate = rate.value;
+        struct.proximity = proximity.value;
+        return struct;
+    }
 }

@@ -19,145 +19,124 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixEpubUsageLimit;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Usage constraint composite (digital products)</h1>
- * <p>
- * An optional and repeatable group of data elements which together describe a usage constraint on a digital product (or
- * the absence of such a constraint), whether enforced by DRM technical protection, inherent in the platform used, or
- * specified by license agreement.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;EpubUsageConstraint&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;epubusageconstraint&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Usage constraint composite (digital products)</h1><p>An optional and repeatable group of data elements which
+ * together describe a usage constraint on a digital product (or the absence of such a constraint), whether enforced by
+ * DRM technical protection, inherent in the platform used, or specified by license agreement.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;EpubUsageConstraint&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;epubusageconstraint&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class EpubUsageConstraint implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "EpubUsageConstraint";
-	public static final String shortname = "epubusageconstraint";
+    public static final String refname = "EpubUsageConstraint";
+    public static final String shortname = "epubusageconstraint";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final EpubUsageConstraint EMPTY = new EpubUsageConstraint();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final EpubUsageConstraint EMPTY = new EpubUsageConstraint();
 
-	public EpubUsageConstraint()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public EpubUsageConstraint() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public EpubUsageConstraint(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public EpubUsageConstraint(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(EpubUsageType.refname) || name.equals(EpubUsageType.shortname))
-				epubUsageType = new EpubUsageType(e);
-			else if (name.equals(EpubUsageStatus.refname) || name.equals(EpubUsageStatus.shortname))
-				epubUsageStatus = new EpubUsageStatus(e);
-			else if (name.equals(EpubUsageLimit.refname) || name.equals(EpubUsageLimit.shortname))
-				epubUsageLimits = JPU.addToList(epubUsageLimits, new EpubUsageLimit(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(EpubUsageType.refname) || name.equals(EpubUsageType.shortname)) {
+                epubUsageType = new EpubUsageType(e);
+            } else if (name.equals(EpubUsageStatus.refname) || name.equals(EpubUsageStatus.shortname)) {
+                epubUsageStatus = new EpubUsageStatus(e);
+            } else if (name.equals(EpubUsageLimit.refname) || name.equals(EpubUsageLimit.shortname)) {
+                epubUsageLimits = JPU.addToList(epubUsageLimits, new EpubUsageLimit(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private EpubUsageType epubUsageType = EpubUsageType.EMPTY;
+    private EpubUsageType epubUsageType = EpubUsageType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public EpubUsageType epubUsageType()
-	{
-		initialize();
-		return epubUsageType;
-	}
+    /**
+     * (this field is required)
+     */
+    public EpubUsageType epubUsageType() {
+        initialize();
+        return epubUsageType;
+    }
 
-	private EpubUsageStatus epubUsageStatus = EpubUsageStatus.EMPTY;
+    private EpubUsageStatus epubUsageStatus = EpubUsageStatus.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public EpubUsageStatus epubUsageStatus()
-	{
-		initialize();
-		return epubUsageStatus;
-	}
+    /**
+     * (this field is required)
+     */
+    public EpubUsageStatus epubUsageStatus() {
+        initialize();
+        return epubUsageStatus;
+    }
 
-	private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits = ListOfOnixDataComposite
-			.empty();
+    private ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits =
+        ListOfOnixDataComposite.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits()
-	{
-		initialize();
-		return epubUsageLimits;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits() {
+        initialize();
+        return epubUsageLimits;
+    }
 }

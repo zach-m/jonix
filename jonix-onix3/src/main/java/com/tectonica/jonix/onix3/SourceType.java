@@ -19,110 +19,79 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.ContentSourceTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Source type</h1>
- * <p>
- * An ONIX code indicating the type of source from which the cited material originated, <i>eg</i> radio, TV. Optional,
- * and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 157</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SourceType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x431&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;SourceType&gt;03&lt;/SourceType&gt; (Radio)</td>
- * </tr>
- * </table>
+ * <h1>Source type</h1><p>An ONIX code indicating the type of source from which the cited material originated, <i>eg</i>
+ * radio, TV. Optional, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 157</td></tr><tr><td>Reference name</td><td>&lt;SourceType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x431&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;SourceType&gt;03&lt;/SourceType&gt;
+ * (Radio)</td></tr></table>
  */
-public class SourceType implements OnixElement<ContentSourceTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class SourceType implements OnixElement<ContentSourceTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SourceType";
-	public static final String shortname = "x431";
+    public static final String refname = "SourceType";
+    public static final String shortname = "x431";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ContentSourceTypes value;
+    public ContentSourceTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ContentSourceTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ContentSourceTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final SourceType EMPTY = new SourceType();
+    private final boolean exists;
+    public static final SourceType EMPTY = new SourceType();
 
-	public SourceType()
-	{
-		exists = false;
-	}
+    public SourceType() {
+        exists = false;
+    }
 
-	public SourceType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public SourceType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ContentSourceTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = ContentSourceTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

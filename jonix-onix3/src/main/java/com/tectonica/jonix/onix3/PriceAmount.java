@@ -19,112 +19,82 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Price amount</h1>
- * <p>
- * The amount of the comparison product price. Mandatory and non-repeating within any occurrence of the
- * &lt;ComparisonProductPrice&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length real number, with explicit decimal point when required, suggested maximum length 12
- * characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PriceAmount&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j151&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;PriceAmount&gt;18.99&lt;/PriceAmount&gt;</td>
- * </tr>
- * </table>
+ * <h1>Price amount</h1><p>The amount of the comparison product price. Mandatory and non-repeating within any occurrence
+ * of the &lt;ComparisonProductPrice&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length real number, with explicit decimal point when required, suggested maximum length 12
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;PriceAmount&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j151&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;PriceAmount&gt;18.99&lt;/PriceAmount&gt;</td></tr></table>
  */
-public class PriceAmount implements OnixElement<Double>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PriceAmount implements OnixElement<Double>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PriceAmount";
-	public static final String shortname = "j151";
+    public static final String refname = "PriceAmount";
+    public static final String shortname = "j151";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
-	 * characters
-	 * <p>
-	 * (type: dt.StrictPositiveDecimal)
-	 */
-	public Double value;
+    /**
+     * Raw Format: Variable length real number, with explicit decimal point when required, suggested maximum length 12
+     * characters<p> (type: dt.StrictPositiveDecimal)
+     */
+    public Double value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Double _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Double _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final PriceAmount EMPTY = new PriceAmount();
+    private final boolean exists;
+    public static final PriceAmount EMPTY = new PriceAmount();
 
-	public PriceAmount()
-	{
-		exists = false;
-	}
+    public PriceAmount() {
+        exists = false;
+    }
 
-	public PriceAmount(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public PriceAmount(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsDouble(element);
-	}
+        value = JPU.getContentAsDouble(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

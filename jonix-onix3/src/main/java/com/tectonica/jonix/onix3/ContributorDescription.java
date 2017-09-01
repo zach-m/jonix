@@ -19,128 +19,95 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Contributor description</h1>
- * <p>
- * Brief text describing a contributor to the product, at the publisher’s discretion. Optional, and repeatable to
- * provide parallel descriptions in multiple languages. The <i>language</i> attribute is optional for a single instance
- * of &lt;ContributorDescription&gt;, but must be included in each instance if &lt;ContributorDescription&gt; is
- * repeated. It may be used with either a person or corporate name, to draw attention to any aspect of a contributor’s
- * background which supports the promotion of the book.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ContributorDescription&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b048&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language, textformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;ContributorDescription&gt;Skipper of the winning crew in the Americas Cup,
- * 1998&lt;/ContributorDescription&gt;</td>
- * </tr>
- * </table>
+ * <h1>Contributor description</h1><p>Brief text describing a contributor to the product, at the publisher’s discretion.
+ * Optional, and repeatable to provide parallel descriptions in multiple languages. The <i>language</i> attribute is
+ * optional for a single instance of &lt;ContributorDescription&gt;, but must be included in each instance if
+ * &lt;ContributorDescription&gt; is repeated. It may be used with either a person or corporate name, to draw attention
+ * to any aspect of a contributor’s background which supports the promotion of the book.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 200 characters. XHTML is
+ * enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td></tr><tr><td>Reference
+ * name</td><td>&lt;ContributorDescription&gt;</td></tr><tr><td>Short tag</td><td>&lt;b048&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td>&lt;ContributorDescription&gt;Skipper of the winning crew in the Americas
+ * Cup, 1998&lt;/ContributorDescription&gt;</td></tr></table>
  */
-public class ContributorDescription implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ContributorDescription implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ContributorDescription";
-	public static final String shortname = "b048";
+    public static final String refname = "ContributorDescription";
+    public static final String shortname = "b048";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ContributorDescription EMPTY = new ContributorDescription();
+    private final boolean exists;
+    public static final ContributorDescription EMPTY = new ContributorDescription();
 
-	public ContributorDescription()
-	{
-		exists = false;
-	}
+    public ContributorDescription() {
+        exists = false;
+    }
 
-	public ContributorDescription(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+    public ContributorDescription(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-		value = JPU.getChildXHTML(element, true);
-	}
+        value = JPU.getChildXHTML(element, true);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

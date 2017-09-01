@@ -19,161 +19,138 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SalesOutletIdentifierTypes;
 import com.tectonica.jonix.struct.JonixSalesOutletIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Sales outlet identifier composite</h1>
- * <p>
- * A group of data elements which together represent a coded identification of a person or organization, used here to
- * identify a sales outlet. Non-repeating in this context.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SalesOutletIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;salesoutletidentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * </table>
+ * <h1>Sales outlet identifier composite</h1><p>A group of data elements which together represent a coded identification
+ * of a person or organization, used here to identify a sales outlet. Non-repeating in this context.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesOutletIdentifier&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;salesoutletidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
 public class SalesOutletIdentifier
-		implements OnixDataCompositeWithKey<JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixSalesOutletIdentifier, SalesOutletIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SalesOutletIdentifier";
-	public static final String shortname = "salesoutletidentifier";
+    public static final String refname = "SalesOutletIdentifier";
+    public static final String shortname = "salesoutletidentifier";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final SalesOutletIdentifier EMPTY = new SalesOutletIdentifier();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final SalesOutletIdentifier EMPTY = new SalesOutletIdentifier();
 
-	public SalesOutletIdentifier()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public SalesOutletIdentifier() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public SalesOutletIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public SalesOutletIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(SalesOutletIDType.refname) || name.equals(SalesOutletIDType.shortname))
-				salesOutletIDType = new SalesOutletIDType(e);
-			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-				idTypeName = new IDTypeName(e);
-			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-				idValue = new IDValue(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(SalesOutletIDType.refname) || name.equals(SalesOutletIDType.shortname)) {
+                salesOutletIDType = new SalesOutletIDType(e);
+            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
+                idTypeName = new IDTypeName(e);
+            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
+                idValue = new IDValue(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private SalesOutletIDType salesOutletIDType = SalesOutletIDType.EMPTY;
+    private SalesOutletIDType salesOutletIDType = SalesOutletIDType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesOutletIDType salesOutletIDType()
-	{
-		initialize();
-		return salesOutletIDType;
-	}
+    /**
+     * (this field is required)
+     */
+    public SalesOutletIDType salesOutletIDType() {
+        initialize();
+        return salesOutletIDType;
+    }
 
-	private IDTypeName idTypeName = IDTypeName.EMPTY;
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName()
-	{
-		initialize();
-		return idTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public IDTypeName idTypeName() {
+        initialize();
+        return idTypeName;
+    }
 
-	private IDValue idValue = IDValue.EMPTY;
+    private IDValue idValue = IDValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue()
-	{
-		initialize();
-		return idValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public IDValue idValue() {
+        initialize();
+        return idValue;
+    }
 
-	@Override
-	public JonixSalesOutletIdentifier asStruct()
-	{
-		initialize();
-		JonixSalesOutletIdentifier struct = new JonixSalesOutletIdentifier();
-		struct.salesOutletIDType = salesOutletIDType.value;
-		struct.idTypeName = idTypeName.value;
-		struct.idValue = idValue.value;
-		return struct;
-	}
+    @Override
+    public JonixSalesOutletIdentifier asStruct() {
+        initialize();
+        JonixSalesOutletIdentifier struct = new JonixSalesOutletIdentifier();
+        struct.salesOutletIDType = salesOutletIDType.value;
+        struct.idTypeName = idTypeName.value;
+        struct.idValue = idValue.value;
+        return struct;
+    }
 
-	@Override
-	public SalesOutletIdentifierTypes structKey()
-	{
-		return salesOutletIDType().value;
-	}
+    @Override
+    public SalesOutletIdentifierTypes structKey() {
+        return salesOutletIDType().value;
+    }
 }

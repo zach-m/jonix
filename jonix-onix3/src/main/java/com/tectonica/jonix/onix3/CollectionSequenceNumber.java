@@ -19,114 +19,84 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Collection sequence number</h1>
- * <p>
- * A number which specifies the ordinal position of the product in a collection. The ordinal position may be a simple
- * number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level if the collection has a multi-level structure (<i>ie</i>
- * there are both collection and sub-collection title elements). Mandatory and non-repeating within the
- * &lt;CollectionSequence&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length string of one or more integers, each successive integer being separated by a period character,
- * suggested maximum length 100 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CollectionSequenceNumber&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x481&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</td>
- * </tr>
- * </table>
+ * <h1>Collection sequence number</h1><p>A number which specifies the ordinal position of the product in a collection.
+ * The ordinal position may be a simple number (1st, 2nd, 3rd <i>etc</i>) or may be multi-level if the collection has a
+ * multi-level structure (<i>ie</i> there are both collection and sub-collection title elements). Mandatory and
+ * non-repeating within the &lt;CollectionSequence&gt; composite.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length string of one or more integers, each successive integer being
+ * separated by a period character, suggested maximum length 100 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;CollectionSequenceNumber&gt;</td></tr><tr><td>Short tag</td><td>&lt;x481&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;CollectionSequenceNumber&gt;2.4&lt;/CollectionSequenceNumber&gt;</td></tr></table>
  */
-public class CollectionSequenceNumber implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CollectionSequenceNumber implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CollectionSequenceNumber";
-	public static final String shortname = "x481";
+    public static final String refname = "CollectionSequenceNumber";
+    public static final String shortname = "x481";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
-	 * character, suggested maximum length 100 characters
-	 * <p>
-	 * (type: dt.MultiLevelNumber)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length string of one or more integers, each successive integer being separated by a period
+     * character, suggested maximum length 100 characters<p> (type: dt.MultiLevelNumber)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CollectionSequenceNumber EMPTY = new CollectionSequenceNumber();
+    private final boolean exists;
+    public static final CollectionSequenceNumber EMPTY = new CollectionSequenceNumber();
 
-	public CollectionSequenceNumber()
-	{
-		exists = false;
-	}
+    public CollectionSequenceNumber() {
+        exists = false;
+    }
 
-	public CollectionSequenceNumber(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CollectionSequenceNumber(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

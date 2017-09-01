@@ -19,162 +19,139 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPublishingDate;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Publishing date composite</h1>
- * <p>
- * A repeatable group of data elements which together specify a date associated with the publishing of the product.
- * Optional, but a date of publication <em>must</em> be specified <em>either</em> here (as a ‘global’ pubdate)
- * <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates related to the publishing of a product can be sent
- * in further repeats.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PublishingDate&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;publishingdate&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Publishing date composite</h1><p>A repeatable group of data elements which together specify a date associated
+ * with the publishing of the product. Optional, but a date of publication <em>must</em> be specified <em>either</em>
+ * here (as a ‘global’ pubdate) <em>or</em> in &lt;MarketPublishingDetail&gt; (P.25). Other dates related to the
+ * publishing of a product can be sent in further repeats.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;PublishingDate&gt;</td></tr><tr><td>Short tag</td><td>&lt;publishingdate&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class PublishingDate implements OnixDataCompositeWithKey<JonixPublishingDate, PublishingDateRoles>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PublishingDate
+    implements OnixDataCompositeWithKey<JonixPublishingDate, PublishingDateRoles>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PublishingDate";
-	public static final String shortname = "publishingdate";
+    public static final String refname = "PublishingDate";
+    public static final String shortname = "publishingdate";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final PublishingDate EMPTY = new PublishingDate();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final PublishingDate EMPTY = new PublishingDate();
 
-	public PublishingDate()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public PublishingDate() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public PublishingDate(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public PublishingDate(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(PublishingDateRole.refname) || name.equals(PublishingDateRole.shortname))
-				publishingDateRole = new PublishingDateRole(e);
-			else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname))
-				dateFormat = new DateFormat(e);
-			else if (name.equals(Date.refname) || name.equals(Date.shortname))
-				date = new Date(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(PublishingDateRole.refname) || name.equals(PublishingDateRole.shortname)) {
+                publishingDateRole = new PublishingDateRole(e);
+            } else if (name.equals(DateFormat.refname) || name.equals(DateFormat.shortname)) {
+                dateFormat = new DateFormat(e);
+            } else if (name.equals(Date.refname) || name.equals(Date.shortname)) {
+                date = new Date(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private PublishingDateRole publishingDateRole = PublishingDateRole.EMPTY;
+    private PublishingDateRole publishingDateRole = PublishingDateRole.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PublishingDateRole publishingDateRole()
-	{
-		initialize();
-		return publishingDateRole;
-	}
+    /**
+     * (this field is required)
+     */
+    public PublishingDateRole publishingDateRole() {
+        initialize();
+        return publishingDateRole;
+    }
 
-	private DateFormat dateFormat = DateFormat.EMPTY;
+    private DateFormat dateFormat = DateFormat.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public DateFormat dateFormat()
-	{
-		initialize();
-		return dateFormat;
-	}
+    /**
+     * (this field is optional)
+     */
+    public DateFormat dateFormat() {
+        initialize();
+        return dateFormat;
+    }
 
-	private Date date = Date.EMPTY;
+    private Date date = Date.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public Date date()
-	{
-		initialize();
-		return date;
-	}
+    /**
+     * (this field is required)
+     */
+    public Date date() {
+        initialize();
+        return date;
+    }
 
-	@Override
-	public JonixPublishingDate asStruct()
-	{
-		initialize();
-		JonixPublishingDate struct = new JonixPublishingDate();
-		struct.publishingDateRole = publishingDateRole.value;
-		struct.dateFormat = dateFormat.value;
-		struct.date = date.value;
-		return struct;
-	}
+    @Override
+    public JonixPublishingDate asStruct() {
+        initialize();
+        JonixPublishingDate struct = new JonixPublishingDate();
+        struct.publishingDateRole = publishingDateRole.value;
+        struct.dateFormat = dateFormat.value;
+        struct.date = date.value;
+        return struct;
+    }
 
-	@Override
-	public PublishingDateRoles structKey()
-	{
-		return publishingDateRole().value;
-	}
+    @Override
+    public PublishingDateRoles structKey() {
+        return publishingDateRole().value;
+    }
 }

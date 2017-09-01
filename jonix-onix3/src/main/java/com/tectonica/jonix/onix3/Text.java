@@ -19,143 +19,107 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Text</h1>
- * <p>
- * The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the &lt;TextContent&gt;
- * composite, and repeatable when essentially identical text is supplied in multiple languages. The <i>language</i>
- * attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if &lt;Text&gt; is
- * repeated.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Text&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;d104&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language, textformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;Text textformat=&quot;05&quot;&gt;&lt;ul&gt;&lt;li&gt;Introduction: aesthetics and modernity; aesthetics and
- * post-modernity&lt;/li&gt;&lt;li&gt;Part 1: Modern philosophy and the emergence of aesthetic theory - Kant:
- * self-consciousness, knowledge and freedom; the unity of the subject; the unification of nature; the purpose of
- * beauty; the limits of beauty&lt;/li&gt;&lt;li&gt;Part 2: German idealism and early German Romanticism: the 'new
- * mythology'; the romantic 'new mythology'&lt;/li&gt;&lt;li&gt;Part 3: Reflections on the subject - Fichte, Holderlin
- * and Novalis&lt;/li&gt;&lt;li&gt;Part 4: Schelling - art as the 'organ of philosophy': the development of
- * consciousness; the structure of the 'system of transcendental idealism'; the aesthetic absolute; mythology, art and
- * language; mythology, language and being&lt;/li&gt;&lt;li&gt;Part 5&#8230;&lt;/li&gt;&lt;/ul&gt;&lt;/Text&gt; (Table
- * of contents supplied as a list, with XHTML markup)</td>
- * </tr>
- * <tr>
- * <td></td>
- * <td>&lt;d104 language=&quot;eng&quot;&gt;'The Name of the Rose' is the author's first novel. It is a historical
- * murder mystery set in an Italian monastery in the year 1327, an intellectual mystery weaving semiotics, biblical
- * analysis, medieval studies and literary theory into gripping fiction.&lt;/d104&gt; &lt;d104
- * language=&quot;ita&quot;&gt;'Il nome della rosa' &#232; il primo romanzo dell'autore. Si tratta di un misterioso
- * omicidio storico ambientato in un monastero italiano nel corso dell'anno 1327, un mistero intellettuale che unisce
- * semiotica, analisi biblici, studi medievali e teoria letteraria nella narrativa avvincente.&lt;/d104&gt; (Parallel
- * short description text provided in two languages)</td>
- * </tr>
- * </table>
+ * <h1>Text</h1><p>The text specified in the &lt;TextType&gt; element. Mandatory in each occurrence of the
+ * &lt;TextContent&gt; composite, and repeatable when essentially identical text is supplied in multiple languages. The
+ * <i>language</i> attribute is optional for a single instance of &lt;Text&gt;, but must be included in each instance if
+ * &lt;Text&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable length text. XHTML is
+ * enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td></tr><tr><td>Reference
+ * name</td><td>&lt;Text&gt;</td></tr><tr><td>Short tag</td><td>&lt;d104&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td>&lt;Text textformat=&quot;05&quot;&gt;&lt;ul&gt;&lt;li&gt;Introduction:
+ * aesthetics and modernity; aesthetics and post-modernity&lt;/li&gt;&lt;li&gt;Part 1: Modern philosophy and the
+ * emergence of aesthetic theory - Kant: self-consciousness, knowledge and freedom; the unity of the subject; the
+ * unification of nature; the purpose of beauty; the limits of beauty&lt;/li&gt;&lt;li&gt;Part 2: German idealism and
+ * early German Romanticism: the 'new mythology'; the romantic 'new mythology'&lt;/li&gt;&lt;li&gt;Part 3: Reflections
+ * on the subject - Fichte, Holderlin and Novalis&lt;/li&gt;&lt;li&gt;Part 4: Schelling - art as the 'organ of
+ * philosophy': the development of consciousness; the structure of the 'system of transcendental idealism'; the
+ * aesthetic absolute; mythology, art and language; mythology, language and being&lt;/li&gt;&lt;li&gt;Part
+ * 5&#8230;&lt;/li&gt;&lt;/ul&gt;&lt;/Text&gt; (Table of contents supplied as a list, with XHTML
+ * markup)</td></tr><tr><td></td><td>&lt;d104 language=&quot;eng&quot;&gt;'The Name of the Rose' is the author's first
+ * novel. It is a historical murder mystery set in an Italian monastery in the year 1327, an intellectual mystery
+ * weaving semiotics, biblical analysis, medieval studies and literary theory into gripping fiction.&lt;/d104&gt;
+ * &lt;d104 language=&quot;ita&quot;&gt;'Il nome della rosa' &#232; il primo romanzo dell'autore. Si tratta di un
+ * misterioso omicidio storico ambientato in un monastero italiano nel corso dell'anno 1327, un mistero intellettuale
+ * che unisce semiotica, analisi biblici, studi medievali e teoria letteraria nella narrativa avvincente.&lt;/d104&gt;
+ * (Parallel short description text provided in two languages)</td></tr></table>
  */
-public class Text implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Text implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Text";
-	public static final String shortname = "d104";
+    public static final String refname = "Text";
+    public static final String shortname = "d104";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
-	 * fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable length text. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+     * fields<p> (type: XHTML)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final Text EMPTY = new Text();
+    private final boolean exists;
+    public static final Text EMPTY = new Text();
 
-	public Text()
-	{
-		exists = false;
-	}
+    public Text() {
+        exists = false;
+    }
 
-	public Text(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+    public Text(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-		value = JPU.getChildXHTML(element, true);
-	}
+        value = JPU.getChildXHTML(element, true);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

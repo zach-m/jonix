@@ -23,18 +23,16 @@ import com.tectonica.jonix.onix3.SupplyDetail;
 
 /**
  * ONIX3 concrete implementation for {@link BasicSupplyDetail}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSupplyDetail3 extends BasicSupplyDetail
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSupplyDetail3 extends BasicSupplyDetail {
+    private static final long serialVersionUID = 1L;
 
-	public BasicSupplyDetail3(SupplyDetail supplyDetail)
-	{
-		supplierRole = supplyDetail.supplier().supplierRole().value;
-		supplierName = supplyDetail.supplier().supplierName().value;
-		availability = supplyDetail.productAvailability().value.name();
-		prices = new BasicPrices3(supplyDetail);
-	}
+    public BasicSupplyDetail3(SupplyDetail supplyDetail) {
+        supplierRole = supplyDetail.supplier().supplierRole().value;
+        supplierName = supplyDetail.supplier().supplierName().value;
+        availability = supplyDetail.productAvailability().value.name();
+        prices = new BasicPrices3(supplyDetail);
+    }
 }

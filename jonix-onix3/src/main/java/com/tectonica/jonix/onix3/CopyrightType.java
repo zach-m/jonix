@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.RightsTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Copyright statement type</h1>
- * <p>
- * An optional ONIX code indicating the type of right covered by the statement, typically a copyright or neighbouring
- * right. If omitted, the default is that the statement represents a copyright.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, one letter</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 219</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CopyrightType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x512&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CopyrightType&gt;P&lt;/CopyrightType&gt; (&#8471; phonogram right)</td>
- * </tr>
- * </table>
+ * <h1>Copyright statement type</h1><p>An optional ONIX code indicating the type of right covered by the statement,
+ * typically a copyright or neighbouring right. If omitted, the default is that the statement represents a
+ * copyright.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, one
+ * letter</td></tr><tr><td>Codelist</td><td>List 219</td></tr><tr><td>Reference name</td><td>&lt;CopyrightType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x512&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;CopyrightType&gt;P&lt;/CopyrightType&gt;
+ * (&#8471; phonogram right)</td></tr></table>
  */
-public class CopyrightType implements OnixElement<RightsTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CopyrightType implements OnixElement<RightsTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CopyrightType";
-	public static final String shortname = "x512";
+    public static final String refname = "CopyrightType";
+    public static final String shortname = "x512";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public RightsTypes value;
+    public RightsTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public RightsTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public RightsTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CopyrightType EMPTY = new CopyrightType();
+    private final boolean exists;
+    public static final CopyrightType EMPTY = new CopyrightType();
 
-	public CopyrightType()
-	{
-		exists = false;
-	}
+    public CopyrightType() {
+        exists = false;
+    }
 
-	public CopyrightType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CopyrightType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = RightsTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = RightsTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

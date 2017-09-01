@@ -19,119 +19,87 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Copyright year</h1>
- * <p>
- * The copyright year as it appears in a copyright statement on the product. Mandatory in each occurrence of the
- * &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is missing)</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CopyrightYear&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b087&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>dateformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b087 dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt; (2003-2008)</td>
- * </tr>
- * </table>
+ * <h1>Copyright year</h1><p>The copyright year as it appears in a copyright statement on the product. Mandatory in each
+ * occurrence of the &lt;CopyrightStatement&gt; composite, and repeatable if several years are listed.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>As specified by the value in the dateformat attribute, or the
+ * default of YYYY if the attribute is missing)</td></tr><tr><td>Reference name</td><td>&lt;CopyrightYear&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b087&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td>&lt;b087
+ * dateformat=&quot;11&quot;&gt;20032008&lt;/b087&gt; (2003-2008)</td></tr></table>
  */
-public class CopyrightYear implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CopyrightYear implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CopyrightYear";
-	public static final String shortname = "b087";
+    public static final String refname = "CopyrightYear";
+    public static final String shortname = "b087";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public DateFormats dateformat;
+    public DateFormats dateformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
-	 * missing)
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: As specified by the value in the dateformat attribute, or the default of YYYY if the attribute is
+     * missing)<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CopyrightYear EMPTY = new CopyrightYear();
+    private final boolean exists;
+    public static final CopyrightYear EMPTY = new CopyrightYear();
 
-	public CopyrightYear()
-	{
-		exists = false;
-	}
+    public CopyrightYear() {
+        exists = false;
+    }
 
-	public CopyrightYear(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
+    public CopyrightYear(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

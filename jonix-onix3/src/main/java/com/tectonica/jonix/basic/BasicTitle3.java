@@ -24,20 +24,18 @@ import com.tectonica.jonix.onix3.TitleElement;
 
 /**
  * ONIX3 concrete implementation for {@link BasicTitle}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicTitle3 extends BasicTitle
-{
-	private static final long serialVersionUID = 1L;
+public class BasicTitle3 extends BasicTitle {
+    private static final long serialVersionUID = 1L;
 
-	public BasicTitle3(TitleDetail title)
-	{
-		// TODO: check out the TitleElementLevel of the TitleElement, especially in collections
-		TitleElement titleElement = title.titleElements().get(0); // at least 1 is mandatory
-		titleType = title.titleType().value;
-		titleText = noBreaks(titleElement.titleText().value);
-		titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
-		subtitle = noBreaks(titleElement.subtitle().value);
-	}
+    public BasicTitle3(TitleDetail title) {
+        // TODO: check out the TitleElementLevel of the TitleElement, especially in collections
+        TitleElement titleElement = title.titleElements().get(0); // at least 1 is mandatory
+        titleType = title.titleType().value;
+        titleText = noBreaks(titleElement.titleText().value);
+        titleWithoutPrefix = noBreaks(titleElement.titleWithoutPrefix().value);
+        subtitle = noBreaks(titleElement.subtitle().value);
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -30,136 +28,117 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixPriceConditionQuantity;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Price condition composite</h1>
- * <p>
- * A repeatable group of data elements which together specify a condition relating to a price.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PriceCondition&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;pricecondition&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Price condition composite</h1><p>A repeatable group of data elements which together specify a condition relating
+ * to a price.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;PriceCondition&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;pricecondition&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class PriceCondition implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PriceCondition implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PriceCondition";
-	public static final String shortname = "pricecondition";
+    public static final String refname = "PriceCondition";
+    public static final String shortname = "pricecondition";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final PriceCondition EMPTY = new PriceCondition();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final PriceCondition EMPTY = new PriceCondition();
 
-	public PriceCondition()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public PriceCondition() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public PriceCondition(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public PriceCondition(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname))
-				priceConditionType = new PriceConditionType(e);
-			else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname))
-				priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(e));
-			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(PriceConditionType.refname) || name.equals(PriceConditionType.shortname)) {
+                priceConditionType = new PriceConditionType(e);
+            } else if (name.equals(PriceConditionQuantity.refname) || name.equals(PriceConditionQuantity.shortname)) {
+                priceConditionQuantitys = JPU.addToList(priceConditionQuantitys, new PriceConditionQuantity(e));
+            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
+                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private PriceConditionType priceConditionType = PriceConditionType.EMPTY;
+    private PriceConditionType priceConditionType = PriceConditionType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PriceConditionType priceConditionType()
-	{
-		initialize();
-		return priceConditionType;
-	}
+    /**
+     * (this field is required)
+     */
+    public PriceConditionType priceConditionType() {
+        initialize();
+        return priceConditionType;
+    }
 
-	private ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes> priceConditionQuantitys = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes>
+        priceConditionQuantitys = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes> priceConditionQuantitys()
-	{
-		initialize();
-		return priceConditionQuantitys;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<PriceConditionQuantity, JonixPriceConditionQuantity, PriceConditionQuantityTypes> priceConditionQuantitys() {
+        initialize();
+        return priceConditionQuantitys;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
-	{
-		initialize();
-		return productIdentifiers;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        initialize();
+        return productIdentifiers;
+    }
 }

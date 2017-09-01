@@ -19,110 +19,79 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Sender identifier type</h1>
- * <p>
- * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in each
- * occurrence of the &lt;SenderIdentifier&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 44</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SenderIDType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;m379&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;m379&gt;01&lt;/m379&gt;</td>
- * </tr>
- * </table>
+ * <h1>Sender identifier type</h1><p>An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt;
+ * element is taken. Mandatory in each occurrence of the &lt;SenderIdentifier&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed length, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;SenderIDType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;m379&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;m379&gt;01&lt;/m379&gt;</td></tr></table>
  */
-public class SenderIDType implements OnixElement<NameCodeTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class SenderIDType implements OnixElement<NameCodeTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SenderIDType";
-	public static final String shortname = "m379";
+    public static final String refname = "SenderIDType";
+    public static final String shortname = "m379";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public NameCodeTypes value;
+    public NameCodeTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public NameCodeTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public NameCodeTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final SenderIDType EMPTY = new SenderIDType();
+    private final boolean exists;
+    public static final SenderIDType EMPTY = new SenderIDType();
 
-	public SenderIDType()
-	{
-		exists = false;
-	}
+    public SenderIDType() {
+        exists = false;
+    }
 
-	public SenderIDType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public SenderIDType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = NameCodeTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.onix3.TextContent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicTexts}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicTexts3 extends BasicTexts
-{
-	private static final long serialVersionUID = 1L;
+public class BasicTexts3 extends BasicTexts {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicTexts3(Product product)
-	{
-		this.product = product;
-	}
+    public BasicTexts3(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicText> initialize()
-	{
-		List<BasicText> list = new ArrayList<>();
-		for (TextContent textContent : product.collateralDetail().textContents())
-			list.add(new BasicText3(textContent));
-		return list;
-	}
+    @Override
+    protected List<BasicText> initialize() {
+        List<BasicText> list = new ArrayList<>();
+        for (TextContent textContent : product.collateralDetail().textContents()) {
+            list.add(new BasicText3(textContent));
+        }
+        return list;
+    }
 }

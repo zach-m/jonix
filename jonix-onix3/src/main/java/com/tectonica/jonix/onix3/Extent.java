@@ -19,174 +19,150 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.ExtentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixExtent;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Extent composite</h1>
- * <p>
- * A repeatable group of data elements which together describe an extent pertaining to the product. Optional, but in
- * practice required for most products, <i>eg</i> to give the number of pages in a printed book or paginated e-book, or
- * to give the running time of an audiobook.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Extent&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;extent&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Extent composite</h1><p>A repeatable group of data elements which together describe an extent pertaining to the
+ * product. Optional, but in practice required for most products, <i>eg</i> to give the number of pages in a printed
+ * book or paginated e-book, or to give the running time of an audiobook.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Extent&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;extent&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Extent";
-	public static final String shortname = "extent";
+    public static final String refname = "Extent";
+    public static final String shortname = "extent";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Extent EMPTY = new Extent();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Extent EMPTY = new Extent();
 
-	public Extent()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Extent() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Extent(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Extent(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ExtentType.refname) || name.equals(ExtentType.shortname))
-				extentType = new ExtentType(e);
-			else if (name.equals(ExtentValue.refname) || name.equals(ExtentValue.shortname))
-				extentValue = new ExtentValue(e);
-			else if (name.equals(ExtentValueRoman.refname) || name.equals(ExtentValueRoman.shortname))
-				extentValueRoman = new ExtentValueRoman(e);
-			else if (name.equals(ExtentUnit.refname) || name.equals(ExtentUnit.shortname))
-				extentUnit = new ExtentUnit(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ExtentType.refname) || name.equals(ExtentType.shortname)) {
+                extentType = new ExtentType(e);
+            } else if (name.equals(ExtentValue.refname) || name.equals(ExtentValue.shortname)) {
+                extentValue = new ExtentValue(e);
+            } else if (name.equals(ExtentValueRoman.refname) || name.equals(ExtentValueRoman.shortname)) {
+                extentValueRoman = new ExtentValueRoman(e);
+            } else if (name.equals(ExtentUnit.refname) || name.equals(ExtentUnit.shortname)) {
+                extentUnit = new ExtentUnit(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ExtentType extentType = ExtentType.EMPTY;
+    private ExtentType extentType = ExtentType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ExtentType extentType()
-	{
-		initialize();
-		return extentType;
-	}
+    /**
+     * (this field is required)
+     */
+    public ExtentType extentType() {
+        initialize();
+        return extentType;
+    }
 
-	private ExtentValue extentValue = ExtentValue.EMPTY;
+    private ExtentValue extentValue = ExtentValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ExtentValue extentValue()
-	{
-		initialize();
-		return extentValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public ExtentValue extentValue() {
+        initialize();
+        return extentValue;
+    }
 
-	private ExtentValueRoman extentValueRoman = ExtentValueRoman.EMPTY;
+    private ExtentValueRoman extentValueRoman = ExtentValueRoman.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ExtentValueRoman extentValueRoman()
-	{
-		initialize();
-		return extentValueRoman;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ExtentValueRoman extentValueRoman() {
+        initialize();
+        return extentValueRoman;
+    }
 
-	private ExtentUnit extentUnit = ExtentUnit.EMPTY;
+    private ExtentUnit extentUnit = ExtentUnit.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ExtentUnit extentUnit()
-	{
-		initialize();
-		return extentUnit;
-	}
+    /**
+     * (this field is required)
+     */
+    public ExtentUnit extentUnit() {
+        initialize();
+        return extentUnit;
+    }
 
-	@Override
-	public JonixExtent asStruct()
-	{
-		initialize();
-		JonixExtent struct = new JonixExtent();
-		struct.extentType = extentType.value;
-		struct.extentUnit = extentUnit.value;
-		struct.extentValue = extentValue.value;
-		return struct;
-	}
+    @Override
+    public JonixExtent asStruct() {
+        initialize();
+        JonixExtent struct = new JonixExtent();
+        struct.extentType = extentType.value;
+        struct.extentUnit = extentUnit.value;
+        struct.extentValue = extentValue.value;
+        return struct;
+    }
 
-	@Override
-	public ExtentTypes structKey()
-	{
-		return extentType().value;
-	}
+    @Override
+    public ExtentTypes structKey() {
+        return extentType().value;
+    }
 }

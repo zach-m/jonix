@@ -26,37 +26,32 @@ import com.tectonica.jonix.onix3.SubjectHeadingText;
 
 /**
  * ONIX3 concrete implementation for {@link BasicSubject}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSubject3 extends BasicSubject
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSubject3 extends BasicSubject {
+    private static final long serialVersionUID = 1L;
 
-	public BasicSubject3(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
-			String subjectHeadingText)
-	{
-		super(subjectSchemeIdentifier, subjectCode, subjectHeadingText);
-	}
+    public BasicSubject3(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
+                         String subjectHeadingText) {
+        super(subjectSchemeIdentifier, subjectCode, subjectHeadingText);
+    }
 
-	public BasicSubject3(Subject s)
-	{
-		subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
-		subjectCode = s.subjectCode().value;
-		subjectHeadingText = pickSubjectHeadingText(s);
-	}
+    public BasicSubject3(Subject s) {
+        subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
+        subjectCode = s.subjectCode().value;
+        subjectHeadingText = pickSubjectHeadingText(s);
+    }
 
-	private String pickSubjectHeadingText(Subject subject)
-	{
-		if (!subject.subjectHeadingTexts().isEmpty())
-		{
-			for (SubjectHeadingText sht : subject.subjectHeadingTexts())
-			{
-				if (sht.language == null || sht.language == LanguageCodes.English)
-					return sht.value;
-			}
-			return subject.subjectHeadingTexts().get(0).value; // return whatever language we have
-		}
-		return null;
-	}
+    private String pickSubjectHeadingText(Subject subject) {
+        if (!subject.subjectHeadingTexts().isEmpty()) {
+            for (SubjectHeadingText sht : subject.subjectHeadingTexts()) {
+                if (sht.language == null || sht.language == LanguageCodes.English) {
+                    return sht.value;
+                }
+            }
+            return subject.subjectHeadingTexts().get(0).value; // return whatever language we have
+        }
+        return null;
+    }
 }

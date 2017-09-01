@@ -19,147 +19,125 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1>
- * <h4 class="nobreak">Product supply composite</h4>
- * <p>
- * The product supply block covers data element Groups P.24 to P.26, specifying a market, the publishing status of the
- * product in that market, and the supply arrangements for the product in that market. The block is repeatable to
- * describe multiple markets. At least one occurrence is expected in a &lt;Product&gt; record unless the
- * &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record is an update notice which carries only those
- * blocks in which changes have occurred.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductSupply&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;productsupply&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>null</h1><h4 class="nobreak">Product supply composite</h4><p>The product supply block covers data element Groups
+ * P.24 to P.26, specifying a market, the publishing status of the product in that market, and the supply arrangements
+ * for the product in that market. The block is repeatable to describe multiple markets. At least one occurrence is
+ * expected in a &lt;Product&gt; record unless the &lt;NotificationType&gt; in Group&nbsp;P.1 indicates that the record
+ * is an update notice which carries only those blocks in which changes have occurred.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductSupply&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;productsupply&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class ProductSupply implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ProductSupply implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductSupply";
-	public static final String shortname = "productsupply";
+    public static final String refname = "ProductSupply";
+    public static final String shortname = "productsupply";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ProductSupply EMPTY = new ProductSupply();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProductSupply EMPTY = new ProductSupply();
 
-	public ProductSupply()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ProductSupply() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ProductSupply(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ProductSupply(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(Market.refname) || name.equals(Market.shortname))
-				markets = JPU.addToList(markets, new Market(e));
-			else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname))
-				marketPublishingDetail = new MarketPublishingDetail(e);
-			else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname))
-				supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(Market.refname) || name.equals(Market.shortname)) {
+                markets = JPU.addToList(markets, new Market(e));
+            } else if (name.equals(MarketPublishingDetail.refname) || name.equals(MarketPublishingDetail.shortname)) {
+                marketPublishingDetail = new MarketPublishingDetail(e);
+            } else if (name.equals(SupplyDetail.refname) || name.equals(SupplyDetail.shortname)) {
+                supplyDetails = JPU.addToList(supplyDetails, new SupplyDetail(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private List<Market> markets = Collections.emptyList();
+    private List<Market> markets = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Market> markets()
-	{
-		initialize();
-		return markets;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<Market> markets() {
+        initialize();
+        return markets;
+    }
 
-	private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
+    private MarketPublishingDetail marketPublishingDetail = MarketPublishingDetail.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public MarketPublishingDetail marketPublishingDetail()
-	{
-		initialize();
-		return marketPublishingDetail;
-	}
+    /**
+     * (this field is optional)
+     */
+    public MarketPublishingDetail marketPublishingDetail() {
+        initialize();
+        return marketPublishingDetail;
+    }
 
-	private List<SupplyDetail> supplyDetails = Collections.emptyList();
+    private List<SupplyDetail> supplyDetails = Collections.emptyList();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<SupplyDetail> supplyDetails()
-	{
-		initialize();
-		return supplyDetails;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public List<SupplyDetail> supplyDetails() {
+        initialize();
+        return supplyDetails;
+    }
 }

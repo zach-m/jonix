@@ -19,41 +19,38 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.HashSet;
-
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.onix3.BiographicalNote;
 import com.tectonica.jonix.onix3.Contributor;
 
+import java.util.HashSet;
+
 /**
  * ONIX3 concrete implementation for {@link BasicContributor}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicContributor3 extends BasicContributor
-{
-	private static final long serialVersionUID = 1L;
+public class BasicContributor3 extends BasicContributor {
+    private static final long serialVersionUID = 1L;
 
-	public BasicContributor3(Contributor c)
-	{
-		contributorRoles = (c.contributorRoles().valuesInto(new HashSet<>()));
-		Integer sequenceNumberValue = c.sequenceNumber().value;
-		sequenceNumber = (sequenceNumberValue == null) ? null : sequenceNumberValue.toString();
-		personName = c.personName().value;
-		personNameKey = c.keyNames().value;
-		personNameBeforeKey = c.namesBeforeKey().value;
-		personNameInverted = c.personNameInverted().value;
-		corporateName = c.corporateName().value;
-		biographicalNote = pickBiographicalNote(c);
-	}
+    public BasicContributor3(Contributor c) {
+        contributorRoles = (c.contributorRoles().valuesInto(new HashSet<>()));
+        Integer sequenceNumberValue = c.sequenceNumber().value;
+        sequenceNumber = (sequenceNumberValue == null) ? null : sequenceNumberValue.toString();
+        personName = c.personName().value;
+        personNameKey = c.keyNames().value;
+        personNameBeforeKey = c.namesBeforeKey().value;
+        personNameInverted = c.personNameInverted().value;
+        corporateName = c.corporateName().value;
+        biographicalNote = pickBiographicalNote(c);
+    }
 
-	private String pickBiographicalNote(Contributor contributor)
-	{
-		for (BiographicalNote bio : contributor.biographicalNotes())
-		{
-			if (bio.language == null || bio.language == LanguageCodes.English)
-				return bio.value;
-		}
-		return contributor.biographicalNotes().firstValue().orElse(null); // return whatever language we have
-	}
+    private String pickBiographicalNote(Contributor contributor) {
+        for (BiographicalNote bio : contributor.biographicalNotes()) {
+            if (bio.language == null || bio.language == LanguageCodes.English) {
+                return bio.value;
+            }
+        }
+        return contributor.biographicalNotes().firstValue().orElse(null); // return whatever language we have
+    }
 }

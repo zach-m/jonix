@@ -19,163 +19,139 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.struct.JonixAgentIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Agent identifier composite</h1>
- * <p>
- * A group of data elements together defining the identifier of an agent or local publisher in accordance with a
- * specified scheme. Optional, but each occurrence of the &lt;PublisherRepresentative&gt; composite must carry either at
- * least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more identifiers are sent using
- * different schemes.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AgentIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;agentidentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Agent identifier composite</h1><p>A group of data elements together defining the identifier of an agent or local
+ * publisher in accordance with a specified scheme. Optional, but each occurrence of the &lt;PublisherRepresentative&gt;
+ * composite must carry either at least one agent identifier, or an &lt;AgentName&gt;. Repeatable only if two or more
+ * identifiers are sent using different schemes.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;AgentIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;agentidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class AgentIdentifier
-		implements OnixDataCompositeWithKey<JonixAgentIdentifier, SupplierIdentifierTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixAgentIdentifier, SupplierIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AgentIdentifier";
-	public static final String shortname = "agentidentifier";
+    public static final String refname = "AgentIdentifier";
+    public static final String shortname = "agentidentifier";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final AgentIdentifier EMPTY = new AgentIdentifier();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final AgentIdentifier EMPTY = new AgentIdentifier();
 
-	public AgentIdentifier()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public AgentIdentifier() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public AgentIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public AgentIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(AgentIDType.refname) || name.equals(AgentIDType.shortname))
-				agentIDType = new AgentIDType(e);
-			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-				idTypeName = new IDTypeName(e);
-			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-				idValue = new IDValue(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(AgentIDType.refname) || name.equals(AgentIDType.shortname)) {
+                agentIDType = new AgentIDType(e);
+            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
+                idTypeName = new IDTypeName(e);
+            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
+                idValue = new IDValue(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private AgentIDType agentIDType = AgentIDType.EMPTY;
+    private AgentIDType agentIDType = AgentIDType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public AgentIDType agentIDType()
-	{
-		initialize();
-		return agentIDType;
-	}
+    /**
+     * (this field is required)
+     */
+    public AgentIDType agentIDType() {
+        initialize();
+        return agentIDType;
+    }
 
-	private IDTypeName idTypeName = IDTypeName.EMPTY;
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName()
-	{
-		initialize();
-		return idTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public IDTypeName idTypeName() {
+        initialize();
+        return idTypeName;
+    }
 
-	private IDValue idValue = IDValue.EMPTY;
+    private IDValue idValue = IDValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue()
-	{
-		initialize();
-		return idValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public IDValue idValue() {
+        initialize();
+        return idValue;
+    }
 
-	@Override
-	public JonixAgentIdentifier asStruct()
-	{
-		initialize();
-		JonixAgentIdentifier struct = new JonixAgentIdentifier();
-		struct.agentIDType = agentIDType.value;
-		struct.idTypeName = idTypeName.value;
-		struct.idValue = idValue.value;
-		return struct;
-	}
+    @Override
+    public JonixAgentIdentifier asStruct() {
+        initialize();
+        JonixAgentIdentifier struct = new JonixAgentIdentifier();
+        struct.agentIDType = agentIDType.value;
+        struct.idTypeName = idTypeName.value;
+        struct.idValue = idValue.value;
+        return struct;
+    }
 
-	@Override
-	public SupplierIdentifierTypes structKey()
-	{
-		return agentIDType().value;
-	}
+    @Override
+    public SupplierIdentifierTypes structKey() {
+        return agentIDType().value;
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
@@ -31,150 +29,130 @@ import com.tectonica.jonix.codelist.ProductRelations;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixProductIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Related product composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together describe a product which has a specified
- * relationship to the product described in the ONIX record.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;RelatedProduct&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;relatedproduct&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Related product composite</h1><p>An optional and repeatable group of data elements which together describe a
+ * product which has a specified relationship to the product described in the ONIX record.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;RelatedProduct&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;relatedproduct&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class RelatedProduct implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class RelatedProduct implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "RelatedProduct";
-	public static final String shortname = "relatedproduct";
+    public static final String refname = "RelatedProduct";
+    public static final String shortname = "relatedproduct";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final RelatedProduct EMPTY = new RelatedProduct();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final RelatedProduct EMPTY = new RelatedProduct();
 
-	public RelatedProduct()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public RelatedProduct() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public RelatedProduct(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public RelatedProduct(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProductRelationCode.refname) || name.equals(ProductRelationCode.shortname))
-				productRelationCodes = JPU.addToList(productRelationCodes, new ProductRelationCode(e));
-			else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname))
-				productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
-			else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname))
-				productForm = new ProductForm(e);
-			else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname))
-				productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProductRelationCode.refname) || name.equals(ProductRelationCode.shortname)) {
+                productRelationCodes = JPU.addToList(productRelationCodes, new ProductRelationCode(e));
+            } else if (name.equals(ProductIdentifier.refname) || name.equals(ProductIdentifier.shortname)) {
+                productIdentifiers = JPU.addToList(productIdentifiers, new ProductIdentifier(e));
+            } else if (name.equals(ProductForm.refname) || name.equals(ProductForm.shortname)) {
+                productForm = new ProductForm(e);
+            } else if (name.equals(ProductFormDetail.refname) || name.equals(ProductFormDetail.shortname)) {
+                productFormDetails = JPU.addToList(productFormDetails, new ProductFormDetail(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes = ListOfOnixElement.empty();
+    private ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes = ListOfOnixElement.empty();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes()
-	{
-		initialize();
-		return productRelationCodes;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes() {
+        initialize();
+        return productRelationCodes;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes>
+        productIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers()
-	{
-		initialize();
-		return productIdentifiers;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
+        initialize();
+        return productIdentifiers;
+    }
 
-	private ProductForm productForm = ProductForm.EMPTY;
+    private ProductForm productForm = ProductForm.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ProductForm productForm()
-	{
-		initialize();
-		return productForm;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ProductForm productForm() {
+        initialize();
+        return productForm;
+    }
 
-	private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails = ListOfOnixElement
-			.empty();
+    private ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails =
+        ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails()
-	{
-		initialize();
-		return productFormDetails;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails() {
+        initialize();
+        return productFormDetails;
+    }
 }

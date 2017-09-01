@@ -19,89 +19,63 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixFlag;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>“No authorship” indicator</h1>
- * <p>
- * An empty element that provides a positive indication that a product has no stated authorship. Intended to be used in
- * an ONIX accreditation scheme to confirm that author information is being consistently supplied in publisher ONIX
- * feeds. Optional and non-repeating. Must only be sent in a record that has no other elements from Group&nbsp;P.7.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>XML empty element</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;NoContributor&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;n339&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;NoContributor/&gt;</td>
- * </tr>
- * </table>
+ * <h1>“No authorship” indicator</h1><p>An empty element that provides a positive indication that a product has no
+ * stated authorship. Intended to be used in an ONIX accreditation scheme to confirm that author information is being
+ * consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no
+ * other elements from Group&nbsp;P.7.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
+ * element</td></tr><tr><td>Reference name</td><td>&lt;NoContributor&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;n339&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;NoContributor/&gt;</td></tr></table>
  */
-public class NoContributor implements OnixFlag, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class NoContributor implements OnixFlag, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "NoContributor";
-	public static final String shortname = "n339";
+    public static final String refname = "NoContributor";
+    public static final String shortname = "n339";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTORS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTORS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final NoContributor EMPTY = new NoContributor();
+    private final boolean exists;
+    public static final NoContributor EMPTY = new NoContributor();
 
-	public NoContributor()
-	{
-		exists = false;
-	}
+    public NoContributor() {
+        exists = false;
+    }
 
-	public NoContributor(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-	}
+    public NoContributor(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

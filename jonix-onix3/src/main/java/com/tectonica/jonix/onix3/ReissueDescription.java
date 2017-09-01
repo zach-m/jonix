@@ -19,123 +19,92 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Reissue description</h1>
- * <p>
- * Text explaining the nature of the reissue. Optional and non-repeating. Deprecated.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ReissueDescription&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j366&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language, textformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release of film.&lt;/j366&gt;</td>
- * </tr>
- * </table>
+ * <h1>Reissue description</h1><p>Text explaining the nature of the reissue. Optional and non-repeating.
+ * Deprecated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum
+ * length 500 characters. XHTML is enabled in this element - see Using XHTML, HTML or XML with ONIX text
+ * fields</td></tr><tr><td>Reference name</td><td>&lt;ReissueDescription&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j366&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td>&lt;j366&gt;Timed to coincide 'day and date' with theatrical release of
+ * film.&lt;/j366&gt;</td></tr></table>
  */
-public class ReissueDescription implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ReissueDescription implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ReissueDescription";
-	public static final String shortname = "j366";
+    public static final String refname = "ReissueDescription";
+    public static final String shortname = "j366";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 500 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ReissueDescription EMPTY = new ReissueDescription();
+    private final boolean exists;
+    public static final ReissueDescription EMPTY = new ReissueDescription();
 
-	public ReissueDescription()
-	{
-		exists = false;
-	}
+    public ReissueDescription() {
+        exists = false;
+    }
 
-	public ReissueDescription(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+    public ReissueDescription(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-		value = JPU.getChildXHTML(element, true);
-	}
+        value = JPU.getChildXHTML(element, true);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

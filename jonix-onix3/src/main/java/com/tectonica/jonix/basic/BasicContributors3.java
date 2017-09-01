@@ -19,40 +19,37 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix3.Contributor;
 import com.tectonica.jonix.onix3.Product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX3 concrete implementation for {@link BasicContributors}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicContributors3 extends BasicContributors
-{
-	private static final long serialVersionUID = 1L;
+public class BasicContributors3 extends BasicContributors {
+    private static final long serialVersionUID = 1L;
 
-	private transient final List<Contributor> contributors;
+    private final transient List<Contributor> contributors;
 
-	public BasicContributors3(Product product)
-	{
-		contributors = product.descriptiveDetail().contributors();
-	}
+    public BasicContributors3(Product product) {
+        contributors = product.descriptiveDetail().contributors();
+    }
 
-	public BasicContributors3(com.tectonica.jonix.onix3.Collection collection)
-	{
-		contributors = collection.contributors();
-	}
+    public BasicContributors3(com.tectonica.jonix.onix3.Collection collection) {
+        contributors = collection.contributors();
+    }
 
-	@Override
-	protected List<BasicContributor> initialize()
-	{
-		List<BasicContributor> list = new ArrayList<>();
-		for (Contributor contributor : contributors)
-			list.add(new BasicContributor3(contributor));
-		sortBySequence(list);
-		return list;
-	}
+    @Override
+    protected List<BasicContributor> initialize() {
+        List<BasicContributor> list = new ArrayList<>();
+        for (Contributor contributor : contributors) {
+            list.add(new BasicContributor3(contributor));
+        }
+        sortBySequence(list);
+        return list;
+    }
 }

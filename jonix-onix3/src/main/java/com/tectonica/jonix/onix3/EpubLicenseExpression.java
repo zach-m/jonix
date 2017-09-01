@@ -19,162 +19,140 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LicenseExpressionTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixEpubLicenseExpression;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Digital product license expression</h1>
- * <p>
- * An optional and repeatable composite that carries details of a link to an expression of the license terms, which may
- * be in human-readable or machine-readable form. Repeatable when there is more than one expression of the license.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;EpubLicenseExpression&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;epublicenseexpression&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Digital product license expression</h1><p>An optional and repeatable composite that carries details of a link to
+ * an expression of the license terms, which may be in human-readable or machine-readable form. Repeatable when there is
+ * more than one expression of the license.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;EpubLicenseExpression&gt;</td></tr><tr><td>Short tag</td><td>&lt;epublicenseexpression&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class EpubLicenseExpression
-		implements OnixDataCompositeWithKey<JonixEpubLicenseExpression, LicenseExpressionTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixEpubLicenseExpression, LicenseExpressionTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "EpubLicenseExpression";
-	public static final String shortname = "epublicenseexpression";
+    public static final String refname = "EpubLicenseExpression";
+    public static final String shortname = "epublicenseexpression";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final EpubLicenseExpression EMPTY = new EpubLicenseExpression();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final EpubLicenseExpression EMPTY = new EpubLicenseExpression();
 
-	public EpubLicenseExpression()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public EpubLicenseExpression() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public EpubLicenseExpression(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public EpubLicenseExpression(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(EpubLicenseExpressionType.refname) || name.equals(EpubLicenseExpressionType.shortname))
-				epubLicenseExpressionType = new EpubLicenseExpressionType(e);
-			else if (name.equals(EpubLicenseExpressionTypeName.refname)
-					|| name.equals(EpubLicenseExpressionTypeName.shortname))
-				epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(e);
-			else if (name.equals(EpubLicenseExpressionLink.refname) || name.equals(EpubLicenseExpressionLink.shortname))
-				epubLicenseExpressionLink = new EpubLicenseExpressionLink(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(EpubLicenseExpressionType.refname) || name.equals(EpubLicenseExpressionType.shortname)) {
+                epubLicenseExpressionType = new EpubLicenseExpressionType(e);
+            } else if (name.equals(EpubLicenseExpressionTypeName.refname) ||
+                name.equals(EpubLicenseExpressionTypeName.shortname)) {
+                epubLicenseExpressionTypeName = new EpubLicenseExpressionTypeName(e);
+            } else if (name.equals(EpubLicenseExpressionLink.refname) ||
+                name.equals(EpubLicenseExpressionLink.shortname)) {
+                epubLicenseExpressionLink = new EpubLicenseExpressionLink(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private EpubLicenseExpressionType epubLicenseExpressionType = EpubLicenseExpressionType.EMPTY;
+    private EpubLicenseExpressionType epubLicenseExpressionType = EpubLicenseExpressionType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public EpubLicenseExpressionType epubLicenseExpressionType()
-	{
-		initialize();
-		return epubLicenseExpressionType;
-	}
+    /**
+     * (this field is required)
+     */
+    public EpubLicenseExpressionType epubLicenseExpressionType() {
+        initialize();
+        return epubLicenseExpressionType;
+    }
 
-	private EpubLicenseExpressionTypeName epubLicenseExpressionTypeName = EpubLicenseExpressionTypeName.EMPTY;
+    private EpubLicenseExpressionTypeName epubLicenseExpressionTypeName = EpubLicenseExpressionTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName()
-	{
-		initialize();
-		return epubLicenseExpressionTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName() {
+        initialize();
+        return epubLicenseExpressionTypeName;
+    }
 
-	private EpubLicenseExpressionLink epubLicenseExpressionLink = EpubLicenseExpressionLink.EMPTY;
+    private EpubLicenseExpressionLink epubLicenseExpressionLink = EpubLicenseExpressionLink.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public EpubLicenseExpressionLink epubLicenseExpressionLink()
-	{
-		initialize();
-		return epubLicenseExpressionLink;
-	}
+    /**
+     * (this field is required)
+     */
+    public EpubLicenseExpressionLink epubLicenseExpressionLink() {
+        initialize();
+        return epubLicenseExpressionLink;
+    }
 
-	@Override
-	public JonixEpubLicenseExpression asStruct()
-	{
-		initialize();
-		JonixEpubLicenseExpression struct = new JonixEpubLicenseExpression();
-		struct.epubLicenseExpressionType = epubLicenseExpressionType.value;
-		struct.epubLicenseExpressionTypeName = epubLicenseExpressionTypeName.value;
-		struct.epubLicenseExpressionLink = epubLicenseExpressionLink.value;
-		return struct;
-	}
+    @Override
+    public JonixEpubLicenseExpression asStruct() {
+        initialize();
+        JonixEpubLicenseExpression struct = new JonixEpubLicenseExpression();
+        struct.epubLicenseExpressionType = epubLicenseExpressionType.value;
+        struct.epubLicenseExpressionTypeName = epubLicenseExpressionTypeName.value;
+        struct.epubLicenseExpressionLink = epubLicenseExpressionLink.value;
+        return struct;
+    }
 
-	@Override
-	public LicenseExpressionTypes structKey()
-	{
-		return epubLicenseExpressionType().value;
-	}
+    @Override
+    public LicenseExpressionTypes structKey() {
+        return epubLicenseExpressionType().value;
+    }
 }

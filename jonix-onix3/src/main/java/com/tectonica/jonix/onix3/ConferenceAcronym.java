@@ -19,110 +19,82 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Conference acronym</h1>
- * <p>
- * An acronym used as a short form of the name of a conference or conference series given in the &lt;ConferenceName&gt;
- * element. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 20 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ConferenceAcronym&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b341&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;ConferenceAcronym&gt;ICCC 2009&lt;/ConferenceAcronym&gt;</td>
- * </tr>
- * </table>
+ * <h1>Conference acronym</h1><p>An acronym used as a short form of the name of a conference or conference series given
+ * in the &lt;ConferenceName&gt; element. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 20
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;ConferenceAcronym&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b341&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ConferenceAcronym&gt;ICCC
+ * 2009&lt;/ConferenceAcronym&gt;</td></tr></table>
  */
-public class ConferenceAcronym implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ConferenceAcronym implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ConferenceAcronym";
-	public static final String shortname = "b341";
+    public static final String refname = "ConferenceAcronym";
+    public static final String shortname = "b341";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 20 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ConferenceAcronym EMPTY = new ConferenceAcronym();
+    private final boolean exists;
+    public static final ConferenceAcronym EMPTY = new ConferenceAcronym();
 
-	public ConferenceAcronym()
-	{
-		exists = false;
-	}
+    public ConferenceAcronym() {
+        exists = false;
+    }
 
-	public ConferenceAcronym(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ConferenceAcronym(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

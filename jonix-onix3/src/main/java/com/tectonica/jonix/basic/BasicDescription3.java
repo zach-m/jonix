@@ -28,43 +28,38 @@ import com.tectonica.jonix.struct.JonixExtent;
 
 /**
  * ONIX3 concrete implementation for {@link BasicDescription}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicDescription3 extends BasicDescription
-{
-	private static final long serialVersionUID = 1L;
+public class BasicDescription3 extends BasicDescription {
+    private static final long serialVersionUID = 1L;
 
-	private transient final AudienceRange audienceRange;
+    private final transient AudienceRange audienceRange;
 
-	public BasicDescription3(Product product)
-	{
-		DescriptiveDetail dd = product.descriptiveDetail();
-		if (dd.exists())
-		{
-			editionType = dd.editionTypes().firstValue().orElse(null);
-			editionNumber = dd.editionNumber().value;
-			ProductFormsList150 productFormValue = dd.productForm().value;
-			productForm = (productFormValue == null) ? null : productFormValue.description;
-			JonixExtent jNumberOfPages = dd.extents().findAsStruct(ExtentTypes.Main_content_page_count).orElse(null);
-			numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null
-					: jNumberOfPages.extentValue.toString();
-			languages = dd.languages().asStructs();
-			audiences = dd.audiences().asStructs();
-			audienceCodes = dd.audienceCodes().values();
-			audienceRange = dd.audienceRanges().first().orElse(null);
-		}
-		else
-		{
-			audienceRange = null;
-		}
-	}
+    public BasicDescription3(Product product) {
+        DescriptiveDetail dd = product.descriptiveDetail();
+        if (dd.exists()) {
+            editionType = dd.editionTypes().firstValue().orElse(null);
+            editionNumber = dd.editionNumber().value;
+            ProductFormsList150 productFormValue = dd.productForm().value;
+            productForm = (productFormValue == null) ? null : productFormValue.description;
+            JonixExtent jNumberOfPages = dd.extents().findAsStruct(ExtentTypes.Main_content_page_count).orElse(null);
+            numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null
+                : jNumberOfPages.extentValue.toString();
+            languages = dd.languages().asStructs();
+            audiences = dd.audiences().asStructs();
+            audienceCodes = dd.audienceCodes().values();
+            audienceRange = dd.audienceRanges().first().orElse(null);
+        } else {
+            audienceRange = null;
+        }
+    }
 
-	@Override
-	public Integer[] getFirstAudienceAgeRange()
-	{
-		if (audienceRange != null)
-			return getAudienceAgeRange(audienceRange.asStruct());
-		return new Integer[] { null, null };
-	}
+    @Override
+    public Integer[] getFirstAudienceAgeRange() {
+        if (audienceRange != null) {
+            return getAudienceAgeRange(audienceRange.asStruct());
+        }
+        return new Integer[] {null, null};
+    }
 }

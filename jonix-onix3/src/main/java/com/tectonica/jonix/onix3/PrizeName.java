@@ -19,120 +19,87 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Prize or award name</h1>
- * <p>
- * The name of a prize or award which the product has received. Mandatory in each occurrence of the &lt;Prize&gt;
- * composite, and repeatable to provide a parallel award name in multiple languages. The <i>language</i> attribute is
- * optional for a single instance of &lt;PrizeName&gt;, but must be included in each instance if &lt;PrizeName&gt; is
- * repeated.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 100 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PrizeName&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;g126&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;PrizeName&gt;Man Booker Prize&lt;/PrizeName&gt;</td>
- * </tr>
- * </table>
+ * <h1>Prize or award name</h1><p>The name of a prize or award which the product has received. Mandatory in each
+ * occurrence of the &lt;Prize&gt; composite, and repeatable to provide a parallel award name in multiple languages. The
+ * <i>language</i> attribute is optional for a single instance of &lt;PrizeName&gt;, but must be included in each
+ * instance if &lt;PrizeName&gt; is repeated.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length
+ * text, suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;PrizeName&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;g126&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;PrizeName&gt;Man
+ * Booker Prize&lt;/PrizeName&gt;</td></tr></table>
  */
-public class PrizeName implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PrizeName implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PrizeName";
-	public static final String shortname = "g126";
+    public static final String refname = "PrizeName";
+    public static final String shortname = "g126";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final PrizeName EMPTY = new PrizeName();
+    private final boolean exists;
+    public static final PrizeName EMPTY = new PrizeName();
 
-	public PrizeName()
-	{
-		exists = false;
-	}
+    public PrizeName() {
+        exists = false;
+    }
 
-	public PrizeName(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+    public PrizeName(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

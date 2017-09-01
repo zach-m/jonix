@@ -19,139 +19,118 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixBatchBonus;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Batch bonus composite</h1>
- * <p>
- * A repeatable group of data elements which together specify a batch bonus, <i>ie</i> a quantity of free copies which
- * are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is optional.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;BatchBonus&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;batchbonus&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Batch bonus composite</h1><p>A repeatable group of data elements which together specify a batch bonus, <i>ie</i>
+ * a quantity of free copies which are supplied with a certain order quantity. The &lt;BatchBonus&gt; composite is
+ * optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;BatchBonus&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;batchbonus&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "BatchBonus";
-	public static final String shortname = "batchbonus";
+    public static final String refname = "BatchBonus";
+    public static final String shortname = "batchbonus";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final BatchBonus EMPTY = new BatchBonus();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final BatchBonus EMPTY = new BatchBonus();
 
-	public BatchBonus()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public BatchBonus() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public BatchBonus(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public BatchBonus(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname))
-				batchQuantity = new BatchQuantity(e);
-			else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname))
-				freeQuantity = new FreeQuantity(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(BatchQuantity.refname) || name.equals(BatchQuantity.shortname)) {
+                batchQuantity = new BatchQuantity(e);
+            } else if (name.equals(FreeQuantity.refname) || name.equals(FreeQuantity.shortname)) {
+                freeQuantity = new FreeQuantity(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private BatchQuantity batchQuantity = BatchQuantity.EMPTY;
+    private BatchQuantity batchQuantity = BatchQuantity.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public BatchQuantity batchQuantity()
-	{
-		initialize();
-		return batchQuantity;
-	}
+    /**
+     * (this field is required)
+     */
+    public BatchQuantity batchQuantity() {
+        initialize();
+        return batchQuantity;
+    }
 
-	private FreeQuantity freeQuantity = FreeQuantity.EMPTY;
+    private FreeQuantity freeQuantity = FreeQuantity.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public FreeQuantity freeQuantity()
-	{
-		initialize();
-		return freeQuantity;
-	}
+    /**
+     * (this field is required)
+     */
+    public FreeQuantity freeQuantity() {
+        initialize();
+        return freeQuantity;
+    }
 
-	@Override
-	public JonixBatchBonus asStruct()
-	{
-		initialize();
-		JonixBatchBonus struct = new JonixBatchBonus();
-		struct.batchQuantity = batchQuantity.value;
-		struct.freeQuantity = freeQuantity.value;
-		return struct;
-	}
+    @Override
+    public JonixBatchBonus asStruct() {
+        initialize();
+        JonixBatchBonus struct = new JonixBatchBonus();
+        struct.batchQuantity = batchQuantity.value;
+        struct.freeQuantity = freeQuantity.value;
+        return struct;
+    }
 }

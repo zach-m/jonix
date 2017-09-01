@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -28,126 +26,94 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextScriptCodes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Title text</h1>
- * <p>
- * The text of a title element, excluding any subtitle. Optional and non-repeating, may only be used where
- * &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.
- * </p>
- * <p>
- * This element is intended to be used when the sending system cannot reliably provide prefixes that are ignored for
- * sorting purposes in a separate data element. If the system <em>can</em> reliably separate prefixes, it should state
- * whether a prefix is present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using
- * &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt;).
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum 300 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;TitleText&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b203&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>collationkey, language, textscript, textcase</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b203&gt;Nicholas Nickleby&lt;/b203&gt;</td>
- * </tr>
- * </table>
+ * <h1>Title text</h1><p>The text of a title element, excluding any subtitle. Optional and non-repeating, may only be
+ * used where &lt;TitlePrefix&gt;, &lt;NoPrefix/&gt; and &lt;TitleWithoutPrefix&gt; are not used.</p><p>This element is
+ * intended to be used when the sending system cannot reliably provide prefixes that are ignored for sorting purposes in
+ * a separate data element. If the system <em>can</em> reliably separate prefixes, it should state whether a prefix is
+ * present (using &lt;TitlePrefix&gt; and &lt;TitleWithoutPrefix&gt;) or absent (using &lt;NoPrefix/&gt; and
+ * &lt;TitleWithoutPrefix&gt;).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
+ * suggested maximum 300 characters</td></tr><tr><td>Reference name</td><td>&lt;TitleText&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b203&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>collationkey,
+ * language, textscript, textcase</td></tr><tr><td>Example</td><td>&lt;b203&gt;Nicholas
+ * Nickleby&lt;/b203&gt;</td></tr></table>
  */
-public class TitleText implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class TitleText implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "TitleText";
-	public static final String shortname = "b203";
+    public static final String refname = "TitleText";
+    public static final String shortname = "b203";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public String collationkey;
+    public String collationkey;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TextScriptCodes textscript;
+    public TextScriptCodes textscript;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum 300 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum 300 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final TitleText EMPTY = new TitleText();
+    private final boolean exists;
+    public static final TitleText EMPTY = new TitleText();
 
-	public TitleText()
-	{
-		exists = false;
-	}
+    public TitleText() {
+        exists = false;
+    }
 
-	public TitleText(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		collationkey = JPU.getAttribute(element, "collationkey");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+    public TitleText(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        collationkey = JPU.getAttribute(element, "collationkey");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        textscript = TextScriptCodes.byCode(JPU.getAttribute(element, "textscript"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

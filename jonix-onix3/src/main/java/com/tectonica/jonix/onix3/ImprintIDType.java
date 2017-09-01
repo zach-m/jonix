@@ -19,115 +19,82 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Imprint identifier type</h1>
- * <p>
- * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in
- * each occurrence of the &lt;ImprintIdentifier&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 44</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ImprintIDType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x445&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x445&gt;01&lt;/x445&gt; (Proprietary)</td>
- * </tr>
- * <tr>
- * <td>Notes</td>
- * <td>'Proprietary' in this context indicates the code list from which &lt;IDValue&gt; is drawn is proprietary; it is
- * not an indicator of trademark or proprietary rights held over the brand or imprint name itself.</td>
- * </tr>
- * </table>
+ * <h1>Imprint identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the
+ * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;ImprintIdentifier&gt; composite.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 44</td></tr><tr><td>Reference name</td><td>&lt;ImprintIDType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x445&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x445&gt;01&lt;/x445&gt;
+ * (Proprietary)</td></tr><tr><td>Notes</td><td>'Proprietary' in this context indicates the code list from which
+ * &lt;IDValue&gt; is drawn is proprietary; it is not an indicator of trademark or proprietary rights held over the
+ * brand or imprint name itself.</td></tr></table>
  */
-public class ImprintIDType implements OnixElement<NameCodeTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ImprintIDType implements OnixElement<NameCodeTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ImprintIDType";
-	public static final String shortname = "x445";
+    public static final String refname = "ImprintIDType";
+    public static final String shortname = "x445";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public NameCodeTypes value;
+    public NameCodeTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public NameCodeTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public NameCodeTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ImprintIDType EMPTY = new ImprintIDType();
+    private final boolean exists;
+    public static final ImprintIDType EMPTY = new ImprintIDType();
 
-	public ImprintIDType()
-	{
-		exists = false;
-	}
+    public ImprintIDType() {
+        exists = false;
+    }
 
-	public ImprintIDType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ImprintIDType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = NameCodeTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

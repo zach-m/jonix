@@ -19,139 +19,118 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixEpubUsageLimit;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Usage limit composite (digital products)</h1>
- * <p>
- * An optional and repeatable group of data elements which together specify a quantitative limit on a particular type of
- * usage of a digital product.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;EpubUsageLimit&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;epubusagelimit&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Usage limit composite (digital products)</h1><p>An optional and repeatable group of data elements which together
+ * specify a quantitative limit on a particular type of usage of a digital product.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;EpubUsageLimit&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;epubusagelimit&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "EpubUsageLimit";
-	public static final String shortname = "epubusagelimit";
+    public static final String refname = "EpubUsageLimit";
+    public static final String shortname = "epubusagelimit";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final EpubUsageLimit EMPTY = new EpubUsageLimit();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final EpubUsageLimit EMPTY = new EpubUsageLimit();
 
-	public EpubUsageLimit()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public EpubUsageLimit() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public EpubUsageLimit(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public EpubUsageLimit(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(Quantity.refname) || name.equals(Quantity.shortname))
-				quantity = new Quantity(e);
-			else if (name.equals(EpubUsageUnit.refname) || name.equals(EpubUsageUnit.shortname))
-				epubUsageUnit = new EpubUsageUnit(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(Quantity.refname) || name.equals(Quantity.shortname)) {
+                quantity = new Quantity(e);
+            } else if (name.equals(EpubUsageUnit.refname) || name.equals(EpubUsageUnit.shortname)) {
+                epubUsageUnit = new EpubUsageUnit(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private Quantity quantity = Quantity.EMPTY;
+    private Quantity quantity = Quantity.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public Quantity quantity()
-	{
-		initialize();
-		return quantity;
-	}
+    /**
+     * (this field is required)
+     */
+    public Quantity quantity() {
+        initialize();
+        return quantity;
+    }
 
-	private EpubUsageUnit epubUsageUnit = EpubUsageUnit.EMPTY;
+    private EpubUsageUnit epubUsageUnit = EpubUsageUnit.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public EpubUsageUnit epubUsageUnit()
-	{
-		initialize();
-		return epubUsageUnit;
-	}
+    /**
+     * (this field is required)
+     */
+    public EpubUsageUnit epubUsageUnit() {
+        initialize();
+        return epubUsageUnit;
+    }
 
-	@Override
-	public JonixEpubUsageLimit asStruct()
-	{
-		initialize();
-		JonixEpubUsageLimit struct = new JonixEpubUsageLimit();
-		struct.quantity = quantity.value;
-		struct.epubUsageUnit = epubUsageUnit.value;
-		return struct;
-	}
+    @Override
+    public JonixEpubUsageLimit asStruct() {
+        initialize();
+        JonixEpubUsageLimit struct = new JonixEpubUsageLimit();
+        struct.quantity = quantity.value;
+        struct.epubUsageUnit = epubUsageUnit.value;
+        return struct;
+    }
 }

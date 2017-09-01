@@ -19,112 +19,84 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Number of items of a specified form (product part)</h1>
- * <p>
- * When product parts are listed as a specified number of <em>different</em> items in a specified form, without
- * identifying the individual items, &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the
- * number is ‘1’. Consequently the element is mandatory and non-repeating in an occurrence of the &lt;ProductPart&gt;
- * composite if &lt;NumberOfCopies&gt; is not present; and it must not be used if &lt;ProductIdentifier&gt; is present.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length integer, maximum four digits</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;NumberOfItemsOfThisForm&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x322&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x322&gt;3&lt;/x322&gt;</td>
- * </tr>
- * </table>
+ * <h1>Number of items of a specified form (product part)</h1><p>When product parts are listed as a specified number of
+ * <em>different</em> items in a specified form, without identifying the individual items,
+ * &lt;NumberOfItemsOfThisForm&gt; must be used to carry the quantity, even if the number is ‘1’. Consequently the
+ * element is mandatory and non-repeating in an occurrence of the &lt;ProductPart&gt; composite if
+ * &lt;NumberOfCopies&gt; is not present; and it must not be used if &lt;ProductIdentifier&gt; is present.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length integer, maximum four
+ * digits</td></tr><tr><td>Reference name</td><td>&lt;NumberOfItemsOfThisForm&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x322&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x322&gt;3&lt;/x322&gt;</td></tr></table>
  */
-public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class NumberOfItemsOfThisForm implements OnixElement<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "NumberOfItemsOfThisForm";
-	public static final String shortname = "x322";
+    public static final String refname = "NumberOfItemsOfThisForm";
+    public static final String shortname = "x322";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length integer, maximum four digits
-	 * <p>
-	 * (type: dt.StrictPositiveInteger)
-	 */
-	public Integer value;
+    /**
+     * Raw Format: Variable-length integer, maximum four digits<p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Integer _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Integer _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final NumberOfItemsOfThisForm EMPTY = new NumberOfItemsOfThisForm();
+    private final boolean exists;
+    public static final NumberOfItemsOfThisForm EMPTY = new NumberOfItemsOfThisForm();
 
-	public NumberOfItemsOfThisForm()
-	{
-		exists = false;
-	}
+    public NumberOfItemsOfThisForm() {
+        exists = false;
+    }
 
-	public NumberOfItemsOfThisForm(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public NumberOfItemsOfThisForm(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsInteger(element);
-	}
+        value = JPU.getContentAsInteger(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

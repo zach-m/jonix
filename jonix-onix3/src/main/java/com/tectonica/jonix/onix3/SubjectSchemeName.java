@@ -19,118 +19,86 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Proprietary subject scheme name</h1>
- * <p>
- * A name identifying a proprietary subject scheme (<i>ie</i> a scheme which is not a standard and for which there is no
- * individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded ‘24’. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 100 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SubjectSchemeName&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b171&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b121&gt;RetailCo ShelfScheme&lt;/b121&gt;</td>
- * </tr>
- * </table>
+ * <h1>Proprietary subject scheme name</h1><p>A name identifying a proprietary subject scheme (<i>ie</i> a scheme which
+ * is not a standard and for which there is no individual identifier code) when &lt;SubjectSchemeIdentifier&gt; is coded
+ * ‘24’. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text,
+ * suggested maximum length 100 characters</td></tr><tr><td>Reference name</td><td>&lt;SubjectSchemeName&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b171&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b121&gt;RetailCo
+ * ShelfScheme&lt;/b121&gt;</td></tr></table>
  */
-public class SubjectSchemeName implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class SubjectSchemeName implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SubjectSchemeName";
-	public static final String shortname = "b171";
+    public static final String refname = "SubjectSchemeName";
+    public static final String shortname = "b171";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final SubjectSchemeName EMPTY = new SubjectSchemeName();
+    private final boolean exists;
+    public static final SubjectSchemeName EMPTY = new SubjectSchemeName();
 
-	public SubjectSchemeName()
-	{
-		exists = false;
-	}
+    public SubjectSchemeName() {
+        exists = false;
+    }
 
-	public SubjectSchemeName(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+    public SubjectSchemeName(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

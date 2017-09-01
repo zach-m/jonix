@@ -19,128 +19,121 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
-public class ONIXMessage implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ONIXMessage implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ONIXMessage";
-	public static final String shortname = "ONIXmessage";
-	public static final String release = "3.0";
+    public static final String refname = "ONIXMessage";
+    public static final String shortname = "ONIXmessage";
+    public static final String release = "3.0";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ONIXMessage EMPTY = new ONIXMessage();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ONIXMessage EMPTY = new ONIXMessage();
 
-	public ONIXMessage()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ONIXMessage() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ONIXMessage(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ONIXMessage(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(Header.refname) || name.equals(Header.shortname))
-				header = new Header(e);
-			else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname))
-				noProduct = new NoProduct(e);
-			else if (name.equals(Product.refname) || name.equals(Product.shortname))
-				products = JPU.addToList(products, new Product(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(Header.refname) || name.equals(Header.shortname)) {
+                header = new Header(e);
+            } else if (name.equals(NoProduct.refname) || name.equals(NoProduct.shortname)) {
+                noProduct = new NoProduct(e);
+            } else if (name.equals(Product.refname) || name.equals(Product.shortname)) {
+                products = JPU.addToList(products, new Product(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private Header header = Header.EMPTY;
+    private Header header = Header.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public Header header()
-	{
-		initialize();
-		return header;
-	}
+    /**
+     * (this field is required)
+     */
+    public Header header() {
+        initialize();
+        return header;
+    }
 
-	private NoProduct noProduct = NoProduct.EMPTY;
+    private NoProduct noProduct = NoProduct.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public NoProduct noProduct()
-	{
-		initialize();
-		return noProduct;
-	}
+    /**
+     * (this field is optional)
+     */
+    public NoProduct noProduct() {
+        initialize();
+        return noProduct;
+    }
 
-	public boolean isNoProduct()
-	{
-		return (noProduct().exists());
-	}
+    public boolean isNoProduct() {
+        return (noProduct().exists());
+    }
 
-	private List<Product> products = Collections.emptyList();
+    private List<Product> products = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Product> products()
-	{
-		initialize();
-		return products;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<Product> products() {
+        initialize();
+        return products;
+    }
 }

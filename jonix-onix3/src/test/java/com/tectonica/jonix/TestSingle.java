@@ -19,12 +19,9 @@
 
 package com.tectonica.jonix;
 
-import java.io.InputStream;
-import java.io.StringReader;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
+import com.tectonica.jonix.onix3.Product;
+import com.tectonica.jonix.stream.JonixFilesStreamer;
+import com.tectonica.jonix.stream.JonixStreamer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,70 +31,59 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
-import com.tectonica.jonix.onix3.Product;
-import com.tectonica.jonix.stream.JonixFilesStreamer;
-import com.tectonica.jonix.stream.JonixStreamer;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.InputStream;
+import java.io.StringReader;
 
-public class TestSingle
-{
+public class TestSingle {
 
-	@Before
-	public void setUp() throws Exception
-	{}
+    @Before
+    public void setUp() throws Exception {
+    }
 
-	@After
-	public void tearDown() throws Exception
-	{}
+    @After
+    public void tearDown() throws Exception {
+    }
 
-	private static Document docOf(String xmlResourceName)
-	{
-		try (InputStream is = TestSingle.class.getResourceAsStream(xmlResourceName))
-		{
-			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-			// disable dtd validation
-			docBuilder.setEntityResolver(new EntityResolver()
-			{
-				@Override
-				public InputSource resolveEntity(String publicId, String systemId)
-				{
-					return new InputSource(new StringReader(""));
-				}
-			});
-			return docBuilder.parse(is);
-		}
-		catch (Exception e)
-		{
-			throw new RuntimeException(e);
-		}
-	}
+    private static Document docOf(String xmlResourceName) {
+        try (InputStream is = TestSingle.class.getResourceAsStream(xmlResourceName)) {
+            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            // disable dtd validation
+            docBuilder.setEntityResolver(new EntityResolver() {
+                @Override
+                public InputSource resolveEntity(String publicId, String systemId) {
+                    return new InputSource(new StringReader(""));
+                }
+            });
+            return docBuilder.parse(is);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-	@Test
-	public void testViaDOM()
-	{
-		final Document doc = docOf("/single-book-onix3.xml");
-		final NodeList products = doc.getElementsByTagName("Product");
-		for (int i = 0; i < products.getLength(); i++)
-		{
-			final Element productElem = (Element) products.item(i);
-			final Product product = new Product(productElem);
-			System.out.println(JonixJson.toJson(product));
-		}
-	}
+    @Test
+    public void testViaDOM() {
+        final Document doc = docOf("/single-book-onix3.xml");
+        final NodeList products = doc.getElementsByTagName("Product");
+        for (int i = 0; i < products.getLength(); i++) {
+            final Element productElem = (Element) products.item(i);
+            final Product product = new Product(productElem);
+            System.out.println(JonixJson.toJson(product));
+        }
+    }
 
-	@Test
-	public void testViaReader()
-	{
-		JonixFilesStreamer streamer = new JonixFilesStreamer(new Onix3Extractor()
-		{
-			@Override
-			protected boolean onProduct(Product product, JonixStreamer streamer)
-			{
-				System.out.println(JonixJson.toJson(product));
-				return true;
-			}
-		});
+    @Test
+    public void testViaReader() {
+        JonixFilesStreamer streamer = new JonixFilesStreamer(new Onix3Extractor() {
+            @Override
+            protected boolean onProduct(Product product, JonixStreamer streamer) {
+                System.out.println(JonixJson.toJson(product));
+                return true;
+            }
+        });
 
-		streamer.read(getClass().getResourceAsStream("/single-book-onix3.xml"));
-	}
+        streamer.read(getClass().getResourceAsStream("/single-book-onix3.xml"));
+    }
 }

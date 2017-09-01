@@ -19,111 +19,79 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.MeasureUnits;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Measure unit code</h1>
- * <p>
- * An ONIX code indicating the measure unit in which dimensions are given. Mandatory in each occurrence of the
- * &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which the measure unit
- * applies. See example below.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two letters</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 50</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;MeasureUnitCode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;c095&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;c095&gt;mm&lt;/c095&gt;</td>
- * </tr>
- * </table>
+ * <h1>Measure unit code</h1><p>An ONIX code indicating the measure unit in which dimensions are given. Mandatory in
+ * each occurrence of the &lt;Measure&gt; composite, and non-repeating. This element must follow the dimension to which
+ * the measure unit applies. See example below.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two letters</td></tr><tr><td>Codelist</td><td>List 50</td></tr><tr><td>Reference
+ * name</td><td>&lt;MeasureUnitCode&gt;</td></tr><tr><td>Short tag</td><td>&lt;c095&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;c095&gt;mm&lt;/c095&gt;</td></tr></table>
  */
-public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class MeasureUnitCode implements OnixElement<MeasureUnits>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "MeasureUnitCode";
-	public static final String shortname = "c095";
+    public static final String refname = "MeasureUnitCode";
+    public static final String shortname = "c095";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public MeasureUnits value;
+    public MeasureUnits value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public MeasureUnits _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public MeasureUnits _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final MeasureUnitCode EMPTY = new MeasureUnitCode();
+    private final boolean exists;
+    public static final MeasureUnitCode EMPTY = new MeasureUnitCode();
 
-	public MeasureUnitCode()
-	{
-		exists = false;
-	}
+    public MeasureUnitCode() {
+        exists = false;
+    }
 
-	public MeasureUnitCode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public MeasureUnitCode(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = MeasureUnits.byCode(JPU.getContentAsString(element));
-	}
+        value = MeasureUnits.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

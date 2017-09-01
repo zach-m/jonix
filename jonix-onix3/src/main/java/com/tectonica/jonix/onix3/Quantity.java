@@ -19,110 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Quantity</h1>
- * <p>
- * A minimum order quantity required to qualify for a specified discount. Optional, and non-repeating. Where omitted,
- * the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying order quantity is 1).
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length decimal number, here necessarily an integer</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Quantity&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x320&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;Quantity&gt;12&lt;/Quantity&gt;</td>
- * </tr>
- * </table>
+ * <h1>Quantity</h1><p>A minimum order quantity required to qualify for a specified discount. Optional, and
+ * non-repeating. Where omitted, the discount applies regardless of the order quantity (<i>ie</i> the minimum qualifying
+ * order quantity is 1).</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length decimal number,
+ * here necessarily an integer</td></tr><tr><td>Reference name</td><td>&lt;Quantity&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x320&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;Quantity&gt;12&lt;/Quantity&gt;</td></tr></table>
  */
-public class Quantity implements OnixElement<Double>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Quantity implements OnixElement<Double>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Quantity";
-	public static final String shortname = "x320";
+    public static final String refname = "Quantity";
+    public static final String shortname = "x320";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length decimal number, here necessarily an integer
-	 * <p>
-	 * (type: dt.PositiveDecimal)
-	 */
-	public Double value;
+    /**
+     * Raw Format: Variable-length decimal number, here necessarily an integer<p> (type: dt.PositiveDecimal)
+     */
+    public Double value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Double _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Double _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final Quantity EMPTY = new Quantity();
+    private final boolean exists;
+    public static final Quantity EMPTY = new Quantity();
 
-	public Quantity()
-	{
-		exists = false;
-	}
+    public Quantity() {
+        exists = false;
+    }
 
-	public Quantity(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public Quantity(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsDouble(element);
-	}
+        value = JPU.getContentAsDouble(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

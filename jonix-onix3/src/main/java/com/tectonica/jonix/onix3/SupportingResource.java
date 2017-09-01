@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
@@ -32,163 +28,143 @@ import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.ResourceFeatureTypes;
 import com.tectonica.jonix.struct.JonixResourceFeature;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Supporting resource composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together specify a supporting resource, used here to indicate
- * that there is a new cover or jacket image, or other supporting resource, for a forthcoming reissue. Deprecated in
- * this context.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SupportingResource&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;supportingresource&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Supporting resource composite</h1><p>An optional and repeatable group of data elements which together specify a
+ * supporting resource, used here to indicate that there is a new cover or jacket image, or other supporting resource,
+ * for a forthcoming reissue. Deprecated in this context.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;SupportingResource&gt;</td></tr><tr><td>Short tag</td><td>&lt;supportingresource&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class SupportingResource implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class SupportingResource implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SupportingResource";
-	public static final String shortname = "supportingresource";
+    public static final String refname = "SupportingResource";
+    public static final String shortname = "supportingresource";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final SupportingResource EMPTY = new SupportingResource();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final SupportingResource EMPTY = new SupportingResource();
 
-	public SupportingResource()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public SupportingResource() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public SupportingResource(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public SupportingResource(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ResourceContentType.refname) || name.equals(ResourceContentType.shortname))
-				resourceContentType = new ResourceContentType(e);
-			else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname))
-				contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
-			else if (name.equals(ResourceMode.refname) || name.equals(ResourceMode.shortname))
-				resourceMode = new ResourceMode(e);
-			else if (name.equals(ResourceFeature.refname) || name.equals(ResourceFeature.shortname))
-				resourceFeatures = JPU.addToList(resourceFeatures, new ResourceFeature(e));
-			else if (name.equals(ResourceVersion.refname) || name.equals(ResourceVersion.shortname))
-				resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ResourceContentType.refname) || name.equals(ResourceContentType.shortname)) {
+                resourceContentType = new ResourceContentType(e);
+            } else if (name.equals(ContentAudience.refname) || name.equals(ContentAudience.shortname)) {
+                contentAudiences = JPU.addToList(contentAudiences, new ContentAudience(e));
+            } else if (name.equals(ResourceMode.refname) || name.equals(ResourceMode.shortname)) {
+                resourceMode = new ResourceMode(e);
+            } else if (name.equals(ResourceFeature.refname) || name.equals(ResourceFeature.shortname)) {
+                resourceFeatures = JPU.addToList(resourceFeatures, new ResourceFeature(e));
+            } else if (name.equals(ResourceVersion.refname) || name.equals(ResourceVersion.shortname)) {
+                resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ResourceContentType resourceContentType = ResourceContentType.EMPTY;
+    private ResourceContentType resourceContentType = ResourceContentType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ResourceContentType resourceContentType()
-	{
-		initialize();
-		return resourceContentType;
-	}
+    /**
+     * (this field is required)
+     */
+    public ResourceContentType resourceContentType() {
+        initialize();
+        return resourceContentType;
+    }
 
-	private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
+    private ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences = ListOfOnixElement.empty();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences()
-	{
-		initialize();
-		return contentAudiences;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
+        initialize();
+        return contentAudiences;
+    }
 
-	private ResourceMode resourceMode = ResourceMode.EMPTY;
+    private ResourceMode resourceMode = ResourceMode.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ResourceMode resourceMode()
-	{
-		initialize();
-		return resourceMode;
-	}
+    /**
+     * (this field is required)
+     */
+    public ResourceMode resourceMode() {
+        initialize();
+        return resourceMode;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes> resourceFeatures = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes>
+        resourceFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes> resourceFeatures()
-	{
-		initialize();
-		return resourceFeatures;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes> resourceFeatures() {
+        initialize();
+        return resourceFeatures;
+    }
 
-	private List<ResourceVersion> resourceVersions = Collections.emptyList();
+    private List<ResourceVersion> resourceVersions = Collections.emptyList();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<ResourceVersion> resourceVersions()
-	{
-		initialize();
-		return resourceVersions;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public List<ResourceVersion> resourceVersions() {
+        initialize();
+        return resourceVersions;
+    }
 }

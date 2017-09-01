@@ -19,110 +19,79 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Text item type code</h1>
- * <p>
- * An ONIX code which identifies the nature of a text item. Mandatory in each occurrence of the &lt;TextItem&gt;
- * composite, and non-repeatable.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 42</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;TextItemType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b290&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;TextItemType&gt;04&lt;/TextItemType&gt; (Back matter)</td>
- * </tr>
- * </table>
+ * <h1>Text item type code</h1><p>An ONIX code which identifies the nature of a text item. Mandatory in each occurrence
+ * of the &lt;TextItem&gt; composite, and non-repeatable.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two digits</td></tr><tr><td>Codelist</td><td>List 42</td></tr><tr><td>Reference
+ * name</td><td>&lt;TextItemType&gt;</td></tr><tr><td>Short tag</td><td>&lt;b290&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;TextItemType&gt;04&lt;/TextItemType&gt;
+ * (Back matter)</td></tr></table>
  */
-public class TextItemType implements OnixElement<TextItemTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class TextItemType implements OnixElement<TextItemTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "TextItemType";
-	public static final String shortname = "b290";
+    public static final String refname = "TextItemType";
+    public static final String shortname = "b290";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextItemTypes value;
+    public TextItemTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public TextItemTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public TextItemTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final TextItemType EMPTY = new TextItemType();
+    private final boolean exists;
+    public static final TextItemType EMPTY = new TextItemType();
 
-	public TextItemType()
-	{
-		exists = false;
-	}
+    public TextItemType() {
+        exists = false;
+    }
 
-	public TextItemType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public TextItemType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = TextItemTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = TextItemTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

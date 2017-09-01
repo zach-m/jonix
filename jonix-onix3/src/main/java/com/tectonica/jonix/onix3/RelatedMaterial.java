@@ -19,131 +19,110 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>null</h1>
- * <h4 class="nobreak">Related material composite</h4>
- * <p>
- * The related material block covers data element Groups P.22 and P.23, providing links to related works and related
- * products. The block as a whole is optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;RelatedMaterial&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;relatedmaterial&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * </table>
+ * <h1>null</h1><h4 class="nobreak">Related material composite</h4><p>The related material block covers data element
+ * Groups P.22 and P.23, providing links to related works and related products. The block as a whole is optional and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;RelatedMaterial&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;relatedmaterial&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr></table>
  */
-public class RelatedMaterial implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class RelatedMaterial implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "RelatedMaterial";
-	public static final String shortname = "relatedmaterial";
+    public static final String refname = "RelatedMaterial";
+    public static final String shortname = "relatedmaterial";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final RelatedMaterial EMPTY = new RelatedMaterial();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final RelatedMaterial EMPTY = new RelatedMaterial();
 
-	public RelatedMaterial()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public RelatedMaterial() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public RelatedMaterial(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public RelatedMaterial(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
-				relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
-			else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname))
-				relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname)) {
+                relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+            } else if (name.equals(RelatedProduct.refname) || name.equals(RelatedProduct.shortname)) {
+                relatedProducts = JPU.addToList(relatedProducts, new RelatedProduct(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private List<RelatedWork> relatedWorks = Collections.emptyList();
+    private List<RelatedWork> relatedWorks = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RelatedWork> relatedWorks()
-	{
-		initialize();
-		return relatedWorks;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<RelatedWork> relatedWorks() {
+        initialize();
+        return relatedWorks;
+    }
 
-	private List<RelatedProduct> relatedProducts = Collections.emptyList();
+    private List<RelatedProduct> relatedProducts = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RelatedProduct> relatedProducts()
-	{
-		initialize();
-		return relatedProducts;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<RelatedProduct> relatedProducts() {
+        initialize();
+        return relatedProducts;
+    }
 }

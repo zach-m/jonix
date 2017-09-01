@@ -19,112 +19,83 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>To Quantity</h1>
- * <p>
- * A maximum order quantity eligible for a specified discount, used only in the case of ‘progressive’ discounts.
- * Optional, but where used, must be preceded by a minimum qualifying order quantity (even if that minimum is 1). For
- * the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt; composite that specifies
- * the highest progressive discount), use zero.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length decimal number, here necessarily an integer</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ToQuantity&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x514&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;ToQuantity&gt;25&lt;/ToQuantity&gt;</td>
- * </tr>
- * </table>
+ * <h1>To Quantity</h1><p>A maximum order quantity eligible for a specified discount, used only in the case of
+ * ‘progressive’ discounts. Optional, but where used, must be preceded by a minimum qualifying order quantity (even if
+ * that minimum is 1). For the special case where there is no maximum (<i>ie</i> in the repeat of the &lt;Discount&gt;
+ * composite that specifies the highest progressive discount), use zero.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length decimal number, here necessarily an
+ * integer</td></tr><tr><td>Reference name</td><td>&lt;ToQuantity&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x514&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;ToQuantity&gt;25&lt;/ToQuantity&gt;</td></tr></table>
  */
-public class ToQuantity implements OnixElement<Double>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ToQuantity implements OnixElement<Double>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ToQuantity";
-	public static final String shortname = "x514";
+    public static final String refname = "ToQuantity";
+    public static final String shortname = "x514";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length decimal number, here necessarily an integer
-	 * <p>
-	 * (type: dt.PositiveDecimal)
-	 */
-	public Double value;
+    /**
+     * Raw Format: Variable-length decimal number, here necessarily an integer<p> (type: dt.PositiveDecimal)
+     */
+    public Double value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Double _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Double _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ToQuantity EMPTY = new ToQuantity();
+    private final boolean exists;
+    public static final ToQuantity EMPTY = new ToQuantity();
 
-	public ToQuantity()
-	{
-		exists = false;
-	}
+    public ToQuantity() {
+        exists = false;
+    }
 
-	public ToQuantity(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ToQuantity(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsDouble(element);
-	}
+        value = JPU.getContentAsDouble(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

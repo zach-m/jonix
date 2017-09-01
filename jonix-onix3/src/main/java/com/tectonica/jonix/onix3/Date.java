@@ -19,125 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.DateFormats;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Date</h1>
- * <p>
- * The date specified in the &lt;PriceDateRole&gt; field. Mandatory in each occurrence of the &lt;PriceDate&gt;
- * composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the attribute is missing, then
- * &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute and &lt;DateFormat&gt;
- * element are missing, the default format is YYYYMMDD.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Date&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b306&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>dateformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;Date&gt;20100106&lt;/Date&gt;</td>
- * </tr>
- * <tr>
- * <td>Notes</td>
- * <td>Note that all dates are inclusive, so 'Date from' is the first date on which the price is effective, and 'Date
- * until' is the last date on which it is effective.</td>
- * </tr>
- * </table>
+ * <h1>Date</h1><p>The date specified in the &lt;PriceDateRole&gt; field. Mandatory in each occurrence of the
+ * &lt;PriceDate&gt; composite, and non-repeating. &lt;Date&gt; may carry a <i>dateformat</i> attribute: if the
+ * attribute is missing, then &lt;DateFormat&gt; indicates the format of the date; if both <i>dateformat</i> attribute
+ * and &lt;DateFormat&gt; element are missing, the default format is YYYYMMDD.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;,
+ * or the default YYYYMMDD</td></tr><tr><td>Reference name</td><td>&lt;Date&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b306&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Attributes</td><td>dateformat</td></tr><tr><td>Example</td><td>&lt;Date&gt;20100106&lt;/Date&gt;</td></tr><tr><td>Notes</td><td>Note
+ * that all dates are inclusive, so 'Date from' is the first date on which the price is effective, and 'Date until' is
+ * the last date on which it is effective.</td></tr></table>
  */
-public class Date implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Date implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Date";
-	public static final String shortname = "b306";
+    public static final String refname = "Date";
+    public static final String shortname = "b306";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public DateFormats dateformat;
+    public DateFormats dateformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default YYYYMMDD
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: As specified by the value in the dateformat attribute, in &lt;DateFormat&gt;, or the default
+     * YYYYMMDD<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final Date EMPTY = new Date();
+    private final boolean exists;
+    public static final Date EMPTY = new Date();
 
-	public Date()
-	{
-		exists = false;
-	}
+    public Date() {
+        exists = false;
+    }
 
-	public Date(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
+    public Date(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        dateformat = DateFormats.byCode(JPU.getAttribute(element, "dateformat"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

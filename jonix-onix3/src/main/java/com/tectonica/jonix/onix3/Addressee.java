@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -28,149 +26,129 @@ import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAddresseeIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Addressee composite</h1>
- * <p>
- * A group of data elements which together specify the addressee of an ONIX for Books message. Optional, and repeatable
- * if there are several addressees.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Addressee&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;addressee&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Addressee composite</h1><p>A group of data elements which together specify the addressee of an ONIX for Books
+ * message. Optional, and repeatable if there are several addressees.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Addressee&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;addressee&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Addressee implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Addressee implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Addressee";
-	public static final String shortname = "addressee";
+    public static final String refname = "Addressee";
+    public static final String shortname = "addressee";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Addressee EMPTY = new Addressee();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Addressee EMPTY = new Addressee();
 
-	public Addressee()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Addressee() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Addressee(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Addressee(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname))
-				addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
-			else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname))
-				addresseeName = new AddresseeName(e);
-			else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname))
-				contactName = new ContactName(e);
-			else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname))
-				emailAddress = new EmailAddress(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(AddresseeIdentifier.refname) || name.equals(AddresseeIdentifier.shortname)) {
+                addresseeIdentifiers = JPU.addToList(addresseeIdentifiers, new AddresseeIdentifier(e));
+            } else if (name.equals(AddresseeName.refname) || name.equals(AddresseeName.shortname)) {
+                addresseeName = new AddresseeName(e);
+            } else if (name.equals(ContactName.refname) || name.equals(ContactName.shortname)) {
+                contactName = new ContactName(e);
+            } else if (name.equals(EmailAddress.refname) || name.equals(EmailAddress.shortname)) {
+                emailAddress = new EmailAddress(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes>
+        addresseeIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers()
-	{
-		initialize();
-		return addresseeIdentifiers;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers() {
+        initialize();
+        return addresseeIdentifiers;
+    }
 
-	private AddresseeName addresseeName = AddresseeName.EMPTY;
+    private AddresseeName addresseeName = AddresseeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public AddresseeName addresseeName()
-	{
-		initialize();
-		return addresseeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public AddresseeName addresseeName() {
+        initialize();
+        return addresseeName;
+    }
 
-	private ContactName contactName = ContactName.EMPTY;
+    private ContactName contactName = ContactName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ContactName contactName()
-	{
-		initialize();
-		return contactName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ContactName contactName() {
+        initialize();
+        return contactName;
+    }
 
-	private EmailAddress emailAddress = EmailAddress.EMPTY;
+    private EmailAddress emailAddress = EmailAddress.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public EmailAddress emailAddress()
-	{
-		initialize();
-		return emailAddress;
-	}
+    /**
+     * (this field is optional)
+     */
+    public EmailAddress emailAddress() {
+        initialize();
+        return emailAddress;
+    }
 }

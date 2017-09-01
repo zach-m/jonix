@@ -19,111 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.BibleContentss;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Bible contents</h1>
- * <p>
- * An ONIX code indicating the content of an edition of the Bible or selected Biblical text, for example ‘New
- * Testament’, ‘Apocrypha’, ‘Pentateuch’. Mandatory in each occurrence of the &lt;Bible&gt; composite, and repeatable so
- * that a list such as ‘Old Testament and Apocrypha’ can be expressed.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two letters</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 82</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;BibleContents&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b352&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b352&gt;OT&lt;/b352&gt; (Old Testament)</td>
- * </tr>
- * </table>
+ * <h1>Bible contents</h1><p>An ONIX code indicating the content of an edition of the Bible or selected Biblical text,
+ * for example ‘New Testament’, ‘Apocrypha’, ‘Pentateuch’. Mandatory in each occurrence of the &lt;Bible&gt; composite,
+ * and repeatable so that a list such as ‘Old Testament and Apocrypha’ can be expressed.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters</td></tr><tr><td>Codelist</td><td>List
+ * 82</td></tr><tr><td>Reference name</td><td>&lt;BibleContents&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b352&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr><tr><td>Example</td><td>&lt;b352&gt;OT&lt;/b352&gt;
+ * (Old Testament)</td></tr></table>
  */
-public class BibleContents implements OnixElement<BibleContentss>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class BibleContents implements OnixElement<BibleContentss>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "BibleContents";
-	public static final String shortname = "b352";
+    public static final String refname = "BibleContents";
+    public static final String shortname = "b352";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public BibleContentss value;
+    public BibleContentss value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public BibleContentss _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public BibleContentss _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final BibleContents EMPTY = new BibleContents();
+    private final boolean exists;
+    public static final BibleContents EMPTY = new BibleContents();
 
-	public BibleContents()
-	{
-		exists = false;
-	}
+    public BibleContents() {
+        exists = false;
+    }
 
-	public BibleContents(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public BibleContents(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = BibleContentss.byCode(JPU.getContentAsString(element));
-	}
+        value = BibleContentss.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

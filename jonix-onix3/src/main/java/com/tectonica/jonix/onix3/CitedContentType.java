@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.CitedContentTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Cited content type code</h1>
- * <p>
- * An ONIX code indicating the type of content which is being cited. Mandatory in each occurrence of the
- * &lt;CitedContent&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 156</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CitedContentType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x430&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CitedContentType&gt;01&lt;/CitedContentType&gt; (Full text of review)</td>
- * </tr>
- * </table>
+ * <h1>Cited content type code</h1><p>An ONIX code indicating the type of content which is being cited. Mandatory in
+ * each occurrence of the &lt;CitedContent&gt; composite, and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 156</td></tr><tr><td>Reference name</td><td>&lt;CitedContentType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x430&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;CitedContentType&gt;01&lt;/CitedContentType&gt;
+ * (Full text of review)</td></tr></table>
  */
-public class CitedContentType implements OnixElement<CitedContentTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CitedContentType implements OnixElement<CitedContentTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CitedContentType";
-	public static final String shortname = "x430";
+    public static final String refname = "CitedContentType";
+    public static final String shortname = "x430";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public CitedContentTypes value;
+    public CitedContentTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public CitedContentTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public CitedContentTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CitedContentType EMPTY = new CitedContentType();
+    private final boolean exists;
+    public static final CitedContentType EMPTY = new CitedContentType();
 
-	public CitedContentType()
-	{
-		exists = false;
-	}
+    public CitedContentType() {
+        exists = false;
+    }
 
-	public CitedContentType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CitedContentType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = CitedContentTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = CitedContentTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

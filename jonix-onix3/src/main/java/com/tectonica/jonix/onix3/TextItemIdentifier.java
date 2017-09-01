@@ -19,161 +19,138 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextItemIdentifierTypes;
 import com.tectonica.jonix.struct.JonixTextItemIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Text item identifier composite</h1>
- * <p>
- * A repeatable group of data elements which together define an identifier of a text item in accordance with a specified
- * scheme. The composite is optional.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;TextItemIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;textitemidentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Text item identifier composite</h1><p>A repeatable group of data elements which together define an identifier of
+ * a text item in accordance with a specified scheme. The composite is optional.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;TextItemIdentifier&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;textitemidentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class TextItemIdentifier
-		implements OnixDataCompositeWithKey<JonixTextItemIdentifier, TextItemIdentifierTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixTextItemIdentifier, TextItemIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "TextItemIdentifier";
-	public static final String shortname = "textitemidentifier";
+    public static final String refname = "TextItemIdentifier";
+    public static final String shortname = "textitemidentifier";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final TextItemIdentifier EMPTY = new TextItemIdentifier();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final TextItemIdentifier EMPTY = new TextItemIdentifier();
 
-	public TextItemIdentifier()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public TextItemIdentifier() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public TextItemIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public TextItemIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(TextItemIDType.refname) || name.equals(TextItemIDType.shortname))
-				textItemIDType = new TextItemIDType(e);
-			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-				idTypeName = new IDTypeName(e);
-			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-				idValue = new IDValue(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(TextItemIDType.refname) || name.equals(TextItemIDType.shortname)) {
+                textItemIDType = new TextItemIDType(e);
+            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
+                idTypeName = new IDTypeName(e);
+            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
+                idValue = new IDValue(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private TextItemIDType textItemIDType = TextItemIDType.EMPTY;
+    private TextItemIDType textItemIDType = TextItemIDType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public TextItemIDType textItemIDType()
-	{
-		initialize();
-		return textItemIDType;
-	}
+    /**
+     * (this field is required)
+     */
+    public TextItemIDType textItemIDType() {
+        initialize();
+        return textItemIDType;
+    }
 
-	private IDTypeName idTypeName = IDTypeName.EMPTY;
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName()
-	{
-		initialize();
-		return idTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public IDTypeName idTypeName() {
+        initialize();
+        return idTypeName;
+    }
 
-	private IDValue idValue = IDValue.EMPTY;
+    private IDValue idValue = IDValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue()
-	{
-		initialize();
-		return idValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public IDValue idValue() {
+        initialize();
+        return idValue;
+    }
 
-	@Override
-	public JonixTextItemIdentifier asStruct()
-	{
-		initialize();
-		JonixTextItemIdentifier struct = new JonixTextItemIdentifier();
-		struct.textItemIDType = textItemIDType.value;
-		struct.idTypeName = idTypeName.value;
-		struct.idValue = idValue.value;
-		return struct;
-	}
+    @Override
+    public JonixTextItemIdentifier asStruct() {
+        initialize();
+        JonixTextItemIdentifier struct = new JonixTextItemIdentifier();
+        struct.textItemIDType = textItemIDType.value;
+        struct.idTypeName = idTypeName.value;
+        struct.idValue = idValue.value;
+        return struct;
+    }
 
-	@Override
-	public TextItemIdentifierTypes structKey()
-	{
-		return textItemIDType().value;
-	}
+    @Override
+    public TextItemIdentifierTypes structKey() {
+        return textItemIDType().value;
+    }
 }

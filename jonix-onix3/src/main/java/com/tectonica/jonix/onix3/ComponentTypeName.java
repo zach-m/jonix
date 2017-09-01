@@ -19,119 +19,86 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Component type name</h1>
- * <p>
- * The generic name (if any) which is given in the product to the type of section which the content item represents,
- * <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a title (in the
- * &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the &lt;ContentItem&gt;.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length alphanumeric, suggested maximum length 20 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ComponentTypeName&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b288&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b288&gt;Chapter&lt;/b288&gt;</td>
- * </tr>
- * </table>
+ * <h1>Component type name</h1><p>The generic name (if any) which is given in the product to the type of section which
+ * the content item represents, <i>eg</i> Chapter, Part, Track. Optional and non-repeating; but either this field or a
+ * title (in the &lt;TitleDetail&gt; composite), or both, must be present in each occurrence of the
+ * &lt;ContentItem&gt;.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length alphanumeric,
+ * suggested maximum length 20 characters</td></tr><tr><td>Reference name</td><td>&lt;ComponentTypeName&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b288&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;b288&gt;Chapter&lt;/b288&gt;</td></tr></table>
  */
-public class ComponentTypeName implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ComponentTypeName implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ComponentTypeName";
-	public static final String shortname = "b288";
+    public static final String refname = "ComponentTypeName";
+    public static final String shortname = "b288";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length alphanumeric, suggested maximum length 20 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ComponentTypeName EMPTY = new ComponentTypeName();
+    private final boolean exists;
+    public static final ComponentTypeName EMPTY = new ComponentTypeName();
 
-	public ComponentTypeName()
-	{
-		exists = false;
-	}
+    public ComponentTypeName() {
+        exists = false;
+    }
 
-	public ComponentTypeName(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+    public ComponentTypeName(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

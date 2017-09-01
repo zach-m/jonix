@@ -19,199 +19,173 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixSubject;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Subject composite</h1>
- * <p>
- * A group of data elements which together describe a subject of a content item. Optional and repeatable.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Subject&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;subject&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Subject composite</h1><p>A group of data elements which together describe a subject of a content item. Optional
+ * and repeatable.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Subject&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;subject&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Subject implements OnixDataComposite<JonixSubject>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Subject";
-	public static final String shortname = "subject";
+    public static final String refname = "Subject";
+    public static final String shortname = "subject";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Subject EMPTY = new Subject();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Subject EMPTY = new Subject();
 
-	public Subject()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Subject() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Subject(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Subject(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname))
-				mainSubject = new MainSubject(e);
-			else if (name.equals(SubjectSchemeIdentifier.refname) || name.equals(SubjectSchemeIdentifier.shortname))
-				subjectSchemeIdentifier = new SubjectSchemeIdentifier(e);
-			else if (name.equals(SubjectSchemeName.refname) || name.equals(SubjectSchemeName.shortname))
-				subjectSchemeName = new SubjectSchemeName(e);
-			else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname))
-				subjectSchemeVersion = new SubjectSchemeVersion(e);
-			else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname))
-				subjectCode = new SubjectCode(e);
-			else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname))
-				subjectHeadingTexts = JPU.addToList(subjectHeadingTexts, new SubjectHeadingText(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(MainSubject.refname) || name.equals(MainSubject.shortname)) {
+                mainSubject = new MainSubject(e);
+            } else if (name.equals(SubjectSchemeIdentifier.refname) || name.equals(SubjectSchemeIdentifier.shortname)) {
+                subjectSchemeIdentifier = new SubjectSchemeIdentifier(e);
+            } else if (name.equals(SubjectSchemeName.refname) || name.equals(SubjectSchemeName.shortname)) {
+                subjectSchemeName = new SubjectSchemeName(e);
+            } else if (name.equals(SubjectSchemeVersion.refname) || name.equals(SubjectSchemeVersion.shortname)) {
+                subjectSchemeVersion = new SubjectSchemeVersion(e);
+            } else if (name.equals(SubjectCode.refname) || name.equals(SubjectCode.shortname)) {
+                subjectCode = new SubjectCode(e);
+            } else if (name.equals(SubjectHeadingText.refname) || name.equals(SubjectHeadingText.shortname)) {
+                subjectHeadingTexts = JPU.addToList(subjectHeadingTexts, new SubjectHeadingText(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private MainSubject mainSubject = MainSubject.EMPTY;
+    private MainSubject mainSubject = MainSubject.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public MainSubject mainSubject()
-	{
-		initialize();
-		return mainSubject;
-	}
+    /**
+     * (this field is optional)
+     */
+    public MainSubject mainSubject() {
+        initialize();
+        return mainSubject;
+    }
 
-	public boolean isMainSubject()
-	{
-		return (mainSubject().exists());
-	}
+    public boolean isMainSubject() {
+        return (mainSubject().exists());
+    }
 
-	private SubjectSchemeIdentifier subjectSchemeIdentifier = SubjectSchemeIdentifier.EMPTY;
+    private SubjectSchemeIdentifier subjectSchemeIdentifier = SubjectSchemeIdentifier.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public SubjectSchemeIdentifier subjectSchemeIdentifier()
-	{
-		initialize();
-		return subjectSchemeIdentifier;
-	}
+    /**
+     * (this field is required)
+     */
+    public SubjectSchemeIdentifier subjectSchemeIdentifier() {
+        initialize();
+        return subjectSchemeIdentifier;
+    }
 
-	private SubjectSchemeName subjectSchemeName = SubjectSchemeName.EMPTY;
+    private SubjectSchemeName subjectSchemeName = SubjectSchemeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public SubjectSchemeName subjectSchemeName()
-	{
-		initialize();
-		return subjectSchemeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public SubjectSchemeName subjectSchemeName() {
+        initialize();
+        return subjectSchemeName;
+    }
 
-	private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
+    private SubjectSchemeVersion subjectSchemeVersion = SubjectSchemeVersion.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public SubjectSchemeVersion subjectSchemeVersion()
-	{
-		initialize();
-		return subjectSchemeVersion;
-	}
+    /**
+     * (this field is optional)
+     */
+    public SubjectSchemeVersion subjectSchemeVersion() {
+        initialize();
+        return subjectSchemeVersion;
+    }
 
-	private SubjectCode subjectCode = SubjectCode.EMPTY;
+    private SubjectCode subjectCode = SubjectCode.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public SubjectCode subjectCode()
-	{
-		initialize();
-		return subjectCode;
-	}
+    /**
+     * (this field is required)
+     */
+    public SubjectCode subjectCode() {
+        initialize();
+        return subjectCode;
+    }
 
-	private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts = ListOfOnixElement.empty();
+    private ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts()
-	{
-		initialize();
-		return subjectHeadingTexts;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts() {
+        initialize();
+        return subjectHeadingTexts;
+    }
 
-	@Override
-	public JonixSubject asStruct()
-	{
-		initialize();
-		JonixSubject struct = new JonixSubject();
-		struct.subjectCode = subjectCode.value;
-		struct.subjectHeadingTexts = subjectHeadingTexts.values();
-		struct.subjectSchemeIdentifier = subjectSchemeIdentifier.value;
-		struct.subjectSchemeName = subjectSchemeName.value;
-		struct.subjectSchemeVersion = subjectSchemeVersion.value;
-		return struct;
-	}
+    @Override
+    public JonixSubject asStruct() {
+        initialize();
+        JonixSubject struct = new JonixSubject();
+        struct.subjectCode = subjectCode.value;
+        struct.subjectHeadingTexts = subjectHeadingTexts.values();
+        struct.subjectSchemeIdentifier = subjectSchemeIdentifier.value;
+        struct.subjectSchemeName = subjectSchemeName.value;
+        struct.subjectSchemeVersion = subjectSchemeVersion.value;
+        return struct;
+    }
 }

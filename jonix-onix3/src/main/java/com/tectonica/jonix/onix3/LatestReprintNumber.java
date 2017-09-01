@@ -19,110 +19,81 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Latest reprint number</h1>
- * <p>
- * The number of the most recent reprint (or current ‘impression number’) of the product. Optional and non-repeating.
- * This element is used only in certain countries where there is a legal requirement to record reprints.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Integer, suggested maximum three digits</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;LatestReprintNumber&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x446&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;LatestReprintNumber&gt;12&lt;/LatestReprintNumber&gt;</td>
- * </tr>
- * </table>
+ * <h1>Latest reprint number</h1><p>The number of the most recent reprint (or current ‘impression number’) of the
+ * product. Optional and non-repeating. This element is used only in certain countries where there is a legal
+ * requirement to record reprints.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Integer, suggested
+ * maximum three digits</td></tr><tr><td>Reference name</td><td>&lt;LatestReprintNumber&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x446&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;LatestReprintNumber&gt;12&lt;/LatestReprintNumber&gt;</td></tr></table>
  */
-public class LatestReprintNumber implements OnixElement<Integer>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class LatestReprintNumber implements OnixElement<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "LatestReprintNumber";
-	public static final String shortname = "x446";
+    public static final String refname = "LatestReprintNumber";
+    public static final String shortname = "x446";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Integer, suggested maximum three digits
-	 * <p>
-	 * (type: dt.StrictPositiveInteger)
-	 */
-	public Integer value;
+    /**
+     * Raw Format: Integer, suggested maximum three digits<p> (type: dt.StrictPositiveInteger)
+     */
+    public Integer value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Integer _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Integer _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final LatestReprintNumber EMPTY = new LatestReprintNumber();
+    private final boolean exists;
+    public static final LatestReprintNumber EMPTY = new LatestReprintNumber();
 
-	public LatestReprintNumber()
-	{
-		exists = false;
-	}
+    public LatestReprintNumber() {
+        exists = false;
+    }
 
-	public LatestReprintNumber(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public LatestReprintNumber(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsInteger(element);
-	}
+        value = JPU.getContentAsInteger(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

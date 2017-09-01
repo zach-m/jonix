@@ -19,63 +19,58 @@
 
 package com.tectonica.jonix;
 
-import org.w3c.dom.Element;
-
 import com.tectonica.jonix.onix3.Header;
 import com.tectonica.jonix.onix3.Product;
 import com.tectonica.jonix.stream.JonixFilesExtractor;
 import com.tectonica.jonix.stream.JonixStreamer;
+import org.w3c.dom.Element;
 
 /**
  * Simple abstract extractor for ONIX3-only sources. Can be used like that:
- * 
+ * <p>
  * <pre>
  * JonixFilesStreamer streamer = new JonixFilesStreamer(new Onix3Extractor()
  * {
- * 	&#064;Override
- * 	protected void onProduct(Product product, JonixStreamer streamer)
- * 	{
- * 		// do something with the product..
- * 	}
+ *  &#064;Override
+ *  protected void onProduct(Product product, JonixStreamer streamer)
+ *    {
+ *      // do something with the product..
+ *    }
  * });
- * 
+ *
  * InputStream is = // your ONIX source
  * streamer.read(is);
  * </pre>
- * 
- * Subclasses need to override {@link #onProduct(Product, JonixStreamer)} and optionally
- * {@link #onHeader(Header, JonixStreamer)}.
+ * <p>
+ * Subclasses need to override {@link #onProduct(Product, JonixStreamer)} and optionally {@link #onHeader(Header,
+ * JonixStreamer)}.
  */
-public abstract class Onix3Extractor extends JonixFilesExtractor
-{
-	/**
-	 * fired when a {@code Header} element is encountered in the ONIX file
-	 * 
-	 * @return whether or not to continue to the processing of the file
-	 */
-	protected boolean onHeader(Header header, JonixStreamer streamer)
-	{
-		return true;
-	}
+public abstract class Onix3Extractor extends JonixFilesExtractor {
+    /**
+     * fired when a {@code Header} element is encountered in the ONIX file
+     *
+     * @return whether or not to continue to the processing of the file
+     */
+    protected boolean onHeader(Header header, JonixStreamer streamer) {
+        return true;
+    }
 
-	/**
-	 * fired when a {@code Product} element is encountered in the ONIX file
-	 * 
-	 * @return whether or not to continue to the processing of the file
-	 */
-	protected abstract boolean onProduct(Product product, JonixStreamer streamer);
+    /**
+     * fired when a {@code Product} element is encountered in the ONIX file
+     *
+     * @return whether or not to continue to the processing of the file
+     */
+    protected abstract boolean onProduct(Product product, JonixStreamer streamer);
 
-	// ///////////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////////
 
-	@Override
-	protected boolean onHeaderElement(Element domHeader, JonixStreamer streamer)
-	{
-		return onHeader(new Header(domHeader), streamer);
-	}
+    @Override
+    protected boolean onHeaderElement(Element domHeader, JonixStreamer streamer) {
+        return onHeader(new Header(domHeader), streamer);
+    }
 
-	@Override
-	protected boolean onProductElement(Element domProduct, JonixStreamer streamer)
-	{
-		return onProduct(new Product(domProduct), streamer);
-	}
+    @Override
+    protected boolean onProductElement(Element domProduct, JonixStreamer streamer) {
+        return onProduct(new Product(domProduct), streamer);
+    }
 }

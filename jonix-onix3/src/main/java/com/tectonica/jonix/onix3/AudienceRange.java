@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
@@ -28,148 +26,128 @@ import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixAudienceRange;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Audience range composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together describe an audience or readership range for which a
- * product is intended. The composite can carry a single value <em>from</em>, <em>to</em>, or <em>exact</em>, or a pair
- * of values with an explicit <em>from</em> and <em>to</em>. See examples below.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AudienceRange&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;audiencerange&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Audience range composite</h1><p>An optional and repeatable group of data elements which together describe an
+ * audience or readership range for which a product is intended. The composite can carry a single value <em>from</em>,
+ * <em>to</em>, or <em>exact</em>, or a pair of values with an explicit <em>from</em> and <em>to</em>. See examples
+ * below.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;AudienceRange&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;audiencerange&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AudienceRange";
-	public static final String shortname = "audiencerange";
+    public static final String refname = "AudienceRange";
+    public static final String shortname = "audiencerange";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final AudienceRange EMPTY = new AudienceRange();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final AudienceRange EMPTY = new AudienceRange();
 
-	public AudienceRange()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public AudienceRange() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public AudienceRange(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public AudienceRange(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname))
-				audienceRangeQualifier = new AudienceRangeQualifier(e);
-			else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname))
-				audienceRangePrecisions = JPU.addToList(audienceRangePrecisions, new AudienceRangePrecision(e));
-			else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname))
-				audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(AudienceRangeQualifier.refname) || name.equals(AudienceRangeQualifier.shortname)) {
+                audienceRangeQualifier = new AudienceRangeQualifier(e);
+            } else if (name.equals(AudienceRangePrecision.refname) || name.equals(AudienceRangePrecision.shortname)) {
+                audienceRangePrecisions = JPU.addToList(audienceRangePrecisions, new AudienceRangePrecision(e));
+            } else if (name.equals(AudienceRangeValue.refname) || name.equals(AudienceRangeValue.shortname)) {
+                audienceRangeValues = JPU.addToList(audienceRangeValues, new AudienceRangeValue(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private AudienceRangeQualifier audienceRangeQualifier = AudienceRangeQualifier.EMPTY;
+    private AudienceRangeQualifier audienceRangeQualifier = AudienceRangeQualifier.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public AudienceRangeQualifier audienceRangeQualifier()
-	{
-		initialize();
-		return audienceRangeQualifier;
-	}
+    /**
+     * (this field is required)
+     */
+    public AudienceRangeQualifier audienceRangeQualifier() {
+        initialize();
+        return audienceRangeQualifier;
+    }
 
-	private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions = ListOfOnixElement
-			.empty();
+    private ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions =
+        ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions()
-	{
-		initialize();
-		return audienceRangePrecisions;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions() {
+        initialize();
+        return audienceRangePrecisions;
+    }
 
-	private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues = ListOfOnixElement.empty();
+    private ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues()
-	{
-		initialize();
-		return audienceRangeValues;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues() {
+        initialize();
+        return audienceRangeValues;
+    }
 
-	@Override
-	public JonixAudienceRange asStruct()
-	{
-		initialize();
-		JonixAudienceRange struct = new JonixAudienceRange();
-		struct.audienceRangePrecisions = audienceRangePrecisions.values();
-		struct.audienceRangeQualifier = audienceRangeQualifier.value;
-		struct.audienceRangeValues = audienceRangeValues.values();
-		return struct;
-	}
+    @Override
+    public JonixAudienceRange asStruct() {
+        initialize();
+        JonixAudienceRange struct = new JonixAudienceRange();
+        struct.audienceRangePrecisions = audienceRangePrecisions.values();
+        struct.audienceRangeQualifier = audienceRangeQualifier.value;
+        struct.audienceRangeValues = audienceRangeValues.values();
+        return struct;
+    }
 }

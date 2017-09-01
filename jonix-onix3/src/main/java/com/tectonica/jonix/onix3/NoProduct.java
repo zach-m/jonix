@@ -19,90 +19,63 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixFlag;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>“No product” indicator</h1>
- * <p>
- * An empty element that provides a positive indication that a message does not carry any Product records. Intended to
- * be used only in empty ‘delta’ update messages to provide confirmation that there have been no updates since the
- * previous message. Optional and non-repeating, but must be used in an ONIX message that contains no &lt;Product&gt;
- * composites.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>XML empty element</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;NoProduct&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x507&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x507/&gt;</td>
- * </tr>
- * </table>
+ * <h1>“No product” indicator</h1><p>An empty element that provides a positive indication that a message does not carry
+ * any Product records. Intended to be used only in empty ‘delta’ update messages to provide confirmation that there
+ * have been no updates since the previous message. Optional and non-repeating, but must be used in an ONIX message that
+ * contains no &lt;Product&gt; composites.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
+ * element</td></tr><tr><td>Reference name</td><td>&lt;NoProduct&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x507&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;1</td></tr><tr><td>Example</td><td>&lt;x507/&gt;</td></tr></table>
  */
-public class NoProduct implements OnixFlag, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class NoProduct implements OnixFlag, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "NoProduct";
-	public static final String shortname = "x507";
+    public static final String refname = "NoProduct";
+    public static final String shortname = "x507";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTORS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTORS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final NoProduct EMPTY = new NoProduct();
+    private final boolean exists;
+    public static final NoProduct EMPTY = new NoProduct();
 
-	public NoProduct()
-	{
-		exists = false;
-	}
+    public NoProduct() {
+        exists = false;
+    }
 
-	public NoProduct(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-	}
+    public NoProduct(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

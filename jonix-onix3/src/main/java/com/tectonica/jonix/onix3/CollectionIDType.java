@@ -19,110 +19,80 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SeriesIdentifierTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Collection identifier type code</h1>
- * <p>
- * An ONIX code identifying a scheme from which an identifier in the &lt;IDValue&gt; element is taken. Mandatory in each
- * occurrence of the &lt;CollectionIdentifier&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length text, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 13</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CollectionIDType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x344&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;x344&gt;02&lt;/x344&gt; (ISSN)</td>
- * </tr>
- * </table>
+ * <h1>Collection identifier type code</h1><p>An ONIX code identifying a scheme from which an identifier in the
+ * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;CollectionIdentifier&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length text, two
+ * digits</td></tr><tr><td>Codelist</td><td>List 13</td></tr><tr><td>Reference name</td><td>&lt;CollectionIDType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x344&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&lt;x344&gt;02&lt;/x344&gt;
+ * (ISSN)</td></tr></table>
  */
-public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CollectionIDType implements OnixElement<SeriesIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CollectionIDType";
-	public static final String shortname = "x344";
+    public static final String refname = "CollectionIDType";
+    public static final String shortname = "x344";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public SeriesIdentifierTypes value;
+    public SeriesIdentifierTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public SeriesIdentifierTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public SeriesIdentifierTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CollectionIDType EMPTY = new CollectionIDType();
+    private final boolean exists;
+    public static final CollectionIDType EMPTY = new CollectionIDType();
 
-	public CollectionIDType()
-	{
-		exists = false;
-	}
+    public CollectionIDType() {
+        exists = false;
+    }
 
-	public CollectionIDType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CollectionIDType(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = SeriesIdentifierTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

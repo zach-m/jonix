@@ -19,127 +19,95 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.TextFormats;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Illustrations and other contents note</h1>
- * <p>
- * For books or other text media only, this data element carries text stating the number and type of illustrations. The
- * text may also include other content items, <i>eg</i> maps, bibliography, tables, index <i>etc</i>. Optional, and
- * repeatable if parallel notes are provided in multiple languages. The <i>language</i> attribute is optional for a
- * single instance of &lt;IllustrationsNote&gt;, but must be included in each instance if &lt;IllustrationsNote&gt; is
- * repeated.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see Using
- * XHTML, HTML or XML with ONIX text fields</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;IllustrationsNote&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b062&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language, textformat</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b062&gt;500 illustrations, 210 in full color&lt;/b062&gt;</td>
- * </tr>
- * </table>
+ * <h1>Illustrations and other contents note</h1><p>For books or other text media only, this data element carries text
+ * stating the number and type of illustrations. The text may also include other content items, <i>eg</i> maps,
+ * bibliography, tables, index <i>etc</i>. Optional, and repeatable if parallel notes are provided in multiple
+ * languages. The <i>language</i> attribute is optional for a single instance of &lt;IllustrationsNote&gt;, but must be
+ * included in each instance if &lt;IllustrationsNote&gt; is repeated.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable length text, suggested maximum length 200 characters. XHTML is
+ * enabled in this element - see Using XHTML, HTML or XML with ONIX text fields</td></tr><tr><td>Reference
+ * name</td><td>&lt;IllustrationsNote&gt;</td></tr><tr><td>Short tag</td><td>&lt;b062&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language,
+ * textformat</td></tr><tr><td>Example</td><td>&lt;b062&gt;500 illustrations, 210 in full
+ * color&lt;/b062&gt;</td></tr></table>
  */
-public class IllustrationsNote implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class IllustrationsNote implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "IllustrationsNote";
-	public static final String shortname = "b062";
+    public static final String refname = "IllustrationsNote";
+    public static final String shortname = "b062";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
-	 * Using XHTML, HTML or XML with ONIX text fields
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable length text, suggested maximum length 200 characters. XHTML is enabled in this element - see
+     * Using XHTML, HTML or XML with ONIX text fields<p> (type: XHTML)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final IllustrationsNote EMPTY = new IllustrationsNote();
+    private final boolean exists;
+    public static final IllustrationsNote EMPTY = new IllustrationsNote();
 
-	public IllustrationsNote()
-	{
-		exists = false;
-	}
+    public IllustrationsNote() {
+        exists = false;
+    }
 
-	public IllustrationsNote(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+    public IllustrationsNote(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
 
-		value = JPU.getChildXHTML(element, true);
-	}
+        value = JPU.getChildXHTML(element, true);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

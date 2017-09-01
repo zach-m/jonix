@@ -19,255 +19,220 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixTitleElement;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Title element composite</h1>
- * <p>
- * A repeatable group of data elements which together represent an element of a title. At least one title element is
- * mandatory in each occurrence of the &lt;TitleDetail&gt; composite. An instance of the &lt;TitleElement&gt; composite
- * must include at least one of: &lt;PartNumber&gt;; &lt;YearOfAnnual&gt;; &lt;TitleText&gt;, &lt;NoPrefix/&gt; together
- * with &lt;TitleWithoutPrefix&gt;, or &lt;TitlePrefix&gt; together with &lt;TitleWithoutPrefix&gt;. In other words it
- * <em>must</em> carry <em>either</em> the text of a title <em>or</em> a part or year designation, and it <em>may</em>
- * carry both.
- * </p>
- * <p>
- * A title element must be designated as belonging to product level, collection level, or subcollection level (the
- * last-named only in the case of a multi-level collection).
- * </p>
- * <p>
- * In the simplest case, a product title will consist of a single title element, at product level. However, the
- * composite structure in ONIX 3.0 allows complex titles to be correctly represented, in the sequence in which the
- * publisher wishes the elements to be displayed.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;TitleElement&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;titleelement&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Title element composite</h1><p>A repeatable group of data elements which together represent an element of a
+ * title. At least one title element is mandatory in each occurrence of the &lt;TitleDetail&gt; composite. An instance
+ * of the &lt;TitleElement&gt; composite must include at least one of: &lt;PartNumber&gt;; &lt;YearOfAnnual&gt;;
+ * &lt;TitleText&gt;, &lt;NoPrefix/&gt; together with &lt;TitleWithoutPrefix&gt;, or &lt;TitlePrefix&gt; together with
+ * &lt;TitleWithoutPrefix&gt;. In other words it <em>must</em> carry <em>either</em> the text of a title <em>or</em> a
+ * part or year designation, and it <em>may</em> carry both.</p><p>A title element must be designated as belonging to
+ * product level, collection level, or subcollection level (the last-named only in the case of a multi-level
+ * collection).</p><p>In the simplest case, a product title will consist of a single title element, at product level.
+ * However, the composite structure in ONIX 3.0 allows complex titles to be correctly represented, in the sequence in
+ * which the publisher wishes the elements to be displayed.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;TitleElement&gt;</td></tr><tr><td>Short tag</td><td>&lt;titleelement&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
  */
-public class TitleElement implements OnixDataComposite<JonixTitleElement>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class TitleElement implements OnixDataComposite<JonixTitleElement>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "TitleElement";
-	public static final String shortname = "titleelement";
+    public static final String refname = "TitleElement";
+    public static final String shortname = "titleelement";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final TitleElement EMPTY = new TitleElement();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final TitleElement EMPTY = new TitleElement();
 
-	public TitleElement()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public TitleElement() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public TitleElement(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public TitleElement(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname))
-				sequenceNumber = new SequenceNumber(e);
-			else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname))
-				titleElementLevel = new TitleElementLevel(e);
-			else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname))
-				partNumber = new PartNumber(e);
-			else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
-				yearOfAnnual = new YearOfAnnual(e);
-			else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname))
-				titlePrefix = new TitlePrefix(e);
-			else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname))
-				noPrefix = new NoPrefix(e);
-			else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname))
-				titleWithoutPrefix = new TitleWithoutPrefix(e);
-			else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname))
-				titleText = new TitleText(e);
-			else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname))
-				subtitle = new Subtitle(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(SequenceNumber.refname) || name.equals(SequenceNumber.shortname)) {
+                sequenceNumber = new SequenceNumber(e);
+            } else if (name.equals(TitleElementLevel.refname) || name.equals(TitleElementLevel.shortname)) {
+                titleElementLevel = new TitleElementLevel(e);
+            } else if (name.equals(PartNumber.refname) || name.equals(PartNumber.shortname)) {
+                partNumber = new PartNumber(e);
+            } else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname)) {
+                yearOfAnnual = new YearOfAnnual(e);
+            } else if (name.equals(TitlePrefix.refname) || name.equals(TitlePrefix.shortname)) {
+                titlePrefix = new TitlePrefix(e);
+            } else if (name.equals(NoPrefix.refname) || name.equals(NoPrefix.shortname)) {
+                noPrefix = new NoPrefix(e);
+            } else if (name.equals(TitleWithoutPrefix.refname) || name.equals(TitleWithoutPrefix.shortname)) {
+                titleWithoutPrefix = new TitleWithoutPrefix(e);
+            } else if (name.equals(TitleText.refname) || name.equals(TitleText.shortname)) {
+                titleText = new TitleText(e);
+            } else if (name.equals(Subtitle.refname) || name.equals(Subtitle.shortname)) {
+                subtitle = new Subtitle(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
+    private SequenceNumber sequenceNumber = SequenceNumber.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public SequenceNumber sequenceNumber()
-	{
-		initialize();
-		return sequenceNumber;
-	}
+    /**
+     * (this field is optional)
+     */
+    public SequenceNumber sequenceNumber() {
+        initialize();
+        return sequenceNumber;
+    }
 
-	private TitleElementLevel titleElementLevel = TitleElementLevel.EMPTY;
+    private TitleElementLevel titleElementLevel = TitleElementLevel.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public TitleElementLevel titleElementLevel()
-	{
-		initialize();
-		return titleElementLevel;
-	}
+    /**
+     * (this field is required)
+     */
+    public TitleElementLevel titleElementLevel() {
+        initialize();
+        return titleElementLevel;
+    }
 
-	private PartNumber partNumber = PartNumber.EMPTY;
+    private PartNumber partNumber = PartNumber.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PartNumber partNumber()
-	{
-		initialize();
-		return partNumber;
-	}
+    /**
+     * (this field is required)
+     */
+    public PartNumber partNumber() {
+        initialize();
+        return partNumber;
+    }
 
-	private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
+    private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public YearOfAnnual yearOfAnnual()
-	{
-		initialize();
-		return yearOfAnnual;
-	}
+    /**
+     * (this field is optional)
+     */
+    public YearOfAnnual yearOfAnnual() {
+        initialize();
+        return yearOfAnnual;
+    }
 
-	private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
+    private TitlePrefix titlePrefix = TitlePrefix.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public TitlePrefix titlePrefix()
-	{
-		initialize();
-		return titlePrefix;
-	}
+    /**
+     * (this field is optional)
+     */
+    public TitlePrefix titlePrefix() {
+        initialize();
+        return titlePrefix;
+    }
 
-	private NoPrefix noPrefix = NoPrefix.EMPTY;
+    private NoPrefix noPrefix = NoPrefix.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public NoPrefix noPrefix()
-	{
-		initialize();
-		return noPrefix;
-	}
+    /**
+     * (this field is optional)
+     */
+    public NoPrefix noPrefix() {
+        initialize();
+        return noPrefix;
+    }
 
-	public boolean isNoPrefix()
-	{
-		return (noPrefix().exists());
-	}
+    public boolean isNoPrefix() {
+        return (noPrefix().exists());
+    }
 
-	private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
+    private TitleWithoutPrefix titleWithoutPrefix = TitleWithoutPrefix.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public TitleWithoutPrefix titleWithoutPrefix()
-	{
-		initialize();
-		return titleWithoutPrefix;
-	}
+    /**
+     * (this field is required)
+     */
+    public TitleWithoutPrefix titleWithoutPrefix() {
+        initialize();
+        return titleWithoutPrefix;
+    }
 
-	private TitleText titleText = TitleText.EMPTY;
+    private TitleText titleText = TitleText.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public TitleText titleText()
-	{
-		initialize();
-		return titleText;
-	}
+    /**
+     * (this field is optional)
+     */
+    public TitleText titleText() {
+        initialize();
+        return titleText;
+    }
 
-	private Subtitle subtitle = Subtitle.EMPTY;
+    private Subtitle subtitle = Subtitle.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Subtitle subtitle()
-	{
-		initialize();
-		return subtitle;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Subtitle subtitle() {
+        initialize();
+        return subtitle;
+    }
 
-	@Override
-	public JonixTitleElement asStruct()
-	{
-		initialize();
-		JonixTitleElement struct = new JonixTitleElement();
-		struct.sequenceNumber = sequenceNumber.value;
-		struct.titleElementLevel = titleElementLevel.value;
-		struct.partNumber = partNumber.value;
-		struct.yearOfAnnual = yearOfAnnual.value;
-		struct.titlePrefix = titlePrefix.value;
-		struct.isNoPrefix = isNoPrefix();
-		struct.titleWithoutPrefix = titleWithoutPrefix.value;
-		struct.titleText = titleText.value;
-		struct.subtitle = subtitle.value;
-		return struct;
-	}
+    @Override
+    public JonixTitleElement asStruct() {
+        initialize();
+        JonixTitleElement struct = new JonixTitleElement();
+        struct.sequenceNumber = sequenceNumber.value;
+        struct.titleElementLevel = titleElementLevel.value;
+        struct.partNumber = partNumber.value;
+        struct.yearOfAnnual = yearOfAnnual.value;
+        struct.titlePrefix = titlePrefix.value;
+        struct.isNoPrefix = isNoPrefix();
+        struct.titleWithoutPrefix = titleWithoutPrefix.value;
+        struct.titleText = titleText.value;
+        struct.subtitle = subtitle.value;
+        return struct;
+    }
 }

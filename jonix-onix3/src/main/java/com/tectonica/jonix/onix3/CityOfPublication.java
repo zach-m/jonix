@@ -19,125 +19,90 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>City or town of publication</h1>
- * <p>
- * The name of a city or town associated with the imprint or publisher. Optional, and repeatable if parallel names for a
- * single location appear on the title page in multiple languages, or if the imprint carries two or more cities of
- * publication.
- * </p>
- * <p>
- * A place of publication is normally given in the form in which it appears on the title page. If the place name appears
- * in more than one language, &lt;CityOfPublication&gt; may be repeated. The <i>language</i> attribute is optional with
- * a single instance of &lt;CityOfPublication&gt;, but must be included in each instance if &lt;CityOfPublication&gt; is
- * repeated.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 50 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CityOfPublication&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b209&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * <tr>
- * <td>Attributes</td>
- * <td>language</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CityOfPublication&gt;New York&lt;/CityOfPublication&gt;</td>
- * </tr>
- * </table>
+ * <h1>City or town of publication</h1><p>The name of a city or town associated with the imprint or publisher. Optional,
+ * and repeatable if parallel names for a single location appear on the title page in multiple languages, or if the
+ * imprint carries two or more cities of publication.</p><p>A place of publication is normally given in the form in
+ * which it appears on the title page. If the place name appears in more than one language, &lt;CityOfPublication&gt;
+ * may be repeated. The <i>language</i> attribute is optional with a single instance of &lt;CityOfPublication&gt;, but
+ * must be included in each instance if &lt;CityOfPublication&gt; is repeated.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length 50
+ * characters</td></tr><tr><td>Reference name</td><td>&lt;CityOfPublication&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b209&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr><tr><td>Attributes</td><td>language</td></tr><tr><td>Example</td><td>&lt;CityOfPublication&gt;New
+ * York&lt;/CityOfPublication&gt;</td></tr></table>
  */
-public class CityOfPublication implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CityOfPublication implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CityOfPublication";
-	public static final String shortname = "b209";
+    public static final String refname = "CityOfPublication";
+    public static final String shortname = "b209";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 50 characters
-	 * <p>
-	 * (type: dt.NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 50 characters<p> (type: dt.NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CityOfPublication EMPTY = new CityOfPublication();
+    private final boolean exists;
+    public static final CityOfPublication EMPTY = new CityOfPublication();
 
-	public CityOfPublication()
-	{
-		exists = false;
-	}
+    public CityOfPublication() {
+        exists = false;
+    }
 
-	public CityOfPublication(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+    public CityOfPublication(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

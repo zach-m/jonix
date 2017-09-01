@@ -19,110 +19,79 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.ProductContactRoles;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
+
+import java.io.Serializable;
 
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product contact role</h1>
- * <p>
- * An ONIX code which identifies the role played by the product contact in relation to the product – for example
- * answering enquiries related to sales or to promotion.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed length, two digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 198</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductContactRole&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;x482&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&#160;&#160;</td>
- * </tr>
- * </table>
+ * <h1>Product contact role</h1><p>An ONIX code which identifies the role played by the product contact in relation to
+ * the product – for example answering enquiries related to sales or to promotion.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed length, two digits</td></tr><tr><td>Codelist</td><td>List
+ * 198</td></tr><tr><td>Reference name</td><td>&lt;ProductContactRole&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;x482&gt;</td></tr><tr><td>Cardinality</td><td>1</td></tr><tr><td>Example</td><td>&#160;&#160;</td></tr></table>
  */
-public class ProductContactRole implements OnixElement<ProductContactRoles>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ProductContactRole implements OnixElement<ProductContactRoles>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductContactRole";
-	public static final String shortname = "x482";
+    public static final String refname = "ProductContactRole";
+    public static final String shortname = "x482";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ProductContactRoles value;
+    public ProductContactRoles value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ProductContactRoles _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ProductContactRoles _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ProductContactRole EMPTY = new ProductContactRole();
+    private final boolean exists;
+    public static final ProductContactRole EMPTY = new ProductContactRole();
 
-	public ProductContactRole()
-	{
-		exists = false;
-	}
+    public ProductContactRole() {
+        exists = false;
+    }
 
-	public ProductContactRole(org.w3c.dom.Element element)
-	{
-		exists = true;
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ProductContactRole(org.w3c.dom.Element element) {
+        exists = true;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductContactRoles.byCode(JPU.getContentAsString(element));
-	}
+        value = ProductContactRoles.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

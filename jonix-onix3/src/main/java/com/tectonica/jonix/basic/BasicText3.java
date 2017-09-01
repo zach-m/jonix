@@ -25,39 +25,34 @@ import com.tectonica.jonix.onix3.TextContent;
 
 /**
  * ONIX3 concrete implementation for {@link BasicText}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicText3 extends BasicText
-{
-	private static final long serialVersionUID = 1L;
+public class BasicText3 extends BasicText {
+    private static final long serialVersionUID = 1L;
 
-	public BasicText3(TextContent textContent)
-	{
-		textType = textContent.textType().value;
-		Text textElement = pickTextObject(textContent);
-		if (textElement != null) // invalid ONIX
-		{
-			textFormat = textElement.textformat;
-			text = textElement.value;
-		}
-	}
+    public BasicText3(TextContent textContent) {
+        textType = textContent.textType().value;
+        Text textElement = pickTextObject(textContent);
+        if (textElement != null) { // invalid ONIX
+            textFormat = textElement.textformat;
+            text = textElement.value;
+        }
+    }
 
-	/**
-	 * ONIX-3 requires at least one <Text> element, and allow more than one to provide translations in several
-	 * languages. This simplistic implementation simply prioritizes English.
-	 */
-	private Text pickTextObject(TextContent textContent)
-	{
-		if (!textContent.texts().isEmpty())
-		{
-			for (Text text : textContent.texts())
-			{
-				if (text.language == null || text.language == LanguageCodes.English)
-					return text;
-			}
-			return textContent.texts().get(0); // return the first element, regardless of its language
-		}
-		return null;
-	}
+    /**
+     * ONIX-3 requires at least one &lt;Text&gt; element, and allow more than one to provide translations in several
+     * languages. This simplistic implementation simply prioritizes English.
+     */
+    private Text pickTextObject(TextContent textContent) {
+        if (!textContent.texts().isEmpty()) {
+            for (Text text : textContent.texts()) {
+                if (text.language == null || text.language == LanguageCodes.English) {
+                    return text;
+                }
+            }
+            return textContent.texts().get(0); // return the first element, regardless of its language
+        }
+        return null;
+    }
 }

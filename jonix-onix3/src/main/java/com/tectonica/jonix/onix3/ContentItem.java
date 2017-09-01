@@ -19,262 +19,232 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.struct.JonixSubject;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Content item composite</h1>
- * <p>
- * A repeatable group of data elements which together describe a content item within a product. Mandatory in any
- * occurrence of the &lt;ContentDetail&gt; composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ContentItem&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;contentitem&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>1&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Content item composite</h1><p>A repeatable group of data elements which together describe a content item within a
+ * product. Mandatory in any occurrence of the &lt;ContentDetail&gt; composite.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ContentItem&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;contentitem&gt;</td></tr><tr><td>Cardinality</td><td>1&#8230;n</td></tr></table>
  */
-public class ContentItem implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ContentItem implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ContentItem";
-	public static final String shortname = "contentitem";
+    public static final String refname = "ContentItem";
+    public static final String shortname = "contentitem";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ContentItem EMPTY = new ContentItem();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ContentItem EMPTY = new ContentItem();
 
-	public ContentItem()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ContentItem() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ContentItem(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ContentItem(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname))
-				levelSequenceNumber = new LevelSequenceNumber(e);
-			else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname))
-				textItem = new TextItem(e);
-			else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname))
-				componentTypeName = new ComponentTypeName(e);
-			else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname))
-				componentNumber = new ComponentNumber(e);
-			else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname))
-				titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
-			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-				contributors = JPU.addToList(contributors, new Contributor(e));
-			else if (name.equals(Subject.refname) || name.equals(Subject.shortname))
-				subjects = JPU.addToList(subjects, new Subject(e));
-			else if (name.equals(NameAsSubject.refname) || name.equals(NameAsSubject.shortname))
-				nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
-			else if (name.equals(TextContent.refname) || name.equals(TextContent.shortname))
-				textContents = JPU.addToList(textContents, new TextContent(e));
-			else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname))
-				citedContents = JPU.addToList(citedContents, new CitedContent(e));
-			else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname))
-				supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
-			else if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname))
-				relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(LevelSequenceNumber.refname) || name.equals(LevelSequenceNumber.shortname)) {
+                levelSequenceNumber = new LevelSequenceNumber(e);
+            } else if (name.equals(TextItem.refname) || name.equals(TextItem.shortname)) {
+                textItem = new TextItem(e);
+            } else if (name.equals(ComponentTypeName.refname) || name.equals(ComponentTypeName.shortname)) {
+                componentTypeName = new ComponentTypeName(e);
+            } else if (name.equals(ComponentNumber.refname) || name.equals(ComponentNumber.shortname)) {
+                componentNumber = new ComponentNumber(e);
+            } else if (name.equals(TitleDetail.refname) || name.equals(TitleDetail.shortname)) {
+                titleDetails = JPU.addToList(titleDetails, new TitleDetail(e));
+            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
+                contributors = JPU.addToList(contributors, new Contributor(e));
+            } else if (name.equals(Subject.refname) || name.equals(Subject.shortname)) {
+                subjects = JPU.addToList(subjects, new Subject(e));
+            } else if (name.equals(NameAsSubject.refname) || name.equals(NameAsSubject.shortname)) {
+                nameAsSubjects = JPU.addToList(nameAsSubjects, new NameAsSubject(e));
+            } else if (name.equals(TextContent.refname) || name.equals(TextContent.shortname)) {
+                textContents = JPU.addToList(textContents, new TextContent(e));
+            } else if (name.equals(CitedContent.refname) || name.equals(CitedContent.shortname)) {
+                citedContents = JPU.addToList(citedContents, new CitedContent(e));
+            } else if (name.equals(SupportingResource.refname) || name.equals(SupportingResource.shortname)) {
+                supportingResources = JPU.addToList(supportingResources, new SupportingResource(e));
+            } else if (name.equals(RelatedWork.refname) || name.equals(RelatedWork.shortname)) {
+                relatedWorks = JPU.addToList(relatedWorks, new RelatedWork(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
+    private LevelSequenceNumber levelSequenceNumber = LevelSequenceNumber.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public LevelSequenceNumber levelSequenceNumber()
-	{
-		initialize();
-		return levelSequenceNumber;
-	}
+    /**
+     * (this field is optional)
+     */
+    public LevelSequenceNumber levelSequenceNumber() {
+        initialize();
+        return levelSequenceNumber;
+    }
 
-	private TextItem textItem = TextItem.EMPTY;
+    private TextItem textItem = TextItem.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public TextItem textItem()
-	{
-		initialize();
-		return textItem;
-	}
+    /**
+     * (this field is required)
+     */
+    public TextItem textItem() {
+        initialize();
+        return textItem;
+    }
 
-	private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
+    private ComponentTypeName componentTypeName = ComponentTypeName.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ComponentTypeName componentTypeName()
-	{
-		initialize();
-		return componentTypeName;
-	}
+    /**
+     * (this field is required)
+     */
+    public ComponentTypeName componentTypeName() {
+        initialize();
+        return componentTypeName;
+    }
 
-	private ComponentNumber componentNumber = ComponentNumber.EMPTY;
+    private ComponentNumber componentNumber = ComponentNumber.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ComponentNumber componentNumber()
-	{
-		initialize();
-		return componentNumber;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ComponentNumber componentNumber() {
+        initialize();
+        return componentNumber;
+    }
 
-	private List<TitleDetail> titleDetails = Collections.emptyList();
+    private List<TitleDetail> titleDetails = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TitleDetail> titleDetails()
-	{
-		initialize();
-		return titleDetails;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<TitleDetail> titleDetails() {
+        initialize();
+        return titleDetails;
+    }
 
-	private List<Contributor> contributors = Collections.emptyList();
+    private List<Contributor> contributors = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Contributor> contributors()
-	{
-		initialize();
-		return contributors;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<Contributor> contributors() {
+        initialize();
+        return contributors;
+    }
 
-	private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<Subject, JonixSubject> subjects = ListOfOnixDataComposite.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataComposite<Subject, JonixSubject> subjects()
-	{
-		initialize();
-		return subjects;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
+        initialize();
+        return subjects;
+    }
 
-	private List<NameAsSubject> nameAsSubjects = Collections.emptyList();
+    private List<NameAsSubject> nameAsSubjects = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<NameAsSubject> nameAsSubjects()
-	{
-		initialize();
-		return nameAsSubjects;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<NameAsSubject> nameAsSubjects() {
+        initialize();
+        return nameAsSubjects;
+    }
 
-	private List<TextContent> textContents = Collections.emptyList();
+    private List<TextContent> textContents = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<TextContent> textContents()
-	{
-		initialize();
-		return textContents;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<TextContent> textContents() {
+        initialize();
+        return textContents;
+    }
 
-	private List<CitedContent> citedContents = Collections.emptyList();
+    private List<CitedContent> citedContents = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<CitedContent> citedContents()
-	{
-		initialize();
-		return citedContents;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<CitedContent> citedContents() {
+        initialize();
+        return citedContents;
+    }
 
-	private List<SupportingResource> supportingResources = Collections.emptyList();
+    private List<SupportingResource> supportingResources = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SupportingResource> supportingResources()
-	{
-		initialize();
-		return supportingResources;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<SupportingResource> supportingResources() {
+        initialize();
+        return supportingResources;
+    }
 
-	private List<RelatedWork> relatedWorks = Collections.emptyList();
+    private List<RelatedWork> relatedWorks = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<RelatedWork> relatedWorks()
-	{
-		initialize();
-		return relatedWorks;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<RelatedWork> relatedWorks() {
+        initialize();
+        return relatedWorks;
+    }
 }

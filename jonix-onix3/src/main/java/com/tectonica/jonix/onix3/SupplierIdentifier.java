@@ -19,163 +19,140 @@
 
 package com.tectonica.jonix.onix3;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 import com.tectonica.jonix.codelist.SupplierIdentifierTypes;
 import com.tectonica.jonix.struct.JonixSupplierIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Supplier identifier composite</h1>
- * <p>
- * A repeatable group of data elements which together define the identifier of a supplier in accordance with a specified
- * scheme, and allowing different types of supplier identifier to be included without defining additional data elements.
- * Optional, but each occurrence of the &lt;NewSupplier&gt; composite must carry <em>either</em> at least one supplier
- * identifier, <em>or</em> a &lt;SupplierName&gt;, <em>or</em> both.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SupplierIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;supplieridentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Cardinality</td>
- * <td>0&#8230;n</td>
- * </tr>
- * </table>
+ * <h1>Supplier identifier composite</h1><p>A repeatable group of data elements which together define the identifier of
+ * a supplier in accordance with a specified scheme, and allowing different types of supplier identifier to be included
+ * without defining additional data elements. Optional, but each occurrence of the &lt;NewSupplier&gt; composite must
+ * carry <em>either</em> at least one supplier identifier, <em>or</em> a &lt;SupplierName&gt;, <em>or</em>
+ * both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;SupplierIdentifier&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;supplieridentifier&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
 public class SupplierIdentifier
-		implements OnixDataCompositeWithKey<JonixSupplierIdentifier, SupplierIdentifierTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixSupplierIdentifier, SupplierIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SupplierIdentifier";
-	public static final String shortname = "supplieridentifier";
+    public static final String refname = "SupplierIdentifier";
+    public static final String shortname = "supplieridentifier";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * (type: dt.DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: dt.DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final SupplierIdentifier EMPTY = new SupplierIdentifier();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final SupplierIdentifier EMPTY = new SupplierIdentifier();
 
-	public SupplierIdentifier()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public SupplierIdentifier() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public SupplierIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public SupplierIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(SupplierIDType.refname) || name.equals(SupplierIDType.shortname))
-				supplierIDType = new SupplierIDType(e);
-			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-				idTypeName = new IDTypeName(e);
-			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-				idValue = new IDValue(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(SupplierIDType.refname) || name.equals(SupplierIDType.shortname)) {
+                supplierIDType = new SupplierIDType(e);
+            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
+                idTypeName = new IDTypeName(e);
+            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
+                idValue = new IDValue(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private SupplierIDType supplierIDType = SupplierIDType.EMPTY;
+    private SupplierIDType supplierIDType = SupplierIDType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public SupplierIDType supplierIDType()
-	{
-		initialize();
-		return supplierIDType;
-	}
+    /**
+     * (this field is required)
+     */
+    public SupplierIDType supplierIDType() {
+        initialize();
+        return supplierIDType;
+    }
 
-	private IDTypeName idTypeName = IDTypeName.EMPTY;
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName()
-	{
-		initialize();
-		return idTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public IDTypeName idTypeName() {
+        initialize();
+        return idTypeName;
+    }
 
-	private IDValue idValue = IDValue.EMPTY;
+    private IDValue idValue = IDValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue()
-	{
-		initialize();
-		return idValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public IDValue idValue() {
+        initialize();
+        return idValue;
+    }
 
-	@Override
-	public JonixSupplierIdentifier asStruct()
-	{
-		initialize();
-		JonixSupplierIdentifier struct = new JonixSupplierIdentifier();
-		struct.supplierIDType = supplierIDType.value;
-		struct.idTypeName = idTypeName.value;
-		struct.idValue = idValue.value;
-		return struct;
-	}
+    @Override
+    public JonixSupplierIdentifier asStruct() {
+        initialize();
+        JonixSupplierIdentifier struct = new JonixSupplierIdentifier();
+        struct.supplierIDType = supplierIDType.value;
+        struct.idTypeName = idTypeName.value;
+        struct.idValue = idValue.value;
+        return struct;
+    }
 
-	@Override
-	public SupplierIdentifierTypes structKey()
-	{
-		return supplierIDType().value;
-	}
+    @Override
+    public SupplierIdentifierTypes structKey() {
+        return supplierIDType().value;
+    }
 }
