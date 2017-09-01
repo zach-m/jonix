@@ -38,7 +38,7 @@ import java.util.TimeZone;
  * &lt;dependency&gt;
  *     &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
  *     &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
- *     &lt;version&gt;2.3.2&lt;/version&gt;
+ *     &lt;version&gt;2.8.7&lt;/version&gt;
  * &lt;/dependency&gt;
  * </pre>
  *

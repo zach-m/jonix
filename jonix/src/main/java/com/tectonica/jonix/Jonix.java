@@ -25,7 +25,6 @@ import com.tectonica.jonix.basic.BasicHeader3;
 import com.tectonica.jonix.basic.BasicProduct;
 import com.tectonica.jonix.basic.BasicProduct2;
 import com.tectonica.jonix.basic.BasicProduct3;
-import com.tectonica.jonix.export.JonixJsonExporter;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.extract.JonixInMemExtractor;
 import com.tectonica.jonix.stream.JonixFilesStreamer;
@@ -125,11 +124,6 @@ public class Jonix {
     public static JonixFilesStreamer createBasicTabDelimitedStreamer(PrintStream out) {
         return new JonixFilesStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER,
             BasicColumn.ALL_COLUMNS).setOut(out));
-    }
-
-    public static JonixFilesStreamer createJsonStreamer(PrintStream out, boolean exportRaw) {
-        return new JonixFilesStreamer(
-            new JonixJsonExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER, exportRaw).setOut(out));
     }
 
     public static JonixFilesStreamer createBasicInMemStreamer(List<BasicProduct> collection) {

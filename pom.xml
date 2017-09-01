@@ -44,11 +44,11 @@
         <module>jonix-xml</module>
         <module>jonix-onix2</module>
         <module>jonix-onix3</module>
+        <module>jonix-json</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.jackson>2.6.5</version.jackson>
         <version.slf4j>1.7.7</version.slf4j>
     </properties>
 
@@ -161,22 +161,10 @@
                 <version>${project.version}</version>
             </dependency>
 
-            <!-- JSON -->
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${version.jackson}</version>
-            </dependency>
-
             <!-- Logging -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>${version.slf4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-jdk14</artifactId>
                 <version>${version.slf4j}</version>
             </dependency>
 
@@ -185,6 +173,18 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${version.slf4j}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.tectonica</groupId>
+                <artifactId>jonix-json</artifactId>
+                <version>${project.version}</version>
                 <scope>test</scope>
             </dependency>
 
