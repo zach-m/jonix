@@ -19,28 +19,26 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.HashSet;
-
 import com.tectonica.jonix.onix2.Contributor;
+
+import java.util.HashSet;
 
 /**
  * ONIX2 concrete implementation for {@link BasicContributor}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicContributor2 extends BasicContributor
-{
-	private static final long serialVersionUID = 1L;
+public class BasicContributor2 extends BasicContributor {
+    private static final long serialVersionUID = 1L;
 
-	public BasicContributor2(Contributor c)
-	{
-		contributorRoles = c.contributorRoles().valuesInto(new HashSet<>());
-		sequenceNumber = c.sequenceNumber().value;
-		personName = c.personName().value;
-		personNameKey = c.keyNames().value;
-		personNameBeforeKey = c.namesBeforeKey().value;
-		personNameInverted = c.personNameInverted().value;
-		corporateName = c.corporateName().value;
-		biographicalNote = c.biographicalNote().value;
-	}
+    public BasicContributor2(Contributor c) {
+        contributorRoles = c.contributorRoles().valuesInto(new HashSet<>());
+        sequenceNumber = c.sequenceNumber().value;
+        personName = c.personName().value;
+        personNameKey = c.keyNames().value;
+        personNameBeforeKey = c.namesBeforeKey().value;
+        personNameInverted = c.personNameInverted().value;
+        corporateName = c.corporateName().value;
+        biographicalNote = c.biographicalNote().value;
+    }
 }

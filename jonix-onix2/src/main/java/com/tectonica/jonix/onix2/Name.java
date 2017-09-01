@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -32,262 +30,237 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPersonNameIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Name composite</h1>
- * <p>
- * A repeatable group of data elements which together represent a personal name, and specify its type. The &lt;Name&gt;
- * composite may be used to send alternate names for the same person, <em>eg</em> to handle such cases as Ian Rankin
- * writing as Jack Harvey.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Name&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;name&gt;</td>
- * </tr>
- * </table>
+ * <h1>Name composite</h1><p>A repeatable group of data elements which together represent a personal name, and specify
+ * its type. The &lt;Name&gt; composite may be used to send alternate names for the same person, <em>eg</em> to handle
+ * such cases as Ian Rankin writing as Jack Harvey.</p><table border='1' cellpadding='3'><tr><td>Reference
+ * name</td><td>&lt;Name&gt;</td></tr><tr><td>Short tag</td><td>&lt;name&gt;</td></tr></table>
  */
-public class Name implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Name implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Name";
-	public static final String shortname = "name";
+    public static final String refname = "Name";
+    public static final String shortname = "name";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Name EMPTY = new Name();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Name EMPTY = new Name();
 
-	public Name()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Name() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Name(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Name(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(PersonNameType.refname) || name.equals(PersonNameType.shortname))
-				personNameType = new PersonNameType(e);
-			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-				personName = new PersonName(e);
-			else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname))
-				personNameInverted = new PersonNameInverted(e);
-			else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname))
-				titlesBeforeNames = new TitlesBeforeNames(e);
-			else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname))
-				namesBeforeKey = new NamesBeforeKey(e);
-			else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname))
-				prefixToKey = new PrefixToKey(e);
-			else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname))
-				keyNames = new KeyNames(e);
-			else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname))
-				namesAfterKey = new NamesAfterKey(e);
-			else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname))
-				suffixToKey = new SuffixToKey(e);
-			else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname))
-				lettersAfterNames = new LettersAfterNames(e);
-			else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname))
-				titlesAfterNames = new TitlesAfterNames(e);
-			else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname))
-				personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(PersonNameType.refname) || name.equals(PersonNameType.shortname)) {
+                personNameType = new PersonNameType(e);
+            } else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname)) {
+                personName = new PersonName(e);
+            } else if (name.equals(PersonNameInverted.refname) || name.equals(PersonNameInverted.shortname)) {
+                personNameInverted = new PersonNameInverted(e);
+            } else if (name.equals(TitlesBeforeNames.refname) || name.equals(TitlesBeforeNames.shortname)) {
+                titlesBeforeNames = new TitlesBeforeNames(e);
+            } else if (name.equals(NamesBeforeKey.refname) || name.equals(NamesBeforeKey.shortname)) {
+                namesBeforeKey = new NamesBeforeKey(e);
+            } else if (name.equals(PrefixToKey.refname) || name.equals(PrefixToKey.shortname)) {
+                prefixToKey = new PrefixToKey(e);
+            } else if (name.equals(KeyNames.refname) || name.equals(KeyNames.shortname)) {
+                keyNames = new KeyNames(e);
+            } else if (name.equals(NamesAfterKey.refname) || name.equals(NamesAfterKey.shortname)) {
+                namesAfterKey = new NamesAfterKey(e);
+            } else if (name.equals(SuffixToKey.refname) || name.equals(SuffixToKey.shortname)) {
+                suffixToKey = new SuffixToKey(e);
+            } else if (name.equals(LettersAfterNames.refname) || name.equals(LettersAfterNames.shortname)) {
+                lettersAfterNames = new LettersAfterNames(e);
+            } else if (name.equals(TitlesAfterNames.refname) || name.equals(TitlesAfterNames.shortname)) {
+                titlesAfterNames = new TitlesAfterNames(e);
+            } else if (name.equals(PersonNameIdentifier.refname) || name.equals(PersonNameIdentifier.shortname)) {
+                personNameIdentifiers = JPU.addToList(personNameIdentifiers, new PersonNameIdentifier(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private PersonNameType personNameType = PersonNameType.EMPTY;
+    private PersonNameType personNameType = PersonNameType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PersonNameType personNameType()
-	{
-		initialize();
-		return personNameType;
-	}
+    /**
+     * (this field is required)
+     */
+    public PersonNameType personNameType() {
+        initialize();
+        return personNameType;
+    }
 
-	private PersonName personName = PersonName.EMPTY;
+    private PersonName personName = PersonName.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PersonName personName()
-	{
-		initialize();
-		return personName;
-	}
+    /**
+     * (this field is required)
+     */
+    public PersonName personName() {
+        initialize();
+        return personName;
+    }
 
-	private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
+    private PersonNameInverted personNameInverted = PersonNameInverted.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PersonNameInverted personNameInverted()
-	{
-		initialize();
-		return personNameInverted;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PersonNameInverted personNameInverted() {
+        initialize();
+        return personNameInverted;
+    }
 
-	private TitlesBeforeNames titlesBeforeNames = TitlesBeforeNames.EMPTY;
+    private TitlesBeforeNames titlesBeforeNames = TitlesBeforeNames.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesBeforeNames titlesBeforeNames()
-	{
-		initialize();
-		return titlesBeforeNames;
-	}
+    /**
+     * (this field is optional)
+     */
+    public TitlesBeforeNames titlesBeforeNames() {
+        initialize();
+        return titlesBeforeNames;
+    }
 
-	private NamesBeforeKey namesBeforeKey = NamesBeforeKey.EMPTY;
+    private NamesBeforeKey namesBeforeKey = NamesBeforeKey.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public NamesBeforeKey namesBeforeKey()
-	{
-		initialize();
-		return namesBeforeKey;
-	}
+    /**
+     * (this field is optional)
+     */
+    public NamesBeforeKey namesBeforeKey() {
+        initialize();
+        return namesBeforeKey;
+    }
 
-	private PrefixToKey prefixToKey = PrefixToKey.EMPTY;
+    private PrefixToKey prefixToKey = PrefixToKey.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PrefixToKey prefixToKey()
-	{
-		initialize();
-		return prefixToKey;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PrefixToKey prefixToKey() {
+        initialize();
+        return prefixToKey;
+    }
 
-	private KeyNames keyNames = KeyNames.EMPTY;
+    private KeyNames keyNames = KeyNames.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public KeyNames keyNames()
-	{
-		initialize();
-		return keyNames;
-	}
+    /**
+     * (this field is optional)
+     */
+    public KeyNames keyNames() {
+        initialize();
+        return keyNames;
+    }
 
-	private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
+    private NamesAfterKey namesAfterKey = NamesAfterKey.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public NamesAfterKey namesAfterKey()
-	{
-		initialize();
-		return namesAfterKey;
-	}
+    /**
+     * (this field is optional)
+     */
+    public NamesAfterKey namesAfterKey() {
+        initialize();
+        return namesAfterKey;
+    }
 
-	private SuffixToKey suffixToKey = SuffixToKey.EMPTY;
+    private SuffixToKey suffixToKey = SuffixToKey.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public SuffixToKey suffixToKey()
-	{
-		initialize();
-		return suffixToKey;
-	}
+    /**
+     * (this field is optional)
+     */
+    public SuffixToKey suffixToKey() {
+        initialize();
+        return suffixToKey;
+    }
 
-	private LettersAfterNames lettersAfterNames = LettersAfterNames.EMPTY;
+    private LettersAfterNames lettersAfterNames = LettersAfterNames.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public LettersAfterNames lettersAfterNames()
-	{
-		initialize();
-		return lettersAfterNames;
-	}
+    /**
+     * (this field is optional)
+     */
+    public LettersAfterNames lettersAfterNames() {
+        initialize();
+        return lettersAfterNames;
+    }
 
-	private TitlesAfterNames titlesAfterNames = TitlesAfterNames.EMPTY;
+    private TitlesAfterNames titlesAfterNames = TitlesAfterNames.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public TitlesAfterNames titlesAfterNames()
-	{
-		initialize();
-		return titlesAfterNames;
-	}
+    /**
+     * (this field is optional)
+     */
+    public TitlesAfterNames titlesAfterNames() {
+        initialize();
+        return titlesAfterNames;
+    }
 
-	private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes>
+        personNameIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers()
-	{
-		initialize();
-		return personNameIdentifiers;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers() {
+        initialize();
+        return personNameIdentifiers;
+    }
 }

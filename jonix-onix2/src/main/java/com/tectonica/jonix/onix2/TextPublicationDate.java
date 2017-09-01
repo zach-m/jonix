@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,112 +27,89 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Publication date of other text</h1>
- * <p>
- * The date on which text sent in the &lt;Text&gt; element, or referenced in the &lt;TextLink&gt; element, was
- * published. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;TextPublicationDate&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;d109&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;d109&gt;20000504&lt;/d109&gt;</td>
- * </tr>
- * </table>
+ * <h1>Publication date of other text</h1><p>The date on which text sent in the &lt;Text&gt; element, or referenced in
+ * the &lt;TextLink&gt; element, was published. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Date as four, six or eight digits (YYYY, YYYYMM,
+ * YYYYMMDD)</td></tr><tr><td>Reference name</td><td>&lt;TextPublicationDate&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;d109&gt;</td></tr><tr><td>Example</td><td>&lt;d109&gt;20000504&lt;/d109&gt;</td></tr></table>
  */
-public class TextPublicationDate implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class TextPublicationDate implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "TextPublicationDate";
-	public static final String shortname = "d109";
+    public static final String refname = "TextPublicationDate";
+    public static final String shortname = "d109";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Date as four, six or eight digits (YYYY, YYYYMM, YYYYMMDD)<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final TextPublicationDate EMPTY = new TextPublicationDate();
+    private final boolean exists;
+    public static final TextPublicationDate EMPTY = new TextPublicationDate();
 
-	public TextPublicationDate()
-	{
-		exists = false;
-	}
+    public TextPublicationDate() {
+        exists = false;
+    }
 
-	public TextPublicationDate(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public TextPublicationDate(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

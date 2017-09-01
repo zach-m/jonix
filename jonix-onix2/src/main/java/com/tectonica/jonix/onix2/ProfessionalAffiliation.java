@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collections;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -32,140 +28,126 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixProfessionalAffiliation;
 
+import java.io.Serializable;
+import java.util.Arrays;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Professional affiliation composite</h1>
- * <p>
- * A repeatable group of data elements which together identify a contributor’s professional position and/or affiliation,
- * allowing multiple positions and affiliations to be specified.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProfessionalAffiliation&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;professionalaffiliation&gt;</td>
- * </tr>
- * </table>
+ * <h1>Professional affiliation composite</h1><p>A repeatable group of data elements which together identify a
+ * contributor’s professional position and/or affiliation, allowing multiple positions and affiliations to be
+ * specified.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProfessionalAffiliation&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;professionalaffiliation&gt;</td></tr></table>
  */
-public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessionalAffiliation>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProfessionalAffiliation";
-	public static final String shortname = "professionalaffiliation";
+    public static final String refname = "ProfessionalAffiliation";
+    public static final String shortname = "professionalaffiliation";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ProfessionalAffiliation EMPTY = new ProfessionalAffiliation();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProfessionalAffiliation EMPTY = new ProfessionalAffiliation();
 
-	public ProfessionalAffiliation()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ProfessionalAffiliation() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ProfessionalAffiliation(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ProfessionalAffiliation(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname))
-				professionalPosition = new ProfessionalPosition(e);
-			else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname))
-				affiliation = new Affiliation(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProfessionalPosition.refname) || name.equals(ProfessionalPosition.shortname)) {
+                professionalPosition = new ProfessionalPosition(e);
+            } else if (name.equals(Affiliation.refname) || name.equals(Affiliation.shortname)) {
+                affiliation = new Affiliation(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ProfessionalPosition professionalPosition = ProfessionalPosition.EMPTY;
+    private ProfessionalPosition professionalPosition = ProfessionalPosition.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ProfessionalPosition professionalPosition()
-	{
-		initialize();
-		return professionalPosition;
-	}
+    /**
+     * (this field is required)
+     */
+    public ProfessionalPosition professionalPosition() {
+        initialize();
+        return professionalPosition;
+    }
 
-	private Affiliation affiliation = Affiliation.EMPTY;
+    private Affiliation affiliation = Affiliation.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Affiliation affiliation()
-	{
-		initialize();
-		return affiliation;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Affiliation affiliation() {
+        initialize();
+        return affiliation;
+    }
 
-	@Override
-	public JonixProfessionalAffiliation asStruct()
-	{
-		initialize();
-		JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
-		struct.affiliation = affiliation.value;
-		struct.professionalPositions = Collections.singletonList(professionalPosition.value);
-		return struct;
-	}
+    @Override
+    public JonixProfessionalAffiliation asStruct() {
+        initialize();
+        JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
+        struct.affiliation = affiliation.value;
+        struct.professionalPositions = Arrays.asList(professionalPosition.value);
+        return struct;
+    }
 }

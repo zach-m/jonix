@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.DateFormats;
@@ -30,111 +28,86 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Date format</h1>
- * <p>
- * An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and non-repeating. When
- * omitted, the format is assumed to be YYYYMMDD.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 55</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;DateFormat&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j260&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;DateFormat&gt;05&lt;/DateFormat&gt;&#160;&#160;&#160;&#160;YYYY</td>
- * </tr>
- * </table>
+ * <h1>Date format</h1><p>An ONIX code indicating the format in which the date is given in &lt;Date&gt;. Optional and
+ * non-repeating. When omitted, the format is assumed to be YYYYMMDD.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
+ * 55</td></tr><tr><td>Reference name</td><td>&lt;DateFormat&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j260&gt;</td></tr><tr><td>Example</td><td>&lt;DateFormat&gt;05&lt;/DateFormat&gt;&#160;&#160;&#160;&#160;YYYY</td></tr></table>
  */
-public class DateFormat implements OnixElement<DateFormats>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class DateFormat implements OnixElement<DateFormats>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "DateFormat";
-	public static final String shortname = "j260";
+    public static final String refname = "DateFormat";
+    public static final String shortname = "j260";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public DateFormats value;
+    public DateFormats value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public DateFormats _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public DateFormats _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final DateFormat EMPTY = new DateFormat();
+    private final boolean exists;
+    public static final DateFormat EMPTY = new DateFormat();
 
-	public DateFormat()
-	{
-		exists = false;
-	}
+    public DateFormat() {
+        exists = false;
+    }
 
-	public DateFormat(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public DateFormat(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = DateFormats.byCode(JPU.getContentAsString(element));
-	}
+        value = DateFormats.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

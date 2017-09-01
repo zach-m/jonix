@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix2.OtherText;
 import com.tectonica.jonix.onix2.Product;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX2 concrete implementation for {@link BasicTexts}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicTexts2 extends BasicTexts
-{
-	private static final long serialVersionUID = 1L;
+public class BasicTexts2 extends BasicTexts {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicTexts2(Product product)
-	{
-		this.product = product;
-	}
+    public BasicTexts2(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicText> initialize()
-	{
-		List<BasicText> list = new ArrayList<>();
-		for (OtherText otherText : product.otherTexts())
-			list.add(new BasicText2(otherText));
-		return list;
-	}
+    @Override
+    protected List<BasicText> initialize() {
+        List<BasicText> list = new ArrayList<>();
+        for (OtherText otherText : product.otherTexts()) {
+            list.add(new BasicText2(otherText));
+        }
+        return list;
+    }
 }

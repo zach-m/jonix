@@ -23,18 +23,16 @@ import com.tectonica.jonix.onix2.Title;
 
 /**
  * ONIX2 concrete implementation for {@link BasicTitle}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicTitle2 extends BasicTitle
-{
-	private static final long serialVersionUID = 1L;
+public class BasicTitle2 extends BasicTitle {
+    private static final long serialVersionUID = 1L;
 
-	public BasicTitle2(Title title)
-	{
-		titleType = title.titleType().value;
-		titleText = noBreaks(title.titleText().value);
-		titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
-		subtitle = noBreaks(title.subtitle().value);
-	}
+    public BasicTitle2(Title title) {
+        titleType = title.titleType().value;
+        titleText = noBreaks(title.titleText().value);
+        titleWithoutPrefix = noBreaks(title.titleWithoutPrefix().value);
+        subtitle = noBreaks(title.subtitle().value);
+    }
 }

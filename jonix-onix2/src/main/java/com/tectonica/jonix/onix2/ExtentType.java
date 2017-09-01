@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.ExtentTypes;
@@ -30,111 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Extent type code</h1>
- * <p>
- * An ONIX code which identifies the type of extent carried in the composite, <em>eg</em> running time for an audio or
- * video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 23</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ExtentType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b218&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;ExtentType&gt;09&lt;/ExtentType&gt;&#160;&#160;&#160;&#160;Duration (running time)</td>
- * </tr>
- * </table>
+ * <h1>Extent type code</h1><p>An ONIX code which identifies the type of extent carried in the composite, <em>eg</em>
+ * running time for an audio or video product. Mandatory in each occurrence of the &lt;Extent&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 23</td></tr><tr><td>Reference name</td><td>&lt;ExtentType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b218&gt;</td></tr><tr><td>Example</td><td>&lt;ExtentType&gt;09&lt;/ExtentType&gt;&#160;&#160;&#160;&#160;Duration
+ * (running time)</td></tr></table>
  */
-public class ExtentType implements OnixElement<ExtentTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ExtentType implements OnixElement<ExtentTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ExtentType";
-	public static final String shortname = "b218";
+    public static final String refname = "ExtentType";
+    public static final String shortname = "b218";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ExtentTypes value;
+    public ExtentTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ExtentTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ExtentTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ExtentType EMPTY = new ExtentType();
+    private final boolean exists;
+    public static final ExtentType EMPTY = new ExtentType();
 
-	public ExtentType()
-	{
-		exists = false;
-	}
+    public ExtentType() {
+        exists = false;
+    }
 
-	public ExtentType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ExtentType(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ExtentTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = ExtentTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

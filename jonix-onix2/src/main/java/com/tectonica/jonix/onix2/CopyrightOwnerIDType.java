@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,111 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Copyright owner identifier type</h1>
- * <p>
- * An ONIX code which identifies the scheme from which the value in the &lt;IDValue&gt; element is taken. Mandatory in
- * each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 44</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CopyrightOwnerIDType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b392&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CopyrightOwnerIDType&gt;03&lt;/CopyrightOwnerIDType&gt;&#160;&#160;&#160;&#160;DNB Publisher ID</td>
- * </tr>
- * </table>
+ * <h1>Copyright owner identifier type</h1><p>An ONIX code which identifies the scheme from which the value in the
+ * &lt;IDValue&gt; element is taken. Mandatory in each occurrence of the &lt;CopyrightOwnerIdentifier&gt; composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 44</td></tr><tr><td>Reference name</td><td>&lt;CopyrightOwnerIDType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b392&gt;</td></tr><tr><td>Example</td><td>&lt;CopyrightOwnerIDType&gt;03&lt;/CopyrightOwnerIDType&gt;&#160;&#160;&#160;&#160;DNB
+ * Publisher ID</td></tr></table>
  */
-public class CopyrightOwnerIDType implements OnixElement<NameCodeTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CopyrightOwnerIDType implements OnixElement<NameCodeTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CopyrightOwnerIDType";
-	public static final String shortname = "b392";
+    public static final String refname = "CopyrightOwnerIDType";
+    public static final String shortname = "b392";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public NameCodeTypes value;
+    public NameCodeTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public NameCodeTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public NameCodeTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CopyrightOwnerIDType EMPTY = new CopyrightOwnerIDType();
+    private final boolean exists;
+    public static final CopyrightOwnerIDType EMPTY = new CopyrightOwnerIDType();
 
-	public CopyrightOwnerIDType()
-	{
-		exists = false;
-	}
+    public CopyrightOwnerIDType() {
+        exists = false;
+    }
 
-	public CopyrightOwnerIDType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CopyrightOwnerIDType(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = NameCodeTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = NameCodeTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

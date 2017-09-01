@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixFlag;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,92 +27,71 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>“No series” indicator</h1>
- * <p>
- * An empty element that provides a positive indication that a product does not belong to a series. Intended to be used
- * in an ONIX accreditation scheme to confirm that series information is being consistently supplied in publisher ONIX
- * feeds. Optional and non-repeating. Must only be sent in a record that has no instances of the &lt;Series&gt;
- * composite.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>XML empty element</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;NoSeries&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;n338&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;NoSeries/&gt;</td>
- * </tr>
- * </table>
+ * <h1>“No series” indicator</h1><p>An empty element that provides a positive indication that a product does not belong
+ * to a series. Intended to be used in an ONIX accreditation scheme to confirm that series information is being
+ * consistently supplied in publisher ONIX feeds. Optional and non-repeating. Must only be sent in a record that has no
+ * instances of the &lt;Series&gt; composite.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>XML empty
+ * element</td></tr><tr><td>Reference name</td><td>&lt;NoSeries&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;n338&gt;</td></tr><tr><td>Example</td><td>&lt;NoSeries/&gt;</td></tr></table>
  */
-public class NoSeries implements OnixFlag, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class NoSeries implements OnixFlag, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "NoSeries";
-	public static final String shortname = "n338";
+    public static final String refname = "NoSeries";
+    public static final String shortname = "n338";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTORS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTORS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final NoSeries EMPTY = new NoSeries();
+    private final boolean exists;
+    public static final NoSeries EMPTY = new NoSeries();
 
-	public NoSeries()
-	{
-		exists = false;
-	}
+    public NoSeries() {
+        exists = false;
+    }
 
-	public NoSeries(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
-	}
+    public NoSeries(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

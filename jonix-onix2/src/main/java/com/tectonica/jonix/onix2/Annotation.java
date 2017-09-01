@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,119 +27,93 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Annotation</h1>
- * <p>
- * A brief descriptive paragraph about the product, length strictly limited to 350 characters. Optional and
- * non-repeating. <strong>The &lt;OtherText&gt; composite on the next page provides a more general method of handling
- * annotations, and is to be preferred.</strong>
- * </p>
- * <p>
- * The &lt;Annotation&gt; element may carry any of the following ONIX attributes: textformat, language, transliteration,
- * textcase.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, maximum 350 characters</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Annotation&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;d100&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;d100&gt;Set on the Greek island of Cephallonia during World War II, this is the story of a beautiful young
- * woman and her two suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of
- * the Italian garrison on the island.&lt;/d100&gt;</td>
- * </tr>
- * </table>
+ * <h1>Annotation</h1><p>A brief descriptive paragraph about the product, length strictly limited to 350 characters.
+ * Optional and non-repeating. <strong>The &lt;OtherText&gt; composite on the next page provides a more general method
+ * of handling annotations, and is to be preferred.</strong></p><p>The &lt;Annotation&gt; element may carry any of the
+ * following ONIX attributes: textformat, language, transliteration, textcase.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable-length text, maximum 350 characters</td></tr><tr><td>Reference
+ * name</td><td>&lt;Annotation&gt;</td></tr><tr><td>Short tag</td><td>&lt;d100&gt;</td></tr><tr><td>Example</td><td>&lt;d100&gt;Set
+ * on the Greek island of Cephallonia during World War II, this is the story of a beautiful young woman and her two
+ * suitors: a gentle fisherman turned ruthless guerrilla, and the charming mandolin-playing head of the Italian garrison
+ * on the island.&lt;/d100&gt;</td></tr></table>
  */
-public class Annotation implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Annotation implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Annotation";
-	public static final String shortname = "d100";
+    public static final String refname = "Annotation";
+    public static final String shortname = "d100";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, maximum 350 characters
-	 * <p>
-	 * (type: XHTML)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, maximum 350 characters<p> (type: XHTML)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final Annotation EMPTY = new Annotation();
+    private final boolean exists;
+    public static final Annotation EMPTY = new Annotation();
 
-	public Annotation()
-	{
-		exists = false;
-	}
+    public Annotation() {
+        exists = false;
+    }
 
-	public Annotation(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public Annotation(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getChildXHTML(element, true);
-	}
+        value = JPU.getChildXHTML(element, true);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

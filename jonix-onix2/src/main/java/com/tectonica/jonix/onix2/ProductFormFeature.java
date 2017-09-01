@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collections;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -33,162 +29,146 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixProductFormFeature;
 
+import java.io.Serializable;
+import java.util.Arrays;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product form feature composite</h1>
- * <p>
- * A repeatable group of data elements which together describe an aspect of product form that is too specific to be
- * covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements. Optional.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductFormFeature&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;productformfeature&gt;</td>
- * </tr>
- * </table>
+ * <h1>Product form feature composite</h1><p>A repeatable group of data elements which together describe an aspect of
+ * product form that is too specific to be covered in the &lt;ProductForm&gt; and &lt;ProductFormDetail&gt; elements.
+ * Optional.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductFormFeature&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;productformfeature&gt;</td></tr></table>
  */
 public class ProductFormFeature
-		implements OnixDataCompositeWithKey<JonixProductFormFeature, ProductFormFeatureTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixProductFormFeature, ProductFormFeatureTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductFormFeature";
-	public static final String shortname = "productformfeature";
+    public static final String refname = "ProductFormFeature";
+    public static final String shortname = "productformfeature";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ProductFormFeature EMPTY = new ProductFormFeature();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProductFormFeature EMPTY = new ProductFormFeature();
 
-	public ProductFormFeature()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ProductFormFeature() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ProductFormFeature(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ProductFormFeature(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname))
-				productFormFeatureType = new ProductFormFeatureType(e);
-			else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname))
-				productFormFeatureValue = new ProductFormFeatureValue(e);
-			else if (name.equals(ProductFormFeatureDescription.refname)
-					|| name.equals(ProductFormFeatureDescription.shortname))
-				productFormFeatureDescription = new ProductFormFeatureDescription(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProductFormFeatureType.refname) || name.equals(ProductFormFeatureType.shortname)) {
+                productFormFeatureType = new ProductFormFeatureType(e);
+            } else if (name.equals(ProductFormFeatureValue.refname) || name.equals(ProductFormFeatureValue.shortname)) {
+                productFormFeatureValue = new ProductFormFeatureValue(e);
+            } else if (name.equals(ProductFormFeatureDescription.refname) ||
+                name.equals(ProductFormFeatureDescription.shortname)) {
+                productFormFeatureDescription = new ProductFormFeatureDescription(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ProductFormFeatureType productFormFeatureType = ProductFormFeatureType.EMPTY;
+    private ProductFormFeatureType productFormFeatureType = ProductFormFeatureType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductFormFeatureType productFormFeatureType()
-	{
-		initialize();
-		return productFormFeatureType;
-	}
+    /**
+     * (this field is required)
+     */
+    public ProductFormFeatureType productFormFeatureType() {
+        initialize();
+        return productFormFeatureType;
+    }
 
-	private ProductFormFeatureValue productFormFeatureValue = ProductFormFeatureValue.EMPTY;
+    private ProductFormFeatureValue productFormFeatureValue = ProductFormFeatureValue.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ProductFormFeatureValue productFormFeatureValue()
-	{
-		initialize();
-		return productFormFeatureValue;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ProductFormFeatureValue productFormFeatureValue() {
+        initialize();
+        return productFormFeatureValue;
+    }
 
-	private ProductFormFeatureDescription productFormFeatureDescription = ProductFormFeatureDescription.EMPTY;
+    private ProductFormFeatureDescription productFormFeatureDescription = ProductFormFeatureDescription.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ProductFormFeatureDescription productFormFeatureDescription()
-	{
-		initialize();
-		return productFormFeatureDescription;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ProductFormFeatureDescription productFormFeatureDescription() {
+        initialize();
+        return productFormFeatureDescription;
+    }
 
-	@Override
-	public JonixProductFormFeature asStruct()
-	{
-		initialize();
-		JonixProductFormFeature struct = new JonixProductFormFeature();
-		struct.productFormFeatureType = productFormFeatureType.value;
-		struct.productFormFeatureDescriptions = Collections.singletonList(productFormFeatureDescription.value);
-		struct.productFormFeatureValue = productFormFeatureValue.value;
-		return struct;
-	}
+    @Override
+    public JonixProductFormFeature asStruct() {
+        initialize();
+        JonixProductFormFeature struct = new JonixProductFormFeature();
+        struct.productFormFeatureType = productFormFeatureType.value;
+        struct.productFormFeatureDescriptions = Arrays.asList(productFormFeatureDescription.value);
+        struct.productFormFeatureValue = productFormFeatureValue.value;
+        return struct;
+    }
 
-	@Override
-	public ProductFormFeatureTypes structKey()
-	{
-		return productFormFeatureType().value;
-	}
+    @Override
+    public ProductFormFeatureTypes structKey() {
+        return productFormFeatureType().value;
+    }
 }

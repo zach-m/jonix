@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -31,162 +29,145 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixLocationIdentifier;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Location identifier composite</h1>
- * <p>
- * A group of data elements which together define the identifier of a stock location in accordance with a specified
- * scheme, and allowing different types of location identifier to be supported without defining additional data
- * elements. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;LocationIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;locationidentifier&gt;</td>
- * </tr>
- * </table>
+ * <h1>Location identifier composite</h1><p>A group of data elements which together define the identifier of a stock
+ * location in accordance with a specified scheme, and allowing different types of location identifier to be supported
+ * without defining additional data elements. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;LocationIdentifier&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;locationidentifier&gt;</td></tr></table>
  */
 public class LocationIdentifier
-		implements OnixDataCompositeWithKey<JonixLocationIdentifier, SupplierIdentifierTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixLocationIdentifier, SupplierIdentifierTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "LocationIdentifier";
-	public static final String shortname = "locationidentifier";
+    public static final String refname = "LocationIdentifier";
+    public static final String shortname = "locationidentifier";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final LocationIdentifier EMPTY = new LocationIdentifier();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final LocationIdentifier EMPTY = new LocationIdentifier();
 
-	public LocationIdentifier()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public LocationIdentifier() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public LocationIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public LocationIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(LocationIDType.refname) || name.equals(LocationIDType.shortname))
-				locationIDType = new LocationIDType(e);
-			else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname))
-				idTypeName = new IDTypeName(e);
-			else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname))
-				idValue = new IDValue(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(LocationIDType.refname) || name.equals(LocationIDType.shortname)) {
+                locationIDType = new LocationIDType(e);
+            } else if (name.equals(IDTypeName.refname) || name.equals(IDTypeName.shortname)) {
+                idTypeName = new IDTypeName(e);
+            } else if (name.equals(IDValue.refname) || name.equals(IDValue.shortname)) {
+                idValue = new IDValue(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private LocationIDType locationIDType = LocationIDType.EMPTY;
+    private LocationIDType locationIDType = LocationIDType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public LocationIDType locationIDType()
-	{
-		initialize();
-		return locationIDType;
-	}
+    /**
+     * (this field is required)
+     */
+    public LocationIDType locationIDType() {
+        initialize();
+        return locationIDType;
+    }
 
-	private IDTypeName idTypeName = IDTypeName.EMPTY;
+    private IDTypeName idTypeName = IDTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public IDTypeName idTypeName()
-	{
-		initialize();
-		return idTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public IDTypeName idTypeName() {
+        initialize();
+        return idTypeName;
+    }
 
-	private IDValue idValue = IDValue.EMPTY;
+    private IDValue idValue = IDValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public IDValue idValue()
-	{
-		initialize();
-		return idValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public IDValue idValue() {
+        initialize();
+        return idValue;
+    }
 
-	@Override
-	public JonixLocationIdentifier asStruct()
-	{
-		initialize();
-		JonixLocationIdentifier struct = new JonixLocationIdentifier();
-		struct.locationIDType = locationIDType.value;
-		struct.idTypeName = idTypeName.value;
-		struct.idValue = idValue.value;
-		return struct;
-	}
+    @Override
+    public JonixLocationIdentifier asStruct() {
+        initialize();
+        JonixLocationIdentifier struct = new JonixLocationIdentifier();
+        struct.locationIDType = locationIDType.value;
+        struct.idTypeName = idTypeName.value;
+        struct.idValue = idValue.value;
+        return struct;
+    }
 
-	@Override
-	public SupplierIdentifierTypes structKey()
-	{
-		return locationIDType().value;
-	}
+    @Override
+    public SupplierIdentifierTypes structKey() {
+        return locationIDType().value;
+    }
 }

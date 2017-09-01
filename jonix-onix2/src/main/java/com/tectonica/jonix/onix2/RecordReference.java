@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,121 +27,95 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Record reference number</h1>
- * <p>
- * For every product, you must choose a single number which will uniquely identify the Information record which you send
- * out about that product, and which will remain as its permanent identifier every time you send an update. It doesn’t
- * matter what number you choose, provided that it is unique and permanent. This number doesn’t really identify the
- * product – even though you may choose to use the ISBN or another product identifier – it identifies your information
- * record about the product, so that the person to whom you are sending an update can match it with what you have
- * previously sent. A good way of generating numbers which are not part of a recognized product identification scheme
- * but which can be guaranteed to be unique is to preface the number with an Internet domain name which is registered to
- * your organisation.
- * </p>
- * <p>
- * This field is mandatory and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length, alphanumeric, suggested maximum length 32 characters.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;RecordReference&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;a001&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;RecordReference&gt;8474339790&lt;/RecordReference&gt;</td>
- * </tr>
- * </table>
+ * <h1>Record reference number</h1><p>For every product, you must choose a single number which will uniquely identify
+ * the Information record which you send out about that product, and which will remain as its permanent identifier every
+ * time you send an update. It doesn’t matter what number you choose, provided that it is unique and permanent. This
+ * number doesn’t really identify the product – even though you may choose to use the ISBN or another product identifier
+ * – it identifies your information record about the product, so that the person to whom you are sending an update can
+ * match it with what you have previously sent. A good way of generating numbers which are not part of a recognized
+ * product identification scheme but which can be guaranteed to be unique is to preface the number with an Internet
+ * domain name which is registered to your organisation.</p><p>This field is mandatory and non-repeating.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length, alphanumeric, suggested maximum length 32
+ * characters.</td></tr><tr><td>Reference name</td><td>&lt;RecordReference&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;a001&gt;</td></tr><tr><td>Example</td><td>&lt;RecordReference&gt;8474339790&lt;/RecordReference&gt;</td></tr></table>
  */
-public class RecordReference implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class RecordReference implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "RecordReference";
-	public static final String shortname = "a001";
+    public static final String refname = "RecordReference";
+    public static final String shortname = "a001";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length, alphanumeric, suggested maximum length 32 characters.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final RecordReference EMPTY = new RecordReference();
+    private final boolean exists;
+    public static final RecordReference EMPTY = new RecordReference();
 
-	public RecordReference()
-	{
-		exists = false;
-	}
+    public RecordReference() {
+        exists = false;
+    }
 
-	public RecordReference(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public RecordReference(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

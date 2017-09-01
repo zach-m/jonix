@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.SalesRights;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX2 concrete implementation for {@link BasicSalesRightss}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSalesRightss2 extends BasicSalesRightss
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSalesRightss2 extends BasicSalesRightss {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicSalesRightss2(Product product)
-	{
-		this.product = product;
-	}
+    public BasicSalesRightss2(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicSalesRights> initialize()
-	{
-		List<BasicSalesRights> list = new ArrayList<>();
-		for (SalesRights salesRights : product.salesRightss())
-			list.add(new BasicSalesRights2(salesRights));
-		return list;
-	}
+    @Override
+    protected List<BasicSalesRights> initialize() {
+        List<BasicSalesRights> list = new ArrayList<>();
+        for (SalesRights salesRights : product.salesRightss()) {
+            list.add(new BasicSalesRights2(salesRights));
+        }
+        return list;
+    }
 }

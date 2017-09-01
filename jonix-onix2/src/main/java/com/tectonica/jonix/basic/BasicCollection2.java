@@ -19,53 +19,48 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.struct.JonixCollectionIdentifier;
 import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX2 concrete implementation for {@link BasicCollection}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicCollection2 extends BasicCollection
-{
-	private static final long serialVersionUID = 1L;
+public class BasicCollection2 extends BasicCollection {
+    private static final long serialVersionUID = 1L;
 
-	@SuppressWarnings("serial")
-	public BasicCollection2(final Series c)
-	{
-		mainTitle = c.titleOfSeries().value;
-		numberWithinSeries = c.numberWithinSeries().value;
-		seriesIdentifiers = new LazyList<JonixCollectionIdentifier>()
-		{
-			@Override
-			protected List<JonixCollectionIdentifier> initialize()
-			{
-				return sidsToCids(c.seriesIdentifiers().asStructs());
-			}
-		};
-		titles = new BasicTitles2(c);
-		contributors = new BasicContributors2(c);
-	}
+    @SuppressWarnings("serial")
+    public BasicCollection2(final Series c) {
+        mainTitle = c.titleOfSeries().value;
+        numberWithinSeries = c.numberWithinSeries().value;
+        seriesIdentifiers = new LazyList<JonixCollectionIdentifier>() {
+            @Override
+            protected List<JonixCollectionIdentifier> initialize() {
+                return sidsToCids(c.seriesIdentifiers().asStructs());
+            }
+        };
+        titles = new BasicTitles2(c);
+        contributors = new BasicContributors2(c);
+    }
 
-	private static List<JonixCollectionIdentifier> sidsToCids(List<JonixSeriesIdentifier> sids)
-	{
-		if (sids == null)
-			return null;
+    private static List<JonixCollectionIdentifier> sidsToCids(List<JonixSeriesIdentifier> sids) {
+        if (sids == null) {
+            return null;
+        }
 
-		List<JonixCollectionIdentifier> result = new ArrayList<>();
-		for (JonixSeriesIdentifier sid : sids)
-		{
-			JonixCollectionIdentifier cid = new JonixCollectionIdentifier();
-			cid.collectionIDType = sid.seriesIDType;
-			cid.idTypeName = sid.idTypeName;
-			cid.idValue = sid.idValue;
-			result.add(cid);
-		}
-		return result;
-	}
+        List<JonixCollectionIdentifier> result = new ArrayList<>();
+        for (JonixSeriesIdentifier sid : sids) {
+            JonixCollectionIdentifier cid = new JonixCollectionIdentifier();
+            cid.collectionIDType = sid.seriesIDType;
+            cid.idTypeName = sid.idTypeName;
+            cid.idValue = sid.idValue;
+            result.add(cid);
+        }
+        return result;
+    }
 }

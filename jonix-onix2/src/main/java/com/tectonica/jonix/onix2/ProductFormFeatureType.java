@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,111 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product form feature type</h1>
- * <p>
- * An ONIX code which specifies the feature described by an instance of the &lt;ProductFormFeature&gt; composite,
- * <em>eg</em> binding color. Mandatory in each occurrence of the composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 79</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductFormFeatureType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b334&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b334&gt;02&lt;/b334&gt;&#160;&#160;&#160;&#160;Page edge color</td>
- * </tr>
- * </table>
+ * <h1>Product form feature type</h1><p>An ONIX code which specifies the feature described by an instance of the
+ * &lt;ProductFormFeature&gt; composite, <em>eg</em> binding color. Mandatory in each occurrence of the composite, and
+ * non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 79</td></tr><tr><td>Reference name</td><td>&lt;ProductFormFeatureType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b334&gt;</td></tr><tr><td>Example</td><td>&lt;b334&gt;02&lt;/b334&gt;&#160;&#160;&#160;&#160;Page
+ * edge color</td></tr></table>
  */
-public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ProductFormFeatureType implements OnixElement<ProductFormFeatureTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductFormFeatureType";
-	public static final String shortname = "b334";
+    public static final String refname = "ProductFormFeatureType";
+    public static final String shortname = "b334";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ProductFormFeatureTypes value;
+    public ProductFormFeatureTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ProductFormFeatureTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ProductFormFeatureTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ProductFormFeatureType EMPTY = new ProductFormFeatureType();
+    private final boolean exists;
+    public static final ProductFormFeatureType EMPTY = new ProductFormFeatureType();
 
-	public ProductFormFeatureType()
-	{
-		exists = false;
-	}
+    public ProductFormFeatureType() {
+        exists = false;
+    }
 
-	public ProductFormFeatureType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ProductFormFeatureType(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ProductFormFeatureTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = ProductFormFeatureTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeWithKey;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -31,162 +29,146 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixProductClassification;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Product classification composite</h1>
- * <p>
- * A repeatable group of data elements which together define a product classification (NOT to be confused with a subject
- * classification). The intended use is to enable national or international trade classifications (aka commodity codes)
- * to be carried in an ONIX record.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ProductClassification&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;productclassification&gt;</td>
- * </tr>
- * </table>
+ * <h1>Product classification composite</h1><p>A repeatable group of data elements which together define a product
+ * classification (NOT to be confused with a subject classification). The intended use is to enable national or
+ * international trade classifications (aka commodity codes) to be carried in an ONIX record.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;ProductClassification&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;productclassification&gt;</td></tr></table>
  */
 public class ProductClassification
-		implements OnixDataCompositeWithKey<JonixProductClassification, ProductClassificationTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+    implements OnixDataCompositeWithKey<JonixProductClassification, ProductClassificationTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ProductClassification";
-	public static final String shortname = "productclassification";
+    public static final String refname = "ProductClassification";
+    public static final String shortname = "productclassification";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ProductClassification EMPTY = new ProductClassification();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ProductClassification EMPTY = new ProductClassification();
 
-	public ProductClassification()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ProductClassification() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ProductClassification(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ProductClassification(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname))
-				productClassificationType = new ProductClassificationType(e);
-			else if (name.equals(ProductClassificationCode.refname) || name.equals(ProductClassificationCode.shortname))
-				productClassificationCode = new ProductClassificationCode(e);
-			else if (name.equals(Percent.refname) || name.equals(Percent.shortname))
-				percent = new Percent(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ProductClassificationType.refname) || name.equals(ProductClassificationType.shortname)) {
+                productClassificationType = new ProductClassificationType(e);
+            } else if (name.equals(ProductClassificationCode.refname) ||
+                name.equals(ProductClassificationCode.shortname)) {
+                productClassificationCode = new ProductClassificationCode(e);
+            } else if (name.equals(Percent.refname) || name.equals(Percent.shortname)) {
+                percent = new Percent(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ProductClassificationType productClassificationType = ProductClassificationType.EMPTY;
+    private ProductClassificationType productClassificationType = ProductClassificationType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductClassificationType productClassificationType()
-	{
-		initialize();
-		return productClassificationType;
-	}
+    /**
+     * (this field is required)
+     */
+    public ProductClassificationType productClassificationType() {
+        initialize();
+        return productClassificationType;
+    }
 
-	private ProductClassificationCode productClassificationCode = ProductClassificationCode.EMPTY;
+    private ProductClassificationCode productClassificationCode = ProductClassificationCode.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ProductClassificationCode productClassificationCode()
-	{
-		initialize();
-		return productClassificationCode;
-	}
+    /**
+     * (this field is required)
+     */
+    public ProductClassificationCode productClassificationCode() {
+        initialize();
+        return productClassificationCode;
+    }
 
-	private Percent percent = Percent.EMPTY;
+    private Percent percent = Percent.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Percent percent()
-	{
-		initialize();
-		return percent;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Percent percent() {
+        initialize();
+        return percent;
+    }
 
-	@Override
-	public JonixProductClassification asStruct()
-	{
-		initialize();
-		JonixProductClassification struct = new JonixProductClassification();
-		struct.productClassificationType = productClassificationType.value;
-		struct.percent = JPU.convertStringToDouble(percent.value);
-		struct.productClassificationCode = productClassificationCode.value;
-		return struct;
-	}
+    @Override
+    public JonixProductClassification asStruct() {
+        initialize();
+        JonixProductClassification struct = new JonixProductClassification();
+        struct.productClassificationType = productClassificationType.value;
+        struct.percent = JPU.convertStringToDouble(percent.value);
+        struct.productClassificationCode = productClassificationCode.value;
+        return struct;
+    }
 
-	@Override
-	public ProductClassificationTypes structKey()
-	{
-		return productClassificationType().value;
-	}
+    @Override
+    public ProductClassificationTypes structKey() {
+        return productClassificationType().value;
+    }
 }

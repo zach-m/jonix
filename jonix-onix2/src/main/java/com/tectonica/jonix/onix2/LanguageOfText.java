@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,113 +27,88 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Language of text</h1>
- * <p>
- * A code indicating a language in which the text of the product is written: optional, and repeatable if the text is in
- * two or more languages. <strong>The &lt;Language&gt; composite on the next page provides a more general method of
- * handling language detail, and is to be preferred.</strong>
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these codes should always be in
- * lower-case.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>ISO 639-2/B List 74</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;LanguageOfText&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b059&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;LanguageOfText&gt;eng&lt;/LanguageOfText&gt;</td>
- * </tr>
- * </table>
+ * <h1>Language of text</h1><p>A code indicating a language in which the text of the product is written: optional, and
+ * repeatable if the text is in two or more languages. <strong>The &lt;Language&gt; composite on the next page provides
+ * a more general method of handling language detail, and is to be preferred.</strong></p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, three lower-case letters. Note that ISO 639 specifies that these
+ * codes should always be in lower-case.</td></tr><tr><td>Codelist</td><td>ISO 639-2/B List
+ * 74</td></tr><tr><td>Reference name</td><td>&lt;LanguageOfText&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b059&gt;</td></tr><tr><td>Example</td><td>&lt;LanguageOfText&gt;eng&lt;/LanguageOfText&gt;</td></tr></table>
  */
-public class LanguageOfText implements OnixElement<LanguageCodes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class LanguageOfText implements OnixElement<LanguageCodes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "LanguageOfText";
-	public static final String shortname = "b059";
+    public static final String refname = "LanguageOfText";
+    public static final String shortname = "b059";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public LanguageCodes value;
+    public LanguageCodes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public LanguageCodes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public LanguageCodes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final LanguageOfText EMPTY = new LanguageOfText();
+    private final boolean exists;
+    public static final LanguageOfText EMPTY = new LanguageOfText();
 
-	public LanguageOfText()
-	{
-		exists = false;
-	}
+    public LanguageOfText() {
+        exists = false;
+    }
 
-	public LanguageOfText(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public LanguageOfText(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = LanguageCodes.byCode(JPU.getContentAsString(element));
-	}
+        value = LanguageCodes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

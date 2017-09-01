@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Publisher;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX2 concrete implementation for {@link BasicPublishers}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPublishers2 extends BasicPublishers
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPublishers2 extends BasicPublishers {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicPublishers2(Product product)
-	{
-		this.product = product;
-	}
+    public BasicPublishers2(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected List<BasicPublisher> initialize()
-	{
-		List<BasicPublisher> list = new ArrayList<>();
-		for (Publisher publisher : product.publishers())
-			list.add(new BasicPublisher2(publisher));
-		return list;
-	}
+    @Override
+    protected List<BasicPublisher> initialize() {
+        List<BasicPublisher> list = new ArrayList<>();
+        for (Publisher publisher : product.publishers()) {
+            list.add(new BasicPublisher2(publisher));
+        }
+        return list;
+    }
 }

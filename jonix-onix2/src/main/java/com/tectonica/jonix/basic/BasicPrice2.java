@@ -24,18 +24,16 @@ import com.tectonica.jonix.onix2.Price;
 
 /**
  * ONIX2 concrete implementation for {@link BasicPrice}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPrice2 extends BasicPrice
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPrice2 extends BasicPrice {
+    private static final long serialVersionUID = 1L;
 
-	public BasicPrice2(Price p)
-	{
-		priceType = p.priceTypeCode().value;
-		priceAmount = JPU.convertStringToDoubleSafe(p.priceAmount().value);
-		priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
-		currencyCode = p.currencyCode().value;
-	}
+    public BasicPrice2(Price p) {
+        priceType = p.priceTypeCode().value;
+        priceAmount = JPU.convertStringToDoubleSafe(p.priceAmount().value);
+        priceAmountAsStr = (priceAmount == null) ? "" : priceAmount.toString();
+        currencyCode = p.currencyCode().value;
+    }
 }

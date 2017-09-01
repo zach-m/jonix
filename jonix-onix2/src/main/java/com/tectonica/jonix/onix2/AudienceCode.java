@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.Audiences;
@@ -30,111 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Audience code</h1>
- * <p>
- * An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or readership for whom a product
- * is intended. Optional, and repeatable if the product is intended for two or more groups.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 28</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AudienceCode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b073&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;&#160;&#160;&#160;&#160;K-12 school</td>
- * </tr>
- * </table>
+ * <h1>Audience code</h1><p>An ONIX code, derived from BISAC and BIC lists, which identifies the broad audience or
+ * readership for whom a product is intended. Optional, and repeatable if the product is intended for two or more
+ * groups.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 28</td></tr><tr><td>Reference name</td><td>&lt;AudienceCode&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b073&gt;</td></tr><tr><td>Example</td><td>&lt;AudienceCode&gt;04&lt;/AudienceCode&gt;&#160;&#160;&#160;&#160;K-12
+ * school</td></tr></table>
  */
-public class AudienceCode implements OnixElement<Audiences>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class AudienceCode implements OnixElement<Audiences>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AudienceCode";
-	public static final String shortname = "b073";
+    public static final String refname = "AudienceCode";
+    public static final String shortname = "b073";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public Audiences value;
+    public Audiences value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public Audiences _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public Audiences _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final AudienceCode EMPTY = new AudienceCode();
+    private final boolean exists;
+    public static final AudienceCode EMPTY = new AudienceCode();
 
-	public AudienceCode()
-	{
-		exists = false;
-	}
+    public AudienceCode() {
+        exists = false;
+    }
 
-	public AudienceCode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public AudienceCode(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = Audiences.byCode(JPU.getContentAsString(element));
-	}
+        value = Audiences.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

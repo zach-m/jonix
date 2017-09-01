@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.CountryCodes;
@@ -30,116 +28,92 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Country excluded</h1>
- * <p>
- * One or more ISO standard codes identifying a country which is excluded from a territory specified in
- * &lt;Territory&gt;. Successive codes may be separated by spaces. Thus, a single occurrence of the element can carry an
- * unlimited number of country codes. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>One or more fixed-length codes, each with two upper case letters, successive codes being separated by spaces.
- * Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper
- * case only.]</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>ISO 3166-1 two-letter country codes - List 91</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CountryExcluded&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j304&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;j304&gt;US CA&lt;/j304&gt;</td>
- * </tr>
- * </table>
+ * <h1>Country excluded</h1><p>One or more ISO standard codes identifying a country which is excluded from a territory
+ * specified in &lt;Territory&gt;. Successive codes may be separated by spaces. Thus, a single occurrence of the element
+ * can carry an unlimited number of country codes. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>One or more fixed-length codes, each with two upper case letters, successive
+ * codes being separated by spaces. Suggested maximum length 300 characters. [Note that ISO 3166-1 specifies that
+ * country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO 3166-1 two-letter country
+ * codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;CountryExcluded&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j304&gt;</td></tr><tr><td>Example</td><td>&lt;j304&gt;US CA&lt;/j304&gt;</td></tr></table>
  */
-public class CountryExcluded implements OnixElement<java.util.Set<CountryCodes>>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CountryExcluded implements OnixElement<java.util.Set<CountryCodes>>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CountryExcluded";
-	public static final String shortname = "j304";
+    public static final String refname = "CountryExcluded";
+    public static final String shortname = "j304";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public java.util.Set<CountryCodes> value;
+    public java.util.Set<CountryCodes> value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public java.util.Set<CountryCodes> _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public java.util.Set<CountryCodes> _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CountryExcluded EMPTY = new CountryExcluded();
+    private final boolean exists;
+    public static final CountryExcluded EMPTY = new CountryExcluded();
 
-	public CountryExcluded()
-	{
-		exists = false;
-	}
+    public CountryExcluded() {
+        exists = false;
+    }
 
-	public CountryExcluded(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CountryExcluded(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = new java.util.HashSet<>();
-		for (String split : JPU.getContentAsString(element).trim().split(" +"))
-			value.add(CountryCodes.byCode(split));
-	}
+        value = new java.util.HashSet<>();
+        for (String split : JPU.getContentAsString(element).trim().split(" +")) {
+            value.add(CountryCodes.byCode(split));
+        }
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

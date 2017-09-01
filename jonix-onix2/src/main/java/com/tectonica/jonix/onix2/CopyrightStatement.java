@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -32,131 +28,119 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Copyright statement composite</h1>
- * <p>
- * An optional and repeatable group of data elements which together represent a structured copyright statement for the
- * product. Either a structured copyright statement or statements, or a copyright year in the separate
- * &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CopyrightStatement&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;copyrightstatement&gt;</td>
- * </tr>
- * </table>
+ * <h1>Copyright statement composite</h1><p>An optional and repeatable group of data elements which together represent a
+ * structured copyright statement for the product. Either a structured copyright statement or statements, or a copyright
+ * year in the separate &lt;CopyrightYear&gt; element which follows the composite, but not both, may be sent.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;CopyrightStatement&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;copyrightstatement&gt;</td></tr></table>
  */
-public class CopyrightStatement implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CopyrightStatement implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CopyrightStatement";
-	public static final String shortname = "copyrightstatement";
+    public static final String refname = "CopyrightStatement";
+    public static final String shortname = "copyrightstatement";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final CopyrightStatement EMPTY = new CopyrightStatement();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final CopyrightStatement EMPTY = new CopyrightStatement();
 
-	public CopyrightStatement()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public CopyrightStatement() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public CopyrightStatement(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public CopyrightStatement(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname))
-				copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(e));
-			else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname))
-				copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(CopyrightYear.refname) || name.equals(CopyrightYear.shortname)) {
+                copyrightYears = JPU.addToList(copyrightYears, new CopyrightYear(e));
+            } else if (name.equals(CopyrightOwner.refname) || name.equals(CopyrightOwner.shortname)) {
+                copyrightOwners = JPU.addToList(copyrightOwners, new CopyrightOwner(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
+    private ListOfOnixElement<CopyrightYear, String> copyrightYears = ListOfOnixElement.empty();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixElement<CopyrightYear, String> copyrightYears()
-	{
-		initialize();
-		return copyrightYears;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixElement<CopyrightYear, String> copyrightYears() {
+        initialize();
+        return copyrightYears;
+    }
 
-	private List<CopyrightOwner> copyrightOwners = Collections.emptyList();
+    private List<CopyrightOwner> copyrightOwners = Collections.emptyList();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public List<CopyrightOwner> copyrightOwners()
-	{
-		initialize();
-		return copyrightOwners;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public List<CopyrightOwner> copyrightOwners() {
+        initialize();
+        return copyrightOwners;
+    }
 }

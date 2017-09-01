@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,114 +27,91 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>BIC subject category version number</h1>
- * <p>
- * A number identifying the version of the BIC subject category scheme used in &lt;BICMainSubject&gt;. Optional and
- * non-repeating, and may only occur when &lt;BICMainSubject&gt; is also present.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for consistency with
- * other version number elements.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;BICVersion&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b066&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;BICVersion&gt;1&lt;/BICVersion&gt;</td>
- * </tr>
- * </table>
+ * <h1>BIC subject category version number</h1><p>A number identifying the version of the BIC subject category scheme
+ * used in &lt;BICMainSubject&gt;. Optional and non-repeating, and may only occur when &lt;BICMainSubject&gt; is also
+ * present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Free form - in practise expected to be an
+ * integer. Suggested maximum length 10 characters, for consistency with other version number
+ * elements.</td></tr><tr><td>Reference name</td><td>&lt;BICVersion&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b066&gt;</td></tr><tr><td>Example</td><td>&lt;BICVersion&gt;1&lt;/BICVersion&gt;</td></tr></table>
  */
-public class BICVersion implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class BICVersion implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "BICVersion";
-	public static final String shortname = "b066";
+    public static final String refname = "BICVersion";
+    public static final String shortname = "b066";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
-	 * consistency with other version number elements.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Free form - in practise expected to be an integer. Suggested maximum length 10 characters, for
+     * consistency with other version number elements.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final BICVersion EMPTY = new BICVersion();
+    private final boolean exists;
+    public static final BICVersion EMPTY = new BICVersion();
 
-	public BICVersion()
-	{
-		exists = false;
-	}
+    public BICVersion() {
+        exists = false;
+    }
 
-	public BICVersion(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public BICVersion(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

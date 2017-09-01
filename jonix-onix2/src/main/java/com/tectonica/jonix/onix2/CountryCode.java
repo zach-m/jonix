@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.CountryCodes;
@@ -30,114 +28,88 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Country code</h1>
- * <p>
- * A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This allows a supplier to list
- * different prices for specific countries by repeating the &lt;Price&gt; composite rather than having to repeat the
- * whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price applies to multiple
- * countries.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two letters. [Note that ISO 3166-1 specifies that country codes shall be sent as upper case
- * only.]</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>ISO 3166-1 two-letter country codes - List 91</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CountryCode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b251&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b251&gt;GB&lt;/b251&gt;</td>
- * </tr>
- * </table>
+ * <h1>Country code</h1><p>A code identifying a country in which the price given in &lt;PriceAmount&gt; applies. This
+ * allows a supplier to list different prices for specific countries by repeating the &lt;Price&gt; composite rather
+ * than having to repeat the whole of the &lt;SupplyDetail&gt; composite. Optional, and repeatable if a single price
+ * applies to multiple countries.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two letters.
+ * [Note that ISO 3166-1 specifies that country codes shall be sent as upper case only.]</td></tr><tr><td>Codelist</td><td>ISO
+ * 3166-1 two-letter country codes - List 91</td></tr><tr><td>Reference name</td><td>&lt;CountryCode&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b251&gt;</td></tr><tr><td>Example</td><td>&lt;b251&gt;GB&lt;/b251&gt;</td></tr></table>
  */
-public class CountryCode implements OnixElement<CountryCodes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CountryCode implements OnixElement<CountryCodes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CountryCode";
-	public static final String shortname = "b251";
+    public static final String refname = "CountryCode";
+    public static final String shortname = "b251";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public CountryCodes value;
+    public CountryCodes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public CountryCodes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public CountryCodes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CountryCode EMPTY = new CountryCode();
+    private final boolean exists;
+    public static final CountryCode EMPTY = new CountryCode();
 
-	public CountryCode()
-	{
-		exists = false;
-	}
+    public CountryCode() {
+        exists = false;
+    }
 
-	public CountryCode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CountryCode(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = CountryCodes.byCode(JPU.getContentAsString(element));
-	}
+        value = CountryCodes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

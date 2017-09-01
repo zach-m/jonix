@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,144 +27,129 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Copyright owner composite</h1>
- * <p>
- * A repeatable group of data elements which together name a copyright owner. At least one occurrence is mandatory in
- * each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of the &lt;CopyrightOwner&gt; composite
- * must carry a single name (personal or corporate), or an identifier, or both.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CopyrightOwner&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;copyrightowner&gt;</td>
- * </tr>
- * </table>
+ * <h1>Copyright owner composite</h1><p>A repeatable group of data elements which together name a copyright owner. At
+ * least one occurrence is mandatory in each occurrence of the &lt;CopyrightStatement&gt; composite. Each occurrence of
+ * the &lt;CopyrightOwner&gt; composite must carry a single name (personal or corporate), or an identifier, or
+ * both.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;CopyrightOwner&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;copyrightowner&gt;</td></tr></table>
  */
-public class CopyrightOwner implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CopyrightOwner implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CopyrightOwner";
-	public static final String shortname = "copyrightowner";
+    public static final String refname = "CopyrightOwner";
+    public static final String shortname = "copyrightowner";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final CopyrightOwner EMPTY = new CopyrightOwner();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final CopyrightOwner EMPTY = new CopyrightOwner();
 
-	public CopyrightOwner()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public CopyrightOwner() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public CopyrightOwner(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public CopyrightOwner(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname))
-				copyrightOwnerIdentifier = new CopyrightOwnerIdentifier(e);
-			else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname))
-				personName = new PersonName(e);
-			else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname))
-				corporateName = new CorporateName(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(CopyrightOwnerIdentifier.refname) || name.equals(CopyrightOwnerIdentifier.shortname)) {
+                copyrightOwnerIdentifier = new CopyrightOwnerIdentifier(e);
+            } else if (name.equals(PersonName.refname) || name.equals(PersonName.shortname)) {
+                personName = new PersonName(e);
+            } else if (name.equals(CorporateName.refname) || name.equals(CorporateName.shortname)) {
+                corporateName = new CorporateName(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private CopyrightOwnerIdentifier copyrightOwnerIdentifier = CopyrightOwnerIdentifier.EMPTY;
+    private CopyrightOwnerIdentifier copyrightOwnerIdentifier = CopyrightOwnerIdentifier.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public CopyrightOwnerIdentifier copyrightOwnerIdentifier()
-	{
-		initialize();
-		return copyrightOwnerIdentifier;
-	}
+    /**
+     * (this field is required)
+     */
+    public CopyrightOwnerIdentifier copyrightOwnerIdentifier() {
+        initialize();
+        return copyrightOwnerIdentifier;
+    }
 
-	private PersonName personName = PersonName.EMPTY;
+    private PersonName personName = PersonName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PersonName personName()
-	{
-		initialize();
-		return personName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PersonName personName() {
+        initialize();
+        return personName;
+    }
 
-	private CorporateName corporateName = CorporateName.EMPTY;
+    private CorporateName corporateName = CorporateName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public CorporateName corporateName()
-	{
-		initialize();
-		return corporateName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public CorporateName corporateName() {
+        initialize();
+        return corporateName;
+    }
 }

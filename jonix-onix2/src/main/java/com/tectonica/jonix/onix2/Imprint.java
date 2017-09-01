@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeUncommon;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,156 +27,140 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Imprint or brand composite</h1>
- * <p>
- * A repeatable group of data elements which together identify an imprint or brand under which the product is marketed.
- * The composite must carry either a name code or a name or both.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Imprint&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;imprint&gt;</td>
- * </tr>
- * </table>
+ * <h1>Imprint or brand composite</h1><p>A repeatable group of data elements which together identify an imprint or brand
+ * under which the product is marketed. The composite must carry either a name code or a name or both.</p><table
+ * border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Imprint&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;imprint&gt;</td></tr></table>
  */
-public class Imprint implements OnixDataCompositeUncommon, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Imprint implements OnixDataCompositeUncommon, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Imprint";
-	public static final String shortname = "imprint";
+    public static final String refname = "Imprint";
+    public static final String shortname = "imprint";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Imprint EMPTY = new Imprint();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Imprint EMPTY = new Imprint();
 
-	public Imprint()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Imprint() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Imprint(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Imprint(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname))
-				imprintName = new ImprintName(e);
-			else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname))
-				nameCodeType = new NameCodeType(e);
-			else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname))
-				nameCodeTypeName = new NameCodeTypeName(e);
-			else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname))
-				nameCodeValue = new NameCodeValue(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(ImprintName.refname) || name.equals(ImprintName.shortname)) {
+                imprintName = new ImprintName(e);
+            } else if (name.equals(NameCodeType.refname) || name.equals(NameCodeType.shortname)) {
+                nameCodeType = new NameCodeType(e);
+            } else if (name.equals(NameCodeTypeName.refname) || name.equals(NameCodeTypeName.shortname)) {
+                nameCodeTypeName = new NameCodeTypeName(e);
+            } else if (name.equals(NameCodeValue.refname) || name.equals(NameCodeValue.shortname)) {
+                nameCodeValue = new NameCodeValue(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private ImprintName imprintName = ImprintName.EMPTY;
+    private ImprintName imprintName = ImprintName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public ImprintName imprintName()
-	{
-		initialize();
-		return imprintName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public ImprintName imprintName() {
+        initialize();
+        return imprintName;
+    }
 
-	private NameCodeType nameCodeType = NameCodeType.EMPTY;
+    private NameCodeType nameCodeType = NameCodeType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public NameCodeType nameCodeType()
-	{
-		initialize();
-		return nameCodeType;
-	}
+    /**
+     * (this field is required)
+     */
+    public NameCodeType nameCodeType() {
+        initialize();
+        return nameCodeType;
+    }
 
-	private NameCodeTypeName nameCodeTypeName = NameCodeTypeName.EMPTY;
+    private NameCodeTypeName nameCodeTypeName = NameCodeTypeName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public NameCodeTypeName nameCodeTypeName()
-	{
-		initialize();
-		return nameCodeTypeName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public NameCodeTypeName nameCodeTypeName() {
+        initialize();
+        return nameCodeTypeName;
+    }
 
-	private NameCodeValue nameCodeValue = NameCodeValue.EMPTY;
+    private NameCodeValue nameCodeValue = NameCodeValue.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public NameCodeValue nameCodeValue()
-	{
-		initialize();
-		return nameCodeValue;
-	}
+    /**
+     * (this field is required)
+     */
+    public NameCodeValue nameCodeValue() {
+        initialize();
+        return nameCodeValue;
+    }
 }

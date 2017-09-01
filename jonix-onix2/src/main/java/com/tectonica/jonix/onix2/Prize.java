@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collections;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -32,181 +28,164 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPrize;
 
+import java.io.Serializable;
+import java.util.Arrays;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Prize or award composite</h1>
- * <p>
- * A repeatable group of data elements which together describe a prize or award won by the product.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Prize&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;prize&gt;</td>
- * </tr>
- * </table>
+ * <h1>Prize or award composite</h1><p>A repeatable group of data elements which together describe a prize or award won
+ * by the product.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Prize&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;prize&gt;</td></tr></table>
  */
-public class Prize implements OnixDataComposite<JonixPrize>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Prize";
-	public static final String shortname = "prize";
+    public static final String refname = "Prize";
+    public static final String shortname = "prize";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Prize EMPTY = new Prize();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Prize EMPTY = new Prize();
 
-	public Prize()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Prize() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Prize(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Prize(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname))
-				prizeName = new PrizeName(e);
-			else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname))
-				prizeYear = new PrizeYear(e);
-			else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname))
-				prizeCountry = new PrizeCountry(e);
-			else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname))
-				prizeCode = new PrizeCode(e);
-			else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname))
-				prizeJury = new PrizeJury(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(PrizeName.refname) || name.equals(PrizeName.shortname)) {
+                prizeName = new PrizeName(e);
+            } else if (name.equals(PrizeYear.refname) || name.equals(PrizeYear.shortname)) {
+                prizeYear = new PrizeYear(e);
+            } else if (name.equals(PrizeCountry.refname) || name.equals(PrizeCountry.shortname)) {
+                prizeCountry = new PrizeCountry(e);
+            } else if (name.equals(PrizeCode.refname) || name.equals(PrizeCode.shortname)) {
+                prizeCode = new PrizeCode(e);
+            } else if (name.equals(PrizeJury.refname) || name.equals(PrizeJury.shortname)) {
+                prizeJury = new PrizeJury(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private PrizeName prizeName = PrizeName.EMPTY;
+    private PrizeName prizeName = PrizeName.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public PrizeName prizeName()
-	{
-		initialize();
-		return prizeName;
-	}
+    /**
+     * (this field is required)
+     */
+    public PrizeName prizeName() {
+        initialize();
+        return prizeName;
+    }
 
-	private PrizeYear prizeYear = PrizeYear.EMPTY;
+    private PrizeYear prizeYear = PrizeYear.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeYear prizeYear()
-	{
-		initialize();
-		return prizeYear;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PrizeYear prizeYear() {
+        initialize();
+        return prizeYear;
+    }
 
-	private PrizeCountry prizeCountry = PrizeCountry.EMPTY;
+    private PrizeCountry prizeCountry = PrizeCountry.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeCountry prizeCountry()
-	{
-		initialize();
-		return prizeCountry;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PrizeCountry prizeCountry() {
+        initialize();
+        return prizeCountry;
+    }
 
-	private PrizeCode prizeCode = PrizeCode.EMPTY;
+    private PrizeCode prizeCode = PrizeCode.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeCode prizeCode()
-	{
-		initialize();
-		return prizeCode;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PrizeCode prizeCode() {
+        initialize();
+        return prizeCode;
+    }
 
-	private PrizeJury prizeJury = PrizeJury.EMPTY;
+    private PrizeJury prizeJury = PrizeJury.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PrizeJury prizeJury()
-	{
-		initialize();
-		return prizeJury;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PrizeJury prizeJury() {
+        initialize();
+        return prizeJury;
+    }
 
-	@Override
-	public JonixPrize asStruct()
-	{
-		initialize();
-		JonixPrize struct = new JonixPrize();
-		struct.prizeCode = prizeCode.value;
-		struct.prizeCountry = prizeCountry.value;
-		struct.prizeJurys = Collections.singletonList(prizeJury.value);
-		struct.prizeNames = Collections.singletonList(prizeName.value);
-		struct.prizeYear = prizeYear.value;
-		return struct;
-	}
+    @Override
+    public JonixPrize asStruct() {
+        initialize();
+        JonixPrize struct = new JonixPrize();
+        struct.prizeCode = prizeCode.value;
+        struct.prizeCountry = prizeCountry.value;
+        struct.prizeJurys = Arrays.asList(prizeJury.value);
+        struct.prizeNames = Arrays.asList(prizeName.value);
+        struct.prizeYear = prizeYear.value;
+        return struct;
+    }
 }

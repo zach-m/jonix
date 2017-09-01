@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.AvailabilityStatuss;
@@ -30,123 +28,92 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Availability status code</h1>
- * <p>
- * An ONIX code indicating the availability of a product. Each occurrence of the &lt;SupplyDetail&gt; composite must
- * carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both, but &lt;ProductAvailability&gt; is now
- * strongly preferred. Non-repeating.
- * </p>
- * <p>
- * Some code values require other accompanying data. Where the code lists state that one of the following is required or
- * may optionally be sent, use the element indicated below:
- * </p>
- * <ul>
- * <li>Expected availability date – use &lt;ExpectedShipDate&gt;</li>
- * <li>Remainder date – &lt;ExpectedShipDate&gt; is again used</li>
- * <li>Estimated time to supply – &lt;OrderTime&gt;</li>
- * <li>Identifier of alternative or successor product – &lt;RelatedProduct&gt;, Group&nbsp;PR.23</li>
- * <li>New supplier – &lt;NewSupplier&gt;</li>
- * </ul>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two letters</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 54</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AvailabilityCode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j141&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;AvailabilityCode&gt;OP&lt;/AvailabilityCode&gt;&#160;&#160;&#160;Out of print</td>
- * </tr>
- * </table>
+ * <h1>Availability status code</h1><p>An ONIX code indicating the availability of a product. Each occurrence of the
+ * &lt;SupplyDetail&gt; composite must carry either &lt;AvailabilityCode&gt; or &lt;ProductAvailability&gt;, or both,
+ * but &lt;ProductAvailability&gt; is now strongly preferred. Non-repeating.</p><p>Some code values require other
+ * accompanying data. Where the code lists state that one of the following is required or may optionally be sent, use
+ * the element indicated below:</p><ul> <li>Expected availability date – use &lt;ExpectedShipDate&gt;</li> <li>Remainder
+ * date – &lt;ExpectedShipDate&gt; is again used</li> <li>Estimated time to supply – &lt;OrderTime&gt;</li>
+ * <li>Identifier of alternative or successor product – &lt;RelatedProduct&gt;, Group&nbsp;PR.23</li> <li>New supplier –
+ * &lt;NewSupplier&gt;</li> </ul><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * letters</td></tr><tr><td>Codelist</td><td>List 54</td></tr><tr><td>Reference name</td><td>&lt;AvailabilityCode&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j141&gt;</td></tr><tr><td>Example</td><td>&lt;AvailabilityCode&gt;OP&lt;/AvailabilityCode&gt;&#160;&#160;&#160;Out
+ * of print</td></tr></table>
  */
-public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class AvailabilityCode implements OnixElement<AvailabilityStatuss>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AvailabilityCode";
-	public static final String shortname = "j141";
+    public static final String refname = "AvailabilityCode";
+    public static final String shortname = "j141";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public AvailabilityStatuss value;
+    public AvailabilityStatuss value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public AvailabilityStatuss _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public AvailabilityStatuss _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final AvailabilityCode EMPTY = new AvailabilityCode();
+    private final boolean exists;
+    public static final AvailabilityCode EMPTY = new AvailabilityCode();
 
-	public AvailabilityCode()
-	{
-		exists = false;
-	}
+    public AvailabilityCode() {
+        exists = false;
+    }
 
-	public AvailabilityCode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public AvailabilityCode(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = AvailabilityStatuss.byCode(JPU.getContentAsString(element));
-	}
+        value = AvailabilityStatuss.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

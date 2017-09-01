@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -31,195 +29,176 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixOnOrderDetail;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Stock quantity composite</h1>
- * <p>
- * A repeatable group of data elements which together specify a quantity of stock and, where a supplier has more than
- * one warehouse, a supplier location. Optional.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Stock&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;stock&gt;</td>
- * </tr>
- * </table>
+ * <h1>Stock quantity composite</h1><p>A repeatable group of data elements which together specify a quantity of stock
+ * and, where a supplier has more than one warehouse, a supplier location. Optional.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;Stock&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;stock&gt;</td></tr></table>
  */
-public class Stock implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Stock implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Stock";
-	public static final String shortname = "stock";
+    public static final String refname = "Stock";
+    public static final String shortname = "stock";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Stock EMPTY = new Stock();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Stock EMPTY = new Stock();
 
-	public Stock()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Stock() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Stock(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Stock(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname))
-				locationIdentifier = new LocationIdentifier(e);
-			else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname))
-				locationName = new LocationName(e);
-			else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname))
-				stockQuantityCoded = new StockQuantityCoded(e);
-			else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname))
-				onHand = new OnHand(e);
-			else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname))
-				onOrder = new OnOrder(e);
-			else if (name.equals(CBO.refname) || name.equals(CBO.shortname))
-				cbo = new CBO(e);
-			else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname))
-				onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(LocationIdentifier.refname) || name.equals(LocationIdentifier.shortname)) {
+                locationIdentifier = new LocationIdentifier(e);
+            } else if (name.equals(LocationName.refname) || name.equals(LocationName.shortname)) {
+                locationName = new LocationName(e);
+            } else if (name.equals(StockQuantityCoded.refname) || name.equals(StockQuantityCoded.shortname)) {
+                stockQuantityCoded = new StockQuantityCoded(e);
+            } else if (name.equals(OnHand.refname) || name.equals(OnHand.shortname)) {
+                onHand = new OnHand(e);
+            } else if (name.equals(OnOrder.refname) || name.equals(OnOrder.shortname)) {
+                onOrder = new OnOrder(e);
+            } else if (name.equals(CBO.refname) || name.equals(CBO.shortname)) {
+                cbo = new CBO(e);
+            } else if (name.equals(OnOrderDetail.refname) || name.equals(OnOrderDetail.shortname)) {
+                onOrderDetails = JPU.addToList(onOrderDetails, new OnOrderDetail(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private LocationIdentifier locationIdentifier = LocationIdentifier.EMPTY;
+    private LocationIdentifier locationIdentifier = LocationIdentifier.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public LocationIdentifier locationIdentifier()
-	{
-		initialize();
-		return locationIdentifier;
-	}
+    /**
+     * (this field is optional)
+     */
+    public LocationIdentifier locationIdentifier() {
+        initialize();
+        return locationIdentifier;
+    }
 
-	private LocationName locationName = LocationName.EMPTY;
+    private LocationName locationName = LocationName.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public LocationName locationName()
-	{
-		initialize();
-		return locationName;
-	}
+    /**
+     * (this field is optional)
+     */
+    public LocationName locationName() {
+        initialize();
+        return locationName;
+    }
 
-	private StockQuantityCoded stockQuantityCoded = StockQuantityCoded.EMPTY;
+    private StockQuantityCoded stockQuantityCoded = StockQuantityCoded.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public StockQuantityCoded stockQuantityCoded()
-	{
-		initialize();
-		return stockQuantityCoded;
-	}
+    /**
+     * (this field is required)
+     */
+    public StockQuantityCoded stockQuantityCoded() {
+        initialize();
+        return stockQuantityCoded;
+    }
 
-	private OnHand onHand = OnHand.EMPTY;
+    private OnHand onHand = OnHand.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public OnHand onHand()
-	{
-		initialize();
-		return onHand;
-	}
+    /**
+     * (this field is optional)
+     */
+    public OnHand onHand() {
+        initialize();
+        return onHand;
+    }
 
-	private OnOrder onOrder = OnOrder.EMPTY;
+    private OnOrder onOrder = OnOrder.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public OnOrder onOrder()
-	{
-		initialize();
-		return onOrder;
-	}
+    /**
+     * (this field is optional)
+     */
+    public OnOrder onOrder() {
+        initialize();
+        return onOrder;
+    }
 
-	private CBO cbo = CBO.EMPTY;
+    private CBO cbo = CBO.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public CBO cbo()
-	{
-		initialize();
-		return cbo;
-	}
+    /**
+     * (this field is optional)
+     */
+    public CBO cbo() {
+        initialize();
+        return cbo;
+    }
 
-	private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();
+    private ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails = ListOfOnixDataComposite.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails()
-	{
-		initialize();
-		return onOrderDetails;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails() {
+        initialize();
+        return onOrderDetails;
+    }
 }

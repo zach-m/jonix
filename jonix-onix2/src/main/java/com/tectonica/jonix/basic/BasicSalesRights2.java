@@ -23,20 +23,18 @@ import com.tectonica.jonix.onix2.SalesRights;
 
 /**
  * ONIX2 concrete implementation for {@link BasicSalesRights}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSalesRights2 extends BasicSalesRights
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSalesRights2 extends BasicSalesRights {
+    private static final long serialVersionUID = 1L;
 
-	public BasicSalesRights2(SalesRights salesRights)
-	{
-		salesRightsType = salesRights.salesRightsType().value;
-		countries = salesRights.rightsCountrys().values();
-		regions = salesRights.rightsTerritory().value;
-		rightRegions = salesRights.rightsRegions().values();
-		countriesExcluded = null;
-		regionsExcluded = null;
-	}
+    public BasicSalesRights2(SalesRights salesRights) {
+        salesRightsType = salesRights.salesRightsType().value;
+        countries = salesRights.rightsCountrys().values();
+        regions = salesRights.rightsTerritory().value;
+        rightRegions = salesRights.rightsRegions().values();
+        countriesExcluded = null;
+        regionsExcluded = null;
+    }
 }

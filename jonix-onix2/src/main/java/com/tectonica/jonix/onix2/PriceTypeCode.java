@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,111 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Price type code</h1>
- * <p>
- * An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the &lt;Price&gt; composite.
- * Optional, provided that a &lt;DefaultPriceTypeCode&gt; has been specified in the message header, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 58</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PriceTypeCode&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j148&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;PriceTypeCode&gt;21&lt;/PriceTypeCode&gt;&#160;&#160;&#160;&#160;Pre-publication RRP excluding tax</td>
- * </tr>
- * </table>
+ * <h1>Price type code</h1><p>An ONIX code indicating the type of the price in the &lt;PriceAmount&gt; field within the
+ * &lt;Price&gt; composite. Optional, provided that a &lt;DefaultPriceTypeCode&gt; has been specified in the message
+ * header, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits</td></tr><tr><td>Codelist</td><td>List 58</td></tr><tr><td>Reference name</td><td>&lt;PriceTypeCode&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j148&gt;</td></tr><tr><td>Example</td><td>&lt;PriceTypeCode&gt;21&lt;/PriceTypeCode&gt;&#160;&#160;&#160;&#160;Pre-publication
+ * RRP excluding tax</td></tr></table>
  */
-public class PriceTypeCode implements OnixElement<PriceTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PriceTypeCode implements OnixElement<PriceTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PriceTypeCode";
-	public static final String shortname = "j148";
+    public static final String refname = "PriceTypeCode";
+    public static final String shortname = "j148";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public PriceTypes value;
+    public PriceTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public PriceTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public PriceTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final PriceTypeCode EMPTY = new PriceTypeCode();
+    private final boolean exists;
+    public static final PriceTypeCode EMPTY = new PriceTypeCode();
 
-	public PriceTypeCode()
-	{
-		exists = false;
-	}
+    public PriceTypeCode() {
+        exists = false;
+    }
 
-	public PriceTypeCode(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public PriceTypeCode(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = PriceTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = PriceTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

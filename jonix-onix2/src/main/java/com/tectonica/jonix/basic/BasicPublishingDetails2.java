@@ -25,28 +25,25 @@ import com.tectonica.jonix.onix2.Product;
 
 /**
  * ONIX2 concrete implementation for {@link BasicPublishingDetails}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPublishingDetails2 extends BasicPublishingDetails
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPublishingDetails2 extends BasicPublishingDetails {
+    private static final long serialVersionUID = 1L;
 
-	public BasicPublishingDetails2(Product product)
-	{
-		publicationDate = product.publicationDate().value;
-		outOfPrintDate = product.outOfPrintDate().value;
-		countryOfPublication = product.countryOfPublication().value;
-		cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
-	}
+    public BasicPublishingDetails2(Product product) {
+        publicationDate = product.publicationDate().value;
+        outOfPrintDate = product.outOfPrintDate().value;
+        countryOfPublication = product.countryOfPublication().value;
+        cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
+    }
 
-	public static String pickCityOfPublication(Product product, LanguageCodes preferredLanguage)
-	{
-		for (CityOfPublication cop : product.cityOfPublications())
-		{
-			if (cop.language == null || cop.language == preferredLanguage)
-				return cop.value;
-		}
-		return product.cityOfPublications().firstValue().orElse(null); // return whatever language we have
-	}
+    public static String pickCityOfPublication(Product product, LanguageCodes preferredLanguage) {
+        for (CityOfPublication cop : product.cityOfPublications()) {
+            if (cop.language == null || cop.language == preferredLanguage) {
+                return cop.value;
+            }
+        }
+        return product.cityOfPublications().firstValue().orElse(null); // return whatever language we have
+    }
 }

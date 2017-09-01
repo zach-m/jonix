@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,115 +27,91 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>On sale date</h1>
- * <p>
- * The date when a new product can be placed on sale by retailers in the market served by the supplier. Optional and
- * non-repeating. <strong>If the &lt;OnSaleDate&gt; element is used, it means that there is an embargo on sales to
- * consumers before the stated date. Otherwise, sales to consumers are permitted as soon as stocks reach
- * retailers.</strong> In the UK, publishers who are following the PA/BA Launch Dates Code of Practice should use this
- * element for the Launch Date.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Date as year, month, day (YYYYMMDD)</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;OnSaleDate&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j143&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;OnSaleDate&gt;20000616&lt;/OnSaleDate&gt;</td>
- * </tr>
- * </table>
+ * <h1>On sale date</h1><p>The date when a new product can be placed on sale by retailers in the market served by the
+ * supplier. Optional and non-repeating. <strong>If the &lt;OnSaleDate&gt; element is used, it means that there is an
+ * embargo on sales to consumers before the stated date. Otherwise, sales to consumers are permitted as soon as stocks
+ * reach retailers.</strong> In the UK, publishers who are following the PA/BA Launch Dates Code of Practice should use
+ * this element for the Launch Date.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Date as year, month,
+ * day (YYYYMMDD)</td></tr><tr><td>Reference name</td><td>&lt;OnSaleDate&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j143&gt;</td></tr><tr><td>Example</td><td>&lt;OnSaleDate&gt;20000616&lt;/OnSaleDate&gt;</td></tr></table>
  */
-public class OnSaleDate implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class OnSaleDate implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "OnSaleDate";
-	public static final String shortname = "j143";
+    public static final String refname = "OnSaleDate";
+    public static final String shortname = "j143";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Date as year, month, day (YYYYMMDD)
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Date as year, month, day (YYYYMMDD)<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final OnSaleDate EMPTY = new OnSaleDate();
+    private final boolean exists;
+    public static final OnSaleDate EMPTY = new OnSaleDate();
 
-	public OnSaleDate()
-	{
-		exists = false;
-	}
+    public OnSaleDate() {
+        exists = false;
+    }
 
-	public OnSaleDate(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public OnSaleDate(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

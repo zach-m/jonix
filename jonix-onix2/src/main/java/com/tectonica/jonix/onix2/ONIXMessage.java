@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -31,140 +27,137 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
-public class ONIXMessage implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ONIXMessage implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ONIXMessage";
-	public static final String shortname = "ONIXmessage";
-	public static final String release = "2.1";
+    public static final String refname = "ONIXMessage";
+    public static final String shortname = "ONIXmessage";
+    public static final String release = "2.1";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ONIXMessage EMPTY = new ONIXMessage();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ONIXMessage EMPTY = new ONIXMessage();
 
-	public ONIXMessage()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ONIXMessage() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ONIXMessage(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ONIXMessage(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(Header.refname) || name.equals(Header.shortname))
-				header = new Header(e);
-			else if (name.equals(Product.refname) || name.equals(Product.shortname))
-				products = JPU.addToList(products, new Product(e));
-			else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname))
-				mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(e));
-			else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname))
-				subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(Header.refname) || name.equals(Header.shortname)) {
+                header = new Header(e);
+            } else if (name.equals(Product.refname) || name.equals(Product.shortname)) {
+                products = JPU.addToList(products, new Product(e));
+            } else if (name.equals(MainSeriesRecord.refname) || name.equals(MainSeriesRecord.shortname)) {
+                mainSeriesRecords = JPU.addToList(mainSeriesRecords, new MainSeriesRecord(e));
+            } else if (name.equals(SubSeriesRecord.refname) || name.equals(SubSeriesRecord.shortname)) {
+                subSeriesRecords = JPU.addToList(subSeriesRecords, new SubSeriesRecord(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private Header header = Header.EMPTY;
+    private Header header = Header.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Header header()
-	{
-		initialize();
-		return header;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Header header() {
+        initialize();
+        return header;
+    }
 
-	private List<Product> products = Collections.emptyList();
+    private List<Product> products = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Product> products()
-	{
-		initialize();
-		return products;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<Product> products() {
+        initialize();
+        return products;
+    }
 
-	private List<MainSeriesRecord> mainSeriesRecords = Collections.emptyList();
+    private List<MainSeriesRecord> mainSeriesRecords = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<MainSeriesRecord> mainSeriesRecords()
-	{
-		initialize();
-		return mainSeriesRecords;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<MainSeriesRecord> mainSeriesRecords() {
+        initialize();
+        return mainSeriesRecords;
+    }
 
-	private List<SubSeriesRecord> subSeriesRecords = Collections.emptyList();
+    private List<SubSeriesRecord> subSeriesRecords = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<SubSeriesRecord> subSeriesRecords()
-	{
-		initialize();
-		return subSeriesRecords;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<SubSeriesRecord> subSeriesRecords() {
+        initialize();
+        return subSeriesRecords;
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
@@ -30,112 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Audience range qualifier</h1>
- * <p>
- * An ONIX code specifying the attribute (age, school grade <em>etc</em>) which is measured by the value in the
- * &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the &lt;AudienceRange&gt; composite, and
- * non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 30</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AudienceRangeQualifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b074&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b074&gt;11&lt;/b074&gt;&#160;&#160;&#160;&#160;US School Grade range</td>
- * </tr>
- * </table>
+ * <h1>Audience range qualifier</h1><p>An ONIX code specifying the attribute (age, school grade <em>etc</em>) which is
+ * measured by the value in the &lt;AudienceRangeValue&gt; element. Mandatory in each occurrence of the
+ * &lt;AudienceRange&gt; composite, and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two numeric digits.</td></tr><tr><td>Codelist</td><td>List 30</td></tr><tr><td>Reference
+ * name</td><td>&lt;AudienceRangeQualifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;b074&gt;</td></tr><tr><td>Example</td><td>&lt;b074&gt;11&lt;/b074&gt;&#160;&#160;&#160;&#160;US
+ * School Grade range</td></tr></table>
  */
-public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class AudienceRangeQualifier implements OnixElement<AudienceRangeQualifiers>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AudienceRangeQualifier";
-	public static final String shortname = "b074";
+    public static final String refname = "AudienceRangeQualifier";
+    public static final String shortname = "b074";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public AudienceRangeQualifiers value;
+    public AudienceRangeQualifiers value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public AudienceRangeQualifiers _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public AudienceRangeQualifiers _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final AudienceRangeQualifier EMPTY = new AudienceRangeQualifier();
+    private final boolean exists;
+    public static final AudienceRangeQualifier EMPTY = new AudienceRangeQualifier();
 
-	public AudienceRangeQualifier()
-	{
-		exists = false;
-	}
+    public AudienceRangeQualifier() {
+        exists = false;
+    }
 
-	public AudienceRangeQualifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public AudienceRangeQualifier(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = AudienceRangeQualifiers.byCode(JPU.getContentAsString(element));
-	}
+        value = AudienceRangeQualifiers.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

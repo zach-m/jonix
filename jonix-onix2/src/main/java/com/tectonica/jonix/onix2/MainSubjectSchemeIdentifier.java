@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,117 +28,90 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Main subject scheme identifier</h1>
- * <p>
- * An ONIX code which identifies a subject scheme which is designated for use in a &lt;MainSubject&gt; composite.
- * Mandatory in each occurrence of the composite, and non-repeating.
- * </p>
- * <p>
- * When the scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element
- * to carry the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the
- * text equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to
- * carry the text of the subject heading.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 26</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;MainSubjectSchemeIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b191&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b191&gt;25&lt;/b191&gt;&#160;&#160;&#160;&#160;Latin American Tabla de materias ISBN</td>
- * </tr>
- * </table>
+ * <h1>Main subject scheme identifier</h1><p>An ONIX code which identifies a subject scheme which is designated for use
+ * in a &lt;MainSubject&gt; composite. Mandatory in each occurrence of the composite, and non-repeating.</p><p>When the
+ * scheme listed in the code list display is annotated “Code”, use the associated &lt;SubjectCode&gt; element to carry
+ * the value (if so required, the &lt;SubjectHeadingText&gt; element can be used simultaneously to carry the text
+ * equivalent of the code). When the scheme is annotated “Text”, use the &lt;SubjectHeadingText&gt; element to carry the
+ * text of the subject heading.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 26</td></tr><tr><td>Reference name</td><td>&lt;MainSubjectSchemeIdentifier&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b191&gt;</td></tr><tr><td>Example</td><td>&lt;b191&gt;25&lt;/b191&gt;&#160;&#160;&#160;&#160;Latin
+ * American Tabla de materias ISBN</td></tr></table>
  */
-public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchemeIdentifiers>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class MainSubjectSchemeIdentifier implements OnixElement<MainSubjectSchemeIdentifiers>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "MainSubjectSchemeIdentifier";
-	public static final String shortname = "b191";
+    public static final String refname = "MainSubjectSchemeIdentifier";
+    public static final String shortname = "b191";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public MainSubjectSchemeIdentifiers value;
+    public MainSubjectSchemeIdentifiers value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public MainSubjectSchemeIdentifiers _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public MainSubjectSchemeIdentifiers _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final MainSubjectSchemeIdentifier EMPTY = new MainSubjectSchemeIdentifier();
+    private final boolean exists;
+    public static final MainSubjectSchemeIdentifier EMPTY = new MainSubjectSchemeIdentifier();
 
-	public MainSubjectSchemeIdentifier()
-	{
-		exists = false;
-	}
+    public MainSubjectSchemeIdentifier() {
+        exists = false;
+    }
 
-	public MainSubjectSchemeIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public MainSubjectSchemeIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = MainSubjectSchemeIdentifiers.byCode(JPU.getContentAsString(element));
-	}
+        value = MainSubjectSchemeIdentifiers.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

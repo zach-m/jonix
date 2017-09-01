@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,111 +28,85 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Price status</h1>
- * <p>
- * An ONIX code which specifies the status of a price. Optional and non-repeating. If the field is omitted, the default
- * “unspecified” will apply.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 61</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PriceStatus&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j266&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;PriceStatus&gt;01&lt;/PriceStatus&gt;&#160;&#160;&#160;&#160;Provisional</td>
- * </tr>
- * </table>
+ * <h1>Price status</h1><p>An ONIX code which specifies the status of a price. Optional and non-repeating. If the field
+ * is omitted, the default “unspecified” will apply.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two numeric digits</td></tr><tr><td>Codelist</td><td>List 61</td></tr><tr><td>Reference
+ * name</td><td>&lt;PriceStatus&gt;</td></tr><tr><td>Short tag</td><td>&lt;j266&gt;</td></tr><tr><td>Example</td><td>&lt;PriceStatus&gt;01&lt;/PriceStatus&gt;&#160;&#160;&#160;&#160;Provisional</td></tr></table>
  */
-public class PriceStatus implements OnixElement<PriceStatuss>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PriceStatus implements OnixElement<PriceStatuss>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PriceStatus";
-	public static final String shortname = "j266";
+    public static final String refname = "PriceStatus";
+    public static final String shortname = "j266";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public PriceStatuss value;
+    public PriceStatuss value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public PriceStatuss _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public PriceStatuss _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final PriceStatus EMPTY = new PriceStatus();
+    private final boolean exists;
+    public static final PriceStatus EMPTY = new PriceStatus();
 
-	public PriceStatus()
-	{
-		exists = false;
-	}
+    public PriceStatus() {
+        exists = false;
+    }
 
-	public PriceStatus(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public PriceStatus(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = PriceStatuss.byCode(JPU.getContentAsString(element));
-	}
+        value = PriceStatuss.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

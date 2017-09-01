@@ -19,26 +19,23 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import com.tectonica.jonix.onix2.Header;
+
+import java.util.Collections;
 
 /**
  * ONIX2 concrete implementation for {@link BasicHeader}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicHeader2 extends BasicHeader
-{
-	private static final long serialVersionUID = 1L;
+public class BasicHeader2 extends BasicHeader {
+    private static final long serialVersionUID = 1L;
 
-	public BasicHeader2(Header header)
-	{
-		fromCompany = header.fromCompany().value;
-		fromPerson = header.fromPerson().value;
-		fromEmail = header.fromEmail().value;
-		toCompanies = header.toCompany().value().map(tc -> Collections.singletonList(tc)).orElse(null);
-		sentDate = header.sentDate().value;
-	}
+    public BasicHeader2(Header header) {
+        fromCompany = header.fromCompany().value;
+        fromPerson = header.fromPerson().value;
+        fromEmail = header.fromEmail().value;
+        toCompanies = header.toCompany().value().map(tc -> Collections.singletonList(tc)).orElse(null);
+        sentDate = header.sentDate().value;
+    }
 }

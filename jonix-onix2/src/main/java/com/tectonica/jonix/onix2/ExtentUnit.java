@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.ExtentUnits;
@@ -30,111 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Extent unit</h1>
- * <p>
- * An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the value is presented.
- * Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 24</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ExtentUnit&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b220&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;ExtentUnit&gt;04&lt;/ExtentUnit&gt;&#160;&#160;&#160;&#160;Hours as integer and decimals</td>
- * </tr>
- * </table>
+ * <h1>Extent unit</h1><p>An ONIX code indicating the unit used for the &lt;ExtentValue&gt; and the format in which the
+ * value is presented. Mandatory in each occurrence of the &lt;Extent&gt; composite, and non-repeating.</p><table
+ * border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
+ * 24</td></tr><tr><td>Reference name</td><td>&lt;ExtentUnit&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b220&gt;</td></tr><tr><td>Example</td><td>&lt;ExtentUnit&gt;04&lt;/ExtentUnit&gt;&#160;&#160;&#160;&#160;Hours
+ * as integer and decimals</td></tr></table>
  */
-public class ExtentUnit implements OnixElement<ExtentUnits>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ExtentUnit implements OnixElement<ExtentUnits>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ExtentUnit";
-	public static final String shortname = "b220";
+    public static final String refname = "ExtentUnit";
+    public static final String shortname = "b220";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ExtentUnits value;
+    public ExtentUnits value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ExtentUnits _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ExtentUnits _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ExtentUnit EMPTY = new ExtentUnit();
+    private final boolean exists;
+    public static final ExtentUnit EMPTY = new ExtentUnit();
 
-	public ExtentUnit()
-	{
-		exists = false;
-	}
+    public ExtentUnit() {
+        exists = false;
+    }
 
-	public ExtentUnit(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ExtentUnit(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ExtentUnits.byCode(JPU.getContentAsString(element));
-	}
+        value = ExtentUnits.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixDataCompositeUncommon;
@@ -32,157 +30,141 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Sales rights composite</h1>
- * <p>
- * A repeatable group of data elements which together identify territorial sales rights which a publisher chooses to
- * exercise in a product. The &lt;SalesRights&gt; composite may occur once for each value of &lt;b089&gt;. See examples
- * at the end of Group&nbsp;PR.21.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SalesRights&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;salesrights&gt;</td>
- * </tr>
- * </table>
+ * <h1>Sales rights composite</h1><p>A repeatable group of data elements which together identify territorial sales
+ * rights which a publisher chooses to exercise in a product. The &lt;SalesRights&gt; composite may occur once for each
+ * value of &lt;b089&gt;. See examples at the end of Group&nbsp;PR.21.</p><table border='1'
+ * cellpadding='3'><tr><td>Reference name</td><td>&lt;SalesRights&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;salesrights&gt;</td></tr></table>
  */
-public class SalesRights implements OnixDataCompositeUncommon, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class SalesRights implements OnixDataCompositeUncommon, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SalesRights";
-	public static final String shortname = "salesrights";
+    public static final String refname = "SalesRights";
+    public static final String shortname = "salesrights";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final SalesRights EMPTY = new SalesRights();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final SalesRights EMPTY = new SalesRights();
 
-	public SalesRights()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public SalesRights() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public SalesRights(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public SalesRights(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname))
-				salesRightsType = new SalesRightsType(e);
-			else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname))
-				rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
-			else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname))
-				rightsTerritory = new RightsTerritory(e);
-			else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname))
-				rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(SalesRightsType.refname) || name.equals(SalesRightsType.shortname)) {
+                salesRightsType = new SalesRightsType(e);
+            } else if (name.equals(RightsCountry.refname) || name.equals(RightsCountry.shortname)) {
+                rightsCountrys = JPU.addToList(rightsCountrys, new RightsCountry(e));
+            } else if (name.equals(RightsTerritory.refname) || name.equals(RightsTerritory.shortname)) {
+                rightsTerritory = new RightsTerritory(e);
+            } else if (name.equals(RightsRegion.refname) || name.equals(RightsRegion.shortname)) {
+                rightsRegions = JPU.addToList(rightsRegions, new RightsRegion(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private SalesRightsType salesRightsType = SalesRightsType.EMPTY;
+    private SalesRightsType salesRightsType = SalesRightsType.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public SalesRightsType salesRightsType()
-	{
-		initialize();
-		return salesRightsType;
-	}
+    /**
+     * (this field is required)
+     */
+    public SalesRightsType salesRightsType() {
+        initialize();
+        return salesRightsType;
+    }
 
-	private ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys = ListOfOnixElement.empty();
+    private ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys = ListOfOnixElement.empty();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys()
-	{
-		initialize();
-		return rightsCountrys;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys() {
+        initialize();
+        return rightsCountrys;
+    }
 
-	private RightsTerritory rightsTerritory = RightsTerritory.EMPTY;
+    private RightsTerritory rightsTerritory = RightsTerritory.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public RightsTerritory rightsTerritory()
-	{
-		initialize();
-		return rightsTerritory;
-	}
+    /**
+     * (this field is optional)
+     */
+    public RightsTerritory rightsTerritory() {
+        initialize();
+        return rightsTerritory;
+    }
 
-	private ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions = ListOfOnixElement.empty();
+    private ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions = ListOfOnixElement.empty();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions()
-	{
-		initialize();
-		return rightsRegions;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixElement<RightsRegion, RightsRegions> rightsRegions() {
+        initialize();
+        return rightsRegions;
+    }
 }

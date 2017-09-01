@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
@@ -30,112 +28,88 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Audience range precision (2)</h1>
- * <p>
- * An ONIX code specifying the “precision” of the value in &lt;AudienceRangeValue&gt; element which follows. Optional
- * and non-repeating. This second occurrence of the two elements &lt;AudienceRangePrecision&gt; and
- * &lt;AudienceRangeValue&gt; is required only when a “From … to …” range is specified.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 31 The only value which is valid in this element is 04 (&#8220;To&#8221;)</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;AudienceRangePrecision&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b075&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b075&gt;04&lt;/b075&gt;&#160;&#160;&#160;&#160;To</td>
- * </tr>
- * </table>
+ * <h1>Audience range precision (2)</h1><p>An ONIX code specifying the “precision” of the value in
+ * &lt;AudienceRangeValue&gt; element which follows. Optional and non-repeating. This second occurrence of the two
+ * elements &lt;AudienceRangePrecision&gt; and &lt;AudienceRangeValue&gt; is required only when a “From … to …” range is
+ * specified.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 31 The only value which is valid in this element is 04
+ * (&#8220;To&#8221;)</td></tr><tr><td>Reference name</td><td>&lt;AudienceRangePrecision&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b075&gt;</td></tr><tr><td>Example</td><td>&lt;b075&gt;04&lt;/b075&gt;&#160;&#160;&#160;&#160;To</td></tr></table>
  */
-public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class AudienceRangePrecision implements OnixElement<AudienceRangePrecisions>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "AudienceRangePrecision";
-	public static final String shortname = "b075";
+    public static final String refname = "AudienceRangePrecision";
+    public static final String shortname = "b075";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public AudienceRangePrecisions value;
+    public AudienceRangePrecisions value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public AudienceRangePrecisions _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public AudienceRangePrecisions _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final AudienceRangePrecision EMPTY = new AudienceRangePrecision();
+    private final boolean exists;
+    public static final AudienceRangePrecision EMPTY = new AudienceRangePrecision();
 
-	public AudienceRangePrecision()
-	{
-		exists = false;
-	}
+    public AudienceRangePrecision() {
+        exists = false;
+    }
 
-	public AudienceRangePrecision(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public AudienceRangePrecision(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = AudienceRangePrecisions.byCode(JPU.getContentAsString(element));
-	}
+        value = AudienceRangePrecisions.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

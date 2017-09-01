@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,114 +27,92 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>BISAC subject category version number</h1>
- * <p>
- * A number identifying the version of the BISAC subject categories used in &lt;BASICMainSubject&gt;. Optional and
- * non-repeating, and may only occur when &lt;BASICMainSubject&gt; is also present.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;. Suggested
- * maximum length 10 characters, for consistency with other version number elements.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;BASICVersion&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b200&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b200&gt;2.01&lt;/b200&gt;</td>
- * </tr>
- * </table>
+ * <h1>BISAC subject category version number</h1><p>A number identifying the version of the BISAC subject categories
+ * used in &lt;BASICMainSubject&gt;. Optional and non-repeating, and may only occur when &lt;BASICMainSubject&gt; is
+ * also present.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Free form - in practise expected to be an
+ * integer or a decimal number such as &#8220;2.01&#8221;. Suggested maximum length 10 characters, for consistency with
+ * other version number elements.</td></tr><tr><td>Reference name</td><td>&lt;BASICVersion&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b200&gt;</td></tr><tr><td>Example</td><td>&lt;b200&gt;2.01&lt;/b200&gt;</td></tr></table>
  */
-public class BASICVersion implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class BASICVersion implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "BASICVersion";
-	public static final String shortname = "b200";
+    public static final String refname = "BASICVersion";
+    public static final String shortname = "b200";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
-	 * Suggested maximum length 10 characters, for consistency with other version number elements.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Free form - in practise expected to be an integer or a decimal number such as &#8220;2.01&#8221;.
+     * Suggested maximum length 10 characters, for consistency with other version number elements.<p> (type:
+     * NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final BASICVersion EMPTY = new BASICVersion();
+    private final boolean exists;
+    public static final BASICVersion EMPTY = new BASICVersion();
 
-	public BASICVersion()
-	{
-		exists = false;
-	}
+    public BASICVersion() {
+        exists = false;
+    }
 
-	public BASICVersion(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public BASICVersion(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

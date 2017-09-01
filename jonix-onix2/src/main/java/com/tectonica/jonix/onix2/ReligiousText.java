@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -32,147 +30,132 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixReligiousTextFeature;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Religious text composite</h1>
- * <p>
- * An optional, non-repeating, group of data elements which together describe features of the content of an edition of a
- * religious text, and intended to meet the special needs of religious publishers and booksellers. The
- * &lt;ReligiousText&gt; composite may carry either a &lt;Bible&gt; composite or a &lt;ReligiousTextID&gt; element
- * accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt; composite. This approach is adopted to enable
- * other devotional texts to be included if need arises without requiring a new ONIX release.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ReligiousText&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;religioustext&gt;</td>
- * </tr>
- * </table>
+ * <h1>Religious text composite</h1><p>An optional, non-repeating, group of data elements which together describe
+ * features of the content of an edition of a religious text, and intended to meet the special needs of religious
+ * publishers and booksellers. The &lt;ReligiousText&gt; composite may carry either a &lt;Bible&gt; composite or a
+ * &lt;ReligiousTextID&gt; element accompanied by multiple repeats of the &lt;ReligiousTextFeature&gt; composite. This
+ * approach is adopted to enable other devotional texts to be included if need arises without requiring a new ONIX
+ * release.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;ReligiousText&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;religioustext&gt;</td></tr></table>
  */
-public class ReligiousText implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ReligiousText implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ReligiousText";
-	public static final String shortname = "religioustext";
+    public static final String refname = "ReligiousText";
+    public static final String shortname = "religioustext";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final ReligiousText EMPTY = new ReligiousText();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final ReligiousText EMPTY = new ReligiousText();
 
-	public ReligiousText()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public ReligiousText() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public ReligiousText(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public ReligiousText(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(Bible.refname) || name.equals(Bible.shortname))
-				bible = new Bible(e);
-			else if (name.equals(ReligiousTextID.refname) || name.equals(ReligiousTextID.shortname))
-				religiousTextID = new ReligiousTextID(e);
-			else if (name.equals(ReligiousTextFeature.refname) || name.equals(ReligiousTextFeature.shortname))
-				religiousTextFeatures = JPU.addToList(religiousTextFeatures, new ReligiousTextFeature(e));
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(Bible.refname) || name.equals(Bible.shortname)) {
+                bible = new Bible(e);
+            } else if (name.equals(ReligiousTextID.refname) || name.equals(ReligiousTextID.shortname)) {
+                religiousTextID = new ReligiousTextID(e);
+            } else if (name.equals(ReligiousTextFeature.refname) || name.equals(ReligiousTextFeature.shortname)) {
+                religiousTextFeatures = JPU.addToList(religiousTextFeatures, new ReligiousTextFeature(e));
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private Bible bible = Bible.EMPTY;
+    private Bible bible = Bible.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public Bible bible()
-	{
-		initialize();
-		return bible;
-	}
+    /**
+     * (this field is optional)
+     */
+    public Bible bible() {
+        initialize();
+        return bible;
+    }
 
-	private ReligiousTextID religiousTextID = ReligiousTextID.EMPTY;
+    private ReligiousTextID religiousTextID = ReligiousTextID.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public ReligiousTextID religiousTextID()
-	{
-		initialize();
-		return religiousTextID;
-	}
+    /**
+     * (this field is required)
+     */
+    public ReligiousTextID religiousTextID() {
+        initialize();
+        return religiousTextID;
+    }
 
-	private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes>
+        religiousTextFeatures = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list is required to contain at least one item)
-	 */
-	public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures()
-	{
-		initialize();
-		return religiousTextFeatures;
-	}
+    /**
+     * (this list is required to contain at least one item)
+     */
+    public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {
+        initialize();
+        return religiousTextFeatures;
+    }
 }

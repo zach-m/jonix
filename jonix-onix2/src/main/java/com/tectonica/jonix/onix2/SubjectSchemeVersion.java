@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,113 +27,90 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Subject scheme version number</h1>
- * <p>
- * A number which identifies a version or edition of the subject scheme specified in the associated
- * &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Free form. Suggested maximum length 10 characters, for consistency with other version number elements.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;SubjectSchemeVersion&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b068&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;SubjectSchemeVersion&gt;21&lt;/SubjectSchemeVersion&gt;</td>
- * </tr>
- * </table>
+ * <h1>Subject scheme version number</h1><p>A number which identifies a version or edition of the subject scheme
+ * specified in the associated &lt;SubjectSchemeIdentifier&gt; element. Optional and non-repeating.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Free form. Suggested maximum length 10 characters, for consistency with other
+ * version number elements.</td></tr><tr><td>Reference name</td><td>&lt;SubjectSchemeVersion&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b068&gt;</td></tr><tr><td>Example</td><td>&lt;SubjectSchemeVersion&gt;21&lt;/SubjectSchemeVersion&gt;</td></tr></table>
  */
-public class SubjectSchemeVersion implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class SubjectSchemeVersion implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "SubjectSchemeVersion";
-	public static final String shortname = "b068";
+    public static final String refname = "SubjectSchemeVersion";
+    public static final String shortname = "b068";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
-	 * elements.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Free form. Suggested maximum length 10 characters, for consistency with other version number
+     * elements.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final SubjectSchemeVersion EMPTY = new SubjectSchemeVersion();
+    private final boolean exists;
+    public static final SubjectSchemeVersion EMPTY = new SubjectSchemeVersion();
 
-	public SubjectSchemeVersion()
-	{
-		exists = false;
-	}
+    public SubjectSchemeVersion() {
+        exists = false;
+    }
 
-	public SubjectSchemeVersion(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public SubjectSchemeVersion(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

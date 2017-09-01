@@ -20,38 +20,35 @@
 package com.tectonica.jonix.basic;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.onix2.AudienceRange;
 import com.tectonica.jonix.onix2.Product;
 
 /**
  * ONIX2 concrete implementation for {@link BasicDescription}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicDescription2 extends BasicDescription
-{
-	private static final long serialVersionUID = 1L;
+public class BasicDescription2 extends BasicDescription {
+    private static final long serialVersionUID = 1L;
 
-	private transient final AudienceRange audienceRange;
+    private final transient AudienceRange audienceRange;
 
-	public BasicDescription2(Product product)
-	{
-		editionType = product.editionTypeCodes().firstValue().orElse(null);
-		editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
-		productForm = product.productForm().value().map(fv -> fv.description).orElse(null);
-		numberOfPages = product.numberOfPages().value;
-		languages = product.languages().asStructs(); // TODO: lazify
-		audiences = product.audiences().asStructs(); // TODO: lazify
-		audienceCodes = product.audienceCodes().values();
-		audienceRange = product.audienceRanges().first().orElse(null);
-	}
+    public BasicDescription2(Product product) {
+        editionType = product.editionTypeCodes().firstValue().orElse(null);
+        editionNumber = JPU.convertStringToInteger(product.editionNumber().value);
+        productForm = product.productForm().value().map(fv -> fv.description).orElse(null);
+        numberOfPages = product.numberOfPages().value;
+        languages = product.languages().asStructs(); // TODO: lazify
+        audiences = product.audiences().asStructs(); // TODO: lazify
+        audienceCodes = product.audienceCodes().values();
+        audienceRange = product.audienceRanges().first().orElse(null);
+    }
 
-	@Override
-	public Integer[] getFirstAudienceAgeRange()
-	{
-		if (audienceRange != null)
-			return getAudienceAgeRange(audienceRange.asStruct());
-		return new Integer[] { null, null };
-	}
+    @Override
+    public Integer[] getFirstAudienceAgeRange() {
+        if (audienceRange != null) {
+            return getAudienceAgeRange(audienceRange.asStruct());
+        }
+        return new Integer[] {null, null};
+    }
 }

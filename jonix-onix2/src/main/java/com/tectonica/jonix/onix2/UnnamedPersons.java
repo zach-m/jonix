@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,112 +28,87 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.UnnamedPersonss;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Unnamed person(s)</h1>
- * <p>
- * An ONIX code allowing a positive indication to be given when authorship is unknown or anonymous, or when as a matter
- * of editorial policy only a limited number of contributors are named. Optional and non-repeating: see Group&nbsp;PR.8
- * introductory text for valid options.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 19</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;UnnamedPersons&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b249&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;UnnamedPersons&gt;02&lt;/UnnamedPersons&gt;&#160;&#160;&#160;&#160;Anonymous</td>
- * </tr>
- * </table>
+ * <h1>Unnamed person(s)</h1><p>An ONIX code allowing a positive indication to be given when authorship is unknown or
+ * anonymous, or when as a matter of editorial policy only a limited number of contributors are named. Optional and
+ * non-repeating: see Group&nbsp;PR.8 introductory text for valid options.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric digits</td></tr><tr><td>Codelist</td><td>List
+ * 19</td></tr><tr><td>Reference name</td><td>&lt;UnnamedPersons&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b249&gt;</td></tr><tr><td>Example</td><td>&lt;UnnamedPersons&gt;02&lt;/UnnamedPersons&gt;&#160;&#160;&#160;&#160;Anonymous</td></tr></table>
  */
-public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class UnnamedPersons implements OnixElement<UnnamedPersonss>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "UnnamedPersons";
-	public static final String shortname = "b249";
+    public static final String refname = "UnnamedPersons";
+    public static final String shortname = "b249";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public UnnamedPersonss value;
+    public UnnamedPersonss value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public UnnamedPersonss _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public UnnamedPersonss _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final UnnamedPersons EMPTY = new UnnamedPersons();
+    private final boolean exists;
+    public static final UnnamedPersons EMPTY = new UnnamedPersons();
 
-	public UnnamedPersons()
-	{
-		exists = false;
-	}
+    public UnnamedPersons() {
+        exists = false;
+    }
 
-	public UnnamedPersons(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public UnnamedPersons(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = UnnamedPersonss.byCode(JPU.getContentAsString(element));
-	}
+        value = UnnamedPersonss.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

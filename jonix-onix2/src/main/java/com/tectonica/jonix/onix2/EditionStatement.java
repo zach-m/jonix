@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,115 +27,93 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Edition statement</h1>
- * <p>
- * A short free-text description of a version or edition. Optional and non-repeating. When used, the
- * &lt;EditionStatement&gt; must carry a complete description of the nature of the edition, <em>ie</em> it should not be
- * treated as merely supplementary to an &lt;EditionTypeCode&gt; or an &lt;EditionNumber&gt;. The
+ * <h1>Edition statement</h1><p>A short free-text description of a version or edition. Optional and non-repeating. When
+ * used, the &lt;EditionStatement&gt; must carry a complete description of the nature of the edition, <em>ie</em> it
+ * should not be treated as merely supplementary to an &lt;EditionTypeCode&gt; or an &lt;EditionNumber&gt;. The
  * &lt;EditionStatement&gt; should be strictly limited to describing features of the content of the edition, and should
- * not include aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX record.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable-length text, suggested maximum length 100 characters.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;EditionStatement&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b058&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b058&gt;3rd edition, revised with an introduction and notes&lt;/b058&gt;</td>
- * </tr>
- * </table>
+ * not include aspects such as rights or market restrictions which are properly covered elsewhere in the ONIX
+ * record.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable-length text, suggested maximum length
+ * 100 characters.</td></tr><tr><td>Reference name</td><td>&lt;EditionStatement&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b058&gt;</td></tr><tr><td>Example</td><td>&lt;b058&gt;3rd edition, revised with an introduction and
+ * notes&lt;/b058&gt;</td></tr></table>
  */
-public class EditionStatement implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class EditionStatement implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "EditionStatement";
-	public static final String shortname = "b058";
+    public static final String refname = "EditionStatement";
+    public static final String shortname = "b058";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable-length text, suggested maximum length 100 characters.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable-length text, suggested maximum length 100 characters.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final EditionStatement EMPTY = new EditionStatement();
+    private final boolean exists;
+    public static final EditionStatement EMPTY = new EditionStatement();
 
-	public EditionStatement()
-	{
-		exists = false;
-	}
+    public EditionStatement() {
+        exists = false;
+    }
 
-	public EditionStatement(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public EditionStatement(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

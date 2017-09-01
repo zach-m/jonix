@@ -19,45 +19,45 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.onix2.Subject;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * ONIX2 concrete implementation for {@link BasicSubjects}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSubjects2 extends BasicSubjects
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSubjects2 extends BasicSubjects {
+    private static final long serialVersionUID = 1L;
 
-	private transient final Product product;
+    private final transient Product product;
 
-	public BasicSubjects2(Product product)
-	{
-		this.product = product;
-	}
+    public BasicSubjects2(Product product) {
+        this.product = product;
+    }
 
-	@Override
-	protected Map<SubjectSchemeIdentifiers, List<BasicSubject>> initialize()
-	{
-		Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
-		String bisacMainSubject = product.basicMainSubject().value;
-		if (bisacMainSubject != null)
-			addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null),
-					false);
+    @Override
+    protected Map<SubjectSchemeIdentifiers, List<BasicSubject>> initialize() {
+        Map<SubjectSchemeIdentifiers, List<BasicSubject>> map = new HashMap<>();
+        String bisacMainSubject = product.basicMainSubject().value;
+        if (bisacMainSubject != null) {
+            addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BISAC_Subject_Heading, bisacMainSubject, null),
+                false);
+        }
 
-		String bicMainSubject = product.bicMainSubject().value;
-		if (bicMainSubject != null)
-			addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null), false);
+        String bicMainSubject = product.bicMainSubject().value;
+        if (bicMainSubject != null) {
+            addKV(map, new BasicSubject2(SubjectSchemeIdentifiers.BIC_subject_category, bicMainSubject, null), false);
+        }
 
-		for (Subject subject : product.subjects())
-			addKV(map, new BasicSubject2(subject), false);
-		return map;
-	}
+        for (Subject subject : product.subjects()) {
+            addKV(map, new BasicSubject2(subject), false);
+        }
+        return map;
+    }
 }

@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,114 +27,90 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Number of illustrations</h1>
- * <p>
- * The total number of illustrations in a book or other printed product. The more informative free text field
- * &lt;IllustrationsNote&gt; or the &lt;Illustrations&gt; composite are preferred, but where the sender of the product
- * information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt; element may be used. Optional
- * and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length integer, suggested maximum length 6 digits.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;NumberOfIllustrations&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b125&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;b125&gt;64&lt;/b125&gt;</td>
- * </tr>
- * </table>
+ * <h1>Number of illustrations</h1><p>The total number of illustrations in a book or other printed product. The more
+ * informative free text field &lt;IllustrationsNote&gt; or the &lt;Illustrations&gt; composite are preferred, but where
+ * the sender of the product information maintains only a simple numeric field, the &lt;NumberOfIllustrations&gt;
+ * element may be used. Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Variable
+ * length integer, suggested maximum length 6 digits.</td></tr><tr><td>Reference name</td><td>&lt;NumberOfIllustrations&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;b125&gt;</td></tr><tr><td>Example</td><td>&lt;b125&gt;64&lt;/b125&gt;</td></tr></table>
  */
-public class NumberOfIllustrations implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class NumberOfIllustrations implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "NumberOfIllustrations";
-	public static final String shortname = "b125";
+    public static final String refname = "NumberOfIllustrations";
+    public static final String shortname = "b125";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length integer, suggested maximum length 6 digits.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable length integer, suggested maximum length 6 digits.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final NumberOfIllustrations EMPTY = new NumberOfIllustrations();
+    private final boolean exists;
+    public static final NumberOfIllustrations EMPTY = new NumberOfIllustrations();
 
-	public NumberOfIllustrations()
-	{
-		exists = false;
-	}
+    public NumberOfIllustrations() {
+        exists = false;
+    }
 
-	public NumberOfIllustrations(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public NumberOfIllustrations(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

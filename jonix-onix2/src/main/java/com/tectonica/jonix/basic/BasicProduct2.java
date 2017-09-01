@@ -23,27 +23,25 @@ import com.tectonica.jonix.onix2.Product;
 
 /**
  * ONIX2 concrete implementation for {@link BasicProduct}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicProduct2 extends BasicProduct
-{
-	private static final long serialVersionUID = 1L;
+public class BasicProduct2 extends BasicProduct {
+    private static final long serialVersionUID = 1L;
 
-	public BasicProduct2(Product product)
-	{
-		onixProduct = product;
-		info = new BasicInfo2(product);
-		description = new BasicDescription2(product);
-		publishingDetails = new BasicPublishingDetails2(product);
-		titles = new BasicTitles2(product);
-		contributors = new BasicContributors2(product);
-		collections = new BasicCollections2(product);
-		subjects = new BasicSubjects2(product);
-		texts = new BasicTexts2(product);
-		publishers = new BasicPublishers2(product);
-		imprints = new BasicImprints2(product);
-		supplyDetails = new BasicSupplyDetails2(product);
-		salesRightss = new BasicSalesRightss2(product);
-	}
+    public BasicProduct2(Product product) {
+        onixProduct = product;
+        info = new BasicInfo2(product);
+        description = new BasicDescription2(product);
+        publishingDetails = new BasicPublishingDetails2(product);
+        titles = new BasicTitles2(product);
+        contributors = new BasicContributors2(product);
+        collections = new BasicCollections2(product);
+        subjects = new BasicSubjects2(product);
+        texts = new BasicTexts2(product);
+        publishers = new BasicPublishers2(product);
+        imprints = new BasicImprints2(product);
+        supplyDetails = new BasicSupplyDetails2(product);
+        salesRightss = new BasicSalesRightss2(product);
+    }
 }

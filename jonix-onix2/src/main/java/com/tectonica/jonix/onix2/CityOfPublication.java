@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,117 +27,92 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>City or town of publication</h1>
- * <p>
- * The name of a city or town associated with the imprint or publisher. Optional, and repeatable if the imprint carries
- * two or more cities of publication.
- * </p>
- * <p>
- * A place of publication is normally given in the form in which it appears on the title page. If the place name appears
- * in more than one language, use the language of the title carried in the ONIX record. If this criterion does not
- * apply, use the form that appears first. Alternatively, some ONIX applications may follow their own “house style”.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Free text, suggested maximum length 50 characters.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;CityOfPublication&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b209&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;CityOfPublication&gt;New York&lt;/CityOfPublication&gt;</td>
- * </tr>
- * </table>
+ * <h1>City or town of publication</h1><p>The name of a city or town associated with the imprint or publisher. Optional,
+ * and repeatable if the imprint carries two or more cities of publication.</p><p>A place of publication is normally
+ * given in the form in which it appears on the title page. If the place name appears in more than one language, use the
+ * language of the title carried in the ONIX record. If this criterion does not apply, use the form that appears first.
+ * Alternatively, some ONIX applications may follow their own “house style”.</p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Free text, suggested maximum length 50 characters.</td></tr><tr><td>Reference
+ * name</td><td>&lt;CityOfPublication&gt;</td></tr><tr><td>Short tag</td><td>&lt;b209&gt;</td></tr><tr><td>Example</td><td>&lt;CityOfPublication&gt;New
+ * York&lt;/CityOfPublication&gt;</td></tr></table>
  */
-public class CityOfPublication implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class CityOfPublication implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "CityOfPublication";
-	public static final String shortname = "b209";
+    public static final String refname = "CityOfPublication";
+    public static final String shortname = "b209";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Free text, suggested maximum length 50 characters.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Free text, suggested maximum length 50 characters.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final CityOfPublication EMPTY = new CityOfPublication();
+    private final boolean exists;
+    public static final CityOfPublication EMPTY = new CityOfPublication();
 
-	public CityOfPublication()
-	{
-		exists = false;
-	}
+    public CityOfPublication() {
+        exists = false;
+    }
 
-	public CityOfPublication(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public CityOfPublication(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -19,34 +19,32 @@
 
 package com.tectonica.jonix.basic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.tectonica.jonix.onix2.Price;
 import com.tectonica.jonix.onix2.SupplyDetail;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * ONIX2 concrete implementation for {@link BasicPrices}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicPrices2 extends BasicPrices
-{
-	private static final long serialVersionUID = 1L;
+public class BasicPrices2 extends BasicPrices {
+    private static final long serialVersionUID = 1L;
 
-	private transient final SupplyDetail supplyDetail;
+    private final transient SupplyDetail supplyDetail;
 
-	public BasicPrices2(SupplyDetail supplyDetail)
-	{
-		this.supplyDetail = supplyDetail;
-	}
+    public BasicPrices2(SupplyDetail supplyDetail) {
+        this.supplyDetail = supplyDetail;
+    }
 
-	@Override
-	protected List<BasicPrice> initialize()
-	{
-		List<BasicPrice> list = new ArrayList<>();
-		for (Price price : supplyDetail.prices())
-			list.add(new BasicPrice2(price));
-		return list;
-	}
+    @Override
+    protected List<BasicPrice> initialize() {
+        List<BasicPrice> list = new ArrayList<>();
+        for (Price price : supplyDetail.prices()) {
+            list.add(new BasicPrice2(price));
+        }
+        return list;
+    }
 }

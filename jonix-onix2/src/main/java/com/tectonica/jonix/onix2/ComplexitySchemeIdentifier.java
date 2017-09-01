@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.ComplexitySchemeIdentifiers;
@@ -30,110 +28,85 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Complexity scheme identifier</h1>
- * <p>
- * An ONIX code specifying the scheme from which the value in &lt;ComplexityCode&gt; is taken.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 32</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;ComplexitySchemeIdentifier&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;b077&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&#160;</td>
- * </tr>
- * </table>
+ * <h1>Complexity scheme identifier</h1><p>An ONIX code specifying the scheme from which the value in
+ * &lt;ComplexityCode&gt; is taken.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two
+ * numeric digits.</td></tr><tr><td>Codelist</td><td>List 32</td></tr><tr><td>Reference
+ * name</td><td>&lt;ComplexitySchemeIdentifier&gt;</td></tr><tr><td>Short tag</td><td>&lt;b077&gt;</td></tr><tr><td>Example</td><td>&#160;</td></tr></table>
  */
-public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeIdentifiers>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class ComplexitySchemeIdentifier implements OnixElement<ComplexitySchemeIdentifiers>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "ComplexitySchemeIdentifier";
-	public static final String shortname = "b077";
+    public static final String refname = "ComplexitySchemeIdentifier";
+    public static final String shortname = "b077";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public ComplexitySchemeIdentifiers value;
+    public ComplexitySchemeIdentifiers value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public ComplexitySchemeIdentifiers _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public ComplexitySchemeIdentifiers _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final ComplexitySchemeIdentifier EMPTY = new ComplexitySchemeIdentifier();
+    private final boolean exists;
+    public static final ComplexitySchemeIdentifier EMPTY = new ComplexitySchemeIdentifier();
 
-	public ComplexitySchemeIdentifier()
-	{
-		exists = false;
-	}
+    public ComplexitySchemeIdentifier() {
+        exists = false;
+    }
 
-	public ComplexitySchemeIdentifier(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public ComplexitySchemeIdentifier(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = ComplexitySchemeIdentifiers.byCode(JPU.getContentAsString(element));
-	}
+        value = ComplexitySchemeIdentifiers.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

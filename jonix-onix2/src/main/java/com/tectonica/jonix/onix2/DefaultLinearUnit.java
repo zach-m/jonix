@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.DefaultLinearUnits;
@@ -30,113 +28,87 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Default linear unit</h1>
- * <p>
- * A code indicating the default unit which is assumed for linear measurements listed in the message, unless otherwise
- * specified in the product record. <strong>This element is deprecated <!-- provided for use at Level 1 -->. For most
- * implementations, explicit coding of measure units with each occurrence of a measurement is to be preferred.</strong>
- * Optional and non-repeating.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two letters.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 94</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;DefaultLinearUnit&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;m187&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;DefaultLinearUnit&gt;mm&lt;/DefaultLinearUnit&gt;</td>
- * </tr>
- * </table>
+ * <h1>Default linear unit</h1><p>A code indicating the default unit which is assumed for linear measurements listed in
+ * the message, unless otherwise specified in the product record. <strong>This element is deprecated <!-- provided for
+ * use at Level 1 -->. For most implementations, explicit coding of measure units with each occurrence of a measurement
+ * is to be preferred.</strong> Optional and non-repeating.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length,
+ * two letters.</td></tr><tr><td>Codelist</td><td>List 94</td></tr><tr><td>Reference
+ * name</td><td>&lt;DefaultLinearUnit&gt;</td></tr><tr><td>Short tag</td><td>&lt;m187&gt;</td></tr><tr><td>Example</td><td>&lt;DefaultLinearUnit&gt;mm&lt;/DefaultLinearUnit&gt;</td></tr></table>
  */
-public class DefaultLinearUnit implements OnixElement<DefaultLinearUnits>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class DefaultLinearUnit implements OnixElement<DefaultLinearUnits>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "DefaultLinearUnit";
-	public static final String shortname = "m187";
+    public static final String refname = "DefaultLinearUnit";
+    public static final String shortname = "m187";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public DefaultLinearUnits value;
+    public DefaultLinearUnits value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public DefaultLinearUnits _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public DefaultLinearUnits _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final DefaultLinearUnit EMPTY = new DefaultLinearUnit();
+    private final boolean exists;
+    public static final DefaultLinearUnit EMPTY = new DefaultLinearUnit();
 
-	public DefaultLinearUnit()
-	{
-		exists = false;
-	}
+    public DefaultLinearUnit() {
+        exists = false;
+    }
 
-	public DefaultLinearUnit(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public DefaultLinearUnit(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = DefaultLinearUnits.byCode(JPU.getContentAsString(element));
-	}
+        value = DefaultLinearUnits.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

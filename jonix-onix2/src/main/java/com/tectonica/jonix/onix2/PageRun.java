@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixComposite.OnixDataComposite;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,140 +28,125 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixPageRun;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Page run composite</h1>
- * <p>
- * A repeatable group of data elements which together define a run of contiguous pages on which a text item appears. The
- * composite is optional, but may be repeated where the text item covers two or more separate page runs.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;PageRun&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;pagerun&gt;</td>
- * </tr>
- * </table>
+ * <h1>Page run composite</h1><p>A repeatable group of data elements which together define a run of contiguous pages on
+ * which a text item appears. The composite is optional, but may be repeated where the text item covers two or more
+ * separate page runs.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;PageRun&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;pagerun&gt;</td></tr></table>
  */
-public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "PageRun";
-	public static final String shortname = "pagerun";
+    public static final String refname = "PageRun";
+    public static final String shortname = "pagerun";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final PageRun EMPTY = new PageRun();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final PageRun EMPTY = new PageRun();
 
-	public PageRun()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public PageRun() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public PageRun(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public PageRun(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname))
-				firstPageNumber = new FirstPageNumber(e);
-			else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname))
-				lastPageNumber = new LastPageNumber(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(FirstPageNumber.refname) || name.equals(FirstPageNumber.shortname)) {
+                firstPageNumber = new FirstPageNumber(e);
+            } else if (name.equals(LastPageNumber.refname) || name.equals(LastPageNumber.shortname)) {
+                lastPageNumber = new LastPageNumber(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
+    private FirstPageNumber firstPageNumber = FirstPageNumber.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public FirstPageNumber firstPageNumber()
-	{
-		initialize();
-		return firstPageNumber;
-	}
+    /**
+     * (this field is required)
+     */
+    public FirstPageNumber firstPageNumber() {
+        initialize();
+        return firstPageNumber;
+    }
 
-	private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
+    private LastPageNumber lastPageNumber = LastPageNumber.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public LastPageNumber lastPageNumber()
-	{
-		initialize();
-		return lastPageNumber;
-	}
+    /**
+     * (this field is optional)
+     */
+    public LastPageNumber lastPageNumber() {
+        initialize();
+        return lastPageNumber;
+    }
 
-	@Override
-	public JonixPageRun asStruct()
-	{
-		initialize();
-		JonixPageRun struct = new JonixPageRun();
-		struct.firstPageNumber = firstPageNumber.value;
-		struct.lastPageNumber = lastPageNumber.value;
-		return struct;
-	}
+    @Override
+    public JonixPageRun asStruct() {
+        initialize();
+        JonixPageRun struct = new JonixPageRun();
+        struct.firstPageNumber = firstPageNumber.value;
+        struct.lastPageNumber = lastPageNumber.value;
+        return struct;
+    }
 }

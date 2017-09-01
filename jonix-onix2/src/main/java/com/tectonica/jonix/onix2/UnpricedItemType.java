@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -30,112 +28,88 @@ import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.codelist.UnpricedItemTypes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Unpriced item type</h1>
- * <p>
- * An ONIX code which specifies a reason why a price amount is not sent. <strong>If code value 02 is used to send
- * advance information without giving a price, the price must be confirmed as soon as possible.</strong> Optional and
- * non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a price.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Fixed-length, two numeric digits.</td>
- * </tr>
- * <tr>
- * <td>Codelist</td>
- * <td>List 57</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;UnpricedItemType&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;j192&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;&#160;&#160;&#160;&#160;Free of charge</td>
- * </tr>
- * </table>
+ * <h1>Unpriced item type</h1><p>An ONIX code which specifies a reason why a price amount is not sent. <strong>If code
+ * value 02 is used to send advance information without giving a price, the price must be confirmed as soon as
+ * possible.</strong> Optional and non-repeating, but required if the &lt;SupplyDetail&gt; composite does not carry a
+ * price.</p><table border='1' cellpadding='3'><tr><td>Format</td><td>Fixed-length, two numeric
+ * digits.</td></tr><tr><td>Codelist</td><td>List 57</td></tr><tr><td>Reference name</td><td>&lt;UnpricedItemType&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;j192&gt;</td></tr><tr><td>Example</td><td>&lt;UnpricedItemType&gt;01&lt;/UnpricedItemType&gt;&#160;&#160;&#160;&#160;Free
+ * of charge</td></tr></table>
  */
-public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class UnpricedItemType implements OnixElement<UnpricedItemTypes>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "UnpricedItemType";
-	public static final String shortname = "j192";
+    public static final String refname = "UnpricedItemType";
+    public static final String shortname = "j192";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public UnpricedItemTypes value;
+    public UnpricedItemTypes value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public UnpricedItemTypes _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public UnpricedItemTypes _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final UnpricedItemType EMPTY = new UnpricedItemType();
+    private final boolean exists;
+    public static final UnpricedItemType EMPTY = new UnpricedItemType();
 
-	public UnpricedItemType()
-	{
-		exists = false;
-	}
+    public UnpricedItemType() {
+        exists = false;
+    }
 
-	public UnpricedItemType(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public UnpricedItemType(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = UnpricedItemTypes.byCode(JPU.getContentAsString(element));
-	}
+        value = UnpricedItemTypes.byCode(JPU.getContentAsString(element));
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

@@ -24,20 +24,18 @@ import com.tectonica.jonix.onix2.SupplyDetail;
 
 /**
  * ONIX2 concrete implementation for {@link BasicSupplyDetail}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSupplyDetail2 extends BasicSupplyDetail
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSupplyDetail2 extends BasicSupplyDetail {
+    private static final long serialVersionUID = 1L;
 
-	public BasicSupplyDetail2(SupplyDetail supplyDetail)
-	{
-		final AvailabilityStatuss availabilityCode = supplyDetail.availabilityCode().value;
-		// NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
-		supplierRole = supplyDetail.supplierRole().value;
-		supplierName = supplyDetail.supplierName().value;
-		availability = (availabilityCode == null) ? null : availabilityCode.name();
-		prices = new BasicPrices2(supplyDetail);
-	}
+    public BasicSupplyDetail2(SupplyDetail supplyDetail) {
+        final AvailabilityStatuss availabilityCode = supplyDetail.availabilityCode().value;
+        // NOTE: AvailabilityStatuss is a required field, we essentially bury here a validation error
+        supplierRole = supplyDetail.supplierRole().value;
+        supplierName = supplyDetail.supplierName().value;
+        availability = (availabilityCode == null) ? null : availabilityCode.name();
+        prices = new BasicPrices2(supplyDetail);
+    }
 }

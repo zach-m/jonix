@@ -19,10 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
@@ -36,209 +32,191 @@ import com.tectonica.jonix.codelist.TransliterationSchemes;
 import com.tectonica.jonix.struct.JonixSeriesIdentifier;
 import com.tectonica.jonix.struct.JonixTitle;
 
+import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Series composite</h1>
- * <p>
- * A repeatable group of data elements which together describe a series of which the product is part.
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Series&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;series&gt;</td>
- * </tr>
- * </table>
+ * <h1>Series composite</h1><p>A repeatable group of data elements which together describe a series of which the product
+ * is part.</p><table border='1' cellpadding='3'><tr><td>Reference name</td><td>&lt;Series&gt;</td></tr><tr><td>Short
+ * tag</td><td>&lt;series&gt;</td></tr></table>
  */
-public class Series implements OnixSuperComposite, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Series implements OnixSuperComposite, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Series";
-	public static final String shortname = "series";
+    public static final String refname = "Series";
+    public static final String shortname = "series";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// CONSTRUCTION
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // CONSTRUCTION
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private boolean initialized;
-	private final boolean exists;
-	private final org.w3c.dom.Element element;
-	public static final Series EMPTY = new Series();
+    private boolean initialized;
+    private final boolean exists;
+    private final org.w3c.dom.Element element;
+    public static final Series EMPTY = new Series();
 
-	public Series()
-	{
-		exists = false;
-		element = null;
-		initialized = true; // so that no further processing will be done on this intentionally-empty object
-	}
+    public Series() {
+        exists = false;
+        element = null;
+        initialized = true; // so that no further processing will be done on this intentionally-empty object
+    }
 
-	public Series(org.w3c.dom.Element element)
-	{
-		exists = true;
-		initialized = false;
-		this.element = element;
-	}
+    public Series(org.w3c.dom.Element element) {
+        exists = true;
+        initialized = false;
+        this.element = element;
+    }
 
-	private void initialize()
-	{
-		if (initialized)
-			return;
-		initialized = true;
+    private void initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		JPU.forElementsOf(element, e -> {
-			final String name = e.getNodeName();
-			if (name.equals(SeriesISSN.refname) || name.equals(SeriesISSN.shortname))
-				seriesISSN = new SeriesISSN(e);
-			else if (name.equals(PublisherSeriesCode.refname) || name.equals(PublisherSeriesCode.shortname))
-				publisherSeriesCode = new PublisherSeriesCode(e);
-			else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname))
-				seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
-			else if (name.equals(TitleOfSeries.refname) || name.equals(TitleOfSeries.shortname))
-				titleOfSeries = new TitleOfSeries(e);
-			else if (name.equals(Title.refname) || name.equals(Title.shortname))
-				titles = JPU.addToList(titles, new Title(e));
-			else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname))
-				contributors = JPU.addToList(contributors, new Contributor(e));
-			else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname))
-				numberWithinSeries = new NumberWithinSeries(e);
-			else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname))
-				yearOfAnnual = new YearOfAnnual(e);
-		});
-	}
+        JPU.forElementsOf(element, e -> {
+            final String name = e.getNodeName();
+            if (name.equals(SeriesISSN.refname) || name.equals(SeriesISSN.shortname)) {
+                seriesISSN = new SeriesISSN(e);
+            } else if (name.equals(PublisherSeriesCode.refname) || name.equals(PublisherSeriesCode.shortname)) {
+                publisherSeriesCode = new PublisherSeriesCode(e);
+            } else if (name.equals(SeriesIdentifier.refname) || name.equals(SeriesIdentifier.shortname)) {
+                seriesIdentifiers = JPU.addToList(seriesIdentifiers, new SeriesIdentifier(e));
+            } else if (name.equals(TitleOfSeries.refname) || name.equals(TitleOfSeries.shortname)) {
+                titleOfSeries = new TitleOfSeries(e);
+            } else if (name.equals(Title.refname) || name.equals(Title.shortname)) {
+                titles = JPU.addToList(titles, new Title(e));
+            } else if (name.equals(Contributor.refname) || name.equals(Contributor.shortname)) {
+                contributors = JPU.addToList(contributors, new Contributor(e));
+            } else if (name.equals(NumberWithinSeries.refname) || name.equals(NumberWithinSeries.shortname)) {
+                numberWithinSeries = new NumberWithinSeries(e);
+            } else if (name.equals(YearOfAnnual.refname) || name.equals(YearOfAnnual.shortname)) {
+                yearOfAnnual = new YearOfAnnual(e);
+            }
+        });
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// MEMBERS
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // MEMBERS
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private SeriesISSN seriesISSN = SeriesISSN.EMPTY;
+    private SeriesISSN seriesISSN = SeriesISSN.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public SeriesISSN seriesISSN()
-	{
-		initialize();
-		return seriesISSN;
-	}
+    /**
+     * (this field is optional)
+     */
+    public SeriesISSN seriesISSN() {
+        initialize();
+        return seriesISSN;
+    }
 
-	private PublisherSeriesCode publisherSeriesCode = PublisherSeriesCode.EMPTY;
+    private PublisherSeriesCode publisherSeriesCode = PublisherSeriesCode.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public PublisherSeriesCode publisherSeriesCode()
-	{
-		initialize();
-		return publisherSeriesCode;
-	}
+    /**
+     * (this field is optional)
+     */
+    public PublisherSeriesCode publisherSeriesCode() {
+        initialize();
+        return publisherSeriesCode;
+    }
 
-	private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes>
+        seriesIdentifiers = ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers()
-	{
-		initialize();
-		return seriesIdentifiers;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
+        initialize();
+        return seriesIdentifiers;
+    }
 
-	private TitleOfSeries titleOfSeries = TitleOfSeries.EMPTY;
+    private TitleOfSeries titleOfSeries = TitleOfSeries.EMPTY;
 
-	/**
-	 * (this field is required)
-	 */
-	public TitleOfSeries titleOfSeries()
-	{
-		initialize();
-		return titleOfSeries;
-	}
+    /**
+     * (this field is required)
+     */
+    public TitleOfSeries titleOfSeries() {
+        initialize();
+        return titleOfSeries;
+    }
 
-	private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles = ListOfOnixDataCompositeWithKey
-			.emptyKeyed();
+    private ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles =
+        ListOfOnixDataCompositeWithKey.emptyKeyed();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles()
-	{
-		initialize();
-		return titles;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
+        initialize();
+        return titles;
+    }
 
-	private List<Contributor> contributors = Collections.emptyList();
+    private List<Contributor> contributors = Collections.emptyList();
 
-	/**
-	 * (this list may be empty)
-	 */
-	public List<Contributor> contributors()
-	{
-		initialize();
-		return contributors;
-	}
+    /**
+     * (this list may be empty)
+     */
+    public List<Contributor> contributors() {
+        initialize();
+        return contributors;
+    }
 
-	private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
+    private NumberWithinSeries numberWithinSeries = NumberWithinSeries.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public NumberWithinSeries numberWithinSeries()
-	{
-		initialize();
-		return numberWithinSeries;
-	}
+    /**
+     * (this field is optional)
+     */
+    public NumberWithinSeries numberWithinSeries() {
+        initialize();
+        return numberWithinSeries;
+    }
 
-	private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
+    private YearOfAnnual yearOfAnnual = YearOfAnnual.EMPTY;
 
-	/**
-	 * (this field is optional)
-	 */
-	public YearOfAnnual yearOfAnnual()
-	{
-		initialize();
-		return yearOfAnnual;
-	}
+    /**
+     * (this field is optional)
+     */
+    public YearOfAnnual yearOfAnnual() {
+        initialize();
+        return yearOfAnnual;
+    }
 }

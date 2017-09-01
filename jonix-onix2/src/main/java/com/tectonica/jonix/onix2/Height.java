@@ -19,8 +19,6 @@
 
 package com.tectonica.jonix.onix2;
 
-import java.io.Serializable;
-
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.OnixElement;
 import com.tectonica.jonix.codelist.LanguageCodes;
@@ -29,117 +27,93 @@ import com.tectonica.jonix.codelist.TextCaseFlags;
 import com.tectonica.jonix.codelist.TextFormats;
 import com.tectonica.jonix.codelist.TransliterationSchemes;
 
+import java.io.Serializable;
+
 /*
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
 /**
- * <h1>Overall height</h1>
- * <p>
- * The overall height of the product: in the case of a book, the spine height, in the units specified in the message
- * header, &lt;DefaultLinearUnit&gt; field, defined in the <cite>ONIX for Books – Product Information Message – XML
- * Message Specification</cite>. Optional and non-repeating; but required if either &lt;Width&gt; or &lt;Thickness&gt;
- * is present. <strong>The &lt;Measure&gt; composite on a previous page provides a more general method of handling
- * measurements, and is to be preferred.</strong>
- * </p>
- * <table border='1' cellpadding='3'>
- * <tr>
- * <td>Format</td>
- * <td>Variable length real number, with an explicit decimal point when required, suggested maximum length 6 characters
- * including a decimal point.</td>
- * </tr>
- * <tr>
- * <td>Reference name</td>
- * <td>&lt;Height&gt;</td>
- * </tr>
- * <tr>
- * <td>Short tag</td>
- * <td>&lt;c096&gt;</td>
- * </tr>
- * <tr>
- * <td>Example</td>
- * <td>&lt;c096&gt;8.25&lt;/c096&gt;</td>
- * </tr>
- * </table>
+ * <h1>Overall height</h1><p>The overall height of the product: in the case of a book, the spine height, in the units
+ * specified in the message header, &lt;DefaultLinearUnit&gt; field, defined in the <cite>ONIX for Books – Product
+ * Information Message – XML Message Specification</cite>. Optional and non-repeating; but required if either
+ * &lt;Width&gt; or &lt;Thickness&gt; is present. <strong>The &lt;Measure&gt; composite on a previous page provides a
+ * more general method of handling measurements, and is to be preferred.</strong></p><table border='1'
+ * cellpadding='3'><tr><td>Format</td><td>Variable length real number, with an explicit decimal point when required,
+ * suggested maximum length 6 characters including a decimal point.</td></tr><tr><td>Reference
+ * name</td><td>&lt;Height&gt;</td></tr><tr><td>Short tag</td><td>&lt;c096&gt;</td></tr><tr><td>Example</td><td>&lt;c096&gt;8.25&lt;/c096&gt;</td></tr></table>
  */
-public class Height implements OnixElement<String>, Serializable
-{
-	private static final long serialVersionUID = 1L;
+public class Height implements OnixElement<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 
-	public static final String refname = "Height";
-	public static final String shortname = "c096";
+    public static final String refname = "Height";
+    public static final String shortname = "c096";
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ATTRIBUTES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // ATTRIBUTES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	public TextFormats textformat;
+    public TextFormats textformat;
 
-	public TextCaseFlags textcase;
+    public TextCaseFlags textcase;
 
-	public LanguageCodes language;
+    public LanguageCodes language;
 
-	public TransliterationSchemes transliteration;
+    public TransliterationSchemes transliteration;
 
-	/**
-	 * (type: DateOrDateTime)
-	 */
-	public String datestamp;
+    /**
+     * (type: DateOrDateTime)
+     */
+    public String datestamp;
 
-	public RecordSourceTypes sourcetype;
+    public RecordSourceTypes sourcetype;
 
-	public String sourcename;
+    public String sourcename;
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// VALUE MEMBER
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // VALUE MEMBER
+    /////////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
-	 * characters including a decimal point.
-	 * <p>
-	 * (type: NonEmptyString)
-	 */
-	public String value;
+    /**
+     * Raw Format: Variable length real number, with an explicit decimal point when required, suggested maximum length 6
+     * characters including a decimal point.<p> (type: NonEmptyString)
+     */
+    public String value;
 
-	/**
-	 * Internal API, use the {@link #value} field instead
-	 */
-	@Override
-	public String _value()
-	{
-		return value;
-	}
+    /**
+     * Internal API, use the {@link #value} field instead
+     */
+    @Override
+    public String _value() {
+        return value;
+    }
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// SERVICES
-	/////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+    // SERVICES
+    /////////////////////////////////////////////////////////////////////////////////
 
-	private final boolean exists;
-	public static final Height EMPTY = new Height();
+    private final boolean exists;
+    public static final Height EMPTY = new Height();
 
-	public Height()
-	{
-		exists = false;
-	}
+    public Height() {
+        exists = false;
+    }
 
-	public Height(org.w3c.dom.Element element)
-	{
-		exists = true;
-		textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-		textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
-		language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
-		transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
-		datestamp = JPU.getAttribute(element, "datestamp");
-		sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-		sourcename = JPU.getAttribute(element, "sourcename");
+    public Height(org.w3c.dom.Element element) {
+        exists = true;
+        textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
+        textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
+        language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
+        transliteration = TransliterationSchemes.byCode(JPU.getAttribute(element, "transliteration"));
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
 
-		value = JPU.getContentAsString(element);
-	}
+        value = JPU.getContentAsString(element);
+    }
 
-	@Override
-	public boolean exists()
-	{
-		return exists;
-	}
+    @Override
+    public boolean exists() {
+        return exists;
+    }
 }

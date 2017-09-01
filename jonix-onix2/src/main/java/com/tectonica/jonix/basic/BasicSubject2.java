@@ -24,23 +24,20 @@ import com.tectonica.jonix.onix2.Subject;
 
 /**
  * ONIX2 concrete implementation for {@link BasicSubject}
- * 
+ *
  * @author Zach Melamed
  */
-public class BasicSubject2 extends BasicSubject
-{
-	private static final long serialVersionUID = 1L;
+public class BasicSubject2 extends BasicSubject {
+    private static final long serialVersionUID = 1L;
 
-	public BasicSubject2(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
-			String subjectHeadingText)
-	{
-		super(subjectSchemeIdentifier, subjectCode, subjectHeadingText);
-	}
+    public BasicSubject2(SubjectSchemeIdentifiers subjectSchemeIdentifier, String subjectCode,
+                         String subjectHeadingText) {
+        super(subjectSchemeIdentifier, subjectCode, subjectHeadingText);
+    }
 
-	public BasicSubject2(Subject s)
-	{
-		subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
-		subjectCode = s.subjectCode().value;
-		subjectHeadingText = s.subjectHeadingText().value;
-	}
+    public BasicSubject2(Subject s) {
+        subjectSchemeIdentifier = s.subjectSchemeIdentifier().value;
+        subjectCode = s.subjectCode().value;
+        subjectHeadingText = s.subjectHeadingText().value;
+    }
 }
