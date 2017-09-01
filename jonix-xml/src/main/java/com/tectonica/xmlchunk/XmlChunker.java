@@ -77,7 +77,7 @@ public class XmlChunker {
      * @author Zach Melamed
      */
     @FunctionalInterface
-    public static interface Listener {
+    public interface Listener {
         /**
          * Fired for elements in the XML source positioned at a level lower than the target depth, giving the user a
          * chance to look at their name and attributes
@@ -85,7 +85,7 @@ public class XmlChunker {
          * @param depth   level at which the element is positioned
          * @param element the element itself (this is NOT a DOM element)
          */
-        public default void onPreTargetStart(int depth, StartElement element) {
+        default void onPreTargetStart(int depth, StartElement element) {
         }
 
         /**
@@ -93,7 +93,7 @@ public class XmlChunker {
          *
          * @return whether or not to continue to the next chunk (i.e. false means break the parsing)
          */
-        public boolean onChunk(Element element);
+        boolean onChunk(Element element);
     }
 
     /**

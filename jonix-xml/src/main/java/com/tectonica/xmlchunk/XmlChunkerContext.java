@@ -100,7 +100,7 @@ class XmlChunkerContext {
                 if (depth < targetDepth) {
                     retVal = event.asStartElement();
                 } else if (depth == targetDepth) {
-                    events = new ArrayList<XMLEvent>();
+                    events = new ArrayList<>();
                 }
             }
 
@@ -123,8 +123,8 @@ class XmlChunkerContext {
         return null;
     }
 
-    private Object elementFromEvents() throws XMLStreamException {
-        List<XMLEvent> domEvents = new ArrayList<XMLEvent>();
+    private Element elementFromEvents() throws XMLStreamException {
+        List<XMLEvent> domEvents = new ArrayList<>();
         domEvents.add(startDocumentEvent);
         domEvents.addAll(events);
         domEvents.add(endDocumentEvent);
