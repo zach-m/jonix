@@ -1,3 +1,16 @@
+#### NOTE: due to some technical reasons, a 'push' had to be forced
+If you pulled commits in the past beyond `jonix-3` release, you may have to reset now before pulling further, as follows:
+
+    git fetch
+	git reset --hard jonix-3
+    git merge
+
+Otherwise you may get some bogus merges.
+
+Apologies..
+
+---
+
 ![jonix](JONIX.png)
 =
 
