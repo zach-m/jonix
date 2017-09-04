@@ -22,14 +22,14 @@ package com.tectonica.jonix;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.extract.JonixInMemExtractor;
 import com.tectonica.jonix.stream.JonixFilesStreamer;
-import com.tectonica.jonix.unify.BasicColumn;
+import com.tectonica.jonix.unify.BaseColumn;
 import com.tectonica.jonix.unify.JonixUnifier;
-import com.tectonica.jonix.unify.basic.BasicHeader;
-import com.tectonica.jonix.unify.basic.BasicProduct;
-import com.tectonica.jonix.unify.basic.onix2.BasicHeader2;
-import com.tectonica.jonix.unify.basic.onix2.BasicProduct2;
-import com.tectonica.jonix.unify.basic.onix3.BasicHeader3;
-import com.tectonica.jonix.unify.basic.onix3.BasicProduct3;
+import com.tectonica.jonix.unify.base.BaseHeader;
+import com.tectonica.jonix.unify.base.BaseProduct;
+import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
+import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
+import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
+import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -79,7 +79,7 @@ public class Jonix {
 
             PrintStream out = new PrintStream(outputFile);
 
-            createBasicTabDelimitedStreamer(out).readFolder(input, pattern);
+            createBaseTabDelimitedStreamer(out).readFolder(input, pattern);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,42 +91,42 @@ public class Jonix {
 
     // /////////////////////////////////////////////////////////////////////////////////////////
 
-    public static final JonixUnifier<BasicHeader, BasicProduct> BASIC_UNIFIER =
-        new JonixUnifier<BasicHeader, BasicProduct>() {
+    public static final JonixUnifier<BaseHeader, BaseProduct> BASIC_UNIFIER =
+        new JonixUnifier<BaseHeader, BaseProduct>() {
             @Override
-            public BasicHeader createFrom(com.tectonica.jonix.onix2.Header header) {
-                return new BasicHeader2(header);
+            public BaseHeader createFrom(com.tectonica.jonix.onix2.Header header) {
+                return new BaseHeader2(header);
             }
 
             @Override
-            public BasicHeader createFrom(com.tectonica.jonix.onix3.Header header) {
-                return new BasicHeader3(header);
+            public BaseHeader createFrom(com.tectonica.jonix.onix3.Header header) {
+                return new BaseHeader3(header);
             }
 
             @Override
-            public BasicProduct createFrom(com.tectonica.jonix.onix2.Product product) {
-                return new BasicProduct2(product);
+            public BaseProduct createFrom(com.tectonica.jonix.onix2.Product product) {
+                return new BaseProduct2(product);
             }
 
             @Override
-            public BasicProduct createFrom(com.tectonica.jonix.onix3.Product product) {
-                return new BasicProduct3(product);
+            public BaseProduct createFrom(com.tectonica.jonix.onix3.Product product) {
+                return new BaseProduct3(product);
             }
 
             @Override
-            public String labelOf(BasicProduct product) {
+            public String labelOf(BaseProduct product) {
                 return product.getLabel();
             }
         };
 
     // /////////////////////////////////////////////////////////////////////////////////////////
 
-    public static JonixFilesStreamer createBasicTabDelimitedStreamer(PrintStream out) {
-        return new JonixFilesStreamer(new JonixTabDelimitedExporter<BasicHeader, BasicProduct>(BASIC_UNIFIER,
-            BasicColumn.ALL_COLUMNS).setOut(out));
+    public static JonixFilesStreamer createBaseTabDelimitedStreamer(PrintStream out) {
+        return new JonixFilesStreamer(new JonixTabDelimitedExporter<BaseHeader, BaseProduct>(BASIC_UNIFIER,
+            BaseColumn.ALL_COLUMNS).setOut(out));
     }
 
-    public static JonixFilesStreamer createBasicInMemStreamer(List<BasicProduct> collection) {
-        return new JonixFilesStreamer(new JonixInMemExtractor<BasicHeader, BasicProduct>(BASIC_UNIFIER, collection));
+    public static JonixFilesStreamer createBaseInMemStreamer(List<BaseProduct> collection) {
+        return new JonixFilesStreamer(new JonixInMemExtractor<BaseHeader, BaseProduct>(BASIC_UNIFIER, collection));
     }
 }

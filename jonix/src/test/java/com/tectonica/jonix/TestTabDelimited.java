@@ -34,7 +34,7 @@ public class TestTabDelimited {
     @Before
     public void setUp() throws Exception {
         PrintStream outFile = new PrintStream("Catalog.tsv");
-        streamer = Jonix.createBasicTabDelimitedStreamer(outFile);
+        streamer = Jonix.createBaseTabDelimitedStreamer(outFile);
     }
 
     @After

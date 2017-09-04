@@ -20,12 +20,12 @@
 package com.tectonica.jonix.extract;
 
 import com.tectonica.jonix.Jonix;
-import com.tectonica.jonix.unify.JonixUnifier;
-import com.tectonica.jonix.unify.basic.BasicHeader;
-import com.tectonica.jonix.unify.basic.BasicProduct;
 import com.tectonica.jonix.stream.JonixFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 import com.tectonica.jonix.stream.JonixStreamer;
+import com.tectonica.jonix.unify.JonixUnifier;
+import com.tectonica.jonix.unify.base.BaseHeader;
+import com.tectonica.jonix.unify.base.BaseProduct;
 import org.w3c.dom.Element;
 
 import java.util.List;
@@ -33,8 +33,8 @@ import java.util.List;
 /**
  * Abstract base-class for extractors whose goal is to facilitate reading from both ONIX2 and ONIX3 sources, and
  * represent their data in in a single pair of classes (header + product), as opposed to a pair for each ONIX version.
- * Jonix provides its own pair of such unified classes, {@link BasicHeader} and {@link BasicProduct}, which you can use
- * as is or extend where applicable.
+ * Jonix provides its own pair of such unified classes, {@link BaseHeader} and {@link BaseProduct}, which you can use as
+ * is or extend where applicable.
  *
  * @param <H> class of the unified header
  * @param <P> class of the unified product

@@ -51,8 +51,8 @@ public class JonixTabulator<H, P> {
     }
 
     /**
-     * turns a Product object into a tab-delimited string, whose columns are defined by the provided array of
-     * {@link JonixColumn}s
+     * turns a Product object into a tab-delimited string, whose columns are defined by the provided array of {@link
+     * JonixColumn}s
      */
     public static <H, P> String productAsTabDelimitedString(P product, JonixColumn<P>[] columns) {
         String[][] prodMatrix = productAsStringMatrix(product, columns);
