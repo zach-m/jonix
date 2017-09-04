@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix3;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.OnixHeader;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
 
 import java.io.Serializable;
@@ -32,7 +33,7 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
-public class Header implements OnixSuperComposite, Serializable {
+public class Header implements OnixHeader, OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Header";

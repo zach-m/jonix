@@ -24,6 +24,7 @@ import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -53,7 +54,7 @@ import java.util.List;
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;Product&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;product&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Product implements OnixSuperComposite, Serializable {
+public class Product implements OnixProduct, OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Product";

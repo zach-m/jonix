@@ -22,6 +22,7 @@ package com.tectonica.jonix.onix2;
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.OnixHeader;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.RecordSourceTypes;
@@ -46,7 +47,7 @@ import java.io.Serializable;
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;Header&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;header&gt;</td></tr></table>
  */
-public class Header implements OnixSuperComposite, Serializable {
+public class Header implements OnixHeader, OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Header";

@@ -24,6 +24,7 @@ import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
 import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
+import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
 import com.tectonica.jonix.codelist.BarcodeIndicators;
@@ -75,7 +76,7 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
-public class Product implements OnixSuperComposite, Serializable {
+public class Product implements OnixProduct, OnixSuperComposite, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Product";

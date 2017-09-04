@@ -75,7 +75,7 @@ import java.util.List;
  * </pre>
  *
  * @version $Revision: 1052095 $ $Date: 2010-12-22 23:03:20 +0000 (Wed, 22 Dec 2010) $
- * @see org.apache.commons.io.ByteOrderMark
+ * @see repackaged.org.apache.commons.io.ByteOrderMark
  * @see <a href="http://en.wikipedia.org/wiki/Byte_order_mark">Wikipedia - Byte Order Mark</a>
  * @since Commons IO 2.0
  */

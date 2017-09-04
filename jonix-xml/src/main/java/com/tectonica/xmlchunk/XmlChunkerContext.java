@@ -34,7 +34,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-class XmlChunkerContext {
+public class XmlChunkerContext {
     static final XMLInputFactory inputFactory;
     static final TransformerFactory transformerFactory;
     static final XmlChunkerEndDocument endDocumentEvent = new XmlChunkerEndDocument();
@@ -61,7 +61,7 @@ class XmlChunkerContext {
     private XMLEvent startDocumentEvent;
     private int targetDepth;
 
-    XmlChunkerContext(InputStream is, String encoding, int targetDepth) throws XMLStreamException {
+    public XmlChunkerContext(InputStream is, String encoding, int targetDepth) throws XMLStreamException {
         depth = -1;
         events = null;
         reader = inputFactory.createXMLEventReader(is, encoding);
@@ -73,7 +73,7 @@ class XmlChunkerContext {
         return depth;
     }
 
-    Element nextChunk() throws XMLStreamException {
+    public Element nextChunk() throws XMLStreamException {
         Object next;
         while ((next = nextObject()) != null) {
             if (next instanceof Element) {
@@ -83,10 +83,10 @@ class XmlChunkerContext {
         return null;
     }
 
-    Object nextObject() throws XMLStreamException {
+    public Object nextObject() throws XMLStreamException {
         while (reader.hasNext()) {
             XMLEvent event = reader.nextEvent();
-            Object retVal = null;
+            Object nextObject = null;
 
             if (event.isStartDocument()) {
                 depth = 0;
@@ -98,7 +98,7 @@ class XmlChunkerContext {
             if (event.isStartElement()) {
                 depth++;
                 if (depth < targetDepth) {
-                    retVal = event.asStartElement();
+                    nextObject = event.asStartElement(); // i.e. will return a StartElement event
                 } else if (depth == targetDepth) {
                     events = new ArrayList<>();
                 }
@@ -110,16 +110,17 @@ class XmlChunkerContext {
 
             if (event.isEndElement()) {
                 if (depth == targetDepth) {
-                    retVal = elementFromEvents();
+                    nextObject = elementFromEvents(); // i.e. will return an XML Element
                     events = null;
                 }
                 depth--;
             }
 
-            if (retVal != null) {
-                return retVal;
+            if (nextObject != null) {
+                return nextObject;
             }
         }
+        reader.close();
         return null;
     }
 
