@@ -20,9 +20,9 @@
 package com.tectonica.jonix.extract;
 
 import com.tectonica.jonix.Jonix;
-import com.tectonica.jonix.JonixUnifier;
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
+import com.tectonica.jonix.unify.JonixUnifier;
+import com.tectonica.jonix.unify.basic.BasicHeader;
+import com.tectonica.jonix.unify.basic.BasicProduct;
 import com.tectonica.jonix.stream.JonixFilesExtractor;
 import com.tectonica.jonix.stream.JonixOnixVersion;
 import com.tectonica.jonix.stream.JonixStreamer;

@@ -19,15 +19,17 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicHeader2;
-import com.tectonica.jonix.basic.BasicHeader3;
-import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.basic.BasicProduct2;
-import com.tectonica.jonix.basic.BasicProduct3;
 import com.tectonica.jonix.export.JonixTabDelimitedExporter;
 import com.tectonica.jonix.extract.JonixInMemExtractor;
 import com.tectonica.jonix.stream.JonixFilesStreamer;
+import com.tectonica.jonix.unify.BasicColumn;
+import com.tectonica.jonix.unify.JonixUnifier;
+import com.tectonica.jonix.unify.basic.BasicHeader;
+import com.tectonica.jonix.unify.basic.BasicProduct;
+import com.tectonica.jonix.unify.basic.onix2.BasicHeader2;
+import com.tectonica.jonix.unify.basic.onix2.BasicProduct2;
+import com.tectonica.jonix.unify.basic.onix3.BasicHeader3;
+import com.tectonica.jonix.unify.basic.onix3.BasicProduct3;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -46,10 +48,8 @@ public class Jonix {
     }
 
     /**
-     * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:
-     * <ul>
-     * <li>any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)
-     * <li>the single file INPUT
+     * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either: <ul> <li>any file in or
+     * below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml) <li>the single file INPUT
      * </ul>
      *
      * @param args OUTPUT INPUT or OUTPUT [DIRECTORY] [PATTERN]

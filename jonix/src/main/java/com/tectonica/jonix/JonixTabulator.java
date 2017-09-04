@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.unify.JonixColumn;
+
 /**
  * A helper class, turning a given set of {@link JonixColumn}s into a tab-delimited string ready for writing into a
  * file.

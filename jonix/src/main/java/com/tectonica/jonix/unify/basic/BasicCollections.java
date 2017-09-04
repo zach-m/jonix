@@ -1,0 +1,45 @@
+/*
+ * Copyright (C) 2012 Zach Melamed
+ * 
+ * Latest version available online at https://github.com/zach-m/jonix
+ * Contact me at zach@tectonica.co.il
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.tectonica.jonix.unify.basic;
+
+import java.util.List;
+
+/**
+ * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
+ * an ONIX product
+ *
+ * @author Zach Melamed
+ */
+@SuppressWarnings("serial")
+public abstract class BasicCollections extends LazyList<BasicCollection> {
+    public BasicCollection getFirst() {
+        return (size() > 0) ? get(0) : null;
+    }
+
+    public String getFirstNumberWithinSeries() {
+        BasicCollection first = getFirst();
+        return (first == null) ? null : first.numberWithinSeries;
+    }
+
+    public String getFirstTitle() {
+        BasicCollection first = getFirst();
+        return (first == null) ? null : first.mainTitle;
+    }
+}

@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.extract;
 
-import com.tectonica.jonix.JonixUnifier;
+import com.tectonica.jonix.unify.JonixUnifier;
 import com.tectonica.jonix.stream.JonixStreamer;
 
 import java.util.Collection;

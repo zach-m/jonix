@@ -19,12 +19,12 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.basic.BasicHeader;
-import com.tectonica.jonix.basic.BasicProduct;
-import com.tectonica.jonix.basic.BasicProduct2;
-import com.tectonica.jonix.basic.BasicProduct3;
+import com.tectonica.jonix.unify.basic.BasicHeader;
+import com.tectonica.jonix.unify.basic.BasicProduct;
 import com.tectonica.jonix.extract.JonixUnifiedExtractor;
 import com.tectonica.jonix.stream.JonixStreamer;
+import com.tectonica.jonix.unify.basic.onix2.BasicProduct2;
+import com.tectonica.jonix.unify.basic.onix3.BasicProduct3;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
 import org.junit.Before;
