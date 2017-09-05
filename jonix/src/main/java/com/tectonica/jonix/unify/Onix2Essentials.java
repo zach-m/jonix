@@ -1,5 +1,7 @@
-package com.tectonica.jonix;
+package com.tectonica.jonix.unify;
 
+import com.tectonica.jonix.JPU;
+import com.tectonica.jonix.util.JonixUtil;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.ContributorRoles;

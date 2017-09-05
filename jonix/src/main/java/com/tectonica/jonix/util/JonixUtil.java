@@ -1,4 +1,4 @@
-package com.tectonica.jonix;
+package com.tectonica.jonix.util;
 
 import repackaged.net.sourceforge.isbnhyphenappender.ISBNHyphenAppender;
 

@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.JonixUtil;
+import com.tectonica.jonix.util.JonixUtil;
 import com.tectonica.jonix.codelist.CountryCodes;
 
 import java.io.Serializable;
