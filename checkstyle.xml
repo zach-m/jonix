@@ -23,6 +23,11 @@
         <property name="optional" value="false"/>
     </module>
 
+    <module name="Header">
+        <property name="headerFile" value="checkstyle-copyright.txt"/>
+        <property name="fileExtensions" value="java"/>
+    </module>
+
     <module name="TreeWalker">
         <module name="SuppressionCommentFilter"/>
         <module name="OuterTypeFilename"/>
