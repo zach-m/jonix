@@ -36,12 +36,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+
+import static com.tectonica.jonix.JonixFactory.headerFromElement;
+import static com.tectonica.jonix.JonixFactory.productFromElement;
 
 public class JonixProvider implements Iterable<OnixProduct> {
 
@@ -54,12 +57,12 @@ public class JonixProvider implements Iterable<OnixProduct> {
 
     private JonixProvider(InputStream inputStream) {
         this.inputStream = Objects.requireNonNull(inputStream);
-        this.files = Collections.emptyList();
+        this.files = new ArrayList<>();
     }
 
     private JonixProvider(List<File> files) {
         this.inputStream = null;
-        this.files = Objects.requireNonNull(files);
+        this.files = new ArrayList<>(Objects.requireNonNull(files));
     }
 
     public static JonixProvider source(InputStream inputStream) {
@@ -71,11 +74,26 @@ public class JonixProvider implements Iterable<OnixProduct> {
     }
 
     public static JonixProvider source(File file) {
-        return new JonixProvider(Arrays.asList(file)); // must be a mutable-list
+        return new JonixProvider(Collections.singletonList(Objects.requireNonNull(file)));
     }
 
     public static JonixProvider source(File folder, String glob, boolean recursive) throws IOException {
         return new JonixProvider(GlobScanner.scan(folder, glob, recursive));
+    }
+
+    public JonixProvider add(List<File> files) {
+        this.files.addAll(Objects.requireNonNull(files));
+        return this;
+    }
+
+    public JonixProvider add(File file) {
+        this.files.add(Objects.requireNonNull(file));
+        return this;
+    }
+
+    public JonixProvider add(File folder, String glob, boolean recursive) throws IOException {
+        this.files.addAll(GlobScanner.scan(folder, glob, recursive));
+        return this;
     }
 
     public JonixProvider encoding(String encoding) {
@@ -212,28 +230,6 @@ public class JonixProvider implements Iterable<OnixProduct> {
                     return productFromElement(product, sourceOnixVersion);
                 }
             };
-        }
-
-        private OnixProduct productFromElement(Element productElement, JonixOnixVersion sourceOnixVersion) {
-            switch (sourceOnixVersion) {
-                case ONIX2:
-                    return new com.tectonica.jonix.onix2.Product(productElement);
-                case ONIX3:
-                    return new com.tectonica.jonix.onix3.Product(productElement);
-                default:
-                    throw new IllegalStateException();
-            }
-        }
-
-        private OnixHeader headerFromElement(Element headerElement, JonixOnixVersion sourceOnixVersion) {
-            switch (sourceOnixVersion) {
-                case ONIX2:
-                    return new com.tectonica.jonix.onix2.Header(headerElement);
-                case ONIX3:
-                    return new com.tectonica.jonix.onix3.Header(headerElement);
-                default:
-                    throw new IllegalStateException();
-            }
         }
     }
 }

@@ -20,7 +20,7 @@
 package com.tectonica.jonix.export;
 
 import com.tectonica.jonix.unify.JonixColumn;
-import com.tectonica.jonix.JonixTabulator;
+import com.tectonica.jonix.unify.JonixTabulator;
 import com.tectonica.jonix.unify.JonixUnifier;
 import com.tectonica.jonix.stream.JonixStreamer;
 

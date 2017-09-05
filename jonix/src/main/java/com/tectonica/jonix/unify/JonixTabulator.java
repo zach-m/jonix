@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.unify.JonixColumn;
 
@@ -65,7 +65,7 @@ public class JonixTabulator<H, P> {
                 if (item == null) {
                     sb.append("");
                 } else {
-                    sb.append(item.replaceAll("\\t|\\n|\\r", " "));
+                    sb.append(item.replaceAll("[\\t\\n\\r]", " "));
                 }
                 sb.append("\t");
             }
