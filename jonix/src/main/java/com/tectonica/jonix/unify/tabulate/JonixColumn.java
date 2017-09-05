@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.unify;
+package com.tectonica.jonix.unify.tabulate;
 
 /**
  * An interface for representing a specific ONIX information (e.g. title, ISBN, description) in a fixed-size String
@@ -55,4 +55,8 @@ public interface JonixColumn<P> {
     String[] getSubColumnNames();
 
     boolean extractFrom(P product, String[] columnBuffer);
+
+    default String[] newBuffer() {
+        return new String[getRepetitions() * getSubColumnNames().length];
+    }
 }

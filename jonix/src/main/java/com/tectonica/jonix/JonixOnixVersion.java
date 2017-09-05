@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.stream;
+package com.tectonica.jonix;
 
 public enum JonixOnixVersion {
     ONIX2, //

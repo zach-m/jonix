@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.stream.JonixOnixVersion;
 import org.w3c.dom.Element;
 
 public class JonixFactory {

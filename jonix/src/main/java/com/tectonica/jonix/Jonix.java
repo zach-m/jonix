@@ -19,21 +19,10 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.export.JonixTabDelimitedExporter;
-import com.tectonica.jonix.extract.JonixInMemExtractor;
-import com.tectonica.jonix.stream.JonixFilesStreamer;
-import com.tectonica.jonix.unify.BaseColumn;
-import com.tectonica.jonix.unify.JonixUnifier;
-import com.tectonica.jonix.unify.base.BaseHeader;
-import com.tectonica.jonix.unify.base.BaseProduct;
-import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
-import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
-import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
-import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
+import com.tectonica.jonix.unify.tabulate.BaseColumn;
+import com.tectonica.jonix.util.SimpleTsvWriter;
 
 import java.io.File;
-import java.io.PrintStream;
-import java.util.List;
 
 public class Jonix {
     private static void usage() {
@@ -46,6 +35,12 @@ public class Jonix {
         p("- the single file INPUT");
         p("");
     }
+
+    private static void p(String s) {
+        System.out.println(s);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either: <ul> <li>any file in or
@@ -66,67 +61,22 @@ public class Jonix {
             final String input = (args.length < 2) ? "." : args[1];
             final File inputFile = new File(input);
             if (!inputFile.exists()) {
-                System.err.println("couldn't find " + input);
+                System.err.println("couldn't find " + inputFile.getAbsolutePath());
                 return;
             }
 
-            final String pattern;
+            final JonixProvider jonix;
             if (!inputFile.isDirectory()) {
-                pattern = "*";
+                jonix = JonixProvider.source(inputFile);
             } else {
-                pattern = (args.length < 3) ? "*.xml" : args[2];
+                String pattern = (args.length < 3) ? "*.xml" : args[2];
+                jonix = JonixProvider.source(inputFile, pattern, true);
             }
 
-            PrintStream out = new PrintStream(outputFile);
-
-            createBaseTabDelimitedStreamer(out).readFolder(input, pattern);
+            SimpleTsvWriter.write(jonix.streamUnified(), new File(outputFile), BaseColumn.ALL);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void p(String s) {
-        System.out.println(s);
-    }
-
-    // /////////////////////////////////////////////////////////////////////////////////////////
-
-    public static final JonixUnifier<BaseHeader, BaseProduct> BASIC_UNIFIER =
-        new JonixUnifier<BaseHeader, BaseProduct>() {
-            @Override
-            public BaseHeader createFrom(com.tectonica.jonix.onix2.Header header) {
-                return new BaseHeader2(header);
-            }
-
-            @Override
-            public BaseHeader createFrom(com.tectonica.jonix.onix3.Header header) {
-                return new BaseHeader3(header);
-            }
-
-            @Override
-            public BaseProduct createFrom(com.tectonica.jonix.onix2.Product product) {
-                return new BaseProduct2(product);
-            }
-
-            @Override
-            public BaseProduct createFrom(com.tectonica.jonix.onix3.Product product) {
-                return new BaseProduct3(product);
-            }
-
-            @Override
-            public String labelOf(BaseProduct product) {
-                return product.getLabel();
-            }
-        };
-
-    // /////////////////////////////////////////////////////////////////////////////////////////
-
-    public static JonixFilesStreamer createBaseTabDelimitedStreamer(PrintStream out) {
-        return new JonixFilesStreamer(new JonixTabDelimitedExporter<BaseHeader, BaseProduct>(BASIC_UNIFIER,
-            BaseColumn.ALL_COLUMNS).setOut(out));
-    }
-
-    public static JonixFilesStreamer createBaseInMemStreamer(List<BaseProduct> collection) {
-        return new JonixFilesStreamer(new JonixInMemExtractor<BaseHeader, BaseProduct>(BASIC_UNIFIER, collection));
-    }
 }

@@ -19,36 +19,34 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.stream.JonixFilesStreamer;
-import org.junit.After;
-import org.junit.Before;
+import com.tectonica.jonix.unify.tabulate.BaseColumn;
+import com.tectonica.jonix.util.SimpleTsvWriter;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
+import java.io.File;
+import java.io.IOException;
 
 public class TestTabDelimited {
-    private JonixFilesStreamer streamer;
-
-    @Before
-    public void setUp() throws Exception {
-        PrintStream outFile = new PrintStream("Catalog.tsv");
-        streamer = Jonix.createBaseTabDelimitedStreamer(outFile);
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     @Ignore
-    // ignored by default. the sample files are not checked into SCM
-    public void exportVariousOnixSourcesIntoTSV() throws FileNotFoundException {
-        String samplesFolder = "C:/Users/zach/Dropbox/Projects/Jonix/onix_samples";
-        streamer.readFolder(samplesFolder + "/ONIX3", "*.onix"); // ONIX3 files
-        streamer.readFolder(samplesFolder + "/ONIX2/BK", "*.xml"); // ONIX2 files
-        streamer.read(samplesFolder + "/ONIX2/SB_short.xml"); // short-references ONIX2 file
-        streamer.read(samplesFolder + "/ONIX2/MY.xml"); // improper ONIX2 file (has some syntactic bugs)
+    // this test is ignored by default, as it scans through many files, that exist only on the author's machine
+    public void exportVariousOnixSourcesIntoTSV() throws IOException {
+        File samples = new File("..", "samples");
+        if (!samples.exists()) {
+            System.err.println("Samples directory is missing: " + samples.getAbsolutePath());
+            System.err.println("Skipping");
+            return;
+        }
+        JonixProvider jonix = JonixProvider
+            .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
+            .add(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
+            .add(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
+            .add(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
+            .onSource((name, header, version) -> System.err.println("Opening " + version + " file: " + name));
+
+        File targetFile = new File("target", "Catalog.tsv");
+        SimpleTsvWriter.write(jonix.streamUnified(), targetFile, BaseColumn.ALL);
+        System.err.println("Written " + targetFile.getAbsolutePath());
     }
 }

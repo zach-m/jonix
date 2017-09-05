@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.stream.JonixOnixVersion;
+import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.util.GlobScanner;
 import com.tectonica.xmlchunk.XmlChunkerContext;
 import org.slf4j.Logger;
@@ -42,6 +42,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import static com.tectonica.jonix.JonixFactory.headerFromElement;
 import static com.tectonica.jonix.JonixFactory.productFromElement;
@@ -53,7 +55,7 @@ public class JonixProvider implements Iterable<OnixProduct> {
     private final InputStream inputStream;
     private final List<File> files;
     private String encoding = "UTF-8";
-    private OnSource onSource = null;
+    private List<OnSource> onSourceEvents = new ArrayList<>();
 
     private JonixProvider(InputStream inputStream) {
         this.inputStream = Objects.requireNonNull(inputStream);
@@ -103,12 +105,20 @@ public class JonixProvider implements Iterable<OnixProduct> {
 
     @FunctionalInterface
     public interface OnSource {
-        int onSource(String sourceName, OnixHeader header, JonixOnixVersion sourceOnixVersion);
+        void onSource(String sourceName, OnixHeader header, JonixOnixVersion sourceOnixVersion);
     }
 
     public JonixProvider onSource(OnSource onSource) {
-        this.onSource = onSource;
+        this.onSourceEvents.add(onSource);
         return this;
+    }
+
+    public Stream<OnixProduct> stream() {
+        return StreamSupport.stream(spliterator(), false);
+    }
+
+    public Stream<BaseProduct> streamUnified() {
+        return stream().map(JonixUnifier::unifyProduct);
     }
 
     @Override
@@ -189,17 +199,15 @@ public class JonixProvider implements Iterable<OnixProduct> {
             Element firstElement = ctx.nextChunk();
             // TODO: allow firstProduct = null, and check that it works on files with not tags under OnixMessage
             if (firstElement.getNodeName().equalsIgnoreCase("Header")) {
-                if (onSource != null) {
+                if (!onSourceEvents.isEmpty()) {
                     OnixHeader header = headerFromElement(firstElement, sourceOnixVersion);
-                    onSource.onSource(sourceName, header, sourceOnixVersion);
+                    onSourceEvents.forEach(e -> e.onSource(sourceName, header, sourceOnixVersion));
                 }
                 // if the first chunk (level-2 element) was a <Header>, the next one must be a <Product>
                 firstElement = ctx.nextChunk();
                 // TODO: allow firstProduct = null, and check that it works on files with only header tag
             } else {
-                if (onSource != null) {
-                    onSource.onSource(sourceName, null, sourceOnixVersion);
-                }
+                onSourceEvents.forEach(e -> e.onSource(sourceName, null, sourceOnixVersion));
             }
 
             // the context now points to the first product in the input-stream, we can start iterate

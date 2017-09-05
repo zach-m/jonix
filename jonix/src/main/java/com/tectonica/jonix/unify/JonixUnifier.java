@@ -20,7 +20,6 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.Jonix;
-import com.tectonica.jonix.extract.JonixUnifiedExtractor;
 
 /**
  * Implementation of this class is required by extractors whose goal is to facilitate reading from both ONIX2 and ONIX3

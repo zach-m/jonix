@@ -19,6 +19,8 @@
 
 package com.tectonica.jonix.unify.base;
 
+import com.tectonica.jonix.OnixProduct;
+
 import java.io.Serializable;
 
 /**
@@ -35,7 +37,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 public abstract class BaseProduct implements Serializable {
-    public transient Object onixProduct;
+    public transient OnixProduct onixProduct;
 
     public BaseInfo info;
     public BaseDescription description;

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.unify;
+package com.tectonica.jonix.unify.tabulate;
 
 import com.tectonica.jonix.codelist.ContributorRoles;
 import com.tectonica.jonix.codelist.CountryCodes;
@@ -358,7 +358,31 @@ public abstract class BaseColumn implements JonixColumn<BaseProduct> {
 
     // //////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static final BaseColumn[] ALL_COLUMNS = {BaseColumn.ISBN13, //
+    // CHECKSTYLE:OFF
+    protected static final Set<PriceTypes> RECOMMENDED_RETAIL_PRICES = new HashSet<>(Arrays.asList(
+        PriceTypes.RRP_including_tax,
+        PriceTypes.RRP_excluding_tax
+    ));
+
+    protected static final Set<SalesRightsTypes> NO_SALES_RIGHTS = new HashSet<>(Arrays.asList(
+        SalesRightsTypes.Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified,
+        SalesRightsTypes.Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories,
+        SalesRightsTypes.Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories,
+        SalesRightsTypes.Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories
+    ));
+
+    protected static final Set<SalesRightsTypes> UNRESTRICTED_SALES_RIGHTS = new HashSet<>(Arrays.asList(
+        SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories,
+        SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories,
+        SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies,
+        SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies
+    ));
+    // CHECKSTYLE:ON
+
+    // //////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static final List<BaseColumn> ALL = Arrays.asList( //
+        BaseColumn.ISBN13, //
         BaseColumn.Title, //
         BaseColumn.SeriesTitle, //
         BaseColumn.Author, //
@@ -376,26 +400,5 @@ public abstract class BaseColumn implements JonixColumn<BaseProduct> {
         BaseColumn.SalesBannedIn, //
         BaseColumn.Description, //
         BaseColumn.ShortDescription //
-    };
-
-    protected static final Set<PriceTypes> RECOMMENDED_RETAIL_PRICES = new HashSet<>(Arrays.asList(
-        PriceTypes.RRP_including_tax,
-        PriceTypes.RRP_excluding_tax
-    ));
-
-    // CHECKSTYLE:OFF
-    protected static final Set<SalesRightsTypes> NO_SALES_RIGHTS = new HashSet<>(Arrays.asList(
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_or_territories_reason_unspecified,
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_but_publisher_holds_exclusive_rights_in_those_countries_or_territories,
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_publisher_holds_non_exclusive_rights_in_those_countries_or_territories,
-        SalesRightsTypes.Not_for_sale_in_the_specified_countries_because_publisher_does_not_hold_rights_in_those_countries_or_territories
-    ));
-
-    protected static final Set<SalesRightsTypes> UNRESTRICTED_SALES_RIGHTS = new HashSet<>(Arrays.asList(
-        SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories,
-        SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories,
-        SalesRightsTypes.For_sale_with_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies,
-        SalesRightsTypes.For_sale_with_non_exclusive_rights_in_the_specified_countries_or_territories_sales_restriction_applies
-    ));
-    // CHECKSTYLE:ON
+    );
 }

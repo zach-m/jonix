@@ -19,10 +19,7 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.unify.base.BaseHeader;
 import com.tectonica.jonix.unify.base.BaseProduct;
-import com.tectonica.jonix.extract.JonixUnifiedExtractor;
-import com.tectonica.jonix.stream.JonixStreamer;
 import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 import com.tectonica.xmlchunk.XmlChunker;
@@ -114,15 +111,8 @@ public class TestBaseProduct {
         });
 
         // read the same file, this time using a JonixReader
-        JonixStreamer streamer =
-            new JonixStreamer(new JonixUnifiedExtractor<BaseHeader, BaseProduct>(Jonix.BASIC_UNIFIER) {
-                @Override
-                protected boolean onProduct(BaseProduct product, JonixStreamer streamer) {
-                    jsonViaReader = JonixJson.objectToJson(product);
-                    return true;
-                }
-            });
-        streamer.read(getClass().getResourceAsStream(RESOURCE_NAME));
+        JonixProvider.source(getClass().getResourceAsStream(RESOURCE_NAME)).streamUnified().limit(1)
+            .forEach(bp -> jsonViaReader = JonixJson.objectToJson(bp));
 
         // compare the JSON received in both methods
         org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);
