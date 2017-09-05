@@ -74,17 +74,17 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -122,7 +122,7 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TitleType titleType() {
-        initialize();
+        _initialize();
         return titleType;
     }
 
@@ -132,7 +132,7 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataComposite<TitleElement, JonixTitleElement> titleElements() {
-        initialize();
+        _initialize();
         return titleElements;
     }
 
@@ -142,7 +142,7 @@ public class TitleDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitleStatement titleStatement() {
-        initialize();
+        _initialize();
         return titleStatement;
     }
 }

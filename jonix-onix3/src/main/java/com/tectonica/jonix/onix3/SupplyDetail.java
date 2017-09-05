@@ -82,17 +82,17 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -166,7 +166,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public Supplier supplier() {
-        initialize();
+        _initialize();
         return supplier;
     }
 
@@ -177,7 +177,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<SupplierOwnCoding, JonixSupplierOwnCoding, SupplierOwnCodeTypes> supplierOwnCodings() {
-        initialize();
+        _initialize();
         return supplierOwnCodings;
     }
 
@@ -188,7 +188,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ReturnsConditions, JonixReturnsConditions, ReturnsConditionsCodeTypes> returnsConditionss() {
-        initialize();
+        _initialize();
         return returnsConditionss;
     }
 
@@ -198,7 +198,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ProductAvailability productAvailability() {
-        initialize();
+        _initialize();
         return productAvailability;
     }
 
@@ -209,7 +209,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<SupplyDate, JonixSupplyDate, SupplyDateRoles> supplyDates() {
-        initialize();
+        _initialize();
         return supplyDates;
     }
 
@@ -219,7 +219,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OrderTime orderTime() {
-        initialize();
+        _initialize();
         return orderTime;
     }
 
@@ -229,7 +229,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NewSupplier newSupplier() {
-        initialize();
+        _initialize();
         return newSupplier;
     }
 
@@ -239,7 +239,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Stock> stocks() {
-        initialize();
+        _initialize();
         return stocks;
     }
 
@@ -249,7 +249,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PackQuantity packQuantity() {
-        initialize();
+        _initialize();
         return packQuantity;
     }
 
@@ -259,7 +259,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public UnpricedItemType unpricedItemType() {
-        initialize();
+        _initialize();
         return unpricedItemType;
     }
 
@@ -269,7 +269,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Price> prices() {
-        initialize();
+        _initialize();
         return prices;
     }
 
@@ -279,7 +279,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Reissue reissue() {
-        initialize();
+        _initialize();
         return reissue;
     }
 }

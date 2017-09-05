@@ -100,14 +100,6 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -115,6 +107,14 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -192,7 +192,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ISBN isbn() {
-        initialize();
+        _initialize();
         return isbn;
     }
 
@@ -202,7 +202,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EAN13 ean13() {
-        initialize();
+        _initialize();
         return ean13;
     }
 
@@ -213,7 +213,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -223,7 +223,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductForm productForm() {
-        initialize();
+        _initialize();
         return productForm;
     }
 
@@ -233,7 +233,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
-        initialize();
+        _initialize();
         return productFormDetails;
     }
 
@@ -244,7 +244,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
-        initialize();
+        _initialize();
         return productFormFeatures;
     }
 
@@ -254,7 +254,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
-        initialize();
+        _initialize();
         return bookFormDetails;
     }
 
@@ -264,7 +264,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductPackaging productPackaging() {
-        initialize();
+        _initialize();
         return productPackaging;
     }
 
@@ -274,7 +274,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductFormDescription productFormDescription() {
-        initialize();
+        _initialize();
         return productFormDescription;
     }
 
@@ -284,7 +284,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfPieces numberOfPieces() {
-        initialize();
+        _initialize();
         return numberOfPieces;
     }
 
@@ -294,7 +294,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TradeCategory tradeCategory() {
-        initialize();
+        _initialize();
         return tradeCategory;
     }
 
@@ -304,7 +304,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
-        initialize();
+        _initialize();
         return productContentTypes;
     }
 
@@ -314,7 +314,7 @@ public class ContainedItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ItemQuantity itemQuantity() {
-        initialize();
+        _initialize();
         return itemQuantity;
     }
 }

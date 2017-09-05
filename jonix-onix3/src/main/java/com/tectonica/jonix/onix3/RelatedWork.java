@@ -76,17 +76,17 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -120,7 +120,7 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public WorkRelationCode workRelationCode() {
-        initialize();
+        _initialize();
         return workRelationCode;
     }
 
@@ -131,7 +131,7 @@ public class RelatedWork implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
-        initialize();
+        _initialize();
         return workIdentifiers;
     }
 }

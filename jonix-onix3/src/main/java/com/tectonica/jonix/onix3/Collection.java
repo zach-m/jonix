@@ -80,17 +80,17 @@ public class Collection implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -144,7 +144,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public CollectionType collectionType() {
-        initialize();
+        _initialize();
         return collectionType;
     }
 
@@ -154,7 +154,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SourceName sourceName() {
-        initialize();
+        _initialize();
         return sourceName;
     }
 
@@ -165,7 +165,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<CollectionIdentifier, JonixCollectionIdentifier, SeriesIdentifierTypes> collectionIdentifiers() {
-        initialize();
+        _initialize();
         return collectionIdentifiers;
     }
 
@@ -176,7 +176,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<CollectionSequence, JonixCollectionSequence, CollectionSequenceTypes> collectionSequences() {
-        initialize();
+        _initialize();
         return collectionSequences;
     }
 
@@ -186,7 +186,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<TitleDetail> titleDetails() {
-        initialize();
+        _initialize();
         return titleDetails;
     }
 
@@ -196,7 +196,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -206,7 +206,7 @@ public class Collection implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
-        initialize();
+        _initialize();
         return contributorStatements;
     }
 }

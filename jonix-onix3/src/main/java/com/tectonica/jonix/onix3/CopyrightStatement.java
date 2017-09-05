@@ -77,17 +77,17 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CopyrightType copyrightType() {
-        initialize();
+        _initialize();
         return copyrightType;
     }
 
@@ -135,7 +135,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<CopyrightYear, String> copyrightYears() {
-        initialize();
+        _initialize();
         return copyrightYears;
     }
 
@@ -145,7 +145,7 @@ public class CopyrightStatement implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<CopyrightOwner> copyrightOwners() {
-        initialize();
+        _initialize();
         return copyrightOwners;
     }
 }

@@ -90,14 +90,6 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -105,6 +97,14 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -159,7 +159,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
-        initialize();
+        _initialize();
         return supplierIdentifiers;
     }
 
@@ -169,7 +169,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplierSAN supplierSAN() {
-        initialize();
+        _initialize();
         return supplierSAN;
     }
 
@@ -179,7 +179,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SupplierEANLocationNumber supplierEANLocationNumber() {
-        initialize();
+        _initialize();
         return supplierEANLocationNumber;
     }
 
@@ -189,7 +189,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplierName supplierName() {
-        initialize();
+        _initialize();
         return supplierName;
     }
 
@@ -199,7 +199,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
-        initialize();
+        _initialize();
         return telephoneNumbers;
     }
 
@@ -209,7 +209,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-        initialize();
+        _initialize();
         return faxNumbers;
     }
 
@@ -219,7 +219,7 @@ public class NewSupplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-        initialize();
+        _initialize();
         return emailAddresss;
     }
 }

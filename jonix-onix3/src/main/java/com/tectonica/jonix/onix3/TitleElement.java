@@ -81,17 +81,17 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -153,7 +153,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is optional)
      */
     public SequenceNumber sequenceNumber() {
-        initialize();
+        _initialize();
         return sequenceNumber;
     }
 
@@ -163,7 +163,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is required)
      */
     public TitleElementLevel titleElementLevel() {
-        initialize();
+        _initialize();
         return titleElementLevel;
     }
 
@@ -173,7 +173,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is required)
      */
     public PartNumber partNumber() {
-        initialize();
+        _initialize();
         return partNumber;
     }
 
@@ -183,7 +183,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is optional)
      */
     public YearOfAnnual yearOfAnnual() {
-        initialize();
+        _initialize();
         return yearOfAnnual;
     }
 
@@ -193,7 +193,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is optional)
      */
     public TitlePrefix titlePrefix() {
-        initialize();
+        _initialize();
         return titlePrefix;
     }
 
@@ -203,7 +203,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is optional)
      */
     public NoPrefix noPrefix() {
-        initialize();
+        _initialize();
         return noPrefix;
     }
 
@@ -217,7 +217,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is required)
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
-        initialize();
+        _initialize();
         return titleWithoutPrefix;
     }
 
@@ -227,7 +227,7 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is optional)
      */
     public TitleText titleText() {
-        initialize();
+        _initialize();
         return titleText;
     }
 
@@ -237,13 +237,13 @@ public class TitleElement implements OnixDataComposite<JonixTitleElement>, Seria
      * (this field is optional)
      */
     public Subtitle subtitle() {
-        initialize();
+        _initialize();
         return subtitle;
     }
 
     @Override
     public JonixTitleElement asStruct() {
-        initialize();
+        _initialize();
         JonixTitleElement struct = new JonixTitleElement();
         struct.sequenceNumber = sequenceNumber.value;
         struct.titleElementLevel = titleElementLevel.value;

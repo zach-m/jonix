@@ -76,17 +76,17 @@ public class SalesOutletIdentifier
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class SalesOutletIdentifier
      * (this field is required)
      */
     public SalesOutletIDType salesOutletIDType() {
-        initialize();
+        _initialize();
         return salesOutletIDType;
     }
 
@@ -134,7 +134,7 @@ public class SalesOutletIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -144,13 +144,13 @@ public class SalesOutletIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixSalesOutletIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixSalesOutletIdentifier struct = new JonixSalesOutletIdentifier();
         struct.salesOutletIDType = salesOutletIDType.value;
         struct.idTypeName = idTypeName.value;

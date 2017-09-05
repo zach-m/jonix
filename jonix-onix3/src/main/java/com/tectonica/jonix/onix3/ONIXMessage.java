@@ -70,17 +70,17 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -118,7 +118,7 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public Header header() {
-        initialize();
+        _initialize();
         return header;
     }
 
@@ -128,7 +128,7 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoProduct noProduct() {
-        initialize();
+        _initialize();
         return noProduct;
     }
 
@@ -142,7 +142,7 @@ public class ONIXMessage implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Product> products() {
-        initialize();
+        _initialize();
         return products;
     }
 }

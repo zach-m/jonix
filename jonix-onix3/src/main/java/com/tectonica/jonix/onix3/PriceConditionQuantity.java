@@ -76,17 +76,17 @@ public class PriceConditionQuantity
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class PriceConditionQuantity
      * (this field is required)
      */
     public PriceConditionQuantityType priceConditionQuantityType() {
-        initialize();
+        _initialize();
         return priceConditionQuantityType;
     }
 
@@ -134,7 +134,7 @@ public class PriceConditionQuantity
      * (this field is required)
      */
     public Quantity quantity() {
-        initialize();
+        _initialize();
         return quantity;
     }
 
@@ -144,13 +144,13 @@ public class PriceConditionQuantity
      * (this field is required)
      */
     public QuantityUnit quantityUnit() {
-        initialize();
+        _initialize();
         return quantityUnit;
     }
 
     @Override
     public JonixPriceConditionQuantity asStruct() {
-        initialize();
+        _initialize();
         JonixPriceConditionQuantity struct = new JonixPriceConditionQuantity();
         struct.priceConditionQuantityType = priceConditionQuantityType.value;
         struct.quantity = quantity.value;

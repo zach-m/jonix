@@ -78,17 +78,17 @@ public class Supplier implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -142,7 +142,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SupplierRole supplierRole() {
-        initialize();
+        _initialize();
         return supplierRole;
     }
 
@@ -153,7 +153,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
-        initialize();
+        _initialize();
         return supplierIdentifiers;
     }
 
@@ -163,7 +163,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplierName supplierName() {
-        initialize();
+        _initialize();
         return supplierName;
     }
 
@@ -173,7 +173,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
-        initialize();
+        _initialize();
         return telephoneNumbers;
     }
 
@@ -183,7 +183,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-        initialize();
+        _initialize();
         return faxNumbers;
     }
 
@@ -193,7 +193,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-        initialize();
+        _initialize();
         return emailAddresss;
     }
 
@@ -203,7 +203,7 @@ public class Supplier implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 }

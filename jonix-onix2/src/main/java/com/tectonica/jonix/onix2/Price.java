@@ -92,14 +92,6 @@ public class Price implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -107,6 +99,14 @@ public class Price implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -240,7 +240,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceTypeCode priceTypeCode() {
-        initialize();
+        _initialize();
         return priceTypeCode;
     }
 
@@ -250,7 +250,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceQualifier priceQualifier() {
-        initialize();
+        _initialize();
         return priceQualifier;
     }
 
@@ -260,7 +260,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceTypeDescription priceTypeDescription() {
-        initialize();
+        _initialize();
         return priceTypeDescription;
     }
 
@@ -270,7 +270,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PricePer pricePer() {
-        initialize();
+        _initialize();
         return pricePer;
     }
 
@@ -280,7 +280,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MinimumOrderQuantity minimumOrderQuantity() {
-        initialize();
+        _initialize();
         return minimumOrderQuantity;
     }
 
@@ -290,7 +290,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss() {
-        initialize();
+        _initialize();
         return batchBonuss;
     }
 
@@ -300,7 +300,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ClassOfTrade classOfTrade() {
-        initialize();
+        _initialize();
         return classOfTrade;
     }
 
@@ -310,7 +310,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public BICDiscountGroupCode bicDiscountGroupCode() {
-        initialize();
+        _initialize();
         return bicDiscountGroupCode;
     }
 
@@ -321,7 +321,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds() {
-        initialize();
+        _initialize();
         return discountCodeds;
     }
 
@@ -331,7 +331,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DiscountPercent discountPercent() {
-        initialize();
+        _initialize();
         return discountPercent;
     }
 
@@ -341,7 +341,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceStatus priceStatus() {
-        initialize();
+        _initialize();
         return priceStatus;
     }
 
@@ -351,7 +351,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public PriceAmount priceAmount() {
-        initialize();
+        _initialize();
         return priceAmount;
     }
 
@@ -361,7 +361,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CurrencyCode currencyCode() {
-        initialize();
+        _initialize();
         return currencyCode;
     }
 
@@ -371,7 +371,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<CountryCode, CountryCodes> countryCodes() {
-        initialize();
+        _initialize();
         return countryCodes;
     }
 
@@ -381,7 +381,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Territory territory() {
-        initialize();
+        _initialize();
         return territory;
     }
 
@@ -391,7 +391,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CountryExcluded countryExcluded() {
-        initialize();
+        _initialize();
         return countryExcluded;
     }
 
@@ -401,7 +401,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TerritoryExcluded territoryExcluded() {
-        initialize();
+        _initialize();
         return territoryExcluded;
     }
 
@@ -411,7 +411,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxRateCode1 taxRateCode1() {
-        initialize();
+        _initialize();
         return taxRateCode1;
     }
 
@@ -421,7 +421,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxRatePercent1 taxRatePercent1() {
-        initialize();
+        _initialize();
         return taxRatePercent1;
     }
 
@@ -431,7 +431,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxableAmount1 taxableAmount1() {
-        initialize();
+        _initialize();
         return taxableAmount1;
     }
 
@@ -441,7 +441,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxAmount1 taxAmount1() {
-        initialize();
+        _initialize();
         return taxAmount1;
     }
 
@@ -451,7 +451,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxRateCode2 taxRateCode2() {
-        initialize();
+        _initialize();
         return taxRateCode2;
     }
 
@@ -461,7 +461,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxRatePercent2 taxRatePercent2() {
-        initialize();
+        _initialize();
         return taxRatePercent2;
     }
 
@@ -471,7 +471,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxableAmount2 taxableAmount2() {
-        initialize();
+        _initialize();
         return taxableAmount2;
     }
 
@@ -481,7 +481,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TaxAmount2 taxAmount2() {
-        initialize();
+        _initialize();
         return taxAmount2;
     }
 
@@ -491,7 +491,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceEffectiveFrom priceEffectiveFrom() {
-        initialize();
+        _initialize();
         return priceEffectiveFrom;
     }
 
@@ -501,7 +501,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceEffectiveUntil priceEffectiveUntil() {
-        initialize();
+        _initialize();
         return priceEffectiveUntil;
     }
 }

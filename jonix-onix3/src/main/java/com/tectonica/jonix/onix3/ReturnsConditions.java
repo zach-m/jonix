@@ -75,17 +75,17 @@ public class ReturnsConditions
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class ReturnsConditions
      * (this field is required)
      */
     public ReturnsCodeType returnsCodeType() {
-        initialize();
+        _initialize();
         return returnsCodeType;
     }
 
@@ -133,7 +133,7 @@ public class ReturnsConditions
      * (this field is optional)
      */
     public ReturnsCodeTypeName returnsCodeTypeName() {
-        initialize();
+        _initialize();
         return returnsCodeTypeName;
     }
 
@@ -143,13 +143,13 @@ public class ReturnsConditions
      * (this field is required)
      */
     public ReturnsCode returnsCode() {
-        initialize();
+        _initialize();
         return returnsCode;
     }
 
     @Override
     public JonixReturnsConditions asStruct() {
-        initialize();
+        _initialize();
         JonixReturnsConditions struct = new JonixReturnsConditions();
         struct.returnsCodeType = returnsCodeType.value;
         struct.returnsCodeTypeName = returnsCodeTypeName.value;

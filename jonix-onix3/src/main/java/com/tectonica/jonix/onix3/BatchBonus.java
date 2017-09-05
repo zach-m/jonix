@@ -74,17 +74,17 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -118,7 +118,7 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
      * (this field is required)
      */
     public BatchQuantity batchQuantity() {
-        initialize();
+        _initialize();
         return batchQuantity;
     }
 
@@ -128,13 +128,13 @@ public class BatchBonus implements OnixDataComposite<JonixBatchBonus>, Serializa
      * (this field is required)
      */
     public FreeQuantity freeQuantity() {
-        initialize();
+        _initialize();
         return freeQuantity;
     }
 
     @Override
     public JonixBatchBonus asStruct() {
-        initialize();
+        _initialize();
         JonixBatchBonus struct = new JonixBatchBonus();
         struct.batchQuantity = batchQuantity.value;
         struct.freeQuantity = freeQuantity.value;

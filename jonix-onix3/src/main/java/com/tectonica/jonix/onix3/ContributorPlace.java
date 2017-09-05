@@ -75,17 +75,17 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -127,7 +127,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * (this field is required)
      */
     public ContributorPlaceRelator contributorPlaceRelator() {
-        initialize();
+        _initialize();
         return contributorPlaceRelator;
     }
 
@@ -137,7 +137,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * (this field is required)
      */
     public CountryCode countryCode() {
-        initialize();
+        _initialize();
         return countryCode;
     }
 
@@ -147,7 +147,7 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * (this field is optional)
      */
     public RegionCode regionCode() {
-        initialize();
+        _initialize();
         return regionCode;
     }
 
@@ -157,13 +157,13 @@ public class ContributorPlace implements OnixDataComposite<JonixContributorPlace
      * (this list may be empty)
      */
     public ListOfOnixElement<LocationName, String> locationNames() {
-        initialize();
+        _initialize();
         return locationNames;
     }
 
     @Override
     public JonixContributorPlace asStruct() {
-        initialize();
+        _initialize();
         JonixContributorPlace struct = new JonixContributorPlace();
         struct.contributorPlaceRelator = contributorPlaceRelator.value;
         struct.countryCode = countryCode.value;

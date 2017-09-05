@@ -77,17 +77,17 @@ public class TextContent implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TextType textType() {
-        initialize();
+        _initialize();
         return textType;
     }
 
@@ -151,7 +151,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
-        initialize();
+        _initialize();
         return contentAudiences;
     }
 
@@ -161,7 +161,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<Text, String> texts() {
-        initialize();
+        _initialize();
         return texts;
     }
 
@@ -171,7 +171,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<TextAuthor, String> textAuthors() {
-        initialize();
+        _initialize();
         return textAuthors;
     }
 
@@ -181,7 +181,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TextSourceCorporate textSourceCorporate() {
-        initialize();
+        _initialize();
         return textSourceCorporate;
     }
 
@@ -191,7 +191,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<SourceTitle, String> sourceTitles() {
-        initialize();
+        _initialize();
         return sourceTitles;
     }
 
@@ -202,7 +202,7 @@ public class TextContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
-        initialize();
+        _initialize();
         return contentDates;
     }
 }

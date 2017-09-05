@@ -76,17 +76,17 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public EpubUsageType epubUsageType() {
-        initialize();
+        _initialize();
         return epubUsageType;
     }
 
@@ -134,7 +134,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public EpubUsageStatus epubUsageStatus() {
-        initialize();
+        _initialize();
         return epubUsageStatus;
     }
 
@@ -145,7 +145,7 @@ public class EpubUsageConstraint implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<EpubUsageLimit, JonixEpubUsageLimit> epubUsageLimits() {
-        initialize();
+        _initialize();
         return epubUsageLimits;
     }
 }

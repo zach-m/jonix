@@ -85,14 +85,6 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -100,6 +92,14 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -133,7 +133,7 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
      * (this field is required)
      */
     public ComplexitySchemeIdentifier complexitySchemeIdentifier() {
-        initialize();
+        _initialize();
         return complexitySchemeIdentifier;
     }
 
@@ -143,13 +143,13 @@ public class Complexity implements OnixDataComposite<JonixComplexity>, Serializa
      * (this field is required)
      */
     public ComplexityCode complexityCode() {
-        initialize();
+        _initialize();
         return complexityCode;
     }
 
     @Override
     public JonixComplexity asStruct() {
-        initialize();
+        _initialize();
         JonixComplexity struct = new JonixComplexity();
         struct.complexityCode = complexityCode.value;
         struct.complexitySchemeIdentifier = complexitySchemeIdentifier.value;

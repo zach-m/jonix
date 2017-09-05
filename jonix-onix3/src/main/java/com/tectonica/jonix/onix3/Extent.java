@@ -76,17 +76,17 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -128,7 +128,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * (this field is required)
      */
     public ExtentType extentType() {
-        initialize();
+        _initialize();
         return extentType;
     }
 
@@ -138,7 +138,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * (this field is required)
      */
     public ExtentValue extentValue() {
-        initialize();
+        _initialize();
         return extentValue;
     }
 
@@ -148,7 +148,7 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * (this field is optional)
      */
     public ExtentValueRoman extentValueRoman() {
-        initialize();
+        _initialize();
         return extentValueRoman;
     }
 
@@ -158,13 +158,13 @@ public class Extent implements OnixDataCompositeWithKey<JonixExtent, ExtentTypes
      * (this field is required)
      */
     public ExtentUnit extentUnit() {
-        initialize();
+        _initialize();
         return extentUnit;
     }
 
     @Override
     public JonixExtent asStruct() {
-        initialize();
+        _initialize();
         JonixExtent struct = new JonixExtent();
         struct.extentType = extentType.value;
         struct.extentUnit = extentUnit.value;

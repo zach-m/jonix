@@ -77,17 +77,17 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -161,7 +161,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LevelSequenceNumber levelSequenceNumber() {
-        initialize();
+        _initialize();
         return levelSequenceNumber;
     }
 
@@ -171,7 +171,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TextItem textItem() {
-        initialize();
+        _initialize();
         return textItem;
     }
 
@@ -181,7 +181,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ComponentTypeName componentTypeName() {
-        initialize();
+        _initialize();
         return componentTypeName;
     }
 
@@ -191,7 +191,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ComponentNumber componentNumber() {
-        initialize();
+        _initialize();
         return componentNumber;
     }
 
@@ -201,7 +201,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<TitleDetail> titleDetails() {
-        initialize();
+        _initialize();
         return titleDetails;
     }
 
@@ -211,7 +211,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -221,7 +221,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
-        initialize();
+        _initialize();
         return subjects;
     }
 
@@ -231,7 +231,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<NameAsSubject> nameAsSubjects() {
-        initialize();
+        _initialize();
         return nameAsSubjects;
     }
 
@@ -241,7 +241,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<TextContent> textContents() {
-        initialize();
+        _initialize();
         return textContents;
     }
 
@@ -251,7 +251,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<CitedContent> citedContents() {
-        initialize();
+        _initialize();
         return citedContents;
     }
 
@@ -261,7 +261,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SupportingResource> supportingResources() {
-        initialize();
+        _initialize();
         return supportingResources;
     }
 
@@ -271,7 +271,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<RelatedWork> relatedWorks() {
-        initialize();
+        _initialize();
         return relatedWorks;
     }
 }

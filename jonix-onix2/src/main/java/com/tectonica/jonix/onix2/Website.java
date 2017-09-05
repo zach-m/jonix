@@ -87,14 +87,6 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -139,7 +139,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * (this field is optional)
      */
     public WebsiteRole websiteRole() {
-        initialize();
+        _initialize();
         return websiteRole;
     }
 
@@ -149,7 +149,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * (this field is optional)
      */
     public WebsiteDescription websiteDescription() {
-        initialize();
+        _initialize();
         return websiteDescription;
     }
 
@@ -159,13 +159,13 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * (this field is required)
      */
     public WebsiteLink websiteLink() {
-        initialize();
+        _initialize();
         return websiteLink;
     }
 
     @Override
     public JonixWebsite asStruct() {
-        initialize();
+        _initialize();
         JonixWebsite struct = new JonixWebsite();
         struct.websiteDescriptions = Arrays.asList(websiteDescription.value);
         struct.websiteLink = websiteLink.value;

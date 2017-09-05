@@ -81,17 +81,17 @@ public class SalesRights implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -137,7 +137,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SalesRightsType salesRightsType() {
-        initialize();
+        _initialize();
         return salesRightsType;
     }
 
@@ -147,7 +147,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public Territory territory() {
-        initialize();
+        _initialize();
         return territory;
     }
 
@@ -157,7 +157,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesRestriction> salesRestrictions() {
-        initialize();
+        _initialize();
         return salesRestrictions;
     }
 
@@ -168,7 +168,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -178,7 +178,7 @@ public class SalesRights implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublisherName publisherName() {
-        initialize();
+        _initialize();
         return publisherName;
     }
 }

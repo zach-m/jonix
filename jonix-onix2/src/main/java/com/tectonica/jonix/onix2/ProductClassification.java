@@ -89,14 +89,6 @@ public class ProductClassification
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -104,6 +96,14 @@ public class ProductClassification
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class ProductClassification
      * (this field is required)
      */
     public ProductClassificationType productClassificationType() {
-        initialize();
+        _initialize();
         return productClassificationType;
     }
 
@@ -151,7 +151,7 @@ public class ProductClassification
      * (this field is required)
      */
     public ProductClassificationCode productClassificationCode() {
-        initialize();
+        _initialize();
         return productClassificationCode;
     }
 
@@ -161,13 +161,13 @@ public class ProductClassification
      * (this field is optional)
      */
     public Percent percent() {
-        initialize();
+        _initialize();
         return percent;
     }
 
     @Override
     public JonixProductClassification asStruct() {
-        initialize();
+        _initialize();
         JonixProductClassification struct = new JonixProductClassification();
         struct.productClassificationType = productClassificationType.value;
         struct.percent = JPU.convertStringToDouble(percent.value);

@@ -77,17 +77,17 @@ public class ProductContactIdentifier
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class ProductContactIdentifier
      * (this field is required)
      */
     public ProductContactIDType productContactIDType() {
-        initialize();
+        _initialize();
         return productContactIDType;
     }
 
@@ -135,7 +135,7 @@ public class ProductContactIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -145,13 +145,13 @@ public class ProductContactIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixProductContactIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixProductContactIdentifier struct = new JonixProductContactIdentifier();
         struct.productContactIDType = productContactIDType.value;
         struct.idTypeName = idTypeName.value;

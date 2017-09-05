@@ -91,14 +91,6 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -106,6 +98,14 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -159,7 +159,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<BibleContents, BibleContentss> bibleContentss() {
-        initialize();
+        _initialize();
         return bibleContentss;
     }
 
@@ -169,7 +169,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<BibleVersion, BibleVersions> bibleVersions() {
-        initialize();
+        _initialize();
         return bibleVersions;
     }
 
@@ -179,7 +179,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this field is optional)
      */
     public StudyBibleType studyBibleType() {
-        initialize();
+        _initialize();
         return studyBibleType;
     }
 
@@ -189,7 +189,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<BiblePurpose, BiblePurposes> biblePurposes() {
-        initialize();
+        _initialize();
         return biblePurposes;
     }
 
@@ -199,7 +199,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this field is optional)
      */
     public BibleTextOrganization bibleTextOrganization() {
-        initialize();
+        _initialize();
         return bibleTextOrganization;
     }
 
@@ -209,7 +209,7 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this field is optional)
      */
     public BibleReferenceLocation bibleReferenceLocation() {
-        initialize();
+        _initialize();
         return bibleReferenceLocation;
     }
 
@@ -219,13 +219,13 @@ public class Bible implements OnixDataComposite<JonixBible>, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<BibleTextFeature, BibleTextFeatures> bibleTextFeatures() {
-        initialize();
+        _initialize();
         return bibleTextFeatures;
     }
 
     @Override
     public JonixBible asStruct() {
-        initialize();
+        _initialize();
         JonixBible struct = new JonixBible();
         struct.bibleContentss = bibleContentss.values();
         struct.biblePurposes = biblePurposes.values();

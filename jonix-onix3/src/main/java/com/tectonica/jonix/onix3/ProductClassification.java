@@ -77,17 +77,17 @@ public class ProductClassification
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class ProductClassification
      * (this field is required)
      */
     public ProductClassificationType productClassificationType() {
-        initialize();
+        _initialize();
         return productClassificationType;
     }
 
@@ -135,7 +135,7 @@ public class ProductClassification
      * (this field is required)
      */
     public ProductClassificationCode productClassificationCode() {
-        initialize();
+        _initialize();
         return productClassificationCode;
     }
 
@@ -145,13 +145,13 @@ public class ProductClassification
      * (this field is optional)
      */
     public Percent percent() {
-        initialize();
+        _initialize();
         return percent;
     }
 
     @Override
     public JonixProductClassification asStruct() {
-        initialize();
+        _initialize();
         JonixProductClassification struct = new JonixProductClassification();
         struct.productClassificationType = productClassificationType.value;
         struct.percent = percent.value;

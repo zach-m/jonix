@@ -74,17 +74,17 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -118,7 +118,7 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
      * (this field is required)
      */
     public Quantity quantity() {
-        initialize();
+        _initialize();
         return quantity;
     }
 
@@ -128,13 +128,13 @@ public class EpubUsageLimit implements OnixDataComposite<JonixEpubUsageLimit>, S
      * (this field is required)
      */
     public EpubUsageUnit epubUsageUnit() {
-        initialize();
+        _initialize();
         return epubUsageUnit;
     }
 
     @Override
     public JonixEpubUsageLimit asStruct() {
-        initialize();
+        _initialize();
         JonixEpubUsageLimit struct = new JonixEpubUsageLimit();
         struct.quantity = quantity.value;
         struct.epubUsageUnit = epubUsageUnit.value;

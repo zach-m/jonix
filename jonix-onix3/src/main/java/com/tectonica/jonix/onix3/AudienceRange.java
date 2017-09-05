@@ -77,17 +77,17 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * (this field is required)
      */
     public AudienceRangeQualifier audienceRangeQualifier() {
-        initialize();
+        _initialize();
         return audienceRangeQualifier;
     }
 
@@ -136,7 +136,7 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * (this list may be empty)
      */
     public ListOfOnixElement<AudienceRangePrecision, AudienceRangePrecisions> audienceRangePrecisions() {
-        initialize();
+        _initialize();
         return audienceRangePrecisions;
     }
 
@@ -146,13 +146,13 @@ public class AudienceRange implements OnixDataComposite<JonixAudienceRange>, Ser
      * (this list may be empty)
      */
     public ListOfOnixElement<AudienceRangeValue, String> audienceRangeValues() {
-        initialize();
+        _initialize();
         return audienceRangeValues;
     }
 
     @Override
     public JonixAudienceRange asStruct() {
-        initialize();
+        _initialize();
         JonixAudienceRange struct = new JonixAudienceRange();
         struct.audienceRangePrecisions = audienceRangePrecisions.values();
         struct.audienceRangeQualifier = audienceRangeQualifier.value;

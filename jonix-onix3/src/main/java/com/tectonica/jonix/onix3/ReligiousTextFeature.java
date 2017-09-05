@@ -77,17 +77,17 @@ public class ReligiousTextFeature
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -126,7 +126,7 @@ public class ReligiousTextFeature
      * (this field is required)
      */
     public ReligiousTextFeatureType religiousTextFeatureType() {
-        initialize();
+        _initialize();
         return religiousTextFeatureType;
     }
 
@@ -136,7 +136,7 @@ public class ReligiousTextFeature
      * (this field is required)
      */
     public ReligiousTextFeatureCode religiousTextFeatureCode() {
-        initialize();
+        _initialize();
         return religiousTextFeatureCode;
     }
 
@@ -147,13 +147,13 @@ public class ReligiousTextFeature
      * (this list may be empty)
      */
     public ListOfOnixElement<ReligiousTextFeatureDescription, String> religiousTextFeatureDescriptions() {
-        initialize();
+        _initialize();
         return religiousTextFeatureDescriptions;
     }
 
     @Override
     public JonixReligiousTextFeature asStruct() {
-        initialize();
+        _initialize();
         JonixReligiousTextFeature struct = new JonixReligiousTextFeature();
         struct.religiousTextFeatureType = religiousTextFeatureType.value;
         struct.religiousTextFeatureCode = religiousTextFeatureCode.value;

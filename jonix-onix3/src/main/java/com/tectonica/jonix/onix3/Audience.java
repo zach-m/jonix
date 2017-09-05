@@ -74,17 +74,17 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -122,7 +122,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * (this field is required)
      */
     public AudienceCodeType audienceCodeType() {
-        initialize();
+        _initialize();
         return audienceCodeType;
     }
 
@@ -132,7 +132,7 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * (this field is optional)
      */
     public AudienceCodeTypeName audienceCodeTypeName() {
-        initialize();
+        _initialize();
         return audienceCodeTypeName;
     }
 
@@ -142,13 +142,13 @@ public class Audience implements OnixDataCompositeWithKey<JonixAudience, Audienc
      * (this field is required)
      */
     public AudienceCodeValue audienceCodeValue() {
-        initialize();
+        _initialize();
         return audienceCodeValue;
     }
 
     @Override
     public JonixAudience asStruct() {
-        initialize();
+        _initialize();
         JonixAudience struct = new JonixAudience();
         struct.audienceCodeType = audienceCodeType.value;
         struct.audienceCodeTypeName = audienceCodeTypeName.value;

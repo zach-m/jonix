@@ -75,17 +75,17 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -119,7 +119,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<RelatedWork> relatedWorks() {
-        initialize();
+        _initialize();
         return relatedWorks;
     }
 
@@ -129,7 +129,7 @@ public class RelatedMaterial implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<RelatedProduct> relatedProducts() {
-        initialize();
+        _initialize();
         return relatedProducts;
     }
 }

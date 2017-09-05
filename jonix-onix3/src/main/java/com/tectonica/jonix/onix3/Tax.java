@@ -76,17 +76,17 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -132,7 +132,7 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
      * (this field is optional)
      */
     public TaxType taxType() {
-        initialize();
+        _initialize();
         return taxType;
     }
 
@@ -142,7 +142,7 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
      * (this field is optional)
      */
     public TaxRateCode taxRateCode() {
-        initialize();
+        _initialize();
         return taxRateCode;
     }
 
@@ -152,7 +152,7 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
      * (this field is required)
      */
     public TaxRatePercent taxRatePercent() {
-        initialize();
+        _initialize();
         return taxRatePercent;
     }
 
@@ -162,7 +162,7 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
      * (this field is optional)
      */
     public TaxableAmount taxableAmount() {
-        initialize();
+        _initialize();
         return taxableAmount;
     }
 
@@ -172,13 +172,13 @@ public class Tax implements OnixDataComposite<JonixTax>, Serializable {
      * (this field is optional)
      */
     public TaxAmount taxAmount() {
-        initialize();
+        _initialize();
         return taxAmount;
     }
 
     @Override
     public JonixTax asStruct() {
-        initialize();
+        _initialize();
         JonixTax struct = new JonixTax();
         struct.taxType = taxType.value;
         struct.taxRateCode = taxRateCode.value;

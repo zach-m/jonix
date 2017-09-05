@@ -23,7 +23,6 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.codelist.AudienceCodeTypes;
 import com.tectonica.jonix.codelist.Audiences;
@@ -76,7 +75,7 @@ import java.util.List;
  * NOTE: THIS IS AN AUTO-GENERATED FILE, DO NOT EDIT MANUALLY
  */
 
-public class Product implements OnixProduct, OnixSuperComposite, Serializable {
+public class Product implements OnixProduct, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Product";
@@ -122,14 +121,6 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -137,6 +128,14 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -770,7 +769,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public RecordReference recordReference() {
-        initialize();
+        _initialize();
         return recordReference;
     }
 
@@ -780,7 +779,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public NotificationType notificationType() {
-        initialize();
+        _initialize();
         return notificationType;
     }
 
@@ -790,7 +789,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DeletionCode deletionCode() {
-        initialize();
+        _initialize();
         return deletionCode;
     }
 
@@ -800,7 +799,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DeletionText deletionText() {
-        initialize();
+        _initialize();
         return deletionText;
     }
 
@@ -810,7 +809,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceType recordSourceType() {
-        initialize();
+        _initialize();
         return recordSourceType;
     }
 
@@ -820,7 +819,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceIdentifierType recordSourceIdentifierType() {
-        initialize();
+        _initialize();
         return recordSourceIdentifierType;
     }
 
@@ -830,7 +829,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceIdentifier recordSourceIdentifier() {
-        initialize();
+        _initialize();
         return recordSourceIdentifier;
     }
 
@@ -840,7 +839,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceName recordSourceName() {
-        initialize();
+        _initialize();
         return recordSourceName;
     }
 
@@ -850,7 +849,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ISBN isbn() {
-        initialize();
+        _initialize();
         return isbn;
     }
 
@@ -860,7 +859,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EAN13 ean13() {
-        initialize();
+        _initialize();
         return ean13;
     }
 
@@ -870,7 +869,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public UPC upc() {
-        initialize();
+        _initialize();
         return upc;
     }
 
@@ -880,7 +879,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublisherProductNo publisherProductNo() {
-        initialize();
+        _initialize();
         return publisherProductNo;
     }
 
@@ -890,7 +889,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ISMN ismn() {
-        initialize();
+        _initialize();
         return ismn;
     }
 
@@ -900,7 +899,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DOI doi() {
-        initialize();
+        _initialize();
         return doi;
     }
 
@@ -911,7 +910,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -921,7 +920,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<Barcode, BarcodeIndicators> barcodes() {
-        initialize();
+        _initialize();
         return barcodes;
     }
 
@@ -931,7 +930,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReplacesISBN replacesISBN() {
-        initialize();
+        _initialize();
         return replacesISBN;
     }
 
@@ -941,7 +940,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReplacesEAN13 replacesEAN13() {
-        initialize();
+        _initialize();
         return replacesEAN13;
     }
 
@@ -951,7 +950,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductForm productForm() {
-        initialize();
+        _initialize();
         return productForm;
     }
 
@@ -961,7 +960,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetails> productFormDetails() {
-        initialize();
+        _initialize();
         return productFormDetails;
     }
 
@@ -972,7 +971,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
-        initialize();
+        _initialize();
         return productFormFeatures;
     }
 
@@ -982,7 +981,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<BookFormDetail, BookFormDetails> bookFormDetails() {
-        initialize();
+        _initialize();
         return bookFormDetails;
     }
 
@@ -992,7 +991,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductPackaging productPackaging() {
-        initialize();
+        _initialize();
         return productPackaging;
     }
 
@@ -1002,7 +1001,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductFormDescription productFormDescription() {
-        initialize();
+        _initialize();
         return productFormDescription;
     }
 
@@ -1012,7 +1011,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfPieces numberOfPieces() {
-        initialize();
+        _initialize();
         return numberOfPieces;
     }
 
@@ -1022,7 +1021,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TradeCategory tradeCategory() {
-        initialize();
+        _initialize();
         return tradeCategory;
     }
 
@@ -1032,7 +1031,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
-        initialize();
+        _initialize();
         return productContentTypes;
     }
 
@@ -1042,7 +1041,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ContainedItem> containedItems() {
-        initialize();
+        _initialize();
         return containedItems;
     }
 
@@ -1053,7 +1052,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications() {
-        initialize();
+        _initialize();
         return productClassifications;
     }
 
@@ -1063,7 +1062,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubType epubType() {
-        initialize();
+        _initialize();
         return epubType;
     }
 
@@ -1073,7 +1072,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubTypeVersion epubTypeVersion() {
-        initialize();
+        _initialize();
         return epubTypeVersion;
     }
 
@@ -1083,7 +1082,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubTypeDescription epubTypeDescription() {
-        initialize();
+        _initialize();
         return epubTypeDescription;
     }
 
@@ -1093,7 +1092,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubFormat epubFormat() {
-        initialize();
+        _initialize();
         return epubFormat;
     }
 
@@ -1103,7 +1102,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubFormatVersion epubFormatVersion() {
-        initialize();
+        _initialize();
         return epubFormatVersion;
     }
 
@@ -1113,7 +1112,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubFormatDescription epubFormatDescription() {
-        initialize();
+        _initialize();
         return epubFormatDescription;
     }
 
@@ -1123,7 +1122,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubSource epubSource() {
-        initialize();
+        _initialize();
         return epubSource;
     }
 
@@ -1133,7 +1132,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubSourceVersion epubSourceVersion() {
-        initialize();
+        _initialize();
         return epubSourceVersion;
     }
 
@@ -1143,7 +1142,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubSourceDescription epubSourceDescription() {
-        initialize();
+        _initialize();
         return epubSourceDescription;
     }
 
@@ -1153,7 +1152,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubTypeNote epubTypeNote() {
-        initialize();
+        _initialize();
         return epubTypeNote;
     }
 
@@ -1163,7 +1162,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Series> seriess() {
-        initialize();
+        _initialize();
         return seriess;
     }
 
@@ -1173,7 +1172,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoSeries noSeries() {
-        initialize();
+        _initialize();
         return noSeries;
     }
 
@@ -1187,7 +1186,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Set> sets() {
-        initialize();
+        _initialize();
         return sets;
     }
 
@@ -1197,7 +1196,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TextCaseFlag textCaseFlag() {
-        initialize();
+        _initialize();
         return textCaseFlag;
     }
 
@@ -1207,7 +1206,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public DistinctiveTitle distinctiveTitle() {
-        initialize();
+        _initialize();
         return distinctiveTitle;
     }
 
@@ -1217,7 +1216,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitlePrefix titlePrefix() {
-        initialize();
+        _initialize();
         return titlePrefix;
     }
 
@@ -1227,7 +1226,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
-        initialize();
+        _initialize();
         return titleWithoutPrefix;
     }
 
@@ -1237,7 +1236,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Subtitle subtitle() {
-        initialize();
+        _initialize();
         return subtitle;
     }
 
@@ -1247,7 +1246,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TranslationOfTitle translationOfTitle() {
-        initialize();
+        _initialize();
         return translationOfTitle;
     }
 
@@ -1257,7 +1256,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<FormerTitle, String> formerTitles() {
-        initialize();
+        _initialize();
         return formerTitles;
     }
 
@@ -1268,7 +1267,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        initialize();
+        _initialize();
         return titles;
     }
 
@@ -1279,7 +1278,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
-        initialize();
+        _initialize();
         return workIdentifiers;
     }
 
@@ -1289,7 +1288,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 
@@ -1299,7 +1298,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ThesisType thesisType() {
-        initialize();
+        _initialize();
         return thesisType;
     }
 
@@ -1309,7 +1308,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ThesisPresentedTo thesisPresentedTo() {
-        initialize();
+        _initialize();
         return thesisPresentedTo;
     }
 
@@ -1319,7 +1318,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ThesisYear thesisYear() {
-        initialize();
+        _initialize();
         return thesisYear;
     }
 
@@ -1329,7 +1328,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -1339,7 +1338,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ContributorStatement contributorStatement() {
-        initialize();
+        _initialize();
         return contributorStatement;
     }
 
@@ -1349,7 +1348,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoContributor noContributor() {
-        initialize();
+        _initialize();
         return noContributor;
     }
 
@@ -1363,7 +1362,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceDescription conferenceDescription() {
-        initialize();
+        _initialize();
         return conferenceDescription;
     }
 
@@ -1373,7 +1372,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceRole conferenceRole() {
-        initialize();
+        _initialize();
         return conferenceRole;
     }
 
@@ -1383,7 +1382,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ConferenceName conferenceName() {
-        initialize();
+        _initialize();
         return conferenceName;
     }
 
@@ -1393,7 +1392,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceNumber conferenceNumber() {
-        initialize();
+        _initialize();
         return conferenceNumber;
     }
 
@@ -1403,7 +1402,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceDate conferenceDate() {
-        initialize();
+        _initialize();
         return conferenceDate;
     }
 
@@ -1413,7 +1412,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferencePlace conferencePlace() {
-        initialize();
+        _initialize();
         return conferencePlace;
     }
 
@@ -1423,7 +1422,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Conference> conferences() {
-        initialize();
+        _initialize();
         return conferences;
     }
 
@@ -1433,7 +1432,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EditionTypeCode, EditionTypes> editionTypeCodes() {
-        initialize();
+        _initialize();
         return editionTypeCodes;
     }
 
@@ -1443,7 +1442,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EditionNumber editionNumber() {
-        initialize();
+        _initialize();
         return editionNumber;
     }
 
@@ -1453,7 +1452,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EditionVersionNumber editionVersionNumber() {
-        initialize();
+        _initialize();
         return editionVersionNumber;
     }
 
@@ -1463,7 +1462,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EditionStatement editionStatement() {
-        initialize();
+        _initialize();
         return editionStatement;
     }
 
@@ -1473,7 +1472,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoEdition noEdition() {
-        initialize();
+        _initialize();
         return noEdition;
     }
 
@@ -1487,7 +1486,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReligiousText religiousText() {
-        initialize();
+        _initialize();
         return religiousText;
     }
 
@@ -1497,7 +1496,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<LanguageOfText, LanguageCodes> languageOfTexts() {
-        initialize();
+        _initialize();
         return languageOfTexts;
     }
 
@@ -1507,7 +1506,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OriginalLanguage originalLanguage() {
-        initialize();
+        _initialize();
         return originalLanguage;
     }
 
@@ -1518,7 +1517,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
-        initialize();
+        _initialize();
         return languages;
     }
 
@@ -1528,7 +1527,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfPages numberOfPages() {
-        initialize();
+        _initialize();
         return numberOfPages;
     }
 
@@ -1538,7 +1537,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PagesRoman pagesRoman() {
-        initialize();
+        _initialize();
         return pagesRoman;
     }
 
@@ -1548,7 +1547,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PagesArabic pagesArabic() {
-        initialize();
+        _initialize();
         return pagesArabic;
     }
 
@@ -1559,7 +1558,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
-        initialize();
+        _initialize();
         return extents;
     }
 
@@ -1569,7 +1568,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfIllustrations numberOfIllustrations() {
-        initialize();
+        _initialize();
         return numberOfIllustrations;
     }
 
@@ -1579,7 +1578,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public IllustrationsNote illustrationsNote() {
-        initialize();
+        _initialize();
         return illustrationsNote;
     }
 
@@ -1590,7 +1589,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Illustrations, JonixIllustrations, IllustrationAndOtherContentTypes> illustrationss() {
-        initialize();
+        _initialize();
         return illustrationss;
     }
 
@@ -1600,7 +1599,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<MapScale, String> mapScales() {
-        initialize();
+        _initialize();
         return mapScales;
     }
 
@@ -1610,7 +1609,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public BASICMainSubject basicMainSubject() {
-        initialize();
+        _initialize();
         return basicMainSubject;
     }
 
@@ -1620,7 +1619,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public BASICVersion basicVersion() {
-        initialize();
+        _initialize();
         return basicVersion;
     }
 
@@ -1630,7 +1629,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public BICMainSubject bicMainSubject() {
-        initialize();
+        _initialize();
         return bicMainSubject;
     }
 
@@ -1640,7 +1639,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public BICVersion bicVersion() {
-        initialize();
+        _initialize();
         return bicVersion;
     }
 
@@ -1650,7 +1649,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<MainSubject, JonixMainSubject> mainSubjects() {
-        initialize();
+        _initialize();
         return mainSubjects;
     }
 
@@ -1660,7 +1659,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
-        initialize();
+        _initialize();
         return subjects;
     }
 
@@ -1670,7 +1669,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<PersonAsSubject> personAsSubjects() {
-        initialize();
+        _initialize();
         return personAsSubjects;
     }
 
@@ -1680,7 +1679,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects() {
-        initialize();
+        _initialize();
         return corporateBodyAsSubjects;
     }
 
@@ -1690,7 +1689,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects() {
-        initialize();
+        _initialize();
         return placeAsSubjects;
     }
 
@@ -1700,7 +1699,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<AudienceCode, Audiences> audienceCodes() {
-        initialize();
+        _initialize();
         return audienceCodes;
     }
 
@@ -1711,7 +1710,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences() {
-        initialize();
+        _initialize();
         return audiences;
     }
 
@@ -1721,7 +1720,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public USSchoolGrade usSchoolGrade() {
-        initialize();
+        _initialize();
         return usSchoolGrade;
     }
 
@@ -1731,7 +1730,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public InterestAge interestAge() {
-        initialize();
+        _initialize();
         return interestAge;
     }
 
@@ -1741,7 +1740,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges() {
-        initialize();
+        _initialize();
         return audienceRanges;
     }
 
@@ -1751,7 +1750,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AudienceDescription audienceDescription() {
-        initialize();
+        _initialize();
         return audienceDescription;
     }
 
@@ -1761,7 +1760,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys() {
-        initialize();
+        _initialize();
         return complexitys;
     }
 
@@ -1771,7 +1770,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Annotation annotation() {
-        initialize();
+        _initialize();
         return annotation;
     }
 
@@ -1781,7 +1780,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MainDescription mainDescription() {
-        initialize();
+        _initialize();
         return mainDescription;
     }
 
@@ -1792,7 +1791,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
-        initialize();
+        _initialize();
         return otherTexts;
     }
 
@@ -1802,7 +1801,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ReviewQuote, String> reviewQuotes() {
-        initialize();
+        _initialize();
         return reviewQuotes;
     }
 
@@ -1812,7 +1811,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CoverImageFormatCode coverImageFormatCode() {
-        initialize();
+        _initialize();
         return coverImageFormatCode;
     }
 
@@ -1822,7 +1821,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CoverImageLinkTypeCode coverImageLinkTypeCode() {
-        initialize();
+        _initialize();
         return coverImageLinkTypeCode;
     }
 
@@ -1832,7 +1831,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CoverImageLink coverImageLink() {
-        initialize();
+        _initialize();
         return coverImageLink;
     }
 
@@ -1843,7 +1842,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
-        initialize();
+        _initialize();
         return mediaFiles;
     }
 
@@ -1854,7 +1853,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<ProductWebsite, JonixProductWebsite> productWebsites() {
-        initialize();
+        _initialize();
         return productWebsites;
     }
 
@@ -1864,7 +1863,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PrizesDescription prizesDescription() {
-        initialize();
+        _initialize();
         return prizesDescription;
     }
 
@@ -1874,7 +1873,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
-        initialize();
+        _initialize();
         return prizes;
     }
 
@@ -1884,7 +1883,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ContentItem> contentItems() {
-        initialize();
+        _initialize();
         return contentItems;
     }
 
@@ -1894,7 +1893,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ImprintName imprintName() {
-        initialize();
+        _initialize();
         return imprintName;
     }
 
@@ -1904,7 +1903,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Imprint> imprints() {
-        initialize();
+        _initialize();
         return imprints;
     }
 
@@ -1914,7 +1913,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublisherName publisherName() {
-        initialize();
+        _initialize();
         return publisherName;
     }
 
@@ -1924,7 +1923,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Publisher> publishers() {
-        initialize();
+        _initialize();
         return publishers;
     }
 
@@ -1934,7 +1933,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<CityOfPublication, String> cityOfPublications() {
-        initialize();
+        _initialize();
         return cityOfPublications;
     }
 
@@ -1944,7 +1943,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CountryOfPublication countryOfPublication() {
-        initialize();
+        _initialize();
         return countryOfPublication;
     }
 
@@ -1954,7 +1953,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<CopublisherName, String> copublisherNames() {
-        initialize();
+        _initialize();
         return copublisherNames;
     }
 
@@ -1964,7 +1963,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<SponsorName, String> sponsorNames() {
-        initialize();
+        _initialize();
         return sponsorNames;
     }
 
@@ -1974,7 +1973,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OriginalPublisher originalPublisher() {
-        initialize();
+        _initialize();
         return originalPublisher;
     }
 
@@ -1984,7 +1983,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublishingStatus publishingStatus() {
-        initialize();
+        _initialize();
         return publishingStatus;
     }
 
@@ -1994,7 +1993,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublishingStatusNote publishingStatusNote() {
-        initialize();
+        _initialize();
         return publishingStatusNote;
     }
 
@@ -2004,7 +2003,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AnnouncementDate announcementDate() {
-        initialize();
+        _initialize();
         return announcementDate;
     }
 
@@ -2014,7 +2013,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TradeAnnouncementDate tradeAnnouncementDate() {
-        initialize();
+        _initialize();
         return tradeAnnouncementDate;
     }
 
@@ -2024,7 +2023,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublicationDate publicationDate() {
-        initialize();
+        _initialize();
         return publicationDate;
     }
 
@@ -2034,7 +2033,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<CopyrightStatement> copyrightStatements() {
-        initialize();
+        _initialize();
         return copyrightStatements;
     }
 
@@ -2044,7 +2043,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CopyrightYear copyrightYear() {
-        initialize();
+        _initialize();
         return copyrightYear;
     }
 
@@ -2054,7 +2053,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public YearFirstPublished yearFirstPublished() {
-        initialize();
+        _initialize();
         return yearFirstPublished;
     }
 
@@ -2064,7 +2063,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesRights> salesRightss() {
-        initialize();
+        _initialize();
         return salesRightss;
     }
 
@@ -2074,7 +2073,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<NotForSale> notForSales() {
-        initialize();
+        _initialize();
         return notForSales;
     }
 
@@ -2084,7 +2083,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesRestriction> salesRestrictions() {
-        initialize();
+        _initialize();
         return salesRestrictions;
     }
 
@@ -2094,7 +2093,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public Height height() {
-        initialize();
+        _initialize();
         return height;
     }
 
@@ -2104,7 +2103,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Width width() {
-        initialize();
+        _initialize();
         return width;
     }
 
@@ -2114,7 +2113,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Thickness thickness() {
-        initialize();
+        _initialize();
         return thickness;
     }
 
@@ -2124,7 +2123,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Weight weight() {
-        initialize();
+        _initialize();
         return weight;
     }
 
@@ -2135,7 +2134,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
-        initialize();
+        _initialize();
         return measures;
     }
 
@@ -2145,7 +2144,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Dimensions dimensions() {
-        initialize();
+        _initialize();
         return dimensions;
     }
 
@@ -2155,7 +2154,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReplacedByISBN replacedByISBN() {
-        initialize();
+        _initialize();
         return replacedByISBN;
     }
 
@@ -2165,7 +2164,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReplacedByEAN13 replacedByEAN13() {
-        initialize();
+        _initialize();
         return replacedByEAN13;
     }
 
@@ -2175,7 +2174,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AlternativeFormatISBN alternativeFormatISBN() {
-        initialize();
+        _initialize();
         return alternativeFormatISBN;
     }
 
@@ -2185,7 +2184,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AlternativeFormatEAN13 alternativeFormatEAN13() {
-        initialize();
+        _initialize();
         return alternativeFormatEAN13;
     }
 
@@ -2195,7 +2194,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AlternativeProductISBN alternativeProductISBN() {
-        initialize();
+        _initialize();
         return alternativeProductISBN;
     }
 
@@ -2205,7 +2204,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AlternativeProductEAN13 alternativeProductEAN13() {
-        initialize();
+        _initialize();
         return alternativeProductEAN13;
     }
 
@@ -2215,7 +2214,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<RelatedProduct> relatedProducts() {
-        initialize();
+        _initialize();
         return relatedProducts;
     }
 
@@ -2225,7 +2224,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OutOfPrintDate outOfPrintDate() {
-        initialize();
+        _initialize();
         return outOfPrintDate;
     }
 
@@ -2235,7 +2234,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SupplyDetail> supplyDetails() {
-        initialize();
+        _initialize();
         return supplyDetails;
     }
 
@@ -2245,7 +2244,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<MarketRepresentation> marketRepresentations() {
-        initialize();
+        _initialize();
         return marketRepresentations;
     }
 
@@ -2255,7 +2254,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PromotionCampaign promotionCampaign() {
-        initialize();
+        _initialize();
         return promotionCampaign;
     }
 
@@ -2265,7 +2264,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PromotionContact promotionContact() {
-        initialize();
+        _initialize();
         return promotionContact;
     }
 
@@ -2275,7 +2274,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public InitialPrintRun initialPrintRun() {
-        initialize();
+        _initialize();
         return initialPrintRun;
     }
 
@@ -2285,7 +2284,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
-        initialize();
+        _initialize();
         return reprintDetails;
     }
 
@@ -2295,7 +2294,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CopiesSold copiesSold() {
-        initialize();
+        _initialize();
         return copiesSold;
     }
 
@@ -2305,7 +2304,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public BookClubAdoption bookClubAdoption() {
-        initialize();
+        _initialize();
         return bookClubAdoption;
     }
 }

@@ -80,17 +80,17 @@ public class PriceIdentifier
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -128,7 +128,7 @@ public class PriceIdentifier
      * (this field is required)
      */
     public PriceIDType priceIDType() {
-        initialize();
+        _initialize();
         return priceIDType;
     }
 
@@ -138,7 +138,7 @@ public class PriceIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -148,13 +148,13 @@ public class PriceIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixPriceIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixPriceIdentifier struct = new JonixPriceIdentifier();
         struct.priceIDType = priceIDType.value;
         struct.idTypeName = idTypeName.value;

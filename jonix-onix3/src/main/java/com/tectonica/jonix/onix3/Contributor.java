@@ -86,17 +86,17 @@ public class Contributor implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -226,7 +226,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SequenceNumber sequenceNumber() {
-        initialize();
+        _initialize();
         return sequenceNumber;
     }
 
@@ -236,7 +236,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<ContributorRole, ContributorRoles> contributorRoles() {
-        initialize();
+        _initialize();
         return contributorRoles;
     }
 
@@ -246,7 +246,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<FromLanguage, LanguageCodes> fromLanguages() {
-        initialize();
+        _initialize();
         return fromLanguages;
     }
 
@@ -256,7 +256,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ToLanguage, LanguageCodes> toLanguages() {
-        initialize();
+        _initialize();
         return toLanguages;
     }
 
@@ -266,7 +266,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NameType nameType() {
-        initialize();
+        _initialize();
         return nameType;
     }
 
@@ -277,7 +277,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<NameIdentifier, JonixNameIdentifier, NameCodeTypes> nameIdentifiers() {
-        initialize();
+        _initialize();
         return nameIdentifiers;
     }
 
@@ -287,7 +287,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public PersonName personName() {
-        initialize();
+        _initialize();
         return personName;
     }
 
@@ -297,7 +297,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PersonNameInverted personNameInverted() {
-        initialize();
+        _initialize();
         return personNameInverted;
     }
 
@@ -307,7 +307,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitlesBeforeNames titlesBeforeNames() {
-        initialize();
+        _initialize();
         return titlesBeforeNames;
     }
 
@@ -317,7 +317,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NamesBeforeKey namesBeforeKey() {
-        initialize();
+        _initialize();
         return namesBeforeKey;
     }
 
@@ -327,7 +327,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PrefixToKey prefixToKey() {
-        initialize();
+        _initialize();
         return prefixToKey;
     }
 
@@ -337,7 +337,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public KeyNames keyNames() {
-        initialize();
+        _initialize();
         return keyNames;
     }
 
@@ -347,7 +347,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NamesAfterKey namesAfterKey() {
-        initialize();
+        _initialize();
         return namesAfterKey;
     }
 
@@ -357,7 +357,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SuffixToKey suffixToKey() {
-        initialize();
+        _initialize();
         return suffixToKey;
     }
 
@@ -367,7 +367,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LettersAfterNames lettersAfterNames() {
-        initialize();
+        _initialize();
         return lettersAfterNames;
     }
 
@@ -377,7 +377,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitlesAfterNames titlesAfterNames() {
-        initialize();
+        _initialize();
         return titlesAfterNames;
     }
 
@@ -387,7 +387,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public CorporateName corporateName() {
-        initialize();
+        _initialize();
         return corporateName;
     }
 
@@ -397,7 +397,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CorporateNameInverted corporateNameInverted() {
-        initialize();
+        _initialize();
         return corporateNameInverted;
     }
 
@@ -407,7 +407,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<AlternativeName> alternativeNames() {
-        initialize();
+        _initialize();
         return alternativeNames;
     }
 
@@ -418,7 +418,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ContributorDate, JonixContributorDate, PersonOrganizationDateRoles> contributorDates() {
-        initialize();
+        _initialize();
         return contributorDates;
     }
 
@@ -429,7 +429,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<ProfessionalAffiliation, JonixProfessionalAffiliation> professionalAffiliations() {
-        initialize();
+        _initialize();
         return professionalAffiliations;
     }
 
@@ -439,7 +439,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<BiographicalNote, String> biographicalNotes() {
-        initialize();
+        _initialize();
         return biographicalNotes;
     }
 
@@ -449,7 +449,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 
@@ -459,7 +459,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ContributorDescription, String> contributorDescriptions() {
-        initialize();
+        _initialize();
         return contributorDescriptions;
     }
 
@@ -469,7 +469,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public UnnamedPersons unnamedPersons() {
-        initialize();
+        _initialize();
         return unnamedPersons;
     }
 
@@ -480,7 +480,7 @@ public class Contributor implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<ContributorPlace, JonixContributorPlace> contributorPlaces() {
-        initialize();
+        _initialize();
         return contributorPlaces;
     }
 }

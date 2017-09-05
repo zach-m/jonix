@@ -88,14 +88,6 @@ public class WorkIdentifier
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -103,6 +95,14 @@ public class WorkIdentifier
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -140,7 +140,7 @@ public class WorkIdentifier
      * (this field is required)
      */
     public WorkIDType workIDType() {
-        initialize();
+        _initialize();
         return workIDType;
     }
 
@@ -150,7 +150,7 @@ public class WorkIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -160,13 +160,13 @@ public class WorkIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixWorkIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixWorkIdentifier struct = new JonixWorkIdentifier();
         struct.workIDType = workIDType.value;
         struct.idTypeName = idTypeName.value;

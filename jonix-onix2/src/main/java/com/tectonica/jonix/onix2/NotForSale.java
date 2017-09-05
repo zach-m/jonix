@@ -90,14 +90,6 @@ public class NotForSale implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -105,6 +97,14 @@ public class NotForSale implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -154,7 +154,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<RightsCountry, java.util.Set<CountryCodes>> rightsCountrys() {
-        initialize();
+        _initialize();
         return rightsCountrys;
     }
 
@@ -164,7 +164,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RightsTerritory rightsTerritory() {
-        initialize();
+        _initialize();
         return rightsTerritory;
     }
 
@@ -174,7 +174,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ISBN isbn() {
-        initialize();
+        _initialize();
         return isbn;
     }
 
@@ -184,7 +184,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EAN13 ean13() {
-        initialize();
+        _initialize();
         return ean13;
     }
 
@@ -195,7 +195,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -205,7 +205,7 @@ public class NotForSale implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublisherName publisherName() {
-        initialize();
+        _initialize();
         return publisherName;
     }
 }

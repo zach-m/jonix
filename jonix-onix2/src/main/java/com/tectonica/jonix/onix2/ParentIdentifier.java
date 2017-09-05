@@ -82,14 +82,6 @@ public class ParentIdentifier
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -97,6 +89,14 @@ public class ParentIdentifier
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -134,7 +134,7 @@ public class ParentIdentifier
      * (this field is required)
      */
     public SeriesIDType seriesIDType() {
-        initialize();
+        _initialize();
         return seriesIDType;
     }
 
@@ -144,7 +144,7 @@ public class ParentIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -154,13 +154,13 @@ public class ParentIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixParentIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixParentIdentifier struct = new JonixParentIdentifier();
         struct.seriesIDType = seriesIDType.value;
         struct.idTypeName = idTypeName.value;

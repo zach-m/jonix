@@ -88,17 +88,17 @@ public class ProductPart implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -164,7 +164,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PrimaryPart primaryPart() {
-        initialize();
+        _initialize();
         return primaryPart;
     }
 
@@ -179,7 +179,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -189,7 +189,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ProductForm productForm() {
-        initialize();
+        _initialize();
         return productForm;
     }
 
@@ -200,7 +200,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails() {
-        initialize();
+        _initialize();
         return productFormDetails;
     }
 
@@ -211,7 +211,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
-        initialize();
+        _initialize();
         return productFormFeatures;
     }
 
@@ -221,7 +221,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
-        initialize();
+        _initialize();
         return productFormDescriptions;
     }
 
@@ -231,7 +231,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
-        initialize();
+        _initialize();
         return productContentTypes;
     }
 
@@ -241,7 +241,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public NumberOfItemsOfThisForm numberOfItemsOfThisForm() {
-        initialize();
+        _initialize();
         return numberOfItemsOfThisForm;
     }
 
@@ -251,7 +251,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfCopies numberOfCopies() {
-        initialize();
+        _initialize();
         return numberOfCopies;
     }
 
@@ -261,7 +261,7 @@ public class ProductPart implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CountryOfManufacture countryOfManufacture() {
-        initialize();
+        _initialize();
         return countryOfManufacture;
     }
 }

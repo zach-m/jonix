@@ -23,7 +23,6 @@ import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataComposite;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
 import com.tectonica.jonix.ListOfOnixElement;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.codelist.NameCodeTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -54,7 +53,7 @@ import java.util.List;
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;Product&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;product&gt;</td></tr><tr><td>Cardinality</td><td>0&#8230;n</td></tr></table>
  */
-public class Product implements OnixProduct, OnixSuperComposite, Serializable {
+public class Product implements OnixProduct, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Product";
@@ -92,17 +91,17 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -184,7 +183,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public RecordReference recordReference() {
-        initialize();
+        _initialize();
         return recordReference;
     }
 
@@ -194,7 +193,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public NotificationType notificationType() {
-        initialize();
+        _initialize();
         return notificationType;
     }
 
@@ -204,7 +203,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<DeletionText, String> deletionTexts() {
-        initialize();
+        _initialize();
         return deletionTexts;
     }
 
@@ -214,7 +213,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceType recordSourceType() {
-        initialize();
+        _initialize();
         return recordSourceType;
     }
 
@@ -225,7 +224,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<RecordSourceIdentifier, JonixRecordSourceIdentifier, NameCodeTypes> recordSourceIdentifiers() {
-        initialize();
+        _initialize();
         return recordSourceIdentifiers;
     }
 
@@ -235,7 +234,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceName recordSourceName() {
-        initialize();
+        _initialize();
         return recordSourceName;
     }
 
@@ -246,7 +245,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -256,7 +255,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Barcode, JonixBarcode> barcodes() {
-        initialize();
+        _initialize();
         return barcodes;
     }
 
@@ -266,7 +265,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DescriptiveDetail descriptiveDetail() {
-        initialize();
+        _initialize();
         return descriptiveDetail;
     }
 
@@ -276,7 +275,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CollateralDetail collateralDetail() {
-        initialize();
+        _initialize();
         return collateralDetail;
     }
 
@@ -286,7 +285,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ContentDetail contentDetail() {
-        initialize();
+        _initialize();
         return contentDetail;
     }
 
@@ -296,7 +295,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublishingDetail publishingDetail() {
-        initialize();
+        _initialize();
         return publishingDetail;
     }
 
@@ -306,7 +305,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RelatedMaterial relatedMaterial() {
-        initialize();
+        _initialize();
         return relatedMaterial;
     }
 
@@ -316,7 +315,7 @@ public class Product implements OnixProduct, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ProductSupply> productSupplys() {
-        initialize();
+        _initialize();
         return productSupplys;
     }
 }

@@ -99,14 +99,6 @@ public class Reissue implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -114,6 +106,14 @@ public class Reissue implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -155,7 +155,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ReissueDate reissueDate() {
-        initialize();
+        _initialize();
         return reissueDate;
     }
 
@@ -165,7 +165,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReissueDescription reissueDescription() {
-        initialize();
+        _initialize();
         return reissueDescription;
     }
 
@@ -175,7 +175,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Price> prices() {
-        initialize();
+        _initialize();
         return prices;
     }
 
@@ -186,7 +186,7 @@ public class Reissue implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
-        initialize();
+        _initialize();
         return mediaFiles;
     }
 }

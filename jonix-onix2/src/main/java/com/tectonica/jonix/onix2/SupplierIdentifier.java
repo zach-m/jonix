@@ -90,14 +90,6 @@ public class SupplierIdentifier
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -105,6 +97,14 @@ public class SupplierIdentifier
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -142,7 +142,7 @@ public class SupplierIdentifier
      * (this field is required)
      */
     public SupplierIDType supplierIDType() {
-        initialize();
+        _initialize();
         return supplierIDType;
     }
 
@@ -152,7 +152,7 @@ public class SupplierIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -162,13 +162,13 @@ public class SupplierIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixSupplierIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixSupplierIdentifier struct = new JonixSupplierIdentifier();
         struct.supplierIDType = supplierIDType.value;
         struct.idTypeName = idTypeName.value;

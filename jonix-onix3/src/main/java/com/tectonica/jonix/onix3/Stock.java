@@ -79,17 +79,17 @@ public class Stock implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -151,7 +151,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LocationIdentifier locationIdentifier() {
-        initialize();
+        _initialize();
         return locationIdentifier;
     }
 
@@ -161,7 +161,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LocationName locationName() {
-        initialize();
+        _initialize();
         return locationName;
     }
 
@@ -172,7 +172,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<StockQuantityCoded, JonixStockQuantityCoded, StockQuantityCodeTypes> stockQuantityCodeds() {
-        initialize();
+        _initialize();
         return stockQuantityCodeds;
     }
 
@@ -182,7 +182,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public OnHand onHand() {
-        initialize();
+        _initialize();
         return onHand;
     }
 
@@ -192,7 +192,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Proximity proximity() {
-        initialize();
+        _initialize();
         return proximity;
     }
 
@@ -202,7 +202,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OnOrder onOrder() {
-        initialize();
+        _initialize();
         return onOrder;
     }
 
@@ -212,7 +212,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CBO cbo() {
-        initialize();
+        _initialize();
         return cbo;
     }
 
@@ -222,7 +222,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<OnOrderDetail, JonixOnOrderDetail> onOrderDetails() {
-        initialize();
+        _initialize();
         return onOrderDetails;
     }
 
@@ -232,7 +232,7 @@ public class Stock implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Velocity, JonixVelocity> velocitys() {
-        initialize();
+        _initialize();
         return velocitys;
     }
 }

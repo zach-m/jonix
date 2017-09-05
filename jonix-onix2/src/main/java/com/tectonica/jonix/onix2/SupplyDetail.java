@@ -95,14 +95,6 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -110,6 +102,14 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -268,7 +268,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<SupplierIdentifier, JonixSupplierIdentifier, SupplierIdentifierTypes> supplierIdentifiers() {
-        initialize();
+        _initialize();
         return supplierIdentifiers;
     }
 
@@ -278,7 +278,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplierSAN supplierSAN() {
-        initialize();
+        _initialize();
         return supplierSAN;
     }
 
@@ -288,7 +288,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SupplierEANLocationNumber supplierEANLocationNumber() {
-        initialize();
+        _initialize();
         return supplierEANLocationNumber;
     }
 
@@ -298,7 +298,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplierName supplierName() {
-        initialize();
+        _initialize();
         return supplierName;
     }
 
@@ -308,7 +308,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
-        initialize();
+        _initialize();
         return telephoneNumbers;
     }
 
@@ -318,7 +318,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-        initialize();
+        _initialize();
         return faxNumbers;
     }
 
@@ -328,7 +328,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-        initialize();
+        _initialize();
         return emailAddresss;
     }
 
@@ -338,7 +338,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 
@@ -348,7 +348,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplierRole supplierRole() {
-        initialize();
+        _initialize();
         return supplierRole;
     }
 
@@ -359,7 +359,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<SupplyToCountry, java.util.Set<CountryCodes>> supplyToCountrys() {
-        initialize();
+        _initialize();
         return supplyToCountrys;
     }
 
@@ -369,7 +369,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplyToTerritory supplyToTerritory() {
-        initialize();
+        _initialize();
         return supplyToTerritory;
     }
 
@@ -379,7 +379,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<SupplyToRegion, SupplytoRegions> supplyToRegions() {
-        initialize();
+        _initialize();
         return supplyToRegions;
     }
 
@@ -390,7 +390,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<SupplyToCountryExcluded, java.util.Set<CountryCodes>> supplyToCountryExcludeds() {
-        initialize();
+        _initialize();
         return supplyToCountryExcludeds;
     }
 
@@ -400,7 +400,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SupplyRestrictionDetail supplyRestrictionDetail() {
-        initialize();
+        _initialize();
         return supplyRestrictionDetail;
     }
 
@@ -410,7 +410,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReturnsCodeType returnsCodeType() {
-        initialize();
+        _initialize();
         return returnsCodeType;
     }
 
@@ -420,7 +420,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReturnsCode returnsCode() {
-        initialize();
+        _initialize();
         return returnsCode;
     }
 
@@ -430,7 +430,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LastDateForReturns lastDateForReturns() {
-        initialize();
+        _initialize();
         return lastDateForReturns;
     }
 
@@ -440,7 +440,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public AvailabilityCode availabilityCode() {
-        initialize();
+        _initialize();
         return availabilityCode;
     }
 
@@ -450,7 +450,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductAvailability productAvailability() {
-        initialize();
+        _initialize();
         return productAvailability;
     }
 
@@ -460,7 +460,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public IntermediaryAvailabilityCode intermediaryAvailabilityCode() {
-        initialize();
+        _initialize();
         return intermediaryAvailabilityCode;
     }
 
@@ -470,7 +470,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NewSupplier newSupplier() {
-        initialize();
+        _initialize();
         return newSupplier;
     }
 
@@ -480,7 +480,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -490,7 +490,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ExpectedShipDate expectedShipDate() {
-        initialize();
+        _initialize();
         return expectedShipDate;
     }
 
@@ -500,7 +500,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OnSaleDate onSaleDate() {
-        initialize();
+        _initialize();
         return onSaleDate;
     }
 
@@ -510,7 +510,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public OrderTime orderTime() {
-        initialize();
+        _initialize();
         return orderTime;
     }
 
@@ -520,7 +520,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Stock> stocks() {
-        initialize();
+        _initialize();
         return stocks;
     }
 
@@ -530,7 +530,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PackQuantity packQuantity() {
-        initialize();
+        _initialize();
         return packQuantity;
     }
 
@@ -540,7 +540,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AudienceRestrictionFlag audienceRestrictionFlag() {
-        initialize();
+        _initialize();
         return audienceRestrictionFlag;
     }
 
@@ -550,7 +550,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AudienceRestrictionNote audienceRestrictionNote() {
-        initialize();
+        _initialize();
         return audienceRestrictionNote;
     }
 
@@ -560,7 +560,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceAmount priceAmount() {
-        initialize();
+        _initialize();
         return priceAmount;
     }
 
@@ -570,7 +570,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public UnpricedItemType unpricedItemType() {
-        initialize();
+        _initialize();
         return unpricedItemType;
     }
 
@@ -580,7 +580,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Price> prices() {
-        initialize();
+        _initialize();
         return prices;
     }
 
@@ -590,7 +590,7 @@ public class SupplyDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Reissue reissue() {
-        initialize();
+        _initialize();
         return reissue;
     }
 }

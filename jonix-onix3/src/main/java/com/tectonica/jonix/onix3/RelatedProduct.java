@@ -79,17 +79,17 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -131,7 +131,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<ProductRelationCode, ProductRelations> productRelationCodes() {
-        initialize();
+        _initialize();
         return productRelationCodes;
     }
 
@@ -142,7 +142,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -152,7 +152,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductForm productForm() {
-        initialize();
+        _initialize();
         return productForm;
     }
 
@@ -163,7 +163,7 @@ public class RelatedProduct implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails() {
-        initialize();
+        _initialize();
         return productFormDetails;
     }
 }

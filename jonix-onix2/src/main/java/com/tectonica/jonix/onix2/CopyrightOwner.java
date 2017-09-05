@@ -86,14 +86,6 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -101,6 +93,14 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -138,7 +138,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public CopyrightOwnerIdentifier copyrightOwnerIdentifier() {
-        initialize();
+        _initialize();
         return copyrightOwnerIdentifier;
     }
 
@@ -148,7 +148,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PersonName personName() {
-        initialize();
+        _initialize();
         return personName;
     }
 
@@ -158,7 +158,7 @@ public class CopyrightOwner implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CorporateName corporateName() {
-        initialize();
+        _initialize();
         return corporateName;
     }
 }

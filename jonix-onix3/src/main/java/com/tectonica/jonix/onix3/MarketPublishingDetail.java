@@ -79,17 +79,17 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -160,7 +160,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public List<PublisherRepresentative> publisherRepresentatives() {
-        initialize();
+        _initialize();
         return publisherRepresentatives;
     }
 
@@ -170,7 +170,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public List<ProductContact> productContacts() {
-        initialize();
+        _initialize();
         return productContacts;
     }
 
@@ -180,7 +180,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this field is required)
      */
     public MarketPublishingStatus marketPublishingStatus() {
-        initialize();
+        _initialize();
         return marketPublishingStatus;
     }
 
@@ -191,7 +191,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixElement<MarketPublishingStatusNote, String> marketPublishingStatusNotes() {
-        initialize();
+        _initialize();
         return marketPublishingStatusNotes;
     }
 
@@ -202,7 +202,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates() {
-        initialize();
+        _initialize();
         return marketDates;
     }
 
@@ -212,7 +212,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixElement<PromotionCampaign, String> promotionCampaigns() {
-        initialize();
+        _initialize();
         return promotionCampaigns;
     }
 
@@ -222,7 +222,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this field is optional)
      */
     public PromotionContact promotionContact() {
-        initialize();
+        _initialize();
         return promotionContact;
     }
 
@@ -232,7 +232,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixElement<InitialPrintRun, String> initialPrintRuns() {
-        initialize();
+        _initialize();
         return initialPrintRuns;
     }
 
@@ -242,7 +242,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixElement<ReprintDetail, String> reprintDetails() {
-        initialize();
+        _initialize();
         return reprintDetails;
     }
 
@@ -252,7 +252,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixElement<CopiesSold, String> copiesSolds() {
-        initialize();
+        _initialize();
         return copiesSolds;
     }
 
@@ -262,7 +262,7 @@ public class MarketPublishingDetail implements OnixSuperComposite, Serializable 
      * (this list may be empty)
      */
     public ListOfOnixElement<BookClubAdoption, String> bookClubAdoptions() {
-        initialize();
+        _initialize();
         return bookClubAdoptions;
     }
 }

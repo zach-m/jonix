@@ -77,17 +77,17 @@ public class CitedContent implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -149,7 +149,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public CitedContentType citedContentType() {
-        initialize();
+        _initialize();
         return citedContentType;
     }
 
@@ -159,7 +159,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
-        initialize();
+        _initialize();
         return contentAudiences;
     }
 
@@ -169,7 +169,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SourceType sourceType() {
-        initialize();
+        _initialize();
         return sourceType;
     }
 
@@ -179,7 +179,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<SourceTitle, String> sourceTitles() {
-        initialize();
+        _initialize();
         return sourceTitles;
     }
 
@@ -189,7 +189,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ListName, String> listNames() {
-        initialize();
+        _initialize();
         return listNames;
     }
 
@@ -199,7 +199,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PositionOnList positionOnList() {
-        initialize();
+        _initialize();
         return positionOnList;
     }
 
@@ -209,7 +209,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<CitationNote, String> citationNotes() {
-        initialize();
+        _initialize();
         return citationNotes;
     }
 
@@ -219,7 +219,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ResourceLink, String> resourceLinks() {
-        initialize();
+        _initialize();
         return resourceLinks;
     }
 
@@ -230,7 +230,7 @@ public class CitedContent implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
-        initialize();
+        _initialize();
         return contentDates;
     }
 }

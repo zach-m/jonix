@@ -88,17 +88,17 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -151,7 +151,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * (this field is optional)
      */
     public PriceType priceType() {
-        initialize();
+        _initialize();
         return priceType;
     }
 
@@ -161,7 +161,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * (this field is required)
      */
     public PriceAmount priceAmount() {
-        initialize();
+        _initialize();
         return priceAmount;
     }
 
@@ -171,7 +171,7 @@ public class ComparisonProductPrice implements OnixSuperComposite, Serializable 
      * (this field is optional)
      */
     public CurrencyCode currencyCode() {
-        initialize();
+        _initialize();
         return currencyCode;
     }
 }

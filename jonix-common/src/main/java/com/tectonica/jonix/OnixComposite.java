@@ -24,6 +24,12 @@ package com.tectonica.jonix;
  */
 public interface OnixComposite extends OnixTag {
     /**
+     * This is an internal API. Since Jonix 8.0, composite objects are being populated lazily. This method initiates the
+     * population process, and is invoked internally by the accessor APIs of the composites
+     */
+    void _initialize();
+
+    /**
      * represents an ONIX composite that contains other composites
      */
     public static interface OnixSuperComposite extends OnixComposite {

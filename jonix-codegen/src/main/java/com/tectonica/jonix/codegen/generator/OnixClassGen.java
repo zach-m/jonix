@@ -89,7 +89,13 @@ public class OnixClassGen {
                 }
             }
         } else {
-            markerInterfaceName = "OnixSuperComposite";
+            if (composite.name.equalsIgnoreCase("Product")) {
+                markerInterfaceName = "OnixProduct";
+            } else if (composite.name.equalsIgnoreCase("Header")) {
+                markerInterfaceName = "OnixHeader";
+            } else {
+                markerInterfaceName = "OnixSuperComposite";
+            }
         }
 
         p.println(Comments.Copyright);
@@ -142,15 +148,14 @@ public class OnixClassGen {
         p.printf("      exists = true;\n");
         p.printf("      initialized = false;\n");
         p.printf("      this.element = element;\n");
+        setInitializers(composite, p);
         p.printf("   }\n");
 
         p.println();
-        p.printf("   private void initialize() {\n", composite.name);
+        p.printf("   @Override\n");
+        p.printf("   public void _initialize() {\n", composite.name);
         p.printf("      if (initialized) return;\n");
         p.printf("      initialized = true;\n");
-
-        p.println();
-        setInitializers(composite, p);
 
         p.println();
         p.printf("      JPU.forElementsOf(element, e -> {\n");
@@ -205,7 +210,7 @@ public class OnixClassGen {
             p.printf("    * %s\n", fi.comment);
             p.printf("    */\n");
             p.printf("   public %s %s() {\n", fi.type, fi.name);
-            p.printf("      initialize();\n");
+            p.printf("      _initialize();\n");
             p.printf("      return %s;\n", fi.name);
             p.printf("   }\n");
 
@@ -231,7 +236,7 @@ public class OnixClassGen {
             p.println();
             p.printf("   @Override\n");
             p.printf("   public %s asStruct() {\n", structName);
-            p.printf("      initialize();\n", structName, structName);
+            p.printf("      _initialize();\n", structName, structName);
             p.printf("      %s struct = new %s();\n", structName, structName);
 
             for (OnixStructMember structMember : struct.allMembers()) {

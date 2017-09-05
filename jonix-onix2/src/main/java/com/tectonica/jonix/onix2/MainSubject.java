@@ -86,14 +86,6 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -101,6 +93,14 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -142,7 +142,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * (this field is required)
      */
     public MainSubjectSchemeIdentifier mainSubjectSchemeIdentifier() {
-        initialize();
+        _initialize();
         return mainSubjectSchemeIdentifier;
     }
 
@@ -152,7 +152,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * (this field is optional)
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
-        initialize();
+        _initialize();
         return subjectSchemeVersion;
     }
 
@@ -162,7 +162,7 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * (this field is required)
      */
     public SubjectCode subjectCode() {
-        initialize();
+        _initialize();
         return subjectCode;
     }
 
@@ -172,13 +172,13 @@ public class MainSubject implements OnixDataComposite<JonixMainSubject>, Seriali
      * (this field is optional)
      */
     public SubjectHeadingText subjectHeadingText() {
-        initialize();
+        _initialize();
         return subjectHeadingText;
     }
 
     @Override
     public JonixMainSubject asStruct() {
-        initialize();
+        _initialize();
         JonixMainSubject struct = new JonixMainSubject();
         struct.mainSubjectSchemeIdentifier = mainSubjectSchemeIdentifier.value;
         struct.subjectSchemeVersion = subjectSchemeVersion.value;

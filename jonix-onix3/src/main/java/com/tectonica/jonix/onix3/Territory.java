@@ -76,17 +76,17 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -128,7 +128,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * (this field is required)
      */
     public CountriesIncluded countriesIncluded() {
-        initialize();
+        _initialize();
         return countriesIncluded;
     }
 
@@ -138,7 +138,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * (this field is optional)
      */
     public RegionsIncluded regionsIncluded() {
-        initialize();
+        _initialize();
         return regionsIncluded;
     }
 
@@ -148,7 +148,7 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * (this field is optional)
      */
     public CountriesExcluded countriesExcluded() {
-        initialize();
+        _initialize();
         return countriesExcluded;
     }
 
@@ -158,13 +158,13 @@ public class Territory implements OnixDataComposite<JonixTerritory>, Serializabl
      * (this field is optional)
      */
     public RegionsExcluded regionsExcluded() {
-        initialize();
+        _initialize();
         return regionsExcluded;
     }
 
     @Override
     public JonixTerritory asStruct() {
-        initialize();
+        _initialize();
         JonixTerritory struct = new JonixTerritory();
         struct.countriesIncluded = countriesIncluded.value;
         struct.regionsIncluded = regionsIncluded.value;

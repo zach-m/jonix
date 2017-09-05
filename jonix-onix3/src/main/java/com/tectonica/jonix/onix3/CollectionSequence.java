@@ -77,17 +77,17 @@ public class CollectionSequence
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class CollectionSequence
      * (this field is required)
      */
     public CollectionSequenceType collectionSequenceType() {
-        initialize();
+        _initialize();
         return collectionSequenceType;
     }
 
@@ -135,7 +135,7 @@ public class CollectionSequence
      * (this field is optional)
      */
     public CollectionSequenceTypeName collectionSequenceTypeName() {
-        initialize();
+        _initialize();
         return collectionSequenceTypeName;
     }
 
@@ -145,13 +145,13 @@ public class CollectionSequence
      * (this field is required)
      */
     public CollectionSequenceNumber collectionSequenceNumber() {
-        initialize();
+        _initialize();
         return collectionSequenceNumber;
     }
 
     @Override
     public JonixCollectionSequence asStruct() {
-        initialize();
+        _initialize();
         JonixCollectionSequence struct = new JonixCollectionSequence();
         struct.collectionSequenceType = collectionSequenceType.value;
         struct.collectionSequenceTypeName = collectionSequenceTypeName.value;

@@ -79,17 +79,17 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -127,7 +127,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * (this field is required)
      */
     public DiscountCodeType discountCodeType() {
-        initialize();
+        _initialize();
         return discountCodeType;
     }
 
@@ -137,7 +137,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * (this field is optional)
      */
     public DiscountCodeTypeName discountCodeTypeName() {
-        initialize();
+        _initialize();
         return discountCodeTypeName;
     }
 
@@ -147,13 +147,13 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * (this field is required)
      */
     public DiscountCode discountCode() {
-        initialize();
+        _initialize();
         return discountCode;
     }
 
     @Override
     public JonixDiscountCoded asStruct() {
-        initialize();
+        _initialize();
         JonixDiscountCoded struct = new JonixDiscountCoded();
         struct.discountCodeType = discountCodeType.value;
         struct.discountCode = discountCode.value;

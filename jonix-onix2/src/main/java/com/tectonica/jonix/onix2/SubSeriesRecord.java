@@ -88,14 +88,6 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -103,6 +95,14 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -200,7 +200,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public RecordReference recordReference() {
-        initialize();
+        _initialize();
         return recordReference;
     }
 
@@ -210,7 +210,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public NotificationType notificationType() {
-        initialize();
+        _initialize();
         return notificationType;
     }
 
@@ -220,7 +220,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DeletionCode deletionCode() {
-        initialize();
+        _initialize();
         return deletionCode;
     }
 
@@ -230,7 +230,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DeletionText deletionText() {
-        initialize();
+        _initialize();
         return deletionText;
     }
 
@@ -240,7 +240,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceType recordSourceType() {
-        initialize();
+        _initialize();
         return recordSourceType;
     }
 
@@ -250,7 +250,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceIdentifierType recordSourceIdentifierType() {
-        initialize();
+        _initialize();
         return recordSourceIdentifierType;
     }
 
@@ -260,7 +260,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceIdentifier recordSourceIdentifier() {
-        initialize();
+        _initialize();
         return recordSourceIdentifier;
     }
 
@@ -270,7 +270,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public RecordSourceName recordSourceName() {
-        initialize();
+        _initialize();
         return recordSourceName;
     }
 
@@ -281,7 +281,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
-        initialize();
+        _initialize();
         return seriesIdentifiers;
     }
 
@@ -291,7 +291,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ParentIdentifier parentIdentifier() {
-        initialize();
+        _initialize();
         return parentIdentifier;
     }
 
@@ -301,7 +301,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public LevelSequenceNumber levelSequenceNumber() {
-        initialize();
+        _initialize();
         return levelSequenceNumber;
     }
 
@@ -311,7 +311,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SeriesPartName seriesPartName() {
-        initialize();
+        _initialize();
         return seriesPartName;
     }
 
@@ -321,7 +321,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberWithinSeries numberWithinSeries() {
-        initialize();
+        _initialize();
         return numberWithinSeries;
     }
 
@@ -332,7 +332,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        initialize();
+        _initialize();
         return titles;
     }
 
@@ -342,7 +342,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -353,7 +353,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
-        initialize();
+        _initialize();
         return otherTexts;
     }
 
@@ -363,7 +363,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Publisher> publishers() {
-        initialize();
+        _initialize();
         return publishers;
     }
 
@@ -373,7 +373,7 @@ public class SubSeriesRecord implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SubordinateEntries subordinateEntries() {
-        initialize();
+        _initialize();
         return subordinateEntries;
     }
 }

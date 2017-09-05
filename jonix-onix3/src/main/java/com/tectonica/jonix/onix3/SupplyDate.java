@@ -75,17 +75,17 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
      * (this field is required)
      */
     public SupplyDateRole supplyDateRole() {
-        initialize();
+        _initialize();
         return supplyDateRole;
     }
 
@@ -133,7 +133,7 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -143,13 +143,13 @@ public class SupplyDate implements OnixDataCompositeWithKey<JonixSupplyDate, Sup
      * (this field is required)
      */
     public Date date() {
-        initialize();
+        _initialize();
         return date;
     }
 
     @Override
     public JonixSupplyDate asStruct() {
-        initialize();
+        _initialize();
         JonixSupplyDate struct = new JonixSupplyDate();
         struct.supplyDateRole = supplyDateRole.value;
         struct.dateFormat = dateFormat.value;

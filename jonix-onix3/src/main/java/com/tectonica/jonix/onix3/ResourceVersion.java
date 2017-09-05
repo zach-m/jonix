@@ -79,17 +79,17 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -131,7 +131,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ResourceForm resourceForm() {
-        initialize();
+        _initialize();
         return resourceForm;
     }
 
@@ -142,7 +142,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ResourceVersionFeature, JonixResourceVersionFeature, ResourceVersionFeatureTypes> resourceVersionFeatures() {
-        initialize();
+        _initialize();
         return resourceVersionFeatures;
     }
 
@@ -152,7 +152,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<ResourceLink, String> resourceLinks() {
-        initialize();
+        _initialize();
         return resourceLinks;
     }
 
@@ -163,7 +163,7 @@ public class ResourceVersion implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ContentDate, JonixContentDate, ContentDateRoles> contentDates() {
-        initialize();
+        _initialize();
         return contentDates;
     }
 }

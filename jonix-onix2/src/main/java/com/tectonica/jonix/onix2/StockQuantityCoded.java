@@ -89,14 +89,6 @@ public class StockQuantityCoded
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -104,6 +96,14 @@ public class StockQuantityCoded
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class StockQuantityCoded
      * (this field is required)
      */
     public StockQuantityCodeType stockQuantityCodeType() {
-        initialize();
+        _initialize();
         return stockQuantityCodeType;
     }
 
@@ -151,7 +151,7 @@ public class StockQuantityCoded
      * (this field is optional)
      */
     public StockQuantityCodeTypeName stockQuantityCodeTypeName() {
-        initialize();
+        _initialize();
         return stockQuantityCodeTypeName;
     }
 
@@ -161,13 +161,13 @@ public class StockQuantityCoded
      * (this field is required)
      */
     public StockQuantityCode stockQuantityCode() {
-        initialize();
+        _initialize();
         return stockQuantityCode;
     }
 
     @Override
     public JonixStockQuantityCoded asStruct() {
-        initialize();
+        _initialize();
         JonixStockQuantityCoded struct = new JonixStockQuantityCoded();
         struct.stockQuantityCodeType = stockQuantityCodeType.value;
         struct.stockQuantityCode = stockQuantityCode.value;

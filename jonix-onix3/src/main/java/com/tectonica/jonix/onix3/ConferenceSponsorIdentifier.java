@@ -75,17 +75,17 @@ public class ConferenceSponsorIdentifier
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class ConferenceSponsorIdentifier
      * (this field is required)
      */
     public ConferenceSponsorIDType conferenceSponsorIDType() {
-        initialize();
+        _initialize();
         return conferenceSponsorIDType;
     }
 
@@ -133,7 +133,7 @@ public class ConferenceSponsorIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -143,13 +143,13 @@ public class ConferenceSponsorIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixConferenceSponsorIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixConferenceSponsorIdentifier struct = new JonixConferenceSponsorIdentifier();
         struct.conferenceSponsorIDType = conferenceSponsorIDType.value;
         struct.idTypeName = idTypeName.value;

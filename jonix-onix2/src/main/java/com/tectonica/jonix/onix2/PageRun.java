@@ -86,14 +86,6 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -101,6 +93,14 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -134,7 +134,7 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
      * (this field is required)
      */
     public FirstPageNumber firstPageNumber() {
-        initialize();
+        _initialize();
         return firstPageNumber;
     }
 
@@ -144,13 +144,13 @@ public class PageRun implements OnixDataComposite<JonixPageRun>, Serializable {
      * (this field is optional)
      */
     public LastPageNumber lastPageNumber() {
-        initialize();
+        _initialize();
         return lastPageNumber;
     }
 
     @Override
     public JonixPageRun asStruct() {
-        initialize();
+        _initialize();
         JonixPageRun struct = new JonixPageRun();
         struct.firstPageNumber = firstPageNumber.value;
         struct.lastPageNumber = lastPageNumber.value;

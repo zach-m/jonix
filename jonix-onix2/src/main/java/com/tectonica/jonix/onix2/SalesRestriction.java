@@ -87,14 +87,6 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -139,7 +139,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SalesRestrictionType salesRestrictionType() {
-        initialize();
+        _initialize();
         return salesRestrictionType;
     }
 
@@ -149,7 +149,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesOutlet> salesOutlets() {
-        initialize();
+        _initialize();
         return salesOutlets;
     }
 
@@ -159,7 +159,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SalesRestrictionDetail salesRestrictionDetail() {
-        initialize();
+        _initialize();
         return salesRestrictionDetail;
     }
 }

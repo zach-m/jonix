@@ -93,14 +93,6 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -108,6 +100,14 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -186,7 +186,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers() {
-        initialize();
+        _initialize();
         return agentIdentifiers;
     }
 
@@ -196,7 +196,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AgentName agentName() {
-        initialize();
+        _initialize();
         return agentName;
     }
 
@@ -206,7 +206,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
-        initialize();
+        _initialize();
         return telephoneNumbers;
     }
 
@@ -216,7 +216,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-        initialize();
+        _initialize();
         return faxNumbers;
     }
 
@@ -226,7 +226,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-        initialize();
+        _initialize();
         return emailAddresss;
     }
 
@@ -236,7 +236,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 
@@ -246,7 +246,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AgentRole agentRole() {
-        initialize();
+        _initialize();
         return agentRole;
     }
 
@@ -256,7 +256,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MarketCountry marketCountry() {
-        initialize();
+        _initialize();
         return marketCountry;
     }
 
@@ -266,7 +266,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public MarketTerritory marketTerritory() {
-        initialize();
+        _initialize();
         return marketTerritory;
     }
 
@@ -276,7 +276,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MarketCountryExcluded marketCountryExcluded() {
-        initialize();
+        _initialize();
         return marketCountryExcluded;
     }
 
@@ -286,7 +286,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MarketRestrictionDetail marketRestrictionDetail() {
-        initialize();
+        _initialize();
         return marketRestrictionDetail;
     }
 
@@ -296,7 +296,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MarketPublishingStatus marketPublishingStatus() {
-        initialize();
+        _initialize();
         return marketPublishingStatus;
     }
 
@@ -307,7 +307,7 @@ public class MarketRepresentation implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<MarketDate, JonixMarketDate, PublishingDateRoles> marketDates() {
-        initialize();
+        _initialize();
         return marketDates;
     }
 }

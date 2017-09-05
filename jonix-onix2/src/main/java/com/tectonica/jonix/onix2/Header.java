@@ -21,7 +21,6 @@ package com.tectonica.jonix.onix2;
 
 import com.tectonica.jonix.JPU;
 import com.tectonica.jonix.ListOfOnixDataCompositeWithKey;
-import com.tectonica.jonix.OnixComposite.OnixSuperComposite;
 import com.tectonica.jonix.OnixHeader;
 import com.tectonica.jonix.codelist.LanguageCodes;
 import com.tectonica.jonix.codelist.NameCodeTypes;
@@ -47,7 +46,7 @@ import java.io.Serializable;
  * cellpadding='3'><tr><td>Reference name</td><td>&lt;Header&gt;</td></tr><tr><td>Short
  * tag</td><td>&lt;header&gt;</td></tr></table>
  */
-public class Header implements OnixHeader, OnixSuperComposite, Serializable {
+public class Header implements OnixHeader, Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String refname = "Header";
@@ -93,14 +92,6 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -108,6 +99,14 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -217,7 +216,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public FromEANNumber fromEANNumber() {
-        initialize();
+        _initialize();
         return fromEANNumber;
     }
 
@@ -227,7 +226,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public FromSAN fromSAN() {
-        initialize();
+        _initialize();
         return fromSAN;
     }
 
@@ -238,7 +237,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers() {
-        initialize();
+        _initialize();
         return senderIdentifiers;
     }
 
@@ -248,7 +247,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public FromCompany fromCompany() {
-        initialize();
+        _initialize();
         return fromCompany;
     }
 
@@ -258,7 +257,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public FromPerson fromPerson() {
-        initialize();
+        _initialize();
         return fromPerson;
     }
 
@@ -268,7 +267,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public FromEmail fromEmail() {
-        initialize();
+        _initialize();
         return fromEmail;
     }
 
@@ -278,7 +277,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ToEANNumber toEANNumber() {
-        initialize();
+        _initialize();
         return toEANNumber;
     }
 
@@ -288,7 +287,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ToSAN toSAN() {
-        initialize();
+        _initialize();
         return toSAN;
     }
 
@@ -299,7 +298,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers() {
-        initialize();
+        _initialize();
         return addresseeIdentifiers;
     }
 
@@ -309,7 +308,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ToCompany toCompany() {
-        initialize();
+        _initialize();
         return toCompany;
     }
 
@@ -319,7 +318,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ToPerson toPerson() {
-        initialize();
+        _initialize();
         return toPerson;
     }
 
@@ -329,7 +328,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MessageNumber messageNumber() {
-        initialize();
+        _initialize();
         return messageNumber;
     }
 
@@ -339,7 +338,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MessageRepeat messageRepeat() {
-        initialize();
+        _initialize();
         return messageRepeat;
     }
 
@@ -349,7 +348,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SentDate sentDate() {
-        initialize();
+        _initialize();
         return sentDate;
     }
 
@@ -359,7 +358,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MessageNote messageNote() {
-        initialize();
+        _initialize();
         return messageNote;
     }
 
@@ -369,7 +368,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DefaultLanguageOfText defaultLanguageOfText() {
-        initialize();
+        _initialize();
         return defaultLanguageOfText;
     }
 
@@ -379,7 +378,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DefaultPriceTypeCode defaultPriceTypeCode() {
-        initialize();
+        _initialize();
         return defaultPriceTypeCode;
     }
 
@@ -389,7 +388,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DefaultCurrencyCode defaultCurrencyCode() {
-        initialize();
+        _initialize();
         return defaultCurrencyCode;
     }
 
@@ -399,7 +398,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DefaultLinearUnit defaultLinearUnit() {
-        initialize();
+        _initialize();
         return defaultLinearUnit;
     }
 
@@ -409,7 +408,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DefaultWeightUnit defaultWeightUnit() {
-        initialize();
+        _initialize();
         return defaultWeightUnit;
     }
 
@@ -419,7 +418,7 @@ public class Header implements OnixHeader, OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DefaultClassOfTrade defaultClassOfTrade() {
-        initialize();
+        _initialize();
         return defaultClassOfTrade;
     }
 }

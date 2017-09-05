@@ -86,14 +86,6 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -101,6 +93,14 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -134,7 +134,7 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SalesOutletIdentifier salesOutletIdentifier() {
-        initialize();
+        _initialize();
         return salesOutletIdentifier;
     }
 
@@ -144,7 +144,7 @@ public class SalesOutlet implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SalesOutletName salesOutletName() {
-        initialize();
+        _initialize();
         return salesOutletName;
     }
 }

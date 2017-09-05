@@ -89,14 +89,6 @@ public class ProductFormFeature
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -104,6 +96,14 @@ public class ProductFormFeature
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class ProductFormFeature
      * (this field is required)
      */
     public ProductFormFeatureType productFormFeatureType() {
-        initialize();
+        _initialize();
         return productFormFeatureType;
     }
 
@@ -151,7 +151,7 @@ public class ProductFormFeature
      * (this field is optional)
      */
     public ProductFormFeatureValue productFormFeatureValue() {
-        initialize();
+        _initialize();
         return productFormFeatureValue;
     }
 
@@ -161,13 +161,13 @@ public class ProductFormFeature
      * (this field is optional)
      */
     public ProductFormFeatureDescription productFormFeatureDescription() {
-        initialize();
+        _initialize();
         return productFormFeatureDescription;
     }
 
     @Override
     public JonixProductFormFeature asStruct() {
-        initialize();
+        _initialize();
         JonixProductFormFeature struct = new JonixProductFormFeature();
         struct.productFormFeatureType = productFormFeatureType.value;
         struct.productFormFeatureDescriptions = Arrays.asList(productFormFeatureDescription.value);

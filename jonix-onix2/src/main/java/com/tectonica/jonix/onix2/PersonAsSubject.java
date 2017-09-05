@@ -90,14 +90,6 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -105,6 +97,14 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -178,7 +178,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public PersonName personName() {
-        initialize();
+        _initialize();
         return personName;
     }
 
@@ -188,7 +188,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PersonNameInverted personNameInverted() {
-        initialize();
+        _initialize();
         return personNameInverted;
     }
 
@@ -198,7 +198,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitlesBeforeNames titlesBeforeNames() {
-        initialize();
+        _initialize();
         return titlesBeforeNames;
     }
 
@@ -208,7 +208,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NamesBeforeKey namesBeforeKey() {
-        initialize();
+        _initialize();
         return namesBeforeKey;
     }
 
@@ -218,7 +218,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PrefixToKey prefixToKey() {
-        initialize();
+        _initialize();
         return prefixToKey;
     }
 
@@ -228,7 +228,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public KeyNames keyNames() {
-        initialize();
+        _initialize();
         return keyNames;
     }
 
@@ -238,7 +238,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NamesAfterKey namesAfterKey() {
-        initialize();
+        _initialize();
         return namesAfterKey;
     }
 
@@ -248,7 +248,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SuffixToKey suffixToKey() {
-        initialize();
+        _initialize();
         return suffixToKey;
     }
 
@@ -258,7 +258,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LettersAfterNames lettersAfterNames() {
-        initialize();
+        _initialize();
         return lettersAfterNames;
     }
 
@@ -268,7 +268,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TitlesAfterNames titlesAfterNames() {
-        initialize();
+        _initialize();
         return titlesAfterNames;
     }
 
@@ -278,7 +278,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Name> names() {
-        initialize();
+        _initialize();
         return names;
     }
 
@@ -289,7 +289,7 @@ public class PersonAsSubject implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<PersonNameIdentifier, JonixPersonNameIdentifier, PersonNameIdentifierTypes> personNameIdentifiers() {
-        initialize();
+        _initialize();
         return personNameIdentifiers;
     }
 }

@@ -79,17 +79,17 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -143,7 +143,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this field is required)
      */
     public AgentRole agentRole() {
-        initialize();
+        _initialize();
         return agentRole;
     }
 
@@ -154,7 +154,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<AgentIdentifier, JonixAgentIdentifier, SupplierIdentifierTypes> agentIdentifiers() {
-        initialize();
+        _initialize();
         return agentIdentifiers;
     }
 
@@ -164,7 +164,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this field is optional)
      */
     public AgentName agentName() {
-        initialize();
+        _initialize();
         return agentName;
     }
 
@@ -174,7 +174,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this list may be empty)
      */
     public ListOfOnixElement<TelephoneNumber, String> telephoneNumbers() {
-        initialize();
+        _initialize();
         return telephoneNumbers;
     }
 
@@ -184,7 +184,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this list may be empty)
      */
     public ListOfOnixElement<FaxNumber, String> faxNumbers() {
-        initialize();
+        _initialize();
         return faxNumbers;
     }
 
@@ -194,7 +194,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this list may be empty)
      */
     public ListOfOnixElement<EmailAddress, String> emailAddresss() {
-        initialize();
+        _initialize();
         return emailAddresss;
     }
 
@@ -204,7 +204,7 @@ public class PublisherRepresentative implements OnixSuperComposite, Serializable
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 }

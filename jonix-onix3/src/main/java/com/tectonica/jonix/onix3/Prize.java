@@ -74,17 +74,17 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -134,7 +134,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<PrizeName, String> prizeNames() {
-        initialize();
+        _initialize();
         return prizeNames;
     }
 
@@ -144,7 +144,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * (this field is optional)
      */
     public PrizeYear prizeYear() {
-        initialize();
+        _initialize();
         return prizeYear;
     }
 
@@ -154,7 +154,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * (this field is optional)
      */
     public PrizeCountry prizeCountry() {
-        initialize();
+        _initialize();
         return prizeCountry;
     }
 
@@ -164,7 +164,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * (this field is optional)
      */
     public PrizeCode prizeCode() {
-        initialize();
+        _initialize();
         return prizeCode;
     }
 
@@ -174,7 +174,7 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<PrizeStatement, String> prizeStatements() {
-        initialize();
+        _initialize();
         return prizeStatements;
     }
 
@@ -184,13 +184,13 @@ public class Prize implements OnixDataComposite<JonixPrize>, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<PrizeJury, String> prizeJurys() {
-        initialize();
+        _initialize();
         return prizeJurys;
     }
 
     @Override
     public JonixPrize asStruct() {
-        initialize();
+        _initialize();
         JonixPrize struct = new JonixPrize();
         struct.prizeCode = prizeCode.value;
         struct.prizeCountry = prizeCountry.value;

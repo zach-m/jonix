@@ -75,17 +75,17 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * (this field is required)
      */
     public ContentDateRole contentDateRole() {
-        initialize();
+        _initialize();
         return contentDateRole;
     }
 
@@ -133,7 +133,7 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -143,13 +143,13 @@ public class ContentDate implements OnixDataCompositeWithKey<JonixContentDate, C
      * (this field is required)
      */
     public Date date() {
-        initialize();
+        _initialize();
         return date;
     }
 
     @Override
     public JonixContentDate asStruct() {
-        initialize();
+        _initialize();
         JonixContentDate struct = new JonixContentDate();
         struct.contentDateRole = contentDateRole.value;
         struct.dateFormat = dateFormat.value;

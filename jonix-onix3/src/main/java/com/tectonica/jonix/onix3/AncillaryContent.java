@@ -77,17 +77,17 @@ public class AncillaryContent
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -126,7 +126,7 @@ public class AncillaryContent
      * (this field is required)
      */
     public AncillaryContentType ancillaryContentType() {
-        initialize();
+        _initialize();
         return ancillaryContentType;
     }
 
@@ -137,7 +137,7 @@ public class AncillaryContent
      * (this list may be empty)
      */
     public ListOfOnixElement<AncillaryContentDescription, String> ancillaryContentDescriptions() {
-        initialize();
+        _initialize();
         return ancillaryContentDescriptions;
     }
 
@@ -147,13 +147,13 @@ public class AncillaryContent
      * (this field is optional)
      */
     public Number number() {
-        initialize();
+        _initialize();
         return number;
     }
 
     @Override
     public JonixAncillaryContent asStruct() {
-        initialize();
+        _initialize();
         JonixAncillaryContent struct = new JonixAncillaryContent();
         struct.ancillaryContentType = ancillaryContentType.value;
         struct.ancillaryContentDescriptions = ancillaryContentDescriptions.values();

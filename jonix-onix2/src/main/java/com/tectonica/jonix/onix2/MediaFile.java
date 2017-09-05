@@ -88,14 +88,6 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -103,6 +95,14 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -172,7 +172,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is required)
      */
     public MediaFileTypeCode mediaFileTypeCode() {
-        initialize();
+        _initialize();
         return mediaFileTypeCode;
     }
 
@@ -182,7 +182,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public MediaFileFormatCode mediaFileFormatCode() {
-        initialize();
+        _initialize();
         return mediaFileFormatCode;
     }
 
@@ -192,7 +192,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public ImageResolution imageResolution() {
-        initialize();
+        _initialize();
         return imageResolution;
     }
 
@@ -202,7 +202,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is required)
      */
     public MediaFileLinkTypeCode mediaFileLinkTypeCode() {
-        initialize();
+        _initialize();
         return mediaFileLinkTypeCode;
     }
 
@@ -212,7 +212,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is required)
      */
     public MediaFileLink mediaFileLink() {
-        initialize();
+        _initialize();
         return mediaFileLink;
     }
 
@@ -222,7 +222,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public TextWithDownload textWithDownload() {
-        initialize();
+        _initialize();
         return textWithDownload;
     }
 
@@ -232,7 +232,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is required)
      */
     public DownloadCaption downloadCaption() {
-        initialize();
+        _initialize();
         return downloadCaption;
     }
 
@@ -242,7 +242,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public DownloadCredit downloadCredit() {
-        initialize();
+        _initialize();
         return downloadCredit;
     }
 
@@ -252,7 +252,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public DownloadCopyrightNotice downloadCopyrightNotice() {
-        initialize();
+        _initialize();
         return downloadCopyrightNotice;
     }
 
@@ -262,7 +262,7 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public DownloadTerms downloadTerms() {
-        initialize();
+        _initialize();
         return downloadTerms;
     }
 
@@ -272,13 +272,13 @@ public class MediaFile implements OnixDataCompositeWithKey<JonixMediaFile, Image
      * (this field is optional)
      */
     public MediaFileDate mediaFileDate() {
-        initialize();
+        _initialize();
         return mediaFileDate;
     }
 
     @Override
     public JonixMediaFile asStruct() {
-        initialize();
+        _initialize();
         JonixMediaFile struct = new JonixMediaFile();
         struct.mediaFileTypeCode = mediaFileTypeCode.value;
         struct.mediaFileFormatCode = mediaFileFormatCode.value;

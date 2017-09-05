@@ -79,17 +79,17 @@ public class ProductFormFeature
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -128,7 +128,7 @@ public class ProductFormFeature
      * (this field is required)
      */
     public ProductFormFeatureType productFormFeatureType() {
-        initialize();
+        _initialize();
         return productFormFeatureType;
     }
 
@@ -138,7 +138,7 @@ public class ProductFormFeature
      * (this field is optional)
      */
     public ProductFormFeatureValue productFormFeatureValue() {
-        initialize();
+        _initialize();
         return productFormFeatureValue;
     }
 
@@ -149,13 +149,13 @@ public class ProductFormFeature
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormFeatureDescription, String> productFormFeatureDescriptions() {
-        initialize();
+        _initialize();
         return productFormFeatureDescriptions;
     }
 
     @Override
     public JonixProductFormFeature asStruct() {
-        initialize();
+        _initialize();
         JonixProductFormFeature struct = new JonixProductFormFeature();
         struct.productFormFeatureType = productFormFeatureType.value;
         struct.productFormFeatureDescriptions = productFormFeatureDescriptions.values();

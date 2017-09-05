@@ -86,14 +86,6 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -101,6 +93,14 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -138,7 +138,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * (this field is required)
      */
     public MeasureTypeCode measureTypeCode() {
-        initialize();
+        _initialize();
         return measureTypeCode;
     }
 
@@ -148,7 +148,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * (this field is required)
      */
     public Measurement measurement() {
-        initialize();
+        _initialize();
         return measurement;
     }
 
@@ -158,13 +158,13 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * (this field is required)
      */
     public MeasureUnitCode measureUnitCode() {
-        initialize();
+        _initialize();
         return measureUnitCode;
     }
 
     @Override
     public JonixMeasure asStruct() {
-        initialize();
+        _initialize();
         JonixMeasure struct = new JonixMeasure();
         struct.measureType = measureTypeCode.value;
         struct.measureUnitCode = measureUnitCode.value;

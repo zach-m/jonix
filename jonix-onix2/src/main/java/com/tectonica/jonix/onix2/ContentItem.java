@@ -99,14 +99,6 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -114,6 +106,14 @@ public class ContentItem implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -203,7 +203,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LevelSequenceNumber levelSequenceNumber() {
-        initialize();
+        _initialize();
         return levelSequenceNumber;
     }
 
@@ -213,7 +213,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TextItem textItem() {
-        initialize();
+        _initialize();
         return textItem;
     }
 
@@ -223,7 +223,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 
@@ -233,7 +233,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ComponentTypeName componentTypeName() {
-        initialize();
+        _initialize();
         return componentTypeName;
     }
 
@@ -243,7 +243,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ComponentNumber componentNumber() {
-        initialize();
+        _initialize();
         return componentNumber;
     }
 
@@ -253,7 +253,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public DistinctiveTitle distinctiveTitle() {
-        initialize();
+        _initialize();
         return distinctiveTitle;
     }
 
@@ -264,7 +264,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        initialize();
+        _initialize();
         return titles;
     }
 
@@ -275,7 +275,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<WorkIdentifier, JonixWorkIdentifier, WorkIdentifierTypes> workIdentifiers() {
-        initialize();
+        _initialize();
         return workIdentifiers;
     }
 
@@ -285,7 +285,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -295,7 +295,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ContributorStatement contributorStatement() {
-        initialize();
+        _initialize();
         return contributorStatement;
     }
 
@@ -305,7 +305,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
-        initialize();
+        _initialize();
         return subjects;
     }
 
@@ -315,7 +315,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<PersonAsSubject> personAsSubjects() {
-        initialize();
+        _initialize();
         return personAsSubjects;
     }
 
@@ -325,7 +325,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<CorporateBodyAsSubject, String> corporateBodyAsSubjects() {
-        initialize();
+        _initialize();
         return corporateBodyAsSubjects;
     }
 
@@ -335,7 +335,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<PlaceAsSubject, String> placeAsSubjects() {
-        initialize();
+        _initialize();
         return placeAsSubjects;
     }
 
@@ -346,7 +346,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<OtherText, JonixOtherText, OtherTextTypes> otherTexts() {
-        initialize();
+        _initialize();
         return otherTexts;
     }
 
@@ -357,7 +357,7 @@ public class ContentItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<MediaFile, JonixMediaFile, ImageAudioVideoFileTypes> mediaFiles() {
-        initialize();
+        _initialize();
         return mediaFiles;
     }
 }

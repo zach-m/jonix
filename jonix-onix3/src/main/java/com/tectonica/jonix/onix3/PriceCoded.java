@@ -76,17 +76,17 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
      * (this field is required)
      */
     public PriceCodeType priceCodeType() {
-        initialize();
+        _initialize();
         return priceCodeType;
     }
 
@@ -134,7 +134,7 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
      * (this field is optional)
      */
     public PriceCodeTypeName priceCodeTypeName() {
-        initialize();
+        _initialize();
         return priceCodeTypeName;
     }
 
@@ -144,13 +144,13 @@ public class PriceCoded implements OnixDataCompositeWithKey<JonixPriceCoded, Pri
      * (this field is required)
      */
     public PriceCode priceCode() {
-        initialize();
+        _initialize();
         return priceCode;
     }
 
     @Override
     public JonixPriceCoded asStruct() {
-        initialize();
+        _initialize();
         JonixPriceCoded struct = new JonixPriceCoded();
         struct.priceCodeType = priceCodeType.value;
         struct.priceCodeTypeName = priceCodeTypeName.value;

@@ -77,17 +77,17 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
      * (this field is required)
      */
     public OnOrder onOrder() {
-        initialize();
+        _initialize();
         return onOrder;
     }
 
@@ -135,7 +135,7 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
      * (this field is optional)
      */
     public Proximity proximity() {
-        initialize();
+        _initialize();
         return proximity;
     }
 
@@ -145,13 +145,13 @@ public class OnOrderDetail implements OnixDataComposite<JonixOnOrderDetail>, Ser
      * (this field is required)
      */
     public ExpectedDate expectedDate() {
-        initialize();
+        _initialize();
         return expectedDate;
     }
 
     @Override
     public JonixOnOrderDetail asStruct() {
-        initialize();
+        _initialize();
         JonixOnOrderDetail struct = new JonixOnOrderDetail();
         struct.expectedDate = expectedDate.value;
         struct.onOrder = onOrder.value;

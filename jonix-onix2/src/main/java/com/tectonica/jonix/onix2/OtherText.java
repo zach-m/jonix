@@ -87,14 +87,6 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -171,7 +171,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is required)
      */
     public TextTypeCode textTypeCode() {
-        initialize();
+        _initialize();
         return textTypeCode;
     }
 
@@ -181,7 +181,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public TextFormat textFormat() {
-        initialize();
+        _initialize();
         return textFormat;
     }
 
@@ -191,7 +191,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public Text text() {
-        initialize();
+        _initialize();
         return text;
     }
 
@@ -201,7 +201,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is required)
      */
     public TextLinkType textLinkType() {
-        initialize();
+        _initialize();
         return textLinkType;
     }
 
@@ -211,7 +211,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is required)
      */
     public TextLink textLink() {
-        initialize();
+        _initialize();
         return textLink;
     }
 
@@ -221,7 +221,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public TextAuthor textAuthor() {
-        initialize();
+        _initialize();
         return textAuthor;
     }
 
@@ -231,7 +231,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public TextSourceCorporate textSourceCorporate() {
-        initialize();
+        _initialize();
         return textSourceCorporate;
     }
 
@@ -241,7 +241,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public TextSourceTitle textSourceTitle() {
-        initialize();
+        _initialize();
         return textSourceTitle;
     }
 
@@ -251,7 +251,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public TextPublicationDate textPublicationDate() {
-        initialize();
+        _initialize();
         return textPublicationDate;
     }
 
@@ -261,7 +261,7 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public StartDate startDate() {
-        initialize();
+        _initialize();
         return startDate;
     }
 
@@ -271,13 +271,13 @@ public class OtherText implements OnixDataCompositeWithKey<JonixOtherText, Other
      * (this field is optional)
      */
     public EndDate endDate() {
-        initialize();
+        _initialize();
         return endDate;
     }
 
     @Override
     public JonixOtherText asStruct() {
-        initialize();
+        _initialize();
         JonixOtherText struct = new JonixOtherText();
         struct.textTypeCode = textTypeCode.value;
         struct.textFormat = textFormat.value;

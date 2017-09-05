@@ -85,14 +85,6 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -100,6 +92,14 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * (this field is optional)
      */
     public ImprintName imprintName() {
-        initialize();
+        _initialize();
         return imprintName;
     }
 
@@ -151,7 +151,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * (this field is required)
      */
     public NameCodeType nameCodeType() {
-        initialize();
+        _initialize();
         return nameCodeType;
     }
 
@@ -161,7 +161,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * (this field is optional)
      */
     public NameCodeTypeName nameCodeTypeName() {
-        initialize();
+        _initialize();
         return nameCodeTypeName;
     }
 
@@ -171,7 +171,7 @@ public class Imprint implements OnixDataCompositeUncommon, Serializable {
      * (this field is required)
      */
     public NameCodeValue nameCodeValue() {
-        initialize();
+        _initialize();
         return nameCodeValue;
     }
 }

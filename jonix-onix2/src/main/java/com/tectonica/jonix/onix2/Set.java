@@ -89,14 +89,6 @@ public class Set implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -104,6 +96,14 @@ public class Set implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -169,7 +169,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ISBNOfSet isbnOfSet() {
-        initialize();
+        _initialize();
         return isbnOfSet;
     }
 
@@ -179,7 +179,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EAN13OfSet ean13OfSet() {
-        initialize();
+        _initialize();
         return ean13OfSet;
     }
 
@@ -190,7 +190,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductIdentifier, JonixProductIdentifier, ProductIdentifierTypes> productIdentifiers() {
-        initialize();
+        _initialize();
         return productIdentifiers;
     }
 
@@ -200,7 +200,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TitleOfSet titleOfSet() {
-        initialize();
+        _initialize();
         return titleOfSet;
     }
 
@@ -211,7 +211,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        initialize();
+        _initialize();
         return titles;
     }
 
@@ -221,7 +221,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SetPartNumber setPartNumber() {
-        initialize();
+        _initialize();
         return setPartNumber;
     }
 
@@ -231,7 +231,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SetPartTitle setPartTitle() {
-        initialize();
+        _initialize();
         return setPartTitle;
     }
 
@@ -241,7 +241,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ItemNumberWithinSet itemNumberWithinSet() {
-        initialize();
+        _initialize();
         return itemNumberWithinSet;
     }
 
@@ -251,7 +251,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LevelSequenceNumber levelSequenceNumber() {
-        initialize();
+        _initialize();
         return levelSequenceNumber;
     }
 
@@ -261,7 +261,7 @@ public class Set implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SetItemTitle setItemTitle() {
-        initialize();
+        _initialize();
         return setItemTitle;
     }
 }

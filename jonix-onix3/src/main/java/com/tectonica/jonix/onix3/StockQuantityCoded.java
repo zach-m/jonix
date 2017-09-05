@@ -78,17 +78,17 @@ public class StockQuantityCoded
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -126,7 +126,7 @@ public class StockQuantityCoded
      * (this field is required)
      */
     public StockQuantityCodeType stockQuantityCodeType() {
-        initialize();
+        _initialize();
         return stockQuantityCodeType;
     }
 
@@ -136,7 +136,7 @@ public class StockQuantityCoded
      * (this field is optional)
      */
     public StockQuantityCodeTypeName stockQuantityCodeTypeName() {
-        initialize();
+        _initialize();
         return stockQuantityCodeTypeName;
     }
 
@@ -146,13 +146,13 @@ public class StockQuantityCoded
      * (this field is required)
      */
     public StockQuantityCode stockQuantityCode() {
-        initialize();
+        _initialize();
         return stockQuantityCode;
     }
 
     @Override
     public JonixStockQuantityCoded asStruct() {
-        initialize();
+        _initialize();
         JonixStockQuantityCoded struct = new JonixStockQuantityCoded();
         struct.stockQuantityCodeType = stockQuantityCodeType.value;
         struct.stockQuantityCode = stockQuantityCode.value;

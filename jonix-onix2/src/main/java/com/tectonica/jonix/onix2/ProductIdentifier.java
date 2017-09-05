@@ -90,14 +90,6 @@ public class ProductIdentifier
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -105,6 +97,14 @@ public class ProductIdentifier
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -142,7 +142,7 @@ public class ProductIdentifier
      * (this field is required)
      */
     public ProductIDType productIDType() {
-        initialize();
+        _initialize();
         return productIDType;
     }
 
@@ -152,7 +152,7 @@ public class ProductIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -162,13 +162,13 @@ public class ProductIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixProductIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixProductIdentifier struct = new JonixProductIdentifier();
         struct.productIDType = productIDType.value;
         struct.idTypeName = idTypeName.value;

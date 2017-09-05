@@ -79,17 +79,17 @@ public class TextItem implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -131,7 +131,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TextItemType textItemType() {
-        initialize();
+        _initialize();
         return textItemType;
     }
 
@@ -142,7 +142,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers() {
-        initialize();
+        _initialize();
         return textItemIdentifiers;
     }
 
@@ -152,7 +152,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
-        initialize();
+        _initialize();
         return pageRuns;
     }
 
@@ -162,7 +162,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfPages numberOfPages() {
-        initialize();
+        _initialize();
         return numberOfPages;
     }
 }

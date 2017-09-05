@@ -91,14 +91,6 @@ public class TextItem implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -106,6 +98,14 @@ public class TextItem implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -155,7 +155,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TextItemType textItemType() {
-        initialize();
+        _initialize();
         return textItemType;
     }
 
@@ -166,7 +166,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<TextItemIdentifier, JonixTextItemIdentifier, TextItemIdentifierTypes> textItemIdentifiers() {
-        initialize();
+        _initialize();
         return textItemIdentifiers;
     }
 
@@ -176,7 +176,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public FirstPageNumber firstPageNumber() {
-        initialize();
+        _initialize();
         return firstPageNumber;
     }
 
@@ -186,7 +186,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LastPageNumber lastPageNumber() {
-        initialize();
+        _initialize();
         return lastPageNumber;
     }
 
@@ -196,7 +196,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<PageRun, JonixPageRun> pageRuns() {
-        initialize();
+        _initialize();
         return pageRuns;
     }
 
@@ -206,7 +206,7 @@ public class TextItem implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfPages numberOfPages() {
-        initialize();
+        _initialize();
         return numberOfPages;
     }
 }

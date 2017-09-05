@@ -79,17 +79,17 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -131,7 +131,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<TextContent> textContents() {
-        initialize();
+        _initialize();
         return textContents;
     }
 
@@ -141,7 +141,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<CitedContent> citedContents() {
-        initialize();
+        _initialize();
         return citedContents;
     }
 
@@ -151,7 +151,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SupportingResource> supportingResources() {
-        initialize();
+        _initialize();
         return supportingResources;
     }
 
@@ -161,7 +161,7 @@ public class CollateralDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Prize, JonixPrize> prizes() {
-        initialize();
+        _initialize();
         return prizes;
     }
 }

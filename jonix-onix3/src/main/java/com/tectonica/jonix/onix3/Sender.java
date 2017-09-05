@@ -75,17 +75,17 @@ public class Sender implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -128,7 +128,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<SenderIdentifier, JonixSenderIdentifier, NameCodeTypes> senderIdentifiers() {
-        initialize();
+        _initialize();
         return senderIdentifiers;
     }
 
@@ -138,7 +138,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SenderName senderName() {
-        initialize();
+        _initialize();
         return senderName;
     }
 
@@ -148,7 +148,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ContactName contactName() {
-        initialize();
+        _initialize();
         return contactName;
     }
 
@@ -158,7 +158,7 @@ public class Sender implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EmailAddress emailAddress() {
-        initialize();
+        _initialize();
         return emailAddress;
     }
 }

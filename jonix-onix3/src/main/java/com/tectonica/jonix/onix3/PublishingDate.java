@@ -77,17 +77,17 @@ public class PublishingDate
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class PublishingDate
      * (this field is required)
      */
     public PublishingDateRole publishingDateRole() {
-        initialize();
+        _initialize();
         return publishingDateRole;
     }
 
@@ -135,7 +135,7 @@ public class PublishingDate
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -145,13 +145,13 @@ public class PublishingDate
      * (this field is required)
      */
     public Date date() {
-        initialize();
+        _initialize();
         return date;
     }
 
     @Override
     public JonixPublishingDate asStruct() {
-        initialize();
+        _initialize();
         JonixPublishingDate struct = new JonixPublishingDate();
         struct.publishingDateRole = publishingDateRole.value;
         struct.dateFormat = dateFormat.value;

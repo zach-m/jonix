@@ -86,14 +86,6 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -101,6 +93,14 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -146,7 +146,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is required)
      */
     public SubjectSchemeIdentifier subjectSchemeIdentifier() {
-        initialize();
+        _initialize();
         return subjectSchemeIdentifier;
     }
 
@@ -156,7 +156,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is optional)
      */
     public SubjectSchemeName subjectSchemeName() {
-        initialize();
+        _initialize();
         return subjectSchemeName;
     }
 
@@ -166,7 +166,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is optional)
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
-        initialize();
+        _initialize();
         return subjectSchemeVersion;
     }
 
@@ -176,7 +176,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is required)
      */
     public SubjectCode subjectCode() {
-        initialize();
+        _initialize();
         return subjectCode;
     }
 
@@ -186,13 +186,13 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is optional)
      */
     public SubjectHeadingText subjectHeadingText() {
-        initialize();
+        _initialize();
         return subjectHeadingText;
     }
 
     @Override
     public JonixSubject asStruct() {
-        initialize();
+        _initialize();
         JonixSubject struct = new JonixSubject();
         struct.subjectCode = subjectCode.value;
         struct.subjectHeadingTexts = Arrays.asList(subjectHeadingText.value);

@@ -76,17 +76,17 @@ public class Addressee implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -129,7 +129,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<AddresseeIdentifier, JonixAddresseeIdentifier, NameCodeTypes> addresseeIdentifiers() {
-        initialize();
+        _initialize();
         return addresseeIdentifiers;
     }
 
@@ -139,7 +139,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public AddresseeName addresseeName() {
-        initialize();
+        _initialize();
         return addresseeName;
     }
 
@@ -149,7 +149,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ContactName contactName() {
-        initialize();
+        _initialize();
         return contactName;
     }
 
@@ -159,7 +159,7 @@ public class Addressee implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EmailAddress emailAddress() {
-        initialize();
+        _initialize();
         return emailAddress;
     }
 }

@@ -77,17 +77,17 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -127,7 +127,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<ConferenceSponsorIdentifier, JonixConferenceSponsorIdentifier, NameCodeTypes> conferenceSponsorIdentifiers() {
-        initialize();
+        _initialize();
         return conferenceSponsorIdentifiers;
     }
 
@@ -137,7 +137,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PersonName personName() {
-        initialize();
+        _initialize();
         return personName;
     }
 
@@ -147,7 +147,7 @@ public class ConferenceSponsor implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CorporateName corporateName() {
-        initialize();
+        _initialize();
         return corporateName;
     }
 }

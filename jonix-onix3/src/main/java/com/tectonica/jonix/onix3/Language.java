@@ -75,17 +75,17 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -127,7 +127,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * (this field is required)
      */
     public LanguageRole languageRole() {
-        initialize();
+        _initialize();
         return languageRole;
     }
 
@@ -137,7 +137,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * (this field is required)
      */
     public LanguageCode languageCode() {
-        initialize();
+        _initialize();
         return languageCode;
     }
 
@@ -147,7 +147,7 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * (this field is optional)
      */
     public CountryCode countryCode() {
-        initialize();
+        _initialize();
         return countryCode;
     }
 
@@ -157,13 +157,13 @@ public class Language implements OnixDataCompositeWithKey<JonixLanguage, Languag
      * (this field is optional)
      */
     public ScriptCode scriptCode() {
-        initialize();
+        _initialize();
         return scriptCode;
     }
 
     @Override
     public JonixLanguage asStruct() {
-        initialize();
+        _initialize();
         JonixLanguage struct = new JonixLanguage();
         struct.languageRole = languageRole.value;
         struct.countryCode = countryCode.value;

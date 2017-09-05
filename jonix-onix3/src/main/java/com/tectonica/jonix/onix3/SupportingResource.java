@@ -80,17 +80,17 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -136,7 +136,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ResourceContentType resourceContentType() {
-        initialize();
+        _initialize();
         return resourceContentType;
     }
 
@@ -146,7 +146,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixElement<ContentAudience, ContentAudiences> contentAudiences() {
-        initialize();
+        _initialize();
         return contentAudiences;
     }
 
@@ -156,7 +156,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ResourceMode resourceMode() {
-        initialize();
+        _initialize();
         return resourceMode;
     }
 
@@ -167,7 +167,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ResourceFeature, JonixResourceFeature, ResourceFeatureTypes> resourceFeatures() {
-        initialize();
+        _initialize();
         return resourceFeatures;
     }
 
@@ -177,7 +177,7 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public List<ResourceVersion> resourceVersions() {
-        initialize();
+        _initialize();
         return resourceVersions;
     }
 }

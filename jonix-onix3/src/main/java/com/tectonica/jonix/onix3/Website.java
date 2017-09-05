@@ -75,17 +75,17 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * (this field is optional)
      */
     public WebsiteRole websiteRole() {
-        initialize();
+        _initialize();
         return websiteRole;
     }
 
@@ -133,7 +133,7 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<WebsiteDescription, String> websiteDescriptions() {
-        initialize();
+        _initialize();
         return websiteDescriptions;
     }
 
@@ -143,13 +143,13 @@ public class Website implements OnixDataComposite<JonixWebsite>, Serializable {
      * (this field is required)
      */
     public WebsiteLink websiteLink() {
-        initialize();
+        _initialize();
         return websiteLink;
     }
 
     @Override
     public JonixWebsite asStruct() {
-        initialize();
+        _initialize();
         JonixWebsite struct = new JonixWebsite();
         struct.websiteDescriptions = websiteDescriptions.values();
         struct.websiteLink = websiteLink.value;

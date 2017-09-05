@@ -81,17 +81,17 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -169,7 +169,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public List<Imprint> imprints() {
-        initialize();
+        _initialize();
         return imprints;
     }
 
@@ -179,7 +179,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Publisher> publishers() {
-        initialize();
+        _initialize();
         return publishers;
     }
 
@@ -189,7 +189,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<CityOfPublication, String> cityOfPublications() {
-        initialize();
+        _initialize();
         return cityOfPublications;
     }
 
@@ -199,7 +199,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CountryOfPublication countryOfPublication() {
-        initialize();
+        _initialize();
         return countryOfPublication;
     }
 
@@ -209,7 +209,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ProductContact> productContacts() {
-        initialize();
+        _initialize();
         return productContacts;
     }
 
@@ -219,7 +219,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublishingStatus publishingStatus() {
-        initialize();
+        _initialize();
         return publishingStatus;
     }
 
@@ -229,7 +229,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<PublishingStatusNote, String> publishingStatusNotes() {
-        initialize();
+        _initialize();
         return publishingStatusNotes;
     }
 
@@ -240,7 +240,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<PublishingDate, JonixPublishingDate, PublishingDateRoles> publishingDates() {
-        initialize();
+        _initialize();
         return publishingDates;
     }
 
@@ -250,7 +250,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public LatestReprintNumber latestReprintNumber() {
-        initialize();
+        _initialize();
         return latestReprintNumber;
     }
 
@@ -260,7 +260,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<CopyrightStatement> copyrightStatements() {
-        initialize();
+        _initialize();
         return copyrightStatements;
     }
 
@@ -270,7 +270,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesRights> salesRightss() {
-        initialize();
+        _initialize();
         return salesRightss;
     }
 
@@ -280,7 +280,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ROWSalesRightsType rowSalesRightsType() {
-        initialize();
+        _initialize();
         return rowSalesRightsType;
     }
 
@@ -290,7 +290,7 @@ public class PublishingDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesRestriction> salesRestrictions() {
-        initialize();
+        _initialize();
         return salesRestrictions;
     }
 }

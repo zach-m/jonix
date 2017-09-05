@@ -87,14 +87,6 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -139,7 +139,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * (this field is required)
      */
     public DiscountCodeType discountCodeType() {
-        initialize();
+        _initialize();
         return discountCodeType;
     }
 
@@ -149,7 +149,7 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * (this field is optional)
      */
     public DiscountCodeTypeName discountCodeTypeName() {
-        initialize();
+        _initialize();
         return discountCodeTypeName;
     }
 
@@ -159,13 +159,13 @@ public class DiscountCoded implements OnixDataCompositeWithKey<JonixDiscountCode
      * (this field is required)
      */
     public DiscountCode discountCode() {
-        initialize();
+        _initialize();
         return discountCode;
     }
 
     @Override
     public JonixDiscountCoded asStruct() {
-        initialize();
+        _initialize();
         JonixDiscountCoded struct = new JonixDiscountCoded();
         struct.discountCodeType = discountCodeType.value;
         struct.discountCode = discountCode.value;

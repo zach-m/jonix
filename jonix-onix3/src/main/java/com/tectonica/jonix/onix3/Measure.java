@@ -75,17 +75,17 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * (this field is required)
      */
     public MeasureType measureType() {
-        initialize();
+        _initialize();
         return measureType;
     }
 
@@ -133,7 +133,7 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * (this field is required)
      */
     public Measurement measurement() {
-        initialize();
+        _initialize();
         return measurement;
     }
 
@@ -143,13 +143,13 @@ public class Measure implements OnixDataCompositeWithKey<JonixMeasure, MeasureTy
      * (this field is required)
      */
     public MeasureUnitCode measureUnitCode() {
-        initialize();
+        _initialize();
         return measureUnitCode;
     }
 
     @Override
     public JonixMeasure asStruct() {
-        initialize();
+        _initialize();
         JonixMeasure struct = new JonixMeasure();
         struct.measureType = measureType.value;
         struct.measureUnitCode = measureUnitCode.value;

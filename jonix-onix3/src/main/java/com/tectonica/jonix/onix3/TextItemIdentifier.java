@@ -76,17 +76,17 @@ public class TextItemIdentifier
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class TextItemIdentifier
      * (this field is required)
      */
     public TextItemIDType textItemIDType() {
-        initialize();
+        _initialize();
         return textItemIDType;
     }
 
@@ -134,7 +134,7 @@ public class TextItemIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -144,13 +144,13 @@ public class TextItemIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixTextItemIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixTextItemIdentifier struct = new JonixTextItemIdentifier();
         struct.textItemIDType = textItemIDType.value;
         struct.idTypeName = idTypeName.value;

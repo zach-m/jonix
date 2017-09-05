@@ -79,17 +79,17 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -127,7 +127,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Bible bible() {
-        initialize();
+        _initialize();
         return bible;
     }
 
@@ -137,7 +137,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ReligiousTextIdentifier religiousTextIdentifier() {
-        initialize();
+        _initialize();
         return religiousTextIdentifier;
     }
 
@@ -148,7 +148,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {
-        initialize();
+        _initialize();
         return religiousTextFeatures;
     }
 }

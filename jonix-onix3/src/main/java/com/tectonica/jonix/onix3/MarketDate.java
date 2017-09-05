@@ -77,17 +77,17 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -125,7 +125,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * (this field is required)
      */
     public MarketDateRole marketDateRole() {
-        initialize();
+        _initialize();
         return marketDateRole;
     }
 
@@ -135,7 +135,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -145,13 +145,13 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * (this field is required)
      */
     public Date date() {
-        initialize();
+        _initialize();
         return date;
     }
 
     @Override
     public JonixMarketDate asStruct() {
-        initialize();
+        _initialize();
         JonixMarketDate struct = new JonixMarketDate();
         struct.marketDateRole = marketDateRole.value;
         struct.date = date.value;

@@ -91,14 +91,6 @@ public class Series implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -106,6 +98,14 @@ public class Series implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -163,7 +163,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public SeriesISSN seriesISSN() {
-        initialize();
+        _initialize();
         return seriesISSN;
     }
 
@@ -173,7 +173,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublisherSeriesCode publisherSeriesCode() {
-        initialize();
+        _initialize();
         return publisherSeriesCode;
     }
 
@@ -184,7 +184,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<SeriesIdentifier, JonixSeriesIdentifier, SeriesIdentifierTypes> seriesIdentifiers() {
-        initialize();
+        _initialize();
         return seriesIdentifiers;
     }
 
@@ -194,7 +194,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public TitleOfSeries titleOfSeries() {
-        initialize();
+        _initialize();
         return titleOfSeries;
     }
 
@@ -205,7 +205,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Title, JonixTitle, TitleTypes> titles() {
-        initialize();
+        _initialize();
         return titles;
     }
 
@@ -215,7 +215,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -225,7 +225,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberWithinSeries numberWithinSeries() {
-        initialize();
+        _initialize();
         return numberWithinSeries;
     }
 
@@ -235,7 +235,7 @@ public class Series implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public YearOfAnnual yearOfAnnual() {
-        initialize();
+        _initialize();
         return yearOfAnnual;
     }
 }

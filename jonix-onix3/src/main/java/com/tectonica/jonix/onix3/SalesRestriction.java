@@ -76,17 +76,17 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -132,7 +132,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public SalesRestrictionType salesRestrictionType() {
-        initialize();
+        _initialize();
         return salesRestrictionType;
     }
 
@@ -142,7 +142,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<SalesOutlet> salesOutlets() {
-        initialize();
+        _initialize();
         return salesOutlets;
     }
 
@@ -152,7 +152,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<SalesRestrictionNote, String> salesRestrictionNotes() {
-        initialize();
+        _initialize();
         return salesRestrictionNotes;
     }
 
@@ -162,7 +162,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public StartDate startDate() {
-        initialize();
+        _initialize();
         return startDate;
     }
 
@@ -172,7 +172,7 @@ public class SalesRestriction implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EndDate endDate() {
-        initialize();
+        _initialize();
         return endDate;
     }
 }

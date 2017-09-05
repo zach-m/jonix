@@ -91,14 +91,6 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -106,6 +98,14 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -143,7 +143,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Bible bible() {
-        initialize();
+        _initialize();
         return bible;
     }
 
@@ -153,7 +153,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ReligiousTextID religiousTextID() {
-        initialize();
+        _initialize();
         return religiousTextID;
     }
 
@@ -164,7 +164,7 @@ public class ReligiousText implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<ReligiousTextFeature, JonixReligiousTextFeature, ReligiousTextFeatureTypes> religiousTextFeatures() {
-        initialize();
+        _initialize();
         return religiousTextFeatures;
     }
 }

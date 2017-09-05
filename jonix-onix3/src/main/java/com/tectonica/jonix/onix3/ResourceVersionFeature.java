@@ -78,17 +78,17 @@ public class ResourceVersionFeature
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -126,7 +126,7 @@ public class ResourceVersionFeature
      * (this field is required)
      */
     public ResourceVersionFeatureType resourceVersionFeatureType() {
-        initialize();
+        _initialize();
         return resourceVersionFeatureType;
     }
 
@@ -136,7 +136,7 @@ public class ResourceVersionFeature
      * (this field is optional)
      */
     public FeatureValue featureValue() {
-        initialize();
+        _initialize();
         return featureValue;
     }
 
@@ -146,13 +146,13 @@ public class ResourceVersionFeature
      * (this list may be empty)
      */
     public ListOfOnixElement<FeatureNote, String> featureNotes() {
-        initialize();
+        _initialize();
         return featureNotes;
     }
 
     @Override
     public JonixResourceVersionFeature asStruct() {
-        initialize();
+        _initialize();
         JonixResourceVersionFeature struct = new JonixResourceVersionFeature();
         struct.resourceVersionFeatureType = resourceVersionFeatureType.value;
         struct.featureValue = featureValue.value;

@@ -89,14 +89,6 @@ public class PersonNameIdentifier
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -104,6 +96,14 @@ public class PersonNameIdentifier
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -141,7 +141,7 @@ public class PersonNameIdentifier
      * (this field is required)
      */
     public PersonNameIDType personNameIDType() {
-        initialize();
+        _initialize();
         return personNameIDType;
     }
 
@@ -151,7 +151,7 @@ public class PersonNameIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -161,13 +161,13 @@ public class PersonNameIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixPersonNameIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixPersonNameIdentifier struct = new JonixPersonNameIdentifier();
         struct.personNameIDType = personNameIDType.value;
         struct.idTypeName = idTypeName.value;

@@ -74,17 +74,17 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -134,7 +134,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is optional)
      */
     public MainSubject mainSubject() {
-        initialize();
+        _initialize();
         return mainSubject;
     }
 
@@ -148,7 +148,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is required)
      */
     public SubjectSchemeIdentifier subjectSchemeIdentifier() {
-        initialize();
+        _initialize();
         return subjectSchemeIdentifier;
     }
 
@@ -158,7 +158,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is optional)
      */
     public SubjectSchemeName subjectSchemeName() {
-        initialize();
+        _initialize();
         return subjectSchemeName;
     }
 
@@ -168,7 +168,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is optional)
      */
     public SubjectSchemeVersion subjectSchemeVersion() {
-        initialize();
+        _initialize();
         return subjectSchemeVersion;
     }
 
@@ -178,7 +178,7 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this field is required)
      */
     public SubjectCode subjectCode() {
-        initialize();
+        _initialize();
         return subjectCode;
     }
 
@@ -188,13 +188,13 @@ public class Subject implements OnixDataComposite<JonixSubject>, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<SubjectHeadingText, String> subjectHeadingTexts() {
-        initialize();
+        _initialize();
         return subjectHeadingTexts;
     }
 
     @Override
     public JonixSubject asStruct() {
-        initialize();
+        _initialize();
         JonixSubject struct = new JonixSubject();
         struct.subjectCode = subjectCode.value;
         struct.subjectHeadingTexts = subjectHeadingTexts.values();

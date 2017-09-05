@@ -76,17 +76,17 @@ public class ImprintIdentifier
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class ImprintIdentifier
      * (this field is required)
      */
     public ImprintIDType imprintIDType() {
-        initialize();
+        _initialize();
         return imprintIDType;
     }
 
@@ -134,7 +134,7 @@ public class ImprintIdentifier
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -144,13 +144,13 @@ public class ImprintIdentifier
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixImprintIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixImprintIdentifier struct = new JonixImprintIdentifier();
         struct.imprintIDType = imprintIDType.value;
         struct.idTypeName = idTypeName.value;

@@ -76,17 +76,17 @@ public class EpubLicenseExpression
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class EpubLicenseExpression
      * (this field is required)
      */
     public EpubLicenseExpressionType epubLicenseExpressionType() {
-        initialize();
+        _initialize();
         return epubLicenseExpressionType;
     }
 
@@ -134,7 +134,7 @@ public class EpubLicenseExpression
      * (this field is optional)
      */
     public EpubLicenseExpressionTypeName epubLicenseExpressionTypeName() {
-        initialize();
+        _initialize();
         return epubLicenseExpressionTypeName;
     }
 
@@ -144,13 +144,13 @@ public class EpubLicenseExpression
      * (this field is required)
      */
     public EpubLicenseExpressionLink epubLicenseExpressionLink() {
-        initialize();
+        _initialize();
         return epubLicenseExpressionLink;
     }
 
     @Override
     public JonixEpubLicenseExpression asStruct() {
-        initialize();
+        _initialize();
         JonixEpubLicenseExpression struct = new JonixEpubLicenseExpression();
         struct.epubLicenseExpressionType = epubLicenseExpressionType.value;
         struct.epubLicenseExpressionTypeName = epubLicenseExpressionTypeName.value;

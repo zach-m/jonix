@@ -102,17 +102,17 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -322,7 +322,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ProductComposition productComposition() {
-        initialize();
+        _initialize();
         return productComposition;
     }
 
@@ -332,7 +332,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ProductForm productForm() {
-        initialize();
+        _initialize();
         return productForm;
     }
 
@@ -343,7 +343,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDetail, ProductFormDetailsList175> productFormDetails() {
-        initialize();
+        _initialize();
         return productFormDetails;
     }
 
@@ -354,7 +354,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductFormFeature, JonixProductFormFeature, ProductFormFeatureTypes> productFormFeatures() {
-        initialize();
+        _initialize();
         return productFormFeatures;
     }
 
@@ -364,7 +364,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ProductPackaging productPackaging() {
-        initialize();
+        _initialize();
         return productPackaging;
     }
 
@@ -374,7 +374,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductFormDescription, String> productFormDescriptions() {
-        initialize();
+        _initialize();
         return productFormDescriptions;
     }
 
@@ -384,7 +384,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public TradeCategory tradeCategory() {
-        initialize();
+        _initialize();
         return tradeCategory;
     }
 
@@ -394,7 +394,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PrimaryContentType primaryContentType() {
-        initialize();
+        _initialize();
         return primaryContentType;
     }
 
@@ -404,7 +404,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ProductContentType, ProductContentTypes> productContentTypes() {
-        initialize();
+        _initialize();
         return productContentTypes;
     }
 
@@ -415,7 +415,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Measure, JonixMeasure, MeasureTypes> measures() {
-        initialize();
+        _initialize();
         return measures;
     }
 
@@ -425,7 +425,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CountryOfManufacture countryOfManufacture() {
-        initialize();
+        _initialize();
         return countryOfManufacture;
     }
 
@@ -436,7 +436,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EpubTechnicalProtection, EpublicationTechnicalProtections> epubTechnicalProtections() {
-        initialize();
+        _initialize();
         return epubTechnicalProtections;
     }
 
@@ -446,7 +446,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<EpubUsageConstraint> epubUsageConstraints() {
-        initialize();
+        _initialize();
         return epubUsageConstraints;
     }
 
@@ -456,7 +456,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EpubLicense epubLicense() {
-        initialize();
+        _initialize();
         return epubLicense;
     }
 
@@ -466,7 +466,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<MapScale, Integer> mapScales() {
-        initialize();
+        _initialize();
         return mapScales;
     }
 
@@ -477,7 +477,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<ProductClassification, JonixProductClassification, ProductClassificationTypes> productClassifications() {
-        initialize();
+        _initialize();
         return productClassifications;
     }
 
@@ -487,7 +487,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ProductPart> productParts() {
-        initialize();
+        _initialize();
         return productParts;
     }
 
@@ -497,7 +497,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Collection> collections() {
-        initialize();
+        _initialize();
         return collections;
     }
 
@@ -507,7 +507,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoCollection noCollection() {
-        initialize();
+        _initialize();
         return noCollection;
     }
 
@@ -521,7 +521,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public List<TitleDetail> titleDetails() {
-        initialize();
+        _initialize();
         return titleDetails;
     }
 
@@ -531,7 +531,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ThesisType thesisType() {
-        initialize();
+        _initialize();
         return thesisType;
     }
 
@@ -541,7 +541,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ThesisPresentedTo thesisPresentedTo() {
-        initialize();
+        _initialize();
         return thesisPresentedTo;
     }
 
@@ -551,7 +551,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ThesisYear thesisYear() {
-        initialize();
+        _initialize();
         return thesisYear;
     }
 
@@ -561,7 +561,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public List<Contributor> contributors() {
-        initialize();
+        _initialize();
         return contributors;
     }
 
@@ -571,7 +571,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<ContributorStatement, String> contributorStatements() {
-        initialize();
+        _initialize();
         return contributorStatements;
     }
 
@@ -581,7 +581,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoContributor noContributor() {
-        initialize();
+        _initialize();
         return noContributor;
     }
 
@@ -595,7 +595,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Conference> conferences() {
-        initialize();
+        _initialize();
         return conferences;
     }
 
@@ -605,7 +605,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EditionType, EditionTypes> editionTypes() {
-        initialize();
+        _initialize();
         return editionTypes;
     }
 
@@ -615,7 +615,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EditionNumber editionNumber() {
-        initialize();
+        _initialize();
         return editionNumber;
     }
 
@@ -625,7 +625,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public EditionVersionNumber editionVersionNumber() {
-        initialize();
+        _initialize();
         return editionVersionNumber;
     }
 
@@ -635,7 +635,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<EditionStatement, String> editionStatements() {
-        initialize();
+        _initialize();
         return editionStatements;
     }
 
@@ -645,7 +645,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NoEdition noEdition() {
-        initialize();
+        _initialize();
         return noEdition;
     }
 
@@ -659,7 +659,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ReligiousText religiousText() {
-        initialize();
+        _initialize();
         return religiousText;
     }
 
@@ -670,7 +670,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Language, JonixLanguage, LanguageRoles> languages() {
-        initialize();
+        _initialize();
         return languages;
     }
 
@@ -681,7 +681,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Extent, JonixExtent, ExtentTypes> extents() {
-        initialize();
+        _initialize();
         return extents;
     }
 
@@ -691,7 +691,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Illustrated illustrated() {
-        initialize();
+        _initialize();
         return illustrated;
     }
 
@@ -701,7 +701,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public NumberOfIllustrations numberOfIllustrations() {
-        initialize();
+        _initialize();
         return numberOfIllustrations;
     }
 
@@ -711,7 +711,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<IllustrationsNote, String> illustrationsNotes() {
-        initialize();
+        _initialize();
         return illustrationsNotes;
     }
 
@@ -722,7 +722,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<AncillaryContent, JonixAncillaryContent, IllustrationAndOtherContentTypes> ancillaryContents() {
-        initialize();
+        _initialize();
         return ancillaryContents;
     }
 
@@ -732,7 +732,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Subject, JonixSubject> subjects() {
-        initialize();
+        _initialize();
         return subjects;
     }
 
@@ -742,7 +742,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<NameAsSubject> nameAsSubjects() {
-        initialize();
+        _initialize();
         return nameAsSubjects;
     }
 
@@ -752,7 +752,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<AudienceCode, Audiences> audienceCodes() {
-        initialize();
+        _initialize();
         return audienceCodes;
     }
 
@@ -763,7 +763,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<Audience, JonixAudience, AudienceCodeTypes> audiences() {
-        initialize();
+        _initialize();
         return audiences;
     }
 
@@ -773,7 +773,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<AudienceRange, JonixAudienceRange> audienceRanges() {
-        initialize();
+        _initialize();
         return audienceRanges;
     }
 
@@ -783,7 +783,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<AudienceDescription, String> audienceDescriptions() {
-        initialize();
+        _initialize();
         return audienceDescriptions;
     }
 
@@ -793,7 +793,7 @@ public class DescriptiveDetail implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Complexity, JonixComplexity> complexitys() {
-        initialize();
+        _initialize();
         return complexitys;
     }
 }

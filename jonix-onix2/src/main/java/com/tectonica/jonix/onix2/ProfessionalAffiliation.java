@@ -87,14 +87,6 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -135,7 +135,7 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
      * (this field is required)
      */
     public ProfessionalPosition professionalPosition() {
-        initialize();
+        _initialize();
         return professionalPosition;
     }
 
@@ -145,13 +145,13 @@ public class ProfessionalAffiliation implements OnixDataComposite<JonixProfessio
      * (this field is optional)
      */
     public Affiliation affiliation() {
-        initialize();
+        _initialize();
         return affiliation;
     }
 
     @Override
     public JonixProfessionalAffiliation asStruct() {
-        initialize();
+        _initialize();
         JonixProfessionalAffiliation struct = new JonixProfessionalAffiliation();
         struct.affiliation = affiliation.value;
         struct.professionalPositions = Arrays.asList(professionalPosition.value);

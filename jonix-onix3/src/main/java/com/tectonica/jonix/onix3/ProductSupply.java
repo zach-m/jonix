@@ -78,17 +78,17 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -126,7 +126,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<Market> markets() {
-        initialize();
+        _initialize();
         return markets;
     }
 
@@ -136,7 +136,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MarketPublishingDetail marketPublishingDetail() {
-        initialize();
+        _initialize();
         return marketPublishingDetail;
     }
 
@@ -146,7 +146,7 @@ public class ProductSupply implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public List<SupplyDetail> supplyDetails() {
-        initialize();
+        _initialize();
         return supplyDetails;
     }
 }

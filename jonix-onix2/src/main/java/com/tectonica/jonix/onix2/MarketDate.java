@@ -87,14 +87,6 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -139,7 +139,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * (this field is required)
      */
     public MarketDateRole marketDateRole() {
-        initialize();
+        _initialize();
         return marketDateRole;
     }
 
@@ -149,7 +149,7 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -159,13 +159,13 @@ public class MarketDate implements OnixDataCompositeWithKey<JonixMarketDate, Pub
      * (this field is required)
      */
     public Date date() {
-        initialize();
+        _initialize();
         return date;
     }
 
     @Override
     public JonixMarketDate asStruct() {
-        initialize();
+        _initialize();
         JonixMarketDate struct = new JonixMarketDate();
         struct.marketDateRole = marketDateRole.value;
         struct.date = date.value;

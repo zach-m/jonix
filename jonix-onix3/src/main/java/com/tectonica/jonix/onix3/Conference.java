@@ -77,17 +77,17 @@ public class Conference implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -149,7 +149,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceRole conferenceRole() {
-        initialize();
+        _initialize();
         return conferenceRole;
     }
 
@@ -159,7 +159,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public ConferenceName conferenceName() {
-        initialize();
+        _initialize();
         return conferenceName;
     }
 
@@ -169,7 +169,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceAcronym conferenceAcronym() {
-        initialize();
+        _initialize();
         return conferenceAcronym;
     }
 
@@ -179,7 +179,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceNumber conferenceNumber() {
-        initialize();
+        _initialize();
         return conferenceNumber;
     }
 
@@ -189,7 +189,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceTheme conferenceTheme() {
-        initialize();
+        _initialize();
         return conferenceTheme;
     }
 
@@ -199,7 +199,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferenceDate conferenceDate() {
-        initialize();
+        _initialize();
         return conferenceDate;
     }
 
@@ -209,7 +209,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public ConferencePlace conferencePlace() {
-        initialize();
+        _initialize();
         return conferencePlace;
     }
 
@@ -219,7 +219,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ConferenceSponsor> conferenceSponsors() {
-        initialize();
+        _initialize();
         return conferenceSponsors;
     }
 
@@ -229,7 +229,7 @@ public class Conference implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 }

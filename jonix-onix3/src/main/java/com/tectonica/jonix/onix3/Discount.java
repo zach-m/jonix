@@ -74,17 +74,17 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -130,7 +130,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * (this field is optional)
      */
     public DiscountType discountType() {
-        initialize();
+        _initialize();
         return discountType;
     }
 
@@ -140,7 +140,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * (this field is optional)
      */
     public Quantity quantity() {
-        initialize();
+        _initialize();
         return quantity;
     }
 
@@ -150,7 +150,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * (this field is optional)
      */
     public ToQuantity toQuantity() {
-        initialize();
+        _initialize();
         return toQuantity;
     }
 
@@ -160,7 +160,7 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * (this field is required)
      */
     public DiscountPercent discountPercent() {
-        initialize();
+        _initialize();
         return discountPercent;
     }
 
@@ -170,13 +170,13 @@ public class Discount implements OnixDataComposite<JonixDiscount>, Serializable 
      * (this field is optional)
      */
     public DiscountAmount discountAmount() {
-        initialize();
+        _initialize();
         return discountAmount;
     }
 
     @Override
     public JonixDiscount asStruct() {
-        initialize();
+        _initialize();
         JonixDiscount struct = new JonixDiscount();
         struct.discountType = discountType.value;
         struct.quantity = quantity.value;

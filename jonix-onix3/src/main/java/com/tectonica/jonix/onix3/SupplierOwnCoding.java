@@ -76,17 +76,17 @@ public class SupplierOwnCoding
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class SupplierOwnCoding
      * (this field is required)
      */
     public SupplierCodeType supplierCodeType() {
-        initialize();
+        _initialize();
         return supplierCodeType;
     }
 
@@ -134,7 +134,7 @@ public class SupplierOwnCoding
      * (this field is optional)
      */
     public SupplierCodeTypeName supplierCodeTypeName() {
-        initialize();
+        _initialize();
         return supplierCodeTypeName;
     }
 
@@ -144,13 +144,13 @@ public class SupplierOwnCoding
      * (this field is required)
      */
     public SupplierCodeValue supplierCodeValue() {
-        initialize();
+        _initialize();
         return supplierCodeValue;
     }
 
     @Override
     public JonixSupplierOwnCoding asStruct() {
-        initialize();
+        _initialize();
         JonixSupplierOwnCoding struct = new JonixSupplierOwnCoding();
         struct.supplierCodeType = supplierCodeType.value;
         struct.supplierCodeTypeName = supplierCodeTypeName.value;

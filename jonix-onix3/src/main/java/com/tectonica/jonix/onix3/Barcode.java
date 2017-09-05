@@ -75,17 +75,17 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -119,7 +119,7 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
      * (this field is required)
      */
     public BarcodeType barcodeType() {
-        initialize();
+        _initialize();
         return barcodeType;
     }
 
@@ -129,13 +129,13 @@ public class Barcode implements OnixDataComposite<JonixBarcode>, Serializable {
      * (this field is optional)
      */
     public PositionOnProduct positionOnProduct() {
-        initialize();
+        _initialize();
         return positionOnProduct;
     }
 
     @Override
     public JonixBarcode asStruct() {
-        initialize();
+        _initialize();
         JonixBarcode struct = new JonixBarcode();
         struct.barcodeType = barcodeType.value;
         struct.positionOnProduct = positionOnProduct.value;

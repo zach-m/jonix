@@ -74,17 +74,17 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -122,7 +122,7 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * (this field is required)
      */
     public PriceDateRole priceDateRole() {
-        initialize();
+        _initialize();
         return priceDateRole;
     }
 
@@ -132,7 +132,7 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * (this field is optional)
      */
     public DateFormat dateFormat() {
-        initialize();
+        _initialize();
         return dateFormat;
     }
 
@@ -142,13 +142,13 @@ public class PriceDate implements OnixDataCompositeWithKey<JonixPriceDate, Price
      * (this field is required)
      */
     public Date date() {
-        initialize();
+        _initialize();
         return date;
     }
 
     @Override
     public JonixPriceDate asStruct() {
-        initialize();
+        _initialize();
         JonixPriceDate struct = new JonixPriceDate();
         struct.priceDateRole = priceDateRole.value;
         struct.dateFormat = dateFormat.value;

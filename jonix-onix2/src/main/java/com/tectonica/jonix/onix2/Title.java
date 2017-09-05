@@ -87,14 +87,6 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
         exists = true;
         initialized = false;
         this.element = element;
-    }
-
-    private void initialize() {
-        if (initialized) {
-            return;
-        }
-        initialized = true;
-
         textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
         textcase = TextCaseFlags.byCode(JPU.getAttribute(element, "textcase"));
         language = LanguageCodes.byCode(JPU.getAttribute(element, "language"));
@@ -102,6 +94,14 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
         datestamp = JPU.getAttribute(element, "datestamp");
         sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
         sourcename = JPU.getAttribute(element, "sourcename");
+    }
+
+    @Override
+    public void _initialize() {
+        if (initialized) {
+            return;
+        }
+        initialized = true;
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -155,7 +155,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is required)
      */
     public TitleType titleType() {
-        initialize();
+        _initialize();
         return titleType;
     }
 
@@ -165,7 +165,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is optional)
      */
     public AbbreviatedLength abbreviatedLength() {
-        initialize();
+        _initialize();
         return abbreviatedLength;
     }
 
@@ -175,7 +175,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is optional)
      */
     public TextCaseFlag textCaseFlag() {
-        initialize();
+        _initialize();
         return textCaseFlag;
     }
 
@@ -185,7 +185,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is required)
      */
     public TitleText titleText() {
-        initialize();
+        _initialize();
         return titleText;
     }
 
@@ -195,7 +195,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is optional)
      */
     public TitlePrefix titlePrefix() {
-        initialize();
+        _initialize();
         return titlePrefix;
     }
 
@@ -205,7 +205,7 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is optional)
      */
     public TitleWithoutPrefix titleWithoutPrefix() {
-        initialize();
+        _initialize();
         return titleWithoutPrefix;
     }
 
@@ -215,13 +215,13 @@ public class Title implements OnixDataCompositeWithKey<JonixTitle, TitleTypes>, 
      * (this field is optional)
      */
     public Subtitle subtitle() {
-        initialize();
+        _initialize();
         return subtitle;
     }
 
     @Override
     public JonixTitle asStruct() {
-        initialize();
+        _initialize();
         JonixTitle struct = new JonixTitle();
         struct.titleType = titleType.value;
         struct.abbreviatedLength = abbreviatedLength.value;

@@ -75,17 +75,17 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -123,7 +123,7 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
      * (this field is required)
      */
     public VelocityMetric velocityMetric() {
-        initialize();
+        _initialize();
         return velocityMetric;
     }
 
@@ -133,7 +133,7 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
      * (this field is required)
      */
     public Rate rate() {
-        initialize();
+        _initialize();
         return rate;
     }
 
@@ -143,13 +143,13 @@ public class Velocity implements OnixDataComposite<JonixVelocity>, Serializable 
      * (this field is optional)
      */
     public Proximity proximity() {
-        initialize();
+        _initialize();
         return proximity;
     }
 
     @Override
     public JonixVelocity asStruct() {
-        initialize();
+        _initialize();
         JonixVelocity struct = new JonixVelocity();
         struct.velocityMetric = velocityMetric.value;
         struct.rate = rate.value;

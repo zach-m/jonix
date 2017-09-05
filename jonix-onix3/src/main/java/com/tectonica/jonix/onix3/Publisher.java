@@ -79,17 +79,17 @@ public class Publisher implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -131,7 +131,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * (this field is required)
      */
     public PublishingRole publishingRole() {
-        initialize();
+        _initialize();
         return publishingRole;
     }
 
@@ -142,7 +142,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * (this list is required to contain at least one item)
      */
     public ListOfOnixDataCompositeWithKey<PublisherIdentifier, JonixPublisherIdentifier, NameCodeTypes> publisherIdentifiers() {
-        initialize();
+        _initialize();
         return publisherIdentifiers;
     }
 
@@ -152,7 +152,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PublisherName publisherName() {
-        initialize();
+        _initialize();
         return publisherName;
     }
 
@@ -162,7 +162,7 @@ public class Publisher implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Website, JonixWebsite> websites() {
-        initialize();
+        _initialize();
         return websites;
     }
 }

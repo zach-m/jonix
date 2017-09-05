@@ -76,17 +76,17 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -124,7 +124,7 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
      * (this field is required)
      */
     public SenderIDType senderIDType() {
-        initialize();
+        _initialize();
         return senderIDType;
     }
 
@@ -134,7 +134,7 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
      * (this field is optional)
      */
     public IDTypeName idTypeName() {
-        initialize();
+        _initialize();
         return idTypeName;
     }
 
@@ -144,13 +144,13 @@ public class SenderIdentifier implements OnixDataCompositeWithKey<JonixSenderIde
      * (this field is required)
      */
     public IDValue idValue() {
-        initialize();
+        _initialize();
         return idValue;
     }
 
     @Override
     public JonixSenderIdentifier asStruct() {
-        initialize();
+        _initialize();
         JonixSenderIdentifier struct = new JonixSenderIdentifier();
         struct.senderIDType = senderIDType.value;
         struct.idTypeName = idTypeName.value;

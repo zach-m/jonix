@@ -87,17 +87,17 @@ public class Price implements OnixSuperComposite, Serializable {
         exists = true;
         initialized = false;
         this.element = element;
+        datestamp = JPU.getAttribute(element, "datestamp");
+        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
+        sourcename = JPU.getAttribute(element, "sourcename");
     }
 
-    private void initialize() {
+    @Override
+    public void _initialize() {
         if (initialized) {
             return;
         }
         initialized = true;
-
-        datestamp = JPU.getAttribute(element, "datestamp");
-        sourcetype = RecordSourceTypes.byCode(JPU.getAttribute(element, "sourcetype"));
-        sourcename = JPU.getAttribute(element, "sourcename");
 
         JPU.forElementsOf(element, e -> {
             final String name = e.getNodeName();
@@ -208,7 +208,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<PriceIdentifier, JonixPriceIdentifier, PriceIdentifierTypes> priceIdentifiers() {
-        initialize();
+        _initialize();
         return priceIdentifiers;
     }
 
@@ -218,7 +218,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceType priceType() {
-        initialize();
+        _initialize();
         return priceType;
     }
 
@@ -228,7 +228,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceQualifier priceQualifier() {
-        initialize();
+        _initialize();
         return priceQualifier;
     }
 
@@ -238,7 +238,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixElement<PriceTypeDescription, String> priceTypeDescriptions() {
-        initialize();
+        _initialize();
         return priceTypeDescriptions;
     }
 
@@ -248,7 +248,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PricePer pricePer() {
-        initialize();
+        _initialize();
         return pricePer;
     }
 
@@ -258,7 +258,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<PriceCondition> priceConditions() {
-        initialize();
+        _initialize();
         return priceConditions;
     }
 
@@ -268,7 +268,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public MinimumOrderQuantity minimumOrderQuantity() {
-        initialize();
+        _initialize();
         return minimumOrderQuantity;
     }
 
@@ -278,7 +278,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<BatchBonus, JonixBatchBonus> batchBonuss() {
-        initialize();
+        _initialize();
         return batchBonuss;
     }
 
@@ -289,7 +289,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<DiscountCoded, JonixDiscountCoded, DiscountCodeTypes> discountCodeds() {
-        initialize();
+        _initialize();
         return discountCodeds;
     }
 
@@ -299,7 +299,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Discount, JonixDiscount> discounts() {
-        initialize();
+        _initialize();
         return discounts;
     }
 
@@ -309,7 +309,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceStatus priceStatus() {
-        initialize();
+        _initialize();
         return priceStatus;
     }
 
@@ -319,7 +319,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceAmount priceAmount() {
-        initialize();
+        _initialize();
         return priceAmount;
     }
 
@@ -329,7 +329,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PriceCoded priceCoded() {
-        initialize();
+        _initialize();
         return priceCoded;
     }
 
@@ -339,7 +339,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataComposite<Tax, JonixTax> taxs() {
-        initialize();
+        _initialize();
         return taxs;
     }
 
@@ -349,7 +349,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CurrencyCode currencyCode() {
-        initialize();
+        _initialize();
         return currencyCode;
     }
 
@@ -359,7 +359,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public Territory territory() {
-        initialize();
+        _initialize();
         return territory;
     }
 
@@ -369,7 +369,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public CurrencyZone currencyZone() {
-        initialize();
+        _initialize();
         return currencyZone;
     }
 
@@ -379,7 +379,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public List<ComparisonProductPrice> comparisonProductPrices() {
-        initialize();
+        _initialize();
         return comparisonProductPrices;
     }
 
@@ -390,7 +390,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this list may be empty)
      */
     public ListOfOnixDataCompositeWithKey<PriceDate, JonixPriceDate, PriceDateRoles> priceDates() {
-        initialize();
+        _initialize();
         return priceDates;
     }
 
@@ -400,7 +400,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PrintedOnProduct printedOnProduct() {
-        initialize();
+        _initialize();
         return printedOnProduct;
     }
 
@@ -410,7 +410,7 @@ public class Price implements OnixSuperComposite, Serializable {
      * (this field is optional)
      */
     public PositionOnProduct positionOnProduct() {
-        initialize();
+        _initialize();
         return positionOnProduct;
     }
 }
