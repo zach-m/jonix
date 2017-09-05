@@ -1,45 +1,32 @@
 package com.tectonica.jonix;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import com.tectonica.jonix.jackson.JonixProductObjectMapper;
+import com.tectonica.jonix.jackson.JonixPublicFieldsObjectMapper;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.TimeZone;
+import java.util.Objects;
 
 public class JonixJson {
-    private static final ObjectMapper publicFieldsMapper = createPublicFieldsMapper();
+    private static final ObjectMapper PRODUCT_OBJECT_MAPPER = new JonixProductObjectMapper();
+    private static final ObjectMapper PUBLIC_FIELDS_MAPPER = new JonixPublicFieldsObjectMapper();
 
-    private static ObjectMapper createPublicFieldsMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-
-        // configure to use public fields only, consistent with Jonix design
-        mapper.setVisibility(PropertyAccessor.FIELD, Visibility.PUBLIC_ONLY);
-        mapper.setVisibility(PropertyAccessor.GETTER, Visibility.NONE);
-        mapper.setVisibility(PropertyAccessor.SETTER, Visibility.NONE);
-
-        // general configuration
-        mapper.setSerializationInclusion(Include.NON_NULL);
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        mapper.setDateFormat(sdf);
-
-        return mapper;
+    public static String productToJson(OnixProduct onixProduct) {
+        Objects.requireNonNull(onixProduct)._initialize();
+        try {
+            return PRODUCT_OBJECT_MAPPER.writeValueAsString(onixProduct);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
-     * returns a JSON string, based on the given Object's public fields
+     * returns a JSON string, based on the given Object's public fields (suitable for BaseProduct family)
      */
-    public static String toJson(Object o) {
+    public static String objectToJson(Object object) {
+        Objects.requireNonNull(object);
         try {
-            return publicFieldsMapper.writeValueAsString(o);
+            return PUBLIC_FIELDS_MAPPER.writeValueAsString(object);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

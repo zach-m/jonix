@@ -61,9 +61,9 @@ public class TestBaseProduct {
                     final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
                     BaseProduct bp = new BaseProduct2(product);
                     System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
-                    System.out.println(JonixJson.toJson(product));
+                    System.out.println(JonixJson.productToJson(product));
                     System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
-                    System.out.println(JonixJson.toJson(bp));
+                    System.out.println(JonixJson.objectToJson(bp));
                 }
                 return true;
             }
@@ -96,9 +96,9 @@ public class TestBaseProduct {
                     final com.tectonica.jonix.onix3.Product product = new com.tectonica.jonix.onix3.Product(element);
                     BaseProduct bp = new BaseProduct3(product);
                     System.out.println("\nRAW ONIX3  --------------------------------------------------------------");
-                    System.out.println(JonixJson.toJson(product));
+                    System.out.println(JonixJson.productToJson(product));
                     System.out.println("\nBASIC ONIX3  ------------------------------------------------------------");
-                    System.out.println(jsonDirect = JonixJson.toJson(bp));
+                    System.out.println(jsonDirect = JonixJson.objectToJson(bp));
                 }
                 return true;
             }
@@ -118,7 +118,7 @@ public class TestBaseProduct {
             new JonixStreamer(new JonixUnifiedExtractor<BaseHeader, BaseProduct>(Jonix.BASIC_UNIFIER) {
                 @Override
                 protected boolean onProduct(BaseProduct product, JonixStreamer streamer) {
-                    jsonViaReader = JonixJson.toJson(product);
+                    jsonViaReader = JonixJson.objectToJson(product);
                     return true;
                 }
             });
