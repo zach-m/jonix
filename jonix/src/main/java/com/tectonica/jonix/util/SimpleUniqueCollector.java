@@ -65,21 +65,21 @@ public class SimpleUniqueCollector {
     private Calendar lastFileTimestamp;
 
     public void read(JonixProvider jonix) {
-        jonix.onSource((fileName, header, version) -> {
-            lastFileTimestamp = JonixUtil.extractTimstampFromFileName(fileName);
+        jonix.onSource(source -> {
+            lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.get().getAbsolutePath());
 
             // if we couldn't extract the timestamp from the file's name, we fall back to its modification date
             if (lastFileTimestamp == null) {
                 lastFileTimestamp = new GregorianCalendar();
-                lastFileTimestamp.setTimeInMillis((new File(fileName)).lastModified());
+                lastFileTimestamp.setTimeInMillis(source.file.get().lastModified());
             }
         });
 
-        jonix.streamUnified().forEach(product -> {
+        jonix.streamUnified().forEach(record -> {
             String[] idData = idColumn.newBuffer();
 
-            if (idColumn.extractFrom(product, idData)) {
-                uniqueProducts.add(new ProductInfo(idData, lastFileTimestamp, product));
+            if (idColumn.extractFrom(record.product, idData)) {
+                uniqueProducts.add(new ProductInfo(idData, lastFileTimestamp, record.product));
                 changed = true;
             }
         });

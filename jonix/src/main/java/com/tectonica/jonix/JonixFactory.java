@@ -24,7 +24,7 @@ import org.w3c.dom.Element;
 public class JonixFactory {
     // TODO: these type of factory services should be externalized as SPI some day..
 
-    public static OnixProduct productFromElement(Element productElement, JonixOnixVersion onixVersion) {
+    public static OnixProduct productFromElement(Element productElement, OnixVersion onixVersion) {
         switch (onixVersion) {
             case ONIX2:
                 return new com.tectonica.jonix.onix2.Product(productElement);
@@ -35,7 +35,7 @@ public class JonixFactory {
         }
     }
 
-    public static OnixHeader headerFromElement(Element headerElement, JonixOnixVersion onixVersion) {
+    public static OnixHeader headerFromElement(Element headerElement, OnixVersion onixVersion) {
         switch (onixVersion) {
             case ONIX2:
                 return new com.tectonica.jonix.onix2.Header(headerElement);

@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix;
 
+import com.tectonica.jonix.unify.BaseRecord;
 import com.tectonica.jonix.unify.base.BaseHeader;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
@@ -27,6 +28,11 @@ import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 
 public class JonixUnifier {
+
+    public static BaseRecord unifyRecord(JonixRecord record) {
+        return new BaseRecord(record.source, unifyProduct(record.product));
+    }
+
     public static BaseProduct unifyProduct(OnixProduct onixProduct) {
         if (onixProduct instanceof com.tectonica.jonix.onix2.Product) {
             return new BaseProduct2((com.tectonica.jonix.onix2.Product) onixProduct);

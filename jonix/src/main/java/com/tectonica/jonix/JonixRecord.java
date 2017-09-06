@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 Zach Melamed
- * 
+ *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
  *
@@ -19,15 +19,12 @@
 
 package com.tectonica.jonix;
 
-public enum JonixOnixVersion {
-    ONIX2, //
+public class JonixRecord {
+    public final OnixSource source;
+    public final OnixProduct product;
 
-    ONIX3, //
-
-    UNKNOWN, //
-
-    /**
-     * currently not used by Jonix. when a non-ONIX source is detected, an exception is thrown
-     */
-    NOT_ONIX;
+    public JonixRecord(OnixSource source, OnixProduct product) {
+        this.source = source;
+        this.product = product;
+    }
 }

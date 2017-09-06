@@ -20,12 +20,13 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.unify.tabulate.BaseColumn;
-import com.tectonica.jonix.util.SimpleTsvWriter;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+
+import static com.tectonica.jonix.util.JonixTSV.toTSV;
 
 public class TestTabDelimited {
     @Test
@@ -38,15 +39,16 @@ public class TestTabDelimited {
             System.err.println("Skipping");
             return;
         }
-        JonixProvider jonix = JonixProvider
+        JonixProvider jonix = Jonix
             .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
-            .add(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
-            .add(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
-            .add(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
-            .onSource((name, header, version) -> System.err.println("Opening " + version + " file: " + name));
+            .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
+            .source(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
+            .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
+            .onSource(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.getSourceName()));
 
         File targetFile = new File("target", "Catalog.tsv");
-        SimpleTsvWriter.write(jonix.streamUnified(), targetFile, BaseColumn.ALL);
+        jonix.streamUnified().map(r -> r.product).collect(toTSV(targetFile, BaseColumn.ALL));
+
         System.err.println("Written " + targetFile.getAbsolutePath());
     }
 }

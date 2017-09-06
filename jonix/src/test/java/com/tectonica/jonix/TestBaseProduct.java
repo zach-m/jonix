@@ -111,8 +111,8 @@ public class TestBaseProduct {
         });
 
         // read the same file, this time using a JonixReader
-        JonixProvider.source(getClass().getResourceAsStream(RESOURCE_NAME)).streamUnified().limit(1)
-            .forEach(bp -> jsonViaReader = JonixJson.objectToJson(bp));
+        Jonix.source(getClass().getResourceAsStream(RESOURCE_NAME)).streamUnified().limit(1)
+            .forEach(record -> jsonViaReader = JonixJson.objectToJson(record.product));
 
         // compare the JSON received in both methods
         org.junit.Assert.assertEquals(jsonDirect, jsonViaReader);

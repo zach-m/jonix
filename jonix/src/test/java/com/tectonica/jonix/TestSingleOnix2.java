@@ -68,8 +68,8 @@ public class TestSingleOnix2 {
     @Test
     public void testViaReader() {
         InputStream source = getClass().getResourceAsStream("/single-book-onix2.xml");
-        for (OnixProduct product : JonixProvider.source(source)) {
-            System.out.println(JonixJson.productToJson(product));
+        for (JonixRecord record : Jonix.source(source)) {
+            System.out.println(JonixJson.productToJson(record.product));
         }
     }
 }

@@ -20,11 +20,36 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.unify.tabulate.BaseColumn;
-import com.tectonica.jonix.util.SimpleTsvWriter;
+import com.tectonica.jonix.util.GlobScanner;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
+import static com.tectonica.jonix.util.JonixTSV.toTSV;
 
 public class Jonix {
+    public static JonixProvider source(InputStream inputStream) {
+        return new JonixProvider(inputStream);
+    }
+
+    public static JonixProvider source(List<File> files) {
+        return new JonixProvider(files);
+    }
+
+    public static JonixProvider source(File file) {
+        return new JonixProvider(Collections.singletonList(Objects.requireNonNull(file)));
+    }
+
+    public static JonixProvider source(File folder, String glob, boolean recursive) throws IOException {
+        return new JonixProvider(GlobScanner.scan(folder, glob, recursive));
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     private static void usage() {
         p("Usage:");
         p("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
@@ -67,13 +92,13 @@ public class Jonix {
 
             final JonixProvider jonix;
             if (!inputFile.isDirectory()) {
-                jonix = JonixProvider.source(inputFile);
+                jonix = Jonix.source(inputFile);
             } else {
                 String pattern = (args.length < 3) ? "*.xml" : args[2];
-                jonix = JonixProvider.source(inputFile, pattern, true);
+                jonix = Jonix.source(inputFile, pattern, true);
             }
 
-            SimpleTsvWriter.write(jonix.streamUnified(), new File(outputFile), BaseColumn.ALL);
+            jonix.streamUnified().map(r -> r.product).collect(toTSV(new File(outputFile), BaseColumn.ALL));
         } catch (Exception e) {
             e.printStackTrace();
         }
