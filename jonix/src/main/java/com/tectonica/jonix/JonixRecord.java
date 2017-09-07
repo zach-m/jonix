@@ -19,11 +19,15 @@
 
 package com.tectonica.jonix;
 
+import java.util.Map;
+
 public class JonixRecord {
+    public final Map<String, Object> config;
     public final OnixSource source;
     public final OnixProduct product;
 
-    public JonixRecord(OnixSource source, OnixProduct product) {
+    public JonixRecord(Map<String, Object> config, OnixSource source, OnixProduct product) {
+        this.config = config;
         this.source = source;
         this.product = product;
     }

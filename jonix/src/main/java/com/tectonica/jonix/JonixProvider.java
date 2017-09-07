@@ -37,8 +37,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
@@ -54,8 +56,10 @@ public class JonixProvider implements Iterable<JonixRecord> {
 
     private final InputStream inputStream;
     private final List<File> files;
+    private final List<OnSource> onSourceEvents = new ArrayList<>();
+    private final Map<String, Object> globalConfig = new HashMap<>();
+
     private String encoding = "UTF-8";
-    private List<OnSource> onSourceEvents = new ArrayList<>();
 
     /**
      * not to be called directly, used {@link Jonix#source(InputStream)}
@@ -88,6 +92,14 @@ public class JonixProvider implements Iterable<JonixRecord> {
         return this;
     }
 
+    public <T> void configure(String id, T value) {
+        globalConfig.put(id, value);
+    }
+
+    public Map<String, Object> getConfiguration() {
+        return globalConfig;
+    }
+
     public JonixProvider encoding(String encoding) {
         this.encoding = encoding;
         return this;
@@ -116,16 +128,16 @@ public class JonixProvider implements Iterable<JonixRecord> {
 
     @Override
     public Iterator<JonixRecord> iterator() {
-        return new SourceAndProductIterator();
+        return new RecordIterator();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private class ProductIterator implements Iterator<OnixProduct> {
-        final SourceAndProductIterator iter;
+        final RecordIterator iter;
 
         ProductIterator() {
-            iter = new SourceAndProductIterator();
+            iter = new RecordIterator();
         }
 
         @Override
@@ -139,11 +151,11 @@ public class JonixProvider implements Iterable<JonixRecord> {
         }
     }
 
-    private class SourceAndProductIterator implements Iterator<JonixRecord> {
+    private class RecordIterator implements Iterator<JonixRecord> {
         final List<File> nextFiles;
         Iterator<JonixRecord> currentIterator;
 
-        SourceAndProductIterator() {
+        RecordIterator() {
             try {
                 if (inputStream == null) {
                     nextFiles = files.subList(0, files.size());
@@ -249,7 +261,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
 
                     // TODO: verify the product is indeed <Product> ?
 
-                    return new JonixRecord(source, productFromElement(product, source.onixVersion));
+                    return new JonixRecord(globalConfig, source, productFromElement(product, source.onixVersion));
                 }
             };
         }

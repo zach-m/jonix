@@ -23,6 +23,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -32,6 +34,7 @@ public class OnixSource {
     public final Optional<File> file;
     public OnixVersion onixVersion;
     public Optional<OnixHeader> header = Optional.empty();
+    public final Map<String, Object> config = new HashMap<>();
 
     OnixSource(InputStream stream) {
         this.stream = Objects.requireNonNull(stream);
