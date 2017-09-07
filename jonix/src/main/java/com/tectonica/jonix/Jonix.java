@@ -32,20 +32,20 @@ import java.util.Objects;
 import static com.tectonica.jonix.util.JonixTSV.toTSV;
 
 public class Jonix {
-    public static JonixProvider source(InputStream inputStream) {
-        return new JonixProvider(inputStream);
+    public static JonixIterable source(InputStream inputStream) {
+        return new JonixIterable(inputStream);
     }
 
-    public static JonixProvider source(List<File> files) {
-        return new JonixProvider(files);
+    public static JonixIterable source(List<File> files) {
+        return new JonixIterable(files);
     }
 
-    public static JonixProvider source(File file) {
-        return new JonixProvider(Collections.singletonList(Objects.requireNonNull(file)));
+    public static JonixIterable source(File file) {
+        return new JonixIterable(Collections.singletonList(Objects.requireNonNull(file)));
     }
 
-    public static JonixProvider source(File folder, String glob, boolean recursive) throws IOException {
-        return new JonixProvider(GlobScanner.scan(folder, glob, recursive));
+    public static JonixIterable source(File folder, String glob, boolean recursive) throws IOException {
+        return new JonixIterable(GlobScanner.scan(folder, glob, recursive));
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +90,7 @@ public class Jonix {
                 return;
             }
 
-            final JonixProvider jonix;
+            final JonixIterable jonix;
             if (!inputFile.isDirectory()) {
                 jonix = Jonix.source(inputFile);
             } else {

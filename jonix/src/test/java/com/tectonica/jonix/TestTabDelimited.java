@@ -46,7 +46,7 @@ public class TestTabDelimited {
         totalCount[0] = 0;
         totalCount[1] = 0;
 
-        JonixProvider jonix = Jonix
+        JonixIterable jonix = Jonix
             .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
             .source(new File(samples, "onix-3"), "*.xml", true)  // ONIX3 files from EDItEUR
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
@@ -57,7 +57,7 @@ public class TestTabDelimited {
                 totalCount[0] += src.getProductCount();
                 System.err.println(" .. Read " + src.getProductCount() + " records");
             })
-            .configure("jonix.stream.failOnException", Boolean.FALSE);
+            .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 
         File targetFile = new File("target", "Catalog.tsv");
         jonix.streamUnified()

@@ -32,11 +32,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -50,9 +48,9 @@ import java.util.stream.StreamSupport;
 import static com.tectonica.jonix.JonixFactory.headerFromElement;
 import static com.tectonica.jonix.JonixFactory.productFromElement;
 
-public class JonixProvider implements Iterable<JonixRecord> {
+public class JonixIterable implements Iterable<JonixRecord> {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JonixProvider.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JonixIterable.class);
 
     @FunctionalInterface
     public interface OnSourceEvent {
@@ -70,7 +68,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
     /**
      * not to be called directly, used {@link Jonix#source(InputStream)}
      */
-    JonixProvider(InputStream inputStream) {
+    JonixIterable(InputStream inputStream) {
         this.inputStream = Objects.requireNonNull(inputStream);
         this.files = new ArrayList<>();
     }
@@ -78,27 +76,27 @@ public class JonixProvider implements Iterable<JonixRecord> {
     /**
      * not to be called directly, used {@link Jonix#source(List)}
      */
-    JonixProvider(List<File> files) {
+    JonixIterable(List<File> files) {
         this.inputStream = null;
         this.files = new ArrayList<>(Objects.requireNonNull(files));
     }
 
-    public JonixProvider source(List<File> files) {
+    public JonixIterable source(List<File> files) {
         this.files.addAll(Objects.requireNonNull(files));
         return this;
     }
 
-    public JonixProvider source(File file) {
+    public JonixIterable source(File file) {
         this.files.add(Objects.requireNonNull(file));
         return this;
     }
 
-    public JonixProvider source(File folder, String glob, boolean recursive) throws IOException {
+    public JonixIterable source(File folder, String glob, boolean recursive) throws IOException {
         this.files.addAll(GlobScanner.scan(folder, glob, recursive));
         return this;
     }
 
-    public <T> JonixProvider configure(String id, T value) {
+    public <T> JonixIterable configure(String id, T value) {
         globalConfig.put(id, value);
         return this;
     }
@@ -107,7 +105,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
         return globalConfig;
     }
 
-    public JonixProvider encoding(String encoding) {
+    public JonixIterable encoding(String encoding) {
         this.encoding = encoding;
         return this;
     }
@@ -115,7 +113,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
     /**
      * NOTE: can be called more than once to register several event-listeners
      */
-    public JonixProvider onSourceStart(OnSourceEvent onSourceStart) {
+    public JonixIterable onSourceStart(OnSourceEvent onSourceStart) {
         this.onSourceStartEvents.add(onSourceStart);
         return this;
     }
@@ -123,7 +121,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
     /**
      * NOTE: can be called more than once to register several event-listeners
      */
-    public JonixProvider onSourceEnd(OnSourceEvent onSourceEnd) {
+    public JonixIterable onSourceEnd(OnSourceEvent onSourceEnd) {
         this.onSourceEndEvents.add(onSourceEnd);
         return this;
     }
@@ -143,82 +141,70 @@ public class JonixProvider implements Iterable<JonixRecord> {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private class ProductIterator implements Iterator<OnixProduct> {
-        final RecordIterator iter;
+    private class RecordIterator implements Iterator<JonixRecord> {
+        final List<File> nextFiles;
+        OnixSource currentSource;
+        Iterator<JonixRecord> currentSourceIterator;
+        boolean ignoreException;
 
-        ProductIterator() {
-            iter = new RecordIterator();
+        RecordIterator() {
+            Boolean failOnException = (Boolean) globalConfig.get("jonix.stream.failOnInvalidFile");
+            ignoreException = (failOnException != null && !failOnException);
+
+            nextFiles = files.subList(0, files.size()); // possibly an empty list
+            try {
+                if (inputStream != null) {
+                    currentSourceIterator = sourceIterator(new OnixSource(inputStream));
+                }
+            } catch (Exception e) {
+                handleInvalidFileException(e);
+            }
         }
 
         @Override
         public boolean hasNext() {
-            return iter.hasNext();
-        }
+            boolean hasNext = (currentSourceIterator != null) && currentSourceIterator.hasNext();
 
-        @Override
-        public OnixProduct next() {
-            return iter.next().product;
-        }
-    }
-
-    private class RecordIterator implements Iterator<JonixRecord> {
-        final List<File> nextFiles;
-        Iterator<JonixRecord> currentIterator;
-        OnixSource currentSource;
-        boolean ignoreException;
-
-        RecordIterator() {
-            Boolean failOnException = (Boolean) globalConfig.get("jonix.stream.failOnException");
-            ignoreException = (failOnException != null && !failOnException);
-
-            try {
-                if (inputStream == null) {
-                    nextFiles = files.subList(0, files.size());
-                    currentIterator = nextFileIterator(nextFiles);
-                } else {
-                    nextFiles = Collections.emptyList();
-                    currentIterator = inputStreamIterator(new OnixSource(inputStream));
+            // if we exhausted the current source, we move on to the next files on the list
+            while (!hasNext) {
+                // before switching to the next file, fire 'onSourceEnd' event for existing source
+                if (currentSource != null) {
+                    onSourceEndEvents.forEach(e -> e.onSource(currentSource));
                 }
-            } catch (Exception e) {
+
+                // if there are no remaining files to open, we can return false, concluding the entire iteration
+                if (nextFiles.isEmpty()) {
+                    return false;
+                }
+
+                // open the next file, which could possibly contain no records to iterate over
+                try {
+                    File file = nextFiles.remove(0);
+                    currentSourceIterator = sourceIterator(new OnixSource(file));
+                    hasNext = currentSourceIterator.hasNext();
+                } catch (Exception e) {
+                    handleInvalidFileException(e);
+                }
+            }
+
+            return true;
+        }
+
+        private void handleInvalidFileException(Exception e) {
+            if (ignoreException) {
+                LOGGER.warn("Error processing " + currentSource.getSourceName(), e);
+            } else {
                 throw new RuntimeException(e);
             }
         }
 
         @Override
-        public boolean hasNext() {
-            boolean hasNext = currentIterator.hasNext();
-            while (!hasNext) {
-                onSourceEndEvents.forEach(e -> e.onSource(currentSource));
-                if (nextFiles.isEmpty()) {
-                    break;
-                }
-                try {
-                    currentIterator = nextFileIterator(nextFiles);
-                    hasNext = currentIterator.hasNext();
-                } catch (Exception e) {
-                    if (ignoreException) {
-                        LOGGER.warn("Error processing " + currentSource.getSourceName(), e);
-                    } else {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
-            return hasNext;
-        }
-
-        @Override
         public JonixRecord next() {
-            return currentIterator.next();
+            return currentSourceIterator.next();
         }
 
-        Iterator<JonixRecord> nextFileIterator(List<File> nextFiles)
-            throws FileNotFoundException, XMLStreamException {
-            File file = nextFiles.remove(0);
-            return inputStreamIterator(new OnixSource(file));
-        }
-
-        Iterator<JonixRecord> inputStreamIterator(OnixSource onixSource) throws XMLStreamException {
-            this.currentSource = onixSource;
+        Iterator<JonixRecord> sourceIterator(OnixSource onixSource) throws XMLStreamException {
+            currentSource = onixSource;
 
             // create iteration context, which holds the XML stream between next() invocations
             final XmlChunkerContext ctx = new XmlChunkerContext(new BOMInputStream(currentSource.stream), encoding, 2);
@@ -242,7 +228,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
                 currentSource.onixVersion = OnixVersion.ONIX3;
             } else {
                 throw new RuntimeException(
-                    "source doesn't comply with either ONIX2 or ONIX3: " + currentSource.getSourceName());
+                    "source doesn't comply with either ONIX2 or ONIX3, release is: " + release.getValue());
             }
 
             // read the first chunk (level-2 element), which should either be a <Product> or <Header>

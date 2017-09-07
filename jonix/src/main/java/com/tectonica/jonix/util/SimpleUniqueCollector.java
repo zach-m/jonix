@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.util;
 
-import com.tectonica.jonix.JonixProvider;
+import com.tectonica.jonix.JonixIterable;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.tabulate.JonixColumn;
 import org.slf4j.Logger;
@@ -63,7 +63,7 @@ public class SimpleUniqueCollector {
 
     private Calendar lastFileTimestamp;
 
-    public void read(JonixProvider jonix) {
+    public void read(JonixIterable jonix) {
         jonix.onSourceStart(source -> {
             lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.get().getAbsolutePath());
 
