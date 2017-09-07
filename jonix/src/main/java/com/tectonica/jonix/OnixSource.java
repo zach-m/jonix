@@ -36,6 +36,8 @@ public class OnixSource {
     public Optional<OnixHeader> header = Optional.empty();
     public final Map<String, Object> config = new HashMap<>();
 
+    int productCount = 0;
+
     OnixSource(InputStream stream) {
         this.stream = Objects.requireNonNull(stream);
         this.file = Optional.empty();
@@ -52,5 +54,9 @@ public class OnixSource {
 
     public String getSourceName() {
         return file.map(File::getAbsolutePath).orElse(stream.toString());
+    }
+
+    public int getProductCount() {
+        return productCount;
     }
 }

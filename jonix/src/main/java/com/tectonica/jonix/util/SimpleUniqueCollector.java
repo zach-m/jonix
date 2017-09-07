@@ -25,7 +25,6 @@ import com.tectonica.jonix.unify.tabulate.JonixColumn;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -65,7 +64,7 @@ public class SimpleUniqueCollector {
     private Calendar lastFileTimestamp;
 
     public void read(JonixProvider jonix) {
-        jonix.onSource(source -> {
+        jonix.onSourceStart(source -> {
             lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.get().getAbsolutePath());
 
             // if we couldn't extract the timestamp from the file's name, we fall back to its modification date

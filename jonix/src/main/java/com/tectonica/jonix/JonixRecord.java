@@ -26,7 +26,7 @@ public class JonixRecord {
     public final OnixSource source;
     public final OnixProduct product;
 
-    public JonixRecord(Map<String, Object> config, OnixSource source, OnixProduct product) {
+    JonixRecord(Map<String, Object> config, OnixSource source, OnixProduct product) {
         this.config = config;
         this.source = source;
         this.product = product;

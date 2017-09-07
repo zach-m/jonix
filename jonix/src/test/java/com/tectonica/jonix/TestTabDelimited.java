@@ -44,7 +44,8 @@ public class TestTabDelimited {
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
             .source(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
             .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
-            .onSource(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.getSourceName()));
+            .onSourceStart(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.getSourceName()))
+            .onSourceEnd(src -> System.err.println(" .. Read " + src.getProductCount() + " records"));
 
         File targetFile = new File("target", "Catalog.tsv");
         jonix.streamUnified().map(r -> r.product).collect(toTSV(targetFile, BaseColumn.ALL));

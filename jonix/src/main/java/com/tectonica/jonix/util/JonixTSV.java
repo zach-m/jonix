@@ -81,7 +81,7 @@ public class JonixTSV<P> implements AutoCloseable {
         return new Collector<P, JonixTSV<P>, Void>() {
             @Override
             public Supplier<JonixTSV<P>> supplier() {
-                return () -> new JonixTSV<P>(targetFile, targetColumns);
+                return () -> new JonixTSV<>(targetFile, targetColumns);
             }
 
             @Override

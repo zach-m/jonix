@@ -54,9 +54,15 @@ public class JonixProvider implements Iterable<JonixRecord> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JonixProvider.class);
 
+    @FunctionalInterface
+    public interface OnSourceEvent {
+        void onSource(OnixSource onixSource);
+    }
+
     private final InputStream inputStream;
     private final List<File> files;
-    private final List<OnSource> onSourceEvents = new ArrayList<>();
+    private final List<OnSourceEvent> onSourceStartEvents = new ArrayList<>();
+    private final List<OnSourceEvent> onSourceEndEvents = new ArrayList<>();
     private final Map<String, Object> globalConfig = new HashMap<>();
 
     private String encoding = "UTF-8";
@@ -105,16 +111,19 @@ public class JonixProvider implements Iterable<JonixRecord> {
         return this;
     }
 
-    @FunctionalInterface
-    public interface OnSource {
-        void onSource(OnixSource onixSource);
+    /**
+     * NOTE: can be called more than once to register several event-listeners
+     */
+    public JonixProvider onSourceStart(OnSourceEvent onSourceStart) {
+        this.onSourceStartEvents.add(onSourceStart);
+        return this;
     }
 
     /**
      * NOTE: can be called more than once to register several event-listeners
      */
-    public JonixProvider onSource(OnSource onSource) {
-        this.onSourceEvents.add(onSource);
+    public JonixProvider onSourceEnd(OnSourceEvent onSourceEnd) {
+        this.onSourceEndEvents.add(onSourceEnd);
         return this;
     }
 
@@ -154,6 +163,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
     private class RecordIterator implements Iterator<JonixRecord> {
         final List<File> nextFiles;
         Iterator<JonixRecord> currentIterator;
+        OnixSource currentSource;
 
         RecordIterator() {
             try {
@@ -172,7 +182,11 @@ public class JonixProvider implements Iterable<JonixRecord> {
         @Override
         public boolean hasNext() {
             boolean hasNext = currentIterator.hasNext();
-            while (!hasNext && !nextFiles.isEmpty()) {
+            while (!hasNext) {
+                onSourceEndEvents.forEach(e -> e.onSource(currentSource));
+                if (nextFiles.isEmpty()) {
+                    break;
+                }
                 try {
                     currentIterator = nextFileIterator(nextFiles);
                     hasNext = currentIterator.hasNext();
@@ -194,9 +208,11 @@ public class JonixProvider implements Iterable<JonixRecord> {
             return inputStreamIterator(new OnixSource(file));
         }
 
-        Iterator<JonixRecord> inputStreamIterator(OnixSource source) throws XMLStreamException {
+        Iterator<JonixRecord> inputStreamIterator(OnixSource onixSource) throws XMLStreamException {
+            this.currentSource = onixSource;
+
             // create iteration context, which holds the XML stream between next() invocations
-            final XmlChunkerContext ctx = new XmlChunkerContext(new BOMInputStream(source.stream), encoding, 2);
+            final XmlChunkerContext ctx = new XmlChunkerContext(new BOMInputStream(currentSource.stream), encoding, 2);
 
             // read the first tag in the file, should always be <ONIXMessage>
             StartElement onixMessage = (StartElement) ctx.nextObject();
@@ -204,7 +220,7 @@ public class JonixProvider implements Iterable<JonixRecord> {
             if (!onixMessage.getName().getLocalPart()
                 .equalsIgnoreCase("ONIXMessage")) { // TODO: check if should be 'equals'
                 throw new RuntimeException(
-                    "source doesn't start with the mandatory <ONIXMessage> tag: " + source.getSourceName());
+                    "source doesn't start with the mandatory <ONIXMessage> tag: " + currentSource.getSourceName());
             }
 
             // given the <ONIXMessage>, determine the ONIX version (provided as an attribute of the tag)
@@ -212,12 +228,12 @@ public class JonixProvider implements Iterable<JonixRecord> {
             boolean onix2 = (release == null || release.getValue().startsWith("2"));
             boolean onix3 = (release != null && release.getValue().startsWith("3"));
             if (onix2) {
-                source.onixVersion = OnixVersion.ONIX2;
+                currentSource.onixVersion = OnixVersion.ONIX2;
             } else if (onix3) {
-                source.onixVersion = OnixVersion.ONIX3;
+                currentSource.onixVersion = OnixVersion.ONIX3;
             } else {
                 throw new RuntimeException(
-                    "source doesn't comply with either ONIX2 or ONIX3: " + source.getSourceName());
+                    "source doesn't comply with either ONIX2 or ONIX3: " + currentSource.getSourceName());
             }
 
             // read the first chunk (level-2 element), which should either be a <Product> or <Header>
@@ -225,9 +241,9 @@ public class JonixProvider implements Iterable<JonixRecord> {
             // TODO: allow firstProduct = null, and check that it works on files with not tags under OnixMessage
             boolean hasHeader = firstElement.getNodeName().equalsIgnoreCase("Header");
             if (hasHeader) {
-                source.header = Optional.of(headerFromElement(firstElement, source.onixVersion));
+                currentSource.header = Optional.of(headerFromElement(firstElement, currentSource.onixVersion));
             }
-            onSourceEvents.forEach(e -> e.onSource(source));
+            onSourceStartEvents.forEach(e -> e.onSource(currentSource));
 
             if (hasHeader) {
                 // if the first chunk (level-2 element) was a <Header>, the next one must be a <Product>
@@ -261,7 +277,9 @@ public class JonixProvider implements Iterable<JonixRecord> {
 
                     // TODO: verify the product is indeed <Product> ?
 
-                    return new JonixRecord(globalConfig, source, productFromElement(product, source.onixVersion));
+                    currentSource.productCount++;
+                    return new JonixRecord(globalConfig, currentSource,
+                        productFromElement(product, currentSource.onixVersion));
                 }
             };
         }
