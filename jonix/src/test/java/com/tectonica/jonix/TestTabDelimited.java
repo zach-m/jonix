@@ -20,11 +20,13 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.unify.tabulate.BaseColumn;
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import static com.tectonica.jonix.util.JonixTSV.toTSV;
 
@@ -39,17 +41,34 @@ public class TestTabDelimited {
             System.err.println("Skipping");
             return;
         }
+
+        int[] totalCount = new int[2];
+        totalCount[0] = 0;
+        totalCount[1] = 0;
+
         JonixProvider jonix = Jonix
             .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
+            .source(new File(samples, "onix-3"), "*.xml", true)  // ONIX3 files from EDItEUR
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
             .source(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
             .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
             .onSourceStart(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.getSourceName()))
-            .onSourceEnd(src -> System.err.println(" .. Read " + src.getProductCount() + " records"));
+            .onSourceEnd(src -> {
+                totalCount[0] += src.getProductCount();
+                System.err.println(" .. Read " + src.getProductCount() + " records");
+            })
+            .configure("jonix.stream.failOnException", Boolean.FALSE);
 
         File targetFile = new File("target", "Catalog.tsv");
-        jonix.streamUnified().map(r -> r.product).collect(toTSV(targetFile, BaseColumn.ALL));
+        jonix.streamUnified()
+            .map(r -> {
+                totalCount[1]++;
+                return r.product;
+            })
+            .collect(toTSV(targetFile, BaseColumn.ALL));
 
-        System.err.println("Written " + targetFile.getAbsolutePath());
+        System.err.println("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
+
+        Assert.assertEquals(totalCount[0], totalCount[1]);
     }
 }

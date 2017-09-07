@@ -98,8 +98,9 @@ public class JonixProvider implements Iterable<JonixRecord> {
         return this;
     }
 
-    public <T> void configure(String id, T value) {
+    public <T> JonixProvider configure(String id, T value) {
         globalConfig.put(id, value);
+        return this;
     }
 
     public Map<String, Object> getConfiguration() {
@@ -164,8 +165,12 @@ public class JonixProvider implements Iterable<JonixRecord> {
         final List<File> nextFiles;
         Iterator<JonixRecord> currentIterator;
         OnixSource currentSource;
+        boolean ignoreException;
 
         RecordIterator() {
+            Boolean failOnException = (Boolean) globalConfig.get("jonix.stream.failOnException");
+            ignoreException = (failOnException != null && !failOnException);
+
             try {
                 if (inputStream == null) {
                     nextFiles = files.subList(0, files.size());
@@ -191,7 +196,11 @@ public class JonixProvider implements Iterable<JonixRecord> {
                     currentIterator = nextFileIterator(nextFiles);
                     hasNext = currentIterator.hasNext();
                 } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    if (ignoreException) {
+                        LOGGER.warn("Error processing " + currentSource.getSourceName(), e);
+                    } else {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
             return hasNext;
@@ -219,8 +228,8 @@ public class JonixProvider implements Iterable<JonixRecord> {
             // TODO: allow onixMessage = null, and check that it works on empty files
             if (!onixMessage.getName().getLocalPart()
                 .equalsIgnoreCase("ONIXMessage")) { // TODO: check if should be 'equals'
-                throw new RuntimeException(
-                    "source doesn't start with the mandatory <ONIXMessage> tag: " + currentSource.getSourceName());
+                throw new RuntimeException("source doesn't start with the mandatory <ONIXMessage> tag. Found <"
+                    + onixMessage.getName().getLocalPart() + ">");
             }
 
             // given the <ONIXMessage>, determine the ONIX version (provided as an attribute of the tag)
@@ -248,8 +257,17 @@ public class JonixProvider implements Iterable<JonixRecord> {
             if (hasHeader) {
                 // if the first chunk (level-2 element) was a <Header>, the next one must be a <Product>
                 firstElement = ctx.nextChunk();
-                // TODO: allow firstProduct = null, and check that it works on files with only header tag
-                // TODO: Handle Onix3's <NoProduct>
+            }
+
+            // TODO: allow firstElement = null, and check that it works on files with only header tag
+            // TODO: Handle Onix3's <NoProduct>
+            //if (onix3) {
+            //    boolean noProduct =
+            //        firstElement.getNodeName().equals("NoProduct") || firstElement.getNodeName().equals("x507");
+            //}
+
+            if (!firstElement.getNodeName().equalsIgnoreCase("Product")) {
+                throw new RuntimeException("expected <Product> tag, found <" + firstElement.getNodeName() + ">");
             }
 
             // the context now points to the first product in the input-stream, we can start iterate
