@@ -42,7 +42,7 @@ public class TestTabDelimited {
             return;
         }
 
-        int[] totalCount = new int[2];
+        int[] totalCount = new int[3];
         totalCount[0] = 0;
         totalCount[1] = 0;
 
@@ -60,12 +60,13 @@ public class TestTabDelimited {
             .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 
         File targetFile = new File("target", "Catalog.tsv");
-        jonix.streamUnified()
+        totalCount[2] = jonix.streamUnified()
             .peek(r -> totalCount[1]++)
             .collect(toTSV(targetFile, BaseTabulation.ALL));
 
         System.err.println("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
 
         Assert.assertEquals(totalCount[0], totalCount[1]);
+        Assert.assertEquals(totalCount[0], totalCount[2]);
     }
 }

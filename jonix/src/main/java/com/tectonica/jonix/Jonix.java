@@ -81,7 +81,7 @@ public class Jonix {
         }
 
         try {
-            final String outputFile = args[0];
+            final String outputFileName = args[0];
 
             final String input = (args.length < 2) ? "." : args[1];
             final File inputFile = new File(input);
@@ -98,7 +98,10 @@ public class Jonix {
                 jonix = Jonix.source(inputFile, pattern, true);
             }
 
-            jonix.streamUnified().collect(toTSV(new File(outputFile), BaseTabulation.ALL));
+            File outputFile = new File(outputFileName);
+            int linesWritten = jonix.streamUnified().collect(toTSV(outputFile, BaseTabulation.ALL));
+
+            System.out.println(String.format("Written %,d records to %s", linesWritten, outputFile.getAbsolutePath()));
         } catch (Exception e) {
             e.printStackTrace();
         }
