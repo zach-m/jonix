@@ -26,7 +26,6 @@ import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -49,12 +48,7 @@ public class TestSingleOnix3 {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
             // disable dtd validation
-            docBuilder.setEntityResolver(new EntityResolver() {
-                @Override
-                public InputSource resolveEntity(String publicId, String systemId) {
-                    return new InputSource(new StringReader(""));
-                }
-            });
+            docBuilder.setEntityResolver((publicId, systemId) -> new InputSource(new StringReader("")));
             return docBuilder.parse(is);
         } catch (Exception e) {
             throw new RuntimeException(e);

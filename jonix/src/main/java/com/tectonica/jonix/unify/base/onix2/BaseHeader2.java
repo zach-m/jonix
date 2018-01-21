@@ -36,7 +36,7 @@ public class BaseHeader2 extends BaseHeader {
         fromCompany = header.fromCompany().value;
         fromPerson = header.fromPerson().value;
         fromEmail = header.fromEmail().value;
-        toCompanies = header.toCompany().value().map(tc -> Collections.singletonList(tc)).orElse(null);
+        toCompanies = header.toCompany().value().map(Collections::singletonList).orElse(null);
         sentDate = header.sentDate().value;
     }
 }

@@ -35,7 +35,7 @@ import java.util.Set;
 @SuppressWarnings("serial")
 public abstract class BaseSupplyDetails extends LazyList<BaseSupplyDetail> {
     public List<BasePrice> findPrices(Set<PriceTypes> requestedTypes) {
-        List<BasePrice> matches = new ArrayList<BasePrice>();
+        List<BasePrice> matches = new ArrayList<>();
         for (BaseSupplyDetail sd : this) {
             matches.addAll(sd.prices.findPrices(requestedTypes));
         }

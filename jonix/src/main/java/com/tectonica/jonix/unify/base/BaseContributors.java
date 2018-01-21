@@ -24,7 +24,6 @@ import com.tectonica.jonix.unify.base.util.LazyList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -53,7 +52,7 @@ public abstract class BaseContributors extends LazyList<BaseContributor> {
             return;
         }
 
-        Collections.sort(contributors, new Comparator<BaseContributor>() {
+        contributors.sort(new Comparator<BaseContributor>() {
             @Override
             public int compare(BaseContributor o1, BaseContributor o2) {
                 return Integer.compare(toInt(o1.sequenceNumber), toInt(o2.sequenceNumber));

@@ -199,9 +199,8 @@ public class Onix2Essentials implements JonixEssentials {
             case AudienceAgeRange:
                 Integer[] ageRange = getAudienceAgeRange();
                 return Arrays
-                    .asList(new String[]
-                        {ageRange[0] == null ? null : ageRange[0].toString(),
-                            ageRange[1] == null ? null : ageRange[1].toString()});
+                    .asList(ageRange[0] == null ? null : ageRange[0].toString(),
+                        ageRange[1] == null ? null : ageRange[1].toString());
 
             case Measurements:
                 List<String> wht = new ArrayList<>();

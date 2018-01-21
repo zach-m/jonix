@@ -37,7 +37,7 @@ public class BaseCollection3 extends BaseCollection {
     @SuppressWarnings("serial")
     public BaseCollection3(final Collection c) {
         titles = new BaseTitles3(c);
-        mainTitle = (titles != null) ? titles.get(0).titleText : null;
+        mainTitle = (titles.size() > 0) ? titles.get(0).titleText : null;
 
         // TODO: also look at Collection -> TitleDetail -> TitleElement -> PartNumber
         numberWithinSeries = (c.collectionSequences().isEmpty()) ? null

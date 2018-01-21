@@ -27,7 +27,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -98,7 +97,7 @@ public class SimpleUniqueCollector {
      * time-stamp (as extracted from its file name or modification-time)
      */
     public List<ProductInfo> getUniqueProducts() {
-        /**
+        /*
          * sorts by descending order of timestamp. This will leave only the latest timestamp (per each product-id)
          * when the products are filtered
          */
@@ -114,15 +113,12 @@ public class SimpleUniqueCollector {
     public List<ProductInfo> getUniqueProducts(final Comparator<ProductInfo> comparator) {
         if (changed) {
             LOGGER.info("Sorting {} products..", uniqueProducts.size());
-            Collections.sort(uniqueProducts, new Comparator<ProductInfo>() {
-                @Override
-                public int compare(ProductInfo p1, ProductInfo p2) {
-                    int result = JonixUtil.compareList(p1.id, p2.id);
-                    if (result == 0) { // with the same id, we leave it for the caller to decide
-                        return comparator.compare(p1, p2);
-                    }
-                    return result;
+            uniqueProducts.sort((p1, p2) -> {
+                int result = JonixUtil.compareList(p1.id, p2.id);
+                if (result == 0) { // with the same id, we leave it for the caller to decide
+                    return comparator.compare(p1, p2);
                 }
+                return result;
             });
 
             LOGGER.info("Compacting..");

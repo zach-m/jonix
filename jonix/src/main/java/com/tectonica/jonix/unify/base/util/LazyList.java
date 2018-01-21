@@ -116,7 +116,7 @@ public abstract class LazyList<T> implements List<T>, Serializable {
     @Override
     public boolean add(T e) {
         ensure();
-        return add(e);
+        return list.add(e);
     }
 
     @Override
@@ -128,7 +128,7 @@ public abstract class LazyList<T> implements List<T>, Serializable {
     @Override
     public boolean remove(Object o) {
         ensure();
-        return remove(o);
+        return list.remove(o);
     }
 
     @Override
@@ -140,31 +140,31 @@ public abstract class LazyList<T> implements List<T>, Serializable {
     @Override
     public boolean containsAll(Collection<?> c) {
         ensure();
-        return containsAll(c);
+        return list.containsAll(c);
     }
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
         ensure();
-        return addAll(c);
+        return list.addAll(c);
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends T> c) {
         ensure();
-        return addAll(c);
+        return list.addAll(index, c);
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
         ensure();
-        return removeAll(c);
+        return list.removeAll(c);
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
         ensure();
-        return retainAll(c);
+        return list.retainAll(c);
     }
 
     @Override

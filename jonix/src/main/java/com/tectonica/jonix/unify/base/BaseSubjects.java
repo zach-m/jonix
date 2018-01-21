@@ -38,7 +38,7 @@ public abstract class BaseSubjects extends LazyMap<SubjectSchemeIdentifiers, Lis
                          boolean insertFirst) {
         List<BaseSubject> items = map.get(subject.subjectSchemeIdentifier);
         if (items == null) {
-            map.put(subject.subjectSchemeIdentifier, items = new ArrayList<BaseSubject>());
+            map.put(subject.subjectSchemeIdentifier, items = new ArrayList<>());
         }
         if (insertFirst) {
             items.add(0, subject);

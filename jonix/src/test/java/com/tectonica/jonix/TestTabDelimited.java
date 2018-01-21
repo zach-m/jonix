@@ -19,7 +19,6 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.unify.BaseRecord;
 import com.tectonica.jonix.unify.BaseTabulation;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -62,10 +61,7 @@ public class TestTabDelimited {
 
         File targetFile = new File("target", "Catalog.tsv");
         jonix.streamUnified()
-            .map((BaseRecord r) -> {
-                totalCount[1]++;
-                return r;
-            })
+            .peek(r -> totalCount[1]++)
             .collect(toTSV(targetFile, BaseTabulation.ALL));
 
         System.err.println("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
