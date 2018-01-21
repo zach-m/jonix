@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 Zach Melamed
- * 
+ *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
  *
@@ -22,7 +22,7 @@ package com.tectonica.jonix.codegen.generator;
 public class Comments {
     public static final String Copyright = "/*\n" + //
         " * Copyright (C) 2012 Zach Melamed\n" + //
-        " * \n" + //
+        " *\n" + //
         " * Latest version available online at https://github.com/zach-m/jonix\n" + //
         " * Contact me at zach@tectonica.co.il\n" + //
         " *\n" + //

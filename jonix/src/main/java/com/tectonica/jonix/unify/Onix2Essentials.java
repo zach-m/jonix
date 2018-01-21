@@ -20,7 +20,6 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.JPU;
-import com.tectonica.jonix.util.JonixUtil;
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
 import com.tectonica.jonix.codelist.ContributorRoles;
@@ -46,6 +45,7 @@ import com.tectonica.jonix.onix2.Publisher;
 import com.tectonica.jonix.onix2.Series;
 import com.tectonica.jonix.onix2.SupplyDetail;
 import com.tectonica.jonix.struct.JonixOtherText;
+import com.tectonica.jonix.util.JonixUtil;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 Zach Melamed
- * 
+ *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
  *
@@ -19,8 +19,8 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.util.JonixUtil;
 import com.tectonica.jonix.codelist.ContributorRoles;
+import com.tectonica.jonix.util.JonixUtil;
 
 import java.io.Serializable;
 import java.util.Set;

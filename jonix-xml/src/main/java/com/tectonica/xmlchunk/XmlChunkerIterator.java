@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 Zach Melamed
- * 
+ *
  * Latest version available online at https://github.com/zach-m/jonix
  * Contact me at zach@tectonica.co.il
  *
@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 //CHECKSTYLE:OFF
+
 /**
  * An iterator for XML data extraction, intended for XML source that has the following properties:
  * <p>
