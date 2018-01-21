@@ -36,10 +36,10 @@ import java.util.Objects;
 public class SimpleUniqueCollector {
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleUniqueCollector.class);
 
-    public final FieldTabulator<OnixProduct> idColumn;
+    public final FieldTabulator<OnixProduct> idTabulator;
 
-    public SimpleUniqueCollector(FieldTabulator<OnixProduct> idColumn) {
-        this.idColumn = Objects.requireNonNull(idColumn);
+    public SimpleUniqueCollector(FieldTabulator<OnixProduct> idTabulator) {
+        this.idTabulator = Objects.requireNonNull(idTabulator);
     }
 
     /**
@@ -57,14 +57,13 @@ public class SimpleUniqueCollector {
         }
     }
 
-    private List<ProductInfo> uniqueProducts = new ArrayList<>();
-    private boolean changed = false;
-
     private Calendar lastFileTimestamp;
+    private List<ProductInfo> uniqueProducts;
+    private boolean changed;
 
-    public void read(JonixRecords jonix) {
-        jonix.onSourceStart(source -> {
-            // TODO: the following access 'file' without NULL check, is this OK?
+    public void read(JonixRecords records) {
+
+        records.onSourceStart(source -> {
             lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.getAbsolutePath());
 
             // if we couldn't extract the timestamp from the file's name, we fall back to its modification date
@@ -74,21 +73,16 @@ public class SimpleUniqueCollector {
             }
         });
 
-        jonix.stream().forEach(record -> {
-            List<String> idData = idColumn.extractFrom(record.product);
+        uniqueProducts = new ArrayList<>();
+        changed = false;
+
+        records.stream().forEach(record -> {
+            List<String> idData = idTabulator.extractFrom(record.product);
             if (idData != null) {
                 uniqueProducts.add(new ProductInfo(idData, lastFileTimestamp, record.product));
                 changed = true;
             }
         });
-        //jonix.streamUnified().forEach(record -> {
-        //    String[] idData = idColumn.newBuffer();
-        //
-        //    if (idColumn.extractFrom(record.product, idData)) {
-        //        uniqueProducts.add(new ProductInfo(idData, lastFileTimestamp, record.product));
-        //        changed = true;
-        //    }
-        //});
     }
     // ////////////////////////////////////////////////////////////////////////////////////////
 

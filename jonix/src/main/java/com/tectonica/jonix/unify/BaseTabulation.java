@@ -46,7 +46,7 @@ import static com.tectonica.jonix.unify.BaseFieldTabulator.Title;
  */
 public class BaseTabulation {
 
-    public static final Tabulation<BaseRecord> ALL = Tabulation.create(BaseRecord.class)
+    public static final Tabulation<BaseRecord> ALL = Tabulation.<BaseRecord>create()
         .add(ISBN13.tabulator())
         .add(Title.tabulator())
         .add(SeriesTitle.tabulator())
@@ -66,7 +66,7 @@ public class BaseTabulation {
         .add(Description.tabulator())
         .add(ShortDescription.tabulator());
 
-    public static final Tabulation<BaseRecord> BASIC = Tabulation.create(BaseRecord.class)
+    public static final Tabulation<BaseRecord> BASIC = Tabulation.<BaseRecord>create()
         .add(ISBN13.tabulator())
         .add(Title.tabulator())
         .add(SeriesTitle.tabulator())

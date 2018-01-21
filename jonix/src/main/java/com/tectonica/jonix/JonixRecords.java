@@ -101,6 +101,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
         return this;
     }
 
+    public Object configValue(String id) {
+        return globalConfig.get(id);
+    }
+
     public Map<String, Object> getConfiguration() {
         return globalConfig;
     }
@@ -148,8 +152,8 @@ public class JonixRecords implements Iterable<JonixRecord> {
         boolean ignoreException;
 
         RecordIterator() {
-            Boolean failOnException = (Boolean) globalConfig.get("jonix.stream.failOnInvalidFile");
-            ignoreException = (failOnException != null && !failOnException);
+            Boolean failOnInvalidFile = (Boolean) globalConfig.get("jonix.stream.failOnInvalidFile");
+            ignoreException = (failOnInvalidFile != null && !failOnInvalidFile);
 
             nextFiles = files.subList(0, files.size()); // possibly an empty list
             try {
@@ -233,11 +237,13 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
             // read the first chunk (level-2 element), which should either be a <Product> or <Header>
             Element firstElement = ctx.nextChunk();
-            // TODO: allow firstProduct = null, and check that it works on files with not tags under OnixMessage
+            // TODO: allow firstProduct = null, and check that it works on files with no tags under OnixMessage
             boolean hasHeader = firstElement.getNodeName().equalsIgnoreCase("Header");
             if (hasHeader) {
                 currentSource.header = headerFromElement(firstElement, currentSource.onixVersion);
             }
+
+            // fire onSourceStart events
             onSourceStartEvents.forEach(e -> e.onSource(currentSource));
 
             if (hasHeader) {

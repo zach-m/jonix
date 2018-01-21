@@ -32,7 +32,7 @@ public class Tabulation<P> {
     private List<FieldTabulator<P>> tabulators = new ArrayList<>();
     private List<String> header = new ArrayList<>();
 
-    public static <P> Tabulation<P> create(Class<P> clz) {
+    public static <P> Tabulation<P> create() {
         return new Tabulation<>();
     }
 

@@ -37,8 +37,11 @@ public class JonixSource {
     OnixVersion onixVersion;
     OnixHeader header;
 
-    // for the convenience of the user // TODO: maybe add APIs? or have it lazily created?
-    public final Map<String, Object> localConfig = new HashMap<>();
+    /**
+     * Per-source key-value store, for the convenience of the user when processing multiple sources.
+     * Can be read-from and written-to with {@link #configValue(String)} and {@link #configure(String, Object)}.
+     */
+    private Map<String, Object> localConfig;
 
     // internal, packaged-protected variable, managed by the during iteration over the source
     // TODO: this could be problematic in presence of concurrency and/or multiple-iterators. Currently not an issue
@@ -73,5 +76,20 @@ public class JonixSource {
 
     public int productsProcessedCount() {
         return productsProcessed;
+    }
+
+    public <T> JonixSource configure(String id, T value) {
+        if (localConfig == null) {
+            localConfig = new HashMap<>();
+        }
+        localConfig.put(id, value);
+        return this;
+    }
+
+    public Object configValue(String id) {
+        if (localConfig == null) {
+            return null;
+        }
+        return localConfig.get(id);
     }
 }

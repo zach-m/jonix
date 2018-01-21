@@ -56,8 +56,13 @@ public class JonixUtil {
 
     /**
      * Attempts to retrieve a time-stamp from a given file-name. Looks for the following constructs in the filename:
-     * <ul> <li><code>hhmm</code> <li><code>hhmmss</code> <li><code>yyyyMMdd</code> <li><code>yyyyMMddhhmm</code>
-     * <li><code>yyyyMMddhhmmss</code> </ul>
+     * <ul>
+     * <li><code>hhmm</code>
+     * <li><code>hhmmss</code>
+     * <li><code>yyyyMMdd</code>
+     * <li><code>yyyyMMddhhmm</code>
+     * <li><code>yyyyMMddhhmmss</code>
+     * </ul>
      *
      * @param fileName the file-name from which to extract the time-stamp
      * @return the extracted time-stamp, or null if such time-stamp couldn't be extracted
