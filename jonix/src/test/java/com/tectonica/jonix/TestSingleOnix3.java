@@ -35,14 +35,6 @@ import java.io.StringReader;
 
 public class TestSingleOnix3 {
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     private static Document docOf(String xmlResourceName) {
         try (InputStream is = TestSingleOnix3.class.getResourceAsStream(xmlResourceName)) {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();

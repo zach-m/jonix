@@ -34,13 +34,6 @@ import java.io.InputStream;
 import java.io.StringReader;
 
 public class TestSingleOnix2 {
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
 
     private static Document docOf(String xmlResourceName) {
         try (InputStream is = TestSingleOnix2.class.getResourceAsStream(xmlResourceName)) {

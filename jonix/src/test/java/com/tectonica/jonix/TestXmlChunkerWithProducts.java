@@ -39,19 +39,19 @@ import java.io.FileNotFoundException;
 import java.util.Optional;
 
 public class TestXmlChunkerWithProducts {
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
 
     @Test
     @Ignore
     // ignored by default. the sample files are not checked in to SCM
     public void readProductsAndExtractProperties() throws FileNotFoundException {
-        final File file = new File("C:\\Users\\zach\\Dropbox\\Projects\\Jonix\\onix_samples\\ONIX2\\SB_Ref.xml");
+        File samples = new File("..", "samples");
+        if (!samples.exists()) {
+            System.err.println("Samples directory is missing: " + samples.getAbsolutePath());
+            System.err.println("Skipping");
+            return;
+        }
+
+        final File file = new File(samples, "onix-2/SB/SB.xml");
         if (!file.exists()) {
             throw new RuntimeException("couldn't found " + file.getAbsolutePath());
         }

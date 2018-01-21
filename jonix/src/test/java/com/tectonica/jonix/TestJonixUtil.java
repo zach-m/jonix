@@ -20,28 +20,13 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.util.JonixUtil;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TestJonixUtil {
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    private int compare(String[] a, String[] b) {
-        int c1 = JonixUtil.compareArray(a, b);
-        int c2 = JonixUtil.compareArray(b, a);
-        Assert.assertEquals(c1, -c2);
-        //String sign = (c1 < 0) ? " < " : ((c1 > 0) ? " > " : " = ");
-        //System.out.println(Arrays.toString(a) + sign + Arrays.toString(b));
-        return c1;
-    }
 
     @Test
     public void testArrayCompare() {
@@ -59,5 +44,37 @@ public class TestJonixUtil {
         Assert.assertEquals(compare(null, a), -1);
         Assert.assertEquals(compare(a_b, ab), -1);
         Assert.assertEquals(compare(a_b, a_c), -1);
+    }
+
+    private int compare(String[] a, String[] b) {
+        int c1 = JonixUtil.compareArray(a, b);
+        int c2 = JonixUtil.compareArray(b, a);
+        Assert.assertEquals(c1, -c2);
+        return c1;
+    }
+
+    @Test
+    public void testListCompare() {
+        List<String> a = Arrays.asList("a");
+        List<String> ab = Arrays.asList("a", "b");
+        List<String> ab2 = Arrays.asList("a", "b");
+        List<String> ac = Arrays.asList("a", "c");
+        List<String> a_b = Arrays.asList("a", null, "b");
+        List<String> a_c = Arrays.asList("a", null, "c");
+
+        Assert.assertEquals(compare(ab, ac), -1);
+        Assert.assertEquals(compare(ab, ab), 0);
+        Assert.assertEquals(compare(ab, ab2), 0);
+        Assert.assertEquals(compare(a, ac), -1);
+        Assert.assertEquals(compare(null, a), -1);
+        Assert.assertEquals(compare(a_b, ab), -1);
+        Assert.assertEquals(compare(a_b, a_c), -1);
+    }
+
+    private int compare(List<String> a, List<String> b) {
+        int c1 = JonixUtil.compareList(a, b);
+        int c2 = JonixUtil.compareList(b, a);
+        Assert.assertEquals(c1, -c2);
+        return c1;
     }
 }

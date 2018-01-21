@@ -46,7 +46,8 @@ public class TestTabDelimited {
         totalCount[0] = 0;
         totalCount[1] = 0;
 
-        JonixRecords jonix = Jonix
+        // prepare to read from various sources
+        JonixRecords records = Jonix
             .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
             .source(new File(samples, "onix-3"), "*.xml", true)  // ONIX3 files from EDItEUR
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
@@ -59,8 +60,9 @@ public class TestTabDelimited {
             })
             .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 
+        // start streaming the records, from their files into a single tab-delimited file
         File targetFile = new File("target", "Catalog.tsv");
-        totalCount[2] = jonix.streamUnified()
+        totalCount[2] = records.streamUnified()
             .peek(r -> totalCount[1]++)
             .collect(toTSV(targetFile, BaseTabulation.ALL));
 

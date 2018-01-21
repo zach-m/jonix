@@ -24,7 +24,6 @@ import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 import com.tectonica.xmlchunk.XmlChunker;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Element;
 
@@ -37,12 +36,8 @@ public class TestBaseProduct {
     private static final String PRODUCT_REF = com.tectonica.jonix.onix2.Product.refname;
     private static final String PRODUCT_SHORT = com.tectonica.jonix.onix2.Product.shortname;
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         System.out.println("\n***********************************************************************************");
     }
 
@@ -51,12 +46,24 @@ public class TestBaseProduct {
         InputStream stream = getClass().getResourceAsStream("/single-book-onix2.xml");
 
         XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener() {
+
+            @Override
+            public void onPreTargetStart(int depth, StartElement element) {
+                final Attribute release = element.getAttributeByName(new QName("release"));
+                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
+                if (!isOnix2) {
+                    throw new RuntimeException("this test is suitable for Onix2");
+                }
+            }
+
             @Override
             public boolean onChunk(Element element) {
                 final String nodeName = element.getNodeName();
                 if (nodeName.equals(PRODUCT_REF) || nodeName.equals(PRODUCT_SHORT)) {
+                    // run the auto-generated code for low-level parsing of an Onix2 <Product> record
                     final com.tectonica.jonix.onix2.Product product = new com.tectonica.jonix.onix2.Product(element);
-                    BaseProduct bp = new BaseProduct2(product);
+                    // create a unified-version of the product
+                    final BaseProduct bp = new BaseProduct2(product);
                     System.out.println("\nRAW ONIX2  --------------------------------------------------------------");
                     System.out.println(JonixJson.productToJson(product));
                     System.out.println("\nBASIC ONIX2  ------------------------------------------------------------");
@@ -65,14 +72,6 @@ public class TestBaseProduct {
                 return true;
             }
 
-            @Override
-            public void onPreTargetStart(int depth, StartElement element) {
-                final Attribute release = element.getAttributeByName(new QName("release"));
-                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
-                if (!isOnix2) {
-                    throw new RuntimeException("this test is suitable for Onix2 only at this time");
-                }
-            }
         });
     }
 
@@ -86,6 +85,16 @@ public class TestBaseProduct {
         InputStream stream = getClass().getResourceAsStream(RESOURCE_NAME);
 
         XmlChunker.parse(stream, "UTF-8", 2, new XmlChunker.Listener() {
+
+            @Override
+            public void onPreTargetStart(int depth, StartElement element) {
+                final Attribute release = element.getAttributeByName(new QName("release"));
+                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
+                if (isOnix2) {
+                    throw new RuntimeException("this test is suitable for Onix3");
+                }
+            }
+
             @Override
             public boolean onChunk(Element element) {
                 final String nodeName = element.getNodeName();
@@ -100,14 +109,6 @@ public class TestBaseProduct {
                 return true;
             }
 
-            @Override
-            public void onPreTargetStart(int depth, StartElement element) {
-                final Attribute release = element.getAttributeByName(new QName("release"));
-                boolean isOnix2 = (release == null || release.getValue().startsWith("2"));
-                if (isOnix2) {
-                    throw new RuntimeException("this test is suitable for Onix3 only at this time");
-                }
-            }
         });
 
         // read the same file, this time using a JonixReader
