@@ -263,7 +263,7 @@ public class Parser {
             }
 
             private String extractAnnotationText(Element annotationElem) {
-                final StringBuffer sb = new StringBuffer();
+                final StringBuilder sb = new StringBuilder();
                 DOM.forElementsOf(annotationElem, "xs:documentation", new ElementListener() {
                     @Override
                     public void onElement(Element documentationElem) {

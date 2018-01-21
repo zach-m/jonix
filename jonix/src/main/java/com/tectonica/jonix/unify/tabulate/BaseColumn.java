@@ -319,7 +319,7 @@ public abstract class BaseColumn implements JonixColumn<BaseProduct> {
         List<BaseSalesRights> salesRightss = product.salesRightss.findSalesRights(stdTypes);
         int pos = 0;
         for (BaseSalesRights salesRights : salesRightss) {
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             if (salesRights.regions != null) {
                 sb.append(salesRights.regions).append("#");
             }
