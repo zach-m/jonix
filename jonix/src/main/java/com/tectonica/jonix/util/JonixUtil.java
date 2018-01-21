@@ -29,12 +29,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JonixUtil {
-    private static final Pattern timestampPattern = Pattern.compile("[^0-9]([0-9]{4,14})(?=[_\\.])");
+    private static final Pattern timestampPattern = Pattern.compile("[^0-9]([0-9]{4,14})(?=[_.])");
 
     private static final String[] FORMATS = {"hhmm", "hhmmss", "yyyyMMdd", "yyyyMMddhhmm", "yyyyMMddhhmmss"};
 
@@ -74,7 +75,7 @@ public class JonixUtil {
             String value = matcher.group(1);
             for (int i = 0; i < FORMATS.length; i++) {
                 if (value.length() == FORMATS[i].length()) {
-                    Date timestamp = null;
+                    Date timestamp;
                     try {
                         timestamp = PARSERS[i].parse(value);
                     } catch (ParseException e) {
@@ -136,6 +137,49 @@ public class JonixUtil {
         if (a.length < b.length) {
             return -1; // "a < b"
         } else if (a.length > b.length) {
+            return 1; // "a > b"
+        }
+
+        // i.e. (a.length == b.length)
+        return 0; // "a = b", same length, all items equal
+    }
+
+    public static <T extends Comparable<T>> int compareList(List<T> a, List<T> b) {
+        if (a == b) { // also covers the case of two null arrays. those are considered 'equal'
+            return 0;
+        }
+
+        // arbitrary: non-null array is considered 'greater than' null array
+        if (a == null) {
+            return -1; // "a < b"
+        } else if (b == null) {
+            return 1; // "a > b"
+        }
+
+        // now the item-by-item comparison - the loop runs as long as items in both arrays are equal
+        int last = Math.min(a.size(), b.size());
+        for (int i = 0; i < last; i++) {
+            T ai = a.get(i);
+            T bi = b.get(i);
+
+            if (ai == null && bi == null) {
+                continue; // two null items are assumed 'equal'
+            } else if (ai == null) { // arbitrary: non-null item is considered 'greater than' null item
+                return -1; // "a < b"
+            } else if (bi == null) {
+                return 1; // "a > b"
+            }
+
+            int comp = ai.compareTo(bi);
+            if (comp != 0) {
+                return comp;
+            }
+        }
+
+        // shorter array whose items are all equal to the first items of a longer array is considered 'less than'
+        if (a.size() < b.size()) {
+            return -1; // "a < b"
+        } else if (a.size() > b.size()) {
             return 1; // "a > b"
         }
 

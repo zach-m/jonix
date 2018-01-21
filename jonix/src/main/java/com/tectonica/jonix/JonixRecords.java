@@ -20,6 +20,7 @@
 package com.tectonica.jonix;
 
 import com.tectonica.jonix.unify.BaseRecord;
+import com.tectonica.jonix.unify.JonixUnifier;
 import com.tectonica.jonix.util.GlobScanner;
 import com.tectonica.xmlchunk.XmlChunkerContext;
 import org.slf4j.Logger;
@@ -41,20 +42,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 import static com.tectonica.jonix.JonixFactory.headerFromElement;
 import static com.tectonica.jonix.JonixFactory.productFromElement;
 
-public class JonixIterable implements Iterable<JonixRecord> {
+public class JonixRecords implements Iterable<JonixRecord> {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JonixIterable.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JonixRecords.class);
 
     @FunctionalInterface
     public interface OnSourceEvent {
-        void onSource(OnixSource onixSource);
+        void onSource(JonixSource jonixSource);
     }
 
     private final InputStream inputStream;
@@ -68,7 +68,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
     /**
      * not to be called directly, used {@link Jonix#source(InputStream)}
      */
-    JonixIterable(InputStream inputStream) {
+    JonixRecords(InputStream inputStream) {
         this.inputStream = Objects.requireNonNull(inputStream);
         this.files = new ArrayList<>();
     }
@@ -76,27 +76,27 @@ public class JonixIterable implements Iterable<JonixRecord> {
     /**
      * not to be called directly, used {@link Jonix#source(List)}
      */
-    JonixIterable(List<File> files) {
+    JonixRecords(List<File> files) {
         this.inputStream = null;
         this.files = new ArrayList<>(Objects.requireNonNull(files));
     }
 
-    public JonixIterable source(List<File> files) {
+    public JonixRecords source(List<File> files) {
         this.files.addAll(Objects.requireNonNull(files));
         return this;
     }
 
-    public JonixIterable source(File file) {
+    public JonixRecords source(File file) {
         this.files.add(Objects.requireNonNull(file));
         return this;
     }
 
-    public JonixIterable source(File folder, String glob, boolean recursive) throws IOException {
+    public JonixRecords source(File folder, String glob, boolean recursive) throws IOException {
         this.files.addAll(GlobScanner.scan(folder, glob, recursive));
         return this;
     }
 
-    public <T> JonixIterable configure(String id, T value) {
+    public <T> JonixRecords configure(String id, T value) {
         globalConfig.put(id, value);
         return this;
     }
@@ -105,7 +105,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
         return globalConfig;
     }
 
-    public JonixIterable encoding(String encoding) {
+    public JonixRecords encoding(String encoding) {
         this.encoding = encoding;
         return this;
     }
@@ -113,7 +113,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
     /**
      * NOTE: can be called more than once to register several event-listeners
      */
-    public JonixIterable onSourceStart(OnSourceEvent onSourceStart) {
+    public JonixRecords onSourceStart(OnSourceEvent onSourceStart) {
         this.onSourceStartEvents.add(onSourceStart);
         return this;
     }
@@ -121,7 +121,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
     /**
      * NOTE: can be called more than once to register several event-listeners
      */
-    public JonixIterable onSourceEnd(OnSourceEvent onSourceEnd) {
+    public JonixRecords onSourceEnd(OnSourceEvent onSourceEnd) {
         this.onSourceEndEvents.add(onSourceEnd);
         return this;
     }
@@ -143,7 +143,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
 
     private class RecordIterator implements Iterator<JonixRecord> {
         final List<File> nextFiles;
-        OnixSource currentSource;
+        JonixSource currentSource;
         Iterator<JonixRecord> currentSourceIterator;
         boolean ignoreException;
 
@@ -154,7 +154,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
             nextFiles = files.subList(0, files.size()); // possibly an empty list
             try {
                 if (inputStream != null) {
-                    currentSourceIterator = sourceIterator(new OnixSource(inputStream));
+                    currentSourceIterator = sourceIterator(new JonixSource(inputStream));
                 }
             } catch (Exception e) {
                 handleInvalidFileException(e);
@@ -180,7 +180,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
                 // open the next file, which could possibly contain no records to iterate over
                 try {
                     File file = nextFiles.remove(0);
-                    currentSourceIterator = sourceIterator(new OnixSource(file));
+                    currentSourceIterator = sourceIterator(new JonixSource(file));
                     hasNext = currentSourceIterator.hasNext();
                 } catch (Exception e) {
                     handleInvalidFileException(e);
@@ -203,8 +203,8 @@ public class JonixIterable implements Iterable<JonixRecord> {
             return currentSourceIterator.next();
         }
 
-        Iterator<JonixRecord> sourceIterator(OnixSource onixSource) throws XMLStreamException {
-            currentSource = onixSource;
+        Iterator<JonixRecord> sourceIterator(JonixSource jonixSource) throws XMLStreamException {
+            currentSource = jonixSource;
 
             // create iteration context, which holds the XML stream between next() invocations
             final XmlChunkerContext ctx = new XmlChunkerContext(new BOMInputStream(currentSource.stream), encoding, 2);
@@ -236,7 +236,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
             // TODO: allow firstProduct = null, and check that it works on files with not tags under OnixMessage
             boolean hasHeader = firstElement.getNodeName().equalsIgnoreCase("Header");
             if (hasHeader) {
-                currentSource.header = Optional.of(headerFromElement(firstElement, currentSource.onixVersion));
+                currentSource.header = headerFromElement(firstElement, currentSource.onixVersion);
             }
             onSourceStartEvents.forEach(e -> e.onSource(currentSource));
 
@@ -281,7 +281,7 @@ public class JonixIterable implements Iterable<JonixRecord> {
 
                     // TODO: verify the product is indeed <Product> ?
 
-                    currentSource.productCount++;
+                    currentSource.productsProcessed++;
                     return new JonixRecord(globalConfig, currentSource,
                         productFromElement(product, currentSource.onixVersion));
                 }

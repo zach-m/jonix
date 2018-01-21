@@ -17,9 +17,11 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix;
+package com.tectonica.jonix.unify;
 
-import com.tectonica.jonix.unify.BaseRecord;
+import com.tectonica.jonix.JonixRecord;
+import com.tectonica.jonix.OnixHeader;
+import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.unify.base.BaseHeader;
 import com.tectonica.jonix.unify.base.BaseProduct;
 import com.tectonica.jonix.unify.base.onix2.BaseHeader2;
@@ -27,6 +29,10 @@ import com.tectonica.jonix.unify.base.onix2.BaseProduct2;
 import com.tectonica.jonix.unify.base.onix3.BaseHeader3;
 import com.tectonica.jonix.unify.base.onix3.BaseProduct3;
 
+/**
+ * This class provides static services for converting version-specific ONIX data into its version-less equivalent
+ * from the <code>com.tectonica.jonix.unify.base</code> package.
+ */
 public class JonixUnifier {
 
     public static BaseRecord unifyRecord(JonixRecord record) {

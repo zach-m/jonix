@@ -19,7 +19,8 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.unify.tabulate.BaseColumn;
+import com.tectonica.jonix.unify.BaseRecord;
+import com.tectonica.jonix.unify.BaseTabulation;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -28,7 +29,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import static com.tectonica.jonix.util.JonixTSV.toTSV;
+import static com.tectonica.jonix.tabulate.JonixTSV.toTSV;
 
 public class TestTabDelimited {
     @Test
@@ -46,7 +47,7 @@ public class TestTabDelimited {
         totalCount[0] = 0;
         totalCount[1] = 0;
 
-        JonixIterable jonix = Jonix
+        JonixRecords jonix = Jonix
             .source(new File(samples, "onix-3"), "*.onix", false)  // ONIX3 files
             .source(new File(samples, "onix-3"), "*.xml", true)  // ONIX3 files from EDItEUR
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
@@ -54,18 +55,18 @@ public class TestTabDelimited {
             .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
             .onSourceStart(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.getSourceName()))
             .onSourceEnd(src -> {
-                totalCount[0] += src.getProductCount();
-                System.err.println(" .. Read " + src.getProductCount() + " records");
+                totalCount[0] += src.productsProcessedCount();
+                System.err.println(" .. Read " + src.productsProcessedCount() + " records");
             })
             .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 
         File targetFile = new File("target", "Catalog.tsv");
         jonix.streamUnified()
-            .map(r -> {
+            .map((BaseRecord r) -> {
                 totalCount[1]++;
-                return r.product;
+                return r;
             })
-            .collect(toTSV(targetFile, BaseColumn.ALL));
+            .collect(toTSV(targetFile, BaseTabulation.ALL));
 
         System.err.println("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
 

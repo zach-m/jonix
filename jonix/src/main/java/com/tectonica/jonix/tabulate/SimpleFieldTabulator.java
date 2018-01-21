@@ -17,24 +17,28 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.unify;
+package com.tectonica.jonix.tabulate;
 
-import com.tectonica.jonix.JonixSource;
-import com.tectonica.jonix.unify.base.BaseHeader;
-import com.tectonica.jonix.unify.base.BaseProduct;
+import java.util.List;
+import java.util.Objects;
 
-import java.util.Optional;
+public class SimpleFieldTabulator<P> implements FieldTabulator<P> {
 
-public class BaseRecord {
-    public final JonixSource source;
-    public final BaseProduct product;
+    protected final List<String> header;
+    protected final FieldRowSupplier<P> rowSupplier;
 
-    public BaseRecord(JonixSource source, BaseProduct product) {
-        this.source = source;
-        this.product = product;
+    public SimpleFieldTabulator(List<String> header, FieldRowSupplier<P> rowSupplier) {
+        this.header = Objects.requireNonNull(header);
+        this.rowSupplier = Objects.requireNonNull(rowSupplier);
     }
 
-    public Optional<BaseHeader> header() {
-        return source.header().map(JonixUnifier::unifyHeader);
+    @Override
+    public List<String> header() {
+        return header;
+    }
+
+    @Override
+    public FieldRowSupplier<P> rowSupplier() {
+        return rowSupplier;
     }
 }

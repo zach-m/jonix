@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.unify.tabulate.BaseColumn;
+import com.tectonica.jonix.unify.BaseTabulation;
 import com.tectonica.jonix.util.GlobScanner;
 
 import java.io.File;
@@ -29,23 +29,23 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-import static com.tectonica.jonix.util.JonixTSV.toTSV;
+import static com.tectonica.jonix.tabulate.JonixTSV.toTSV;
 
 public class Jonix {
-    public static JonixIterable source(InputStream inputStream) {
-        return new JonixIterable(inputStream);
+    public static JonixRecords source(InputStream inputStream) {
+        return new JonixRecords(inputStream);
     }
 
-    public static JonixIterable source(List<File> files) {
-        return new JonixIterable(files);
+    public static JonixRecords source(List<File> files) {
+        return new JonixRecords(files);
     }
 
-    public static JonixIterable source(File file) {
-        return new JonixIterable(Collections.singletonList(Objects.requireNonNull(file)));
+    public static JonixRecords source(File file) {
+        return new JonixRecords(Collections.singletonList(Objects.requireNonNull(file)));
     }
 
-    public static JonixIterable source(File folder, String glob, boolean recursive) throws IOException {
-        return new JonixIterable(GlobScanner.scan(folder, glob, recursive));
+    public static JonixRecords source(File folder, String glob, boolean recursive) throws IOException {
+        return new JonixRecords(GlobScanner.scan(folder, glob, recursive));
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +90,7 @@ public class Jonix {
                 return;
             }
 
-            final JonixIterable jonix;
+            final JonixRecords jonix;
             if (!inputFile.isDirectory()) {
                 jonix = Jonix.source(inputFile);
             } else {
@@ -98,7 +98,7 @@ public class Jonix {
                 jonix = Jonix.source(inputFile, pattern, true);
             }
 
-            jonix.streamUnified().map(r -> r.product).collect(toTSV(new File(outputFile), BaseColumn.ALL));
+            jonix.streamUnified().collect(toTSV(new File(outputFile), BaseTabulation.ALL));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -17,10 +17,7 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.util;
-
-import com.tectonica.jonix.unify.tabulate.JonixColumn;
-import com.tectonica.jonix.unify.tabulate.JonixTabulator;
+package com.tectonica.jonix.tabulate;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,12 +37,12 @@ import java.util.stream.Stream;
 public class JonixTSV<P> implements AutoCloseable {
 
     private final PrintStream out;
-    private final JonixTabulator<P> tabulator;
+    private final Tabulation<P> tabulation;
 
-    public JonixTSV(File targetFile, List<? extends JonixColumn<P>> targetColumns) {
+    public JonixTSV(File targetFile, Tabulation<P> tabulation) {
         try {
-            out = new PrintStream(targetFile, "UTF-8");
-            tabulator = new JonixTabulator<>(targetColumns);
+            this.out = new PrintStream(targetFile, "UTF-8");
+            this.tabulation = tabulation;
             writeHeader();
         } catch (UnsupportedEncodingException | FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -53,19 +50,15 @@ public class JonixTSV<P> implements AutoCloseable {
     }
 
     protected void writeHeader() {
-        out.println(tsvLineOf(tabulator.header()));
+        out.println(tsvLineOf(tabulation.header()));
     }
 
     public void writeProduct(P product) {
-        out.println(tsvLineOf(tabulator.row(product)));
+        out.println(tsvLineOf(tabulation.row(product)));
     }
 
     protected String tsvLineOf(List<String> line) {
-        return defaultTsvLineOf(line);
-    }
-
-    public static String defaultTsvLineOf(List<String> line) {
-        return line.stream().map(s -> s == null ? "" : s.replaceAll("[\\t\\n\\r]", " "))
+        return line.stream().map(s -> (s == null) ? "" : s.replaceAll("[\\t\\n\\r]", " "))
             .collect(Collectors.joining("\t"));
     }
 
@@ -76,12 +69,11 @@ public class JonixTSV<P> implements AutoCloseable {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static <P> Collector<P, ?, ?> toTSV(File targetFile,
-                                               List<? extends JonixColumn<P>> targetColumns) {
+    public static <P> Collector<P, ?, ?> toTSV(File targetFile, Tabulation<P> tabulation) {
         return new Collector<P, JonixTSV<P>, Void>() {
             @Override
             public Supplier<JonixTSV<P>> supplier() {
-                return () -> new JonixTSV<>(targetFile, targetColumns);
+                return () -> new JonixTSV<>(targetFile, tabulation);
             }
 
             @Override
@@ -109,9 +101,8 @@ public class JonixTSV<P> implements AutoCloseable {
         };
     }
 
-    public static <P> void writeTSV(Stream<P> productsStream, File targetFile,
-                                    List<? extends JonixColumn<P>> targetColumns) {
-        try (JonixTSV<P> writer = new JonixTSV<>(targetFile, targetColumns)) {
+    public static <P> void writeTSV(Stream<P> productsStream, File targetFile, Tabulation<P> tabulation) {
+        try (JonixTSV<P> writer = new JonixTSV<>(targetFile, tabulation)) {
             productsStream.forEach(writer::writeProduct);
         }
     }

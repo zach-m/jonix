@@ -23,10 +23,10 @@ import java.util.Map;
 
 public class JonixRecord {
     public final Map<String, Object> config;
-    public final OnixSource source;
+    public final JonixSource source;
     public final OnixProduct product;
 
-    JonixRecord(Map<String, Object> config, OnixSource source, OnixProduct product) {
+    protected JonixRecord(Map<String, Object> config, JonixSource source, OnixProduct product) {
         this.config = config;
         this.source = source;
         this.product = product;

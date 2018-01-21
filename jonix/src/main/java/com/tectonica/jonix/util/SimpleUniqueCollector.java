@@ -19,9 +19,9 @@
 
 package com.tectonica.jonix.util;
 
-import com.tectonica.jonix.JonixIterable;
-import com.tectonica.jonix.unify.base.BaseProduct;
-import com.tectonica.jonix.unify.tabulate.JonixColumn;
+import com.tectonica.jonix.JonixRecords;
+import com.tectonica.jonix.OnixProduct;
+import com.tectonica.jonix.tabulate.FieldTabulator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,9 +37,9 @@ import java.util.Objects;
 public class SimpleUniqueCollector {
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleUniqueCollector.class);
 
-    public final JonixColumn<BaseProduct> idColumn;
+    public final FieldTabulator<OnixProduct> idColumn;
 
-    public SimpleUniqueCollector(JonixColumn<BaseProduct> idColumn) {
+    public SimpleUniqueCollector(FieldTabulator<OnixProduct> idColumn) {
         this.idColumn = Objects.requireNonNull(idColumn);
     }
 
@@ -47,11 +47,11 @@ public class SimpleUniqueCollector {
      * a wrapper for Product with some extra information needed for sorting and filtering
      */
     public static class ProductInfo {
-        public final String[] id;
+        public final List<String> id;
         public final Calendar timestamp;
-        public final BaseProduct product;
+        public final OnixProduct product;
 
-        private ProductInfo(String[] id, Calendar timestamp, BaseProduct product) {
+        private ProductInfo(List<String> id, Calendar timestamp, OnixProduct product) {
             this.id = id;
             this.timestamp = timestamp;
             this.product = product;
@@ -63,25 +63,33 @@ public class SimpleUniqueCollector {
 
     private Calendar lastFileTimestamp;
 
-    public void read(JonixIterable jonix) {
+    public void read(JonixRecords jonix) {
         jonix.onSourceStart(source -> {
-            lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.get().getAbsolutePath());
+            // TODO: the following access 'file' without NULL check, is this OK?
+            lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.getAbsolutePath());
 
             // if we couldn't extract the timestamp from the file's name, we fall back to its modification date
             if (lastFileTimestamp == null) {
                 lastFileTimestamp = new GregorianCalendar();
-                lastFileTimestamp.setTimeInMillis(source.file.get().lastModified());
+                lastFileTimestamp.setTimeInMillis(source.file.lastModified());
             }
         });
 
-        jonix.streamUnified().forEach(record -> {
-            String[] idData = idColumn.newBuffer();
-
-            if (idColumn.extractFrom(record.product, idData)) {
+        jonix.stream().forEach(record -> {
+            List<String> idData = idColumn.extractFrom(record.product);
+            if (idData != null) {
                 uniqueProducts.add(new ProductInfo(idData, lastFileTimestamp, record.product));
                 changed = true;
             }
         });
+        //jonix.streamUnified().forEach(record -> {
+        //    String[] idData = idColumn.newBuffer();
+        //
+        //    if (idColumn.extractFrom(record.product, idData)) {
+        //        uniqueProducts.add(new ProductInfo(idData, lastFileTimestamp, record.product));
+        //        changed = true;
+        //    }
+        //});
     }
     // ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -109,7 +117,7 @@ public class SimpleUniqueCollector {
             Collections.sort(uniqueProducts, new Comparator<ProductInfo>() {
                 @Override
                 public int compare(ProductInfo p1, ProductInfo p2) {
-                    int result = JonixUtil.compareArray(p1.id, p2.id);
+                    int result = JonixUtil.compareList(p1.id, p2.id);
                     if (result == 0) { // with the same id, we leave it for the caller to decide
                         return comparator.compare(p1, p2);
                     }
@@ -118,7 +126,7 @@ public class SimpleUniqueCollector {
             });
 
             LOGGER.info("Compacting..");
-            String[] lastId = null;
+            List<String> lastId = null;
             ListIterator<ProductInfo> iter = uniqueProducts.listIterator();
             while (iter.hasNext()) {
                 ProductInfo pi = iter.next();
