@@ -19,5 +19,17 @@
 
 package com.tectonica.jonix;
 
+/**
+ * This is a marker interface (has no methods) for a fundamental functionality provided by Jonix.
+ * <p>
+ * The idea of a <code>Struct</code> is to represent an ONIX Data Composite (i.e. an ONIX item that contains several
+ * fields, but no nested ONIX items) as a simple Java object. One of the biggest advantages of such <code>Struct</code>
+ * is that it's ONIX-version agnostic (i.e. Onix2 and Onix3 create the exact same class) - which allows easy development
+ * of cross-version processing. Another important feature is that in many cases one of the fields in the
+ * <code>Struct</code> acts as a <b>key</b> (i.e. mandatory, unique, and searchable-by). This useful trait is captured
+ * by {@link JonixKeyedStruct}.
+ * <p>
+ * To obtain <code>Struct</code> from any Data Composite invoke {@link OnixComposite.OnixDataComposite#asStruct()}.
+ */
 public interface JonixStruct {
 }

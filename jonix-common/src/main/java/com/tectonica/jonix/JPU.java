@@ -152,8 +152,10 @@ public class JPU {
         return out;
     }
 
-    public static <C extends OnixDataCompositeWithKey<S, K>, S extends JonixKeyedStruct<K>, K extends Enum<K>>
-        ListOfOnixDataCompositeWithKey<C, S, K> addToList(ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
+    public static <C extends OnixDataCompositeWithKey<S, K>,
+        S extends JonixKeyedStruct<K>,
+        K extends Enum<K> & OnixCodelist> ListOfOnixDataCompositeWithKey<C, S, K> addToList(
+        ListOfOnixDataCompositeWithKey<C, S, K> in, C item) {
         ListOfOnixDataCompositeWithKey<C, S, K> out = (in.size() > 0) ? in : new ListOfOnixDataCompositeWithKey<>();
         out.add(item);
         return out;

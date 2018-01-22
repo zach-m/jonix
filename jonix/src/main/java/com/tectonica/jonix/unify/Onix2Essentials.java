@@ -240,6 +240,7 @@ public class Onix2Essentials implements JonixEssentials {
     }
 
     public String getProductIdentifier(ProductIdentifierTypes idType) {
+        //return product.productIdentifiers().find(idType).map(pi -> pi.idValue().value).orElse(null);
         return product.productIdentifiers().findAsStruct(idType).map(pi -> pi.idValue).orElse(null);
     }
 
@@ -289,20 +290,13 @@ public class Onix2Essentials implements JonixEssentials {
             return;
         }
 
-        contributors.sort(new Comparator<Contributor>() {
-            @Override
-            public int compare(Contributor o1, Contributor o2) {
-                return Integer.compare(toInt(o1.sequenceNumber().value), toInt(o2.sequenceNumber().value));
+        contributors.sort(Comparator.comparingInt(o -> {
+            try {
+                return Integer.parseInt(o.sequenceNumber().value);
+            } catch (NumberFormatException nfe) {
+                return Integer.MAX_VALUE; // i.e. unsequenced items in an hybrid list go to the end
             }
-
-            private int toInt(String s1) {
-                try {
-                    return Integer.parseInt(s1);
-                } catch (NumberFormatException nfe) {
-                    return Integer.MAX_VALUE; // i.e. unsequenced items in an hybrid list go to the end
-                }
-            }
-        });
+        }));
     }
 
     public List<String> getContributors(ContributorRoles... requestedRoles) {

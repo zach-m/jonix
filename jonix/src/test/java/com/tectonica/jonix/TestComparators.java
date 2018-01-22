@@ -19,17 +19,17 @@
 
 package com.tectonica.jonix;
 
-import com.tectonica.jonix.util.JonixUtil;
+import com.tectonica.jonix.util.Comparators;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class TestJonixUtil {
+public class TestComparators {
 
     @Test
-    public void testArrayCompare() {
+    public void compareArray() {
         String[] a = new String[] {"a"};
         String[] ab = new String[] {"a", "b"};
         String[] ab2 = new String[] {"a", "b"};
@@ -47,14 +47,14 @@ public class TestJonixUtil {
     }
 
     private int compare(String[] a, String[] b) {
-        int c1 = JonixUtil.compareArray(a, b);
-        int c2 = JonixUtil.compareArray(b, a);
+        int c1 = Comparators.compareArray(a, b);
+        int c2 = Comparators.compareArray(b, a);
         Assert.assertEquals(c1, -c2);
         return c1;
     }
 
     @Test
-    public void testListCompare() {
+    public void compareList() {
         List<String> a = Arrays.asList("a");
         List<String> ab = Arrays.asList("a", "b");
         List<String> ab2 = Arrays.asList("a", "b");
@@ -72,8 +72,8 @@ public class TestJonixUtil {
     }
 
     private int compare(List<String> a, List<String> b) {
-        int c1 = JonixUtil.compareList(a, b);
-        int c2 = JonixUtil.compareList(b, a);
+        int c1 = Comparators.compareList(a, b);
+        int c2 = Comparators.compareList(b, a);
         Assert.assertEquals(c1, -c2);
         return c1;
     }

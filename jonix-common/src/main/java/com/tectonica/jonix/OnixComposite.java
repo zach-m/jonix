@@ -32,20 +32,20 @@ public interface OnixComposite extends OnixTag {
     /**
      * represents an ONIX composite that contains other composites
      */
-    public static interface OnixSuperComposite extends OnixComposite {
+    interface OnixSuperComposite extends OnixComposite {
     }
 
     /**
      * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites). This composite is
      * unique to specific version of ONIX, and isn't common to all
      */
-    public static interface OnixDataCompositeUncommon extends OnixComposite {
+    interface OnixDataCompositeUncommon extends OnixComposite {
     }
 
     /**
      * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites)
      */
-    public static interface OnixDataComposite<V extends JonixStruct> extends OnixComposite {
+    interface OnixDataComposite<V extends JonixStruct> extends OnixComposite {
         V asStruct();
     }
 
@@ -53,7 +53,7 @@ public interface OnixComposite extends OnixTag {
      * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites), one of which is the
      * key of the composite (i.e. a mandatory enumerated value, by which a composite can't be looked up)
      */
-    public static interface OnixDataCompositeWithKey<V extends JonixKeyedStruct<K>, K extends Enum<K>>
+    interface OnixDataCompositeWithKey<V extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
         extends OnixDataComposite<V> {
         K structKey();
     }

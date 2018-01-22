@@ -64,7 +64,7 @@ public class SimpleUniqueCollector {
     public void read(JonixRecords records) {
 
         records.onSourceStart(source -> {
-            lastFileTimestamp = JonixUtil.extractTimstampFromFileName(source.file.getAbsolutePath());
+            lastFileTimestamp = TimestampParser.extractTimstampFromFileName(source.file.getAbsolutePath());
 
             // if we couldn't extract the timestamp from the file's name, we fall back to its modification date
             if (lastFileTimestamp == null) {
@@ -108,7 +108,7 @@ public class SimpleUniqueCollector {
         if (changed) {
             LOGGER.info("Sorting {} products..", uniqueProducts.size());
             uniqueProducts.sort((p1, p2) -> {
-                int result = JonixUtil.compareList(p1.id, p2.id);
+                int result = Comparators.compareList(p1.id, p2.id);
                 if (result == 0) { // with the same id, we leave it for the caller to decide
                     return comparator.compare(p1, p2);
                 }
