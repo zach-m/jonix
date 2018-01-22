@@ -45,9 +45,128 @@ import java.util.Objects;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import static com.tectonica.jonix.JonixFactory.headerFromElement;
-import static com.tectonica.jonix.JonixFactory.productFromElement;
-
+/**
+ * This class provides the mechanism to scan one or more ONIX sources, and process the ONIX records they contain
+ * (typically an ONIX <code>Header</code> followed by one or more ONIX <code>Product</code> records).
+ * <p>
+ * The normal preparation steps of this class are as follows:
+ * <ol>
+ * <li>Add one or more ONIX sources</li>
+ * <li>Set the expected encoding of the sources (default is <code>UTF-8</code>)</li>
+ * <li>Optionally, set event handlers to be fired during processing</li>
+ * <li>Optionally, set key-value pairs, which will be accessible conveniently during processing</li>
+ * </ol>
+ * <p>
+ * Example:
+ * <pre>
+ * JonixRecords records = Jonix
+ *     .source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
+ *     .source(new File("/path/to/file-with-short-style-onix-2.xml"))
+ *     .source(new File("/path/to/file-with-reference-style-onix-3.onx"))
+ *     .onSourceStart(src -> { // take a look at:
+ *         // src.onixVersion()
+ *         // src.header()
+ *         // src.sourceName()
+ *     })
+ *     .onSourceEnd(src -> { // take a look at:
+ *         // src.productsProcessedCount()
+ *     })
+ *     .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
+ * </pre>
+ * <p>
+ * Once the {@link JonixRecords} is prepared, processing can be done in several ways:
+ * <h2>Iteration</h2>
+ * First and foremost, {@link JonixRecords} is an {@link Iterable} of {@link JonixRecord}. Hence, it can be iterated
+ * over with a simple <code>for</code> loop.
+ * The following loop iterates over the ONIX products in all sources, and handles them whether they're of version Onix2
+ * or Onix3.
+ * <pre>
+ * for (JonixRecord record : records) {
+ *     if (record.product instanceof com.tectonica.jonix.onix3.Product) {
+ *         com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
+ *         // TODO: process the Onix3 <Product>
+ *     } else if (record.product instanceof com.tectonica.jonix.onix2.Product) {
+ *         com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
+ *         // TODO: process the Onix2 <Product>
+ *     } else {
+ *         throw new IllegalArgumentException();
+ *     }
+ * }
+ * </pre>
+ * To continue this example of low-level handling (staying very close to the structure of the XML data), the following
+ * is an elaborate version of the code above, pulling out the ISBN and first contributor from all ONIX products:
+ * <pre>
+ * for (JonixRecord record : records) {
+ *     String isbn13;
+ *     String personName = null;
+ *     List<ContributorRoles> roles = null;
+ *     if (record.product instanceof com.tectonica.jonix.onix2.Product) {
+ *         com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
+ *         isbn13 = product2.productIdentifiers()
+ *             .find(ProductIdentifierTypes.ISBN_13)
+ *             .map(pid -> pid.idValue().value)
+ *             .orElse(null);
+ *         List<com.tectonica.jonix.onix2.Contributor> contributors = product2.contributors();
+ *         if (!contributors.isEmpty()) {
+ *             com.tectonica.jonix.onix2.Contributor firstContributor = contributors.get(0);
+ *             roles = firstContributor.contributorRoles().values();
+ *             personName = firstContributor.personName().value;
+ *         }
+ *     } else if (record.product instanceof com.tectonica.jonix.onix3.Product) {
+ *         com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
+ *         isbn13 = product3.productIdentifiers()
+ *             .find(ProductIdentifierTypes.ISBN_13)
+ *             .map(pid -> pid.idValue().value)
+ *             .orElse(null);
+ *         List<com.tectonica.jonix.onix3.Contributor> contributors = product3.descriptiveDetail().contributors();
+ *         if (!contributors.isEmpty()) {
+ *             com.tectonica.jonix.onix3.Contributor firstContributor = contributors.get(0);
+ *             roles = firstContributor.contributorRoles().values();
+ *             personName = firstContributor.personName().value;
+ *         }
+ *     } else {
+ *         throw new IllegalArgumentException();
+ *     }
+ *     System.out
+ *         .println(String.format("Found ISBN %s, first person is %s, his roles: %s", isbn13, personName, roles));
+ * }
+ * </pre>
+ * <h2>Streaming</h2>
+ * It is sometime useful to invoke {@link JonixRecords#stream()} and use the resulting {@link Stream} along with Java 8
+ * Streaming APIs to achieve greater readability. The following examples retrieves the Onix3 Products from their sources
+ * and stores them in an in-memory {@link List}:
+ * <pre>
+ * import com.tectonica.jonix.onix3.Product;
+ * ...
+ * List<Product> products3 = records.stream()
+ *     .filter(rec -> rec.product instanceof Product)
+ *     .map(rec -> (Product) rec.product)
+ *     .collect(Collectors.toList());
+ * </pre>
+ * <h2>Streaming as Unified Record</h2>
+ * One of Jonix's best facilities is the <code>Unification</code> framework, allowing to simplify the treatment in
+ * varied sources (Onix2 mixed with Onix3 files) and eliminate some of the intricacies of XML handling.
+ * The method {@link JonixRecords#streamUnified()} returns a {@link Stream}, but not of the low-level
+ * {@link JonixRecord}s. Instead it streams out {@link BaseRecord}s, that contains typed and unified representation of
+ * the most essential data within typical ONIX source. The following examples shows how simple it is to extract data
+ * from ONIX source without the inherent complications of ONIX diversity:
+ * <pre>
+ * Set<PriceTypes> requestedPrices = JonixUtil.setOf(PriceTypes.RRP_including_tax, PriceTypes.RRP_excluding_tax);
+ * records.streamUnified()
+ *     .map(rec -> rec.product)
+ *     .forEach(product -> {
+ *         String recordReference = product.info.recordReference;
+ *         String isbn13 = product.info.findProductId(ProductIdentifierTypes.ISBN_13);
+ *         String title = product.titles.findTitleText(TitleTypes.Distinctive_title_book);
+ *         List<String> authors = product.contributors.getDisplayNames(ContributorRoles.By_author);
+ *         List<BasePrice> prices = product.supplyDetails.findPrices(requestedPrices);
+ *         List<String> priceLabels = prices.stream()
+ *             .map(bp -> bp.priceAmountAsStr + " " + bp.currencyCode).collect(Collectors.toList());
+ *         System.out.println(String.format("Found product ref. %s, ISBN='%s', Title='%s', authors=%s, prices=%s",
+ *             recordReference, isbn13, title, authors, priceLabels));
+ *     });
+ * </pre>
+ */
 public class JonixRecords implements Iterable<JonixRecord> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JonixRecords.class);
@@ -66,7 +185,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
     private String encoding = "UTF-8";
 
     /**
-     * not to be called directly, used {@link Jonix#source(InputStream)}
+     * not to be called directly, use {@link Jonix#source(InputStream)}
      */
     JonixRecords(InputStream inputStream) {
         this.inputStream = Objects.requireNonNull(inputStream);
@@ -74,7 +193,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
     }
 
     /**
-     * not to be called directly, used {@link Jonix#source(List)}
+     * not to be called directly, use {@link Jonix#source(List)}
      */
     JonixRecords(List<File> files) {
         this.inputStream = null;
@@ -115,7 +234,11 @@ public class JonixRecords implements Iterable<JonixRecord> {
     }
 
     /**
-     * NOTE: can be called more than once to register several event-listeners
+     * Registers a listener for <code>SourceStart</code> event, which occurs when a new source is about to be processed
+     * but only after the ONIX version and the (optional) ONIX header have been parsed. These will be available in the
+     * {@link JonixSource} of the {@link OnSourceEvent}.
+     * <p>
+     * NOTE: this method can be called more than once to register several event-listeners
      */
     public JonixRecords onSourceStart(OnSourceEvent onSourceStart) {
         this.onSourceStartEvents.add(onSourceStart);
@@ -123,7 +246,13 @@ public class JonixRecords implements Iterable<JonixRecord> {
     }
 
     /**
-     * NOTE: can be called more than once to register several event-listeners
+     * Registers a listener for <code>SourceEnd</code> event, which occurs when after all records have been processed
+     * in the recently opened source. In addition to all the information that was available for event-listeners
+     * registered with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also
+     * includes {@link JonixSource#productsProcessedCount()}, with the final count of ONIX products processed from the
+     * source.
+     * <p>
+     * NOTE: this method can be called more than once to register several event-listeners
      */
     public JonixRecords onSourceEnd(OnSourceEvent onSourceEnd) {
         this.onSourceEndEvents.add(onSourceEnd);
@@ -155,7 +284,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
             Boolean failOnInvalidFile = (Boolean) globalConfig.get("jonix.stream.failOnInvalidFile");
             ignoreException = (failOnInvalidFile != null && !failOnInvalidFile);
 
-            nextFiles = files.subList(0, files.size()); // possibly an empty list
+            nextFiles = new ArrayList<>(files); // possibly an empty list
             try {
                 if (inputStream != null) {
                     currentSourceIterator = sourceIterator(new JonixSource(inputStream));
@@ -196,7 +325,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
         private void handleInvalidFileException(Exception e) {
             if (ignoreException) {
-                LOGGER.warn("Error processing " + currentSource.getSourceName(), e);
+                LOGGER.warn("Error processing " + currentSource.sourceName(), e);
             } else {
                 throw new RuntimeException(e);
             }
@@ -240,10 +369,10 @@ public class JonixRecords implements Iterable<JonixRecord> {
             // TODO: allow firstProduct = null, and check that it works on files with no tags under OnixMessage
             boolean hasHeader = firstElement.getNodeName().equalsIgnoreCase("Header");
             if (hasHeader) {
-                currentSource.header = headerFromElement(firstElement, currentSource.onixVersion);
+                currentSource.header = JonixFactory.headerFromElement(firstElement, currentSource.onixVersion);
             }
 
-            // fire onSourceStart events
+            // fire 'onSourceStart' event
             onSourceStartEvents.forEach(e -> e.onSource(currentSource));
 
             if (hasHeader) {
@@ -289,7 +418,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
                     currentSource.productsProcessed++;
                     return new JonixRecord(globalConfig, currentSource,
-                        productFromElement(product, currentSource.onixVersion));
+                        JonixFactory.productFromElement(product, currentSource.onixVersion));
                 }
             };
         }

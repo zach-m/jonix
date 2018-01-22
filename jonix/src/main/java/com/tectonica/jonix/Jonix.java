@@ -32,18 +32,73 @@ import java.util.Objects;
 import static com.tectonica.jonix.tabulate.JonixTSV.toTSV;
 
 public class Jonix {
+    /**
+     * Initializes a {@link JonixRecords} from an {@link InputStream} of an ONIX source. This source is expected to
+     * contain valid XML content, conforming to either of the ONIX standards (the deprecated
+     * <a href="http://www.editeur.org/15/Archived-Previous-Releases/#Release 2.1">Onix2</a> or the current
+     * <a href="http://www.editeur.org/93/Release-3.0-Downloads">Onix3</a>). The resulting {@link JonixRecords} can be
+     * used to iterate over the ONIX records contained in the source.
+     * <p>
+     * NOTE: only one {@link InputStream} is allowed in a {@link JonixRecords}. It is possible, however, to add files
+     * as additional ONIX sources before starting iteration.
+     *
+     * @param inputStream non-null {@link InputStream} with ONIX content
+     * @return a {@link JonixRecords} for iterating over the ONIX content
+     */
     public static JonixRecords source(InputStream inputStream) {
         return new JonixRecords(inputStream);
     }
 
-    public static JonixRecords source(List<File> files) {
-        return new JonixRecords(files);
-    }
-
+    /**
+     * Initializes a {@link JonixRecords} from an ONIX {@link File}. This file is expected to contain valid XML content,
+     * conforming to either of the ONIX standards (the deprecated
+     * <a href="http://www.editeur.org/15/Archived-Previous-Releases/#Release 2.1">Onix2</a> or the current
+     * <a href="http://www.editeur.org/93/Release-3.0-Downloads">Onix3</a>). The resulting {@link JonixRecords} can be
+     * used to iterate over the ONIX records contained in the file.
+     * <p>
+     * If needed, before starting iteration, more files can be added as sources, using the various <code>source()</code>
+     * methods of {@link JonixRecords}.
+     *
+     * @param file non-null {@link File} containing ONIX content
+     * @return a {@link JonixRecords} for iterating over the ONIX content
+     */
     public static JonixRecords source(File file) {
         return new JonixRecords(Collections.singletonList(Objects.requireNonNull(file)));
     }
 
+    /**
+     * Initializes a {@link JonixRecords} from a group of ONIX {@link File}s. Each of these files is expected to contain
+     * valid XML content, conforming to either of the ONIX standards (the deprecated
+     * <a href="http://www.editeur.org/15/Archived-Previous-Releases/#Release 2.1">Onix2</a> or the current
+     * <a href="http://www.editeur.org/93/Release-3.0-Downloads">Onix3</a>). The resulting {@link JonixRecords} can be
+     * used to iterate over the ONIX records contained in these files.
+     * <p>
+     * If needed, before starting iteration, more files can be added as sources, using the various <code>source()</code>
+     * methods of {@link JonixRecords}.
+     *
+     * @param files non-null list of {@link File}s containing ONIX content
+     * @return a {@link JonixRecords} for iterating over the ONIX content
+     */
+    public static JonixRecords source(List<File> files) {
+        return new JonixRecords(files);
+    }
+
+    /**
+     * Initializes a {@link JonixRecords} from a group of ONIX {@link File}s, created by scanning folder. Each of these
+     * files is expected to contain valid XML content, conforming to either of the ONIX standards (the deprecated
+     * <a href="http://www.editeur.org/15/Archived-Previous-Releases/#Release 2.1">Onix2</a> or the current
+     * <a href="http://www.editeur.org/93/Release-3.0-Downloads">Onix3</a>). The resulting {@link JonixRecords} can be
+     * used to iterate over the ONIX records contained in these files.
+     * <p>
+     * If needed, before starting iteration, more files can be added as sources, using the various <code>source()</code>
+     * methods of {@link JonixRecords}.
+     *
+     * @param folder    the parent folder in which to look for ONIX files
+     * @param glob      a <a href="https://docs.oracle.com/javase/tutorial/essential/io/fileOps.html#glob">glob</a>
+     *                  expression for determining which files within the folder is relevant
+     * @param recursive whether or not to scan the sub-folders in the parent folder recursively
+     * @return a {@link JonixRecords} for iterating over the ONIX content
+     */
     public static JonixRecords source(File folder, String glob, boolean recursive) throws IOException {
         return new JonixRecords(GlobScanner.scan(folder, glob, recursive));
     }
@@ -68,8 +123,10 @@ public class Jonix {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either: <ul> <li>any file in or
-     * below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml) <li>the single file INPUT
+     * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:
+     * <ul>
+     * <li>any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)</li>
+     * <li>the single file INPUT</li>
      * </ul>
      *
      * @param args OUTPUT INPUT or OUTPUT [DIRECTORY] [PATTERN]

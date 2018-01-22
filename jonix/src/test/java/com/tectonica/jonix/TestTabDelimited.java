@@ -53,7 +53,7 @@ public class TestTabDelimited {
             .source(new File(samples, "onix-2/BK"), "*.xml", false) // ONIX2 files
             .source(new File(samples, "onix-2/SB/SB_short.xml")) // short-references ONIX2 file
             .source(new File(samples, "onix-2/MY/MY.xml")) // improper ONIX2 file (has some syntactic bugs)
-            .onSourceStart(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.getSourceName()))
+            .onSourceStart(src -> System.err.println("Opening " + src.onixVersion + " file: " + src.sourceName()))
             .onSourceEnd(src -> {
                 totalCount[0] += src.productsProcessedCount();
                 System.err.println(" .. Read " + src.productsProcessedCount() + " records");

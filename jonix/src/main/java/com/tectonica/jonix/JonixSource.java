@@ -28,13 +28,32 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * Represents a source (either a {@link File} or an {@link InputStream}) containing ONIX records.
+ * <p>
+ * While iterating over records with {@link JonixRecords}, this object is accessible via the {@link JonixRecord#source}
+ * passed to the caller with each ONIX record. It can be used to query the details of the current source, such as its
+ * (auto-detected) ONIX version, its ONIX Header (if provided), and of course the file/stream behind it.
+ * <p>
+ * Also, it provides a key-value map, that the caller can use during iteration for applicative purposes.
+ */
 public class JonixSource {
     // final and mandatory fields, representing the essence of the source
+
+    /**
+     * Mandatory, non-null member, represented by this source (even it the user passed a {@link File} object)
+     */
     public final InputStream stream;
+
+    /**
+     * The {@link File} represented by this source (possibly <code>null</code> if {@link InputStream} was used directly)
+     */
     public final File file;
 
-    // optional information, set after construction during iteration
+    // set externally AFTER construction
     OnixVersion onixVersion;
+
+    // set externally AFTER construction (if available)
     OnixHeader header;
 
     /**
@@ -43,7 +62,7 @@ public class JonixSource {
      */
     private Map<String, Object> localConfig;
 
-    // internal, packaged-protected variable, managed by the during iteration over the source
+    // internal, packaged-protected variable, managed during iteration over the source
     // TODO: this could be problematic in presence of concurrency and/or multiple-iterators. Currently not an issue
     // TODO: as this is a package-protected class, but Rethink a little.
     int productsProcessed = 0;
@@ -62,7 +81,7 @@ public class JonixSource {
         return (file == null);
     }
 
-    public String getSourceName() {
+    public String sourceName() {
         return file != null ? file.getAbsolutePath() : stream.toString();
     }
 
@@ -70,8 +89,8 @@ public class JonixSource {
         return Optional.ofNullable(header);
     }
 
-    public Optional<OnixVersion> onixVersion() {
-        return Optional.ofNullable(onixVersion);
+    public OnixVersion onixVersion() {
+        return onixVersion;
     }
 
     public int productsProcessedCount() {

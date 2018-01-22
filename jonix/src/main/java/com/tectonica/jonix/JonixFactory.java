@@ -21,10 +21,14 @@ package com.tectonica.jonix;
 
 import org.w3c.dom.Element;
 
-public class JonixFactory {
+/**
+ * Internal class for transforming an XML {@link Element} into a Jonix object. In order to do this, it must know what
+ * {@link OnixVersion} the source conforms to.
+ */
+class JonixFactory {
     // TODO: these type of factory services should be externalized as SPI some day..
 
-    public static OnixProduct productFromElement(Element productElement, OnixVersion onixVersion) {
+    static OnixProduct productFromElement(Element productElement, OnixVersion onixVersion) {
         switch (onixVersion) {
             case ONIX2:
                 return new com.tectonica.jonix.onix2.Product(productElement);
@@ -35,7 +39,7 @@ public class JonixFactory {
         }
     }
 
-    public static OnixHeader headerFromElement(Element headerElement, OnixVersion onixVersion) {
+    static OnixHeader headerFromElement(Element headerElement, OnixVersion onixVersion) {
         switch (onixVersion) {
             case ONIX2:
                 return new com.tectonica.jonix.onix2.Header(headerElement);

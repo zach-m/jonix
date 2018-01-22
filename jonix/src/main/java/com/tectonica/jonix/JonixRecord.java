@@ -22,11 +22,15 @@ package com.tectonica.jonix;
 import java.util.Map;
 
 public class JonixRecord {
-    public final Map<String, Object> globalConfig;
+    private final Map<String, Object> globalConfig;
+
     public final JonixSource source;
     public final OnixProduct product;
 
-    protected JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product) {
+    JonixRecord(Map<String, Object> globalConfig, JonixSource source, OnixProduct product) {
+        assert globalConfig != null;
+        assert source != null;
+        assert product != null;
         this.globalConfig = globalConfig;
         this.source = source;
         this.product = product;
