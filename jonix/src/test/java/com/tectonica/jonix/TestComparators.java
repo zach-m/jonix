@@ -46,13 +46,6 @@ public class TestComparators {
         Assert.assertEquals(compare(a_b, a_c), -1);
     }
 
-    private int compare(String[] a, String[] b) {
-        int c1 = Comparators.compareArray(a, b);
-        int c2 = Comparators.compareArray(b, a);
-        Assert.assertEquals(c1, -c2);
-        return c1;
-    }
-
     @Test
     public void compareList() {
         List<String> a = Arrays.asList("a");
@@ -69,6 +62,13 @@ public class TestComparators {
         Assert.assertEquals(compare(null, a), -1);
         Assert.assertEquals(compare(a_b, ab), -1);
         Assert.assertEquals(compare(a_b, a_c), -1);
+    }
+
+    private int compare(String[] a, String[] b) {
+        int c1 = Comparators.compareArray(a, b);
+        int c2 = Comparators.compareArray(b, a);
+        Assert.assertEquals(c1, -c2);
+        return c1;
     }
 
     private int compare(List<String> a, List<String> b) {

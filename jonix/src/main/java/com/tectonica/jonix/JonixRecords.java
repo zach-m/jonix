@@ -84,10 +84,10 @@ import java.util.stream.StreamSupport;
  * for (JonixRecord record : records) {
  *     if (record.product instanceof com.tectonica.jonix.onix3.Product) {
  *         com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
- *         // TODO: process the Onix3 <Product>
+ *         // TODO: process the Onix3 &lt;Product>
  *     } else if (record.product instanceof com.tectonica.jonix.onix2.Product) {
  *         com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
- *         // TODO: process the Onix2 <Product>
+ *         // TODO: process the Onix2 &lt;Product>
  *     } else {
  *         throw new IllegalArgumentException();
  *     }
@@ -99,14 +99,14 @@ import java.util.stream.StreamSupport;
  * for (JonixRecord record : records) {
  *     String isbn13;
  *     String personName = null;
- *     List<ContributorRoles> roles = null;
+ *     List&lt;ContributorRoles> roles = null;
  *     if (record.product instanceof com.tectonica.jonix.onix2.Product) {
  *         com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
  *         isbn13 = product2.productIdentifiers()
  *             .find(ProductIdentifierTypes.ISBN_13)
  *             .map(pid -> pid.idValue().value)
  *             .orElse(null);
- *         List<com.tectonica.jonix.onix2.Contributor> contributors = product2.contributors();
+ *         List&lt;com.tectonica.jonix.onix2.Contributor> contributors = product2.contributors();
  *         if (!contributors.isEmpty()) {
  *             com.tectonica.jonix.onix2.Contributor firstContributor = contributors.get(0);
  *             roles = firstContributor.contributorRoles().values();
@@ -118,7 +118,7 @@ import java.util.stream.StreamSupport;
  *             .find(ProductIdentifierTypes.ISBN_13)
  *             .map(pid -> pid.idValue().value)
  *             .orElse(null);
- *         List<com.tectonica.jonix.onix3.Contributor> contributors = product3.descriptiveDetail().contributors();
+ *         List&lt;com.tectonica.jonix.onix3.Contributor> contributors = product3.descriptiveDetail().contributors();
  *         if (!contributors.isEmpty()) {
  *             com.tectonica.jonix.onix3.Contributor firstContributor = contributors.get(0);
  *             roles = firstContributor.contributorRoles().values();
@@ -138,7 +138,7 @@ import java.util.stream.StreamSupport;
  * <pre>
  * import com.tectonica.jonix.onix3.Product;
  * ...
- * List<Product> products3 = records.stream()
+ * List&lt;Product> products3 = records.stream()
  *     .filter(rec -> rec.product instanceof Product)
  *     .map(rec -> (Product) rec.product)
  *     .collect(Collectors.toList());
@@ -151,16 +151,16 @@ import java.util.stream.StreamSupport;
  * the most essential data within typical ONIX source. The following examples shows how simple it is to extract data
  * from ONIX source without the inherent complications of ONIX diversity:
  * <pre>
- * Set<PriceTypes> requestedPrices = JonixUtil.setOf(PriceTypes.RRP_including_tax, PriceTypes.RRP_excluding_tax);
+ * Set&lt;PriceTypes> requestedPrices = JonixUtil.setOf(PriceTypes.RRP_including_tax, PriceTypes.RRP_excluding_tax);
  * records.streamUnified()
  *     .map(rec -> rec.product)
  *     .forEach(product -> {
  *         String recordReference = product.info.recordReference;
  *         String isbn13 = product.info.findProductId(ProductIdentifierTypes.ISBN_13);
  *         String title = product.titles.findTitleText(TitleTypes.Distinctive_title_book);
- *         List<String> authors = product.contributors.getDisplayNames(ContributorRoles.By_author);
- *         List<BasePrice> prices = product.supplyDetails.findPrices(requestedPrices);
- *         List<String> priceLabels = prices.stream()
+ *         List&lt;String> authors = product.contributors.getDisplayNames(ContributorRoles.By_author);
+ *         List&lt;BasePrice> prices = product.supplyDetails.findPrices(requestedPrices);
+ *         List&lt;String> priceLabels = prices.stream()
  *             .map(bp -> bp.priceAmountAsStr + " " + bp.currencyCode).collect(Collectors.toList());
  *         System.out.println(String.format("Found product ref. %s, ISBN='%s', Title='%s', authors=%s, prices=%s",
  *             recordReference, isbn13, title, authors, priceLabels));
