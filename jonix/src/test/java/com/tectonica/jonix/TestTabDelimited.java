@@ -28,7 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import static com.tectonica.jonix.tabulate.JonixTSV.toTSV;
+import static com.tectonica.jonix.tabulate.JonixDelimitedWriter.toDelimitedFile;
 
 public class TestTabDelimited {
     @Test
@@ -60,11 +60,11 @@ public class TestTabDelimited {
             })
             .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
 
-        // start streaming the records, from their files into a single tab-delimited file
-        File targetFile = new File("target", "Catalog.tsv");
+        // start streaming the records, from their files into a single comma-delimited file
+        File targetFile = new File("target", "Catalog.csv");
         totalCount[2] = records.streamUnified()
             .peek(r -> totalCount[1]++)
-            .collect(toTSV(targetFile, BaseTabulation.ALL));
+            .collect(toDelimitedFile(targetFile, ',', BaseTabulation.ALL));
 
         System.err.println("Written " + Arrays.toString(totalCount) + " records to " + targetFile.getAbsolutePath());
 

@@ -29,7 +29,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-import static com.tectonica.jonix.tabulate.JonixTSV.toTSV;
+import static com.tectonica.jonix.tabulate.JonixDelimitedWriter.toDelimitedFile;
 
 public class Jonix {
     /**
@@ -110,7 +110,7 @@ public class Jonix {
         p("        java -jar jonix.jar OUTPUT [DIRECTORY] [PATTERN]");
         p("or:     java -jar jonix.jar OUTPUT INPUT");
         p("");
-        p("Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:");
+        p("Creates a comma-delimited file named OUTPUT, listing all the ONIX records found in either:");
         p("- any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)");
         p("- the single file INPUT");
         p("");
@@ -123,7 +123,7 @@ public class Jonix {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Creates a tab-delimited file named OUTPUT, listing all the ONIX records found in either:
+     * Creates a comma-delimited file named OUTPUT, listing all the ONIX records found in either:
      * <ul>
      * <li>any file in or below DIRECTORY (default is current) whose name matches PATTERN (default is *.xml)</li>
      * <li>the single file INPUT</li>
@@ -156,7 +156,7 @@ public class Jonix {
             }
 
             File outputFile = new File(outputFileName);
-            int linesWritten = jonix.streamUnified().collect(toTSV(outputFile, BaseTabulation.ALL));
+            int linesWritten = jonix.streamUnified().collect(toDelimitedFile(outputFile, ',', BaseTabulation.ALL));
 
             System.out.println(String.format("Written %,d records to %s", linesWritten, outputFile.getAbsolutePath()));
         } catch (Exception e) {

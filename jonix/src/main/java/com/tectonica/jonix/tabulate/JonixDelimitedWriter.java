@@ -19,9 +19,11 @@
 
 package com.tectonica.jonix.tabulate;
 
+import repackaged.com.csvreader.CsvWriter;
+
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Collections;
 import java.util.List;
@@ -31,30 +33,38 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Class that facilitates writing a tab-delimited file where each line contains one ONIX product.
+ * Class that facilitates writing a char-delimited file where each line contains one ONIX product.
  * The key for extracting flat list of values from an (tree-shaped) ONIX product lies in the {@link Tabulation} object
  * which must be provided to this class. The {@link Tabulation} object also has all the header-related information.
  * <p>
  * Typically, this class is not accessed directly (unless for subclassing). Refer to the helper functions,
- * {@link #writeTSV(Iterable, File, Tabulation)} and {@link #writeTSV(Stream, File, Tabulation)}, or alternatively,
- * if using a stream of ONIX products, consider the {@link Collector} returned by {@link #toTSV(File, Tabulation)}.
+ * {@link #writeFile(File, char, Tabulation, Iterable)} and {@link #writeFile(File, char, Tabulation, Stream)}, or
+ * alternatively, if using a stream of ONIX products, consider the {@link Collector} returned by
+ * {@link #toDelimitedFile(File, char, Tabulation)}.
  *
  * @param <P> the type of the ONIX products to be written
  */
-public class JonixTSV<P> implements AutoCloseable {
+public class JonixDelimitedWriter<P> implements AutoCloseable {
 
-    private final PrintWriter out;
     private final Tabulation<P> tabulation;
-    private int linesWritten = 0;
+    protected CsvWriter out;
+    protected int linesWritten = 0;
 
-    public JonixTSV(File targetFile, Tabulation<P> tabulation) {
+    public JonixDelimitedWriter(File targetFile, Tabulation<P> tabulation) {
+        this(targetFile, ',', tabulation);
+    }
+
+    public JonixDelimitedWriter(File targetFile, char delimiter, Tabulation<P> tabulation) {
+        this.tabulation = tabulation;
+        initializeWriter(targetFile, delimiter);
+    }
+
+    protected void initializeWriter(File targetFile, char delimiter) {
         try {
-            this.out = new PrintWriter(Files.newBufferedWriter(targetFile.toPath()));
-            this.tabulation = tabulation;
+            this.out = new CsvWriter(Files.newBufferedWriter(targetFile.toPath(), StandardCharsets.UTF_8), delimiter);
             writeHeader();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -62,17 +72,23 @@ public class JonixTSV<P> implements AutoCloseable {
     }
 
     protected void writeHeader() {
-        out.println(tsvLineOf(tabulation.header()));
+        writeRow(tabulation.header());
     }
 
-    public void writeProduct(P product) {
-        out.println(tsvLineOf(tabulation.row(product)));
+    protected void writeProduct(P product) {
+        writeRow(tabulation.row(product));
         ++linesWritten;
     }
 
-    protected String tsvLineOf(List<String> line) {
-        return line.stream().map(s -> (s == null) ? "" : s.replaceAll("[\\t\\n\\r]", " "))
-            .collect(Collectors.joining("\t"));
+    protected void writeRow(List<String> row) {
+        try {
+            for (String cell : row) {
+                out.write(cell, true);
+            }
+            out.endRecord();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -89,34 +105,36 @@ public class JonixTSV<P> implements AutoCloseable {
     /**
      * Returns a {@link Collector} for writing a stream of ONIX products into a tab-separated file (with header)
      *
-     * @param targetFile the destination (tab-delimited) file
+     * @param targetFile the destination (char-delimited) file
+     * @param delimiter  the character to use as a delimiter in the output file, typically ','
      * @param tabulation a {@link Tabulation} object for to the type of the ONIX products contained in the stream.
      *                   this object has all the information needed to extract and flatten data from each product.
      * @param <P>        the type of the ONIX products contained in the stream
      * @return a {@link Collector} to be used in conjunction with {@link Stream#collect(Collector)}
      */
-    public static <P> Collector<P, ?, Integer> toTSV(File targetFile, Tabulation<P> tabulation) {
-        return new Collector<P, JonixTSV<P>, Integer>() {
+    public static <P> Collector<P, ?, Integer> toDelimitedFile(File targetFile, char delimiter,
+                                                               Tabulation<P> tabulation) {
+        return new Collector<P, JonixDelimitedWriter<P>, Integer>() {
             @Override
-            public Supplier<JonixTSV<P>> supplier() {
-                return () -> new JonixTSV<>(targetFile, tabulation);
+            public Supplier<JonixDelimitedWriter<P>> supplier() {
+                return () -> new JonixDelimitedWriter<>(targetFile, delimiter, tabulation);
             }
 
             @Override
-            public BiConsumer<JonixTSV<P>, P> accumulator() {
-                return JonixTSV::writeProduct;
+            public BiConsumer<JonixDelimitedWriter<P>, P> accumulator() {
+                return JonixDelimitedWriter::writeProduct;
             }
 
             @Override
-            public BinaryOperator<JonixTSV<P>> combiner() {
+            public BinaryOperator<JonixDelimitedWriter<P>> combiner() {
                 return null;
             }
 
             @Override
-            public Function<JonixTSV<P>, Integer> finisher() {
-                return (tsv) -> {
-                    tsv.close();
-                    return tsv.linesWritten;
+            public Function<JonixDelimitedWriter<P>, Integer> finisher() {
+                return (writer) -> {
+                    writer.close();
+                    return writer.linesWritten;
                 };
             }
 
@@ -128,31 +146,34 @@ public class JonixTSV<P> implements AutoCloseable {
     }
 
     /**
-     * Convenience method for writing a {@link Stream} of ONIX products into a tab-delimited file
+     * Convenience method for writing a {@link Stream} of ONIX products into a char-delimited file
      *
-     * @param productsStream {@link Stream} of ONIX products
-     * @param targetFile     the destination (tab-delimited) file
+     * @param targetFile     the destination (char-delimited) file
+     * @param delimiter      the character to use as a delimiter in the output file, typically ','
      * @param tabulation     a {@link Tabulation} object for to the type of the ONIX products contained in the stream.
      *                       this object has all the information needed to extract and flatten data from each product.
      * @param <P>            the type of the ONIX products contained in the iterable
+     * @param productsStream {@link Stream} of ONIX products
      */
-    public static <P> void writeTSV(Stream<P> productsStream, File targetFile, Tabulation<P> tabulation) {
-        try (JonixTSV<P> writer = new JonixTSV<>(targetFile, tabulation)) {
+    public static <P> void writeFile(File targetFile, char delimiter, Tabulation<P> tabulation,
+                                     Stream<P> productsStream) {
+        try (JonixDelimitedWriter<P> writer = new JonixDelimitedWriter<>(targetFile, delimiter, tabulation)) {
             productsStream.forEach(writer::writeProduct);
         }
     }
 
     /**
-     * Convenience method for writing an {@link Iterable} of ONIX products into a tab-delimited file
+     * Convenience method for writing an {@link Iterable} of ONIX products into a char-delimited file
      *
-     * @param products   an {@link Iterable} of ONIX products
-     * @param targetFile the destination (tab-delimited) file
+     * @param targetFile the destination (char-delimited) file
+     * @param delimiter  the character to use as a delimiter in the output file, typically ','
      * @param tabulation a {@link Tabulation} object for to the type of the ONIX products contained in the iterable.
      *                   this object has all the information needed to extract and flatten data from each product.
      * @param <P>        the type of the ONIX products contained in the stream
+     * @param products   an {@link Iterable} of ONIX products
      */
-    public static <P> void writeTSV(Iterable<P> products, File targetFile, Tabulation<P> tabulation) {
-        try (JonixTSV<P> writer = new JonixTSV<>(targetFile, tabulation)) {
+    public static <P> void writeFile(File targetFile, char delimiter, Tabulation<P> tabulation, Iterable<P> products) {
+        try (JonixDelimitedWriter<P> writer = new JonixDelimitedWriter<>(targetFile, delimiter, tabulation)) {
             products.forEach(writer::writeProduct);
         }
     }
