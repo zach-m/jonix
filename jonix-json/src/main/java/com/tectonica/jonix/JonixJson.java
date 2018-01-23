@@ -47,7 +47,7 @@ public class JonixJson {
      * are explicitly invoked, and the (private) fields are accessed directly. So some advanced configuration of the
      * <code>Jackson</code> serializer is needed, which is exactly what this API is all about.
      *
-     * @param onixProduct the ONIX product to serialize to JSON
+     * @param onixProduct the ONIX Product to serialize to JSON
      * @return JSON representation of the product
      */
     public static String productToJson(OnixProduct onixProduct) {

@@ -24,27 +24,27 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * An interface that represents a group of logical field within an ONIX product (e.g. ISBN + Price, etc.), including
+ * An interface that represents a group of logical field within an ONIX Product (e.g. ISBN + Price, etc.), including
  * their headers (for output purposes) and their <i>tabulation</i> functions (in {@link FieldTabulator#rowSupplier()}).
  * The amount of values returned by {@link #header()} determines the length of the row passed to
  * {@link FieldRowSupplier#setRowFromProduct(List, Object)}.
  */
 public interface FieldTabulator<P> {
     /**
-     * returns a column header for each value that will be extracted from the ONIX product by {@link #rowSupplier()}.
+     * returns a column header for each value that will be extracted from the ONIX Product by {@link #rowSupplier()}.
      * the length of the returned list determines the length of the (empty) row passed to
      * {@link FieldRowSupplier#setRowFromProduct(List, Object)}.
      */
     List<String> header();
 
     /**
-     * returns a function to be executed in order to extract values from an ONIX product. see {@link FieldRowSupplier}
+     * returns a function to be executed in order to extract values from an ONIX Product. see {@link FieldRowSupplier}
      * for more information.
      */
     FieldRowSupplier<P> rowSupplier();
 
     /**
-     * Canonical implementation for tabulating the field from an ONIX product.
+     * Canonical implementation for tabulating the field from an ONIX Product.
      * It is not recommended to use this implementation when extracting many fields from a single ONIX record.
      * See {@link Tabulation#row(Object)} for "batch-type" tabulation.
      */

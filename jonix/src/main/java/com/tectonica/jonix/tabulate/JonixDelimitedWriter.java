@@ -36,16 +36,16 @@ import java.util.stream.Collector;
 import java.util.stream.Stream;
 
 /**
- * Class that facilitates writing a char-delimited file where each line contains one ONIX product.
- * The key for extracting flat list of values from an (tree-shaped) ONIX product lies in the {@link Tabulation} object
+ * Class that facilitates writing a char-delimited file where each line contains one ONIX Product.
+ * The key for extracting flat list of values from an (tree-shaped) ONIX Product lies in the {@link Tabulation} object
  * which must be provided to this class. The {@link Tabulation} object also has all the header-related information.
  * <p>
  * Typically, this class is not accessed directly (unless for subclassing). Refer to the helper functions,
  * {@link #writeFile(File, char, Tabulation, Iterable)} and {@link #writeFile(File, char, Tabulation, Stream)}, or
- * alternatively, if using a stream of ONIX products, consider the {@link Collector} returned by
+ * alternatively, if using a stream of ONIX Products, consider the {@link Collector} returned by
  * {@link #toDelimitedFile(File, char, Tabulation)}.
  *
- * @param <P> the type of the ONIX products to be written
+ * @param <P> the type of the ONIX Products to be written
  */
 public class JonixDelimitedWriter<P> implements AutoCloseable {
 
@@ -103,13 +103,13 @@ public class JonixDelimitedWriter<P> implements AutoCloseable {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Returns a {@link Collector} for writing a stream of ONIX products into a tab-separated file (with header)
+     * Returns a {@link Collector} for writing a stream of ONIX Products into a tab-separated file (with header)
      *
      * @param targetFile the destination (char-delimited) file
      * @param delimiter  the character to use as a delimiter in the output file, typically ','
-     * @param tabulation a {@link Tabulation} object for to the type of the ONIX products contained in the stream.
+     * @param tabulation a {@link Tabulation} object for to the type of the ONIX Products contained in the stream.
      *                   this object has all the information needed to extract and flatten data from each product.
-     * @param <P>        the type of the ONIX products contained in the stream
+     * @param <P>        the type of the ONIX Products contained in the stream
      * @return a {@link Collector} to be used in conjunction with {@link Stream#collect(Collector)}
      */
     public static <P> Collector<P, ?, Integer> toDelimitedFile(File targetFile, char delimiter,
@@ -146,14 +146,14 @@ public class JonixDelimitedWriter<P> implements AutoCloseable {
     }
 
     /**
-     * Convenience method for writing a {@link Stream} of ONIX products into a char-delimited file
+     * Convenience method for writing a {@link Stream} of ONIX Products into a char-delimited file
      *
      * @param targetFile     the destination (char-delimited) file
      * @param delimiter      the character to use as a delimiter in the output file, typically ','
-     * @param tabulation     a {@link Tabulation} object for to the type of the ONIX products contained in the stream.
+     * @param tabulation     a {@link Tabulation} object for to the type of the ONIX Products contained in the stream.
      *                       this object has all the information needed to extract and flatten data from each product.
-     * @param <P>            the type of the ONIX products contained in the iterable
-     * @param productsStream {@link Stream} of ONIX products
+     * @param <P>            the type of the ONIX Products contained in the iterable
+     * @param productsStream {@link Stream} of ONIX Products
      */
     public static <P> void writeFile(File targetFile, char delimiter, Tabulation<P> tabulation,
                                      Stream<P> productsStream) {
@@ -163,14 +163,14 @@ public class JonixDelimitedWriter<P> implements AutoCloseable {
     }
 
     /**
-     * Convenience method for writing an {@link Iterable} of ONIX products into a char-delimited file
+     * Convenience method for writing an {@link Iterable} of ONIX Products into a char-delimited file
      *
      * @param targetFile the destination (char-delimited) file
      * @param delimiter  the character to use as a delimiter in the output file, typically ','
-     * @param tabulation a {@link Tabulation} object for to the type of the ONIX products contained in the iterable.
+     * @param tabulation a {@link Tabulation} object for to the type of the ONIX Products contained in the iterable.
      *                   this object has all the information needed to extract and flatten data from each product.
-     * @param <P>        the type of the ONIX products contained in the stream
-     * @param products   an {@link Iterable} of ONIX products
+     * @param <P>        the type of the ONIX Products contained in the stream
+     * @param products   an {@link Iterable} of ONIX Products
      */
     public static <P> void writeFile(File targetFile, char delimiter, Tabulation<P> tabulation, Iterable<P> products) {
         try (JonixDelimitedWriter<P> writer = new JonixDelimitedWriter<>(targetFile, delimiter, tabulation)) {

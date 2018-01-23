@@ -25,7 +25,7 @@ import java.util.List;
 
 /**
  * A {@link List} containing the multiple instances of ONIX2 &lt;Series&gt; / ONIX3 &lt;Collection&gt; that may exist in
- * an ONIX product
+ * an ONIX Product
  *
  * @author Zach Melamed
  */

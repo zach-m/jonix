@@ -22,7 +22,7 @@ package com.tectonica.jonix.tabulate;
 import java.util.List;
 
 /**
- * an interface that corresponds a single logical field within an ONIX product (e.g. ISBN, Price, etc.), and implements
+ * an interface that corresponds a single logical field within an ONIX Product (e.g. ISBN, Price, etc.), and implements
  * a <i>tabulation</i> of that field - i.e. a string-array representation (as opposed to a tree-structure of
  * varied-type values) capturing the values (e.g. PriceType, PriceAmount and CurrencyCode) of a <b>single</b> occurrence
  * of the field represented. In case there are several occurrences, they're accounted for at a higher level abstractions
@@ -31,11 +31,11 @@ import java.util.List;
 @FunctionalInterface
 public interface FieldRowSupplier<P> {
     /**
-     * takes an ONIX product object and flattens it into a list of values
+     * takes an ONIX Product object and flattens it into a list of values
      *
      * @param row     null-initialized <code>List</code> of <code>String</code>s, which is expected to be fully
      *                populated by this function. The list's size gives a clue as to how much information is expected.
-     * @param product the ONIX product object from which the values should be extracted.
+     * @param product the ONIX Product object from which the values should be extracted.
      * @return <code>true</code> if the field was extracted successfully, <code>false</code> otherwise
      */
     boolean setRowFromProduct(List<String> row, P product);

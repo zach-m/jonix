@@ -32,7 +32,7 @@ import java.util.Objects;
  * values of the column names (e.g. "Author" times 3 will become "Author1", "Author2", "Author3")
  * Users may subclass this class for similar purposes.
  *
- * @param <P> the class representing the ONIX product record
+ * @param <P> the class representing the ONIX Product record
  */
 public class FieldTabulatorFactory<P> {
 
@@ -72,11 +72,11 @@ public class FieldTabulatorFactory<P> {
 
     /**
      * User-facing factory for creating a {@link FieldTabulator} given the field's column names and tabulation function.
-     * This class is relevant for non-repeatable fields, i.e. those that have only one occurrence per ONIX product (e.g.
+     * This class is relevant for non-repeatable fields, i.e. those that have only one occurrence per ONIX Product (e.g.
      * ISBN, PublicationDate, etc.)
      * The factory function, {@link #tabulator()}, is the only API of this class.
      *
-     * @param <P> the class representing the ONIX product record
+     * @param <P> the class representing the ONIX Product record
      */
     public static class Singular<P> extends FieldTabulatorFactory<P> {
         public Singular(String column, FieldRowSupplier<P> rowSupplier) {
@@ -95,10 +95,10 @@ public class FieldTabulatorFactory<P> {
     /**
      * User-facing factory for creating a {@link FieldTabulator} given the field's column names, tabulation function,
      * and the amount of required occurrences. This class is relevant for repeatable fields, i.e. those that may have
-     * more than one occurrence per ONIX product (e.g. Author, Price, etc.)
+     * more than one occurrence per ONIX Product (e.g. Author, Price, etc.)
      * The factory function, {@link #tabulator(int)}, is the only API of this class.
      *
-     * @param <P> the class representing the ONIX product record
+     * @param <P> the class representing the ONIX Product record
      */
     public static class Plural<P> extends FieldTabulatorFactory<P> {
         public Plural(String column, FieldRowSupplier<P> rowSupplier) {

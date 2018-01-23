@@ -20,8 +20,8 @@
 package com.tectonica.jonix;
 
 /**
- * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite (i.e.
- * a container for ONIX elements and possibly other ONIX composites)
+ * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite (i.e.
+ * a container for ONIX Elements and possibly other ONIX Composites)
  */
 public interface OnixComposite extends OnixTag {
     /**
@@ -31,31 +31,31 @@ public interface OnixComposite extends OnixTag {
     void _initialize();
 
     /**
-     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
+     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
      * that contains other composites
      */
     interface OnixSuperComposite extends OnixComposite {
     }
 
     /**
-     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
-     * that contains only ONIX elements (i.e. no nested composites). This composite is unique to specific version of
+     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * that contains only ONIX Elements (i.e. no nested composites). This composite is unique to specific version of
      * ONIX, and isn't common to all.
      */
     interface OnixDataCompositeUncommon extends OnixComposite {
     }
 
     /**
-     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
-     * that contains only ONIX elements (i.e. no nested composites)
+     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * that contains only ONIX Elements (i.e. no nested composites)
      */
     interface OnixDataComposite<V extends JonixStruct> extends OnixComposite {
         V asStruct();
     }
 
     /**
-     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
-     * that contains only ONIX elements (i.e. no nested composites), one of which is the key of the composite (i.e. a
+     * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Composite
+     * that contains only ONIX Elements (i.e. no nested composites), one of which is the key of the composite (i.e. a
      * mandatory, unique, enumerated code-list, by which a composite can't be looked up)
      */
     interface OnixDataCompositeWithKey<V extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>

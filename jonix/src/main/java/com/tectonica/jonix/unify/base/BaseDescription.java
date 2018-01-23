@@ -32,7 +32,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Bundles together some descriptive information included in an ONIX product
+ * Bundles together some descriptive information included in an ONIX Product
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..
  *

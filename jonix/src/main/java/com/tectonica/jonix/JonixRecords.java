@@ -78,7 +78,7 @@ import java.util.stream.StreamSupport;
  * <h2>Iteration</h2>
  * First and foremost, {@link JonixRecords} is an {@link Iterable} of {@link JonixRecord}. Hence, it can be iterated
  * over with a simple <code>for</code> loop.
- * The following loop iterates over the ONIX products in all sources, and handles them whether they're of version Onix2
+ * The following loop iterates over the ONIX Products in all sources, and handles them whether they're of version Onix2
  * or Onix3.
  * <pre>
  * for (JonixRecord record : records) {
@@ -94,7 +94,7 @@ import java.util.stream.StreamSupport;
  * }
  * </pre>
  * To continue this example of low-level handling (staying very close to the structure of the XML data), the following
- * is an elaborate version of the code above, pulling out the ISBN and first contributor from all ONIX products:
+ * is an elaborate version of the code above, pulling out the ISBN and first contributor from all ONIX Products:
  * <pre>
  * for (JonixRecord record : records) {
  *     String isbn13;
@@ -235,7 +235,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
 
     /**
      * Registers a listener for <code>SourceStart</code> event, which occurs when a new source is about to be processed
-     * but only after the ONIX version and the (optional) ONIX header have been parsed. These will be available in the
+     * but only after the ONIX version and the (optional) ONIX Header have been parsed. These will be available in the
      * {@link JonixSource} of the {@link OnSourceEvent}.
      * <p>
      * NOTE: this method can be called more than once to register several event-listeners
@@ -249,7 +249,7 @@ public class JonixRecords implements Iterable<JonixRecord> {
      * Registers a listener for <code>SourceEnd</code> event, which occurs when after all records have been processed
      * in the recently opened source. In addition to all the information that was available for event-listeners
      * registered with {@link #onSourceStart(OnSourceEvent)}, the {@link JonixSource} when this event is fired also
-     * includes {@link JonixSource#productsProcessedCount()}, with the final count of ONIX products processed from the
+     * includes {@link JonixSource#productsProcessedCount()}, with the final count of ONIX Products processed from the
      * source.
      * <p>
      * NOTE: this method can be called more than once to register several event-listeners

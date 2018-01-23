@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A {@link List} containing the multiple instances of ONIX &lt;Subject&gt; that may exist in an ONIX product
+ * A {@link List} containing the multiple instances of ONIX &lt;Subject&gt; that may exist in an ONIX Product
  *
  * @author Zach Melamed
  */

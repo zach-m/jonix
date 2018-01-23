@@ -29,7 +29,7 @@ import java.util.HashSet;
 import java.util.List;
 
 /**
- * A {@link List} containing the multiple instances of ONIX &lt;Contributor&gt; that may exist in an ONIX product or an
+ * A {@link List} containing the multiple instances of ONIX &lt;Contributor&gt; that may exist in an ONIX Product or an
  * ONIX collection (series)
  *
  * @author Zach Melamed

@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * A {@link List} containing the multiple instances of ONIX &lt;SupplyDetail&gt; that may exist in an ONIX product
+ * A {@link List} containing the multiple instances of ONIX &lt;SupplyDetail&gt; that may exist in an ONIX Product
  *
  * @author Zach Melamed
  */

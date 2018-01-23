@@ -20,7 +20,7 @@
 package com.tectonica.jonix;
 
 /**
- * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, this interface completes
+ * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, this interface completes
  * {@link JonixStruct} by representing a <code>Struct</code> that contains a <b>key</b> (i.e. mandatory, unique, and
  * searchable-by field).
  * <p>
@@ -31,7 +31,7 @@ package com.tectonica.jonix;
  * <p>
  * To find a <code>Struct</code> by its key, use any of the finder methods in {@link ListOfOnixDataCompositeWithKey}.
  * <p>
- * For example, each ONIX product may have several Product Identifiers (ISBN-10, ISBN-13, URN, etc.). To find a certain
+ * For example, each ONIX Product may have several Product Identifiers (ISBN-10, ISBN-13, URN, etc.). To find a certain
  * identifier, say ISBN-13, you can look up its struct {@link com.tectonica.jonix.struct.JonixProductIdentifier}
  * by its key (of type {@link com.tectonica.jonix.codelist.ProductIdentifierTypes}), and once having the struct, use it
  * to get the requested value (the product identifier, <code>idValue</code>):

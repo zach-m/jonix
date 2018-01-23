@@ -22,7 +22,7 @@ package com.tectonica.jonix;
 import java.util.Optional;
 
 /**
- * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX element (i.e. an
+ * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Element (i.e. an
  * element that contains a single value field and possibly some attributes, but nothing else)
  */
 public interface OnixElement<V> extends OnixTag {

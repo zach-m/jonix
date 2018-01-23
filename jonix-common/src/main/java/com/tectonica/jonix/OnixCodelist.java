@@ -20,7 +20,7 @@
 package com.tectonica.jonix;
 
 /**
- * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX Codelist
+ * Fundamental interface in {@link com.tectonica.jonix Jonix object model}, representing an ONIX Codelist
  */
 public interface OnixCodelist {
     String getCode();
