@@ -24,10 +24,25 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * An interface that represents a group of logical field within an ONIX Product (e.g. ISBN + Price, etc.), including
- * their headers (for output purposes) and their <i>tabulation</i> functions (in {@link FieldTabulator#rowSupplier()}).
- * The amount of values returned by {@link #header()} determines the length of the row passed to
- * {@link FieldRowSupplier#setRowFromProduct(List, Object)}.
+ * An interface for representing a logical field within an ONIX Product.
+ * <p>
+ * Such logical field may consist of a single column (e.g. ISBN field) or a set of connected columns (e.g. Price field,
+ * which bundles together 3 columns: amount, currency and type).
+ * <p>
+ * In order to represent a field, an implementing class needs to return two things:
+ * <ul>
+ * <li>a {@link #header()}, which is a list of Strings, where each String gives the i-th column its display-name</li>
+ * <li>a {@link #rowSupplier()}, which is function (i.e. {@link FunctionalInterface}), that, given an ONIX product,
+ * knows how to extract data from it in the form of Strings list, whose length is equal to the amount of columns
+ * returned by {@link #header()} (as each column-header pertains to exactly one column-value)</li>
+ * </ul>
+ * Initially {@link #header()} is obtained, then, if not empty, the {@link #rowSupplier()} is invoked to return a
+ * {@link FieldRowSupplier} in which {@link FieldRowSupplier#setRowFromProduct(List, Object)} will be called repeatedly,
+ * once per each ONIX Product, to get the values from that Product.
+ * <p>
+ * Note that for performance boosting, {@link FieldRowSupplier#setRowFromProduct(List, Object)} is actually being
+ * called with a pre-initialized all-<code>null</code> list of Strings, which it needs to fill, rather than allocate
+ * and return a new list.
  */
 public interface FieldTabulator<P> {
     /**

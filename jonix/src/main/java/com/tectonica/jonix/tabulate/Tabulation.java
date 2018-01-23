@@ -24,8 +24,16 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Zach Melamed
- * @since 1/21/2018
+ * This class contains a collection of {@link FieldTabulator}s which together hold all the information needed to flatten
+ * an ONIX Product (which is a tree-like structure by its nature) into a flat-list of values (containing one or more
+ * logical fields). It also provides a header (i.e. list of column-names) for each of these values, in case the context
+ * requires a header (e.g. when writing to a file).
+ * <p>
+ * While users are likely to define their own {@link FieldTabulator}s and {@link Tabulation}s, Jonix offers a ready-made
+ * set for your convenience, as part of the <code>Unification</code> services.
+ *
+ * @see FieldTabulator
+ * @see com.tectonica.jonix.unify.BaseTabulation
  */
 public class Tabulation<P> {
 
