@@ -17,11 +17,13 @@
  * limitations under the License.
  */
 
-package com.tectonica.jonix.util;
+package com.tectonica.jonix.experimental;
 
 import com.tectonica.jonix.JonixRecords;
 import com.tectonica.jonix.OnixProduct;
 import com.tectonica.jonix.tabulate.FieldTabulator;
+import com.tectonica.jonix.util.Comparators;
+import com.tectonica.jonix.util.TimestampParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -4,7 +4,7 @@
 
     <groupId>com.tectonica</groupId>
     <artifactId>jonix-parent</artifactId>
-    <version>8.0-rc1</version>
+    <version>8.0.1</version>
     <packaging>pom</packaging>
 
     <name>Jonix - Parent</name>
@@ -76,7 +76,8 @@
                         <windowtitle>Jonix Framework ${project.version} APIs</windowtitle>
                         <encoding>UTF-8</encoding>
                         <aggregate>true</aggregate>
-                        <excludePackageNames>com.tectonica.repackaged:net</excludePackageNames>
+                        <excludePackageNames>repackaged</excludePackageNames>
+                        <additionalparam>-Xdoclint:none</additionalparam>
                     </configuration>
                 </plugin>
 
@@ -230,10 +231,11 @@
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>2.10.4</version>
                         <configuration>
-                            <doctitle>${project.name} ${project.version} APIs</doctitle>
-                            <windowtitle>${project.name} ${project.version} APIs</windowtitle>
+                            <doctitle>Jonix Framework ${project.version} APIs</doctitle>
+                            <windowtitle>Jonix Framework ${project.version} APIs</windowtitle>
                             <encoding>UTF-8</encoding>
                             <aggregate>false</aggregate>
+                            <additionalparam>-Xdoclint:none</additionalparam>
                         </configuration>
                         <executions>
                             <execution>
