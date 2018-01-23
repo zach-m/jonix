@@ -60,8 +60,8 @@ public class ListOfOnixDataCompositeWithKey
         return find(structKey).map(odc -> odc.asStruct());
     }
 
-    public List<C> findAll(Set<K> structKeys) {
-        List<C> matches = new ArrayList<>();
+    public ListOfOnixDataCompositeWithKey<C,S,K> findAll(Set<K> structKeys) {
+        ListOfOnixDataCompositeWithKey<C,S,K> matches = new ListOfOnixDataCompositeWithKey<>();
         forEach(item -> {
             if (structKeys == null || structKeys.contains(item.structKey())) {
                 matches.add(item);
@@ -71,7 +71,7 @@ public class ListOfOnixDataCompositeWithKey
     }
 
     @SuppressWarnings("unchecked")
-    public List<C> findAll(K... structKeys) {
+    public ListOfOnixDataCompositeWithKey<C,S,K> findAll(K... structKeys) {
         return findAll(new HashSet<>(Arrays.asList(structKeys)));
     }
 

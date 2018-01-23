@@ -30,8 +30,8 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
     private List<V> cachedValues = null;
 
     /**
-     * returns a list of the values within the elements of this list (as opposed to the elements themselves, each of
-     * which also contains attributes, which are usually not interesting)
+     * returns a list of the values stored within the elements of this list (as opposed to the elements themselves,
+     * each of which also contains attributes, which are usually not interesting)
      *
      * @return a non-null, possibly empty, list of the values
      */
@@ -42,6 +42,12 @@ public class ListOfOnixElement<E extends OnixElement<V>, V> extends ArrayList<E>
         return cachedValues;
     }
 
+    /**
+     * stores into a given {@link Collection} the values stored within the elements of this list (as opposed to the
+     * elements themselves, each of which also contains attributes, which are usually not interesting)
+     *
+     * @return the same passed collection, after being populated
+     */
     public <C extends Collection<V>> C valuesInto(C collection) {
         forEach(item -> collection.add(item._value()));
         return collection;

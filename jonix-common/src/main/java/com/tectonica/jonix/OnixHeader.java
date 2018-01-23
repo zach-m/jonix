@@ -19,5 +19,9 @@
 
 package com.tectonica.jonix;
 
+/**
+ * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, used to mark objects that represent
+ * an ONIX header
+ */
 public interface OnixHeader extends OnixComposite.OnixSuperComposite {
 }

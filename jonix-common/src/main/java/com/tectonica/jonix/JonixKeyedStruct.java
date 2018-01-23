@@ -20,8 +20,9 @@
 package com.tectonica.jonix;
 
 /**
- * This interface completes {@link JonixStruct}, by representing a <code>Struct</code> that contains a <b>key</b> (i.e.
- * mandatory, unique, and searchable-by field).
+ * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, this interface completes
+ * {@link JonixStruct} by representing a <code>Struct</code> that contains a <b>key</b> (i.e. mandatory, unique, and
+ * searchable-by field).
  * <p>
  * The key is an enumerated type, and more specifically an {@link OnixCodelist}.
  * <p>

@@ -20,7 +20,8 @@
 package com.tectonica.jonix;
 
 /**
- * represents an ONIX composite (i.e. a container for ONIX elements and possibly other ONIX composites)
+ * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite (i.e.
+ * a container for ONIX elements and possibly other ONIX composites)
  */
 public interface OnixComposite extends OnixTag {
     /**
@@ -30,28 +31,32 @@ public interface OnixComposite extends OnixTag {
     void _initialize();
 
     /**
-     * represents an ONIX composite that contains other composites
+     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
+     * that contains other composites
      */
     interface OnixSuperComposite extends OnixComposite {
     }
 
     /**
-     * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites). This composite is
-     * unique to specific version of ONIX, and isn't common to all
+     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
+     * that contains only ONIX elements (i.e. no nested composites). This composite is unique to specific version of
+     * ONIX, and isn't common to all.
      */
     interface OnixDataCompositeUncommon extends OnixComposite {
     }
 
     /**
-     * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites)
+     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
+     * that contains only ONIX elements (i.e. no nested composites)
      */
     interface OnixDataComposite<V extends JonixStruct> extends OnixComposite {
         V asStruct();
     }
 
     /**
-     * represents an ONIX composite that contains only ONIX elements (i.e. no nested composites), one of which is the
-     * key of the composite (i.e. a mandatory enumerated value, by which a composite can't be looked up)
+     * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, representing an ONIX composite
+     * that contains only ONIX elements (i.e. no nested composites), one of which is the key of the composite (i.e. a
+     * mandatory, unique, enumerated code-list, by which a composite can't be looked up)
      */
     interface OnixDataCompositeWithKey<V extends JonixKeyedStruct<K>, K extends Enum<K> & OnixCodelist>
         extends OnixDataComposite<V> {

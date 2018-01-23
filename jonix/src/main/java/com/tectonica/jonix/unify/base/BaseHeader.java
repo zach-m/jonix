@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Contains the essential information included in ONIX &lt;Header&gt;.
  * <p>
- * Provided as part of the 'basic' suite of classes whose goal is to extract the most important information from an ONIX
+ * Provided as part of the 'base' suite of classes whose goal is to extract the most important information from an ONIX
  * source (be it ONIX2 or ONIX3) and make it available for other various uses (print in a tabular format, etc.). The
  * classes of the 'basic' bridge the gap between ONIX versions, and provide a unified view of the content, allowing the
  * user to write a version-agnostic code.

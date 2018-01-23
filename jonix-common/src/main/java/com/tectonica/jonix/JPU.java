@@ -36,7 +36,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * an all-static Jonix Processing Utility class, assisting in run time processing of the DOM elements.
+ * JPU (Jonix Processing Utility) is an all-static internal utility class, assisting in run time processing of the DOM
+ * elements. Shouldn't be accessed normally by users.
  * <p>
  * IMPORTANT: Beware editing! the auto-generated classes all rely heavily on the methods in this class
  *

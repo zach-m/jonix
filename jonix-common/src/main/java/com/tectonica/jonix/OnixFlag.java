@@ -20,7 +20,8 @@
 package com.tectonica.jonix;
 
 /**
- * represents an ONIX flag (i.e. has no content, marks something simply by being present)
+ * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, used to mark objects that represent
+ * an ONIX flag (i.e. an ONIX element that has no content, but indicates something in its presence)
  */
 public interface OnixFlag extends OnixTag {
 }

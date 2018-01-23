@@ -26,9 +26,9 @@ import java.io.Serializable;
 /**
  * Contains the essential information included in ONIX &lt;Product&gt;.
  * <p>
- * Provided as part of the 'basic' suite of classes whose goal is to extract the most important information from an ONIX
+ * Provided as part of the 'base' suite of classes whose goal is to extract the most important information from an ONIX
  * source (be it ONIX2 or ONIX3) and make it available for other various uses (print in a tabular format, search, sort,
- * etc.). The classes of the 'basic' suite bridge the gap between ONIX versions, and provide a unified view of the
+ * etc.). The classes of the 'base' suite bridge the gap between ONIX versions, and provide a unified view of the
  * content, allowing the user to write a version-agnostic code.
  * <p>
  * NOTE: to access the information, use the public fields directly. No getters() are included..

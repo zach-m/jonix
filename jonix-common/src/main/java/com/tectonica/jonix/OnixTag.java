@@ -19,6 +19,13 @@
 
 package com.tectonica.jonix;
 
+/**
+ * Fundamental interface in <a href="package-summary.html">Jonix object model</a>, used as a base-class for all types
+ * of ONIX elements ('tags')
+ */
 public interface OnixTag {
+    /**
+     * indicates whether this tag exists in the ONIX record
+     */
     boolean exists();
 }
