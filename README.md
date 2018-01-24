@@ -3,13 +3,29 @@
 
 Commercial-grade library for extracting data from [ONIX](http://www.editeur.org/11/Books) sources.
 
-Release History:
-- Version 8.x is the latest generation of Jonix, released on Jan 23, 2018, relying on Java 8 support and exposes a completely overhauled fluent APIs
+#### Release History:
+- Version 8.x is the latest generation of Jonix, released on Jan 23, 2018, relying on Java 8 support and offers completely overhauled fluent APIs
 - Version 3.0 has been released on June 26, 2015. It supports ONIX versions 2.1.03 and 3.0.02.
 - Version 3.1-rc1 has been released on May 17, 2016.
 
+#### JavaDocs
 API documentation can be found [here](http://zach-m.github.io/jonix).
 
+Table of contents
+-
+
+* [Introduction](#introduction)
+    * [Low-Level APIs: XML-to-Java](#low-level-apis)
+    * [High-Level APIs: Scan, Stream, Extract, Unify, Export](#high-level-apis)
+    * [Quick Start](#quick-start)
+        * [Setup](#setup)
+        * [Code Snippets](#code-snippets)
+            * [Preparation](#preparation)
+            * [Low-level iteration](#low-level-iteration)
+            * [From iteration to streaming](#from-iteration-to-streaming)
+            * [High-level processing with Unification](#high-level-processing-with-unification)
+            * [Tabulation](#tabulation)
+  
 # Introduction
 
 For many years, Jonix has been the only free Java library supporting ONIX extensively and reliably. Only lately, however, 
@@ -27,7 +43,7 @@ found in later sections.
 Jonix provides various facilities to extract data out of ONIX sources (in the future it may also be able to generate 
 ONIX files). They can be divided into two groups:
 
-## Low-Level APIs: XML-to-Java
+## Low-Level APIs
 
 The most fundamental function in Jonix is to transform ONIX sources (containing XML content) into Java objects. 
 When an ONIX source is being read, each record is transformed into a Java object (with many nested objects inside it), 
@@ -63,7 +79,7 @@ to avoid confusion.
 and [here](http://www.editeur.org/15/Archived-Previous-Releases/#2.1%20Downloads)). 
 There are over 400 classes behind each ONIX version (2 and 3) and almost 200 enumerators representing the Codelists.
 
-## High-Level APIs: Scan, Stream, Extract, Unify, Export
+## High-Level APIs
 
 On top of the low-level functions, Jonix offers assorted services for data manipulation, including:
 
@@ -82,13 +98,15 @@ tabulation scheme, which you can customize to your needs. For more information s
 
 ## Setup
 
-Add the following to your `pom.xml``: 
+Add the following to your `pom.xml`: 
 
-	<dependency>
-		<groupId>com.tectonica</groupId>
-		<artifactId>jonix</artifactId>
-		<version>8.0.1</version>
-	</dependency>
+```xml
+<dependency>
+    <groupId>com.tectonica</groupId>
+    <artifactId>jonix</artifactId>
+    <version>8.0.1</version>
+</dependency>
+```
 
 ## Code Snippets
 
@@ -104,19 +122,21 @@ The typical preparation steps for reading ONIX content are as follows:
 
 You can mix up sources of diverse versions and types:
 
-    JonixRecords records = Jonix
-         .source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
-         .source(new File("/path/to/file-with-short-style-onix-2.xml"))
-         .source(new File("/path/to/file-with-reference-style-onix-3.onx"))
-         .onSourceStart(src -> { // take a look at:
-             // src.onixVersion()
-             // src.header()
-             // src.sourceName()
-         })
-         .onSourceEnd(src -> { // take a look at:
-             // src.productsProcessedCount()
-         })
-         .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
+```java
+JonixRecords records = Jonix
+     .source(new File("/path/to/folder-with-onix-files"), "*.xml", false)
+     .source(new File("/path/to/file-with-short-style-onix-2.xml"))
+     .source(new File("/path/to/file-with-reference-style-onix-3.onx"))
+     .onSourceStart(src -> { // take a look at:
+         // src.onixVersion()
+         // src.header()
+         // src.sourceName()
+     })
+     .onSourceEnd(src -> { // take a look at:
+         // src.productsProcessedCount()
+     })
+     .configure("jonix.stream.failOnInvalidFile", Boolean.FALSE);
+```
  
 ### Low-level iteration
  
@@ -125,66 +145,72 @@ Each of these items contain an ONIX Product and a link to the ONIX source from w
  
 The exact concrete class that contain the ONIX Product depends on the ONIX Version of the source, and can be known
 in advance, so for low-level processing, it is typical to do something like the following:
- 
-    for (JonixRecord record : records) {
-        if (record.product instanceof com.tectonica.jonix.onix3.Product) {
-            com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
-            // TODO: process the Onix3 <Product>
-        } else if (record.product instanceof com.tectonica.jonix.onix2.Product) {
-            com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
-            // TODO: process the Onix2 <Product>
-        } else {
-            throw new IllegalArgumentException();
-        }
+
+```java
+for (JonixRecord record : records) {
+    if (record.product instanceof com.tectonica.jonix.onix3.Product) {
+        com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
+        // TODO: process the Onix3 <Product>
+    } else if (record.product instanceof com.tectonica.jonix.onix2.Product) {
+        com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
+        // TODO: process the Onix2 <Product>
+    } else {
+        throw new IllegalArgumentException();
     }
+}
+``` 
 
 In the following code snippet, we pull the ISBN out of the ONIX Products along with some contributors information:
 
-    for (JonixRecord record : records) {
-        String isbn13;
-        String personName = null;
-        List<ContributorRoles> roles = null;
-        if (record.product instanceof com.tectonica.jonix.onix2.Product) {
-            com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
-            isbn13 = product2.productIdentifiers()
-                .find(ProductIdentifierTypes.ISBN_13)
-                .map(pid -> pid.idValue().value)
-                .orElse(null);
-            List<com.tectonica.jonix.onix2.Contributor> contributors = product2.contributors();
-            if (!contributors.isEmpty()) {
-                com.tectonica.jonix.onix2.Contributor firstContributor = contributors.get(0);
-                roles = firstContributor.contributorRoles().values();
-                personName = firstContributor.personName().value;
-            }
-        } else if (record.product instanceof com.tectonica.jonix.onix3.Product) {
-            com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
-            isbn13 = product3.productIdentifiers()
-                .find(ProductIdentifierTypes.ISBN_13)
-                .map(pid -> pid.idValue().value)
-                .orElse(null);
-            List<com.tectonica.jonix.onix3.Contributor> contributors = product3.descriptiveDetail().contributors();
-            if (!contributors.isEmpty()) {
-                com.tectonica.jonix.onix3.Contributor firstContributor = contributors.get(0);
-                roles = firstContributor.contributorRoles().values();
-                personName = firstContributor.personName().value;
-            }
-        } else {
-            throw new IllegalArgumentException();
+```java
+for (JonixRecord record : records) {
+    String isbn13;
+    String personName = null;
+    List<ContributorRoles> roles = null;
+    if (record.product instanceof com.tectonica.jonix.onix2.Product) {
+        com.tectonica.jonix.onix2.Product product2 = (com.tectonica.jonix.onix2.Product) record.product;
+        isbn13 = product2.productIdentifiers()
+            .find(ProductIdentifierTypes.ISBN_13)
+            .map(pid -> pid.idValue().value)
+            .orElse(null);
+        List<com.tectonica.jonix.onix2.Contributor> contributors = product2.contributors();
+        if (!contributors.isEmpty()) {
+            com.tectonica.jonix.onix2.Contributor firstContributor = contributors.get(0);
+            roles = firstContributor.contributorRoles().values();
+            personName = firstContributor.personName().value;
         }
-        System.out
-            .println(String.format("Found ISBN %s, first person is %s, his roles: %s", isbn13, personName, roles));
+    } else if (record.product instanceof com.tectonica.jonix.onix3.Product) {
+        com.tectonica.jonix.onix3.Product product3 = (com.tectonica.jonix.onix3.Product) record.product;
+        isbn13 = product3.productIdentifiers()
+            .find(ProductIdentifierTypes.ISBN_13)
+            .map(pid -> pid.idValue().value)
+            .orElse(null);
+        List<com.tectonica.jonix.onix3.Contributor> contributors = product3.descriptiveDetail().contributors();
+        if (!contributors.isEmpty()) {
+            com.tectonica.jonix.onix3.Contributor firstContributor = contributors.get(0);
+            roles = firstContributor.contributorRoles().values();
+            personName = firstContributor.personName().value;
+        }
+    } else {
+        throw new IllegalArgumentException();
     }
+    System.out
+        .println(String.format("Found ISBN %s, first person is %s, his roles: %s", isbn13, personName, roles));
+}
+```
 
 ### From iteration to streaming
  
 It is sometime useful to invoke `stream()` and use the resulting `Stream` along with Java 8 Streaming APIs to achieve greater readability. The following examples retrieves the Onix3 Products from their sources and stores them in an in-memory List:
 
-	import com.tectonica.jonix.onix3.Product;
-	...
-	List<Product> products3 = records.stream()
-		.filter(rec -> rec.product instanceof Product)
-		.map(rec -> (Product) rec.product)
-		.collect(Collectors.toList());
+```java
+import com.tectonica.jonix.onix3.Product;
+...
+List<Product> products3 = records.stream()
+    .filter(rec -> rec.product instanceof Product)
+    .map(rec -> (Product) rec.product)
+    .collect(Collectors.toList());
+```
 
 ### High-level processing with Unification
  
@@ -197,59 +223,70 @@ and unified representation of the most essential data within typical ONIX source
 
 The following example demonstrates extraction of some fundamental ONIX fields from an ONIX source of any version and type:
 
-    // the following is a set of the price-types we will look for in the ONIX records
-    Set<PriceTypes> requestedPrices = JonixUtil.setOf(PriceTypes.RRP_including_tax, PriceTypes.RRP_excluding_tax);
-    
-    // we start going over the ONIX records, looking the Unified version of them
-    records.streamUnified()
-        .map(rec -> rec.product)
-        .forEach(product -> {
-            String recordReference = product.info.recordReference;
-            String isbn13 = product.info.findProductId(ProductIdentifierTypes.ISBN_13);
-            String title = product.titles.findTitleText(TitleTypes.Distinctive_title_book);
-            List<String> authors = product.contributors.getDisplayNames(ContributorRoles.By_author);
-            List<BasePrice> prices = product.supplyDetails.findPrices(requestedPrices);
-            List<String> priceLabels = prices.stream()
-                .map(bp -> bp.priceAmountAsStr + " " + bp.currencyCode).collect(Collectors.toList());
-            System.out.println(String.format("Found product ref. %s, ISBN='%s', Title='%s', authors=%s, prices=%s",
-                recordReference, isbn13, title, authors, priceLabels));
-        });
+```java
+// the following is a set of the price-types we will look for in the ONIX records
+Set<PriceTypes> requestedPrices = JonixUtil.setOf(PriceTypes.RRP_including_tax, PriceTypes.RRP_excluding_tax);
+
+// we start going over the ONIX records, looking the Unified version of them
+records.streamUnified()
+    .map(rec -> rec.product)
+    .forEach(product -> {
+        String recordReference = product.info.recordReference;
+        String isbn13 = product.info.findProductId(ProductIdentifierTypes.ISBN_13);
+        String title = product.titles.findTitleText(TitleTypes.Distinctive_title_book);
+        List<String> authors = product.contributors.getDisplayNames(ContributorRoles.By_author);
+        List<BasePrice> prices = product.supplyDetails.findPrices(requestedPrices);
+        List<String> priceLabels = prices.stream()
+            .map(bp -> bp.priceAmountAsStr + " " + bp.currencyCode).collect(Collectors.toList());
+        System.out.println(String.format("Found product ref. %s, ISBN='%s', Title='%s', authors=%s, prices=%s",
+            recordReference, isbn13, title, authors, priceLabels));
+    });
+```
  
 Unification can also be done explicitly (not via `streamUnified()`) using 
 [JonixUnifier](http://zach-m.github.io/jonix/com/tectonica/jonix/unify/JonixUnifier.html). For example, here's how 
 to manually transform a raw `OnixProduct` into a `BaseProduct`:
 
-    void foo(JonixRecord record) {
-        BaseProduct baseProduct = JonixUnifier.unifyProduct(record.product);
-        // TODO: access the content of 'baseProduct'
-    }
+```java
+void foo(JonixRecord record) {
+    BaseProduct baseProduct = JonixUnifier.unifyProduct(record.product);
+    // TODO: access the content of 'baseProduct'
+}
+```
 
 Another case is Unification of the raw `OnixHeader`, by using `JonixUnifier.unifyHeader()`, like that:
 
-    // given a JonixRecords object
-    JonixRecords records = ...
-    
-    // we can set use the 'SourceStart' event to print the ONIX Header information
-    records.onSourceStart(src -> {
-        src.header().map(JonixUnifier::unifyHeader).ifPresent(baseHeader -> System.out.println(baseHeader));
-    })
+```java
+// given a JonixRecords object
+JonixRecords records = ...
+
+// we can set use the 'SourceStart' event to print the ONIX Header information
+records.onSourceStart(src -> {
+    src.header().map(JonixUnifier::unifyHeader).ifPresent(baseHeader -> System.out.println(baseHeader));
+})
+```
 
 ### Tabulation
 
 Jonix provides generic framework to allow flattening and outputting ONIX Products into a table-like structure (suitable
 for CSV or database export). Jonix offers a `Collector` that saves a stream into a CSV file:
 
-    // prepare to read from various sources
-    JonixRecords records = Jonix
-        .source(...)
-        .onSourceStart(src -> ...)
-        .onSourceEnd(src -> ...)
-        .configure(...);
-    
-    // save the most important fields of the streamed ONIX products into a CSV file
-    File targetFile = new File("/path/to/export.csv");
-    int totalCount = records.streamUnified()
-        .collect(toDelimitedFile(targetFile, ',', BaseTabulation.ALL));
+```java
+// prepare to read from various sources
+JonixRecords records = Jonix
+    .source(...)
+    .onSourceStart(src -> ...)
+    .onSourceEnd(src -> ...)
+    .configure(...);
+
+// save the most important fields of the streamed ONIX products into a CSV file
+File targetFile = new File("/path/to/destination.csv");
+int recordsWritten = records.streamUnified()
+    .collect(toDelimitedFile(targetFile, ',', BaseTabulation.ALL));
+
+// file is saved
+System.out.println("Written " + recordsWritten + " records")
+```
 
 The procedure of how to define which fields to output and how are described in 
 [Tabulation](http://zach-m.github.io/jonix/com/tectonica/jonix/tabulate/Tabulation.html) and in 
