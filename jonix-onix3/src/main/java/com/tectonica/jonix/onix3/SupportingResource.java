@@ -115,6 +115,10 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
                 case ResourceVersion.shortname:
                     resourceVersions = JPU.addToList(resourceVersions, new ResourceVersion(e));
                     break;
+                case ResourceLink.refname:
+                case ResourceLink.shortname:
+                    resourceLink = new ResourceLink(e);
+                    break;
                 default:
                     break;
             }
@@ -179,5 +183,15 @@ public class SupportingResource implements OnixSuperComposite, Serializable {
     public List<ResourceVersion> resourceVersions() {
         _initialize();
         return resourceVersions;
+    }
+
+    private ResourceLink resourceLink = ResourceLink.EMPTY;
+
+    /**
+     * (this field is required)
+     */
+    public ResourceLink resourceLink() {
+        _initialize();
+        return resourceLink;
     }
 }
