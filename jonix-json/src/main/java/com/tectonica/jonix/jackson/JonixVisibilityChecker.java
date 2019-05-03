@@ -62,6 +62,11 @@ public class JonixVisibilityChecker implements VisibilityChecker<JonixVisibility
     }
 
     @Override
+    public JonixVisibilityChecker withOverrides(JsonAutoDetect.Value vis) {
+        return null;
+    }
+
+    @Override
     public JonixVisibilityChecker withVisibility(PropertyAccessor method, JsonAutoDetect.Visibility v) {
         return null;
     }
