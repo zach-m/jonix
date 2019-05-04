@@ -23,6 +23,8 @@ import com.tectonica.jonix.codegen.util.XML;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,6 +32,8 @@ import java.util.Set;
 
 @SuppressWarnings("serial")
 public class OnixDocs extends ArrayList<OnixDoc> {
+    private static Logger LOGGER = LoggerFactory.getLogger(OnixDocs.class);
+
     public final Set<String> allTags = new HashSet<>();
 
     public OnixDocs() {
@@ -102,9 +106,9 @@ public class OnixDocs extends ArrayList<OnixDoc> {
 
                 add(onixDoc);
             } catch (Exception e) {
-                System.err.println("Exception:  " + e.toString());
-                System.err.println("In section: " + section.outerHtml());
-                System.err.println("------------------------------------------------------------------");
+                LOGGER.warn("Exception:  " + e.toString());
+                LOGGER.warn("In section: " + section.outerHtml());
+                LOGGER.warn("------------------------------------------------------------------");
             }
         }
     }

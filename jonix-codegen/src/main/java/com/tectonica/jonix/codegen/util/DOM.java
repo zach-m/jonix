@@ -80,7 +80,7 @@ public class DOM {
         return (Element) item;
     }
 
-    public static interface ElementListener {
+    public interface ElementListener {
         void onElement(Element element);
     }
 

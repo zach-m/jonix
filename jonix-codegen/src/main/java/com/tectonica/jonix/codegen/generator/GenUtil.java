@@ -26,10 +26,14 @@ import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
 public class GenUtil {
+    private static Logger LOGGER = LoggerFactory.getLogger(GenUtil.class);
+
     public static final String COMMON_PACKAGE = "com.tectonica.jonix";
 
     public static class TypeInfo {
@@ -169,9 +173,9 @@ public class GenUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(fieldOf("text"));
-        System.out.println(fieldOf("TextFormat"));
-        System.out.println(fieldOf("ISBN"));
-        System.out.println(fieldOf("IDTypeName"));
+        LOGGER.info(fieldOf("text"));
+        LOGGER.info(fieldOf("TextFormat"));
+        LOGGER.info(fieldOf("ISBN"));
+        LOGGER.info(fieldOf("IDTypeName"));
     }
 }

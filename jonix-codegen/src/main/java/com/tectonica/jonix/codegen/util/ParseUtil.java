@@ -22,6 +22,8 @@ package com.tectonica.jonix.codegen.util;
 import com.tectonica.jonix.codegen.generator.Parser;
 import com.tectonica.jonix.codegen.generator.Parser.OnixVersion;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
@@ -38,6 +40,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ParseUtil {
+    private static Logger LOGGER = LoggerFactory.getLogger(ParseUtil.class);
+
     public static final String RES_CODELIST_2 = "/xsd/onix2/ONIX_BookProduct_CodeLists.xsd";
     public static final String RES_REF_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_reference.xsd";
     public static final String RES_SHORT_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_short.xsd";
@@ -46,7 +50,7 @@ public class ParseUtil {
     public static final String RES_CODELIST_3 = "/xsd/onix3/ONIX_BookProduct_CodeLists.xsd";
     public static final String RES_REF_3 = "/xsd/onix3/ONIX_BookProduct_3.0_reference.xsd";
     public static final String RES_SHORT_3 = "/xsd/onix3/ONIX_BookProduct_3.0_short.xsd";
-    public static final String RES_HTML_SPEC_3 = "/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html";
+    public static final String RES_HTML_SPEC_3 = "/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.6.html";
 
     public static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList("RegionCode", "RightsCountry",
         "RightsTerritory", "SupplyToCountry", "SupplyToTerritory", "SupplyToCountryExcluded", "Territory",
@@ -55,9 +59,11 @@ public class ParseUtil {
     public static final Set<String> SPACEABLE_SHORT_2 = new HashSet<>(Arrays.asList("b398", "b090", "b388", "j138",
         "j397", "j140", "j303", "j304", "j308", "j403", "j404", "j405"));
 
+    // NOTE: this list was assembled by searching "separated by spaces" in ONIX_for_Books_Format_Specification_3.x.html
     public static final Set<String> SPACEABLE_REF_3 = new HashSet<>(Arrays.asList("CountriesIncluded",
         "RegionsIncluded", "CountriesExcluded", "RegionsExcluded"));
 
+    // NOTE: this list contains the short-version of the tags in SPACEABLE_REF_3
     public static final Set<String> SPACEABLE_SHORT_3 = new HashSet<>(Arrays.asList("x449", "x450", "x451", "x452"));
 
     public static OnixMetadata parse(OnixVersion onixVersion, boolean isShort, String mainXsd, String codelistXsd,
@@ -71,7 +77,7 @@ public class ParseUtil {
         parser.analyzeSchema(mainDoc);
         parser.postAnalysis(specHtml);
 
-        System.out.println(">>> Successfully processed " + mainXsd);
+        LOGGER.info(">>> Successfully processed " + mainXsd);
 
         return parser.getMetadata();
     }

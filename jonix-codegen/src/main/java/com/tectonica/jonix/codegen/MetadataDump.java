@@ -28,6 +28,8 @@ import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.util.JSON;
 import com.tectonica.jonix.codegen.util.ParseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -36,21 +38,23 @@ import java.io.IOException;
 
 public class MetadataDump {
     private static final File DUMP_FOLDER = new File("parsed");
+    private static Logger LOGGER = LoggerFactory.getLogger(MetadataDump.class);
 
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
-        System.out.println("Parsing Onix2..");
+        LOGGER.info("Parsing Onix2..");
         parse2();
 
-        System.out.println("Parsing Onix3..");
+        LOGGER.info("Parsing Onix3..");
         parse3();
 
-        System.out.println("DONE");
+        LOGGER.info("DONE");
     }
 
     private static void parse2() throws IOException, ParserConfigurationException, SAXException {
         final OnixMetadata ref2 =
             ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2, ParseUtil.RES_CODELIST_2,
                 ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
+
         final OnixMetadata short2 =
             ParseUtil.parse(OnixVersion.Ver2_1_03, true, ParseUtil.RES_SHORT_2, ParseUtil.RES_CODELIST_2,
                 ParseUtil.SPACEABLE_SHORT_2, ParseUtil.RES_HTML_SPEC_2);
@@ -62,10 +66,11 @@ public class MetadataDump {
 
     private static void parse3() throws IOException, ParserConfigurationException, SAXException {
         final OnixMetadata ref3 =
-            ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
+            ParseUtil.parse(OnixVersion.Ver3_0_06, false, ParseUtil.RES_REF_3, ParseUtil.RES_CODELIST_3,
                 ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
+
         final OnixMetadata short3 =
-            ParseUtil.parse(OnixVersion.Ver3_0_02, true, ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3,
+            ParseUtil.parse(OnixVersion.Ver3_0_06, true, ParseUtil.RES_SHORT_3, ParseUtil.RES_CODELIST_3,
                 ParseUtil.SPACEABLE_SHORT_3, ParseUtil.RES_HTML_SPEC_3);
 
         File parent = new File(DUMP_FOLDER, "onix3");
@@ -114,7 +119,7 @@ public class MetadataDump {
             saveAsJson(folder + "/structs/" + os.containingComposite.name + ".txt", os);
         }
 
-        System.out.println("saved results to " + folder);
+        LOGGER.info("saved results to " + folder);
     }
 
     private static void saveAsJson(final String fileName, final Object obj) throws IOException {

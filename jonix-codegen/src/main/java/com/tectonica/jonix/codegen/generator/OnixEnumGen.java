@@ -22,6 +22,8 @@ package com.tectonica.jonix.codegen.generator;
 import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.util.XML;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -29,6 +31,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class OnixEnumGen {
+    private static Logger LOGGER = LoggerFactory.getLogger(OnixEnumGen.class);
+
     private static final int MIN_FOR_MAP = 8;
 
     private final String packageName;
@@ -205,15 +209,15 @@ public class OnixEnumGen {
         String s;
 
         s = "By (photographer)";
-        System.out.println(s + " --> " + aux.enumNameOf(s));
+        LOGGER.info(s + " --> " + aux.enumNameOf(s));
 
         s = "Tagalog (Baybayin, Alibata)";
-        System.out.println(s + " --> " + aux.enumNameOf(s));
+        LOGGER.info(s + " --> " + aux.enumNameOf(s));
 
         s = "16:10";
-        System.out.println(s + " --> " + aux.enumNameOf(s));
+        LOGGER.info(s + " --> " + aux.enumNameOf(s));
 
         s = "Distinctive title (book); Cover title (serial); Title on item (serial content item or reviewed resource)";
-        System.out.println(s + " --> " + aux.enumNameOf(s));
+        LOGGER.info(s + " --> " + aux.enumNameOf(s));
     }
 }

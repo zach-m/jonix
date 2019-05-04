@@ -38,6 +38,8 @@ import com.tectonica.jonix.codegen.metadata.OnixStructMember.TransformationType;
 import com.tectonica.jonix.codegen.util.ListDiff;
 import com.tectonica.jonix.codegen.util.ListDiff.CompareListener;
 import com.tectonica.jonix.codegen.util.ParseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -50,6 +52,8 @@ import java.util.List;
 import java.util.Map;
 
 public class GenerateCode {
+    private static Logger LOGGER = LoggerFactory.getLogger(GenerateCode.class);
+    
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         final String basePackage = GenUtil.COMMON_PACKAGE;
         final String basePath = new File(".").getAbsolutePath();
@@ -61,7 +65,7 @@ public class GenerateCode {
 
         final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2,
             ParseUtil.RES_CODELIST_2, ParseUtil.SPACEABLE_REF_2, ParseUtil.RES_HTML_SPEC_2);
-        final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_02, false, ParseUtil.RES_REF_3,
+        final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_06, false, ParseUtil.RES_REF_3,
             ParseUtil.RES_CODELIST_3, ParseUtil.SPACEABLE_REF_3, ParseUtil.RES_HTML_SPEC_3);
 
         final List<OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
@@ -74,7 +78,7 @@ public class GenerateCode {
         generateOnix2(basePackage, basePath, relativePath, ref2);
         generateOnix3(basePackage, basePath, relativePath, ref3);
 
-        System.out.println("DONE");
+        LOGGER.info("DONE");
     }
 
     private static void generateCodelists(final String basePackage, final String basePath, final String relativePath,
@@ -84,7 +88,7 @@ public class GenerateCode {
             throw new RuntimeException("couldn't find jonix-common project at " + codelistHome);
         }
 
-        System.out.println("Generating unified codelists..");
+        LOGGER.info("Generating unified codelists..");
 
         final OnixEnumGen oeg = new OnixEnumGen(basePackage, codelistHome + relativePath, "codelist");
         for (OnixSimpleType codelist : unifiedCodelists) {
@@ -99,7 +103,7 @@ public class GenerateCode {
             throw new RuntimeException("couldn't find jonix-common project at " + codelistHome);
         }
 
-        System.out.println("Generating unified structs..");
+        LOGGER.info("Generating unified structs..");
 
         final OnixStructGen osg = new OnixStructGen(basePackage, codelistHome + relativePath, "struct");
         for (OnixStruct struct : unifiedStructs) {
@@ -114,7 +118,7 @@ public class GenerateCode {
             throw new RuntimeException("couldn't find jonix-onix2 project at " + onix2home);
         }
 
-        System.out.println("Generating code for Onix2..");
+        LOGGER.info("Generating code for Onix2..");
         generateModel(basePackage, onix2home + relativePath, "onix2", ref2);
     }
 
@@ -125,7 +129,7 @@ public class GenerateCode {
             throw new RuntimeException("couldn't find jonix-onix3 project at " + onix3home);
         }
 
-        System.out.println("Generating code for Onix3..");
+        LOGGER.info("Generating code for Onix3..");
         generateModel(basePackage, onix3home + relativePath, "onix3", ref3);
     }
 
@@ -155,24 +159,24 @@ public class GenerateCode {
             public boolean onDiff(OnixSimpleType enum2, OnixSimpleType enum3) {
                 // ignore aliases, we'll generate code out of the types they point to
                 if (enum2 != null && enum2.enumAliasFor != null) {
-                    //System.out.println("Skipping " + enum2.name + ", alias for " + enum2.enumName);
+                    //LOGGER.info("Skipping " + enum2.name + ", alias for " + enum2.enumName);
                     return true;
                 }
                 if (enum3 != null && enum3.enumAliasFor != null) {
-                    //System.out.println("Skipping " + enum3.name + ", alias for " + enum3.enumName);
+                    //LOGGER.info("Skipping " + enum3.name + ", alias for " + enum3.enumName);
                     return true;
                 }
 
                 if (enum2 != null && enum3 != null) {
-                    //System.out.println("                                         Common: " + enum2.enumName);
+                    //LOGGER.info("                                         Common: " + enum2.enumName);
                     final OnixSimpleType unified = unifiedCodelist(enum2, enum3);
                     unifiedCodelists.add(unified);
                 } else if (enum2 != null) {
-                    //System.out.println("Unique to Onix2: " + enum2.enumName);
+                    //LOGGER.info("Unique to Onix2: " + enum2.enumName);
                     enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3";
                     unifiedCodelists.add(enum2);
                 } else {
-                    //System.out.println("Unique to Onix3: " + enum3.enumName);
+                    //LOGGER.info("Unique to Onix3: " + enum3.enumName);
                     enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3";
                     unifiedCodelists.add(enum3);
                 }
@@ -191,15 +195,15 @@ public class GenerateCode {
                 if (enumValue2 != null && enumValue3 != null) {
                     //if (!enumValue2.name.equals(enumValue3.name))
                     //{
-                    //    System.out.println("DIFF - ONIX2 - " + enum2.enumName + ": "+ enumValue2.name);
-                    //    System.out.println("DIFF - ONIX3 - " + enum3.enumName + ": "+ enumValue3.name);
+                    //    LOGGER.info("DIFF - ONIX2 - " + enum2.enumName + ": "+ enumValue2.name);
+                    //    LOGGER.info("DIFF - ONIX3 - " + enum3.enumName + ": "+ enumValue3.name);
                     //}
                 } else if (enumValue2 != null) {
-                    //System.out.println("Unique to Onix2: " + enum2.enumName + "." + enumValue2);
+                    //LOGGER.info("Unique to Onix2: " + enum2.enumName + "." + enumValue2);
                     enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3";
                     result.add(enumValue2);
                 } else {
-                    //System.out.println("Unique to Onix3: " + enum3.enumName + "." + enumValue3);
+                    //LOGGER.info("Unique to Onix3: " + enum3.enumName + "." + enumValue3);
                     enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3";
                 }
                 return true;
@@ -224,14 +228,14 @@ public class GenerateCode {
                 } else if (struct2 != null) {
                     final String name = struct2.containingComposite.name;
                     if (ref3.onixComposites.containsKey(name)) {
-                        System.err.println("<" + name + "> is a struct in Onix2 but doesn't qualify for one in Onix3");
+                        LOGGER.warn("<" + name + "> is a struct in Onix2 but doesn't qualify for one in Onix3");
                     } else {
                         unifiedStructs.put(name, struct2);
                     }
                 } else {
                     final String name = struct3.containingComposite.name;
                     if (ref2.onixComposites.containsKey(name)) {
-                        System.err.println("<" + name + "> is a struct in Onix3 but doesn't qualify for one in Onix2");
+                        LOGGER.warn("<" + name + "> is a struct in Onix3 but doesn't qualify for one in Onix2");
                     } else {
                         unifiedStructs.put(name, struct3);
                     }
@@ -306,7 +310,7 @@ public class GenerateCode {
                                     osm3.transformationNeededInVersion = ref2.onixVersion;
                                     osm3.transformationType = TransformationType.StringToDouble;
                                 } else {
-                                    System.err.println("<" + className
+                                    LOGGER.warn("<" + className
                                         + "> can't be unified into struct: type mismatch in '"
                                         + memberClassName + "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
                                     return false; // can't unify, we cancel the scanning of the remaining members
@@ -320,10 +324,10 @@ public class GenerateCode {
                         }
                         unified.members.add(osm3);
                     } else if (osm2 != null) {
-                        System.err.println("<" + className + "> Onix2 has a unique field '"
+                        LOGGER.warn("<" + className + "> Onix2 has a unique field '"
                             + osm2.dataMember.className + "' - this field will not be part the unified struct");
                     } else {
-                        System.err.println("<" + className + "> Onix2 has a unique field '"
+                        LOGGER.warn("<" + className + "> Onix2 has a unique field '"
                             + osm3.dataMember.className + "' - this field will not be part the unified struct");
                     }
                     return true;
@@ -340,27 +344,27 @@ public class GenerateCode {
     //    ListDiff.sortAndCompare(ref2.getIntfs(), ref3.getIntfs(), new CompareListener<OnixCompositeDef>() {
     //        @Override
     //        public boolean onDiff(final OnixCompositeDef composite2, final OnixCompositeDef composite3) {
-    //            System.err.println("---------------------------------------------------------------------------");
+    //            LOGGER.warn("---------------------------------------------------------------------------");
     //            if (composite2 != null && composite3 != null) {
-    //                System.err.println("non-struct: " + composite2.name + "\n");
+    //                LOGGER.warn("non-struct: " + composite2.name + "\n");
     //                ListDiff.sortAndCompare(composite2.members, composite3.members,
     //                    new CompareListener<OnixCompositeMember>() {
     //                        @Override
     //                        public boolean onDiff(OnixCompositeMember m2, OnixCompositeMember m3) {
     //                            if (m2 != null && m3 != null) {
-    //                                System.err.println("SHARED: " + m2.className);
+    //                                LOGGER.warn("SHARED: " + m2.className);
     //                            } else if (m2 != null) {
-    //                                System.err.println("                    ONIX-2: " + m2.className);
+    //                                LOGGER.warn("                    ONIX-2: " + m2.className);
     //                            } else {
-    //                                System.err.println("                    ONIX-3: " + m3.className);
+    //                                LOGGER.warn("                    ONIX-3: " + m3.className);
     //                            }
     //                            return true;
     //                        }
     //                    });
     //            } else if (composite2 != null) {
-    //                System.err.println("Onix2 non-struct: " + composite2.name);
+    //                LOGGER.warn("Onix2 non-struct: " + composite2.name);
     //            } else {
-    //                System.err.println("Onix3 non-struct: " + composite3.name);
+    //                LOGGER.warn("Onix3 non-struct: " + composite3.name);
     //            }
     //            return true;
     //        }

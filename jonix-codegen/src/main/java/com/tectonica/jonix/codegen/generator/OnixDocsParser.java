@@ -21,6 +21,8 @@ package com.tectonica.jonix.codegen.generator;
 
 import com.tectonica.jonix.codegen.metadata.OnixDocs;
 import org.jsoup.Jsoup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -30,6 +32,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class OnixDocsParser {
+    private static Logger LOGGER = LoggerFactory.getLogger(OnixDocsParser.class);
+
     public static OnixDocs parse(String specHtml) throws IOException {
         return new OnixDocs(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
     }
@@ -42,7 +46,7 @@ public class OnixDocsParser {
     }
 
     private static void parseAndSave(final String specHtml, File targetHtml) throws IOException, FileNotFoundException {
-        System.out.println("Parsing " + specHtml + " into " + targetHtml.getAbsolutePath());
+        LOGGER.info("Parsing " + specHtml + " into " + targetHtml.getAbsolutePath());
         OnixDocs onixDocs = parse(specHtml);
 
         //JSON.saveAsJson(new File(targetHtml + ".json"), onixDocs);
@@ -51,6 +55,6 @@ public class OnixDocsParser {
             out.println(onixDocs.toHtml());
         }
 
-        System.out.println(onixDocs.allTags);
+        LOGGER.info(onixDocs.allTags.toString());
     }
 }
