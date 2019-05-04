@@ -26,7 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ListDiff {
-    public static interface CompareListener<T> {
+    public interface CompareListener<T> {
         boolean onDiff(T itemL, T itemR);
     }
 

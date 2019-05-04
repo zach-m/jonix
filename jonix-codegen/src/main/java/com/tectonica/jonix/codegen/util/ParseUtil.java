@@ -40,7 +40,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ParseUtil {
-    private static Logger LOGGER = LoggerFactory.getLogger(ParseUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ParseUtil.class);
 
     public static final String RES_CODELIST_2 = "/xsd/onix2/ONIX_BookProduct_CodeLists.xsd";
     public static final String RES_REF_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_reference.xsd";
@@ -88,12 +88,7 @@ public class ParseUtil {
             DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
             // disable dtd validation
-            docBuilder.setEntityResolver(new EntityResolver() {
-                @Override
-                public InputSource resolveEntity(String publicId, String systemId) {
-                    return new InputSource(new StringReader(""));
-                }
-            });
+            docBuilder.setEntityResolver((publicId, systemId) -> new InputSource(new StringReader("")));
             return docBuilder.parse(is);
         }
     }

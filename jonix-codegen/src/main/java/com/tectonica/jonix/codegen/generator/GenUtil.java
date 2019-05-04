@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 public class GenUtil {
-    private static Logger LOGGER = LoggerFactory.getLogger(GenUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GenUtil.class);
 
     public static final String COMMON_PACKAGE = "com.tectonica.jonix";
 
@@ -63,7 +63,7 @@ public class GenUtil {
 
     public static TypeInfo typeInfoOf(String onixSimpleTypeName, String javaType, String enumName) {
         TypeInfo result = new TypeInfo();
-        result.isXHTML = (onixSimpleTypeName == null) ? false : onixSimpleTypeName.equals(OnixSimpleType.XHTML.name);
+        result.isXHTML = (onixSimpleTypeName != null) && onixSimpleTypeName.equals(OnixSimpleType.XHTML.name);
         result.javaType = result.isXHTML ? null : enumName;
         result.isPrimitive = (result.javaType == null);
         result.comment = null;

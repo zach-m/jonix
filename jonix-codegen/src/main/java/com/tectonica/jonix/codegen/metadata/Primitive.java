@@ -32,9 +32,9 @@ public enum Primitive {
     public final String javaType;
     public final Set<String> xsdTokens;
 
-    private Primitive(String javaType, String... xsdTokens) {
+    Primitive(String javaType, String... xsdTokens) {
         this.javaType = javaType;
-        this.xsdTokens = new HashSet<String>(Arrays.asList(xsdTokens));
+        this.xsdTokens = new HashSet<>(Arrays.asList(xsdTokens));
     }
 
     public static Primitive fromXsdToken(String xsdToken) {

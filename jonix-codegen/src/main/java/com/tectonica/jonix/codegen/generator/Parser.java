@@ -52,7 +52,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Parser {
-    private static Logger LOGGER = LoggerFactory.getLogger(Parser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Parser.class);
 
     public enum OnixVersion {
         Ver2_1_03, Ver3_0_06
@@ -179,7 +179,7 @@ public class Parser {
      */
     private String enumJavaName(String enumComment) {
         final String[] splits = enumComment.replaceAll("[^a-zA-Z0-9 /]+", "").replaceAll("[ /]{2,}", " ").toLowerCase()
-            .split(" |/");
+            .split("[ /]");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < splits.length; i++) {
             String split = splits[i];

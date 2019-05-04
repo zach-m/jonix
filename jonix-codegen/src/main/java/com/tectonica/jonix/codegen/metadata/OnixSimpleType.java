@@ -69,7 +69,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         ost.comment = other.comment;
         ost.enumAliasFor = other.enumAliasFor;
         ost.enumName = other.enumName;
-        ost.enumValues = new ArrayList<OnixEnumValue>(other.enumValues); // new array, same items
+        ost.enumValues = new ArrayList<>(other.enumValues); // new array, same items
         return ost;
     }
 

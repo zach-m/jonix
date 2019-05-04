@@ -52,8 +52,8 @@ import java.util.List;
 import java.util.Map;
 
 public class GenerateCode {
-    private static Logger LOGGER = LoggerFactory.getLogger(GenerateCode.class);
-    
+    private static final Logger LOGGER = LoggerFactory.getLogger(GenerateCode.class);
+
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         final String basePackage = GenUtil.COMMON_PACKAGE;
         final String basePath = new File(".").getAbsolutePath();
@@ -154,34 +154,31 @@ public class GenerateCode {
     private static List<OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3) {
         final List<OnixSimpleType> unifiedCodelists = new ArrayList<>();
 
-        ListDiff.sortAndCompare(ref2.getEnums(), ref3.getEnums(), new CompareListener<OnixSimpleType>() {
-            @Override
-            public boolean onDiff(OnixSimpleType enum2, OnixSimpleType enum3) {
-                // ignore aliases, we'll generate code out of the types they point to
-                if (enum2 != null && enum2.enumAliasFor != null) {
-                    //LOGGER.info("Skipping " + enum2.name + ", alias for " + enum2.enumName);
-                    return true;
-                }
-                if (enum3 != null && enum3.enumAliasFor != null) {
-                    //LOGGER.info("Skipping " + enum3.name + ", alias for " + enum3.enumName);
-                    return true;
-                }
-
-                if (enum2 != null && enum3 != null) {
-                    //LOGGER.info("                                         Common: " + enum2.enumName);
-                    final OnixSimpleType unified = unifiedCodelist(enum2, enum3);
-                    unifiedCodelists.add(unified);
-                } else if (enum2 != null) {
-                    //LOGGER.info("Unique to Onix2: " + enum2.enumName);
-                    enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3";
-                    unifiedCodelists.add(enum2);
-                } else {
-                    //LOGGER.info("Unique to Onix3: " + enum3.enumName);
-                    enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3";
-                    unifiedCodelists.add(enum3);
-                }
+        ListDiff.sortAndCompare(ref2.getEnums(), ref3.getEnums(), (enum2, enum3) -> {
+            // ignore aliases, we'll generate code out of the types they point to
+            if (enum2 != null && enum2.enumAliasFor != null) {
+                //LOGGER.info("Skipping " + enum2.name + ", alias for " + enum2.enumName);
                 return true;
             }
+            if (enum3 != null && enum3.enumAliasFor != null) {
+                //LOGGER.info("Skipping " + enum3.name + ", alias for " + enum3.enumName);
+                return true;
+            }
+
+            if (enum2 != null && enum3 != null) {
+                //LOGGER.info("                                         Common: " + enum2.enumName);
+                final OnixSimpleType unified = unifiedCodelist(enum2, enum3);
+                unifiedCodelists.add(unified);
+            } else if (enum2 != null) {
+                //LOGGER.info("Unique to Onix2: " + enum2.enumName);
+                enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3";
+                unifiedCodelists.add(enum2);
+            } else {
+                //LOGGER.info("Unique to Onix3: " + enum3.enumName);
+                enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3";
+                unifiedCodelists.add(enum3);
+            }
+            return true;
         });
 
         return unifiedCodelists;
@@ -189,25 +186,22 @@ public class GenerateCode {
 
     private static OnixSimpleType unifiedCodelist(final OnixSimpleType enum2, final OnixSimpleType enum3) {
         final OnixSimpleType result = OnixSimpleType.cloneFrom(enum3);
-        ListDiff.compare(enum2.enumValues, enum3.enumValues, new CompareListener<OnixEnumValue>() {
-            @Override
-            public boolean onDiff(OnixEnumValue enumValue2, OnixEnumValue enumValue3) {
-                if (enumValue2 != null && enumValue3 != null) {
-                    //if (!enumValue2.name.equals(enumValue3.name))
-                    //{
-                    //    LOGGER.info("DIFF - ONIX2 - " + enum2.enumName + ": "+ enumValue2.name);
-                    //    LOGGER.info("DIFF - ONIX3 - " + enum3.enumName + ": "+ enumValue3.name);
-                    //}
-                } else if (enumValue2 != null) {
-                    //LOGGER.info("Unique to Onix2: " + enum2.enumName + "." + enumValue2);
-                    enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3";
-                    result.add(enumValue2);
-                } else {
-                    //LOGGER.info("Unique to Onix3: " + enum3.enumName + "." + enumValue3);
-                    enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3";
-                }
-                return true;
+        ListDiff.compare(enum2.enumValues, enum3.enumValues, (enumValue2, enumValue3) -> {
+            if (enumValue2 != null && enumValue3 != null) {
+                //if (!enumValue2.name.equals(enumValue3.name))
+                //{
+                //    LOGGER.info("DIFF - ONIX2 - " + enum2.enumName + ": "+ enumValue2.name);
+                //    LOGGER.info("DIFF - ONIX3 - " + enum3.enumName + ": "+ enumValue3.name);
+                //}
+            } else if (enumValue2 != null) {
+                //LOGGER.info("Unique to Onix2: " + enum2.enumName + "." + enumValue2);
+                enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3";
+                result.add(enumValue2);
+            } else {
+                //LOGGER.info("Unique to Onix3: " + enum3.enumName + "." + enumValue3);
+                enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3";
             }
+            return true;
         });
         return result;
     }
@@ -217,31 +211,28 @@ public class GenerateCode {
     private static Map<String, OnixStruct> unifyStructs(final OnixMetadata ref2, final OnixMetadata ref3) {
         final Map<String, OnixStruct> unifiedStructs = new HashMap<>();
 
-        ListDiff.sortAndCompare(ref2.getStructs(), ref3.getStructs(), new CompareListener<OnixStruct>() {
-            @Override
-            public boolean onDiff(final OnixStruct struct2, final OnixStruct struct3) {
-                if (struct2 != null && struct3 != null) {
-                    final OnixStruct unified = unifiedStruct(struct2, struct3, ref2, ref3);
-                    if (unified != null) {
-                        unifiedStructs.put(struct3.containingComposite.name, unified);
-                    }
-                } else if (struct2 != null) {
-                    final String name = struct2.containingComposite.name;
-                    if (ref3.onixComposites.containsKey(name)) {
-                        LOGGER.warn("<" + name + "> is a struct in Onix2 but doesn't qualify for one in Onix3");
-                    } else {
-                        unifiedStructs.put(name, struct2);
-                    }
-                } else {
-                    final String name = struct3.containingComposite.name;
-                    if (ref2.onixComposites.containsKey(name)) {
-                        LOGGER.warn("<" + name + "> is a struct in Onix3 but doesn't qualify for one in Onix2");
-                    } else {
-                        unifiedStructs.put(name, struct3);
-                    }
+        ListDiff.sortAndCompare(ref2.getStructs(), ref3.getStructs(), (struct2, struct3) -> {
+            if (struct2 != null && struct3 != null) {
+                final OnixStruct unified = unifiedStruct(struct2, struct3, ref2, ref3);
+                if (unified != null) {
+                    unifiedStructs.put(struct3.containingComposite.name, unified);
                 }
-                return true;
+            } else if (struct2 != null) {
+                final String name = struct2.containingComposite.name;
+                if (ref3.onixComposites.containsKey(name)) {
+                    LOGGER.warn("<" + name + "> is a struct in Onix2 but doesn't qualify for one in Onix3");
+                } else {
+                    unifiedStructs.put(name, struct2);
+                }
+            } else {
+                final String name = struct3.containingComposite.name;
+                if (ref2.onixComposites.containsKey(name)) {
+                    LOGGER.warn("<" + name + "> is a struct in Onix3 but doesn't qualify for one in Onix2");
+                } else {
+                    unifiedStructs.put(name, struct3);
+                }
             }
+            return true;
         });
 
         ref2.unifiedStructs = unifiedStructs;
@@ -285,53 +276,50 @@ public class GenerateCode {
         unified.members = new ArrayList<>();
 
         boolean completed = ListDiff.sortAndCompare(struct2.members, struct3.members,
-            new CompareListener<OnixStructMember>() {
-                @Override
-                public boolean onDiff(OnixStructMember osm2, OnixStructMember osm3) {
-                    if (osm2 != null && osm3 != null) {
-                        OnixCompositeMember m2 = osm2.dataMember;
-                        OnixCompositeMember m3 = osm3.dataMember;
-                        if (m2.getClass() != m3.getClass()) { // element vs flag
-                            throw new RuntimeException("Can't deal with types collision in " + className + ": "
-                                + m2.getClass().getSimpleName() + " vs " + m3.getClass().getSimpleName());
-                        }
-
-                        final String memberClassName = m2.className; // = m3.className
-                        if (m2.onixClass instanceof OnixElementDef) {
-                            OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
-                            OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
-                            final String javaType2 = vm2.simpleType.primitiveType.javaType;
-                            final String javaType3 = vm3.simpleType.primitiveType.javaType;
-                            if (!javaType2.equals(javaType3)) {
-                                if (javaType2.equals("String") && javaType3.equals("Integer")) {
-                                    osm3.transformationNeededInVersion = ref2.onixVersion;
-                                    osm3.transformationType = TransformationType.StringToInteger;
-                                } else if (javaType2.equals("String") && javaType3.equals("Double")) {
-                                    osm3.transformationNeededInVersion = ref2.onixVersion;
-                                    osm3.transformationType = TransformationType.StringToDouble;
-                                } else {
-                                    LOGGER.warn("<" + className
-                                        + "> can't be unified into struct: type mismatch in '"
-                                        + memberClassName + "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
-                                    return false; // can't unify, we cancel the scanning of the remaining members
-                                }
-                            }
-                            if (m2.cardinality.singular != m3.cardinality.singular) {
-                                osm3.transformationNeededInVersion = m2.cardinality.singular ? ref2.onixVersion
-                                    : ref3.onixVersion;
-                                osm3.transformationType = TransformationType.SingularToMultiple;
-                            }
-                        }
-                        unified.members.add(osm3);
-                    } else if (osm2 != null) {
-                        LOGGER.warn("<" + className + "> Onix2 has a unique field '"
-                            + osm2.dataMember.className + "' - this field will not be part the unified struct");
-                    } else {
-                        LOGGER.warn("<" + className + "> Onix2 has a unique field '"
-                            + osm3.dataMember.className + "' - this field will not be part the unified struct");
+            (osm2, osm3) -> {
+                if (osm2 != null && osm3 != null) {
+                    OnixCompositeMember m2 = osm2.dataMember;
+                    OnixCompositeMember m3 = osm3.dataMember;
+                    if (m2.getClass() != m3.getClass()) { // element vs flag
+                        throw new RuntimeException("Can't deal with types collision in " + className + ": "
+                            + m2.getClass().getSimpleName() + " vs " + m3.getClass().getSimpleName());
                     }
-                    return true;
+
+                    final String memberClassName = m2.className; // = m3.className
+                    if (m2.onixClass instanceof OnixElementDef) {
+                        OnixElementMember vm2 = ((OnixElementDef) m2.onixClass).valueMember;
+                        OnixElementMember vm3 = ((OnixElementDef) m3.onixClass).valueMember;
+                        final String javaType2 = vm2.simpleType.primitiveType.javaType;
+                        final String javaType3 = vm3.simpleType.primitiveType.javaType;
+                        if (!javaType2.equals(javaType3)) {
+                            if (javaType2.equals("String") && javaType3.equals("Integer")) {
+                                osm3.transformationNeededInVersion = ref2.onixVersion;
+                                osm3.transformationType = TransformationType.StringToInteger;
+                            } else if (javaType2.equals("String") && javaType3.equals("Double")) {
+                                osm3.transformationNeededInVersion = ref2.onixVersion;
+                                osm3.transformationType = TransformationType.StringToDouble;
+                            } else {
+                                LOGGER.warn("<" + className
+                                    + "> can't be unified into struct: type mismatch in '"
+                                    + memberClassName + "': Onix2=" + javaType2 + " vs Onix3=" + javaType3);
+                                return false; // can't unify, we cancel the scanning of the remaining members
+                            }
+                        }
+                        if (m2.cardinality.singular != m3.cardinality.singular) {
+                            osm3.transformationNeededInVersion = m2.cardinality.singular ? ref2.onixVersion
+                                : ref3.onixVersion;
+                            osm3.transformationType = TransformationType.SingularToMultiple;
+                        }
+                    }
+                    unified.members.add(osm3);
+                } else if (osm2 != null) {
+                    LOGGER.warn("<" + className + "> Onix2 has a unique field '"
+                        + osm2.dataMember.className + "' - this field will not be part the unified struct");
+                } else {
+                    LOGGER.warn("<" + className + "> Onix2 has a unique field '"
+                        + osm3.dataMember.className + "' - this field will not be part the unified struct");
                 }
+                return true;
             });
         return (completed ? unified : null);
     }

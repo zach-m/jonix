@@ -32,7 +32,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class OnixDocsParser {
-    private static Logger LOGGER = LoggerFactory.getLogger(OnixDocsParser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(OnixDocsParser.class);
 
     public static OnixDocs parse(String specHtml) throws IOException {
         return new OnixDocs(Jsoup.parse(OnixDocsParser.class.getResourceAsStream(specHtml), "UTF-8", "file://"));
@@ -40,12 +40,12 @@ public class OnixDocsParser {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+    public static void main(String[] args) throws IOException {
         parseAndSave("/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html", new File("parsed", "Onix2.html"));
         parseAndSave("/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html", new File("parsed", "Onix3.html"));
     }
 
-    private static void parseAndSave(final String specHtml, File targetHtml) throws IOException, FileNotFoundException {
+    private static void parseAndSave(final String specHtml, File targetHtml) throws IOException {
         LOGGER.info("Parsing " + specHtml + " into " + targetHtml.getAbsolutePath());
         OnixDocs onixDocs = parse(specHtml);
 

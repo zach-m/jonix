@@ -30,9 +30,9 @@ public class OnixStructMember implements Comparable<OnixStructMember> {
      */
     public OnixCompositeMember dataMember;
 
-    public static enum TransformationType {
+    public enum TransformationType {
         SingularToMultiple, ChangeClassName, //
-        StringToInteger, StringToDouble;
+        StringToInteger, StringToDouble
     }
 
     @JsonIgnore

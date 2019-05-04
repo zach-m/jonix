@@ -32,7 +32,7 @@ import java.util.Set;
 
 @SuppressWarnings("serial")
 public class OnixDocs extends ArrayList<OnixDoc> {
-    private static Logger LOGGER = LoggerFactory.getLogger(OnixDocs.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(OnixDocs.class);
 
     public final Set<String> allTags = new HashSet<>();
 
@@ -92,7 +92,7 @@ public class OnixDocs extends ArrayList<OnixDoc> {
                         if (onixDocDetail.detailType == OnixDoc.DetailType.referencename
                             || onixDocDetail.detailType == OnixDoc.DetailType.shorttag) {
                             // in onix3 documentation, the angle brackets are as implemented as style
-                            String onixClassName = line.replaceAll("(<|>|/)", "");
+                            String onixClassName = line.replaceAll("([<>/])", "");
                             line = "<" + onixClassName + ">";
                             if (onixDocDetail.detailType == OnixDoc.DetailType.referencename) {
                                 onixDoc.onixClassName = onixClassName;

@@ -31,7 +31,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class OnixEnumGen {
-    private static Logger LOGGER = LoggerFactory.getLogger(OnixEnumGen.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(OnixEnumGen.class);
 
     private static final int MIN_FOR_MAP = 8;
 

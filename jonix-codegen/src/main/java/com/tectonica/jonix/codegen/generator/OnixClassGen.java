@@ -153,7 +153,7 @@ public class OnixClassGen {
 
         p.println();
         p.printf("   @Override\n");
-        p.printf("   public void _initialize() {\n", composite.name);
+        p.printf("   public void _initialize() {\n");
         p.printf("      if (initialized) return;\n");
         p.printf("      initialized = true;\n");
 
@@ -236,7 +236,7 @@ public class OnixClassGen {
             p.println();
             p.printf("   @Override\n");
             p.printf("   public %s asStruct() {\n", structName);
-            p.printf("      _initialize();\n", structName, structName);
+            p.printf("      _initialize();\n");
             p.printf("      %s struct = new %s();\n", structName, structName);
 
             for (OnixStructMember structMember : struct.allMembers()) {
@@ -279,13 +279,11 @@ public class OnixClassGen {
                 String field = GenUtil.fieldOf(keyMember.className);
                 boolean transformationNeeded = (struct.keyMember.transformationNeededInVersion == ref.onixVersion);
                 if (transformationNeeded) {
-                    switch (struct.keyMember.transformationType) {
-                        case ChangeClassName:
-                            field = GenUtil.fieldOf(struct.keyMember.transformationHint);
-                            break;
-                        default:
-                            throw new UnsupportedOperationException(
-                                "Still not handling key-transofmration other than ChangeClassName");
+                    if (struct.keyMember.transformationType == OnixStructMember.TransformationType.ChangeClassName) {
+                        field = GenUtil.fieldOf(struct.keyMember.transformationHint);
+                    } else {
+                        throw new UnsupportedOperationException(
+                            "Still not handling key-transofmration other than ChangeClassName");
                     }
                 }
                 OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;

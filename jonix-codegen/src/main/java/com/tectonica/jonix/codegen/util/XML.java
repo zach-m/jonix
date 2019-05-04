@@ -56,7 +56,7 @@ public class XML {
 
                 default:
                     if (c > 0x7e) {
-                        sb.append("&#" + ((int) c) + ";");
+                        sb.append("&#").append((int) c).append(";");
                     } else {
                         sb.append(c);
                     }

@@ -38,7 +38,7 @@ import java.io.IOException;
 
 public class MetadataDump {
     private static final File DUMP_FOLDER = new File("parsed");
-    private static Logger LOGGER = LoggerFactory.getLogger(MetadataDump.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MetadataDump.class);
 
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         LOGGER.info("Parsing Onix2..");
@@ -122,7 +122,7 @@ public class MetadataDump {
         LOGGER.info("saved results to " + folder);
     }
 
-    private static void saveAsJson(final String fileName, final Object obj) throws IOException {
+    private static void saveAsJson(final String fileName, final Object obj) {
         JSON.saveAsJson(new File(fileName), obj);
     }
 }

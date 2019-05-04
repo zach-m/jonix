@@ -57,8 +57,8 @@ public class OnixStructGen {
         String structMarkerInterface = "JonixStruct";
         String structKeyQualifier = "";
 
-        OnixCompositeMember keyMember = null;
-        OnixElementDef keyClass = null;
+        OnixCompositeMember keyMember;
+        OnixElementDef keyClass;
         TypeInfo keyTypeInfo = null;
         String keyField = null;
         if (struct.isKeyed()) {
@@ -152,7 +152,7 @@ public class OnixStructGen {
         // declare key
         if (struct.isKeyed()) {
             p.println();
-            p.printf("   @Override\n", keyTypeInfo.javaType, keyField);
+            p.printf("   @Override\n");
             p.printf("   public %s key() { return %s; }\n", keyTypeInfo.javaType, keyField);
         }
 

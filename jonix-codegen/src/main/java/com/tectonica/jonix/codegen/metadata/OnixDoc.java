@@ -42,7 +42,7 @@ public class OnixDoc {
 
         public final String label;
 
-        private DetailType(String label) {
+        DetailType(String label) {
             this.label = label;
         }
     }

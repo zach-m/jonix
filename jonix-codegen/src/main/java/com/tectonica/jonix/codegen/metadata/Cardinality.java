@@ -28,7 +28,7 @@ public enum Cardinality {
     public final boolean omittable;
     public final boolean singular;
 
-    private Cardinality(boolean omittable, boolean singular) {
+    Cardinality(boolean omittable, boolean singular) {
         this.omittable = omittable;
         this.singular = singular;
     }

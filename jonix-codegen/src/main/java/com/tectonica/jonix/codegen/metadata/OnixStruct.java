@@ -60,7 +60,7 @@ public class OnixStruct implements Comparable<OnixStruct> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("struct " + containingComposite.name).append("\n");
+        sb.append("struct ").append(containingComposite.name).append("\n");
         if (keyMember != null) {
             OnixElementMember km = ((OnixElementDef) keyMember.dataMember.onixClass).valueMember;
             sb.append("   [key] - ").append(km.simpleType.enumName).append("\n");
