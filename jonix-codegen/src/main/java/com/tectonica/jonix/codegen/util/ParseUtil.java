@@ -25,13 +25,13 @@ import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
@@ -73,8 +73,8 @@ public class ParseUtil {
         Document mainDoc = docOf(mainXsd);
 
         final Parser parser = new Parser(onixVersion, isShort, spaceables);
-        parser.analyzeSchema(codelistDoc);
-        parser.analyzeSchema(mainDoc);
+        parser.analyzeSchema(codelistDoc, new File(codelistXsd).getName());
+        parser.analyzeSchema(mainDoc, new File(mainXsd).getName());
         parser.postAnalysis(specHtml);
 
         LOGGER.info(">>> Successfully processed " + mainXsd);

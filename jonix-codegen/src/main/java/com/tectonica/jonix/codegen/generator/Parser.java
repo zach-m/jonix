@@ -84,14 +84,23 @@ public class Parser {
         return meta;
     }
 
-    public void analyzeSchema(Document xsdDoc) {
+    /**
+     * This method is extracting metadata from ONIX official XSD files. Currently it can process either the Codelists
+     * XSD or the Elements XSD (Reference/Short).
+     * <p>
+     * Since processing of some data-types builds on the existence of others, previously-processed data-types, the
+     * correct order is to first call this method on the Codelists, and later on the Elements.
+     */
+    public void analyzeSchema(Document xsdDoc, String schemaFileName) {
         // take the top-container from of the XSD file
         final Element schemaElem = (Element) xsdDoc.getElementsByTagName("xs:schema").item(0);
 
         // process auxiliary tags (SimpleTypes, Groups, AttributeGroups) that other tags will references later
+        LOGGER.debug("\n\nSchema {}: Amending ****************************************************\n", schemaFileName);
         amendContext(schemaElem);
 
-        // traverse top-level elements of the schema, looking for Onix classes
+        // traverse top-level elements of the schema, looking for Onix classes (none are expected in Codelist XSD)
+        LOGGER.debug("\n\nSchema {}: Elements ****************************************************\n", schemaFileName);
         DOM.forElementsOf(schemaElem, element -> {
             final String xsdTagName = element.getNodeName();
             switch (xsdTagName) {
@@ -105,12 +114,11 @@ public class Parser {
                     break;
                 case "xs:include":
                     String schemaLocation = element.getAttribute("schemaLocation");
-                    if (schemaLocation.equals("ONIX_BookProduct_CodeLists.xsd") ||
-                        schemaLocation.equals("ONIX_XHTML_Subset.xsd")) {
-                        // TODO: make sure and exaplain the following comment
-                        // we ignore these XSD includes, as we handle them separately
-                        LOGGER.debug("NOTE: Ignoring known xs:include: " + schemaLocation);
-                    } else {
+                    if (!"ONIX_BookProduct_CodeLists.xsd".equals(schemaLocation) &&
+                        !"ONIX_XHTML_Subset.xsd".equals(schemaLocation)) {
+                        // we ignore these XSD includes, for the following reasons:
+                        // - ONIX_BookProduct_CodeLists.xsd: is called explicitly before the main XSD
+                        // - ONIX_XHTML_Subset             :  pertains to HTML tags, which we don't represent in Jonix
                         throw new RuntimeException("Unexpected top-level xs:include " + schemaLocation);
                     }
                     break;
@@ -133,27 +141,204 @@ public class Parser {
 
     private void processSimpleTypes(final Element schemaElem) {
         DOM.forElementsOf(schemaElem, "xs:simpleType", simpleTypeElem -> {
+
+            // ensure that the xs:simpleType has a name attribute, and use it to start an OnixSimpleType instance
             final String simpleTypeName = simpleTypeElem.getAttribute("name");
             if (simpleTypeName.isEmpty()) {
                 throw new RuntimeException("unnamed top-level xs:simpleType is unsupported");
             }
+            OnixSimpleType simpleType = new OnixSimpleType(simpleTypeName);
 
-            OnixSimpleType simpleType = new OnixSimpleType();
-            simpleType.name = simpleTypeElem.getAttribute("name");
+            // the heavy lifting is done here
             processSimpleType(simpleTypeElem, simpleType);
-            if (simpleType.primitiveType == null) {
-                throw new RuntimeException("erroneous processing of onixType " + simpleType);
-            }
 
+            // store the processed simpleType in the metadata
             if (simpleType.isEnum()) {
-                simpleType.enumName = enumNameOf(simpleType);
                 meta.onixEnums.put(simpleType.name, simpleType);
             } else {
                 meta.onixTypes.put(simpleType.name, simpleType);
             }
 
-            LOGGER.debug("processed simpleType: " + simpleType.name);
+            // some debug logging
+            String enumName = simpleType.isEnum() ? ("enum=" + simpleType.enumName) : "";
+            String link = (simpleType.enumAliasFor == null) ? "" : (" -> " + simpleType.enumAliasFor);
+            LOGGER.debug("processed simpleType: {} ({}{})", simpleType.name, enumName, link);
         });
+    }
+
+    private void processSimpleType(Element simpleTypeElem, final OnixSimpleType simpleType) {
+        DOM.forElementsOf(simpleTypeElem, new ElementListener() {
+            @Override
+            public void onElement(Element simpleTypeDefElem) {
+                final String simpleTypeDefName = simpleTypeDefElem.getNodeName();
+
+                switch (simpleTypeDefName) {
+                    case "xs:annotation":
+                        simpleType.comment = extractAnnotationText(simpleTypeDefElem);
+                        break;
+                    case "xs:restriction":
+                        handleRestriction(simpleTypeDefElem);
+                        break;
+                    case "xs:union":
+                        simpleType.primitiveType = Primitive.String; // we don't even bother..
+                        // TODO: what if union of just one element?
+                        //  See in ONIX3: <xs:simpleType name="dt.DateOrDateTime">
+                        break;
+                    case "xs:list":
+                        handleList(simpleTypeDefElem);
+                        break;
+                    default:
+                        throw new RuntimeException("Unhandled case of " + simpleTypeDefName);
+                }
+            }
+
+            /**
+             * xs:annotations are used to "document" other tags in plain english
+             */
+            private String extractAnnotationText(Element annotationElem) {
+                final StringBuilder sb = new StringBuilder();
+                DOM.forElementsOf(annotationElem, "xs:documentation", documentationElem -> {
+                    final String line = DOM.getChildText(documentationElem);
+                    if (line != null && !line.isEmpty()) {
+                        if (sb.length() != 0) {
+                            sb.append("\n");
+                        }
+                        sb.append(line);
+                    }
+                });
+                return sb.length() > 0 ? sb.toString() : null;
+            }
+
+            /**
+             * xs:restriction defines a data type by extending an existing type (built-in primitive such as xs:decimal,
+             * or custom type such as another xs:simpleType)
+             */
+            private void handleRestriction(Element restrictionElem) {
+                boolean isRestrictionHasBase = restrictionElem.hasAttribute("base");
+
+                // first we check the case of extending a built-in primitive (such as xs:decimal or xs:string)
+                // this is by-far the most common restriction in ONIX (codelists are xs:string-based restrictions)
+                if (isRestrictionHasBase) {
+                    final String baseType = restrictionElem.getAttribute("base");
+
+                    // we expected that the 'base' is a known primitive-type, typically one of the following:
+                    // [xs:decimal, xs:int, xs:nonNegativeInteger, xs:positiveInteger, xs:string, xs:token, xs:anyURI]
+                    final Primitive primitiveType = Primitive.fromXsdToken(baseType);
+                    if (primitiveType != null) {
+                        simpleType.primitiveType = primitiveType;
+
+                        // xs:string types may have an xs:pattern, or have list of possible enumerated values
+                        if (primitiveType == Primitive.String) {
+                            final Element patternElem = DOM.firstElemChild(restrictionElem, "xs:pattern");
+                            if (patternElem != null) {
+                                // NOTE: currently this only happens in Elements XSD
+                                simpleType.comment = patternElem.getAttribute("value");
+                                // TODO: there could be many patterns listed
+                                //LOGGER.debug("Case 1A ({}) for {} with comment '{}'", primitiveType.name(),
+                                //    simpleType.name, simpleType.comment);
+                            } else {
+                                // NOTE: currently this only happens in Codelist XSD
+                                addEnumerations(restrictionElem);
+                                //LOGGER.debug("Case 1B ({}) for {}", primitiveType.name(), simpleType.name);
+                                if (simpleType.enumValues == null) {
+                                    LOGGER.debug("simpleType {} is a general String (without pattern or enumerations)",
+                                        simpleType.name);
+                                }
+                            }
+                        }
+
+                        return; // CASE 1
+                    }
+
+                    // the only case where we allow 'base' that is NOT a known primitive-type is Aliasing, which
+                    // means that we expect 'base' to point to a previously-processed simpleType
+                    // NOTE: currently this only happens in the Codelist XSD, and only in enums
+                    final OnixSimpleType existing = meta.typeByName(baseType);
+                    if (existing != null) {
+                        int childCount = restrictionElem.getChildNodes().getLength();
+                        if (childCount > 0) {
+                            throw new RuntimeException("Inheritance of non-primitive is limited to mere aliasing");
+                        }
+                        // we have a situation where one type simply "inherits" another type that's NOT xsd-primitive
+                        simpleType.setAsAliasFor(existing);
+                        return; // CASE 2
+                    }
+
+                    throw new RuntimeException("Unknown xs:restriction base: " + baseType);
+                }
+
+                // when the xs:restriction has no 'base', it technically defines a non-primitive simple-type.
+                // this is only rarely used in ONIX XSDs, as a way to define a min-sized list of another xs:simpleType.
+                // We support it by using the target xs:simpleType as if it were this one directly (i.e. recursively).
+                final Element simpleTypeElemBelowRestriction = DOM.firstElemChild(restrictionElem, "xs:simpleType");
+                if (simpleTypeElemBelowRestriction != null) {
+                    if (DOM.nextElemChild(simpleTypeElemBelowRestriction, "xs:simpleType") != null) {
+                        throw new RuntimeException("simpleType " + simpleType.name
+                            + " is a base-less restriction with more than one xs:simpleType");
+                    }
+                    if (!simpleType.isEmpty()) {
+                        throw new RuntimeException("simpleType " + simpleType.name
+                            + " is a base-less restriction which isn't empty: " + simpleType);
+                    }
+                    LOGGER.debug("simpleType {} is a base-less restriction, a copy of another xs:simpleType",
+                        simpleType.name);
+                    processSimpleType(simpleTypeElemBelowRestriction, simpleType);
+                    return; // CASE 3
+                }
+
+                throw new RuntimeException("Unhandled case of xs:restriction in simpleType " + simpleType.name);
+            }
+
+            private void addEnumerations(Element restrictionElem) {
+                DOM.forElementsOf(restrictionElem, "xs:enumeration", enumerationElem -> {
+                    final String value = enumerationElem.getAttribute("value");
+                    final Element annotationElem = DOM.firstElemChild(enumerationElem, "xs:annotation");
+                    String comment = extractAnnotationText(annotationElem);
+                    if (comment == null) {
+                        throw new NullPointerException();
+                    }
+                    final int lineBreak = comment.indexOf("\n");
+                    final String name;
+                    final String description;
+                    if (lineBreak < 0) {
+                        name = comment;
+                        description = null;
+                    } else {
+                        name = comment.substring(0, lineBreak);
+                        description = comment.substring(lineBreak + "\n".length());
+                    }
+                    simpleType.add(OnixEnumValue.create(name, value, description));
+                });
+            }
+
+            /**
+             * xs:list represents a straightforward collection of some other simpleType
+             */
+            private void handleList(Element listElem) {
+                final String itemType = listElem.getAttribute("itemType");
+                if (itemType.isEmpty()) {
+                    throw new RuntimeException("xs:list doesn't specify an itemType attribute");
+                }
+                OnixSimpleType existingType = meta.typeByName(itemType);
+                if (existingType == null) {
+                    throw new RuntimeException(
+                        "Can't create list for " + simpleType.name + " with unknown type " + itemType);
+                }
+                // we ignore the fact that this is a list, and treat it as if it were a singular value
+                LOGGER.debug("simpleTye {} is an xs:list of {} items, we ignore it by merely aliasing", simpleType.name,
+                    existingType.name);
+                simpleType.setAsAliasFor(existingType);
+            }
+        });
+
+        // we're done going over all the sub-tags of the xs:simpleType tag
+        if (simpleType.primitiveType == null) {
+            throw new RuntimeException("erroneous processing of simpleType " + simpleType);
+        }
+        if (simpleType.isEnum()) {
+            simpleType.enumName = enumNameOf(simpleType);
+        }
+        patchSimpleType(simpleType); // fixes some errors from the XSD, if such exist
     }
 
     private String enumNameOf(OnixSimpleType enumType) {
@@ -196,129 +381,6 @@ public class Parser {
             sb.append(Character.toUpperCase(split.charAt(0))).append(split.substring(1));
         }
         return sb.toString() + "s";
-    }
-
-    private void processSimpleType(Element simpleTypeElem, final OnixSimpleType simpleType) {
-        DOM.forElementsOf(simpleTypeElem, new ElementListener() {
-            @Override
-            public void onElement(Element simpleTypeDefElem) {
-                final String simpleTypeDefName = simpleTypeDefElem.getNodeName();
-
-                switch (simpleTypeDefName) {
-                    case "xs:restriction":
-                        handleRestriction(simpleTypeDefElem);
-                        break;
-                    case "xs:annotation":
-                        simpleType.comment = extractAnnotationText(simpleTypeDefElem);
-                        break;
-                    case "xs:union":
-                        simpleType.primitiveType = Primitive.String; // we don't even bother..
-
-                        break;
-                    case "xs:list":
-                        handleList(simpleTypeDefElem);
-                        break;
-                    default:
-                        throw new RuntimeException("Unhandled case of " + simpleTypeDefName);
-                }
-            }
-
-            /**
-             * restriction can define a type by inheriting an existing one (primitive / non-primitive), or by defining a
-             * new type
-             */
-            private void handleRestriction(Element restrictionElem) {
-                // first we check the case of inheritance
-                if (restrictionElem.hasAttribute("base")) {
-                    final String baseType = restrictionElem.getAttribute("base");
-
-                    // we handle the case of primitive-type
-                    final Primitive primitiveType = Primitive.fromXsdToken(baseType);
-                    if (primitiveType != null) {
-                        simpleType.primitiveType = primitiveType;
-
-                        // primitives (strings, actually) may have a pattern or a list of enumerated values
-                        final Element patternElem = DOM.firstElemChild(restrictionElem, "xs:pattern");
-                        if (patternElem != null) {
-                            simpleType.comment = patternElem.getAttribute("value");
-                        } else {
-                            DOM.forElementsOf(restrictionElem, "xs:enumeration", enumerationElem -> {
-                                final String value = enumerationElem.getAttribute("value");
-                                final Element annotationElem = DOM.firstElemChild(enumerationElem, "xs:annotation");
-                                String comment = extractAnnotationText(annotationElem);
-                                if (comment == null) {
-                                    throw new NullPointerException();
-                                }
-                                final int lineBreak = comment.indexOf("\n");
-                                final String name;
-                                final String description;
-                                if (lineBreak < 0) {
-                                    name = comment;
-                                    description = null;
-                                } else {
-                                    name = comment.substring(0, lineBreak);
-                                    description = comment.substring(lineBreak + "\n".length());
-                                }
-                                simpleType.add(OnixEnumValue.create(name, value, description));
-                            });
-                        }
-                        return;
-                    }
-
-                    // if non-primitive, we lookup the inherited type and simply create an alias to it
-                    final OnixSimpleType existing = meta.typeByName(baseType);
-                    if (existing != null) {
-                        if (restrictionElem.getChildNodes().getLength() > 0) {
-                            throw new RuntimeException("Inheritance of non-privimive is limited to mere aliasing");
-                        }
-                        // we have a situation where one type simply "inherits" another type that's NOT xsd-primitive
-                        simpleType.aliasFrom(existing);
-                        return;
-                    }
-
-                    throw new RuntimeException("Unknown xs:restriction base: " + baseType);
-                }
-
-                // handle restriction that defines a new simpleType (rather than inheriting an existing xsd-type)
-                final Element simpleTypeElemBelowRestriction = DOM.firstElemChild(restrictionElem, "xs:simpleType");
-                if (simpleTypeElemBelowRestriction != null) {
-                    processSimpleType(simpleTypeElemBelowRestriction, simpleType);
-                    return;
-                }
-
-                throw new RuntimeException("Unhandled case of xs:restriction");
-            }
-
-            private String extractAnnotationText(Element annotationElem) {
-                final StringBuilder sb = new StringBuilder();
-                DOM.forElementsOf(annotationElem, "xs:documentation", documentationElem -> {
-                    final String line = DOM.getChildText(documentationElem);
-                    if (line != null && !line.isEmpty()) {
-                        if (sb.length() != 0) {
-                            sb.append("\n");
-                        }
-                        sb.append(line);
-                    }
-                });
-                return sb.length() > 0 ? sb.toString() : null;
-            }
-
-            private void handleList(Element listElem) {
-                final String itemType = listElem.getAttribute("itemType");
-                if (itemType.isEmpty()) {
-                    throw new RuntimeException("xs:list doesn't specify an itemType attribute");
-                }
-
-                OnixSimpleType existingType = meta.typeByName(itemType);
-                if (existingType == null) {
-                    throw new RuntimeException("Unknown type " + itemType);
-                }
-
-                simpleType.aliasFrom(existingType);
-            }
-        });
-
-        patchSimpleType(simpleType); // fixes some errors from the XSD, if such exist
     }
 
     private void patchSimpleType(final OnixSimpleType simpleType) {

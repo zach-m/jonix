@@ -24,8 +24,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public enum Primitive {
-    String("String", "xs:string", "xs:token", "xs:NMTOKEN"), //
-    AnyURI("String", "xs:anyURI"), //
+    String("String", "xs:string", "xs:token", "xs:anyURI", "xs:NMTOKEN"), //
     Int("Integer", "xs:int", "xs:positiveInteger", "xs:nonNegativeInteger"), //
     Decimal("Double", "xs:decimal");
 
