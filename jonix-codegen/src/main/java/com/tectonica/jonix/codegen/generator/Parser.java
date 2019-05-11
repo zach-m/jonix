@@ -185,9 +185,8 @@ public class Parser {
                         definitionAcquired = true;
                         break;
                     case "xs:union":
-                        simpleType.primitiveType = Primitive.String; // we don't even bother..
-                        // TODO: what if union of just one element?
-                        //  See in ONIX3: <xs:simpleType name="dt.DateOrDateTime">
+                        // currently we only handle unions containing a single <xs:simpleType>
+                        processSimpleType(singleSimpleTypeChildOf(simpleTypeDefElem), simpleType);
                         definitionAcquired = true;
                         break;
                     case "xs:list":
@@ -240,7 +239,9 @@ public class Parser {
                             if (patternElem != null) {
                                 // NOTE: currently this only happens in Elements XSD
                                 simpleType.comment = patternElem.getAttribute("value");
-                                // TODO: there could be many patterns listed
+                                if (DOM.nextElemChild(patternElem, "xs:pattern") != null) {
+                                    LOGGER.info("ignoring alternative xs:patterns in {}", simpleType.name);
+                                }
                                 //LOGGER.debug("Case 1A ({}) for {} with comment '{}'", primitiveType.name(),
                                 //    simpleType.name, simpleType.comment);
                             } else {
@@ -274,26 +275,13 @@ public class Parser {
                     throw new RuntimeException("Unknown xs:restriction base: " + baseType);
                 }
 
-                // when the xs:restriction has no 'base', it technically defines a non-primitive simple-type.
+                // when the xs:restriction has no 'base', it defines a simple-type from scratch (no inheritance).
                 // this is only rarely used in ONIX XSDs, as a way to define a min-sized list of another xs:simpleType.
                 // We support it by using the target xs:simpleType as if it were this one directly (i.e. recursively).
-                final Element simpleTypeElemBelowRestriction = DOM.firstElemChild(restrictionElem, "xs:simpleType");
-                if (simpleTypeElemBelowRestriction != null) {
-                    if (DOM.nextElemChild(simpleTypeElemBelowRestriction, "xs:simpleType") != null) {
-                        throw new RuntimeException("simpleType " + simpleType.name
-                            + " is a base-less restriction with more than one xs:simpleType");
-                    }
-                    if (!simpleType.isEmpty()) {
-                        throw new RuntimeException("simpleType " + simpleType.name
-                            + " is a base-less restriction which isn't empty: " + simpleType);
-                    }
-                    LOGGER.debug("simpleType {} is a base-less restriction, a copy of another xs:simpleType",
-                        simpleType.name);
-                    processSimpleType(simpleTypeElemBelowRestriction, simpleType);
-                    return; // CASE 3
-                }
-
-                throw new RuntimeException("Unhandled case of xs:restriction in simpleType " + simpleType.name);
+                final Element simpleTypeElemBelowRestriction = singleSimpleTypeChildOf(restrictionElem);
+                LOGGER.debug("simpleType {} is a base-less restriction, a copy of another xs:simpleType",
+                    simpleType.name);
+                processSimpleType(simpleTypeElemBelowRestriction, simpleType); // CASE 3
             }
 
             private void addEnumerations(Element restrictionElem) {
@@ -335,6 +323,18 @@ public class Parser {
                 // we create an alias to the item-type, and then mark the alias as such that represents a list
                 simpleType.setAsAliasFor(existingType);
                 simpleType.isList = true;
+            }
+
+            private Element singleSimpleTypeChildOf(Element element) {
+                final Element simpleTypeChild = DOM.firstElemChild(element, "xs:simpleType");
+                if (simpleTypeChild != null) {
+                    if (DOM.nextElemChild(simpleTypeChild, "xs:simpleType") != null) {
+                        throw new RuntimeException("simpleType " + simpleType.name
+                            + " violated expectancy for a single <xs:simpleType>");
+                    }
+                    return simpleTypeChild;
+                }
+                throw new RuntimeException("simpleType " + simpleType.name + " is missing a child <xs:simpleType>");
             }
         });
 
