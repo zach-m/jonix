@@ -19,6 +19,7 @@
 
 package com.tectonica.jonix.codegen.metadata;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.ArrayList;
@@ -27,18 +28,18 @@ import java.util.List;
 /**
  * Represents an ONIX primitive type. This type belongs to either one of the following distinct groups:
  * <ul>
- * <li>Data types - e.g. PositiveInteger, NonEmptyString, TimeOrDuration, etc.</li>
+ * <li>Data types - e.g. String, PositiveInteger, NonEmptyString, TimeOrDuration, etc.</li>
  * <li>Enumerated types - these are Onix <a href="https://www.editeur.org/14/Code-Lists/">Codelists</a></li>
  * </ul>
  * Given instance of this class, use {@link #isEnum()} to tell which group it belongs to.
  */
-@JsonPropertyOrder( {"name", "primitiveType", "comment", "enum", "enumName", "enumAliasFor", "enumValues"})
+@JsonPropertyOrder( {"name", "primitiveType", "comment", "isList", "enum", "enumName", "enumAliasFor", "enumValues"})
 public class OnixSimpleType implements Comparable<OnixSimpleType> {
     public static final OnixSimpleType XHTML = new OnixSimpleType("XHTML", Primitive.String, "Free XHTML content",
         null);
 
     /**
-     * the official name of the type, as named in the XSD tag {@code <xs:simpleType name="??">}
+     * the official ONIX name of the type, as named in the XSD tag {@code <xs:simpleType name="??">}
      */
     public final String name;
 
@@ -48,9 +49,14 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
     public Primitive primitiveType;
 
     /**
-     * In case of data-type: extra-description of the simpleType; in case of enum-type: description of the codelist
+     * description of the simpleType (aka annotation)
      */
     public String comment;
+
+    /**
+     * determines whether the type allows a list of values (rather than a single value)
+     */
+    public boolean isList;
 
     /**
      * (enum-type only): the Java Enum name to be used in the generated code; otherwise - null
@@ -72,8 +78,9 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         return (enumValues != null);
     }
 
+    @JsonIgnore
     public boolean isEmpty() {
-        return (primitiveType == null) && (comment == null) && (enumName == null) && (enumAliasFor == null);
+        return (primitiveType == null) && (comment == null) && (enumName == null) && (enumAliasFor == null) && !isList;
     }
 
     public OnixSimpleType(String name) {
@@ -98,6 +105,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
 
         primitiveType = enumType.primitiveType;
         comment = enumType.comment;
+        isList = enumType.isList;
         enumAliasFor = enumType.name;
         enumName = enumType.enumName;
         enumValues = enumType.enumValues;
@@ -107,6 +115,7 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         OnixSimpleType ost = new OnixSimpleType(other.name);
         ost.primitiveType = other.primitiveType;
         ost.comment = other.comment;
+        ost.isList = other.isList;
         ost.enumAliasFor = other.enumAliasFor;
         ost.enumName = other.enumName;
         ost.enumValues = new ArrayList<>(other.enumValues); // new array, same items

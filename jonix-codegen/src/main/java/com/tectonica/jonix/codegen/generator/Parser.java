@@ -65,7 +65,6 @@ public class Parser {
             this.onixVersion = onixVersion;
         }
 
-        private Set<String> spaceables;
         private Set<String> enumNames = new HashSet<>();
         private Map<String, Element> groupNodes = new HashMap<>();
         private Map<String, Element> attributeGroupNodes = new HashMap<>();
@@ -74,10 +73,9 @@ public class Parser {
     private final SchemaContext context;
     private final OnixMetadata meta;
 
-    public Parser(OnixVersion onixVersion, boolean isShort, Set<String> spaceables) {
+    public Parser(OnixVersion onixVersion, boolean isShort) {
         context = new SchemaContext(onixVersion);
         meta = new OnixMetadata(onixVersion, isShort);
-        context.spaceables = spaceables;
     }
 
     public OnixMetadata getMetadata() {
@@ -321,7 +319,7 @@ public class Parser {
             }
 
             /**
-             * xs:list represents a straightforward collection of some other simpleType
+             * xs:list represents a collection of some other simpleType
              */
             private void handleList(Element listElem) {
                 final String itemType = listElem.getAttribute("itemType");
@@ -333,10 +331,10 @@ public class Parser {
                     throw new RuntimeException(
                         "Can't create list for " + simpleType.name + " with unknown type " + itemType);
                 }
-                // we ignore the fact that this is a list, and treat it as if it were a singular value
-                LOGGER.debug("simpleTye {} is an xs:list of {} items, we ignore it by merely aliasing", simpleType.name,
-                    existingType.name);
+                LOGGER.debug("simpleTye {} is an xs:list of {} items", simpleType.name, existingType.name);
+                // we create an alias to the item-type, and then mark the alias as such that represents a list
                 simpleType.setAsAliasFor(existingType);
+                simpleType.isList = true;
             }
         });
 
@@ -473,7 +471,7 @@ public class Parser {
                 final OnixElementDef onixElement = new OnixElementDef();
                 onixElement.name = onixTagName;
                 onixElement.valueMember = member;
-                onixElement.isSpaceable = context.spaceables.contains(onixTagName);
+                onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
                 meta.onixElements.put(onixElement.name, onixElement);
                 onixClass = onixElement;
             } else {
@@ -525,7 +523,7 @@ public class Parser {
             final OnixElementMember member = OnixElementMember.create(simpleType);
             onixElement.name = onixTagName;
             onixElement.valueMember = member;
-            onixElement.isSpaceable = context.spaceables.contains(onixTagName);
+            onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
             patchElement(onixElement); // fixes some errors from the XSD, if such exist
             meta.onixElements.put(onixElement.name, onixElement);
             onixClass = onixElement;
@@ -549,16 +547,26 @@ public class Parser {
         extractAttributes(attributesParentElem, onixClass);
     }
 
+    private static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList(
+        "RegionCode", "MarketCountry", "MarketTerritory", "MarketCountryExcluded"));
+
+    private static final Set<String> SPACEABLE_SHORT_2 = new HashSet<>(Arrays.asList(
+        "b398", "j403", "j404", "j405"));
+
     private void patchElement(final OnixElementDef onixElement) {
         if (context.onixVersion == OnixVersion.Ver2_1_03) {
-            // patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
             if (onixElement.name.equals("AgentIDType") || onixElement.name.equals("j400")) {
+                // patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
                 onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List92"));
             } else if (onixElement.name.equals("MarketDateRole") || onixElement.name.equals("j408")) {
                 // patch for error in Onix2_rev03 XSD with regards to MarketDateRole (listed as free text)
                 // NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be
                 // created
                 onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List163"));
+            } else if (SPACEABLE_REF_2.contains(onixElement.name) || SPACEABLE_SHORT_2.contains(onixElement.name)) {
+                // for elements in Onix2_rev03 that are documented (in HTML) as supporting space-separated list, but
+                // defined as singular in the schema (the XSD file)
+                onixElement.isSpaceable = true;
             }
         }
     }
