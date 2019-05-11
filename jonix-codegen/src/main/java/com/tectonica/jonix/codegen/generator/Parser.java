@@ -168,9 +168,15 @@ public class Parser {
 
     private void processSimpleType(Element simpleTypeElem, final OnixSimpleType simpleType) {
         DOM.forElementsOf(simpleTypeElem, new ElementListener() {
+            boolean definitionAcquired = false;
+
             @Override
             public void onElement(Element simpleTypeDefElem) {
                 final String simpleTypeDefName = simpleTypeDefElem.getNodeName();
+
+                if (definitionAcquired) {
+                    throw new RuntimeException("simpleType " + simpleType.name + " has more than one definition");
+                }
 
                 switch (simpleTypeDefName) {
                     case "xs:annotation":
@@ -178,14 +184,17 @@ public class Parser {
                         break;
                     case "xs:restriction":
                         handleRestriction(simpleTypeDefElem);
+                        definitionAcquired = true;
                         break;
                     case "xs:union":
                         simpleType.primitiveType = Primitive.String; // we don't even bother..
                         // TODO: what if union of just one element?
                         //  See in ONIX3: <xs:simpleType name="dt.DateOrDateTime">
+                        definitionAcquired = true;
                         break;
                     case "xs:list":
                         handleList(simpleTypeDefElem);
+                        definitionAcquired = true;
                         break;
                     default:
                         throw new RuntimeException("Unhandled case of " + simpleTypeDefName);
