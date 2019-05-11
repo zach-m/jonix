@@ -105,11 +105,13 @@ public class Parser {
                 case "xs:element":
                     extractOnixClass(element);
                     break;
+
                 case "xs:simpleType":
                 case "xs:attributeGroup":
                 case "xs:group":
                     // auxiliary tags, pre-handled in amendContext(), already exist in OnixMetadata or SchemaContext
                     break;
+
                 case "xs:include":
                     String schemaLocation = element.getAttribute("schemaLocation");
                     if (!"ONIX_BookProduct_CodeLists.xsd".equals(schemaLocation) &&
@@ -120,6 +122,7 @@ public class Parser {
                         throw new RuntimeException("Unexpected top-level xs:include " + schemaLocation);
                     }
                     break;
+
                 default:
                     throw new RuntimeException("Unexpected top-level " + xsdTagName);
             }
@@ -338,25 +341,36 @@ public class Parser {
             }
         });
 
-        // we're done going over all the sub-tags of the xs:simpleType tag
+        // we're done going over all the (two) sub-tags of the xs:simpleType tag
         if (simpleType.primitiveType == null) {
             throw new RuntimeException("erroneous processing of simpleType " + simpleType);
         }
+
+        // we now compose a Java name for enum, if that's the type, based on the enum's comment
         if (simpleType.isEnum()) {
             simpleType.enumName = enumNameOf(simpleType);
             simpleType.enumCodelistIssue = meta.codelistIssue;
         }
+
+        // manual modifications
         patchSimpleType(simpleType); // fixes some errors from the XSD, if such exist
     }
 
     private String enumNameOf(OnixSimpleType enumType) {
+        // first, if this is an alias, we take the enumName from the original
         if (enumType.enumAliasFor != null) {
             return meta.typeByName(enumType.enumAliasFor).enumName;
         }
 
+        // otherwise we set the enumName based on the enum's comment + make sure it's unique
         String enumName = enumJavaName(enumType.comment);
         if (!context.enumNames.add(enumName)) {
+            String enumNameBefore = enumName;
             enumName += enumType.name; // new code-list with the same name, we have to differentiate
+            if (context.enumNames.contains(enumName)) {
+                throw new RuntimeException("Can't find unique name for simpleType " + enumType.name);
+            }
+            LOGGER.info("simpleType " + enumType.name + ": can't use " + enumNameBefore + ", using " + enumName);
         }
         return enumName;
     }
@@ -430,9 +444,6 @@ public class Parser {
             throw new RuntimeException("unnamed top-level xs:element is unsupported");
         }
 
-        //if (!onixTagName.equals("Annotation"))
-        //    return;
-
         Element complexTypeElem;
         Element contentElem;
         String contentType = "";
@@ -466,75 +477,16 @@ public class Parser {
         final Element attributesParentElem;
 
         if (defineFromScratch) { // first case (OnixComposite): content is "xs:sequence|xs:choice|xs:group"
-            // special treatment for Onix2 Flow
-            if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null) {
-                final OnixElementMember member = OnixElementMember.create(OnixSimpleType.XHTML);
-                final OnixElementDef onixElement = new OnixElementDef();
-                onixElement.name = onixTagName;
-                onixElement.valueMember = member;
-                onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
-                meta.onixElements.put(onixElement.name, onixElement);
-                onixClass = onixElement;
-            } else {
-                final Map<String, OnixCompositeMember> members = new LinkedHashMap<>();
-                if (contentType.equals("xs:group")) {
-                    extractMembersFromGroup(contentElem, members);
-                } else {
-                    extractMembers(contentElem, members);
-                }
-                final OnixCompositeDef onixComposite = new OnixCompositeDef();
-                onixComposite.name = onixTagName;
-                onixComposite.members = new ArrayList<>(members.values());
-                meta.onixComposites.put(onixComposite.name, onixComposite);
-                onixClass = onixComposite;
-            }
+            onixClass = onixClassFromScratch(onixTagName, contentType, contentElem);
             attributesParentElem = complexTypeElem;
 
         } else if (defineByInheritance) { // second case (OnixElement): content is "xs:simpleContent|xs:complexContent"
             final Element extensionElem = DOM.firstElemChild(contentElem);
-
-            // validate that we can deal with the provided inheritance
-            if (!extensionElem.getNodeName().equals("xs:extension")) {
-                throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: "
-                    + extensionElem.getNodeName());
-            }
-            final String baseType = extensionElem.getAttribute("base");
-            if (baseType.isEmpty()) {
-                throw new RuntimeException("found xs:extension without base");
-            }
-            DOM.ensureTagNames(DOM.firstElemChild(extensionElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
-
-            final boolean complex = contentType.equals("xs:complexContent");
-
-            final OnixSimpleType simpleType;
-            if (!complex) {
-                simpleType = meta.typeByName(baseType);
-                if (simpleType == null) {
-                    throw new RuntimeException("Unknown type " + baseType);
-                }
-            } else {
-                // special case for Onix3 Flow
-                if (!baseType.equals("Flow")) {
-                    throw new RuntimeException("found xs:extension with base type != Flow: " + baseType);
-                }
-                simpleType = OnixSimpleType.XHTML;
-            }
-
-            final OnixElementDef onixElement = new OnixElementDef();
-            final OnixElementMember member = OnixElementMember.create(simpleType);
-            onixElement.name = onixTagName;
-            onixElement.valueMember = member;
-            onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
-            patchElement(onixElement); // fixes some errors from the XSD, if such exist
-            meta.onixElements.put(onixElement.name, onixElement);
-            onixClass = onixElement;
+            onixClass = onixClassByInheritance(onixTagName, contentType, extensionElem);
             attributesParentElem = extensionElem;
 
         } else if (defineFlag) { // third case (OnixFlag): content is merely "xs:attribute|xs:attributeGroup"
-            final OnixFlagDef onixFlagClass = new OnixFlagDef();
-            onixFlagClass.name = onixTagName;
-            meta.onixFlags.put(onixFlagClass.name, onixFlagClass);
-            onixClass = onixFlagClass;
+            onixClass = onixClassFlag(onixTagName);
             attributesParentElem = complexTypeElem;
 
         } else {
@@ -546,6 +498,78 @@ public class Parser {
         // other than attributes, we don't expect other information about the class we just created
         DOM.ensureTagNames(DOM.nextElemChild(contentElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
         extractAttributes(attributesParentElem, onixClass);
+    }
+
+    private OnixClass onixClassFromScratch(String onixTagName, String contentType, Element contentElem) {
+        // special treatment for Onix2 Flow
+        if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null) {
+            final OnixElementMember member = OnixElementMember.create(OnixSimpleType.XHTML);
+            final OnixElementDef onixElement = new OnixElementDef();
+            onixElement.name = onixTagName;
+            onixElement.valueMember = member;
+            onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
+            meta.onixElements.put(onixElement.name, onixElement);
+            return onixElement;
+        }
+
+        final Map<String, OnixCompositeMember> members = new LinkedHashMap<>();
+        if (contentType.equals("xs:group")) {
+            extractMembersFromGroup(contentElem, members);
+        } else {
+            extractMembers(contentElem, members);
+        }
+        final OnixCompositeDef onixComposite = new OnixCompositeDef();
+        onixComposite.name = onixTagName;
+        onixComposite.members = new ArrayList<>(members.values());
+        meta.onixComposites.put(onixComposite.name, onixComposite);
+        return onixComposite;
+    }
+
+    private OnixClass onixClassByInheritance(String onixTagName, String contentType, Element extensionElem) {
+        // validate that the passed element is indeed an extension with a base (i.e. inheritance)
+        if (!extensionElem.getNodeName().equals("xs:extension")) {
+            throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: "
+                + extensionElem.getNodeName());
+        }
+        final String baseType = extensionElem.getAttribute("base");
+        if (baseType.isEmpty()) {
+            throw new RuntimeException("found xs:extension without base");
+        }
+
+        DOM.ensureTagNames(DOM.firstElemChild(extensionElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
+
+        final boolean complex = contentType.equals("xs:complexContent");
+
+        final OnixSimpleType simpleType;
+        if (!complex) {
+            simpleType = meta.typeByName(baseType);
+            if (simpleType == null) {
+                throw new RuntimeException("Unknown type " + baseType);
+            }
+        } else {
+            // special case for Onix3 Flow
+            if (!baseType.equals("Flow")) {
+                throw new RuntimeException("found xs:extension with base type != Flow: " + baseType);
+            }
+            simpleType = OnixSimpleType.XHTML;
+        }
+
+        final OnixElementDef onixElement = new OnixElementDef();
+        final OnixElementMember member = OnixElementMember.create(simpleType);
+        onixElement.name = onixTagName;
+        onixElement.valueMember = member;
+        onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
+        patchElement(onixElement); // fixes some errors from the XSD, if such exist
+        meta.onixElements.put(onixElement.name, onixElement);
+
+        return onixElement;
+    }
+
+    private OnixClass onixClassFlag(String onixTagName) {
+        final OnixFlagDef onixFlagClass = new OnixFlagDef();
+        onixFlagClass.name = onixTagName;
+        meta.onixFlags.put(onixFlagClass.name, onixFlagClass);
+        return onixFlagClass;
     }
 
     private static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList(
