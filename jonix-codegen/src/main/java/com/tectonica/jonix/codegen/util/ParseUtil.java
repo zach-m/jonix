@@ -35,30 +35,37 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class ParseUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(ParseUtil.class);
 
-    public static final String RES_CODELIST_2 = "/xsd/onix2/ONIX_BookProduct_CodeLists.xsd";
-    public static final String RES_REF_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_reference.xsd";
-    public static final String RES_SHORT_2 = "/xsd/onix2/ONIX_BookProduct_Release2.1_short.xsd";
-    public static final String RES_HTML_SPEC_2 = "/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html";
+    public static final String CODELIST_ISSUE_2 = "36";
+    public static final String RES_CODELIST_2 =
+        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_BookProduct_CodeLists.xsd";
+    public static final String RES_REF_2 =
+        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_BookProduct_Release2.1_reference.xsd";
+    public static final String RES_SHORT_2 =
+        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_BookProduct_Release2.1_short.xsd";
+    public static final String RES_HTML_SPEC_2 =
+        "/xsd/onix2.1_2013-11-15_rev03_codelist36/ONIX_for_Books_Format_Specification_2.1.4.html";
 
-    public static final String RES_CODELIST_3 = "/xsd/onix3/ONIX_BookProduct_CodeLists.xsd";
-    public static final String RES_REF_3 = "/xsd/onix3/ONIX_BookProduct_3.0_reference.xsd";
-    public static final String RES_SHORT_3 = "/xsd/onix3/ONIX_BookProduct_3.0_short.xsd";
-    public static final String RES_HTML_SPEC_3 = "/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.6.html";
+    public static final String CODELIST_ISSUE_3 = "45";
+    public static final String RES_CODELIST_3 =
+        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_BookProduct_CodeLists.xsd";
+    public static final String RES_REF_3 =
+        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_BookProduct_3.0_reference.xsd";
+    public static final String RES_SHORT_3 =
+        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_BookProduct_3.0_short.xsd";
+    public static final String RES_HTML_SPEC_3 =
+        "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_for_Books_Format_Specification_3.0.6.html";
 
     public static OnixMetadata parse(OnixVersion onixVersion, boolean isShort, String mainXsd, String codelistXsd,
-                                     String specHtml)
+                                     String specHtml, String codelistIssue)
         throws IOException, ParserConfigurationException, SAXException {
         Document codelistDoc = docOf(codelistXsd);
         Document mainDoc = docOf(mainXsd);
 
-        final Parser parser = new Parser(onixVersion, isShort);
+        final Parser parser = new Parser(onixVersion, isShort, codelistIssue);
         parser.analyzeSchema(codelistDoc, new File(codelistXsd).getName());
         parser.analyzeSchema(mainDoc, new File(mainXsd).getName());
         parser.postAnalysis(specHtml);

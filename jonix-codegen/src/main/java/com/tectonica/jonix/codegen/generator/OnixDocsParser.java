@@ -20,14 +20,12 @@
 package com.tectonica.jonix.codegen.generator;
 
 import com.tectonica.jonix.codegen.metadata.OnixDocs;
+import com.tectonica.jonix.codegen.util.ParseUtil;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 
@@ -40,9 +38,12 @@ public class OnixDocsParser {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //TODO: turn into test
     public static void main(String[] args) throws IOException {
-        parseAndSave("/xsd/onix2/ONIX_for_Books_Format_Specification_2.1.4.html", new File("parsed", "Onix2.html"));
-        parseAndSave("/xsd/onix3/ONIX_for_Books_Format_Specification_3.0.2.html", new File("parsed", "Onix3.html"));
+        File outDir = new File("parsed");
+        outDir.mkdirs();
+        parseAndSave(ParseUtil.RES_HTML_SPEC_2, new File(outDir, "Onix2.html"));
+        parseAndSave(ParseUtil.RES_HTML_SPEC_3, new File(outDir, "Onix3.html"));
     }
 
     private static void parseAndSave(final String specHtml, File targetHtml) throws IOException {

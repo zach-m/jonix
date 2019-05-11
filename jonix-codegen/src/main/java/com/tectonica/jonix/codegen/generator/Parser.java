@@ -73,9 +73,9 @@ public class Parser {
     private final SchemaContext context;
     private final OnixMetadata meta;
 
-    public Parser(OnixVersion onixVersion, boolean isShort) {
+    public Parser(OnixVersion onixVersion, boolean isShort, String codelistIssue) {
         context = new SchemaContext(onixVersion);
-        meta = new OnixMetadata(onixVersion, isShort);
+        meta = new OnixMetadata(onixVersion, isShort, codelistIssue);
     }
 
     public OnixMetadata getMetadata() {
@@ -344,6 +344,7 @@ public class Parser {
         }
         if (simpleType.isEnum()) {
             simpleType.enumName = enumNameOf(simpleType);
+            simpleType.enumCodelistIssue = meta.codelistIssue;
         }
         patchSimpleType(simpleType); // fixes some errors from the XSD, if such exist
     }

@@ -27,10 +27,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@JsonPropertyOrder( {"onixVersion", "isShort", "composites", "elements", "flags", "types", "enums", "structs"})
+@JsonPropertyOrder(
+    {"onixVersion", "isShort", "codelistIssue", "composites", "elements", "flags", "types", "enums", "structs"})
 public class OnixMetadata {
     public final OnixVersion onixVersion;
     public final boolean isShort;
+    public final String codelistIssue;
 
     @JsonIgnore
     public Map<String, OnixCompositeDef> onixComposites = new HashMap<>();
@@ -49,9 +51,10 @@ public class OnixMetadata {
     @JsonIgnore
     public Map<String, OnixStruct> unifiedStructs = null;
 
-    public OnixMetadata(OnixVersion onixVersion, boolean isShort) {
+    public OnixMetadata(OnixVersion onixVersion, boolean isShort, String codelistIssue) {
         this.onixVersion = onixVersion;
         this.isShort = isShort;
+        this.codelistIssue = codelistIssue;
     }
 
     // convenience getters

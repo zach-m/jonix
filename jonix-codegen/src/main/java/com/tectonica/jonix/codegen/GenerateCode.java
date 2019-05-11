@@ -28,15 +28,12 @@ import com.tectonica.jonix.codegen.metadata.OnixCompositeDef;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixElementMember;
-import com.tectonica.jonix.codegen.metadata.OnixEnumValue;
 import com.tectonica.jonix.codegen.metadata.OnixFlagDef;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
-import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 import com.tectonica.jonix.codegen.metadata.OnixStructMember.TransformationType;
 import com.tectonica.jonix.codegen.util.ListDiff;
-import com.tectonica.jonix.codegen.util.ListDiff.CompareListener;
 import com.tectonica.jonix.codegen.util.ParseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,9 +61,9 @@ public class GenerateCode {
         }
 
         final OnixMetadata ref2 = ParseUtil.parse(OnixVersion.Ver2_1_03, false, ParseUtil.RES_REF_2,
-            ParseUtil.RES_CODELIST_2, ParseUtil.RES_HTML_SPEC_2);
+            ParseUtil.RES_CODELIST_2, ParseUtil.RES_HTML_SPEC_2, ParseUtil.CODELIST_ISSUE_2);
         final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_06, false, ParseUtil.RES_REF_3,
-            ParseUtil.RES_CODELIST_3, ParseUtil.RES_HTML_SPEC_3);
+            ParseUtil.RES_CODELIST_3, ParseUtil.RES_HTML_SPEC_3, ParseUtil.CODELIST_ISSUE_3);
 
         final List<OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
         final Map<String, OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);

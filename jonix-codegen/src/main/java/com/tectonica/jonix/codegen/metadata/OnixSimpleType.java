@@ -33,7 +33,9 @@ import java.util.List;
  * </ul>
  * Given instance of this class, use {@link #isEnum()} to tell which group it belongs to.
  */
-@JsonPropertyOrder( {"name", "primitiveType", "comment", "isList", "enum", "enumName", "enumAliasFor", "enumValues"})
+@JsonPropertyOrder(
+    {"name", "primitiveType", "comment", "isList", "enum", "enumName", "enumCodelistIssue", "enumAliasFor",
+        "enumValues"})
 public class OnixSimpleType implements Comparable<OnixSimpleType> {
     public static final OnixSimpleType XHTML = new OnixSimpleType("XHTML", Primitive.String, "Free XHTML content",
         null);
@@ -64,6 +66,11 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
     public String enumName;
 
     /**
+     * (enum-type only): the codelist version from which this enum was parsed
+     */
+    public String enumCodelistIssue;
+
+    /**
      * (enum-type only): In some rare cases, the enum is just an alias for another enum, e.g. "CountryCodeList" ->
      * "List91"
      */
@@ -80,14 +87,15 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
 
     @JsonIgnore
     public boolean isEmpty() {
-        return (primitiveType == null) && (comment == null) && (enumName == null) && (enumAliasFor == null) && !isList;
+        return (primitiveType == null) && (comment == null) && (enumName == null) && (enumCodelistIssue == null) &&
+            (enumAliasFor == null) && !isList;
     }
 
     public OnixSimpleType(String name) {
         this.name = name;
     }
 
-    public OnixSimpleType(String name, Primitive dataType, String comment, List<OnixEnumValue> enumValues) {
+    private OnixSimpleType(String name, Primitive dataType, String comment, List<OnixEnumValue> enumValues) {
         this.name = name;
         this.primitiveType = dataType;
         this.comment = comment;
@@ -106,8 +114,9 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         primitiveType = enumType.primitiveType;
         comment = enumType.comment;
         isList = enumType.isList;
-        enumAliasFor = enumType.name;
         enumName = enumType.enumName;
+        enumCodelistIssue = enumType.enumCodelistIssue;
+        enumAliasFor = enumType.name;
         enumValues = enumType.enumValues;
     }
 
@@ -116,8 +125,9 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         ost.primitiveType = other.primitiveType;
         ost.comment = other.comment;
         ost.isList = other.isList;
-        ost.enumAliasFor = other.enumAliasFor;
         ost.enumName = other.enumName;
+        ost.enumCodelistIssue = other.enumCodelistIssue;
+        ost.enumAliasFor = other.enumAliasFor;
         ost.enumValues = new ArrayList<>(other.enumValues); // new array, same items
         return ost;
     }
