@@ -84,57 +84,39 @@ public class Parser {
 
     /**
      * This method is extracting metadata from ONIX official XSD files. Currently it can process either the Codelists
-     * XSD or the Elements XSD (Reference/Short).
+     * XSD or the Structure XSD (in either variant, Reference or Short).
      * <p>
-     * Since processing of some data-types builds on the existence of others, previously-processed data-types, the
-     * correct order is to first call this method on the Codelists, and later on the Elements.
+     * Since processing of some data-types builds on the existence of others (previously-processed) data-types, the
+     * correct order is to first call this method on the Codelists, and later on the Structure.
      */
     public void analyzeSchema(Document xsdDoc, String schemaFileName) {
-        // take the top-container from of the XSD file
+        // take the top-container from of the XSD file, we'll process everything below this element
         final Element schemaElem = (Element) xsdDoc.getElementsByTagName("xs:schema").item(0);
 
         // process auxiliary tags (SimpleTypes, Groups, AttributeGroups) that other tags will references later
-        LOGGER.debug("\n\nSchema {}: Amending ****************************************************\n", schemaFileName);
-        amendContext(schemaElem);
+        LOGGER.debug("\n\n{}/{}: Analyzing Context ****************************************************\n",
+            meta.onixVersion, schemaFileName);
+        analyzeContext(schemaElem);
 
-        // traverse top-level elements of the schema, looking for Onix classes (none are expected in Codelist XSD)
-        LOGGER.debug("\n\nSchema {}: Elements ****************************************************\n", schemaFileName);
-        DOM.forElementsOf(schemaElem, element -> {
-            final String xsdTagName = element.getNodeName();
-            switch (xsdTagName) {
-                case "xs:element":
-                    extractOnixClass(element);
-                    break;
-
-                case "xs:simpleType":
-                case "xs:attributeGroup":
-                case "xs:group":
-                    // auxiliary tags, pre-handled in amendContext(), already exist in OnixMetadata or SchemaContext
-                    break;
-
-                case "xs:include":
-                    String schemaLocation = element.getAttribute("schemaLocation");
-                    if (!"ONIX_BookProduct_CodeLists.xsd".equals(schemaLocation) &&
-                        !"ONIX_XHTML_Subset.xsd".equals(schemaLocation)) {
-                        // we ignore these XSD includes, for the following reasons:
-                        // - ONIX_BookProduct_CodeLists.xsd: is called explicitly before the main XSD
-                        // - ONIX_XHTML_Subset             :  pertains to HTML tags, which we don't represent in Jonix
-                        throw new RuntimeException("Unexpected top-level xs:include " + schemaLocation);
-                    }
-                    break;
-
-                default:
-                    throw new RuntimeException("Unexpected top-level " + xsdTagName);
-            }
-        });
+        // process complex tags, pertaining to Onix classes (elements, composites, flags)
+        // NOTE: none are expected in Codelist XSD
+        LOGGER.debug("\n\nSchema {}/{}: Analyzing Classes ****************************************************\n",
+            meta.onixVersion, schemaFileName);
+        analyzeClasses(schemaElem);
     }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // CONTEXT SERVICES
+    //
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Process primitive/auxiliary top-level tags (SimpleTypes, Groups, AttributeGroups) that Onix classes are composed
      * of. SimpleTypes are stored directly in {@link #meta}, as they already represent final types. Groups and
      * AttributeGroups, on the other hand, are stored intermediately in {@link #context}, and used later in parsing.
      */
-    private void amendContext(final Element schemaElem) {
+    private void analyzeContext(final Element schemaElem) {
         processSimpleTypes(schemaElem);
         processGroups(schemaElem);
         processAttributeGroups(schemaElem);
@@ -376,7 +358,7 @@ public class Parser {
     }
 
     /**
-     * encodes the (free-text) comment of the code-list (i.e. its annotation from the XSD schema) into a proper Java
+     * Encodes the (free-text) comment of the code-list (i.e. its annotation from the XSD schema) into a proper Java
      * name for the enum representing that code-list.
      * <p>
      * The process is NOT guaranteed to be forward-compatible as it only deals with cases observed.
@@ -434,16 +416,54 @@ public class Parser {
         });
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // ONIX CLASSES SERVICES
+    //
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     /**
-     *
+     * Process the complex tags of the schema (xs:element), extracting properties of the Onix classes (including
+     * elements, composites and flags)
      */
+    private void analyzeClasses(Element schemaElem) {
+        DOM.forElementsOf(schemaElem, element -> {
+            final String xsdTagName = element.getNodeName();
+            switch (xsdTagName) {
+                case "xs:element":
+                    extractOnixClass(element);
+                    break;
+
+                case "xs:simpleType":
+                case "xs:attributeGroup":
+                case "xs:group":
+                    // auxiliary tags, pre-handled in analyzeContext(), already exist in OnixMetadata or SchemaContext
+                    break;
+
+                case "xs:include":
+                    String schemaLocation = element.getAttribute("schemaLocation");
+                    if (!"ONIX_BookProduct_CodeLists.xsd".equals(schemaLocation) &&
+                        !"ONIX_XHTML_Subset.xsd".equals(schemaLocation)) {
+                        // we ignore these XSD includes, for the following reasons:
+                        // - ONIX_BookProduct_CodeLists.xsd: is called explicitly before the main XSD
+                        // - ONIX_XHTML_Subset             :  pertains to HTML tags, which we don't represent in Jonix
+                        throw new RuntimeException("Unexpected top-level xs:include " + schemaLocation);
+                    }
+                    break;
+
+                default:
+                    throw new RuntimeException("Unexpected top-level " + xsdTagName);
+            }
+        });
+    }
+
     private void extractOnixClass(Element element) {
 
+        // validate the basic structure of the xs:element
         String onixTagName = element.getAttribute("name");
         if (onixTagName.isEmpty()) {
             throw new RuntimeException("unnamed top-level xs:element is unsupported");
         }
-
         Element complexTypeElem;
         Element contentElem;
         String contentType = "";
@@ -460,39 +480,43 @@ public class Parser {
             // the basic structure is now validated (xs:element containing single xs:complexType)
             contentElem = DOM.firstElemChild(complexTypeElem);
             contentType = contentElem.getNodeName();
-
         } finally {
             LOGGER.debug("--- {} ({})", onixTagName, contentType);
         }
 
-        // the first child of <xs:complexType> determines how to process it, there are 3 cases
-        final boolean defineFromScratch =
-            contentType.equals("xs:sequence") || contentType.equals("xs:choice") || contentType.equals("xs:group");
-        final boolean defineByInheritance =
-            contentType.equals("xs:simpleContent") || contentType.equals("xs:complexContent");
-        final boolean defineFlag =
-            contentType.equals("xs:attribute") || contentType.equals("xs:attributeGroup");
-
         final OnixClass onixClass;
-        final Element attributesParentElem;
+        Element attributesParentElem = complexTypeElem;
 
-        if (defineFromScratch) { // first case (OnixComposite): content is "xs:sequence|xs:choice|xs:group"
-            onixClass = onixClassFromScratch(onixTagName, contentType, contentElem);
-            attributesParentElem = complexTypeElem;
+        // the first child of <xs:complexType> determines how to process it, there are 3 cases
+        switch (contentType) {
+            case "xs:simpleContent":
+            case "xs:complexContent":
+                final Element extensionElem = DOM.firstElemChild(contentElem);
+                onixClass = extractOnixElement(onixTagName, contentType, extensionElem);
+                attributesParentElem = extensionElem;
+                break;
 
-        } else if (defineByInheritance) { // second case (OnixElement): content is "xs:simpleContent|xs:complexContent"
-            final Element extensionElem = DOM.firstElemChild(contentElem);
-            onixClass = onixClassByInheritance(onixTagName, contentType, extensionElem);
-            attributesParentElem = extensionElem;
+            case "xs:choice":
+            case "xs:sequence":
+            case "xs:group":
+                // special treatment for Onix2 Flow (tag containing HTML content)
+                OnixClass onix2Flow = extractOnixElementForOnix2Flow(onixTagName, contentType, contentElem);
+                if (onix2Flow != null) {
+                    onixClass = onix2Flow;
+                } else {
+                    onixClass = extractOnixComposite(onixTagName, contentType, contentElem);
+                }
+                break;
 
-        } else if (defineFlag) { // third case (OnixFlag): content is merely "xs:attribute|xs:attributeGroup"
-            onixClass = onixClassFlag(onixTagName);
-            attributesParentElem = complexTypeElem;
+            case "xs:attribute":
+            case "xs:attributeGroup":
+                onixClass = extractOnixFlag(onixTagName);
+                break;
 
-        } else {
-            throw new RuntimeException(
-                "first child of top-level xs:element's xs:complexType is expected to define a content. found: "
-                    + contentType);
+            default:
+                throw new RuntimeException(
+                    "first child of top-level xs:element's xs:complexType is expected to define a content. found: "
+                        + contentType);
         }
 
         // other than attributes, we don't expect other information about the class we just created
@@ -500,18 +524,68 @@ public class Parser {
         extractAttributes(attributesParentElem, onixClass);
     }
 
-    private OnixClass onixClassFromScratch(String onixTagName, String contentType, Element contentElem) {
-        // special treatment for Onix2 Flow
-        if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null) {
-            final OnixElementMember member = OnixElementMember.create(OnixSimpleType.XHTML);
-            final OnixElementDef onixElement = new OnixElementDef();
-            onixElement.name = onixTagName;
-            onixElement.valueMember = member;
-            onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
-            meta.onixElements.put(onixElement.name, onixElement);
-            return onixElement;
+    /**
+     * extracts an OnixElement which is a mere extension of some xs:simpleType (primitive or codelist)
+     */
+    private OnixClass extractOnixElement(String onixTagName, String contentType, Element extensionElem) {
+        // validate that the passed child element is indeed an xs:extension with a base (i.e. inheritance)
+        if (!extensionElem.getNodeName().equals("xs:extension")) {
+            throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: "
+                + extensionElem.getNodeName());
+        }
+        final String baseType = extensionElem.getAttribute("base");
+        if (baseType.isEmpty()) {
+            throw new RuntimeException("found xs:extension without base");
         }
 
+        // under the xs:extension tag, we expect only xs:attribute and xs:attributeGroup tags
+        DOM.ensureTagNames(DOM.firstElemChild(extensionElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
+
+        // find out the base simpleType from which this OnixElement inherits
+        final OnixSimpleType baseSimpleType;
+        if (contentType.equals("xs:simpleContent")) {
+            // xs:simpleContent is an extension of a simpleType with some attributes
+            baseSimpleType = meta.typeByName(baseType);
+            if (baseSimpleType == null) {
+                throw new RuntimeException("Unknown type " + baseType);
+            }
+        } else {
+            // xs:complexContent in used in Onix3 for Flow tags (i.e. HTML content)
+            if (!baseType.equals("Flow")) {
+                throw new RuntimeException("found xs:extension with base type != Flow: " + baseType);
+            }
+            baseSimpleType = OnixSimpleType.XHTML;
+        }
+
+        final OnixElementDef onixElement = new OnixElementDef();
+        onixElement.name = onixTagName;
+        onixElement.valueMember = OnixElementMember.create(baseSimpleType);
+        onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
+
+        patchOnixElement(onixElement); // manual fixes for some errors in the XSD, if such exist
+        meta.onixElements.put(onixElement.name, onixElement);
+
+        return onixElement;
+    }
+
+    private OnixClass extractOnixElementForOnix2Flow(String onixTagName, String contentType, Element contentElem) {
+        // special treatment for Onix2 Flow (tag containing HTML content)
+        if (contentType.equals("xs:choice")) {
+            if (DOM.firstElemChild(contentElem, "xs:element", "ref", "p") != null) {
+                // we identify this situation by spotting the HTML <p> tag among the allowed elements.
+                // if found, we classify this tag as OnixElement (with free HTML text), rather than OnixComposite
+                final OnixElementDef onixElement = new OnixElementDef();
+                onixElement.name = onixTagName;
+                onixElement.valueMember = OnixElementMember.create(OnixSimpleType.XHTML);
+                onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
+                meta.onixElements.put(onixElement.name, onixElement);
+                return onixElement;
+            }
+        }
+        return null;
+    }
+
+    private OnixClass extractOnixComposite(String onixTagName, String contentType, Element contentElem) {
         final Map<String, OnixCompositeMember> members = new LinkedHashMap<>();
         if (contentType.equals("xs:group")) {
             extractMembersFromGroup(contentElem, members);
@@ -523,77 +597,6 @@ public class Parser {
         onixComposite.members = new ArrayList<>(members.values());
         meta.onixComposites.put(onixComposite.name, onixComposite);
         return onixComposite;
-    }
-
-    private OnixClass onixClassByInheritance(String onixTagName, String contentType, Element extensionElem) {
-        // validate that the passed element is indeed an extension with a base (i.e. inheritance)
-        if (!extensionElem.getNodeName().equals("xs:extension")) {
-            throw new RuntimeException("expected xs:extension as first child of " + contentType + ", found: "
-                + extensionElem.getNodeName());
-        }
-        final String baseType = extensionElem.getAttribute("base");
-        if (baseType.isEmpty()) {
-            throw new RuntimeException("found xs:extension without base");
-        }
-
-        DOM.ensureTagNames(DOM.firstElemChild(extensionElem), Arrays.asList("xs:attribute", "xs:attributeGroup"));
-
-        final boolean complex = contentType.equals("xs:complexContent");
-
-        final OnixSimpleType simpleType;
-        if (!complex) {
-            simpleType = meta.typeByName(baseType);
-            if (simpleType == null) {
-                throw new RuntimeException("Unknown type " + baseType);
-            }
-        } else {
-            // special case for Onix3 Flow
-            if (!baseType.equals("Flow")) {
-                throw new RuntimeException("found xs:extension with base type != Flow: " + baseType);
-            }
-            simpleType = OnixSimpleType.XHTML;
-        }
-
-        final OnixElementDef onixElement = new OnixElementDef();
-        final OnixElementMember member = OnixElementMember.create(simpleType);
-        onixElement.name = onixTagName;
-        onixElement.valueMember = member;
-        onixElement.isSpaceable = onixElement.valueMember.simpleType.isList;
-        patchElement(onixElement); // fixes some errors from the XSD, if such exist
-        meta.onixElements.put(onixElement.name, onixElement);
-
-        return onixElement;
-    }
-
-    private OnixClass onixClassFlag(String onixTagName) {
-        final OnixFlagDef onixFlagClass = new OnixFlagDef();
-        onixFlagClass.name = onixTagName;
-        meta.onixFlags.put(onixFlagClass.name, onixFlagClass);
-        return onixFlagClass;
-    }
-
-    private static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList(
-        "RegionCode", "MarketCountry", "MarketTerritory", "MarketCountryExcluded"));
-
-    private static final Set<String> SPACEABLE_SHORT_2 = new HashSet<>(Arrays.asList(
-        "b398", "j403", "j404", "j405"));
-
-    private void patchElement(final OnixElementDef onixElement) {
-        if (context.onixVersion == OnixVersion.Ver2_1_03) {
-            if (onixElement.name.equals("AgentIDType") || onixElement.name.equals("j400")) {
-                // patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
-                onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List92"));
-            } else if (onixElement.name.equals("MarketDateRole") || onixElement.name.equals("j408")) {
-                // patch for error in Onix2_rev03 XSD with regards to MarketDateRole (listed as free text)
-                // NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be
-                // created
-                onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List163"));
-            } else if (SPACEABLE_REF_2.contains(onixElement.name) || SPACEABLE_SHORT_2.contains(onixElement.name)) {
-                // for elements in Onix2_rev03 that are documented (in HTML) as supporting space-separated list, but
-                // defined as singular in the schema (the XSD file)
-                onixElement.isSpaceable = true;
-            }
-        }
     }
 
     private void extractMembers(final Element sequenceOrChoiceElem,
@@ -612,12 +615,12 @@ public class Parser {
                     break;
                 case "xs:group":
                     // recurse, looking for the elements
-                    extractMembersFromGroup(childElem, members); // recurse
+                    extractMembersFromGroup(childElem, members);
                     break;
                 case "xs:element":
                     final String className = childElem.getAttribute("ref");
                     if (className.isEmpty()) {
-                        throw new RuntimeException("under content - xs:elemenet without ref found");
+                        throw new RuntimeException("under content - xs:element without ref found");
                     }
                     final boolean isUnderChoice = sequenceOrChoiceElem.getNodeName().equals("xs:choice");
                     final String minOccurs = isUnderChoice ? "0" : childElem.getAttribute("minOccurs");
@@ -626,7 +629,7 @@ public class Parser {
                     final OnixCompositeMember existing = members.get(className);
                     if (existing == null) {
                         OnixCompositeMember onixCompositeMember = OnixCompositeMember.create(className, cardinality);
-                        patchCompositeMember(onixCompositeMember);
+                        patchOnixCompositeMember(onixCompositeMember);
                         members.put(className, onixCompositeMember);
                     } else {
                         // this is a case where a certain member is listed more than once in the specs of the parent
@@ -669,12 +672,44 @@ public class Parser {
         extractMembers(groupDefTopElem, members);
     }
 
-    private void patchCompositeMember(OnixCompositeMember onixCompositeMember) {
+    private OnixClass extractOnixFlag(String onixTagName) {
+        final OnixFlagDef onixFlagClass = new OnixFlagDef();
+        onixFlagClass.name = onixTagName;
+        meta.onixFlags.put(onixFlagClass.name, onixFlagClass);
+        return onixFlagClass;
+    }
+
+    private static final Set<String> SPACEABLE_REF_2 = new HashSet<>(Arrays.asList(
+        "RegionCode", "MarketCountry", "MarketTerritory", "MarketCountryExcluded"));
+
+    private static final Set<String> SPACEABLE_SHORT_2 = new HashSet<>(Arrays.asList(
+        "b398", "j403", "j404", "j405"));
+
+    private void patchOnixElement(final OnixElementDef onixElement) {
+        if (context.onixVersion == OnixVersion.Ver2_1_03) {
+            if (onixElement.name.equals("AgentIDType") || onixElement.name.equals("j400")) {
+                // patch for error in Onix2_rev03 XSD with regards to AgentIDType (listed as free text)
+                onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List92"));
+            } else if (onixElement.name.equals("MarketDateRole") || onixElement.name.equals("j408")) {
+                // patch for error in Onix2_rev03 XSD with regards to MarketDateRole (listed as free text)
+                // NOTE: the correct codelist is 67, but we use 163 (which extends 67) so that a common struct can be
+                // created
+                onixElement.valueMember = OnixElementMember.create(meta.onixEnums.get("List163"));
+            } else if (SPACEABLE_REF_2.contains(onixElement.name) || SPACEABLE_SHORT_2.contains(onixElement.name)) {
+                // for elements in Onix2_rev03 that are documented (in HTML) as supporting space-separated list, but
+                // defined as singular in the schema (the XSD file)
+                onixElement.isSpaceable = true;
+            }
+        }
+    }
+
+    private void patchOnixCompositeMember(OnixCompositeMember onixCompositeMember) {
         // in Onix's <AudienceRange> there are two members <AudienceRangePrecision> and <AudienceRangeValue>
         // with a very unique cardinality - they can appear once, twice or not at all. the XSD doesn't reflect that
         if (onixCompositeMember.className.equals("AudienceRangePrecision")
             || onixCompositeMember.className.equals("AudienceRangeValue")
-            || onixCompositeMember.className.equals("b075") || onixCompositeMember.className.equals("b076")) {
+            || onixCompositeMember.className.equals("b075")
+            || onixCompositeMember.className.equals("b076")) {
             onixCompositeMember.cardinality = Cardinality.ZeroOrMore;
         }
     }
@@ -752,7 +787,7 @@ public class Parser {
 
     public void postAnalysis(String specHtml) {
         // we're traversing all composites, looking for those that are data-composites, i.e. that contain ONLY elements
-        // and/or flags
+        // and/or flags (no nested composites)
         for (OnixCompositeDef composite : meta.getComposites()) {
             boolean isDataComposite = true;
             OnixStruct struct = new OnixStruct(composite);

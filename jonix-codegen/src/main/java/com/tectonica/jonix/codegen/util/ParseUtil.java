@@ -59,18 +59,18 @@ public class ParseUtil {
     public static final String RES_HTML_SPEC_3 =
         "/xsd/onix3.0_2019-04-26_rev06_codelist45/ONIX_for_Books_Format_Specification_3.0.6.html";
 
-    public static OnixMetadata parse(OnixVersion onixVersion, boolean isShort, String mainXsd, String codelistXsd,
+    public static OnixMetadata parse(OnixVersion onixVersion, boolean isShort, String structureXsd, String codelistXsd,
                                      String specHtml, String codelistIssue)
         throws IOException, ParserConfigurationException, SAXException {
         Document codelistDoc = docOf(codelistXsd);
-        Document mainDoc = docOf(mainXsd);
+        Document structureDoc = docOf(structureXsd);
 
         final Parser parser = new Parser(onixVersion, isShort, codelistIssue);
         parser.analyzeSchema(codelistDoc, new File(codelistXsd).getName());
-        parser.analyzeSchema(mainDoc, new File(mainXsd).getName());
+        parser.analyzeSchema(structureDoc, new File(structureXsd).getName());
         parser.postAnalysis(specHtml);
 
-        LOGGER.info(">>> Successfully processed " + mainXsd);
+        LOGGER.info(">>> Successfully processed " + structureXsd);
 
         return parser.getMetadata();
     }
