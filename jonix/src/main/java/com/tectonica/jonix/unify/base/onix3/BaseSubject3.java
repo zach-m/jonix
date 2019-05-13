@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.SubjectSchemeIdentifiers;
 import com.tectonica.jonix.onix3.Subject;
 import com.tectonica.jonix.onix3.SubjectHeadingText;
@@ -47,7 +47,7 @@ public class BaseSubject3 extends BaseSubject {
     private String pickSubjectHeadingText(Subject subject) {
         if (!subject.subjectHeadingTexts().isEmpty()) {
             for (SubjectHeadingText sht : subject.subjectHeadingTexts()) {
-                if (sht.language == null || sht.language == LanguageCodes.English) {
+                if (sht.language == null || sht.language == Languages.English) {
                     return sht.value;
                 }
             }

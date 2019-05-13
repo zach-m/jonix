@@ -26,14 +26,11 @@ import com.tectonica.jonix.codegen.metadata.OnixElementDef;
 import com.tectonica.jonix.codegen.metadata.OnixMetadata;
 import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.util.Map;
 
 public class GenUtil {
-    private static final Logger LOGGER = LoggerFactory.getLogger(GenUtil.class);
-
     public static final String COMMON_PACKAGE = "com.tectonica.jonix";
 
     public static class TypeInfo {
@@ -41,6 +38,12 @@ public class GenUtil {
         String comment;
         boolean isPrimitive;
         boolean isXHTML;
+    }
+
+    private final Map<String, OnixSimpleType> unifiedCodelists;
+
+    public GenUtil(Map<String, OnixSimpleType> unifiedCodelists) {
+        this.unifiedCodelists = unifiedCodelists;
     }
 
     /**
@@ -53,24 +56,41 @@ public class GenUtil {
         }
     }
 
-    public static TypeInfo typeInfoOf(OnixSimpleType simpleType) {
-        return typeInfoOf(simpleType.name, simpleType.primitiveType.javaType, simpleType.enumName);
+    public TypeInfo typeInfoOf(OnixSimpleType simpleType) {
+        return typeInfoOf(simpleTypeNameOf(simpleType), simpleType.primitiveType.javaType, simpleType.enumName);
     }
 
-    public static TypeInfo typeInfoOf(OnixAttribute attt) {
-        return typeInfoOf(attt.getSimpleTypeName(), attt.primitiveType.javaType, attt.getEnumName());
+    public TypeInfo typeInfoOf(OnixAttribute attr) {
+        return typeInfoOf(simpleTypeNameOf(attr.simpleType), attr.primitiveType.javaType, attr.getEnumName());
     }
 
-    public static TypeInfo typeInfoOf(String onixSimpleTypeName, String javaType, String enumName) {
+    private String simpleTypeNameOf(OnixSimpleType simpleType) {
+        if (simpleType == null) {
+            return null;
+        }
+        // de-reference alias
+        return (simpleType.enumAliasFor == null) ? simpleType.name : simpleType.enumAliasFor;
+    }
+
+    private TypeInfo typeInfoOf(String simpleTypeName, String primitiveJavaType, String enumName) {
+        // in case the enumName in the question has been "renamed" (i.e. we chose the enumName of the
+        // other side during codelist unification) we adjust to new (unified) enumName
+        if (simpleTypeName != null) {
+            OnixSimpleType unifiedSimpleType = unifiedCodelists.get(simpleTypeName);
+            if (unifiedSimpleType != null) {
+                enumName = unifiedSimpleType.enumName;
+            }
+        }
+
         TypeInfo result = new TypeInfo();
-        result.isXHTML = (onixSimpleTypeName != null) && onixSimpleTypeName.equals(OnixSimpleType.XHTML.name);
+        result.isXHTML = OnixSimpleType.XHTML.name.equals(simpleTypeName);
         result.javaType = result.isXHTML ? null : enumName;
         result.isPrimitive = (result.javaType == null);
         result.comment = null;
-        if (result.javaType == null) {
-            result.javaType = javaType;
-            if ((onixSimpleTypeName != null)) {
-                result.comment = "(type: " + onixSimpleTypeName + ")";
+        if (result.javaType == null) { // i.e. neither XHTML nor enum
+            result.javaType = primitiveJavaType;
+            if ((simpleTypeName != null)) {
+                result.comment = "(type: " + simpleTypeName + ")";
             }
         }
         return result;
@@ -85,26 +105,11 @@ public class GenUtil {
         String structName;
     }
 
-    private static String commentOf(Cardinality cardinality) {
-        switch (cardinality) {
-            case Required:
-                return "(this field is required)";
-            case Optional:
-                return "(this field is optional)";
-            case OneOrMore:
-                return "(this list is required to contain at least one item)";
-            case ZeroOrMore:
-                return "(this list may be empty)";
-            default:
-                throw new RuntimeException();
-        }
-    }
-
-    public static FieldInfo fieldInfoOf(OnixCompositeMember member, OnixMetadata ref) {
+    public FieldInfo fieldInfoOf(OnixCompositeMember member, OnixMetadata ref) {
         FieldInfo result = new FieldInfo();
-        result.name = fieldOf(member.className);
+        result.name = fieldNameFor(member.className);
         result.type = member.className;
-        result.comment = commentOf(member.cardinality);
+        result.comment = commentFor(member.cardinality);
         if (member.cardinality.singular) {
             result.emptyPhrase = String.format("%s.EMPTY", result.type);
         } else {
@@ -127,7 +132,7 @@ public class GenUtil {
                     if (struct.isKeyed()) {
                         OnixCompositeMember keyMember = struct.keyMember.dataMember;
                         OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
-                        TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+                        TypeInfo keyTypeInfo = typeInfoOf(keyClass.valueMember.simpleType);
                         result.type = String.format("ListOfOnixDataCompositeWithKey<%s,%s,%s>", result.type,
                             result.structName, keyTypeInfo.javaType);
                         result.emptyPhrase = "ListOfOnixDataCompositeWithKey.emptyKeyed()";
@@ -144,7 +149,7 @@ public class GenUtil {
         return result;
     }
 
-    public static String fieldOf(String propertyName) {
+    public String fieldNameFor(String propertyName) {
         // find the first lower-case character
         int i = 0;
         for (; i < propertyName.length(); i++) {
@@ -172,10 +177,18 @@ public class GenUtil {
         return propertyName.substring(0, i - 1).toLowerCase() + propertyName.substring(i - 1);
     }
 
-    public static void main(String[] args) {
-        LOGGER.info(fieldOf("text"));
-        LOGGER.info(fieldOf("TextFormat"));
-        LOGGER.info(fieldOf("ISBN"));
-        LOGGER.info(fieldOf("IDTypeName"));
+    private String commentFor(Cardinality cardinality) {
+        switch (cardinality) {
+            case Required:
+                return "(this field is required)";
+            case Optional:
+                return "(this field is optional)";
+            case OneOrMore:
+                return "(this list is required to contain at least one item)";
+            case ZeroOrMore:
+                return "(this list may be empty)";
+            default:
+                throw new RuntimeException();
+        }
     }
 }

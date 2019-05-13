@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.onix3.BiographicalNote;
 import com.tectonica.jonix.onix3.Contributor;
 import com.tectonica.jonix.unify.base.BaseContributor;
@@ -48,7 +48,7 @@ public class BaseContributor3 extends BaseContributor {
 
     private String pickBiographicalNote(Contributor contributor) {
         for (BiographicalNote bio : contributor.biographicalNotes()) {
-            if (bio.language == null || bio.language == LanguageCodes.English) {
+            if (bio.language == null || bio.language == Languages.English) {
                 return bio.value;
             }
         }

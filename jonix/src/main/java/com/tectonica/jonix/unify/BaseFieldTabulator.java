@@ -20,7 +20,7 @@
 package com.tectonica.jonix.unify;
 
 import com.tectonica.jonix.codelist.ContributorRoles;
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.codelist.PriceTypes;
 import com.tectonica.jonix.codelist.ProductIdentifierTypes;
@@ -262,7 +262,7 @@ public class BaseFieldTabulator {
             }
             sb.append("|");
             if (salesRights.countries != null) {
-                for (Set<CountryCodes> cc : salesRights.countries) {
+                for (Set<Countrys> cc : salesRights.countries) {
                     sb.append(cc).append(";");
                 }
             }

@@ -144,6 +144,10 @@ public class OnixSimpleType implements Comparable<OnixSimpleType> {
         return name + " (" + primitiveType + ") = '" + comment + "', values=" + enumValues + "'";
     }
 
+    /**
+     * comparator for unification processes; relevant when comparing types from different versions of ONIX. in such
+     * cases all that matters is the raw name.
+     */
     @Override
     public int compareTo(OnixSimpleType other) {
         return name.compareTo(other.name);

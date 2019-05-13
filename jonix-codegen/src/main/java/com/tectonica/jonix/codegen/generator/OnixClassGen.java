@@ -41,11 +41,13 @@ public class OnixClassGen {
     private final File folder;
 
     private final OnixMetadata ref;
+    private final GenUtil genUtil;
 
     public OnixClassGen(String basePackage, String baseFolder, String subfolder, OnixMetadata ref) {
         this.ref = ref;
         packageName = basePackage + "." + subfolder;
         folder = new File(baseFolder, subfolder);
+        genUtil = new GenUtil(ref.unifiedCodelists);
         GenUtil.prepareOutputFolder(folder);
     }
 
@@ -81,7 +83,7 @@ public class OnixClassGen {
                 if (struct.isKeyed()) {
                     OnixCompositeMember keyMember = struct.keyMember.dataMember;
                     OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
-                    TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+                    GenUtil.TypeInfo keyTypeInfo = genUtil.typeInfoOf(keyClass.valueMember.simpleType);
                     markerInterfaceName = String.format("OnixDataCompositeWithKey<%s,%s>", structName,
                         keyTypeInfo.javaType);
                 } else {
@@ -163,7 +165,7 @@ public class OnixClassGen {
         p.printf("         switch (name) {\n");
         for (OnixCompositeMember m : composite.members) {
             final String className = m.className;
-            String field = GenUtil.fieldOf(className);
+            String field = genUtil.fieldNameFor(className);
             if (!m.cardinality.singular) {
                 field += "s";
             }
@@ -198,7 +200,7 @@ public class OnixClassGen {
         printCaptionComment(p, "MEMBERS");
 
         for (OnixCompositeMember member : composite.members) {
-            final FieldInfo fi = GenUtil.fieldInfoOf(member, ref);
+            final FieldInfo fi = genUtil.fieldInfoOf(member, ref);
 
             // declare member in a private field
             p.println();
@@ -242,7 +244,7 @@ public class OnixClassGen {
             for (OnixStructMember structMember : struct.allMembers()) {
                 final OnixCompositeMember member = structMember.dataMember;
                 if (member.onixClass instanceof OnixElementDef) {
-                    String targetField = GenUtil.fieldOf(member.className);
+                    String targetField = genUtil.fieldNameFor(member.className);
                     String field = targetField;
                     if (!member.cardinality.singular) {
                         field += "s";
@@ -255,7 +257,7 @@ public class OnixClassGen {
                                 break;
                             case ChangeClassName:
                                 p.printf("      struct.%s = %s.value;\n", field,
-                                    GenUtil.fieldOf(structMember.transformationHint));
+                                    genUtil.fieldNameFor(structMember.transformationHint));
                                 break;
                             default:
                                 p.printf("      struct.%s = JPU.convert%s(%s.value);\n", field,
@@ -276,18 +278,18 @@ public class OnixClassGen {
 
             if (struct.isKeyed()) {
                 OnixCompositeMember keyMember = struct.keyMember.dataMember;
-                String field = GenUtil.fieldOf(keyMember.className);
+                String field = genUtil.fieldNameFor(keyMember.className);
                 boolean transformationNeeded = (struct.keyMember.transformationNeededInVersion == ref.onixVersion);
                 if (transformationNeeded) {
                     if (struct.keyMember.transformationType == OnixStructMember.TransformationType.ChangeClassName) {
-                        field = GenUtil.fieldOf(struct.keyMember.transformationHint);
+                        field = genUtil.fieldNameFor(struct.keyMember.transformationHint);
                     } else {
                         throw new UnsupportedOperationException(
                             "Still not handling key-transofmration other than ChangeClassName");
                     }
                 }
                 OnixElementDef keyClass = (OnixElementDef) keyMember.onixClass;
-                TypeInfo keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
+                TypeInfo keyTypeInfo = genUtil.typeInfoOf(keyClass.valueMember.simpleType);
                 p.println();
                 p.printf("   @Override\n");
                 p.printf("   public %s structKey() {\n", keyTypeInfo.javaType);
@@ -311,7 +313,7 @@ public class OnixClassGen {
         p.println(Comments.AutoGen);
 
         // analyze the main value of the element
-        final TypeInfo ti = GenUtil.typeInfoOf(element.valueMember.simpleType);
+        final TypeInfo ti = genUtil.typeInfoOf(element.valueMember.simpleType);
         String valueType = element.isSpaceable ? String.format("java.util.Set<%s>", ti.javaType) : ti.javaType;
 
         printOnixDoc(p, element.onixDoc);
@@ -461,7 +463,7 @@ public class OnixClassGen {
         p.println();
         printCaptionComment(p, "ATTRIBUTES");
         for (OnixAttribute a : clz.attributes) {
-            final TypeInfo ti = GenUtil.typeInfoOf(a);
+            final TypeInfo ti = genUtil.typeInfoOf(a);
             p.println();
             if (ti.comment != null) {
                 p.printf("   /**\n");
@@ -474,14 +476,14 @@ public class OnixClassGen {
 
     private void setInitializers(OnixClass clz, PrintStream p) {
         for (OnixAttribute a : clz.attributes) {
-            String enumName = a.getEnumName();
+            TypeInfo ti = genUtil.typeInfoOf(a);
 
-            if (enumName == null) {
+            if (ti.isPrimitive) {
                 // EXAMPLE: datestamp = JPU.getAttribute(element, "datestamp");
                 p.printf("      %s = JPU.getAttribute(element, \"%s\");\n", a.name, a.name);
             } else {
                 // EXAMPLE: textformat = TextFormats.byCode(JPU.getAttribute(element, "textformat"));
-                p.printf("      %s = %s.byCode(JPU.getAttribute(element, \"%s\"));\n", a.name, enumName, a.name);
+                p.printf("      %s = %s.byCode(JPU.getAttribute(element, \"%s\"));\n", a.name, ti.javaType, a.name);
             }
         }
     }

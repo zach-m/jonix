@@ -40,6 +40,10 @@ public class OnixEnumValue implements Comparable<OnixEnumValue> {
         return "{" + value + "=" + name + "}";
     }
 
+    /**
+     * comparator for unification processes; relevant when comparing values of one enum to values of another. in such
+     * cases all that matters is the raw value.
+     */
     @Override
     public int compareTo(OnixEnumValue other) {
         return value.compareTo(other.value); // NOTE: this is a value comparison, not name

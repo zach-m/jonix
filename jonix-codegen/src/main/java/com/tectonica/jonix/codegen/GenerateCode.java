@@ -44,9 +44,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class GenerateCode {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenerateCode.class);
@@ -65,13 +67,13 @@ public class GenerateCode {
         final OnixMetadata ref3 = ParseUtil.parse(OnixVersion.Ver3_0_06, false, ParseUtil.RES_REF_3,
             ParseUtil.RES_CODELIST_3, ParseUtil.RES_HTML_SPEC_3, ParseUtil.CODELIST_ISSUE_3);
 
-        final List<OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
+        final Map<String, OnixSimpleType> unifiedCodelists = unifyCodelists(ref2, ref3);
         final Map<String, OnixStruct> unifiedStructs = unifyStructs(ref2, ref3);
         //unifyInterfaces(ref2, ref3);
 
         // Generate source code
-        generateCodelists(basePackage, basePath, relativePath, unifiedCodelists);
-        generateStructs(basePackage, basePath, relativePath, unifiedStructs.values());
+        generateCodelists(basePackage, basePath, relativePath, unifiedCodelists.values());
+        generateStructs(basePackage, basePath, relativePath, unifiedCodelists, unifiedStructs.values());
         generateOnix2(basePackage, basePath, relativePath, ref2);
         generateOnix3(basePackage, basePath, relativePath, ref3);
 
@@ -79,7 +81,7 @@ public class GenerateCode {
     }
 
     private static void generateCodelists(final String basePackage, final String basePath, final String relativePath,
-                                          final List<OnixSimpleType> unifiedCodelists) {
+                                          final Collection<OnixSimpleType> unifiedCodelists) {
         final String codelistHome = basePath + "/jonix-common";
         if (!new File(codelistHome).exists()) {
             throw new RuntimeException("couldn't find jonix-common project at " + codelistHome);
@@ -94,6 +96,7 @@ public class GenerateCode {
     }
 
     private static void generateStructs(final String basePackage, final String basePath, final String relativePath,
+                                        Map<String, OnixSimpleType> unifiedCodelists,
                                         final Collection<OnixStruct> unifiedStructs) {
         final String codelistHome = basePath + "/jonix-common";
         if (!new File(codelistHome).exists()) {
@@ -102,7 +105,8 @@ public class GenerateCode {
 
         LOGGER.info("Generating unified structs..");
 
-        final OnixStructGen osg = new OnixStructGen(basePackage, codelistHome + relativePath, "struct");
+        final OnixStructGen osg =
+            new OnixStructGen(basePackage, codelistHome + relativePath, "struct", unifiedCodelists);
         for (OnixStruct struct : unifiedStructs) {
             osg.generate(struct);
         }
@@ -148,55 +152,89 @@ public class GenerateCode {
 
     // /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private static List<OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3) {
-        final List<OnixSimpleType> unifiedCodelists = new ArrayList<>();
+    private static Map<String, OnixSimpleType> unifyCodelists(OnixMetadata ref2, OnixMetadata ref3) {
+        final Map<String, OnixSimpleType> unifiedCodelists = new HashMap<>();
+        final String SPACER = "                                        ";
 
+        // we iterate over the list of enums from Onix2 and Onix3, matching them by name
         ListDiff.sortAndCompare(ref2.getEnums(), ref3.getEnums(), (enum2, enum3) -> {
             // ignore aliases, we'll generate code out of the types they point to
             if (enum2 != null && enum2.enumAliasFor != null) {
-                //LOGGER.info("Skipping " + enum2.name + ", alias for " + enum2.enumName);
-                return true;
-            }
-            if (enum3 != null && enum3.enumAliasFor != null) {
-                //LOGGER.info("Skipping " + enum3.name + ", alias for " + enum3.enumName);
-                return true;
-            }
-
-            if (enum2 != null && enum3 != null) {
-                //LOGGER.info("                                         Common: " + enum2.enumName);
+                LOGGER.debug("unifyCodelists: Skipping Onix2's {}, alias for {}", enum2.name, enum2.enumName);
+            } else if (enum3 != null && enum3.enumAliasFor != null) {
+                LOGGER.debug("unifyCodelists: Skipping Onix3's {}, alias for {}", enum3.name, enum3.enumName);
+            } else if (enum2 != null && enum3 != null) {
+                // enums with same name found in both sides, we need to create a unified version
                 final OnixSimpleType unified = unifiedCodelist(enum2, enum3);
-                unifiedCodelists.add(unified);
+                LOGGER.debug("unifyCodelists: {} {}", SPACER, unified.enumName);
+                unifiedCodelists.put(enum3.name, unified);
             } else if (enum2 != null) {
-                //LOGGER.info("Unique to Onix2: " + enum2.enumName);
-                enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3";
-                unifiedCodelists.add(enum2);
+                // enum from Onix2 exists, with no match on Onix3, we add it as is (with a deprecation comment)
+                LOGGER.debug("unifyCodelists: [onix2] " + enum2.enumName);
+                enum2.comment += "\n<p>" + "NOTE: Deprecated in Onix3"; // TODO: <p> goes through URL-encofing
+                unifiedCodelists.put(enum2.name, enum2);
             } else {
-                //LOGGER.info("Unique to Onix3: " + enum3.enumName);
-                enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3";
-                unifiedCodelists.add(enum3);
+                assert enum3 != null;
+                // enum from Onix3 exists, with no match on Onix2, we add it as is
+                LOGGER.debug("unifyCodelists: {} {} [onix3] {}", SPACER, SPACER, enum3.enumName);
+                enum3.comment += "\n<p>" + "NOTE: Introduced in Onix3"; // TODO: <p> goes through URL-encofing
+                unifiedCodelists.put(enum3.name, enum3);
             }
             return true;
         });
+
+        // since we might be comparing codelists from different issues (e.g. 36 vs 45), it could happen that the
+        // same enumName appears in different issues under different names (=codelist number). for example, the
+        // enumName "ProductForms" is under the name "List7" in issue 36, but under the name "List150" in 45.
+        // we now cross-compare enumNames, and rename the one that's older (smaller issue number)
+        Map<String, Long> counters = unifiedCodelists.values().stream()
+            .filter(ost -> ost.isEnum() && ost.enumAliasFor == null)
+            .collect(Collectors.groupingBy(ost -> ost.enumName, HashMap::new, Collectors.counting()));
+        List<Map.Entry<String, Long>> clashes =
+            counters.entrySet().stream().filter(entry -> entry.getValue() > 1).collect(Collectors.toList());
+        if (clashes.size() > 0) {
+            LOGGER.warn("unifyCodelists: enumName clashes at: {}", clashes);
+            for (Map.Entry<String, Long> clash : clashes) {
+                String enumName = clash.getKey();
+                unifiedCodelists.values().stream()
+                    .filter(ost -> ost.isEnum() && ost.enumAliasFor == null)
+                    .filter(ost -> enumName.equals(ost.enumName))
+                    .sorted(Comparator.comparing(o -> Long.parseLong(o.enumCodelistIssue)))
+                    .forEach(ost -> {
+                        if (clash.getValue() > 1) {
+                            String newEnumName = ost.enumName + ost.name;
+                            LOGGER.debug("unifyCodelists: renaming {}.{} -> {} in issue {}",
+                                ost.name, ost.enumName, newEnumName, ost.enumCodelistIssue);
+                            ost.enumName = newEnumName;
+                            clash.setValue(clash.getValue() - 1L);
+                        }
+                    });
+            }
+        }
+        // TODO: I think this might be the only place where we change a metadata field after parsing
+
+        ref2.unifiedCodelists = unifiedCodelists;
+        ref3.unifiedCodelists = unifiedCodelists;
 
         return unifiedCodelists;
     }
 
     private static OnixSimpleType unifiedCodelist(final OnixSimpleType enum2, final OnixSimpleType enum3) {
         final OnixSimpleType result = OnixSimpleType.cloneFrom(enum3);
+
+        // the enums in both sides are sorted by value right from the XSD
         ListDiff.compare(enum2.enumValues, enum3.enumValues, (enumValue2, enumValue3) -> {
             if (enumValue2 != null && enumValue3 != null) {
-                //if (!enumValue2.name.equals(enumValue3.name))
-                //{
-                //    LOGGER.info("DIFF - ONIX2 - " + enum2.enumName + ": "+ enumValue2.name);
-                //    LOGGER.info("DIFF - ONIX3 - " + enum3.enumName + ": "+ enumValue3.name);
+                //if (!enumValue2.name.equals(enumValue3.name)) {
+                //    LOGGER.debug("unifyCodelists: Difference in enumValue: Onix2={}, Onix3={}", enumValue2, enumValue3);
                 //}
             } else if (enumValue2 != null) {
-                //LOGGER.info("Unique to Onix2: " + enum2.enumName + "." + enumValue2);
-                enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3";
+                //LOGGER.debug("unifyCodelists: Unique to Onix2: " + enum2.enumName + "." + enumValue2);
+                enumValue2.description += "\n<p>" + "NOTE: Deprecated in Onix3"; // TODO: <p> goes through URL-encofing
                 result.add(enumValue2);
             } else {
-                //LOGGER.info("Unique to Onix3: " + enum3.enumName + "." + enumValue3);
-                enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3";
+                //LOGGER.debug("unifyCodelists: Unique to Onix3: " + enum3.enumName + "." + enumValue3);
+                enumValue3.description += "\n<p>" + "NOTE: Introduced in Onix3"; // TODO: <p> goes through URL-encofing
             }
             return true;
         });
@@ -212,7 +250,8 @@ public class GenerateCode {
             if (struct2 != null && struct3 != null) {
                 final OnixStruct unified = unifiedStruct(struct2, struct3, ref2, ref3);
                 if (unified != null) {
-                    unifiedStructs.put(struct3.containingComposite.name, unified);
+                    String name = struct3.containingComposite.name;
+                    unifiedStructs.put(name, unified);
                 }
             } else if (struct2 != null) {
                 final String name = struct2.containingComposite.name;
@@ -250,12 +289,12 @@ public class GenerateCode {
         }
 
         if (struct3.keyMember != null) {
-            final String enumName2 = struct2.keyEnumType().enumName;
-            final String enumName3 = struct3.keyEnumType().enumName;
-            if (!enumName2.equals(enumName3)) {
+            final String keyName2 = struct2.keyEnumType().name;
+            final String keyName3 = struct3.keyEnumType().name;
+            if (!keyName2.equals(keyName3)) {
                 throw new RuntimeException("Class " + className
-                    + ", can't be unified into struct as keys are of different types: Onix2=" + enumName2
-                    + " Onix3=" + enumName3);
+                    + ", can't be unified into struct as keys are of different types: Onix2=" + keyName2
+                    + " Onix3=" + keyName3);
             }
 
             unified.keyMember = struct3.keyMember;

@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.codelist.PublishingDateRoles;
 import com.tectonica.jonix.onix3.CityOfPublication;
 import com.tectonica.jonix.onix3.Product;
@@ -45,7 +45,7 @@ public class BasePublishingDetails3 extends BasePublishingDetails {
                 pd.publishingDates().findAsStruct(PublishingDateRoles.Out_of_print_deletion_date).map(p -> p.date)
                     .orElse(null);
             countryOfPublication = pd.countryOfPublication().value;
-            cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
+            cityOfPublication = pickCityOfPublication(product, Languages.English);
         } else {
             publicationDate = null;
             countryOfPublication = null;
@@ -53,7 +53,7 @@ public class BasePublishingDetails3 extends BasePublishingDetails {
         }
     }
 
-    private String pickCityOfPublication(Product product, LanguageCodes preferredLanguage) {
+    private String pickCityOfPublication(Product product, Languages preferredLanguage) {
         List<CityOfPublication> cops = product.publishingDetail().cityOfPublications();
 
         if (cops.isEmpty()) {

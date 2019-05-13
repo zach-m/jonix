@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix2;
 
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.onix2.CityOfPublication;
 import com.tectonica.jonix.onix2.Product;
 import com.tectonica.jonix.unify.base.BasePublishingDetails;
@@ -36,10 +36,10 @@ public class BasePublishingDetails2 extends BasePublishingDetails {
         publicationDate = product.publicationDate().value;
         outOfPrintDate = product.outOfPrintDate().value;
         countryOfPublication = product.countryOfPublication().value;
-        cityOfPublication = pickCityOfPublication(product, LanguageCodes.English);
+        cityOfPublication = pickCityOfPublication(product, Languages.English);
     }
 
-    public static String pickCityOfPublication(Product product, LanguageCodes preferredLanguage) {
+    public static String pickCityOfPublication(Product product, Languages preferredLanguage) {
         for (CityOfPublication cop : product.cityOfPublications()) {
             if (cop.language == null || cop.language == preferredLanguage) {
                 return cop.value;

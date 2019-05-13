@@ -22,21 +22,26 @@ package com.tectonica.jonix.codegen.generator;
 import com.tectonica.jonix.codegen.generator.GenUtil.TypeInfo;
 import com.tectonica.jonix.codegen.metadata.OnixCompositeMember;
 import com.tectonica.jonix.codegen.metadata.OnixElementDef;
+import com.tectonica.jonix.codegen.metadata.OnixSimpleType;
 import com.tectonica.jonix.codegen.metadata.OnixStruct;
 import com.tectonica.jonix.codegen.metadata.OnixStructMember;
 
 import java.io.File;
 import java.io.PrintStream;
+import java.util.Map;
 
 public class OnixStructGen {
     private static final String COMMON_PACKAGE = "com.tectonica.jonix";
 
     private final String packageName;
     private final File folder;
+    private final GenUtil genUtil;
 
-    public OnixStructGen(String basePackage, String baseFolder, String subfolder) {
+    public OnixStructGen(String basePackage, String baseFolder, String subfolder,
+                         Map<String, OnixSimpleType> unifiedCodelists) {
         packageName = basePackage + "." + subfolder;
         folder = new File(baseFolder, subfolder);
+        genUtil = new GenUtil(unifiedCodelists);
         GenUtil.prepareOutputFolder(folder);
     }
 
@@ -64,8 +69,8 @@ public class OnixStructGen {
         if (struct.isKeyed()) {
             keyMember = struct.keyMember.dataMember;
             keyClass = (OnixElementDef) keyMember.onixClass;
-            keyTypeInfo = GenUtil.typeInfoOf(keyClass.valueMember.simpleType);
-            keyField = GenUtil.fieldOf(keyMember.className);
+            keyTypeInfo = genUtil.typeInfoOf(keyClass.valueMember.simpleType);
+            keyField = genUtil.fieldNameFor(keyMember.className);
             structMarkerInterface = "JonixKeyedStruct";
             structKeyQualifier = "<" + keyTypeInfo.javaType + ">";
         }
@@ -110,8 +115,8 @@ public class OnixStructGen {
             String comment;
             if (member.onixClass instanceof OnixElementDef) {
                 final OnixElementDef memberClass = (OnixElementDef) member.onixClass;
-                final TypeInfo ti = GenUtil.typeInfoOf(memberClass.valueMember.simpleType);
-                field = GenUtil.fieldOf(member.className);
+                final TypeInfo ti = genUtil.typeInfoOf(memberClass.valueMember.simpleType);
+                field = genUtil.fieldNameFor(member.className);
                 javaType = ti.javaType;
                 if (memberClass.isSpaceable) {
                     javaType = "java.util.Set<" + javaType + ">";

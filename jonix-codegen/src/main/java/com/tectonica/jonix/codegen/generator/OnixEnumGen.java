@@ -133,7 +133,7 @@ public class OnixEnumGen {
         p.printf("   public final String code;\n");
         p.printf("   public final String description;\n");
         p.println();
-        p.printf("   private %s(String code, String description)\n", enumType.enumName);
+        p.printf("   %s(String code, String description)\n", enumType.enumName);
         p.printf("   {\n");
         p.printf("      this.code = code;\n");
         p.printf("      this.description = description;\n");
@@ -204,6 +204,7 @@ public class OnixEnumGen {
     }
 
     public static void main(String[] args) {
+        // TODO: turn into a test
         final OnixEnumGen aux = new OnixEnumGen(null, null, null);
         String s;
 

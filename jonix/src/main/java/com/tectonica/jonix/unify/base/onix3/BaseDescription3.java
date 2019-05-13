@@ -20,7 +20,7 @@
 package com.tectonica.jonix.unify.base.onix3;
 
 import com.tectonica.jonix.codelist.ExtentTypes;
-import com.tectonica.jonix.codelist.ProductFormsList150;
+import com.tectonica.jonix.codelist.ProductForms;
 import com.tectonica.jonix.onix3.AudienceRange;
 import com.tectonica.jonix.onix3.DescriptiveDetail;
 import com.tectonica.jonix.onix3.Product;
@@ -42,7 +42,7 @@ public class BaseDescription3 extends BaseDescription {
         if (dd.exists()) {
             editionType = dd.editionTypes().firstValue().orElse(null);
             editionNumber = dd.editionNumber().value;
-            ProductFormsList150 productFormValue = dd.productForm().value;
+            ProductForms productFormValue = dd.productForm().value;
             productForm = (productFormValue == null) ? null : productFormValue.description;
             JonixExtent jNumberOfPages = dd.extents().findAsStruct(ExtentTypes.Main_content_page_count).orElse(null);
             numberOfPages = (jNumberOfPages == null || jNumberOfPages.extentValue == null) ? null

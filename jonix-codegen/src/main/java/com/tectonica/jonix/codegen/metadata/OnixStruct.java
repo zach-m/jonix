@@ -77,6 +77,10 @@ public class OnixStruct implements Comparable<OnixStruct> {
         return sb.toString();
     }
 
+    /**
+     * comparator for unification processes; relevant when comparing structs from different versions of ONIX. in such
+     * cases structs are considered equal if the ONIX name of the composite they represent is the same.
+     */
     @Override
     public int compareTo(OnixStruct other) {
         return containingComposite.name.compareTo(other.containingComposite.name);

@@ -21,7 +21,7 @@ package com.tectonica.jonix.unify.base;
 
 import com.tectonica.jonix.codelist.AudienceRangePrecisions;
 import com.tectonica.jonix.codelist.AudienceRangeQualifiers;
-import com.tectonica.jonix.codelist.Audiences;
+import com.tectonica.jonix.codelist.AudienceTypes;
 import com.tectonica.jonix.codelist.EditionTypes;
 import com.tectonica.jonix.codelist.LanguageRoles;
 import com.tectonica.jonix.struct.JonixAudience;
@@ -46,7 +46,7 @@ public abstract class BaseDescription implements Serializable {
     public String numberOfPages;
     public List<JonixLanguage> languages;
     public List<JonixAudience> audiences;
-    public List<Audiences> audienceCodes;
+    public List<AudienceTypes> audienceCodes;
 
     /**
      * returns a 2-items array, containing the FROM and TO age-range values, or null if not indicated. This function

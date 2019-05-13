@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.util.JonixUtil;
 
 import java.io.Serializable;
@@ -36,7 +36,7 @@ import java.util.Date;
 public abstract class BasePublishingDetails implements Serializable {
     public String publicationDate;
     public String outOfPrintDate;
-    public CountryCodes countryOfPublication;
+    public Countrys countryOfPublication;
     public String cityOfPublication;
 
     public Date getPublicationDate() {

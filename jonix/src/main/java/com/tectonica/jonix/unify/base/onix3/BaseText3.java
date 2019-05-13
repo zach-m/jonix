@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base.onix3;
 
-import com.tectonica.jonix.codelist.LanguageCodes;
+import com.tectonica.jonix.codelist.Languages;
 import com.tectonica.jonix.onix3.Text;
 import com.tectonica.jonix.onix3.TextContent;
 import com.tectonica.jonix.unify.base.BaseText;
@@ -48,7 +48,7 @@ public class BaseText3 extends BaseText {
     private Text pickTextObject(TextContent textContent) {
         if (!textContent.texts().isEmpty()) {
             for (Text text : textContent.texts()) {
-                if (text.language == null || text.language == LanguageCodes.English) {
+                if (text.language == null || text.language == Languages.English) {
                     return text;
                 }
             }

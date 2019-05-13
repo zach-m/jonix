@@ -49,6 +49,8 @@ public class OnixMetadata {
 
     // the following is to be filled during code-generation, not parsing
     @JsonIgnore
+    public Map<String, OnixSimpleType> unifiedCodelists = null;
+    @JsonIgnore
     public Map<String, OnixStruct> unifiedStructs = null;
 
     public OnixMetadata(OnixVersion onixVersion, boolean isShort, String codelistIssue) {

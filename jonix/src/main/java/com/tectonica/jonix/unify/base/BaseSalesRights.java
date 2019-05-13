@@ -19,7 +19,7 @@
 
 package com.tectonica.jonix.unify.base;
 
-import com.tectonica.jonix.codelist.CountryCodes;
+import com.tectonica.jonix.codelist.Countrys;
 import com.tectonica.jonix.codelist.Regions;
 import com.tectonica.jonix.codelist.RightsRegions;
 import com.tectonica.jonix.codelist.SalesRightsTypes;
@@ -38,9 +38,9 @@ import java.util.Set;
 @SuppressWarnings("serial")
 public abstract class BaseSalesRights implements Serializable {
     public SalesRightsTypes salesRightsType;
-    public List<Set<CountryCodes>> countries; // TODO: need to be contracted to merely a Set
+    public List<Set<Countrys>> countries; // TODO: need to be contracted to merely a Set
     public Set<Regions> regions;
     public List<RightsRegions> rightRegions; // only in Onix2
-    public Set<CountryCodes> countriesExcluded; // only in Onix3
+    public Set<Countrys> countriesExcluded; // only in Onix3
     public Set<Regions> regionsExcluded; // only in Onix3
 }

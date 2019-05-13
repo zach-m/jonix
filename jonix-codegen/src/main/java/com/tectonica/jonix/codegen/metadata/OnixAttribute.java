@@ -27,7 +27,7 @@ public class OnixAttribute implements Comparable<OnixAttribute> {
     public String name;
     public Primitive primitiveType;
     @JsonIgnore
-    public OnixSimpleType simpleType; // may be null
+    public OnixSimpleType simpleType; // may be null if this attribute is based on a primitive type
 
     private OnixAttribute() {
     }
